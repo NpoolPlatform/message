@@ -92,12 +92,11 @@
         "PaymentType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "CreatedAt": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
         },
         "PaymentCoinTypeID": {
-          "$ref": "#/definitions/v1StringVal",
-          "title": "payment"
+          "$ref": "#/definitions/v1StringVal"
         },
         "OrderState": {
           "$ref": "#/definitions/v1Uint32Val",
@@ -254,6 +253,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_value\""
         },
+        "GoodValueUSD": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_value_usd\""
+        },
         "PaymentAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"payment_amount\""
@@ -302,37 +305,41 @@
         "PaymentType": {
           "$ref": "#/definitions/v1PaymentType"
         },
-        "PaymentAccountID": {
+        "CoinTypeID": {
           "type": "string",
-          "title": "payment\n@inject_tag: sql:\"payment_account_id\""
+          "title": "@inject_tag: sql:\"coin_type_id\""
         },
         "PaymentCoinTypeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"payment_coin_type_id\""
         },
+        "TransferAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"transfer_amount\""
+        },
+        "BalanceAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"balance_amount\""
+        },
+        "CoinUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_usd_currency\""
+        },
+        "LocalCoinUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"local_coin_usd_currency\""
+        },
+        "LiveCoinUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"live_coin_usd_currency\""
+        },
+        "PaymentAccountID": {
+          "type": "string",
+          "title": "payment\n@inject_tag: sql:\"payment_account_id\""
+        },
         "PaymentStartAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"payment_start_amount\""
-        },
-        "PaymentTransferAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"payment_transfer_amount\""
-        },
-        "PaymentBalanceAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"payment_balance_amount\""
-        },
-        "PaymentCoinUSDCurrency": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"payment_coin_usd_currency\""
-        },
-        "PaymentLocalCoinUSDCurrency": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"payment_local_coin_usd_currency\""
-        },
-        "PaymentLiveCoinUSDCurrency": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"payment_live_coin_usd_currency\""
         },
         "OrderStateID": {
           "type": "string",
@@ -381,6 +388,10 @@
         "UserSetCanceled": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"user_set_canceled\""
+        },
+        "AdminSetCanceled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"admin_set_canceled\""
         },
         "PaymentTransactionID": {
           "type": "string",
@@ -447,6 +458,9 @@
         "GoodValue": {
           "type": "string"
         },
+        "GoodValueUSD": {
+          "type": "string"
+        },
         "PaymentAmount": {
           "type": "string"
         },
@@ -475,29 +489,32 @@
         "PaymentType": {
           "$ref": "#/definitions/v1PaymentType"
         },
-        "PaymentAccountID": {
-          "type": "string",
-          "title": "payment"
+        "CoinTypeID": {
+          "type": "string"
         },
         "PaymentCoinTypeID": {
           "type": "string"
         },
+        "TransferAmount": {
+          "type": "string"
+        },
+        "BalanceAmount": {
+          "type": "string"
+        },
+        "CoinUSDCurrency": {
+          "type": "string"
+        },
+        "LocalCoinUSDCurrency": {
+          "type": "string"
+        },
+        "LiveCoinUSDCurrency": {
+          "type": "string"
+        },
+        "PaymentAccountID": {
+          "type": "string",
+          "title": "payment"
+        },
         "PaymentStartAmount": {
-          "type": "string"
-        },
-        "PaymentTransferAmount": {
-          "type": "string"
-        },
-        "PaymentBalanceAmount": {
-          "type": "string"
-        },
-        "PaymentCoinUSDCurrency": {
-          "type": "string"
-        },
-        "PaymentLocalCoinUSDCurrency": {
-          "type": "string"
-        },
-        "PaymentLiveCoinUSDCurrency": {
           "type": "string"
         },
         "OrderState": {
@@ -526,6 +543,9 @@
           "type": "boolean"
         },
         "UserSetCanceled": {
+          "type": "boolean"
+        },
+        "AdminSetCanceled": {
           "type": "boolean"
         },
         "PaymentTransactionID": {

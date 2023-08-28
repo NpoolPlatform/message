@@ -14,6 +14,7 @@ service Middleware {
     rpc CreateGoodStatements    (CreateGoodStatementsRequest)   returns (CreateGoodStatementsResponse) {}
     rpc DeleteGoodStatement     (DeleteGoodStatementRequest)    returns (DeleteGoodStatementResponse) {}
     rpc DeleteGoodStatements    (DeleteGoodStatementsRequest)   returns (DeleteGoodStatementsResponse) {}
+    rpc ExistGoodStatementConds (ExistGoodStatementCondsRequest) returns (ExistGoodStatementCondsResponse) {}
 }
 
 message GoodStatementReq {
@@ -36,12 +37,18 @@ message GoodStatement {
     string CoinTypeID  = 30;
     // @inject_tag: sql:"amount"
     string Amount      = 40;
+    // @inject_tag: sql:"technique_service_fee_amount"
+    string TechniqueServiceFeeAmount      = 50;
+    // @inject_tag: sql:"to_platform"
+    string ToPlatform  = 60;
+    // @inject_tag: sql:"to_user"
+    string ToUser      = 70;
     // @inject_tag: sql:"benefit_date"
-    uint32 BenefitDate = 50;
+    uint32 BenefitDate = 80;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt   = 60;
+    uint32 CreatedAt   = 90;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt   = 70;
+    uint32 UpdatedAt   = 100;
 }
 
 message Conds {
@@ -101,4 +108,12 @@ message DeleteGoodStatementsRequest {
 
 message DeleteGoodStatementsResponse {
     repeated GoodStatement Infos = 10;
+}
+
+message ExistGoodStatementCondsRequest {
+    Conds conds = 10;
+}
+
+message ExistGoodStatementCondsResponse {
+    bool info = 10;
 }
