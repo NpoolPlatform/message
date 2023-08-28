@@ -222,7 +222,8 @@ message Conds {
     optional basetypes.v1.StringVal      AppID  = 20;
     optional basetypes.v1.StringVal      GoodID = 30;
     optional basetypes.v1.StringSliceVal GoodIDs = 40;
-    optional basetypes.v1.StringSliceVal AppIDs  = 50;
+    optional basetypes.v1.StringSliceVal AppIDs = 50;
+    optional basetypes.v1.StringSliceVal IDs    = 60;
 }
 
 message CreateGoodRequest {
