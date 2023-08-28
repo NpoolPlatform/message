@@ -9,14 +9,11 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateOutOfGas     (CreateOutOfGasRequest)     returns (CreateOutOfGasResponse)     {}
-    rpc CreateOutOfGass    (CreateOutOfGassRequest)    returns (CreateOutOfGassResponse)    {}
     rpc UpdateOutOfGas     (UpdateOutOfGasRequest)     returns (UpdateOutOfGasResponse)     {}
     rpc GetOutOfGas        (GetOutOfGasRequest)        returns (GetOutOfGasResponse)        {}
-    rpc GetOutOfGasOnly    (GetOutOfGasOnlyRequest)    returns (GetOutOfGasOnlyResponse)    {}
     rpc GetOutOfGass       (GetOutOfGassRequest)       returns (GetOutOfGassResponse)       {}
     rpc ExistOutOfGas      (ExistOutOfGasRequest)      returns (ExistOutOfGasResponse)      {}
     rpc ExistOutOfGasConds (ExistOutOfGasCondsRequest) returns (ExistOutOfGasCondsResponse) {}
-    rpc CountOutOfGass     (CountOutOfGassRequest)     returns (CountOutOfGassResponse)     {}
     rpc DeleteOutOfGas     (DeleteOutOfGasRequest)     returns (DeleteOutOfGasResponse)     {}
 }
 
@@ -59,14 +56,6 @@ message CreateOutOfGasResponse {
     OutOfGas Info = 10;
 }
 
-message CreateOutOfGassRequest {
-    repeated OutOfGasReq Infos = 10;
-}
-
-message CreateOutOfGassResponse {
-    repeated OutOfGas Infos = 10;
-}
-
 message UpdateOutOfGasRequest {
     OutOfGasReq Info = 10;
 }
@@ -94,14 +83,6 @@ message GetOutOfGassResponse {
     uint32            Total = 20;
 }
 
-message GetOutOfGasOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetOutOfGasOnlyResponse {
-    OutOfGas Info = 10;
-}
-
 message ExistOutOfGasRequest {
     string ID = 10;
 }
@@ -116,14 +97,6 @@ message ExistOutOfGasCondsRequest {
 
 message ExistOutOfGasCondsResponse {
     bool Info = 10;
-}
-
-message CountOutOfGassRequest {
-    Conds Conds = 10;
-}
-
-message CountOutOfGassResponse {
-    uint32 Info = 10;
 }
 
 message DeleteOutOfGasRequest {
