@@ -212,12 +212,6 @@
         },
         "TechniqueServiceFeeAmount": {
           "type": "string"
-        },
-        "StatementID": {
-          "type": "string"
-        },
-        "UnsoldStatementID": {
-          "type": "string"
         }
       }
     }
