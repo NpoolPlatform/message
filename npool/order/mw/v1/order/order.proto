@@ -187,7 +187,6 @@ message Conds {
     basetypes.v1.StringVal      PaymentAmount         = 70;
     basetypes.v1.Uint32Val      OrderType             = 80;
     basetypes.v1.Uint32Val      InvestmentType        = 90;
-    basetypes.v1.StringSliceVal CouponIDs             = 100;
     basetypes.v1.Uint32Val      PaymentType           = 110;
     basetypes.v1.StringVal      CoinTypeID            = 120;
     basetypes.v1.StringVal      PaymentCoinTypeID     = 130;
