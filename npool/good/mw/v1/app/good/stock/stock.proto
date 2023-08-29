@@ -8,8 +8,8 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc AddStock       (AddStockRequest)       returns (AddStockResponse)       {}
-    rpc SubStock       (SubStockRequest)       returns (SubStockResponse)       {}
+    rpc AddStock (AddStockRequest) returns (AddStockResponse) {}
+    rpc SubStock (SubStockRequest) returns (SubStockResponse) {}
 }
 
 message StockReq {
@@ -23,6 +23,7 @@ message StockReq {
     optional string WaitStart  = 80;
     optional string InService  = 90;
     optional bool   ChargeBack = 100;
+    optional bool   Rollback   = 110;
 }
 
 message Stock {

@@ -66,6 +66,10 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"end_at\""
         },
+        "Title": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"title\""
+        },
         "Message": {
           "type": "string",
           "title": "@inject_tag: sql:\"message\""
@@ -129,12 +133,11 @@
           "type": "integer",
           "format": "int64"
         },
-        "Message": {
+        "Title": {
           "type": "string"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
+        "Message": {
+          "type": "string"
         }
       }
     },

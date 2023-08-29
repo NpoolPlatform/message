@@ -4,7 +4,6 @@ package order.middleware.compensate.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/compensate";
 
-import "npool/basetypes/order/v1/enums.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
@@ -23,8 +22,8 @@ message CompensateReq {
     optional string     OrderID   = 20;
     optional uint32     StartAt   = 30;
     optional uint32     EndAt     = 40;
-    optional string     Message   = 50;
-    optional uint32     CreatedAt = 60;
+    optional string     Title     = 50;
+    optional string     Message   = 60;
 }
 
 message Compensate {
@@ -36,8 +35,10 @@ message Compensate {
     uint32     StartAt   = 30;
     // @inject_tag: sql:"end_at"
     uint32     EndAt     = 40;
+    // @inject_tag: sql:"title"
+    string     Title     = 50;
     // @inject_tag: sql:"message"
-    string     Message   = 50;
+    string     Message   = 51;
 
     // order
     // @inject_tag: sql:"app_id"
