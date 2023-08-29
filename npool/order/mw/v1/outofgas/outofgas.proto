@@ -11,7 +11,7 @@ service Middleware {
     rpc CreateOutOfGas     (CreateOutOfGasRequest)     returns (CreateOutOfGasResponse)     {}
     rpc UpdateOutOfGas     (UpdateOutOfGasRequest)     returns (UpdateOutOfGasResponse)     {}
     rpc GetOutOfGas        (GetOutOfGasRequest)        returns (GetOutOfGasResponse)        {}
-    rpc GetOutOfGass       (GetOutOfGassRequest)       returns (GetOutOfGassResponse)       {}
+    rpc GetOutOfGases      (GetOutOfGasesRequest)      returns (GetOutOfGasesResponse)       {}
     rpc ExistOutOfGas      (ExistOutOfGasRequest)      returns (ExistOutOfGasResponse)      {}
     rpc ExistOutOfGasConds (ExistOutOfGasCondsRequest) returns (ExistOutOfGasCondsResponse) {}
     rpc DeleteOutOfGas     (DeleteOutOfGasRequest)     returns (DeleteOutOfGasResponse)     {}
@@ -47,7 +47,6 @@ message Conds {
     basetypes.v1.Uint32Val EndAt   = 40;
 }
 
-
 message CreateOutOfGasRequest {
     OutOfGasReq Info = 10;
 }
@@ -72,13 +71,13 @@ message GetOutOfGasResponse {
     OutOfGas Info = 10;
 }
 
-message GetOutOfGassRequest {
+message GetOutOfGasesRequest {
     Conds Conds   = 10;
     int32 Offset  = 20;
     int32 Limit   = 30;
 }
 
-message GetOutOfGassResponse {
+message GetOutOfGasesResponse {
     repeated OutOfGas Infos = 10;
     uint32            Total = 20;
 }

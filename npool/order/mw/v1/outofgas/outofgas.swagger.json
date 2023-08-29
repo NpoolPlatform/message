@@ -102,7 +102,7 @@
         }
       }
     },
-    "v1GetOutOfGassResponse": {
+    "v1GetOutOfGasesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
