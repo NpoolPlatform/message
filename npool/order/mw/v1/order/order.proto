@@ -16,7 +16,6 @@ service Middleware {
     rpc UpdateOrders    (UpdateOrdersRequest)   returns (UpdateOrdersResponse)   {}
     rpc GetOrder        (GetOrderRequest)       returns (GetOrderResponse)       {}
     rpc GetOrders       (GetOrdersRequest)      returns (GetOrdersResponse)      {}
-    rpc GetOrderOnly    (GetOrderOnlyRequest)   returns (GetOrderOnlyResponse)   {}
     rpc SumOrderUnits   (SumOrderUnitsRequest)  returns (SumOrderUnitsResponse)  {}
     rpc ExistOrder      (ExistOrderRequest)      returns (ExistOrderResponse)      {}
     rpc ExistOrderConds (ExistOrderCondsRequest) returns (ExistOrderCondsResponse) {}
@@ -256,14 +255,6 @@ message GetOrdersRequest {
 message GetOrdersResponse {
     repeated Order Infos = 10;
     uint32         Total = 20;
-}
-
-message GetOrderOnlyRequest {
-    Conds Conds  = 10;
-}
-
-message GetOrderOnlyResponse {
-    Order Info = 10;
 }
 
 message SumOrderUnitsRequest {
