@@ -28,6 +28,9 @@ message WithdrawReq {
     optional string PlatformTransactionID  = 70;
     optional string ChainTransactionID     = 80;
     optional basetypes.ledger.v1.WithdrawState State       = 90;
+    // only Update Withdraw & Withdraw Success
+    optional string ChainTxID              = 100;
+    optional string FeeAmount              = 110;
 }
 
 message Withdraw {
