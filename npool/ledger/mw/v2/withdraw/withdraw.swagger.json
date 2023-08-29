@@ -251,12 +251,9 @@
         "State": {
           "$ref": "#/definitions/v1WithdrawState"
         },
-        "ChainTxID": {
+        "FeeAmount": {
           "type": "string",
           "title": "only Update Withdraw \u0026 Withdraw Success"
-        },
-        "FeeAmount": {
-          "type": "string"
         }
       }
     }
