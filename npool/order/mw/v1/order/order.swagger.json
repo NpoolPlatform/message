@@ -86,9 +86,6 @@
         "InvestmentType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "CouponIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
         "PaymentType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
