@@ -9,9 +9,7 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc GetProfit        (GetProfitRequest)        returns (GetProfitResponse)        {}
-    rpc GetProfitOnly    (GetProfitOnlyRequest)    returns (GetProfitOnlyResponse)    {}
     rpc GetProfits       (GetProfitsRequest)       returns (GetProfitsResponse)       {}
-    rpc DeleteProfit     (DeleteProfitRequest)     returns (DeleteProfitResponse)       {}
 }
 
 message ProfitReq {
@@ -64,20 +62,4 @@ message GetProfitsRequest {
 message GetProfitsResponse {
     repeated Profit Infos = 10;
     uint32           Total = 20;
-}
-
-message GetProfitOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetProfitOnlyResponse {
-    Profit Info = 10;
-}
-
-message DeleteProfitRequest {
-    ProfitReq Info = 10;
-}
-
-message DeleteProfitResponse {
-    Profit Info = 10;
 }

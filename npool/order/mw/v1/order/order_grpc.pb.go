@@ -25,7 +25,6 @@ const (
 	Middleware_UpdateOrders_FullMethodName    = "/order.middleware.order1.v1.Middleware/UpdateOrders"
 	Middleware_GetOrder_FullMethodName        = "/order.middleware.order1.v1.Middleware/GetOrder"
 	Middleware_GetOrders_FullMethodName       = "/order.middleware.order1.v1.Middleware/GetOrders"
-	Middleware_GetOrderOnly_FullMethodName    = "/order.middleware.order1.v1.Middleware/GetOrderOnly"
 	Middleware_SumOrderUnits_FullMethodName   = "/order.middleware.order1.v1.Middleware/SumOrderUnits"
 	Middleware_ExistOrder_FullMethodName      = "/order.middleware.order1.v1.Middleware/ExistOrder"
 	Middleware_ExistOrderConds_FullMethodName = "/order.middleware.order1.v1.Middleware/ExistOrderConds"
@@ -42,7 +41,6 @@ type MiddlewareClient interface {
 	UpdateOrders(ctx context.Context, in *UpdateOrdersRequest, opts ...grpc.CallOption) (*UpdateOrdersResponse, error)
 	GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error)
 	GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error)
-	GetOrderOnly(ctx context.Context, in *GetOrderOnlyRequest, opts ...grpc.CallOption) (*GetOrderOnlyResponse, error)
 	SumOrderUnits(ctx context.Context, in *SumOrderUnitsRequest, opts ...grpc.CallOption) (*SumOrderUnitsResponse, error)
 	ExistOrder(ctx context.Context, in *ExistOrderRequest, opts ...grpc.CallOption) (*ExistOrderResponse, error)
 	ExistOrderConds(ctx context.Context, in *ExistOrderCondsRequest, opts ...grpc.CallOption) (*ExistOrderCondsResponse, error)
@@ -111,15 +109,6 @@ func (c *middlewareClient) GetOrders(ctx context.Context, in *GetOrdersRequest, 
 	return out, nil
 }
 
-func (c *middlewareClient) GetOrderOnly(ctx context.Context, in *GetOrderOnlyRequest, opts ...grpc.CallOption) (*GetOrderOnlyResponse, error) {
-	out := new(GetOrderOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetOrderOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) SumOrderUnits(ctx context.Context, in *SumOrderUnitsRequest, opts ...grpc.CallOption) (*SumOrderUnitsResponse, error) {
 	out := new(SumOrderUnitsResponse)
 	err := c.cc.Invoke(ctx, Middleware_SumOrderUnits_FullMethodName, in, out, opts...)
@@ -166,7 +155,6 @@ type MiddlewareServer interface {
 	UpdateOrders(context.Context, *UpdateOrdersRequest) (*UpdateOrdersResponse, error)
 	GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error)
 	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
-	GetOrderOnly(context.Context, *GetOrderOnlyRequest) (*GetOrderOnlyResponse, error)
 	SumOrderUnits(context.Context, *SumOrderUnitsRequest) (*SumOrderUnitsResponse, error)
 	ExistOrder(context.Context, *ExistOrderRequest) (*ExistOrderResponse, error)
 	ExistOrderConds(context.Context, *ExistOrderCondsRequest) (*ExistOrderCondsResponse, error)
@@ -195,9 +183,6 @@ func (UnimplementedMiddlewareServer) GetOrder(context.Context, *GetOrderRequest)
 }
 func (UnimplementedMiddlewareServer) GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrders not implemented")
-}
-func (UnimplementedMiddlewareServer) GetOrderOnly(context.Context, *GetOrderOnlyRequest) (*GetOrderOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetOrderOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) SumOrderUnits(context.Context, *SumOrderUnitsRequest) (*SumOrderUnitsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SumOrderUnits not implemented")
@@ -332,24 +317,6 @@ func _Middleware_GetOrders_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetOrderOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetOrderOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetOrderOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetOrderOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetOrderOnly(ctx, req.(*GetOrderOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_SumOrderUnits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SumOrderUnitsRequest)
 	if err := dec(in); err != nil {
@@ -452,10 +419,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetOrders",
 			Handler:    _Middleware_GetOrders_Handler,
-		},
-		{
-			MethodName: "GetOrderOnly",
-			Handler:    _Middleware_GetOrderOnly_Handler,
 		},
 		{
 			MethodName: "SumOrderUnits",

@@ -19,12 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateWithdraw_FullMethodName  = "/ledger.middleware.withdraw.v2.Middleware/CreateWithdraw"
-	Middleware_UpdateWithdraw_FullMethodName  = "/ledger.middleware.withdraw.v2.Middleware/UpdateWithdraw"
-	Middleware_DeleteWithdraw_FullMethodName  = "/ledger.middleware.withdraw.v2.Middleware/DeleteWithdraw"
-	Middleware_GetWithdraw_FullMethodName     = "/ledger.middleware.withdraw.v2.Middleware/GetWithdraw"
-	Middleware_GetWithdrawOnly_FullMethodName = "/ledger.middleware.withdraw.v2.Middleware/GetWithdrawOnly"
-	Middleware_GetWithdraws_FullMethodName    = "/ledger.middleware.withdraw.v2.Middleware/GetWithdraws"
+	Middleware_CreateWithdraw_FullMethodName = "/ledger.middleware.withdraw.v2.Middleware/CreateWithdraw"
+	Middleware_UpdateWithdraw_FullMethodName = "/ledger.middleware.withdraw.v2.Middleware/UpdateWithdraw"
+	Middleware_DeleteWithdraw_FullMethodName = "/ledger.middleware.withdraw.v2.Middleware/DeleteWithdraw"
+	Middleware_GetWithdraw_FullMethodName    = "/ledger.middleware.withdraw.v2.Middleware/GetWithdraw"
+	Middleware_GetWithdraws_FullMethodName   = "/ledger.middleware.withdraw.v2.Middleware/GetWithdraws"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -35,7 +34,6 @@ type MiddlewareClient interface {
 	UpdateWithdraw(ctx context.Context, in *UpdateWithdrawRequest, opts ...grpc.CallOption) (*UpdateWithdrawResponse, error)
 	DeleteWithdraw(ctx context.Context, in *DeleteWithdrawRequest, opts ...grpc.CallOption) (*DeleteWithdrawResponse, error)
 	GetWithdraw(ctx context.Context, in *GetWithdrawRequest, opts ...grpc.CallOption) (*GetWithdrawResponse, error)
-	GetWithdrawOnly(ctx context.Context, in *GetWithdrawOnlyRequest, opts ...grpc.CallOption) (*GetWithdrawOnlyResponse, error)
 	GetWithdraws(ctx context.Context, in *GetWithdrawsRequest, opts ...grpc.CallOption) (*GetWithdrawsResponse, error)
 }
 
@@ -83,15 +81,6 @@ func (c *middlewareClient) GetWithdraw(ctx context.Context, in *GetWithdrawReque
 	return out, nil
 }
 
-func (c *middlewareClient) GetWithdrawOnly(ctx context.Context, in *GetWithdrawOnlyRequest, opts ...grpc.CallOption) (*GetWithdrawOnlyResponse, error) {
-	out := new(GetWithdrawOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetWithdrawOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) GetWithdraws(ctx context.Context, in *GetWithdrawsRequest, opts ...grpc.CallOption) (*GetWithdrawsResponse, error) {
 	out := new(GetWithdrawsResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetWithdraws_FullMethodName, in, out, opts...)
@@ -109,7 +98,6 @@ type MiddlewareServer interface {
 	UpdateWithdraw(context.Context, *UpdateWithdrawRequest) (*UpdateWithdrawResponse, error)
 	DeleteWithdraw(context.Context, *DeleteWithdrawRequest) (*DeleteWithdrawResponse, error)
 	GetWithdraw(context.Context, *GetWithdrawRequest) (*GetWithdrawResponse, error)
-	GetWithdrawOnly(context.Context, *GetWithdrawOnlyRequest) (*GetWithdrawOnlyResponse, error)
 	GetWithdraws(context.Context, *GetWithdrawsRequest) (*GetWithdrawsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -129,9 +117,6 @@ func (UnimplementedMiddlewareServer) DeleteWithdraw(context.Context, *DeleteWith
 }
 func (UnimplementedMiddlewareServer) GetWithdraw(context.Context, *GetWithdrawRequest) (*GetWithdrawResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetWithdraw not implemented")
-}
-func (UnimplementedMiddlewareServer) GetWithdrawOnly(context.Context, *GetWithdrawOnlyRequest) (*GetWithdrawOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetWithdrawOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetWithdraws(context.Context, *GetWithdrawsRequest) (*GetWithdrawsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetWithdraws not implemented")
@@ -221,24 +206,6 @@ func _Middleware_GetWithdraw_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetWithdrawOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetWithdrawOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetWithdrawOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetWithdrawOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetWithdrawOnly(ctx, req.(*GetWithdrawOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_GetWithdraws_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetWithdrawsRequest)
 	if err := dec(in); err != nil {
@@ -279,10 +246,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetWithdraw",
 			Handler:    _Middleware_GetWithdraw_Handler,
-		},
-		{
-			MethodName: "GetWithdrawOnly",
-			Handler:    _Middleware_GetWithdrawOnly_Handler,
 		},
 		{
 			MethodName: "GetWithdraws",

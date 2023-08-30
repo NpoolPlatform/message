@@ -19,11 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetLedger_FullMethodName     = "/ledger.middleware.ledger.v2.Middleware/GetLedger"
-	Middleware_GetLedgerOnly_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/GetLedgerOnly"
-	Middleware_GetLedgers_FullMethodName    = "/ledger.middleware.ledger.v2.Middleware/GetLedgers"
-	Middleware_AddBalance_FullMethodName    = "/ledger.middleware.ledger.v2.Middleware/AddBalance"
-	Middleware_SubBalance_FullMethodName    = "/ledger.middleware.ledger.v2.Middleware/SubBalance"
+	Middleware_GetLedger_FullMethodName  = "/ledger.middleware.ledger.v2.Middleware/GetLedger"
+	Middleware_GetLedgers_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/GetLedgers"
+	Middleware_AddBalance_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/AddBalance"
+	Middleware_SubBalance_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/SubBalance"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -31,7 +30,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	GetLedger(ctx context.Context, in *GetLedgerRequest, opts ...grpc.CallOption) (*GetLedgerResponse, error)
-	GetLedgerOnly(ctx context.Context, in *GetLedgerOnlyRequest, opts ...grpc.CallOption) (*GetLedgerOnlyResponse, error)
 	GetLedgers(ctx context.Context, in *GetLedgersRequest, opts ...grpc.CallOption) (*GetLedgersResponse, error)
 	AddBalance(ctx context.Context, in *AddBalanceRequest, opts ...grpc.CallOption) (*AddBalanceResponse, error)
 	SubBalance(ctx context.Context, in *SubBalanceRequest, opts ...grpc.CallOption) (*SubBalanceResponse, error)
@@ -48,15 +46,6 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) GetLedger(ctx context.Context, in *GetLedgerRequest, opts ...grpc.CallOption) (*GetLedgerResponse, error) {
 	out := new(GetLedgerResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetLedger_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) GetLedgerOnly(ctx context.Context, in *GetLedgerOnlyRequest, opts ...grpc.CallOption) (*GetLedgerOnlyResponse, error) {
-	out := new(GetLedgerOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetLedgerOnly_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -95,7 +84,6 @@ func (c *middlewareClient) SubBalance(ctx context.Context, in *SubBalanceRequest
 // for forward compatibility
 type MiddlewareServer interface {
 	GetLedger(context.Context, *GetLedgerRequest) (*GetLedgerResponse, error)
-	GetLedgerOnly(context.Context, *GetLedgerOnlyRequest) (*GetLedgerOnlyResponse, error)
 	GetLedgers(context.Context, *GetLedgersRequest) (*GetLedgersResponse, error)
 	AddBalance(context.Context, *AddBalanceRequest) (*AddBalanceResponse, error)
 	SubBalance(context.Context, *SubBalanceRequest) (*SubBalanceResponse, error)
@@ -108,9 +96,6 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) GetLedger(context.Context, *GetLedgerRequest) (*GetLedgerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLedger not implemented")
-}
-func (UnimplementedMiddlewareServer) GetLedgerOnly(context.Context, *GetLedgerOnlyRequest) (*GetLedgerOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetLedgerOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetLedgers(context.Context, *GetLedgersRequest) (*GetLedgersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLedgers not implemented")
@@ -148,24 +133,6 @@ func _Middleware_GetLedger_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetLedger(ctx, req.(*GetLedgerRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_GetLedgerOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetLedgerOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetLedgerOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetLedgerOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetLedgerOnly(ctx, req.(*GetLedgerOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -234,10 +201,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLedger",
 			Handler:    _Middleware_GetLedger_Handler,
-		},
-		{
-			MethodName: "GetLedgerOnly",
-			Handler:    _Middleware_GetLedgerOnly_Handler,
 		},
 		{
 			MethodName: "GetLedgers",

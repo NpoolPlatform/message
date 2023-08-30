@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -122,14 +121,6 @@
         }
       }
     },
-    "v2GetWithdrawOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Withdraw"
-        }
-      }
-    },
     "v2GetWithdrawResponse": {
       "type": "object",
       "properties": {
@@ -144,7 +135,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Withdraw"
           }
         },
@@ -252,6 +242,10 @@
         },
         "State": {
           "$ref": "#/definitions/v1WithdrawState"
+        },
+        "FeeAmount": {
+          "type": "string",
+          "title": "only Update Withdraw \u0026 Withdraw Success"
         }
       }
     }

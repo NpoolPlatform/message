@@ -8,7 +8,6 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc GetGoodStatementOnly    (GetGoodStatementOnlyRequest)   returns (GetGoodStatementOnlyResponse) {}
     rpc GetGoodStatements       (GetGoodStatementsRequest)      returns (GetGoodStatementsResponse)    {}
     rpc CreateGoodStatement     (CreateGoodStatementRequest)    returns (CreateGoodStatementResponse) {}
     rpc CreateGoodStatements    (CreateGoodStatementsRequest)   returns (CreateGoodStatementsResponse) {}
@@ -57,14 +56,6 @@ message Conds {
     optional basetypes.v1.StringVal CoinTypeID       = 30;
     optional basetypes.v1.StringVal Amount           = 40;
     optional basetypes.v1.Uint32Val BenefitDate      = 50;
-}
-
-message GetGoodStatementOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetGoodStatementOnlyResponse {
-    GoodStatement Info = 10;
 }
 
 message GetGoodStatementsRequest {

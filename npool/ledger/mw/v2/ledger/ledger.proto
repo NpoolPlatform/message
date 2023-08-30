@@ -10,7 +10,6 @@ import "npool/basetypes/ledger/v1/enums.proto";
 // Service Name
 service Middleware {
     rpc GetLedger        (GetLedgerRequest)        returns (GetLedgerResponse)        {}
-    rpc GetLedgerOnly    (GetLedgerOnlyRequest)    returns (GetLedgerOnlyResponse)    {}
     rpc GetLedgers       (GetLedgersRequest)       returns (GetLedgersResponse)       {}
     rpc AddBalance       (AddBalanceRequest)       returns (AddBalanceResponse)       {}
     rpc SubBalance       (SubBalanceRequest)       returns (SubBalanceResponse)       {}
@@ -77,14 +76,6 @@ message GetLedgersRequest {
 message GetLedgersResponse {
     repeated Ledger Infos = 10;
     uint32          Total = 20;
-}
-
-message GetLedgerOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetLedgerOnlyResponse {
-    Ledger Info = 10;
 }
 
 message AddBalanceRequest {

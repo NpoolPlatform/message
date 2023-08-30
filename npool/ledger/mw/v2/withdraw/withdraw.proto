@@ -13,7 +13,6 @@ service Middleware {
     rpc UpdateWithdraw     (UpdateWithdrawRequest)     returns (UpdateWithdrawResponse)     {}
     rpc DeleteWithdraw     (DeleteWithdrawRequest)     returns (DeleteWithdrawResponse)     {}
     rpc GetWithdraw        (GetWithdrawRequest)        returns (GetWithdrawResponse)        {}
-    rpc GetWithdrawOnly    (GetWithdrawOnlyRequest)    returns (GetWithdrawOnlyResponse)    {}
     rpc GetWithdraws       (GetWithdrawsRequest)       returns (GetWithdrawsResponse)       {}
 }
 
@@ -28,6 +27,8 @@ message WithdrawReq {
     optional string PlatformTransactionID  = 70;
     optional string ChainTransactionID     = 80;
     optional basetypes.ledger.v1.WithdrawState State       = 90;
+    // only Update Withdraw & Withdraw Success
+    optional string FeeAmount              = 100;
 }
 
 message Withdraw {
@@ -101,14 +102,6 @@ message GetWithdrawsRequest {
 message GetWithdrawsResponse {
     repeated Withdraw Infos = 10;
     uint32            Total = 20;
-}
-
-message GetWithdrawOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetWithdrawOnlyResponse {
-    Withdraw Info = 10;
 }
 
 message DeleteWithdrawRequest {

@@ -86,9 +86,6 @@
         "InvestmentType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "CouponIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
         "PaymentType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
@@ -170,14 +167,6 @@
       "properties": {
         "Info": {
           "type": "boolean"
-        }
-      }
-    },
-    "v1GetOrderOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Order"
         }
       }
     },
