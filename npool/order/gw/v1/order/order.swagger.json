@@ -578,6 +578,9 @@
         },
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1OrderStartMode"
         }
       }
     },
@@ -615,6 +618,9 @@
         },
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1OrderStartMode"
         },
         "Goods": {
           "type": "array",
@@ -1020,6 +1026,15 @@
           "format": "int64"
         }
       }
+    },
+    "v1OrderStartMode": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderStartMode",
+        "OrderStartTBD",
+        "OrderStartConfirmed"
+      ],
+      "default": "DefaultOrderStartMode"
     },
     "v1OrderState": {
       "type": "string",
