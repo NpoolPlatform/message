@@ -69,6 +69,8 @@ message OrderReq {
     optional basetypes.order.v1.PaymentState PaymentState = 350;
     optional uint32 OutOfGasHours                         = 360;
     optional uint32 CompensateHours                       = 370;
+
+    optional bool   Rollback   = 380;
 }
 
 message Order {
