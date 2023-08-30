@@ -20,6 +20,9 @@ enum OrderState {
     OrderStatePaid              = 30;
     OrderStatePaymentTimeout    = 40;
     // Platform confirm canceled
+    OrderStatePreCancel         = 41;
+    OrderStateCancelStock       = 42;
+    OrderStateCancelBalance     = 43;
     OrderStateCanceled          = 50;
 
     // Cyclation order state
