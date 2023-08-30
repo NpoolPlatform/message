@@ -16,6 +16,7 @@ enum MsgID {
     CreateNewLoginReq            = 80;
     CreateCommissionReq          = 90;
     DepositReceivedReq           = 100;
+    CreateTxReq                  = 110;
     CreateSampleMsgReq           = 100000000;
 }
 
