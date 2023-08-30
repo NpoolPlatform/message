@@ -9,7 +9,6 @@ import "npool/basetypes/ledger/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc GetStatementOnly    (GetStatementOnlyRequest)    returns (GetStatementOnlyResponse)    {}
     rpc GetStatements       (GetStatementsRequest)       returns (GetStatementsResponse)       {}
     rpc GetStatement        (GetStatementRequest)        returns (GetStatementResponse)        {}
     rpc CreateStatements    (CreateStatementsRequest)    returns (CreateStatementsResponse)    {}
@@ -65,14 +64,6 @@ message Conds {
     optional basetypes.v1.StringVal IOExtra          = 100;
     optional basetypes.v1.Uint32Val StartAt          = 110;
     optional basetypes.v1.Uint32Val EndAt            = 120;
-}
-
-message GetStatementOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetStatementOnlyResponse {
-    Statement Info = 10;
 }
 
 message GetStatementsRequest {

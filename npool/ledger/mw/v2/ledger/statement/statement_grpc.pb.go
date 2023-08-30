@@ -19,7 +19,6 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetStatementOnly_FullMethodName = "/ledger.middleware.ledger.statement.v2.Middleware/GetStatementOnly"
 	Middleware_GetStatements_FullMethodName    = "/ledger.middleware.ledger.statement.v2.Middleware/GetStatements"
 	Middleware_GetStatement_FullMethodName     = "/ledger.middleware.ledger.statement.v2.Middleware/GetStatement"
 	Middleware_CreateStatements_FullMethodName = "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatements"
@@ -32,7 +31,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	GetStatementOnly(ctx context.Context, in *GetStatementOnlyRequest, opts ...grpc.CallOption) (*GetStatementOnlyResponse, error)
 	GetStatements(ctx context.Context, in *GetStatementsRequest, opts ...grpc.CallOption) (*GetStatementsResponse, error)
 	GetStatement(ctx context.Context, in *GetStatementRequest, opts ...grpc.CallOption) (*GetStatementResponse, error)
 	CreateStatements(ctx context.Context, in *CreateStatementsRequest, opts ...grpc.CallOption) (*CreateStatementsResponse, error)
@@ -47,15 +45,6 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
-}
-
-func (c *middlewareClient) GetStatementOnly(ctx context.Context, in *GetStatementOnlyRequest, opts ...grpc.CallOption) (*GetStatementOnlyResponse, error) {
-	out := new(GetStatementOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetStatementOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *middlewareClient) GetStatements(ctx context.Context, in *GetStatementsRequest, opts ...grpc.CallOption) (*GetStatementsResponse, error) {
@@ -116,7 +105,6 @@ func (c *middlewareClient) DeleteStatement(ctx context.Context, in *DeleteStatem
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	GetStatementOnly(context.Context, *GetStatementOnlyRequest) (*GetStatementOnlyResponse, error)
 	GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error)
 	GetStatement(context.Context, *GetStatementRequest) (*GetStatementResponse, error)
 	CreateStatements(context.Context, *CreateStatementsRequest) (*CreateStatementsResponse, error)
@@ -130,9 +118,6 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) GetStatementOnly(context.Context, *GetStatementOnlyRequest) (*GetStatementOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetStatementOnly not implemented")
-}
 func (UnimplementedMiddlewareServer) GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStatements not implemented")
 }
@@ -162,24 +147,6 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
-}
-
-func _Middleware_GetStatementOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetStatementOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetStatementOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetStatementOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetStatementOnly(ctx, req.(*GetStatementOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -297,10 +264,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "ledger.middleware.ledger.statement.v2.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetStatementOnly",
-			Handler:    _Middleware_GetStatementOnly_Handler,
-		},
 		{
 			MethodName: "GetStatements",
 			Handler:    _Middleware_GetStatements_Handler,

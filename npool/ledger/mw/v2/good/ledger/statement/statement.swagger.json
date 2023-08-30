@@ -133,14 +133,6 @@
         }
       }
     },
-    "v2GetGoodStatementOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2GoodStatement"
-        }
-      }
-    },
     "v2GetGoodStatementsResponse": {
       "type": "object",
       "properties": {

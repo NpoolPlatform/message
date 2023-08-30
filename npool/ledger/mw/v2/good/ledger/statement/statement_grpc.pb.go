@@ -19,7 +19,6 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetGoodStatementOnly_FullMethodName    = "/ledger.middleware.good.ledger.statement.v2.Middleware/GetGoodStatementOnly"
 	Middleware_GetGoodStatements_FullMethodName       = "/ledger.middleware.good.ledger.statement.v2.Middleware/GetGoodStatements"
 	Middleware_CreateGoodStatement_FullMethodName     = "/ledger.middleware.good.ledger.statement.v2.Middleware/CreateGoodStatement"
 	Middleware_CreateGoodStatements_FullMethodName    = "/ledger.middleware.good.ledger.statement.v2.Middleware/CreateGoodStatements"
@@ -32,7 +31,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	GetGoodStatementOnly(ctx context.Context, in *GetGoodStatementOnlyRequest, opts ...grpc.CallOption) (*GetGoodStatementOnlyResponse, error)
 	GetGoodStatements(ctx context.Context, in *GetGoodStatementsRequest, opts ...grpc.CallOption) (*GetGoodStatementsResponse, error)
 	CreateGoodStatement(ctx context.Context, in *CreateGoodStatementRequest, opts ...grpc.CallOption) (*CreateGoodStatementResponse, error)
 	CreateGoodStatements(ctx context.Context, in *CreateGoodStatementsRequest, opts ...grpc.CallOption) (*CreateGoodStatementsResponse, error)
@@ -47,15 +45,6 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
-}
-
-func (c *middlewareClient) GetGoodStatementOnly(ctx context.Context, in *GetGoodStatementOnlyRequest, opts ...grpc.CallOption) (*GetGoodStatementOnlyResponse, error) {
-	out := new(GetGoodStatementOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetGoodStatementOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *middlewareClient) GetGoodStatements(ctx context.Context, in *GetGoodStatementsRequest, opts ...grpc.CallOption) (*GetGoodStatementsResponse, error) {
@@ -116,7 +105,6 @@ func (c *middlewareClient) ExistGoodStatementConds(ctx context.Context, in *Exis
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	GetGoodStatementOnly(context.Context, *GetGoodStatementOnlyRequest) (*GetGoodStatementOnlyResponse, error)
 	GetGoodStatements(context.Context, *GetGoodStatementsRequest) (*GetGoodStatementsResponse, error)
 	CreateGoodStatement(context.Context, *CreateGoodStatementRequest) (*CreateGoodStatementResponse, error)
 	CreateGoodStatements(context.Context, *CreateGoodStatementsRequest) (*CreateGoodStatementsResponse, error)
@@ -130,9 +118,6 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) GetGoodStatementOnly(context.Context, *GetGoodStatementOnlyRequest) (*GetGoodStatementOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetGoodStatementOnly not implemented")
-}
 func (UnimplementedMiddlewareServer) GetGoodStatements(context.Context, *GetGoodStatementsRequest) (*GetGoodStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodStatements not implemented")
 }
@@ -162,24 +147,6 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
-}
-
-func _Middleware_GetGoodStatementOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetGoodStatementOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetGoodStatementOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetGoodStatementOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetGoodStatementOnly(ctx, req.(*GetGoodStatementOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetGoodStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -297,10 +264,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "ledger.middleware.good.ledger.statement.v2.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetGoodStatementOnly",
-			Handler:    _Middleware_GetGoodStatementOnly_Handler,
-		},
 		{
 			MethodName: "GetGoodStatements",
 			Handler:    _Middleware_GetGoodStatements_Handler,

@@ -4,21 +4,8 @@ package ledger.middleware.good.ledger.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/good/ledger";
 
-import "npool/basetypes/v1/conds.proto";
-
 // Service Name
-service Middleware {
-    rpc GetGoodLedgerOnly (GetGoodLedgerOnlyRequest) returns (GetGoodLedgerOnlyResponse) {}
-}
-
-message GoodLedgerReq {
-    optional string ID         = 10;
-    optional string GoodID     = 20;
-    optional string CoinTypeID = 30;
-    optional string Amount     = 40;
-    optional string ToPlatform = 50;
-    optional string ToUser     = 60;
-}
+service Middleware {}
 
 message GoodLedger {
     // @inject_tag: sql:"id"
@@ -37,21 +24,4 @@ message GoodLedger {
     uint32 CreatedAt  = 70;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt  = 80;
-}
-
-message Conds {
-    optional basetypes.v1.StringVal ID         = 10;
-    optional basetypes.v1.StringVal GoodID     = 20;
-    optional basetypes.v1.StringVal CoinTypeID = 30;
-    optional basetypes.v1.StringVal Amount     = 40;
-    optional basetypes.v1.StringVal ToPlatform = 50;
-    optional basetypes.v1.StringVal ToUser     = 60;
-}
-
-message GetGoodLedgerOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetGoodLedgerOnlyResponse {
-    GoodLedger Info = 10;
 }

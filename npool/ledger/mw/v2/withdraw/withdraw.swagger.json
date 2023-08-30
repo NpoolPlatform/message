@@ -121,14 +121,6 @@
         }
       }
     },
-    "v2GetWithdrawOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Withdraw"
-        }
-      }
-    },
     "v2GetWithdrawResponse": {
       "type": "object",
       "properties": {

@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -115,14 +114,6 @@
         }
       }
     },
-    "v2GetLedgerOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
     "v2GetLedgerResponse": {
       "type": "object",
       "properties": {
@@ -137,7 +128,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Ledger"
           }
         },
@@ -225,8 +215,7 @@
           "type": "string"
         },
         "LockID": {
-          "type": "string",
-          "title": "currently not used"
+          "type": "string"
         }
       }
     },

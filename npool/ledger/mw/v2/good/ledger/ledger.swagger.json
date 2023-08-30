@@ -4,11 +4,6 @@
     "title": "npool/ledger/mw/v2/good/ledger/ledger.proto",
     "version": "version not set"
   },
-  "tags": [
-    {
-      "name": "Middleware"
-    }
-  ],
   "consumes": [
     "application/json"
   ],
@@ -39,90 +34,8 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v2Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Amount": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ToPlatform": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ToUser": {
-          "$ref": "#/definitions/v1StringVal"
-        }
-      }
-    },
-    "v2GetGoodLedgerOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2GoodLedger"
-        }
-      }
-    },
-    "v2GoodLedger": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
-        },
-        "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
-        },
-        "Amount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"amount\""
-        },
-        "ToPlatform": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"to_platform\""
-        },
-        "ToUser": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"to_user\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     }
