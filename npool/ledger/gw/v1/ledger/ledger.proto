@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package ledger.gateway.ledger1.v1;
+package ledger.gateway.ledger.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/gw/v1/ledger";
 
