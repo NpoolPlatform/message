@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/basetypes/ledger/v1"
 enum IOType {
     DefaultType        = 0;
     Incoming           = 10;
-    Outcoming          = 11;
+    Outcoming          = 20;
 }
   
 enum IOSubType {
