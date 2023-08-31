@@ -41,17 +41,22 @@ enum OrderState {
      */
 
     // End or order
-    OrderStatePreCancel         = 60; // -> OrderStateRestoreCanceledStock
-    OrderStatePreExpired        = 70; // -> OrderStateRestoreExpiredStock
+    OrderStatePreCancel         = 60; // -> OrderStatePreCancelCheck
+    OrderStatePreCancelCheck    = 70; // -> OrderStateRestoreCanceledStock
+    OrderStatePreExpired        = 80; // -> OrderStatePreExpired
+    OrderStatePreExpiredCheck   = 90; // -> OrderStateRestoreExpiredStock
 
     // Calculation
-    OrderStateRestoreExpiredStock   = 80; // -> OrderStateExpired
-    OrderStateRestoreCanceledStock  = 90; // -> OrderStateReturnCanceledBalance
-    OrderStateReturnCalceledBalance = 100;// -> OrderStateCanceled
+    OrderStateRestoreExpiredStock        = 100; // -> OrderStateRestoreExpiredStockCheck
+    OrderStateRestoreExpiredStockCheck   = 110; // -> OrderStateExpired
+    OrderStateRestoreCanceledStock       = 120; // -> OrderStateReturnCanceledBalanceCheck
+    OrderStateRestoreCanceledStockCheck  = 130; // -> OrderStateReturnCanceledBalance
+    OrderStateReturnCalceledBalance      = 140; // -> OrderStateReturnCalceledBalanceCheck
+    OrderStateReturnCalceledBalanceCheck = 150; // -> OrderStateCanceled
 
     // End state
-    OrderStateCanceled          = 110;
-    OrderStateExpired           = 120;
+    OrderStateCanceled          = 160;
+    OrderStateExpired           = 170;
 
     // Delivery order state
 }
