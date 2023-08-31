@@ -102,9 +102,9 @@ message DeleteGoodStatementsResponse {
 }
 
 message ExistGoodStatementCondsRequest {
-    Conds conds = 10;
+    Conds Conds = 10;
 }
 
 message ExistGoodStatementCondsResponse {
-    bool info = 10;
+    bool Info = 10;
 }
