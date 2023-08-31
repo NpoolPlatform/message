@@ -1053,13 +1053,13 @@
         "OrderStateRestoreExpiredStockCheck",
         "OrderStateRestoreCanceledStock",
         "OrderStateRestoreCanceledStockCheck",
-        "OrderStateReturnCalceledBalance",
-        "OrderStateReturnCalceledBalanceCheck",
+        "OrderStateReturnCanceledBalance",
+        "OrderStateReturnCanceledBalanceCheck",
         "OrderStateCanceled",
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "description": "-\u003e OrderStatePreCancel\n - OrderStatePreCancel: End or order\n\n-\u003e OrderStatePreCancelCheck\n - OrderStatePreCancelCheck: -\u003e OrderStateRestoreCanceledStock\n - OrderStatePreExpired: -\u003e OrderStatePreExpired\n - OrderStatePreExpiredCheck: -\u003e OrderStateRestoreExpiredStock\n - OrderStateRestoreExpiredStock: Calculation\n\n-\u003e OrderStateRestoreExpiredStockCheck\n - OrderStateRestoreExpiredStockCheck: -\u003e OrderStateExpired\n - OrderStateRestoreCanceledStock: -\u003e OrderStateReturnCanceledBalanceCheck\n - OrderStateRestoreCanceledStockCheck: -\u003e OrderStateReturnCanceledBalance\n - OrderStateReturnCalceledBalance: -\u003e OrderStateReturnCalceledBalanceCheck\n - OrderStateReturnCalceledBalanceCheck: -\u003e OrderStateCanceled\n - OrderStateCanceled: End state",
+      "description": "-\u003e OrderStatePreCancel\n - OrderStatePreCancel: End or order\n\n-\u003e OrderStatePreCancelCheck\n - OrderStatePreCancelCheck: -\u003e OrderStateRestoreCanceledStock\n - OrderStatePreExpired: -\u003e OrderStatePreExpired\n - OrderStatePreExpiredCheck: -\u003e OrderStateRestoreExpiredStock\n - OrderStateRestoreExpiredStock: Calculation\n\n-\u003e OrderStateRestoreExpiredStockCheck\n - OrderStateRestoreExpiredStockCheck: -\u003e OrderStateExpired\n - OrderStateRestoreCanceledStock: -\u003e OrderStateRestoreCanceledStockCheck\n - OrderStateRestoreCanceledStockCheck: -\u003e OrderStateReturnCanceledBalance\n - OrderStateReturnCanceledBalance: -\u003e OrderStateReturnCanceledBalanceCheck\n - OrderStateReturnCanceledBalanceCheck: -\u003e OrderStateCanceled\n - OrderStateCanceled: End state",
       "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTimeout: Timeout of order"
     },
     "v1OrderType": {
