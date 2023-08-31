@@ -17,22 +17,22 @@ enum IOSubType {
     // O: record order id in extra
     Payment                   = 100;
     // I: record good id in extra
-    MiningBenefit             = 101;
+    MiningBenefit             = 110;
     // I: record user id, order id in extra
-    Commission                = 102;
+    Commission                = 120;
     // I: record good id in extra
-    TechniqueFeeCommission    = 103;
+    TechniqueFeeCommission    = 130;
     // I: record address in extra
-    Deposit                   = 104;
+    Deposit                   = 140;
     // I: record from user in extra
     // O: record target user in extra
-    Transfer                  = 105;
+    Transfer                  = 150;
     // O
-    Withdrawal                = 200;
+    Withdrawal                = 160;
     // I: record user id, order id in extra
-    OrderRevoke               = 210;
+    OrderRevoke               = 170;
     // I: record user id,order id, archivement details id in extra
-    CommissionRevoke          = 220;
+    CommissionRevoke          = 180;
 }
 
 enum WithdrawState {
