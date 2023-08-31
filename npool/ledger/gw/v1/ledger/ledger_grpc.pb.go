@@ -19,9 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetLedgers_FullMethodName         = "/ledger.gateway.ledger1.v1.Gateway/GetLedgers"
-	Gateway_GetIntervalLedgers_FullMethodName = "/ledger.gateway.ledger1.v1.Gateway/GetIntervalLedgers"
-	Gateway_GetAppLedgers_FullMethodName      = "/ledger.gateway.ledger1.v1.Gateway/GetAppLedgers"
+	Gateway_GetLedgers_FullMethodName         = "/ledger.gateway.ledger.v1.Gateway/GetLedgers"
+	Gateway_GetIntervalLedgers_FullMethodName = "/ledger.gateway.ledger.v1.Gateway/GetIntervalLedgers"
+	Gateway_GetAppLedgers_FullMethodName      = "/ledger.gateway.ledger.v1.Gateway/GetAppLedgers"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -162,7 +162,7 @@ func _Gateway_GetAppLedgers_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ledger.gateway.ledger1.v1.Gateway",
+	ServiceName: "ledger.gateway.ledger.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
