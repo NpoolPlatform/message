@@ -18,16 +18,40 @@ enum OrderState {
     OrderStateWaitPayment       = 10;
     OrderStateCheckPayment      = 20;
     OrderStatePaid              = 30;
-    OrderStatePaymentTimeout    = 40;
-    // Platform confirm canceled
-    OrderStatePreCancel         = 41;
-    OrderStateCancelStock       = 42;
-    OrderStateCancelBalance     = 43;
-    OrderStateCanceled          = 50;
+    OrderStateInService         = 40;
 
-    // Cyclation order state
-    OrderStateInService         = 60;
-    OrderStateExpired           = 70;
+    // Timeout of order
+    OrderStatePaymentTimeout    = 50; // -> OrderStatePreCancel
+
+    /**
+     * WaitPayment -> CheckPayment -> Paid -> InService -------------------|                                Rollback            Rollback
+     *                    |             |          |                       |                                   A                    A
+     *                    |             |          |                       |                                   |                    |
+     *                    |             |          |                       V                                   |                    |
+     *                    |             |          |                   PreExpired -------------------> RestoreExpiredStock ----> Expired
+     *                    |             |          |
+     *                    |             |          |
+     *                    |             |--------------> PreCancel ----> RestoreCanceledStock ---> ReturnCanceledBalance ----> Canceled
+     *                    |                                  A                                                |                    |
+     *                    |                                  |                                                V                    V
+     *                    |----> PaymentTimeout --------------                                            Rollback             Rollback
+     *
+     *
+     *
+     */
+
+    // End or order
+    OrderStatePreCancel         = 60; // -> OrderStateRestoreCanceledStock
+    OrderStatePreExpired        = 70; // -> OrderStateRestoreExpiredStock
+
+    // Calculation
+    OrderStateRestoreExpiredStock   = 80; // -> OrderStateExpired
+    OrderStateRestoreCanceledStock  = 90; // -> OrderStateReturnCanceledBalance
+    OrderStateReturnCalceledBalance = 100;// -> OrderStateCanceled
+
+    // End state
+    OrderStateCanceled          = 110;
+    OrderStateExpired           = 120;
 
     // Delivery order state
 }
