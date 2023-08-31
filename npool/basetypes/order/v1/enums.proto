@@ -27,46 +27,46 @@ enum OrderState {
     OrderStatePaymentBalanceSpentCheck     = 80; // -> OrderStatePaid (achievement and stock (dtm))
 
     // Paid
-    OrderStatePaid              = 30;
-    OrderStateInService         = 40;
+    OrderStatePaid              = 90;
+    OrderStateInService         = 100;
 
     // Timeout of order
-    OrderStatePaymentTimeout    = 50; // -> OrderStatePreCancel
+    OrderStatePaymentTimeout    = 110; // -> OrderStatePreCancel
 
     /**
-     * WaitPayment -> CheckPayment -> Paid -> InService -------------------|                                Rollback            Rollback
-     *                    |             |          |                       |                                   A                    A
-     *                    |             |          |                       |                                   |                    |
-     *                    |             |          |                       V                                   |                    |
-     *                    |             |          |                   PreExpired -------------------> RestoreExpiredStock ----> Expired
-     *                    |             |          |
-     *                    |             |          |
-     *                    |             |--------------> PreCancel ----> RestoreCanceledStock ---> ReturnCanceledBalance ----> Canceled
-     *                    |                                  A                                                |                    |
-     *                    |                                  |                                                V                    V
-     *                    |----> PaymentTimeout --------------                                            Rollback             Rollback
-     *
-     *
+     * WaitPayment -> CheckPayment -> TransferReceived -> TransferReceivedCheck -> TransferBookKept -> TransferBookKeptCheck -> BalanceSpent -> BalanceSpentCheck -> Paid -> InService ------------------|                                  Rollback                                    Rollback
+     *                    |                                                                                                                                           |          |                       |                                     A                                            A
+     *                    |                                                                                                                                           |          |                       |                                     |                                            |
+     *                    |                                                                                                                                           |          |                       V                                     |                                            |
+     *                    |                                                                                                                                           |          |                   PreExpired -> PreExpiredCheck -> RestoreExpiredStock -> RestoreExpiredStockCheck -> Expired
+     *                    |                                                                                                                                           |          |
+     *                    |                                                                                                                                           |          |
+     *                    |                                                                                                                                           -------------> PreCancel -> PreCancelCheck -> RestoreCanceledStock -> RestoreCanceledStockCheck -> ReturnCanceledBalance -> ReturnCanceledBalanceCheck -> Canceled
+     *                    |                                                                                                                                                              A                               |         A                                          |         A                                          |
+     *                    |                                                                                                                                                              |                               V         |                                          V         |                                          V
+     *                    --> PaymentTimeout---------------------------------------------------------------------------------------------------------------------------------------------|                            Rollback     |                                       Rollback     |                                       Rollback
+     *                                                                                                                                                                                   |                               |         |                                          |         |                                          |
+     *                                                                                                                                                                                   |--------------------------------         |-------------------------------------------         |-------------------------------------------                                         
      *
      */
 
     // End or order
-    OrderStatePreCancel         = 60; // -> OrderStatePreCancelCheck
-    OrderStatePreCancelCheck    = 70; // -> OrderStateRestoreCanceledStock
-    OrderStatePreExpired        = 80; // -> OrderStatePreExpired
-    OrderStatePreExpiredCheck   = 90; // -> OrderStateRestoreExpiredStock
+    OrderStatePreCancel         = 120; // -> OrderStatePreCancelCheck
+    OrderStatePreCancelCheck    = 130; // -> OrderStateRestoreCanceledStock
+    OrderStatePreExpired        = 140; // -> OrderStatePreExpired
+    OrderStatePreExpiredCheck   = 150; // -> OrderStateRestoreExpiredStock
 
     // Calculation
-    OrderStateRestoreExpiredStock        = 100; // -> OrderStateRestoreExpiredStockCheck
-    OrderStateRestoreExpiredStockCheck   = 110; // -> OrderStateExpired
-    OrderStateRestoreCanceledStock       = 120; // -> OrderStateRestoreCanceledStockCheck
-    OrderStateRestoreCanceledStockCheck  = 130; // -> OrderStateReturnCanceledBalance
-    OrderStateReturnCanceledBalance      = 140; // -> OrderStateReturnCanceledBalanceCheck
-    OrderStateReturnCanceledBalanceCheck = 150; // -> OrderStateCanceled
+    OrderStateRestoreExpiredStock        = 160; // -> OrderStateRestoreExpiredStockCheck
+    OrderStateRestoreExpiredStockCheck   = 170; // -> OrderStateExpired
+    OrderStateRestoreCanceledStock       = 180; // -> OrderStateRestoreCanceledStockCheck
+    OrderStateRestoreCanceledStockCheck  = 190; // -> OrderStateReturnCanceledBalance
+    OrderStateReturnCanceledBalance      = 200; // -> OrderStateReturnCanceledBalanceCheck
+    OrderStateReturnCanceledBalanceCheck = 210; // -> OrderStateCanceled
 
     // End state
-    OrderStateCanceled          = 160;
-    OrderStateExpired           = 170;
+    OrderStateCanceled          = 220;
+    OrderStateExpired           = 230;
 
     // Delivery order state
 }
