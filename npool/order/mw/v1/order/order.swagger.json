@@ -553,6 +553,9 @@
         "CompensateHours": {
           "type": "integer",
           "format": "int64"
+        },
+        "Rollback": {
+          "type": "boolean"
         }
       }
     },
@@ -573,12 +576,15 @@
         "OrderStateCheckPayment",
         "OrderStatePaid",
         "OrderStatePaymentTimeout",
+        "OrderStatePreCancel",
+        "OrderStateCancelStock",
+        "OrderStateCancelBalance",
         "OrderStateCanceled",
         "OrderStateInService",
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStateCanceled: Platform confirm canceled\n - OrderStateInService: Cyclation order state"
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePreCancel: Platform confirm canceled\n - OrderStateInService: Cyclation order state"
     },
     "v1OrderType": {
       "type": "string",
