@@ -86,6 +86,9 @@
         "InvestmentType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
+        "CouponIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "PaymentType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
@@ -575,16 +578,19 @@
         "OrderStateWaitPayment",
         "OrderStateCheckPayment",
         "OrderStatePaid",
+        "OrderStateInService",
         "OrderStatePaymentTimeout",
         "OrderStatePreCancel",
-        "OrderStateCancelStock",
-        "OrderStateCancelBalance",
+        "OrderStatePreExpired",
+        "OrderStateRestoreExpiredStock",
+        "OrderStateRestoreCanceledStock",
+        "OrderStateReturnCalceledBalance",
         "OrderStateCanceled",
-        "OrderStateInService",
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePreCancel: Platform confirm canceled\n - OrderStateInService: Cyclation order state"
+      "description": "-\u003e OrderStatePreCancel\n - OrderStatePreCancel: End or order\n\n-\u003e OrderStateRestoreCanceledStock\n - OrderStatePreExpired: -\u003e OrderStateRestoreExpiredStock\n - OrderStateRestoreExpiredStock: Calculation\n\n-\u003e OrderStateExpired\n - OrderStateRestoreCanceledStock: -\u003e OrderStateReturnCanceledBalance\n - OrderStateReturnCalceledBalance: -\u003e OrderStateCanceled\n - OrderStateCanceled: End state",
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTimeout: Timeout of order"
     },
     "v1OrderType": {
       "type": "string",
