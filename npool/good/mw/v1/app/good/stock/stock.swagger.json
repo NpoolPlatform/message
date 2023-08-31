@@ -140,6 +140,10 @@
         "Locked": {
           "type": "string"
         },
+        "AppSpotLocked": {
+          "type": "string",
+          "title": "Locked from app spot quantity"
+        },
         "WaitStart": {
           "type": "string"
         },

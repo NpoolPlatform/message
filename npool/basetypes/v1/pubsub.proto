@@ -4,6 +4,8 @@ package basetypes.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
+import "google/protobuf/any.proto";
+
 enum MsgID {
     DefaultMsgID                 = 0;
     RewardEventReq               = 10;
@@ -17,6 +19,8 @@ enum MsgID {
     CreateCommissionReq          = 90;
     DepositReceivedReq           = 100;
     CreateTxReq                  = 110;
+    DepositCheckFailReq          = 120;
+
     CreateSampleMsgReq           = 100000000;
 }
 
@@ -26,3 +30,8 @@ enum MsgState {
     StateFail       = 20;
 }
 
+message MsgError {
+    // Json value
+    string Value = 10;
+    string Error = 20;
+}

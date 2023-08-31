@@ -20,10 +20,11 @@ message StockReq {
     optional string Reserved   = 50;
     optional string SpotQuantity = 60;
     optional string Locked     = 70;
-    optional string WaitStart  = 80;
-    optional string InService  = 90;
-    optional bool   ChargeBack = 100;
-    optional bool   Rollback   = 110;
+    optional string AppSpotLocked = 80;  // Locked from app spot quantity
+    optional string WaitStart  = 90;
+    optional string InService  = 100;
+    optional bool   ChargeBack = 110;
+    optional bool   Rollback   = 120;
 }
 
 message Stock {

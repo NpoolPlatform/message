@@ -578,6 +578,9 @@
         },
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1OrderStartMode"
         }
       }
     },
@@ -615,6 +618,9 @@
         },
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1OrderStartMode"
         },
         "Goods": {
           "type": "array",
@@ -1021,6 +1027,15 @@
         }
       }
     },
+    "v1OrderStartMode": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderStartMode",
+        "OrderStartTBD",
+        "OrderStartConfirmed"
+      ],
+      "default": "DefaultOrderStartMode"
+    },
     "v1OrderState": {
       "type": "string",
       "enum": [
@@ -1028,13 +1043,24 @@
         "OrderStateWaitPayment",
         "OrderStateCheckPayment",
         "OrderStatePaid",
-        "OrderStatePaymentTimeout",
-        "OrderStateCanceled",
         "OrderStateInService",
+        "OrderStatePaymentTimeout",
+        "OrderStatePreCancel",
+        "OrderStatePreCancelCheck",
+        "OrderStatePreExpired",
+        "OrderStatePreExpiredCheck",
+        "OrderStateRestoreExpiredStock",
+        "OrderStateRestoreExpiredStockCheck",
+        "OrderStateRestoreCanceledStock",
+        "OrderStateRestoreCanceledStockCheck",
+        "OrderStateReturnCalceledBalance",
+        "OrderStateReturnCalceledBalanceCheck",
+        "OrderStateCanceled",
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStateCanceled: Platform confirm canceled\n - OrderStateInService: Cyclation order state"
+      "description": "-\u003e OrderStatePreCancel\n - OrderStatePreCancel: End or order\n\n-\u003e OrderStatePreCancelCheck\n - OrderStatePreCancelCheck: -\u003e OrderStateRestoreCanceledStock\n - OrderStatePreExpired: -\u003e OrderStatePreExpired\n - OrderStatePreExpiredCheck: -\u003e OrderStateRestoreExpiredStock\n - OrderStateRestoreExpiredStock: Calculation\n\n-\u003e OrderStateRestoreExpiredStockCheck\n - OrderStateRestoreExpiredStockCheck: -\u003e OrderStateExpired\n - OrderStateRestoreCanceledStock: -\u003e OrderStateReturnCanceledBalanceCheck\n - OrderStateRestoreCanceledStockCheck: -\u003e OrderStateReturnCanceledBalance\n - OrderStateReturnCalceledBalance: -\u003e OrderStateReturnCalceledBalanceCheck\n - OrderStateReturnCalceledBalanceCheck: -\u003e OrderStateCanceled\n - OrderStateCanceled: End state",
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTimeout: Timeout of order"
     },
     "v1OrderType": {
       "type": "string",

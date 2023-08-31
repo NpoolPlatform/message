@@ -178,6 +178,7 @@ message CreateOrderRequest {
     basetypes.order.v1.OrderType OrderType = 80;
     repeated string CouponIDs            = 90;
     basetypes.order.v1.InvestmentType InvestmentType = 100;
+    basetypes.order.v1.OrderStartMode StartMode      = 110;
 }
 
 message CreateOrderResponse {
@@ -192,13 +193,14 @@ message CreateOrdersRequest {
     basetypes.order.v1.OrderType OrderType = 50;
     repeated string CouponIDs              = 60;
     basetypes.order.v1.InvestmentType InvestmentType = 70;
+    basetypes.order.v1.OrderStartMode StartMode      = 80;
     message Good {
         string GoodID      = 10;
         string Units       = 20;
         string PromotionID = 30;
         bool   Parent      = 40;
     }
-    repeated Good Goods = 80;
+    repeated Good Goods = 90;
 }
 
 message CreateOrdersResponse {
