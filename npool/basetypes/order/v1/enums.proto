@@ -82,6 +82,14 @@ enum OrderState {
      *         |              |                                    |
      *         |              |                                    |
      *         |              v                                    |
+     *   Rollback----OrderStateCommissionAdded                     |
+     *                        |                                    |
+     *                        |                                    |
+     *                        v                                    |
+     *         ---->OrderStateCommissionAddedCheck                 |
+     *         |              |                                    |
+     *         |              |                                    |
+     *         |              v                                    |
      *   Rollback-----AchievementBookKept                          |
      *                        |                                    |
      *                        |                                    |
@@ -96,28 +104,28 @@ enum OrderState {
      *                        v                                    |
      *                   InService---------------------------------|
      *                        |                                    |
-     *                        |                                    |
-     *                        v                                    v
+     *                        |                                    |              
+     *                        v                                    v              
      *                   PreExpired                            PreCancel
-     *                        |                                    |
-     *                        |                                    |
-     *                        v                                    v
+     *                        |                                    |             
+     *                        |                                    |     
+     *                        v                                    v                               
      *         ------->PreExpiredCheck                        PreCancelCheck<-----------------------
      *         |              |                                    |                               |
      *         |              |                                    |                               |
      *         |              v                                    v                               |
      *   Rollback------RestoreExpiredStock                 RestoreCanceledStock-----------------Rollback
-     *                        |                                    |
-     *                        |                                    |
-     *                        v                                    v
+     *                        |                                    |                              
+     *                        |                                    |     
+     *                        v                                    v                               
      *         ------->RestoreExpiredStockCheck            RestoreCanceledStockCheck<---------------
      *         |              |                                    |                               |
      *         |              |                                    |                               |
      *         |              v                                    v                               |
      *   Rollback----------Expired                         ReturnCanceledBalance----------------Rollback
-     *                                                             |
-     *                                                             |
-     *                                                             v
+     *                                                             |                              
+     *                                                             |     
+     *                                                             v                               
      *                                                     ReturnCanceledBalanceCheck<--------------
      *                                                             |                               |
      *                                                             |                               |
