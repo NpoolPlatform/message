@@ -21,6 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Middleware_CreateStatement_FullMethodName  = "/inspire.middleware.achievement.statement.v1.Middleware/CreateStatement"
 	Middleware_CreateStatements_FullMethodName = "/inspire.middleware.achievement.statement.v1.Middleware/CreateStatements"
+	Middleware_DeleteStatements_FullMethodName = "/inspire.middleware.achievement.statement.v1.Middleware/DeleteStatements"
 	Middleware_GetStatements_FullMethodName    = "/inspire.middleware.achievement.statement.v1.Middleware/GetStatements"
 	Middleware_DeleteStatement_FullMethodName  = "/inspire.middleware.achievement.statement.v1.Middleware/DeleteStatement"
 )
@@ -31,6 +32,7 @@ const (
 type MiddlewareClient interface {
 	CreateStatement(ctx context.Context, in *CreateStatementRequest, opts ...grpc.CallOption) (*CreateStatementResponse, error)
 	CreateStatements(ctx context.Context, in *CreateStatementsRequest, opts ...grpc.CallOption) (*CreateStatementsResponse, error)
+	DeleteStatements(ctx context.Context, in *DeleteStatementsRequest, opts ...grpc.CallOption) (*DeleteStatementsResponse, error)
 	GetStatements(ctx context.Context, in *GetStatementsRequest, opts ...grpc.CallOption) (*GetStatementsResponse, error)
 	DeleteStatement(ctx context.Context, in *DeleteStatementRequest, opts ...grpc.CallOption) (*DeleteStatementResponse, error)
 }
@@ -61,6 +63,15 @@ func (c *middlewareClient) CreateStatements(ctx context.Context, in *CreateState
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteStatements(ctx context.Context, in *DeleteStatementsRequest, opts ...grpc.CallOption) (*DeleteStatementsResponse, error) {
+	out := new(DeleteStatementsResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteStatements_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) GetStatements(ctx context.Context, in *GetStatementsRequest, opts ...grpc.CallOption) (*GetStatementsResponse, error) {
 	out := new(GetStatementsResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetStatements_FullMethodName, in, out, opts...)
@@ -85,6 +96,7 @@ func (c *middlewareClient) DeleteStatement(ctx context.Context, in *DeleteStatem
 type MiddlewareServer interface {
 	CreateStatement(context.Context, *CreateStatementRequest) (*CreateStatementResponse, error)
 	CreateStatements(context.Context, *CreateStatementsRequest) (*CreateStatementsResponse, error)
+	DeleteStatements(context.Context, *DeleteStatementsRequest) (*DeleteStatementsResponse, error)
 	GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error)
 	DeleteStatement(context.Context, *DeleteStatementRequest) (*DeleteStatementResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -99,6 +111,9 @@ func (UnimplementedMiddlewareServer) CreateStatement(context.Context, *CreateSta
 }
 func (UnimplementedMiddlewareServer) CreateStatements(context.Context, *CreateStatementsRequest) (*CreateStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateStatements not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteStatements(context.Context, *DeleteStatementsRequest) (*DeleteStatementsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteStatements not implemented")
 }
 func (UnimplementedMiddlewareServer) GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStatements not implemented")
@@ -155,6 +170,24 @@ func _Middleware_CreateStatements_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteStatementsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteStatements(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteStatements_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteStatements(ctx, req.(*DeleteStatementsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_GetStatements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetStatementsRequest)
 	if err := dec(in); err != nil {
@@ -205,6 +238,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateStatements",
 			Handler:    _Middleware_CreateStatements_Handler,
+		},
+		{
+			MethodName: "DeleteStatements",
+			Handler:    _Middleware_DeleteStatements_Handler,
 		},
 		{
 			MethodName: "GetStatements",

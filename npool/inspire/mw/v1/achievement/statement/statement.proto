@@ -10,6 +10,7 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc CreateStatement     (CreateStatementRequest)     returns (CreateStatementResponse)     {}
     rpc CreateStatements    (CreateStatementsRequest)    returns (CreateStatementsResponse)    {}
+    rpc DeleteStatements    (DeleteStatementsRequest)    returns (DeleteStatementsResponse)    {}
     rpc GetStatements       (GetStatementsRequest)       returns (GetStatementsResponse)       {}
     rpc DeleteStatement     (DeleteStatementRequest)     returns (DeleteStatementResponse)     {}
 }
@@ -98,6 +99,14 @@ message CreateStatementsRequest {
 }
 
 message CreateStatementsResponse {
+    repeated Statement Infos = 10;
+}
+
+message DeleteStatementsRequest {
+    repeated StatementReq Infos = 10;
+}
+
+message DeleteStatementsResponse {
     repeated Statement Infos = 10;
 }
 

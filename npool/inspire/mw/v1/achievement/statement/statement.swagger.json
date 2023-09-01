@@ -122,6 +122,18 @@
         }
       }
     },
+    "v1DeleteStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Statement"
+          }
+        }
+      }
+    },
     "v1GetStatementsResponse": {
       "type": "object",
       "properties": {
