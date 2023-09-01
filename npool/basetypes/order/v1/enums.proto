@@ -33,20 +33,74 @@ enum OrderState {
     // Timeout of order
     OrderStatePaymentTimeout    = 110; // -> OrderStatePreCancel
 
+
     /**
-     * WaitPayment -> CheckPayment -> TransferReceived -> TransferReceivedCheck -> TransferBookKept -> TransferBookKeptCheck -> BalanceSpent -> BalanceSpentCheck -> Paid -> InService ------------------|                                  Rollback                                    Rollback
-     *                    |                                                                                                                                           |          |                       |                                     A                                            A
-     *                    |                                                                                                                                           |          |                       |                                     |                                            |
-     *                    |                                                                                                                                           |          |                       V                                     |                                            |
-     *                    |                                                                                                                                           |          |                   PreExpired -> PreExpiredCheck -> RestoreExpiredStock -> RestoreExpiredStockCheck -> Expired
-     *                    |                                                                                                                                           |          |
-     *                    |                                                                                                                                           |          |
-     *                    |                                                                                                                                           -------------> PreCancel -> PreCancelCheck -> RestoreCanceledStock -> RestoreCanceledStockCheck -> ReturnCanceledBalance -> ReturnCanceledBalanceCheck -> Canceled
-     *                    |                                                                                                                                                              A                               |         A                                          |         A                                          |
-     *                    |                                                                                                                                                              |                               V         |                                          V         |                                          V
-     *                    --> PaymentTimeout---------------------------------------------------------------------------------------------------------------------------------------------|                            Rollback     |                                       Rollback     |                                       Rollback
-     *                                                                                                                                                                                   |                               |         |                                          |         |                                          |
-     *                                                                                                                                                                                   |--------------------------------         |-------------------------------------------         |-------------------------------------------                                         
+     *
+     *                   WaitPayment
+     *                        |
+     *                        |
+     *                        v
+     *                   CheckPayment----------------------------------------------
+     *                        |                                    |              |
+     *                        |                                    |              |
+     *                        v                                    |              v
+     *                 TransferReceived                            |         PaymentTimeout
+     *                        |                                    |              |
+     *                        |                                    |              |
+     *                        v                                    |              |
+     *         ------->TransferReceivedCheck                       |              |
+     *         |              |                                    |              |
+     *         |              |                                    |              |
+     *         |              v                                    |              |
+     *   Rollback------TransferBookKept                            |              |
+     *                        |                                    |              |
+     *                        |                                    |              |
+     *                        v                                    |              |
+     *         ----->TransferBookKeptCheck                         |              |
+     *         |              |                                    |              |
+     *         |              |                                    |              |
+     *         |              v                                    |              |
+     *   Rollback---------BalanceSpent                             |              |
+     *                        |                                    |              |
+     *                        |                                    |              |
+     *                        v                                    |              |
+     *         ------->BalanceSpentCheck                           |              |
+     *         |              |                                    |              |
+     *         |              |                                    |              |
+     *         |              v                                    |              |
+     *   Rollback------------Paid                                  |              |
+     *                        |                                    |              |
+     *                        |                                    |              |
+     *                        v                                    |              |
+     *                   InService---------------------------------|              |
+     *                        |                                    |              |
+     *                        |                                    |<--------------              
+     *                        v                                    v              
+     *                   PreExpired                            PreCancel
+     *                        |                                    |             
+     *                        |                                    |     
+     *                        v                                    v                               
+     *         ------->PreExpiredCheck                        PreCancelCheck<-----------------------
+     *         |              |                                    |                               |
+     *         |              |                                    |                               |
+     *         |              v                                    v                               |
+     *   Rollback------RestoreExpiredStock                 RestoreCanceledStock-----------------Rollback
+     *                        |                                    |                              
+     *                        |                                    |     
+     *                        v                                    v                               
+     *         ------->RestoreExpiredStockCheck            RestoreCanceledStockCheck<---------------
+     *         |              |                                    |                               |
+     *         |              |                                    |                               |
+     *         |              v                                    v                               |
+     *   Rollback----------Expired                         ReturnCanceledBalance----------------Rollback
+     *                                                             |                              
+     *                                                             |     
+     *                                                             v                               
+     *                                                     ReturnCanceledBalanceCheck<--------------
+     *                                                             |                               |
+     *                                                             |                               |
+     *                                                             v                               |
+     *                                                          Canceled------------------------Rollback
      *
      */
 
