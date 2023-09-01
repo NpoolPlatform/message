@@ -26,6 +26,7 @@ message CalculateRequest {
     string PaymentAmount          = 100;
     // Good value in payment coin amount
     string GoodValue              = 110;
+    string GoodValueUSD           = 111;
     basetypes.inspire.v1.SettleType SettleType = 120;
     bool   HasCommission          = 130;
     uint32 OrderCreatedAt         = 140;
