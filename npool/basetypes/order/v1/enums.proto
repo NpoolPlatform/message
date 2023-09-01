@@ -26,16 +26,18 @@ enum OrderState {
     OrderStatePaymentBalanceSpent          = 70;  // -> OrderStatePaymentBalanceSpentCheck
     OrderStatePaymentBalanceSpentCheck     = 80;  // -> OrderStateGoodStockTransferred (transfer stock from locked to wait start)
     OrderStateGoodStockTransferred         = 90;  // -> OrderStateGoodStockTransferredCheck
-    OrderStateGoodStockTransferredCheck    = 100; // -> OrderStateAchievementBookKept (bookkeep purchase achievement)
-    OrderStateAchievementBookKept          = 110; // -> OrderStateAchievementBookKeptCheck
-    OrderStateAchievementBookKeptCheck     = 120; // -> OrderStatePaid
+    OrderStateGoodStockTransferredCheck    = 100; // -> OrderStateCommissionAdded (commission added)
+    OrderStateCommissionAdded              = 110; // -> OrderStateCommissionAddedCheck
+    OrderStateCommissionAddedCheck         = 120; // -> OrderStateAchievementBookKept
+    OrderStateAchievementBookKept          = 130; // -> OrderStateAchievementBookKeptCheck
+    OrderStateAchievementBookKeptCheck     = 140; // -> OrderStatePaid
 
     // Paid
-    OrderStatePaid              = 130;
-    OrderStateInService         = 140;
+    OrderStatePaid              = 150;
+    OrderStateInService         = 160;
 
     // Timeout of order
-    OrderStatePaymentTimeout    = 150; // -> OrderStatePreCancel
+    OrderStatePaymentTimeout    = 170; // -> OrderStatePreCancel
 
 
      /**
@@ -94,28 +96,28 @@ enum OrderState {
      *                        v                                    |
      *                   InService---------------------------------|
      *                        |                                    |
-     *                        |                                    |              
-     *                        v                                    v              
+     *                        |                                    |
+     *                        v                                    v
      *                   PreExpired                            PreCancel
-     *                        |                                    |             
-     *                        |                                    |     
-     *                        v                                    v                               
+     *                        |                                    |
+     *                        |                                    |
+     *                        v                                    v
      *         ------->PreExpiredCheck                        PreCancelCheck<-----------------------
      *         |              |                                    |                               |
      *         |              |                                    |                               |
      *         |              v                                    v                               |
      *   Rollback------RestoreExpiredStock                 RestoreCanceledStock-----------------Rollback
-     *                        |                                    |                              
-     *                        |                                    |     
-     *                        v                                    v                               
+     *                        |                                    |
+     *                        |                                    |
+     *                        v                                    v
      *         ------->RestoreExpiredStockCheck            RestoreCanceledStockCheck<---------------
      *         |              |                                    |                               |
      *         |              |                                    |                               |
      *         |              v                                    v                               |
      *   Rollback----------Expired                         ReturnCanceledBalance----------------Rollback
-     *                                                             |                              
-     *                                                             |     
-     *                                                             v                               
+     *                                                             |
+     *                                                             |
+     *                                                             v
      *                                                     ReturnCanceledBalanceCheck<--------------
      *                                                             |                               |
      *                                                             |                               |
@@ -125,22 +127,22 @@ enum OrderState {
      */
 
     // End or order
-    OrderStatePreCancel         = 160; // -> OrderStatePreCancelCheck
-    OrderStatePreCancelCheck    = 170; // -> OrderStateRestoreCanceledStock
-    OrderStatePreExpired        = 180; // -> OrderStatePreExpired
-    OrderStatePreExpiredCheck   = 190; // -> OrderStateRestoreExpiredStock
+    OrderStatePreCancel         = 180; // -> OrderStatePreCancelCheck
+    OrderStatePreCancelCheck    = 190; // -> OrderStateRestoreCanceledStock
+    OrderStatePreExpired        = 200; // -> OrderStatePreExpired
+    OrderStatePreExpiredCheck   = 210; // -> OrderStateRestoreExpiredStock
 
     // Calculation
-    OrderStateRestoreExpiredStock        = 200; // -> OrderStateRestoreExpiredStockCheck
-    OrderStateRestoreExpiredStockCheck   = 210; // -> OrderStateExpired
-    OrderStateRestoreCanceledStock       = 220; // -> OrderStateRestoreCanceledStockCheck
-    OrderStateRestoreCanceledStockCheck  = 230; // -> OrderStateReturnCanceledBalance
-    OrderStateReturnCanceledBalance      = 240; // -> OrderStateReturnCanceledBalanceCheck
-    OrderStateReturnCanceledBalanceCheck = 250; // -> OrderStateCanceled
+    OrderStateRestoreExpiredStock        = 220; // -> OrderStateRestoreExpiredStockCheck
+    OrderStateRestoreExpiredStockCheck   = 230; // -> OrderStateExpired
+    OrderStateRestoreCanceledStock       = 240; // -> OrderStateRestoreCanceledStockCheck
+    OrderStateRestoreCanceledStockCheck  = 250; // -> OrderStateReturnCanceledBalance
+    OrderStateReturnCanceledBalance      = 260; // -> OrderStateReturnCanceledBalanceCheck
+    OrderStateReturnCanceledBalanceCheck = 270; // -> OrderStateCanceled
 
     // End state
-    OrderStateCanceled          = 260;
-    OrderStateExpired           = 270;
+    OrderStateCanceled          = 290;
+    OrderStateExpired           = 300;
 
     // Delivery order state
 }
