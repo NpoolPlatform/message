@@ -19,12 +19,16 @@ enum OrderState {
     OrderStateCheckPayment      = 20; // -> OrderStatePaymentTimeout || PaymentTransferReceived
 
     // Payment process
-    OrderStatePaymentTransferReceived      = 30; // -> OrderStatePaymentTransferReceivedCheck (received on blockchain)
-    OrderStatePaymentTransferReceivedCheck = 40; // -> OrderStatePaymentTransferBookKept (bookkeeping)
-    OrderStatePaymentTransferBookKept      = 50; // -> OrderStatePaymentTransferBookKeptCheck
-    OrderStatePaymentTransferBookKeptCheck = 60; // -> OrderStatePaymentBalanceSpent (spend locked balance)
-    OrderStatePaymentBalanceSpent          = 70; // -> OrderStatePaymentBalanceSpentCheck
-    OrderStatePaymentBalanceSpentCheck     = 80; // -> OrderStatePaid (achievement and stock (dtm))
+    OrderStatePaymentTransferReceived      = 30;  // -> OrderStatePaymentTransferReceivedCheck (received on blockchain)
+    OrderStatePaymentTransferReceivedCheck = 40;  // -> OrderStatePaymentTransferBookKept (bookkeeping)
+    OrderStatePaymentTransferBookKept      = 50;  // -> OrderStatePaymentTransferBookKeptCheck
+    OrderStatePaymentTransferBookKeptCheck = 60;  // -> OrderStatePaymentBalanceSpent (spend locked balance)
+    OrderStatePaymentBalanceSpent          = 70;  // -> OrderStatePaymentBalanceSpentCheck
+    OrderStatePaymentBalanceSpentCheck     = 80;  // -> OrderStateGoodStockTransferred (transfer stock from locked to wait start)
+    OrderStateGoodStockTransferred         = 90;  // -> OrderStateGoodStockTransferredCheck
+    OrderStateGoodStockTransferredCheck    = 100; // -> OrderStateAchievementBookKept (bookkeep purchase achievement)
+    OrderStateAchievementBookKept          = 110; // -> OrderStateAchievementBookKeptCheck
+    OrderStateAchievementBookKeptCheck     = 120; // -> OrderStatePaid
 
     // Paid
     OrderStatePaid              = 90;
