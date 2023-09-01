@@ -34,13 +34,13 @@ enum OrderState {
     OrderStatePaymentTimeout    = 110; // -> OrderStatePreCancel
 
 
-    /**
+     /**
      *
      *                   WaitPayment
      *                        |
      *                        |
      *                        v
-     *                   CheckPayment----------------------------------------------
+     *                   CheckPayment---------------------------------------------|
      *                        |                                    |              |
      *                        |                                    |              |
      *                        v                                    |              v
@@ -64,17 +64,17 @@ enum OrderState {
      *                        |                                    |              |
      *                        |                                    |              |
      *                        v                                    |              |
-     *         ------->BalanceSpentCheck                           |              |
-     *         |              |                                    |              |
-     *         |              |                                    |              |
-     *         |              v                                    |              |
-     *   Rollback------------Paid                                  |              |
-     *                        |                                    |              |
-     *                        |                                    |              |
-     *                        v                                    |              |
-     *                   InService---------------------------------|              |
-     *                        |                                    |              |
-     *                        |                                    |<--------------              
+     *         ------->BalanceSpentCheck                           |<--------------
+     *         |              |                                    |
+     *         |              |                                    |
+     *         |              v                                    |
+     *   Rollback------------Paid----------------------------------|
+     *                        |                                    |
+     *                        |                                    |
+     *                        v                                    |
+     *                   InService---------------------------------|
+     *                        |                                    |
+     *                        |                                    |              
      *                        v                                    v              
      *                   PreExpired                            PreCancel
      *                        |                                    |             
