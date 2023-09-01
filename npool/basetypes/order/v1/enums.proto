@@ -31,11 +31,11 @@ enum OrderState {
     OrderStateAchievementBookKeptCheck     = 120; // -> OrderStatePaid
 
     // Paid
-    OrderStatePaid              = 90;
-    OrderStateInService         = 100;
+    OrderStatePaid              = 130;
+    OrderStateInService         = 140;
 
     // Timeout of order
-    OrderStatePaymentTimeout    = 110; // -> OrderStatePreCancel
+    OrderStatePaymentTimeout    = 150; // -> OrderStatePreCancel
 
 
      /**
@@ -68,7 +68,23 @@ enum OrderState {
      *                        |                                    |              |
      *                        |                                    |              |
      *                        v                                    |              |
-     *         ------->BalanceSpentCheck                           |<--------------
+     *         -------->BalanceSpentCheck                          |<--------------
+     *         |              |                                    |
+     *         |              |                                    |
+     *         |              v                                    |
+     *   Rollback-----GoodStockTransferred                         |
+     *                        |                                    |
+     *                        |                                    |
+     *                        v                                    |
+     *         ------>GoodStockTransferredCheck                    |
+     *         |              |                                    |
+     *         |              |                                    |
+     *         |              v                                    |
+     *   Rollback-----AchievementBookKept                          |
+     *                        |                                    |
+     *                        |                                    |
+     *                        v                                    |
+     *         ------>AchievementBookKeptCheck                     |
      *         |              |                                    |
      *         |              |                                    |
      *         |              v                                    |
@@ -109,22 +125,22 @@ enum OrderState {
      */
 
     // End or order
-    OrderStatePreCancel         = 120; // -> OrderStatePreCancelCheck
-    OrderStatePreCancelCheck    = 130; // -> OrderStateRestoreCanceledStock
-    OrderStatePreExpired        = 140; // -> OrderStatePreExpired
-    OrderStatePreExpiredCheck   = 150; // -> OrderStateRestoreExpiredStock
+    OrderStatePreCancel         = 160; // -> OrderStatePreCancelCheck
+    OrderStatePreCancelCheck    = 170; // -> OrderStateRestoreCanceledStock
+    OrderStatePreExpired        = 180; // -> OrderStatePreExpired
+    OrderStatePreExpiredCheck   = 190; // -> OrderStateRestoreExpiredStock
 
     // Calculation
-    OrderStateRestoreExpiredStock        = 160; // -> OrderStateRestoreExpiredStockCheck
-    OrderStateRestoreExpiredStockCheck   = 170; // -> OrderStateExpired
-    OrderStateRestoreCanceledStock       = 180; // -> OrderStateRestoreCanceledStockCheck
-    OrderStateRestoreCanceledStockCheck  = 190; // -> OrderStateReturnCanceledBalance
-    OrderStateReturnCanceledBalance      = 200; // -> OrderStateReturnCanceledBalanceCheck
-    OrderStateReturnCanceledBalanceCheck = 210; // -> OrderStateCanceled
+    OrderStateRestoreExpiredStock        = 200; // -> OrderStateRestoreExpiredStockCheck
+    OrderStateRestoreExpiredStockCheck   = 210; // -> OrderStateExpired
+    OrderStateRestoreCanceledStock       = 220; // -> OrderStateRestoreCanceledStockCheck
+    OrderStateRestoreCanceledStockCheck  = 230; // -> OrderStateReturnCanceledBalance
+    OrderStateReturnCanceledBalance      = 240; // -> OrderStateReturnCanceledBalanceCheck
+    OrderStateReturnCanceledBalanceCheck = 250; // -> OrderStateCanceled
 
     // End state
-    OrderStateCanceled          = 220;
-    OrderStateExpired           = 230;
+    OrderStateCanceled          = 260;
+    OrderStateExpired           = 270;
 
     // Delivery order state
 }
