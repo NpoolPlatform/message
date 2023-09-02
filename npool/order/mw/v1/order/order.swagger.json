@@ -413,6 +413,10 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"compensate_hours\""
         },
+        "CancelState": {
+          "$ref": "#/definitions/v1OrderState",
+          "title": "@inject_tag: sql:\"cancel_state\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -562,6 +566,9 @@
         },
         "Rollback": {
           "type": "boolean"
+        },
+        "CancelState": {
+          "$ref": "#/definitions/v1OrderState"
         }
       }
     },

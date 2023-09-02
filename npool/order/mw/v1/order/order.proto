@@ -69,8 +69,8 @@ message OrderReq {
     optional basetypes.order.v1.PaymentState PaymentState = 350;
     optional uint32 OutOfGasHours                         = 360;
     optional uint32 CompensateHours                       = 370;
-
-    optional bool   Rollback   = 380;
+    optional bool   Rollback                              = 380;
+    optional basetypes.order.v1.OrderState CancelState    = 390;
 }
 
 message Order {
@@ -171,6 +171,8 @@ message Order {
     uint32 OutOfGasHours                         = 460;
     // @inject_tag: sql:"compensate_hours"
     uint32 CompensateHours                       = 470;
+    // @inject_tag: sql:"cancel_state"
+    basetypes.order.v1.OrderState   CancelState  = 480;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt                             = 1000;
