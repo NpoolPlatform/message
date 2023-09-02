@@ -173,7 +173,8 @@ message Order {
     // @inject_tag: sql:"compensate_hours"
     uint32 CompensateHours                       = 470;
     // @inject_tag: sql:"cancel_state"
-    basetypes.order.v1.OrderState   CancelState  = 480;
+    string CancelStateStr                        = 480;
+    basetypes.order.v1.OrderState CancelState    = 490;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt                             = 1000;

@@ -425,9 +425,12 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"compensate_hours\""
         },
-        "CancelState": {
-          "$ref": "#/definitions/v1OrderState",
+        "CancelStateStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"cancel_state\""
+        },
+        "CancelState": {
+          "$ref": "#/definitions/v1OrderState"
         },
         "CreatedAt": {
           "type": "integer",
