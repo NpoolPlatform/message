@@ -5,6 +5,7 @@ package review.middleware.review.v2;
 option go_package = "github.com/NpoolPlatform/message/npool/review/mw/v2/review";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/review/v1/enums.proto";
 
 // Service Name
 service Middleware {
@@ -18,38 +19,15 @@ service Middleware {
     rpc ExistReviewConds (ExistReviewCondsRequest) returns (ExistReviewCondsResponse) {}
 }
 
-enum ReviewObjectType {
-    DefaultObjectType     = 0;
-    ObjectKyc             = 10;
-    ObjectWithdrawal      = 20;
-}
-
-enum ReviewState {
-    DefaultReviewState    = 0;
-    Approved              = 10;
-    Wait                  = 20;
-    Rejected              = 30;
-}
-
-enum ReviewTriggerType {
-    DefaultTriggerType    = 0;
-    // Withdrawal triggers
-    AutoReviewed          = 10;
-    LargeAmount           = 20;
-    InsufficientFunds     = 30;
-    InsufficientGas       = 40;
-    InsufficientFundsGas  = 50;
-}
-
 message ReviewReq {
     optional string            ID         = 10;
     optional string            AppID      = 20;
     optional string            ReviewerID = 30;
     optional string            Domain     = 40;
     optional string            ObjectID   = 50;
-    optional ReviewTriggerType Trigger    = 60;
-    optional ReviewObjectType  ObjectType = 70;
-    optional ReviewState       State      = 80;
+    optional basetypes.review.v1.ReviewTriggerType Trigger    = 60;
+    optional basetypes.review.v1.ReviewObjectType  ObjectType = 70;
+    optional basetypes.review.v1.ReviewState       State      = 80;
     optional string            Message    = 90;
 }
 
@@ -66,13 +44,13 @@ message Review {
     string            ObjectID   = 50;
     // @inject_tag: sql:"trigger"
     string            TriggerStr = 51;
-    ReviewTriggerType Trigger    = 60;
+    basetypes.review.v1.ReviewTriggerType Trigger    = 60;
     // @inject_tag: sql:"object_type"
     string            ObjectTypeStr = 61;
-    ReviewObjectType  ObjectType    = 70;
+    basetypes.review.v1.ReviewObjectType ObjectType = 70;
     // @inject_tag: sql:"state"
     string            StateStr      = 71;
-    ReviewState       State         = 80;
+    basetypes.review.v1.ReviewState State = 80;
     // @inject_tag: sql:"message"
     string            Message       = 90;
     // @inject_tag: sql:"created_at"
@@ -123,7 +101,7 @@ message GetObjectReviewRequest {
     string AppID     = 10;
     string Domain    = 20;
     string ObjectID  = 30;
-    ReviewObjectType ObjectType = 40;
+    basetypes.review.v1.ReviewObjectType ObjectType = 40;
 }
 
 message GetObjectReviewResponse {
@@ -134,7 +112,7 @@ message GetObjectReviewsRequest {
     string          AppID     = 10;
     string          Domain    = 20;
     repeated string ObjectIDs = 30;
-    ReviewObjectType ObjectType = 40;
+    basetypes.review.v1.ReviewObjectType ObjectType = 40;
 }
 
 message GetObjectReviewsResponse {

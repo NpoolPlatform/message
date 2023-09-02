@@ -203,6 +203,25 @@
       ],
       "default": "DefaultState"
     },
+    "v1ReviewObjectType": {
+      "type": "string",
+      "enum": [
+        "DefaultObjectType",
+        "ObjectKyc",
+        "ObjectWithdrawal"
+      ],
+      "default": "DefaultObjectType"
+    },
+    "v1ReviewState": {
+      "type": "string",
+      "enum": [
+        "DefaultReviewState",
+        "Approved",
+        "Wait",
+        "Rejected"
+      ],
+      "default": "DefaultReviewState"
+    },
     "v2GetAppKycReviewsRequest": {
       "type": "object",
       "properties": {
@@ -316,7 +335,7 @@
           "title": "review"
         },
         "ObjectType": {
-          "$ref": "#/definitions/v2ReviewObjectType"
+          "$ref": "#/definitions/v1ReviewObjectType"
         },
         "Domain": {
           "type": "string"
@@ -325,7 +344,7 @@
           "type": "string"
         },
         "ReviewState": {
-          "$ref": "#/definitions/v2ReviewState"
+          "$ref": "#/definitions/v1ReviewState"
         },
         "KycState": {
           "$ref": "#/definitions/v1KycState"
@@ -342,25 +361,6 @@
           "format": "int64"
         }
       }
-    },
-    "v2ReviewObjectType": {
-      "type": "string",
-      "enum": [
-        "DefaultObjectType",
-        "ObjectKyc",
-        "ObjectWithdrawal"
-      ],
-      "default": "DefaultObjectType"
-    },
-    "v2ReviewState": {
-      "type": "string",
-      "enum": [
-        "DefaultReviewState",
-        "Approved",
-        "Wait",
-        "Rejected"
-      ],
-      "default": "DefaultReviewState"
     },
     "v2UpdateAppKycReviewRequest": {
       "type": "object",
@@ -379,7 +379,7 @@
           "title": "Reviewer"
         },
         "State": {
-          "$ref": "#/definitions/v2ReviewState"
+          "$ref": "#/definitions/v1ReviewState"
         },
         "Message": {
           "type": "string"
@@ -408,7 +408,7 @@
           "title": "Reviewer"
         },
         "State": {
-          "$ref": "#/definitions/v2ReviewState"
+          "$ref": "#/definitions/v1ReviewState"
         },
         "Message": {
           "type": "string"

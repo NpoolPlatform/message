@@ -5,9 +5,11 @@ package review.gateway.withdraw.v2;
 option go_package = "github.com/NpoolPlatform/message/npool/review/gw/v2/withdraw";
 
 import "npool/basetypes/ledger/v1/enums.proto";
+import "npool/basetypes/review/v1/enums.proto";
 import "npool/review/mw/v2/review/review.proto";
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/kycstate.proto";
+
 // Service Name
 service Gateway {
     rpc GetWithdrawReviews (GetWithdrawReviewsRequest) returns (GetWithdrawReviewsResponse) {
@@ -48,13 +50,13 @@ message WithdrawReview {
     string EmailAddress                         = 60;
     string PhoneNO                              = 70;
     string Reviewer                             = 80;
-    review.middleware.review.v2.ReviewObjectType ObjectType = 90;
+    basetypes.review.v1.ReviewObjectType ObjectType = 90;
     string Domain                               = 100;
     uint32 CreatedAt                            = 110;
     uint32 UpdatedAt                            = 120;
     string Message                              = 130;
-    review.middleware.review.v2.ReviewState State         = 140;
-    review.middleware.review.v2.ReviewTriggerType Trigger = 150;
+    basetypes.review.v1.ReviewState State         = 140;
+    basetypes.review.v1.ReviewTriggerType Trigger = 150;
     string Amount                               = 160;
     string FeeAmount                            = 170;
     string CoinTypeID                           = 180;
@@ -92,7 +94,7 @@ message UpdateWithdrawReviewRequest {
     string ReviewID    = 10;
     string AppID       = 20;
     string UserID      = 30; // Reviewer
-    review.middleware.review.v2.ReviewState State = 50;
+    basetypes.review.v1.ReviewState State = 50;
     optional string Message   = 60;
 }
 
@@ -105,7 +107,7 @@ message UpdateAppWithdrawReviewRequest {
     string AppID       = 20;
     string TargetAppID = 30;
     string UserID      = 40; // Reviewer
-    review.middleware.review.v2.ReviewState State = 60;
+    basetypes.review.v1.ReviewState State = 60;
     optional string Message   = 70;
 }
 
