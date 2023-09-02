@@ -20,6 +20,7 @@ service Middleware {
     rpc ExistOrder      (ExistOrderRequest)      returns (ExistOrderResponse)      {}
     rpc ExistOrderConds (ExistOrderCondsRequest) returns (ExistOrderCondsResponse) {}
     rpc DeleteOrder     (DeleteOrderRequest)     returns (DeleteOrderResponse)     {}
+    rpc DeleteOrders    (DeleteOrdersRequest)    returns (DeleteOrdersResponse)    {}
 }
 
 message OrderReq {
@@ -292,4 +293,12 @@ message DeleteOrderRequest {
 
 message DeleteOrderResponse {
     Order Info = 10;
+}
+
+message DeleteOrdersRequest {
+    repeated OrderReq Infos = 10;
+}
+
+message DeleteOrdersResponse {
+    repeated Order Infos = 10;
 }

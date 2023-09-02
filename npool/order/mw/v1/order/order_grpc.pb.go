@@ -29,6 +29,7 @@ const (
 	Middleware_ExistOrder_FullMethodName      = "/order.middleware.order1.v1.Middleware/ExistOrder"
 	Middleware_ExistOrderConds_FullMethodName = "/order.middleware.order1.v1.Middleware/ExistOrderConds"
 	Middleware_DeleteOrder_FullMethodName     = "/order.middleware.order1.v1.Middleware/DeleteOrder"
+	Middleware_DeleteOrders_FullMethodName    = "/order.middleware.order1.v1.Middleware/DeleteOrders"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -45,6 +46,7 @@ type MiddlewareClient interface {
 	ExistOrder(ctx context.Context, in *ExistOrderRequest, opts ...grpc.CallOption) (*ExistOrderResponse, error)
 	ExistOrderConds(ctx context.Context, in *ExistOrderCondsRequest, opts ...grpc.CallOption) (*ExistOrderCondsResponse, error)
 	DeleteOrder(ctx context.Context, in *DeleteOrderRequest, opts ...grpc.CallOption) (*DeleteOrderResponse, error)
+	DeleteOrders(ctx context.Context, in *DeleteOrdersRequest, opts ...grpc.CallOption) (*DeleteOrdersResponse, error)
 }
 
 type middlewareClient struct {
@@ -145,6 +147,15 @@ func (c *middlewareClient) DeleteOrder(ctx context.Context, in *DeleteOrderReque
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteOrders(ctx context.Context, in *DeleteOrdersRequest, opts ...grpc.CallOption) (*DeleteOrdersResponse, error) {
+	out := new(DeleteOrdersResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteOrders_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -159,6 +170,7 @@ type MiddlewareServer interface {
 	ExistOrder(context.Context, *ExistOrderRequest) (*ExistOrderResponse, error)
 	ExistOrderConds(context.Context, *ExistOrderCondsRequest) (*ExistOrderCondsResponse, error)
 	DeleteOrder(context.Context, *DeleteOrderRequest) (*DeleteOrderResponse, error)
+	DeleteOrders(context.Context, *DeleteOrdersRequest) (*DeleteOrdersResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -195,6 +207,9 @@ func (UnimplementedMiddlewareServer) ExistOrderConds(context.Context, *ExistOrde
 }
 func (UnimplementedMiddlewareServer) DeleteOrder(context.Context, *DeleteOrderRequest) (*DeleteOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteOrder not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteOrders(context.Context, *DeleteOrdersRequest) (*DeleteOrdersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteOrders not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -389,6 +404,24 @@ func _Middleware_DeleteOrder_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteOrdersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteOrders(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteOrders_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteOrders(ctx, req.(*DeleteOrdersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -435,6 +468,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteOrder",
 			Handler:    _Middleware_DeleteOrder_Handler,
+		},
+		{
+			MethodName: "DeleteOrders",
+			Handler:    _Middleware_DeleteOrders_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
