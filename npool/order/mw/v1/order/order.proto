@@ -136,7 +136,7 @@ message Order {
     // @inject_tag: sql:"payment_start_amount"
     string PaymentStartAmount                    = 290;
 
-    // orderstate 
+    // Orderstate
     // @inject_tag: sql:"orderstate_id"
     string OrderStateID                          = 300;
     // @inject_tag: sql:"order_state"
@@ -206,6 +206,7 @@ message Conds {
     basetypes.v1.StringSliceVal IDs                   = 200;
     basetypes.v1.StringVal      CouponID              = 210;
     basetypes.v1.Uint32SliceVal OrderStates           = 220;
+    basetypes.v1.Uint32SliceVal PaymentTypes          = 230;
 }
 
 message CreateOrderRequest {

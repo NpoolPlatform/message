@@ -126,6 +126,9 @@
         },
         "OrderStates": {
           "$ref": "#/definitions/v1Uint32SliceVal"
+        },
+        "PaymentTypes": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
         }
       }
     },
@@ -335,7 +338,7 @@
         },
         "OrderStateID": {
           "type": "string",
-          "title": "orderstate \n@inject_tag: sql:\"orderstate_id\""
+          "title": "Orderstate\n@inject_tag: sql:\"orderstate_id\""
         },
         "OrderStateStr": {
           "type": "string",
