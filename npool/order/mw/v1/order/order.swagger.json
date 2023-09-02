@@ -160,6 +160,18 @@
         }
       }
     },
+    "v1DeleteOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Order"
+          }
+        }
+      }
+    },
     "v1ExistOrderCondsResponse": {
       "type": "object",
       "properties": {

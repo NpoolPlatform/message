@@ -82,11 +82,11 @@ enum OrderState {
      *         |              |                                    |
      *         |              |                                    |
      *         |              v                                    |
-     *   Rollback----OrderStateCommissionAdded                     |
+     *   Rollback-------CommissionAdded                            |
      *                        |                                    |
      *                        |                                    |
      *                        v                                    |
-     *         ---->OrderStateCommissionAddedCheck                 |
+     *         ------>CommissionAddedCheck                         |
      *         |              |                                    |
      *         |              |                                    |
      *         |              v                                    |
