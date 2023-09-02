@@ -104,28 +104,36 @@ enum OrderState {
      *                        v                                    |
      *                   InService---------------------------------|
      *                        |                                    |
-     *                        |                                    |
-     *                        v                                    v
+     *                        |                                    |              
+     *                        v                                    v              
      *                   PreExpired                            PreCancel
-     *                        |                                    |
-     *                        |                                    |
-     *                        v                                    v
+     *                        |                                    |             
+     *                        |                                    |     
+     *                        v                                    v                               
      *         ------->PreExpiredCheck                        PreCancelCheck<-----------------------
      *         |              |                                    |                               |
      *         |              |                                    |                               |
      *         |              v                                    v                               |
      *   Rollback------RestoreExpiredStock                 RestoreCanceledStock-----------------Rollback
-     *                        |                                    |
-     *                        |                                    |
-     *                        v                                    v
+     *                        |                                    |                              
+     *                        |                                    |     
+     *                        v                                    v                               
      *         ------->RestoreExpiredStockCheck            RestoreCanceledStockCheck<---------------
      *         |              |                                    |                               |
      *         |              |                                    |                               |
      *         |              v                                    v                               |
-     *   Rollback----------Expired                         ReturnCanceledBalance----------------Rollback
-     *                                                             |
-     *                                                             |
-     *                                                             v
+     *   Rollback----------Expired                          CanceledAchievement----------------Rollback
+     *                                                             |                               
+     *                                                             |                               
+     *                                                             v                               
+     *                                                     CanceledAchievementCheck<----------------
+     *                                                             |                               |
+     *                                                             |                               |
+     *                                                             v                               |
+     *                                                     ReturnCanceledBalance----------------Rollback
+     *                                                             |                              
+     *                                                             |     
+     *                                                             v                               
      *                                                     ReturnCanceledBalanceCheck<--------------
      *                                                             |                               |
      *                                                             |                               |
