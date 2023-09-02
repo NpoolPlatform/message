@@ -103,6 +103,9 @@
         },
         "State": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "ReviewID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -200,6 +203,10 @@
         "State": {
           "$ref": "#/definitions/v1WithdrawState"
         },
+        "ReviewID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"review_id\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -248,6 +255,9 @@
         "FeeAmount": {
           "type": "string",
           "title": "only Update Withdraw \u0026 Withdraw Success"
+        },
+        "ReviewID": {
+          "type": "string"
         }
       }
     }

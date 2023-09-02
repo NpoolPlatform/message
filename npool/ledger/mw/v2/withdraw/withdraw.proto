@@ -26,9 +26,10 @@ message WithdrawReq {
     optional string Amount                 = 60;
     optional string PlatformTransactionID  = 70;
     optional string ChainTransactionID     = 80;
-    optional basetypes.ledger.v1.WithdrawState State       = 90;
+    optional basetypes.ledger.v1.WithdrawState State = 90;
     // only Update Withdraw & Withdraw Success
     optional string FeeAmount              = 100;
+    optional string ReviewID               = 110;
 }
 
 message Withdraw {
@@ -52,11 +53,13 @@ message Withdraw {
     string ChainTransactionID     = 90;
     // @inject_tag: sql:"state"
     string StateStr               = 100;
-    basetypes.ledger.v1.WithdrawState State           = 110;
+    basetypes.ledger.v1.WithdrawState State = 110;
+    // @inject_tag: sql:"review_id"
+    string ReviewID               = 120;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt              = 120;
+    uint32 CreatedAt              = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt              = 130;
+    uint32 UpdatedAt              = 1010;
 }
 
 message Conds {
@@ -67,6 +70,7 @@ message Conds {
     optional basetypes.v1.StringVal AccountID  = 50;
     optional basetypes.v1.Uint32Val CreatedAt  = 70;
     optional basetypes.v1.Uint32Val State      = 80;
+    optional basetypes.v1.StringVal ReviewID   = 90;
 }
 
 message CreateWithdrawRequest {
