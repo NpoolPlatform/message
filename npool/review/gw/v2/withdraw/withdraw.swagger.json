@@ -188,9 +188,11 @@
       "type": "string",
       "enum": [
         "DefaultWithdrawState",
+        "Created",
         "Reviewing",
-        "Transferring",
+        "Approved",
         "Rejected",
+        "Transferring",
         "TransactionFail",
         "Successful"
       ],

@@ -9,7 +9,7 @@ enum IOType {
     Incoming           = 10;
     Outcoming          = 20;
 }
-  
+
 enum IOSubType {
     DefaultSubType            = 0;
     // I/O
@@ -37,9 +37,11 @@ enum IOSubType {
 
 enum WithdrawState {
     DefaultWithdrawState  = 0;
-    Reviewing             = 10;
-    Transferring          = 20;
-    Rejected              = 30;
-    TransactionFail       = 40;
-    Successful            = 50;
+    Created               = 10;
+    Reviewing             = 20;
+    Approved              = 30;
+    Rejected              = 40;
+    Transferring          = 50;
+    TransactionFail       = 60;
+    Successful            = 70;
 }
