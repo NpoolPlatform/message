@@ -144,9 +144,9 @@ enum OrderState {
     OrderStateRestoreExpiredStock        = 220; // -> OrderStateRestoreExpiredStockCheck
     OrderStateRestoreExpiredStockCheck   = 230; // -> OrderStateExpired
     OrderStateRestoreCanceledStock       = 240; // -> OrderStateRestoreCanceledStockCheck
-    OrderStateRestoreCanceledStockCheck  = 250; // -> OrderStateRestoreCanceledAchievement
-    OrderStateRestoreCanceledAchievement = 260; // -> OrderStateRestoreCanceledAchievementCheck
-    OrderStateRestoreCanceledAchievementCheck = 270; // -> OrderStateReturnCanceledBalance
+    OrderStateRestoreCanceledStockCheck  = 250; // -> OrderStateCanceledAchievement
+    OrderStateCanceledAchievement        = 260; // -> OrderStateCanceledAchievementCheck
+    OrderStateCanceledAchievementCheck   = 270; // -> OrderStateReturnCanceledBalance
     OrderStateReturnCanceledBalance      = 280; // -> OrderStateReturnCanceledBalanceCheck
     OrderStateReturnCanceledBalanceCheck = 290; // -> OrderStateCanceled
 
