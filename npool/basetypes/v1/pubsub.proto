@@ -25,6 +25,8 @@ enum MsgID {
     WithdrawSuccessReq           = 2010;
     WithdrwaFailReq              = 2020;
 
+    CreateGoodBenefitReq         = 3000;
+
     CreateSampleMsgReq           = 100000000;
 }
 
