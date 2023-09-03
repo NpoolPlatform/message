@@ -17,9 +17,13 @@ enum MsgID {
     UpdateOpLogHumanReadableReq  = 70;
     CreateNewLoginReq            = 80;
     CreateCommissionReq          = 90;
-    DepositReceivedReq           = 100;
-    CreateTxReq                  = 110;
-    DepositCheckFailReq          = 120;
+
+    DepositReceivedReq           = 1000;
+    DepositCheckFailReq          = 1010;
+
+    WithdrawRequestReq           = 2000;
+    WithdrawSuccessReq           = 2010;
+    WithdrwaFailReq              = 2020;
 
     CreateSampleMsgReq           = 100000000;
 }
