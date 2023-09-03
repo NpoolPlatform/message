@@ -30,6 +30,7 @@ message WithdrawReq {
     // only Update Withdraw & Withdraw Success
     optional string FeeAmount              = 100;
     optional string ReviewID               = 110;
+    optional bool   Rollback               = 120;
 }
 
 message Withdraw {

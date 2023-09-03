@@ -267,6 +267,9 @@
         },
         "ReviewID": {
           "type": "string"
+        },
+        "Rollback": {
+          "type": "boolean"
         }
       }
     }
