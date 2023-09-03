@@ -40,8 +40,14 @@ enum WithdrawState {
     Created               = 10;
     Reviewing             = 20;
     Approved              = 30;
-    Rejected              = 40;
-    Transferring          = 50;
-    TransactionFail       = 60;
-    Successful            = 70;
+    Transferring          = 40;
+    PreRejected           = 50;
+    ReturnRejectedBalance = 60;  // -> Rejected
+    Rejected              = 70;  // ReturnRejectedBalance <- (rollback)
+    PreFail               = 80;
+    ReturnFailBalance     = 90;  // -> TransactionFail
+    TransactionFail       = 100; // ReturnFailBalance <-
+    PreSuccessful         = 110;
+    SpendSuccessfulBalance = 120; // -> Successful
+    Successful            = 130;  // SpendSuccessfulBalance <-
 }

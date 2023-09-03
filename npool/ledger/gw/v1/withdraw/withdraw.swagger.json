@@ -382,12 +382,19 @@
         "Created",
         "Reviewing",
         "Approved",
-        "Rejected",
         "Transferring",
+        "PreRejected",
+        "ReturnRejectedBalance",
+        "Rejected",
+        "PreFail",
+        "ReturnFailBalance",
         "TransactionFail",
+        "PreSuccessful",
+        "SpendSuccessfulBalance",
         "Successful"
       ],
-      "default": "DefaultWithdrawState"
+      "default": "DefaultWithdrawState",
+      "title": "- ReturnRejectedBalance: -\u003e Rejected\n - Rejected: ReturnRejectedBalance \u003c- (rollback)\n - ReturnFailBalance: -\u003e TransactionFail\n - TransactionFail: ReturnFailBalance \u003c-\n - SpendSuccessfulBalance: -\u003e Successful\n - Successful: SpendSuccessfulBalance \u003c-"
     }
   }
 }
