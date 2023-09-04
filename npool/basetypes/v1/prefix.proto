@@ -85,4 +85,5 @@ enum Prefix {
     PrefixAccountLock          = 30000;
 
     PrefixCreateOrder          = 40000;
+    PrefixCreateWithdraw       = 40010;
 }
