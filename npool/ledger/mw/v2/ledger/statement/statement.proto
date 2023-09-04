@@ -64,6 +64,7 @@ message Conds {
     optional basetypes.v1.StringVal IOExtra          = 100;
     optional basetypes.v1.Uint32Val StartAt          = 110;
     optional basetypes.v1.Uint32Val EndAt            = 120;
+    optional basetypes.v1.Uint32SliceVal IOSubTypes  = 130;
 }
 
 message GetStatementsRequest {
