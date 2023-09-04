@@ -113,6 +113,14 @@
         }
       }
     },
+    "v1ExistGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetGoodResponse": {
       "type": "object",
       "properties": {

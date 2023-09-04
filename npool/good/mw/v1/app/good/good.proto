@@ -12,6 +12,7 @@ service Middleware {
     rpc CreateGood     (CreateGoodRequest)     returns (CreateGoodResponse)     {}
     rpc GetGood        (GetGoodRequest)        returns (GetGoodResponse)        {}
     rpc GetGoods       (GetGoodsRequest)       returns (GetGoodsResponse)       {}
+    rpc ExistGood      (ExistGoodRequest)      returns (ExistGoodResponse)      {}
     rpc ExistGoodConds (ExistGoodCondsRequest) returns (ExistGoodCondsResponse) {}
     rpc UpdateGood     (UpdateGoodRequest)     returns (UpdateGoodResponse)     {}
     rpc DeleteGood     (DeleteGoodRequest)     returns (DeleteGoodResponse)     {}
@@ -251,6 +252,14 @@ message GetGoodsRequest {
 message GetGoodsResponse {
     repeated Good Infos = 10;
     uint32        Total = 20;
+}
+
+message ExistGoodRequest {
+    string ID = 10;
+}
+
+message ExistGoodResponse {
+    bool Info = 10;
 }
 
 message ExistGoodCondsRequest {
