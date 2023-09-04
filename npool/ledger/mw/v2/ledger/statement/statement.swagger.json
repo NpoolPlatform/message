@@ -82,6 +82,21 @@
         }
       }
     },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
     "v1Uint32Val": {
       "type": "object",
       "properties": {
@@ -123,6 +138,9 @@
         },
         "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "IOSubTypes": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
         }
       }
     },
