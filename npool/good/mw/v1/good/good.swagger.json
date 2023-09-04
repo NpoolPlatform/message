@@ -39,6 +39,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -134,6 +135,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Good"
           }
         },
@@ -424,7 +426,8 @@
         "GoodLabelInnovationStarter",
         "GoodLabelLoyaltyExclusive"
       ],
-      "default": "DefaultGoodLabel"
+      "default": "DefaultGoodLabel",
+      "title": "- GoodLabelNoviceExclusive: Newbie\n - GoodLabelInnovationStarter: First batch mining\n - GoodLabelLoyaltyExclusive: User with action credis pass threshold"
     },
     "v1GoodReq": {
       "type": "object",

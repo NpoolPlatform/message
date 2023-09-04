@@ -434,16 +434,13 @@
     }
   },
   "definitions": {
-    "CreateOrdersRequestGood": {
+    "CreateOrdersRequestOrderReq": {
       "type": "object",
       "properties": {
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "Units": {
-          "type": "string"
-        },
-        "PromotionID": {
           "type": "string"
         },
         "Parent": {
@@ -473,6 +470,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -514,7 +512,7 @@
         "TargetUserID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "Units": {
@@ -551,7 +549,7 @@
         "UserID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "Units": {
@@ -566,9 +564,6 @@
         "PayWithBalanceAmount": {
           "type": "string"
         },
-        "OrderType": {
-          "$ref": "#/definitions/v1OrderType"
-        },
         "CouponIDs": {
           "type": "array",
           "items": {
@@ -577,9 +572,6 @@
         },
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
-        },
-        "StartMode": {
-          "$ref": "#/definitions/v1OrderStartMode"
         }
       }
     },
@@ -606,9 +598,6 @@
         "PayWithBalanceAmount": {
           "type": "string"
         },
-        "OrderType": {
-          "$ref": "#/definitions/v1OrderType"
-        },
         "CouponIDs": {
           "type": "array",
           "items": {
@@ -618,13 +607,11 @@
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
         },
-        "StartMode": {
-          "$ref": "#/definitions/v1OrderStartMode"
-        },
-        "Goods": {
+        "Orders": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/CreateOrdersRequestGood"
+            "type": "object",
+            "$ref": "#/definitions/CreateOrdersRequestOrderReq"
           }
         }
       }
@@ -635,6 +622,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         }
@@ -649,7 +637,7 @@
         "TargetUserID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "Units": {
@@ -699,6 +687,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         },
@@ -733,6 +722,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         },
@@ -764,6 +754,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         },
@@ -820,6 +811,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         },
@@ -854,6 +846,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         },
@@ -1009,6 +1002,7 @@
         "Coupons": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Coupon"
           }
         },
@@ -1017,15 +1011,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1OrderStartMode": {
-      "type": "string",
-      "enum": [
-        "DefaultOrderStartMode",
-        "OrderStartTBD",
-        "OrderStartConfirmed"
-      ],
-      "default": "DefaultOrderStartMode"
     },
     "v1OrderState": {
       "type": "string",
@@ -1065,7 +1050,8 @@
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state"
+      "description": "-\u003e OrderStateCheckPayment\n - OrderStateCheckPayment: -\u003e OrderStatePaymentTimeout || PaymentTransferReceived\n - OrderStatePaymentTransferReceived: Payment process\n\n-\u003e OrderStatePaymentTransferReceivedCheck (received on blockchain)\n - OrderStatePaymentTransferReceivedCheck: -\u003e OrderStatePaymentTransferBookKept (bookkeeping)\n - OrderStatePaymentTransferBookKept: -\u003e OrderStatePaymentTransferBookKeptCheck\n - OrderStatePaymentTransferBookKeptCheck: -\u003e OrderStatePaymentBalanceSpent (spend locked balance)\n - OrderStatePaymentBalanceSpent: -\u003e OrderStatePaymentBalanceSpentCheck\n - OrderStatePaymentBalanceSpentCheck: -\u003e OrderStateGoodStockTransferred (transfer stock from locked to wait start)\n - OrderStateGoodStockTransferred: -\u003e OrderStateGoodStockTransferredCheck\n - OrderStateGoodStockTransferredCheck: -\u003e OrderStateCommissionAdded (commission added)\n - OrderStateCommissionAdded: -\u003e OrderStateCommissionAddedCheck\n - OrderStateCommissionAddedCheck: -\u003e OrderStateAchievementBookKept\n - OrderStateAchievementBookKept: -\u003e OrderStateAchievementBookKeptCheck\n - OrderStateAchievementBookKeptCheck: -\u003e OrderStatePaid\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n\n-\u003e OrderStatePreCancel\n - OrderStatePreCancel: End or order\n\n-\u003e OrderStatePreCancelCheck\n - OrderStatePreCancelCheck: -\u003e OrderStateRestoreCanceledStock\n - OrderStatePreExpired: -\u003e OrderStatePreExpired\n - OrderStatePreExpiredCheck: -\u003e OrderStateRestoreExpiredStock\n - OrderStateRestoreExpiredStock: Calculation\n\n-\u003e OrderStateRestoreExpiredStockCheck\n - OrderStateRestoreExpiredStockCheck: -\u003e OrderStateExpired\n - OrderStateRestoreCanceledStock: -\u003e OrderStateRestoreCanceledStockCheck\n - OrderStateRestoreCanceledStockCheck: -\u003e OrderStateCancelAchievement\n - OrderStateCancelAchievement: -\u003e OrderStateCancelAchievementCheck\n - OrderStateCancelAchievementCheck: -\u003e OrderStateReturnCanceledBalance\n - OrderStateReturnCanceledBalance: -\u003e OrderStateReturnCanceledBalanceCheck\n - OrderStateReturnCanceledBalanceCheck: -\u003e OrderStateCanceled\n - OrderStateCanceled: End state",
+      "title": "- OrderStateWaitPayment: Common state"
     },
     "v1OrderType": {
       "type": "string",
@@ -1102,9 +1088,6 @@
         "ID": {
           "type": "string"
         },
-        "PaymentID": {
-          "type": "string"
-        },
         "Canceled": {
           "type": "boolean"
         }
@@ -1130,9 +1113,6 @@
         "ID": {
           "type": "string"
         },
-        "PaymentID": {
-          "type": "string"
-        },
         "Canceled": {
           "type": "boolean"
         }
@@ -1156,9 +1136,6 @@
           "type": "string"
         },
         "ID": {
-          "type": "string"
-        },
-        "PaymentID": {
           "type": "string"
         },
         "Canceled": {

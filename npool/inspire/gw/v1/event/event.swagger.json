@@ -136,6 +136,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -314,6 +315,7 @@
         "Coupons": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Coupon"
           }
         },
@@ -373,6 +375,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Event"
           }
         },
