@@ -83,4 +83,6 @@ enum Prefix {
     PrefixScheduler            = 20000;
 
     PrefixAccountLock          = 30000;
+
+    PrefixCreateOrder          = 40000;
 }
