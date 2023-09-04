@@ -14,6 +14,8 @@ enum OrderType {
 enum OrderState {
     DefaultOrderState = 0;
 
+    OrderStateCreated           = 9;
+
     // Common state
     OrderStateWaitPayment       = 10; // -> OrderStateCheckPayment
     OrderStateCheckPayment      = 20; // -> OrderStatePaymentTimeout || PaymentTransferReceived

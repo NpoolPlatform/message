@@ -600,6 +600,7 @@
       "type": "string",
       "enum": [
         "DefaultOrderState",
+        "OrderStateCreated",
         "OrderStateWaitPayment",
         "OrderStateCheckPayment",
         "OrderStatePaymentTransferReceived",
