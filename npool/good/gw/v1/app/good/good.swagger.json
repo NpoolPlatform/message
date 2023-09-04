@@ -261,7 +261,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -435,7 +434,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Good"
           }
         },
@@ -467,7 +465,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Good"
           }
         },
@@ -604,7 +601,6 @@
         "SupportCoins": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/GoodCoinInfo"
           }
         },
@@ -617,7 +613,6 @@
         "RequiredGoods": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Good"
           }
         },
@@ -770,8 +765,7 @@
         "GoodLabelInnovationStarter",
         "GoodLabelLoyaltyExclusive"
       ],
-      "default": "DefaultGoodLabel",
-      "title": "- GoodLabelNoviceExclusive: Newbie\n - GoodLabelInnovationStarter: First batch mining\n - GoodLabelLoyaltyExclusive: User with action credis pass threshold"
+      "default": "DefaultGoodLabel"
     },
     "v1GoodStartMode": {
       "type": "string",
