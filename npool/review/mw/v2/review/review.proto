@@ -136,7 +136,7 @@ message GetReviewResponse {
 }
 
 message ExistReviewCondsRequest {
-    Conds conds = 10;
+    Conds Conds = 10;
 }
 
 message ExistReviewCondsResponse {
