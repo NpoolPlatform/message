@@ -87,9 +87,6 @@
         "UserID": {
           "type": "string"
         },
-        "LangID": {
-          "type": "string"
-        },
         "CoinTypeID": {
           "type": "string"
         },

@@ -20,7 +20,6 @@ service Gateway {
 message CreateAppUserDepositRequest {
     string AppID        = 10;
     string UserID       = 20;
-    string LangID       = 21;
     string CoinTypeID   = 30;
     string Amount       = 40;
     string TargetAppID  = 50;
