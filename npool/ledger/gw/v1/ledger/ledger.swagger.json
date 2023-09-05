@@ -79,38 +79,6 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/get/intervalgenerals": {
-      "post": {
-        "operationId": "Gateway_GetIntervalLedgers",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetIntervalLedgersResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetIntervalLedgersRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
@@ -159,49 +127,6 @@
       }
     },
     "v1GetAppLedgersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Ledger"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetIntervalLedgersRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetIntervalLedgersResponse": {
       "type": "object",
       "properties": {
         "Infos": {

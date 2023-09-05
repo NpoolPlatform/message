@@ -15,13 +15,6 @@ service Gateway {
         };
     }
 
-    rpc GetIntervalLedgers (GetIntervalLedgersRequest) returns (GetIntervalLedgersResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/intervalgenerals"
-            body: "*"
-        };
-    }
-
     rpc GetAppLedgers (GetAppLedgersRequest) returns (GetAppLedgersResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/generals"
@@ -56,21 +49,7 @@ message GetLedgersRequest {
 
 message GetLedgersResponse {
     repeated Ledger Infos = 10;
-    uint32           Total = 20;
-}
-
-message GetIntervalLedgersRequest {
-    string AppID   = 10;
-    string UserID  = 20;
-    uint32 StartAt = 30;
-    uint32 EndAt   = 40;
-    int32  Offset  = 50;
-    int32  Limit   = 60;
-}
-
-message GetIntervalLedgersResponse {
-    repeated Ledger Infos = 10;
-    uint32           Total = 20;
+    uint32          Total = 20;
 }
 
 message GetAppLedgersRequest {
@@ -81,5 +60,5 @@ message GetAppLedgersRequest {
 
 message GetAppLedgersResponse {
     repeated Ledger Infos = 10;
-    uint32           Total = 20;
+    uint32          Total = 20;
 }
