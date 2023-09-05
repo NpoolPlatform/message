@@ -65,6 +65,7 @@ message Conds {
     optional basetypes.v1.Uint32Val StartAt          = 110;
     optional basetypes.v1.Uint32Val EndAt            = 120;
     optional basetypes.v1.Uint32SliceVal IOSubTypes  = 130;
+    optional basetypes.v1.StringSliceVal CoinTypeIDs = 140;
 }
 
 message GetStatementsRequest {
