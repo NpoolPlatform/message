@@ -66,8 +66,9 @@ message Conds {
     optional basetypes.v1.StringVal ID    = 10;
     optional basetypes.v1.StringVal AppID = 20;
     optional basetypes.v1.StringVal GoodID = 30;
-    optional basetypes.v1.StringVal AppGoodID = 40;
-    optional basetypes.v1.StringVal TopMostID = 50;
+    optional basetypes.v1.StringVal AppGoodID   = 40;
+    optional basetypes.v1.StringVal TopMostID   = 50;
+    optional basetypes.v1.Uint32Val TopMostType = 60;
 }
 
 message CreateTopMostGoodRequest {
