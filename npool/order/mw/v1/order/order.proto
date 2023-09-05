@@ -17,6 +17,7 @@ service Middleware {
     rpc GetOrder        (GetOrderRequest)       returns (GetOrderResponse)       {}
     rpc GetOrders       (GetOrdersRequest)      returns (GetOrdersResponse)      {}
     rpc SumOrderUnits   (SumOrderUnitsRequest)  returns (SumOrderUnitsResponse)  {}
+    rpc CountOrders     (CountOrdersRequest)    returns (CountOrdersResponse)    {}
     rpc ExistOrder      (ExistOrderRequest)      returns (ExistOrderResponse)      {}
     rpc ExistOrderConds (ExistOrderCondsRequest) returns (ExistOrderCondsResponse) {}
     rpc DeleteOrder     (DeleteOrderRequest)     returns (DeleteOrderResponse)     {}
@@ -270,6 +271,14 @@ message SumOrderUnitsRequest {
 
 message SumOrderUnitsResponse {
     string Info = 10;
+}
+
+message CountOrdersRequest {
+    Conds Conds  = 10;
+}
+
+message CountOrdersResponse {
+    uint32 Info = 10;
 }
 
 message ExistOrderRequest {
