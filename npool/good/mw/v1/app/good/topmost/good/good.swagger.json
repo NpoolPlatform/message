@@ -62,6 +62,9 @@
         },
         "TopMostID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "TopMostType": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -233,6 +236,18 @@
         },
         "Price": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
