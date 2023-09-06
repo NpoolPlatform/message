@@ -598,6 +598,10 @@
         },
         "CancelState": {
           "$ref": "#/definitions/v1OrderState"
+        },
+        "PaidAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
