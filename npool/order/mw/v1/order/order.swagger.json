@@ -441,6 +441,11 @@
         "CancelState": {
           "$ref": "#/definitions/v1OrderState"
         },
+        "PaidAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:paid_at\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
