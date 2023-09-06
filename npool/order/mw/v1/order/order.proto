@@ -73,7 +73,6 @@ message OrderReq {
     optional uint32 CompensateHours                       = 370;
     optional bool   Rollback                              = 380;
     optional basetypes.order.v1.OrderState CancelState    = 390;
-    optional uint32 PaidAt                                = 400;
 }
 
 message Order {
