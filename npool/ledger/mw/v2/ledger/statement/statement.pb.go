@@ -154,8 +154,8 @@ type Statement struct {
 	IOSubType    v1.IOSubType `protobuf:"varint,60,opt,name=IOSubType,proto3,enum=basetypes.ledger.v1.IOSubType" json:"IOSubType,omitempty"`
 	// @inject_tag: sql:"amount"
 	Amount string `protobuf:"bytes,70,opt,name=Amount,proto3" json:"Amount,omitempty" sql:"amount"`
-	// @inject_tag: sql:"io_extra"
-	IOExtra string `protobuf:"bytes,100,opt,name=IOExtra,proto3" json:"IOExtra,omitempty" sql:"io_extra"`
+	// @inject_tag: sql:"io_extra_v1"
+	IOExtra string `protobuf:"bytes,100,opt,name=IOExtra,proto3" json:"IOExtra,omitempty" sql:"io_extra_v1"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,110,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
