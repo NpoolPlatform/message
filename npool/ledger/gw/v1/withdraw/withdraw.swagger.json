@@ -168,7 +168,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -197,9 +196,6 @@
         },
         "AccountType": {
           "$ref": "#/definitions/v1SignMethod"
-        },
-        "Account": {
-          "type": "string"
         },
         "VerificationCode": {
           "type": "string"
@@ -236,7 +232,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Withdraw"
           }
         },
@@ -268,7 +263,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Withdraw"
           }
         },
@@ -303,7 +297,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Withdraw"
           }
         },
@@ -327,8 +320,7 @@
         "Google",
         "Username"
       ],
-      "default": "DefaultSignMethod",
-      "title": "- Mobile: For signup, signin, verify\n - Email: For signup, signin, verify\n - Twitter: For signin\n - Github: For signin\n - Facebook: For signin\n - Linkedin: For signin\n - Wechat: For signin\n - Google: For signin, verify\n - Username: For signup, signin"
+      "default": "DefaultSignMethod"
     },
     "v1Withdraw": {
       "type": "object",
@@ -393,8 +385,7 @@
         "SpendSuccessfulBalance",
         "Successful"
       ],
-      "default": "DefaultWithdrawState",
-      "title": "- ReturnRejectedBalance: -\u003e Rejected\n - Rejected: ReturnRejectedBalance \u003c- (rollback)\n - ReturnFailBalance: -\u003e TransactionFail\n - TransactionFail: ReturnFailBalance \u003c-\n - SpendSuccessfulBalance: -\u003e Successful\n - Successful: SpendSuccessfulBalance \u003c-"
+      "default": "DefaultWithdrawState"
     }
   }
 }

@@ -61,7 +61,6 @@ message CreateWithdrawRequest {
     string AccountID         = 40;
     string Amount            = 50;
     basetypes.v1.SignMethod AccountType = 60;
-    string Account           = 70;
     string VerificationCode  = 80;
 }
 
