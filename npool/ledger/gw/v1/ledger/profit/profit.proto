@@ -104,7 +104,7 @@ message GetIntervalProfitsResponse {
 }
 
 message GoodProfit {
-    string GoodID     = 10;
+    string AppGoodID  = 10;
     string GoodName   = 20;
     string GoodUnit   = 30;
     uint32 GoodServicePeriodDays = 31;
