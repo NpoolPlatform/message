@@ -125,6 +125,10 @@ message Good {
     string           GoodTotal          = 370;
     // @inject_tag: sql:"good_spot_quantity"
     string           GoodSpotQuantity   = 380;
+    // @inject_tag: sql:"good_in_service"
+    string           GoodInService      = 390;
+    // @inject_tag: sql:"good_sold"
+    string           GoodSold           = 400;
 
     // @inject_tag: sql:"start_at"
     uint32           StartAt            = 410;
