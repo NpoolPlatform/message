@@ -73,6 +73,8 @@ message OrderReq {
     optional uint32 CompensateHours                       = 370;
     optional bool   Rollback                              = 380;
     optional basetypes.order.v1.OrderState CancelState    = 390;
+    optional string AppGoodStockLockID                    = 400;
+    optional string LedgerLockID                          = 410;
 }
 
 message Order {
@@ -178,6 +180,10 @@ message Order {
     basetypes.order.v1.OrderState CancelState    = 490;
     // @inject_tag: sql:paid_at"
     uint32 PaidAt                                = 500;
+    // @inject_tag: sql:app_good_stock_lock_id"
+    string AppGoodStockLockID                    = 510;
+    // @inject_tag: sql:ledger_lock_id"
+    string LedgerLockID                          = 520;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt                             = 1000;
