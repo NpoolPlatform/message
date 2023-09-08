@@ -910,6 +910,9 @@
         "GoodID": {
           "type": "string"
         },
+        "AppGoodID": {
+          "type": "string"
+        },
         "GoodName": {
           "type": "string"
         },

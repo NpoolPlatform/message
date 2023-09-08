@@ -130,6 +130,7 @@ message Order {
     bool   CoinPresale            = 111;
 
     string GoodID                 = 120;
+    string AppGoodID              = 121;
     string GoodName               = 130;
     string GoodUnit               = 131;
     uint32 GoodServicePeriodDays  = 132;
