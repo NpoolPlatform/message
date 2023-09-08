@@ -67,7 +67,7 @@
         }
       }
     },
-    "v1ListSubsystemRequest": {
+    "v1ListSubsystemsRequest": {
       "type": "object"
     }
   }

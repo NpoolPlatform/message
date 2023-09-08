@@ -19,7 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_ListSubsystem_FullMethodName    = "/scheduler.middleware.v1.Middleware/ListSubsystem"
+	Middleware_ListSubsystems_FullMethodName   = "/scheduler.middleware.v1.Middleware/ListSubsystems"
 	Middleware_EnableSubsystem_FullMethodName  = "/scheduler.middleware.v1.Middleware/EnableSubsystem"
 	Middleware_DisableSubsystem_FullMethodName = "/scheduler.middleware.v1.Middleware/DisableSubsystem"
 )
@@ -28,7 +28,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	ListSubsystem(ctx context.Context, in *ListSubsystemRequest, opts ...grpc.CallOption) (*ListSubsystemRequest, error)
+	ListSubsystems(ctx context.Context, in *ListSubsystemsRequest, opts ...grpc.CallOption) (*ListSubsystemsRequest, error)
 	EnableSubsystem(ctx context.Context, in *EnableSubsystemRequest, opts ...grpc.CallOption) (*EnableSubsystemRequest, error)
 	DisableSubsystem(ctx context.Context, in *DisableSubsystemRequest, opts ...grpc.CallOption) (*DisableSubsystemRequest, error)
 }
@@ -41,9 +41,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) ListSubsystem(ctx context.Context, in *ListSubsystemRequest, opts ...grpc.CallOption) (*ListSubsystemRequest, error) {
-	out := new(ListSubsystemRequest)
-	err := c.cc.Invoke(ctx, Middleware_ListSubsystem_FullMethodName, in, out, opts...)
+func (c *middlewareClient) ListSubsystems(ctx context.Context, in *ListSubsystemsRequest, opts ...grpc.CallOption) (*ListSubsystemsRequest, error) {
+	out := new(ListSubsystemsRequest)
+	err := c.cc.Invoke(ctx, Middleware_ListSubsystems_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,7 +72,7 @@ func (c *middlewareClient) DisableSubsystem(ctx context.Context, in *DisableSubs
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	ListSubsystem(context.Context, *ListSubsystemRequest) (*ListSubsystemRequest, error)
+	ListSubsystems(context.Context, *ListSubsystemsRequest) (*ListSubsystemsRequest, error)
 	EnableSubsystem(context.Context, *EnableSubsystemRequest) (*EnableSubsystemRequest, error)
 	DisableSubsystem(context.Context, *DisableSubsystemRequest) (*DisableSubsystemRequest, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -82,8 +82,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) ListSubsystem(context.Context, *ListSubsystemRequest) (*ListSubsystemRequest, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListSubsystem not implemented")
+func (UnimplementedMiddlewareServer) ListSubsystems(context.Context, *ListSubsystemsRequest) (*ListSubsystemsRequest, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListSubsystems not implemented")
 }
 func (UnimplementedMiddlewareServer) EnableSubsystem(context.Context, *EnableSubsystemRequest) (*EnableSubsystemRequest, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EnableSubsystem not implemented")
@@ -104,20 +104,20 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_ListSubsystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListSubsystemRequest)
+func _Middleware_ListSubsystems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSubsystemsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).ListSubsystem(ctx, in)
+		return srv.(MiddlewareServer).ListSubsystems(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_ListSubsystem_FullMethodName,
+		FullMethod: Middleware_ListSubsystems_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ListSubsystem(ctx, req.(*ListSubsystemRequest))
+		return srv.(MiddlewareServer).ListSubsystems(ctx, req.(*ListSubsystemsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -166,8 +166,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "ListSubsystem",
-			Handler:    _Middleware_ListSubsystem_Handler,
+			MethodName: "ListSubsystems",
+			Handler:    _Middleware_ListSubsystems_Handler,
 		},
 		{
 			MethodName: "EnableSubsystem",
