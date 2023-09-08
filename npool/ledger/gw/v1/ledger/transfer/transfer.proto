@@ -36,7 +36,6 @@ message Transfer {
 message CreateTransferRequest {
     string AppID            = 10;
     string UserID           = 20;
-    string Account          = 30;
     basetypes.v1.SignMethod AccountType = 40;
     string VerificationCode = 50;
     string TargetUserID     = 60;

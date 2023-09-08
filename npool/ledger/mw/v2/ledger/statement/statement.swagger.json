@@ -264,7 +264,7 @@
         },
         "IOExtra": {
           "type": "string",
-          "title": "@inject_tag: sql:\"io_extra\""
+          "title": "@inject_tag: sql:\"io_extra_v1\""
         },
         "CreatedAt": {
           "type": "integer",

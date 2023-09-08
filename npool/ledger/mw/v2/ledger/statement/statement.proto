@@ -46,7 +46,7 @@ message Statement {
     basetypes.ledger.v1.IOSubType   IOSubType                      = 60;
     // @inject_tag: sql:"amount"
     string      Amount                         = 70;
-    // @inject_tag: sql:"io_extra"
+    // @inject_tag: sql:"io_extra_v1"
     string      IOExtra                        = 100;
     // @inject_tag: sql:"created_at"
     uint32      CreatedAt                      = 110;
