@@ -156,7 +156,7 @@
         "Rollback": {
           "type": "boolean"
         },
-        "LockedID": {
+        "LockID": {
           "type": "string"
         }
       }
