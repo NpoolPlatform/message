@@ -219,3 +219,11 @@ enum OrderStartMode {
     OrderStartTBD        = 10;
     OrderStartConfirmed  = 20;
 }
+
+enum OrderLockType {
+    DefaultOrderLockType = 0;
+
+    LockBalance    = 10;
+    LockStock      = 20;
+    LockCommission = 30;
+}

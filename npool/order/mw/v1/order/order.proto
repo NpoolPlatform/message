@@ -75,7 +75,6 @@ message OrderReq {
     optional basetypes.order.v1.OrderState CancelState    = 390;
     optional string AppGoodStockLockID                    = 400;
     optional string LedgerLockID                          = 410;
-    optional string CommissionLockID                      = 420;
 }
 
 message Order {
@@ -185,8 +184,6 @@ message Order {
     string AppGoodStockLockID                    = 510;
     // @inject_tag: sql:"ledger_lock_id"
     string LedgerLockID                          = 520;
-    // @inject_tag: sql:"commission_lock_id"
-    string CommissionLockID                      = 530;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt                             = 1000;

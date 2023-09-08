@@ -454,10 +454,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ledger_lock_id\""
         },
-        "CommissionLockID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"commission_lock_id\""
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -615,9 +611,6 @@
           "type": "string"
         },
         "LedgerLockID": {
-          "type": "string"
-        },
-        "CommissionLockID": {
           "type": "string"
         }
       }
