@@ -971,6 +971,9 @@
         "PayWithBalanceAmount": {
           "type": "string"
         },
+        "TransferAmount": {
+          "type": "string"
+        },
         "PayWithParent": {
           "type": "boolean"
         },
