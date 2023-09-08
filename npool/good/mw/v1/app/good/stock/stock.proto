@@ -25,6 +25,7 @@ message StockReq {
     optional string InService  = 100;
     optional bool   ChargeBack = 110;
     optional bool   Rollback   = 120;
+    optional string LockedID   = 130;
 }
 
 message Stock {
