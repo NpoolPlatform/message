@@ -210,7 +210,7 @@ enum BenefitState {
 
     BenefitWait       = 10;
     BenefitCalculated = 20;
-    BenefitDone       = 30;
+    BenefitBookKept   = 30;
 }
 
 enum OrderStartMode {
