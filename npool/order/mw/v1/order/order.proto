@@ -179,13 +179,13 @@ message Order {
     // @inject_tag: sql:"cancel_state"
     string CancelStateStr                        = 480;
     basetypes.order.v1.OrderState CancelState    = 490;
-    // @inject_tag: sql:paid_at"
+    // @inject_tag: sql:"paid_at"
     uint32 PaidAt                                = 500;
-    // @inject_tag: sql:app_good_stock_lock_id"
+    // @inject_tag: sql:"app_good_stock_lock_id"
     string AppGoodStockLockID                    = 510;
-    // @inject_tag: sql:ledger_lock_id"
+    // @inject_tag: sql:"ledger_lock_id"
     string LedgerLockID                          = 520;
-    // @inject_tag: sql:commission_lock_id"
+    // @inject_tag: sql:"commission_lock_id"
     string CommissionLockID                      = 530;
 
     // @inject_tag: sql:"created_at"

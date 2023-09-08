@@ -528,14 +528,14 @@ type Order struct {
 	// @inject_tag: sql:"cancel_state"
 	CancelStateStr string        `protobuf:"bytes,480,opt,name=CancelStateStr,proto3" json:"CancelStateStr,omitempty" sql:"cancel_state"`
 	CancelState    v1.OrderState `protobuf:"varint,490,opt,name=CancelState,proto3,enum=basetypes.order.v1.OrderState" json:"CancelState,omitempty"`
-	// @inject_tag: sql:paid_at"
-	PaidAt uint32 `protobuf:"varint,500,opt,name=PaidAt,proto3" json:"PaidAt,omitempty"`
-	// @inject_tag: sql:app_good_stock_lock_id"
-	AppGoodStockLockID string `protobuf:"bytes,510,opt,name=AppGoodStockLockID,proto3" json:"AppGoodStockLockID,omitempty"`
-	// @inject_tag: sql:ledger_lock_id"
-	LedgerLockID string `protobuf:"bytes,520,opt,name=LedgerLockID,proto3" json:"LedgerLockID,omitempty"`
-	// @inject_tag: sql:commission_lock_id"
-	CommissionLockID string `protobuf:"bytes,530,opt,name=CommissionLockID,proto3" json:"CommissionLockID,omitempty"`
+	// @inject_tag: sql:"paid_at"
+	PaidAt uint32 `protobuf:"varint,500,opt,name=PaidAt,proto3" json:"PaidAt,omitempty" sql:"paid_at"`
+	// @inject_tag: sql:"app_good_stock_lock_id"
+	AppGoodStockLockID string `protobuf:"bytes,510,opt,name=AppGoodStockLockID,proto3" json:"AppGoodStockLockID,omitempty" sql:"app_good_stock_lock_id"`
+	// @inject_tag: sql:"ledger_lock_id"
+	LedgerLockID string `protobuf:"bytes,520,opt,name=LedgerLockID,proto3" json:"LedgerLockID,omitempty" sql:"ledger_lock_id"`
+	// @inject_tag: sql:"commission_lock_id"
+	CommissionLockID string `protobuf:"bytes,530,opt,name=CommissionLockID,proto3" json:"CommissionLockID,omitempty" sql:"commission_lock_id"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
