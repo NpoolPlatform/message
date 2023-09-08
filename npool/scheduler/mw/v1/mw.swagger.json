@@ -45,7 +45,7 @@
         }
       }
     },
-    "v1DisableSubsystemRequest": {
+    "v1DisableSubsystemResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -56,7 +56,7 @@
         }
       }
     },
-    "v1EnableSubsystemRequest": {
+    "v1EnableSubsystemResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -67,8 +67,16 @@
         }
       }
     },
-    "v1ListSubsystemsRequest": {
-      "type": "object"
+    "v1ListSubsystemsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     }
   }
 }
