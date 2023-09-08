@@ -51,7 +51,7 @@
         "DefaultBenefitState",
         "BenefitWait",
         "BenefitCalculated",
-        "BenefitDone"
+        "BenefitBookKept"
       ],
       "default": "DefaultBenefitState"
     },
