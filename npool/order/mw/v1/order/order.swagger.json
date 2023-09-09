@@ -604,9 +604,6 @@
         "Rollback": {
           "type": "boolean"
         },
-        "CancelState": {
-          "$ref": "#/definitions/v1OrderState"
-        },
         "AppGoodStockLockID": {
           "type": "string"
         },
