@@ -14,155 +14,106 @@ enum OrderType {
 enum OrderState {
     DefaultOrderState = 0;
 
-    OrderStateCreated           = 9;
+    OrderStateCreated           = 10; // -> OrderStateWaitPayment
 
     // Common state
-    OrderStateWaitPayment       = 10; // -> OrderStateCheckPayment
-    OrderStateCheckPayment      = 20; // -> OrderStatePaymentTimeout || PaymentTransferReceived
+    OrderStateWaitPayment       = 20; // -> OrderStatePaymentTimeout || OrderStatePaymentTransferReceived || OrderStatePreCancel
 
     // Payment process
-    OrderStatePaymentTransferReceived      = 30;  // -> OrderStatePaymentTransferReceivedCheck (received on blockchain)
-    OrderStatePaymentTransferReceivedCheck = 40;  // -> OrderStatePaymentTransferBookKept (bookkeeping)
-    OrderStatePaymentTransferBookKept      = 50;  // -> OrderStatePaymentTransferBookKeptCheck
-    OrderStatePaymentTransferBookKeptCheck = 60;  // -> OrderStatePaymentBalanceSpent (spend locked balance)
-    OrderStatePaymentBalanceSpent          = 70;  // -> OrderStatePaymentBalanceSpentCheck
-    OrderStatePaymentBalanceSpentCheck     = 80;  // -> OrderStateGoodStockTransferred (transfer stock from locked to wait start)
-    OrderStateGoodStockTransferred         = 90;  // -> OrderStateGoodStockTransferredCheck
-    OrderStateGoodStockTransferredCheck    = 100; // -> OrderStateCommissionAdded (commission added)
-    OrderStateCommissionAdded              = 110; // -> OrderStateCommissionAddedCheck
-    OrderStateCommissionAddedCheck         = 120; // -> OrderStateAchievementBookKept
-    OrderStateAchievementBookKept          = 130; // -> OrderStateAchievementBookKeptCheck
-    OrderStateAchievementBookKeptCheck     = 140; // -> OrderStatePaid
+    OrderStatePaymentTransferReceived      = 30;  // -> OrderStatePaymentTransferBookKept (bookkeeping)
+    OrderStatePaymentTransferBookKeeping   = 40;  // -> OrderStatePaymentBalanceSpent (spend locked balance)
+    OrderStatePaymentSpendBalance          = 50;  // -> OrderStateGoodStockTransferred (transfer stock from locked to wait start)
+    OrderStateTransferGoodStock            = 60;  // -> OrderStateCommissionAdded (commission added)
+    OrderStateAddCommission                = 70; // -> OrderStateAchievementBookKept
+    OrderStateAchievementBookKeeping       = 80; // -> OrderStatePaid
 
     // Paid
-    OrderStatePaid              = 150;
-    OrderStateInService         = 160;
+    OrderStatePaid              = 90;  // -> OrderStatePreCancel || OrderStateInService
+    OrderStateInService         = 100; // -> OrderStatePreCancel || OrderStatePreExpired
 
     // Timeout of order
-    OrderStatePaymentTimeout    = 170; // -> OrderStatePreCancel
+    OrderStatePaymentTimeout    = 110; // -> OrderStatePreCancel
 
 
-     /**
-     *
-     *                   WaitPayment
-     *                        |
-     *                        |
-     *                        v
-     *                   CheckPayment---------------------------------------------|
-     *                        |                                    |              |
-     *                        |                                    |              |
-     *                        v                                    |              v
-     *                 TransferReceived                            |         PaymentTimeout
-     *                        |                                    |              |
-     *                        |                                    |              |
-     *                        v                                    |              |
-     *         ------->TransferReceivedCheck                       |              |
-     *         |              |                                    |              |
-     *         |              |                                    |              |
-     *         |              v                                    |              |
-     *   Rollback------TransferBookKept                            |              |
-     *                        |                                    |              |
-     *                        |                                    |              |
-     *                        v                                    |              |
-     *         ----->TransferBookKeptCheck                         |              |
-     *         |              |                                    |              |
-     *         |              |                                    |              |
-     *         |              v                                    |              |
-     *   Rollback---------BalanceSpent                             |              |
-     *                        |                                    |              |
-     *                        |                                    |              |
-     *                        v                                    |              |
-     *         -------->BalanceSpentCheck                          |<--------------
-     *         |              |                                    |
-     *         |              |                                    |
-     *         |              v                                    |
-     *   Rollback-----GoodStockTransferred                         |
-     *                        |                                    |
-     *                        |                                    |
-     *                        v                                    |
-     *         ------>GoodStockTransferredCheck                    |
-     *         |              |                                    |
-     *         |              |                                    |
-     *         |              v                                    |
-     *   Rollback-------CommissionAdded                            |
-     *                        |                                    |
-     *                        |                                    |
-     *                        v                                    |
-     *         ------>CommissionAddedCheck                         |
-     *         |              |                                    |
-     *         |              |                                    |
-     *         |              v                                    |
-     *   Rollback-----AchievementBookKept                          |
-     *                        |                                    |
-     *                        |                                    |
-     *                        v                                    |
-     *         ------>AchievementBookKeptCheck                     |
-     *         |              |                                    |
-     *         |              |                                    |
-     *         |              v                                    |
-     *   Rollback------------Paid----------------------------------|
-     *                        |                                    |
-     *                        |                                    |
-     *                        v                                    |
-     *                   InService---------------------------------|
-     *                        |                                    |
-     *                        |                                    |              
-     *                        v                                    v              
-     *                   PreExpired                            PreCancel
-     *                        |                                    |             
-     *                        |                                    |     
-     *                        v                                    v                               
-     *         ------->PreExpiredCheck                        PreCancelCheck<-----------------------
-     *         |              |                                    |                               |
-     *         |              |                                    |                               |
-     *         |              v                                    v                               |
-     *   Rollback------RestoreExpiredStock                 RestoreCanceledStock-----------------Rollback
-     *                        |                                    |                              
-     *                        |                                    |     
-     *                        v                                    v                               
-     *         ------->RestoreExpiredStockCheck            RestoreCanceledStockCheck<---------------
-     *         |              |                                    |                               |
-     *         |              |                                    |                               |
-     *         |              v                                    v                               |
-     *   Rollback----------Expired                          CanceledAchievement----------------Rollback
-     *                                                             |                               
-     *                                                             |                               
-     *                                                             v                               
-     *                                                     CanceledAchievementCheck<----------------
-     *                                                             |                               |
-     *                                                             |                               |
-     *                                                             v                               |
-     *                                                     ReturnCanceledBalance----------------Rollback
-     *                                                             |                              
-     *                                                             |     
-     *                                                             v                               
-     *                                                     ReturnCanceledBalanceCheck<--------------
-     *                                                             |                               |
-     *                                                             |                               |
-     *                                                             v                               |
-     *                                                          Canceled------------------------Rollback
+     /*
+                           Created
+                             |
+                             |
+                             v
+                        WaitPayment----------------------------------------------|
+                             |                                    |              |
+                             |                                    |              |
+                             |                                    |              v
+                             v                                    |         PaymentTimeout
+              ------->TransferReceived                            |              |
+              |              |                                    |              |
+              |              |                                    |              |
+              |              v                                    |              |
+        Rollback----->TransferBookKeeping                         |              |
+              |              |                                    |              |
+              |              |                                    |              |
+              |              v                                    |              |
+        Rollback----->TransferSpendBalance                        |              |
+              |              |                                    |
+              |              |                                    |
+              |              v                                    |
+        Rollback---->TransferGoodStock                            |
+              |              |                                    |
+              |              |                                    |
+              |              v                                    |
+        Rollback------>AddCommission                              |
+              |              |                                    |
+              |              |                                    |
+              |              v                                    |
+        Rollback----->AchievementBookKeeping                      |
+              |              |                                    |
+              |              |                                    |
+              |              v                                    |
+        Rollback------------Paid----------------------------------|
+                             |                                    |
+                             |                                    |
+                             v                                    |
+                        InService---------------------------------|
+                             |                                    |
+                             |                                    |
+                             v                                    |
+                        PreExpired                                |
+                             |                                    |
+                             |                                    |
+                             v                                    v
+              ------->PreExpiredCheck                        PreCancel<----------------------------
+              |              |                                    |                               |
+              |              |                                    |                               |
+              |              v                                    v                               |
+        Rollback----->RestoreExpiredStock                 RestoreCanceledStock<----------------Rollback
+              |              |                                    |                               |
+              |              |                                    |                               |
+              |              v                                    v                               |
+        Rollback----------Expired                          CanceledAchievement<---------------Rollback
+                                                                  |                               |
+                                                                  |                               |
+                                                                  v                               |
+                                                          ReturnCanceledBalance<---------------Rollback
+                                                                  |                               |
+                                                                  |                               |
+                                                                  v                               |
+                                                               Canceled------------------------Rollback
      *
      */
 
     // End or order
-    OrderStatePreCancel         = 180; // -> OrderStatePreCancelCheck
-    OrderStatePreCancelCheck    = 190; // -> OrderStateRestoreCanceledStock
-    OrderStatePreExpired        = 200; // -> OrderStatePreExpired
-    OrderStatePreExpiredCheck   = 210; // -> OrderStateRestoreExpiredStock
+    OrderStatePreCancel         = 120; // -> OrderStateRestoreCanceledStock
+    OrderStatePreExpired        = 130; // -> OrderStateRestoreExpiredStock
 
     // Calculation
-    OrderStateRestoreExpiredStock        = 220; // -> OrderStateRestoreExpiredStockCheck
-    OrderStateRestoreExpiredStockCheck   = 230; // -> OrderStateExpired
-    OrderStateRestoreCanceledStock       = 240; // -> OrderStateRestoreCanceledStockCheck
-    OrderStateRestoreCanceledStockCheck  = 250; // -> OrderStateCancelAchievement
-    OrderStateCancelAchievement          = 260; // -> OrderStateCancelAchievementCheck
-    OrderStateCancelAchievementCheck     = 270; // -> OrderStateReturnCanceledBalance
-    OrderStateReturnCanceledBalance      = 280; // -> OrderStateReturnCanceledBalanceCheck
-    OrderStateReturnCanceledBalanceCheck = 290; // -> OrderStateCanceled
+    OrderStateRestoreExpiredStock        = 140; // -> OrderStateExpired
+    OrderStateRestoreCanceledStock       = 150; // -> OrderStateCancelAchievement
+    OrderStateCancelAchievement          = 160; // -> OrderStateReturnCanceledBalance
+    OrderStateReturnCanceledBalance      = 170; // -> OrderStateCanceled
 
     // End state
-    OrderStateCanceled          = 300;
-    OrderStateExpired           = 310;
+    OrderStateCanceled          = 180;
+    OrderStateExpired           = 190;
 
     // Delivery order state
 }
