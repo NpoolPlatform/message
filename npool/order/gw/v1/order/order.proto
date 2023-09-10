@@ -166,6 +166,9 @@ message Order {
     basetypes.order.v1.InvestmentType InvestmentType = 420;
     repeated Coupon Coupons       = 500;
     uint32 LastBenefitAt          = 510;
+
+    bool   UserSetCanceled        = 520;
+    bool   AdminSetCanceled       = 530;
 }
 
 message CreateOrderRequest {

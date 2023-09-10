@@ -1015,6 +1015,12 @@
         "LastBenefitAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "UserSetCanceled": {
+          "type": "boolean"
+        },
+        "AdminSetCanceled": {
+          "type": "boolean"
         }
       }
     },
