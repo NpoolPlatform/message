@@ -80,34 +80,30 @@ enum OrderState {
                              |                                    |              |
                              |                                    |              |
                              v                                    |              |
-        |---------->TransferGoodStockWaitStart                    |              |
+    Rollback------->TransferGoodStockWaitStart                    |              |
         |                    |                                    |              |
         |                    |                                    |              |
         |                    v                                    |              |
-        --------------->UpdateInServiceChilds                     |              |
+    Rollback-------->UpdateInServiceChilds                        |              |
         |                    |                                    |              |
         |                    |                                    |              |
         |                    v                                    |              |
-        --------------- InService---------------------------------|--------------|
+    Rollback------------- InService-------------------------------|--------------|
                              |                                    |
                              |                                    |
                              v                                    |
-              |----> TransferGoodStockInService                   |
-              |              |                                    |
-              |              |                                    |
-              |              v                                    | 
-              --------->UpdateExpiredChilds                       | 
+        Rollback-------->PreExpired                               | 
               |              |                                    | 
               |              |                                    | 
               |              v                                    v 
-              ----------->PreExpired                         PreCancel
+        Rollback--->RestoreExpiredStock                       PreCancel
               |              |                                    |
               |              |                                    |
               |              v                                    v
-        Rollback----->RestoreExpiredStock                 RestoreCanceledStock
-              |              |                                    |
-              |              |                                    |
-              |              v                                    v
+        Rollback----->UpdateExpiredChilds                 RestoreCanceledStock<----------------Rollback
+              |              |                                    |                               |
+              |              |                                    |                               |
+              |              v                                    v                               |
         Rollback----------Expired                          CanceledAchievement<----------------Rollback
                                                                   |                               |
                                                                   |                               |
