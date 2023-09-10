@@ -23,16 +23,18 @@ enum OrderState {
     OrderStatePaymentTransferReceived      = 30;  // -> OrderStatePaymentTransferBookKept (bookkeeping)
     OrderStatePaymentTransferBookKeeping   = 40;  // -> OrderStatePaymentBalanceSpent (spend locked balance)
     OrderStatePaymentSpendBalance          = 50;  // -> OrderStateGoodStockTransferred (transfer stock from locked to wait start)
-    OrderStateTransferGoodStock            = 60;  // -> OrderStateCommissionAdded (commission added)
+    OrderStateTransferGoodStockLocked      = 60;  // -> OrderStateCommissionAdded (commission added)
     OrderStateAddCommission                = 70; // -> OrderStateAchievementBookKept
     OrderStateAchievementBookKeeping       = 80; // -> OrderStatePaid
 
     // Paid
-    OrderStatePaid              = 90;  // -> OrderStatePreCancel || OrderStateInService
-    OrderStateInService         = 100; // -> OrderStatePreCancel || OrderStatePreExpired
+    OrderStatePaid              = 90;  // -> OrderStatePreCancel || OrderStateTransferGoodStockWaitStart
+    OrderStateTransferGoodStockWaitStart = 100; // -> OrderStateInService
+    OrderStateInService         = 110; // -> OrderStatePreCancel || OrderStateTransferGoodStockInService
+    OrderStateTransferGoodStockInService = 120; // -> OrderStatePreExpired
 
     // Timeout of order
-    OrderStatePaymentTimeout    = 110; // -> OrderStatePreCancel
+    OrderStatePaymentTimeout    = 130; // -> OrderStatePreCancel
 
 
      /*
@@ -57,7 +59,7 @@ enum OrderState {
               |              |                                    |
               |              |                                    |
               |              v                                    |
-        Rollback---->TransferGoodStock                            |
+        Rollback---->TransferGoodStockLocked                      |
               |              |                                    |
               |              |                                    |
               |              v                                    |
@@ -73,15 +75,19 @@ enum OrderState {
                              |                                    |
                              |                                    |
                              v                                    |
+                TransferGoodStockWaitStart                        |
+                             |                                    |
+                             |                                    |
+                             v                                    |
                         InService---------------------------------|
                              |                                    |
                              |                                    |
                              v                                    |
-                        PreExpired                                |
+                TransferGoodStockInService                        |
                              |                                    |
                              |                                    |
                              v                                    v
-              ------->PreExpiredCheck                        PreCancel<----------------------------
+              ----------->PreExpired                         PreCancel<----------------------------
               |              |                                    |                               |
               |              |                                    |                               |
               |              v                                    v                               |
@@ -102,18 +108,18 @@ enum OrderState {
      */
 
     // End or order
-    OrderStatePreCancel         = 120; // -> OrderStateRestoreCanceledStock
-    OrderStatePreExpired        = 130; // -> OrderStateRestoreExpiredStock
+    OrderStatePreCancel         = 140; // -> OrderStateRestoreCanceledStock
+    OrderStatePreExpired        = 150; // -> OrderStateRestoreExpiredStock
 
     // Calculation
-    OrderStateRestoreExpiredStock        = 140; // -> OrderStateExpired
-    OrderStateRestoreCanceledStock       = 150; // -> OrderStateCancelAchievement
-    OrderStateCancelAchievement          = 160; // -> OrderStateReturnCanceledBalance
-    OrderStateReturnCanceledBalance      = 170; // -> OrderStateCanceled
+    OrderStateRestoreExpiredStock   = 160; // -> OrderStateExpired
+    OrderStateRestoreCanceledStock  = 170; // -> OrderStateCancelAchievement
+    OrderStateCancelAchievement     = 180; // -> OrderStateReturnCanceledBalance
+    OrderStateReturnCanceledBalance = 190; // -> OrderStateCanceled
 
     // End state
-    OrderStateCanceled          = 180;
-    OrderStateExpired           = 190;
+    OrderStateCanceled          = 200;
+    OrderStateExpired           = 210;
 
     // Delivery order state
 }
