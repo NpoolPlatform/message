@@ -92,10 +92,10 @@ enum OrderState {
                              |                                    |
                              |                                    |
                              v                                    |
-        Rollback-------->PreExpired                               | 
-              |              |                                    | 
-              |              |                                    | 
-              |              v                                    v 
+        Rollback-------->PreExpired                               |
+              |              |                                    |
+              |              |                                    |
+              |              v                                    v
         Rollback--->RestoreExpiredStock                       PreCancel
               |              |                                    |
               |              |                                    |
@@ -135,11 +135,13 @@ enum OrderState {
     OrderStateCancelAchievement     = 200; // -> OrderStateDeductLockedCommission
     OrderStateDeductLockedCommission = 210; // -> OrderStateReturnCanceledBalance
     OrderStateReturnCanceledBalance = 220; // -> OrderStateUpdateCanceledChilds
-    OrderStateUpdateCanceledChilds  = 230; // -> OrderStateCanceled
+    OrderStateUpdateCanceledChilds  = 230; // -> OrderStateUnlockPaymentAccount
+    OrderStateCanceledTransferBookKeeping = 240; // -> OrderStateUnlockPaymentAccount
+    OrderStateUnlockPaymentAccount  = 250; // -> OrderStateCanceled
 
     // End state
-    OrderStateCanceled          = 240;
-    OrderStateExpired           = 250;
+    OrderStateCanceled          = 260;
+    OrderStateExpired           = 270;
 
     // Delivery order state
 }
