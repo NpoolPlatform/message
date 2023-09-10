@@ -119,7 +119,7 @@ enum OrderState {
     // Calculation
     OrderStateRestoreExpiredStock   = 170; // -> OrderStateExpired
     OrderStateUpdateExpiredChilds   = 180; // -> OrderStatePreExpired
-    OrderStateRestoreCanceldStock   = 190; // -> OrderStateCancelAchievement
+    OrderStateRestoreCanceledStock  = 190; // -> OrderStateCancelAchievement
     OrderStateCancelAchievement     = 200; // -> OrderStateReturnCanceledBalance
     OrderStateReturnCanceledBalance = 210; // -> OrderStateCanceled
     OrderStateUpdateCanceledChilds  = 220; // -> OrderStatePreExpired
