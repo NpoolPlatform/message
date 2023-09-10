@@ -80,12 +80,12 @@ const (
 	// Common state
 	OrderState_OrderStateWaitPayment OrderState = 20 // -> OrderStatePaymentTimeout || OrderStatePaymentTransferReceived || OrderStatePreCancel
 	// Payment process
-	OrderState_OrderStatePaymentTransferReceived    OrderState = 30 // -> OrderStatePaymentTransferBookKept (bookkeeping)
-	OrderState_OrderStatePaymentTransferBookKeeping OrderState = 40 // -> OrderStatePaymentBalanceSpent (spend locked balance)
-	OrderState_OrderStatePaymentSpendBalance        OrderState = 50 // -> OrderStateGoodStockTransferred (transfer stock from locked to wait start)
-	OrderState_OrderStateTransferGoodStockLocked    OrderState = 60 // -> OrderStateCommissionAdded (commission added)
-	OrderState_OrderStateAddCommission              OrderState = 70 // -> OrderStateAchievementBookKept
-	OrderState_OrderStateAchievementBookKeeping     OrderState = 80 // -> OrderStateAchievementBookKept
+	OrderState_OrderStatePaymentTransferReceived    OrderState = 30 // -> OrderStatePaymentTransferBookKeeping
+	OrderState_OrderStatePaymentTransferBookKeeping OrderState = 40 // -> OrderStatePaymentSpendBalance
+	OrderState_OrderStatePaymentSpendBalance        OrderState = 50 // -> OrderStateTransferGoodStockLocked
+	OrderState_OrderStateTransferGoodStockLocked    OrderState = 60 // -> OrderStateAddCommission
+	OrderState_OrderStateAddCommission              OrderState = 70 // -> OrderStateAchievementBookKeeping
+	OrderState_OrderStateAchievementBookKeeping     OrderState = 80 // -> OrderStateUpdatePaidChilds
 	OrderState_OrderStateUpdatePaidChilds           OrderState = 90 // -> OrderStatePaid
 	// Paid
 	OrderState_OrderStatePaid                       OrderState = 100 // -> OrderStatePreCancel || OrderStateTransferGoodStockWaitStart
@@ -98,13 +98,13 @@ const (
 	OrderState_OrderStatePreCancel  OrderState = 150 // -> OrderStateRestoreCanceledStock
 	OrderState_OrderStatePreExpired OrderState = 160 // -> OrderStateRestoreExpiredStock
 	// Calculation
-	OrderState_OrderStateRestoreExpiredStock    OrderState = 170 // -> OrderStateExpired
-	OrderState_OrderStateUpdateExpiredChilds    OrderState = 180 // -> OrderStatePreExpired
+	OrderState_OrderStateRestoreExpiredStock    OrderState = 170 // -> OrderStateUpdateExpiredChilds
+	OrderState_OrderStateUpdateExpiredChilds    OrderState = 180 // -> OrderStateExpired
 	OrderState_OrderStateRestoreCanceledStock   OrderState = 190 // -> OrderStateCancelAchievement
 	OrderState_OrderStateCancelAchievement      OrderState = 200 // -> OrderStateDeductLockedCommission
 	OrderState_OrderStateDeductLockedCommission OrderState = 210 // -> OrderStateReturnCanceledBalance
-	OrderState_OrderStateReturnCanceledBalance  OrderState = 220 // -> OrderStateCanceled
-	OrderState_OrderStateUpdateCanceledChilds   OrderState = 230 // -> OrderStatePreExpired
+	OrderState_OrderStateReturnCanceledBalance  OrderState = 220 // -> OrderStateUpdateCanceledChilds
+	OrderState_OrderStateUpdateCanceledChilds   OrderState = 230 // -> OrderStateCanceled
 	// End state
 	OrderState_OrderStateCanceled OrderState = 240
 	OrderState_OrderStateExpired  OrderState = 250

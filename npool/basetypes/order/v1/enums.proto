@@ -31,7 +31,7 @@ enum OrderState {
     // Paid
     OrderStatePaid              = 100;  // -> OrderStatePreCancel || OrderStateTransferGoodStockWaitStart
     OrderStateTransferGoodStockWaitStart = 110; // -> OrderStateUpdatePaidChilds
-    OrderStateUpdatePaidChilds      = 120; // -> OrderStateInService
+    OrderStateUpdateInServiceChilds      = 120; // -> OrderStateInService
     OrderStateInService         = 130; // -> OrderStatePreCancel || OrderStatePreExpired
 
     // Timeout of order
