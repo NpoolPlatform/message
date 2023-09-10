@@ -66,6 +66,8 @@ message Coupon {
     optional string UsedByOrderID = 180;
     // @inject_tag: sql:"good_id"
     optional string GoodID     = 190;
+    // @inject_tag: sql:"app_good_id"
+    optional string AppGoodID  = 191;
     // @inject_tag: sql:"threshold"
     optional string Threshold  = 200;
     // @inject_tag: sql:"allocated"

@@ -31,6 +31,7 @@ message CouponReq {
     optional string UserID       = 110;
     // For good specific coupon
     optional string GoodID       = 120;
+    optional string AppGoodID    = 121;
     // For threshold coupon
     optional string Threshold    = 130;
     // We may have random amount coupon
@@ -65,6 +66,8 @@ message Coupon {
     optional string UserID          = 120;
     // @inject_tag: sql:"good_id"
     optional string GoodID          = 130;
+    // @inject_tag: sql:"app_good_id"
+    optional string AppGoodID       = 131;
     // @inject_tag: sql:"threshold"
     optional string Threshold       = 140;
     // @inject_tag: sql:"allocated"

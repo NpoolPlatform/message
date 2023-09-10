@@ -50,6 +50,11 @@ message GoodAchievement {
     string SelfCommission     = 140;
 
     string SuperiorCommission = 150;
+
+    string AppGoodID          = 160;
+    string AppGoodName        = 170;
+    string AppGoodUnit        = 180;
+
 }
 
 message Achievement {

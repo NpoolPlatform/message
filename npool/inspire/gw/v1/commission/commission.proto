@@ -82,6 +82,9 @@ message Commission {
     uint32 EndAt         = 200;
     uint32 CreatedAt     = 210;
     uint32 UpdatedAt     = 220;
+
+    string AppGoodID     = 230;
+    string AppGoodName   = 240;
 }
 
 message CreateCommissionRequest {
@@ -89,6 +92,7 @@ message CreateCommissionRequest {
     string          UserID       = 20;
     string          TargetUserID = 30;
     string          GoodID       = 40;
+    string          AppGoodID    = 41;
     basetypes.inspire.v1.SettleType SettleType = 50;
     string          AmountOrPercent = 60;
     uint32          StartAt      = 70;
@@ -106,6 +110,7 @@ message CreateUserCommissionRequest {
     string          AppID        = 10;
     string          TargetUserID = 20;
     string          GoodID       = 30;
+    string          AppGoodID    = 31;
     basetypes.inspire.v1.SettleType SettleType = 40;
     string          AmountOrPercent = 50;
     uint32          StartAt      = 60;
@@ -155,20 +160,20 @@ message GetAppCommissionsResponse {
 }
 
 message CloneCommissionsRequest {
-    string AppID      = 10;
-    string FromGoodID = 20;
-    string ToGoodID   = 30;
-    string ScalePercent = 40;
+    string AppID         = 10;
+    string FromAppGoodID = 20;
+    string ToAppGoodID   = 30;
+    string ScalePercent  = 40;
 }
 
 message CloneCommissionsResponse {
 }
 
 message CloneAppCommissionsRequest {
-    string TargetAppID = 10;
-    string FromGoodID  = 20;
-    string ToGoodID    = 30;
-    string ScalePercent = 40;
+    string TargetAppID    = 10;
+    string FromAppGoodID  = 20;
+    string ToAppGoodID    = 30;
+    string ScalePercent   = 40;
 }
 
 message CloneAppCommissionsResponse {

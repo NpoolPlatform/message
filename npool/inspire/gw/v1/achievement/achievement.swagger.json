@@ -295,6 +295,15 @@
         },
         "SuperiorCommission": {
           "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "AppGoodName": {
+          "type": "string"
+        },
+        "AppGoodUnit": {
+          "type": "string"
         }
       }
     },

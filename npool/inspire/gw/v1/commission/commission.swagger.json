@@ -276,10 +276,10 @@
         "TargetAppID": {
           "type": "string"
         },
-        "FromGoodID": {
+        "FromAppGoodID": {
           "type": "string"
         },
-        "ToGoodID": {
+        "ToAppGoodID": {
           "type": "string"
         },
         "ScalePercent": {
@@ -296,10 +296,10 @@
         "AppID": {
           "type": "string"
         },
-        "FromGoodID": {
+        "FromAppGoodID": {
           "type": "string"
         },
-        "ToGoodID": {
+        "ToAppGoodID": {
           "type": "string"
         },
         "ScalePercent": {
@@ -388,6 +388,12 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "AppGoodName": {
+          "type": "string"
         }
       }
     },
@@ -404,6 +410,9 @@
           "type": "string"
         },
         "GoodID": {
+          "type": "string"
+        },
+        "AppGoodID": {
           "type": "string"
         },
         "SettleType": {
@@ -448,6 +457,9 @@
           "type": "string"
         },
         "GoodID": {
+          "type": "string"
+        },
+        "AppGoodID": {
           "type": "string"
         },
         "SettleType": {

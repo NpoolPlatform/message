@@ -21,6 +21,7 @@ message StatementReq {
     optional string UserID                  = 30;
     optional string DirectContributorID     = 31;
     optional string GoodID                  = 40;
+    optional string AppGoodID               = 41;
     optional string OrderID                 = 50;
     optional bool   SelfOrder               = 60;
     optional string PaymentID               = 70;
@@ -44,6 +45,8 @@ message Statement {
     string DirectContributorID      = 31;
     // @inject_tag: sql:"good_id"
     string GoodID                   = 40;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID                = 41;
     // @inject_tag: sql:"order_id"
     string OrderID                  = 50;
     // @inject_tag: sql:"self_order"

@@ -84,7 +84,7 @@
         "AppID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         }
       }
