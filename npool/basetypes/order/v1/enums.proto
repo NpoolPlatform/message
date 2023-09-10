@@ -25,16 +25,17 @@ enum OrderState {
     OrderStatePaymentSpendBalance          = 50;  // -> OrderStateGoodStockTransferred (transfer stock from locked to wait start)
     OrderStateTransferGoodStockLocked      = 60;  // -> OrderStateCommissionAdded (commission added)
     OrderStateAddCommission                = 70; // -> OrderStateAchievementBookKept
-    OrderStateAchievementBookKeeping       = 80; // -> OrderStatePaid
+    OrderStateAchievementBookKeeping       = 80; // -> OrderStateAchievementBookKept
+    OrderStateAchievementBookKept          = 90; // -> OrderStatePaid
 
     // Paid
-    OrderStatePaid              = 90;  // -> OrderStatePreCancel || OrderStateTransferGoodStockWaitStart
-    OrderStateTransferGoodStockWaitStart = 100; // -> OrderStateInService
-    OrderStateInService         = 110; // -> OrderStatePreCancel || OrderStateTransferGoodStockInService
-    OrderStateTransferGoodStockInService = 120; // -> OrderStatePreExpired
+    OrderStatePaid              = 100;  // -> OrderStatePreCancel || OrderStateTransferGoodStockWaitStart
+    OrderStateTransferGoodStockWaitStart = 110; // -> OrderStateInService
+    OrderStateInService         = 120; // -> OrderStatePreCancel || OrderStateTransferGoodStockInService
+    OrderStateTransferGoodStockInService = 130; // -> OrderStatePreExpired
 
     // Timeout of order
-    OrderStatePaymentTimeout    = 130; // -> OrderStatePreCancel
+    OrderStatePaymentTimeout    = 140; // -> OrderStatePreCancel
 
 
      /*
@@ -68,6 +69,10 @@ enum OrderState {
               |              |                                    |
               |              v                                    |
         Rollback----->AchievementBookKeeping                      |
+              |              |                                    |
+              |              |                                    |
+              |              v                                    |
+        Rollback----->AchievementBookKept                         |
               |              |                                    |
               |              |                                    |
               |              v                                    |
@@ -108,18 +113,18 @@ enum OrderState {
      */
 
     // End or order
-    OrderStatePreCancel         = 140; // -> OrderStateRestoreCanceledStock
-    OrderStatePreExpired        = 150; // -> OrderStateRestoreExpiredStock
+    OrderStatePreCancel         = 150; // -> OrderStateRestoreCanceledStock
+    OrderStatePreExpired        = 160; // -> OrderStateRestoreExpiredStock
 
     // Calculation
-    OrderStateRestoreExpiredStock   = 160; // -> OrderStateExpired
-    OrderStateRestoreCanceledStock  = 170; // -> OrderStateCancelAchievement
-    OrderStateCancelAchievement     = 180; // -> OrderStateReturnCanceledBalance
-    OrderStateReturnCanceledBalance = 190; // -> OrderStateCanceled
+    OrderStateRestoreExpiredStock   = 170; // -> OrderStateExpired
+    OrderStateRestoreCanceledStock  = 180; // -> OrderStateCancelAchievement
+    OrderStateCancelAchievement     = 190; // -> OrderStateReturnCanceledBalance
+    OrderStateReturnCanceledBalance = 200; // -> OrderStateCanceled
 
     // End state
-    OrderStateCanceled          = 200;
-    OrderStateExpired           = 210;
+    OrderStateCanceled          = 210;
+    OrderStateExpired           = 220;
 
     // Delivery order state
 }
