@@ -85,10 +85,12 @@ message Conds {
     optional basetypes.v1.StringVal AppID  = 20;
     optional basetypes.v1.StringVal UserID = 30;
     optional basetypes.v1.StringVal GoodID = 40;
+    optional basetypes.v1.StringVal AppGoodID = 41;
     optional basetypes.v1.Uint32Val SettleType = 50;
     optional basetypes.v1.Uint32Val EndAt  = 60;
     optional basetypes.v1.StringSliceVal UserIDs = 70;
     optional basetypes.v1.StringSliceVal GoodIDs = 80;
+    optional basetypes.v1.StringSliceVal AppGoodIDs = 81;
     optional basetypes.v1.Uint32Val StartAt = 90;
 }
 
@@ -131,7 +133,9 @@ message CloneCommissionsRequest {
     string AppID        = 10;
     string FromGoodID   = 20;
     string ToGoodID     = 30;
-    string ScalePercent = 40;
+    string FromAppGoodID = 40;
+    string ToAppGoodID   = 50;
+    string ScalePercent = 60;
 }
 
 message CloneCommissionsResponse {

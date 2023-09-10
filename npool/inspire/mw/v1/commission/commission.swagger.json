@@ -196,6 +196,9 @@
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "SettleType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
@@ -206,6 +209,9 @@
           "$ref": "#/definitions/v1StringSliceVal"
         },
         "GoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AppGoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
         "StartAt": {

@@ -81,6 +81,7 @@ message Conds {
     optional basetypes.v1.StringVal UserID              = 30;
     optional basetypes.v1.StringVal DirectContributorID = 31;
     optional basetypes.v1.StringVal GoodID              = 40;
+    optional basetypes.v1.StringVal AppGoodID           = 41;
     optional basetypes.v1.StringVal OrderID             = 50;
     optional basetypes.v1.BoolVal   SelfOrder           = 60;
     optional basetypes.v1.StringVal PaymentID           = 70;

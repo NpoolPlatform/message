@@ -60,6 +60,9 @@
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "IDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
