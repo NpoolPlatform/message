@@ -20,8 +20,8 @@ enum OrderState {
     OrderStateWaitPayment       = 20; // -> OrderStatePaymentTimeout || OrderStatePaymentTransferReceived || OrderStatePreCancel
 
     // Payment process
-    OrderStatePaymentTransferReceived      = 30;  // -> OrderStatePaymentTransferBookKept (bookkeeping)
-    OrderStatePaymentTransferBookKeeping   = 40;  // -> OrderStatePaymentBalanceSpent (spend locked balance)
+    OrderStatePaymentTransferReceived      = 30;  // -> OrderStatePaymentTransferBookKeeping
+    OrderStatePaymentTransferBookKeeping   = 40;  // -> OrderStatePaymentSpendBalance (spend locked balance)
     OrderStatePaymentSpendBalance          = 50;  // -> OrderStateGoodStockTransferred (transfer stock from locked to wait start)
     OrderStateTransferGoodStockLocked      = 60;  // -> OrderStateCommissionAdded (commission added)
     OrderStateAddCommission                = 70; // -> OrderStateAchievementBookKept
@@ -57,54 +57,66 @@ enum OrderState {
               |              |                                    |              |
               |              v                                    |              |
         Rollback----->TransferSpendBalance                        |              |
-              |              |                                    |
-              |              |                                    |
-              |              v                                    |
+              |              |                                    |              |
+              |              |                                    |              |
+              |              v                                    |              |
         Rollback---->TransferGoodStockLocked                      |
-              |              |                                    |
-              |              |                                    |
+              |              |                                    |              |
+              |              |                                    |              |
               |              v                                    |
-        Rollback------>AddCommission                              |
-              |              |                                    |
-              |              |                                    |
-              |              v                                    |
-        Rollback----->AchievementBookKeeping                      |
-              |              |                                    |
-              |              |                                    |
-              |              v                                    |
-        Rollback----->AchievementBookKept                         |
-              |              |                                    |
-              |              |                                    |
-              |              v                                    |
-        Rollback------------Paid----------------------------------|
-                             |                                    |
-                             |                                    |
-                             v                                    |
-        |------>TransferGoodStockWaitStart                        |
-        |                    |                                    |
-        |                    |                                    |
-        |                    v                                    |
-        --------------- InService---------------------------------|
+        Rollback------>AddCommission                              |              |
+              |              |                                    |              |
+              |              |                                    |              |
+              |              v                                    |              |
+        Rollback----->AchievementBookKeeping                      |              |
+              |              |                                    |              |
+              |              |                                    |              |
+              |              v                                    |              |
+        Rollback----->UpdatePaidChilds                            |              |
+              |              |                                    |              |
+              |              |                                    |              |
+              |              v                                    |              |
+        Rollback------------Paid----------------------------------|              |
+                             |                                    |              |
+                             |                                    |              |
+                             v                                    |              |
+        |---------->TransferGoodStockWaitStart                    |              |
+        |                    |                                    |              |
+        |                    |                                    |              |
+        |                    v                                    |              |
+        --------------->UpdateInServiceChilds                     |              |
+        |                    |                                    |              |
+        |                    |                                    |              |
+        |                    v                                    |              |
+        --------------- InService---------------------------------|--------------|
                              |                                    |
                              |                                    |
                              v                                    |
               |----> TransferGoodStockInService                   |
               |              |                                    |
               |              |                                    |
+              |              v                                    | 
+              --------->UpdateExpiredChilds                       | 
+              |              |                                    | 
+              |              |                                    | 
+              |              v                                    v 
+              ----------->PreExpired                         PreCancel
+              |              |                                    |
+              |              |                                    |
               |              v                                    v
-              ----------->PreExpired                         PreCancel<----------------------------
-              |              |                                    |                               |
-              |              |                                    |                               |
-              |              v                                    v                               |
-        Rollback----->RestoreExpiredStock                 RestoreCanceledStock<----------------Rollback
-              |              |                                    |                               |
-              |              |                                    |                               |
-              |              v                                    v                               |
-        Rollback----------Expired                          CanceledAchievement<---------------Rollback
+        Rollback----->RestoreExpiredStock                 RestoreCanceledStock
+              |              |                                    |
+              |              |                                    |
+              |              v                                    v
+        Rollback----------Expired                          CanceledAchievement<----------------Rollback
                                                                   |                               |
                                                                   |                               |
                                                                   v                               |
-                                                          ReturnCanceledBalance<---------------Rollback
+                                                          DeductLockedCommission---------------Rollback
+                                                                  |                               |
+                                                                  |                               |
+                                                                  v                               |
+                                                          ReturnCanceledBalance----------------Rollback
                                                                   |                               |
                                                                   |                               |
                                                                   v                               |
