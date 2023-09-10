@@ -136,9 +136,9 @@ enum OrderState {
     OrderStateCancelAchievement     = 210; // -> OrderStateDeductLockedCommission
     OrderStateDeductLockedCommission = 220; // -> OrderStateReturnCanceledBalance
     OrderStateReturnCanceledBalance = 230; // -> OrderStateUpdateCanceledChilds
-    OrderStateUpdateCanceledChilds  = 240; // -> OrderStateUnlockPaymentAccount
-    OrderStateCanceledTransferBookKeeping = 250; // -> OrderStateUnlockPaymentAccount
-    OrderStateUnlockPaymentAccount  = 260; // -> OrderStateCanceled
+    OrderStateUpdateCanceledChilds  = 240; // -> OrderStateCanceledTransferBookKeeping
+    OrderStateCanceledTransferBookKeeping = 250; // -> OrderStateCancelUnlockPaymentAccount
+    OrderStateCancelUnlockPaymentAccount  = 260; // -> OrderStateCanceled
 
     // End state
     OrderStateCanceled          = 270;
