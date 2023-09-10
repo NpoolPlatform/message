@@ -75,18 +75,18 @@ enum OrderState {
                              |                                    |
                              |                                    |
                              v                                    |
-                TransferGoodStockWaitStart                        |
+        |------>TransferGoodStockWaitStart                        |
+        |                    |                                    |
+        |                    |                                    |
+        |                    v                                    |
+        --------------- InService---------------------------------|
                              |                                    |
                              |                                    |
                              v                                    |
-                        InService---------------------------------|
-                             |                                    |
-                             |                                    |
-                             v                                    |
-                TransferGoodStockInService                        |
-                             |                                    |
-                             |                                    |
-                             v                                    v
+              |----> TransferGoodStockInService                   |
+              |              |                                    |
+              |              |                                    |
+              |              v                                    v
               ----------->PreExpired                         PreCancel<----------------------------
               |              |                                    |                               |
               |              |                                    |                               |
