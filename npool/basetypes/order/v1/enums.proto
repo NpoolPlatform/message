@@ -77,6 +77,10 @@ enum OrderState {
               |              |                                    |              |
               |              |                                    |              |
               |              v                                    |              |
+        Rollback------->PaymentUnlockAccount                      |              |
+              |              |                                    |              |
+              |              |                                    |              |
+              |              v                                    |              |              
         Rollback------------Paid----------------------------------|              |
                              |                                    |              |
                              |                                    |              |
