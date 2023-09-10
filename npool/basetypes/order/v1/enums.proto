@@ -125,6 +125,10 @@ enum OrderState {
                                                                   |                               |
                                                                   |                               |
                                                                   v                               |
+                                                        CancelUnlockPaymentAccount-------------Rollback
+                                                                  |                               |
+                                                                  |                               |
+                                                                  v                               |
                                                                Canceled------------------------Rollback
      *
      */
