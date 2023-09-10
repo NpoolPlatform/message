@@ -120,13 +120,14 @@ enum OrderState {
     OrderStateRestoreExpiredStock   = 170; // -> OrderStateExpired
     OrderStateUpdateExpiredChilds   = 180; // -> OrderStatePreExpired
     OrderStateRestoreCanceledStock  = 190; // -> OrderStateCancelAchievement
-    OrderStateCancelAchievement     = 200; // -> OrderStateReturnCanceledBalance
-    OrderStateReturnCanceledBalance = 210; // -> OrderStateCanceled
-    OrderStateUpdateCanceledChilds  = 220; // -> OrderStatePreExpired
+    OrderStateCancelAchievement     = 200; // -> OrderStateDeductLockedCommission
+    OrderStateDeductLockedCommission = 210; // -> OrderStateReturnCanceledBalance
+    OrderStateReturnCanceledBalance = 220; // -> OrderStateCanceled
+    OrderStateUpdateCanceledChilds  = 230; // -> OrderStatePreExpired
 
     // End state
-    OrderStateCanceled          = 230;
-    OrderStateExpired           = 240;
+    OrderStateCanceled          = 240;
+    OrderStateExpired           = 250;
 
     // Delivery order state
 }
