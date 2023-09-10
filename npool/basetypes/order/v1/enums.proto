@@ -24,18 +24,19 @@ enum OrderState {
     OrderStatePaymentTransferBookKeeping   = 40;  // -> OrderStatePaymentSpendBalance
     OrderStatePaymentSpendBalance          = 50;  // -> OrderStateTransferGoodStockLocked
     OrderStateTransferGoodStockLocked      = 60;  // -> OrderStateAddCommission
-    OrderStateAddCommission                = 70; // -> OrderStateAchievementBookKeeping
-    OrderStateAchievementBookKeeping       = 80; // -> OrderStateUpdatePaidChilds
-    OrderStateUpdatePaidChilds             = 90; // -> OrderStatePaid
+    OrderStateAddCommission                = 70;  // -> OrderStateAchievementBookKeeping
+    OrderStateAchievementBookKeeping       = 80;  // -> OrderStateUpdatePaidChilds
+    OrderStateUpdatePaidChilds             = 90;  // -> OrderStatePaymentUnlockAccount
+    OrderStatePaymentUnlockAccount         = 100; // -> OrderStatePaid
 
     // Paid
-    OrderStatePaid              = 100;  // -> OrderStatePreCancel || OrderStateTransferGoodStockWaitStart
-    OrderStateTransferGoodStockWaitStart = 110; // -> OrderStateUpdatePaidChilds
-    OrderStateUpdateInServiceChilds      = 120; // -> OrderStateInService
-    OrderStateInService         = 130; // -> OrderStatePreCancel || OrderStatePreExpired
+    OrderStatePaid              = 110;  // -> OrderStatePreCancel || OrderStateTransferGoodStockWaitStart
+    OrderStateTransferGoodStockWaitStart = 120; // -> OrderStateUpdatePaidChilds
+    OrderStateUpdateInServiceChilds      = 130; // -> OrderStateInService
+    OrderStateInService         = 140; // -> OrderStatePreCancel || OrderStatePreExpired
 
     // Timeout of order
-    OrderStatePaymentTimeout    = 140; // -> OrderStatePreCancel
+    OrderStatePaymentTimeout    = 150; // -> OrderStatePreCancel
 
 
      /*
@@ -125,23 +126,23 @@ enum OrderState {
      */
 
     // End or order
-    OrderStatePreCancel         = 150; // -> OrderStateRestoreCanceledStock
-    OrderStatePreExpired        = 160; // -> OrderStateRestoreExpiredStock
+    OrderStatePreCancel         = 160; // -> OrderStateRestoreCanceledStock
+    OrderStatePreExpired        = 170; // -> OrderStateRestoreExpiredStock
 
     // Calculation
-    OrderStateRestoreExpiredStock   = 170; // -> OrderStateUpdateExpiredChilds
-    OrderStateUpdateExpiredChilds   = 180; // -> OrderStateExpired
-    OrderStateRestoreCanceledStock  = 190; // -> OrderStateCancelAchievement
-    OrderStateCancelAchievement     = 200; // -> OrderStateDeductLockedCommission
-    OrderStateDeductLockedCommission = 210; // -> OrderStateReturnCanceledBalance
-    OrderStateReturnCanceledBalance = 220; // -> OrderStateUpdateCanceledChilds
-    OrderStateUpdateCanceledChilds  = 230; // -> OrderStateUnlockPaymentAccount
-    OrderStateCanceledTransferBookKeeping = 240; // -> OrderStateUnlockPaymentAccount
-    OrderStateUnlockPaymentAccount  = 250; // -> OrderStateCanceled
+    OrderStateRestoreExpiredStock   = 180; // -> OrderStateUpdateExpiredChilds
+    OrderStateUpdateExpiredChilds   = 190; // -> OrderStateExpired
+    OrderStateRestoreCanceledStock  = 200; // -> OrderStateCancelAchievement
+    OrderStateCancelAchievement     = 210; // -> OrderStateDeductLockedCommission
+    OrderStateDeductLockedCommission = 220; // -> OrderStateReturnCanceledBalance
+    OrderStateReturnCanceledBalance = 230; // -> OrderStateUpdateCanceledChilds
+    OrderStateUpdateCanceledChilds  = 240; // -> OrderStateUnlockPaymentAccount
+    OrderStateCanceledTransferBookKeeping = 250; // -> OrderStateUnlockPaymentAccount
+    OrderStateUnlockPaymentAccount  = 260; // -> OrderStateCanceled
 
     // End state
-    OrderStateCanceled          = 260;
-    OrderStateExpired           = 270;
+    OrderStateCanceled          = 270;
+    OrderStateExpired           = 280;
 
     // Delivery order state
 }
