@@ -108,11 +108,15 @@ enum OrderState {
                                                                   |                               |
                                                                   |                               |
                                                                   v                               |
-                                                          DeductLockedCommission---------------Rollback
+                                                          DeductLockedCommission<--------------Rollback
                                                                   |                               |
                                                                   |                               |
                                                                   v                               |
-                                                          ReturnCanceledBalance----------------Rollback
+                                                          ReturnCanceledBalance<---------------Rollback
+                                                                  |                               |
+                                                                  |                               |
+                                                                  v                               |
+                                                           UpdateCanceledChilds<---------------Rollback
                                                                   |                               |
                                                                   |                               |
                                                                   v                               |
