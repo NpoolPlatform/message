@@ -21,17 +21,17 @@ enum OrderState {
 
     // Payment process
     OrderStatePaymentTransferReceived      = 30;  // -> OrderStatePaymentTransferBookKeeping
-    OrderStatePaymentTransferBookKeeping   = 40;  // -> OrderStatePaymentSpendBalance (spend locked balance)
-    OrderStatePaymentSpendBalance          = 50;  // -> OrderStateGoodStockTransferred (transfer stock from locked to wait start)
-    OrderStateTransferGoodStockLocked      = 60;  // -> OrderStateCommissionAdded (commission added)
-    OrderStateAddCommission                = 70; // -> OrderStateAchievementBookKept
-    OrderStateAchievementBookKeeping       = 80; // -> OrderStateAchievementBookKept
+    OrderStatePaymentTransferBookKeeping   = 40;  // -> OrderStatePaymentSpendBalance
+    OrderStatePaymentSpendBalance          = 50;  // -> OrderStateTransferGoodStockLocked
+    OrderStateTransferGoodStockLocked      = 60;  // -> OrderStateAddCommission
+    OrderStateAddCommission                = 70; // -> OrderStateAchievementBookKeeping
+    OrderStateAchievementBookKeeping       = 80; // -> OrderStateUpdatePaidChilds
     OrderStateUpdatePaidChilds             = 90; // -> OrderStatePaid
 
     // Paid
     OrderStatePaid              = 100;  // -> OrderStatePreCancel || OrderStateTransferGoodStockWaitStart
     OrderStateTransferGoodStockWaitStart = 110; // -> OrderStateUpdatePaidChilds
-    OrderStateUpdateInServiceChilds      = 120; // -> OrderStateInService
+    OrderStateUpdatePaidChilds      = 120; // -> OrderStateInService
     OrderStateInService         = 130; // -> OrderStatePreCancel || OrderStatePreExpired
 
     // Timeout of order
@@ -129,13 +129,13 @@ enum OrderState {
     OrderStatePreExpired        = 160; // -> OrderStateRestoreExpiredStock
 
     // Calculation
-    OrderStateRestoreExpiredStock   = 170; // -> OrderStateExpired
-    OrderStateUpdateExpiredChilds   = 180; // -> OrderStatePreExpired
+    OrderStateRestoreExpiredStock   = 170; // -> OrderStateUpdateExpiredChilds
+    OrderStateUpdateExpiredChilds   = 180; // -> OrderStateExpired
     OrderStateRestoreCanceledStock  = 190; // -> OrderStateCancelAchievement
     OrderStateCancelAchievement     = 200; // -> OrderStateDeductLockedCommission
     OrderStateDeductLockedCommission = 210; // -> OrderStateReturnCanceledBalance
-    OrderStateReturnCanceledBalance = 220; // -> OrderStateCanceled
-    OrderStateUpdateCanceledChilds  = 230; // -> OrderStatePreExpired
+    OrderStateReturnCanceledBalance = 220; // -> OrderStateUpdateCanceledChilds
+    OrderStateUpdateCanceledChilds  = 230; // -> OrderStateCanceled
 
     // End state
     OrderStateCanceled          = 240;
