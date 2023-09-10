@@ -47,11 +47,11 @@ enum OrderState {
                              |                                    |              |
                              |                                    |              v
                              v                                    |         PaymentTimeout
-              ------->TransferReceived                            |              |
-              |              |                                    |              |
-              |              |                                    |              |
-              |              v                                    |              |
-        Rollback----->TransferBookKeeping                         |              |
+                      TransferReceived                            |              |
+                             |                                    |              |
+                             |                                    |              |
+                             v                                    |              |
+              |------>TransferBookKeeping                         |              |
               |              |                                    |              |
               |              |                                    |              |
               |              v                                    |              |
