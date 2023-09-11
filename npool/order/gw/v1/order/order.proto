@@ -157,9 +157,11 @@ message Order {
     uint32 CreatedAt              = 350;
     uint32 PaidAt                 = 360;
 
-    basetypes.order.v1.OrderState   State       = 370;
+    basetypes.order.v1.OrderState   OrderState  = 370;
+    basetypes.order.v1.OrderState   CancelState = 371;
     basetypes.order.v1.OrderType    OrderType   = 380;
     basetypes.order.v1.PaymentType  PaymentType = 390;
+    basetypes.order.v1.PaymentState PaymentState = 391;
 
     uint32 StartAt                  = 400;
     uint32 EndAt                    = 410;

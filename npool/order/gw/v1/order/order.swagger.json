@@ -985,7 +985,10 @@
           "type": "integer",
           "format": "int64"
         },
-        "State": {
+        "OrderState": {
+          "$ref": "#/definitions/v1OrderState"
+        },
+        "CancelState": {
           "$ref": "#/definitions/v1OrderState"
         },
         "OrderType": {
@@ -993,6 +996,9 @@
         },
         "PaymentType": {
           "$ref": "#/definitions/v1PaymentType"
+        },
+        "PaymentState": {
+          "$ref": "#/definitions/v1PaymentState"
         },
         "StartAt": {
           "type": "integer",
@@ -1070,6 +1076,18 @@
         "Airdrop"
       ],
       "default": "DefaultOrderType"
+    },
+    "v1PaymentState": {
+      "type": "string",
+      "enum": [
+        "DefaultPaymentState",
+        "PaymentStateWait",
+        "PaymentStateDone",
+        "PaymentStateCanceled",
+        "PaymentStateTimeout",
+        "PaymentStateNoPayment"
+      ],
+      "default": "DefaultPaymentState"
     },
     "v1PaymentType": {
       "type": "string",
