@@ -16,6 +16,7 @@ message CalculateRequest {
     string AppID                  = 10;
     string UserID                 = 20;
     string GoodID                 = 30;
+    string AppGoodID              = 31;
     string OrderID                = 40;
     string PaymentID              = 50;
     string CoinTypeID             = 60;
