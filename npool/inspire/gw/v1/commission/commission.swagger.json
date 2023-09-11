@@ -409,9 +409,6 @@
         "TargetUserID": {
           "type": "string"
         },
-        "GoodID": {
-          "type": "string"
-        },
         "AppGoodID": {
           "type": "string"
         },
@@ -454,9 +451,6 @@
           "type": "string"
         },
         "TargetUserID": {
-          "type": "string"
-        },
-        "GoodID": {
           "type": "string"
         },
         "AppGoodID": {

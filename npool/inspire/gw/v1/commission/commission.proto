@@ -91,8 +91,7 @@ message CreateCommissionRequest {
     string          AppID        = 10;
     string          UserID       = 20;
     string          TargetUserID = 30;
-    string          GoodID       = 40;
-    string          AppGoodID    = 41;
+    string          AppGoodID    = 40;
     basetypes.inspire.v1.SettleType SettleType = 50;
     string          AmountOrPercent = 60;
     uint32          StartAt      = 70;
@@ -109,8 +108,7 @@ message CreateCommissionResponse {
 message CreateUserCommissionRequest {
     string          AppID        = 10;
     string          TargetUserID = 20;
-    string          GoodID       = 30;
-    string          AppGoodID    = 31;
+    string          AppGoodID    = 30;
     basetypes.inspire.v1.SettleType SettleType = 40;
     string          AmountOrPercent = 50;
     uint32          StartAt      = 60;
