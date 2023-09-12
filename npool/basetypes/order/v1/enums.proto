@@ -25,13 +25,13 @@ enum OrderState {
     OrderStatePaymentSpendBalance          = 50;  // -> OrderStateTransferGoodStockLocked
     OrderStateTransferGoodStockLocked      = 60;  // -> OrderStateAddCommission
     OrderStateAddCommission                = 70;  // -> OrderStateAchievementBookKeeping
-    OrderStateAchievementBookKeeping       = 80;  // -> OrderStateUpdatePaidChilds
-    OrderStateUpdatePaidChilds             = 90;  // -> OrderStatePaymentUnlockAccount
-    OrderStatePaymentUnlockAccount         = 100; // -> OrderStatePaid
+    OrderStateAchievementBookKeeping       = 80;  // -> OrderStatePaymentUnlockAccount
+    OrderStatePaymentUnlockAccount         = 90;  // -> OrderStateUpdatePaidChilds
+    OrderStateUpdatePaidChilds             = 100; // -> OrderStatePaid
 
     // Paid
     OrderStatePaid              = 110;  // -> OrderStatePreCancel || OrderStateTransferGoodStockWaitStart
-    OrderStateTransferGoodStockWaitStart = 120; // -> OrderStateUpdatePaidChilds
+    OrderStateTransferGoodStockWaitStart = 120; // -> OrderStateUpdateInServiceChilds
     OrderStateUpdateInServiceChilds      = 130; // -> OrderStateInService
     OrderStateInService         = 140; // -> OrderStatePreCancel || OrderStatePreExpired
 
@@ -73,14 +73,14 @@ enum OrderState {
               |              |                                    |              |
               |              |                                    |              |
               |              v                                    |              |
+        Rollback------->PaymentUnlockAccount                      |              |
+              |              |                                    |              |
+              |              |                                    |              |
+              |              v                                    |              |
         Rollback------->UpdatePaidChilds                          |              |
               |              |                                    |              |
               |              |                                    |              |
               |              v                                    |              |
-        Rollback------->PaymentUnlockAccount                      |              |
-              |              |                                    |              |
-              |              |                                    |              |
-              |              v                                    |              |              
         Rollback------------Paid----------------------------------|              |
                              |                                    |              |
                              |                                    |              |
@@ -121,11 +121,15 @@ enum OrderState {
                                                                   |                               |
                                                                   |                               |
                                                                   v                               |
-                                                           UpdateCanceledChilds<---------------Rollback
+                                                      CancelTransferBookKeeping<---------------Rollback
                                                                   |                               |
                                                                   |                               |
                                                                   v                               |
                                                         CancelUnlockPaymentAccount-------------Rollback
+                                                                  |                               |
+                                                                  |                               |
+                                                                  v                               |
+                                                           UpdateCanceledChilds<---------------Rollback
                                                                   |                               |
                                                                   |                               |
                                                                   v                               |
@@ -143,10 +147,10 @@ enum OrderState {
     OrderStateRestoreCanceledStock  = 200; // -> OrderStateCancelAchievement
     OrderStateCancelAchievement     = 210; // -> OrderStateDeductLockedCommission
     OrderStateDeductLockedCommission = 220; // -> OrderStateReturnCanceledBalance
-    OrderStateReturnCanceledBalance = 230; // -> OrderStateUpdateCanceledChilds
-    OrderStateUpdateCanceledChilds  = 240; // -> OrderStateCanceledTransferBookKeeping
-    OrderStateCanceledTransferBookKeeping = 250; // -> OrderStateCancelUnlockPaymentAccount
-    OrderStateCancelUnlockPaymentAccount  = 260; // -> OrderStateCanceled
+    OrderStateReturnCanceledBalance = 230; // -> OrderStateCanceledTransferBookKeeping
+    OrderStateCanceledTransferBookKeeping = 240; // -> OrderStateCancelUnlockPaymentAccount
+    OrderStateCancelUnlockPaymentAccount  = 250; // -> OrderStateUpdateCanceledChilds
+    OrderStateUpdateCanceledChilds  = 260; // -> OrderStateCanceled
 
     // End state
     OrderStateCanceled          = 270;
