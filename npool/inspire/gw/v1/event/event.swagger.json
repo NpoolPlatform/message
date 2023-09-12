@@ -284,7 +284,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "InviterLayers": {
@@ -354,6 +354,12 @@
         "DeletedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "AppGoodName": {
+          "type": "string"
         }
       }
     },

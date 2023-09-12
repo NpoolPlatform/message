@@ -27,6 +27,7 @@ message EventReq {
     optional uint32               MaxConsecutive = 70;
     optional string               GoodID        = 80;
     optional uint32               InviterLayers = 90;
+    optional string               AppGoodID     = 100;
 }
 
 message Event {
@@ -48,6 +49,8 @@ message Event {
     uint32               MaxConsecutive = 70;
     // @inject_tag: sql:"good_id"
     optional string      GoodID        = 80;
+    // @inject_tag: sql:"app_good_id"
+    optional string      AppGoodID     = 81;
     // @inject_tag: sql:"inviter_layers"
     uint32               InviterLayers = 90;
     // @inject_tag: sql:"created_at"
@@ -63,6 +66,7 @@ message Conds {
     optional basetypes.v1.StringVal AppID     = 20;
     optional basetypes.v1.Uint32Val EventType = 30;
     optional basetypes.v1.StringVal GoodID    = 40;
+    optional basetypes.v1.StringVal AppGoodID = 41;
     optional basetypes.v1.StringSliceVal IDs  = 50;
 }
 

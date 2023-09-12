@@ -45,6 +45,8 @@ message Event {
     uint32               CreatedAt     = 200;
     uint32               UpdatedAt     = 210;
     uint32               DeletedAt     = 220;
+    string               AppGoodID     = 230;
+    string               AppGoodName   = 240;
 }
 
 message CreateEventRequest {
@@ -54,7 +56,7 @@ message CreateEventRequest {
     optional string      Credits       = 40;
     optional string      CreditsPerUSD = 50;
     optional uint32      MaxConsecutive = 60;
-    optional string      GoodID        = 70;
+    optional string      AppGoodID     = 70;
     optional uint32      InviterLayers = 80;
 }
 
