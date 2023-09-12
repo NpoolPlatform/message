@@ -124,6 +124,7 @@ message RewardEventRequest {
     string               UserID      = 20;
     basetypes.v1.UsedFor EventType   = 30;
     optional string      GoodID      = 40;
+    optional string      AppGoodID   = 41;
     uint32               Consecutive = 50;
     string               Amount      = 60;
 }
