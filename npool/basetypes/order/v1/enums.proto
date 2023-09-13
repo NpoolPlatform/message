@@ -125,7 +125,7 @@ enum OrderState {
                                                                   |                               |
                                                                   |                               |
                                                                   v                               |
-                                                        CanceledTransferBookKeeping------------Rollback                                                           
+                                                        CanceledTransferBookKeeping------------Rollback
                                                                   |                               |
                                                                   |                               |
                                                                   v                               |
@@ -148,9 +148,9 @@ enum OrderState {
     // Calculation
     OrderStateRestoreExpiredStock   = 180; // -> OrderStateUpdateExpiredChilds
     OrderStateUpdateExpiredChilds   = 190; // -> OrderStateExpired
-    OrderStateRestoreCanceledStock  = 200; // -> OrderStateCancelAchievement
-    OrderStateCancelAchievement     = 210; // -> OrderStateDeductLockedCommission
-    OrderStateDeductLockedCommission = 220; // -> OrderStateReturnCanceledBalance
+    OrderStateRestoreCanceledStock  = 200; // -> OrderStateDeductLockedCommission
+    OrderStateDeductLockedCommission = 210; // -> OrderStateCancelAchievement
+    OrderStateCancelAchievement     = 220; // -> OrderStateReturnCanceledBalance
     OrderStateReturnCanceledBalance = 230; // -> OrderStateCanceledTransferBookKeeping
     OrderStateCanceledTransferBookKeeping = 240; // -> OrderStateCancelUnlockPaymentAccount
     OrderStateCancelUnlockPaymentAccount  = 250; // -> OrderStateUpdateCanceledChilds

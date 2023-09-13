@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -141,8 +140,7 @@
           "type": "string"
         },
         "AppSpotLocked": {
-          "type": "string",
-          "title": "Locked from app spot quantity"
+          "type": "string"
         },
         "WaitStart": {
           "type": "string"
