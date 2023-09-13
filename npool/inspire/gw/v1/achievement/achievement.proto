@@ -53,7 +53,6 @@ message GoodAchievement {
 
     string AppGoodID          = 160;
     string AppGoodName        = 170;
-    string AppGoodUnit        = 180;
 
 }
 

@@ -301,9 +301,6 @@
         },
         "AppGoodName": {
           "type": "string"
-        },
-        "AppGoodUnit": {
-          "type": "string"
         }
       }
     },
