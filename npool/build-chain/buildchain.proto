@@ -65,6 +65,7 @@ message CreateTokenInfoResponse {
 message Conds {
   basetypes.v1.StringVal ChainType = 10;
   basetypes.v1.StringVal TokenType = 20;
+  basetypes.v1.StringVal OfficialContract = 30;
 }
 
 message GetTokenInfosRequest {

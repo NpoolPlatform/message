@@ -183,6 +183,9 @@
         },
         "TokenType": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "OfficialContract": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
