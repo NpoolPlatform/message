@@ -186,6 +186,24 @@
         },
         "OfficialContract": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Name": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Unit": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Decimal": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "PrivateContract": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Remark": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Data": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },

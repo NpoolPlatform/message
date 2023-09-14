@@ -66,6 +66,12 @@ message Conds {
   basetypes.v1.StringVal ChainType = 10;
   basetypes.v1.StringVal TokenType = 20;
   basetypes.v1.StringVal OfficialContract = 30;
+  basetypes.v1.StringVal Name = 40;
+  basetypes.v1.StringVal Unit = 50;
+  basetypes.v1.StringVal Decimal = 60;
+  basetypes.v1.StringVal PrivateContract = 70;
+  basetypes.v1.StringVal Remark = 80;
+  basetypes.v1.StringVal Data = 90;
 }
 
 message GetTokenInfosRequest {
