@@ -204,6 +204,9 @@
         },
         "Data": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "ID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },

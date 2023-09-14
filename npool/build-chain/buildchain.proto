@@ -72,6 +72,7 @@ message Conds {
   optional basetypes.v1.StringVal PrivateContract = 70;
   optional basetypes.v1.StringVal Remark = 80;
   optional basetypes.v1.StringVal Data = 90;
+  optional basetypes.v1.StringVal ID = 100;
 }
 
 message GetTokenInfosRequest {
