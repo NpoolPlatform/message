@@ -135,6 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
+              "type": "object",
               "properties": {}
             }
           }
@@ -155,14 +156,6 @@
       },
       "additionalProperties": {}
     },
-    "protobufNullValue": {
-      "type": "string",
-      "enum": [
-        "NULL_VALUE"
-      ],
-      "default": "NULL_VALUE",
-      "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\n The JSON representation for `NullValue` is JSON `null`.\n\n - NULL_VALUE: Null value."
-    },
     "rpcStatus": {
       "type": "object",
       "properties": {
@@ -176,8 +169,20 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ChainType": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "TokenType": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -231,25 +236,11 @@
         }
       }
     },
-    "v1FilterCond": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Val": {
-          "type": "object"
-        }
-      }
-    },
     "v1GetTokenInfosRequest": {
       "type": "object",
       "properties": {
         "Conds": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/v1FilterCond"
-          }
+          "$ref": "#/definitions/v1Conds"
         }
       }
     },
@@ -259,12 +250,24 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1TokenInfo"
           }
         },
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
         }
       }
     },

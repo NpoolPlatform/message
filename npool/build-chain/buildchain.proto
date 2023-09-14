@@ -62,7 +62,14 @@ message CreateTokenInfoResponse {
   string Msg = 30;
 }
 
-message GetTokenInfosRequest { map<string, basetypes.v1.FilterCond> Conds = 20; }
+message Conds {
+  basetypes.v1.StringVal ChainType = 10;
+  basetypes.v1.StringVal TokenType = 20;
+}
+
+message GetTokenInfosRequest {
+  Conds Conds = 10;
+}
 
 message GetTokenInfosResponse {
   repeated TokenInfo Infos = 10;

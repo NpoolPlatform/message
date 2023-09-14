@@ -39,6 +39,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -128,6 +129,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v2Ledger"
           }
         },
@@ -215,7 +217,8 @@
           "type": "string"
         },
         "LockID": {
-          "type": "string"
+          "type": "string",
+          "title": "currently not used"
         }
       }
     },
