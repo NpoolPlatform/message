@@ -58,4 +58,5 @@ enum LedgerLockState {
     LedgerLockLocked   = 10;
     LedgerLockSettle   = 20;
     LedgerLockRollback = 30;
+    LedgerLockCanceled = 40;
 }

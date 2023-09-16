@@ -78,4 +78,5 @@ enum AppStockLockState {
     AppStockExpired    = 40;
     AppStockChargeBack = 50;
     AppStockRollback   = 60;
+    AppStockCanceled   = 70;
 }
