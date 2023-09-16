@@ -51,3 +51,11 @@ enum WithdrawState {
     SpendSuccessfulBalance = 120; // -> Successful
     Successful            = 130;  // SpendSuccessfulBalance <-
 }
+
+enum LedgerLockState {
+    DefaultLedgerLockState = 0;
+
+    LedgerLockLocked   = 10;
+    LedgerLockSettle   = 20;
+    LedgerLockRollback = 30;
+}

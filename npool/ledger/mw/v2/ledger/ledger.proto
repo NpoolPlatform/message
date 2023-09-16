@@ -87,14 +87,10 @@ message UnlockBalanceResponse {
 }
 
 message SettleBalanceRequest {
-    string AppID      = 10;
-    string UserID     = 20;
-    string CoinTypeID = 30;
-    string Amount     = 40;
-    basetypes.ledger.v1.IOSubType IOSubType = 50;
-    string IOExtra     = 60;
-    string StatementID = 70;
-    string LockID      = 80;
+    string LockID = 10;
+    basetypes.ledger.v1.IOSubType IOSubType = 20;
+    string IOExtra     = 30;
+    string StatementID = 40;
 }
 
 message SettleBalanceResponse {
