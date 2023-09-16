@@ -14,6 +14,7 @@ service Middleware {
     rpc InService  (InServiceRequest)  returns (InServiceResponse)  {}
     rpc ChargeBack (ChargeBackRequest) returns (ChargeBackResponse) {}
     rpc Expire     (ExpireRequest)     returns (ExpireResponse)     {}
+    rpc Reserve    (ReserveRequest)    returns (ReserveResponse)    {}
 }
 
 message Stock {
@@ -116,6 +117,18 @@ message ExpireRequest {
 }
 
 message ExpireResponse {
+    Stock Info = 10;
+}
+
+message ReserveRequest {
+    string ID        = 10;
+    string AppID     = 20;
+    string GoodID    = 30;
+    string AppGoodID = 40;
+    string Units     = 50;
+}
+
+message ReserveResponse {
     Stock Info = 10;
 }
 
