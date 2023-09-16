@@ -9,23 +9,11 @@ import "npool/basetypes/ledger/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc GetLedger        (GetLedgerRequest)        returns (GetLedgerResponse)        {}
-    rpc GetLedgers       (GetLedgersRequest)       returns (GetLedgersResponse)       {}
-    rpc AddBalance       (AddBalanceRequest)       returns (AddBalanceResponse)       {}
-    rpc SubBalance       (SubBalanceRequest)       returns (SubBalanceResponse)       {}
-}
-
-message LedgerReq {
-    optional string ID         = 10;
-    optional string AppID      = 20;
-    optional string UserID     = 30;
-    optional string CoinTypeID = 40;
-    optional string Locked     = 60;
-    optional string Spendable  = 80;
-    optional basetypes.ledger.v1.IOSubType       IOSubType   = 90;
-    optional string IOExtra     = 100;
-    optional string StatementID = 110;
-    optional string LockID      = 120; // currently not used
+    rpc GetLedger     (GetLedgerRequest)     returns (GetLedgerResponse)     {}
+    rpc GetLedgers    (GetLedgersRequest)    returns (GetLedgersResponse)    {}
+    rpc LockBalance   (LockBalanceRequest)   returns (LockBalanceResponse)   {}
+    rpc UnlockBalance (UnlockBalanceRequest) returns (UnlockBalanceResponse) {}
+    rpc SettleBalance (SettleBalanceRequest) returns (SettleBalanceResponse) {}
 }
 
 message Ledger {
@@ -78,18 +66,37 @@ message GetLedgersResponse {
     uint32          Total = 20;
 }
 
-message AddBalanceRequest {
-    LedgerReq Info = 10;
+message LockBalanceRequest {
+    string AppID      = 10;
+    string UserID     = 20;
+    string CoinTypeID = 30;
+    string Amount     = 40;
+    string LockID     = 50;
 }
 
-message AddBalanceResponse {
-    .ledger.middleware.ledger.v2.Ledger Info = 10;
+message LockBalanceResponse {
+    Ledger Info = 10;
 }
 
-message SubBalanceRequest {
-    LedgerReq Info = 10;
+message UnlockBalanceRequest {
+    string LockID = 10;
 }
 
-message SubBalanceResponse {
-    .ledger.middleware.ledger.v2.Ledger Info = 10;
+message UnlockBalanceResponse {
+    Ledger Info = 10;
+}
+
+message SettleBalanceRequest {
+    string AppID      = 10;
+    string UserID     = 20;
+    string CoinTypeID = 30;
+    string Amount     = 40;
+    basetypes.ledger.v1.IOSubType IOSubType = 50;
+    string IOExtra     = 60;
+    string StatementID = 70;
+    string LockID      = 80;
+}
+
+message SettleBalanceResponse {
+    Ledger Info = 10;
 }

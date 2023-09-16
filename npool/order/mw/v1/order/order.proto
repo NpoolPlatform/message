@@ -13,6 +13,7 @@ service Middleware {
     rpc CreateOrder     (CreateOrderRequest)    returns (CreateOrderResponse)    {}
     rpc CreateOrders    (CreateOrdersRequest)   returns (CreateOrdersResponse)   {}
     rpc UpdateOrder     (UpdateOrderRequest)    returns (UpdateOrderResponse)    {}
+    rpc RollbackOrder   (RollbackOrderRequest)  returns (RollbackOrderResponse)  {}
     rpc UpdateOrders    (UpdateOrdersRequest)   returns (UpdateOrdersResponse)   {}
     rpc GetOrder        (GetOrderRequest)       returns (GetOrderResponse)       {}
     rpc GetOrders       (GetOrdersRequest)      returns (GetOrdersResponse)      {}
@@ -71,7 +72,6 @@ message OrderReq {
     optional basetypes.order.v1.PaymentState PaymentState = 350;
     optional uint32 OutOfGasHours                         = 360;
     optional uint32 CompensateHours                       = 370;
-    optional bool   Rollback                              = 380;
     optional string AppGoodStockLockID                    = 400;
     optional string LedgerLockID                          = 410;
 }
@@ -244,6 +244,15 @@ message UpdateOrderRequest {
 message UpdateOrderResponse {
     Order Info = 10;
 }
+
+message RollbackOrderRequest {
+    OrderReq Info = 10;
+}
+
+message RollbackOrderResponse {
+    Order Info = 10;
+}
+
 
 message UpdateOrdersRequest {
     repeated OrderReq Infos = 10;

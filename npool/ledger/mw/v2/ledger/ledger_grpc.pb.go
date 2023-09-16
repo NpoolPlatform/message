@@ -19,10 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetLedger_FullMethodName  = "/ledger.middleware.ledger.v2.Middleware/GetLedger"
-	Middleware_GetLedgers_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/GetLedgers"
-	Middleware_AddBalance_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/AddBalance"
-	Middleware_SubBalance_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/SubBalance"
+	Middleware_GetLedger_FullMethodName     = "/ledger.middleware.ledger.v2.Middleware/GetLedger"
+	Middleware_GetLedgers_FullMethodName    = "/ledger.middleware.ledger.v2.Middleware/GetLedgers"
+	Middleware_LockBalance_FullMethodName   = "/ledger.middleware.ledger.v2.Middleware/LockBalance"
+	Middleware_UnlockBalance_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/UnlockBalance"
+	Middleware_SettleBalance_FullMethodName = "/ledger.middleware.ledger.v2.Middleware/SettleBalance"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -31,8 +32,9 @@ const (
 type MiddlewareClient interface {
 	GetLedger(ctx context.Context, in *GetLedgerRequest, opts ...grpc.CallOption) (*GetLedgerResponse, error)
 	GetLedgers(ctx context.Context, in *GetLedgersRequest, opts ...grpc.CallOption) (*GetLedgersResponse, error)
-	AddBalance(ctx context.Context, in *AddBalanceRequest, opts ...grpc.CallOption) (*AddBalanceResponse, error)
-	SubBalance(ctx context.Context, in *SubBalanceRequest, opts ...grpc.CallOption) (*SubBalanceResponse, error)
+	LockBalance(ctx context.Context, in *LockBalanceRequest, opts ...grpc.CallOption) (*LockBalanceResponse, error)
+	UnlockBalance(ctx context.Context, in *UnlockBalanceRequest, opts ...grpc.CallOption) (*UnlockBalanceResponse, error)
+	SettleBalance(ctx context.Context, in *SettleBalanceRequest, opts ...grpc.CallOption) (*SettleBalanceResponse, error)
 }
 
 type middlewareClient struct {
@@ -61,18 +63,27 @@ func (c *middlewareClient) GetLedgers(ctx context.Context, in *GetLedgersRequest
 	return out, nil
 }
 
-func (c *middlewareClient) AddBalance(ctx context.Context, in *AddBalanceRequest, opts ...grpc.CallOption) (*AddBalanceResponse, error) {
-	out := new(AddBalanceResponse)
-	err := c.cc.Invoke(ctx, Middleware_AddBalance_FullMethodName, in, out, opts...)
+func (c *middlewareClient) LockBalance(ctx context.Context, in *LockBalanceRequest, opts ...grpc.CallOption) (*LockBalanceResponse, error) {
+	out := new(LockBalanceResponse)
+	err := c.cc.Invoke(ctx, Middleware_LockBalance_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) SubBalance(ctx context.Context, in *SubBalanceRequest, opts ...grpc.CallOption) (*SubBalanceResponse, error) {
-	out := new(SubBalanceResponse)
-	err := c.cc.Invoke(ctx, Middleware_SubBalance_FullMethodName, in, out, opts...)
+func (c *middlewareClient) UnlockBalance(ctx context.Context, in *UnlockBalanceRequest, opts ...grpc.CallOption) (*UnlockBalanceResponse, error) {
+	out := new(UnlockBalanceResponse)
+	err := c.cc.Invoke(ctx, Middleware_UnlockBalance_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) SettleBalance(ctx context.Context, in *SettleBalanceRequest, opts ...grpc.CallOption) (*SettleBalanceResponse, error) {
+	out := new(SettleBalanceResponse)
+	err := c.cc.Invoke(ctx, Middleware_SettleBalance_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -85,8 +96,9 @@ func (c *middlewareClient) SubBalance(ctx context.Context, in *SubBalanceRequest
 type MiddlewareServer interface {
 	GetLedger(context.Context, *GetLedgerRequest) (*GetLedgerResponse, error)
 	GetLedgers(context.Context, *GetLedgersRequest) (*GetLedgersResponse, error)
-	AddBalance(context.Context, *AddBalanceRequest) (*AddBalanceResponse, error)
-	SubBalance(context.Context, *SubBalanceRequest) (*SubBalanceResponse, error)
+	LockBalance(context.Context, *LockBalanceRequest) (*LockBalanceResponse, error)
+	UnlockBalance(context.Context, *UnlockBalanceRequest) (*UnlockBalanceResponse, error)
+	SettleBalance(context.Context, *SettleBalanceRequest) (*SettleBalanceResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -100,11 +112,14 @@ func (UnimplementedMiddlewareServer) GetLedger(context.Context, *GetLedgerReques
 func (UnimplementedMiddlewareServer) GetLedgers(context.Context, *GetLedgersRequest) (*GetLedgersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLedgers not implemented")
 }
-func (UnimplementedMiddlewareServer) AddBalance(context.Context, *AddBalanceRequest) (*AddBalanceResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddBalance not implemented")
+func (UnimplementedMiddlewareServer) LockBalance(context.Context, *LockBalanceRequest) (*LockBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LockBalance not implemented")
 }
-func (UnimplementedMiddlewareServer) SubBalance(context.Context, *SubBalanceRequest) (*SubBalanceResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SubBalance not implemented")
+func (UnimplementedMiddlewareServer) UnlockBalance(context.Context, *UnlockBalanceRequest) (*UnlockBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnlockBalance not implemented")
+}
+func (UnimplementedMiddlewareServer) SettleBalance(context.Context, *SettleBalanceRequest) (*SettleBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SettleBalance not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -155,38 +170,56 @@ func _Middleware_GetLedgers_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_AddBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddBalanceRequest)
+func _Middleware_LockBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LockBalanceRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).AddBalance(ctx, in)
+		return srv.(MiddlewareServer).LockBalance(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_AddBalance_FullMethodName,
+		FullMethod: Middleware_LockBalance_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).AddBalance(ctx, req.(*AddBalanceRequest))
+		return srv.(MiddlewareServer).LockBalance(ctx, req.(*LockBalanceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_SubBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SubBalanceRequest)
+func _Middleware_UnlockBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnlockBalanceRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).SubBalance(ctx, in)
+		return srv.(MiddlewareServer).UnlockBalance(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_SubBalance_FullMethodName,
+		FullMethod: Middleware_UnlockBalance_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).SubBalance(ctx, req.(*SubBalanceRequest))
+		return srv.(MiddlewareServer).UnlockBalance(ctx, req.(*UnlockBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_SettleBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SettleBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).SettleBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_SettleBalance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).SettleBalance(ctx, req.(*SettleBalanceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -207,12 +240,16 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetLedgers_Handler,
 		},
 		{
-			MethodName: "AddBalance",
-			Handler:    _Middleware_AddBalance_Handler,
+			MethodName: "LockBalance",
+			Handler:    _Middleware_LockBalance_Handler,
 		},
 		{
-			MethodName: "SubBalance",
-			Handler:    _Middleware_SubBalance_Handler,
+			MethodName: "UnlockBalance",
+			Handler:    _Middleware_UnlockBalance_Handler,
+		},
+		{
+			MethodName: "SettleBalance",
+			Handler:    _Middleware_SettleBalance_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

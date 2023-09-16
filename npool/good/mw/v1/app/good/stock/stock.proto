@@ -8,24 +8,12 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc AddStock (AddStockRequest) returns (AddStockResponse) {}
-    rpc SubStock (SubStockRequest) returns (SubStockResponse) {}
-}
-
-message StockReq {
-    optional string ID         = 10;
-    optional string AppID      = 20;
-    optional string GoodID     = 30;
-    optional string AppGoodID  = 40;
-    optional string Reserved   = 50;
-    optional string SpotQuantity = 60;
-    optional string Locked     = 70;
-    optional string AppSpotLocked = 80;  // Locked from app spot quantity
-    optional string WaitStart  = 90;
-    optional string InService  = 100;
-    optional bool   ChargeBack = 110;
-    optional bool   Rollback   = 120;
-    optional string LockID     = 130;
+    rpc Lock       (LockRequest)       returns (LockResponse)       {}
+    rpc Unlock     (UnlockRequest)     returns (UnlockResponse)     {}
+    rpc WaitStart  (WaitStartRequest)  returns (WaitStartResponse)  {}
+    rpc InService  (InServiceRequest)  returns (InServiceResponse)  {}
+    rpc ChargeBack (ChargeBackRequest) returns (ChargeBackResponse) {}
+    rpc Expire     (ExpireRequest)     returns (ExpireResponse)     {}
 }
 
 message Stock {
@@ -59,29 +47,75 @@ message Stock {
     uint32 UpdatedAt  = 1010;
 }
 
-message Conds {
-    optional basetypes.v1.StringVal ID        = 10;
-    optional basetypes.v1.StringVal AppID     = 20;
-    optional basetypes.v1.StringVal GoodID    = 30;
-    optional basetypes.v1.StringVal AppGoodID = 40;
-    optional basetypes.v1.StringSliceVal AppIDs     = 50;
-    optional basetypes.v1.StringSliceVal GoodIDs    = 60;
-    optional basetypes.v1.StringSliceVal AppGoodIDs = 70;
+message LockRequest {
+    string ID         = 10;
+    string AppID      = 20;
+    string GoodID     = 30;
+    string AppGoodID  = 40;
+    string Units      = 50;
+    string AppSpotUnits = 60;  // Locked from app spot quantity
+    string LockID     = 70;
 }
 
-message AddStockRequest {
-    StockReq Info = 10;
-}
-
-message AddStockResponse {
+message LockResponse {
     Stock Info = 10;
 }
 
-message SubStockRequest {
-    StockReq Info = 10;
+message UnlockRequest {
+    string LockID = 10;
 }
 
-message SubStockResponse {
+message UnlockResponse {
+    Stock Info = 10;
+}
+
+message WaitStartRequest {
+    string ID         = 10;
+    string AppID      = 20;
+    string GoodID     = 30;
+    string AppGoodID  = 40;
+    string Units      = 50;
+    string LockID     = 60;
+}
+
+message WaitStartResponse {
+    Stock Info = 10;
+}
+
+message InServiceRequest {
+    string ID         = 10;
+    string AppID      = 20;
+    string GoodID     = 30;
+    string AppGoodID  = 40;
+    string Units      = 50;
+}
+
+message InServiceResponse {
+    Stock Info = 10;
+}
+
+message ChargeBackRequest {
+    string ID         = 10;
+    string AppID      = 20;
+    string GoodID     = 30;
+    string AppGoodID  = 40;
+    optional string WaitStart = 50;
+    optional string InService = 60;
+}
+
+message ChargeBackResponse {
+    Stock Info = 10;
+}
+
+message ExpireRequest {
+    string ID        = 10;
+    string AppID     = 20;
+    string GoodID    = 30;
+    string AppGoodID = 40;
+    string Units     = 50;
+}
+
+message ExpireResponse {
     Stock Info = 10;
 }
 

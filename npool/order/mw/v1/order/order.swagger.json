@@ -601,9 +601,6 @@
           "type": "integer",
           "format": "int64"
         },
-        "Rollback": {
-          "type": "boolean"
-        },
         "AppGoodStockLockID": {
           "type": "string"
         },
@@ -692,6 +689,14 @@
         "PayWithNoPayment"
       ],
       "default": "DefaultPaymentType"
+    },
+    "v1RollbackOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Order"
+        }
+      }
     },
     "v1StringSliceVal": {
       "type": "object",

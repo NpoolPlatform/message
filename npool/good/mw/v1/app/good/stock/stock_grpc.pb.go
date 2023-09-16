@@ -19,16 +19,24 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_AddStock_FullMethodName = "/good.middleware.app.good1.stock.v1.Middleware/AddStock"
-	Middleware_SubStock_FullMethodName = "/good.middleware.app.good1.stock.v1.Middleware/SubStock"
+	Middleware_Lock_FullMethodName       = "/good.middleware.app.good1.stock.v1.Middleware/Lock"
+	Middleware_Unlock_FullMethodName     = "/good.middleware.app.good1.stock.v1.Middleware/Unlock"
+	Middleware_WaitStart_FullMethodName  = "/good.middleware.app.good1.stock.v1.Middleware/WaitStart"
+	Middleware_InService_FullMethodName  = "/good.middleware.app.good1.stock.v1.Middleware/InService"
+	Middleware_ChargeBack_FullMethodName = "/good.middleware.app.good1.stock.v1.Middleware/ChargeBack"
+	Middleware_Expire_FullMethodName     = "/good.middleware.app.good1.stock.v1.Middleware/Expire"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	AddStock(ctx context.Context, in *AddStockRequest, opts ...grpc.CallOption) (*AddStockResponse, error)
-	SubStock(ctx context.Context, in *SubStockRequest, opts ...grpc.CallOption) (*SubStockResponse, error)
+	Lock(ctx context.Context, in *LockRequest, opts ...grpc.CallOption) (*LockResponse, error)
+	Unlock(ctx context.Context, in *UnlockRequest, opts ...grpc.CallOption) (*UnlockResponse, error)
+	WaitStart(ctx context.Context, in *WaitStartRequest, opts ...grpc.CallOption) (*WaitStartResponse, error)
+	InService(ctx context.Context, in *InServiceRequest, opts ...grpc.CallOption) (*InServiceResponse, error)
+	ChargeBack(ctx context.Context, in *ChargeBackRequest, opts ...grpc.CallOption) (*ChargeBackResponse, error)
+	Expire(ctx context.Context, in *ExpireRequest, opts ...grpc.CallOption) (*ExpireResponse, error)
 }
 
 type middlewareClient struct {
@@ -39,18 +47,54 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) AddStock(ctx context.Context, in *AddStockRequest, opts ...grpc.CallOption) (*AddStockResponse, error) {
-	out := new(AddStockResponse)
-	err := c.cc.Invoke(ctx, Middleware_AddStock_FullMethodName, in, out, opts...)
+func (c *middlewareClient) Lock(ctx context.Context, in *LockRequest, opts ...grpc.CallOption) (*LockResponse, error) {
+	out := new(LockResponse)
+	err := c.cc.Invoke(ctx, Middleware_Lock_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) SubStock(ctx context.Context, in *SubStockRequest, opts ...grpc.CallOption) (*SubStockResponse, error) {
-	out := new(SubStockResponse)
-	err := c.cc.Invoke(ctx, Middleware_SubStock_FullMethodName, in, out, opts...)
+func (c *middlewareClient) Unlock(ctx context.Context, in *UnlockRequest, opts ...grpc.CallOption) (*UnlockResponse, error) {
+	out := new(UnlockResponse)
+	err := c.cc.Invoke(ctx, Middleware_Unlock_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) WaitStart(ctx context.Context, in *WaitStartRequest, opts ...grpc.CallOption) (*WaitStartResponse, error) {
+	out := new(WaitStartResponse)
+	err := c.cc.Invoke(ctx, Middleware_WaitStart_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) InService(ctx context.Context, in *InServiceRequest, opts ...grpc.CallOption) (*InServiceResponse, error) {
+	out := new(InServiceResponse)
+	err := c.cc.Invoke(ctx, Middleware_InService_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ChargeBack(ctx context.Context, in *ChargeBackRequest, opts ...grpc.CallOption) (*ChargeBackResponse, error) {
+	out := new(ChargeBackResponse)
+	err := c.cc.Invoke(ctx, Middleware_ChargeBack_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) Expire(ctx context.Context, in *ExpireRequest, opts ...grpc.CallOption) (*ExpireResponse, error) {
+	out := new(ExpireResponse)
+	err := c.cc.Invoke(ctx, Middleware_Expire_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -61,8 +105,12 @@ func (c *middlewareClient) SubStock(ctx context.Context, in *SubStockRequest, op
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	AddStock(context.Context, *AddStockRequest) (*AddStockResponse, error)
-	SubStock(context.Context, *SubStockRequest) (*SubStockResponse, error)
+	Lock(context.Context, *LockRequest) (*LockResponse, error)
+	Unlock(context.Context, *UnlockRequest) (*UnlockResponse, error)
+	WaitStart(context.Context, *WaitStartRequest) (*WaitStartResponse, error)
+	InService(context.Context, *InServiceRequest) (*InServiceResponse, error)
+	ChargeBack(context.Context, *ChargeBackRequest) (*ChargeBackResponse, error)
+	Expire(context.Context, *ExpireRequest) (*ExpireResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -70,11 +118,23 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) AddStock(context.Context, *AddStockRequest) (*AddStockResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddStock not implemented")
+func (UnimplementedMiddlewareServer) Lock(context.Context, *LockRequest) (*LockResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Lock not implemented")
 }
-func (UnimplementedMiddlewareServer) SubStock(context.Context, *SubStockRequest) (*SubStockResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SubStock not implemented")
+func (UnimplementedMiddlewareServer) Unlock(context.Context, *UnlockRequest) (*UnlockResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Unlock not implemented")
+}
+func (UnimplementedMiddlewareServer) WaitStart(context.Context, *WaitStartRequest) (*WaitStartResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WaitStart not implemented")
+}
+func (UnimplementedMiddlewareServer) InService(context.Context, *InServiceRequest) (*InServiceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method InService not implemented")
+}
+func (UnimplementedMiddlewareServer) ChargeBack(context.Context, *ChargeBackRequest) (*ChargeBackResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ChargeBack not implemented")
+}
+func (UnimplementedMiddlewareServer) Expire(context.Context, *ExpireRequest) (*ExpireResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Expire not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -89,38 +149,110 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_AddStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddStockRequest)
+func _Middleware_Lock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LockRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).AddStock(ctx, in)
+		return srv.(MiddlewareServer).Lock(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_AddStock_FullMethodName,
+		FullMethod: Middleware_Lock_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).AddStock(ctx, req.(*AddStockRequest))
+		return srv.(MiddlewareServer).Lock(ctx, req.(*LockRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_SubStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SubStockRequest)
+func _Middleware_Unlock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnlockRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).SubStock(ctx, in)
+		return srv.(MiddlewareServer).Unlock(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_SubStock_FullMethodName,
+		FullMethod: Middleware_Unlock_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).SubStock(ctx, req.(*SubStockRequest))
+		return srv.(MiddlewareServer).Unlock(ctx, req.(*UnlockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_WaitStart_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WaitStartRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).WaitStart(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_WaitStart_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).WaitStart(ctx, req.(*WaitStartRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_InService_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(InServiceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).InService(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_InService_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).InService(ctx, req.(*InServiceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ChargeBack_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ChargeBackRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ChargeBack(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ChargeBack_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ChargeBack(ctx, req.(*ChargeBackRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_Expire_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExpireRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).Expire(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_Expire_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).Expire(ctx, req.(*ExpireRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -133,12 +265,28 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "AddStock",
-			Handler:    _Middleware_AddStock_Handler,
+			MethodName: "Lock",
+			Handler:    _Middleware_Lock_Handler,
 		},
 		{
-			MethodName: "SubStock",
-			Handler:    _Middleware_SubStock_Handler,
+			MethodName: "Unlock",
+			Handler:    _Middleware_Unlock_Handler,
+		},
+		{
+			MethodName: "WaitStart",
+			Handler:    _Middleware_WaitStart_Handler,
+		},
+		{
+			MethodName: "InService",
+			Handler:    _Middleware_InService_Handler,
+		},
+		{
+			MethodName: "ChargeBack",
+			Handler:    _Middleware_ChargeBack_Handler,
+		},
+		{
+			MethodName: "Expire",
+			Handler:    _Middleware_Expire_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
