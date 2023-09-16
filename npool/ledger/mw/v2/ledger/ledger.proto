@@ -79,7 +79,8 @@ message LockBalanceResponse {
 }
 
 message UnlockBalanceRequest {
-    string LockID = 10;
+    string LockID   = 10;
+    bool   Rollback = 20;
 }
 
 message UnlockBalanceResponse {
