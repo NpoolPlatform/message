@@ -25,7 +25,6 @@ const (
 	Middleware_InService_FullMethodName  = "/good.middleware.app.good1.stock.v1.Middleware/InService"
 	Middleware_ChargeBack_FullMethodName = "/good.middleware.app.good1.stock.v1.Middleware/ChargeBack"
 	Middleware_Expire_FullMethodName     = "/good.middleware.app.good1.stock.v1.Middleware/Expire"
-	Middleware_Reserve_FullMethodName    = "/good.middleware.app.good1.stock.v1.Middleware/Reserve"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -38,7 +37,6 @@ type MiddlewareClient interface {
 	InService(ctx context.Context, in *InServiceRequest, opts ...grpc.CallOption) (*InServiceResponse, error)
 	ChargeBack(ctx context.Context, in *ChargeBackRequest, opts ...grpc.CallOption) (*ChargeBackResponse, error)
 	Expire(ctx context.Context, in *ExpireRequest, opts ...grpc.CallOption) (*ExpireResponse, error)
-	Reserve(ctx context.Context, in *ReserveRequest, opts ...grpc.CallOption) (*ReserveResponse, error)
 }
 
 type middlewareClient struct {
@@ -103,15 +101,6 @@ func (c *middlewareClient) Expire(ctx context.Context, in *ExpireRequest, opts .
 	return out, nil
 }
 
-func (c *middlewareClient) Reserve(ctx context.Context, in *ReserveRequest, opts ...grpc.CallOption) (*ReserveResponse, error) {
-	out := new(ReserveResponse)
-	err := c.cc.Invoke(ctx, Middleware_Reserve_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -122,7 +111,6 @@ type MiddlewareServer interface {
 	InService(context.Context, *InServiceRequest) (*InServiceResponse, error)
 	ChargeBack(context.Context, *ChargeBackRequest) (*ChargeBackResponse, error)
 	Expire(context.Context, *ExpireRequest) (*ExpireResponse, error)
-	Reserve(context.Context, *ReserveRequest) (*ReserveResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -147,9 +135,6 @@ func (UnimplementedMiddlewareServer) ChargeBack(context.Context, *ChargeBackRequ
 }
 func (UnimplementedMiddlewareServer) Expire(context.Context, *ExpireRequest) (*ExpireResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Expire not implemented")
-}
-func (UnimplementedMiddlewareServer) Reserve(context.Context, *ReserveRequest) (*ReserveResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Reserve not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -272,24 +257,6 @@ func _Middleware_Expire_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_Reserve_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ReserveRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).Reserve(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_Reserve_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).Reserve(ctx, req.(*ReserveRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -320,10 +287,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Expire",
 			Handler:    _Middleware_Expire_Handler,
-		},
-		{
-			MethodName: "Reserve",
-			Handler:    _Middleware_Reserve_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

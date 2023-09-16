@@ -5,6 +5,7 @@ package good.middleware.app.good1.stock.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/stock";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Middleware {
@@ -14,7 +15,6 @@ service Middleware {
     rpc InService  (InServiceRequest)  returns (InServiceResponse)  {}
     rpc ChargeBack (ChargeBackRequest) returns (ChargeBackResponse) {}
     rpc Expire     (ExpireRequest)     returns (ExpireResponse)     {}
-    rpc Reserve    (ReserveRequest)    returns (ReserveResponse)    {}
 }
 
 message Stock {
@@ -72,12 +72,7 @@ message UnlockResponse {
 }
 
 message WaitStartRequest {
-    string ID         = 10;
-    string AppID      = 20;
-    string GoodID     = 30;
-    string AppGoodID  = 40;
-    string Units      = 50;
-    string LockID     = 60;
+    string LockID = 10;
 }
 
 message WaitStartResponse {
@@ -85,11 +80,7 @@ message WaitStartResponse {
 }
 
 message InServiceRequest {
-    string ID         = 10;
-    string AppID      = 20;
-    string GoodID     = 30;
-    string AppGoodID  = 40;
-    string Units      = 50;
+    string LockID = 10;
 }
 
 message InServiceResponse {
@@ -97,12 +88,7 @@ message InServiceResponse {
 }
 
 message ChargeBackRequest {
-    string ID         = 10;
-    string AppID      = 20;
-    string GoodID     = 30;
-    string AppGoodID  = 40;
-    optional string WaitStart = 50;
-    optional string InService = 60;
+    string LockID = 10;
 }
 
 message ChargeBackResponse {
@@ -110,26 +96,10 @@ message ChargeBackResponse {
 }
 
 message ExpireRequest {
-    string ID        = 10;
-    string AppID     = 20;
-    string GoodID    = 30;
-    string AppGoodID = 40;
-    string Units     = 50;
+    string LockID = 10;
 }
 
 message ExpireResponse {
-    Stock Info = 10;
-}
-
-message ReserveRequest {
-    string ID        = 10;
-    string AppID     = 20;
-    string GoodID    = 30;
-    string AppGoodID = 40;
-    string Units     = 50;
-}
-
-message ReserveResponse {
     Stock Info = 10;
 }
 
