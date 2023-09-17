@@ -22,7 +22,6 @@ const (
 	Middleware_CreateOrder_FullMethodName     = "/order.middleware.order1.v1.Middleware/CreateOrder"
 	Middleware_CreateOrders_FullMethodName    = "/order.middleware.order1.v1.Middleware/CreateOrders"
 	Middleware_UpdateOrder_FullMethodName     = "/order.middleware.order1.v1.Middleware/UpdateOrder"
-	Middleware_RollbackOrder_FullMethodName   = "/order.middleware.order1.v1.Middleware/RollbackOrder"
 	Middleware_UpdateOrders_FullMethodName    = "/order.middleware.order1.v1.Middleware/UpdateOrders"
 	Middleware_GetOrder_FullMethodName        = "/order.middleware.order1.v1.Middleware/GetOrder"
 	Middleware_GetOrders_FullMethodName       = "/order.middleware.order1.v1.Middleware/GetOrders"
@@ -41,7 +40,6 @@ type MiddlewareClient interface {
 	CreateOrder(ctx context.Context, in *CreateOrderRequest, opts ...grpc.CallOption) (*CreateOrderResponse, error)
 	CreateOrders(ctx context.Context, in *CreateOrdersRequest, opts ...grpc.CallOption) (*CreateOrdersResponse, error)
 	UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*UpdateOrderResponse, error)
-	RollbackOrder(ctx context.Context, in *RollbackOrderRequest, opts ...grpc.CallOption) (*RollbackOrderResponse, error)
 	UpdateOrders(ctx context.Context, in *UpdateOrdersRequest, opts ...grpc.CallOption) (*UpdateOrdersResponse, error)
 	GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error)
 	GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error)
@@ -82,15 +80,6 @@ func (c *middlewareClient) CreateOrders(ctx context.Context, in *CreateOrdersReq
 func (c *middlewareClient) UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*UpdateOrderResponse, error) {
 	out := new(UpdateOrderResponse)
 	err := c.cc.Invoke(ctx, Middleware_UpdateOrder_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) RollbackOrder(ctx context.Context, in *RollbackOrderRequest, opts ...grpc.CallOption) (*RollbackOrderResponse, error) {
-	out := new(RollbackOrderResponse)
-	err := c.cc.Invoke(ctx, Middleware_RollbackOrder_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -185,7 +174,6 @@ type MiddlewareServer interface {
 	CreateOrder(context.Context, *CreateOrderRequest) (*CreateOrderResponse, error)
 	CreateOrders(context.Context, *CreateOrdersRequest) (*CreateOrdersResponse, error)
 	UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error)
-	RollbackOrder(context.Context, *RollbackOrderRequest) (*RollbackOrderResponse, error)
 	UpdateOrders(context.Context, *UpdateOrdersRequest) (*UpdateOrdersResponse, error)
 	GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error)
 	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
@@ -210,9 +198,6 @@ func (UnimplementedMiddlewareServer) CreateOrders(context.Context, *CreateOrders
 }
 func (UnimplementedMiddlewareServer) UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrder not implemented")
-}
-func (UnimplementedMiddlewareServer) RollbackOrder(context.Context, *RollbackOrderRequest) (*RollbackOrderResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RollbackOrder not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateOrders(context.Context, *UpdateOrdersRequest) (*UpdateOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrders not implemented")
@@ -304,24 +289,6 @@ func _Middleware_UpdateOrder_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).UpdateOrder(ctx, req.(*UpdateOrderRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_RollbackOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RollbackOrderRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).RollbackOrder(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_RollbackOrder_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).RollbackOrder(ctx, req.(*RollbackOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -506,10 +473,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateOrder",
 			Handler:    _Middleware_UpdateOrder_Handler,
-		},
-		{
-			MethodName: "RollbackOrder",
-			Handler:    _Middleware_RollbackOrder_Handler,
 		},
 		{
 			MethodName: "UpdateOrders",
