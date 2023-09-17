@@ -19,12 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetStatements_FullMethodName    = "/ledger.middleware.ledger.statement.v2.Middleware/GetStatements"
-	Middleware_GetStatement_FullMethodName     = "/ledger.middleware.ledger.statement.v2.Middleware/GetStatement"
-	Middleware_CreateStatements_FullMethodName = "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatements"
-	Middleware_DeleteStatements_FullMethodName = "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatements"
-	Middleware_CreateStatement_FullMethodName  = "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatement"
-	Middleware_DeleteStatement_FullMethodName  = "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatement"
+	Middleware_GetStatements_FullMethodName       = "/ledger.middleware.ledger.statement.v2.Middleware/GetStatements"
+	Middleware_GetStatement_FullMethodName        = "/ledger.middleware.ledger.statement.v2.Middleware/GetStatement"
+	Middleware_ExistStatementConds_FullMethodName = "/ledger.middleware.ledger.statement.v2.Middleware/ExistStatementConds"
+	Middleware_CreateStatements_FullMethodName    = "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatements"
+	Middleware_DeleteStatements_FullMethodName    = "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatements"
+	Middleware_CreateStatement_FullMethodName     = "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatement"
+	Middleware_DeleteStatement_FullMethodName     = "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatement"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -33,6 +34,7 @@ const (
 type MiddlewareClient interface {
 	GetStatements(ctx context.Context, in *GetStatementsRequest, opts ...grpc.CallOption) (*GetStatementsResponse, error)
 	GetStatement(ctx context.Context, in *GetStatementRequest, opts ...grpc.CallOption) (*GetStatementResponse, error)
+	ExistStatementConds(ctx context.Context, in *ExistStatementCondsRequest, opts ...grpc.CallOption) (*ExistStatementCondsResponse, error)
 	CreateStatements(ctx context.Context, in *CreateStatementsRequest, opts ...grpc.CallOption) (*CreateStatementsResponse, error)
 	DeleteStatements(ctx context.Context, in *DeleteStatementsRequest, opts ...grpc.CallOption) (*DeleteStatementsResponse, error)
 	CreateStatement(ctx context.Context, in *CreateStatementRequest, opts ...grpc.CallOption) (*CreateStatementResponse, error)
@@ -59,6 +61,15 @@ func (c *middlewareClient) GetStatements(ctx context.Context, in *GetStatementsR
 func (c *middlewareClient) GetStatement(ctx context.Context, in *GetStatementRequest, opts ...grpc.CallOption) (*GetStatementResponse, error) {
 	out := new(GetStatementResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetStatement_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistStatementConds(ctx context.Context, in *ExistStatementCondsRequest, opts ...grpc.CallOption) (*ExistStatementCondsResponse, error) {
+	out := new(ExistStatementCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistStatementConds_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,6 +118,7 @@ func (c *middlewareClient) DeleteStatement(ctx context.Context, in *DeleteStatem
 type MiddlewareServer interface {
 	GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error)
 	GetStatement(context.Context, *GetStatementRequest) (*GetStatementResponse, error)
+	ExistStatementConds(context.Context, *ExistStatementCondsRequest) (*ExistStatementCondsResponse, error)
 	CreateStatements(context.Context, *CreateStatementsRequest) (*CreateStatementsResponse, error)
 	DeleteStatements(context.Context, *DeleteStatementsRequest) (*DeleteStatementsResponse, error)
 	CreateStatement(context.Context, *CreateStatementRequest) (*CreateStatementResponse, error)
@@ -123,6 +135,9 @@ func (UnimplementedMiddlewareServer) GetStatements(context.Context, *GetStatemen
 }
 func (UnimplementedMiddlewareServer) GetStatement(context.Context, *GetStatementRequest) (*GetStatementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStatement not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistStatementConds(context.Context, *ExistStatementCondsRequest) (*ExistStatementCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistStatementConds not implemented")
 }
 func (UnimplementedMiddlewareServer) CreateStatements(context.Context, *CreateStatementsRequest) (*CreateStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateStatements not implemented")
@@ -181,6 +196,24 @@ func _Middleware_GetStatement_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetStatement(ctx, req.(*GetStatementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistStatementConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistStatementCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistStatementConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistStatementConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistStatementConds(ctx, req.(*ExistStatementCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -271,6 +304,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetStatement",
 			Handler:    _Middleware_GetStatement_Handler,
+		},
+		{
+			MethodName: "ExistStatementConds",
+			Handler:    _Middleware_ExistStatementConds_Handler,
 		},
 		{
 			MethodName: "CreateStatements",

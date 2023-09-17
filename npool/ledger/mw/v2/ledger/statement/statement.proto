@@ -11,10 +11,11 @@ import "npool/basetypes/ledger/v1/enums.proto";
 service Middleware {
     rpc GetStatements       (GetStatementsRequest)       returns (GetStatementsResponse)       {}
     rpc GetStatement        (GetStatementRequest)        returns (GetStatementResponse)        {}
+    rpc ExistStatementConds (ExistStatementCondsRequest) returns (ExistStatementCondsResponse) {}
     rpc CreateStatements    (CreateStatementsRequest)    returns (CreateStatementsResponse)    {}
-    rpc DeleteStatements    (DeleteStatementsRequest)  returns (DeleteStatementsResponse)  {}
-    rpc CreateStatement     (CreateStatementRequest)     returns (CreateStatementResponse)      {}
-    rpc DeleteStatement     (DeleteStatementRequest)   returns (DeleteStatementResponse)    {}
+    rpc DeleteStatements    (DeleteStatementsRequest)    returns (DeleteStatementsResponse)    {}
+    rpc CreateStatement     (CreateStatementRequest)     returns (CreateStatementResponse)     {}
+    rpc DeleteStatement     (DeleteStatementRequest)     returns (DeleteStatementResponse)     {}
 }
 
 message StatementReq {
@@ -66,6 +67,7 @@ message Conds {
     optional basetypes.v1.Uint32Val EndAt            = 120;
     optional basetypes.v1.Uint32SliceVal IOSubTypes  = 130;
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 140;
+    optional basetypes.v1.StringSliceVal UserIDs     = 150;
 }
 
 message GetStatementsRequest {
@@ -85,6 +87,14 @@ message GetStatementRequest {
 
 message GetStatementResponse {
     Statement Info = 10;
+}
+
+message ExistStatementCondsRequest {
+    Conds  Conds  = 10;
+}
+
+message ExistStatementCondsResponse {
+    bool Info = 10;
 }
 
 message CreateStatementsRequest {
