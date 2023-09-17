@@ -158,6 +158,9 @@
         },
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -198,6 +201,14 @@
             "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
+        }
+      }
+    },
+    "v2ExistStatementCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
         }
       }
     },

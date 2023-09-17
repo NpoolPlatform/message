@@ -87,14 +87,6 @@
         }
       }
     },
-    "v2AddBalanceResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Ledger"
-        }
-      }
-    },
     "v2Conds": {
       "type": "object",
       "properties": {
@@ -186,43 +178,23 @@
         }
       }
     },
-    "v2LedgerReq": {
+    "v2LockBalanceResponse": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Locked": {
-          "type": "string"
-        },
-        "Spendable": {
-          "type": "string"
-        },
-        "IOSubType": {
-          "$ref": "#/definitions/v1IOSubType"
-        },
-        "IOExtra": {
-          "type": "string"
-        },
-        "StatementID": {
-          "type": "string"
-        },
-        "LockID": {
-          "type": "string",
-          "title": "currently not used"
+        "Info": {
+          "$ref": "#/definitions/v2Ledger"
         }
       }
     },
-    "v2SubBalanceResponse": {
+    "v2SettleBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Ledger"
+        }
+      }
+    },
+    "v2UnlockBalanceResponse": {
       "type": "object",
       "properties": {
         "Info": {

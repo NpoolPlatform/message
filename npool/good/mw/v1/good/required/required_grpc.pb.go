@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateRequired_FullMethodName = "/good.middleware.good1.required1.v1.Middleware/CreateRequired"
-	Middleware_GetRequired_FullMethodName    = "/good.middleware.good1.required1.v1.Middleware/GetRequired"
-	Middleware_GetRequireds_FullMethodName   = "/good.middleware.good1.required1.v1.Middleware/GetRequireds"
-	Middleware_UpdateRequired_FullMethodName = "/good.middleware.good1.required1.v1.Middleware/UpdateRequired"
-	Middleware_DeleteRequired_FullMethodName = "/good.middleware.good1.required1.v1.Middleware/DeleteRequired"
+	Middleware_CreateRequired_FullMethodName     = "/good.middleware.good1.required1.v1.Middleware/CreateRequired"
+	Middleware_GetRequired_FullMethodName        = "/good.middleware.good1.required1.v1.Middleware/GetRequired"
+	Middleware_ExistRequiredConds_FullMethodName = "/good.middleware.good1.required1.v1.Middleware/ExistRequiredConds"
+	Middleware_GetRequireds_FullMethodName       = "/good.middleware.good1.required1.v1.Middleware/GetRequireds"
+	Middleware_UpdateRequired_FullMethodName     = "/good.middleware.good1.required1.v1.Middleware/UpdateRequired"
+	Middleware_DeleteRequired_FullMethodName     = "/good.middleware.good1.required1.v1.Middleware/DeleteRequired"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -32,6 +33,7 @@ const (
 type MiddlewareClient interface {
 	CreateRequired(ctx context.Context, in *CreateRequiredRequest, opts ...grpc.CallOption) (*CreateRequiredResponse, error)
 	GetRequired(ctx context.Context, in *GetRequiredRequest, opts ...grpc.CallOption) (*GetRequiredResponse, error)
+	ExistRequiredConds(ctx context.Context, in *ExistRequiredCondsRequest, opts ...grpc.CallOption) (*ExistRequiredCondsResponse, error)
 	GetRequireds(ctx context.Context, in *GetRequiredsRequest, opts ...grpc.CallOption) (*GetRequiredsResponse, error)
 	UpdateRequired(ctx context.Context, in *UpdateRequiredRequest, opts ...grpc.CallOption) (*UpdateRequiredResponse, error)
 	DeleteRequired(ctx context.Context, in *DeleteRequiredRequest, opts ...grpc.CallOption) (*DeleteRequiredResponse, error)
@@ -57,6 +59,15 @@ func (c *middlewareClient) CreateRequired(ctx context.Context, in *CreateRequire
 func (c *middlewareClient) GetRequired(ctx context.Context, in *GetRequiredRequest, opts ...grpc.CallOption) (*GetRequiredResponse, error) {
 	out := new(GetRequiredResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetRequired_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistRequiredConds(ctx context.Context, in *ExistRequiredCondsRequest, opts ...grpc.CallOption) (*ExistRequiredCondsResponse, error) {
+	out := new(ExistRequiredCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistRequiredConds_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -96,6 +107,7 @@ func (c *middlewareClient) DeleteRequired(ctx context.Context, in *DeleteRequire
 type MiddlewareServer interface {
 	CreateRequired(context.Context, *CreateRequiredRequest) (*CreateRequiredResponse, error)
 	GetRequired(context.Context, *GetRequiredRequest) (*GetRequiredResponse, error)
+	ExistRequiredConds(context.Context, *ExistRequiredCondsRequest) (*ExistRequiredCondsResponse, error)
 	GetRequireds(context.Context, *GetRequiredsRequest) (*GetRequiredsResponse, error)
 	UpdateRequired(context.Context, *UpdateRequiredRequest) (*UpdateRequiredResponse, error)
 	DeleteRequired(context.Context, *DeleteRequiredRequest) (*DeleteRequiredResponse, error)
@@ -111,6 +123,9 @@ func (UnimplementedMiddlewareServer) CreateRequired(context.Context, *CreateRequ
 }
 func (UnimplementedMiddlewareServer) GetRequired(context.Context, *GetRequiredRequest) (*GetRequiredResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRequired not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistRequiredConds(context.Context, *ExistRequiredCondsRequest) (*ExistRequiredCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistRequiredConds not implemented")
 }
 func (UnimplementedMiddlewareServer) GetRequireds(context.Context, *GetRequiredsRequest) (*GetRequiredsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRequireds not implemented")
@@ -166,6 +181,24 @@ func _Middleware_GetRequired_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetRequired(ctx, req.(*GetRequiredRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistRequiredConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistRequiredCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistRequiredConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistRequiredConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistRequiredConds(ctx, req.(*ExistRequiredCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -238,6 +271,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetRequired",
 			Handler:    _Middleware_GetRequired_Handler,
+		},
+		{
+			MethodName: "ExistRequiredConds",
+			Handler:    _Middleware_ExistRequiredConds_Handler,
 		},
 		{
 			MethodName: "GetRequireds",

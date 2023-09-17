@@ -65,6 +65,9 @@
         },
         "TopMostType": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "AppGoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -119,6 +122,20 @@
         "TopMostLoyaltyExclusive"
       ],
       "default": "DefaultGoodTopMostType"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     },
     "v1StringVal": {
       "type": "object",

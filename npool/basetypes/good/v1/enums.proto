@@ -68,3 +68,15 @@ enum GoodStartMode {
     GoodStartModeTBD       = 10;
     GoodStartModeConfirmed = 20;
 }
+
+enum AppStockLockState {
+    DefaultAppStockLockState = 0;
+
+    AppStockLocked     = 10;
+    AppStockWaitStart  = 20;
+    AppStockInService  = 30;
+    AppStockExpired    = 40;
+    AppStockChargeBack = 50;
+    AppStockRollback   = 60;
+    AppStockCanceled   = 70;
+}

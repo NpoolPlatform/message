@@ -10,6 +10,7 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc CreateRequired      (CreateRequiredRequest)      returns (CreateRequiredResponse)      {}
     rpc GetRequired         (GetRequiredRequest)         returns (GetRequiredResponse)         {}
+    rpc ExistRequiredConds  (ExistRequiredCondsRequest)  returns (ExistRequiredCondsResponse)  {}
     rpc GetRequireds        (GetRequiredsRequest)        returns (GetRequiredsResponse)        {}
     rpc UpdateRequired      (UpdateRequiredRequest)      returns (UpdateRequiredResponse)      {}
     rpc DeleteRequired      (DeleteRequiredRequest)      returns (DeleteRequiredResponse)      {}
@@ -63,6 +64,14 @@ message GetRequiredRequest {
 
 message GetRequiredResponse {
     Required Info = 10;
+}
+
+message ExistRequiredCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistRequiredCondsResponse {
+    bool Info = 10;
 }
 
 message GetRequiredsRequest {

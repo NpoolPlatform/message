@@ -45,7 +45,31 @@
         }
       }
     },
-    "v1AddStockResponse": {
+    "v1ChargeBackResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Stock"
+        }
+      }
+    },
+    "v1ExpireResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Stock"
+        }
+      }
+    },
+    "v1InServiceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Stock"
+        }
+      }
+    },
+    "v1LockResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -116,52 +140,15 @@
         }
       }
     },
-    "v1StockReq": {
+    "v1UnlockResponse": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "AppGoodID": {
-          "type": "string"
-        },
-        "Reserved": {
-          "type": "string"
-        },
-        "SpotQuantity": {
-          "type": "string"
-        },
-        "Locked": {
-          "type": "string"
-        },
-        "AppSpotLocked": {
-          "type": "string",
-          "title": "Locked from app spot quantity"
-        },
-        "WaitStart": {
-          "type": "string"
-        },
-        "InService": {
-          "type": "string"
-        },
-        "ChargeBack": {
-          "type": "boolean"
-        },
-        "Rollback": {
-          "type": "boolean"
-        },
-        "LockID": {
-          "type": "string"
+        "Info": {
+          "$ref": "#/definitions/v1Stock"
         }
       }
     },
-    "v1SubStockResponse": {
+    "v1WaitStartResponse": {
       "type": "object",
       "properties": {
         "Info": {
