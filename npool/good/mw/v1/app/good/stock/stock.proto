@@ -55,7 +55,10 @@ message LockRequest {
     string AppGoodID  = 40;
     string Units      = 50;
     string AppSpotUnits = 60;  // Locked from app spot quantity
-    string LockID     = 70;
+
+    // Must same as unlock request
+    string LockID     = 1000;
+    bool   Rollback   = 1010;
 }
 
 message LockResponse {
@@ -63,8 +66,9 @@ message LockResponse {
 }
 
 message UnlockRequest {
-    string LockID   = 10;
-    bool   Rollback = 20;
+    // Must same as lock request
+    string LockID   = 1000;
+    bool   Rollback = 1010;
 }
 
 message UnlockResponse {

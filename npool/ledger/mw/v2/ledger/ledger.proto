@@ -71,7 +71,10 @@ message LockBalanceRequest {
     string UserID     = 20;
     string CoinTypeID = 30;
     string Amount     = 40;
-    string LockID     = 50;
+
+    // Must same as unlock
+    string LockID     = 1000;
+    bool   Rollback   = 1010;
 }
 
 message LockBalanceResponse {
@@ -79,8 +82,9 @@ message LockBalanceResponse {
 }
 
 message UnlockBalanceRequest {
-    string LockID   = 10;
-    bool   Rollback = 20;
+    // Must same as unlock
+    string LockID   = 1000;
+    bool   Rollback = 1010;
 }
 
 message UnlockBalanceResponse {
