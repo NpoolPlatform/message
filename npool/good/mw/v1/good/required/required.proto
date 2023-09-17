@@ -67,13 +67,12 @@ message GetRequiredResponse {
 }
 
 message ExistRequiredCondsRequest {
-    string ID = 10;
+    Conds Conds = 10;
 }
 
 message ExistRequiredCondsResponse {
     bool Info = 10;
 }
-
 
 message GetRequiredsRequest {
     Conds Conds  = 10;
