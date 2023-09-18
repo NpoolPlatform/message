@@ -880,6 +880,9 @@
         "ParentOrderGoodName": {
           "type": "string"
         },
+        "ParentOrderAppGoodID": {
+          "type": "string"
+        },
         "AppID": {
           "type": "string"
         },

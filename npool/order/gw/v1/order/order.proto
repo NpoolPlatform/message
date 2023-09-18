@@ -117,6 +117,7 @@ message Order {
     string ParentOrderID          = 20;
     string ParentOrderGoodID      = 30;
     string ParentOrderGoodName    = 40;
+    string ParentOrderAppGoodID   = 41;
 
     string AppID                  = 49;
     string UserID                 = 50;
