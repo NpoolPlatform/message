@@ -266,9 +266,14 @@ message GetOrdersResponse {
 
 message GetUserOrdersRequest {
     string AppID   = 10;
-    string TargetUserID  = 20;
+    string TargetUserID = 20;
     int32  Offset  = 30;
     int32  Limit   = 40;
+}
+
+message GetUserOrdersResponse {
+    repeated Order Infos = 10;
+    uint32         Total = 20;
 }
 
 message CreateUserOrderRequest {
@@ -299,11 +304,6 @@ message CreateAppUserOrderRequest {
 
 message CreateAppUserOrderResponse {
     Order Info = 10;
-}
-
-message GetUserOrdersResponse {
-    repeated Order Infos = 10;
-    uint32         Total = 20;
 }
 
 message GetAppUserOrdersRequest {
