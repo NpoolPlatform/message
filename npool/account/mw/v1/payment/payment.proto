@@ -90,6 +90,7 @@ message UpdateAccountResponse {
 
 message LockAccountRequest {
     string ID = 10;
+    basetypes.v1.AccountLockedBy LockedBy = 20;
 }
 
 message LockAccountResponse {
