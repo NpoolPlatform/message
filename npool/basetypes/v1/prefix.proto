@@ -19,6 +19,7 @@ enum Prefix {
     PrefixCreateFiatCurrency = 110;
     PrefixCreateCoinCurrencyFeed = 120;
     PrefixCreateCoinCurrency = 130;
+    PrefixUpdateCoinCurrency = 131;
     PrefixCreateCoinFiat    = 140;
     PrefixCreateCoinFiatCurrency = 150;
     PrefixCreateAppCountry  = 160;
