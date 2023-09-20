@@ -21,6 +21,8 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Middleware_CreateAccount_FullMethodName  = "/account.middleware.payment.v1.Middleware/CreateAccount"
 	Middleware_UpdateAccount_FullMethodName  = "/account.middleware.payment.v1.Middleware/UpdateAccount"
+	Middleware_LockAccount_FullMethodName    = "/account.middleware.payment.v1.Middleware/LockAccount"
+	Middleware_UnlockAccount_FullMethodName  = "/account.middleware.payment.v1.Middleware/UnlockAccount"
 	Middleware_GetAccount_FullMethodName     = "/account.middleware.payment.v1.Middleware/GetAccount"
 	Middleware_GetAccountOnly_FullMethodName = "/account.middleware.payment.v1.Middleware/GetAccountOnly"
 	Middleware_GetAccounts_FullMethodName    = "/account.middleware.payment.v1.Middleware/GetAccounts"
@@ -32,6 +34,8 @@ const (
 type MiddlewareClient interface {
 	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
 	UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error)
+	LockAccount(ctx context.Context, in *LockAccountRequest, opts ...grpc.CallOption) (*LockAccountResponse, error)
+	UnlockAccount(ctx context.Context, in *UnlockAccountRequest, opts ...grpc.CallOption) (*UnlockAccountResponse, error)
 	GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error)
 	GetAccountOnly(ctx context.Context, in *GetAccountOnlyRequest, opts ...grpc.CallOption) (*GetAccountOnlyResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
@@ -57,6 +61,24 @@ func (c *middlewareClient) CreateAccount(ctx context.Context, in *CreateAccountR
 func (c *middlewareClient) UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error) {
 	out := new(UpdateAccountResponse)
 	err := c.cc.Invoke(ctx, Middleware_UpdateAccount_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) LockAccount(ctx context.Context, in *LockAccountRequest, opts ...grpc.CallOption) (*LockAccountResponse, error) {
+	out := new(LockAccountResponse)
+	err := c.cc.Invoke(ctx, Middleware_LockAccount_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UnlockAccount(ctx context.Context, in *UnlockAccountRequest, opts ...grpc.CallOption) (*UnlockAccountResponse, error) {
+	out := new(UnlockAccountResponse)
+	err := c.cc.Invoke(ctx, Middleware_UnlockAccount_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -96,6 +118,8 @@ func (c *middlewareClient) GetAccounts(ctx context.Context, in *GetAccountsReque
 type MiddlewareServer interface {
 	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
 	UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error)
+	LockAccount(context.Context, *LockAccountRequest) (*LockAccountResponse, error)
+	UnlockAccount(context.Context, *UnlockAccountRequest) (*UnlockAccountResponse, error)
 	GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error)
 	GetAccountOnly(context.Context, *GetAccountOnlyRequest) (*GetAccountOnlyResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
@@ -111,6 +135,12 @@ func (UnimplementedMiddlewareServer) CreateAccount(context.Context, *CreateAccou
 }
 func (UnimplementedMiddlewareServer) UpdateAccount(context.Context, *UpdateAccountRequest) (*UpdateAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAccount not implemented")
+}
+func (UnimplementedMiddlewareServer) LockAccount(context.Context, *LockAccountRequest) (*LockAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LockAccount not implemented")
+}
+func (UnimplementedMiddlewareServer) UnlockAccount(context.Context, *UnlockAccountRequest) (*UnlockAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnlockAccount not implemented")
 }
 func (UnimplementedMiddlewareServer) GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccount not implemented")
@@ -166,6 +196,42 @@ func _Middleware_UpdateAccount_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).UpdateAccount(ctx, req.(*UpdateAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_LockAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LockAccountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).LockAccount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_LockAccount_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).LockAccount(ctx, req.(*LockAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UnlockAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnlockAccountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UnlockAccount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UnlockAccount_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UnlockAccount(ctx, req.(*UnlockAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -238,6 +304,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAccount",
 			Handler:    _Middleware_UpdateAccount_Handler,
+		},
+		{
+			MethodName: "LockAccount",
+			Handler:    _Middleware_LockAccount_Handler,
+		},
+		{
+			MethodName: "UnlockAccount",
+			Handler:    _Middleware_UnlockAccount_Handler,
 		},
 		{
 			MethodName: "GetAccount",

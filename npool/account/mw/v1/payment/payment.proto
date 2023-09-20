@@ -9,12 +9,13 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)     {}
-    rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}
-
-    rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)        {}
-    rpc GetAccountOnly    (GetAccountOnlyRequest)    returns (GetAccountOnlyResponse)    {}
-    rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
+    rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)  {}
+    rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)  {}
+    rpc LockAccount       (LockAccountRequest)       returns (LockAccountResponse)    {}
+    rpc UnlockAccount     (UnlockAccountRequest)     returns (UnlockAccountResponse)  {}
+    rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)     {}
+    rpc GetAccountOnly    (GetAccountOnlyRequest)    returns (GetAccountOnlyResponse) {}
+    rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)    {}
 }
 
 message AccountReq {
@@ -84,6 +85,22 @@ message UpdateAccountRequest {
 }
 
 message UpdateAccountResponse {
+    Account Info = 10;
+}
+
+message LockAccountRequest {
+    string ID = 10;
+}
+
+message LockAccountResponse {
+    Account Info = 10;
+}
+
+message UnlockAccountRequest {
+    string ID = 10;
+}
+
+message UnlockAccountResponse {
     Account Info = 10;
 }
 
