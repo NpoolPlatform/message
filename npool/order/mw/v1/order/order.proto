@@ -221,6 +221,8 @@ message Conds {
     optional basetypes.v1.Uint32SliceVal PaymentTypes          = 230;
     optional basetypes.v1.Uint32Val      CreatedAt             = 240;
     optional basetypes.v1.Uint32Val      UpdatedAt             = 250;
+    optional basetypes.v1.BoolVal        AdminSetCanceled      = 260;
+    optional basetypes.v1.BoolVal        UserSetCanceled       = 270;
 }
 
 message CreateOrderRequest {

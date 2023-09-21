@@ -55,6 +55,17 @@
       ],
       "default": "DefaultBenefitState"
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -135,6 +146,12 @@
         },
         "UpdatedAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "AdminSetCanceled": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "UserSetCanceled": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
