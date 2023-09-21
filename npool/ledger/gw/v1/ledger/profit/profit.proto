@@ -53,6 +53,7 @@ message MiningReward {
     string OrderID      = 120;
     uint32 CreatedAt    = 130;
     string UserID       = 140;
+    string AppID        = 150;
 }
 
 message GetMiningRewardsRequest {

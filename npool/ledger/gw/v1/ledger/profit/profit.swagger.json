@@ -457,6 +457,9 @@
         },
         "UserID": {
           "type": "string"
+        },
+        "AppID": {
+          "type": "string"
         }
       }
     },
