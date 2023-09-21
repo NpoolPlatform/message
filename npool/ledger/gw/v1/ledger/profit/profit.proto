@@ -52,6 +52,7 @@ message MiningReward {
     string AppGoodID    = 110;
     string OrderID      = 120;
     uint32 CreatedAt    = 130;
+    string UserID       = 140;
 }
 
 message GetMiningRewardsRequest {
@@ -69,6 +70,8 @@ message GetMiningRewardsResponse {
 }
 
 message Profit {
+    string AppID      = 8;
+    string UserID     = 9;
     string CoinTypeID = 10;
     string CoinName   = 20;
     repeated string DisplayNames = 21;
@@ -104,6 +107,8 @@ message GetIntervalProfitsResponse {
 }
 
 message GoodProfit {
+    string AppID      = 8;
+    string UserID     = 9;
     string AppGoodID  = 10;
     string GoodName   = 20;
     string GoodUnit   = 30;

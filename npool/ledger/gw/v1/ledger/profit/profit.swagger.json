@@ -341,6 +341,12 @@
     "v1GoodProfit": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "AppGoodID": {
           "type": "string"
         },
@@ -448,12 +454,21 @@
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "UserID": {
+          "type": "string"
         }
       }
     },
     "v1Profit": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
