@@ -224,6 +224,9 @@
         },
         "EmailAddress": {
           "type": "string"
+        },
+        "AppID": {
+          "type": "string"
         }
       }
     }
