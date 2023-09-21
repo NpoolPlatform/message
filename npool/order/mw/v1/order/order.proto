@@ -220,6 +220,7 @@ message Conds {
     optional basetypes.v1.Uint32SliceVal OrderStates           = 220;
     optional basetypes.v1.Uint32SliceVal PaymentTypes          = 230;
     optional basetypes.v1.Uint32Val      CreatedAt             = 240;
+    optional basetypes.v1.Uint32Val      UpdatedAt             = 250;
 }
 
 message CreateOrderRequest {
