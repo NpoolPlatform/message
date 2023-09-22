@@ -366,6 +366,12 @@
         },
         "Message": {
           "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
         }
       }
     },

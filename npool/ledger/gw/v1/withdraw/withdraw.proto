@@ -51,6 +51,8 @@ message Withdraw {
     repeated string AddressLabels = 80;
     basetypes.ledger.v1.WithdrawState State = 90;
     string        Message       = 100;
+    string        AppID         = 110;
+    string        UserID        = 120;
 }
 
 message CreateWithdrawRequest {
