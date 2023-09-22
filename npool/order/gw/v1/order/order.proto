@@ -281,7 +281,6 @@ message CreateUserOrderRequest {
     string          TargetUserID         = 20;
     string          AppGoodID            = 30;
     string          Units                = 40;
-    string          PaymentCoinID        = 50;
     optional string ParentOrderID        = 60;
     basetypes.order.v1.OrderType OrderType = 110;
     basetypes.order.v1.InvestmentType InvestmentType = 120;
@@ -296,7 +295,6 @@ message CreateAppUserOrderRequest {
     string          TargetUserID         = 20;
     string          AppGoodID            = 30;
     string          Units                = 40;
-    string          PaymentCoinID        = 50;
     optional string ParentOrderID        = 60;
     basetypes.order.v1.OrderType OrderType     = 110;
     basetypes.order.v1.InvestmentType InvestmentType = 120;

@@ -518,9 +518,6 @@
         "Units": {
           "type": "string"
         },
-        "PaymentCoinID": {
-          "type": "string"
-        },
         "ParentOrderID": {
           "type": "string"
         },
@@ -641,9 +638,6 @@
           "type": "string"
         },
         "Units": {
-          "type": "string"
-        },
-        "PaymentCoinID": {
           "type": "string"
         },
         "ParentOrderID": {
