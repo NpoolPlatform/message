@@ -926,6 +926,9 @@
         "GoodValue": {
           "type": "string"
         },
+        "GoodValueUSD": {
+          "type": "string"
+        },
         "Units": {
           "type": "string"
         },

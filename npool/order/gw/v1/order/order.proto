@@ -137,6 +137,7 @@ message Order {
     uint32 GoodServicePeriodDays  = 132;
     string GoodUnitPrice          = 133;
     string GoodValue              = 134;
+    string GoodValueUSD           = 135;
     string Units                  = 140;
 
     string PaymentID              = 150;
