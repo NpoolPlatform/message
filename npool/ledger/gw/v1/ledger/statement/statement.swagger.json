@@ -256,6 +256,12 @@
         },
         "EmailAddress": {
           "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
         }
       }
     }

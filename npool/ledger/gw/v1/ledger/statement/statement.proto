@@ -38,6 +38,8 @@ message Statement {
     string UserID     = 100;
     string PhoneNO       = 110;
     string EmailAddress  = 120;
+    string AppID      = 130;
+    string ID         = 140;
 }
 
 message GetStatementsRequest {
