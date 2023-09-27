@@ -25,6 +25,7 @@ message GoodStatementReq {
     optional string     TotalAmount        = 70;
     optional string     UnsoldAmount       = 80;
     optional string     TechniqueServiceFeeAmount = 90;
+    optional bool       Rollback         = 1000;
 }
 
 message GoodStatement {

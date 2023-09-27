@@ -28,6 +28,7 @@ message StatementReq {
     optional string     Amount           = 70;
     optional string     IOExtra          = 100;
     optional uint32     CreatedAt        = 110;
+    optional bool       Rollback         = 1000;
 }
 
 message Statement {
