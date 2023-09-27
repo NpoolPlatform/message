@@ -52,10 +52,12 @@
         "BenefitWait",
         "BenefitTransferring",
         "BenefitBookKeeping",
+        "BenefitUserBookKeeping",
         "BenefitDone",
         "BenefitFail"
       ],
-      "default": "DefaultBenefitState"
+      "default": "DefaultBenefitState",
+      "title": "- BenefitBookKeeping: Good bookkeeping"
     },
     "v1BenefitType": {
       "type": "string",
