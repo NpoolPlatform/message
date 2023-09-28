@@ -20,7 +20,7 @@ message CommentReq {
     optional string ID        = 10;
     optional string AppID     = 20;
     optional string UserID    = 30;
-    optional string GoodID    = 40;
+    optional string AppGoodID = 40;
     optional string OrderID   = 50;
     optional string Content   = 60;
     optional string ReplyToID = 70;
@@ -33,8 +33,8 @@ message Comment {
     string AppID     = 20;
     // @inject_tag: sql:"user_id"
     string UserID    = 30;
-    // @inject_tag: sql:"good_id"
-    string GoodID    = 40;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID = 40;
     // @inject_tag: sql:"good_name"
     string GoodName  = 50;
     // @inject_tag: sql:"order_id"
@@ -53,8 +53,8 @@ message Conds {
     optional basetypes.v1.StringVal      ID       = 10;
     optional basetypes.v1.StringVal      AppID    = 20;
     optional basetypes.v1.StringVal      UserID   = 30;
-    optional basetypes.v1.StringVal      GoodID   = 40;
-    optional basetypes.v1.StringSliceVal GoodIDs  = 50;
+    optional basetypes.v1.StringVal      AppGoodID   = 40;
+    optional basetypes.v1.StringSliceVal AppGoodIDs  = 50;
     optional basetypes.v1.StringVal      OrderID  = 60;
     optional basetypes.v1.StringSliceVal OrderIDs = 70;
 }
