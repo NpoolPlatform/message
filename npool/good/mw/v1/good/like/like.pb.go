@@ -93,6 +93,13 @@ func (x *LikeReq) GetAppGoodID() string {
 	return ""
 }
 
+func (x *LikeReq) GetAppGoodID() string {
+	if x != nil && x.AppGoodID != nil {
+		return *x.AppGoodID
+	}
+	return ""
+}
+
 func (x *LikeReq) GetLike() bool {
 	if x != nil && x.Like != nil {
 		return *x.Like
