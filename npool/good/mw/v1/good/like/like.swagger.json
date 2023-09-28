@@ -172,9 +172,6 @@
         "AppGoodID": {
           "type": "string"
         },
-        "AppGoodID": {
-          "type": "string"
-        },
         "Like": {
           "type": "boolean"
         }
