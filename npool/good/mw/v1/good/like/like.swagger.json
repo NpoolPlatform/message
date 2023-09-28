@@ -162,9 +162,6 @@
         "UserID": {
           "type": "string"
         },
-        "GoodID": {
-          "type": "string"
-        },
         "AppGoodID": {
           "type": "string"
         },
