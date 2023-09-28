@@ -370,13 +370,7 @@
     "v1GetCommentsRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string"
-        },
         "AppGoodID": {
-          "type": "string"
-        },
-        "GoodID": {
           "type": "string"
         },
         "Offset": {
