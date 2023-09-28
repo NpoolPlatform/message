@@ -51,7 +51,7 @@ message Comment {
     optional string Username = 50;
     optional string EmailAddress = 60;
     optional string PhoneNO = 70;
-    string GoodID     = 80;
+    string AppGoodID  = 80;
     string GoodName   = 90;
     optional string OrderID = 100;
     string Content    = 110;
@@ -61,9 +61,9 @@ message Comment {
 }
 
 message CreateCommentRequest {
-    string AppID    = 10;
-    string UserID   = 20;
-    string GoodID   = 30;
+    string AppID        = 10;
+    string UserID       = 20;
+    string AppGoodID    = 30;
     optional string OrderID = 40;
     string Content  = 50;
     optional string ReplyToID = 60;
@@ -85,9 +85,9 @@ message UpdateCommentResponse {
 }
 
 message GetCommentsRequest {
-    optional string GoodID = 10;
-    int32           Offset = 20;
-    int32           Limit  = 30;
+    optional string AppGoodID = 10;
+    int32           Offset    = 20;
+    int32           Limit     = 30;
 }
 
 message GetCommentsResponse {

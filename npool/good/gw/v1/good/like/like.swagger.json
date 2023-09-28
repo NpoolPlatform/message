@@ -168,7 +168,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -183,7 +182,7 @@
         "UserID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "Like": {
@@ -224,7 +223,7 @@
     "v1GetLikesRequest": {
       "type": "object",
       "properties": {
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "Offset": {
@@ -243,7 +242,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Like"
           }
         },
@@ -278,7 +276,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Like"
           }
         },
@@ -312,7 +309,7 @@
         "PhoneNO": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "GoodName": {
