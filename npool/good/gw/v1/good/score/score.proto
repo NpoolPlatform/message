@@ -44,17 +44,17 @@ message Score {
     optional string Username = 50;
     optional string EmailAddress = 60;
     optional string PhoneNO = 70;
-    string GoodID     = 80;
+    string AppGoodID  = 80;
     string GoodName   = 90;
     string Score      = 100;
     uint32 CreatedAt  = 1000;
 }
 
 message CreateScoreRequest {
-    string AppID  = 10;
-    string UserID = 20;
-    string GoodID = 30;
-    string Score  = 40;
+    string AppID        = 10;
+    string UserID       = 20;
+    string AppGoodID    = 30;
+    string Score        = 40;
 }
 
 message CreateScoreResponse {
@@ -62,9 +62,9 @@ message CreateScoreResponse {
 }
 
 message GetScoresRequest {
-    optional string GoodID = 10;
-    int32           Offset = 20;
-    int32           Limit  = 30;
+    optional string AppGoodID   = 10;
+    int32           Offset      = 20;
+    int32           Limit       = 30;
 }
 
 message GetScoresResponse {
