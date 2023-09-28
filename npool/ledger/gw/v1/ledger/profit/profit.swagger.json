@@ -460,6 +460,9 @@
         },
         "AppID": {
           "type": "string"
+        },
+        "ID": {
+          "type": "string"
         }
       }
     },
