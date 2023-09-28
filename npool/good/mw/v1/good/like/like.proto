@@ -20,7 +20,6 @@ message LikeReq {
     optional string ID         = 10;
     optional string AppID      = 20;
     optional string UserID     = 30;
-    optional string GoodID     = 40;
     optional string AppGoodID  = 41;
     optional bool   Like       = 50;
 }
