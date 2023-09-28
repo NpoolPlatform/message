@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/get/intervalgoodprofits": {
+      "post": {
+        "operationId": "Gateway_GetIntervalGoodProfits",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetIntervalGoodProfitsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetIntervalGoodProfitsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/intervalprofits": {
       "post": {
         "operationId": "Gateway_GetIntervalProfits",
@@ -183,6 +215,41 @@
         "UserID": {
           "type": "string"
         },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetGoodProfitsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1GoodProfit"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetIntervalGoodProfitsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "StartAt": {
           "type": "integer",
           "format": "int64"
@@ -201,7 +268,7 @@
         }
       }
     },
-    "v1GetGoodProfitsResponse": {
+    "v1GetIntervalGoodProfitsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
