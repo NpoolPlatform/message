@@ -5,10 +5,10 @@ package scheduler.middleware.sentinel.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/scheduler/mw/v1/sentinel";
 
 service Middleware {
-    rpc TriggerScan (TriggerScanRequest) returns (TriggerScanResponse) {}
+    rpc Trigger (TriggerRequest) returns (TriggerResponse) {}
 }
 
-message TriggerScanRequest {
+message TriggerRequest {
     string Subsystem = 10;
     oneof Cond {
         string GoodID = 20;
@@ -16,5 +16,5 @@ message TriggerScanRequest {
     }
 }
 
-message TriggerScanResponse {
+message TriggerResponse {
 }

@@ -19,14 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_TriggerScan_FullMethodName = "/scheduler.middleware.sentinel.v1.Middleware/TriggerScan"
+	Middleware_Trigger_FullMethodName = "/scheduler.middleware.sentinel.v1.Middleware/Trigger"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	TriggerScan(ctx context.Context, in *TriggerScanRequest, opts ...grpc.CallOption) (*TriggerScanResponse, error)
+	Trigger(ctx context.Context, in *TriggerRequest, opts ...grpc.CallOption) (*TriggerResponse, error)
 }
 
 type middlewareClient struct {
@@ -37,9 +37,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) TriggerScan(ctx context.Context, in *TriggerScanRequest, opts ...grpc.CallOption) (*TriggerScanResponse, error) {
-	out := new(TriggerScanResponse)
-	err := c.cc.Invoke(ctx, Middleware_TriggerScan_FullMethodName, in, out, opts...)
+func (c *middlewareClient) Trigger(ctx context.Context, in *TriggerRequest, opts ...grpc.CallOption) (*TriggerResponse, error) {
+	out := new(TriggerResponse)
+	err := c.cc.Invoke(ctx, Middleware_Trigger_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -50,7 +50,7 @@ func (c *middlewareClient) TriggerScan(ctx context.Context, in *TriggerScanReque
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	TriggerScan(context.Context, *TriggerScanRequest) (*TriggerScanResponse, error)
+	Trigger(context.Context, *TriggerRequest) (*TriggerResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -58,8 +58,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) TriggerScan(context.Context, *TriggerScanRequest) (*TriggerScanResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method TriggerScan not implemented")
+func (UnimplementedMiddlewareServer) Trigger(context.Context, *TriggerRequest) (*TriggerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Trigger not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -74,20 +74,20 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_TriggerScan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(TriggerScanRequest)
+func _Middleware_Trigger_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TriggerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).TriggerScan(ctx, in)
+		return srv.(MiddlewareServer).Trigger(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_TriggerScan_FullMethodName,
+		FullMethod: Middleware_Trigger_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).TriggerScan(ctx, req.(*TriggerScanRequest))
+		return srv.(MiddlewareServer).Trigger(ctx, req.(*TriggerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -100,8 +100,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "TriggerScan",
-			Handler:    _Middleware_TriggerScan_Handler,
+			MethodName: "Trigger",
+			Handler:    _Middleware_Trigger_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

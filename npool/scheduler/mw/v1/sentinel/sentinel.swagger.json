@@ -45,7 +45,7 @@
         }
       }
     },
-    "v1TriggerScanResponse": {
+    "v1TriggerResponse": {
       "type": "object"
     }
   }
