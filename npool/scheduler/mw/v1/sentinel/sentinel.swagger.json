@@ -20,7 +20,7 @@
     "TriggerRequestCondGoodIDs": {
       "type": "object",
       "properties": {
-        "GoodID": {
+        "GoodIDs": {
           "type": "array",
           "items": {
             "type": "string"

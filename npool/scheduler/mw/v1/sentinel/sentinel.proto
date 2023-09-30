@@ -11,7 +11,7 @@ service Middleware {
 message TriggerRequest {
     string Subsystem = 10;
     message CondGoodIDs {
-        repeated string GoodID = 10;
+        repeated string GoodIDs = 10;
     }
     oneof Cond {
         string GoodID = 20;
