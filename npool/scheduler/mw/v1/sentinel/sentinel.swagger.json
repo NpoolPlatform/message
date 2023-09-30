@@ -4,6 +4,11 @@
     "title": "npool/scheduler/mw/v1/sentinel/sentinel.proto",
     "version": "version not set"
   },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
   "consumes": [
     "application/json"
   ],
@@ -39,6 +44,9 @@
           }
         }
       }
+    },
+    "v1TriggerScanResponse": {
+      "type": "object"
     }
   }
 }
