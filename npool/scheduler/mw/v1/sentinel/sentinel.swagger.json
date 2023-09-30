@@ -17,6 +17,17 @@
   ],
   "paths": {},
   "definitions": {
+    "TriggerRequestCondGoodIDs": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
