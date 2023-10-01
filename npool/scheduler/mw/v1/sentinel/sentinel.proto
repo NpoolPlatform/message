@@ -8,14 +8,15 @@ service Middleware {
     rpc Trigger (TriggerRequest) returns (TriggerResponse) {}
 }
 
+message BenefitWait {
+    repeated string GoodIDs  = 10;
+    uint32          RewardAt = 20;
+}
+
 message TriggerRequest {
     string Subsystem = 10;
-    message CondGoodIDs {
-        repeated string GoodIDs = 10;
-    }
     oneof Cond {
-        string GoodID = 20;
-        CondGoodIDs GoodIDs = 30;
+        BenefitWait BenefitWait = 20;
     }
 }
 

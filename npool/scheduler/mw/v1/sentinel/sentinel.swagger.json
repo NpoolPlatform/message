@@ -17,17 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "TriggerRequestCondGoodIDs": {
-      "type": "object",
-      "properties": {
-        "GoodIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -53,6 +42,21 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1BenefitWait": {
+      "type": "object",
+      "properties": {
+        "GoodIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "RewardAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
