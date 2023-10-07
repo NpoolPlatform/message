@@ -41,7 +41,7 @@ message APIReq {
     optional bool       Exported       = 70;
     optional string     PathPrefix     = 80;
     repeated string     Domains        = 90;
-    optional bool       Depracated     = 100;
+    optional bool       Deprecated     = 100;
 }
 
 message API {
@@ -68,8 +68,8 @@ message API {
     // @inject_tag: sql:"domains"
     string     DomainsStr     = 89;
     repeated   string  Domains = 90;
-    // @inject_tag: sql:"depracated"
-    bool       Depracated     = 100;
+    // @inject_tag: sql:"deprecated"
+    bool       Deprecated     = 100;
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt      = 110;
     // @inject_tag: sql:"updated_at"
@@ -83,7 +83,7 @@ message Conds {
     optional basetypes.v1.Int32Val       Method      = 40;
     optional basetypes.v1.StringVal      Path        = 50;
     optional basetypes.v1.BoolVal        Exported    = 60;
-    optional basetypes.v1.BoolVal        Depracated  = 70;
+    optional basetypes.v1.BoolVal        Deprecated  = 70;
     optional basetypes.v1.StringSliceVal EntIDs      = 80;
 }
 

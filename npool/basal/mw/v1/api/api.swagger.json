@@ -101,9 +101,9 @@
             "type": "string"
           }
         },
-        "Depracated": {
+        "Deprecated": {
           "type": "boolean",
-          "title": "@inject_tag: sql:\"depracated\""
+          "title": "@inject_tag: sql:\"deprecated\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -154,7 +154,7 @@
             "type": "string"
           }
         },
-        "Depracated": {
+        "Deprecated": {
           "type": "boolean"
         }
       }
@@ -191,7 +191,7 @@
         "Exported": {
           "$ref": "#/definitions/v1BoolVal"
         },
-        "Depracated": {
+        "Deprecated": {
           "$ref": "#/definitions/v1BoolVal"
         },
         "EntIDs": {
