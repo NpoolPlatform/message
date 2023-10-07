@@ -24,7 +24,6 @@ const (
 	Middleware_UpdateAPI_FullMethodName  = "/basal.middleware.api.v1.Middleware/UpdateAPI"
 	Middleware_GetAPIs_FullMethodName    = "/basal.middleware.api.v1.Middleware/GetAPIs"
 	Middleware_GetDomains_FullMethodName = "/basal.middleware.api.v1.Middleware/GetDomains"
-	Middleware_GetAPIOnly_FullMethodName = "/basal.middleware.api.v1.Middleware/GetAPIOnly"
 	Middleware_ExistAPI_FullMethodName   = "/basal.middleware.api.v1.Middleware/ExistAPI"
 	Middleware_DeleteAPI_FullMethodName  = "/basal.middleware.api.v1.Middleware/DeleteAPI"
 )
@@ -38,7 +37,6 @@ type MiddlewareClient interface {
 	UpdateAPI(ctx context.Context, in *UpdateAPIRequest, opts ...grpc.CallOption) (*UpdateAPIResponse, error)
 	GetAPIs(ctx context.Context, in *GetAPIsRequest, opts ...grpc.CallOption) (*GetAPIsResponse, error)
 	GetDomains(ctx context.Context, in *GetDomainsRequest, opts ...grpc.CallOption) (*GetDomainsResponse, error)
-	GetAPIOnly(ctx context.Context, in *GetAPIOnlyRequest, opts ...grpc.CallOption) (*GetAPIOnlyResponse, error)
 	ExistAPI(ctx context.Context, in *ExistAPIRequest, opts ...grpc.CallOption) (*ExistAPIResponse, error)
 	DeleteAPI(ctx context.Context, in *DeleteAPIRequest, opts ...grpc.CallOption) (*DeleteAPIResponse, error)
 }
@@ -96,15 +94,6 @@ func (c *middlewareClient) GetDomains(ctx context.Context, in *GetDomainsRequest
 	return out, nil
 }
 
-func (c *middlewareClient) GetAPIOnly(ctx context.Context, in *GetAPIOnlyRequest, opts ...grpc.CallOption) (*GetAPIOnlyResponse, error) {
-	out := new(GetAPIOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetAPIOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) ExistAPI(ctx context.Context, in *ExistAPIRequest, opts ...grpc.CallOption) (*ExistAPIResponse, error) {
 	out := new(ExistAPIResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistAPI_FullMethodName, in, out, opts...)
@@ -132,7 +121,6 @@ type MiddlewareServer interface {
 	UpdateAPI(context.Context, *UpdateAPIRequest) (*UpdateAPIResponse, error)
 	GetAPIs(context.Context, *GetAPIsRequest) (*GetAPIsResponse, error)
 	GetDomains(context.Context, *GetDomainsRequest) (*GetDomainsResponse, error)
-	GetAPIOnly(context.Context, *GetAPIOnlyRequest) (*GetAPIOnlyResponse, error)
 	ExistAPI(context.Context, *ExistAPIRequest) (*ExistAPIResponse, error)
 	DeleteAPI(context.Context, *DeleteAPIRequest) (*DeleteAPIResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -156,9 +144,6 @@ func (UnimplementedMiddlewareServer) GetAPIs(context.Context, *GetAPIsRequest) (
 }
 func (UnimplementedMiddlewareServer) GetDomains(context.Context, *GetDomainsRequest) (*GetDomainsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDomains not implemented")
-}
-func (UnimplementedMiddlewareServer) GetAPIOnly(context.Context, *GetAPIOnlyRequest) (*GetAPIOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAPIOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistAPI(context.Context, *ExistAPIRequest) (*ExistAPIResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAPI not implemented")
@@ -269,24 +254,6 @@ func _Middleware_GetDomains_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetAPIOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAPIOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetAPIOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetAPIOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetAPIOnly(ctx, req.(*GetAPIOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_ExistAPI_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAPIRequest)
 	if err := dec(in); err != nil {
@@ -349,10 +316,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDomains",
 			Handler:    _Middleware_GetDomains_Handler,
-		},
-		{
-			MethodName: "GetAPIOnly",
-			Handler:    _Middleware_GetAPIOnly_Handler,
 		},
 		{
 			MethodName: "ExistAPI",

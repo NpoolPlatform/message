@@ -235,14 +235,6 @@
         }
       }
     },
-    "v1GetAPIOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1API"
-        }
-      }
-    },
     "v1GetAPIsResponse": {
       "type": "object",
       "properties": {

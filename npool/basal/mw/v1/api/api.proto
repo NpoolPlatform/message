@@ -13,7 +13,6 @@ service Middleware {
     rpc UpdateAPI     (UpdateAPIRequest)     returns (UpdateAPIResponse)     {}
     rpc GetAPIs       (GetAPIsRequest)       returns (GetAPIsResponse)       {}
     rpc GetDomains    (GetDomainsRequest)    returns (GetDomainsResponse)    {}
-    rpc GetAPIOnly    (GetAPIOnlyRequest)    returns (GetAPIOnlyResponse)    {}
     rpc ExistAPI      (ExistAPIRequest)      returns (ExistAPIResponse)      {}
     rpc DeleteAPI     (DeleteAPIRequest)     returns (DeleteAPIResponse)     {}
 }
@@ -128,14 +127,6 @@ message GetDomainsRequest {
 
 message GetDomainsResponse {
     repeated string Infos = 10;
-}
-
-message GetAPIOnlyRequest {
-    Conds Conds  = 10;
-}
-
-message GetAPIOnlyResponse {
-    API Info = 10;
 }
 
 message ExistAPIRequest {
