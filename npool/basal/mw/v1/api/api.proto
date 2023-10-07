@@ -32,7 +32,8 @@ enum Method {
 }
 
 message APIReq {
-    optional string     ID             = 10;
+    optional uint32     ID             = 9;
+    optional string     EntID          = 10;
     optional Protocol   Protocol       = 20;
     optional string     ServiceName    = 30;
     optional Method     Method         = 40;
@@ -46,7 +47,9 @@ message APIReq {
 
 message API {
      // @inject_tag: sql:"id"
-    string     ID             = 10;
+    uint32     ID             = 9;
+     // @inject_tag: sql:"ent_id"
+    string     EntID          = 10;
     // @inject_tag: sql:"protocol"
     string     ProtocolStr    = 19;
     Protocol   Protocol       = 20;
@@ -75,14 +78,14 @@ message API {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID          = 10;
+    optional basetypes.v1.StringVal      EntID       = 10;
     optional basetypes.v1.Int32Val       Protocol    = 20;
     optional basetypes.v1.StringVal      ServiceName = 30;
     optional basetypes.v1.Int32Val       Method      = 40;
     optional basetypes.v1.StringVal      Path        = 50;
     optional basetypes.v1.BoolVal        Exported    = 60;
     optional basetypes.v1.BoolVal        Depracated  = 70;
-    optional basetypes.v1.StringSliceVal IDs         = 80;
+    optional basetypes.v1.StringSliceVal EntIDs      = 80;
 }
 
 message CreateAPIRequest {
@@ -136,7 +139,7 @@ message GetAPIOnlyResponse {
 }
 
 message ExistAPIRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistAPIResponse {
