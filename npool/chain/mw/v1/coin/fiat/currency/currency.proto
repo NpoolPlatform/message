@@ -18,6 +18,8 @@ message CurrencyReq {
 message Currency {
     // @inject_tag: sql:"id"
     uint32 ID           = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID        = 11;
     // @inject_tag: sql:"coin_type_id"
     string CoinTypeID   = 20;
     // @inject_tag: sql:"coin_name"

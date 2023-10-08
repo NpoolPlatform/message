@@ -17,7 +17,8 @@ service Middleware {
 }
 
 message CoinDescriptionReq {
-    optional string    ID         = 10;
+    optional uint32    ID         = 9;
+    optional string    EntID      = 10;
     optional string    AppID      = 20;
     optional string    CoinTypeID = 30;
     optional basetypes.v1.UsedFor UsedFor = 40;
@@ -28,7 +29,9 @@ message CoinDescriptionReq {
 
 message CoinDescription {
     // @inject_tag: sql:"id"
-    string  ID         = 10;
+    uint32  ID         = 9;
+    // @inject_tag: sql:"ent_id"
+    string  EntID      = 10;
     // @inject_tag: sql:"app_id"
     string  AppID      = 20;
     // @inject_tag: sql:"coin_type_id"
@@ -55,7 +58,7 @@ message CoinDescription {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID         = 10;
+    optional basetypes.v1.StringVal EntID      = 10;
     optional basetypes.v1.StringVal AppID      = 20;
     optional basetypes.v1.StringVal CoinTypeID = 30;
     optional basetypes.v1.Int32Val  UsedFor    = 40;
@@ -78,7 +81,7 @@ message UpdateCoinDescriptionResponse {
 }
 
 message GetCoinDescriptionRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetCoinDescriptionResponse {

@@ -16,6 +16,7 @@ service Middleware {
 
 message CoinFiatReq {
     optional uint32    ID              = 10;
+    optional string    EntID           = 11;
     optional string    CoinTypeID      = 20;
     optional string    FiatID          = 30;
     optional basetypes.v1.CurrencyFeedType FeedType = 40;
@@ -24,6 +25,8 @@ message CoinFiatReq {
 message CoinFiat {
     // @inject_tag: sql:"id"
     uint32 ID           = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID        = 11;
     // @inject_tag: sql:"coin_type_id"
     string CoinTypeID   = 20;
     // @inject_tag: sql:"coin_name"
@@ -52,7 +55,7 @@ message CoinFiat {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID          = 10;
+    optional basetypes.v1.StringVal      EntID       = 10;
     optional basetypes.v1.StringVal      CoinTypeID  = 20;
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 30;
 }
