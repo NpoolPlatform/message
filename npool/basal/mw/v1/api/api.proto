@@ -78,9 +78,9 @@ message API {
 
 message Conds {
     optional basetypes.v1.StringVal      EntID       = 10;
-    optional basetypes.v1.Int32Val       Protocol    = 20;
+    optional basetypes.v1.Uint32Val      Protocol    = 20;
     optional basetypes.v1.StringVal      ServiceName = 30;
-    optional basetypes.v1.Int32Val       Method      = 40;
+    optional basetypes.v1.Uint32Val      Method      = 40;
     optional basetypes.v1.StringVal      Path        = 50;
     optional basetypes.v1.BoolVal        Exported    = 60;
     optional basetypes.v1.BoolVal        Deprecated  = 70;

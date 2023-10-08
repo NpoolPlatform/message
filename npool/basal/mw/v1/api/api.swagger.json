@@ -177,13 +177,13 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "Protocol": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "ServiceName": {
           "$ref": "#/definitions/v1StringVal"
         },
         "Method": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "Path": {
           "$ref": "#/definitions/v1StringVal"
@@ -262,18 +262,6 @@
         }
       }
     },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "v1Method": {
       "type": "string",
       "enum": [
@@ -315,6 +303,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
