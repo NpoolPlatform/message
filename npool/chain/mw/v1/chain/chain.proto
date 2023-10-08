@@ -16,6 +16,7 @@ service Middleware {
 }
 
 message ChainReq {
+    optional uint32 ID         = 9;
     optional string EntID      = 10;
     optional string ChainType  = 20;
     optional string Logo       = 30;
@@ -70,7 +71,7 @@ message CreateChainResponse {
 }
 
 message GetChainRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetChainResponse {

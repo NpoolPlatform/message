@@ -13,7 +13,7 @@ service Middleware {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID          = 10;
+    optional basetypes.v1.StringVal      EntID       = 10;
     optional basetypes.v1.StringVal      CoinTypeID  = 20;
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 30;
     optional basetypes.v1.Uint32Val      StartAt     = 40;

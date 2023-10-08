@@ -19,7 +19,8 @@ service Middleware {
 }
 
 message CoinReq {
-    optional string ID                           = 10;
+    optional uint32 ID                           = 9;
+    optional string EntID                        = 10;
     optional string Name                         = 20;
     optional string Logo                         = 30;
     optional bool   Presale                      = 40;
@@ -56,7 +57,9 @@ message CoinReq {
 
 message Coin {
     // @inject_tag: sql:"id"
-    string ID                           = 10;
+    uint32 ID                           = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID                        = 10;
     // @inject_tag: sql:"name"
     string Name                         = 20;
     // @inject_tag: sql:"logo"
@@ -120,11 +123,11 @@ message Coin {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID       = 10;
+    optional basetypes.v1.StringVal      EntID    = 10;
     optional basetypes.v1.BoolVal        Presale  = 20;
     optional basetypes.v1.StringVal      ENV      = 30;
     optional basetypes.v1.BoolVal        ForPay   = 40;
-    optional basetypes.v1.StringSliceVal IDs      = 50;
+    optional basetypes.v1.StringSliceVal EntIDs   = 50;
     optional basetypes.v1.BoolVal        Disabled = 60;
     optional basetypes.v1.StringVal      Name     = 70;
     optional basetypes.v1.StringSliceVal Names    = 80;
@@ -139,7 +142,7 @@ message CreateCoinResponse {
 }
 
 message GetCoinRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetCoinResponse {
@@ -147,7 +150,7 @@ message GetCoinResponse {
 }
 
 message ExistCoinRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistCoinResponse {

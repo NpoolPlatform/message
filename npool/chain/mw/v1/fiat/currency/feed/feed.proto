@@ -15,7 +15,8 @@ service Middleware {
 }
 
 message FeedReq {
-    optional string ID           = 10;
+    optional uint32 ID           = 10;
+    optional string EntID        = 11;
     optional string FiatID       = 20;
     optional basetypes.v1.CurrencyFeedType FeedType = 30;
     optional string FeedFiatName = 40;
@@ -24,7 +25,9 @@ message FeedReq {
 
 message Feed {
     // @inject_tag: sql:"id"
-    string ID           = 10;
+    uint32 ID           = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID        = 11;
     // @inject_tag: sql:"fiat_id"
     string FiatID       = 20;
     // @inject_tag: sql:"fiat_name"
@@ -47,7 +50,7 @@ message Feed {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID       = 10;
+    optional basetypes.v1.StringVal      EntID    = 10;
     optional basetypes.v1.StringVal      FiatID   = 20;
     optional basetypes.v1.StringSliceVal FiatIDs  = 30;
     optional basetypes.v1.Uint32Val      FeedType = 40;
