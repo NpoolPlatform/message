@@ -13,7 +13,6 @@ service Middleware {
     rpc UpdateAPI     (UpdateAPIRequest)     returns (UpdateAPIResponse)     {}
     rpc GetAPIs       (GetAPIsRequest)       returns (GetAPIsResponse)       {}
     rpc GetDomains    (GetDomainsRequest)    returns (GetDomainsResponse)    {}
-    rpc GetAPIOnly    (GetAPIOnlyRequest)    returns (GetAPIOnlyResponse)    {}
     rpc ExistAPI      (ExistAPIRequest)      returns (ExistAPIResponse)      {}
     rpc DeleteAPI     (DeleteAPIRequest)     returns (DeleteAPIResponse)     {}
 }
@@ -32,7 +31,8 @@ enum Method {
 }
 
 message APIReq {
-    optional string     ID             = 10;
+    optional uint32     ID             = 9;
+    optional string     EntID          = 10;
     optional Protocol   Protocol       = 20;
     optional string     ServiceName    = 30;
     optional Method     Method         = 40;
@@ -41,12 +41,14 @@ message APIReq {
     optional bool       Exported       = 70;
     optional string     PathPrefix     = 80;
     repeated string     Domains        = 90;
-    optional bool       Depracated     = 100;
+    optional bool       Deprecated     = 100;
 }
 
 message API {
      // @inject_tag: sql:"id"
-    string     ID             = 10;
+    uint32     ID             = 9;
+     // @inject_tag: sql:"ent_id"
+    string     EntID          = 10;
     // @inject_tag: sql:"protocol"
     string     ProtocolStr    = 19;
     Protocol   Protocol       = 20;
@@ -66,8 +68,8 @@ message API {
     // @inject_tag: sql:"domains"
     string     DomainsStr     = 89;
     repeated   string  Domains = 90;
-    // @inject_tag: sql:"depracated"
-    bool       Depracated     = 100;
+    // @inject_tag: sql:"deprecated"
+    bool       Deprecated     = 100;
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt      = 110;
     // @inject_tag: sql:"updated_at"
@@ -75,14 +77,14 @@ message API {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID          = 10;
-    optional basetypes.v1.Int32Val       Protocol    = 20;
+    optional basetypes.v1.StringVal      EntID       = 10;
+    optional basetypes.v1.Uint32Val      Protocol    = 20;
     optional basetypes.v1.StringVal      ServiceName = 30;
-    optional basetypes.v1.Int32Val       Method      = 40;
+    optional basetypes.v1.Uint32Val      Method      = 40;
     optional basetypes.v1.StringVal      Path        = 50;
     optional basetypes.v1.BoolVal        Exported    = 60;
-    optional basetypes.v1.BoolVal        Depracated  = 70;
-    optional basetypes.v1.StringSliceVal IDs         = 80;
+    optional basetypes.v1.BoolVal        Deprecated  = 70;
+    optional basetypes.v1.StringSliceVal EntIDs      = 80;
 }
 
 message CreateAPIRequest {
@@ -127,16 +129,8 @@ message GetDomainsResponse {
     repeated string Infos = 10;
 }
 
-message GetAPIOnlyRequest {
-    Conds Conds  = 10;
-}
-
-message GetAPIOnlyResponse {
-    API Info = 10;
-}
-
 message ExistAPIRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistAPIResponse {
