@@ -72,13 +72,13 @@ message Tx {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID          = 10;
+    optional basetypes.v1.StringVal      EntID       = 10;
     optional basetypes.v1.StringVal      CoinTypeID  = 20;
     optional basetypes.v1.StringVal      AccountID   = 30;
     optional basetypes.v1.StringSliceVal AccountIDs  = 40;
     optional basetypes.v1.Uint32Val      State       = 50;
     optional basetypes.v1.Uint32Val      Type        = 60;
-    optional basetypes.v1.StringSliceVal IDs         = 70;
+    optional basetypes.v1.StringSliceVal EntIDs      = 70;
     optional basetypes.v1.Uint32SliceVal States      = 80;
 }
 
