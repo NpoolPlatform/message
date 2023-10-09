@@ -325,6 +325,16 @@
         }
       }
     },
+    "v1CouponAvailableIn": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponAvailableIn",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponAvailableIn"
+    },
     "v1CouponConstraint": {
       "type": "string",
       "enum": [
