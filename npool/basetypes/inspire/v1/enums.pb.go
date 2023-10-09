@@ -333,6 +333,9 @@ func (CouponConstraint) EnumDescriptor() ([]byte, []int) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 830fcd1c6 (add CouponAvailableIn)
 type CouponScope int32
 
 const (
@@ -348,6 +351,7 @@ var (
 		0:  "DefaultCouponScope",
 =======
 type CouponAvailableIn int32
+<<<<<<< HEAD
 =======
 type CouponScope int32
 >>>>>>> eea2b6fff (change to CouponScope)
@@ -369,14 +373,32 @@ var (
 	CouponScope_name = map[int32]string{
 		0:  "DefaultCouponScope",
 >>>>>>> eea2b6fff (change to CouponScope)
+=======
+
+const (
+	CouponAvailableIn_DefaultCouponAvailableIn CouponAvailableIn = 0
+	CouponAvailableIn_AllGood                  CouponAvailableIn = 10
+	CouponAvailableIn_Whitelist                CouponAvailableIn = 20
+	CouponAvailableIn_Blacklist                CouponAvailableIn = 30
+)
+
+// Enum value maps for CouponAvailableIn.
+var (
+	CouponAvailableIn_name = map[int32]string{
+		0:  "DefaultCouponAvailableIn",
+>>>>>>> 025211b03 (add CouponAvailableIn)
+>>>>>>> 830fcd1c6 (add CouponAvailableIn)
 		10: "AllGood",
 		20: "Whitelist",
 		30: "Blacklist",
 	}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eea2b6fff (change to CouponScope)
+=======
+>>>>>>> 830fcd1c6 (add CouponAvailableIn)
 	CouponScope_value = map[string]int32{
 		"DefaultCouponScope": 0,
 		"AllGood":            10,
@@ -399,6 +421,7 @@ func (x CouponScope) Enum() *CouponScope {
 
 func (x CouponAvailableIn) Enum() *CouponAvailableIn {
 	p := new(CouponAvailableIn)
+<<<<<<< HEAD
 >>>>>>> 9b918d201 (add CouponAvailableIn)
 =======
 	}
@@ -407,12 +430,18 @@ func (x CouponAvailableIn) Enum() *CouponAvailableIn {
 func (x CouponScope) Enum() *CouponScope {
 	p := new(CouponScope)
 >>>>>>> eea2b6fff (change to CouponScope)
+=======
+>>>>>>> 025211b03 (add CouponAvailableIn)
+>>>>>>> 830fcd1c6 (add CouponAvailableIn)
 	*p = x
 	return p
 }
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 830fcd1c6 (add CouponAvailableIn)
 func (x CouponScope) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
@@ -433,6 +462,7 @@ func (x CouponScope) Number() protoreflect.EnumNumber {
 func (CouponScope) EnumDescriptor() ([]byte, []int) {
 =======
 func (x CouponAvailableIn) String() string {
+<<<<<<< HEAD
 =======
 func (x CouponScope) String() string {
 >>>>>>> eea2b6fff (change to CouponScope)
@@ -459,6 +489,26 @@ func (CouponAvailableIn) EnumDescriptor() ([]byte, []int) {
 // Deprecated: Use CouponScope.Descriptor instead.
 func (CouponScope) EnumDescriptor() ([]byte, []int) {
 >>>>>>> eea2b6fff (change to CouponScope)
+=======
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CouponAvailableIn) Descriptor() protoreflect.EnumDescriptor {
+	return file_npool_basetypes_inspire_v1_enums_proto_enumTypes[6].Descriptor()
+}
+
+func (CouponAvailableIn) Type() protoreflect.EnumType {
+	return &file_npool_basetypes_inspire_v1_enums_proto_enumTypes[6]
+}
+
+func (x CouponAvailableIn) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use CouponAvailableIn.Descriptor instead.
+func (CouponAvailableIn) EnumDescriptor() ([]byte, []int) {
+>>>>>>> 025211b03 (add CouponAvailableIn)
+>>>>>>> 830fcd1c6 (add CouponAvailableIn)
 	return file_npool_basetypes_inspire_v1_enums_proto_rawDescGZIP(), []int{6}
 }
 
@@ -507,8 +557,11 @@ var file_npool_basetypes_inspire_v1_enums_proto_rawDesc = []byte{
 	0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x10, 0x1e, 0x12, 0x11, 0x0a, 0x0d, 0x47, 0x6f, 0x6f,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eea2b6fff (change to CouponScope)
+=======
+>>>>>>> 830fcd1c6 (add CouponAvailableIn)
 	0x64, 0x54, 0x68, 0x72, 0x65, 0x73, 0x68, 0x6f, 0x6c, 0x64, 0x10, 0x28, 0x2a, 0x50, 0x0a, 0x0b,
 	0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x12, 0x16, 0x0a, 0x12, 0x44,
 	0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70,
@@ -521,6 +574,9 @@ var file_npool_basetypes_inspire_v1_enums_proto_rawDesc = []byte{
 	0x65, 0x73, 0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x33,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 830fcd1c6 (add CouponAvailableIn)
 =======
 	0x64, 0x54, 0x68, 0x72, 0x65, 0x73, 0x68, 0x6f, 0x6c, 0x64, 0x10, 0x28, 0x2a, 0x5c, 0x0a, 0x11,
 	0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x41, 0x76, 0x61, 0x69, 0x6c, 0x61, 0x62, 0x6c, 0x65, 0x49,
@@ -534,9 +590,13 @@ var file_npool_basetypes_inspire_v1_enums_proto_rawDesc = []byte{
 	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x69,
 	0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x33,
+<<<<<<< HEAD
 >>>>>>> 9b918d201 (add CouponAvailableIn)
 =======
 >>>>>>> eea2b6fff (change to CouponScope)
+=======
+>>>>>>> 025211b03 (add CouponAvailableIn)
+>>>>>>> 830fcd1c6 (add CouponAvailableIn)
 }
 
 var (
@@ -555,8 +615,11 @@ var file_npool_basetypes_inspire_v1_enums_proto_enumTypes = make([]protoimpl.Enu
 var file_npool_basetypes_inspire_v1_enums_proto_goTypes = []interface{}{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eea2b6fff (change to CouponScope)
+=======
+>>>>>>> 830fcd1c6 (add CouponAvailableIn)
 	(SettleType)(0),       // 0: basetypes.inspire.v1.SettleType
 	(SettleMode)(0),       // 1: basetypes.inspire.v1.SettleMode
 	(SettleAmountType)(0), // 2: basetypes.inspire.v1.SettleAmountType
@@ -565,6 +628,9 @@ var file_npool_basetypes_inspire_v1_enums_proto_goTypes = []interface{}{
 	(CouponConstraint)(0), // 5: basetypes.inspire.v1.CouponConstraint
 	(CouponScope)(0),      // 6: basetypes.inspire.v1.CouponScope
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 830fcd1c6 (add CouponAvailableIn)
 =======
 	(SettleType)(0),        // 0: basetypes.inspire.v1.SettleType
 	(SettleMode)(0),        // 1: basetypes.inspire.v1.SettleMode
@@ -573,9 +639,13 @@ var file_npool_basetypes_inspire_v1_enums_proto_goTypes = []interface{}{
 	(CouponType)(0),        // 4: basetypes.inspire.v1.CouponType
 	(CouponConstraint)(0),  // 5: basetypes.inspire.v1.CouponConstraint
 	(CouponAvailableIn)(0), // 6: basetypes.inspire.v1.CouponAvailableIn
+<<<<<<< HEAD
 >>>>>>> 9b918d201 (add CouponAvailableIn)
 =======
 >>>>>>> eea2b6fff (change to CouponScope)
+=======
+>>>>>>> 025211b03 (add CouponAvailableIn)
+>>>>>>> 830fcd1c6 (add CouponAvailableIn)
 }
 var file_npool_basetypes_inspire_v1_enums_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
