@@ -38,6 +38,7 @@ message CouponReq {
     optional string Allocated    = 140;
     optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 150;
     optional bool   Random       = 160;
+    optional basetypes.inspire.v1.CouponAvailableIn AvailableIn     = 170;
 }
 
 message Coupon {
@@ -77,6 +78,9 @@ message Coupon {
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 170;
     // @inject_tag: sql:"random"
     bool            Random          = 180;
+    // @inject_tag: sql:"available_in"
+    string          AvailableInStr  = 190;
+    basetypes.inspire.v1.CouponAvailableIn AvailableIn  = 200;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
