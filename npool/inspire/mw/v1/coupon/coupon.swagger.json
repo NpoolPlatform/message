@@ -140,6 +140,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d0f30a27c (add CouponScope in Coupon)
 =======
@@ -149,6 +150,8 @@
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
+=======
+>>>>>>> e8a37bc1f (add AvailableIn)
 =======
 >>>>>>> 7ec96802f (add CouponScope in Coupon)
 >>>>>>> f48ba6e22 (add CouponScope in Coupon)
@@ -167,6 +170,8 @@
 >>>>>>> 16e625749 (fix wrong name)
           "$ref": "#/definitions/v1CouponScope"
 =======
+=======
+>>>>>>> 1d00d34ce (add AvailableIn)
         "AvailableInStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"available_in\""
@@ -175,6 +180,7 @@
         },
         "AvailableIn": {
           "$ref": "#/definitions/v1CouponAvailableIn"
+<<<<<<< HEAD
 >>>>>>> 48d282860 (add AvailableIn)
 <<<<<<< HEAD
 >>>>>>> de5b60872 (add AvailableIn)
@@ -224,7 +230,13 @@
 >>>>>>> 1d4daf6dd (fix wrong name)
         },
 >>>>>>> 7ec96802f (add CouponScope in Coupon)
+<<<<<<< HEAD
 >>>>>>> f48ba6e22 (add CouponScope in Coupon)
+=======
+=======
+        },
+>>>>>>> 1d00d34ce (add AvailableIn)
+>>>>>>> e8a37bc1f (add AvailableIn)
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -241,6 +253,16 @@
           "title": "@inject_tag: sql:\"deleted_at\""
         }
       }
+    },
+    "v1CouponAvailableIn": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponAvailableIn",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponAvailableIn"
     },
     "v1CouponConstraint": {
       "type": "string",
@@ -311,10 +333,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
 >>>>>>> de66fa2d2 (add CouponScope in Coupon)
+=======
+>>>>>>> e8a37bc1f (add AvailableIn)
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -369,7 +394,15 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
 >>>>>>> efeee4eee (add CouponScope in Coupon)
+<<<<<<< HEAD
 >>>>>>> de66fa2d2 (add CouponScope in Coupon)
+=======
+=======
+        },
+        "AvailableIn": {
+          "$ref": "#/definitions/v1CouponAvailableIn"
+>>>>>>> 1d00d34ce (add AvailableIn)
+>>>>>>> e8a37bc1f (add AvailableIn)
         }
       }
     },
