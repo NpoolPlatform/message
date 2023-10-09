@@ -146,6 +146,13 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"random\""
         },
+        "AvailableInStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"available_in\""
+        },
+        "AvailableIn": {
+          "$ref": "#/definitions/v1CouponAvailableIn"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -162,6 +169,16 @@
           "title": "@inject_tag: sql:\"deleted_at\""
         }
       }
+    },
+    "v1CouponAvailableIn": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponAvailableIn",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponAvailableIn"
     },
     "v1CouponConstraint": {
       "type": "string",
@@ -233,6 +250,9 @@
         },
         "Random": {
           "type": "boolean"
+        },
+        "AvailableIn": {
+          "$ref": "#/definitions/v1CouponAvailableIn"
         }
       }
     },
