@@ -132,12 +132,21 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"random\""
         },
+<<<<<<< HEAD
         "CouponScopeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_scope\""
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
+=======
+        "AvailableInStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"available_in\""
+        },
+        "AvailableIn": {
+          "$ref": "#/definitions/v1CouponAvailableIn"
+>>>>>>> 48d282860 (add AvailableIn)
         },
         "CreatedAt": {
           "type": "integer",
@@ -155,6 +164,16 @@
           "title": "@inject_tag: sql:\"deleted_at\""
         }
       }
+    },
+    "v1CouponAvailableIn": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponAvailableIn",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponAvailableIn"
     },
     "v1CouponConstraint": {
       "type": "string",
@@ -220,8 +239,13 @@
         "Random": {
           "type": "boolean"
         },
+<<<<<<< HEAD
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
+=======
+        "AvailableIn": {
+          "$ref": "#/definitions/v1CouponAvailableIn"
+>>>>>>> 48d282860 (add AvailableIn)
         }
       }
     },
