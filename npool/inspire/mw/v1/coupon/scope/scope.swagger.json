@@ -55,6 +55,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
@@ -72,10 +73,13 @@
 =======
 =======
 >>>>>>> 2af3a1403 (update scope)
+=======
+>>>>>>> 620df297b (update scope)
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "AppGoodID": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -137,6 +141,12 @@
         },
         "CouponIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+=======
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1Uint32Val"
+>>>>>>> 620df297b (update scope)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1Uint32Val"
@@ -179,6 +189,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -239,6 +250,8 @@
 =======
 >>>>>>> 1696c7238 (add ExistScopeConds)
 >>>>>>> 3278e274c (add ExistScopeConds)
+=======
+>>>>>>> 620df297b (update scope)
     "v1GetScopeResponse": {
       "type": "object",
       "properties": {
@@ -274,6 +287,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
@@ -301,6 +315,8 @@
 =======
 =======
 >>>>>>> 2af3a1403 (update scope)
+=======
+>>>>>>> 620df297b (update scope)
         "AppID": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
@@ -308,6 +324,7 @@
         "AppGoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_id\""
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 517e40d6c (update scope)
@@ -373,6 +390,8 @@
         },
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
+=======
+>>>>>>> 620df297b (update scope)
         },
         "CouponScopeStr": {
           "type": "string",
@@ -381,6 +400,7 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -426,12 +446,15 @@
 =======
 =======
 >>>>>>> 2af3a1403 (update scope)
+=======
+>>>>>>> 620df297b (update scope)
         "CouponTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_type\""
         },
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 517e40d6c (update scope)
@@ -515,6 +538,8 @@
 =======
 >>>>>>> 569d52611 (update scope)
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> 620df297b (update scope)
         },
         "CreatedAt": {
           "type": "integer",
@@ -539,6 +564,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
@@ -549,10 +575,13 @@
 =======
 =======
 >>>>>>> 2af3a1403 (update scope)
+=======
+>>>>>>> 620df297b (update scope)
         "AppID": {
           "type": "string"
         },
         "AppGoodID": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 517e40d6c (update scope)
@@ -573,11 +602,14 @@
         "GoodID": {
 >>>>>>> 569d52611 (update scope)
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> 620df297b (update scope)
           "type": "string"
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -671,6 +703,10 @@
 =======
 >>>>>>> 0be619288 (add CouponIDs conds)
 >>>>>>> 691b4067a (add CouponIDs conds)
+=======
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+>>>>>>> 620df297b (update scope)
         }
       }
     },
@@ -702,6 +738,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
@@ -713,6 +750,8 @@
 =======
 =======
 >>>>>>> 2af3a1403 (update scope)
+=======
+>>>>>>> 620df297b (update scope)
     },
     "v1UpdateScopeResponse": {
       "type": "object",
@@ -721,6 +760,7 @@
           "$ref": "#/definitions/v1Scope"
         }
       }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 517e40d6c (update scope)
@@ -746,6 +786,8 @@
 =======
 >>>>>>> 93c017168 (delete update)
 >>>>>>> 39dd6527d (delete update)
+=======
+>>>>>>> 620df297b (update scope)
     }
   }
 }

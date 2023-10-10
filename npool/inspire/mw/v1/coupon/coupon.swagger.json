@@ -146,6 +146,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d0f30a27c (add CouponScope in Coupon)
 =======
@@ -293,6 +294,8 @@
           "$ref": "#/definitions/v1CouponScope"
         },
 >>>>>>> dbadaddd4 (add AvailableIn)
+=======
+>>>>>>> 620df297b (update scope)
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -373,6 +376,7 @@
         },
         "Random": {
           "type": "boolean"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -487,18 +491,10 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
 >>>>>>> 8c2c26e70 (change to CouponScope)
+=======
+>>>>>>> 620df297b (update scope)
         }
       }
-    },
-    "v1CouponScope": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponScope",
-        "AllGood",
-        "Whitelist",
-        "Blacklist"
-      ],
-      "default": "DefaultCouponScope"
     },
     "v1CouponType": {
       "type": "string",
