@@ -253,6 +253,7 @@
         "Random": {
           "type": "boolean"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -268,6 +269,11 @@
 >>>>>>> eea2b6fff (change to CouponScope)
 =======
 >>>>>>> 517e40d6c (update scope)
+=======
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+>>>>>>> 9f1de32a3 (add CouponScope in Coupon)
         }
       }
     },
