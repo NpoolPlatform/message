@@ -135,11 +135,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d0f30a27c (add CouponScope in Coupon)
         "CouponScopeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_scope\""
         },
         "CouponScope": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CouponScope"
 =======
         "AvailableInStr": {
@@ -160,6 +164,10 @@
         },
 =======
 >>>>>>> 517e40d6c (update scope)
+=======
+          "$ref": "#/definitions/v1CouponConstraint"
+        },
+>>>>>>> d0f30a27c (add CouponScope in Coupon)
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
