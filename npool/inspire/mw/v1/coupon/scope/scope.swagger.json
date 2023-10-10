@@ -269,6 +269,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CouponDenomination": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
@@ -314,6 +315,11 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_demonination\""
 >>>>>>> d1472c113 (update coupon scope)
+=======
+        "CouponDenomination": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_denomination\""
+>>>>>>> 3f5158662 (fix wrong word)
         },
         "CreatedAt": {
           "type": "integer",
