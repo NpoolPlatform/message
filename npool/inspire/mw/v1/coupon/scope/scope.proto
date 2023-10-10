@@ -98,4 +98,3 @@ message DeleteScopeRequest {
 message DeleteScopeResponse {
     Scope    Info = 10;
 }
-
