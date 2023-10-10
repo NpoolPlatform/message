@@ -160,8 +160,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> f48ba6e22 (add CouponScope in Coupon)
+=======
+>>>>>>> 16e625749 (fix wrong name)
           "$ref": "#/definitions/v1CouponScope"
 =======
         "AvailableInStr": {
@@ -216,6 +219,9 @@
 =======
 =======
           "$ref": "#/definitions/v1CouponConstraint"
+=======
+          "$ref": "#/definitions/v1CouponScope"
+>>>>>>> 1d4daf6dd (fix wrong name)
         },
 >>>>>>> 7ec96802f (add CouponScope in Coupon)
 >>>>>>> f48ba6e22 (add CouponScope in Coupon)
@@ -355,6 +361,16 @@
 >>>>>>> fdf74a356 (update scope)
         }
       }
+    },
+    "v1CouponScope": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponScope",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponScope"
     },
     "v1CouponType": {
       "type": "string",
