@@ -299,12 +299,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
 >>>>>>> 6ccaa9d7a (change to CouponID)
 =======
 >>>>>>> 63affb696 (update coupon scope)
+=======
+>>>>>>> c7b697e2f (fix wrong word)
         "CouponDenomination": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
@@ -360,7 +363,15 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_demonination\""
 >>>>>>> b8f6227b4 (update coupon scope)
+<<<<<<< HEAD
 >>>>>>> 63affb696 (update coupon scope)
+=======
+=======
+        "CouponDenomination": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_denomination\""
+>>>>>>> 7616c6fde (fix wrong word)
+>>>>>>> c7b697e2f (fix wrong word)
         },
         "CreatedAt": {
           "type": "integer",
