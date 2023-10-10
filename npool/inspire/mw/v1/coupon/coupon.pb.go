@@ -52,6 +52,7 @@ type CouponReq struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CouponScope      *v1.CouponScope      `protobuf:"varint,170,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope,oneof" json:"CouponScope,omitempty"`
 <<<<<<< HEAD
 =======
@@ -69,6 +70,9 @@ type CouponReq struct {
 >>>>>>> 9f1de32a3 (add CouponScope in Coupon)
 =======
 >>>>>>> 00fa541ce (update scope)
+=======
+	CouponScope      *v1.CouponScope      `protobuf:"varint,170,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope,oneof" json:"CouponScope,omitempty"`
+>>>>>>> 5436b848d (add CouponScope in Coupon)
 }
 
 func (x *CouponReq) Reset() {
@@ -213,13 +217,17 @@ func (x *CouponReq) GetRandom() bool {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9f1de32a3 (add CouponScope in Coupon)
+=======
+>>>>>>> 5436b848d (add CouponScope in Coupon)
 func (x *CouponReq) GetCouponScope() v1.CouponScope {
 	if x != nil && x.CouponScope != nil {
 		return *x.CouponScope
 	}
 	return v1.CouponScope(0)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 func (x *CouponReq) GetAvailableIn() v1.CouponAvailableIn {
@@ -245,6 +253,10 @@ func (x *CouponReq) GetCouponScope() v1.CouponScope {
 >>>>>>> 9f1de32a3 (add CouponScope in Coupon)
 =======
 >>>>>>> 00fa541ce (update scope)
+=======
+}
+
+>>>>>>> 5436b848d (add CouponScope in Coupon)
 type Coupon struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
