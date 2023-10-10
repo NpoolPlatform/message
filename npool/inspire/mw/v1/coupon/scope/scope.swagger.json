@@ -500,8 +500,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
+=======
+>>>>>>> 34d2dcf6a (delete update)
 =======
     },
     "v1UpdateScopeResponse": {
@@ -517,7 +520,12 @@
 >>>>>>> 5f58823bb (delete update)
 =======
 >>>>>>> e2ba5c456 (update scope)
+<<<<<<< HEAD
 >>>>>>> fdf74a356 (update scope)
+=======
+=======
+>>>>>>> 9de0afdf4 (delete update)
+>>>>>>> 34d2dcf6a (delete update)
     }
   }
 }
