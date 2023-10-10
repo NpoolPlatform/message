@@ -52,6 +52,9 @@
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fdf74a356 (update scope)
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -65,6 +68,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "AppGoodID": {
+<<<<<<< HEAD
 =======
         "GoodID": {
 >>>>>>> 789287843 (update scope)
@@ -86,6 +90,13 @@
         },
         "CouponIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+=======
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1Uint32Val"
+>>>>>>> e2ba5c456 (update scope)
+>>>>>>> fdf74a356 (update scope)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1Uint32Val"
@@ -130,8 +141,11 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 0c59f0169 (add ExistScopeConds)
+=======
+>>>>>>> fdf74a356 (update scope)
     "v1ExistScopeCondsResponse": {
       "type": "object",
       "properties": {
@@ -141,10 +155,15 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 517e40d6c (update scope)
 =======
 >>>>>>> 0c59f0169 (add ExistScopeConds)
+=======
+=======
+>>>>>>> e2ba5c456 (update scope)
+>>>>>>> fdf74a356 (update scope)
     "v1GetScopeResponse": {
       "type": "object",
       "properties": {
@@ -177,6 +196,9 @@
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fdf74a356 (update scope)
         "GoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
@@ -203,6 +225,7 @@
         "AppGoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_id\""
+<<<<<<< HEAD
 >>>>>>> 517e40d6c (update scope)
 =======
         "GoodID": {
@@ -224,6 +247,9 @@
         },
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
+=======
+>>>>>>> e2ba5c456 (update scope)
+>>>>>>> fdf74a356 (update scope)
         },
         "CouponScopeStr": {
           "type": "string",
@@ -236,6 +262,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fdf74a356 (update scope)
         "CouponDenomination": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
@@ -244,6 +273,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_circulation\""
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fdf74a356 (update scope)
 =======
         "CouponTypeStr": {
           "type": "string",
@@ -251,6 +283,7 @@
         },
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
+<<<<<<< HEAD
 >>>>>>> 517e40d6c (update scope)
 =======
         "CouponID": {
@@ -269,6 +302,9 @@
 >>>>>>> 79af4427f (fix wrong word)
 =======
 >>>>>>> 789287843 (update scope)
+=======
+>>>>>>> e2ba5c456 (update scope)
+>>>>>>> fdf74a356 (update scope)
         },
         "CreatedAt": {
           "type": "integer",
@@ -290,16 +326,23 @@
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fdf74a356 (update scope)
         "GoodID": {
 =======
         "AppID": {
           "type": "string"
         },
         "AppGoodID": {
+<<<<<<< HEAD
 >>>>>>> 517e40d6c (update scope)
 =======
         "GoodID": {
 >>>>>>> 789287843 (update scope)
+=======
+>>>>>>> e2ba5c456 (update scope)
+>>>>>>> fdf74a356 (update scope)
           "type": "string"
         },
         "CouponScope": {
@@ -307,6 +350,9 @@
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fdf74a356 (update scope)
         "CouponID": {
           "type": "string"
         }
@@ -326,6 +372,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
@@ -342,6 +389,12 @@
 >>>>>>> ffa9569a3 (change to CouponID)
 =======
 >>>>>>> 64ab19b68 (update coupon scope)
+=======
+=======
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+>>>>>>> e2ba5c456 (update scope)
+>>>>>>> fdf74a356 (update scope)
         }
       }
     },
@@ -369,6 +422,9 @@
       }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fdf74a356 (update scope)
 =======
     },
     "v1UpdateScopeResponse": {
@@ -378,9 +434,13 @@
           "$ref": "#/definitions/v1Scope"
         }
       }
+<<<<<<< HEAD
 >>>>>>> 517e40d6c (update scope)
 =======
 >>>>>>> 5f58823bb (delete update)
+=======
+>>>>>>> e2ba5c456 (update scope)
+>>>>>>> fdf74a356 (update scope)
     }
   }
 }

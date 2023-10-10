@@ -138,12 +138,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d0f30a27c (add CouponScope in Coupon)
 =======
 >>>>>>> de5b60872 (add AvailableIn)
 =======
 >>>>>>> 36fa23794 (change to CouponScope)
+=======
+>>>>>>> fdf74a356 (update scope)
         "CouponScopeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_scope\""
@@ -175,6 +178,7 @@
 >>>>>>> 35797011c (change to CouponScope)
 >>>>>>> 36fa23794 (change to CouponScope)
         },
+<<<<<<< HEAD
         "AvailableIn": {
           "$ref": "#/definitions/v1CouponAvailableIn"
 >>>>>>> b85cac668 (add AvailableIn)
@@ -196,6 +200,10 @@
 >>>>>>> a8c3c1602 (fix wrong name)
         },
 >>>>>>> d0f30a27c (add CouponScope in Coupon)
+=======
+=======
+>>>>>>> e2ba5c456 (update scope)
+>>>>>>> fdf74a356 (update scope)
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -280,6 +288,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fdf74a356 (update scope)
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -321,19 +332,14 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
 >>>>>>> 35797011c (change to CouponScope)
+<<<<<<< HEAD
 >>>>>>> 36fa23794 (change to CouponScope)
+=======
+=======
+>>>>>>> e2ba5c456 (update scope)
+>>>>>>> fdf74a356 (update scope)
         }
       }
-    },
-    "v1CouponScope": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponScope",
-        "AllGood",
-        "Whitelist",
-        "Blacklist"
-      ],
-      "default": "DefaultCouponScope"
     },
     "v1CouponType": {
       "type": "string",
