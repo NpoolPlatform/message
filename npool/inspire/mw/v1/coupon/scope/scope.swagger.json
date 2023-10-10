@@ -168,9 +168,9 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
-        "CouponDemonination": {
+        "CouponDenomination": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coupon_demonination\""
+          "title": "@inject_tag: sql:\"coupon_denomination\""
         },
         "CreatedAt": {
           "type": "integer",
