@@ -45,7 +45,6 @@ type CouponReq struct {
 	Allocated        *string              `protobuf:"bytes,140,opt,name=Allocated,proto3,oneof" json:"Allocated,omitempty"`
 	CouponConstraint *v1.CouponConstraint `protobuf:"varint,150,opt,name=CouponConstraint,proto3,enum=basetypes.inspire.v1.CouponConstraint,oneof" json:"CouponConstraint,omitempty"`
 	Random           *bool                `protobuf:"varint,160,opt,name=Random,proto3,oneof" json:"Random,omitempty"`
-	CouponScope      *v1.CouponScope      `protobuf:"varint,170,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope,oneof" json:"CouponScope,omitempty"`
 }
 
 func (x *CouponReq) Reset() {
@@ -183,13 +182,6 @@ func (x *CouponReq) GetRandom() bool {
 		return *x.Random
 	}
 	return false
-}
-
-func (x *CouponReq) GetCouponScope() v1.CouponScope {
-	if x != nil && x.CouponScope != nil {
-		return *x.CouponScope
-	}
-	return v1.CouponScope(0)
 }
 
 type Coupon struct {
@@ -389,20 +381,6 @@ func (x *Coupon) GetRandom() bool {
 		return x.Random
 	}
 	return false
-}
-
-func (x *Coupon) GetCouponScopeStr() string {
-	if x != nil {
-		return x.CouponScopeStr
-	}
-	return ""
-}
-
-func (x *Coupon) GetCouponScope() v1.CouponScope {
-	if x != nil {
-		return x.CouponScope
-	}
-	return v1.CouponScope(0)
 }
 
 func (x *Coupon) GetCreatedAt() uint32 {
@@ -1254,10 +1232,9 @@ var file_npool_inspire_mw_v1_coupon_coupon_proto_goTypes = []interface{}{
 	(*DeleteCouponResponse)(nil), // 12: inspire.middleware.coupon.v1.DeleteCouponResponse
 	(v1.CouponType)(0),           // 13: basetypes.inspire.v1.CouponType
 	(v1.CouponConstraint)(0),     // 14: basetypes.inspire.v1.CouponConstraint
-	(v1.CouponScope)(0),          // 15: basetypes.inspire.v1.CouponScope
-	(*v11.StringVal)(nil),        // 16: basetypes.v1.StringVal
-	(*v11.Uint32Val)(nil),        // 17: basetypes.v1.Uint32Val
-	(*v11.StringSliceVal)(nil),   // 18: basetypes.v1.StringSliceVal
+	(*v11.StringVal)(nil),        // 15: basetypes.v1.StringVal
+	(*v11.Uint32Val)(nil),        // 16: basetypes.v1.Uint32Val
+	(*v11.StringSliceVal)(nil),   // 17: basetypes.v1.StringSliceVal
 }
 var file_npool_inspire_mw_v1_coupon_coupon_proto_depIdxs = []int32{
 	13, // 0: inspire.middleware.coupon.v1.CouponReq.CouponType:type_name -> basetypes.inspire.v1.CouponType
