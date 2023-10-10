@@ -222,6 +222,16 @@
         }
       }
     },
+    "v1CouponScope": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponScope",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponScope"
+    },
     "v1CouponType": {
       "type": "string",
       "enum": [
