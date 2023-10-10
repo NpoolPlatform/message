@@ -372,6 +372,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
@@ -386,6 +387,8 @@
 >>>>>>> 52a05eeef (change to CouponID)
 =======
 >>>>>>> 28c374a4a (update coupon scope)
+=======
+>>>>>>> 539c56151 (fix wrong word)
         "CouponDenomination": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
@@ -475,7 +478,15 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_demonination\""
 >>>>>>> d1472c113 (update coupon scope)
+<<<<<<< HEAD
 >>>>>>> 28c374a4a (update coupon scope)
+=======
+=======
+        "CouponDenomination": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_denomination\""
+>>>>>>> 3f5158662 (fix wrong word)
+>>>>>>> 539c56151 (fix wrong word)
         },
         "CreatedAt": {
           "type": "integer",

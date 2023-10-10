@@ -285,6 +285,7 @@ type Scope struct {
 	CouponScope    v1.CouponScope `protobuf:"varint,90,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope" json:"CouponScope,omitempty"`
 	// @inject_tag: sql:"coupon_denomination"
 	CouponDenomination string `protobuf:"bytes,100,opt,name=CouponDenomination,proto3" json:"CouponDenomination,omitempty" sql:"coupon_denomination"`
+<<<<<<< HEAD
 	// @inject_tag: sql:"coupon_circulation"
 	CouponCirculation string `protobuf:"bytes,110,opt,name=CouponCirculation,proto3" json:"CouponCirculation,omitempty" sql:"coupon_circulation"`
 <<<<<<< HEAD
@@ -413,7 +414,12 @@ type Scope struct {
 	// @inject_tag: sql:"coupon_demonination"
 	CouponDemonination string `protobuf:"bytes,100,opt,name=CouponDemonination,proto3" json:"CouponDemonination,omitempty" sql:"coupon_demonination"`
 >>>>>>> d1472c113 (update coupon scope)
+<<<<<<< HEAD
 >>>>>>> 28c374a4a (update coupon scope)
+=======
+=======
+>>>>>>> 3f5158662 (fix wrong word)
+>>>>>>> 539c56151 (fix wrong word)
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
@@ -716,6 +722,7 @@ func (x *Scope) GetCouponScope() v1.CouponScope {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
@@ -728,6 +735,8 @@ func (x *Scope) GetCouponScope() v1.CouponScope {
 >>>>>>> 52a05eeef (change to CouponID)
 =======
 >>>>>>> 28c374a4a (update coupon scope)
+=======
+>>>>>>> 539c56151 (fix wrong word)
 func (x *Scope) GetCouponDenomination() string {
 	if x != nil {
 		return x.CouponDenomination
@@ -789,7 +798,15 @@ func (x *Scope) GetCouponDemonination() string {
 	if x != nil {
 		return x.CouponDemonination
 >>>>>>> d1472c113 (update coupon scope)
+<<<<<<< HEAD
 >>>>>>> 28c374a4a (update coupon scope)
+=======
+=======
+func (x *Scope) GetCouponDenomination() string {
+	if x != nil {
+		return x.CouponDenomination
+>>>>>>> 3f5158662 (fix wrong word)
+>>>>>>> 539c56151 (fix wrong word)
 	}
 	return ""
 }
@@ -2618,8 +2635,11 @@ var file_npool_inspire_mw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 28c374a4a (update coupon scope)
+=======
+>>>>>>> 539c56151 (fix wrong word)
 	0x12, 0x2e, 0x0a, 0x12, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x69,
 	0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x64, 0x20, 0x01, 0x28, 0x09, 0x52, 0x12, 0x43, 0x6f,
 	0x75, 0x70, 0x6f, 0x6e, 0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e,
@@ -2640,9 +2660,16 @@ var file_npool_inspire_mw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 =======
 =======
 	0x12, 0x2e, 0x0a, 0x12, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x44, 0x65, 0x6d, 0x6f, 0x6e, 0x69,
+=======
+	0x12, 0x2e, 0x0a, 0x12, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x69,
+>>>>>>> 3f5158662 (fix wrong word)
 	0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x64, 0x20, 0x01, 0x28, 0x09, 0x52, 0x12, 0x43, 0x6f,
+<<<<<<< HEAD
 	0x75, 0x70, 0x6f, 0x6e, 0x44, 0x65, 0x6d, 0x6f, 0x6e, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 >>>>>>> 28c374a4a (update coupon scope)
+=======
+	0x75, 0x70, 0x6f, 0x6e, 0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+>>>>>>> 539c56151 (fix wrong word)
 	0x12, 0x1d, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xe8, 0x07,
 	0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12,
 	0x1d, 0x0a, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xf2, 0x07, 0x20,
