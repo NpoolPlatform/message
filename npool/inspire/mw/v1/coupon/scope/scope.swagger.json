@@ -226,14 +226,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1UpdateScopeResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Scope"
-        }
-      }
     }
   }
 }

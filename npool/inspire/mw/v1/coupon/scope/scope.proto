@@ -10,7 +10,6 @@ import "npool/basetypes/inspire/v1/enums.proto";
 // Service Name
 service Middleware {
     rpc CreateScope     (CreateScopeRequest)    returns (CreateScopeResponse)   {}
-    rpc UpdateScope     (UpdateScopeRequest)    returns (UpdateScopeResponse)   {}
     rpc ExistScopeConds (ExistScopeCondsRequest)returns (ExistScopeCondsResponse)    {}
     rpc GetScope        (GetScopeRequest)       returns (GetScopeResponse)      {}
     rpc GetScopes       (GetScopesRequest)      returns (GetScopesResponse)     {}
@@ -63,14 +62,6 @@ message CreateScopeRequest {
 }
 
 message CreateScopeResponse {
-    Scope Info = 10;
-}
-
-message UpdateScopeRequest {
-    ScopeReq Info = 10;
-}
-
-message UpdateScopeResponse {
     Scope Info = 10;
 }
 
