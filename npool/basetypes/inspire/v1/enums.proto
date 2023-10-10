@@ -56,7 +56,7 @@ enum CouponConstraint {
 enum CouponScope {
     DefaultCouponScope = 0;
 
-    AllGood                 = 10;
-    Whitelist               = 20;
-    Blacklist               = 30;
+    AllGood            = 10;
+    Whitelist          = 20;
+    Blacklist          = 30;
 }
