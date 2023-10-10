@@ -152,6 +152,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CouponScope"
 =======
 =======
@@ -197,6 +198,9 @@
 >>>>>>> 2af3a1403 (update scope)
 =======
           "$ref": "#/definitions/v1CouponConstraint"
+=======
+          "$ref": "#/definitions/v1CouponScope"
+>>>>>>> fe359a10c (fix wrong name)
         },
 >>>>>>> 69b822e19 (add CouponScope in Coupon)
         "CreatedAt": {
@@ -317,6 +321,16 @@
 >>>>>>> 2af3a1403 (update scope)
         }
       }
+    },
+    "v1CouponScope": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponScope",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponScope"
     },
     "v1CouponType": {
       "type": "string",
