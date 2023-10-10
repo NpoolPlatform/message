@@ -142,6 +142,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d0f30a27c (add CouponScope in Coupon)
 =======
@@ -155,6 +156,8 @@
 >>>>>>> e8a37bc1f (add AvailableIn)
 =======
 >>>>>>> 4fa24c6fa (change to CouponScope)
+=======
+>>>>>>> 809aa181a (update scope)
 =======
 >>>>>>> 7ec96802f (add CouponScope in Coupon)
 >>>>>>> f48ba6e22 (add CouponScope in Coupon)
@@ -247,7 +250,12 @@
 =======
         },
 >>>>>>> 1d00d34ce (add AvailableIn)
+<<<<<<< HEAD
 >>>>>>> e8a37bc1f (add AvailableIn)
+=======
+=======
+>>>>>>> 2af3a1403 (update scope)
+>>>>>>> 809aa181a (update scope)
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -335,12 +343,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
 >>>>>>> de66fa2d2 (add CouponScope in Coupon)
 =======
 >>>>>>> e8a37bc1f (add AvailableIn)
+=======
+>>>>>>> 809aa181a (update scope)
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -411,19 +422,14 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
 >>>>>>> 265f77efc (change to CouponScope)
+<<<<<<< HEAD
 >>>>>>> 4fa24c6fa (change to CouponScope)
+=======
+=======
+>>>>>>> 2af3a1403 (update scope)
+>>>>>>> 809aa181a (update scope)
         }
       }
-    },
-    "v1CouponScope": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponScope",
-        "AllGood",
-        "Whitelist",
-        "Blacklist"
-      ],
-      "default": "DefaultCouponScope"
     },
     "v1CouponType": {
       "type": "string",
