@@ -57,14 +57,10 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "CouponID": {
-<<<<<<< HEAD
           "$ref": "#/definitions/v1StringVal"
         },
         "CouponIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
-=======
-          "$ref": "#/definitions/v1Uint32Val"
->>>>>>> f7ba44c19 (change to CouponID)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1Uint32Val"
@@ -80,6 +76,16 @@
         "Blacklist"
       ],
       "default": "DefaultCouponScope"
+    },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer"
+      ],
+      "default": "DefaultCouponType"
     },
     "v1CreateScopeResponse": {
       "type": "object",
@@ -151,9 +157,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_name\""
         },
-        "CouponID": {
+        "CouponTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coupon_id\""
+          "title": "@inject_tag: sql:\"coupon_type\""
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
         },
         "CouponScopeStr": {
           "type": "string",
@@ -195,7 +204,6 @@
         },
         "CouponID": {
           "type": "string"
-<<<<<<< HEAD
         }
       }
     },
@@ -210,8 +218,6 @@
           "items": {
             "type": "string"
           }
-=======
->>>>>>> f7ba44c19 (change to CouponID)
         }
       }
     },
