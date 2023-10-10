@@ -137,6 +137,16 @@
       ],
       "default": "DefaultCouponScope"
     },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer"
+      ],
+      "default": "DefaultCouponType"
+    },
     "v1CreateScopeResponse": {
       "type": "object",
       "properties": {
@@ -325,6 +335,21 @@
 =======
 >>>>>>> 2af3a1403 (update scope)
         },
+        "CouponID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_id\""
+        },
+        "CouponName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_name\""
+        },
+        "CouponTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_type\""
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
         "CouponScopeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_scope\""
@@ -332,6 +357,7 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -354,6 +380,8 @@
 >>>>>>> 809aa181a (update scope)
 =======
 >>>>>>> 52a05eeef (change to CouponID)
+=======
+>>>>>>> 28c374a4a (update coupon scope)
         "CouponDenomination": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
@@ -435,7 +463,15 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_id\""
 >>>>>>> f7ba44c19 (change to CouponID)
+<<<<<<< HEAD
 >>>>>>> 52a05eeef (change to CouponID)
+=======
+=======
+        "CouponDemonination": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_demonination\""
+>>>>>>> d1472c113 (update coupon scope)
+>>>>>>> 28c374a4a (update coupon scope)
         },
         "CreatedAt": {
           "type": "integer",
