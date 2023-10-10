@@ -507,6 +507,7 @@ func (x *Coupon) GetCouponScopeStr() string {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 func (x *Coupon) GetCouponScope() v1.CouponScope {
 	if x != nil {
 		return x.CouponScope
@@ -546,10 +547,13 @@ func (x *Coupon) GetCouponScope() v1.CouponScope {
 >>>>>>> 00fa541ce (update scope)
 =======
 func (x *Coupon) GetCouponScope() v1.CouponConstraint {
+=======
+func (x *Coupon) GetCouponScope() v1.CouponScope {
+>>>>>>> c5f28a08e (fix wrong name)
 	if x != nil {
 		return x.CouponScope
 	}
-	return v1.CouponConstraint(0)
+	return v1.CouponScope(0)
 }
 
 >>>>>>> d1ec1b3e2 (add CouponScope in Coupon)
@@ -2253,6 +2257,7 @@ var file_npool_inspire_mw_v1_coupon_coupon_proto_goTypes = []interface{}{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(v1.CouponScope)(0),          // 15: basetypes.inspire.v1.CouponScope
 =======
 	(v1.CouponAvailableIn)(0),    // 15: basetypes.inspire.v1.CouponAvailableIn
@@ -2269,16 +2274,21 @@ var file_npool_inspire_mw_v1_coupon_coupon_proto_goTypes = []interface{}{
 	(*v11.StringSliceVal)(nil),   // 17: basetypes.v1.StringSliceVal
 >>>>>>> 517e40d6c (update scope)
 =======
+=======
+>>>>>>> c5f28a08e (fix wrong name)
 	(v1.CouponScope)(0),          // 15: basetypes.inspire.v1.CouponScope
 	(*v11.StringVal)(nil),        // 16: basetypes.v1.StringVal
 	(*v11.Uint32Val)(nil),        // 17: basetypes.v1.Uint32Val
 	(*v11.StringSliceVal)(nil),   // 18: basetypes.v1.StringSliceVal
+<<<<<<< HEAD
 >>>>>>> a8c3c1602 (fix wrong name)
 =======
 	(*v11.StringVal)(nil),        // 15: basetypes.v1.StringVal
 	(*v11.Uint32Val)(nil),        // 16: basetypes.v1.Uint32Val
 	(*v11.StringSliceVal)(nil),   // 17: basetypes.v1.StringSliceVal
 >>>>>>> 00fa541ce (update scope)
+=======
+>>>>>>> c5f28a08e (fix wrong name)
 }
 var file_npool_inspire_mw_v1_coupon_coupon_proto_depIdxs = []int32{
 	13, // 0: inspire.middleware.coupon.v1.CouponReq.CouponType:type_name -> basetypes.inspire.v1.CouponType
