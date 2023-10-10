@@ -73,6 +73,7 @@ type CouponReq struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
@@ -173,6 +174,8 @@ type CouponReq struct {
 =======
 	CouponScope      *v1.CouponScope      `protobuf:"varint,170,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope,oneof" json:"CouponScope,omitempty"`
 >>>>>>> ef193c968 (add CouponScope in Coupon)
+=======
+>>>>>>> 5ab13dbad (update scope)
 }
 
 func (x *CouponReq) Reset() {
@@ -312,6 +315,7 @@ func (x *CouponReq) GetRandom() bool {
 	return false
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -482,6 +486,8 @@ func (x *CouponReq) GetCouponScope() v1.CouponScope {
 }
 
 >>>>>>> ef193c968 (add CouponScope in Coupon)
+=======
+>>>>>>> 5ab13dbad (update scope)
 type Coupon struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -841,6 +847,7 @@ func (x *Coupon) GetRandom() bool {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> de5b60872 (add AvailableIn)
 =======
@@ -1128,6 +1135,8 @@ func (x *Coupon) GetCouponScope() v1.CouponScope {
 }
 
 >>>>>>> 92dfb38d0 (add CouponScope in Coupon)
+=======
+>>>>>>> 5ab13dbad (update scope)
 func (x *Coupon) GetCreatedAt() uint32 {
 	if x != nil {
 		return x.CreatedAt
@@ -4910,6 +4919,7 @@ var file_npool_inspire_mw_v1_coupon_coupon_proto_goTypes = []interface{}{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(v1.CouponScope)(0),          // 15: basetypes.inspire.v1.CouponScope
 =======
 	(v1.CouponAvailableIn)(0),    // 15: basetypes.inspire.v1.CouponAvailableIn
@@ -5026,6 +5036,11 @@ var file_npool_inspire_mw_v1_coupon_coupon_proto_goTypes = []interface{}{
 >>>>>>> 620df297b (update scope)
 =======
 >>>>>>> a815b979c (fix wrong name)
+=======
+	(*v11.StringVal)(nil),        // 15: basetypes.v1.StringVal
+	(*v11.Uint32Val)(nil),        // 16: basetypes.v1.Uint32Val
+	(*v11.StringSliceVal)(nil),   // 17: basetypes.v1.StringSliceVal
+>>>>>>> 5ab13dbad (update scope)
 }
 var file_npool_inspire_mw_v1_coupon_coupon_proto_depIdxs = []int32{
 	13, // 0: inspire.middleware.coupon.v1.CouponReq.CouponType:type_name -> basetypes.inspire.v1.CouponType

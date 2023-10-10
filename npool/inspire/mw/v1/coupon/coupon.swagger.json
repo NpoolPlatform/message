@@ -400,6 +400,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
@@ -511,18 +512,10 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
 >>>>>>> ef193c968 (add CouponScope in Coupon)
+=======
+>>>>>>> 5ab13dbad (update scope)
         }
       }
-    },
-    "v1CouponScope": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponScope",
-        "AllGood",
-        "Whitelist",
-        "Blacklist"
-      ],
-      "default": "DefaultCouponScope"
     },
     "v1CouponType": {
       "type": "string",
