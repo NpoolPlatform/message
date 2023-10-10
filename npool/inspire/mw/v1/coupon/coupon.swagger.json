@@ -367,6 +367,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
@@ -375,6 +376,8 @@
 >>>>>>> e8a37bc1f (add AvailableIn)
 =======
 >>>>>>> 809aa181a (update scope)
+=======
+>>>>>>> e094abcfa (add CouponScope in Coupon)
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -450,7 +453,15 @@
 =======
 =======
 >>>>>>> 2af3a1403 (update scope)
+<<<<<<< HEAD
 >>>>>>> 809aa181a (update scope)
+=======
+=======
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+>>>>>>> 3b78b9c40 (add CouponScope in Coupon)
+>>>>>>> e094abcfa (add CouponScope in Coupon)
         }
       }
     },
