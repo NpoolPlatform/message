@@ -67,8 +67,12 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "CouponID": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1Uint32Val"
 >>>>>>> 517e40d6c (update scope)
+=======
+          "$ref": "#/definitions/v1StringVal"
+>>>>>>> d3803f242 (change type)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1Uint32Val"
