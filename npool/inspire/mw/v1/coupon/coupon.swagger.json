@@ -134,6 +134,7 @@
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CouponScopeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_scope\""
@@ -157,6 +158,8 @@
           "$ref": "#/definitions/v1CouponScope"
 >>>>>>> eea2b6fff (change to CouponScope)
         },
+=======
+>>>>>>> 517e40d6c (update scope)
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -237,6 +240,7 @@
         },
         "Random": {
           "type": "boolean"
+<<<<<<< HEAD
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -250,18 +254,10 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
 >>>>>>> eea2b6fff (change to CouponScope)
+=======
+>>>>>>> 517e40d6c (update scope)
         }
       }
-    },
-    "v1CouponScope": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponScope",
-        "AllGood",
-        "Whitelist",
-        "Blacklist"
-      ],
-      "default": "DefaultCouponScope"
     },
     "v1CouponType": {
       "type": "string",
