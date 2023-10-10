@@ -27,11 +27,8 @@ message ScopeReq {
 message Scope {
     // @inject_tag: sql:"id"
     string     ID              = 10;
-    // @inject_tag: sql:"app_id"
-    string     AppID           = 20;
-    // @inject_tag: sql:"app_good_id"
-    string     AppGoodID       = 30;
-<<<<<<< HEAD
+    // @inject_tag: sql:"good_id"
+    string     GoodID          = 30;
     // @inject_tag: sql:"coupon_id"
     string     CouponID        = 40;
     // @inject_tag: sql:"coupon_name"
@@ -44,13 +41,8 @@ message Scope {
     basetypes.inspire.v1.CouponScope CouponScope  = 90;
     // @inject_tag: sql:"coupon_denomination"
     string     CouponDenomination  = 100;
-=======
-    // @inject_tag: sql:"coupon_scope"
-    string     CouponScopeStr  = 40;
-    basetypes.inspire.v1.CouponScope  CouponScope  = 50;
-    // @inject_tag: sql:"coupon_id"
-    string     CouponID   = 60;
->>>>>>> f7ba44c19 (change to CouponID)
+    // @inject_tag: sql:"coupon_circulation"
+    string     CouponCirculation  = 110;
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
@@ -61,12 +53,8 @@ message Conds {
     optional basetypes.v1.StringVal ID          = 10;
     optional basetypes.v1.StringVal AppID       = 20;
     optional basetypes.v1.StringVal AppGoodID   = 30;
-<<<<<<< HEAD
     optional basetypes.v1.StringVal CouponID    = 40;
     optional basetypes.v1.StringSliceVal CouponIDs   = 41;
-=======
-    optional basetypes.v1.Uint32Val CouponID    = 40;
->>>>>>> f7ba44c19 (change to CouponID)
     optional basetypes.v1.Uint32Val CouponScope = 50;
 }
 
