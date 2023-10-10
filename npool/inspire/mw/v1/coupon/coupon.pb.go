@@ -383,6 +383,20 @@ func (x *Coupon) GetRandom() bool {
 	return false
 }
 
+func (x *Coupon) GetCouponScopeStr() string {
+	if x != nil {
+		return x.CouponScopeStr
+	}
+	return ""
+}
+
+func (x *Coupon) GetCouponScope() v1.CouponConstraint {
+	if x != nil {
+		return x.CouponScope
+	}
+	return v1.CouponConstraint(0)
+}
+
 func (x *Coupon) GetCreatedAt() uint32 {
 	if x != nil {
 		return x.CreatedAt
