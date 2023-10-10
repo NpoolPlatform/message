@@ -2945,7 +2945,7 @@ type DeleteScopeRequest struct {
 func (x *DeleteScopeRequest) Reset() {
 	*x = DeleteScopeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes[11]
+		mi := &file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2958,7 +2958,7 @@ func (x *DeleteScopeRequest) String() string {
 func (*DeleteScopeRequest) ProtoMessage() {}
 
 func (x *DeleteScopeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes[11]
+	mi := &file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2971,7 +2971,7 @@ func (x *DeleteScopeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteScopeRequest.ProtoReflect.Descriptor instead.
 func (*DeleteScopeRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_coupon_scope_scope_proto_rawDescGZIP(), []int{11}
+	return file_npool_inspire_mw_v1_coupon_scope_scope_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *DeleteScopeRequest) GetInfo() *ScopeReq {
@@ -2992,7 +2992,7 @@ type DeleteScopeResponse struct {
 func (x *DeleteScopeResponse) Reset() {
 	*x = DeleteScopeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes[12]
+		mi := &file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3005,7 +3005,7 @@ func (x *DeleteScopeResponse) String() string {
 func (*DeleteScopeResponse) ProtoMessage() {}
 
 func (x *DeleteScopeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes[12]
+	mi := &file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3018,7 +3018,7 @@ func (x *DeleteScopeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteScopeResponse.ProtoReflect.Descriptor instead.
 func (*DeleteScopeResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_coupon_scope_scope_proto_rawDescGZIP(), []int{12}
+	return file_npool_inspire_mw_v1_coupon_scope_scope_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *DeleteScopeResponse) GetInfo() *Scope {
@@ -5668,7 +5668,7 @@ func file_npool_inspire_mw_v1_coupon_scope_scope_proto_rawDescGZIP() []byte {
 	return file_npool_inspire_mw_v1_coupon_scope_scope_proto_rawDescData
 }
 
-var file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_npool_inspire_mw_v1_coupon_scope_scope_proto_goTypes = []interface{}{
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6948,7 +6948,7 @@ func file_npool_inspire_mw_v1_coupon_scope_scope_proto_init() {
 			}
 		}
 		file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteScopeRequest); i {
+			switch v := v.(*ExistScopeCondsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -6960,6 +6960,30 @@ func file_npool_inspire_mw_v1_coupon_scope_scope_proto_init() {
 			}
 		}
 		file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExistScopeCondsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteScopeRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_inspire_mw_v1_coupon_scope_scope_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteScopeResponse); i {
 			case 0:
 				return &v.state
@@ -6980,7 +7004,7 @@ func file_npool_inspire_mw_v1_coupon_scope_scope_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_inspire_mw_v1_coupon_scope_scope_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   13,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
