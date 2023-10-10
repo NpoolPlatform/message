@@ -287,6 +287,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -319,6 +320,11 @@
 >>>>>>> 265f77efc (change to CouponScope)
 =======
 >>>>>>> 2af3a1403 (update scope)
+=======
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+>>>>>>> 3b78b9c40 (add CouponScope in Coupon)
         }
       }
     },
