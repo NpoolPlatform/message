@@ -57,7 +57,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "CouponID": {
-          "$ref": "#/definitions/v1Uint32Val"
+          "$ref": "#/definitions/v1StringVal"
         },
         "CouponScope": {
           "$ref": "#/definitions/v1Uint32Val"
