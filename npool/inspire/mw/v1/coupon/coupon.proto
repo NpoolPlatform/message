@@ -38,6 +38,7 @@ message CouponReq {
     optional string Allocated    = 140;
     optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 150;
     optional bool   Random       = 160;
+    optional basetypes.inspire.v1.CouponScope CouponScope           = 170;
 }
 
 message Coupon {
