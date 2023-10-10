@@ -401,6 +401,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
@@ -514,6 +515,11 @@
 >>>>>>> ef193c968 (add CouponScope in Coupon)
 =======
 >>>>>>> 5ab13dbad (update scope)
+=======
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+>>>>>>> e7010a15e (add CouponScope in Coupon)
         }
       }
     },
