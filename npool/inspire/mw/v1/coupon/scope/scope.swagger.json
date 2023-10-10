@@ -50,6 +50,7 @@
         "ID": {
           "$ref": "#/definitions/v1StringVal"
         },
+<<<<<<< HEAD
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -58,6 +59,16 @@
         },
         "CouponIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+=======
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1Uint32Val"
+>>>>>>> e2ba5c456 (update scope)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1Uint32Val"
@@ -100,6 +111,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1ExistScopeCondsResponse": {
       "type": "object",
       "properties": {
@@ -108,6 +120,8 @@
         }
       }
     },
+=======
+>>>>>>> e2ba5c456 (update scope)
     "v1GetScopeResponse": {
       "type": "object",
       "properties": {
@@ -138,6 +152,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"id\""
         },
+<<<<<<< HEAD
         "GoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
@@ -156,6 +171,15 @@
         },
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
+=======
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "AppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_id\""
+>>>>>>> e2ba5c456 (update scope)
         },
         "CouponScopeStr": {
           "type": "string",
@@ -164,6 +188,7 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+<<<<<<< HEAD
         "CouponDenomination": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
@@ -171,6 +196,14 @@
         "CouponCirculation": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_circulation\""
+=======
+        "CouponTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_type\""
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+>>>>>>> e2ba5c456 (update scope)
         },
         "CreatedAt": {
           "type": "integer",
@@ -190,12 +223,20 @@
         "ID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "GoodID": {
+=======
+        "AppID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+>>>>>>> e2ba5c456 (update scope)
           "type": "string"
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+<<<<<<< HEAD
         "CouponID": {
           "type": "string"
         }
@@ -212,6 +253,10 @@
           "items": {
             "type": "string"
           }
+=======
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+>>>>>>> e2ba5c456 (update scope)
         }
       }
     },
@@ -237,6 +282,17 @@
           "format": "int64"
         }
       }
+<<<<<<< HEAD
+=======
+    },
+    "v1UpdateScopeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Scope"
+        }
+      }
+>>>>>>> e2ba5c456 (update scope)
     }
   }
 }
