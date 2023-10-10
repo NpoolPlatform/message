@@ -144,6 +144,7 @@
         },
         "CouponScope": {
 <<<<<<< HEAD
+<<<<<<< HEAD
           "$ref": "#/definitions/v1CouponScope"
 =======
         "AvailableInStr": {
@@ -166,6 +167,9 @@
 >>>>>>> 517e40d6c (update scope)
 =======
           "$ref": "#/definitions/v1CouponConstraint"
+=======
+          "$ref": "#/definitions/v1CouponScope"
+>>>>>>> a8c3c1602 (fix wrong name)
         },
 >>>>>>> d0f30a27c (add CouponScope in Coupon)
         "CreatedAt": {
@@ -266,6 +270,16 @@
 >>>>>>> 517e40d6c (update scope)
         }
       }
+    },
+    "v1CouponScope": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponScope",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponScope"
     },
     "v1CouponType": {
       "type": "string",
