@@ -112,6 +112,9 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b4ce1d7e (add ExistScopeConds)
     "v1ExistScopeCondsResponse": {
       "type": "object",
       "properties": {
@@ -120,8 +123,11 @@
         }
       }
     },
+<<<<<<< HEAD
 =======
 >>>>>>> e2ba5c456 (update scope)
+=======
+>>>>>>> 7b4ce1d7e (add ExistScopeConds)
     "v1GetScopeResponse": {
       "type": "object",
       "properties": {
