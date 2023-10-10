@@ -331,6 +331,7 @@
         }
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     },
     "v1UpdateScopeResponse": {
@@ -341,6 +342,8 @@
         }
       }
 >>>>>>> e2ba5c456 (update scope)
+=======
+>>>>>>> 9de0afdf4 (delete update)
     }
   }
 }
