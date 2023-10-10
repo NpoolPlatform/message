@@ -219,21 +219,8 @@
         },
         "Random": {
           "type": "boolean"
-        },
-        "CouponScope": {
-          "$ref": "#/definitions/v1CouponScope"
         }
       }
-    },
-    "v1CouponScope": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponScope",
-        "AllGood",
-        "Whitelist",
-        "Blacklist"
-      ],
-      "default": "DefaultCouponScope"
     },
     "v1CouponType": {
       "type": "string",
