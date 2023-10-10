@@ -219,6 +219,9 @@
         },
         "Random": {
           "type": "boolean"
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
         }
       }
     },

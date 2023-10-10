@@ -45,6 +45,7 @@ type CouponReq struct {
 	Allocated        *string              `protobuf:"bytes,140,opt,name=Allocated,proto3,oneof" json:"Allocated,omitempty"`
 	CouponConstraint *v1.CouponConstraint `protobuf:"varint,150,opt,name=CouponConstraint,proto3,enum=basetypes.inspire.v1.CouponConstraint,oneof" json:"CouponConstraint,omitempty"`
 	Random           *bool                `protobuf:"varint,160,opt,name=Random,proto3,oneof" json:"Random,omitempty"`
+	CouponScope      *v1.CouponScope      `protobuf:"varint,170,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope,oneof" json:"CouponScope,omitempty"`
 }
 
 func (x *CouponReq) Reset() {
@@ -182,6 +183,13 @@ func (x *CouponReq) GetRandom() bool {
 		return *x.Random
 	}
 	return false
+}
+
+func (x *CouponReq) GetCouponScope() v1.CouponScope {
+	if x != nil && x.CouponScope != nil {
+		return *x.CouponScope
+	}
+	return v1.CouponScope(0)
 }
 
 type Coupon struct {
