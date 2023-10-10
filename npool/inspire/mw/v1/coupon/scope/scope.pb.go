@@ -655,6 +655,7 @@ type Conds struct {
 	AppGoodID   *v11.StringVal `protobuf:"bytes,30,opt,name=AppGoodID,proto3,oneof" json:"AppGoodID,omitempty"`
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CouponID    *v11.StringVal `protobuf:"bytes,40,opt,name=CouponID,proto3,oneof" json:"CouponID,omitempty"`
 	CouponScope *v11.Uint32Val `protobuf:"bytes,50,opt,name=CouponScope,proto3,oneof" json:"CouponScope,omitempty"`
 >>>>>>> 517e40d6c (update scope)
@@ -670,6 +671,9 @@ type Conds struct {
 =======
 	CouponID    *v11.Uint32Val `protobuf:"bytes,40,opt,name=CouponID,proto3,oneof" json:"CouponID,omitempty"`
 >>>>>>> 6ccaa9d7a (change to CouponID)
+=======
+	CouponID    *v11.StringVal `protobuf:"bytes,40,opt,name=CouponID,proto3,oneof" json:"CouponID,omitempty"`
+>>>>>>> 6862415d9 (change type)
 	CouponScope *v11.Uint32Val `protobuf:"bytes,50,opt,name=CouponScope,proto3,oneof" json:"CouponScope,omitempty"`
 >>>>>>> e2ba5c456 (update scope)
 >>>>>>> fdf74a356 (update scope)
@@ -788,6 +792,7 @@ func (x *Conds) GetCouponID() *v11.StringVal {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 func (x *Conds) GetCouponIDs() *v11.StringSliceVal {
 	if x != nil {
 		return x.CouponIDs
@@ -798,6 +803,9 @@ func (x *Conds) GetCouponType() *v11.Uint32Val {
 >>>>>>> e2ba5c456 (update scope)
 =======
 func (x *Conds) GetCouponID() *v11.Uint32Val {
+=======
+func (x *Conds) GetCouponID() *v11.StringVal {
+>>>>>>> 21d8d37fb (change type)
 	if x != nil {
 		return x.CouponID
 >>>>>>> dd9ee614a (change to CouponID)
@@ -2003,6 +2011,7 @@ var file_npool_inspire_mw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 	0x64, 0x49, 0x44, 0x88, 0x01, 0x01, 0x12, 0x38, 0x0a, 0x08, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e,
 	0x49, 0x44, 0x18, 0x28, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74,
 <<<<<<< HEAD
+<<<<<<< HEAD
 	0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x56, 0x61,
 	0x6c, 0x48, 0x03, 0x52, 0x08, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x49, 0x44, 0x88, 0x01, 0x01,
 <<<<<<< HEAD
@@ -2011,6 +2020,9 @@ var file_npool_inspire_mw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 >>>>>>> fdf74a356 (update scope)
 =======
 	0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x69, 0x6e, 0x74, 0x33, 0x32, 0x56, 0x61,
+=======
+	0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x56, 0x61,
+>>>>>>> 6862415d9 (change type)
 	0x6c, 0x48, 0x03, 0x52, 0x08, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x49, 0x44, 0x88, 0x01, 0x01,
 >>>>>>> b8f6227b4 (update coupon scope)
 >>>>>>> 63affb696 (update coupon scope)
@@ -3529,7 +3541,7 @@ var file_npool_inspire_mw_v1_coupon_scope_scope_proto_depIdxs = []int32{
 	17, // 3: inspire.middleware.coupon.scope.v1.Conds.ID:type_name -> basetypes.v1.StringVal
 	17, // 4: inspire.middleware.coupon.scope.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
 	17, // 5: inspire.middleware.coupon.scope.v1.Conds.AppGoodID:type_name -> basetypes.v1.StringVal
-	18, // 6: inspire.middleware.coupon.scope.v1.Conds.CouponID:type_name -> basetypes.v1.Uint32Val
+	17, // 6: inspire.middleware.coupon.scope.v1.Conds.CouponID:type_name -> basetypes.v1.StringVal
 	18, // 7: inspire.middleware.coupon.scope.v1.Conds.CouponScope:type_name -> basetypes.v1.Uint32Val
 	0,  // 8: inspire.middleware.coupon.scope.v1.CreateScopeRequest.Info:type_name -> inspire.middleware.coupon.scope.v1.ScopeReq
 	1,  // 9: inspire.middleware.coupon.scope.v1.CreateScopeResponse.Info:type_name -> inspire.middleware.coupon.scope.v1.Scope
