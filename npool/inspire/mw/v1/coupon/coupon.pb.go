@@ -51,6 +51,7 @@ type CouponReq struct {
 	Random           *bool                `protobuf:"varint,160,opt,name=Random,proto3,oneof" json:"Random,omitempty"`
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CouponScope      *v1.CouponScope      `protobuf:"varint,170,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope,oneof" json:"CouponScope,omitempty"`
 <<<<<<< HEAD
 =======
@@ -66,6 +67,8 @@ type CouponReq struct {
 =======
 	CouponScope      *v1.CouponScope      `protobuf:"varint,170,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope,oneof" json:"CouponScope,omitempty"`
 >>>>>>> 9f1de32a3 (add CouponScope in Coupon)
+=======
+>>>>>>> 00fa541ce (update scope)
 }
 
 func (x *CouponReq) Reset() {
@@ -209,6 +212,7 @@ func (x *CouponReq) GetRandom() bool {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9f1de32a3 (add CouponScope in Coupon)
 func (x *CouponReq) GetCouponScope() v1.CouponScope {
@@ -239,6 +243,8 @@ func (x *CouponReq) GetCouponScope() v1.CouponScope {
 }
 
 >>>>>>> 9f1de32a3 (add CouponScope in Coupon)
+=======
+>>>>>>> 00fa541ce (update scope)
 type Coupon struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -467,6 +473,7 @@ func (x *Coupon) GetRandom() bool {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 func (x *Coupon) GetCouponScopeStr() string {
 	if x != nil {
 		return x.CouponScopeStr
@@ -528,6 +535,8 @@ func (x *Coupon) GetCouponScope() v1.CouponScope {
 }
 
 >>>>>>> d0f30a27c (add CouponScope in Coupon)
+=======
+>>>>>>> 00fa541ce (update scope)
 func (x *Coupon) GetCreatedAt() uint32 {
 	if x != nil {
 		return x.CreatedAt
@@ -2227,6 +2236,7 @@ var file_npool_inspire_mw_v1_coupon_coupon_proto_goTypes = []interface{}{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(v1.CouponScope)(0),          // 15: basetypes.inspire.v1.CouponScope
 =======
 	(v1.CouponAvailableIn)(0),    // 15: basetypes.inspire.v1.CouponAvailableIn
@@ -2248,6 +2258,11 @@ var file_npool_inspire_mw_v1_coupon_coupon_proto_goTypes = []interface{}{
 	(*v11.Uint32Val)(nil),        // 17: basetypes.v1.Uint32Val
 	(*v11.StringSliceVal)(nil),   // 18: basetypes.v1.StringSliceVal
 >>>>>>> a8c3c1602 (fix wrong name)
+=======
+	(*v11.StringVal)(nil),        // 15: basetypes.v1.StringVal
+	(*v11.Uint32Val)(nil),        // 16: basetypes.v1.Uint32Val
+	(*v11.StringSliceVal)(nil),   // 17: basetypes.v1.StringSliceVal
+>>>>>>> 00fa541ce (update scope)
 }
 var file_npool_inspire_mw_v1_coupon_coupon_proto_depIdxs = []int32{
 	13, // 0: inspire.middleware.coupon.v1.CouponReq.CouponType:type_name -> basetypes.inspire.v1.CouponType
