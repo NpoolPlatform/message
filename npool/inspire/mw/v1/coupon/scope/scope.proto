@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package inspire.middleware.coupon.scope.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/coupon/scope";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateScope   (CreateScopeRequest)   returns (CreateScopeResponse)   {}
+    rpc UpdateScope   (UpdateScopeRequest)   returns (UpdateScopeResponse)   {}
+    rpc GetScope      (GetScopeRequest)      returns (GetScopeResponse)      {}
+    rpc GetScopes     (GetScopesRequest)     returns (GetScopesResponse)     {}
+    rpc DeleteScope   (DeleteScopeRequest)   returns (DeleteScopeResponse)   {}
+}
+
+message ScopeReq {
+    optional string ID        = 10;
+    optional string AppID     = 20;
+    optional string AppGoodID = 30;
+    optional basetypes.inspire.v1.CouponScope  CouponScope  = 40;
+    optional basetypes.inspire.v1.CouponType   CouponType   = 50;
+}
+
+message Scope {
+    // @inject_tag: sql:"id"
+    string     ID              = 10;
+    // @inject_tag: sql:"app_id"
+    string     AppID           = 20;
+    // @inject_tag: sql:"app_good_id"
+    string     AppGoodID       = 30;
+    // @inject_tag: sql:"coupon_scope"
+    string     CouponScopeStr  = 40;
+    basetypes.inspire.v1.CouponScope  CouponScope  = 50;
+    // @inject_tag: sql:"coupon_type"
+    string     CouponTypeStr   = 60;
+    basetypes.inspire.v1.CouponType   CouponType   = 70;
+    // @inject_tag: sql:"created_at"
+    uint32     CreatedAt       = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32     UpdatedAt       = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal ID          = 10;
+    optional basetypes.v1.StringVal AppID       = 20;
+    optional basetypes.v1.StringVal AppGoodID   = 30;
+    optional basetypes.v1.Uint32Val CouponType  = 40;
+    optional basetypes.v1.Uint32Val CouponScope = 50;
+}
+
+message CreateScopeRequest {
+    ScopeReq Info = 10;
+}
+
+message CreateScopeResponse {
+    Scope Info = 10;
+}
+
+message UpdateScopeRequest {
+    ScopeReq Info = 10;
+}
+
+message UpdateScopeResponse {
+    Scope Info = 10;
+}
+
+message GetScopeRequest {
+    string ID = 10;
+}
+
+message GetScopeResponse {
+    Scope Info = 10;
+}
+
+message GetScopesRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetScopesResponse {
+    repeated Scope Infos = 10;
+    uint32         Total = 20;
+}
+
+message DeleteScopeRequest {
+    ScopeReq Info = 10;
+}
+
+message DeleteScopeResponse {
+    Scope    Info = 10;
+}
+
