@@ -145,6 +145,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d0f30a27c (add CouponScope in Coupon)
 =======
@@ -282,11 +283,14 @@
 >>>>>>> 07d4d2579 (add CouponScope in Coupon)
 =======
         "AvailableInStr": {
+=======
+        "CouponScopeStr": {
+>>>>>>> 8c2c26e70 (change to CouponScope)
           "type": "string",
           "title": "@inject_tag: sql:\"available_in\""
         },
-        "AvailableIn": {
-          "$ref": "#/definitions/v1CouponAvailableIn"
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
         },
 >>>>>>> dbadaddd4 (add AvailableIn)
         "CreatedAt": {
@@ -305,16 +309,6 @@
           "title": "@inject_tag: sql:\"deleted_at\""
         }
       }
-    },
-    "v1CouponAvailableIn": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponAvailableIn",
-        "AllGood",
-        "Whitelist",
-        "Blacklist"
-      ],
-      "default": "DefaultCouponAvailableIn"
     },
     "v1CouponConstraint": {
       "type": "string",
@@ -485,9 +479,14 @@
 >>>>>>> e094abcfa (add CouponScope in Coupon)
 =======
         },
+<<<<<<< HEAD
         "AvailableIn": {
           "$ref": "#/definitions/v1CouponAvailableIn"
 >>>>>>> dbadaddd4 (add AvailableIn)
+=======
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+>>>>>>> 8c2c26e70 (change to CouponScope)
         }
       }
     },
