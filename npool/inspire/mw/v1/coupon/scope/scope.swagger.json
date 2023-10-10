@@ -70,6 +70,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CouponID": {
 <<<<<<< HEAD
           "$ref": "#/definitions/v1Uint32Val"
@@ -82,6 +83,9 @@
           "$ref": "#/definitions/v1StringSliceVal"
 =======
         "CouponType": {
+=======
+        "CouponID": {
+>>>>>>> f7ba44c19 (change to CouponID)
           "$ref": "#/definitions/v1Uint32Val"
 >>>>>>> 2af3a1403 (update scope)
         },
@@ -99,16 +103,6 @@
         "Blacklist"
       ],
       "default": "DefaultCouponScope"
-    },
-    "v1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount",
-        "SpecialOffer"
-      ],
-      "default": "DefaultCouponType"
     },
     "v1CreateScopeResponse": {
       "type": "object",
@@ -244,6 +238,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CouponDenomination": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
@@ -279,6 +274,11 @@
 >>>>>>> 7616c6fde (fix wrong word)
 =======
 >>>>>>> 2af3a1403 (update scope)
+=======
+        "CouponID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_id\""
+>>>>>>> f7ba44c19 (change to CouponID)
         },
         "CreatedAt": {
           "type": "integer",
@@ -320,6 +320,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CouponID": {
           "type": "string"
         }
@@ -351,6 +352,10 @@
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
 >>>>>>> 2af3a1403 (update scope)
+=======
+        "CouponID": {
+          "type": "string"
+>>>>>>> f7ba44c19 (change to CouponID)
         }
       }
     },
