@@ -22,7 +22,7 @@ message ScopeReq {
     optional string AppID     = 20;
     optional string AppGoodID = 30;
     optional basetypes.inspire.v1.CouponScope  CouponScope  = 40;
-    optional basetypes.inspire.v1.CouponType   CouponType   = 50;
+    optional string CouponID  = 50;
 }
 
 message Scope {
@@ -35,9 +35,8 @@ message Scope {
     // @inject_tag: sql:"coupon_scope"
     string     CouponScopeStr  = 40;
     basetypes.inspire.v1.CouponScope  CouponScope  = 50;
-    // @inject_tag: sql:"coupon_type"
-    string     CouponTypeStr   = 60;
-    basetypes.inspire.v1.CouponType   CouponType   = 70;
+    // @inject_tag: sql:"coupon_id"
+    string     CouponID   = 60;
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
@@ -48,7 +47,7 @@ message Conds {
     optional basetypes.v1.StringVal ID          = 10;
     optional basetypes.v1.StringVal AppID       = 20;
     optional basetypes.v1.StringVal AppGoodID   = 30;
-    optional basetypes.v1.Uint32Val CouponType  = 40;
+    optional basetypes.v1.Uint32Val CouponID    = 40;
     optional basetypes.v1.Uint32Val CouponScope = 50;
 }
 
