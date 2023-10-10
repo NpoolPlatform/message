@@ -99,6 +99,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CouponID": {
 <<<<<<< HEAD
           "$ref": "#/definitions/v1Uint32Val"
@@ -115,6 +116,9 @@
           "$ref": "#/definitions/v1StringSliceVal"
 =======
         "CouponType": {
+=======
+        "CouponID": {
+>>>>>>> f7ba44c19 (change to CouponID)
           "$ref": "#/definitions/v1Uint32Val"
 >>>>>>> 2af3a1403 (update scope)
         },
@@ -132,16 +136,6 @@
         "Blacklist"
       ],
       "default": "DefaultCouponScope"
-    },
-    "v1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount",
-        "SpecialOffer"
-      ],
-      "default": "DefaultCouponType"
     },
     "v1CreateScopeResponse": {
       "type": "object",
@@ -347,6 +341,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
@@ -357,6 +352,8 @@
 >>>>>>> c7b697e2f (fix wrong word)
 =======
 >>>>>>> 809aa181a (update scope)
+=======
+>>>>>>> 52a05eeef (change to CouponID)
         "CouponDenomination": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
@@ -430,7 +427,15 @@
 =======
 =======
 >>>>>>> 2af3a1403 (update scope)
+<<<<<<< HEAD
 >>>>>>> 809aa181a (update scope)
+=======
+=======
+        "CouponID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_id\""
+>>>>>>> f7ba44c19 (change to CouponID)
+>>>>>>> 52a05eeef (change to CouponID)
         },
         "CreatedAt": {
           "type": "integer",
@@ -490,12 +495,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
 >>>>>>> 6ccaa9d7a (change to CouponID)
 =======
 >>>>>>> 809aa181a (update scope)
+=======
+>>>>>>> 52a05eeef (change to CouponID)
         "CouponID": {
           "type": "string"
         }
@@ -559,7 +567,14 @@
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
 >>>>>>> 2af3a1403 (update scope)
+<<<<<<< HEAD
 >>>>>>> 809aa181a (update scope)
+=======
+=======
+        "CouponID": {
+          "type": "string"
+>>>>>>> f7ba44c19 (change to CouponID)
+>>>>>>> 52a05eeef (change to CouponID)
         }
       }
     },
