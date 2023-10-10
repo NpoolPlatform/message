@@ -42,8 +42,8 @@ message Scope {
     // @inject_tag: sql:"coupon_scope"
     string     CouponScopeStr  = 80;
     basetypes.inspire.v1.CouponScope CouponScope  = 90;
-    // @inject_tag: sql:"coupon_demonination"
-    string     CouponDemonination  = 100;
+    // @inject_tag: sql:"coupon_denomination"
+    string     CouponDenomination  = 100;
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
