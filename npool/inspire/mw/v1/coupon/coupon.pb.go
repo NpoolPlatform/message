@@ -474,6 +474,7 @@ func (x *Coupon) GetRandom() bool {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 func (x *Coupon) GetCouponScopeStr() string {
 	if x != nil {
 		return x.CouponScopeStr
@@ -492,10 +493,16 @@ func (x *Coupon) GetCouponScopeStr() string {
 	if x != nil {
 		return x.CouponScopeStr
 >>>>>>> d0f30a27c (add CouponScope in Coupon)
+=======
+func (x *Coupon) GetCouponScopeStr() string {
+	if x != nil {
+		return x.CouponScopeStr
+>>>>>>> d1ec1b3e2 (add CouponScope in Coupon)
 	}
 	return ""
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -537,6 +544,15 @@ func (x *Coupon) GetCouponScope() v1.CouponScope {
 >>>>>>> d0f30a27c (add CouponScope in Coupon)
 =======
 >>>>>>> 00fa541ce (update scope)
+=======
+func (x *Coupon) GetCouponScope() v1.CouponConstraint {
+	if x != nil {
+		return x.CouponScope
+	}
+	return v1.CouponConstraint(0)
+}
+
+>>>>>>> d1ec1b3e2 (add CouponScope in Coupon)
 func (x *Coupon) GetCreatedAt() uint32 {
 	if x != nil {
 		return x.CreatedAt
