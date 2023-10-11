@@ -62,9 +62,10 @@ message CreateScoreResponse {
 }
 
 message GetScoresRequest {
-    optional string AppGoodID   = 10;
-    int32           Offset      = 20;
-    int32           Limit       = 30;
+    string          AppID     = 10;
+    optional string AppGoodID = 20;
+    int32           Offset    = 30;
+    int32           Limit     = 40;
 }
 
 message GetScoresResponse {
