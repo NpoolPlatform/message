@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/gw/v1/invitation/registration/registration.proto",
+    "title": "npool/inspire/gw/v1/coupon/scope/scope.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/app/registrationinvitations": {
+    "/v1/create/scope": {
       "post": {
-        "operationId": "Gateway_GetAppRegistrations",
+        "operationId": "Gateway_CreateScope",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppRegistrationsResponse"
+              "$ref": "#/definitions/v1CreateScopeResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppRegistrationsRequest"
+              "$ref": "#/definitions/v1CreateScopeRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/get/registrationinvitations": {
+    "/v1/delete/scope": {
       "post": {
-        "operationId": "Gateway_GetRegistrations",
+        "operationId": "Gateway_DeleteScope",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetRegistrationsResponse"
+              "$ref": "#/definitions/v1DeleteScopeResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetRegistrationsRequest"
+              "$ref": "#/definitions/v1DeleteScopeRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/update/registrationinvitation": {
+    "/v1/get/app/scopes": {
       "post": {
-        "operationId": "Gateway_UpdateRegistration",
+        "operationId": "Gateway_GetAppScopes",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateRegistrationResponse"
+              "$ref": "#/definitions/v1GetAppScopesResponse"
             }
           },
           "default": {
@@ -103,7 +103,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateRegistrationRequest"
+              "$ref": "#/definitions/v1GetAppScopesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/scopes": {
+      "post": {
+        "operationId": "Gateway_GetScopes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetScopesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetScopesRequest"
             }
           }
         ],
@@ -141,7 +173,71 @@
         }
       }
     },
-    "v1GetAppRegistrationsRequest": {
+    "v1CouponScope": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponScope",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponScope"
+    },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount",
+        "SpecialOffer"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "v1CreateScopeRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+        }
+      }
+    },
+    "v1CreateScopeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Scope"
+        }
+      }
+    },
+    "v1DeleteScopeRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteScopeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Scope"
+        }
+      }
+    },
+    "v1GetAppScopesRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -157,13 +253,13 @@
         }
       }
     },
-    "v1GetAppRegistrationsResponse": {
+    "v1GetAppScopesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Registration"
+            "$ref": "#/definitions/v1Scope"
           }
         },
         "Total": {
@@ -172,7 +268,7 @@
         }
       }
     },
-    "v1GetRegistrationsRequest": {
+    "v1GetScopesRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -188,13 +284,13 @@
         }
       }
     },
-    "v1GetRegistrationsResponse": {
+    "v1GetScopesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Registration"
+            "$ref": "#/definitions/v1Scope"
           }
         },
         "Total": {
@@ -203,7 +299,7 @@
         }
       }
     },
-    "v1Registration": {
+    "v1Scope": {
       "type": "object",
       "properties": {
         "ID": {
@@ -212,28 +308,31 @@
         "AppID": {
           "type": "string"
         },
-        "InviterID": {
+        "AppGoodID": {
           "type": "string"
         },
-        "InviterEmailAddress": {
+        "GoodName": {
           "type": "string"
         },
-        "InviterPhoneNO": {
+        "CouponID": {
           "type": "string"
         },
-        "InviterUsername": {
+        "CouponName": {
           "type": "string"
         },
-        "InviteeID": {
+        "CouponTypeStr": {
           "type": "string"
         },
-        "InviteeEmailAddress": {
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "CouponScopeStr": {
           "type": "string"
         },
-        "InviteePhoneNO": {
-          "type": "string"
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
         },
-        "InviteeUsername": {
+        "CouponDenomination": {
           "type": "string"
         },
         "CreatedAt": {
@@ -243,28 +342,6 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1UpdateRegistrationRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "InviterID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateRegistrationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Registration"
         }
       }
     }
