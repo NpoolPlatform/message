@@ -89,6 +89,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e8948f8dc (delete get app scopes)
 =======
@@ -104,6 +105,13 @@
 =======
 >>>>>>> 1fb4844cc (update scope)
 >>>>>>> 509fa36c7 (update scope)
+=======
+=======
+=======
+>>>>>>> 1fb4844cc (update scope)
+=======
+>>>>>>> 3a2981d70 (add coupon scope in gw)
+>>>>>>> c3156b2f2 (add coupon scope in gw)
     "/v1/get/app/scopes": {
       "post": {
         "operationId": "Gateway_GetAppScopes",
@@ -136,6 +144,7 @@
         ]
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -189,6 +198,8 @@
 =======
 =======
 >>>>>>> 509fa36c7 (update scope)
+=======
+>>>>>>> c3156b2f2 (add coupon scope in gw)
 >>>>>>> e243bad0c (add coupon scope in gw)
 <<<<<<< HEAD
 >>>>>>> eb5c69d26 (add coupon scope in gw)
@@ -200,7 +211,12 @@
 =======
 =======
 >>>>>>> 1fb4844cc (update scope)
+<<<<<<< HEAD
 >>>>>>> 509fa36c7 (update scope)
+=======
+=======
+>>>>>>> 3a2981d70 (add coupon scope in gw)
+>>>>>>> c3156b2f2 (add coupon scope in gw)
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -290,6 +306,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "GoodID": {
 =======
         "AppID": {
@@ -303,6 +320,8 @@
 =======
 =======
 >>>>>>> 509fa36c7 (update scope)
+=======
+>>>>>>> c3156b2f2 (add coupon scope in gw)
         "GoodID": {
 =======
         "AppID": {
@@ -313,7 +332,13 @@
 =======
         "TargetAppID": {
 >>>>>>> 1fb4844cc (update scope)
+<<<<<<< HEAD
 >>>>>>> 509fa36c7 (update scope)
+=======
+=======
+        "AppID": {
+>>>>>>> 3a2981d70 (add coupon scope in gw)
+>>>>>>> c3156b2f2 (add coupon scope in gw)
           "type": "string"
         },
         "CouponID": {
@@ -322,8 +347,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+>>>>>>> c3156b2f2 (add coupon scope in gw)
 =======
         "AppGoodID": {
           "type": "string"
@@ -334,7 +362,15 @@
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> e243bad0c (add coupon scope in gw)
+<<<<<<< HEAD
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+=======
+        "AppGoodID": {
+          "type": "string"
+        },
+>>>>>>> 3a2981d70 (add coupon scope in gw)
+>>>>>>> c3156b2f2 (add coupon scope in gw)
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         }
@@ -356,6 +392,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         },
         "TargetAppID": {
@@ -365,11 +402,21 @@
 >>>>>>> 789287843 (update scope)
 =======
 =======
+>>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
         },
         "TargetAppID": {
           "type": "string"
 >>>>>>> e243bad0c (add coupon scope in gw)
+<<<<<<< HEAD
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+=======
+        },
+        "AppID": {
+          "type": "string"
+>>>>>>> 3a2981d70 (add coupon scope in gw)
+>>>>>>> c3156b2f2 (add coupon scope in gw)
         }
       }
     },
@@ -390,12 +437,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
 >>>>>>> e8948f8dc (delete get app scopes)
 =======
 >>>>>>> 509fa36c7 (update scope)
+=======
+>>>>>>> c3156b2f2 (add coupon scope in gw)
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
@@ -414,7 +464,12 @@
 =======
 =======
 >>>>>>> 1fb4844cc (update scope)
+<<<<<<< HEAD
 >>>>>>> 509fa36c7 (update scope)
+=======
+=======
+>>>>>>> 3a2981d70 (add coupon scope in gw)
+>>>>>>> c3156b2f2 (add coupon scope in gw)
     "v1GetAppScopesRequest": {
       "type": "object",
       "properties": {
@@ -447,6 +502,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -502,16 +558,24 @@
 >>>>>>> e8948f8dc (delete get app scopes)
 =======
 =======
+>>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
 >>>>>>> feba7689e (delete get app scopes)
 =======
 >>>>>>> 1fb4844cc (update scope)
+<<<<<<< HEAD
 >>>>>>> 509fa36c7 (update scope)
+=======
+=======
+>>>>>>> 3a2981d70 (add coupon scope in gw)
+>>>>>>> c3156b2f2 (add coupon scope in gw)
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> f213f6ed2 (add coupon scope in gw)
@@ -528,6 +592,11 @@
 =======
 >>>>>>> e243bad0c (add coupon scope in gw)
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+>>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> 3a2981d70 (add coupon scope in gw)
+>>>>>>> c3156b2f2 (add coupon scope in gw)
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -562,13 +631,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+>>>>>>> c3156b2f2 (add coupon scope in gw)
         "GoodID": {
           "type": "string"
         },
         "GoodTitle": {
 =======
+=======
+>>>>>>> 3a2981d70 (add coupon scope in gw)
         "AppID": {
           "type": "string"
         },
@@ -576,6 +650,7 @@
           "type": "string"
         },
         "GoodName": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> f213f6ed2 (add coupon scope in gw)
 =======
@@ -587,6 +662,11 @@
 =======
 >>>>>>> e243bad0c (add coupon scope in gw)
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+>>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> 3a2981d70 (add coupon scope in gw)
+>>>>>>> c3156b2f2 (add coupon scope in gw)
           "type": "string"
         },
         "CouponID": {
@@ -598,8 +678,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+>>>>>>> c3156b2f2 (add coupon scope in gw)
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
         },
@@ -614,6 +697,8 @@
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
+=======
+>>>>>>> 3a2981d70 (add coupon scope in gw)
         "CouponTypeStr": {
           "type": "string"
         },
@@ -639,8 +724,14 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+<<<<<<< HEAD
 >>>>>>> e243bad0c (add coupon scope in gw)
+<<<<<<< HEAD
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+=======
+>>>>>>> 3a2981d70 (add coupon scope in gw)
+>>>>>>> c3156b2f2 (add coupon scope in gw)
         "CouponDenomination": {
           "type": "string"
         },
