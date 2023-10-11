@@ -55,6 +55,7 @@ message CreateCouponRequest {
     optional string Threshold    = 130;
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 140;
     bool   Random       = 150;
+    basetypes.inspire.v1.CouponScope CouponScope = 160;
 }
 
 message CreateCouponResponse {
@@ -75,6 +76,7 @@ message UpdateCouponRequest {
     optional string Threshold    = 120;
     optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 130;
     optional bool   Random       = 140;
+    optional basetypes.inspire.v1.CouponScope CouponScope = 150;
 }
 
 message UpdateCouponResponse {
