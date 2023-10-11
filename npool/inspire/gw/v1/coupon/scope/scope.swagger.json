@@ -80,6 +80,41 @@
         ]
       }
     },
+<<<<<<< HEAD
+=======
+    "/v1/get/app/scopes": {
+      "post": {
+        "operationId": "Gateway_GetAppScopes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppScopesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppScopesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+>>>>>>> e243bad0c (add coupon scope in gw)
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -164,12 +199,22 @@
     "v1CreateScopeRequest": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "GoodID": {
+=======
+        "AppID": {
+>>>>>>> e243bad0c (add coupon scope in gw)
           "type": "string"
         },
         "CouponID": {
           "type": "string"
         },
+<<<<<<< HEAD
+=======
+        "AppGoodID": {
+          "type": "string"
+        },
+>>>>>>> e243bad0c (add coupon scope in gw)
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         }
@@ -188,6 +233,12 @@
       "properties": {
         "ID": {
           "type": "string"
+<<<<<<< HEAD
+=======
+        },
+        "AppID": {
+          "type": "string"
+>>>>>>> e243bad0c (add coupon scope in gw)
         }
       }
     },
@@ -199,9 +250,49 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
+=======
+    "v1GetAppScopesRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppScopesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Scope"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetScopesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+>>>>>>> e243bad0c (add coupon scope in gw)
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -233,10 +324,20 @@
         "ID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "GoodID": {
           "type": "string"
         },
         "GoodTitle": {
+=======
+        "AppID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "GoodName": {
+>>>>>>> e243bad0c (add coupon scope in gw)
           "type": "string"
         },
         "CouponID": {
@@ -245,6 +346,7 @@
         "CouponName": {
           "type": "string"
         },
+<<<<<<< HEAD
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
         },
@@ -254,6 +356,20 @@
         "CouponCirculation": {
           "type": "string"
         },
+=======
+        "CouponTypeStr": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "CouponScopeStr": {
+          "type": "string"
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+        },
+>>>>>>> e243bad0c (add coupon scope in gw)
         "CouponDenomination": {
           "type": "string"
         },
