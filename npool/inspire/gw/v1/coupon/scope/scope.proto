@@ -69,27 +69,6 @@ message GetScopesRequest {
 }
 
 message GetScopesResponse {
-    repeated Scope     Infos = 10;
-    uint32             Total = 20;
-}
-
-message GetAppScopesRequest {
-    string AppID      = 10;
-    int32  Offset     = 20;
-    int32  Limit      = 30;
-}
-
-message GetAppScopesResponse {
-    repeated Scope     Infos = 10;
-    uint32             Total = 20;
-}
-
-message GetScopesRequest {
-    int32  Offset    = 30;
-    int32  Limit     = 40;
-}
-
-message GetScopesResponse {
     repeated Scope  Infos = 10;
     uint32          Total = 20;
 }
