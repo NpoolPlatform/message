@@ -210,6 +210,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           "title": "@inject_tag: sql:\"coupon_scope\""
 =======
           "title": "@inject_tag: sql:\"coupon_constraint\""
@@ -220,6 +221,8 @@
 =======
 =======
 >>>>>>> 2d76a9423 (fix wrong tag)
+=======
+>>>>>>> fae489c28 (return CouponScope in allocated coupon)
           "title": "@inject_tag: sql:\"coupon_scope\""
 =======
           "title": "@inject_tag: sql:\"coupon_constraint\""
@@ -230,7 +233,13 @@
 =======
           "title": "@inject_tag: sql:\"coupon_scope\""
 >>>>>>> 91bbc9509 (fix wrong tag)
+<<<<<<< HEAD
 >>>>>>> 2d76a9423 (fix wrong tag)
+=======
+=======
+          "title": "@inject_tag: sql:\"coupon_constraint\""
+>>>>>>> 2ee08c10e (return CouponScope in allocated coupon)
+>>>>>>> fae489c28 (return CouponScope in allocated coupon)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"

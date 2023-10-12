@@ -179,6 +179,7 @@ type Coupon struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	// @inject_tag: sql:"scope_id"
 	ScopeID string `protobuf:"bytes,241,opt,name=ScopeID,proto3" json:"ScopeID,omitempty" sql:"scope_id"`
@@ -189,6 +190,8 @@ type Coupon struct {
 >>>>>>> c8e745dab (return CouponScope in allocated coupon)
 =======
 >>>>>>> 2d76a9423 (fix wrong tag)
+=======
+>>>>>>> fae489c28 (return CouponScope in allocated coupon)
 	// @inject_tag: sql:"coupon_scope"
 	CouponScopeStr string         `protobuf:"bytes,250,opt,name=CouponScopeStr,proto3" json:"CouponScopeStr,omitempty" sql:"coupon_scope"`
 =======
@@ -209,7 +212,14 @@ type Coupon struct {
 	// @inject_tag: sql:"coupon_scope"
 	CouponScopeStr string         `protobuf:"bytes,250,opt,name=CouponScopeStr,proto3" json:"CouponScopeStr,omitempty" sql:"coupon_scope"`
 >>>>>>> 91bbc9509 (fix wrong tag)
+<<<<<<< HEAD
 >>>>>>> 2d76a9423 (fix wrong tag)
+=======
+=======
+	// @inject_tag: sql:"coupon_constraint"
+	CouponScopeStr string         `protobuf:"bytes,250,opt,name=CouponScopeStr,proto3" json:"CouponScopeStr,omitempty" sql:"coupon_constraint"`
+>>>>>>> 2ee08c10e (return CouponScope in allocated coupon)
+>>>>>>> fae489c28 (return CouponScope in allocated coupon)
 	CouponScope    v1.CouponScope `protobuf:"varint,260,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope" json:"CouponScope,omitempty"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
@@ -1838,6 +1848,7 @@ var file_npool_inspire_mw_v1_coupon_allocated_allocated_proto_rawDesc = []byte{
 	0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x2f, 0x61, 0x6c, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x65, 0x64, 0x62,
 	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> ca15e0eda (return CouponScope in allocated coupon)
 =======
 	0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32,
@@ -2101,6 +2112,11 @@ var file_npool_inspire_mw_v1_coupon_allocated_allocated_proto_rawDesc = []byte{
 =======
 >>>>>>> f4be3b7f8 (return CouponScope in allocated coupon)
 >>>>>>> c8e745dab (return CouponScope in allocated coupon)
+=======
+>>>>>>> f4be3b7f8 (return CouponScope in allocated coupon)
+=======
+>>>>>>> 2ee08c10e (return CouponScope in allocated coupon)
+>>>>>>> fae489c28 (return CouponScope in allocated coupon)
 }
 
 var (
@@ -2252,6 +2268,7 @@ var file_npool_inspire_mw_v1_coupon_allocated_allocated_proto_depIdxs = []int32{
 	21, // [21:21] is the sub-list for extension extendee
 	0,  // [0:21] is the sub-list for field type_name
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> ca15e0eda (return CouponScope in allocated coupon)
 =======
 	18, // 8: inspire.middleware.coupon.allocated.v1.Conds.CouponIDs:type_name -> basetypes.v1.StringSliceVal
@@ -2287,6 +2304,11 @@ var file_npool_inspire_mw_v1_coupon_allocated_allocated_proto_depIdxs = []int32{
 =======
 >>>>>>> f4be3b7f8 (return CouponScope in allocated coupon)
 >>>>>>> c8e745dab (return CouponScope in allocated coupon)
+=======
+>>>>>>> f4be3b7f8 (return CouponScope in allocated coupon)
+=======
+>>>>>>> 2ee08c10e (return CouponScope in allocated coupon)
+>>>>>>> fae489c28 (return CouponScope in allocated coupon)
 }
 
 func init() { file_npool_inspire_mw_v1_coupon_allocated_allocated_proto_init() }
