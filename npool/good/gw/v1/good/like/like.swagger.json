@@ -229,6 +229,9 @@
         "AppGoodID": {
           "type": "string"
         },
+        "GoodID": {
+          "type": "string"
+        },
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -320,6 +323,9 @@
         },
         "Like": {
           "type": "boolean"
+        },
+        "GoodID": {
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",

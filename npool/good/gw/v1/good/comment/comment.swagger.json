@@ -244,6 +244,9 @@
         "ReplyToID": {
           "type": "string"
         },
+        "GoodID": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -314,6 +317,9 @@
           "type": "string"
         },
         "AppGoodID": {
+          "type": "string"
+        },
+        "GoodID": {
           "type": "string"
         },
         "Offset": {
