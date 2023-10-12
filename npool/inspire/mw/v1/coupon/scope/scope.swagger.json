@@ -105,6 +105,9 @@
 >>>>>>> 21d8d37fb (change type)
 >>>>>>> 6862415d9 (change type)
         },
+        "CouponIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "CouponScope": {
           "$ref": "#/definitions/v1Uint32Val"
         }
@@ -443,6 +446,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
@@ -461,6 +465,8 @@
 >>>>>>> 64ab19b68 (update coupon scope)
 =======
 =======
+>>>>>>> 9cab00e8b (add CouponIDs conds)
+=======
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
 >>>>>>> e2ba5c456 (update scope)
@@ -471,7 +477,12 @@
         "CouponID": {
           "type": "string"
 >>>>>>> dd9ee614a (change to CouponID)
+<<<<<<< HEAD
 >>>>>>> 6ccaa9d7a (change to CouponID)
+=======
+=======
+>>>>>>> dd5c178c9 (add CouponIDs conds)
+>>>>>>> 9cab00e8b (add CouponIDs conds)
         }
       }
     },
