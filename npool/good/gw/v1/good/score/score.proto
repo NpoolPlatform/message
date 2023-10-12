@@ -47,6 +47,7 @@ message Score {
     string AppGoodID  = 80;
     string GoodName   = 90;
     string Score      = 100;
+    string GoodID     = 110;
     uint32 CreatedAt  = 1000;
 }
 
@@ -64,8 +65,9 @@ message CreateScoreResponse {
 message GetScoresRequest {
     string          AppID     = 10;
     optional string AppGoodID = 20;
-    int32           Offset    = 30;
-    int32           Limit     = 40;
+    optional string GoodID    = 30;
+    int32           Offset    = 40;
+    int32           Limit     = 50;
 }
 
 message GetScoresResponse {
