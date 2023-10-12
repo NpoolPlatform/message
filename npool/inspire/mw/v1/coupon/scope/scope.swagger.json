@@ -93,6 +93,9 @@
           "$ref": "#/definitions/v1StringVal"
 >>>>>>> 2e23812c8 (change type)
         },
+        "CouponIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "CouponScope": {
           "$ref": "#/definitions/v1Uint32Val"
         }
@@ -379,6 +382,7 @@
             "type": "string"
           }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
@@ -397,6 +401,8 @@
         "CouponID": {
           "type": "string"
 >>>>>>> f7ba44c19 (change to CouponID)
+=======
+>>>>>>> 0be619288 (add CouponIDs conds)
         }
       }
     },
