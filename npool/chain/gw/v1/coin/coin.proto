@@ -50,7 +50,7 @@ message GetCoinsResponse {
 }
 
 message UpdateCoinRequest {
-    string          ID                          = 10;
+    uint32          ID                          = 10;
     optional bool   Presale                     = 20;
     optional string ReservedAmount              = 30;
     optional bool   ForPay                      = 40;
