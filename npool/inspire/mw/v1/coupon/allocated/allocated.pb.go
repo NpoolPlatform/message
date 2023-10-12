@@ -175,6 +175,7 @@ type Coupon struct {
 	Random bool `protobuf:"varint,240,opt,name=Random,proto3" json:"Random,omitempty" sql:"random"`
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// @inject_tag: sql:"coupon_scope"
 	CouponScopeStr string         `protobuf:"bytes,250,opt,name=CouponScopeStr,proto3" json:"CouponScopeStr,omitempty" sql:"coupon_scope"`
 =======
@@ -185,6 +186,10 @@ type Coupon struct {
 	// @inject_tag: sql:"coupon_scope"
 	CouponScopeStr string         `protobuf:"bytes,250,opt,name=CouponScopeStr,proto3" json:"CouponScopeStr,omitempty" sql:"coupon_scope"`
 >>>>>>> 91bbc9509 (fix wrong tag)
+=======
+	// @inject_tag: sql:"coupon_constraint"
+	CouponScopeStr string         `protobuf:"bytes,250,opt,name=CouponScopeStr,proto3" json:"CouponScopeStr,omitempty" sql:"coupon_constraint"`
+>>>>>>> 2ee08c10e (return CouponScope in allocated coupon)
 	CouponScope    v1.CouponScope `protobuf:"varint,260,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope" json:"CouponScope,omitempty"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
@@ -1665,7 +1670,10 @@ var file_npool_inspire_mw_v1_coupon_allocated_allocated_proto_rawDesc = []byte{
 	0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63,
 	0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x2f, 0x61, 0x6c, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x65, 0x64, 0x62,
 	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 >>>>>>> f4be3b7f8 (return CouponScope in allocated coupon)
+=======
+>>>>>>> 2ee08c10e (return CouponScope in allocated coupon)
 }
 
 var (
@@ -1807,7 +1815,10 @@ var file_npool_inspire_mw_v1_coupon_allocated_allocated_proto_depIdxs = []int32{
 	21, // [21:21] is the sub-list for extension type_name
 	21, // [21:21] is the sub-list for extension extendee
 	0,  // [0:21] is the sub-list for field type_name
+<<<<<<< HEAD
 >>>>>>> f4be3b7f8 (return CouponScope in allocated coupon)
+=======
+>>>>>>> 2ee08c10e (return CouponScope in allocated coupon)
 }
 
 func init() { file_npool_inspire_mw_v1_coupon_allocated_allocated_proto_init() }
