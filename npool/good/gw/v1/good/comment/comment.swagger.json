@@ -376,6 +376,9 @@
         "AppGoodID": {
           "type": "string"
         },
+        "GoodID": {
+          "type": "string"
+        },
         "Offset": {
           "type": "integer",
           "format": "int32"
