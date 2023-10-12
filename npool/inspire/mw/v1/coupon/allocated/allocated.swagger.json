@@ -206,7 +206,11 @@
         },
         "CouponScopeStr": {
           "type": "string",
+<<<<<<< HEAD
           "title": "@inject_tag: sql:\"coupon_scope\""
+=======
+          "title": "@inject_tag: sql:\"coupon_constraint\""
+>>>>>>> ca15e0eda (return CouponScope in allocated coupon)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
