@@ -41,6 +41,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc DeleteAppComment (DeleteAppCommentRequest) returns (DeleteAppCommentResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app/goodcomment"
+            body: "*"
+        };
+    }
 }
 
 message Comment {
@@ -110,7 +117,6 @@ message GetMyCommentsResponse {
     uint32           Total = 20;
 }
 
-
 message DeleteCommentRequest {
     string ID     = 10;
     string AppID  = 20;
@@ -118,5 +124,14 @@ message DeleteCommentRequest {
 }
 
 message DeleteCommentResponse {
+    Comment Info = 10;
+}
+
+message DeleteAppCommentRequest {
+    string ID     = 10;
+    string AppID  = 20;
+}
+
+message DeleteAppCommentResponse {
     Comment Info = 10;
 }

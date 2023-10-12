@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/delete/app/goodcomment": {
+      "post": {
+        "operationId": "Gateway_DeleteAppComment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppCommentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppCommentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/delete/goodcomment": {
       "post": {
         "operationId": "Gateway_DeleteComment",
@@ -281,6 +313,25 @@
       }
     },
     "v1CreateCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+        }
+      }
+    },
+    "v1DeleteAppCommentRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteAppCommentResponse": {
       "type": "object",
       "properties": {
         "Info": {
