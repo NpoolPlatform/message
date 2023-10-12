@@ -201,6 +201,13 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"random\""
         },
+        "CouponScopeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_constraint\""
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -246,6 +253,16 @@
           "type": "string"
         }
       }
+    },
+    "v1CouponScope": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponScope",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponScope"
     },
     "v1CouponType": {
       "type": "string",
