@@ -130,8 +130,6 @@ message DeleteCommentResponse {
 message DeleteAppCommentRequest {
     string ID     = 10;
     string AppID  = 20;
-    string UserID = 30;
-    string TargetUserID = 50;
 }
 
 message DeleteAppCommentResponse {
