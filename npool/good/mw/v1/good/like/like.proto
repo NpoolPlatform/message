@@ -47,8 +47,9 @@ message Conds {
     optional basetypes.v1.StringVal      ID      = 10;
     optional basetypes.v1.StringVal      AppID   = 20;
     optional basetypes.v1.StringVal      UserID  = 30;
-    optional basetypes.v1.StringVal      AppGoodID  = 60;
-    optional basetypes.v1.StringSliceVal AppGoodIDs = 70;
+    optional basetypes.v1.StringVal      AppGoodID  = 40;
+    optional basetypes.v1.StringSliceVal AppGoodIDs = 50;
+    optional basetypes.v1.StringVal      GoodID     = 60;
 }
 
 message CreateLikeRequest {

@@ -57,6 +57,7 @@ message Conds {
     optional basetypes.v1.StringSliceVal AppGoodIDs  = 50;
     optional basetypes.v1.StringVal      OrderID  = 60;
     optional basetypes.v1.StringSliceVal OrderIDs = 70;
+    optional basetypes.v1.StringVal      GoodID   = 80;
 }
 
 message CreateCommentRequest {
