@@ -59,6 +59,9 @@
         "CouponID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "CouponIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "CouponScope": {
           "$ref": "#/definitions/v1Uint32Val"
         }
@@ -201,6 +204,20 @@
         },
         "CouponID": {
           "type": "string"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
