@@ -54,6 +54,7 @@ message Conds {
     optional basetypes.v1.StringVal AppID       = 20;
     optional basetypes.v1.StringVal AppGoodID   = 30;
     optional basetypes.v1.StringVal CouponID    = 40;
+    optional basetypes.v1.StringSliceVal CouponIDs   = 41;
     optional basetypes.v1.Uint32Val CouponScope = 50;
 }
 
