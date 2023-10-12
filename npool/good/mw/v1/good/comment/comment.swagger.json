@@ -140,6 +140,9 @@
         },
         "OrderIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
