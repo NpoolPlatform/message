@@ -141,6 +141,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"score\""
         },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
