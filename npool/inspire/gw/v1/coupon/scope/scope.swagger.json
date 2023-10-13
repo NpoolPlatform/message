@@ -87,6 +87,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e8948f8dc (delete get app scopes)
 =======
 =======
 >>>>>>> f83005c76 (update scope)
@@ -178,7 +181,12 @@
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> e243bad0c (add coupon scope in gw)
+<<<<<<< HEAD
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+=======
+>>>>>>> feba7689e (delete get app scopes)
+>>>>>>> e8948f8dc (delete get app scopes)
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -357,8 +365,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+>>>>>>> e8948f8dc (delete get app scopes)
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
@@ -409,6 +420,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 447c10d15 (delete get app scopes)
 =======
@@ -452,6 +464,10 @@
 >>>>>>> 7c8102624 (update scope pb)
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+=======
+>>>>>>> feba7689e (delete get app scopes)
+>>>>>>> e8948f8dc (delete get app scopes)
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
