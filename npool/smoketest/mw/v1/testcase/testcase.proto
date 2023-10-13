@@ -43,8 +43,8 @@ message TestCase {
     // @inject_tag: sql:"deprecated"
     bool         Deprecated       = 130;
     // @inject_tag: sql:"test_case_class"
-    string       TestCaseClassStr = 140;
-    TestCaseType TestCaseClass    = 150;
+    string        TestCaseClassStr = 140;
+    TestCaseClass TestCaseClass    = 150;
     // @inject_tag: sql:"created_at"
     uint32       CreatedAt        = 1000;
     // @inject_tag: sql:"updated_at"
