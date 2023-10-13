@@ -374,6 +374,12 @@
         },
         "CoinTypeID": {
           "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
         }
       }
     },
