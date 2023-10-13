@@ -6,6 +6,8 @@ option go_package = "github.com/NpoolPlatform/message/npool/chain/gw/v1/coin";
 
 import "google/api/annotations.proto";
 import "npool/chain/mw/v1/coin/coin.proto";
+import "npool/basetypes/v1/gastype.proto";
+
 
 // Service Name
 service Gateway {
@@ -33,6 +35,14 @@ message CreateCoinRequest {
     string Name = 10;
     string Unit = 20;
     string ENV  = 30;
+    string ChainType  = 40;
+    string ChainNativeUnit  = 50;
+    string ChainAtomicUnit  = 60;
+    uint32 ChainUnitExp  = 70;
+    basetypes.v1.GasType GasType  = 80;
+    string ChainID  = 90;
+    string ChainNickname  = 100;
+    string ChainNativeCoinName  = 110;
 }
 
 message CreateCoinResponse {
