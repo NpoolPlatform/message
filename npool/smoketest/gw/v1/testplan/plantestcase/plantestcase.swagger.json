@@ -240,6 +240,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/smoketestgatewaytestplanplantestcasev1PlanTestCase"
           }
         },
@@ -268,7 +269,10 @@
           "$ref": "#/definitions/v1TestCaseType"
         },
         "TestCaseClass": {
-          "$ref": "#/definitions/v1TestCaseClass"
+          "$ref": "#/definitions/v1TestCaseType"
+        },
+        "Module": {
+          "type": "string"
         },
         "Input": {
           "type": "string"
@@ -284,9 +288,6 @@
           "format": "int64"
         },
         "TestUserID": {
-          "type": "string"
-        },
-        "TestUserEmail": {
           "type": "string"
         },
         "Result": {
@@ -363,15 +364,6 @@
           "$ref": "#/definitions/smoketestgatewaytestplanplantestcasev1PlanTestCase"
         }
       }
-    },
-    "v1TestCaseClass": {
-      "type": "string",
-      "enum": [
-        "DefaultTestCaseClass",
-        "Functionality",
-        "Interface"
-      ],
-      "default": "DefaultTestCaseClass"
     },
     "v1TestCaseResult": {
       "type": "string",
