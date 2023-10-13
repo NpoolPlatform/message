@@ -23,7 +23,6 @@ const (
 	Middleware_UpdateModule_FullMethodName     = "/smoketest.middleware.module.v1.Middleware/UpdateModule"
 	Middleware_GetModules_FullMethodName       = "/smoketest.middleware.module.v1.Middleware/GetModules"
 	Middleware_GetModule_FullMethodName        = "/smoketest.middleware.module.v1.Middleware/GetModule"
-	Middleware_GetModuleConds_FullMethodName   = "/smoketest.middleware.module.v1.Middleware/GetModuleConds"
 	Middleware_DeleteModule_FullMethodName     = "/smoketest.middleware.module.v1.Middleware/DeleteModule"
 	Middleware_ExistModule_FullMethodName      = "/smoketest.middleware.module.v1.Middleware/ExistModule"
 	Middleware_ExistModuleConds_FullMethodName = "/smoketest.middleware.module.v1.Middleware/ExistModuleConds"
@@ -37,7 +36,6 @@ type MiddlewareClient interface {
 	UpdateModule(ctx context.Context, in *UpdateModuleRequest, opts ...grpc.CallOption) (*UpdateModuleResponse, error)
 	GetModules(ctx context.Context, in *GetModulesRequest, opts ...grpc.CallOption) (*GetModulesResponse, error)
 	GetModule(ctx context.Context, in *GetModuleRequest, opts ...grpc.CallOption) (*GetModuleResponse, error)
-	GetModuleConds(ctx context.Context, in *GetModuleCondsRequest, opts ...grpc.CallOption) (*GetModuleCondsResponse, error)
 	DeleteModule(ctx context.Context, in *DeleteModuleRequest, opts ...grpc.CallOption) (*DeleteModuleResponse, error)
 	ExistModule(ctx context.Context, in *ExistModuleRequest, opts ...grpc.CallOption) (*ExistModuleResponse, error)
 	ExistModuleConds(ctx context.Context, in *ExistModuleCondsRequest, opts ...grpc.CallOption) (*ExistModuleCondsResponse, error)
@@ -87,15 +85,6 @@ func (c *middlewareClient) GetModule(ctx context.Context, in *GetModuleRequest, 
 	return out, nil
 }
 
-func (c *middlewareClient) GetModuleConds(ctx context.Context, in *GetModuleCondsRequest, opts ...grpc.CallOption) (*GetModuleCondsResponse, error) {
-	out := new(GetModuleCondsResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetModuleConds_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeleteModule(ctx context.Context, in *DeleteModuleRequest, opts ...grpc.CallOption) (*DeleteModuleResponse, error) {
 	out := new(DeleteModuleResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteModule_FullMethodName, in, out, opts...)
@@ -131,7 +120,6 @@ type MiddlewareServer interface {
 	UpdateModule(context.Context, *UpdateModuleRequest) (*UpdateModuleResponse, error)
 	GetModules(context.Context, *GetModulesRequest) (*GetModulesResponse, error)
 	GetModule(context.Context, *GetModuleRequest) (*GetModuleResponse, error)
-	GetModuleConds(context.Context, *GetModuleCondsRequest) (*GetModuleCondsResponse, error)
 	DeleteModule(context.Context, *DeleteModuleRequest) (*DeleteModuleResponse, error)
 	ExistModule(context.Context, *ExistModuleRequest) (*ExistModuleResponse, error)
 	ExistModuleConds(context.Context, *ExistModuleCondsRequest) (*ExistModuleCondsResponse, error)
@@ -153,9 +141,6 @@ func (UnimplementedMiddlewareServer) GetModules(context.Context, *GetModulesRequ
 }
 func (UnimplementedMiddlewareServer) GetModule(context.Context, *GetModuleRequest) (*GetModuleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetModule not implemented")
-}
-func (UnimplementedMiddlewareServer) GetModuleConds(context.Context, *GetModuleCondsRequest) (*GetModuleCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetModuleConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteModule(context.Context, *DeleteModuleRequest) (*DeleteModuleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteModule not implemented")
@@ -251,24 +236,6 @@ func _Middleware_GetModule_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetModuleConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetModuleCondsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetModuleConds(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetModuleConds_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetModuleConds(ctx, req.(*GetModuleCondsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeleteModule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteModuleRequest)
 	if err := dec(in); err != nil {
@@ -345,10 +312,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetModule",
 			Handler:    _Middleware_GetModule_Handler,
-		},
-		{
-			MethodName: "GetModuleConds",
-			Handler:    _Middleware_GetModuleConds_Handler,
 		},
 		{
 			MethodName: "DeleteModule",
