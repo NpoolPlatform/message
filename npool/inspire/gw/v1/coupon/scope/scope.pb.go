@@ -3369,6 +3369,7 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescGZIP() []byte {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
@@ -3493,6 +3494,9 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimp
 =======
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 >>>>>>> b9363449e (update scope)
+=======
+var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+>>>>>>> 255adc2de (delete get app scopes)
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_goTypes = []interface{}{
 	(*Scope)(nil),                // 0: inspire.gateway.coupon.scope.v1.Scope
 	(*CreateScopeRequest)(nil),   // 1: inspire.gateway.coupon.scope.v1.CreateScopeRequest
@@ -4189,6 +4193,7 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			NumMessages:   7,
 =======
 			NumMessages:   9,
@@ -4282,6 +4287,9 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 =======
 			NumMessages:   9,
 >>>>>>> b9363449e (update scope)
+=======
+			NumMessages:   7,
+>>>>>>> 255adc2de (delete get app scopes)
 			NumExtensions: 0,
 			NumServices:   1,
 		},
