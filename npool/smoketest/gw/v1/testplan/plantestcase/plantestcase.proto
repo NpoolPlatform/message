@@ -45,7 +45,7 @@ message PlanTestCase {
     string          TestCaseID                              = 30;
     string          TestCaseName                            = 40;
     smoketest.middleware.testcase.v1.TestCaseType TestCaseType  = 60;
-    smoketest.middleware.testcase.v1.TestCaseType TestCaseClass = 80;
+    smoketest.middleware.testcase.v1.TestCaseClass TestCaseClass = 80;
     string          Module                                  = 90;
     string          Input                                   = 100;
     string          Output                                  = 110;
