@@ -65,15 +65,13 @@ message TestCase {
 message CreateTestCaseRequest {
     string           Name        = 10;
     optional string  Description = 20;
-    string           ModuleID    = 30;
-    optional string  ApiID       = 40;
+    string           ModuleName  = 30;
+    string           ApiID       = 40;
     optional string  Input       = 50;
     optional string  InputDesc   = 60;
     optional string  Expectation = 70;
     optional string  OutputDesc  = 80;
     optional string  ID          = 90;
-    smoketest.middleware.testcase.v1.TestCaseType TestCaseType = 100;
-    smoketest.middleware.testcase.v1.TestCaseClass TestCaseClass = 110;
 }
 
 message CreateTestCaseResponse {
