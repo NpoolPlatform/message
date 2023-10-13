@@ -68,7 +68,6 @@ message TestCaseReq {
     optional string        Name          = 20;
     optional string        Description   = 30;
     optional string        ModuleID      = 40;
-    optional string        ModuleName    = 50;
     optional string        ApiID         = 60;
     optional string        Input         = 70;
     optional string        InputDesc     = 80;
