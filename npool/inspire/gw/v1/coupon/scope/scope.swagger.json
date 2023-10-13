@@ -83,6 +83,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> f83005c76 (update scope)
@@ -124,6 +125,8 @@
 >>>>>>> 447c10d15 (delete get app scopes)
 =======
 >>>>>>> f83005c76 (update scope)
+=======
+>>>>>>> 4b0ed6935 (delete get app scopes)
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -266,6 +269,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
@@ -308,6 +312,8 @@
 >>>>>>> 447c10d15 (delete get app scopes)
 =======
 >>>>>>> f83005c76 (update scope)
+=======
+>>>>>>> 4b0ed6935 (delete get app scopes)
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
