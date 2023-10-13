@@ -136,7 +136,7 @@
           "title": "@inject_tag: sql:\"test_case_class\""
         },
         "TestCaseClass": {
-          "$ref": "#/definitions/v1TestCaseType"
+          "$ref": "#/definitions/v1TestCaseClass"
         },
         "ModuleID": {
           "type": "string",
@@ -260,6 +260,15 @@
           "type": "string"
         }
       }
+    },
+    "v1TestCaseClass": {
+      "type": "string",
+      "enum": [
+        "DefaultTestCaseClass",
+        "Functionality",
+        "Interface"
+      ],
+      "default": "DefaultTestCaseClass"
     },
     "v1TestCaseResult": {
       "type": "string",
