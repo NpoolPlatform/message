@@ -15,7 +15,6 @@ service Middleware {
     rpc GetModuleConds      (GetModuleCondsRequest)     returns (GetModuleCondsResponse)     {}
     rpc DeleteModule        (DeleteModuleRequest)       returns (DeleteModuleResponse)       {}
     rpc ExistModule         (ExistModuleRequest)        returns (ExistModuleResponse)        {}
-    rpc ExistModuleByName   (ExistModuleByNameRequest)  returns (ExistModuleByNameResponse)  {}
     rpc ExistModuleConds    (ExistModuleCondsRequest)   returns (ExistModuleCondsResponse)   {}
 }
 
@@ -35,14 +34,14 @@ message Module {
 }
 
 message ModuleReq {
-    optional string ID                      = 10;
-    optional string Name                    = 20;
-    optional string Description             = 30;
+    optional string ID          = 10;
+    optional string Name        = 20;
+    optional string Description = 30;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID     = 10;
-    optional basetypes.v1.StringVal      Name   = 20;
+    optional basetypes.v1.StringVal ID   = 10;
+    optional basetypes.v1.StringVal Name = 20;
 
 }
 
@@ -59,14 +58,6 @@ message ExistModuleRequest {
 }
 
 message ExistModuleResponse {
-    bool  Info  = 10;
-}
-
-message ExistModuleByNameRequest {
-    string     Name                   = 10;
-}
-
-message ExistModuleByNameResponse {
     bool  Info  = 10;
 }
 
