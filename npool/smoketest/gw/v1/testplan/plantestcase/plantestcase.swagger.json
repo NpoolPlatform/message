@@ -364,14 +364,92 @@
         }
       }
     },
-    "v1TestCaseClass": {
-      "type": "string",
-      "enum": [
-        "DefaultTestCaseClass",
-        "Functionality",
-        "Interface"
-      ],
-      "default": "DefaultTestCaseClass"
+    "v1PlanTestCase": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "TestPlanID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_plan_id\""
+        },
+        "TestCaseID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_id\""
+        },
+        "TestCaseName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_name\""
+        },
+        "TestCaseTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_type\""
+        },
+        "TestCaseType": {
+          "$ref": "#/definitions/v1TestCaseType"
+        },
+        "TestCaseClassStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_class\""
+        },
+        "TestCaseClass": {
+          "$ref": "#/definitions/v1TestCaseType"
+        },
+        "Module": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"module\""
+        },
+        "Input": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"input\""
+        },
+        "Output": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"output\""
+        },
+        "Description": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"description\""
+        },
+        "RunDuration": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"run_duration\""
+        },
+        "TestUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_user_id\""
+        },
+        "ResultStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"result\""
+        },
+        "Result": {
+          "$ref": "#/definitions/v1TestCaseResult"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"deleted_at\""
+        }
+      }
     },
     "v1TestCaseResult": {
       "type": "string",
