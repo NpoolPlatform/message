@@ -125,6 +125,31 @@
         },
         "ENV": {
           "type": "string"
+        },
+        "ChainType": {
+          "type": "string"
+        },
+        "ChainNativeUnit": {
+          "type": "string"
+        },
+        "ChainAtomicUnit": {
+          "type": "string"
+        },
+        "ChainUnitExp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GasType": {
+          "$ref": "#/definitions/v1GasType"
+        },
+        "ChainID": {
+          "type": "string"
+        },
+        "ChainNickname": {
+          "type": "string"
+        },
+        "ChainNativeCoinName": {
+          "type": "string"
         }
       }
     },
@@ -408,6 +433,16 @@
           "title": "@inject_tag: sql:\"check_new_address_balance\""
         }
       }
+    },
+    "v1GasType": {
+      "type": "string",
+      "enum": [
+        "DefaultGasType",
+        "FixedGas",
+        "DynamicGas",
+        "GasUnsupported"
+      ],
+      "default": "DefaultGasType"
     }
   }
 }
