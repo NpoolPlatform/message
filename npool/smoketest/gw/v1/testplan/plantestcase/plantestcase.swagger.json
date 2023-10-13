@@ -269,7 +269,7 @@
           "$ref": "#/definitions/v1TestCaseType"
         },
         "TestCaseClass": {
-          "$ref": "#/definitions/v1TestCaseType"
+          "$ref": "#/definitions/v1TestCaseClass"
         },
         "Module": {
           "type": "string"
@@ -364,6 +364,15 @@
           "$ref": "#/definitions/smoketestgatewaytestplanplantestcasev1PlanTestCase"
         }
       }
+    },
+    "v1TestCaseClass": {
+      "type": "string",
+      "enum": [
+        "DefaultTestCaseClass",
+        "Functionality",
+        "Interface"
+      ],
+      "default": "DefaultTestCaseClass"
     },
     "v1TestCaseResult": {
       "type": "string",
