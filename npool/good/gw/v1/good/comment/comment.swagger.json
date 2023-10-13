@@ -332,6 +332,12 @@
         },
         "UserID": {
           "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
         }
       }
     },
