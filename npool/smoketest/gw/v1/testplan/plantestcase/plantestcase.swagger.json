@@ -272,9 +272,6 @@
         "TestCaseClass": {
           "$ref": "#/definitions/v1TestCaseClass"
         },
-        "Module": {
-          "type": "string"
-        },
         "Input": {
           "type": "string"
         },
