@@ -36,27 +36,29 @@ message PlanTestCase {
     string          TestCaseTypeStr                         = 50;
     smoketest.middleware.testcase.v1.TestCaseType TestCaseType  = 60;
     // @inject_tag: sql:"test_case_class"
-    string        TestCaseClassStr                          = 70;
+    string         TestCaseClassStr                         = 70;
     smoketest.middleware.testcase.v1.TestCaseClass TestCaseClass = 80;
+    // @inject_tag: sql:"test_case_api_id"
+    string          TestCaseApiID                           = 90;
     // @inject_tag: sql:"module_id"
-    string          ModuleID                                = 90;
+    string          ModuleID                                = 100;
     // @inject_tag: sql:"module_name"
-    string          ModuleName                              = 100;
+    string          ModuleName                              = 110;
     // @inject_tag: sql:"input"
-    string          Input                                   = 110;
+    string          Input                                   = 120;
     // @inject_tag: sql:"output"
-    string          Output                                  = 120;
+    string          Output                                  = 130;
     // @inject_tag: sql:"description"
-    string          Description                             = 130;
+    string          Description                             = 140;
     // @inject_tag: sql:"run_duration"
-    uint32          RunDuration                             = 140;
+    uint32          RunDuration                             = 150;
     // @inject_tag: sql:"test_user_id"
-    string          TestUserID                              = 150;
+    string          TestUserID                              = 160;
     // @inject_tag: sql:"result"
-    string          ResultStr                               = 160;
-    TestCaseResult  Result                                  = 170;
+    string          ResultStr                               = 170;
+    TestCaseResult  Result                                  = 180;
     // @inject_tag: sql:"index"
-    uint32          Index                                   = 180;
+    uint32          Index                                   = 190;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt                               = 1000;
     // @inject_tag: sql:"updated_at"
