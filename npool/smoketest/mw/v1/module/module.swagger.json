@@ -72,14 +72,6 @@
         }
       }
     },
-    "v1ExistModuleByNameResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1ExistModuleCondsResponse": {
       "type": "object",
       "properties": {
