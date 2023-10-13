@@ -36,35 +36,31 @@ message PlanTestCase {
     string          TestCaseTypeStr                         = 50;
     smoketest.middleware.testcase.v1.TestCaseType TestCaseType  = 60;
     // @inject_tag: sql:"test_case_class"
-    string         TestCaseClassStr                         = 70;
-    smoketest.middleware.testcase.v1.TestCaseClass TestCaseClass = 80;
-    // @inject_tag: sql:"test_case_api_id"
-    string          TestCaseApiID                           = 90;
-    // @inject_tag: sql:"module_id"
-    string          ModuleID                                = 100;
-    // @inject_tag: sql:"module_name"
-    string          ModuleName                              = 110;
+    string        TestCaseClassStr                          = 70;
+    smoketest.middleware.testcase.v1.TestCaseType TestCaseClass = 80;
+    // @inject_tag: sql:"module"
+    string          Module                                  = 90;
     // @inject_tag: sql:"input"
-    string          Input                                   = 120;
+    string          Input                                   = 100;
     // @inject_tag: sql:"output"
-    string          Output                                  = 130;
+    string          Output                                  = 110;
     // @inject_tag: sql:"description"
-    string          Description                             = 140;
+    string          Description                             = 120;
     // @inject_tag: sql:"run_duration"
-    uint32          RunDuration                             = 150;
+    uint32          RunDuration                             = 130;
     // @inject_tag: sql:"test_user_id"
-    string          TestUserID                              = 160;
+    string          TestUserID                              = 140;
     // @inject_tag: sql:"result"
-    string          ResultStr                               = 170;
-    TestCaseResult  Result                                  = 180;
+    string          ResultStr                               = 150;
+    TestCaseResult  Result                                  = 160;
     // @inject_tag: sql:"index"
-    uint32          Index                                   = 190;
+    uint32          Index                                   = 170;
     // @inject_tag: sql:"created_at"
-    uint32          CreatedAt                               = 1000;
+    uint32          CreatedAt                               = 180;
     // @inject_tag: sql:"updated_at"
-    uint32          UpdatedAt                               = 1010;
+    uint32          UpdatedAt                               = 1000;
     // @inject_tag: sql:"deleted_at"
-    uint32          DeletedAt                               = 1020;
+    uint32          DeletedAt                               = 1010;
 }
 
 message PlanTestCaseReq {
