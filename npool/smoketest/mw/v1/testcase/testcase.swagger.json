@@ -246,9 +246,6 @@
         "ModuleID": {
           "type": "string"
         },
-        "ModuleName": {
-          "type": "string"
-        },
         "ApiID": {
           "type": "string"
         },
