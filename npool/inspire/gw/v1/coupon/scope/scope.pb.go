@@ -775,7 +775,7 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescGZIP() []byte {
 	return file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescData
 }
 
-var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_goTypes = []interface{}{
 	(*Scope)(nil),                // 0: inspire.gateway.coupon.scope.v1.Scope
 	(*CreateScopeRequest)(nil),   // 1: inspire.gateway.coupon.scope.v1.CreateScopeRequest
@@ -934,7 +934,7 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   9,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
