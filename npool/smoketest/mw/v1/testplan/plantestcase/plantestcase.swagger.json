@@ -138,9 +138,13 @@
         "TestCaseClass": {
           "$ref": "#/definitions/v1TestCaseType"
         },
-        "Module": {
+        "ModuleID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"module\""
+          "title": "@inject_tag: sql:\"module_id\""
+        },
+        "ModuleName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"module_name\""
         },
         "Input": {
           "type": "string",
