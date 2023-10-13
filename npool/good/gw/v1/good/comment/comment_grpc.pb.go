@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateComment_FullMethodName = "/good.gateway.good1.comment.v1.Gateway/CreateComment"
-	Gateway_UpdateComment_FullMethodName = "/good.gateway.good1.comment.v1.Gateway/UpdateComment"
-	Gateway_GetComments_FullMethodName   = "/good.gateway.good1.comment.v1.Gateway/GetComments"
-	Gateway_GetMyComments_FullMethodName = "/good.gateway.good1.comment.v1.Gateway/GetMyComments"
-	Gateway_DeleteComment_FullMethodName = "/good.gateway.good1.comment.v1.Gateway/DeleteComment"
+	Gateway_CreateComment_FullMethodName    = "/good.gateway.good1.comment.v1.Gateway/CreateComment"
+	Gateway_UpdateComment_FullMethodName    = "/good.gateway.good1.comment.v1.Gateway/UpdateComment"
+	Gateway_GetComments_FullMethodName      = "/good.gateway.good1.comment.v1.Gateway/GetComments"
+	Gateway_GetMyComments_FullMethodName    = "/good.gateway.good1.comment.v1.Gateway/GetMyComments"
+	Gateway_DeleteComment_FullMethodName    = "/good.gateway.good1.comment.v1.Gateway/DeleteComment"
+	Gateway_DeleteAppComment_FullMethodName = "/good.gateway.good1.comment.v1.Gateway/DeleteAppComment"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -35,6 +36,7 @@ type GatewayClient interface {
 	GetComments(ctx context.Context, in *GetCommentsRequest, opts ...grpc.CallOption) (*GetCommentsResponse, error)
 	GetMyComments(ctx context.Context, in *GetMyCommentsRequest, opts ...grpc.CallOption) (*GetMyCommentsResponse, error)
 	DeleteComment(ctx context.Context, in *DeleteCommentRequest, opts ...grpc.CallOption) (*DeleteCommentResponse, error)
+	DeleteAppComment(ctx context.Context, in *DeleteAppCommentRequest, opts ...grpc.CallOption) (*DeleteAppCommentResponse, error)
 }
 
 type gatewayClient struct {
@@ -90,6 +92,15 @@ func (c *gatewayClient) DeleteComment(ctx context.Context, in *DeleteCommentRequ
 	return out, nil
 }
 
+func (c *gatewayClient) DeleteAppComment(ctx context.Context, in *DeleteAppCommentRequest, opts ...grpc.CallOption) (*DeleteAppCommentResponse, error) {
+	out := new(DeleteAppCommentResponse)
+	err := c.cc.Invoke(ctx, Gateway_DeleteAppComment_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -99,6 +110,7 @@ type GatewayServer interface {
 	GetComments(context.Context, *GetCommentsRequest) (*GetCommentsResponse, error)
 	GetMyComments(context.Context, *GetMyCommentsRequest) (*GetMyCommentsResponse, error)
 	DeleteComment(context.Context, *DeleteCommentRequest) (*DeleteCommentResponse, error)
+	DeleteAppComment(context.Context, *DeleteAppCommentRequest) (*DeleteAppCommentResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -120,6 +132,9 @@ func (UnimplementedGatewayServer) GetMyComments(context.Context, *GetMyCommentsR
 }
 func (UnimplementedGatewayServer) DeleteComment(context.Context, *DeleteCommentRequest) (*DeleteCommentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteComment not implemented")
+}
+func (UnimplementedGatewayServer) DeleteAppComment(context.Context, *DeleteAppCommentRequest) (*DeleteAppCommentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppComment not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -224,6 +239,24 @@ func _Gateway_DeleteComment_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_DeleteAppComment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppCommentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeleteAppComment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_DeleteAppComment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeleteAppComment(ctx, req.(*DeleteAppCommentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -250,6 +283,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteComment",
 			Handler:    _Gateway_DeleteComment_Handler,
+		},
+		{
+			MethodName: "DeleteAppComment",
+			Handler:    _Gateway_DeleteAppComment_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

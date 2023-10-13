@@ -41,6 +41,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc DeleteAppComment (DeleteAppCommentRequest) returns (DeleteAppCommentResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app/goodcomment"
+            body: "*"
+        };
+    }
 }
 
 message Comment {
@@ -51,19 +58,20 @@ message Comment {
     optional string Username = 50;
     optional string EmailAddress = 60;
     optional string PhoneNO = 70;
-    string GoodID     = 80;
+    string AppGoodID  = 80;
     string GoodName   = 90;
     optional string OrderID = 100;
     string Content    = 110;
     optional string ReplyToID = 120;
+    string GoodID     = 130;
     uint32 CreatedAt  = 1000;
     uint32 UpdatedAt  = 1010;
 }
 
 message CreateCommentRequest {
-    string AppID    = 10;
-    string UserID   = 20;
-    string GoodID   = 30;
+    string AppID        = 10;
+    string UserID       = 20;
+    string AppGoodID    = 30;
     optional string OrderID = 40;
     string Content  = 50;
     optional string ReplyToID = 60;
@@ -85,9 +93,11 @@ message UpdateCommentResponse {
 }
 
 message GetCommentsRequest {
-    optional string GoodID = 10;
-    int32           Offset = 20;
-    int32           Limit  = 30;
+    string          AppID     = 10;
+    optional string AppGoodID = 20;
+    optional string GoodID    = 30;
+    int32           Offset    = 40;
+    int32           Limit     = 50;
 }
 
 message GetCommentsResponse {
@@ -107,7 +117,6 @@ message GetMyCommentsResponse {
     uint32           Total = 20;
 }
 
-
 message DeleteCommentRequest {
     string ID     = 10;
     string AppID  = 20;
@@ -115,5 +124,15 @@ message DeleteCommentRequest {
 }
 
 message DeleteCommentResponse {
+    Comment Info = 10;
+}
+
+message DeleteAppCommentRequest {
+    string ID     = 10;
+    string AppID  = 20;
+    string UserID = 30;
+}
+
+message DeleteAppCommentResponse {
     Comment Info = 10;
 }
