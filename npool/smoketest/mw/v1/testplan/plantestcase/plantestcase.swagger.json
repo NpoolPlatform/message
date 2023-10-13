@@ -136,10 +136,6 @@
         "TestCaseClass": {
           "$ref": "#/definitions/v1TestCaseClass"
         },
-        "TestCaseApiID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"test_case_api_id\""
-        },
         "ModuleID": {
           "type": "string",
           "title": "@inject_tag: sql:\"module_id\""
