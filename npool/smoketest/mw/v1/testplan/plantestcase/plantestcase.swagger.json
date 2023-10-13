@@ -134,19 +134,11 @@
           "title": "@inject_tag: sql:\"test_case_class\""
         },
         "TestCaseClass": {
-          "$ref": "#/definitions/v1TestCaseClass"
+          "$ref": "#/definitions/v1TestCaseType"
         },
-        "TestCaseApiID": {
+        "Module": {
           "type": "string",
-          "title": "@inject_tag: sql:\"test_case_api_id\""
-        },
-        "ModuleID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"module_id\""
-        },
-        "ModuleName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"module_name\""
+          "title": "@inject_tag: sql:\"module\""
         },
         "Input": {
           "type": "string",
