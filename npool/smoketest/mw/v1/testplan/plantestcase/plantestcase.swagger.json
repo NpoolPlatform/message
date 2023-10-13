@@ -45,7 +45,7 @@
         }
       }
     },
-    "v1Conds": {
+    "testplanplantestcasev1Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -119,6 +119,28 @@
         "TestCaseID": {
           "type": "string",
           "title": "@inject_tag: sql:\"test_case_id\""
+        },
+        "TestCaseName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_name\""
+        },
+        "TestCaseTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_type\""
+        },
+        "TestCaseType": {
+          "$ref": "#/definitions/v1TestCaseType"
+        },
+        "TestCaseClassStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_class\""
+        },
+        "TestCaseClass": {
+          "$ref": "#/definitions/v1TestCaseType"
+        },
+        "Module": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"module\""
         },
         "Input": {
           "type": "string",
@@ -244,6 +266,15 @@
         "Failed"
       ],
       "default": "DefaultTestCaseResult"
+    },
+    "v1TestCaseType": {
+      "type": "string",
+      "enum": [
+        "DefaultTestCaseType",
+        "Manual",
+        "Automatic"
+      ],
+      "default": "DefaultTestCaseType"
     },
     "v1UpdatePlanTestCaseResponse": {
       "type": "object",
