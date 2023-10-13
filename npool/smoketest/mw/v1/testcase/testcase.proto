@@ -18,55 +18,65 @@ service Middleware {
 
 message TestCase {
     // @inject_tag: sql:"id"
-    string          ID                                                = 10;
+    string       ID               = 10;
     // @inject_tag: sql:"name"
-    string          Name                                              = 20;
+    string       Name             = 20;
     // @inject_tag: sql:"description"
-    string          Description                                       = 30;
+    string       Description      = 30;
     // @inject_tag: sql:"module_id"
-    string          ModuleID                                          = 40;
+    string       ModuleID         = 40;
     // @inject_tag: sql:"module_name"
-    string          ModuleName                                        = 50;
+    string       ModuleName       = 50;
     // @inject_tag: sql:"api_id"
-    string          ApiID                                             = 60;
+    string       ApiID            = 60;
     // @inject_tag: sql:"expectation"
-    string          Expectation                                       = 70;
+    string       Expectation      = 70;
     // @inject_tag: sql:"output_desc"
-    string          OutputDesc                                        = 80;
+    string       OutputDesc       = 80;
     // @inject_tag: sql:"input"
-    string          Input                                             = 90;
+    string       Input            = 90;
     // @inject_tag: sql:"input_desc"
-    string          InputDesc                                         = 100;
+    string       InputDesc        = 100;
     // @inject_tag: sql:"test_case_type"
-    string          TestCaseTypeStr                                   = 110;
-    TestCaseType    TestCaseType                                      = 120;
+    string       TestCaseTypeStr  = 110;
+    TestCaseType TestCaseType     = 120;
     // @inject_tag: sql:"deprecated"
-    bool            Deprecated                                        = 130;
+    bool         Deprecated       = 130;
+    // @inject_tag: sql:"test_case_class"
+    string       TestCaseClassStr = 140;
+    TestCaseType TestCaseClass    = 150;
     // @inject_tag: sql:"created_at"
-    uint32          CreatedAt                                         = 140;
+    uint32       CreatedAt        = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32          UpdatedAt                                         = 150;
+    uint32       UpdatedAt        = 1010;
 }
 
 enum TestCaseType {
-    DefaultTestCaseType      = 0;
-    Manual                   = 10;
-    Automatic                = 20;
+    DefaultTestCaseType = 0;
+    Manual              = 10;
+    Automatic           = 20;
+}
+
+enum TestCaseClass {
+    DefaultTestCaseClass = 0;
+    Functionality        = 10;
+    Interface            = 20;
 }
 
 message TestCaseReq {
-    optional string          ID                        = 10;
-    optional string          Name                      = 20;
-    optional string          Description               = 30;
-    optional string          ModuleID                  = 40;
-    optional string          ModuleName                = 50;
-    optional string          ApiID                     = 60;
-    optional string          Input                     = 70;
-    optional string          InputDesc                 = 80;
-    optional string          Expectation               = 90;
-    optional string          OutputDesc                = 100;
-    optional TestCaseType    TestCaseType              = 110;
-    optional bool            Deprecated                = 120;
+    optional string        ID            = 10;
+    optional string        Name          = 20;
+    optional string        Description   = 30;
+    optional string        ModuleID      = 40;
+    optional string        ModuleName    = 50;
+    optional string        ApiID         = 60;
+    optional string        Input         = 70;
+    optional string        InputDesc     = 80;
+    optional string        Expectation   = 90;
+    optional string        OutputDesc    = 100;
+    optional TestCaseType  TestCaseType  = 110;
+    optional bool          Deprecated    = 120;
+    optional TestCaseClass TestCaseClass = 130;
 }
 
 message Conds {
