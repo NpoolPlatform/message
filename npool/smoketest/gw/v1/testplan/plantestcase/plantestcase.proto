@@ -51,6 +51,7 @@ message PlanTestCase {
     string          Description                             = 120;
     uint32          RunDuration                             = 130;
     string          TestUserID                              = 140;
+    string          TestUserEmail                           = 150;
     smoketest.middleware.testplan.plantestcase.v1.TestCaseResult Result = 160;
     uint32          Index                                   = 170;
     string          ModuleID                                = 180;
