@@ -134,6 +134,7 @@ func local_request_Gateway_GetScopes_0(ctx context.Context, marshaler runtime.Ma
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func request_Gateway_GetAppScopes_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppScopesRequest
@@ -170,6 +171,8 @@ func local_request_Gateway_GetAppScopes_0(ctx context.Context, marshaler runtime
 }
 
 >>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> feba7689e (delete get app scopes)
 // RegisterGatewayHandlerServer registers the http handlers for service Gateway to "mux".
 // UnaryRPC     :call GatewayServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
@@ -246,6 +249,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 	})
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	mux.Handle("POST", pattern_Gateway_GetAppScopes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
@@ -271,6 +275,8 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 	})
 
 >>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> feba7689e (delete get app scopes)
 	return nil
 }
 
@@ -373,6 +379,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 	})
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	mux.Handle("POST", pattern_Gateway_GetAppScopes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
@@ -395,6 +402,8 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 	})
 
 >>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> feba7689e (delete get app scopes)
 	return nil
 }
 
@@ -405,10 +414,13 @@ var (
 
 	pattern_Gateway_GetScopes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "scopes"}, ""))
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 	pattern_Gateway_GetAppScopes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "app", "scopes"}, ""))
 >>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> feba7689e (delete get app scopes)
 )
 
 var (
@@ -418,8 +430,11 @@ var (
 
 	forward_Gateway_GetScopes_0 = runtime.ForwardResponseMessage
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 	forward_Gateway_GetAppScopes_0 = runtime.ForwardResponseMessage
 >>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> feba7689e (delete get app scopes)
 )

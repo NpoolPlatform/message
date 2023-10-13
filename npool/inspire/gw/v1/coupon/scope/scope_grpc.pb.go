@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Gateway_CreateScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/CreateScope"
 	Gateway_DeleteScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/DeleteScope"
 	Gateway_GetScopes_FullMethodName   = "/inspire.gateway.coupon.scope.v1.Gateway/GetScopes"
@@ -29,6 +30,11 @@ const (
 	Gateway_GetScopes_FullMethodName    = "/inspire.gateway.coupon.scope.v1.Gateway/GetScopes"
 	Gateway_GetAppScopes_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/GetAppScopes"
 >>>>>>> e243bad0c (add coupon scope in gw)
+=======
+	Gateway_CreateScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/CreateScope"
+	Gateway_DeleteScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/DeleteScope"
+	Gateway_GetScopes_FullMethodName   = "/inspire.gateway.coupon.scope.v1.Gateway/GetScopes"
+>>>>>>> feba7689e (delete get app scopes)
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -39,9 +45,12 @@ type GatewayClient interface {
 	DeleteScope(ctx context.Context, in *DeleteScopeRequest, opts ...grpc.CallOption) (*DeleteScopeResponse, error)
 	GetScopes(ctx context.Context, in *GetScopesRequest, opts ...grpc.CallOption) (*GetScopesResponse, error)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
 >>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> feba7689e (delete get app scopes)
 }
 
 type gatewayClient struct {
@@ -80,6 +89,7 @@ func (c *gatewayClient) GetScopes(ctx context.Context, in *GetScopesRequest, opt
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func (c *gatewayClient) GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error) {
 	out := new(GetAppScopesResponse)
@@ -91,6 +101,8 @@ func (c *gatewayClient) GetAppScopes(ctx context.Context, in *GetAppScopesReques
 }
 
 >>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> feba7689e (delete get app scopes)
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -99,9 +111,12 @@ type GatewayServer interface {
 	DeleteScope(context.Context, *DeleteScopeRequest) (*DeleteScopeResponse, error)
 	GetScopes(context.Context, *GetScopesRequest) (*GetScopesResponse, error)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
 >>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> feba7689e (delete get app scopes)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -119,11 +134,14 @@ func (UnimplementedGatewayServer) GetScopes(context.Context, *GetScopesRequest) 
 	return nil, status.Errorf(codes.Unimplemented, "method GetScopes not implemented")
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func (UnimplementedGatewayServer) GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppScopes not implemented")
 }
 >>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> feba7689e (delete get app scopes)
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
 // UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
@@ -192,6 +210,7 @@ func _Gateway_GetScopes_Handler(srv interface{}, ctx context.Context, dec func(i
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func _Gateway_GetAppScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppScopesRequest)
@@ -212,6 +231,8 @@ func _Gateway_GetAppScopes_Handler(srv interface{}, ctx context.Context, dec fun
 }
 
 >>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> feba7689e (delete get app scopes)
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -232,12 +253,15 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetScopes_Handler,
 		},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		{
 			MethodName: "GetAppScopes",
 			Handler:    _Gateway_GetAppScopes_Handler,
 		},
 >>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> feba7689e (delete get app scopes)
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "npool/inspire/gw/v1/coupon/scope/scope.proto",

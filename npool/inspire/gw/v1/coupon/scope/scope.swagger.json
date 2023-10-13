@@ -81,6 +81,7 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "/v1/get/app/scopes": {
       "post": {
@@ -115,6 +116,8 @@
       }
     },
 >>>>>>> e243bad0c (add coupon scope in gw)
+=======
+>>>>>>> feba7689e (delete get app scopes)
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -251,6 +254,7 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
@@ -286,6 +290,8 @@
         }
       }
     },
+=======
+>>>>>>> feba7689e (delete get app scopes)
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
