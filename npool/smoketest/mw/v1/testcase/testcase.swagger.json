@@ -203,6 +203,13 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"deprecated\""
         },
+        "TestCaseClassStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_class\""
+        },
+        "TestCaseClass": {
+          "$ref": "#/definitions/v1TestCaseType"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -214,6 +221,15 @@
           "title": "@inject_tag: sql:\"updated_at\""
         }
       }
+    },
+    "v1TestCaseClass": {
+      "type": "string",
+      "enum": [
+        "DefaultTestCaseClass",
+        "Functionality",
+        "Interface"
+      ],
+      "default": "DefaultTestCaseClass"
     },
     "v1TestCaseReq": {
       "type": "object",
@@ -253,6 +269,9 @@
         },
         "Deprecated": {
           "type": "boolean"
+        },
+        "TestCaseClass": {
+          "$ref": "#/definitions/v1TestCaseClass"
         }
       }
     },
