@@ -44,14 +44,14 @@ message PlanTestCase {
     string          TestPlanID                              = 20;
     string          TestCaseID                              = 30;
     string          TestCaseName                            = 40;
-    smoketest.middleware.testcase.v1.TestCaseType TestCaseType = 60;
-    smoketest.middleware.testcase.v1.TestCaseClass TestCaseClass = 80;
+    smoketest.middleware.testcase.v1.TestCaseType TestCaseType  = 60;
+    smoketest.middleware.testcase.v1.TestCaseType TestCaseClass = 80;
+    string          Module                                  = 90;
     string          Input                                   = 100;
     string          Output                                  = 110;
     string          Description                             = 120;
     uint32          RunDuration                             = 130;
     string          TestUserID                              = 140;
-    string          TestUserEmail                           = 150;
     smoketest.middleware.testplan.plantestcase.v1.TestCaseResult Result = 160;
     uint32          Index                                   = 170;
     string          ModuleID                                = 180;
