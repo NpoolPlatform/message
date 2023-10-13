@@ -313,7 +313,11 @@
         },
         "CouponScopeStr": {
           "type": "string",
+<<<<<<< HEAD
           "title": "@inject_tag: sql:\"coupon_scope\""
+=======
+          "title": "@inject_tag: sql:\"coupon_constraint\""
+>>>>>>> 447c10d15 (delete get app scopes)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
