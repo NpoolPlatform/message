@@ -206,7 +206,7 @@
           "title": "@inject_tag: sql:\"test_case_class\""
         },
         "TestCaseClass": {
-          "$ref": "#/definitions/v1TestCaseClass"
+          "$ref": "#/definitions/v1TestCaseType"
         },
         "CreatedAt": {
           "type": "integer",
