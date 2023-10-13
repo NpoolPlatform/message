@@ -23,7 +23,6 @@ const (
 	Middleware_UpdateModule_FullMethodName     = "/smoketest.middleware.module.v1.Middleware/UpdateModule"
 	Middleware_GetModules_FullMethodName       = "/smoketest.middleware.module.v1.Middleware/GetModules"
 	Middleware_GetModule_FullMethodName        = "/smoketest.middleware.module.v1.Middleware/GetModule"
-	Middleware_GetModuleConds_FullMethodName   = "/smoketest.middleware.module.v1.Middleware/GetModuleConds"
 	Middleware_DeleteModule_FullMethodName     = "/smoketest.middleware.module.v1.Middleware/DeleteModule"
 	Middleware_ExistModule_FullMethodName      = "/smoketest.middleware.module.v1.Middleware/ExistModule"
 	Middleware_ExistModuleConds_FullMethodName = "/smoketest.middleware.module.v1.Middleware/ExistModuleConds"
