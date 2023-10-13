@@ -263,6 +263,9 @@
         "CreatedBy": {
           "type": "string"
         },
+        "CreatorEmail": {
+          "type": "string"
+        },
         "Email": {
           "type": "string"
         },
