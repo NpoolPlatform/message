@@ -287,6 +287,9 @@
         "TestUserID": {
           "type": "string"
         },
+        "TestUserEmail": {
+          "type": "string"
+        },
         "Result": {
           "$ref": "#/definitions/v1TestCaseResult"
         },
