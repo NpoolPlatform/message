@@ -97,6 +97,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e8948f8dc (delete get app scopes)
 =======
@@ -134,6 +135,8 @@
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
 =======
 >>>>>>> b9363449e (update scope)
+=======
+>>>>>>> f648d16ad (update scope)
     "/v1/get/app/scopes": {
       "post": {
         "operationId": "Gateway_GetAppScopes",
@@ -166,6 +169,7 @@
         ]
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -307,6 +311,8 @@
 >>>>>>> b9363449e (update scope)
 =======
 >>>>>>> 255adc2de (delete get app scopes)
+=======
+>>>>>>> f648d16ad (update scope)
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -593,6 +599,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
@@ -648,14 +655,19 @@
 =======
 =======
 >>>>>>> b9363449e (update scope)
+=======
+>>>>>>> f648d16ad (update scope)
     "v1GetAppScopesRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
 =======
 >>>>>>> b9363449e (update scope)
+=======
+>>>>>>> f648d16ad (update scope)
           "type": "string"
         },
         "Offset": {
@@ -683,6 +695,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -812,6 +825,8 @@
 >>>>>>> b9363449e (update scope)
 =======
 >>>>>>> 255adc2de (delete get app scopes)
+=======
+>>>>>>> f648d16ad (update scope)
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
