@@ -41,7 +41,8 @@ service Gateway {
 }
 
 message Lang {
-    string ID      = 10;
+    uint32 ID      = 9;
+    string EntID   = 10;
     string AppID   = 20;
     string AppName = 30;
     string LangID  = 40;
@@ -65,7 +66,7 @@ message CreateLangResponse {
 }
 
 message UpdateLangRequest {
-    string        ID     = 10;
+    uint32        ID     = 10;
     string        AppID  = 20;
     optional bool Main   = 30;
 }
@@ -97,7 +98,7 @@ message GetAppLangsResponse {
 }
 
 message DeleteLangRequest {
-    string ID          = 10;
+    uint32 ID          = 10;
     string TargetAppID = 20;
 }
 

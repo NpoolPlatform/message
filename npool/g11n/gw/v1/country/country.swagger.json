@@ -171,8 +171,9 @@
     "g11ngatewaycountryv1CreateCountryRequest": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "string"
+        "EntID": {
+          "type": "integer",
+          "format": "int64"
         },
         "Country": {
           "type": "string"
@@ -228,7 +229,8 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Country": {
           "type": "string"
