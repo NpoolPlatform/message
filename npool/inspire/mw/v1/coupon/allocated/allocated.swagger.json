@@ -209,6 +209,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           "title": "@inject_tag: sql:\"coupon_scope\""
 =======
           "title": "@inject_tag: sql:\"coupon_constraint\""
@@ -219,6 +220,9 @@
 =======
           "title": "@inject_tag: sql:\"coupon_constraint\""
 >>>>>>> 2ee08c10e (return CouponScope in allocated coupon)
+=======
+          "title": "@inject_tag: sql:\"coupon_scope\""
+>>>>>>> 880c4a0bc (fix wrong tag)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"

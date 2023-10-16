@@ -176,6 +176,7 @@ type Coupon struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// @inject_tag: sql:"coupon_scope"
 	CouponScopeStr string         `protobuf:"bytes,250,opt,name=CouponScopeStr,proto3" json:"CouponScopeStr,omitempty" sql:"coupon_scope"`
 =======
@@ -190,6 +191,10 @@ type Coupon struct {
 	// @inject_tag: sql:"coupon_constraint"
 	CouponScopeStr string         `protobuf:"bytes,250,opt,name=CouponScopeStr,proto3" json:"CouponScopeStr,omitempty" sql:"coupon_constraint"`
 >>>>>>> 2ee08c10e (return CouponScope in allocated coupon)
+=======
+	// @inject_tag: sql:"coupon_scope"
+	CouponScopeStr string         `protobuf:"bytes,250,opt,name=CouponScopeStr,proto3" json:"CouponScopeStr,omitempty" sql:"coupon_scope"`
+>>>>>>> 880c4a0bc (fix wrong tag)
 	CouponScope    v1.CouponScope `protobuf:"varint,260,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope" json:"CouponScope,omitempty"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
