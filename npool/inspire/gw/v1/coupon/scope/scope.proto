@@ -29,6 +29,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc GetAppScopes (GetAppScopesRequest) returns (GetAppScopesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/scopes"
+            body: "*"
+        };
+    }
 }
 
 message Scope {
@@ -61,6 +68,17 @@ message DeleteScopeRequest {
 
 message DeleteScopeResponse {
     Scope Info       = 10;
+}
+
+message GetAppScopesRequest {
+    string TargetAppID      = 10;
+    int32  Offset           = 20;
+    int32  Limit            = 30;
+}
+
+message GetAppScopesResponse {
+    repeated Scope     Infos = 10;
+    uint32             Total = 20;
 }
 
 message GetScopesRequest {

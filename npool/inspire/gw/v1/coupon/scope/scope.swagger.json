@@ -95,6 +95,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e8948f8dc (delete get app scopes)
 =======
@@ -130,6 +131,8 @@
 >>>>>>> 2c48ebb04 (update scope)
 =======
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
+=======
+>>>>>>> b9363449e (update scope)
     "/v1/get/app/scopes": {
       "post": {
         "operationId": "Gateway_GetAppScopes",
@@ -162,6 +165,7 @@
         ]
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -298,6 +302,8 @@
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
 =======
 >>>>>>> 61a423dc4 (delete get app scopes)
+=======
+>>>>>>> b9363449e (update scope)
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -395,6 +401,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "GoodID": {
 =======
         "AppID": {
@@ -446,6 +453,9 @@
 =======
         "AppID": {
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
+=======
+        "TargetAppID": {
+>>>>>>> b9363449e (update scope)
           "type": "string"
         },
         "CouponID": {
@@ -549,7 +559,7 @@
 >>>>>>> 2e441a23e (update scope)
 =======
         },
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
         }
@@ -563,6 +573,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -631,11 +642,16 @@
         "AppID": {
 >>>>>>> 3b0497879 (update scope pb)
 =======
+=======
+>>>>>>> b9363449e (update scope)
     "v1GetAppScopesRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
+<<<<<<< HEAD
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
+=======
+>>>>>>> b9363449e (update scope)
           "type": "string"
         },
         "Offset": {
@@ -663,6 +679,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -787,6 +804,8 @@
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
 =======
 >>>>>>> 61a423dc4 (delete get app scopes)
+=======
+>>>>>>> b9363449e (update scope)
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
