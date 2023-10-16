@@ -77,7 +77,7 @@ message Coupon {
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 230;
     // @inject_tag: sql:"random"
     bool       Random          = 240;
-    // @inject_tag: sql:"coupon_constraint"
+    // @inject_tag: sql:"coupon_scope"
     string     CouponScopeStr  = 250;
     basetypes.inspire.v1.CouponScope CouponScope = 260;
     // @inject_tag: sql:"created_at"

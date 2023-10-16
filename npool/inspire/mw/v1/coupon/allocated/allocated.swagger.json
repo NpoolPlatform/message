@@ -203,7 +203,7 @@
         },
         "CouponScopeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coupon_constraint\""
+          "title": "@inject_tag: sql:\"coupon_scope\""
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"

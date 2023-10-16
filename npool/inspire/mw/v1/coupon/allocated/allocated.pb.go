@@ -165,8 +165,8 @@ type Coupon struct {
 	CouponConstraint    v1.CouponConstraint `protobuf:"varint,230,opt,name=CouponConstraint,proto3,enum=basetypes.inspire.v1.CouponConstraint" json:"CouponConstraint,omitempty"`
 	// @inject_tag: sql:"random"
 	Random bool `protobuf:"varint,240,opt,name=Random,proto3" json:"Random,omitempty" sql:"random"`
-	// @inject_tag: sql:"coupon_constraint"
-	CouponScopeStr string         `protobuf:"bytes,250,opt,name=CouponScopeStr,proto3" json:"CouponScopeStr,omitempty" sql:"coupon_constraint"`
+	// @inject_tag: sql:"coupon_scope"
+	CouponScopeStr string         `protobuf:"bytes,250,opt,name=CouponScopeStr,proto3" json:"CouponScopeStr,omitempty" sql:"coupon_scope"`
 	CouponScope    v1.CouponScope `protobuf:"varint,260,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope" json:"CouponScope,omitempty"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
