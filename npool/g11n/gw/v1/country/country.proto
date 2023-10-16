@@ -36,7 +36,7 @@ service Gateway {
 }
 
 message CreateCountryRequest {
-    optional uint32 EntID     = 10;
+    optional string EntID     = 10;
     string          Country   = 20;
     string          Flag      = 30;
     string          Code      = 40;

@@ -36,7 +36,7 @@ service Gateway {
 }
 
 message CreateLangRequest {
-    optional uint32 EntID  = 10;
+    optional string EntID  = 10;
     string          Lang   = 20;
     string          Logo   = 30;
     string          Name   = 40;
