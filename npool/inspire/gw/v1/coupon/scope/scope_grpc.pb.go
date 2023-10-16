@@ -19,9 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/CreateScope"
-	Gateway_DeleteScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/DeleteScope"
-	Gateway_GetScopes_FullMethodName   = "/inspire.gateway.coupon.scope.v1.Gateway/GetScopes"
+	Gateway_CreateScope_FullMethodName  = "/inspire.gateway.coupon.scope.v1.Gateway/CreateScope"
+	Gateway_DeleteScope_FullMethodName  = "/inspire.gateway.coupon.scope.v1.Gateway/DeleteScope"
+	Gateway_GetScopes_FullMethodName    = "/inspire.gateway.coupon.scope.v1.Gateway/GetScopes"
+	Gateway_GetAppScopes_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/GetAppScopes"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -31,6 +32,7 @@ type GatewayClient interface {
 	CreateScope(ctx context.Context, in *CreateScopeRequest, opts ...grpc.CallOption) (*CreateScopeResponse, error)
 	DeleteScope(ctx context.Context, in *DeleteScopeRequest, opts ...grpc.CallOption) (*DeleteScopeResponse, error)
 	GetScopes(ctx context.Context, in *GetScopesRequest, opts ...grpc.CallOption) (*GetScopesResponse, error)
+	GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
 }
 
 type gatewayClient struct {
@@ -68,6 +70,15 @@ func (c *gatewayClient) GetScopes(ctx context.Context, in *GetScopesRequest, opt
 	return out, nil
 }
 
+func (c *gatewayClient) GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error) {
+	out := new(GetAppScopesResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetAppScopes_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -75,6 +86,7 @@ type GatewayServer interface {
 	CreateScope(context.Context, *CreateScopeRequest) (*CreateScopeResponse, error)
 	DeleteScope(context.Context, *DeleteScopeRequest) (*DeleteScopeResponse, error)
 	GetScopes(context.Context, *GetScopesRequest) (*GetScopesResponse, error)
+	GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -90,6 +102,9 @@ func (UnimplementedGatewayServer) DeleteScope(context.Context, *DeleteScopeReque
 }
 func (UnimplementedGatewayServer) GetScopes(context.Context, *GetScopesRequest) (*GetScopesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetScopes not implemented")
+}
+func (UnimplementedGatewayServer) GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppScopes not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -158,6 +173,24 @@ func _Gateway_GetScopes_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetAppScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppScopesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppScopes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_GetAppScopes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppScopes(ctx, req.(*GetAppScopesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -176,6 +209,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetScopes",
 			Handler:    _Gateway_GetScopes_Handler,
+		},
+		{
+			MethodName: "GetAppScopes",
+			Handler:    _Gateway_GetAppScopes_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
