@@ -88,6 +88,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e8948f8dc (delete get app scopes)
 =======
@@ -98,6 +99,11 @@
 =======
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+=======
+=======
+>>>>>>> 1fb4844cc (update scope)
+>>>>>>> 509fa36c7 (update scope)
     "/v1/get/app/scopes": {
       "post": {
         "operationId": "Gateway_GetAppScopes",
@@ -130,6 +136,7 @@
         ]
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -180,13 +187,20 @@
 =======
 >>>>>>> 789287843 (update scope)
 =======
+=======
+>>>>>>> 509fa36c7 (update scope)
 >>>>>>> e243bad0c (add coupon scope in gw)
 <<<<<<< HEAD
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
 =======
 >>>>>>> feba7689e (delete get app scopes)
+<<<<<<< HEAD
 >>>>>>> e8948f8dc (delete get app scopes)
+=======
+=======
+>>>>>>> 1fb4844cc (update scope)
+>>>>>>> 509fa36c7 (update scope)
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -275,6 +289,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "GoodID": {
 =======
         "AppID": {
@@ -286,11 +301,19 @@
         "GoodID": {
 >>>>>>> 789287843 (update scope)
 =======
+=======
+>>>>>>> 509fa36c7 (update scope)
         "GoodID": {
 =======
         "AppID": {
 >>>>>>> e243bad0c (add coupon scope in gw)
+<<<<<<< HEAD
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+=======
+        "TargetAppID": {
+>>>>>>> 1fb4844cc (update scope)
+>>>>>>> 509fa36c7 (update scope)
           "type": "string"
         },
         "CouponID": {
@@ -343,7 +366,7 @@
 =======
 =======
         },
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
 >>>>>>> e243bad0c (add coupon scope in gw)
 >>>>>>> eb5c69d26 (add coupon scope in gw)
@@ -366,14 +389,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
 >>>>>>> e8948f8dc (delete get app scopes)
+=======
+>>>>>>> 509fa36c7 (update scope)
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
 =======
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> f83005c76 (update scope)
@@ -384,6 +411,10 @@
       "properties": {
         "AppID": {
 =======
+=======
+=======
+>>>>>>> 1fb4844cc (update scope)
+>>>>>>> 509fa36c7 (update scope)
     "v1GetAppScopesRequest": {
       "type": "object",
       "properties": {
@@ -416,6 +447,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -468,6 +500,12 @@
 =======
 >>>>>>> feba7689e (delete get app scopes)
 >>>>>>> e8948f8dc (delete get app scopes)
+=======
+=======
+>>>>>>> feba7689e (delete get app scopes)
+=======
+>>>>>>> 1fb4844cc (update scope)
+>>>>>>> 509fa36c7 (update scope)
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
