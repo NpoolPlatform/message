@@ -29,6 +29,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc GetAppScopes (GetAppScopesRequest) returns (GetAppScopesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/scopes"
+            body: "*"
+        };
+    }
 }
 
 message Scope {

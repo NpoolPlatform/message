@@ -1146,6 +1146,7 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescGZIP() []byte {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 =======
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
@@ -1153,6 +1154,9 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimp
 =======
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 >>>>>>> 4b0ed6935 (delete get app scopes)
+=======
+var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+>>>>>>> 4b738f188 (update scope)
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_goTypes = []interface{}{
 	(*Scope)(nil),                // 0: inspire.gateway.coupon.scope.v1.Scope
 	(*CreateScopeRequest)(nil),   // 1: inspire.gateway.coupon.scope.v1.CreateScopeRequest
@@ -1420,6 +1424,7 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			NumMessages:   7,
 =======
 			NumMessages:   9,
@@ -1433,6 +1438,9 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 =======
 			NumMessages:   7,
 >>>>>>> 4b0ed6935 (delete get app scopes)
+=======
+			NumMessages:   9,
+>>>>>>> 4b738f188 (update scope)
 			NumExtensions: 0,
 			NumServices:   1,
 		},
