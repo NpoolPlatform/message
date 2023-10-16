@@ -184,9 +184,6 @@
         "TargetUserID": {
           "type": "string"
         },
-        "AppGoodID": {
-          "type": "string"
-        },
         "Threshold": {
           "type": "string"
         },
@@ -273,9 +270,6 @@
           "type": "string"
         },
         "TargetUserID": {
-          "type": "string"
-        },
-        "AppGoodID": {
           "type": "string"
         },
         "Threshold": {

@@ -50,8 +50,7 @@ message CreateCouponRequest {
     uint32 DurationDays = 80;
     string Message      = 90;
     string Name         = 100;
-    optional string TargetUserID = 110;
-    optional string AppGoodID    = 120;
+    optional string TargetUserID = 110; // only for special offer
     optional string Threshold    = 130;
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 140;
     bool   Random       = 150;
@@ -72,7 +71,6 @@ message UpdateCouponRequest {
     optional string Message      = 80;
     optional string Name         = 90;
     optional string TargetUserID = 100;
-    optional string AppGoodID    = 110;
     optional string Threshold    = 120;
     optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 130;
     optional bool   Random       = 140;
