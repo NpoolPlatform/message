@@ -17,14 +17,17 @@ service Middleware {
 }
 
 message CountryReq {
-    optional string ID        = 10;
+    optional uint32 ID        = 9;
+    optional string EntID     = 10;
     optional string AppID     = 20;
     optional string CountryID = 30;
 }
 
 message Country {
     // @inject_tag: sql:"id"
-    string ID         = 10;
+    uint32 ID         = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID      = 10;
     // @inject_tag: sql:"app_id"
     string AppID      = 20;
     // @inject_tag: sql:"country_id"
@@ -44,7 +47,7 @@ message Country {
 }
 
 message Conds {
-    basetypes.v1.StringVal ID         = 10;
+    basetypes.v1.StringVal EntID      = 10;
     basetypes.v1.StringVal AppID      = 20;
     basetypes.v1.StringVal CountryID  = 30;
 }

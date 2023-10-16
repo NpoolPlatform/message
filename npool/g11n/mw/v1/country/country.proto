@@ -19,7 +19,8 @@ service Middleware {
 }
 
 message CountryReq {
-    optional string    ID      = 10;
+    optional uint32    ID      = 9;
+    optional string    EntID   = 10;
     optional string    Country = 20;
     optional string    Flag    = 30;
     optional string    Code    = 40;
@@ -28,7 +29,9 @@ message CountryReq {
 
 message Country {
     // @inject_tag: sql:"id"
-    string ID      = 10;
+    uint32 ID      = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID   = 10;
     // @inject_tag: sql:"country"
     string Country = 20;
     // @inject_tag: sql:"flag"
@@ -44,7 +47,7 @@ message Country {
 }
 
 message Conds {
-    basetypes.v1.StringVal ID       = 10;
+    basetypes.v1.StringVal EntID    = 10;
     basetypes.v1.StringVal Country  = 20;
     basetypes.v1.StringVal Code     = 30;
     basetypes.v1.StringVal Short    = 40;
@@ -77,7 +80,7 @@ message UpdateCountryResponse {
 }
 
 message GetCountryRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetCountryResponse {
