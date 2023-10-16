@@ -70,7 +70,7 @@ func (x *CreateLangRequest) GetEntID() string {
 	if x != nil && x.EntID != nil {
 		return *x.EntID
 	}
-	return 0
+	return ""
 }
 
 func (x *CreateLangRequest) GetLang() string {

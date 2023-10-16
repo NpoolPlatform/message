@@ -70,7 +70,7 @@ func (x *CreateCountryRequest) GetEntID() string {
 	if x != nil && x.EntID != nil {
 		return *x.EntID
 	}
-	return 0
+	return ""
 }
 
 func (x *CreateCountryRequest) GetCountry() string {
