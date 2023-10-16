@@ -182,8 +182,12 @@
           "type": "string"
         },
         "TargetUserID": {
+<<<<<<< HEAD
           "type": "string",
           "title": "only for special offer"
+=======
+          "type": "string"
+>>>>>>> 359af11b0 (delete AppGoodID in Coupon)
         },
         "Threshold": {
           "type": "string"
