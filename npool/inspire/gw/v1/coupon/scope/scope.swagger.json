@@ -82,7 +82,10 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> f83005c76 (update scope)
     "/v1/get/app/scopes": {
       "post": {
         "operationId": "Gateway_GetAppScopes",
@@ -115,9 +118,12 @@
         ]
       }
     },
+<<<<<<< HEAD
 >>>>>>> f213f6ed2 (add coupon scope in gw)
 =======
 >>>>>>> 447c10d15 (delete get app scopes)
+=======
+>>>>>>> f83005c76 (update scope)
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -203,10 +209,14 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "GoodID": {
 =======
         "AppID": {
 >>>>>>> f213f6ed2 (add coupon scope in gw)
+=======
+        "TargetAppID": {
+>>>>>>> f83005c76 (update scope)
           "type": "string"
         },
         "CouponID": {
@@ -239,7 +249,7 @@
 <<<<<<< HEAD
 =======
         },
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
 >>>>>>> f213f6ed2 (add coupon scope in gw)
         }
@@ -255,10 +265,13 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
 =======
+=======
+>>>>>>> f83005c76 (update scope)
     "v1GetAppScopesRequest": {
       "type": "object",
       "properties": {
@@ -290,8 +303,11 @@
         }
       }
     },
+<<<<<<< HEAD
 =======
 >>>>>>> 447c10d15 (delete get app scopes)
+=======
+>>>>>>> f83005c76 (update scope)
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {
