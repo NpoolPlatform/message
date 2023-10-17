@@ -168,7 +168,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -183,7 +182,7 @@
         "UserID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "Like": {
@@ -224,6 +223,12 @@
     "v1GetLikesRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
         "GoodID": {
           "type": "string"
         },
@@ -243,7 +248,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Like"
           }
         },
@@ -278,7 +282,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Like"
           }
         },
@@ -312,7 +315,7 @@
         "PhoneNO": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "GoodName": {
@@ -320,6 +323,9 @@
         },
         "Like": {
           "type": "boolean"
+        },
+        "GoodID": {
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",

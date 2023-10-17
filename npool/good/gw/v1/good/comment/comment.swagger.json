@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/delete/app/goodcomment": {
+      "post": {
+        "operationId": "Gateway_DeleteAppComment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppCommentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppCommentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/delete/goodcomment": {
       "post": {
         "operationId": "Gateway_DeleteComment",
@@ -200,7 +232,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -230,7 +261,7 @@
         "PhoneNO": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "GoodName": {
@@ -243,6 +274,9 @@
           "type": "string"
         },
         "ReplyToID": {
+          "type": "string"
+        },
+        "GoodID": {
           "type": "string"
         },
         "CreatedAt": {
@@ -264,7 +298,7 @@
         "UserID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "OrderID": {
@@ -279,6 +313,31 @@
       }
     },
     "v1CreateCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+        }
+      }
+    },
+    "v1DeleteAppCommentRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteAppCommentResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -311,6 +370,12 @@
     "v1GetCommentsRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
         "GoodID": {
           "type": "string"
         },
@@ -330,7 +395,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Comment"
           }
         },
@@ -365,7 +429,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Comment"
           }
         },

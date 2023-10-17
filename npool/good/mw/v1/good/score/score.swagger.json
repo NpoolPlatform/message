@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -57,11 +56,14 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "GoodID": {
+        "AppGoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "GoodIDs": {
+        "AppGoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -103,7 +105,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Score"
           }
         },
@@ -128,9 +129,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
+          "title": "@inject_tag: sql:\"app_good_id\""
         },
         "GoodName": {
           "type": "string",
@@ -139,6 +140,10 @@
         "Score": {
           "type": "string",
           "title": "@inject_tag: sql:\"score\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -164,7 +169,7 @@
         "UserID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "Score": {
