@@ -264,9 +264,6 @@
         "CreatorEmail": {
           "type": "string"
         },
-        "Email": {
-          "type": "string"
-        },
         "Executor": {
           "type": "string"
         },
