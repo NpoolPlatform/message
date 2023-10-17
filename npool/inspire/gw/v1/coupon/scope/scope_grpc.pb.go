@@ -78,6 +78,7 @@ type GatewayClient interface {
 =======
 	GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f213f6ed2 (add coupon scope in gw)
 =======
 >>>>>>> 447c10d15 (delete get app scopes)
@@ -92,6 +93,9 @@ type GatewayClient interface {
 =======
 	GetNAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
 >>>>>>> 36e1391e1 (update scope pb)
+=======
+	GetNAppScopes(ctx context.Context, in *GetNAppScopesRequest, opts ...grpc.CallOption) (*GetNAppScopesResponse, error)
+>>>>>>> 7c8102624 (update scope pb)
 }
 
 type gatewayClient struct {
@@ -151,6 +155,7 @@ func (c *gatewayClient) GetAppScopes(ctx context.Context, in *GetAppScopesReques
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f213f6ed2 (add coupon scope in gw)
 =======
 >>>>>>> 447c10d15 (delete get app scopes)
@@ -163,6 +168,10 @@ func (c *gatewayClient) GetAppScopes(ctx context.Context, in *GetAppScopesReques
 =======
 func (c *gatewayClient) GetNAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error) {
 	out := new(GetAppScopesResponse)
+=======
+func (c *gatewayClient) GetNAppScopes(ctx context.Context, in *GetNAppScopesRequest, opts ...grpc.CallOption) (*GetNAppScopesResponse, error) {
+	out := new(GetNAppScopesResponse)
+>>>>>>> 7c8102624 (update scope pb)
 	err := c.cc.Invoke(ctx, Gateway_GetNAppScopes_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -186,6 +195,7 @@ type GatewayServer interface {
 =======
 	GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f213f6ed2 (add coupon scope in gw)
 =======
 >>>>>>> 447c10d15 (delete get app scopes)
@@ -200,6 +210,9 @@ type GatewayServer interface {
 =======
 	GetNAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
 >>>>>>> 36e1391e1 (update scope pb)
+=======
+	GetNAppScopes(context.Context, *GetNAppScopesRequest) (*GetNAppScopesResponse, error)
+>>>>>>> 7c8102624 (update scope pb)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -226,6 +239,7 @@ func (UnimplementedGatewayServer) GetAppScopes(context.Context, *GetAppScopesReq
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppScopes not implemented")
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f213f6ed2 (add coupon scope in gw)
 =======
 >>>>>>> 447c10d15 (delete get app scopes)
@@ -243,6 +257,9 @@ func (UnimplementedGatewayServer) GetAppScopes(context.Context, *GetAppScopesReq
 >>>>>>> 4b738f188 (update scope)
 =======
 func (UnimplementedGatewayServer) GetNAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
+=======
+func (UnimplementedGatewayServer) GetNAppScopes(context.Context, *GetNAppScopesRequest) (*GetNAppScopesResponse, error) {
+>>>>>>> 7c8102624 (update scope pb)
 	return nil, status.Errorf(codes.Unimplemented, "method GetNAppScopes not implemented")
 }
 >>>>>>> 36e1391e1 (update scope pb)
@@ -355,7 +372,7 @@ func _Gateway_GetAppScopes_Handler(srv interface{}, ctx context.Context, dec fun
 >>>>>>> 4b738f188 (update scope)
 =======
 func _Gateway_GetNAppScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppScopesRequest)
+	in := new(GetNAppScopesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -367,7 +384,7 @@ func _Gateway_GetNAppScopes_Handler(srv interface{}, ctx context.Context, dec fu
 		FullMethod: Gateway_GetNAppScopes_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNAppScopes(ctx, req.(*GetAppScopesRequest))
+		return srv.(GatewayServer).GetNAppScopes(ctx, req.(*GetNAppScopesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
