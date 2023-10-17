@@ -73,6 +73,9 @@
         "CouponID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "CouponIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "Used": {
           "$ref": "#/definitions/v1BoolVal"
         },

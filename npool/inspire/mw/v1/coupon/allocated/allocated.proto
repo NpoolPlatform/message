@@ -92,6 +92,7 @@ message Conds {
     optional basetypes.v1.StringVal UserID   = 30;
     optional basetypes.v1.Uint32Val CouponType = 40;
     optional basetypes.v1.StringVal CouponID = 50;
+    optional basetypes.v1.StringSliceVal CouponIDs = 51;
     optional basetypes.v1.BoolVal   Used     = 60;
     optional basetypes.v1.StringVal UsedByOrderID = 70;
     optional basetypes.v1.StringSliceVal IDs = 80;
