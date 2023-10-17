@@ -72,6 +72,8 @@ message CreateTestCaseRequest {
     optional string  Expectation = 70;
     optional string  OutputDesc  = 80;
     optional string  ID          = 90;
+    smoketest.middleware.testcase.v1.TestCaseType TestCaseType = 100;
+    smoketest.middleware.testcase.v1.TestCaseClass TestCaseClass = 110;
 }
 
 message CreateTestCaseResponse {
