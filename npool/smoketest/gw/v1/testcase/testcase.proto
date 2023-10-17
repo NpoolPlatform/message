@@ -65,7 +65,7 @@ message TestCase {
 message CreateTestCaseRequest {
     string           Name        = 10;
     optional string  Description = 20;
-    string           ModuleName  = 30;
+    string           ModuleID    = 30;
     string           ApiID       = 40;
     optional string  Input       = 50;
     optional string  InputDesc   = 60;
