@@ -201,10 +201,14 @@
             "description": "A successful response.",
             "schema": {
 <<<<<<< HEAD
+<<<<<<< HEAD
               "$ref": "#/definitions/v1GetNAppScopesResponse"
 =======
               "$ref": "#/definitions/v1GetAppScopesResponse"
 >>>>>>> 56bff6edf (update scope pb)
+=======
+              "$ref": "#/definitions/v1GetNAppScopesResponse"
+>>>>>>> 99f4aea0b (update scope pb)
             }
           },
           "default": {
@@ -221,10 +225,14 @@
             "required": true,
             "schema": {
 <<<<<<< HEAD
+<<<<<<< HEAD
               "$ref": "#/definitions/v1GetNAppScopesRequest"
 =======
               "$ref": "#/definitions/v1GetAppScopesRequest"
 >>>>>>> 56bff6edf (update scope pb)
+=======
+              "$ref": "#/definitions/v1GetNAppScopesRequest"
+>>>>>>> 99f4aea0b (update scope pb)
             }
           }
         ],
@@ -725,6 +733,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 447c10d15 (delete get app scopes)
 =======
@@ -734,6 +743,8 @@
 =======
 >>>>>>> 4b738f188 (update scope)
 =======
+=======
+>>>>>>> 99f4aea0b (update scope pb)
     "v1GetNAppScopesRequest": {
       "type": "object",
       "properties": {
@@ -765,6 +776,7 @@
         }
       }
     },
+<<<<<<< HEAD
 >>>>>>> 7c8102624 (update scope pb)
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
@@ -845,6 +857,8 @@
 >>>>>>> 255adc2de (delete get app scopes)
 =======
 >>>>>>> f648d16ad (update scope)
+=======
+>>>>>>> 99f4aea0b (update scope pb)
     "v1GetScopesRequest": {
       "type": "object",
       "properties": {

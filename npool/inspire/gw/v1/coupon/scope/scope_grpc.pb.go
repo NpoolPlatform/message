@@ -239,6 +239,7 @@ type GatewayClient interface {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f213f6ed2 (add coupon scope in gw)
 =======
 >>>>>>> 447c10d15 (delete get app scopes)
@@ -338,6 +339,9 @@ type GatewayClient interface {
 =======
 	GetNAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
 >>>>>>> 56bff6edf (update scope pb)
+=======
+	GetNAppScopes(ctx context.Context, in *GetNAppScopesRequest, opts ...grpc.CallOption) (*GetNAppScopesResponse, error)
+>>>>>>> 99f4aea0b (update scope pb)
 }
 
 type gatewayClient struct {
@@ -455,6 +459,7 @@ func (c *gatewayClient) GetAppScopes(ctx context.Context, in *GetAppScopesReques
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f213f6ed2 (add coupon scope in gw)
 =======
 >>>>>>> 447c10d15 (delete get app scopes)
@@ -475,6 +480,10 @@ func (c *gatewayClient) GetNAppScopes(ctx context.Context, in *GetNAppScopesRequ
 func (c *gatewayClient) GetNAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error) {
 	out := new(GetAppScopesResponse)
 >>>>>>> 56bff6edf (update scope pb)
+=======
+func (c *gatewayClient) GetNAppScopes(ctx context.Context, in *GetNAppScopesRequest, opts ...grpc.CallOption) (*GetNAppScopesResponse, error) {
+	out := new(GetNAppScopesResponse)
+>>>>>>> 99f4aea0b (update scope pb)
 	err := c.cc.Invoke(ctx, Gateway_GetNAppScopes_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -589,6 +598,7 @@ type GatewayServer interface {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f213f6ed2 (add coupon scope in gw)
 =======
 >>>>>>> 447c10d15 (delete get app scopes)
@@ -688,6 +698,9 @@ type GatewayServer interface {
 =======
 	GetNAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
 >>>>>>> 56bff6edf (update scope pb)
+=======
+	GetNAppScopes(context.Context, *GetNAppScopesRequest) (*GetNAppScopesResponse, error)
+>>>>>>> 99f4aea0b (update scope pb)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -740,6 +753,7 @@ func (UnimplementedGatewayServer) GetScopes(context.Context, *GetScopesRequest) 
 func (UnimplementedGatewayServer) GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppScopes not implemented")
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -849,6 +863,9 @@ func (UnimplementedGatewayServer) GetAppScopes(context.Context, *GetAppScopesReq
 >>>>>>> f648d16ad (update scope)
 =======
 func (UnimplementedGatewayServer) GetNAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
+=======
+func (UnimplementedGatewayServer) GetNAppScopes(context.Context, *GetNAppScopesRequest) (*GetNAppScopesResponse, error) {
+>>>>>>> 99f4aea0b (update scope pb)
 	return nil, status.Errorf(codes.Unimplemented, "method GetNAppScopes not implemented")
 }
 >>>>>>> 56bff6edf (update scope pb)
@@ -1020,8 +1037,12 @@ func _Gateway_GetNAppScopes_Handler(srv interface{}, ctx context.Context, dec fu
 	in := new(GetNAppScopesRequest)
 =======
 func _Gateway_GetNAppScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+<<<<<<< HEAD
 	in := new(GetAppScopesRequest)
 >>>>>>> 56bff6edf (update scope pb)
+=======
+	in := new(GetNAppScopesRequest)
+>>>>>>> 99f4aea0b (update scope pb)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1034,10 +1055,14 @@ func _Gateway_GetNAppScopes_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		return srv.(GatewayServer).GetNAppScopes(ctx, req.(*GetNAppScopesRequest))
 =======
 		return srv.(GatewayServer).GetNAppScopes(ctx, req.(*GetAppScopesRequest))
 >>>>>>> 56bff6edf (update scope pb)
+=======
+		return srv.(GatewayServer).GetNAppScopes(ctx, req.(*GetNAppScopesRequest))
+>>>>>>> 99f4aea0b (update scope pb)
 	}
 	return interceptor(ctx, in, info, handler)
 }

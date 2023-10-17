@@ -250,8 +250,12 @@ func request_Gateway_GetNAppScopes_0(ctx context.Context, marshaler runtime.Mars
 	var protoReq GetNAppScopesRequest
 =======
 func request_Gateway_GetNAppScopes_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+<<<<<<< HEAD
 	var protoReq GetAppScopesRequest
 >>>>>>> 56bff6edf (update scope pb)
+=======
+	var protoReq GetNAppScopesRequest
+>>>>>>> 99f4aea0b (update scope pb)
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -269,10 +273,14 @@ func request_Gateway_GetNAppScopes_0(ctx context.Context, marshaler runtime.Mars
 
 func local_request_Gateway_GetNAppScopes_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	var protoReq GetNAppScopesRequest
 =======
 	var protoReq GetAppScopesRequest
 >>>>>>> 56bff6edf (update scope pb)
+=======
+	var protoReq GetNAppScopesRequest
+>>>>>>> 99f4aea0b (update scope pb)
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
