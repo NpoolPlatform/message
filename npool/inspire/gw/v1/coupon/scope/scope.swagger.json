@@ -180,6 +180,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f213f6ed2 (add coupon scope in gw)
 =======
 >>>>>>> 447c10d15 (delete get app scopes)
@@ -190,6 +191,8 @@
 =======
 >>>>>>> 4b738f188 (update scope)
 =======
+=======
+>>>>>>> 56bff6edf (update scope pb)
     "/v1/get/n/app/scopes": {
       "post": {
         "operationId": "Gateway_GetNAppScopes",
@@ -197,7 +200,11 @@
           "200": {
             "description": "A successful response.",
             "schema": {
+<<<<<<< HEAD
               "$ref": "#/definitions/v1GetNAppScopesResponse"
+=======
+              "$ref": "#/definitions/v1GetAppScopesResponse"
+>>>>>>> 56bff6edf (update scope pb)
             }
           },
           "default": {
@@ -213,7 +220,11 @@
             "in": "body",
             "required": true,
             "schema": {
+<<<<<<< HEAD
               "$ref": "#/definitions/v1GetNAppScopesRequest"
+=======
+              "$ref": "#/definitions/v1GetAppScopesRequest"
+>>>>>>> 56bff6edf (update scope pb)
             }
           }
         ],
@@ -222,6 +233,7 @@
         ]
       }
     },
+<<<<<<< HEAD
 >>>>>>> 36e1391e1 (update scope pb)
 =======
 >>>>>>> 789287843 (update scope)
@@ -313,6 +325,8 @@
 >>>>>>> 255adc2de (delete get app scopes)
 =======
 >>>>>>> f648d16ad (update scope)
+=======
+>>>>>>> 56bff6edf (update scope pb)
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -660,6 +674,7 @@
     "v1GetAppScopesRequest": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "TargetAppID": {
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -668,6 +683,9 @@
 >>>>>>> b9363449e (update scope)
 =======
 >>>>>>> f648d16ad (update scope)
+=======
+        "AppID": {
+>>>>>>> 56bff6edf (update scope pb)
           "type": "string"
         },
         "Offset": {
@@ -838,6 +856,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f213f6ed2 (add coupon scope in gw)
 =======
         "UserID": {
@@ -877,6 +896,11 @@
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
+=======
+        "UserID": {
+          "type": "string"
+        },
+>>>>>>> 56bff6edf (update scope pb)
         "Offset": {
           "type": "integer",
           "format": "int32"
