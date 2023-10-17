@@ -119,7 +119,6 @@ message Good {
     uint32           ServiceStartAt      = 590;
     string           TechnicalFeeRatio   = 600;
     string           ElectricityFeeRatio = 610;
-    string           DailyRewardAmount   = 620;
     repeated string  Descriptions        = 640;
     string           GoodBanner          = 650;
     repeated string  DisplayNames        = 660;
@@ -235,7 +234,6 @@ message UpdateGoodRequest {
     repeated string Descriptions        = 160;
     optional string GoodBanner          = 170;
     repeated string DisplayNames        = 180;
-    optional string DailyRewardAmount   = 190;
     optional bool   EnablePurchase      = 200;
     optional bool   EnableProductPage   = 210;
     optional basetypes.good.v1.CancelMode CancelMode = 220;
