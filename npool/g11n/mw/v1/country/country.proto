@@ -47,6 +47,7 @@ message Country {
 }
 
 message Conds {
+    basetypes.v1.Uint32Val ID       = 9;
     basetypes.v1.StringVal EntID    = 10;
     basetypes.v1.StringVal Country  = 20;
     basetypes.v1.StringVal Code     = 30;
