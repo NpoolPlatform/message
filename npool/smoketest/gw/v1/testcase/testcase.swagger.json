@@ -168,7 +168,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -183,7 +182,7 @@
         "Description": {
           "type": "string"
         },
-        "ModuleName": {
+        "ModuleID": {
           "type": "string"
         },
         "ApiID": {
@@ -252,7 +251,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
           }
         },
