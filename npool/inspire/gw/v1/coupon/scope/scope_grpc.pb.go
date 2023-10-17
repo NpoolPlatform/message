@@ -34,7 +34,7 @@ type GatewayClient interface {
 	DeleteScope(ctx context.Context, in *DeleteScopeRequest, opts ...grpc.CallOption) (*DeleteScopeResponse, error)
 	GetScopes(ctx context.Context, in *GetScopesRequest, opts ...grpc.CallOption) (*GetScopesResponse, error)
 	GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
-	GetNAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
+	GetNAppScopes(ctx context.Context, in *GetNAppScopesRequest, opts ...grpc.CallOption) (*GetNAppScopesResponse, error)
 }
 
 type gatewayClient struct {
@@ -81,8 +81,8 @@ func (c *gatewayClient) GetAppScopes(ctx context.Context, in *GetAppScopesReques
 	return out, nil
 }
 
-func (c *gatewayClient) GetNAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error) {
-	out := new(GetAppScopesResponse)
+func (c *gatewayClient) GetNAppScopes(ctx context.Context, in *GetNAppScopesRequest, opts ...grpc.CallOption) (*GetNAppScopesResponse, error) {
+	out := new(GetNAppScopesResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetNAppScopes_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -98,7 +98,7 @@ type GatewayServer interface {
 	DeleteScope(context.Context, *DeleteScopeRequest) (*DeleteScopeResponse, error)
 	GetScopes(context.Context, *GetScopesRequest) (*GetScopesResponse, error)
 	GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
-	GetNAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
+	GetNAppScopes(context.Context, *GetNAppScopesRequest) (*GetNAppScopesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -118,7 +118,7 @@ func (UnimplementedGatewayServer) GetScopes(context.Context, *GetScopesRequest) 
 func (UnimplementedGatewayServer) GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppScopes not implemented")
 }
-func (UnimplementedGatewayServer) GetNAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
+func (UnimplementedGatewayServer) GetNAppScopes(context.Context, *GetNAppScopesRequest) (*GetNAppScopesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNAppScopes not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
@@ -207,7 +207,7 @@ func _Gateway_GetAppScopes_Handler(srv interface{}, ctx context.Context, dec fun
 }
 
 func _Gateway_GetNAppScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppScopesRequest)
+	in := new(GetNAppScopesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -219,7 +219,7 @@ func _Gateway_GetNAppScopes_Handler(srv interface{}, ctx context.Context, dec fu
 		FullMethod: Gateway_GetNAppScopes_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNAppScopes(ctx, req.(*GetAppScopesRequest))
+		return srv.(GatewayServer).GetNAppScopes(ctx, req.(*GetNAppScopesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
