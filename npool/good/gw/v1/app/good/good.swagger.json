@@ -645,9 +645,6 @@
         "ElectricityFeeRatio": {
           "type": "string"
         },
-        "DailyRewardAmount": {
-          "type": "string"
-        },
         "Descriptions": {
           "type": "array",
           "items": {
@@ -849,9 +846,6 @@
           "items": {
             "type": "string"
           }
-        },
-        "DailyRewardAmount": {
-          "type": "string"
         },
         "EnablePurchase": {
           "type": "boolean"
