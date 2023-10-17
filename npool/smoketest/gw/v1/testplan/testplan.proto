@@ -44,7 +44,6 @@ message TestPlan {
     smoketest.middleware.testplan.v1.TestPlanState   State  = 30;
     string          CreatedBy                               = 40;
     string          CreatorEmail                            = 50;
-    string          Email                                   = 60;
     string          Executor                                = 70;
     string          ExecutorEmail                           = 80;
     uint32          Fails                                   = 90;
