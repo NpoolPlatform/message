@@ -128,6 +128,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e243bad0c (add coupon scope in gw)
 =======
 >>>>>>> feba7689e (delete get app scopes)
@@ -139,6 +140,40 @@
 >>>>>>> 67de434f0 (delete get app scopes)
 =======
 >>>>>>> 9589c2455 (update scope)
+=======
+    "/v1/get/n/app/scopes": {
+      "post": {
+        "operationId": "Gateway_GetNAppScopes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppScopesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppScopesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+>>>>>>> 960f133ce (update scope pb)
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -317,7 +352,7 @@
     "v1GetAppScopesRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
+        "AppID": {
           "type": "string"
         },
         "Offset": {
@@ -365,9 +400,15 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e243bad0c (add coupon scope in gw)
 =======
 >>>>>>> 3a2981d70 (add coupon scope in gw)
+=======
+        "UserID": {
+          "type": "string"
+        },
+>>>>>>> 960f133ce (update scope pb)
         "Offset": {
           "type": "integer",
           "format": "int32"
