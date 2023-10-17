@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -72,14 +71,6 @@
         }
       }
     },
-    "v1ExistModuleByNameResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1ExistModuleCondsResponse": {
       "type": "object",
       "properties": {
@@ -93,22 +84,6 @@
       "properties": {
         "Info": {
           "type": "boolean"
-        }
-      }
-    },
-    "v1GetModuleCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Module"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -126,7 +101,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Module"
           }
         },

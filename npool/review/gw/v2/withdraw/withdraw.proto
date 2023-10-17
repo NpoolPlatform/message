@@ -6,7 +6,6 @@ option go_package = "github.com/NpoolPlatform/message/npool/review/gw/v2/withdra
 
 import "npool/basetypes/ledger/v1/enums.proto";
 import "npool/basetypes/review/v1/enums.proto";
-import "npool/review/mw/v2/review/review.proto";
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/kycstate.proto";
 
