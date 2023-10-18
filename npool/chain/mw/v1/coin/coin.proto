@@ -120,6 +120,21 @@ message Coin {
     bool   RefreshCurrency              = 270;
     // @inject_tag: sql:"check_new_address_balance"
     bool   CheckNewAddressBalance       = 280;
+    // @inject_tag: sql:"chain_name"
+    string ChainType                    = 290;
+    // @inject_tag: sql:"native_unit"
+    string ChainNativeUnit              = 300;
+    // @inject_tag: sql:"atomic_unit"
+    string ChainAtomicUnit              = 310;
+    // @inject_tag: sql:"unit_dec_exp"
+    uint32 ChainUnitExp                 = 320;
+    // @inject_tag: sql:"chain_id"
+    string ChainID                      = 330;
+    // @inject_tag: sql:"nickname"
+    string ChainNickname                = 340;
+    // @inject_tag: sql:"gas_type"
+    string GasTypeStr                   = 350;
+    basetypes.v1.GasType GasType        = 360;
 }
 
 message Conds {

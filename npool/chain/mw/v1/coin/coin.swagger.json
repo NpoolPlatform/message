@@ -189,6 +189,38 @@
         "CheckNewAddressBalance": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"check_new_address_balance\""
+        },
+        "ChainType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"chain_name\""
+        },
+        "ChainNativeUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"native_unit\""
+        },
+        "ChainAtomicUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"atomic_unit\""
+        },
+        "ChainUnitExp": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"unit_dec_exp\""
+        },
+        "ChainID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"chain_id\""
+        },
+        "ChainNickname": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"nickname\""
+        },
+        "GasTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"gas_type\""
+        },
+        "GasType": {
+          "$ref": "#/definitions/v1GasType"
         }
       }
     },
