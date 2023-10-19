@@ -183,6 +183,14 @@
       ],
       "default": "DefaultGasType"
     },
+    "v1GetChainOnlyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Chain"
+        }
+      }
+    },
     "v1GetChainResponse": {
       "type": "object",
       "properties": {
