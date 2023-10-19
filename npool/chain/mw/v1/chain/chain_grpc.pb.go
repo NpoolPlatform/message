@@ -19,11 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateChain_FullMethodName  = "/chain.middleware.chain.v1.Middleware/CreateChain"
-	Middleware_GetChain_FullMethodName     = "/chain.middleware.chain.v1.Middleware/GetChain"
-	Middleware_GetChains_FullMethodName    = "/chain.middleware.chain.v1.Middleware/GetChains"
-	Middleware_GetChainOnly_FullMethodName = "/chain.middleware.chain.v1.Middleware/GetChainOnly"
-	Middleware_UpdateChain_FullMethodName  = "/chain.middleware.chain.v1.Middleware/UpdateChain"
+	Middleware_CreateChain_FullMethodName = "/chain.middleware.chain.v1.Middleware/CreateChain"
+	Middleware_GetChain_FullMethodName    = "/chain.middleware.chain.v1.Middleware/GetChain"
+	Middleware_GetChains_FullMethodName   = "/chain.middleware.chain.v1.Middleware/GetChains"
+	Middleware_UpdateChain_FullMethodName = "/chain.middleware.chain.v1.Middleware/UpdateChain"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -33,7 +32,6 @@ type MiddlewareClient interface {
 	CreateChain(ctx context.Context, in *CreateChainRequest, opts ...grpc.CallOption) (*CreateChainResponse, error)
 	GetChain(ctx context.Context, in *GetChainRequest, opts ...grpc.CallOption) (*GetChainResponse, error)
 	GetChains(ctx context.Context, in *GetChainsRequest, opts ...grpc.CallOption) (*GetChainsResponse, error)
-	GetChainOnly(ctx context.Context, in *GetChainOnlyRequest, opts ...grpc.CallOption) (*GetChainOnlyResponse, error)
 	UpdateChain(ctx context.Context, in *UpdateChainRequest, opts ...grpc.CallOption) (*UpdateChainResponse, error)
 }
 
@@ -72,15 +70,6 @@ func (c *middlewareClient) GetChains(ctx context.Context, in *GetChainsRequest, 
 	return out, nil
 }
 
-func (c *middlewareClient) GetChainOnly(ctx context.Context, in *GetChainOnlyRequest, opts ...grpc.CallOption) (*GetChainOnlyResponse, error) {
-	out := new(GetChainOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetChainOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) UpdateChain(ctx context.Context, in *UpdateChainRequest, opts ...grpc.CallOption) (*UpdateChainResponse, error) {
 	out := new(UpdateChainResponse)
 	err := c.cc.Invoke(ctx, Middleware_UpdateChain_FullMethodName, in, out, opts...)
@@ -97,7 +86,6 @@ type MiddlewareServer interface {
 	CreateChain(context.Context, *CreateChainRequest) (*CreateChainResponse, error)
 	GetChain(context.Context, *GetChainRequest) (*GetChainResponse, error)
 	GetChains(context.Context, *GetChainsRequest) (*GetChainsResponse, error)
-	GetChainOnly(context.Context, *GetChainOnlyRequest) (*GetChainOnlyResponse, error)
 	UpdateChain(context.Context, *UpdateChainRequest) (*UpdateChainResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -114,9 +102,6 @@ func (UnimplementedMiddlewareServer) GetChain(context.Context, *GetChainRequest)
 }
 func (UnimplementedMiddlewareServer) GetChains(context.Context, *GetChainsRequest) (*GetChainsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetChains not implemented")
-}
-func (UnimplementedMiddlewareServer) GetChainOnly(context.Context, *GetChainOnlyRequest) (*GetChainOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetChainOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateChain(context.Context, *UpdateChainRequest) (*UpdateChainResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateChain not implemented")
@@ -188,24 +173,6 @@ func _Middleware_GetChains_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetChainOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetChainOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetChainOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetChainOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetChainOnly(ctx, req.(*GetChainOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_UpdateChain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateChainRequest)
 	if err := dec(in); err != nil {
@@ -242,10 +209,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetChains",
 			Handler:    _Middleware_GetChains_Handler,
-		},
-		{
-			MethodName: "GetChainOnly",
-			Handler:    _Middleware_GetChainOnly_Handler,
 		},
 		{
 			MethodName: "UpdateChain",

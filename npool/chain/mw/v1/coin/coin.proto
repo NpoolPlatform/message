@@ -14,7 +14,6 @@ service Middleware {
     rpc ExistCoin      (ExistCoinRequest)    returns (ExistCoinResponse)     {}
     rpc GetCoins       (GetCoinsRequest)     returns (GetCoinsResponse)      {}
     rpc ExistCoinConds (ExistCoinCondsRequest) returns (ExistCoinCondsResponse) {}
-    rpc GetCoinOnly    (GetCoinOnlyRequest)  returns (GetCoinOnlyResponse)   {}
     rpc UpdateCoin     (UpdateCoinRequest)   returns (UpdateCoinResponse)    {}
 }
 
@@ -189,14 +188,6 @@ message ExistCoinCondsRequest {
 
 message ExistCoinCondsResponse {
     bool Info = 10;
-}
-
-message GetCoinOnlyRequest {
-    Conds Conds  = 10;
-}
-
-message GetCoinOnlyResponse {
-    Coin Info = 10;
 }
 
 message UpdateCoinRequest {

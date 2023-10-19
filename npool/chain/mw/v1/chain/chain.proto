@@ -12,7 +12,6 @@ service Middleware {
     rpc CreateChain  (CreateChainRequest)  returns (CreateChainResponse)  {}
     rpc GetChain     (GetChainRequest)     returns (GetChainResponse)     {}
     rpc GetChains    (GetChainsRequest)    returns (GetChainsResponse)    {}
-    rpc GetChainOnly (GetChainOnlyRequest) returns (GetChainOnlyResponse) {}
     rpc UpdateChain  (UpdateChainRequest)  returns (UpdateChainResponse)  {}
 }
 
@@ -92,14 +91,6 @@ message GetChainsRequest {
 message GetChainsResponse {
     repeated Chain Infos = 10;
     uint32         Total = 20;
-}
-
-message GetChainOnlyRequest {
-    Conds Conds  = 10;
-}
-
-message GetChainOnlyResponse {
-    Chain Info = 10;
 }
 
 message UpdateChainRequest {

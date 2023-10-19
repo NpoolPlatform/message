@@ -396,14 +396,6 @@
       ],
       "default": "DefaultGasType"
     },
-    "v1GetCoinOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Coin"
-        }
-      }
-    },
     "v1GetCoinResponse": {
       "type": "object",
       "properties": {
