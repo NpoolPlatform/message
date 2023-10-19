@@ -4,6 +4,7 @@ package chain.middleware.chain.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/chain/mw/v1/chain";
 
+import "npool/basetypes/v1/gastype.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
@@ -23,9 +24,10 @@ message ChainReq {
     optional string ChainID    = 40;
     optional string NativeUnit = 50;
     optional string AtomicUnit = 60;
-    optional int64  UnitDecExp = 70;
-    optional string ChainName  = 80;
-    optional string ENV        = 90;
+    optional uint32 UnitExp    = 70;
+    optional string NickName   = 80;
+    optional basetypes.v1.GasType GasType = 90;
+    optional string ENV        = 100;
 }
 
 message Chain {
@@ -43,12 +45,15 @@ message Chain {
     string NativeUnit = 60;
     // @inject_tag: sql:"atomic_unit"
     string AtomicUnit = 70;
-    // @inject_tag: sql:"unit_dec_exp"
-    uint32 UnitDecExp = 80;
-    // @inject_tag: sql:"chain_name"
-    string ChainName  = 90;
+    // @inject_tag: sql:"unit_exp"
+    uint32 UnitExp    = 80;
+    // @inject_tag: sql:"nickname"
+    string Nickname  = 90;
     // @inject_tag: sql:"env"
     string ENV        = 100;
+    // @inject_tag: sql:"gas_type"
+    string GasTypeStr            = 110;
+    basetypes.v1.GasType GasType = 120;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
