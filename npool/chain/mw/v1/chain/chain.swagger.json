@@ -77,18 +77,25 @@
           "type": "string",
           "title": "@inject_tag: sql:\"atomic_unit\""
         },
-        "UnitDecExp": {
+        "UnitExp": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"unit_dec_exp\""
+          "title": "@inject_tag: sql:\"unit_exp\""
         },
-        "ChainName": {
+        "Nickname": {
           "type": "string",
-          "title": "@inject_tag: sql:\"chain_name\""
+          "title": "@inject_tag: sql:\"nickname\""
         },
         "ENV": {
           "type": "string",
           "title": "@inject_tag: sql:\"env\""
+        },
+        "GasTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"gas_type\""
+        },
+        "GasType": {
+          "$ref": "#/definitions/v1GasType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -127,12 +134,15 @@
         "AtomicUnit": {
           "type": "string"
         },
-        "UnitDecExp": {
-          "type": "string",
+        "UnitExp": {
+          "type": "integer",
           "format": "int64"
         },
-        "ChainName": {
+        "NickName": {
           "type": "string"
+        },
+        "GasType": {
+          "$ref": "#/definitions/v1GasType"
         },
         "ENV": {
           "type": "string"
@@ -163,6 +173,16 @@
           "$ref": "#/definitions/v1Chain"
         }
       }
+    },
+    "v1GasType": {
+      "type": "string",
+      "enum": [
+        "DefaultGasType",
+        "FixedGas",
+        "DynamicGas",
+        "GasUnsupported"
+      ],
+      "default": "DefaultGasType"
     },
     "v1GetChainOnlyResponse": {
       "type": "object",
