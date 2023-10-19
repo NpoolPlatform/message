@@ -94,8 +94,6 @@ message Coin {
 message CreateCoinRequest {
     string TargetAppID = 10;
     string CoinTypeID  = 20;
-    string Name        = 30;
-    string Logo        = 40;
 }
 
 message CreateCoinResponse {
