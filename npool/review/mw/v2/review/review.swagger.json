@@ -44,18 +44,6 @@
         }
       }
     },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "v1ReviewObjectType": {
       "type": "string",
       "enum": [
@@ -99,6 +87,18 @@
         }
       }
     },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v2Conds": {
       "type": "object",
       "properties": {
@@ -118,13 +118,13 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "Trigger": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "ObjectType": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "State": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
