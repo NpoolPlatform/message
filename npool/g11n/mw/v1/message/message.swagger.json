@@ -118,14 +118,6 @@
         }
       }
     },
-    "v1GetMessageOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Message"
-        }
-      }
-    },
     "v1GetMessageResponse": {
       "type": "object",
       "properties": {

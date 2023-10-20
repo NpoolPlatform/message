@@ -115,14 +115,6 @@
         }
       }
     },
-    "v1GetLangOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Lang"
-        }
-      }
-    },
     "v1GetLangsResponse": {
       "type": "object",
       "properties": {

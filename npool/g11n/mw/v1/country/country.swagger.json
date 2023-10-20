@@ -184,14 +184,6 @@
         }
       }
     },
-    "v1GetCountryOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Country"
-        }
-      }
-    },
     "v1GetCountryResponse": {
       "type": "object",
       "properties": {

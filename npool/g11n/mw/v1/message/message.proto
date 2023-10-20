@@ -12,7 +12,6 @@ service Middleware {
     rpc CreateMessages    (CreateMessagesRequest)    returns (CreateMessagesResponse)    {}
     rpc UpdateMessage     (UpdateMessageRequest)     returns (UpdateMessageResponse)     {}
     rpc GetMessage        (GetMessageRequest)        returns (GetMessageResponse)        {}
-    rpc GetMessageOnly    (GetMessageOnlyRequest)    returns (GetMessageOnlyResponse)    {}
     rpc GetMessages       (GetMessagesRequest)       returns (GetMessagesResponse)       {}
     rpc ExistMessageConds (ExistMessageCondsRequest) returns (ExistMessageCondsResponse) {}
     rpc DeleteMessage     (DeleteMessageRequest)     returns (DeleteMessageResponse)     {}
@@ -94,14 +93,6 @@ message GetMessageRequest {
 }
 
 message GetMessageResponse {
-    Message Info = 10;
-}
-
-message GetMessageOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetMessageOnlyResponse {
     Message Info = 10;
 }
 
