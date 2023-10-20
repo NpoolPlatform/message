@@ -41,32 +41,30 @@ service Gateway {
 
 message KycReview {
     // user
-    string UserID       = 10;
-    string EmailAddress = 20;
-    string PhoneNO      = 30;
-    string Username     = 31;
-    string FirstName    = 32;
-    string LastName     = 33;
-
+    string UserID                             = 10;
+    string EmailAddress                       = 20;
+    string PhoneNO                            = 30;
+    string Username                           = 31;
+    string FirstName                          = 32;
+    string LastName                           = 33;
     // kyc
-    string                       KycID         = 40;
-    basetypes.v1.KycDocumentType DocumentType  = 60;
-    string                       IDNumber      = 70;
-    string                       FrontImg      = 80;
-    string                       BackImg       = 90;
-    string                       SelfieImg     = 100;
-    basetypes.v1.KycEntityType   EntityType    = 110;
-
+    string                       KycID        = 40;
+    basetypes.v1.KycDocumentType DocumentType = 60;
+    string                       IDNumber     = 70;
+    string                       FrontImg     = 80;
+    string                       BackImg      = 90;
+    string                       SelfieImg    = 100;
+    basetypes.v1.KycEntityType   EntityType   = 110;
     // review
-    string ReviewID                             = 140;
-    basetypes.review.v1.ReviewObjectType ObjectType     = 150;
-    string Domain                                        = 160;
-    string Reviewer                                      = 170;
-    basetypes.review.v1.ReviewState       ReviewState   = 180;
-    basetypes.v1.KycState     KycState                   = 190;
-    string Message                                       = 200;
-    uint32 CreatedAt                                     = 210;
-    uint32 UpdatedAt                                     = 220;
+    string ReviewID                           = 140;
+    basetypes.review.v1.ReviewObjectType ObjectType   = 150;
+    string Domain                             = 160;
+    string Reviewer                           = 170;
+    basetypes.review.v1.ReviewState ReviewState       = 180;
+    basetypes.v1.KycState           KycState  = 190;
+    string Message                            = 200;
+    uint32 CreatedAt                          = 210;
+    uint32 UpdatedAt                          = 220;
 }
 
 message GetKycReviewsRequest {
