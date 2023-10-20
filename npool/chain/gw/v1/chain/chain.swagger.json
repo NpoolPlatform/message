@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/chain/gw/v1/fiat/currency/history/history.proto",
+    "title": "npool/chain/gw/v1/chain/chain.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/fiatcurrencyhistories": {
+    "/v1/get/chains": {
       "post": {
-        "operationId": "Gateway_GetCurrencies",
+        "operationId": "Gateway_GetChains",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/currencyhistoryv1GetCurrenciesResponse"
+              "$ref": "#/definitions/chaingatewaychainv1GetChainsResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/currencyhistoryv1GetCurrenciesRequest"
+              "$ref": "#/definitions/chaingatewaychainv1GetChainsRequest"
             }
           }
         ],
@@ -50,23 +50,9 @@
     }
   },
   "definitions": {
-    "currencyhistoryv1GetCurrenciesRequest": {
+    "chaingatewaychainv1GetChainsRequest": {
       "type": "object",
       "properties": {
-        "FiatIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -77,13 +63,14 @@
         }
       }
     },
-    "currencyhistoryv1GetCurrenciesResponse": {
+    "chaingatewaychainv1GetChainsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Currency"
+            "type": "object",
+            "$ref": "#/definitions/v1Chain"
           }
         },
         "Total": {
@@ -114,12 +101,13 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
       }
     },
-    "v1Currency": {
+    "v1Chain": {
       "type": "object",
       "properties": {
         "ID": {
@@ -131,36 +119,45 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "FiatID": {
+        "ChainType": {
           "type": "string",
-          "title": "@inject_tag: sql:\"fiat_id\""
+          "title": "@inject_tag: sql:\"chain_type\""
         },
-        "FeedTypeStr": {
+        "Logo": {
           "type": "string",
-          "title": "@inject_tag: sql:\"feed_type\""
+          "title": "@inject_tag: sql:\"logo\""
         },
-        "FeedType": {
-          "$ref": "#/definitions/v1CurrencyFeedType"
-        },
-        "FiatName": {
+        "ChainID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"fiat_name\""
+          "title": "@inject_tag: sql:\"chain_id\""
         },
-        "FiatLogo": {
+        "NativeUnit": {
           "type": "string",
-          "title": "@inject_tag: sql:\"fiat_logo\""
+          "title": "@inject_tag: sql:\"native_unit\""
         },
-        "FiatUnit": {
+        "AtomicUnit": {
           "type": "string",
-          "title": "@inject_tag: sql:\"fiat_unit\""
+          "title": "@inject_tag: sql:\"atomic_unit\""
         },
-        "MarketValueHigh": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"market_value_high\""
+        "UnitExp": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"unit_exp\""
         },
-        "MarketValueLow": {
+        "Nickname": {
           "type": "string",
-          "title": "@inject_tag: sql:\"market_value_low\""
+          "title": "@inject_tag: sql:\"nickname\""
+        },
+        "ENV": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"env\""
+        },
+        "GasTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"gas_type\""
+        },
+        "GasType": {
+          "$ref": "#/definitions/v1GasType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -174,15 +171,15 @@
         }
       }
     },
-    "v1CurrencyFeedType": {
+    "v1GasType": {
       "type": "string",
       "enum": [
-        "DefaultFeedType",
-        "CoinGecko",
-        "CoinBase",
-        "StableUSDHardCode"
+        "DefaultGasType",
+        "FixedGas",
+        "DynamicGas",
+        "GasUnsupported"
       ],
-      "default": "DefaultFeedType"
+      "default": "DefaultGasType"
     }
   }
 }

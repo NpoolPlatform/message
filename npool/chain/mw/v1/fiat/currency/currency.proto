@@ -14,7 +14,8 @@ service Middleware {
 }
 
 message CurrencyReq {
-    optional string ID     = 10;
+    optional uint32 ID     = 10;
+    optional string EntID  = 11;
     optional string FiatID = 20;
     optional basetypes.v1.CurrencyFeedType FeedType = 30;
     optional string MarketValueHigh = 40;
@@ -23,7 +24,9 @@ message CurrencyReq {
 
 message Currency {
     // @inject_tag: sql:"id"
-    string ID              = 10;
+    uint32 ID              = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID           = 11;
     // @inject_tag: sql:"fiat_id"
     string FiatID          = 20;
     // @inject_tag: sql:"feed_type"
@@ -46,14 +49,14 @@ message Currency {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID       = 10;
+    optional basetypes.v1.StringVal      EntID    = 10;
     optional basetypes.v1.StringVal      FiatID   = 20;
     optional basetypes.v1.StringSliceVal FiatIDs  = 30;
     optional basetypes.v1.StringVal      FiatName = 40;
 }
 
 message GetCurrencyRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetCurrencyResponse {

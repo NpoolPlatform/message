@@ -24,7 +24,6 @@ const (
 	Middleware_ExistCoin_FullMethodName      = "/chain.middleware.coin.v1.Middleware/ExistCoin"
 	Middleware_GetCoins_FullMethodName       = "/chain.middleware.coin.v1.Middleware/GetCoins"
 	Middleware_ExistCoinConds_FullMethodName = "/chain.middleware.coin.v1.Middleware/ExistCoinConds"
-	Middleware_GetCoinOnly_FullMethodName    = "/chain.middleware.coin.v1.Middleware/GetCoinOnly"
 	Middleware_UpdateCoin_FullMethodName     = "/chain.middleware.coin.v1.Middleware/UpdateCoin"
 )
 
@@ -37,7 +36,6 @@ type MiddlewareClient interface {
 	ExistCoin(ctx context.Context, in *ExistCoinRequest, opts ...grpc.CallOption) (*ExistCoinResponse, error)
 	GetCoins(ctx context.Context, in *GetCoinsRequest, opts ...grpc.CallOption) (*GetCoinsResponse, error)
 	ExistCoinConds(ctx context.Context, in *ExistCoinCondsRequest, opts ...grpc.CallOption) (*ExistCoinCondsResponse, error)
-	GetCoinOnly(ctx context.Context, in *GetCoinOnlyRequest, opts ...grpc.CallOption) (*GetCoinOnlyResponse, error)
 	UpdateCoin(ctx context.Context, in *UpdateCoinRequest, opts ...grpc.CallOption) (*UpdateCoinResponse, error)
 }
 
@@ -94,15 +92,6 @@ func (c *middlewareClient) ExistCoinConds(ctx context.Context, in *ExistCoinCond
 	return out, nil
 }
 
-func (c *middlewareClient) GetCoinOnly(ctx context.Context, in *GetCoinOnlyRequest, opts ...grpc.CallOption) (*GetCoinOnlyResponse, error) {
-	out := new(GetCoinOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetCoinOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) UpdateCoin(ctx context.Context, in *UpdateCoinRequest, opts ...grpc.CallOption) (*UpdateCoinResponse, error) {
 	out := new(UpdateCoinResponse)
 	err := c.cc.Invoke(ctx, Middleware_UpdateCoin_FullMethodName, in, out, opts...)
@@ -121,7 +110,6 @@ type MiddlewareServer interface {
 	ExistCoin(context.Context, *ExistCoinRequest) (*ExistCoinResponse, error)
 	GetCoins(context.Context, *GetCoinsRequest) (*GetCoinsResponse, error)
 	ExistCoinConds(context.Context, *ExistCoinCondsRequest) (*ExistCoinCondsResponse, error)
-	GetCoinOnly(context.Context, *GetCoinOnlyRequest) (*GetCoinOnlyResponse, error)
 	UpdateCoin(context.Context, *UpdateCoinRequest) (*UpdateCoinResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -144,9 +132,6 @@ func (UnimplementedMiddlewareServer) GetCoins(context.Context, *GetCoinsRequest)
 }
 func (UnimplementedMiddlewareServer) ExistCoinConds(context.Context, *ExistCoinCondsRequest) (*ExistCoinCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistCoinConds not implemented")
-}
-func (UnimplementedMiddlewareServer) GetCoinOnly(context.Context, *GetCoinOnlyRequest) (*GetCoinOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCoinOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateCoin(context.Context, *UpdateCoinRequest) (*UpdateCoinResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoin not implemented")
@@ -254,24 +239,6 @@ func _Middleware_ExistCoinConds_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetCoinOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCoinOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetCoinOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetCoinOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetCoinOnly(ctx, req.(*GetCoinOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_UpdateCoin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateCoinRequest)
 	if err := dec(in); err != nil {
@@ -316,10 +283,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistCoinConds",
 			Handler:    _Middleware_ExistCoinConds_Handler,
-		},
-		{
-			MethodName: "GetCoinOnly",
-			Handler:    _Middleware_GetCoinOnly_Handler,
 		},
 		{
 			MethodName: "UpdateCoin",

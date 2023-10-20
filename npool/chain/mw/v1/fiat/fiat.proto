@@ -15,7 +15,8 @@ service Middleware {
 }
 
 message FiatReq {
-    optional string ID   = 10;
+    optional uint32 ID   = 10;
+    optional string EntID = 11;
     optional string Name = 20;
     optional string Logo = 30;
     optional string Unit = 40;
@@ -23,7 +24,9 @@ message FiatReq {
 
 message Fiat {
     // @inject_tag: sql:"id"
-    string ID        = 10;
+    uint32 ID        = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID     = 11;
     // @inject_tag: sql:"name"
     string Name      = 20;
     // @inject_tag: sql:"logo"
@@ -37,7 +40,7 @@ message Fiat {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID   = 10;
+    optional basetypes.v1.StringVal EntID = 10;
     optional basetypes.v1.StringVal Name = 20;
 }
 
@@ -50,7 +53,7 @@ message CreateFiatResponse {
 }
 
 message GetFiatRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetFiatResponse {

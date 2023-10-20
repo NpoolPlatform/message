@@ -52,6 +52,10 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"id\""
         },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
         "CoinTypeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
@@ -114,6 +118,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "EntID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
@@ -128,7 +135,7 @@
     "v1Conds": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "CoinTypeID": {
