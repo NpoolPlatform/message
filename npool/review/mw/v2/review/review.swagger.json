@@ -76,6 +76,20 @@
       "default": "DefaultTriggerType",
       "title": "- AutoReviewed: Withdrawal triggers"
     },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -125,6 +139,9 @@
         },
         "State": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
