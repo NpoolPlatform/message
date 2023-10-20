@@ -1281,62 +1281,74 @@ var file_npool_review_mw_v2_review_review_proto_goTypes = []interface{}{
 	(*UpdateReviewResponse)(nil),     // 6: review.middleware.review.v2.UpdateReviewResponse
 	(*GetReviewsRequest)(nil),        // 7: review.middleware.review.v2.GetReviewsRequest
 	(*GetReviewsResponse)(nil),       // 8: review.middleware.review.v2.GetReviewsResponse
-	(*DeleteReviewRequest)(nil),      // 9: review.middleware.review.v2.DeleteReviewRequest
-	(*DeleteReviewResponse)(nil),     // 10: review.middleware.review.v2.DeleteReviewResponse
-	(*GetReviewRequest)(nil),         // 11: review.middleware.review.v2.GetReviewRequest
-	(*GetReviewResponse)(nil),        // 12: review.middleware.review.v2.GetReviewResponse
-	(*ExistReviewCondsRequest)(nil),  // 13: review.middleware.review.v2.ExistReviewCondsRequest
-	(*ExistReviewCondsResponse)(nil), // 14: review.middleware.review.v2.ExistReviewCondsResponse
-	(v1.ReviewTriggerType)(0),        // 15: basetypes.review.v1.ReviewTriggerType
-	(v1.ReviewObjectType)(0),         // 16: basetypes.review.v1.ReviewObjectType
-	(v1.ReviewState)(0),              // 17: basetypes.review.v1.ReviewState
-	(*v11.StringVal)(nil),            // 18: basetypes.v1.StringVal
-	(*v11.Uint32Val)(nil),            // 19: basetypes.v1.Uint32Val
-	(*v11.StringSliceVal)(nil),       // 20: basetypes.v1.StringSliceVal
+	(*GetObjectReviewRequest)(nil),   // 9: review.middleware.review.v2.GetObjectReviewRequest
+	(*GetObjectReviewResponse)(nil),  // 10: review.middleware.review.v2.GetObjectReviewResponse
+	(*GetObjectReviewsRequest)(nil),  // 11: review.middleware.review.v2.GetObjectReviewsRequest
+	(*GetObjectReviewsResponse)(nil), // 12: review.middleware.review.v2.GetObjectReviewsResponse
+	(*DeleteReviewRequest)(nil),      // 13: review.middleware.review.v2.DeleteReviewRequest
+	(*DeleteReviewResponse)(nil),     // 14: review.middleware.review.v2.DeleteReviewResponse
+	(*GetReviewRequest)(nil),         // 15: review.middleware.review.v2.GetReviewRequest
+	(*GetReviewResponse)(nil),        // 16: review.middleware.review.v2.GetReviewResponse
+	(*ExistReviewCondsRequest)(nil),  // 17: review.middleware.review.v2.ExistReviewCondsRequest
+	(*ExistReviewCondsResponse)(nil), // 18: review.middleware.review.v2.ExistReviewCondsResponse
+	(v1.ReviewTriggerType)(0),        // 19: basetypes.review.v1.ReviewTriggerType
+	(v1.ReviewObjectType)(0),         // 20: basetypes.review.v1.ReviewObjectType
+	(v1.ReviewState)(0),              // 21: basetypes.review.v1.ReviewState
+	(*v11.StringVal)(nil),            // 22: basetypes.v1.StringVal
+	(*v11.Uint32Val)(nil),            // 23: basetypes.v1.Uint32Val
+	(*v11.StringSliceVal)(nil),       // 24: basetypes.v1.StringSliceVal
 }
 var file_npool_review_mw_v2_review_review_proto_depIdxs = []int32{
-	15, // 0: review.middleware.review.v2.ReviewReq.Trigger:type_name -> basetypes.review.v1.ReviewTriggerType
-	16, // 1: review.middleware.review.v2.ReviewReq.ObjectType:type_name -> basetypes.review.v1.ReviewObjectType
-	17, // 2: review.middleware.review.v2.ReviewReq.State:type_name -> basetypes.review.v1.ReviewState
-	15, // 3: review.middleware.review.v2.Review.Trigger:type_name -> basetypes.review.v1.ReviewTriggerType
-	16, // 4: review.middleware.review.v2.Review.ObjectType:type_name -> basetypes.review.v1.ReviewObjectType
-	17, // 5: review.middleware.review.v2.Review.State:type_name -> basetypes.review.v1.ReviewState
-	18, // 6: review.middleware.review.v2.Conds.EntID:type_name -> basetypes.v1.StringVal
-	18, // 7: review.middleware.review.v2.Conds.AppID:type_name -> basetypes.v1.StringVal
-	18, // 8: review.middleware.review.v2.Conds.ReviewerID:type_name -> basetypes.v1.StringVal
-	18, // 9: review.middleware.review.v2.Conds.Domain:type_name -> basetypes.v1.StringVal
-	18, // 10: review.middleware.review.v2.Conds.ObjectID:type_name -> basetypes.v1.StringVal
-	19, // 11: review.middleware.review.v2.Conds.Trigger:type_name -> basetypes.v1.Uint32Val
-	19, // 12: review.middleware.review.v2.Conds.ObjectType:type_name -> basetypes.v1.Uint32Val
-	19, // 13: review.middleware.review.v2.Conds.State:type_name -> basetypes.v1.Uint32Val
-	20, // 14: review.middleware.review.v2.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
+	19, // 0: review.middleware.review.v2.ReviewReq.Trigger:type_name -> basetypes.review.v1.ReviewTriggerType
+	20, // 1: review.middleware.review.v2.ReviewReq.ObjectType:type_name -> basetypes.review.v1.ReviewObjectType
+	21, // 2: review.middleware.review.v2.ReviewReq.State:type_name -> basetypes.review.v1.ReviewState
+	19, // 3: review.middleware.review.v2.Review.Trigger:type_name -> basetypes.review.v1.ReviewTriggerType
+	20, // 4: review.middleware.review.v2.Review.ObjectType:type_name -> basetypes.review.v1.ReviewObjectType
+	21, // 5: review.middleware.review.v2.Review.State:type_name -> basetypes.review.v1.ReviewState
+	22, // 6: review.middleware.review.v2.Conds.EntID:type_name -> basetypes.v1.StringVal
+	22, // 7: review.middleware.review.v2.Conds.AppID:type_name -> basetypes.v1.StringVal
+	22, // 8: review.middleware.review.v2.Conds.ReviewerID:type_name -> basetypes.v1.StringVal
+	22, // 9: review.middleware.review.v2.Conds.Domain:type_name -> basetypes.v1.StringVal
+	22, // 10: review.middleware.review.v2.Conds.ObjectID:type_name -> basetypes.v1.StringVal
+	23, // 11: review.middleware.review.v2.Conds.Trigger:type_name -> basetypes.v1.Uint32Val
+	23, // 12: review.middleware.review.v2.Conds.ObjectType:type_name -> basetypes.v1.Uint32Val
+	23, // 13: review.middleware.review.v2.Conds.State:type_name -> basetypes.v1.Uint32Val
+	24, // 14: review.middleware.review.v2.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
 	0,  // 15: review.middleware.review.v2.CreateReviewRequest.Info:type_name -> review.middleware.review.v2.ReviewReq
 	1,  // 16: review.middleware.review.v2.CreateReviewResponse.Info:type_name -> review.middleware.review.v2.Review
 	0,  // 17: review.middleware.review.v2.UpdateReviewRequest.Info:type_name -> review.middleware.review.v2.ReviewReq
 	1,  // 18: review.middleware.review.v2.UpdateReviewResponse.Info:type_name -> review.middleware.review.v2.Review
 	2,  // 19: review.middleware.review.v2.GetReviewsRequest.Conds:type_name -> review.middleware.review.v2.Conds
 	1,  // 20: review.middleware.review.v2.GetReviewsResponse.Infos:type_name -> review.middleware.review.v2.Review
-	0,  // 21: review.middleware.review.v2.DeleteReviewRequest.Info:type_name -> review.middleware.review.v2.ReviewReq
-	1,  // 22: review.middleware.review.v2.DeleteReviewResponse.Info:type_name -> review.middleware.review.v2.Review
-	1,  // 23: review.middleware.review.v2.GetReviewResponse.Info:type_name -> review.middleware.review.v2.Review
-	2,  // 24: review.middleware.review.v2.ExistReviewCondsRequest.Conds:type_name -> review.middleware.review.v2.Conds
-	3,  // 25: review.middleware.review.v2.Middleware.CreateReview:input_type -> review.middleware.review.v2.CreateReviewRequest
-	5,  // 26: review.middleware.review.v2.Middleware.UpdateReview:input_type -> review.middleware.review.v2.UpdateReviewRequest
-	7,  // 27: review.middleware.review.v2.Middleware.GetReviews:input_type -> review.middleware.review.v2.GetReviewsRequest
-	9,  // 28: review.middleware.review.v2.Middleware.DeleteReview:input_type -> review.middleware.review.v2.DeleteReviewRequest
-	11, // 29: review.middleware.review.v2.Middleware.GetReview:input_type -> review.middleware.review.v2.GetReviewRequest
-	13, // 30: review.middleware.review.v2.Middleware.ExistReviewConds:input_type -> review.middleware.review.v2.ExistReviewCondsRequest
-	4,  // 31: review.middleware.review.v2.Middleware.CreateReview:output_type -> review.middleware.review.v2.CreateReviewResponse
-	6,  // 32: review.middleware.review.v2.Middleware.UpdateReview:output_type -> review.middleware.review.v2.UpdateReviewResponse
-	8,  // 33: review.middleware.review.v2.Middleware.GetReviews:output_type -> review.middleware.review.v2.GetReviewsResponse
-	10, // 34: review.middleware.review.v2.Middleware.DeleteReview:output_type -> review.middleware.review.v2.DeleteReviewResponse
-	12, // 35: review.middleware.review.v2.Middleware.GetReview:output_type -> review.middleware.review.v2.GetReviewResponse
-	14, // 36: review.middleware.review.v2.Middleware.ExistReviewConds:output_type -> review.middleware.review.v2.ExistReviewCondsResponse
-	31, // [31:37] is the sub-list for method output_type
-	25, // [25:31] is the sub-list for method input_type
-	25, // [25:25] is the sub-list for extension type_name
-	25, // [25:25] is the sub-list for extension extendee
-	0,  // [0:25] is the sub-list for field type_name
+	20, // 21: review.middleware.review.v2.GetObjectReviewRequest.ObjectType:type_name -> basetypes.review.v1.ReviewObjectType
+	1,  // 22: review.middleware.review.v2.GetObjectReviewResponse.Info:type_name -> review.middleware.review.v2.Review
+	20, // 23: review.middleware.review.v2.GetObjectReviewsRequest.ObjectType:type_name -> basetypes.review.v1.ReviewObjectType
+	1,  // 24: review.middleware.review.v2.GetObjectReviewsResponse.Infos:type_name -> review.middleware.review.v2.Review
+	0,  // 25: review.middleware.review.v2.DeleteReviewRequest.Info:type_name -> review.middleware.review.v2.ReviewReq
+	1,  // 26: review.middleware.review.v2.DeleteReviewResponse.Info:type_name -> review.middleware.review.v2.Review
+	1,  // 27: review.middleware.review.v2.GetReviewResponse.Info:type_name -> review.middleware.review.v2.Review
+	2,  // 28: review.middleware.review.v2.ExistReviewCondsRequest.Conds:type_name -> review.middleware.review.v2.Conds
+	3,  // 29: review.middleware.review.v2.Middleware.CreateReview:input_type -> review.middleware.review.v2.CreateReviewRequest
+	5,  // 30: review.middleware.review.v2.Middleware.UpdateReview:input_type -> review.middleware.review.v2.UpdateReviewRequest
+	9,  // 31: review.middleware.review.v2.Middleware.GetObjectReview:input_type -> review.middleware.review.v2.GetObjectReviewRequest
+	11, // 32: review.middleware.review.v2.Middleware.GetObjectReviews:input_type -> review.middleware.review.v2.GetObjectReviewsRequest
+	7,  // 33: review.middleware.review.v2.Middleware.GetReviews:input_type -> review.middleware.review.v2.GetReviewsRequest
+	13, // 34: review.middleware.review.v2.Middleware.DeleteReview:input_type -> review.middleware.review.v2.DeleteReviewRequest
+	15, // 35: review.middleware.review.v2.Middleware.GetReview:input_type -> review.middleware.review.v2.GetReviewRequest
+	17, // 36: review.middleware.review.v2.Middleware.ExistReviewConds:input_type -> review.middleware.review.v2.ExistReviewCondsRequest
+	4,  // 37: review.middleware.review.v2.Middleware.CreateReview:output_type -> review.middleware.review.v2.CreateReviewResponse
+	6,  // 38: review.middleware.review.v2.Middleware.UpdateReview:output_type -> review.middleware.review.v2.UpdateReviewResponse
+	10, // 39: review.middleware.review.v2.Middleware.GetObjectReview:output_type -> review.middleware.review.v2.GetObjectReviewResponse
+	12, // 40: review.middleware.review.v2.Middleware.GetObjectReviews:output_type -> review.middleware.review.v2.GetObjectReviewsResponse
+	8,  // 41: review.middleware.review.v2.Middleware.GetReviews:output_type -> review.middleware.review.v2.GetReviewsResponse
+	14, // 42: review.middleware.review.v2.Middleware.DeleteReview:output_type -> review.middleware.review.v2.DeleteReviewResponse
+	16, // 43: review.middleware.review.v2.Middleware.GetReview:output_type -> review.middleware.review.v2.GetReviewResponse
+	18, // 44: review.middleware.review.v2.Middleware.ExistReviewConds:output_type -> review.middleware.review.v2.ExistReviewCondsResponse
+	37, // [37:45] is the sub-list for method output_type
+	29, // [29:37] is the sub-list for method input_type
+	29, // [29:29] is the sub-list for extension type_name
+	29, // [29:29] is the sub-list for extension extendee
+	0,  // [0:29] is the sub-list for field type_name
 }
 
 func init() { file_npool_review_mw_v2_review_review_proto_init() }
