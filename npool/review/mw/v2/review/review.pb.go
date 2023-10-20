@@ -85,13 +85,6 @@ func (x *ReviewReq) GetEntID() string {
 	return ""
 }
 
-func (x *ReviewReq) GetEntID() string {
-	if x != nil && x.EntID != nil {
-		return *x.EntID
-	}
-	return ""
-}
-
 func (x *ReviewReq) GetAppID() string {
 	if x != nil && x.AppID != nil {
 		return *x.AppID

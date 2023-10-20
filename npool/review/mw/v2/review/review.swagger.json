@@ -267,9 +267,6 @@
         "EntID": {
           "type": "string"
         },
-        "EntID": {
-          "type": "string"
-        },
         "AppID": {
           "type": "string"
         },
