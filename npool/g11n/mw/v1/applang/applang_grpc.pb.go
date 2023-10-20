@@ -22,7 +22,6 @@ const (
 	Middleware_CreateLang_FullMethodName     = "/g11n.middleware.applang.v1.Middleware/CreateLang"
 	Middleware_CreateLangs_FullMethodName    = "/g11n.middleware.applang.v1.Middleware/CreateLangs"
 	Middleware_UpdateLang_FullMethodName     = "/g11n.middleware.applang.v1.Middleware/UpdateLang"
-	Middleware_GetLangOnly_FullMethodName    = "/g11n.middleware.applang.v1.Middleware/GetLangOnly"
 	Middleware_GetLangs_FullMethodName       = "/g11n.middleware.applang.v1.Middleware/GetLangs"
 	Middleware_ExistLangConds_FullMethodName = "/g11n.middleware.applang.v1.Middleware/ExistLangConds"
 	Middleware_DeleteLang_FullMethodName     = "/g11n.middleware.applang.v1.Middleware/DeleteLang"
@@ -35,7 +34,6 @@ type MiddlewareClient interface {
 	CreateLang(ctx context.Context, in *CreateLangRequest, opts ...grpc.CallOption) (*CreateLangResponse, error)
 	CreateLangs(ctx context.Context, in *CreateLangsRequest, opts ...grpc.CallOption) (*CreateLangsResponse, error)
 	UpdateLang(ctx context.Context, in *UpdateLangRequest, opts ...grpc.CallOption) (*UpdateLangResponse, error)
-	GetLangOnly(ctx context.Context, in *GetLangOnlyRequest, opts ...grpc.CallOption) (*GetLangOnlyResponse, error)
 	GetLangs(ctx context.Context, in *GetLangsRequest, opts ...grpc.CallOption) (*GetLangsResponse, error)
 	ExistLangConds(ctx context.Context, in *ExistLangCondsRequest, opts ...grpc.CallOption) (*ExistLangCondsResponse, error)
 	DeleteLang(ctx context.Context, in *DeleteLangRequest, opts ...grpc.CallOption) (*DeleteLangResponse, error)
@@ -76,15 +74,6 @@ func (c *middlewareClient) UpdateLang(ctx context.Context, in *UpdateLangRequest
 	return out, nil
 }
 
-func (c *middlewareClient) GetLangOnly(ctx context.Context, in *GetLangOnlyRequest, opts ...grpc.CallOption) (*GetLangOnlyResponse, error) {
-	out := new(GetLangOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetLangOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) GetLangs(ctx context.Context, in *GetLangsRequest, opts ...grpc.CallOption) (*GetLangsResponse, error) {
 	out := new(GetLangsResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetLangs_FullMethodName, in, out, opts...)
@@ -119,7 +108,6 @@ type MiddlewareServer interface {
 	CreateLang(context.Context, *CreateLangRequest) (*CreateLangResponse, error)
 	CreateLangs(context.Context, *CreateLangsRequest) (*CreateLangsResponse, error)
 	UpdateLang(context.Context, *UpdateLangRequest) (*UpdateLangResponse, error)
-	GetLangOnly(context.Context, *GetLangOnlyRequest) (*GetLangOnlyResponse, error)
 	GetLangs(context.Context, *GetLangsRequest) (*GetLangsResponse, error)
 	ExistLangConds(context.Context, *ExistLangCondsRequest) (*ExistLangCondsResponse, error)
 	DeleteLang(context.Context, *DeleteLangRequest) (*DeleteLangResponse, error)
@@ -138,9 +126,6 @@ func (UnimplementedMiddlewareServer) CreateLangs(context.Context, *CreateLangsRe
 }
 func (UnimplementedMiddlewareServer) UpdateLang(context.Context, *UpdateLangRequest) (*UpdateLangResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateLang not implemented")
-}
-func (UnimplementedMiddlewareServer) GetLangOnly(context.Context, *GetLangOnlyRequest) (*GetLangOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetLangOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetLangs(context.Context, *GetLangsRequest) (*GetLangsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLangs not implemented")
@@ -218,24 +203,6 @@ func _Middleware_UpdateLang_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetLangOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetLangOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetLangOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetLangOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetLangOnly(ctx, req.(*GetLangOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_GetLangs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetLangsRequest)
 	if err := dec(in); err != nil {
@@ -308,10 +275,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateLang",
 			Handler:    _Middleware_UpdateLang_Handler,
-		},
-		{
-			MethodName: "GetLangOnly",
-			Handler:    _Middleware_GetLangOnly_Handler,
 		},
 		{
 			MethodName: "GetLangs",
