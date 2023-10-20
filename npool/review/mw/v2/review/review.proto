@@ -20,7 +20,8 @@ service Middleware {
 }
 
 message ReviewReq {
-    optional string            ID         = 10;
+    optional string            ID         = 9;
+    optional string            EntID      = 10;
     optional string            AppID      = 20;
     optional string            ReviewerID = 30;
     optional string            Domain     = 40;
@@ -33,7 +34,9 @@ message ReviewReq {
 
 message Review {
     // @inject_tag: sql:"id"
-    string            ID         = 10;
+    uint32            ID         = 9;
+    // @inject_tag: sql:"ent_id"
+    string            EntID      = 10;
     // @inject_tag: sql:"app_id"
     string            AppID      = 20;
     // @inject_tag: sql:"reviewer_id"
@@ -44,23 +47,23 @@ message Review {
     string            ObjectID   = 50;
     // @inject_tag: sql:"trigger"
     string            TriggerStr = 51;
-    basetypes.review.v1.ReviewTriggerType Trigger    = 60;
+    basetypes.review.v1.ReviewTriggerType Trigger   = 60;
     // @inject_tag: sql:"object_type"
     string            ObjectTypeStr = 61;
     basetypes.review.v1.ReviewObjectType ObjectType = 70;
     // @inject_tag: sql:"state"
-    string            StateStr      = 71;
+    string            StateStr    = 71;
     basetypes.review.v1.ReviewState State = 80;
     // @inject_tag: sql:"message"
-    string            Message       = 90;
+    string            Message     = 90;
     // @inject_tag: sql:"created_at"
-    uint32            CreatedAt     = 100;
+    uint32            CreatedAt   = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32            UpdatedAt     = 110;
+    uint32            UpdatedAt   = 1100;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID         = 10;
+    optional basetypes.v1.StringVal EntID      = 10;
     optional basetypes.v1.StringVal AppID      = 20;
     optional basetypes.v1.StringVal ReviewerID = 30;
     optional basetypes.v1.StringVal Domain     = 40;
@@ -128,7 +131,7 @@ message DeleteReviewResponse {
 }
 
 message GetReviewRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetReviewResponse {
