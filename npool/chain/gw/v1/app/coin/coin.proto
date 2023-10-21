@@ -101,9 +101,10 @@ message CreateCoinResponse {
 }
 
 message GetCoinsRequest {
-    string AppID  = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+    string        AppID  = 10;
+    optional bool ForPay = 20;
+    int32         Offset = 30;
+    int32         Limit  = 40;
 }
 
 message GetCoinsResponse {
