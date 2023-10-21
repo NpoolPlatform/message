@@ -441,6 +441,9 @@
         "AppID": {
           "type": "string"
         },
+        "ForPay": {
+          "type": "boolean"
+        },
         "Offset": {
           "type": "integer",
           "format": "int32"
