@@ -216,6 +216,7 @@
         "IDs": {
           "$ref": "#/definitions/v1Uint32SliceVal"
 <<<<<<< HEAD
+<<<<<<< HEAD
         }
       }
     },
@@ -234,6 +235,8 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1NotifReq"
+=======
+>>>>>>> a8aaa956a (Change id to entid)
         }
       }
     },

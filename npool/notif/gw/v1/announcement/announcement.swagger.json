@@ -345,6 +345,7 @@
           "type": "integer",
           "format": "int64"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         "EntID": {
           "type": "string"
@@ -353,6 +354,8 @@
         },
         "EntID": {
           "type": "string"
+=======
+>>>>>>> a8aaa956a (Change id to entid)
         },
         "AppID": {
           "type": "string"
@@ -496,6 +499,7 @@
           "type": "integer",
           "format": "int64"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         "EntID": {
           "type": "string"
@@ -504,6 +508,8 @@
         },
         "EntID": {
           "type": "string"
+=======
+>>>>>>> a8aaa956a (Change id to entid)
         },
         "AppID": {
           "type": "string"
