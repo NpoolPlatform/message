@@ -85,7 +85,7 @@ message CreateAppSMSTemplateResponse {
 }
 
 message GetSMSTemplateRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetSMSTemplateResponse {
@@ -115,7 +115,7 @@ message GetAppSMSTemplatesResponse {
 }
 
 message UpdateSMSTemplateRequest {
-    string ID           = 10;
+    uint32 ID           = 10;
     string AppID        = 20;
     optional string Subject = 30;
     optional string Message = 40;
@@ -126,7 +126,7 @@ message UpdateSMSTemplateResponse {
 }
 
 message UpdateAppSMSTemplateRequest {
-    string ID           = 10;
+    uint32 ID           = 10;
     string TargetAppID  = 20;
     optional string Subject = 40;
     optional string Message = 50;

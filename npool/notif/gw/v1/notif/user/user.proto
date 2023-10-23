@@ -39,7 +39,8 @@ service Gateway {
 }
 
 message NotifUser {
-    string           ID             = 10;
+    uint32           ID             = 9;
+    string           EntID          = 10;
     basetypes.v1.UsedFor EventType  = 20;
     string           AppID          = 30;
     string           UserID         = 50;
@@ -64,7 +65,7 @@ message CreateNotifUserResponse {
 }
 
 message DeleteNotifUserRequest {
-    string ID    = 10;
+    uint32 ID    = 10;
     string AppID = 20;
 }
 

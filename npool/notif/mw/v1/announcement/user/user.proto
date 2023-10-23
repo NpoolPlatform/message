@@ -20,7 +20,9 @@ service Middleware {
 
 message AnnouncementUser {
     // @inject_tag: sql:"id"
-    string ID             = 10;
+    uint32 ID             = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID          = 10;
     // @inject_tag: sql:"app_id"
     string AppID          = 20;
     // @inject_tag: sql:"user_id"
@@ -48,17 +50,19 @@ message AnnouncementUser {
 }
 
 message AnnouncementUserReq {
-    optional string ID             = 10;
+    optional uint32 ID             = 9;
+    optional string EntID          = 10;
     optional string AppID          = 20;
     optional string UserID         = 30;
     optional string AnnouncementID = 40;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID             = 10;
-    optional basetypes.v1.StringVal      AppID          = 30;
-    optional basetypes.v1.StringVal      UserID         = 40;
-    optional basetypes.v1.StringVal      AnnouncementID = 50;
+    optional basetypes.v1.Uint32Val ID             = 9;
+    optional basetypes.v1.StringVal EntID          = 10;
+    optional basetypes.v1.StringVal AppID          = 30;
+    optional basetypes.v1.StringVal UserID         = 40;
+    optional basetypes.v1.StringVal AnnouncementID = 50;
 }
 
 message CreateAnnouncementUserRequest {
@@ -78,7 +82,7 @@ message UpdateAnnouncementUserResponse {
 }
 
 message GetAnnouncementUserRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetAnnouncementUserResponse {
@@ -105,7 +109,7 @@ message GetAnnouncementUserOnlyResponse {
 }
 
 message ExistAnnouncementUserRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistAnnouncementUserResponse {

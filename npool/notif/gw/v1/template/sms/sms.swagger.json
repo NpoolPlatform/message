@@ -273,7 +273,7 @@
     "notifgatewaytemplatesmsv1GetSMSTemplateRequest": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "type": "string"
         }
       }
@@ -308,6 +308,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1SMSTemplate"
           }
         },
@@ -321,7 +322,8 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "AppID": {
           "type": "string"
@@ -364,6 +366,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -419,6 +422,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1SMSTemplate"
           }
         },
@@ -432,8 +436,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "AppID": {
           "type": "string",
@@ -474,7 +483,8 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "TargetAppID": {
           "type": "string"
