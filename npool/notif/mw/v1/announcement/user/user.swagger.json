@@ -226,6 +226,7 @@
           "format": "int64"
         }
       }
+<<<<<<< HEAD
     },
     "v1UpdateAnnouncementUserResponse": {
 >>>>>>> a8aaa956a (Change id to entid)
@@ -253,6 +254,8 @@
           "format": "int64"
         }
       }
+=======
+>>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
     }
