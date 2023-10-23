@@ -12,7 +12,6 @@ service Middleware {
     rpc CreateNotifUser     (CreateNotifUserRequest)     returns (CreateNotifUserResponse)     {}
     rpc UpdateNotifUser     (UpdateNotifUserRequest)     returns (UpdateNotifUserResponse)     {}
     rpc GetNotifUser        (GetNotifUserRequest)        returns (GetNotifUserResponse)        {}
-    rpc GetNotifUserOnly    (GetNotifUserOnlyRequest)    returns (GetNotifUserOnlyResponse)    {}
     rpc GetNotifUsers       (GetNotifUsersRequest)       returns (GetNotifUsersResponse)       {}
     rpc ExistNotifUser      (ExistNotifUserRequest)      returns (ExistNotifUserResponse)      {}
     rpc ExistNotifUserConds (ExistNotifUserCondsRequest) returns (ExistNotifUserCondsResponse) {}
@@ -87,14 +86,6 @@ message GetNotifUsersRequest {
 message GetNotifUsersResponse {
     repeated NotifUser Infos = 10;
     uint32             Total = 20;
-}
-
-message GetNotifUserOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetNotifUserOnlyResponse {
-    NotifUser Info = 10;
 }
 
 message ExistNotifUserRequest {

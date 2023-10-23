@@ -13,8 +13,6 @@ service Middleware {
     rpc CreateSendStates    (CreateSendStatesRequest)    returns (CreateSendStatesResponse)  {}
     rpc GetSendStates       (GetSendStatesRequest)       returns (GetSendStatesResponse)    {}
     rpc GetSendState        (GetSendStateRequest)        returns (GetSendStateResponse)        {}
-    rpc GetSendStateOnly    (GetSendStateOnlyRequest)    returns (GetSendStateOnlyResponse)    {}
-    rpc ExistSendState      (ExistSendStateRequest)      returns (ExistSendStateResponse)      {}
     rpc ExistSendStateConds (ExistSendStateCondsRequest) returns (ExistSendStateCondsResponse) {}
     rpc DeleteSendState     (DeleteSendStateRequest)     returns (DeleteSendStateResponse)     {}
 }
@@ -103,22 +101,6 @@ message GetSendStateRequest {
 
 message GetSendStateResponse {
     SendState Info = 10;
-}
-
-message GetSendStateOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetSendStateOnlyResponse {
-    SendState Info = 10;
-}
-
-message ExistSendStateRequest {
-    string EntID = 10;
-}
-
-message ExistSendStateResponse {
-    bool Info = 10;
 }
 
 message ExistSendStateCondsRequest {

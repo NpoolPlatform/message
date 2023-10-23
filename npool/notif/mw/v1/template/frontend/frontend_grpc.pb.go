@@ -21,13 +21,11 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Middleware_GetFrontendTemplate_FullMethodName        = "/notif.middleware.template.frontend.v1.Middleware/GetFrontendTemplate"
 	Middleware_GetFrontendTemplates_FullMethodName       = "/notif.middleware.template.frontend.v1.Middleware/GetFrontendTemplates"
-	Middleware_GetFrontendTemplateOnly_FullMethodName    = "/notif.middleware.template.frontend.v1.Middleware/GetFrontendTemplateOnly"
 	Middleware_CreateFrontendTemplate_FullMethodName     = "/notif.middleware.template.frontend.v1.Middleware/CreateFrontendTemplate"
 	Middleware_CreateFrontendTemplates_FullMethodName    = "/notif.middleware.template.frontend.v1.Middleware/CreateFrontendTemplates"
 	Middleware_UpdateFrontendTemplate_FullMethodName     = "/notif.middleware.template.frontend.v1.Middleware/UpdateFrontendTemplate"
 	Middleware_ExistFrontendTemplate_FullMethodName      = "/notif.middleware.template.frontend.v1.Middleware/ExistFrontendTemplate"
 	Middleware_ExistFrontendTemplateConds_FullMethodName = "/notif.middleware.template.frontend.v1.Middleware/ExistFrontendTemplateConds"
-	Middleware_CountFrontendTemplates_FullMethodName     = "/notif.middleware.template.frontend.v1.Middleware/CountFrontendTemplates"
 	Middleware_DeleteFrontendTemplate_FullMethodName     = "/notif.middleware.template.frontend.v1.Middleware/DeleteFrontendTemplate"
 )
 
@@ -37,13 +35,11 @@ const (
 type MiddlewareClient interface {
 	GetFrontendTemplate(ctx context.Context, in *GetFrontendTemplateRequest, opts ...grpc.CallOption) (*GetFrontendTemplateResponse, error)
 	GetFrontendTemplates(ctx context.Context, in *GetFrontendTemplatesRequest, opts ...grpc.CallOption) (*GetFrontendTemplatesResponse, error)
-	GetFrontendTemplateOnly(ctx context.Context, in *GetFrontendTemplateOnlyRequest, opts ...grpc.CallOption) (*GetFrontendTemplateOnlyResponse, error)
 	CreateFrontendTemplate(ctx context.Context, in *CreateFrontendTemplateRequest, opts ...grpc.CallOption) (*CreateFrontendTemplateResponse, error)
 	CreateFrontendTemplates(ctx context.Context, in *CreateFrontendTemplatesRequest, opts ...grpc.CallOption) (*CreateFrontendTemplatesResponse, error)
 	UpdateFrontendTemplate(ctx context.Context, in *UpdateFrontendTemplateRequest, opts ...grpc.CallOption) (*UpdateFrontendTemplateResponse, error)
 	ExistFrontendTemplate(ctx context.Context, in *ExistFrontendTemplateRequest, opts ...grpc.CallOption) (*ExistFrontendTemplateResponse, error)
 	ExistFrontendTemplateConds(ctx context.Context, in *ExistFrontendTemplateCondsRequest, opts ...grpc.CallOption) (*ExistFrontendTemplateCondsResponse, error)
-	CountFrontendTemplates(ctx context.Context, in *CountFrontendTemplatesRequest, opts ...grpc.CallOption) (*CountFrontendTemplatesResponse, error)
 	DeleteFrontendTemplate(ctx context.Context, in *DeleteFrontendTemplateRequest, opts ...grpc.CallOption) (*DeleteFrontendTemplateResponse, error)
 }
 
@@ -67,15 +63,6 @@ func (c *middlewareClient) GetFrontendTemplate(ctx context.Context, in *GetFront
 func (c *middlewareClient) GetFrontendTemplates(ctx context.Context, in *GetFrontendTemplatesRequest, opts ...grpc.CallOption) (*GetFrontendTemplatesResponse, error) {
 	out := new(GetFrontendTemplatesResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetFrontendTemplates_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) GetFrontendTemplateOnly(ctx context.Context, in *GetFrontendTemplateOnlyRequest, opts ...grpc.CallOption) (*GetFrontendTemplateOnlyResponse, error) {
-	out := new(GetFrontendTemplateOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetFrontendTemplateOnly_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -127,15 +114,6 @@ func (c *middlewareClient) ExistFrontendTemplateConds(ctx context.Context, in *E
 	return out, nil
 }
 
-func (c *middlewareClient) CountFrontendTemplates(ctx context.Context, in *CountFrontendTemplatesRequest, opts ...grpc.CallOption) (*CountFrontendTemplatesResponse, error) {
-	out := new(CountFrontendTemplatesResponse)
-	err := c.cc.Invoke(ctx, Middleware_CountFrontendTemplates_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeleteFrontendTemplate(ctx context.Context, in *DeleteFrontendTemplateRequest, opts ...grpc.CallOption) (*DeleteFrontendTemplateResponse, error) {
 	out := new(DeleteFrontendTemplateResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteFrontendTemplate_FullMethodName, in, out, opts...)
@@ -151,13 +129,11 @@ func (c *middlewareClient) DeleteFrontendTemplate(ctx context.Context, in *Delet
 type MiddlewareServer interface {
 	GetFrontendTemplate(context.Context, *GetFrontendTemplateRequest) (*GetFrontendTemplateResponse, error)
 	GetFrontendTemplates(context.Context, *GetFrontendTemplatesRequest) (*GetFrontendTemplatesResponse, error)
-	GetFrontendTemplateOnly(context.Context, *GetFrontendTemplateOnlyRequest) (*GetFrontendTemplateOnlyResponse, error)
 	CreateFrontendTemplate(context.Context, *CreateFrontendTemplateRequest) (*CreateFrontendTemplateResponse, error)
 	CreateFrontendTemplates(context.Context, *CreateFrontendTemplatesRequest) (*CreateFrontendTemplatesResponse, error)
 	UpdateFrontendTemplate(context.Context, *UpdateFrontendTemplateRequest) (*UpdateFrontendTemplateResponse, error)
 	ExistFrontendTemplate(context.Context, *ExistFrontendTemplateRequest) (*ExistFrontendTemplateResponse, error)
 	ExistFrontendTemplateConds(context.Context, *ExistFrontendTemplateCondsRequest) (*ExistFrontendTemplateCondsResponse, error)
-	CountFrontendTemplates(context.Context, *CountFrontendTemplatesRequest) (*CountFrontendTemplatesResponse, error)
 	DeleteFrontendTemplate(context.Context, *DeleteFrontendTemplateRequest) (*DeleteFrontendTemplateResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -171,9 +147,6 @@ func (UnimplementedMiddlewareServer) GetFrontendTemplate(context.Context, *GetFr
 }
 func (UnimplementedMiddlewareServer) GetFrontendTemplates(context.Context, *GetFrontendTemplatesRequest) (*GetFrontendTemplatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFrontendTemplates not implemented")
-}
-func (UnimplementedMiddlewareServer) GetFrontendTemplateOnly(context.Context, *GetFrontendTemplateOnlyRequest) (*GetFrontendTemplateOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetFrontendTemplateOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) CreateFrontendTemplate(context.Context, *CreateFrontendTemplateRequest) (*CreateFrontendTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateFrontendTemplate not implemented")
@@ -189,9 +162,6 @@ func (UnimplementedMiddlewareServer) ExistFrontendTemplate(context.Context, *Exi
 }
 func (UnimplementedMiddlewareServer) ExistFrontendTemplateConds(context.Context, *ExistFrontendTemplateCondsRequest) (*ExistFrontendTemplateCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistFrontendTemplateConds not implemented")
-}
-func (UnimplementedMiddlewareServer) CountFrontendTemplates(context.Context, *CountFrontendTemplatesRequest) (*CountFrontendTemplatesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountFrontendTemplates not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteFrontendTemplate(context.Context, *DeleteFrontendTemplateRequest) (*DeleteFrontendTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteFrontendTemplate not implemented")
@@ -241,24 +211,6 @@ func _Middleware_GetFrontendTemplates_Handler(srv interface{}, ctx context.Conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetFrontendTemplates(ctx, req.(*GetFrontendTemplatesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_GetFrontendTemplateOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetFrontendTemplateOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetFrontendTemplateOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetFrontendTemplateOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetFrontendTemplateOnly(ctx, req.(*GetFrontendTemplateOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -353,24 +305,6 @@ func _Middleware_ExistFrontendTemplateConds_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CountFrontendTemplates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountFrontendTemplatesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CountFrontendTemplates(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CountFrontendTemplates_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CountFrontendTemplates(ctx, req.(*CountFrontendTemplatesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeleteFrontendTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteFrontendTemplateRequest)
 	if err := dec(in); err != nil {
@@ -405,10 +339,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetFrontendTemplates_Handler,
 		},
 		{
-			MethodName: "GetFrontendTemplateOnly",
-			Handler:    _Middleware_GetFrontendTemplateOnly_Handler,
-		},
-		{
 			MethodName: "CreateFrontendTemplate",
 			Handler:    _Middleware_CreateFrontendTemplate_Handler,
 		},
@@ -427,10 +357,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistFrontendTemplateConds",
 			Handler:    _Middleware_ExistFrontendTemplateConds_Handler,
-		},
-		{
-			MethodName: "CountFrontendTemplates",
-			Handler:    _Middleware_CountFrontendTemplates_Handler,
 		},
 		{
 			MethodName: "DeleteFrontendTemplate",

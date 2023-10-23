@@ -219,14 +219,6 @@
         }
       }
     },
-    "v1GetAnnouncementOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Announcement"
-        }
-      }
-    },
     "v1GetAnnouncementResponse": {
       "type": "object",
       "properties": {

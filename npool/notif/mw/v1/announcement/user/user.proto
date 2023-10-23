@@ -9,11 +9,8 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateAnnouncementUser     (CreateAnnouncementUserRequest)     returns (CreateAnnouncementUserResponse)     {}
-    rpc UpdateAnnouncementUser     (UpdateAnnouncementUserRequest)     returns (UpdateAnnouncementUserResponse)     {}
     rpc GetAnnouncementUser        (GetAnnouncementUserRequest)        returns (GetAnnouncementUserResponse)        {}
-    rpc GetAnnouncementUserOnly    (GetAnnouncementUserOnlyRequest)    returns (GetAnnouncementUserOnlyResponse)    {}
     rpc GetAnnouncementUsers       (GetAnnouncementUsersRequest)       returns (GetAnnouncementUsersResponse)       {}
-    rpc ExistAnnouncementUser      (ExistAnnouncementUserRequest)      returns (ExistAnnouncementUserResponse)      {}
     rpc ExistAnnouncementUserConds (ExistAnnouncementUserCondsRequest) returns (ExistAnnouncementUserCondsResponse) {}
     rpc DeleteAnnouncementUser     (DeleteAnnouncementUserRequest)     returns (DeleteAnnouncementUserResponse)     {}
 }
@@ -73,14 +70,6 @@ message CreateAnnouncementUserResponse {
     AnnouncementUser Info = 10;
 }
 
-message UpdateAnnouncementUserRequest {
-    AnnouncementUserReq Info = 10;
-}
-
-message UpdateAnnouncementUserResponse {
-    AnnouncementUser Info = 10;
-}
-
 message GetAnnouncementUserRequest {
     string EntID = 10;
 }
@@ -98,22 +87,6 @@ message GetAnnouncementUsersRequest {
 message GetAnnouncementUsersResponse {
     repeated AnnouncementUser Infos = 10;
     uint32                    Total = 20;
-}
-
-message GetAnnouncementUserOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetAnnouncementUserOnlyResponse {
-    AnnouncementUser Info = 10;
-}
-
-message ExistAnnouncementUserRequest {
-    string EntID = 10;
-}
-
-message ExistAnnouncementUserResponse {
-    bool Info = 10;
 }
 
 message ExistAnnouncementUserCondsRequest {

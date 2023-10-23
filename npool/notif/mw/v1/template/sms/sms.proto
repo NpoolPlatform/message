@@ -10,7 +10,6 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc GetSMSTemplate        (GetSMSTemplateRequest)        returns (GetSMSTemplateResponse)        {}
     rpc GetSMSTemplates       (GetSMSTemplatesRequest)       returns (GetSMSTemplatesResponse)       {}
-    rpc GetSMSTemplateOnly    (GetSMSTemplateOnlyRequest)    returns (GetSMSTemplateOnlyResponse)    {}
     rpc CreateSMSTemplate     (CreateSMSTemplateRequest)     returns (CreateSMSTemplateResponse)     {}
     rpc CreateSMSTemplates    (CreateSMSTemplatesRequest)    returns (CreateSMSTemplatesResponse)    {}
     rpc UpdateSMSTemplate     (UpdateSMSTemplateRequest)     returns (UpdateSMSTemplateResponse)     {}
@@ -76,14 +75,6 @@ message GetSMSTemplatesRequest {
 message GetSMSTemplatesResponse {
     repeated SMSTemplate Infos = 10;
     uint32               Total = 20;
-}
-
-message GetSMSTemplateOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetSMSTemplateOnlyResponse {
-    SMSTemplate Info = 10;
 }
 
 message CreateSMSTemplateRequest {

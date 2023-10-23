@@ -11,7 +11,6 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc GetEmailTemplate        (GetEmailTemplateRequest)        returns (GetEmailTemplateResponse)     {}
     rpc GetEmailTemplates       (GetEmailTemplatesRequest)       returns (GetEmailTemplatesResponse)    {}
-    rpc GetEmailTemplateOnly    (GetEmailTemplateOnlyRequest)    returns (GetEmailTemplateOnlyResponse) {}
     rpc CreateEmailTemplate     (CreateEmailTemplateRequest)     returns (CreateEmailTemplateResponse)     {}
     rpc CreateEmailTemplates    (CreateEmailTemplatesRequest)    returns (CreateEmailTemplatesResponse)    {}
     rpc UpdateEmailTemplate     (UpdateEmailTemplateRequest)     returns (UpdateEmailTemplateResponse)     {}
@@ -116,14 +115,6 @@ message GetEmailTemplatesRequest {
 message GetEmailTemplatesResponse {
     repeated EmailTemplate Infos = 10;
     uint32                 Total = 20;
-}
-
-message GetEmailTemplateOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetEmailTemplateOnlyResponse {
-    EmailTemplate Info = 10;
 }
 
 message UpdateEmailTemplateRequest {

@@ -89,22 +89,6 @@
         }
       }
     },
-    "v1ExistReadStateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetReadStateOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1ReadState"
-        }
-      }
-    },
     "v1GetReadStateResponse": {
       "type": "object",
       "properties": {

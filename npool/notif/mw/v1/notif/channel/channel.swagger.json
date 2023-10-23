@@ -152,22 +152,6 @@
         }
       }
     },
-    "v1ExistChannelResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetChannelOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Channel"
-        }
-      }
-    },
     "v1GetChannelResponse": {
       "type": "object",
       "properties": {
@@ -222,14 +206,6 @@
         "Value": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1UpdateChannelResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Channel"
         }
       }
     },

@@ -832,100 +832,6 @@ func (x *GetAnnouncementResponse) GetInfo() *Announcement {
 	return nil
 }
 
-type GetAnnouncementOnlyRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-}
-
-func (x *GetAnnouncementOnlyRequest) Reset() {
-	*x = GetAnnouncementOnlyRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[11]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetAnnouncementOnlyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetAnnouncementOnlyRequest) ProtoMessage() {}
-
-func (x *GetAnnouncementOnlyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[11]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetAnnouncementOnlyRequest.ProtoReflect.Descriptor instead.
-func (*GetAnnouncementOnlyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{11}
-}
-
-func (x *GetAnnouncementOnlyRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-type GetAnnouncementOnlyResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *Announcement `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *GetAnnouncementOnlyResponse) Reset() {
-	*x = GetAnnouncementOnlyResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[12]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetAnnouncementOnlyResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetAnnouncementOnlyResponse) ProtoMessage() {}
-
-func (x *GetAnnouncementOnlyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[12]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetAnnouncementOnlyResponse.ProtoReflect.Descriptor instead.
-func (*GetAnnouncementOnlyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{12}
-}
-
-func (x *GetAnnouncementOnlyResponse) GetInfo() *Announcement {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
 type ExistAnnouncementRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -937,7 +843,7 @@ type ExistAnnouncementRequest struct {
 func (x *ExistAnnouncementRequest) Reset() {
 	*x = ExistAnnouncementRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[13]
+		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -950,7 +856,7 @@ func (x *ExistAnnouncementRequest) String() string {
 func (*ExistAnnouncementRequest) ProtoMessage() {}
 
 func (x *ExistAnnouncementRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[13]
+	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -963,7 +869,7 @@ func (x *ExistAnnouncementRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistAnnouncementRequest.ProtoReflect.Descriptor instead.
 func (*ExistAnnouncementRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{13}
+	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ExistAnnouncementRequest) GetEntID() string {
@@ -984,7 +890,7 @@ type ExistAnnouncementResponse struct {
 func (x *ExistAnnouncementResponse) Reset() {
 	*x = ExistAnnouncementResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[14]
+		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -997,7 +903,7 @@ func (x *ExistAnnouncementResponse) String() string {
 func (*ExistAnnouncementResponse) ProtoMessage() {}
 
 func (x *ExistAnnouncementResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[14]
+	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1010,7 +916,7 @@ func (x *ExistAnnouncementResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistAnnouncementResponse.ProtoReflect.Descriptor instead.
 func (*ExistAnnouncementResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{14}
+	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ExistAnnouncementResponse) GetInfo() bool {
@@ -1031,7 +937,7 @@ type ExistAnnouncementCondsRequest struct {
 func (x *ExistAnnouncementCondsRequest) Reset() {
 	*x = ExistAnnouncementCondsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[15]
+		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1044,7 +950,7 @@ func (x *ExistAnnouncementCondsRequest) String() string {
 func (*ExistAnnouncementCondsRequest) ProtoMessage() {}
 
 func (x *ExistAnnouncementCondsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[15]
+	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1057,7 +963,7 @@ func (x *ExistAnnouncementCondsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistAnnouncementCondsRequest.ProtoReflect.Descriptor instead.
 func (*ExistAnnouncementCondsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{15}
+	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *ExistAnnouncementCondsRequest) GetConds() *Conds {
@@ -1078,7 +984,7 @@ type ExistAnnouncementCondsResponse struct {
 func (x *ExistAnnouncementCondsResponse) Reset() {
 	*x = ExistAnnouncementCondsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[16]
+		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1091,7 +997,7 @@ func (x *ExistAnnouncementCondsResponse) String() string {
 func (*ExistAnnouncementCondsResponse) ProtoMessage() {}
 
 func (x *ExistAnnouncementCondsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[16]
+	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1104,7 +1010,7 @@ func (x *ExistAnnouncementCondsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistAnnouncementCondsResponse.ProtoReflect.Descriptor instead.
 func (*ExistAnnouncementCondsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{16}
+	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ExistAnnouncementCondsResponse) GetInfo() bool {
@@ -1125,7 +1031,7 @@ type DeleteAnnouncementRequest struct {
 func (x *DeleteAnnouncementRequest) Reset() {
 	*x = DeleteAnnouncementRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[17]
+		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1138,7 +1044,7 @@ func (x *DeleteAnnouncementRequest) String() string {
 func (*DeleteAnnouncementRequest) ProtoMessage() {}
 
 func (x *DeleteAnnouncementRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[17]
+	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1151,7 +1057,7 @@ func (x *DeleteAnnouncementRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAnnouncementRequest.ProtoReflect.Descriptor instead.
 func (*DeleteAnnouncementRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{17}
+	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *DeleteAnnouncementRequest) GetInfo() *AnnouncementReq {
@@ -1172,7 +1078,7 @@ type DeleteAnnouncementResponse struct {
 func (x *DeleteAnnouncementResponse) Reset() {
 	*x = DeleteAnnouncementResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[18]
+		mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1185,7 +1091,7 @@ func (x *DeleteAnnouncementResponse) String() string {
 func (*DeleteAnnouncementResponse) ProtoMessage() {}
 
 func (x *DeleteAnnouncementResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[18]
+	mi := &file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1198,7 +1104,7 @@ func (x *DeleteAnnouncementResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAnnouncementResponse.ProtoReflect.Descriptor instead.
 func (*DeleteAnnouncementResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{18}
+	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *DeleteAnnouncementResponse) GetInfo() *Announcement {
@@ -1373,18 +1279,6 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_rawDesc = []byte{
 	0x2e, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
 	0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e,
 	0x76, 0x31, 0x2e, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52,
-	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x5b, 0x0a, 0x1a, 0x47, 0x65, 0x74, 0x41, 0x6e, 0x6e, 0x6f,
-	0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x3d, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x27, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
-	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65,
-	0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e,
-	0x64, 0x73, 0x22, 0x61, 0x0a, 0x1b, 0x47, 0x65, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63,
-	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x12, 0x42, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x2e, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
-	0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e,
-	0x76, 0x31, 0x2e, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52,
 	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x30, 0x0a, 0x18, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x6e,
 	0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x12, 0x14, 0x0a, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
@@ -1413,7 +1307,7 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_rawDesc = []byte{
 	0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
 	0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76,
 	0x31, 0x2e, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x04,
-	0x49, 0x6e, 0x66, 0x6f, 0x32, 0xa9, 0x09, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x49, 0x6e, 0x66, 0x6f, 0x32, 0x92, 0x08, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
 	0x61, 0x72, 0x65, 0x12, 0x91, 0x01, 0x0a, 0x12, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x6e,
 	0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x3b, 0x2e, 0x6e, 0x6f, 0x74,
 	0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e,
@@ -1441,58 +1335,49 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_rawDesc = []byte{
 	0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e,
 	0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
 	0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x94, 0x01, 0x0a, 0x13, 0x47, 0x65, 0x74, 0x41, 0x6e,
-	0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x3c,
-	0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
-	0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76,
-	0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e,
-	0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3d, 0x2e, 0x6e,
-	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
-	0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e,
-	0x47, 0x65, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x4f,
-	0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x8b, 0x01,
-	0x0a, 0x10, 0x47, 0x65, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e,
-	0x74, 0x73, 0x12, 0x39, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
-	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65,
-	0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63,
-	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3a, 0x2e,
-	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
-	0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31,
-	0x2e, 0x47, 0x65, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x8e, 0x01, 0x0a, 0x11,
-	0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e,
-	0x74, 0x12, 0x3a, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x8b, 0x01, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x41, 0x6e,
+	0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x39, 0x2e, 0x6e, 0x6f,
+	0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61,
+	0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47,
+	0x65, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3a, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d,
+	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e,
+	0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x6e, 0x6e,
+	0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x8e, 0x01, 0x0a, 0x11, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x6e,
+	0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x3a, 0x2e, 0x6e, 0x6f, 0x74,
+	0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e,
+	0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78,
+	0x69, 0x73, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3b, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d,
+	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e,
+	0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41,
+	0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x9d, 0x01, 0x0a, 0x16, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41,
+	0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73,
+	0x12, 0x3f, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74,
+	0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63,
+	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x40, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
 	0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e,
 	0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e,
-	0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3b, 0x2e,
-	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
-	0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31,
-	0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65,
-	0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x9d, 0x01, 0x0a,
-	0x16, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65,
-	0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x3f, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e,
-	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75,
-	0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74,
-	0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64,
-	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x40, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66,
-	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f,
-	0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73,
-	0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6e,
-	0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x91, 0x01, 0x0a,
-	0x12, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d,
-	0x65, 0x6e, 0x74, 0x12, 0x3b, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64,
-	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d,
-	0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x6e, 0x6e,
-	0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x3c, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
-	0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74,
-	0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e,
-	0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x42, 0x41, 0x5a, 0x3f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e,
-	0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73,
-	0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66,
-	0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d,
-	0x65, 0x6e, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x91, 0x01, 0x0a, 0x12, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x3b, 0x2e, 0x6e,
+	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
+	0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65,
+	0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3c, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
+	0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e,
+	0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x41, 0x5a, 0x3f, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61,
+	0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70,
+	0x6f, 0x6f, 0x6c, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f,
+	0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1507,7 +1392,7 @@ func file_npool_notif_mw_v1_announcement_announcement_proto_rawDescGZIP() []byte
 	return file_npool_notif_mw_v1_announcement_announcement_proto_rawDescData
 }
 
-var file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
+var file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 var file_npool_notif_mw_v1_announcement_announcement_proto_goTypes = []interface{}{
 	(*AnnouncementReq)(nil),                // 0: notif.middleware.announcement.v1.AnnouncementReq
 	(*Announcement)(nil),                   // 1: notif.middleware.announcement.v1.Announcement
@@ -1520,33 +1405,31 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_goTypes = []interface
 	(*UpdateAnnouncementResponse)(nil),     // 8: notif.middleware.announcement.v1.UpdateAnnouncementResponse
 	(*GetAnnouncementRequest)(nil),         // 9: notif.middleware.announcement.v1.GetAnnouncementRequest
 	(*GetAnnouncementResponse)(nil),        // 10: notif.middleware.announcement.v1.GetAnnouncementResponse
-	(*GetAnnouncementOnlyRequest)(nil),     // 11: notif.middleware.announcement.v1.GetAnnouncementOnlyRequest
-	(*GetAnnouncementOnlyResponse)(nil),    // 12: notif.middleware.announcement.v1.GetAnnouncementOnlyResponse
-	(*ExistAnnouncementRequest)(nil),       // 13: notif.middleware.announcement.v1.ExistAnnouncementRequest
-	(*ExistAnnouncementResponse)(nil),      // 14: notif.middleware.announcement.v1.ExistAnnouncementResponse
-	(*ExistAnnouncementCondsRequest)(nil),  // 15: notif.middleware.announcement.v1.ExistAnnouncementCondsRequest
-	(*ExistAnnouncementCondsResponse)(nil), // 16: notif.middleware.announcement.v1.ExistAnnouncementCondsResponse
-	(*DeleteAnnouncementRequest)(nil),      // 17: notif.middleware.announcement.v1.DeleteAnnouncementRequest
-	(*DeleteAnnouncementResponse)(nil),     // 18: notif.middleware.announcement.v1.DeleteAnnouncementResponse
-	(v1.NotifChannel)(0),                   // 19: basetypes.v1.NotifChannel
-	(v1.NotifType)(0),                      // 20: basetypes.v1.NotifType
-	(*v1.Uint32Val)(nil),                   // 21: basetypes.v1.Uint32Val
-	(*v1.StringVal)(nil),                   // 22: basetypes.v1.StringVal
+	(*ExistAnnouncementRequest)(nil),       // 11: notif.middleware.announcement.v1.ExistAnnouncementRequest
+	(*ExistAnnouncementResponse)(nil),      // 12: notif.middleware.announcement.v1.ExistAnnouncementResponse
+	(*ExistAnnouncementCondsRequest)(nil),  // 13: notif.middleware.announcement.v1.ExistAnnouncementCondsRequest
+	(*ExistAnnouncementCondsResponse)(nil), // 14: notif.middleware.announcement.v1.ExistAnnouncementCondsResponse
+	(*DeleteAnnouncementRequest)(nil),      // 15: notif.middleware.announcement.v1.DeleteAnnouncementRequest
+	(*DeleteAnnouncementResponse)(nil),     // 16: notif.middleware.announcement.v1.DeleteAnnouncementResponse
+	(v1.NotifChannel)(0),                   // 17: basetypes.v1.NotifChannel
+	(v1.NotifType)(0),                      // 18: basetypes.v1.NotifType
+	(*v1.Uint32Val)(nil),                   // 19: basetypes.v1.Uint32Val
+	(*v1.StringVal)(nil),                   // 20: basetypes.v1.StringVal
 }
 var file_npool_notif_mw_v1_announcement_announcement_proto_depIdxs = []int32{
-	19, // 0: notif.middleware.announcement.v1.AnnouncementReq.Channel:type_name -> basetypes.v1.NotifChannel
-	20, // 1: notif.middleware.announcement.v1.AnnouncementReq.AnnouncementType:type_name -> basetypes.v1.NotifType
-	19, // 2: notif.middleware.announcement.v1.Announcement.Channel:type_name -> basetypes.v1.NotifChannel
-	20, // 3: notif.middleware.announcement.v1.Announcement.AnnouncementType:type_name -> basetypes.v1.NotifType
-	21, // 4: notif.middleware.announcement.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
-	22, // 5: notif.middleware.announcement.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	22, // 6: notif.middleware.announcement.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	22, // 7: notif.middleware.announcement.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
-	22, // 8: notif.middleware.announcement.v1.Conds.LangID:type_name -> basetypes.v1.StringVal
-	21, // 9: notif.middleware.announcement.v1.Conds.AnnouncementType:type_name -> basetypes.v1.Uint32Val
-	21, // 10: notif.middleware.announcement.v1.Conds.StartAt:type_name -> basetypes.v1.Uint32Val
-	21, // 11: notif.middleware.announcement.v1.Conds.EndAt:type_name -> basetypes.v1.Uint32Val
-	21, // 12: notif.middleware.announcement.v1.Conds.Channel:type_name -> basetypes.v1.Uint32Val
+	17, // 0: notif.middleware.announcement.v1.AnnouncementReq.Channel:type_name -> basetypes.v1.NotifChannel
+	18, // 1: notif.middleware.announcement.v1.AnnouncementReq.AnnouncementType:type_name -> basetypes.v1.NotifType
+	17, // 2: notif.middleware.announcement.v1.Announcement.Channel:type_name -> basetypes.v1.NotifChannel
+	18, // 3: notif.middleware.announcement.v1.Announcement.AnnouncementType:type_name -> basetypes.v1.NotifType
+	19, // 4: notif.middleware.announcement.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
+	20, // 5: notif.middleware.announcement.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	20, // 6: notif.middleware.announcement.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	20, // 7: notif.middleware.announcement.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
+	20, // 8: notif.middleware.announcement.v1.Conds.LangID:type_name -> basetypes.v1.StringVal
+	19, // 9: notif.middleware.announcement.v1.Conds.AnnouncementType:type_name -> basetypes.v1.Uint32Val
+	19, // 10: notif.middleware.announcement.v1.Conds.StartAt:type_name -> basetypes.v1.Uint32Val
+	19, // 11: notif.middleware.announcement.v1.Conds.EndAt:type_name -> basetypes.v1.Uint32Val
+	19, // 12: notif.middleware.announcement.v1.Conds.Channel:type_name -> basetypes.v1.Uint32Val
 	2,  // 13: notif.middleware.announcement.v1.GetAnnouncementsRequest.Conds:type_name -> notif.middleware.announcement.v1.Conds
 	1,  // 14: notif.middleware.announcement.v1.GetAnnouncementsResponse.Infos:type_name -> notif.middleware.announcement.v1.Announcement
 	0,  // 15: notif.middleware.announcement.v1.CreateAnnouncementRequest.Info:type_name -> notif.middleware.announcement.v1.AnnouncementReq
@@ -1554,32 +1437,28 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_depIdxs = []int32{
 	0,  // 17: notif.middleware.announcement.v1.UpdateAnnouncementRequest.Info:type_name -> notif.middleware.announcement.v1.AnnouncementReq
 	1,  // 18: notif.middleware.announcement.v1.UpdateAnnouncementResponse.Info:type_name -> notif.middleware.announcement.v1.Announcement
 	1,  // 19: notif.middleware.announcement.v1.GetAnnouncementResponse.Info:type_name -> notif.middleware.announcement.v1.Announcement
-	2,  // 20: notif.middleware.announcement.v1.GetAnnouncementOnlyRequest.Conds:type_name -> notif.middleware.announcement.v1.Conds
-	1,  // 21: notif.middleware.announcement.v1.GetAnnouncementOnlyResponse.Info:type_name -> notif.middleware.announcement.v1.Announcement
-	2,  // 22: notif.middleware.announcement.v1.ExistAnnouncementCondsRequest.Conds:type_name -> notif.middleware.announcement.v1.Conds
-	0,  // 23: notif.middleware.announcement.v1.DeleteAnnouncementRequest.Info:type_name -> notif.middleware.announcement.v1.AnnouncementReq
-	1,  // 24: notif.middleware.announcement.v1.DeleteAnnouncementResponse.Info:type_name -> notif.middleware.announcement.v1.Announcement
-	5,  // 25: notif.middleware.announcement.v1.Middleware.CreateAnnouncement:input_type -> notif.middleware.announcement.v1.CreateAnnouncementRequest
-	7,  // 26: notif.middleware.announcement.v1.Middleware.UpdateAnnouncement:input_type -> notif.middleware.announcement.v1.UpdateAnnouncementRequest
-	9,  // 27: notif.middleware.announcement.v1.Middleware.GetAnnouncement:input_type -> notif.middleware.announcement.v1.GetAnnouncementRequest
-	11, // 28: notif.middleware.announcement.v1.Middleware.GetAnnouncementOnly:input_type -> notif.middleware.announcement.v1.GetAnnouncementOnlyRequest
-	3,  // 29: notif.middleware.announcement.v1.Middleware.GetAnnouncements:input_type -> notif.middleware.announcement.v1.GetAnnouncementsRequest
-	13, // 30: notif.middleware.announcement.v1.Middleware.ExistAnnouncement:input_type -> notif.middleware.announcement.v1.ExistAnnouncementRequest
-	15, // 31: notif.middleware.announcement.v1.Middleware.ExistAnnouncementConds:input_type -> notif.middleware.announcement.v1.ExistAnnouncementCondsRequest
-	17, // 32: notif.middleware.announcement.v1.Middleware.DeleteAnnouncement:input_type -> notif.middleware.announcement.v1.DeleteAnnouncementRequest
-	6,  // 33: notif.middleware.announcement.v1.Middleware.CreateAnnouncement:output_type -> notif.middleware.announcement.v1.CreateAnnouncementResponse
-	8,  // 34: notif.middleware.announcement.v1.Middleware.UpdateAnnouncement:output_type -> notif.middleware.announcement.v1.UpdateAnnouncementResponse
-	10, // 35: notif.middleware.announcement.v1.Middleware.GetAnnouncement:output_type -> notif.middleware.announcement.v1.GetAnnouncementResponse
-	12, // 36: notif.middleware.announcement.v1.Middleware.GetAnnouncementOnly:output_type -> notif.middleware.announcement.v1.GetAnnouncementOnlyResponse
-	4,  // 37: notif.middleware.announcement.v1.Middleware.GetAnnouncements:output_type -> notif.middleware.announcement.v1.GetAnnouncementsResponse
-	14, // 38: notif.middleware.announcement.v1.Middleware.ExistAnnouncement:output_type -> notif.middleware.announcement.v1.ExistAnnouncementResponse
-	16, // 39: notif.middleware.announcement.v1.Middleware.ExistAnnouncementConds:output_type -> notif.middleware.announcement.v1.ExistAnnouncementCondsResponse
-	18, // 40: notif.middleware.announcement.v1.Middleware.DeleteAnnouncement:output_type -> notif.middleware.announcement.v1.DeleteAnnouncementResponse
-	33, // [33:41] is the sub-list for method output_type
-	25, // [25:33] is the sub-list for method input_type
-	25, // [25:25] is the sub-list for extension type_name
-	25, // [25:25] is the sub-list for extension extendee
-	0,  // [0:25] is the sub-list for field type_name
+	2,  // 20: notif.middleware.announcement.v1.ExistAnnouncementCondsRequest.Conds:type_name -> notif.middleware.announcement.v1.Conds
+	0,  // 21: notif.middleware.announcement.v1.DeleteAnnouncementRequest.Info:type_name -> notif.middleware.announcement.v1.AnnouncementReq
+	1,  // 22: notif.middleware.announcement.v1.DeleteAnnouncementResponse.Info:type_name -> notif.middleware.announcement.v1.Announcement
+	5,  // 23: notif.middleware.announcement.v1.Middleware.CreateAnnouncement:input_type -> notif.middleware.announcement.v1.CreateAnnouncementRequest
+	7,  // 24: notif.middleware.announcement.v1.Middleware.UpdateAnnouncement:input_type -> notif.middleware.announcement.v1.UpdateAnnouncementRequest
+	9,  // 25: notif.middleware.announcement.v1.Middleware.GetAnnouncement:input_type -> notif.middleware.announcement.v1.GetAnnouncementRequest
+	3,  // 26: notif.middleware.announcement.v1.Middleware.GetAnnouncements:input_type -> notif.middleware.announcement.v1.GetAnnouncementsRequest
+	11, // 27: notif.middleware.announcement.v1.Middleware.ExistAnnouncement:input_type -> notif.middleware.announcement.v1.ExistAnnouncementRequest
+	13, // 28: notif.middleware.announcement.v1.Middleware.ExistAnnouncementConds:input_type -> notif.middleware.announcement.v1.ExistAnnouncementCondsRequest
+	15, // 29: notif.middleware.announcement.v1.Middleware.DeleteAnnouncement:input_type -> notif.middleware.announcement.v1.DeleteAnnouncementRequest
+	6,  // 30: notif.middleware.announcement.v1.Middleware.CreateAnnouncement:output_type -> notif.middleware.announcement.v1.CreateAnnouncementResponse
+	8,  // 31: notif.middleware.announcement.v1.Middleware.UpdateAnnouncement:output_type -> notif.middleware.announcement.v1.UpdateAnnouncementResponse
+	10, // 32: notif.middleware.announcement.v1.Middleware.GetAnnouncement:output_type -> notif.middleware.announcement.v1.GetAnnouncementResponse
+	4,  // 33: notif.middleware.announcement.v1.Middleware.GetAnnouncements:output_type -> notif.middleware.announcement.v1.GetAnnouncementsResponse
+	12, // 34: notif.middleware.announcement.v1.Middleware.ExistAnnouncement:output_type -> notif.middleware.announcement.v1.ExistAnnouncementResponse
+	14, // 35: notif.middleware.announcement.v1.Middleware.ExistAnnouncementConds:output_type -> notif.middleware.announcement.v1.ExistAnnouncementCondsResponse
+	16, // 36: notif.middleware.announcement.v1.Middleware.DeleteAnnouncement:output_type -> notif.middleware.announcement.v1.DeleteAnnouncementResponse
+	30, // [30:37] is the sub-list for method output_type
+	23, // [23:30] is the sub-list for method input_type
+	23, // [23:23] is the sub-list for extension type_name
+	23, // [23:23] is the sub-list for extension extendee
+	0,  // [0:23] is the sub-list for field type_name
 }
 
 func init() { file_npool_notif_mw_v1_announcement_announcement_proto_init() }
@@ -1721,30 +1600,6 @@ func file_npool_notif_mw_v1_announcement_announcement_proto_init() {
 			}
 		}
 		file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAnnouncementOnlyRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAnnouncementOnlyResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistAnnouncementRequest); i {
 			case 0:
 				return &v.state
@@ -1756,7 +1611,7 @@ func file_npool_notif_mw_v1_announcement_announcement_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistAnnouncementResponse); i {
 			case 0:
 				return &v.state
@@ -1768,7 +1623,7 @@ func file_npool_notif_mw_v1_announcement_announcement_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistAnnouncementCondsRequest); i {
 			case 0:
 				return &v.state
@@ -1780,7 +1635,7 @@ func file_npool_notif_mw_v1_announcement_announcement_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistAnnouncementCondsResponse); i {
 			case 0:
 				return &v.state
@@ -1792,7 +1647,7 @@ func file_npool_notif_mw_v1_announcement_announcement_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteAnnouncementRequest); i {
 			case 0:
 				return &v.state
@@ -1804,7 +1659,7 @@ func file_npool_notif_mw_v1_announcement_announcement_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_announcement_announcement_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteAnnouncementResponse); i {
 			case 0:
 				return &v.state
@@ -1825,7 +1680,7 @@ func file_npool_notif_mw_v1_announcement_announcement_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_notif_mw_v1_announcement_announcement_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   19,
+			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

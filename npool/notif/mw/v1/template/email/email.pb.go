@@ -840,100 +840,6 @@ func (x *GetEmailTemplatesResponse) GetTotal() uint32 {
 	return 0
 }
 
-type GetEmailTemplateOnlyRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-}
-
-func (x *GetEmailTemplateOnlyRequest) Reset() {
-	*x = GetEmailTemplateOnlyRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[11]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetEmailTemplateOnlyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetEmailTemplateOnlyRequest) ProtoMessage() {}
-
-func (x *GetEmailTemplateOnlyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[11]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetEmailTemplateOnlyRequest.ProtoReflect.Descriptor instead.
-func (*GetEmailTemplateOnlyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{11}
-}
-
-func (x *GetEmailTemplateOnlyRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-type GetEmailTemplateOnlyResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *EmailTemplate `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *GetEmailTemplateOnlyResponse) Reset() {
-	*x = GetEmailTemplateOnlyResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[12]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetEmailTemplateOnlyResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetEmailTemplateOnlyResponse) ProtoMessage() {}
-
-func (x *GetEmailTemplateOnlyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[12]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetEmailTemplateOnlyResponse.ProtoReflect.Descriptor instead.
-func (*GetEmailTemplateOnlyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{12}
-}
-
-func (x *GetEmailTemplateOnlyResponse) GetInfo() *EmailTemplate {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
 type UpdateEmailTemplateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -945,7 +851,7 @@ type UpdateEmailTemplateRequest struct {
 func (x *UpdateEmailTemplateRequest) Reset() {
 	*x = UpdateEmailTemplateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[13]
+		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -958,7 +864,7 @@ func (x *UpdateEmailTemplateRequest) String() string {
 func (*UpdateEmailTemplateRequest) ProtoMessage() {}
 
 func (x *UpdateEmailTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[13]
+	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -971,7 +877,7 @@ func (x *UpdateEmailTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateEmailTemplateRequest.ProtoReflect.Descriptor instead.
 func (*UpdateEmailTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{13}
+	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *UpdateEmailTemplateRequest) GetInfo() *EmailTemplateReq {
@@ -992,7 +898,7 @@ type UpdateEmailTemplateResponse struct {
 func (x *UpdateEmailTemplateResponse) Reset() {
 	*x = UpdateEmailTemplateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[14]
+		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1005,7 +911,7 @@ func (x *UpdateEmailTemplateResponse) String() string {
 func (*UpdateEmailTemplateResponse) ProtoMessage() {}
 
 func (x *UpdateEmailTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[14]
+	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1018,7 +924,7 @@ func (x *UpdateEmailTemplateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateEmailTemplateResponse.ProtoReflect.Descriptor instead.
 func (*UpdateEmailTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{14}
+	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *UpdateEmailTemplateResponse) GetInfo() *EmailTemplate {
@@ -1039,7 +945,7 @@ type ExistEmailTemplateRequest struct {
 func (x *ExistEmailTemplateRequest) Reset() {
 	*x = ExistEmailTemplateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[15]
+		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1052,7 +958,7 @@ func (x *ExistEmailTemplateRequest) String() string {
 func (*ExistEmailTemplateRequest) ProtoMessage() {}
 
 func (x *ExistEmailTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[15]
+	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1065,7 +971,7 @@ func (x *ExistEmailTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistEmailTemplateRequest.ProtoReflect.Descriptor instead.
 func (*ExistEmailTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{15}
+	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *ExistEmailTemplateRequest) GetEntID() string {
@@ -1086,7 +992,7 @@ type ExistEmailTemplateResponse struct {
 func (x *ExistEmailTemplateResponse) Reset() {
 	*x = ExistEmailTemplateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[16]
+		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1099,7 +1005,7 @@ func (x *ExistEmailTemplateResponse) String() string {
 func (*ExistEmailTemplateResponse) ProtoMessage() {}
 
 func (x *ExistEmailTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[16]
+	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1112,7 +1018,7 @@ func (x *ExistEmailTemplateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistEmailTemplateResponse.ProtoReflect.Descriptor instead.
 func (*ExistEmailTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{16}
+	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ExistEmailTemplateResponse) GetInfo() bool {
@@ -1133,7 +1039,7 @@ type ExistEmailTemplateCondsRequest struct {
 func (x *ExistEmailTemplateCondsRequest) Reset() {
 	*x = ExistEmailTemplateCondsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[17]
+		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1146,7 +1052,7 @@ func (x *ExistEmailTemplateCondsRequest) String() string {
 func (*ExistEmailTemplateCondsRequest) ProtoMessage() {}
 
 func (x *ExistEmailTemplateCondsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[17]
+	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1159,7 +1065,7 @@ func (x *ExistEmailTemplateCondsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistEmailTemplateCondsRequest.ProtoReflect.Descriptor instead.
 func (*ExistEmailTemplateCondsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{17}
+	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ExistEmailTemplateCondsRequest) GetConds() *Conds {
@@ -1180,7 +1086,7 @@ type ExistEmailTemplateCondsResponse struct {
 func (x *ExistEmailTemplateCondsResponse) Reset() {
 	*x = ExistEmailTemplateCondsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[18]
+		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1193,7 +1099,7 @@ func (x *ExistEmailTemplateCondsResponse) String() string {
 func (*ExistEmailTemplateCondsResponse) ProtoMessage() {}
 
 func (x *ExistEmailTemplateCondsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[18]
+	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1206,7 +1112,7 @@ func (x *ExistEmailTemplateCondsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistEmailTemplateCondsResponse.ProtoReflect.Descriptor instead.
 func (*ExistEmailTemplateCondsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{18}
+	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ExistEmailTemplateCondsResponse) GetInfo() bool {
@@ -1227,7 +1133,7 @@ type DeleteEmailTemplateRequest struct {
 func (x *DeleteEmailTemplateRequest) Reset() {
 	*x = DeleteEmailTemplateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[19]
+		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1240,7 +1146,7 @@ func (x *DeleteEmailTemplateRequest) String() string {
 func (*DeleteEmailTemplateRequest) ProtoMessage() {}
 
 func (x *DeleteEmailTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[19]
+	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1253,7 +1159,7 @@ func (x *DeleteEmailTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteEmailTemplateRequest.ProtoReflect.Descriptor instead.
 func (*DeleteEmailTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{19}
+	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *DeleteEmailTemplateRequest) GetInfo() *EmailTemplateReq {
@@ -1274,7 +1180,7 @@ type DeleteEmailTemplateResponse struct {
 func (x *DeleteEmailTemplateResponse) Reset() {
 	*x = DeleteEmailTemplateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[20]
+		mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1287,7 +1193,7 @@ func (x *DeleteEmailTemplateResponse) String() string {
 func (*DeleteEmailTemplateResponse) ProtoMessage() {}
 
 func (x *DeleteEmailTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[20]
+	mi := &file_npool_notif_mw_v1_template_email_email_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1300,7 +1206,7 @@ func (x *DeleteEmailTemplateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteEmailTemplateResponse.ProtoReflect.Descriptor instead.
 func (*DeleteEmailTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{20}
+	return file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *DeleteEmailTemplateResponse) GetInfo() *EmailTemplate {
@@ -1621,7 +1527,7 @@ func file_npool_notif_mw_v1_template_email_email_proto_rawDescGZIP() []byte {
 	return file_npool_notif_mw_v1_template_email_email_proto_rawDescData
 }
 
-var file_npool_notif_mw_v1_template_email_email_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
+var file_npool_notif_mw_v1_template_email_email_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
 var file_npool_notif_mw_v1_template_email_email_proto_goTypes = []interface{}{
 	(*EmailTemplate)(nil),                   // 0: notif.middleware.template.email.v1.EmailTemplate
 	(*EmailTemplateReq)(nil),                // 1: notif.middleware.template.email.v1.EmailTemplateReq
@@ -1634,35 +1540,33 @@ var file_npool_notif_mw_v1_template_email_email_proto_goTypes = []interface{}{
 	(*GetEmailTemplateResponse)(nil),        // 8: notif.middleware.template.email.v1.GetEmailTemplateResponse
 	(*GetEmailTemplatesRequest)(nil),        // 9: notif.middleware.template.email.v1.GetEmailTemplatesRequest
 	(*GetEmailTemplatesResponse)(nil),       // 10: notif.middleware.template.email.v1.GetEmailTemplatesResponse
-	(*GetEmailTemplateOnlyRequest)(nil),     // 11: notif.middleware.template.email.v1.GetEmailTemplateOnlyRequest
-	(*GetEmailTemplateOnlyResponse)(nil),    // 12: notif.middleware.template.email.v1.GetEmailTemplateOnlyResponse
-	(*UpdateEmailTemplateRequest)(nil),      // 13: notif.middleware.template.email.v1.UpdateEmailTemplateRequest
-	(*UpdateEmailTemplateResponse)(nil),     // 14: notif.middleware.template.email.v1.UpdateEmailTemplateResponse
-	(*ExistEmailTemplateRequest)(nil),       // 15: notif.middleware.template.email.v1.ExistEmailTemplateRequest
-	(*ExistEmailTemplateResponse)(nil),      // 16: notif.middleware.template.email.v1.ExistEmailTemplateResponse
-	(*ExistEmailTemplateCondsRequest)(nil),  // 17: notif.middleware.template.email.v1.ExistEmailTemplateCondsRequest
-	(*ExistEmailTemplateCondsResponse)(nil), // 18: notif.middleware.template.email.v1.ExistEmailTemplateCondsResponse
-	(*DeleteEmailTemplateRequest)(nil),      // 19: notif.middleware.template.email.v1.DeleteEmailTemplateRequest
-	(*DeleteEmailTemplateResponse)(nil),     // 20: notif.middleware.template.email.v1.DeleteEmailTemplateResponse
-	(v1.UsedFor)(0),                         // 21: basetypes.v1.UsedFor
-	(*v1.Uint32Val)(nil),                    // 22: basetypes.v1.Uint32Val
-	(*v1.StringVal)(nil),                    // 23: basetypes.v1.StringVal
-	(*v1.Int32Val)(nil),                     // 24: basetypes.v1.Int32Val
-	(*v1.StringSliceVal)(nil),               // 25: basetypes.v1.StringSliceVal
-	(*v1.Uint32SliceVal)(nil),               // 26: basetypes.v1.Uint32SliceVal
+	(*UpdateEmailTemplateRequest)(nil),      // 11: notif.middleware.template.email.v1.UpdateEmailTemplateRequest
+	(*UpdateEmailTemplateResponse)(nil),     // 12: notif.middleware.template.email.v1.UpdateEmailTemplateResponse
+	(*ExistEmailTemplateRequest)(nil),       // 13: notif.middleware.template.email.v1.ExistEmailTemplateRequest
+	(*ExistEmailTemplateResponse)(nil),      // 14: notif.middleware.template.email.v1.ExistEmailTemplateResponse
+	(*ExistEmailTemplateCondsRequest)(nil),  // 15: notif.middleware.template.email.v1.ExistEmailTemplateCondsRequest
+	(*ExistEmailTemplateCondsResponse)(nil), // 16: notif.middleware.template.email.v1.ExistEmailTemplateCondsResponse
+	(*DeleteEmailTemplateRequest)(nil),      // 17: notif.middleware.template.email.v1.DeleteEmailTemplateRequest
+	(*DeleteEmailTemplateResponse)(nil),     // 18: notif.middleware.template.email.v1.DeleteEmailTemplateResponse
+	(v1.UsedFor)(0),                         // 19: basetypes.v1.UsedFor
+	(*v1.Uint32Val)(nil),                    // 20: basetypes.v1.Uint32Val
+	(*v1.StringVal)(nil),                    // 21: basetypes.v1.StringVal
+	(*v1.Int32Val)(nil),                     // 22: basetypes.v1.Int32Val
+	(*v1.StringSliceVal)(nil),               // 23: basetypes.v1.StringSliceVal
+	(*v1.Uint32SliceVal)(nil),               // 24: basetypes.v1.Uint32SliceVal
 }
 var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
-	21, // 0: notif.middleware.template.email.v1.EmailTemplate.UsedFor:type_name -> basetypes.v1.UsedFor
-	21, // 1: notif.middleware.template.email.v1.EmailTemplateReq.UsedFor:type_name -> basetypes.v1.UsedFor
-	22, // 2: notif.middleware.template.email.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
-	23, // 3: notif.middleware.template.email.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	23, // 4: notif.middleware.template.email.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	23, // 5: notif.middleware.template.email.v1.Conds.LangID:type_name -> basetypes.v1.StringVal
-	24, // 6: notif.middleware.template.email.v1.Conds.UsedFor:type_name -> basetypes.v1.Int32Val
-	23, // 7: notif.middleware.template.email.v1.Conds.Sender:type_name -> basetypes.v1.StringVal
-	25, // 8: notif.middleware.template.email.v1.Conds.AppIDs:type_name -> basetypes.v1.StringSliceVal
-	25, // 9: notif.middleware.template.email.v1.Conds.LangIDs:type_name -> basetypes.v1.StringSliceVal
-	26, // 10: notif.middleware.template.email.v1.Conds.UsedFors:type_name -> basetypes.v1.Uint32SliceVal
+	19, // 0: notif.middleware.template.email.v1.EmailTemplate.UsedFor:type_name -> basetypes.v1.UsedFor
+	19, // 1: notif.middleware.template.email.v1.EmailTemplateReq.UsedFor:type_name -> basetypes.v1.UsedFor
+	20, // 2: notif.middleware.template.email.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
+	21, // 3: notif.middleware.template.email.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	21, // 4: notif.middleware.template.email.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	21, // 5: notif.middleware.template.email.v1.Conds.LangID:type_name -> basetypes.v1.StringVal
+	22, // 6: notif.middleware.template.email.v1.Conds.UsedFor:type_name -> basetypes.v1.Int32Val
+	21, // 7: notif.middleware.template.email.v1.Conds.Sender:type_name -> basetypes.v1.StringVal
+	23, // 8: notif.middleware.template.email.v1.Conds.AppIDs:type_name -> basetypes.v1.StringSliceVal
+	23, // 9: notif.middleware.template.email.v1.Conds.LangIDs:type_name -> basetypes.v1.StringSliceVal
+	24, // 10: notif.middleware.template.email.v1.Conds.UsedFors:type_name -> basetypes.v1.Uint32SliceVal
 	1,  // 11: notif.middleware.template.email.v1.CreateEmailTemplateRequest.Info:type_name -> notif.middleware.template.email.v1.EmailTemplateReq
 	0,  // 12: notif.middleware.template.email.v1.CreateEmailTemplateResponse.Info:type_name -> notif.middleware.template.email.v1.EmailTemplate
 	1,  // 13: notif.middleware.template.email.v1.CreateEmailTemplatesRequest.Infos:type_name -> notif.middleware.template.email.v1.EmailTemplateReq
@@ -1670,36 +1574,32 @@ var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
 	0,  // 15: notif.middleware.template.email.v1.GetEmailTemplateResponse.Info:type_name -> notif.middleware.template.email.v1.EmailTemplate
 	2,  // 16: notif.middleware.template.email.v1.GetEmailTemplatesRequest.Conds:type_name -> notif.middleware.template.email.v1.Conds
 	0,  // 17: notif.middleware.template.email.v1.GetEmailTemplatesResponse.Infos:type_name -> notif.middleware.template.email.v1.EmailTemplate
-	2,  // 18: notif.middleware.template.email.v1.GetEmailTemplateOnlyRequest.Conds:type_name -> notif.middleware.template.email.v1.Conds
-	0,  // 19: notif.middleware.template.email.v1.GetEmailTemplateOnlyResponse.Info:type_name -> notif.middleware.template.email.v1.EmailTemplate
-	1,  // 20: notif.middleware.template.email.v1.UpdateEmailTemplateRequest.Info:type_name -> notif.middleware.template.email.v1.EmailTemplateReq
-	0,  // 21: notif.middleware.template.email.v1.UpdateEmailTemplateResponse.Info:type_name -> notif.middleware.template.email.v1.EmailTemplate
-	2,  // 22: notif.middleware.template.email.v1.ExistEmailTemplateCondsRequest.Conds:type_name -> notif.middleware.template.email.v1.Conds
-	1,  // 23: notif.middleware.template.email.v1.DeleteEmailTemplateRequest.Info:type_name -> notif.middleware.template.email.v1.EmailTemplateReq
-	0,  // 24: notif.middleware.template.email.v1.DeleteEmailTemplateResponse.Info:type_name -> notif.middleware.template.email.v1.EmailTemplate
-	7,  // 25: notif.middleware.template.email.v1.Middleware.GetEmailTemplate:input_type -> notif.middleware.template.email.v1.GetEmailTemplateRequest
-	9,  // 26: notif.middleware.template.email.v1.Middleware.GetEmailTemplates:input_type -> notif.middleware.template.email.v1.GetEmailTemplatesRequest
-	11, // 27: notif.middleware.template.email.v1.Middleware.GetEmailTemplateOnly:input_type -> notif.middleware.template.email.v1.GetEmailTemplateOnlyRequest
-	3,  // 28: notif.middleware.template.email.v1.Middleware.CreateEmailTemplate:input_type -> notif.middleware.template.email.v1.CreateEmailTemplateRequest
-	5,  // 29: notif.middleware.template.email.v1.Middleware.CreateEmailTemplates:input_type -> notif.middleware.template.email.v1.CreateEmailTemplatesRequest
-	13, // 30: notif.middleware.template.email.v1.Middleware.UpdateEmailTemplate:input_type -> notif.middleware.template.email.v1.UpdateEmailTemplateRequest
-	15, // 31: notif.middleware.template.email.v1.Middleware.ExistEmailTemplate:input_type -> notif.middleware.template.email.v1.ExistEmailTemplateRequest
-	17, // 32: notif.middleware.template.email.v1.Middleware.ExistEmailTemplateConds:input_type -> notif.middleware.template.email.v1.ExistEmailTemplateCondsRequest
-	19, // 33: notif.middleware.template.email.v1.Middleware.DeleteEmailTemplate:input_type -> notif.middleware.template.email.v1.DeleteEmailTemplateRequest
-	8,  // 34: notif.middleware.template.email.v1.Middleware.GetEmailTemplate:output_type -> notif.middleware.template.email.v1.GetEmailTemplateResponse
-	10, // 35: notif.middleware.template.email.v1.Middleware.GetEmailTemplates:output_type -> notif.middleware.template.email.v1.GetEmailTemplatesResponse
-	12, // 36: notif.middleware.template.email.v1.Middleware.GetEmailTemplateOnly:output_type -> notif.middleware.template.email.v1.GetEmailTemplateOnlyResponse
-	4,  // 37: notif.middleware.template.email.v1.Middleware.CreateEmailTemplate:output_type -> notif.middleware.template.email.v1.CreateEmailTemplateResponse
-	6,  // 38: notif.middleware.template.email.v1.Middleware.CreateEmailTemplates:output_type -> notif.middleware.template.email.v1.CreateEmailTemplatesResponse
-	14, // 39: notif.middleware.template.email.v1.Middleware.UpdateEmailTemplate:output_type -> notif.middleware.template.email.v1.UpdateEmailTemplateResponse
-	16, // 40: notif.middleware.template.email.v1.Middleware.ExistEmailTemplate:output_type -> notif.middleware.template.email.v1.ExistEmailTemplateResponse
-	18, // 41: notif.middleware.template.email.v1.Middleware.ExistEmailTemplateConds:output_type -> notif.middleware.template.email.v1.ExistEmailTemplateCondsResponse
-	20, // 42: notif.middleware.template.email.v1.Middleware.DeleteEmailTemplate:output_type -> notif.middleware.template.email.v1.DeleteEmailTemplateResponse
-	34, // [34:43] is the sub-list for method output_type
-	25, // [25:34] is the sub-list for method input_type
-	25, // [25:25] is the sub-list for extension type_name
-	25, // [25:25] is the sub-list for extension extendee
-	0,  // [0:25] is the sub-list for field type_name
+	1,  // 18: notif.middleware.template.email.v1.UpdateEmailTemplateRequest.Info:type_name -> notif.middleware.template.email.v1.EmailTemplateReq
+	0,  // 19: notif.middleware.template.email.v1.UpdateEmailTemplateResponse.Info:type_name -> notif.middleware.template.email.v1.EmailTemplate
+	2,  // 20: notif.middleware.template.email.v1.ExistEmailTemplateCondsRequest.Conds:type_name -> notif.middleware.template.email.v1.Conds
+	1,  // 21: notif.middleware.template.email.v1.DeleteEmailTemplateRequest.Info:type_name -> notif.middleware.template.email.v1.EmailTemplateReq
+	0,  // 22: notif.middleware.template.email.v1.DeleteEmailTemplateResponse.Info:type_name -> notif.middleware.template.email.v1.EmailTemplate
+	7,  // 23: notif.middleware.template.email.v1.Middleware.GetEmailTemplate:input_type -> notif.middleware.template.email.v1.GetEmailTemplateRequest
+	9,  // 24: notif.middleware.template.email.v1.Middleware.GetEmailTemplates:input_type -> notif.middleware.template.email.v1.GetEmailTemplatesRequest
+	3,  // 25: notif.middleware.template.email.v1.Middleware.CreateEmailTemplate:input_type -> notif.middleware.template.email.v1.CreateEmailTemplateRequest
+	5,  // 26: notif.middleware.template.email.v1.Middleware.CreateEmailTemplates:input_type -> notif.middleware.template.email.v1.CreateEmailTemplatesRequest
+	11, // 27: notif.middleware.template.email.v1.Middleware.UpdateEmailTemplate:input_type -> notif.middleware.template.email.v1.UpdateEmailTemplateRequest
+	13, // 28: notif.middleware.template.email.v1.Middleware.ExistEmailTemplate:input_type -> notif.middleware.template.email.v1.ExistEmailTemplateRequest
+	15, // 29: notif.middleware.template.email.v1.Middleware.ExistEmailTemplateConds:input_type -> notif.middleware.template.email.v1.ExistEmailTemplateCondsRequest
+	17, // 30: notif.middleware.template.email.v1.Middleware.DeleteEmailTemplate:input_type -> notif.middleware.template.email.v1.DeleteEmailTemplateRequest
+	8,  // 31: notif.middleware.template.email.v1.Middleware.GetEmailTemplate:output_type -> notif.middleware.template.email.v1.GetEmailTemplateResponse
+	10, // 32: notif.middleware.template.email.v1.Middleware.GetEmailTemplates:output_type -> notif.middleware.template.email.v1.GetEmailTemplatesResponse
+	4,  // 33: notif.middleware.template.email.v1.Middleware.CreateEmailTemplate:output_type -> notif.middleware.template.email.v1.CreateEmailTemplateResponse
+	6,  // 34: notif.middleware.template.email.v1.Middleware.CreateEmailTemplates:output_type -> notif.middleware.template.email.v1.CreateEmailTemplatesResponse
+	12, // 35: notif.middleware.template.email.v1.Middleware.UpdateEmailTemplate:output_type -> notif.middleware.template.email.v1.UpdateEmailTemplateResponse
+	14, // 36: notif.middleware.template.email.v1.Middleware.ExistEmailTemplate:output_type -> notif.middleware.template.email.v1.ExistEmailTemplateResponse
+	16, // 37: notif.middleware.template.email.v1.Middleware.ExistEmailTemplateConds:output_type -> notif.middleware.template.email.v1.ExistEmailTemplateCondsResponse
+	18, // 38: notif.middleware.template.email.v1.Middleware.DeleteEmailTemplate:output_type -> notif.middleware.template.email.v1.DeleteEmailTemplateResponse
+	31, // [31:39] is the sub-list for method output_type
+	23, // [23:31] is the sub-list for method input_type
+	23, // [23:23] is the sub-list for extension type_name
+	23, // [23:23] is the sub-list for extension extendee
+	0,  // [0:23] is the sub-list for field type_name
 }
 
 func init() { file_npool_notif_mw_v1_template_email_email_proto_init() }
@@ -1841,30 +1741,6 @@ func file_npool_notif_mw_v1_template_email_email_proto_init() {
 			}
 		}
 		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetEmailTemplateOnlyRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetEmailTemplateOnlyResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateEmailTemplateRequest); i {
 			case 0:
 				return &v.state
@@ -1876,7 +1752,7 @@ func file_npool_notif_mw_v1_template_email_email_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateEmailTemplateResponse); i {
 			case 0:
 				return &v.state
@@ -1888,7 +1764,7 @@ func file_npool_notif_mw_v1_template_email_email_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistEmailTemplateRequest); i {
 			case 0:
 				return &v.state
@@ -1900,7 +1776,7 @@ func file_npool_notif_mw_v1_template_email_email_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistEmailTemplateResponse); i {
 			case 0:
 				return &v.state
@@ -1912,7 +1788,7 @@ func file_npool_notif_mw_v1_template_email_email_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistEmailTemplateCondsRequest); i {
 			case 0:
 				return &v.state
@@ -1924,7 +1800,7 @@ func file_npool_notif_mw_v1_template_email_email_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistEmailTemplateCondsResponse); i {
 			case 0:
 				return &v.state
@@ -1936,7 +1812,7 @@ func file_npool_notif_mw_v1_template_email_email_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteEmailTemplateRequest); i {
 			case 0:
 				return &v.state
@@ -1948,7 +1824,7 @@ func file_npool_notif_mw_v1_template_email_email_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_template_email_email_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteEmailTemplateResponse); i {
 			case 0:
 				return &v.state
@@ -1968,7 +1844,7 @@ func file_npool_notif_mw_v1_template_email_email_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_notif_mw_v1_template_email_email_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   21,
+			NumMessages:   19,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

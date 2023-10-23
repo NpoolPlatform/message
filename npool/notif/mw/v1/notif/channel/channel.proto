@@ -11,11 +11,8 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateChannel     (CreateChannelRequest)     returns (CreateChannelResponse)     {}
-    rpc UpdateChannel     (UpdateChannelRequest)     returns (UpdateChannelResponse)     {}
     rpc GetChannels       (GetChannelsRequest)       returns (GetChannelsResponse)       {}
-    rpc GetChannelOnly    (GetChannelOnlyRequest)    returns (GetChannelOnlyResponse)    {}
     rpc GetChannel        (GetChannelRequest)        returns (GetChannelResponse)        {}
-    rpc ExistChannel      (ExistChannelRequest)      returns (ExistChannelResponse)      {}
     rpc ExistChannelConds (ExistChannelCondsRequest) returns (ExistChannelCondsResponse) {}
     rpc DeleteChannel     (DeleteChannelRequest)     returns (DeleteChannelResponse)     {}
 }
@@ -66,27 +63,11 @@ message GetChannelsResponse {
     uint32           Total = 20;
 }
 
-message GetChannelOnlyRequest {
-    Conds Conds   = 10;
-}
-
-message GetChannelOnlyResponse {
-    Channel Info = 10;
-}
-
 message CreateChannelRequest {
     ChannelReq Info = 10;
 }
 
 message CreateChannelResponse {
-    Channel Info = 10;
-}
-
-message UpdateChannelRequest {
-    ChannelReq Info = 10;
-}
-
-message UpdateChannelResponse {
     Channel Info = 10;
 }
 
@@ -96,14 +77,6 @@ message GetChannelRequest {
 
 message GetChannelResponse {
     Channel Info = 10;
-}
-
-message ExistChannelRequest {
-    string EntID = 10;
-}
-
-message ExistChannelResponse {
-    bool Info = 10;
 }
 
 message ExistChannelCondsRequest {

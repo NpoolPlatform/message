@@ -858,100 +858,6 @@ func (x *GetContactsResponse) GetTotal() uint32 {
 	return 0
 }
 
-type GetContactOnlyRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conds *Conds `protobuf:"bytes,10,opt,name=Conds,proto3" json:"Conds,omitempty"`
-}
-
-func (x *GetContactOnlyRequest) Reset() {
-	*x = GetContactOnlyRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[12]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetContactOnlyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetContactOnlyRequest) ProtoMessage() {}
-
-func (x *GetContactOnlyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[12]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetContactOnlyRequest.ProtoReflect.Descriptor instead.
-func (*GetContactOnlyRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{12}
-}
-
-func (x *GetContactOnlyRequest) GetConds() *Conds {
-	if x != nil {
-		return x.Conds
-	}
-	return nil
-}
-
-type GetContactOnlyResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *Contact `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *GetContactOnlyResponse) Reset() {
-	*x = GetContactOnlyResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[13]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetContactOnlyResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetContactOnlyResponse) ProtoMessage() {}
-
-func (x *GetContactOnlyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[13]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetContactOnlyResponse.ProtoReflect.Descriptor instead.
-func (*GetContactOnlyResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{13}
-}
-
-func (x *GetContactOnlyResponse) GetInfo() *Contact {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
 type UpdateContactRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -963,7 +869,7 @@ type UpdateContactRequest struct {
 func (x *UpdateContactRequest) Reset() {
 	*x = UpdateContactRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[14]
+		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -976,7 +882,7 @@ func (x *UpdateContactRequest) String() string {
 func (*UpdateContactRequest) ProtoMessage() {}
 
 func (x *UpdateContactRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[14]
+	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -989,7 +895,7 @@ func (x *UpdateContactRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateContactRequest.ProtoReflect.Descriptor instead.
 func (*UpdateContactRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{14}
+	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *UpdateContactRequest) GetInfo() *ContactReq {
@@ -1010,7 +916,7 @@ type UpdateContactResponse struct {
 func (x *UpdateContactResponse) Reset() {
 	*x = UpdateContactResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[15]
+		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1023,7 +929,7 @@ func (x *UpdateContactResponse) String() string {
 func (*UpdateContactResponse) ProtoMessage() {}
 
 func (x *UpdateContactResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[15]
+	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1036,7 +942,7 @@ func (x *UpdateContactResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateContactResponse.ProtoReflect.Descriptor instead.
 func (*UpdateContactResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{15}
+	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *UpdateContactResponse) GetInfo() *Contact {
@@ -1044,100 +950,6 @@ func (x *UpdateContactResponse) GetInfo() *Contact {
 		return x.Info
 	}
 	return nil
-}
-
-type ExistContactRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	EntID string `protobuf:"bytes,10,opt,name=EntID,proto3" json:"EntID,omitempty"`
-}
-
-func (x *ExistContactRequest) Reset() {
-	*x = ExistContactRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[16]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistContactRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistContactRequest) ProtoMessage() {}
-
-func (x *ExistContactRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[16]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistContactRequest.ProtoReflect.Descriptor instead.
-func (*ExistContactRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{16}
-}
-
-func (x *ExistContactRequest) GetEntID() string {
-	if x != nil {
-		return x.EntID
-	}
-	return ""
-}
-
-type ExistContactResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info bool `protobuf:"varint,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *ExistContactResponse) Reset() {
-	*x = ExistContactResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[17]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ExistContactResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExistContactResponse) ProtoMessage() {}
-
-func (x *ExistContactResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[17]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExistContactResponse.ProtoReflect.Descriptor instead.
-func (*ExistContactResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{17}
-}
-
-func (x *ExistContactResponse) GetInfo() bool {
-	if x != nil {
-		return x.Info
-	}
-	return false
 }
 
 type ExistContactCondsRequest struct {
@@ -1151,7 +963,7 @@ type ExistContactCondsRequest struct {
 func (x *ExistContactCondsRequest) Reset() {
 	*x = ExistContactCondsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[18]
+		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1164,7 +976,7 @@ func (x *ExistContactCondsRequest) String() string {
 func (*ExistContactCondsRequest) ProtoMessage() {}
 
 func (x *ExistContactCondsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[18]
+	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1177,7 +989,7 @@ func (x *ExistContactCondsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistContactCondsRequest.ProtoReflect.Descriptor instead.
 func (*ExistContactCondsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{18}
+	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ExistContactCondsRequest) GetConds() *Conds {
@@ -1198,7 +1010,7 @@ type ExistContactCondsResponse struct {
 func (x *ExistContactCondsResponse) Reset() {
 	*x = ExistContactCondsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[19]
+		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1211,7 +1023,7 @@ func (x *ExistContactCondsResponse) String() string {
 func (*ExistContactCondsResponse) ProtoMessage() {}
 
 func (x *ExistContactCondsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[19]
+	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1224,7 +1036,7 @@ func (x *ExistContactCondsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistContactCondsResponse.ProtoReflect.Descriptor instead.
 func (*ExistContactCondsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{19}
+	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ExistContactCondsResponse) GetInfo() bool {
@@ -1245,7 +1057,7 @@ type DeleteContactRequest struct {
 func (x *DeleteContactRequest) Reset() {
 	*x = DeleteContactRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[20]
+		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1258,7 +1070,7 @@ func (x *DeleteContactRequest) String() string {
 func (*DeleteContactRequest) ProtoMessage() {}
 
 func (x *DeleteContactRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[20]
+	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1271,7 +1083,7 @@ func (x *DeleteContactRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteContactRequest.ProtoReflect.Descriptor instead.
 func (*DeleteContactRequest) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{20}
+	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *DeleteContactRequest) GetInfo() *ContactReq {
@@ -1292,7 +1104,7 @@ type DeleteContactResponse struct {
 func (x *DeleteContactResponse) Reset() {
 	*x = DeleteContactResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[21]
+		mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1305,7 +1117,7 @@ func (x *DeleteContactResponse) String() string {
 func (*DeleteContactResponse) ProtoMessage() {}
 
 func (x *DeleteContactResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[21]
+	mi := &file_npool_notif_mw_v1_contact_contact_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1318,7 +1130,7 @@ func (x *DeleteContactResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteContactResponse.ProtoReflect.Descriptor instead.
 func (*DeleteContactResponse) Descriptor() ([]byte, []int) {
-	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{21}
+	return file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *DeleteContactResponse) GetInfo() *Contact {
@@ -1462,33 +1274,17 @@ var file_npool_notif_mw_v1_contact_contact_proto_rawDesc = []byte{
 	0x65, 0x2e, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e,
 	0x74, 0x61, 0x63, 0x74, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54,
 	0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61,
-	0x6c, 0x22, 0x51, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x4f,
-	0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x38, 0x0a, 0x05, 0x43, 0x6f,
-	0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
-	0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6e,
-	0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43,
-	0x6f, 0x6e, 0x64, 0x73, 0x22, 0x52, 0x0a, 0x16, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61,
-	0x63, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x38,
-	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x6e,
-	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
-	0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x74, 0x61,
-	0x63, 0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x53, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61,
-	0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x12, 0x3b, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27,
-	0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
-	0x65, 0x2e, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e,
-	0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x51, 0x0a,
-	0x15, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x38, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64,
-	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e,
-	0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x22, 0x2b, 0x0a, 0x13, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44,
-	0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x22, 0x2a, 0x0a,
-	0x14, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20,
-	0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x54, 0x0a, 0x18, 0x45, 0x78, 0x69,
+	0x6c, 0x22, 0x53, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x61,
+	0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3b, 0x0a, 0x04, 0x49, 0x6e, 0x66,
+	0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e,
+	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6e, 0x74, 0x61,
+	0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x71,
+	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x51, 0x0a, 0x15, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x38, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e,
+	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
+	0x2e, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x74,
+	0x61, 0x63, 0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x54, 0x0a, 0x18, 0x45, 0x78, 0x69,
 	0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x38, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64,
@@ -1507,7 +1303,7 @@ var file_npool_notif_mw_v1_contact_contact_proto_rawDesc = []byte{
 	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x6e,
 	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
 	0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x74, 0x61,
-	0x63, 0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xda, 0x08, 0x0a, 0x0a, 0x4d, 0x69, 0x64,
+	0x63, 0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xe6, 0x06, 0x0a, 0x0a, 0x4d, 0x69, 0x64,
 	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x7e, 0x0a, 0x0f, 0x47, 0x65, 0x6e, 0x65, 0x72,
 	0x61, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x12, 0x33, 0x2e, 0x6e, 0x6f, 0x74,
 	0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
@@ -1538,50 +1334,35 @@ var file_npool_notif_mw_v1_contact_contact_proto_rawDesc = []byte{
 	0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2f, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
 	0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6e,
 	0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61,
-	0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7b, 0x0a, 0x0e,
-	0x47, 0x65, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x32,
-	0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
-	0x65, 0x2e, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
-	0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x33, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
-	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31,
-	0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x4f, 0x6e, 0x6c, 0x79, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x72, 0x0a, 0x0b, 0x47, 0x65, 0x74,
-	0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x73, 0x12, 0x2f, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66,
-	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6e, 0x74,
-	0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63,
-	0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
-	0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6e,
-	0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61,
-	0x63, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x75, 0x0a,
-	0x0c, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x12, 0x30, 0x2e,
+	0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x72, 0x0a, 0x0b,
+	0x47, 0x65, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x73, 0x12, 0x2f, 0x2e, 0x6e, 0x6f,
+	0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63,
+	0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6e,
+	0x74, 0x61, 0x63, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e, 0x6e,
+	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
+	0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f,
+	0x6e, 0x74, 0x61, 0x63, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x12, 0x84, 0x01, 0x0a, 0x11, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63,
+	0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x35, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d,
+	0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63,
+	0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63,
+	0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x36, 0x2e,
 	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
 	0x2e, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73,
-	0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x31, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
-	0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78,
-	0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x84, 0x01, 0x0a, 0x11, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f,
-	0x6e, 0x74, 0x61, 0x63, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x35, 0x2e, 0x6e, 0x6f, 0x74,
-	0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
-	0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f,
-	0x6e, 0x74, 0x61, 0x63, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x36, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
-	0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e,
-	0x45, 0x78, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x43, 0x6f, 0x6e, 0x64,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x78, 0x0a, 0x0d, 0x44,
-	0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x12, 0x31, 0x2e, 0x6e,
-	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
-	0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x32, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
-	0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65,
-	0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3c, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72,
-	0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f,
-	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6e, 0x74,
-	0x61, 0x63, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x78, 0x0a, 0x0d, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x12, 0x31, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66,
+	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x6e, 0x74,
+	0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f, 0x6e,
+	0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x6e, 0x6f,
+	0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63,
+	0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x42, 0x3c, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
+	0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65,
+	0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6e, 0x6f, 0x74, 0x69,
+	0x66, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1596,7 +1377,7 @@ func file_npool_notif_mw_v1_contact_contact_proto_rawDescGZIP() []byte {
 	return file_npool_notif_mw_v1_contact_contact_proto_rawDescData
 }
 
-var file_npool_notif_mw_v1_contact_contact_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
+var file_npool_notif_mw_v1_contact_contact_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
 var file_npool_notif_mw_v1_contact_contact_proto_goTypes = []interface{}{
 	(*ContactReq)(nil),                // 0: notif.middleware.contact.v1.ContactReq
 	(*Contact)(nil),                   // 1: notif.middleware.contact.v1.Contact
@@ -1610,68 +1391,58 @@ var file_npool_notif_mw_v1_contact_contact_proto_goTypes = []interface{}{
 	(*GetContactResponse)(nil),        // 9: notif.middleware.contact.v1.GetContactResponse
 	(*GetContactsRequest)(nil),        // 10: notif.middleware.contact.v1.GetContactsRequest
 	(*GetContactsResponse)(nil),       // 11: notif.middleware.contact.v1.GetContactsResponse
-	(*GetContactOnlyRequest)(nil),     // 12: notif.middleware.contact.v1.GetContactOnlyRequest
-	(*GetContactOnlyResponse)(nil),    // 13: notif.middleware.contact.v1.GetContactOnlyResponse
-	(*UpdateContactRequest)(nil),      // 14: notif.middleware.contact.v1.UpdateContactRequest
-	(*UpdateContactResponse)(nil),     // 15: notif.middleware.contact.v1.UpdateContactResponse
-	(*ExistContactRequest)(nil),       // 16: notif.middleware.contact.v1.ExistContactRequest
-	(*ExistContactResponse)(nil),      // 17: notif.middleware.contact.v1.ExistContactResponse
-	(*ExistContactCondsRequest)(nil),  // 18: notif.middleware.contact.v1.ExistContactCondsRequest
-	(*ExistContactCondsResponse)(nil), // 19: notif.middleware.contact.v1.ExistContactCondsResponse
-	(*DeleteContactRequest)(nil),      // 20: notif.middleware.contact.v1.DeleteContactRequest
-	(*DeleteContactResponse)(nil),     // 21: notif.middleware.contact.v1.DeleteContactResponse
-	(v1.SignMethod)(0),                // 22: basetypes.v1.SignMethod
-	(v1.UsedFor)(0),                   // 23: basetypes.v1.UsedFor
-	(*v1.Uint32Val)(nil),              // 24: basetypes.v1.Uint32Val
-	(*v1.StringVal)(nil),              // 25: basetypes.v1.StringVal
+	(*UpdateContactRequest)(nil),      // 12: notif.middleware.contact.v1.UpdateContactRequest
+	(*UpdateContactResponse)(nil),     // 13: notif.middleware.contact.v1.UpdateContactResponse
+	(*ExistContactCondsRequest)(nil),  // 14: notif.middleware.contact.v1.ExistContactCondsRequest
+	(*ExistContactCondsResponse)(nil), // 15: notif.middleware.contact.v1.ExistContactCondsResponse
+	(*DeleteContactRequest)(nil),      // 16: notif.middleware.contact.v1.DeleteContactRequest
+	(*DeleteContactResponse)(nil),     // 17: notif.middleware.contact.v1.DeleteContactResponse
+	(v1.SignMethod)(0),                // 18: basetypes.v1.SignMethod
+	(v1.UsedFor)(0),                   // 19: basetypes.v1.UsedFor
+	(*v1.Uint32Val)(nil),              // 20: basetypes.v1.Uint32Val
+	(*v1.StringVal)(nil),              // 21: basetypes.v1.StringVal
 }
 var file_npool_notif_mw_v1_contact_contact_proto_depIdxs = []int32{
-	22, // 0: notif.middleware.contact.v1.ContactReq.AccountType:type_name -> basetypes.v1.SignMethod
-	23, // 1: notif.middleware.contact.v1.ContactReq.UsedFor:type_name -> basetypes.v1.UsedFor
-	22, // 2: notif.middleware.contact.v1.Contact.AccountType:type_name -> basetypes.v1.SignMethod
-	23, // 3: notif.middleware.contact.v1.Contact.UsedFor:type_name -> basetypes.v1.UsedFor
-	24, // 4: notif.middleware.contact.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
-	25, // 5: notif.middleware.contact.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	25, // 6: notif.middleware.contact.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	24, // 7: notif.middleware.contact.v1.Conds.AccountType:type_name -> basetypes.v1.Uint32Val
-	24, // 8: notif.middleware.contact.v1.Conds.UsedFor:type_name -> basetypes.v1.Uint32Val
-	23, // 9: notif.middleware.contact.v1.GenerateContactRequest.UsedFor:type_name -> basetypes.v1.UsedFor
+	18, // 0: notif.middleware.contact.v1.ContactReq.AccountType:type_name -> basetypes.v1.SignMethod
+	19, // 1: notif.middleware.contact.v1.ContactReq.UsedFor:type_name -> basetypes.v1.UsedFor
+	18, // 2: notif.middleware.contact.v1.Contact.AccountType:type_name -> basetypes.v1.SignMethod
+	19, // 3: notif.middleware.contact.v1.Contact.UsedFor:type_name -> basetypes.v1.UsedFor
+	20, // 4: notif.middleware.contact.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
+	21, // 5: notif.middleware.contact.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	21, // 6: notif.middleware.contact.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	20, // 7: notif.middleware.contact.v1.Conds.AccountType:type_name -> basetypes.v1.Uint32Val
+	20, // 8: notif.middleware.contact.v1.Conds.UsedFor:type_name -> basetypes.v1.Uint32Val
+	19, // 9: notif.middleware.contact.v1.GenerateContactRequest.UsedFor:type_name -> basetypes.v1.UsedFor
 	3,  // 10: notif.middleware.contact.v1.GenerateContactResponse.Info:type_name -> notif.middleware.contact.v1.TextInfo
 	0,  // 11: notif.middleware.contact.v1.CreateContactRequest.Info:type_name -> notif.middleware.contact.v1.ContactReq
 	1,  // 12: notif.middleware.contact.v1.CreateContactResponse.Info:type_name -> notif.middleware.contact.v1.Contact
 	1,  // 13: notif.middleware.contact.v1.GetContactResponse.Info:type_name -> notif.middleware.contact.v1.Contact
 	2,  // 14: notif.middleware.contact.v1.GetContactsRequest.Conds:type_name -> notif.middleware.contact.v1.Conds
 	1,  // 15: notif.middleware.contact.v1.GetContactsResponse.Infos:type_name -> notif.middleware.contact.v1.Contact
-	2,  // 16: notif.middleware.contact.v1.GetContactOnlyRequest.Conds:type_name -> notif.middleware.contact.v1.Conds
-	1,  // 17: notif.middleware.contact.v1.GetContactOnlyResponse.Info:type_name -> notif.middleware.contact.v1.Contact
-	0,  // 18: notif.middleware.contact.v1.UpdateContactRequest.Info:type_name -> notif.middleware.contact.v1.ContactReq
-	1,  // 19: notif.middleware.contact.v1.UpdateContactResponse.Info:type_name -> notif.middleware.contact.v1.Contact
-	2,  // 20: notif.middleware.contact.v1.ExistContactCondsRequest.Conds:type_name -> notif.middleware.contact.v1.Conds
-	0,  // 21: notif.middleware.contact.v1.DeleteContactRequest.Info:type_name -> notif.middleware.contact.v1.ContactReq
-	1,  // 22: notif.middleware.contact.v1.DeleteContactResponse.Info:type_name -> notif.middleware.contact.v1.Contact
-	4,  // 23: notif.middleware.contact.v1.Middleware.GenerateContact:input_type -> notif.middleware.contact.v1.GenerateContactRequest
-	6,  // 24: notif.middleware.contact.v1.Middleware.CreateContact:input_type -> notif.middleware.contact.v1.CreateContactRequest
-	14, // 25: notif.middleware.contact.v1.Middleware.UpdateContact:input_type -> notif.middleware.contact.v1.UpdateContactRequest
-	8,  // 26: notif.middleware.contact.v1.Middleware.GetContact:input_type -> notif.middleware.contact.v1.GetContactRequest
-	12, // 27: notif.middleware.contact.v1.Middleware.GetContactOnly:input_type -> notif.middleware.contact.v1.GetContactOnlyRequest
-	10, // 28: notif.middleware.contact.v1.Middleware.GetContacts:input_type -> notif.middleware.contact.v1.GetContactsRequest
-	16, // 29: notif.middleware.contact.v1.Middleware.ExistContact:input_type -> notif.middleware.contact.v1.ExistContactRequest
-	18, // 30: notif.middleware.contact.v1.Middleware.ExistContactConds:input_type -> notif.middleware.contact.v1.ExistContactCondsRequest
-	20, // 31: notif.middleware.contact.v1.Middleware.DeleteContact:input_type -> notif.middleware.contact.v1.DeleteContactRequest
-	5,  // 32: notif.middleware.contact.v1.Middleware.GenerateContact:output_type -> notif.middleware.contact.v1.GenerateContactResponse
-	7,  // 33: notif.middleware.contact.v1.Middleware.CreateContact:output_type -> notif.middleware.contact.v1.CreateContactResponse
-	15, // 34: notif.middleware.contact.v1.Middleware.UpdateContact:output_type -> notif.middleware.contact.v1.UpdateContactResponse
-	9,  // 35: notif.middleware.contact.v1.Middleware.GetContact:output_type -> notif.middleware.contact.v1.GetContactResponse
-	13, // 36: notif.middleware.contact.v1.Middleware.GetContactOnly:output_type -> notif.middleware.contact.v1.GetContactOnlyResponse
-	11, // 37: notif.middleware.contact.v1.Middleware.GetContacts:output_type -> notif.middleware.contact.v1.GetContactsResponse
-	17, // 38: notif.middleware.contact.v1.Middleware.ExistContact:output_type -> notif.middleware.contact.v1.ExistContactResponse
-	19, // 39: notif.middleware.contact.v1.Middleware.ExistContactConds:output_type -> notif.middleware.contact.v1.ExistContactCondsResponse
-	21, // 40: notif.middleware.contact.v1.Middleware.DeleteContact:output_type -> notif.middleware.contact.v1.DeleteContactResponse
-	32, // [32:41] is the sub-list for method output_type
-	23, // [23:32] is the sub-list for method input_type
-	23, // [23:23] is the sub-list for extension type_name
-	23, // [23:23] is the sub-list for extension extendee
-	0,  // [0:23] is the sub-list for field type_name
+	0,  // 16: notif.middleware.contact.v1.UpdateContactRequest.Info:type_name -> notif.middleware.contact.v1.ContactReq
+	1,  // 17: notif.middleware.contact.v1.UpdateContactResponse.Info:type_name -> notif.middleware.contact.v1.Contact
+	2,  // 18: notif.middleware.contact.v1.ExistContactCondsRequest.Conds:type_name -> notif.middleware.contact.v1.Conds
+	0,  // 19: notif.middleware.contact.v1.DeleteContactRequest.Info:type_name -> notif.middleware.contact.v1.ContactReq
+	1,  // 20: notif.middleware.contact.v1.DeleteContactResponse.Info:type_name -> notif.middleware.contact.v1.Contact
+	4,  // 21: notif.middleware.contact.v1.Middleware.GenerateContact:input_type -> notif.middleware.contact.v1.GenerateContactRequest
+	6,  // 22: notif.middleware.contact.v1.Middleware.CreateContact:input_type -> notif.middleware.contact.v1.CreateContactRequest
+	12, // 23: notif.middleware.contact.v1.Middleware.UpdateContact:input_type -> notif.middleware.contact.v1.UpdateContactRequest
+	8,  // 24: notif.middleware.contact.v1.Middleware.GetContact:input_type -> notif.middleware.contact.v1.GetContactRequest
+	10, // 25: notif.middleware.contact.v1.Middleware.GetContacts:input_type -> notif.middleware.contact.v1.GetContactsRequest
+	14, // 26: notif.middleware.contact.v1.Middleware.ExistContactConds:input_type -> notif.middleware.contact.v1.ExistContactCondsRequest
+	16, // 27: notif.middleware.contact.v1.Middleware.DeleteContact:input_type -> notif.middleware.contact.v1.DeleteContactRequest
+	5,  // 28: notif.middleware.contact.v1.Middleware.GenerateContact:output_type -> notif.middleware.contact.v1.GenerateContactResponse
+	7,  // 29: notif.middleware.contact.v1.Middleware.CreateContact:output_type -> notif.middleware.contact.v1.CreateContactResponse
+	13, // 30: notif.middleware.contact.v1.Middleware.UpdateContact:output_type -> notif.middleware.contact.v1.UpdateContactResponse
+	9,  // 31: notif.middleware.contact.v1.Middleware.GetContact:output_type -> notif.middleware.contact.v1.GetContactResponse
+	11, // 32: notif.middleware.contact.v1.Middleware.GetContacts:output_type -> notif.middleware.contact.v1.GetContactsResponse
+	15, // 33: notif.middleware.contact.v1.Middleware.ExistContactConds:output_type -> notif.middleware.contact.v1.ExistContactCondsResponse
+	17, // 34: notif.middleware.contact.v1.Middleware.DeleteContact:output_type -> notif.middleware.contact.v1.DeleteContactResponse
+	28, // [28:35] is the sub-list for method output_type
+	21, // [21:28] is the sub-list for method input_type
+	21, // [21:21] is the sub-list for extension type_name
+	21, // [21:21] is the sub-list for extension extendee
+	0,  // [0:21] is the sub-list for field type_name
 }
 
 func init() { file_npool_notif_mw_v1_contact_contact_proto_init() }
@@ -1825,30 +1596,6 @@ func file_npool_notif_mw_v1_contact_contact_proto_init() {
 			}
 		}
 		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetContactOnlyRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetContactOnlyResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateContactRequest); i {
 			case 0:
 				return &v.state
@@ -1860,7 +1607,7 @@ func file_npool_notif_mw_v1_contact_contact_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateContactResponse); i {
 			case 0:
 				return &v.state
@@ -1872,31 +1619,7 @@ func file_npool_notif_mw_v1_contact_contact_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistContactRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExistContactResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistContactCondsRequest); i {
 			case 0:
 				return &v.state
@@ -1908,7 +1631,7 @@ func file_npool_notif_mw_v1_contact_contact_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistContactCondsResponse); i {
 			case 0:
 				return &v.state
@@ -1920,7 +1643,7 @@ func file_npool_notif_mw_v1_contact_contact_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteContactRequest); i {
 			case 0:
 				return &v.state
@@ -1932,7 +1655,7 @@ func file_npool_notif_mw_v1_contact_contact_proto_init() {
 				return nil
 			}
 		}
-		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_notif_mw_v1_contact_contact_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteContactResponse); i {
 			case 0:
 				return &v.state
@@ -1952,7 +1675,7 @@ func file_npool_notif_mw_v1_contact_contact_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_notif_mw_v1_contact_contact_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   22,
+			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

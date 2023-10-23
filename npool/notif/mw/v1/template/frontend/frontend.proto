@@ -10,13 +10,11 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc GetFrontendTemplate        (GetFrontendTemplateRequest)        returns (GetFrontendTemplateResponse)        {}
     rpc GetFrontendTemplates       (GetFrontendTemplatesRequest)       returns (GetFrontendTemplatesResponse)       {}
-    rpc GetFrontendTemplateOnly    (GetFrontendTemplateOnlyRequest)    returns (GetFrontendTemplateOnlyResponse)    {}
     rpc CreateFrontendTemplate     (CreateFrontendTemplateRequest)     returns (CreateFrontendTemplateResponse)     {}
     rpc CreateFrontendTemplates    (CreateFrontendTemplatesRequest)    returns (CreateFrontendTemplatesResponse)    {}
     rpc UpdateFrontendTemplate     (UpdateFrontendTemplateRequest)     returns (UpdateFrontendTemplateResponse)     {}
     rpc ExistFrontendTemplate      (ExistFrontendTemplateRequest)      returns (ExistFrontendTemplateResponse)      {}
     rpc ExistFrontendTemplateConds (ExistFrontendTemplateCondsRequest) returns (ExistFrontendTemplateCondsResponse) {}
-    rpc CountFrontendTemplates     (CountFrontendTemplatesRequest)     returns (CountFrontendTemplatesResponse)     {}
     rpc DeleteFrontendTemplate     (DeleteFrontendTemplateRequest)     returns (DeleteFrontendTemplateResponse)     {}
 }
 
@@ -82,14 +80,6 @@ message GetFrontendTemplatesResponse {
     uint32                    Total = 20;
 }
 
-message GetFrontendTemplateOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetFrontendTemplateOnlyResponse {
-    FrontendTemplate Info = 10;
-}
-
 message CreateFrontendTemplateRequest {
     FrontendTemplateReq Info = 10;
 }
@@ -128,14 +118,6 @@ message ExistFrontendTemplateCondsRequest {
 
 message ExistFrontendTemplateCondsResponse {
     bool Info = 10;
-}
-
-message CountFrontendTemplatesRequest {
-    Conds Conds = 10;
-}
-
-message CountFrontendTemplatesResponse {
-    uint32 Info = 10;
 }
 
 message DeleteFrontendTemplateRequest {
