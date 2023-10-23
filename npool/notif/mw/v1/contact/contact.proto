@@ -23,7 +23,8 @@ service Middleware {
 }
 
 message ContactReq {
-    optional string                  ID          = 10;
+    optional uint32                  ID          = 9;
+    optional string                  EntID       = 10;
     optional string                  AppID       = 20;
     optional string                  Account     = 30;
     optional basetypes.v1.SignMethod AccountType = 40;
@@ -33,7 +34,9 @@ message ContactReq {
 
 message Contact {
     // @inject_tag: sql:"id"
-    string                  ID             = 10;
+    uint32 ID                              = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID                           = 10;
     // @inject_tag: sql:"app_id"
     string                  AppID          = 20;
     // @inject_tag: sql:"account"
@@ -53,10 +56,11 @@ message Contact {
 }
 
 message Conds {
-    basetypes.v1.StringVal  ID          = 10;
-    basetypes.v1.StringVal  AppID       = 30;
-    basetypes.v1.Uint32Val  AccountType = 40;
-    basetypes.v1.Uint32Val  UsedFor     = 50;
+    basetypes.v1.Uint32Val ID          = 9;
+    basetypes.v1.StringVal EntID       = 10;
+    basetypes.v1.StringVal AppID       = 30;
+    basetypes.v1.Uint32Val AccountType = 40;
+    basetypes.v1.Uint32Val UsedFor     = 50;
 }
 
 message TextInfo {
@@ -90,7 +94,7 @@ message CreateContactResponse {
 }
 
 message GetContactRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetContactResponse {
@@ -125,7 +129,7 @@ message UpdateContactResponse {
 }
 
 message ExistContactRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistContactResponse {

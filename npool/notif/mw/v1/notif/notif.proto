@@ -26,42 +26,45 @@ service Middleware {
 
 message Notif {
     // @inject_tag: sql:"id"
-    string    ID          = 10;
+    uint32 ID                         = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID                      = 10;
     // @inject_tag: sql:"app_id"
-    string    AppID       = 20;
+    string    AppID                   = 20;
     // @inject_tag: sql:"user_id"
-    string    UserID      = 30;
+    string    UserID                  = 30;
     // @inject_tag: sql:"notified"
-    bool      Notified    = 40;
+    bool      Notified                = 40;
     // @inject_tag: sql:"lang_id"
-    string    LangID      = 50;
+    string    LangID                  = 50;
     // @inject_tag: sql:"event_type"
-    string    EventTypeStr = 59;
-    basetypes.v1.UsedFor EventType = 60;
+    string    EventTypeStr            = 59;
+    basetypes.v1.UsedFor EventType    = 60;
     // @inject_tag: sql:"use_template"
-    bool      UseTemplate = 70;
+    bool      UseTemplate             = 70;
     // @inject_tag: sql:"title"
-    string    Title       = 80;
+    string    Title                   = 80;
     // @inject_tag: sql:"content"
-    string    Content     = 90;
+    string    Content                 = 90;
     // @inject_tag: sql:"channel"
-    string    ChannelStr   = 99;
+    string    ChannelStr              = 99;
     basetypes.v1.NotifChannel Channel = 100;
     // @inject_tag: sql:"extra"
-    string    Extra       = 110;
+    string    Extra                   = 110;
     // @inject_tag: sql:"created_at"
-    uint32    CreatedAt   = 120;
+    uint32    CreatedAt               = 120;
     // @inject_tag: sql:"updated_at"
-    uint32    UpdatedAt   = 130;
+    uint32    UpdatedAt               = 130;
     // @inject_tag: sql:"event_id"
-    string    EventID     = 140;
+    string    EventID                 = 140;
     // @inject_tag: sql:"type"
-    string NotifTypeStr   = 149;
-    basetypes.v1.NotifType NotifType = 150;
+    string NotifTypeStr               = 149;
+    basetypes.v1.NotifType NotifType  = 150;
 }
 
 message NotifReq {
-    optional string    ID          = 10;
+    optional uint32    ID          = 9;
+    optional string    EntID       = 10;
     optional string    AppID       = 20;
     optional string    UserID      = 30;
     optional bool      Notified    = 40;
@@ -77,8 +80,9 @@ message NotifReq {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID          = 10;
-    optional basetypes.v1.StringSliceVal IDs         = 11;
+    optional basetypes.v1.Uint32Val      ID          = 9;
+    optional basetypes.v1.StringVal      EntID       = 10;
+    optional basetypes.v1.StringSliceVal EntIDs      = 11;
     optional basetypes.v1.StringVal      AppID       = 20;
     optional basetypes.v1.StringVal      UserID      = 30;
     optional basetypes.v1.BoolVal        Notified    = 40;
@@ -92,6 +96,7 @@ message Conds {
     optional basetypes.v1.StringVal      EventID     = 120;
     optional basetypes.v1.StringSliceVal EventIDs    = 121;
     optional basetypes.v1.Uint32Val      NotifType   = 130;
+    optional basetypes.v1.Uint32SliceVal IDs         = 140;
 }
 
 message CreateNotifRequest {
@@ -128,7 +133,7 @@ message UpdateNotifsResponse {
 }
 
 message GetNotifRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetNotifResponse {

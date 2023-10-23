@@ -27,7 +27,9 @@ service Middleware {
 
 message EmailTemplate {
     // @inject_tag: sql:"id"
-    string ID                = 10;
+    uint32 ID                = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID             = 10;
     // @inject_tag: sql:"app_id"
     string AppID             = 20;
     // @inject_tag: sql:"lang_id"
@@ -56,7 +58,8 @@ message EmailTemplate {
 }
 
 message EmailTemplateReq {
-    optional string ID                = 10;
+    optional uint32 ID                = 9;
+    optional string EntID             = 10;
     optional string AppID             = 20;
     optional string LangID            = 30;
     optional basetypes.v1.UsedFor UsedFor = 40;
@@ -69,7 +72,8 @@ message EmailTemplateReq {
 }
 
 message Conds {
-    basetypes.v1.StringVal      ID       = 10;
+    basetypes.v1.Uint32Val      ID       = 9;
+    basetypes.v1.StringVal      EntID    = 10;
     basetypes.v1.StringVal      AppID    = 30;
     basetypes.v1.StringVal      LangID   = 40;
     basetypes.v1.Int32Val       UsedFor  = 50;
@@ -96,7 +100,7 @@ message CreateEmailTemplatesResponse {
 }
 
 message GetEmailTemplateRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetEmailTemplateResponse {
@@ -131,7 +135,7 @@ message UpdateEmailTemplateResponse {
 }
 
 message ExistEmailTemplateRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistEmailTemplateResponse {

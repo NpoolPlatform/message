@@ -21,7 +21,8 @@ service Middleware {
 }
 
 message AnnouncementReq {
-    optional string ID         = 10;
+    optional uint32 ID         = 9;
+    optional string EntID      = 10;
     optional string AppID      = 20;
     optional string LangID     = 30;
     optional string Title      = 40;
@@ -34,7 +35,9 @@ message AnnouncementReq {
 
 message Announcement {
     // @inject_tag: sql:"id"
-    string ID         = 10;
+    uint32 ID         = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID      = 10;
     // @inject_tag: sql:"app_id"
     string AppID      = 20;
     // @inject_tag: sql:"lang_id"
@@ -64,13 +67,14 @@ message Announcement {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID               = 9;
-    optional basetypes.v1.StringVal      AppID            = 10;
-    optional basetypes.v1.StringVal      UserID           = 20;
-    optional basetypes.v1.StringVal      LangID           = 30;
-    optional basetypes.v1.Uint32Val      AnnouncementType = 60;
-    optional basetypes.v1.Uint32Val      StartAt          = 70;
-    optional basetypes.v1.Uint32Val      EndAt            = 90;
+    optional basetypes.v1.Uint32Val      ID               = 9;
+    optional basetypes.v1.StringVal      EntID            = 10;
+    optional basetypes.v1.StringVal      AppID            = 20;
+    optional basetypes.v1.StringVal      UserID           = 30;
+    optional basetypes.v1.StringVal      LangID           = 40;
+    optional basetypes.v1.Uint32Val      AnnouncementType = 50;
+    optional basetypes.v1.Uint32Val      StartAt          = 60;
+    optional basetypes.v1.Uint32Val      EndAt            = 70;
     optional basetypes.v1.Uint32Val      Channel          = 100;
 }
 
@@ -103,7 +107,7 @@ message UpdateAnnouncementResponse {
 }
 
 message GetAnnouncementRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetAnnouncementResponse {
@@ -119,7 +123,7 @@ message GetAnnouncementOnlyResponse {
 }
 
 message ExistAnnouncementRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistAnnouncementResponse {

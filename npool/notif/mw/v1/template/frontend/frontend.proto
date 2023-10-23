@@ -22,13 +22,15 @@ service Middleware {
 
 message FrontendTemplate {
     // @inject_tag: sql:"id"
-    string ID          = 10;
+    uint32 ID          = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID       = 10;
     // @inject_tag: sql:"app_id"
     string AppID       = 20;
     // @inject_tag: sql:"lang_id"
     string LangID      = 30;
     // @inject_tag: sql:"used_for"
-    string UsedForStr        = 40;
+    string UsedForStr            = 40;
     basetypes.v1.UsedFor UsedFor = 50;
     // @inject_tag: sql:"title"
     string Title       = 60;
@@ -41,7 +43,8 @@ message FrontendTemplate {
 }
 
 message FrontendTemplateReq {
-    optional string ID          = 10;
+    optional uint32 ID          = 9;
+    optional string EntID       = 10;
     optional string AppID       = 20;
     optional string LangID      = 30;
     optional basetypes.v1.UsedFor UsedFor = 40;
@@ -50,7 +53,8 @@ message FrontendTemplateReq {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID      = 10;
+    optional basetypes.v1.Uint32Val ID      = 9;
+    optional basetypes.v1.StringVal EntID   = 10;
     optional basetypes.v1.StringVal AppID   = 20;
     optional basetypes.v1.StringVal LangID  = 30;
     optional basetypes.v1.Uint32Val UsedFor = 40;
@@ -60,7 +64,7 @@ message Conds {
 }
 
 message GetFrontendTemplateRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetFrontendTemplateResponse {
@@ -111,7 +115,7 @@ message UpdateFrontendTemplateResponse {
 }
 
 message ExistFrontendTemplateRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistFrontendTemplateResponse {
