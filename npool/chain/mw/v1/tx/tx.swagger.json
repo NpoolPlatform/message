@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -48,7 +47,7 @@
     "v1Conds": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "CoinTypeID": {
@@ -66,7 +65,7 @@
         "Type": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "IDs": {
+        "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
         "States": {
@@ -88,7 +87,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Tx"
           }
         }
@@ -116,7 +114,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Tx"
           }
         },
@@ -155,8 +152,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "CoinTypeID": {
           "type": "string",
@@ -232,6 +234,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "CoinTypeID": {

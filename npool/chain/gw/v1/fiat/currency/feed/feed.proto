@@ -41,7 +41,7 @@ message CreateFeedResponse {
 }
 
 message UpdateFeedRequest {
-    string          ID           = 10;
+    uint32          ID           = 10;
     optional string FeedFiatName = 20;
     optional bool   Disabled     = 30;
 }

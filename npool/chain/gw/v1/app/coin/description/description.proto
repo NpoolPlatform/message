@@ -67,7 +67,7 @@ message CreateAppCoinDescriptionResponse {
 }
 
 message UpdateCoinDescriptionRequest {
-    string          ID      = 10;
+    uint32          ID      = 10;
     string          AppID   = 20;
     optional string Title   = 30;
     optional string Message = 40;

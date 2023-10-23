@@ -12,10 +12,8 @@ service Middleware {
     rpc UpdateModule        (UpdateModuleRequest)       returns (UpdateModuleResponse)       {}
     rpc GetModules          (GetModulesRequest)         returns (GetModulesResponse)         {}
     rpc GetModule           (GetModuleRequest)          returns (GetModuleResponse)          {}
-    rpc GetModuleConds      (GetModuleCondsRequest)     returns (GetModuleCondsResponse)     {}
     rpc DeleteModule        (DeleteModuleRequest)       returns (DeleteModuleResponse)       {}
     rpc ExistModule         (ExistModuleRequest)        returns (ExistModuleResponse)        {}
-    rpc ExistModuleByName   (ExistModuleByNameRequest)  returns (ExistModuleByNameResponse)  {}
     rpc ExistModuleConds    (ExistModuleCondsRequest)   returns (ExistModuleCondsResponse)   {}
 }
 
@@ -35,14 +33,14 @@ message Module {
 }
 
 message ModuleReq {
-    optional string ID                      = 10;
-    optional string Name                    = 20;
-    optional string Description             = 30;
+    optional string ID          = 10;
+    optional string Name        = 20;
+    optional string Description = 30;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID     = 10;
-    optional basetypes.v1.StringVal      Name   = 20;
+    optional basetypes.v1.StringVal ID   = 10;
+    optional basetypes.v1.StringVal Name = 20;
 
 }
 
@@ -51,22 +49,14 @@ message CreateModuleRequest {
 }
 
 message CreateModuleResponse {
-    Module  Info   = 10;
+    Module Info = 10;
 }
 
 message ExistModuleRequest {
-    string     ID                   = 10;
+    string     ID = 10;
 }
 
 message ExistModuleResponse {
-    bool  Info  = 10;
-}
-
-message ExistModuleByNameRequest {
-    string     Name                   = 10;
-}
-
-message ExistModuleByNameResponse {
     bool  Info  = 10;
 }
 
@@ -87,23 +77,14 @@ message DeleteModuleResponse {
 }
 
 message GetModulesRequest {
-    Conds Conds          = 10;
-    int32  Offset                                    = 20;
-    int32  Limit                                     = 30;
+    Conds Conds   = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
 }
 
 message GetModulesResponse {
     repeated Module Infos = 10;
-    uint32                                      Total = 20;
-}
-
-message GetModuleCondsRequest {
-    Conds Conds          = 10;
-}
-
-message GetModuleCondsResponse {
-    repeated Module Infos = 10;
-    uint32                                      Total = 20;
+    uint32          Total = 20;
 }
 
 message GetModuleRequest {
@@ -111,13 +92,13 @@ message GetModuleRequest {
 }
 
 message GetModuleResponse {
-    Module           Info = 10;
+    Module Info = 10;
 }
 
 message UpdateModuleRequest {
-    ModuleReq        Info = 10;
+    ModuleReq Info = 10;
 }
 
 message UpdateModuleResponse {
-    Module           Info = 10;
+    Module Info = 10;
 }

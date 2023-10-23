@@ -41,7 +41,8 @@ service Gateway {
 }
 
 message Coin {
-    string          ID                           = 10;
+    uint32          ID                           = 9;
+    string          EntID                        = 10;
     string          AppID                        = 20;
     string          CoinTypeID                   = 30;
     string          Name                         = 40;
@@ -92,7 +93,7 @@ message Coin {
 
 message CreateCoinRequest {
     string TargetAppID = 10;
-    string CoinTypeID  = 30;
+    string CoinTypeID  = 20;
 }
 
 message CreateCoinResponse {
@@ -100,9 +101,10 @@ message CreateCoinResponse {
 }
 
 message GetCoinsRequest {
-    string AppID  = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+    string        AppID  = 10;
+    optional bool ForPay = 20;
+    int32         Offset = 30;
+    int32         Limit  = 40;
 }
 
 message GetCoinsResponse {
@@ -122,7 +124,7 @@ message GetAppCoinsResponse {
 }
 
 message UpdateCoinRequest {
-    string          ID                       = 10;
+    uint32          ID                       = 10;
     string          AppID                    = 20;
     optional string Name                     = 50;
     repeated string DisplayNames             = 51;
@@ -144,7 +146,7 @@ message UpdateCoinResponse {
 }
 
 message DeleteCoinRequest {
-    string ID          = 10;
+    uint32 ID          = 10;
     string TargetAppID = 20;
 }
 

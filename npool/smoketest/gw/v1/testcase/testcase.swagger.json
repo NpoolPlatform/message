@@ -168,7 +168,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -183,7 +182,7 @@
         "Description": {
           "type": "string"
         },
-        "ModuleName": {
+        "ModuleID": {
           "type": "string"
         },
         "ApiID": {
@@ -203,6 +202,12 @@
         },
         "ID": {
           "type": "string"
+        },
+        "TestCaseType": {
+          "$ref": "#/definitions/v1TestCaseType"
+        },
+        "TestCaseClass": {
+          "$ref": "#/definitions/v1TestCaseClass"
         }
       }
     },
@@ -252,7 +257,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
           }
         },
@@ -316,6 +320,9 @@
         "TestCaseType": {
           "$ref": "#/definitions/v1TestCaseType"
         },
+        "TestCaseClass": {
+          "$ref": "#/definitions/v1TestCaseClass"
+        },
         "Deprecated": {
           "type": "boolean"
         },
@@ -356,6 +363,9 @@
         "TestCaseType": {
           "$ref": "#/definitions/v1TestCaseType"
         },
+        "TestCaseClass": {
+          "$ref": "#/definitions/v1TestCaseClass"
+        },
         "Deprecated": {
           "type": "boolean"
         }
@@ -368,6 +378,15 @@
           "$ref": "#/definitions/smoketestgatewaytestcasev1TestCase"
         }
       }
+    },
+    "v1TestCaseClass": {
+      "type": "string",
+      "enum": [
+        "DefaultTestCaseClass",
+        "Functionality",
+        "Interface"
+      ],
+      "default": "DefaultTestCaseClass"
     },
     "v1TestCaseType": {
       "type": "string",
