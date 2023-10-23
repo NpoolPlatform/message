@@ -241,14 +241,6 @@
         }
       }
     },
-    "v1GetEmailTemplateOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1EmailTemplate"
-        }
-      }
-    },
     "v1GetEmailTemplateResponse": {
       "type": "object",
       "properties": {

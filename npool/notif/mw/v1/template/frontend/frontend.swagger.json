@@ -74,15 +74,6 @@
         }
       }
     },
-    "v1CountFrontendTemplatesResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1CreateFrontendTemplateResponse": {
       "type": "object",
       "properties": {
@@ -198,14 +189,6 @@
         },
         "Content": {
           "type": "string"
-        }
-      }
-    },
-    "v1GetFrontendTemplateOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FrontendTemplate"
         }
       }
     },

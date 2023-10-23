@@ -110,22 +110,6 @@
         }
       }
     },
-    "v1ExistSendStateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetSendStateOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1SendState"
-        }
-      }
-    },
     "v1GetSendStateResponse": {
       "type": "object",
       "properties": {

@@ -160,14 +160,6 @@
         }
       }
     },
-    "v1GetNotifOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Notif"
-        }
-      }
-    },
     "v1GetNotifResponse": {
       "type": "object",
       "properties": {

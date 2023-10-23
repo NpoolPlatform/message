@@ -166,27 +166,11 @@
         }
       }
     },
-    "v1ExistContactResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1GenerateContactResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1TextInfo"
-        }
-      }
-    },
-    "v1GetContactOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Contact"
         }
       }
     },

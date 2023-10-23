@@ -109,14 +109,6 @@
         }
       }
     },
-    "v1GetSMSTemplateOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1SMSTemplate"
-        }
-      }
-    },
     "v1GetSMSTemplateResponse": {
       "type": "object",
       "properties": {

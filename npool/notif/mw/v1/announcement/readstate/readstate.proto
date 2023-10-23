@@ -10,9 +10,7 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc CreateReadState     (CreateReadStateRequest)     returns (CreateReadStateResponse)     {}
     rpc GetReadState        (GetReadStateRequest)        returns (GetReadStateResponse)        {}
-    rpc GetReadStateOnly    (GetReadStateOnlyRequest)    returns (GetReadStateOnlyResponse)    {}
     rpc GetReadStates       (GetReadStatesRequest)       returns (GetReadStatesResponse)       {}
-    rpc ExistReadState      (ExistReadStateRequest)      returns (ExistReadStateResponse)      {}
     rpc ExistReadStateConds (ExistReadStateCondsRequest) returns (ExistReadStateCondsResponse) {}
     rpc DeleteReadState     (DeleteReadStateRequest)     returns (DeleteReadStateResponse)     {}
 }
@@ -98,22 +96,6 @@ message GetReadStatesRequest {
 message GetReadStatesResponse {
     repeated ReadState Infos = 10;
     uint32             Total = 20;
-}
-
-message GetReadStateOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetReadStateOnlyResponse {
-    ReadState Info = 10;
-}
-
-message ExistReadStateRequest {
-    string EntID = 10;
-}
-
-message ExistReadStateResponse {
-    bool Info = 10;
 }
 
 message ExistReadStateCondsRequest {

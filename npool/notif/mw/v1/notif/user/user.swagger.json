@@ -100,14 +100,6 @@
         }
       }
     },
-    "v1GetNotifUserOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1NotifUser"
-        }
-      }
-    },
     "v1GetNotifUserResponse": {
       "type": "object",
       "properties": {
