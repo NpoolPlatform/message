@@ -21,8 +21,6 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Middleware_CreateReview_FullMethodName     = "/review.middleware.review.v2.Middleware/CreateReview"
 	Middleware_UpdateReview_FullMethodName     = "/review.middleware.review.v2.Middleware/UpdateReview"
-	Middleware_GetObjectReview_FullMethodName  = "/review.middleware.review.v2.Middleware/GetObjectReview"
-	Middleware_GetObjectReviews_FullMethodName = "/review.middleware.review.v2.Middleware/GetObjectReviews"
 	Middleware_GetReviews_FullMethodName       = "/review.middleware.review.v2.Middleware/GetReviews"
 	Middleware_DeleteReview_FullMethodName     = "/review.middleware.review.v2.Middleware/DeleteReview"
 	Middleware_GetReview_FullMethodName        = "/review.middleware.review.v2.Middleware/GetReview"
@@ -35,8 +33,6 @@ const (
 type MiddlewareClient interface {
 	CreateReview(ctx context.Context, in *CreateReviewRequest, opts ...grpc.CallOption) (*CreateReviewResponse, error)
 	UpdateReview(ctx context.Context, in *UpdateReviewRequest, opts ...grpc.CallOption) (*UpdateReviewResponse, error)
-	GetObjectReview(ctx context.Context, in *GetObjectReviewRequest, opts ...grpc.CallOption) (*GetObjectReviewResponse, error)
-	GetObjectReviews(ctx context.Context, in *GetObjectReviewsRequest, opts ...grpc.CallOption) (*GetObjectReviewsResponse, error)
 	GetReviews(ctx context.Context, in *GetReviewsRequest, opts ...grpc.CallOption) (*GetReviewsResponse, error)
 	DeleteReview(ctx context.Context, in *DeleteReviewRequest, opts ...grpc.CallOption) (*DeleteReviewResponse, error)
 	GetReview(ctx context.Context, in *GetReviewRequest, opts ...grpc.CallOption) (*GetReviewResponse, error)
@@ -63,24 +59,6 @@ func (c *middlewareClient) CreateReview(ctx context.Context, in *CreateReviewReq
 func (c *middlewareClient) UpdateReview(ctx context.Context, in *UpdateReviewRequest, opts ...grpc.CallOption) (*UpdateReviewResponse, error) {
 	out := new(UpdateReviewResponse)
 	err := c.cc.Invoke(ctx, Middleware_UpdateReview_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) GetObjectReview(ctx context.Context, in *GetObjectReviewRequest, opts ...grpc.CallOption) (*GetObjectReviewResponse, error) {
-	out := new(GetObjectReviewResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetObjectReview_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) GetObjectReviews(ctx context.Context, in *GetObjectReviewsRequest, opts ...grpc.CallOption) (*GetObjectReviewsResponse, error) {
-	out := new(GetObjectReviewsResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetObjectReviews_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -129,8 +107,6 @@ func (c *middlewareClient) ExistReviewConds(ctx context.Context, in *ExistReview
 type MiddlewareServer interface {
 	CreateReview(context.Context, *CreateReviewRequest) (*CreateReviewResponse, error)
 	UpdateReview(context.Context, *UpdateReviewRequest) (*UpdateReviewResponse, error)
-	GetObjectReview(context.Context, *GetObjectReviewRequest) (*GetObjectReviewResponse, error)
-	GetObjectReviews(context.Context, *GetObjectReviewsRequest) (*GetObjectReviewsResponse, error)
 	GetReviews(context.Context, *GetReviewsRequest) (*GetReviewsResponse, error)
 	DeleteReview(context.Context, *DeleteReviewRequest) (*DeleteReviewResponse, error)
 	GetReview(context.Context, *GetReviewRequest) (*GetReviewResponse, error)
@@ -147,12 +123,6 @@ func (UnimplementedMiddlewareServer) CreateReview(context.Context, *CreateReview
 }
 func (UnimplementedMiddlewareServer) UpdateReview(context.Context, *UpdateReviewRequest) (*UpdateReviewResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateReview not implemented")
-}
-func (UnimplementedMiddlewareServer) GetObjectReview(context.Context, *GetObjectReviewRequest) (*GetObjectReviewResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetObjectReview not implemented")
-}
-func (UnimplementedMiddlewareServer) GetObjectReviews(context.Context, *GetObjectReviewsRequest) (*GetObjectReviewsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetObjectReviews not implemented")
 }
 func (UnimplementedMiddlewareServer) GetReviews(context.Context, *GetReviewsRequest) (*GetReviewsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetReviews not implemented")
@@ -211,42 +181,6 @@ func _Middleware_UpdateReview_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).UpdateReview(ctx, req.(*UpdateReviewRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_GetObjectReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetObjectReviewRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetObjectReview(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetObjectReview_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetObjectReview(ctx, req.(*GetObjectReviewRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_GetObjectReviews_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetObjectReviewsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetObjectReviews(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetObjectReviews_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetObjectReviews(ctx, req.(*GetObjectReviewsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -337,14 +271,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateReview",
 			Handler:    _Middleware_UpdateReview_Handler,
-		},
-		{
-			MethodName: "GetObjectReview",
-			Handler:    _Middleware_GetObjectReview_Handler,
-		},
-		{
-			MethodName: "GetObjectReviews",
-			Handler:    _Middleware_GetObjectReviews_Handler,
 		},
 		{
 			MethodName: "GetReviews",
