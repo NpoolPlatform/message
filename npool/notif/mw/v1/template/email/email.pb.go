@@ -1534,6 +1534,9 @@ var file_npool_notif_mw_v1_template_email_email_proto_goTypes = []interface{}{
 	(*GetEmailTemplatesRequest)(nil),        // 9: notif.middleware.template.email.v1.GetEmailTemplatesRequest
 	(*GetEmailTemplatesResponse)(nil),       // 10: notif.middleware.template.email.v1.GetEmailTemplatesResponse
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4ebcffd26 (Remove unnecessary api)
 	(*UpdateEmailTemplateRequest)(nil),      // 11: notif.middleware.template.email.v1.UpdateEmailTemplateRequest
 	(*UpdateEmailTemplateResponse)(nil),     // 12: notif.middleware.template.email.v1.UpdateEmailTemplateResponse
 	(*ExistEmailTemplateRequest)(nil),       // 13: notif.middleware.template.email.v1.ExistEmailTemplateRequest
@@ -1548,6 +1551,7 @@ var file_npool_notif_mw_v1_template_email_email_proto_goTypes = []interface{}{
 	(*v1.Int32Val)(nil),                     // 22: basetypes.v1.Int32Val
 	(*v1.StringSliceVal)(nil),               // 23: basetypes.v1.StringSliceVal
 	(*v1.Uint32SliceVal)(nil),               // 24: basetypes.v1.Uint32SliceVal
+<<<<<<< HEAD
 }
 var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
 	19, // 0: notif.middleware.template.email.v1.EmailTemplate.UsedFor:type_name -> basetypes.v1.UsedFor
@@ -1592,6 +1596,21 @@ var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
 	25, // 9: notif.middleware.template.email.v1.Conds.LangIDs:type_name -> basetypes.v1.StringSliceVal
 	26, // 10: notif.middleware.template.email.v1.Conds.UsedFors:type_name -> basetypes.v1.Uint32SliceVal
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+}
+var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
+	19, // 0: notif.middleware.template.email.v1.EmailTemplate.UsedFor:type_name -> basetypes.v1.UsedFor
+	19, // 1: notif.middleware.template.email.v1.EmailTemplateReq.UsedFor:type_name -> basetypes.v1.UsedFor
+	20, // 2: notif.middleware.template.email.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
+	21, // 3: notif.middleware.template.email.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	21, // 4: notif.middleware.template.email.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	21, // 5: notif.middleware.template.email.v1.Conds.LangID:type_name -> basetypes.v1.StringVal
+	22, // 6: notif.middleware.template.email.v1.Conds.UsedFor:type_name -> basetypes.v1.Int32Val
+	21, // 7: notif.middleware.template.email.v1.Conds.Sender:type_name -> basetypes.v1.StringVal
+	23, // 8: notif.middleware.template.email.v1.Conds.AppIDs:type_name -> basetypes.v1.StringSliceVal
+	23, // 9: notif.middleware.template.email.v1.Conds.LangIDs:type_name -> basetypes.v1.StringSliceVal
+	24, // 10: notif.middleware.template.email.v1.Conds.UsedFors:type_name -> basetypes.v1.Uint32SliceVal
+>>>>>>> 4ebcffd26 (Remove unnecessary api)
 	1,  // 11: notif.middleware.template.email.v1.CreateEmailTemplateRequest.Info:type_name -> notif.middleware.template.email.v1.EmailTemplateReq
 	0,  // 12: notif.middleware.template.email.v1.CreateEmailTemplateResponse.Info:type_name -> notif.middleware.template.email.v1.EmailTemplate
 	1,  // 13: notif.middleware.template.email.v1.CreateEmailTemplatesRequest.Infos:type_name -> notif.middleware.template.email.v1.EmailTemplateReq
@@ -1600,6 +1619,9 @@ var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
 	2,  // 16: notif.middleware.template.email.v1.GetEmailTemplatesRequest.Conds:type_name -> notif.middleware.template.email.v1.Conds
 	0,  // 17: notif.middleware.template.email.v1.GetEmailTemplatesResponse.Infos:type_name -> notif.middleware.template.email.v1.EmailTemplate
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4ebcffd26 (Remove unnecessary api)
 	1,  // 18: notif.middleware.template.email.v1.UpdateEmailTemplateRequest.Info:type_name -> notif.middleware.template.email.v1.EmailTemplateReq
 	0,  // 19: notif.middleware.template.email.v1.UpdateEmailTemplateResponse.Info:type_name -> notif.middleware.template.email.v1.EmailTemplate
 	2,  // 20: notif.middleware.template.email.v1.ExistEmailTemplateCondsRequest.Conds:type_name -> notif.middleware.template.email.v1.Conds
@@ -1626,6 +1648,7 @@ var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
 	23, // [23:23] is the sub-list for extension type_name
 	23, // [23:23] is the sub-list for extension extendee
 	0,  // [0:23] is the sub-list for field type_name
+<<<<<<< HEAD
 =======
 	2,  // 18: notif.middleware.template.email.v1.GetEmailTemplateOnlyRequest.Conds:type_name -> notif.middleware.template.email.v1.Conds
 	0,  // 19: notif.middleware.template.email.v1.GetEmailTemplateOnlyResponse.Info:type_name -> notif.middleware.template.email.v1.EmailTemplate
@@ -1658,6 +1681,8 @@ var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
 	25, // [25:25] is the sub-list for extension extendee
 	0,  // [0:25] is the sub-list for field type_name
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+>>>>>>> 4ebcffd26 (Remove unnecessary api)
 }
 
 func init() { file_npool_notif_mw_v1_template_email_email_proto_init() }
