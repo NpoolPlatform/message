@@ -142,6 +142,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/gatewaynotif3v1Notif"
           }
         },
@@ -231,6 +232,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1NotifReq"
           }
         }
@@ -242,6 +244,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/gatewaynotif3v1Notif"
           }
         }
@@ -269,6 +272,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -296,6 +300,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/gatewaynotif3v1Notif"
           }
         },
