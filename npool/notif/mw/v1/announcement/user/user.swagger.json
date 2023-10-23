@@ -212,6 +212,21 @@
       }
     },
     "v1Uint32Val": {
+<<<<<<< HEAD
+=======
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAnnouncementUserResponse": {
+>>>>>>> a8aaa956a (Change id to entid)
       "type": "object",
       "properties": {
         "Op": {
