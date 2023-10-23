@@ -169,25 +169,6 @@
         }
       }
     },
-    "v2GetObjectReviewResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Review"
-        }
-      }
-    },
-    "v2GetObjectReviewsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v2Review"
-          }
-        }
-      }
-    },
     "v2GetReviewResponse": {
       "type": "object",
       "properties": {

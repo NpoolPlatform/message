@@ -11,8 +11,6 @@ import "npool/basetypes/review/v1/enums.proto";
 service Middleware {
     rpc CreateReview     (CreateReviewRequest)     returns (CreateReviewResponse)     {}
     rpc UpdateReview     (UpdateReviewRequest)     returns (UpdateReviewResponse)     {}
-    rpc GetObjectReview  (GetObjectReviewRequest)  returns (GetObjectReviewResponse)  {}
-    rpc GetObjectReviews (GetObjectReviewsRequest) returns (GetObjectReviewsResponse) {}
     rpc GetReviews       (GetReviewsRequest)       returns (GetReviewsResponse)       {}
     rpc DeleteReview     (DeleteReviewRequest)     returns (DeleteReviewResponse)     {}
     rpc GetReview        (GetReviewRequest)        returns (GetReviewResponse)        {}
@@ -99,28 +97,6 @@ message GetReviewsRequest {
 message GetReviewsResponse {
     repeated Review Infos = 10;
     uint32                            Total = 20;
-}
-
-message GetObjectReviewRequest {
-    string AppID     = 10;
-    string Domain    = 20;
-    string ObjectID  = 30;
-    basetypes.review.v1.ReviewObjectType ObjectType = 40;
-}
-
-message GetObjectReviewResponse {
-    Review Info = 10;
-}
-
-message GetObjectReviewsRequest {
-    string          AppID     = 10;
-    string          Domain    = 20;
-    repeated string ObjectIDs = 30;
-    basetypes.review.v1.ReviewObjectType ObjectType = 40;
-}
-
-message GetObjectReviewsResponse {
-    repeated Review Infos = 10;
 }
 
 message DeleteReviewRequest {
