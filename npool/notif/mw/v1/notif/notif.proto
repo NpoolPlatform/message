@@ -4,6 +4,7 @@ package notif.middleware.notif.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/notif";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/channel.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/conds.proto";
@@ -12,8 +13,18 @@ import "npool/notif/mw/v1/template/template.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateNotif    (CreateNotifRequest)    returns (CreateNotifResponse)    {}
-    rpc CreateNotifs   (CreateNotifsRequest)   returns (CreateNotifsResponse)   {}
+    rpc CreateNotif    (CreateNotifRequest)    returns (CreateNotifResponse)    {
+        option (google.api.http) = {
+            post: "/v1/notif_CreateNotif"
+            body: "*"
+        };
+    }
+    rpc CreateNotifs   (CreateNotifsRequest)   returns (CreateNotifsResponse)   {
+        option (google.api.http) = {
+            post: "/v1/notif_CreateNotifs"
+            body: "*"
+        };
+    }
     rpc UpdateNotif    (UpdateNotifRequest)    returns (UpdateNotifResponse)    {}
     rpc UpdateNotifs   (UpdateNotifsRequest)   returns (UpdateNotifsResponse)   {}
     rpc GetNotif       (GetNotifRequest)       returns (GetNotifResponse)       {}
