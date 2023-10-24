@@ -79,6 +79,7 @@
           "Middleware"
         ]
       }
+<<<<<<< HEAD
     },
     "/v1/notif_DeleteNotif": {
       "post": {
@@ -111,6 +112,8 @@
           "Middleware"
         ]
       }
+=======
+>>>>>>> 423530abb (Add notif mw api)
     }
   },
   "definitions": {
@@ -217,6 +220,14 @@
           "$ref": "#/definitions/v1NotifReq"
 =======
 >>>>>>> a8aaa956a (Change id to entid)
+        }
+      }
+    },
+    "v1CreateNotifRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1NotifReq"
         }
       }
     },
