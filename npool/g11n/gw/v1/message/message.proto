@@ -74,6 +74,7 @@ service Gateway {
 message Message {
     uint32 ID         = 9;
     string EntID      = 10;
+    string AppID      = 19;
     string AppName    = 20;
     string LangID     = 30;
     string Lang       = 40;
