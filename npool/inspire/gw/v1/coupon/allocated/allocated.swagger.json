@@ -314,10 +314,14 @@
         "CouponScopeStr": {
           "type": "string",
 <<<<<<< HEAD
+<<<<<<< HEAD
           "title": "@inject_tag: sql:\"coupon_scope\""
 =======
           "title": "@inject_tag: sql:\"coupon_constraint\""
 >>>>>>> 447c10d15 (delete get app scopes)
+=======
+          "title": "@inject_tag: sql:\"coupon_scope\""
+>>>>>>> 32c16c6a8 (make AppGoodID must)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"

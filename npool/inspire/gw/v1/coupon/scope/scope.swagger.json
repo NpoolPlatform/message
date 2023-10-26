@@ -462,6 +462,7 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
         },
@@ -475,11 +476,10 @@
         "CouponTypeStr": {
           "type": "string"
         },
+=======
+>>>>>>> 32c16c6a8 (make AppGoodID must)
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
-        },
-        "CouponScopeStr": {
-          "type": "string"
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
