@@ -830,10 +830,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
 >>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
+>>>>>>> 0b22a17fb (make AppGoodID must)
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
         },
@@ -854,6 +857,7 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 32c16c6a8 (make AppGoodID must)
         "CouponType": {
@@ -866,11 +870,12 @@
 =======
 >>>>>>> 789287843 (update scope)
 =======
+=======
+=======
+>>>>>>> 8db49e034 (make AppGoodID must)
+>>>>>>> 0b22a17fb (make AppGoodID must)
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
-        },
-        "CouponScopeStr": {
-          "type": "string"
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
