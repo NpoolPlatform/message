@@ -12,14 +12,14 @@ service Middleware {
     rpc CreateMessages    (CreateMessagesRequest)    returns (CreateMessagesResponse)    {}
     rpc UpdateMessage     (UpdateMessageRequest)     returns (UpdateMessageResponse)     {}
     rpc GetMessage        (GetMessageRequest)        returns (GetMessageResponse)        {}
-    rpc GetMessageOnly    (GetMessageOnlyRequest)    returns (GetMessageOnlyResponse)    {}
     rpc GetMessages       (GetMessagesRequest)       returns (GetMessagesResponse)       {}
     rpc ExistMessageConds (ExistMessageCondsRequest) returns (ExistMessageCondsResponse) {}
     rpc DeleteMessage     (DeleteMessageRequest)     returns (DeleteMessageResponse)     {}
 }
 
 message MessageReq {
-    optional string ID        = 10;
+    optional uint32 ID        = 9;
+    optional string EntID     = 10;
     optional string AppID     = 20;
     optional string LangID    = 30;
     optional string MessageID = 40;
@@ -30,7 +30,9 @@ message MessageReq {
 
 message Message {
     // @inject_tag: sql:"id"
-    string ID         = 10;
+    uint32 ID         = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID      = 10;
     // @inject_tag: sql:"app_id"
     string AppID      = 20;
     // @inject_tag: sql:"lang_id"
@@ -52,7 +54,8 @@ message Message {
 }
 
 message Conds {
-    basetypes.v1.StringVal ID         = 10;
+    basetypes.v1.Uint32Val ID         = 9;
+    basetypes.v1.StringVal EntID      = 10;
     basetypes.v1.StringVal AppID      = 20;
     basetypes.v1.StringVal LangID     = 30;
     basetypes.v1.StringVal MessageID  = 40;
@@ -86,18 +89,10 @@ message UpdateMessageResponse {
 }
 
 message GetMessageRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetMessageResponse {
-    Message Info = 10;
-}
-
-message GetMessageOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetMessageOnlyResponse {
     Message Info = 10;
 }
 

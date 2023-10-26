@@ -23,7 +23,6 @@ const (
 	Middleware_CreateCountries_FullMethodName   = "/g11n.middleware.country.v1.Middleware/CreateCountries"
 	Middleware_UpdateCountry_FullMethodName     = "/g11n.middleware.country.v1.Middleware/UpdateCountry"
 	Middleware_GetCountry_FullMethodName        = "/g11n.middleware.country.v1.Middleware/GetCountry"
-	Middleware_GetCountryOnly_FullMethodName    = "/g11n.middleware.country.v1.Middleware/GetCountryOnly"
 	Middleware_GetCountries_FullMethodName      = "/g11n.middleware.country.v1.Middleware/GetCountries"
 	Middleware_ExistCountryConds_FullMethodName = "/g11n.middleware.country.v1.Middleware/ExistCountryConds"
 	Middleware_DeleteCountry_FullMethodName     = "/g11n.middleware.country.v1.Middleware/DeleteCountry"
@@ -37,7 +36,6 @@ type MiddlewareClient interface {
 	CreateCountries(ctx context.Context, in *CreateCountriesRequest, opts ...grpc.CallOption) (*CreateCountriesResponse, error)
 	UpdateCountry(ctx context.Context, in *UpdateCountryRequest, opts ...grpc.CallOption) (*UpdateCountryResponse, error)
 	GetCountry(ctx context.Context, in *GetCountryRequest, opts ...grpc.CallOption) (*GetCountryResponse, error)
-	GetCountryOnly(ctx context.Context, in *GetCountryOnlyRequest, opts ...grpc.CallOption) (*GetCountryOnlyResponse, error)
 	GetCountries(ctx context.Context, in *GetCountriesRequest, opts ...grpc.CallOption) (*GetCountriesResponse, error)
 	ExistCountryConds(ctx context.Context, in *ExistCountryCondsRequest, opts ...grpc.CallOption) (*ExistCountryCondsResponse, error)
 	DeleteCountry(ctx context.Context, in *DeleteCountryRequest, opts ...grpc.CallOption) (*DeleteCountryResponse, error)
@@ -87,15 +85,6 @@ func (c *middlewareClient) GetCountry(ctx context.Context, in *GetCountryRequest
 	return out, nil
 }
 
-func (c *middlewareClient) GetCountryOnly(ctx context.Context, in *GetCountryOnlyRequest, opts ...grpc.CallOption) (*GetCountryOnlyResponse, error) {
-	out := new(GetCountryOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetCountryOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) GetCountries(ctx context.Context, in *GetCountriesRequest, opts ...grpc.CallOption) (*GetCountriesResponse, error) {
 	out := new(GetCountriesResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetCountries_FullMethodName, in, out, opts...)
@@ -131,7 +120,6 @@ type MiddlewareServer interface {
 	CreateCountries(context.Context, *CreateCountriesRequest) (*CreateCountriesResponse, error)
 	UpdateCountry(context.Context, *UpdateCountryRequest) (*UpdateCountryResponse, error)
 	GetCountry(context.Context, *GetCountryRequest) (*GetCountryResponse, error)
-	GetCountryOnly(context.Context, *GetCountryOnlyRequest) (*GetCountryOnlyResponse, error)
 	GetCountries(context.Context, *GetCountriesRequest) (*GetCountriesResponse, error)
 	ExistCountryConds(context.Context, *ExistCountryCondsRequest) (*ExistCountryCondsResponse, error)
 	DeleteCountry(context.Context, *DeleteCountryRequest) (*DeleteCountryResponse, error)
@@ -153,9 +141,6 @@ func (UnimplementedMiddlewareServer) UpdateCountry(context.Context, *UpdateCount
 }
 func (UnimplementedMiddlewareServer) GetCountry(context.Context, *GetCountryRequest) (*GetCountryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCountry not implemented")
-}
-func (UnimplementedMiddlewareServer) GetCountryOnly(context.Context, *GetCountryOnlyRequest) (*GetCountryOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCountryOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetCountries(context.Context, *GetCountriesRequest) (*GetCountriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCountries not implemented")
@@ -251,24 +236,6 @@ func _Middleware_GetCountry_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetCountryOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCountryOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetCountryOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetCountryOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetCountryOnly(ctx, req.(*GetCountryOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_GetCountries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCountriesRequest)
 	if err := dec(in); err != nil {
@@ -345,10 +312,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCountry",
 			Handler:    _Middleware_GetCountry_Handler,
-		},
-		{
-			MethodName: "GetCountryOnly",
-			Handler:    _Middleware_GetCountryOnly_Handler,
 		},
 		{
 			MethodName: "GetCountries",

@@ -149,7 +149,7 @@
     "g11ngatewaylangv1CreateLangRequest": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "type": "string"
         },
         "Lang": {
@@ -228,7 +228,8 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Lang": {
           "type": "string"
@@ -283,8 +284,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "Lang": {
           "type": "string",
@@ -318,6 +324,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "Lang": {
