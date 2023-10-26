@@ -386,14 +386,8 @@
         "CouponName": {
           "type": "string"
         },
-        "CouponTypeStr": {
-          "type": "string"
-        },
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
-        },
-        "CouponScopeStr": {
-          "type": "string"
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
