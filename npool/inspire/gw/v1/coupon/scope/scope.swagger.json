@@ -1021,6 +1021,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
@@ -1090,11 +1091,10 @@
         "CouponTypeStr": {
           "type": "string"
         },
+=======
+>>>>>>> cb372d17f (make AppGoodID must)
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
-        },
-        "CouponScopeStr": {
-          "type": "string"
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
