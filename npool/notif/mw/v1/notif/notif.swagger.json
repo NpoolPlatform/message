@@ -80,6 +80,9 @@
         ]
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8553a2081 (Add delete api)
     },
     "/v1/notif_DeleteNotif": {
       "post": {
@@ -112,8 +115,11 @@
           "Middleware"
         ]
       }
+<<<<<<< HEAD
 =======
 >>>>>>> 423530abb (Add notif mw api)
+=======
+>>>>>>> 8553a2081 (Add delete api)
     }
   },
   "definitions": {
@@ -139,6 +145,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -256,6 +263,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Notif"
           }
         }
@@ -291,6 +299,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Notif"
           }
         }
@@ -310,6 +319,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Notif"
           }
         },
@@ -570,6 +580,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Notif"
           }
         }
