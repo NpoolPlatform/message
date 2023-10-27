@@ -4,6 +4,7 @@ package notif.middleware.template.sms.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/template/sms";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/conds.proto";
 
@@ -15,7 +16,12 @@ service Middleware {
     rpc UpdateSMSTemplate     (UpdateSMSTemplateRequest)     returns (UpdateSMSTemplateResponse)     {}
     rpc ExistSMSTemplate      (ExistSMSTemplateRequest)      returns (ExistSMSTemplateResponse)      {}
     rpc ExistSMSTemplateConds (ExistSMSTemplateCondsRequest) returns (ExistSMSTemplateCondsResponse) {}
-    rpc DeleteSMSTemplate     (DeleteSMSTemplateRequest)     returns (DeleteSMSTemplateResponse)     {}
+    rpc DeleteSMSTemplate     (DeleteSMSTemplateRequest)     returns (DeleteSMSTemplateResponse)     {
+        option (google.api.http) = {
+            post: "/v1/template_DeleteSMSTemplate"
+            body: "*"
+        };
+    }
 }
 
 message SMSTemplate {
