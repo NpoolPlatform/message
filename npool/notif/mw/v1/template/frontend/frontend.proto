@@ -4,6 +4,7 @@ package notif.middleware.template.frontend.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/template/frontend";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/conds.proto";
 
@@ -15,7 +16,12 @@ service Middleware {
     rpc UpdateFrontendTemplate     (UpdateFrontendTemplateRequest)     returns (UpdateFrontendTemplateResponse)     {}
     rpc ExistFrontendTemplate      (ExistFrontendTemplateRequest)      returns (ExistFrontendTemplateResponse)      {}
     rpc ExistFrontendTemplateConds (ExistFrontendTemplateCondsRequest) returns (ExistFrontendTemplateCondsResponse) {}
-    rpc DeleteFrontendTemplate     (DeleteFrontendTemplateRequest)     returns (DeleteFrontendTemplateResponse)     {}
+    rpc DeleteFrontendTemplate     (DeleteFrontendTemplateRequest)     returns (DeleteFrontendTemplateResponse)     {
+        option (google.api.http) = {
+            post: "/v1/template_DeleteFrontendTemplate"
+            body: "*"
+        };
+    }
 }
 
 message FrontendTemplate {

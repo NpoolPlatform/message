@@ -31,7 +31,12 @@ service Middleware {
     rpc GetNotifs      (GetNotifsRequest)      returns (GetNotifsResponse)      {}
     rpc GenerateNotifs (GenerateNotifsRequest) returns (GenerateNotifsResponse) {}
     rpc ExistNotifConds (ExistNotifCondsRequest) returns (ExistNotifCondsResponse) {}
-    rpc DeleteNotif     (DeleteNotifRequest)     returns (DeleteNotifResponse)     {}
+    rpc DeleteNotif     (DeleteNotifRequest)     returns (DeleteNotifResponse)     {
+        option (google.api.http) = {
+            post: "/v1/notif_DeleteNotif"
+            body: "*"
+        };
+    }
 }
 
 message Notif {
