@@ -114,38 +114,6 @@
     },
     "/v1/review_GetReview": {
       "post": {
-        "operationId": "Middleware_GetReviews",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v2GetReviewsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v2GetReviewsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
-    "/v1/review_GetReviews": {
-      "post": {
         "operationId": "Middleware_GetReview",
         "responses": {
           "200": {
@@ -168,6 +136,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v2GetReviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/review_GetReviews": {
+      "post": {
+        "operationId": "Middleware_GetReviews",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GetReviewsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2GetReviewsRequest"
             }
           }
         ],

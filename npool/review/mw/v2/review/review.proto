@@ -24,7 +24,7 @@ service Middleware {
     }
     rpc GetReviews       (GetReviewsRequest)       returns (GetReviewsResponse)       {
         option (google.api.http) = {
-            post: "/v1/review_GetReview"
+            post: "/v1/review_GetReviews"
             body: "*"
         };
     }
@@ -36,7 +36,7 @@ service Middleware {
     }
     rpc GetReview        (GetReviewRequest)        returns (GetReviewResponse)        {
         option (google.api.http) = {
-            post: "/v1/review_GetReviews"
+            post: "/v1/review_GetReview"
             body: "*"
         };
     }
