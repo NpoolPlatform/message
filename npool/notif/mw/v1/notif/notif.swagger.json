@@ -82,6 +82,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8553a2081 (Add delete api)
 =======
 >>>>>>> 8553a2081 (Add delete api)
     },
@@ -117,12 +120,15 @@
         ]
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 423530abb (Add notif mw api)
 =======
 >>>>>>> 8553a2081 (Add delete api)
 =======
 >>>>>>> 423530abb (Add notif mw api)
+=======
+>>>>>>> 8553a2081 (Add delete api)
     }
   },
   "definitions": {
@@ -148,6 +154,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -276,6 +283,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Notif"
           }
         }
@@ -311,6 +319,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Notif"
           }
         }
@@ -330,6 +339,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Notif"
           }
         },
@@ -590,6 +600,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Notif"
           }
         }
