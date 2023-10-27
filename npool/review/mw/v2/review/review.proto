@@ -4,17 +4,48 @@ package review.middleware.review.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/review/mw/v2/review";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/review/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateReview     (CreateReviewRequest)     returns (CreateReviewResponse)     {}
-    rpc UpdateReview     (UpdateReviewRequest)     returns (UpdateReviewResponse)     {}
-    rpc GetReviews       (GetReviewsRequest)       returns (GetReviewsResponse)       {}
-    rpc DeleteReview     (DeleteReviewRequest)     returns (DeleteReviewResponse)     {}
-    rpc GetReview        (GetReviewRequest)        returns (GetReviewResponse)        {}
-    rpc ExistReviewConds (ExistReviewCondsRequest) returns (ExistReviewCondsResponse) {}
+    rpc CreateReview     (CreateReviewRequest)     returns (CreateReviewResponse)     {
+        option (google.api.http) = {
+            post: "/v1/review_CreateReview"
+            body: "*"
+        };
+    }
+    rpc UpdateReview     (UpdateReviewRequest)     returns (UpdateReviewResponse)     {
+        option (google.api.http) = {
+            post: "/v1/review_UpdateReview"
+            body: "*"
+        };
+    }
+    rpc GetReviews       (GetReviewsRequest)       returns (GetReviewsResponse)       {
+        option (google.api.http) = {
+            post: "/v1/review_GetReview"
+            body: "*"
+        };
+    }
+    rpc DeleteReview     (DeleteReviewRequest)     returns (DeleteReviewResponse)     {
+        option (google.api.http) = {
+            post: "/v1/review_DeleteReview"
+            body: "*"
+        };
+    }
+    rpc GetReview        (GetReviewRequest)        returns (GetReviewResponse)        {
+        option (google.api.http) = {
+            post: "/v1/review_GetReviews"
+            body: "*"
+        };
+    }
+    rpc ExistReviewConds (ExistReviewCondsRequest) returns (ExistReviewCondsResponse) {
+        option (google.api.http) = {
+            post: "/v1/review_ExistReviewConds"
+            body: "*"
+        };
+    }
 }
 
 message ReviewReq {
