@@ -293,7 +293,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/review.middleware.review.v2.Middleware/GetReviews", runtime.WithHTTPPathPattern("/v1/review_GetReview"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/review.middleware.review.v2.Middleware/GetReviews", runtime.WithHTTPPathPattern("/v1/review_GetReviews"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -339,7 +339,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/review.middleware.review.v2.Middleware/GetReview", runtime.WithHTTPPathPattern("/v1/review_GetReviews"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/review.middleware.review.v2.Middleware/GetReview", runtime.WithHTTPPathPattern("/v1/review_GetReview"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -464,7 +464,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/review.middleware.review.v2.Middleware/GetReviews", runtime.WithHTTPPathPattern("/v1/review_GetReview"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/review.middleware.review.v2.Middleware/GetReviews", runtime.WithHTTPPathPattern("/v1/review_GetReviews"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -504,7 +504,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/review.middleware.review.v2.Middleware/GetReview", runtime.WithHTTPPathPattern("/v1/review_GetReviews"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/review.middleware.review.v2.Middleware/GetReview", runtime.WithHTTPPathPattern("/v1/review_GetReview"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -548,11 +548,11 @@ var (
 
 	pattern_Middleware_UpdateReview_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "review_UpdateReview"}, ""))
 
-	pattern_Middleware_GetReviews_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "review_GetReview"}, ""))
+	pattern_Middleware_GetReviews_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "review_GetReviews"}, ""))
 
 	pattern_Middleware_DeleteReview_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "review_DeleteReview"}, ""))
 
-	pattern_Middleware_GetReview_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "review_GetReviews"}, ""))
+	pattern_Middleware_GetReview_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "review_GetReview"}, ""))
 
 	pattern_Middleware_ExistReviewConds_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "review_ExistReviewConds"}, ""))
 )
