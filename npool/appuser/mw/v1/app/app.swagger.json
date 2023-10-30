@@ -163,12 +163,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64",
 =======
 =======
 >>>>>>> 2283e696c (Add auto increment id)
+=======
+>>>>>>> 8eb981ff1 (Add auto increment id)
         "EntID": {
           "type": "string",
 >>>>>>> 8eb981ff1 (Add auto increment id)
@@ -254,11 +257,14 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "ID": {
           "$ref": "#/definitions/v1Uint32Val"
         },
 =======
 >>>>>>> 2283e696c (Add auto increment id)
+=======
+>>>>>>> 8eb981ff1 (Add auto increment id)
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },

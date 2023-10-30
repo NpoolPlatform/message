@@ -30,6 +30,7 @@ type HistoryReq struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ID        *uint32       `protobuf:"varint,9,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
 =======
 >>>>>>> 8eb981ff1 (Add auto increment id)
@@ -41,6 +42,8 @@ type HistoryReq struct {
 =======
 	ID        *uint32       `protobuf:"varint,9,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
 >>>>>>> ea1c9973f (Add ID to req)
+=======
+>>>>>>> 8eb981ff1 (Add auto increment id)
 	EntID     *string       `protobuf:"bytes,10,opt,name=EntID,proto3,oneof" json:"EntID,omitempty"`
 	AppID     *string       `protobuf:"bytes,20,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
 	UserID    *string       `protobuf:"bytes,30,opt,name=UserID,proto3,oneof" json:"UserID,omitempty"`
@@ -86,6 +89,7 @@ func (*HistoryReq) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 func (x *HistoryReq) GetID() uint32 {
 	if x != nil && x.ID != nil {
 		return *x.ID
@@ -113,6 +117,8 @@ func (x *HistoryReq) GetID() uint32 {
 >>>>>>> 2283e696c (Add auto increment id)
 =======
 >>>>>>> ea1c9973f (Add ID to req)
+=======
+>>>>>>> 8eb981ff1 (Add auto increment id)
 func (x *HistoryReq) GetEntID() string {
 	if x != nil && x.EntID != nil {
 		return *x.EntID
@@ -332,6 +338,7 @@ type Conds struct {
 	unknownFields protoimpl.UnknownFields
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EntID     *v1.StringVal `protobuf:"bytes,10,opt,name=EntID,proto3,oneof" json:"EntID,omitempty"`
 	AppID     *v1.StringVal `protobuf:"bytes,20,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
 	UserID    *v1.StringVal `protobuf:"bytes,30,opt,name=UserID,proto3,oneof" json:"UserID,omitempty"`
@@ -340,6 +347,8 @@ type Conds struct {
 	Location  *v1.StringVal `protobuf:"bytes,60,opt,name=Location,proto3,oneof" json:"Location,omitempty"`
 	UserAgent *v1.StringVal `protobuf:"bytes,70,opt,name=UserAgent,proto3,oneof" json:"UserAgent,omitempty"`
 =======
+=======
+>>>>>>> 8eb981ff1 (Add auto increment id)
 	EntID     *v1.StringVal `protobuf:"bytes,10,opt,name=EntID,proto3" json:"EntID,omitempty"`
 	AppID     *v1.StringVal `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
 	UserID    *v1.StringVal `protobuf:"bytes,30,opt,name=UserID,proto3" json:"UserID,omitempty"`
@@ -754,6 +763,7 @@ var file_npool_appuser_mw_v1_user_login_history_history_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d5be11d2e (Add ID to req)
 =======
@@ -933,6 +943,8 @@ var file_npool_appuser_mw_v1_user_login_history_history_proto_rawDesc = []byte{
 =======
 =======
 >>>>>>> 2283e696c (Add auto increment id)
+=======
+>>>>>>> 8eb981ff1 (Add auto increment id)
 	0x22, 0xd5, 0x02, 0x0a, 0x0a, 0x48, 0x69, 0x73, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x71, 0x12,
 	0x19, 0x0a, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00,
 	0x52, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x88, 0x01, 0x01, 0x12, 0x19, 0x0a, 0x05, 0x41, 0x70,
@@ -1074,6 +1086,7 @@ var file_npool_appuser_mw_v1_user_login_history_history_proto_rawDesc = []byte{
 	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x61, 0x70, 0x70, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x6d, 0x77, 0x2f,
 	0x76, 0x31, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x2f, 0x68, 0x69,
 	0x73, 0x74, 0x6f, 0x72, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 8eb981ff1 (Add auto increment id)
 =======
@@ -1225,6 +1238,8 @@ var file_npool_appuser_mw_v1_user_login_history_history_proto_rawDesc = []byte{
 >>>>>>> 2283e696c (Add auto increment id)
 =======
 >>>>>>> ea1c9973f (Add ID to req)
+=======
+>>>>>>> 8eb981ff1 (Add auto increment id)
 }
 
 var (

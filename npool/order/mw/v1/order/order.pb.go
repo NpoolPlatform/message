@@ -2,6 +2,7 @@
 // versions:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // 	protoc-gen-go v1.27.1
 =======
 // 	protoc-gen-go v1.31.0
@@ -9,6 +10,9 @@
 =======
 // 	protoc-gen-go v1.31.0
 >>>>>>> 2283e696c (Add auto increment id)
+=======
+// 	protoc-gen-go v1.31.0
+>>>>>>> 8eb981ff1 (Add auto increment id)
 // 	protoc        v3.18.1
 // source: npool/order/mw/v1/order/order.proto
 

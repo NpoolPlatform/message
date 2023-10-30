@@ -156,6 +156,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d5be11d2e (Add ID to req)
 =======
@@ -174,6 +175,8 @@
 >>>>>>> 2283e696c (Add auto increment id)
 =======
 >>>>>>> ea1c9973f (Add ID to req)
+=======
+>>>>>>> 8eb981ff1 (Add auto increment id)
         "EntID": {
           "type": "string"
         },

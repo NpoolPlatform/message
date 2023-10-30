@@ -60,11 +60,14 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "ID": {
           "$ref": "#/definitions/v1Uint32Val"
         },
 =======
 >>>>>>> 2283e696c (Add auto increment id)
+=======
+>>>>>>> 8eb981ff1 (Add auto increment id)
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -235,6 +238,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d5be11d2e (Add ID to req)
 =======
@@ -253,6 +257,8 @@
 >>>>>>> 2283e696c (Add auto increment id)
 =======
 >>>>>>> ea1c9973f (Add ID to req)
+=======
+>>>>>>> 8eb981ff1 (Add auto increment id)
         "EntID": {
           "type": "string"
         },
