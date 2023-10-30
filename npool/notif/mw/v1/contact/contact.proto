@@ -5,6 +5,7 @@ package notif.middleware.contact.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/contact";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/signmethod.proto";
@@ -17,7 +18,12 @@ service Middleware {
     rpc GetContact        (GetContactRequest)        returns (GetContactResponse)        {}
     rpc GetContacts       (GetContactsRequest)       returns (GetContactsResponse)       {}
     rpc ExistContactConds (ExistContactCondsRequest) returns (ExistContactCondsResponse) {}
-    rpc DeleteContact     (DeleteContactRequest)     returns (DeleteContactResponse)     {}
+    rpc DeleteContact     (DeleteContactRequest)     returns (DeleteContactResponse)     {
+        option (google.api.http) = {
+            post: "/v1/contact_DeleteContact"
+            body: "*"
+        };
+    }
 }
 
 message ContactReq {

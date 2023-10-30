@@ -15,7 +15,40 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/contact_DeleteContact": {
+      "post": {
+        "operationId": "Middleware_DeleteContact",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteContactResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteContactRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -39,6 +72,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -149,6 +183,14 @@
         }
       }
     },
+    "v1DeleteContactRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ContactReq"
+        }
+      }
+    },
     "v1DeleteContactResponse": {
       "type": "object",
       "properties": {
@@ -187,6 +229,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Contact"
           }
         },
@@ -210,7 +253,8 @@
         "Google",
         "Username"
       ],
-      "default": "DefaultSignMethod"
+      "default": "DefaultSignMethod",
+      "title": "- Mobile: For signup, signin, verify\n - Email: For signup, signin, verify\n - Twitter: For signin\n - Github: For signin\n - Facebook: For signin\n - Linkedin: For signin\n - Wechat: For signin\n - Google: For signin, verify\n - Username: For signup, signin"
     },
     "v1StringVal": {
       "type": "object",
