@@ -4,17 +4,28 @@ package notif.middleware.announcement.sendstate.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/announcement/sendstate";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/channel.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateSendState     (CreateSendStateRequest)     returns (CreateSendStateResponse)  {}
+    rpc CreateSendState     (CreateSendStateRequest)     returns (CreateSendStateResponse)  {
+        option (google.api.http) = {
+            post: "/v1/sendstate_CreateSendState"
+            body: "*"
+        };
+    }
     rpc CreateSendStates    (CreateSendStatesRequest)    returns (CreateSendStatesResponse)  {}
     rpc GetSendStates       (GetSendStatesRequest)       returns (GetSendStatesResponse)    {}
     rpc GetSendState        (GetSendStateRequest)        returns (GetSendStateResponse)        {}
     rpc ExistSendStateConds (ExistSendStateCondsRequest) returns (ExistSendStateCondsResponse) {}
-    rpc DeleteSendState     (DeleteSendStateRequest)     returns (DeleteSendStateResponse)     {}
+    rpc DeleteSendState     (DeleteSendStateRequest)     returns (DeleteSendStateResponse)     {
+        option (google.api.http) = {
+            post: "/v1/sendstate_DeleteSendState"
+            body: "*"
+        };
+    }
 }
 
 message SendState {
