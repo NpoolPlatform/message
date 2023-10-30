@@ -11,15 +11,12 @@ import "npool/basetypes/v1/kycstate.proto";
 service Middleware {
     rpc CreateUser        (CreateUserRequest)       returns (CreateUserResponse)       {}
     rpc UpdateUser        (UpdateUserRequest)       returns (UpdateUserResponse)       {}
-
     rpc GetUsers          (GetUsersRequest)         returns (GetUsersResponse)         {}
     rpc GetUser           (GetUserRequest)          returns (GetUserResponse)          {}
     rpc VerifyAccount     (VerifyAccountRequest)    returns (VerifyAccountResponse)    {}
     rpc VerifyUser        (VerifyUserRequest)       returns (VerifyUserResponse)       {}
-
     rpc ExistUser         (ExistUserRequest)        returns (ExistUserResponse)        {}
     rpc ExistUserConds    (ExistUserCondsRequest)   returns (ExistUserCondsResponse)   {}
-
     rpc DeleteUser        (DeleteUserRequest)       returns (DeleteUserResponse)       {}
     rpc DeleteThirdUser   (DeleteThirdUserRequest)  returns (DeleteThirdUserResponse)  {}
 
@@ -27,7 +24,7 @@ service Middleware {
 
 message UserReq {
     // Base
-    optional string ID                 = 10;
+    optional string EntID              = 10;
     optional string AppID              = 20;
     optional string EmailAddress       = 30;
     optional string PhoneNO            = 40;
@@ -92,7 +89,9 @@ message OAuthThirdParty {
 message User {
     // Base
     // @inject_tag: sql:"id"
-    string          ID                          = 10;
+    uint32          ID                          = 9;
+    // @inject_tag: sql:"ent_id"
+    string          EntID                       = 10;
     // @inject_tag: sql:"app_id"
     string          AppID                       = 20;
     // @inject_tag: sql:"email_address"
@@ -201,12 +200,12 @@ message User {
 }
 
 message Conds {
-    basetypes.v1.StringVal      ID            = 10;
+    basetypes.v1.StringVal      EntID         = 10;
     basetypes.v1.StringVal      AppID         = 20;
     basetypes.v1.StringVal      PhoneNO       = 30;
     basetypes.v1.StringVal      EmailAddress  = 40;
     basetypes.v1.StringVal      ImportFromApp = 50;
-    basetypes.v1.StringSliceVal IDs           = 60;
+    basetypes.v1.StringSliceVal EntIDs        = 60;
     basetypes.v1.StringVal      ThirdPartyID  = 70;
     basetypes.v1.StringVal      ThirdPartyUserID = 80;
 }
@@ -235,7 +234,7 @@ message GetUsersRequest {
 
 message GetUsersResponse {
     repeated User Infos = 10;
-    uint32 Total  = 40;
+    uint32        Total = 20;
 }
 
 message GetUserRequest {
