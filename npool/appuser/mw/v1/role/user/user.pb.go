@@ -417,8 +417,12 @@ func (x *Conds) GetEntID() *v1.StringVal {
 =======
 func (x *Conds) GetID() *v1.Uint32Val {
 	if x != nil {
+<<<<<<< HEAD
 		return x.ID
 >>>>>>> 12ed827a0 (Add ID to conds)
+=======
+		return x.EntID
+>>>>>>> 12ef4547d (Add auto increment id)
 	}
 	return nil
 }
