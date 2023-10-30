@@ -15,7 +15,72 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/sendstate_CreateSendState": {
+      "post": {
+        "operationId": "Middleware_CreateSendState",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateSendStateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateSendStateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/sendstate_DeleteSendState": {
+      "post": {
+        "operationId": "Middleware_DeleteSendState",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteSendStateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteSendStateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -39,6 +104,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -73,6 +139,14 @@
         }
       }
     },
+    "v1CreateSendStateRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SendStateReq"
+        }
+      }
+    },
     "v1CreateSendStateResponse": {
       "type": "object",
       "properties": {
@@ -87,8 +161,17 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1SendState"
           }
+        }
+      }
+    },
+    "v1DeleteSendStateRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SendStateReq"
         }
       }
     },
@@ -122,6 +205,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1SendState"
           }
         },
