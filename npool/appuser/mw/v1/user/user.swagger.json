@@ -47,7 +47,7 @@
     "v1Conds": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
@@ -62,7 +62,7 @@
         "ImportFromApp": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "IDs": {
+        "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
         "ThirdPartyID": {
@@ -224,8 +224,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "Base\n@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "AppID": {
           "type": "string",
@@ -435,7 +440,7 @@
     "v1UserReq": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "type": "string",
           "title": "Base"
         },
