@@ -87,10 +87,13 @@
     "v1AppSubscribeReq": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64"
         },
+=======
+>>>>>>> 8eb981ff1 (Add auto increment id)
         "EntID": {
           "type": "string"
         },
