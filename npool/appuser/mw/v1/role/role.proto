@@ -18,7 +18,7 @@ service Middleware {
 }
 
 message RoleReq {
-    optional string ID          = 10;
+    optional string EntID       = 10;
     optional string AppID       = 20;
     optional string CreatedBy   = 30;
     optional string Role        = 40;
@@ -30,7 +30,9 @@ message RoleReq {
 message Role {
     // Base info
     // @inject_tag: sql:"id"
-    string  ID           = 10;
+    uint32  ID           = 9;
+    // @inject_tag: sql:"ent_id"
+    string  EntID        = 10;
     // @inject_tag: sql:"created_by"
     string  CreatedBy    = 20;
     // @inject_tag: sql:"role"
@@ -52,14 +54,14 @@ message Role {
 }
 
 message Conds {
-    basetypes.v1.StringVal       ID        = 10;
+    basetypes.v1.StringVal       EntID     = 10;
     basetypes.v1.StringVal       AppID     = 20;
     basetypes.v1.StringVal       CreatedBy = 30;
     basetypes.v1.StringVal       Role      = 40;
     basetypes.v1.BoolVal         Default   = 50;
     basetypes.v1.StringSliceVal  Roles     = 60;
     basetypes.v1.BoolVal         Genesis   = 70;
-    basetypes.v1.StringSliceVal  IDs       = 80;
+    basetypes.v1.StringSliceVal  EntIDs    = 80;
     basetypes.v1.StringSliceVal  AppIDs    = 90;
 }
 
@@ -88,7 +90,7 @@ message UpdateRoleResponse {
 }
 
 message GetRoleRequest {
-    string ID  = 10;
+    string EntID = 10;
 }
 
 message GetRoleResponse {
@@ -107,7 +109,7 @@ message GetRolesResponse {
 }
 
 message ExistRoleRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistRoleResponse {

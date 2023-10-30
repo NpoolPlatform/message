@@ -16,7 +16,7 @@ service Middleware {
 }
 
 message KycReq {
-    optional string          ID            = 10;
+    optional string          EntID         = 10;
     optional string          AppID         = 20;
     optional string          UserID        = 30;
     optional basetypes.v1.KycDocumentType DocumentType  = 40;
@@ -31,7 +31,9 @@ message KycReq {
 
 message Kyc {
     // @inject_tag: sql:"id"
-    string          ID              = 10;
+    uint32          ID              = 9;
+    // @inject_tag: sql:"ent_id"
+    string          EntID           = 10;
     // @inject_tag: sql:"app_id"
     string          AppID           = 20;
     // @inject_tag: sql:"app_name"
@@ -71,7 +73,7 @@ message Kyc {
 }
 
 message Conds {
-    basetypes.v1.StringVal ID           = 10;
+    basetypes.v1.StringVal EntID        = 10;
     basetypes.v1.StringVal AppID        = 20;
     basetypes.v1.StringVal UserID       = 30;
     basetypes.v1.StringVal ReviewID     = 40;
@@ -98,7 +100,7 @@ message UpdateKycResponse {
 }
 
 message GetKycRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetKycResponse {

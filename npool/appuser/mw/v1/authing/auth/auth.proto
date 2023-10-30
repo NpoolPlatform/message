@@ -17,7 +17,7 @@ service Middleware {
 }
 
 message AuthReq {
-    optional string ID          = 10;
+    optional string EntID       = 10;
     optional string AppID       = 20;
     optional string RoleID      = 30;
     optional string UserID      = 40;
@@ -27,7 +27,9 @@ message AuthReq {
 
 message Auth {
     // @inject_tag: sql:"id"
-    string ID           = 5;
+    uint32 ID           = 5;
+    // @inject_tag: sql:"ent_id"
+    string EntID        = 9;
     // @inject_tag: sql:"app_id"
     string AppID        = 10;
     // @inject_tag: sql:"app_name"
@@ -53,7 +55,7 @@ message Auth {
 }
 
 message Conds {
-    basetypes.v1.StringVal ID        = 10;
+    basetypes.v1.StringVal EntID     = 10;
     basetypes.v1.StringVal AppID     = 20;
     basetypes.v1.StringVal RoleID    = 30;
     basetypes.v1.StringVal UserID    = 40;
@@ -89,7 +91,7 @@ message ExistAuthResponse {
 }
 
 message GetAuthRequest {
-    string ID    = 10;
+    string EntID = 10;
 }
 
 message GetAuthResponse {
@@ -97,9 +99,9 @@ message GetAuthResponse {
 }
 
 message GetAuthsRequest {
-    Conds  Conds    = 9;
-    int32  Offset   = 20;
-    int32  Limit    = 30;
+    Conds  Conds  = 9;
+    int32  Offset = 20;
+    int32  Limit  = 30;
 }
 
 message GetAuthsResponse {

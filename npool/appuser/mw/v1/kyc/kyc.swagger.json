@@ -47,7 +47,7 @@
     "v1Conds": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
@@ -116,8 +116,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "AppID": {
           "type": "string",
@@ -221,7 +226,7 @@
     "v1KycReq": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "type": "string"
         },
         "AppID": {
