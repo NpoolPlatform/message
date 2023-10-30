@@ -158,9 +158,14 @@
     "v1AppReq": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64",
+=======
+        "EntID": {
+          "type": "string",
+>>>>>>> 8eb981ff1 (Add auto increment id)
           "title": "Base info"
         },
         "EntID": {
