@@ -154,6 +154,7 @@
       "properties": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d5be11d2e (Add ID to req)
         "ID": {
@@ -165,6 +166,8 @@
 >>>>>>> 8eb981ff1 (Add auto increment id)
 =======
 >>>>>>> d5be11d2e (Add ID to req)
+=======
+>>>>>>> 2283e696c (Add auto increment id)
         "EntID": {
           "type": "string"
         },

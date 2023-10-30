@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // 	protoc-gen-go v1.27.1
 =======
 // 	protoc-gen-go v1.31.0
@@ -13,6 +14,9 @@
 =======
 // 	protoc-gen-go v1.31.0
 >>>>>>> 12ef4547d (Add auto increment id)
+=======
+// 	protoc-gen-go v1.31.0
+>>>>>>> 2283e696c (Add auto increment id)
 // 	protoc        v3.18.1
 // source: npool/notif/mw/v1/template/email/email.proto
 

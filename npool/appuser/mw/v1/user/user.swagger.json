@@ -48,9 +48,12 @@
     "v1Conds": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "ID": {
           "$ref": "#/definitions/v1Uint32Val"
         },
+=======
+>>>>>>> 2283e696c (Add auto increment id)
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -461,10 +464,13 @@
       "properties": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64",
 =======
+=======
+>>>>>>> 2283e696c (Add auto increment id)
         "EntID": {
           "type": "string",
 >>>>>>> 8eb981ff1 (Add auto increment id)
