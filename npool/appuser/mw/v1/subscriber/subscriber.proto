@@ -15,7 +15,7 @@ service Middleware {
 }
 
 message SubscriberReq {
-    optional string ID            = 10;
+    optional string EntID         = 10;
     optional string AppID         = 20;
     optional string EmailAddress  = 30;
     optional bool   Registered    = 40;
@@ -24,7 +24,9 @@ message SubscriberReq {
 message Subscriber {
     // Base info
     // @inject_tag: sql:"id"
-    string  ID           = 10;
+    uint32  ID           = 9;
+    // @inject_tag: sql:"ent_id"
+    string  EntID        = 10;
     // @inject_tag: sql:"app_id"
     string  AppID        = 20;
     // @inject_tag: sql:"app_name"
@@ -40,7 +42,7 @@ message Subscriber {
 }
 
 message Conds {
-    basetypes.v1.StringVal ID            = 10;
+    basetypes.v1.StringVal EntID         = 10;
     basetypes.v1.StringVal AppID         = 20;
     basetypes.v1.StringVal EmailAddress  = 30;
     basetypes.v1.BoolVal   Registered    = 40;
@@ -63,7 +65,7 @@ message UpdateSubscriberResponse {
 }
 
 message GetSubscriberRequest {
-    string ID  = 10;
+    string EntID = 10;
 }
 
 message GetSubscriberResponse {

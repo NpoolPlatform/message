@@ -15,7 +15,7 @@ service Middleware {
 }
 
 message AppSubscribeReq {
-    optional string ID             = 10;
+    optional string EntID          = 10;
     optional string AppID          = 20;
     optional string SubscribeAppID = 30;
 }
@@ -23,7 +23,9 @@ message AppSubscribeReq {
 message AppSubscribe {
     // Base info
     // @inject_tag: sql:"id"
-    string  ID               = 10;
+    uint32  ID               = 9;
+    // @inject_tag: sql:"ent_id"
+    string  EntID            = 10;
     // @inject_tag: sql:"app_id"
     string  AppID            = 20;
     // @inject_tag: sql:"app_name"
@@ -39,7 +41,7 @@ message AppSubscribe {
 }
 
 message Conds {
-    basetypes.v1.StringVal ID             = 10;
+    basetypes.v1.StringVal EntID          = 10;
     basetypes.v1.StringVal AppID          = 20;
     basetypes.v1.StringVal SubscribeAppID = 30;
 }
@@ -53,7 +55,7 @@ message CreateAppSubscribeResponse {
 }
 
 message GetAppSubscribeRequest {
-    string ID  = 10;
+    string EntID = 10;
 }
 
 message GetAppSubscribeResponse {
@@ -68,7 +70,7 @@ message GetAppSubscribesRequest {
 
 message GetAppSubscribesResponse {
     repeated AppSubscribe Infos = 10;
-    uint32              Total = 20;
+    uint32                Total = 20;
 }
 
 message ExistAppSubscribeCondsRequest {

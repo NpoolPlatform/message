@@ -21,7 +21,7 @@ service Middleware {
 }
 
 message OAuthThirdPartyReq {
-    optional string ID           = 10;
+    optional string EntID        = 10;
     optional string AppID        = 20;
     optional string ThirdPartyID = 30;
     optional string ClientID     = 40;
@@ -31,7 +31,9 @@ message OAuthThirdPartyReq {
 
 message OAuthThirdParty {
     // @inject_tag: sql:"id"
-    string ID             = 10;
+    uint32 ID             = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID          = 10;
     // @inject_tag: sql:"app_id"
     string AppID          = 20;
     // @inject_tag: sql:"third_party_id"
@@ -64,7 +66,7 @@ message OAuthThirdParty {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID            = 10;
+    optional basetypes.v1.StringVal      EntID         = 10;
     optional basetypes.v1.StringVal      AppID         = 20;
     optional basetypes.v1.StringVal      ThirdPartyID  = 30;
     optional basetypes.v1.StringSliceVal ThirdPartyIDs = 40;
@@ -96,11 +98,11 @@ message GetOAuthThirdPartiesRequest {
 
 message GetOAuthThirdPartiesResponse {
     repeated OAuthThirdParty Infos = 10;
-    uint32 Total  = 40;
+    uint32                   Total = 20;
 }
 
 message GetOAuthThirdPartyRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetOAuthThirdPartyResponse {
