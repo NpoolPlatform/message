@@ -19,8 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateAppScope_FullMethodName     = "/inspire.gateway.coupon.app.scope.v1.Gateway/CreateAppScope"
-	Gateway_GetAppScopes_FullMethodName       = "/inspire.gateway.coupon.app.scope.v1.Gateway/GetAppScopes"
+	Gateway_GetAppGoodScopes_FullMethodName   = "/inspire.gateway.coupon.app.scope.v1.Gateway/GetAppGoodScopes"
 	Gateway_CreateAppGoodScope_FullMethodName = "/inspire.gateway.coupon.app.scope.v1.Gateway/CreateAppGoodScope"
 	Gateway_DeleteAppGoodScope_FullMethodName = "/inspire.gateway.coupon.app.scope.v1.Gateway/DeleteAppGoodScope"
 )
@@ -29,8 +28,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateAppScope(ctx context.Context, in *CreateAppScopeRequest, opts ...grpc.CallOption) (*CreateAppScopeResponse, error)
-	GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
+	GetAppGoodScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
 	CreateAppGoodScope(ctx context.Context, in *CreateAppGoodScopeRequest, opts ...grpc.CallOption) (*CreateAppGoodScopeResponse, error)
 	DeleteAppGoodScope(ctx context.Context, in *DeleteAppGoodScopeRequest, opts ...grpc.CallOption) (*DeleteAppGoodScopeResponse, error)
 }
@@ -43,18 +41,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) CreateAppScope(ctx context.Context, in *CreateAppScopeRequest, opts ...grpc.CallOption) (*CreateAppScopeResponse, error) {
-	out := new(CreateAppScopeResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateAppScope_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error) {
+func (c *gatewayClient) GetAppGoodScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error) {
 	out := new(GetAppScopesResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetAppScopes_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Gateway_GetAppGoodScopes_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -83,8 +72,7 @@ func (c *gatewayClient) DeleteAppGoodScope(ctx context.Context, in *DeleteAppGoo
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateAppScope(context.Context, *CreateAppScopeRequest) (*CreateAppScopeResponse, error)
-	GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
+	GetAppGoodScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
 	CreateAppGoodScope(context.Context, *CreateAppGoodScopeRequest) (*CreateAppGoodScopeResponse, error)
 	DeleteAppGoodScope(context.Context, *DeleteAppGoodScopeRequest) (*DeleteAppGoodScopeResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -94,11 +82,8 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateAppScope(context.Context, *CreateAppScopeRequest) (*CreateAppScopeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAppScope not implemented")
-}
-func (UnimplementedGatewayServer) GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppScopes not implemented")
+func (UnimplementedGatewayServer) GetAppGoodScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodScopes not implemented")
 }
 func (UnimplementedGatewayServer) CreateAppGoodScope(context.Context, *CreateAppGoodScopeRequest) (*CreateAppGoodScopeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppGoodScope not implemented")
@@ -119,38 +104,20 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_CreateAppScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAppScopeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CreateAppScope(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_CreateAppScope_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateAppScope(ctx, req.(*CreateAppScopeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetAppScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppScopesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetAppScopes(ctx, in)
+		return srv.(GatewayServer).GetAppGoodScopes(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetAppScopes_FullMethodName,
+		FullMethod: Gateway_GetAppGoodScopes_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppScopes(ctx, req.(*GetAppScopesRequest))
+		return srv.(GatewayServer).GetAppGoodScopes(ctx, req.(*GetAppScopesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -199,12 +166,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateAppScope",
-			Handler:    _Gateway_CreateAppScope_Handler,
-		},
-		{
-			MethodName: "GetAppScopes",
-			Handler:    _Gateway_GetAppScopes_Handler,
+			MethodName: "GetAppGoodScopes",
+			Handler:    _Gateway_GetAppGoodScopes_Handler,
 		},
 		{
 			MethodName: "CreateAppGoodScope",
