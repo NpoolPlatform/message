@@ -32,9 +32,9 @@ service Gateway {
 message Scope {
     string     ID              = 10;
     string     AppGoodID       = 20;
-    string     GoodName        = 50;
-    string     ScopeID         = 30;
-    string     GoodID          = 40;
+    string     GoodName        = 30;
+    string     ScopeID         = 40;
+    string     GoodID          = 50;
     string     CouponID        = 60;
     string     CouponName      = 70;
     basetypes.inspire.v1.CouponType  CouponType   = 80;
