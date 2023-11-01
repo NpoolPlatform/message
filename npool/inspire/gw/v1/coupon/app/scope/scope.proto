@@ -9,15 +9,9 @@ import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateAppScope (CreateAppScopeRequest) returns (CreateAppScopeResponse) {
+    rpc GetAppGoodScopes (GetAppScopesRequest) returns (GetAppScopesResponse) {
         option (google.api.http) = {
-            post: "/v1/create/appscope"
-            body: "*"
-        };
-    }
-    rpc GetAppScopes (GetAppScopesRequest) returns (GetAppScopesResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/appscopes"
+            post: "/v1/get/appgoodscopes"
             body: "*"
         };
     }
