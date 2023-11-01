@@ -112,38 +112,6 @@
         ]
       }
     },
-    "/v1/get/appgoodscopes": {
-      "post": {
-        "operationId": "Gateway_GetAppGoodScopes",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppGoodScopesResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppGoodScopesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/appscopes": {
       "post": {
         "operationId": "Gateway_GetAppScopes",
@@ -279,37 +247,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Scope"
-        }
-      }
-    },
-    "v1GetAppGoodScopesRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppGoodScopesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Scope"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
