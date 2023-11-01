@@ -187,13 +187,10 @@
         "AppID": {
           "type": "string"
         },
-        "ScopeID": {
+        "AppGoodID": {
           "type": "string"
         },
-        "CouponScope": {
-          "$ref": "#/definitions/v1CouponScope"
-        },
-        "CouponID": {
+        "ScopeID": {
           "type": "string"
         }
       }

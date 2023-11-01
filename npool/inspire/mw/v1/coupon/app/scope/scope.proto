@@ -17,9 +17,8 @@ service Middleware {
 message ScopeReq {
     optional string ID        = 10;
     optional string AppID     = 20;
-    optional string ScopeID   = 30;
-    optional basetypes.inspire.v1.CouponScope  CouponScope  = 50;
-    optional string CouponID  = 60;
+    optional string AppGoodID = 30;
+    optional string ScopeID   = 40;
 }
 
 message Scope {
