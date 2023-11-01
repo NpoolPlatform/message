@@ -33,12 +33,6 @@ service Gateway {
             body: "*"
         };
     }
-    rpc GetAppGoodScopes (GetAppGoodScopesRequest) returns (GetAppGoodScopesResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/appgoodscopes"
-            body: "*"
-        };
-    }
 }
 
 message Scope {
@@ -91,15 +85,4 @@ message DeleteAppGoodScopeRequest {
 
 message DeleteAppGoodScopeResponse {
     Scope Info       = 10;
-}
-
-message GetAppGoodScopesRequest {
-    string AppID     = 10;
-    int32  Offset    = 20;
-    int32  Limit     = 30;
-}
-
-message GetAppGoodScopesResponse {
-    repeated Scope  Infos = 10;
-    uint32          Total = 20;
 }
