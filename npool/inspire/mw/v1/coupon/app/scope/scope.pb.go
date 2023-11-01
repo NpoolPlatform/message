@@ -398,6 +398,7 @@ type Scope struct {
 	ScopeID string `protobuf:"bytes,30,opt,name=ScopeID,proto3" json:"ScopeID,omitempty" sql:"scope_id"`
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// @inject_tag: sql:"good_id"
 	GoodID string `protobuf:"bytes,31,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id"`
 >>>>>>> f810a58c9 (update appgoodscope)
@@ -466,6 +467,10 @@ type Scope struct {
 	// @inject_tag: sql:"good_id1"
 	GoodID string `protobuf:"bytes,31,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id1"`
 >>>>>>> afb4ce05b (change to goodid)
+=======
+	// @inject_tag: sql:"good_id"
+	GoodID string `protobuf:"bytes,31,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id"`
+>>>>>>> daa29b1ef (change to goodid)
 	// @inject_tag: sql:"app_good_id"
 	AppGoodID string `protobuf:"bytes,40,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty" sql:"app_good_id"`
 	// @inject_tag: sql:"coupon_id"
