@@ -9,9 +9,10 @@ import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateScope     (CreateScopeRequest)    returns (CreateScopeResponse)   {}
-    rpc DeleteScope     (DeleteScopeRequest)    returns (DeleteScopeResponse)   {}
-    rpc GetScopes       (GetScopesRequest)      returns (GetScopesResponse)     {}
+    rpc CreateAppGoodScope     (CreateAppGoodScopeRequest)    returns (CreateAppGoodScopeResponse)   {}
+    rpc DeleteAppGoodScope     (DeleteAppGoodScopeRequest)    returns (DeleteAppGoodScopeResponse)   {}
+    rpc GetAppGoodScopes       (GetAppGoodScopesRequest)      returns (GetAppGoodScopesResponse)     {}
+    rpc ExistScopeConds        (ExistAppGoodScopeCondsRequest)returns (ExistAppGoodScopeCondsResponse)    {}
 }
 
 message ScopeReq {
@@ -26,8 +27,10 @@ message Scope {
     string     ID              = 10;
     // @inject_tag: sql:"app_id"
     string     AppID           = 20;
+    // @inject_tag: sql:"scope_id"
+    string     ScopeID         = 30;
     // @inject_tag: sql:"good_id"
-    string     GoodID          = 30;
+    string     GoodID          = 31;
     // @inject_tag: sql:"app_good_id"
     string     AppGoodID       = 40;
     // @inject_tag: sql:"coupon_id"
@@ -58,38 +61,45 @@ message Conds {
     optional basetypes.v1.Uint32Val CouponScope = 70;
 }
 
-message CreateScopeRequest {
+message CreateAppGoodScopeRequest {
     ScopeReq Info = 10;
 }
 
-message CreateScopeResponse {
+message CreateAppGoodScopeResponse {
     Scope Info = 10;
 }
 
-message GetScopeRequest {
+message GetAppGoodScopeRequest {
     string ID = 10;
 }
 
-message GetScopeResponse {
+message GetAppGoodScopeResponse {
     Scope Info = 10;
 }
 
-message GetScopesRequest {
+message GetAppGoodScopesRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
-message GetScopesResponse {
+message GetAppGoodScopesResponse {
     repeated Scope Infos = 10;
     uint32         Total = 20;
 }
 
-message DeleteScopeRequest {
+message DeleteAppGoodScopeRequest {
     ScopeReq Info = 10;
 }
 
-message DeleteScopeResponse {
+message DeleteAppGoodScopeResponse {
     Scope    Info = 10;
 }
 
+message ExistAppGoodScopeCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistAppGoodScopeCondsResponse {
+    bool Info   = 10;
+}
