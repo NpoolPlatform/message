@@ -311,6 +311,10 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"random\""
         },
+        "ScopeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"scope_id\""
+        },
         "CouponScopeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_scope\""

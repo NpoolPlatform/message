@@ -48,38 +48,6 @@
         ]
       }
     },
-    "/v1/create/appscope": {
-      "post": {
-        "operationId": "Gateway_CreateAppScope",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateAppScopeResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateAppScopeRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/delete/appgoodscope": {
       "post": {
         "operationId": "Gateway_DeleteAppGoodScope",
@@ -112,9 +80,9 @@
         ]
       }
     },
-    "/v1/get/appscopes": {
+    "/v1/get/appgoodscopes": {
       "post": {
-        "operationId": "Gateway_GetAppScopes",
+        "operationId": "Gateway_GetAppGoodScopes",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -208,25 +176,6 @@
       }
     },
     "v1CreateAppGoodScopeResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Scope"
-        }
-      }
-    },
-    "v1CreateAppScopeRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "ScopeID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CreateAppScopeResponse": {
       "type": "object",
       "properties": {
         "Info": {
