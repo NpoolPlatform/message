@@ -536,6 +536,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CouponDenomination": {
 =======
         "CouponCirculation": {
@@ -544,11 +545,19 @@
         "CouponDenomination": {
 >>>>>>> 68862949b (fix wrong attr)
 =======
+=======
+>>>>>>> d90d6004c (fix wrong attr)
         "CouponDenomination": {
 =======
         "CouponCirculation": {
 >>>>>>> 569d52611 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2e441a23e (update scope)
+=======
+=======
+        "CouponDenomination": {
+>>>>>>> ae4432532 (fix wrong attr)
+>>>>>>> d90d6004c (fix wrong attr)
           "type": "string"
         },
         "CreatedAt": {
