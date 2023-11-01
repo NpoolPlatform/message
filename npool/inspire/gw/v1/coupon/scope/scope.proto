@@ -29,20 +29,6 @@ service Gateway {
             body: "*"
         };
     }
-
-    rpc GetAppScopes (GetAppScopesRequest) returns (GetAppScopesResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/scopes"
-            body: "*"
-        };
-    }
-
-    rpc GetNAppScopes (GetNAppScopesRequest) returns (GetNAppScopesResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/n/app/scopes"
-            body: "*"
-        };
-    }
 }
 
 message Scope {
@@ -78,10 +64,8 @@ message DeleteScopeResponse {
 }
 
 message GetScopesRequest {
-    string AppID      = 10;
-    string UserID     = 20;
-    int32  Offset     = 30;
-    int32  Limit      = 40;
+    int32  Offset    = 30;
+    int32  Limit     = 40;
 }
 
 message GetScopesResponse {

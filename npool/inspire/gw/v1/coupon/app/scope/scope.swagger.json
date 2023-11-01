@@ -48,6 +48,41 @@
         ]
       }
     },
+<<<<<<< HEAD
+=======
+    "/v1/create/appscope": {
+      "post": {
+        "operationId": "Gateway_CreateAppScope",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppScopeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppScopeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+>>>>>>> 569d52611 (update scope)
     "/v1/delete/appgoodscope": {
       "post": {
         "operationId": "Gateway_DeleteAppGoodScope",
@@ -111,6 +146,41 @@
           "Gateway"
         ]
       }
+<<<<<<< HEAD
+=======
+    },
+    "/v1/get/appscopes": {
+      "post": {
+        "operationId": "Gateway_GetAppScopes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppScopesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppScopesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+>>>>>>> 569d52611 (update scope)
     }
   },
   "definitions": {
@@ -164,10 +234,14 @@
     "v1CreateAppGoodScopeRequest": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "AppID": {
           "type": "string"
         },
         "CouponID": {
+=======
+        "ScopeID": {
+>>>>>>> 569d52611 (update scope)
           "type": "string"
         },
         "AppGoodID": {
@@ -186,14 +260,39 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+    "v1CreateAppScopeRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "ScopeID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateAppScopeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Scope"
+        }
+      }
+    },
+>>>>>>> 569d52611 (update scope)
     "v1DeleteAppGoodScopeRequest": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
+<<<<<<< HEAD
         },
         "AppID": {
           "type": "string"
+=======
+>>>>>>> 569d52611 (update scope)
         }
       }
     },
@@ -236,6 +335,40 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+    "v1GetAppScopesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppScopesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Scope"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+>>>>>>> 569d52611 (update scope)
     "v1Scope": {
       "type": "object",
       "properties": {
@@ -245,9 +378,12 @@
         "GoodID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "AppID": {
           "type": "string"
         },
+=======
+>>>>>>> 569d52611 (update scope)
         "AppGoodID": {
           "type": "string"
         },
@@ -266,7 +402,11 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+<<<<<<< HEAD
         "CouponDenomination": {
+=======
+        "CouponCirculation": {
+>>>>>>> 569d52611 (update scope)
           "type": "string"
         },
         "CreatedAt": {

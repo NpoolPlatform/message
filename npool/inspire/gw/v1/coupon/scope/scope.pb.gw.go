@@ -139,6 +139,7 @@ func local_request_Gateway_GetScopes_0(ctx context.Context, marshaler runtime.Ma
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 1fb4844cc (update scope)
@@ -231,6 +232,8 @@ func local_request_Gateway_GetNAppScopes_0(ctx context.Context, marshaler runtim
 }
 
 >>>>>>> 960f133ce (update scope pb)
+=======
+>>>>>>> 569d52611 (update scope)
 // RegisterGatewayHandlerServer registers the http handlers for service Gateway to "mux".
 // UnaryRPC     :call GatewayServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
@@ -312,6 +315,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 1fb4844cc (update scope)
@@ -382,6 +386,8 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 	})
 
 >>>>>>> 960f133ce (update scope pb)
+=======
+>>>>>>> 569d52611 (update scope)
 	return nil
 }
 
@@ -489,6 +495,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 1fb4844cc (update scope)
@@ -553,6 +560,8 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 	})
 
 >>>>>>> 960f133ce (update scope pb)
+=======
+>>>>>>> 569d52611 (update scope)
 	return nil
 }
 
@@ -562,6 +571,7 @@ var (
 	pattern_Gateway_DeleteScope_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "scope"}, ""))
 
 	pattern_Gateway_GetScopes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "scopes"}, ""))
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -593,6 +603,8 @@ var (
 
 	pattern_Gateway_GetNAppScopes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "n", "app", "scopes"}, ""))
 >>>>>>> 960f133ce (update scope pb)
+=======
+>>>>>>> 569d52611 (update scope)
 )
 
 var (
@@ -601,6 +613,7 @@ var (
 	forward_Gateway_DeleteScope_0 = runtime.ForwardResponseMessage
 
 	forward_Gateway_GetScopes_0 = runtime.ForwardResponseMessage
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -632,4 +645,6 @@ var (
 
 	forward_Gateway_GetNAppScopes_0 = runtime.ForwardResponseMessage
 >>>>>>> 960f133ce (update scope pb)
+=======
+>>>>>>> 569d52611 (update scope)
 )
