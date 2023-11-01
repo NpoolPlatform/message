@@ -709,6 +709,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CouponDenomination": {
 =======
         "CouponCirculation": {
@@ -733,6 +734,9 @@
 =======
         "CouponCirculation": {
 >>>>>>> b20bec5db (update scope)
+=======
+        "CouponDenomination": {
+>>>>>>> 2078ff30e (fix wrong attr)
           "type": "string"
         },
         "CreatedAt": {
