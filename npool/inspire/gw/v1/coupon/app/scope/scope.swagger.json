@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/gw/v1/coupon/scope/scope.proto",
+    "title": "npool/inspire/gw/v1/coupon/app/scope/scope.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/scope": {
+    "/v1/create/appgoodscope": {
       "post": {
-        "operationId": "Gateway_CreateScope",
+        "operationId": "Gateway_CreateAppGoodScope",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateScopeResponse"
+              "$ref": "#/definitions/v1CreateAppGoodScopeResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateScopeRequest"
+              "$ref": "#/definitions/v1CreateAppGoodScopeRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/delete/scope": {
+    "/v1/create/appscope": {
       "post": {
-        "operationId": "Gateway_DeleteScope",
+        "operationId": "Gateway_CreateAppScope",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteScopeResponse"
+              "$ref": "#/definitions/v1CreateAppScopeResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteScopeRequest"
+              "$ref": "#/definitions/v1CreateAppScopeRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/scopes": {
+    "/v1/delete/appgoodscope": {
       "post": {
-        "operationId": "Gateway_GetScopes",
+        "operationId": "Gateway_DeleteAppGoodScope",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetScopesResponse"
+              "$ref": "#/definitions/v1DeleteAppGoodScopeResponse"
             }
           },
           "default": {
@@ -103,7 +103,71 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetScopesRequest"
+              "$ref": "#/definitions/v1DeleteAppGoodScopeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/appgoodscopes": {
+      "post": {
+        "operationId": "Gateway_GetAppGoodScopes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodScopesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppGoodScopesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/appscopes": {
+      "post": {
+        "operationId": "Gateway_GetAppScopes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppScopesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppScopesRequest"
             }
           }
         ],
@@ -161,13 +225,13 @@
       ],
       "default": "DefaultCouponType"
     },
-    "v1CreateScopeRequest": {
+    "v1CreateAppGoodScopeRequest": {
       "type": "object",
       "properties": {
-        "GoodID": {
+        "ScopeID": {
           "type": "string"
         },
-        "CouponID": {
+        "AppGoodID": {
           "type": "string"
         },
         "CouponScope": {
@@ -175,7 +239,7 @@
         }
       }
     },
-    "v1CreateScopeResponse": {
+    "v1CreateAppGoodScopeResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -183,7 +247,26 @@
         }
       }
     },
-    "v1DeleteScopeRequest": {
+    "v1CreateAppScopeRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "ScopeID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateAppScopeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Scope"
+        }
+      }
+    },
+    "v1DeleteAppGoodScopeRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -191,7 +274,7 @@
         }
       }
     },
-    "v1DeleteScopeResponse": {
+    "v1DeleteAppGoodScopeResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -199,9 +282,12 @@
         }
       }
     },
-    "v1GetScopesRequest": {
+    "v1GetAppGoodScopesRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -212,7 +298,38 @@
         }
       }
     },
-    "v1GetScopesResponse": {
+    "v1GetAppGoodScopesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Scope"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppScopesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppScopesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -236,7 +353,10 @@
         "GoodID": {
           "type": "string"
         },
-        "GoodTitle": {
+        "AppGoodID": {
+          "type": "string"
+        },
+        "GoodName": {
           "type": "string"
         },
         "CouponID": {
@@ -252,9 +372,6 @@
           "$ref": "#/definitions/v1CouponScope"
         },
         "CouponCirculation": {
-          "type": "string"
-        },
-        "CouponDenomination": {
           "type": "string"
         },
         "CreatedAt": {
