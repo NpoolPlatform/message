@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppScopesResponse"
+              "$ref": "#/definitions/v1GetAppGoodScopesResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppScopesRequest"
+              "$ref": "#/definitions/v1GetAppGoodScopesRequest"
             }
           }
         ],
@@ -164,14 +164,14 @@
     "v1CreateAppGoodScopeRequest": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "type": "string"
+        },
         "ScopeID": {
           "type": "string"
         },
         "AppGoodID": {
           "type": "string"
-        },
-        "CouponScope": {
-          "$ref": "#/definitions/v1CouponScope"
         }
       }
     },
@@ -199,7 +199,7 @@
         }
       }
     },
-    "v1GetAppScopesRequest": {
+    "v1GetAppGoodScopesRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -215,7 +215,7 @@
         }
       }
     },
-    "v1GetAppScopesResponse": {
+    "v1GetAppGoodScopesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -236,13 +236,16 @@
         "ID": {
           "type": "string"
         },
-        "GoodID": {
-          "type": "string"
-        },
         "AppGoodID": {
           "type": "string"
         },
         "GoodName": {
+          "type": "string"
+        },
+        "ScopeID": {
+          "type": "string"
+        },
+        "GoodID": {
           "type": "string"
         },
         "CouponID": {
