@@ -19,18 +19,20 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateScope_FullMethodName = "/inspire.middleware.coupon.app.scope.v1.Middleware/CreateScope"
-	Middleware_DeleteScope_FullMethodName = "/inspire.middleware.coupon.app.scope.v1.Middleware/DeleteScope"
-	Middleware_GetScopes_FullMethodName   = "/inspire.middleware.coupon.app.scope.v1.Middleware/GetScopes"
+	Middleware_CreateAppGoodScope_FullMethodName = "/inspire.middleware.coupon.app.scope.v1.Middleware/CreateAppGoodScope"
+	Middleware_DeleteAppGoodScope_FullMethodName = "/inspire.middleware.coupon.app.scope.v1.Middleware/DeleteAppGoodScope"
+	Middleware_GetAppGoodScopes_FullMethodName   = "/inspire.middleware.coupon.app.scope.v1.Middleware/GetAppGoodScopes"
+	Middleware_ExistScopeConds_FullMethodName    = "/inspire.middleware.coupon.app.scope.v1.Middleware/ExistScopeConds"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	CreateScope(ctx context.Context, in *CreateScopeRequest, opts ...grpc.CallOption) (*CreateScopeResponse, error)
-	DeleteScope(ctx context.Context, in *DeleteScopeRequest, opts ...grpc.CallOption) (*DeleteScopeResponse, error)
-	GetScopes(ctx context.Context, in *GetScopesRequest, opts ...grpc.CallOption) (*GetScopesResponse, error)
+	CreateAppGoodScope(ctx context.Context, in *CreateAppGoodScopeRequest, opts ...grpc.CallOption) (*CreateAppGoodScopeResponse, error)
+	DeleteAppGoodScope(ctx context.Context, in *DeleteAppGoodScopeRequest, opts ...grpc.CallOption) (*DeleteAppGoodScopeResponse, error)
+	GetAppGoodScopes(ctx context.Context, in *GetAppGoodScopesRequest, opts ...grpc.CallOption) (*GetAppGoodScopesResponse, error)
+	ExistScopeConds(ctx context.Context, in *ExistAppGoodScopeCondsRequest, opts ...grpc.CallOption) (*ExistAppGoodScopeCondsResponse, error)
 }
 
 type middlewareClient struct {
@@ -41,27 +43,36 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) CreateScope(ctx context.Context, in *CreateScopeRequest, opts ...grpc.CallOption) (*CreateScopeResponse, error) {
-	out := new(CreateScopeResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateScope_FullMethodName, in, out, opts...)
+func (c *middlewareClient) CreateAppGoodScope(ctx context.Context, in *CreateAppGoodScopeRequest, opts ...grpc.CallOption) (*CreateAppGoodScopeResponse, error) {
+	out := new(CreateAppGoodScopeResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateAppGoodScope_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) DeleteScope(ctx context.Context, in *DeleteScopeRequest, opts ...grpc.CallOption) (*DeleteScopeResponse, error) {
-	out := new(DeleteScopeResponse)
-	err := c.cc.Invoke(ctx, Middleware_DeleteScope_FullMethodName, in, out, opts...)
+func (c *middlewareClient) DeleteAppGoodScope(ctx context.Context, in *DeleteAppGoodScopeRequest, opts ...grpc.CallOption) (*DeleteAppGoodScopeResponse, error) {
+	out := new(DeleteAppGoodScopeResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteAppGoodScope_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) GetScopes(ctx context.Context, in *GetScopesRequest, opts ...grpc.CallOption) (*GetScopesResponse, error) {
-	out := new(GetScopesResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetScopes_FullMethodName, in, out, opts...)
+func (c *middlewareClient) GetAppGoodScopes(ctx context.Context, in *GetAppGoodScopesRequest, opts ...grpc.CallOption) (*GetAppGoodScopesResponse, error) {
+	out := new(GetAppGoodScopesResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetAppGoodScopes_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistScopeConds(ctx context.Context, in *ExistAppGoodScopeCondsRequest, opts ...grpc.CallOption) (*ExistAppGoodScopeCondsResponse, error) {
+	out := new(ExistAppGoodScopeCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistScopeConds_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,9 +83,10 @@ func (c *middlewareClient) GetScopes(ctx context.Context, in *GetScopesRequest, 
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	CreateScope(context.Context, *CreateScopeRequest) (*CreateScopeResponse, error)
-	DeleteScope(context.Context, *DeleteScopeRequest) (*DeleteScopeResponse, error)
-	GetScopes(context.Context, *GetScopesRequest) (*GetScopesResponse, error)
+	CreateAppGoodScope(context.Context, *CreateAppGoodScopeRequest) (*CreateAppGoodScopeResponse, error)
+	DeleteAppGoodScope(context.Context, *DeleteAppGoodScopeRequest) (*DeleteAppGoodScopeResponse, error)
+	GetAppGoodScopes(context.Context, *GetAppGoodScopesRequest) (*GetAppGoodScopesResponse, error)
+	ExistScopeConds(context.Context, *ExistAppGoodScopeCondsRequest) (*ExistAppGoodScopeCondsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -82,14 +94,17 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateScope(context.Context, *CreateScopeRequest) (*CreateScopeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateScope not implemented")
+func (UnimplementedMiddlewareServer) CreateAppGoodScope(context.Context, *CreateAppGoodScopeRequest) (*CreateAppGoodScopeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppGoodScope not implemented")
 }
-func (UnimplementedMiddlewareServer) DeleteScope(context.Context, *DeleteScopeRequest) (*DeleteScopeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteScope not implemented")
+func (UnimplementedMiddlewareServer) DeleteAppGoodScope(context.Context, *DeleteAppGoodScopeRequest) (*DeleteAppGoodScopeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppGoodScope not implemented")
 }
-func (UnimplementedMiddlewareServer) GetScopes(context.Context, *GetScopesRequest) (*GetScopesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetScopes not implemented")
+func (UnimplementedMiddlewareServer) GetAppGoodScopes(context.Context, *GetAppGoodScopesRequest) (*GetAppGoodScopesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodScopes not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistScopeConds(context.Context, *ExistAppGoodScopeCondsRequest) (*ExistAppGoodScopeCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistScopeConds not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -104,56 +119,74 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_CreateScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateScopeRequest)
+func _Middleware_CreateAppGoodScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppGoodScopeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateScope(ctx, in)
+		return srv.(MiddlewareServer).CreateAppGoodScope(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_CreateScope_FullMethodName,
+		FullMethod: Middleware_CreateAppGoodScope_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateScope(ctx, req.(*CreateScopeRequest))
+		return srv.(MiddlewareServer).CreateAppGoodScope(ctx, req.(*CreateAppGoodScopeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_DeleteScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteScopeRequest)
+func _Middleware_DeleteAppGoodScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppGoodScopeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).DeleteScope(ctx, in)
+		return srv.(MiddlewareServer).DeleteAppGoodScope(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_DeleteScope_FullMethodName,
+		FullMethod: Middleware_DeleteAppGoodScope_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteScope(ctx, req.(*DeleteScopeRequest))
+		return srv.(MiddlewareServer).DeleteAppGoodScope(ctx, req.(*DeleteAppGoodScopeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetScopesRequest)
+func _Middleware_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppGoodScopesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetScopes(ctx, in)
+		return srv.(MiddlewareServer).GetAppGoodScopes(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetScopes_FullMethodName,
+		FullMethod: Middleware_GetAppGoodScopes_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetScopes(ctx, req.(*GetScopesRequest))
+		return srv.(MiddlewareServer).GetAppGoodScopes(ctx, req.(*GetAppGoodScopesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistScopeConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistAppGoodScopeCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistScopeConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistScopeConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistScopeConds(ctx, req.(*ExistAppGoodScopeCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -166,16 +199,20 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateScope",
-			Handler:    _Middleware_CreateScope_Handler,
+			MethodName: "CreateAppGoodScope",
+			Handler:    _Middleware_CreateAppGoodScope_Handler,
 		},
 		{
-			MethodName: "DeleteScope",
-			Handler:    _Middleware_DeleteScope_Handler,
+			MethodName: "DeleteAppGoodScope",
+			Handler:    _Middleware_DeleteAppGoodScope_Handler,
 		},
 		{
-			MethodName: "GetScopes",
-			Handler:    _Middleware_GetScopes_Handler,
+			MethodName: "GetAppGoodScopes",
+			Handler:    _Middleware_GetAppGoodScopes_Handler,
+		},
+		{
+			MethodName: "ExistScopeConds",
+			Handler:    _Middleware_ExistScopeConds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
