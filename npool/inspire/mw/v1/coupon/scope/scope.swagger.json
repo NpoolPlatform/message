@@ -51,6 +51,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -64,6 +65,9 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "AppGoodID": {
+=======
+        "GoodID": {
+>>>>>>> 789287843 (update scope)
           "$ref": "#/definitions/v1StringVal"
         },
         "CouponID": {
@@ -172,6 +176,7 @@
           "title": "@inject_tag: sql:\"id\""
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "GoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
@@ -199,6 +204,11 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_id\""
 >>>>>>> 517e40d6c (update scope)
+=======
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+>>>>>>> 789287843 (update scope)
         },
         "CouponID": {
           "type": "string",
@@ -233,6 +243,7 @@
         "CouponCirculation": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_circulation\""
+<<<<<<< HEAD
 =======
         "CouponTypeStr": {
           "type": "string",
@@ -256,6 +267,8 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
 >>>>>>> 79af4427f (fix wrong word)
+=======
+>>>>>>> 789287843 (update scope)
         },
         "CreatedAt": {
           "type": "integer",
@@ -276,6 +289,7 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "GoodID": {
 =======
         "AppID": {
@@ -283,6 +297,9 @@
         },
         "AppGoodID": {
 >>>>>>> 517e40d6c (update scope)
+=======
+        "GoodID": {
+>>>>>>> 789287843 (update scope)
           "type": "string"
         },
         "CouponScope": {

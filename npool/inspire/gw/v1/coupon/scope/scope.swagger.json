@@ -85,6 +85,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> f83005c76 (update scope)
@@ -168,6 +169,8 @@
       }
     },
 >>>>>>> 36e1391e1 (update scope pb)
+=======
+>>>>>>> 789287843 (update scope)
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -254,6 +257,7 @@
       "properties": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "GoodID": {
 =======
         "AppID": {
@@ -261,17 +265,23 @@
 =======
         "TargetAppID": {
 >>>>>>> f83005c76 (update scope)
+=======
+        "GoodID": {
+>>>>>>> 789287843 (update scope)
           "type": "string"
         },
         "CouponID": {
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         "AppGoodID": {
           "type": "string"
         },
 >>>>>>> f213f6ed2 (add coupon scope in gw)
+=======
+>>>>>>> 789287843 (update scope)
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         }
@@ -291,11 +301,14 @@
         "ID": {
           "type": "string"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         },
         "TargetAppID": {
           "type": "string"
 >>>>>>> f213f6ed2 (add coupon scope in gw)
+=======
+>>>>>>> 789287843 (update scope)
         }
       }
     },
@@ -307,6 +320,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -408,6 +422,11 @@
           "type": "string"
         },
 >>>>>>> 36e1391e1 (update scope pb)
+=======
+    "v1GetScopesRequest": {
+      "type": "object",
+      "properties": {
+>>>>>>> 789287843 (update scope)
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -440,6 +459,7 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "GoodID": {
           "type": "string"
         },
@@ -453,6 +473,12 @@
         },
         "GoodName": {
 >>>>>>> f213f6ed2 (add coupon scope in gw)
+=======
+        "GoodID": {
+          "type": "string"
+        },
+        "GoodTitle": {
+>>>>>>> 789287843 (update scope)
           "type": "string"
         },
         "CouponID": {
@@ -472,6 +498,7 @@
         "CouponCirculation": {
           "type": "string"
         },
+<<<<<<< HEAD
 =======
         "CouponTypeStr": {
           "type": "string"
@@ -485,6 +512,8 @@
           "$ref": "#/definitions/v1CouponScope"
         },
 >>>>>>> f213f6ed2 (add coupon scope in gw)
+=======
+>>>>>>> 789287843 (update scope)
         "CouponDenomination": {
           "type": "string"
         },
