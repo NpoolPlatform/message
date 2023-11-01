@@ -258,8 +258,11 @@ func local_request_Gateway_DeleteAppGoodScope_0(ctx context.Context, marshaler r
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> 6712e122f (update scope)
 =======
 func request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppGoodScopesRequest
@@ -301,7 +304,12 @@ func local_request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler run
 >>>>>>> 60afcdcd5 (update scope)
 =======
 >>>>>>> 569d52611 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2e441a23e (update scope)
+=======
+=======
+>>>>>>> 909af8f64 (update scope)
+>>>>>>> 6712e122f (update scope)
 // RegisterGatewayHandlerServer registers the http handlers for service Gateway to "mux".
 // UnaryRPC     :call GatewayServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
@@ -463,8 +471,11 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> 6712e122f (update scope)
 =======
 	mux.Handle("POST", pattern_Gateway_GetAppGoodScopes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
@@ -495,7 +506,12 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 >>>>>>> 60afcdcd5 (update scope)
 =======
 >>>>>>> 569d52611 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2e441a23e (update scope)
+=======
+=======
+>>>>>>> 909af8f64 (update scope)
+>>>>>>> 6712e122f (update scope)
 	return nil
 }
 
@@ -673,8 +689,11 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> 6712e122f (update scope)
 =======
 	mux.Handle("POST", pattern_Gateway_GetAppGoodScopes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
@@ -702,7 +721,12 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 >>>>>>> 60afcdcd5 (update scope)
 =======
 >>>>>>> 569d52611 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2e441a23e (update scope)
+=======
+=======
+>>>>>>> 909af8f64 (update scope)
+>>>>>>> 6712e122f (update scope)
 	return nil
 }
 
@@ -732,8 +756,11 @@ var (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> 6712e122f (update scope)
 )
 
 var (
@@ -741,6 +768,7 @@ var (
 =======
 
 	pattern_Gateway_GetAppGoodScopes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "appgoodscopes"}, ""))
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> 60afcdcd5 (update scope)
@@ -756,6 +784,10 @@ var (
 	forward_Gateway_GetAppGoodScopes_0 = runtime.ForwardResponseMessage
 >>>>>>> ce3f1742c (delete createappscope)
 =======
+=======
+=======
+>>>>>>> 909af8f64 (update scope)
+>>>>>>> 6712e122f (update scope)
 )
 
 var (
@@ -771,6 +803,7 @@ var (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 	forward_Gateway_GetAppGoodScopes_0 = runtime.ForwardResponseMessage
@@ -779,8 +812,15 @@ var (
 >>>>>>> 60afcdcd5 (update scope)
 =======
 =======
+>>>>>>> 6712e122f (update scope)
+=======
 
 	forward_Gateway_GetAppGoodScopes_0 = runtime.ForwardResponseMessage
 >>>>>>> 569d52611 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2e441a23e (update scope)
+=======
+=======
+>>>>>>> 909af8f64 (update scope)
+>>>>>>> 6712e122f (update scope)
 )

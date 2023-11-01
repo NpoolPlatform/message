@@ -127,6 +127,9 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6712e122f (update scope)
     "/v1/get/appgoodscopes": {
       "post": {
         "operationId": "Gateway_GetAppGoodScopes",
@@ -163,6 +166,7 @@
 =======
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 60afcdcd5 (update scope)
     "/v1/get/appscopes": {
@@ -172,6 +176,10 @@
       "post": {
         "operationId": "Gateway_GetAppGoodScopes",
 =======
+=======
+=======
+>>>>>>> 909af8f64 (update scope)
+>>>>>>> 6712e122f (update scope)
     "/v1/get/appscopes": {
       "post": {
         "operationId": "Gateway_GetAppScopes",
@@ -384,6 +392,9 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6712e122f (update scope)
     "v1GetAppGoodScopesRequest": {
       "type": "object",
       "properties": {
@@ -418,8 +429,13 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 60afcdcd5 (update scope)
+=======
+=======
+>>>>>>> 909af8f64 (update scope)
+>>>>>>> 6712e122f (update scope)
     "v1GetAppScopesRequest": {
 =======
     "v1GetAppGoodScopesRequest": {
