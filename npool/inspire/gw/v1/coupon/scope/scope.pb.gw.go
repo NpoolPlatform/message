@@ -151,6 +151,7 @@ func local_request_Gateway_GetScopes_0(ctx context.Context, marshaler runtime.Ma
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e8948f8dc (delete get app scopes)
 =======
@@ -392,6 +393,8 @@ func local_request_Gateway_GetNAppScopes_0(ctx context.Context, marshaler runtim
 >>>>>>> f648d16ad (update scope)
 =======
 >>>>>>> 56bff6edf (update scope pb)
+=======
+>>>>>>> b20bec5db (update scope)
 // RegisterGatewayHandlerServer registers the http handlers for service Gateway to "mux".
 // UnaryRPC     :call GatewayServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
@@ -467,6 +470,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 	})
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -679,6 +683,8 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 >>>>>>> f648d16ad (update scope)
 =======
 >>>>>>> 56bff6edf (update scope pb)
+=======
+>>>>>>> b20bec5db (update scope)
 	return nil
 }
 
@@ -780,6 +786,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 	})
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -983,6 +990,8 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 >>>>>>> f648d16ad (update scope)
 =======
 >>>>>>> 56bff6edf (update scope pb)
+=======
+>>>>>>> b20bec5db (update scope)
 	return nil
 }
 
@@ -1010,6 +1019,7 @@ var (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 	pattern_Gateway_GetAppScopes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "app", "scopes"}, ""))
@@ -1116,6 +1126,8 @@ var (
 
 	pattern_Gateway_GetNAppScopes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "n", "app", "scopes"}, ""))
 >>>>>>> 56bff6edf (update scope pb)
+=======
+>>>>>>> b20bec5db (update scope)
 )
 
 var (
@@ -1142,6 +1154,7 @@ var (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 	forward_Gateway_GetAppScopes_0 = runtime.ForwardResponseMessage
@@ -1248,4 +1261,6 @@ var (
 
 	forward_Gateway_GetNAppScopes_0 = runtime.ForwardResponseMessage
 >>>>>>> 56bff6edf (update scope pb)
+=======
+>>>>>>> b20bec5db (update scope)
 )

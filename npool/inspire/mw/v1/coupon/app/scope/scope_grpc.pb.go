@@ -25,6 +25,7 @@ const (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -103,12 +104,18 @@ const (
 =======
 >>>>>>> c30c37510 (change to verifycouponscopes)
 >>>>>>> fbc5cffab (change to verifycouponscopes)
+=======
+	Middleware_CreateScope_FullMethodName = "/inspire.middleware.coupon.app.scope.v1.Middleware/CreateScope"
+	Middleware_DeleteScope_FullMethodName = "/inspire.middleware.coupon.app.scope.v1.Middleware/DeleteScope"
+	Middleware_GetScopes_FullMethodName   = "/inspire.middleware.coupon.app.scope.v1.Middleware/GetScopes"
+>>>>>>> b20bec5db (update scope)
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -184,6 +191,11 @@ type MiddlewareClient interface {
 	VerifyCouponScopes(ctx context.Context, in *VerifyCouponScopesRequest, opts ...grpc.CallOption) (*VerifyCouponScopesResponse, error)
 >>>>>>> c30c37510 (change to verifycouponscopes)
 >>>>>>> fbc5cffab (change to verifycouponscopes)
+=======
+	CreateScope(ctx context.Context, in *CreateScopeRequest, opts ...grpc.CallOption) (*CreateScopeResponse, error)
+	DeleteScope(ctx context.Context, in *DeleteScopeRequest, opts ...grpc.CallOption) (*DeleteScopeResponse, error)
+	GetScopes(ctx context.Context, in *GetScopesRequest, opts ...grpc.CallOption) (*GetScopesResponse, error)
+>>>>>>> b20bec5db (update scope)
 }
 
 type middlewareClient struct {
@@ -194,6 +206,7 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -227,12 +240,18 @@ func (c *middlewareClient) CreateAppGoodScope(ctx context.Context, in *CreateApp
 	err := c.cc.Invoke(ctx, Middleware_CreateAppGoodScope_FullMethodName, in, out, opts...)
 >>>>>>> d834bcbdf (update appgoodscope)
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+func (c *middlewareClient) CreateScope(ctx context.Context, in *CreateScopeRequest, opts ...grpc.CallOption) (*CreateScopeResponse, error) {
+	out := new(CreateScopeResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateScope_FullMethodName, in, out, opts...)
+>>>>>>> b20bec5db (update scope)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -266,12 +285,18 @@ func (c *middlewareClient) DeleteAppGoodScope(ctx context.Context, in *DeleteApp
 	err := c.cc.Invoke(ctx, Middleware_DeleteAppGoodScope_FullMethodName, in, out, opts...)
 >>>>>>> d834bcbdf (update appgoodscope)
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+func (c *middlewareClient) DeleteScope(ctx context.Context, in *DeleteScopeRequest, opts ...grpc.CallOption) (*DeleteScopeResponse, error) {
+	out := new(DeleteScopeResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteScope_FullMethodName, in, out, opts...)
+>>>>>>> b20bec5db (update scope)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -399,6 +424,11 @@ func (c *middlewareClient) VerifyCouponScopes(ctx context.Context, in *VerifyCou
 	err := c.cc.Invoke(ctx, Middleware_VerifyCouponScopes_FullMethodName, in, out, opts...)
 >>>>>>> c30c37510 (change to verifycouponscopes)
 >>>>>>> fbc5cffab (change to verifycouponscopes)
+=======
+func (c *middlewareClient) GetScopes(ctx context.Context, in *GetScopesRequest, opts ...grpc.CallOption) (*GetScopesResponse, error) {
+	out := new(GetScopesResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetScopes_FullMethodName, in, out, opts...)
+>>>>>>> b20bec5db (update scope)
 	if err != nil {
 		return nil, err
 	}
@@ -409,6 +439,7 @@ func (c *middlewareClient) VerifyCouponScopes(ctx context.Context, in *VerifyCou
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -484,6 +515,11 @@ type MiddlewareServer interface {
 	VerifyCouponScopes(context.Context, *VerifyCouponScopesRequest) (*VerifyCouponScopesResponse, error)
 >>>>>>> c30c37510 (change to verifycouponscopes)
 >>>>>>> fbc5cffab (change to verifycouponscopes)
+=======
+	CreateScope(context.Context, *CreateScopeRequest) (*CreateScopeResponse, error)
+	DeleteScope(context.Context, *DeleteScopeRequest) (*DeleteScopeResponse, error)
+	GetScopes(context.Context, *GetScopesRequest) (*GetScopesResponse, error)
+>>>>>>> b20bec5db (update scope)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -491,6 +527,7 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -619,6 +656,16 @@ func (UnimplementedMiddlewareServer) VerifyCouponScopes(context.Context, *Verify
 	return nil, status.Errorf(codes.Unimplemented, "method VerifyCouponScopes not implemented")
 >>>>>>> c30c37510 (change to verifycouponscopes)
 >>>>>>> fbc5cffab (change to verifycouponscopes)
+=======
+func (UnimplementedMiddlewareServer) CreateScope(context.Context, *CreateScopeRequest) (*CreateScopeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateScope not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteScope(context.Context, *DeleteScopeRequest) (*DeleteScopeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteScope not implemented")
+}
+func (UnimplementedMiddlewareServer) GetScopes(context.Context, *GetScopesRequest) (*GetScopesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetScopes not implemented")
+>>>>>>> b20bec5db (update scope)
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -633,6 +680,7 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -662,10 +710,15 @@ func _Middleware_CreateAppGoodScope_Handler(srv interface{}, ctx context.Context
 	in := new(CreateAppGoodScopeRequest)
 >>>>>>> d834bcbdf (update appgoodscope)
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+func _Middleware_CreateScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateScopeRequest)
+>>>>>>> b20bec5db (update scope)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -723,10 +776,21 @@ func _Middleware_CreateAppGoodScope_Handler(srv interface{}, ctx context.Context
 		return srv.(MiddlewareServer).CreateAppGoodScope(ctx, req.(*CreateAppGoodScopeRequest))
 >>>>>>> d834bcbdf (update appgoodscope)
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+		return srv.(MiddlewareServer).CreateScope(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateScope_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateScope(ctx, req.(*CreateScopeRequest))
+>>>>>>> b20bec5db (update scope)
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -756,10 +820,15 @@ func _Middleware_DeleteAppGoodScope_Handler(srv interface{}, ctx context.Context
 	in := new(DeleteAppGoodScopeRequest)
 >>>>>>> d834bcbdf (update appgoodscope)
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+func _Middleware_DeleteScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteScopeRequest)
+>>>>>>> b20bec5db (update scope)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -817,10 +886,21 @@ func _Middleware_DeleteAppGoodScope_Handler(srv interface{}, ctx context.Context
 		return srv.(MiddlewareServer).DeleteAppGoodScope(ctx, req.(*DeleteAppGoodScopeRequest))
 >>>>>>> d834bcbdf (update appgoodscope)
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+		return srv.(MiddlewareServer).DeleteScope(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteScope_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteScope(ctx, req.(*DeleteScopeRequest))
+>>>>>>> b20bec5db (update scope)
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -850,10 +930,15 @@ func _Middleware_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, 
 	in := new(GetAppGoodScopesRequest)
 >>>>>>> d834bcbdf (update appgoodscope)
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+func _Middleware_GetScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetScopesRequest)
+>>>>>>> b20bec5db (update scope)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1105,6 +1190,16 @@ func _Middleware_ExistAppGoodScopeConds_Handler(srv interface{}, ctx context.Con
 		return srv.(MiddlewareServer).VerifyCouponScopes(ctx, req.(*VerifyCouponScopesRequest))
 >>>>>>> c30c37510 (change to verifycouponscopes)
 >>>>>>> fbc5cffab (change to verifycouponscopes)
+=======
+		return srv.(MiddlewareServer).GetScopes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetScopes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetScopes(ctx, req.(*GetScopesRequest))
+>>>>>>> b20bec5db (update scope)
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1117,6 +1212,7 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1256,6 +1352,18 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_VerifyCouponScopes_Handler,
 >>>>>>> c30c37510 (change to verifycouponscopes)
 >>>>>>> fbc5cffab (change to verifycouponscopes)
+=======
+			MethodName: "CreateScope",
+			Handler:    _Middleware_CreateScope_Handler,
+		},
+		{
+			MethodName: "DeleteScope",
+			Handler:    _Middleware_DeleteScope_Handler,
+		},
+		{
+			MethodName: "GetScopes",
+			Handler:    _Middleware_GetScopes_Handler,
+>>>>>>> b20bec5db (update scope)
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

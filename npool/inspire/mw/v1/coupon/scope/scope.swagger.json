@@ -56,12 +56,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
 >>>>>>> 809aa181a (update scope)
 =======
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> b20bec5db (update scope)
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -310,6 +313,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
@@ -414,6 +418,11 @@
           "$ref": "#/definitions/v1CouponType"
 =======
 >>>>>>> 620df297b (update scope)
+=======
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+>>>>>>> b20bec5db (update scope)
         },
         "CouponID": {
           "type": "string",
@@ -476,6 +485,7 @@
         "CouponCirculation": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_circulation\""
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -595,6 +605,8 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
 >>>>>>> 308712c13 (fix wrong word)
+=======
+>>>>>>> b20bec5db (update scope)
         },
         "CreatedAt": {
           "type": "integer",
@@ -614,6 +626,7 @@
         "ID": {
           "type": "string"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -659,6 +672,9 @@
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> 620df297b (update scope)
+=======
+        "GoodID": {
+>>>>>>> b20bec5db (update scope)
           "type": "string"
         },
         "CouponScope": {
