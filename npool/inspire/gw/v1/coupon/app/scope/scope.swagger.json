@@ -51,8 +51,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> e6bdbe852 (delete createappscope)
 =======
     "/v1/create/appscope": {
       "post": {
@@ -92,7 +95,12 @@
 >>>>>>> ce3f1742c (delete createappscope)
 =======
 >>>>>>> 569d52611 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2e441a23e (update scope)
+=======
+=======
+>>>>>>> 80bc5ee31 (delete createappscope)
+>>>>>>> e6bdbe852 (delete createappscope)
     "/v1/delete/appgoodscope": {
       "post": {
         "operationId": "Gateway_DeleteAppGoodScope",
@@ -128,8 +136,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 6712e122f (update scope)
+=======
+>>>>>>> e6bdbe852 (delete createappscope)
     "/v1/get/appgoodscopes": {
       "post": {
         "operationId": "Gateway_GetAppGoodScopes",
@@ -181,9 +192,16 @@
 >>>>>>> 909af8f64 (update scope)
 >>>>>>> 6712e122f (update scope)
     "/v1/get/appscopes": {
+=======
+    "/v1/get/appgoodscopes": {
+>>>>>>> 80bc5ee31 (delete createappscope)
       "post": {
+<<<<<<< HEAD
         "operationId": "Gateway_GetAppScopes",
 >>>>>>> 2e441a23e (update scope)
+=======
+        "operationId": "Gateway_GetAppGoodScopes",
+>>>>>>> e6bdbe852 (delete createappscope)
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -326,8 +344,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> e6bdbe852 (delete createappscope)
 =======
     "v1CreateAppScopeRequest": {
       "type": "object",
@@ -354,7 +375,12 @@
 >>>>>>> ce3f1742c (delete createappscope)
 =======
 >>>>>>> 569d52611 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2e441a23e (update scope)
+=======
+=======
+>>>>>>> 80bc5ee31 (delete createappscope)
+>>>>>>> e6bdbe852 (delete createappscope)
     "v1DeleteAppGoodScopeRequest": {
       "type": "object",
       "properties": {
