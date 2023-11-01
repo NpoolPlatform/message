@@ -281,6 +281,7 @@ type Scope struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 789287843 (update scope)
 =======
@@ -290,6 +291,8 @@ type Scope struct {
 =======
 =======
 >>>>>>> 68184eced (change to goodid1)
+=======
+>>>>>>> ce8043e99 (change to goodid)
 =======
 >>>>>>> 569d52611 (update scope)
 >>>>>>> 2e441a23e (update scope)
@@ -306,7 +309,14 @@ type Scope struct {
 >>>>>>> 854d66214 (change to goodid)
 =======
 >>>>>>> 5d849369c (change to goodid1)
+<<<<<<< HEAD
 >>>>>>> 68184eced (change to goodid1)
+=======
+=======
+	// @inject_tag: sql:"good_id"
+	GoodID string `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id"`
+>>>>>>> 03a3fe943 (change to goodid)
+>>>>>>> ce8043e99 (change to goodid)
 	// @inject_tag: sql:"coupon_id"
 	CouponID string `protobuf:"bytes,40,opt,name=CouponID,proto3" json:"CouponID,omitempty" sql:"coupon_id"`
 	// @inject_tag: sql:"coupon_name"
