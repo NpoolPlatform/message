@@ -189,7 +189,7 @@
 >>>>>>> d834bcbdf (update appgoodscope)
         "GoodID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
+          "title": "@inject_tag: sql:\"good_id1\""
         },
 >>>>>>> 569d52611 (update scope)
         "AppGoodID": {
