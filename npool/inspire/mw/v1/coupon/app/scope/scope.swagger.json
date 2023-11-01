@@ -146,7 +146,7 @@
         },
         "GoodID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_id1\""
+          "title": "@inject_tag: sql:\"good_id\""
         },
         "AppGoodID": {
           "type": "string",
