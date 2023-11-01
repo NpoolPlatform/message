@@ -308,7 +308,7 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
-        "CouponCirculation": {
+        "CouponDenomination": {
           "type": "string"
         },
         "CreatedAt": {
