@@ -23,7 +23,6 @@ message CouponReq {
     optional string UserID   = 50;
     optional bool   Used     = 60;
     optional string UsedByOrderID = 70;
-    optional string CouponScope  = 80;
 }
 
 message Coupon {

@@ -254,9 +254,6 @@
         },
         "UsedByOrderID": {
           "type": "string"
-        },
-        "CouponScope": {
-          "type": "string"
         }
       }
     },
