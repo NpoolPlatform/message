@@ -409,10 +409,14 @@
           "$ref": "#/definitions/v1CouponScope"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CouponDenomination": {
 =======
         "CouponCirculation": {
 >>>>>>> 789287843 (update scope)
+=======
+        "CouponDenomination": {
+>>>>>>> 68862949b (fix wrong attr)
           "type": "string"
         },
         "CreatedAt": {
