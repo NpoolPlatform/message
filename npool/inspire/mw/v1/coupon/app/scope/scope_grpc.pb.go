@@ -24,10 +24,13 @@ const (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+>>>>>>> 08c68e544 (fix wrong name)
 	Middleware_CreateAppGoodScope_FullMethodName     = "/inspire.middleware.coupon.app.scope.v1.Middleware/CreateAppGoodScope"
 	Middleware_DeleteAppGoodScope_FullMethodName     = "/inspire.middleware.coupon.app.scope.v1.Middleware/DeleteAppGoodScope"
 	Middleware_GetAppGoodScopes_FullMethodName       = "/inspire.middleware.coupon.app.scope.v1.Middleware/GetAppGoodScopes"
@@ -74,7 +77,16 @@ const (
 	Middleware_GetAppGoodScopes_FullMethodName   = "/inspire.middleware.coupon.app.scope.v1.Middleware/GetAppGoodScopes"
 	Middleware_ExistScopeConds_FullMethodName    = "/inspire.middleware.coupon.app.scope.v1.Middleware/ExistScopeConds"
 >>>>>>> d834bcbdf (update appgoodscope)
+<<<<<<< HEAD
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+=======
+	Middleware_CreateAppGoodScope_FullMethodName     = "/inspire.middleware.coupon.app.scope.v1.Middleware/CreateAppGoodScope"
+	Middleware_DeleteAppGoodScope_FullMethodName     = "/inspire.middleware.coupon.app.scope.v1.Middleware/DeleteAppGoodScope"
+	Middleware_GetAppGoodScopes_FullMethodName       = "/inspire.middleware.coupon.app.scope.v1.Middleware/GetAppGoodScopes"
+	Middleware_ExistAppGoodScopeConds_FullMethodName = "/inspire.middleware.coupon.app.scope.v1.Middleware/ExistAppGoodScopeConds"
+>>>>>>> c4bc6a9f8 (fix wrong name)
+>>>>>>> 08c68e544 (fix wrong name)
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -128,9 +140,16 @@ type MiddlewareClient interface {
 	CreateAppGoodScope(ctx context.Context, in *CreateAppGoodScopeRequest, opts ...grpc.CallOption) (*CreateAppGoodScopeResponse, error)
 	DeleteAppGoodScope(ctx context.Context, in *DeleteAppGoodScopeRequest, opts ...grpc.CallOption) (*DeleteAppGoodScopeResponse, error)
 	GetAppGoodScopes(ctx context.Context, in *GetAppGoodScopesRequest, opts ...grpc.CallOption) (*GetAppGoodScopesResponse, error)
+<<<<<<< HEAD
 	ExistScopeConds(ctx context.Context, in *ExistAppGoodScopeCondsRequest, opts ...grpc.CallOption) (*ExistAppGoodScopeCondsResponse, error)
 >>>>>>> d834bcbdf (update appgoodscope)
+<<<<<<< HEAD
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+=======
+	ExistAppGoodScopeConds(ctx context.Context, in *ExistAppGoodScopeCondsRequest, opts ...grpc.CallOption) (*ExistAppGoodScopeCondsResponse, error)
+>>>>>>> c4bc6a9f8 (fix wrong name)
+>>>>>>> 08c68e544 (fix wrong name)
 }
 
 type middlewareClient struct {
@@ -244,10 +263,13 @@ func (c *middlewareClient) GetAppGoodScopes(ctx context.Context, in *GetAppGoodS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5680b7b6f (export getappgoodscope)
 =======
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+>>>>>>> 08c68e544 (fix wrong name)
 func (c *middlewareClient) GetAppGoodScope(ctx context.Context, in *GetAppGoodScopeRequest, opts ...grpc.CallOption) (*GetAppGoodScopeResponse, error) {
 	out := new(GetAppGoodScopeResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetAppGoodScope_FullMethodName, in, out, opts...)
@@ -307,7 +329,15 @@ func (c *middlewareClient) ExistScopeConds(ctx context.Context, in *ExistAppGood
 	out := new(ExistAppGoodScopeCondsResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistScopeConds_FullMethodName, in, out, opts...)
 >>>>>>> d834bcbdf (update appgoodscope)
+<<<<<<< HEAD
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+=======
+func (c *middlewareClient) ExistAppGoodScopeConds(ctx context.Context, in *ExistAppGoodScopeCondsRequest, opts ...grpc.CallOption) (*ExistAppGoodScopeCondsResponse, error) {
+	out := new(ExistAppGoodScopeCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistAppGoodScopeConds_FullMethodName, in, out, opts...)
+>>>>>>> c4bc6a9f8 (fix wrong name)
+>>>>>>> 08c68e544 (fix wrong name)
 	if err != nil {
 		return nil, err
 	}
@@ -365,9 +395,16 @@ type MiddlewareServer interface {
 	CreateAppGoodScope(context.Context, *CreateAppGoodScopeRequest) (*CreateAppGoodScopeResponse, error)
 	DeleteAppGoodScope(context.Context, *DeleteAppGoodScopeRequest) (*DeleteAppGoodScopeResponse, error)
 	GetAppGoodScopes(context.Context, *GetAppGoodScopesRequest) (*GetAppGoodScopesResponse, error)
+<<<<<<< HEAD
 	ExistScopeConds(context.Context, *ExistAppGoodScopeCondsRequest) (*ExistAppGoodScopeCondsResponse, error)
 >>>>>>> d834bcbdf (update appgoodscope)
+<<<<<<< HEAD
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+=======
+	ExistAppGoodScopeConds(context.Context, *ExistAppGoodScopeCondsRequest) (*ExistAppGoodScopeCondsResponse, error)
+>>>>>>> c4bc6a9f8 (fix wrong name)
+>>>>>>> 08c68e544 (fix wrong name)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -394,8 +431,11 @@ func (UnimplementedMiddlewareServer) GetAppGoodScopes(context.Context, *GetAppGo
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5680b7b6f (export getappgoodscope)
+=======
+>>>>>>> 08c68e544 (fix wrong name)
 func (UnimplementedMiddlewareServer) GetAppGoodScope(context.Context, *GetAppGoodScopeRequest) (*GetAppGoodScopeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodScope not implemented")
 }
@@ -467,7 +507,14 @@ func (UnimplementedMiddlewareServer) GetAppGoodScopes(context.Context, *GetAppGo
 func (UnimplementedMiddlewareServer) ExistScopeConds(context.Context, *ExistAppGoodScopeCondsRequest) (*ExistAppGoodScopeCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistScopeConds not implemented")
 >>>>>>> d834bcbdf (update appgoodscope)
+<<<<<<< HEAD
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+=======
+func (UnimplementedMiddlewareServer) ExistAppGoodScopeConds(context.Context, *ExistAppGoodScopeCondsRequest) (*ExistAppGoodScopeCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistAppGoodScopeConds not implemented")
+>>>>>>> c4bc6a9f8 (fix wrong name)
+>>>>>>> 08c68e544 (fix wrong name)
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -725,8 +772,11 @@ func _Middleware_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5680b7b6f (export getappgoodscope)
+=======
+>>>>>>> 08c68e544 (fix wrong name)
 func _Middleware_GetAppGoodScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppGoodScopeRequest)
 	if err := dec(in); err != nil {
@@ -875,21 +925,31 @@ func _Middleware_ExistAppGoodScopeConds_Handler(srv interface{}, ctx context.Con
 }
 
 func _Middleware_ExistScopeConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+=======
+func _Middleware_ExistAppGoodScopeConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+>>>>>>> c4bc6a9f8 (fix wrong name)
 	in := new(ExistAppGoodScopeCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistScopeConds(ctx, in)
+		return srv.(MiddlewareServer).ExistAppGoodScopeConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_ExistScopeConds_FullMethodName,
+		FullMethod: Middleware_ExistAppGoodScopeConds_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+<<<<<<< HEAD
 		return srv.(MiddlewareServer).ExistScopeConds(ctx, req.(*ExistAppGoodScopeCondsRequest))
 >>>>>>> d834bcbdf (update appgoodscope)
+<<<<<<< HEAD
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+=======
+		return srv.(MiddlewareServer).ExistAppGoodScopeConds(ctx, req.(*ExistAppGoodScopeCondsRequest))
+>>>>>>> c4bc6a9f8 (fix wrong name)
+>>>>>>> 08c68e544 (fix wrong name)
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -924,8 +984,11 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5680b7b6f (export getappgoodscope)
+=======
+>>>>>>> 08c68e544 (fix wrong name)
 			MethodName: "GetAppGoodScope",
 			Handler:    _Middleware_GetAppGoodScope_Handler,
 		},
@@ -1005,7 +1068,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "ExistScopeConds",
 			Handler:    _Middleware_ExistScopeConds_Handler,
 >>>>>>> d834bcbdf (update appgoodscope)
+<<<<<<< HEAD
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+=======
+			MethodName: "ExistAppGoodScopeConds",
+			Handler:    _Middleware_ExistAppGoodScopeConds_Handler,
+>>>>>>> c4bc6a9f8 (fix wrong name)
+>>>>>>> 08c68e544 (fix wrong name)
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
