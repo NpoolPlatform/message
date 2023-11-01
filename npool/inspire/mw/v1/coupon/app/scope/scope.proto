@@ -29,7 +29,7 @@ message Scope {
     string     AppID           = 20;
     // @inject_tag: sql:"scope_id"
     string     ScopeID         = 30;
-    // @inject_tag: sql:"good_id1"
+    // @inject_tag: sql:"good_id"
     string     GoodID          = 31;
     // @inject_tag: sql:"app_good_id"
     string     AppGoodID       = 40;
