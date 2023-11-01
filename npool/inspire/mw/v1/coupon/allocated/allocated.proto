@@ -25,7 +25,6 @@ message CouponReq {
     optional bool   Used     = 60;
     optional uint32 UsedAt   = 61;
     optional string UsedByOrderID = 70;
-    optional string CouponScope  = 80;
 }
 
 message Coupon {
