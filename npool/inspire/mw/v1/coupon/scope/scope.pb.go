@@ -154,10 +154,15 @@ type Scope struct {
 	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 789287843 (update scope)
 	// @inject_tag: sql:"good_id"
 	GoodID string `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id"`
+=======
+	// @inject_tag: sql:"good_id1"
+	GoodID string `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id1"`
+>>>>>>> 64fcdcde5 (change to goodid1)
 	// @inject_tag: sql:"coupon_id"
 	CouponID string `protobuf:"bytes,40,opt,name=CouponID,proto3" json:"CouponID,omitempty" sql:"coupon_id"`
 	// @inject_tag: sql:"coupon_name"

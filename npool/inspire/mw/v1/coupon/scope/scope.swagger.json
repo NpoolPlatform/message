@@ -179,7 +179,7 @@
 <<<<<<< HEAD
         "GoodID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
+          "title": "@inject_tag: sql:\"good_id1\""
         },
         "CouponID": {
           "type": "string",
