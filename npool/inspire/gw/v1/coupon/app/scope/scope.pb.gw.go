@@ -40,6 +40,7 @@ var _ = metadata.Join
 func request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppGoodScopesRequest
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func request_Gateway_CreateAppScope_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateAppScopeRequest
@@ -48,6 +49,8 @@ func request_Gateway_CreateAppScope_0(ctx context.Context, marshaler runtime.Mar
 func request_Gateway_CreateAppScope_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateAppScopeRequest
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> fa9719ac3 (update req)
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)

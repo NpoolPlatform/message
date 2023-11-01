@@ -167,8 +167,11 @@
               "$ref": "#/definitions/v1GetAppGoodScopesResponse"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> fa9719ac3 (update req)
             }
           },
           "default": {
@@ -353,6 +356,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -370,6 +374,11 @@
           "type": "string"
         },
 >>>>>>> 808e18b40 (update req)
+=======
+        "AppID": {
+          "type": "string"
+        },
+>>>>>>> fa9719ac3 (update req)
         "ScopeID": {
 >>>>>>> 789287843 (update scope)
 =======
@@ -398,9 +407,6 @@
         },
         "AppGoodID": {
           "type": "string"
-        },
-        "CouponScope": {
-          "$ref": "#/definitions/v1CouponScope"
         }
       }
     },
@@ -516,12 +522,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 6712e122f (update scope)
 =======
 >>>>>>> b695b1f4b (update req)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> fa9719ac3 (update req)
     "v1GetAppGoodScopesRequest": {
       "type": "object",
       "properties": {
@@ -539,6 +548,7 @@
       }
     },
     "v1GetAppGoodScopesResponse": {
+<<<<<<< HEAD
       "type": "object",
       "properties": {
         "Infos": {
@@ -612,6 +622,8 @@
 =======
     "v1GetAppScopesResponse": {
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> fa9719ac3 (update req)
       "type": "object",
       "properties": {
         "Infos": {
@@ -640,6 +652,7 @@
         "ID": {
           "type": "string"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -695,10 +708,18 @@
           "type": "string"
         },
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> fa9719ac3 (update req)
         "AppGoodID": {
           "type": "string"
         },
         "GoodName": {
+          "type": "string"
+        },
+        "ScopeID": {
+          "type": "string"
+        },
+        "GoodID": {
           "type": "string"
         },
         "CouponID": {
