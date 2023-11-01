@@ -204,10 +204,6 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"random\""
         },
-        "ScopeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"scope_id\""
-        },
         "CouponScopeStr": {
           "type": "string",
 <<<<<<< HEAD
@@ -305,7 +301,7 @@
         "UsedByOrderID": {
           "type": "string"
         },
-        "ScopeID": {
+        "CouponScope": {
           "type": "string"
         }
       }

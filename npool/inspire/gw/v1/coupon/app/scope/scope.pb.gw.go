@@ -98,6 +98,7 @@ func request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler runtime.M
 >>>>>>> e6bdbe852 (delete createappscope)
 func request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppGoodScopesRequest
+<<<<<<< HEAD
 =======
 func request_Gateway_CreateAppScope_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateAppScopeRequest
@@ -159,6 +160,8 @@ func request_Gateway_GetAppScopes_0(ctx context.Context, marshaler runtime.Marsh
 func request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 >>>>>>> 80bc5ee31 (delete createappscope)
 	var protoReq GetAppScopesRequest
+=======
+>>>>>>> f7e76ad3e (update req)
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -175,7 +178,7 @@ func request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler runtime.M
 }
 
 func local_request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAppScopesRequest
+	var protoReq GetAppGoodScopesRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
