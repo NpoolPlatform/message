@@ -106,6 +106,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "v1CreateAppGoodScopeResponse": {
 =======
     "v1CreateScopeResponse": {
@@ -114,11 +115,19 @@
     "v1CreateAppGoodScopeResponse": {
 >>>>>>> f810a58c9 (update appgoodscope)
 =======
+=======
+>>>>>>> f3b0e6a12 (update appgoodscope)
     "v1CreateAppGoodScopeResponse": {
 =======
     "v1CreateScopeResponse": {
 >>>>>>> 569d52611 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2e441a23e (update scope)
+=======
+=======
+    "v1CreateAppGoodScopeResponse": {
+>>>>>>> d834bcbdf (update appgoodscope)
+>>>>>>> f3b0e6a12 (update appgoodscope)
       "type": "object",
       "properties": {
         "Info": {
@@ -126,6 +135,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -137,11 +147,19 @@
     "v1DeleteAppGoodScopeResponse": {
 >>>>>>> f810a58c9 (update appgoodscope)
 =======
+=======
+>>>>>>> f3b0e6a12 (update appgoodscope)
     "v1DeleteAppGoodScopeResponse": {
 =======
     "v1DeleteScopeResponse": {
 >>>>>>> 569d52611 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2e441a23e (update scope)
+=======
+=======
+    "v1DeleteAppGoodScopeResponse": {
+>>>>>>> d834bcbdf (update appgoodscope)
+>>>>>>> f3b0e6a12 (update appgoodscope)
       "type": "object",
       "properties": {
         "Info": {
@@ -152,10 +170,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> f810a58c9 (update appgoodscope)
 =======
 >>>>>>> 2e441a23e (update scope)
+=======
+=======
+>>>>>>> d834bcbdf (update appgoodscope)
+>>>>>>> f3b0e6a12 (update appgoodscope)
     "v1ExistAppGoodScopeCondsResponse": {
       "type": "object",
       "properties": {
@@ -166,8 +189,11 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5680b7b6f (export getappgoodscope)
+=======
+>>>>>>> f3b0e6a12 (update appgoodscope)
     "v1GetAppGoodScopeResponse": {
       "type": "object",
       "properties": {
@@ -186,7 +212,13 @@
 >>>>>>> f810a58c9 (update appgoodscope)
 =======
 >>>>>>> 569d52611 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2e441a23e (update scope)
+=======
+=======
+    "v1GetAppGoodScopesResponse": {
+>>>>>>> d834bcbdf (update appgoodscope)
+>>>>>>> f3b0e6a12 (update appgoodscope)
       "type": "object",
       "properties": {
         "Infos": {
@@ -216,16 +248,23 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f3b0e6a12 (update appgoodscope)
 =======
 =======
         "ScopeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"scope_id\""
         },
+<<<<<<< HEAD
 >>>>>>> f810a58c9 (update appgoodscope)
 =======
 =======
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> d834bcbdf (update appgoodscope)
+>>>>>>> f3b0e6a12 (update appgoodscope)
         "GoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
