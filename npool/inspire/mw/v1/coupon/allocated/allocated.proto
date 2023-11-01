@@ -25,6 +25,7 @@ message CouponReq {
     optional bool   Used     = 60;
     optional uint32 UsedAt   = 61;
     optional string UsedByOrderID = 70;
+    optional string ScopeID  = 80;
 }
 
 message Coupon {
@@ -79,6 +80,8 @@ message Coupon {
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 230;
     // @inject_tag: sql:"random"
     bool       Random          = 240;
+    // @inject_tag: sql:"scope_id"
+    string     ScopeID         = 241;
     // @inject_tag: sql:"coupon_scope"
     string     CouponScopeStr  = 250;
     basetypes.inspire.v1.CouponScope CouponScope = 260;
