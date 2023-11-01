@@ -303,10 +303,18 @@ type Scope struct {
 =======
 	// @inject_tag: sql:"scope_id"
 	ScopeID string `protobuf:"bytes,30,opt,name=ScopeID,proto3" json:"ScopeID,omitempty" sql:"scope_id"`
+<<<<<<< HEAD
 	// @inject_tag: sql:"good_id"
 	GoodID string `protobuf:"bytes,31,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id"`
 >>>>>>> d834bcbdf (update appgoodscope)
+<<<<<<< HEAD
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+=======
+	// @inject_tag: sql:"good_id1"
+	GoodID string `protobuf:"bytes,31,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id1"`
+>>>>>>> dd222760c (change to goodid)
+>>>>>>> 8d4a395d6 (change to goodid)
 	// @inject_tag: sql:"app_good_id"
 	AppGoodID string `protobuf:"bytes,40,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty" sql:"app_good_id"`
 	// @inject_tag: sql:"coupon_id"

@@ -267,7 +267,7 @@
 >>>>>>> f3b0e6a12 (update appgoodscope)
         "GoodID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
+          "title": "@inject_tag: sql:\"good_id1\""
         },
 <<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
