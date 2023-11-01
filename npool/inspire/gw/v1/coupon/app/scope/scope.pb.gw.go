@@ -33,6 +33,7 @@ var _ = metadata.Join
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 func request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppGoodScopesRequest
 <<<<<<< HEAD
@@ -91,23 +92,14 @@ func request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler runtime.M
 	var protoReq GetAppScopesRequest
 =======
 >>>>>>> 808e18b40 (update req)
-	var metadata runtime.ServerMetadata
-
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	msg, err := client.GetAppGoodScopes(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
-	return msg, metadata, err
-
-}
-
-func local_request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+=======
+func request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppGoodScopesRequest
+=======
+func request_Gateway_CreateAppScope_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppScopeRequest
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -119,11 +111,78 @@ func local_request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler run
 	}
 
 <<<<<<< HEAD
+	msg, err := client.GetAppGoodScopes(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+=======
+	msg, err := client.CreateAppScope(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+>>>>>>> 569d52611 (update scope)
+	return msg, metadata, err
+
+}
+
+<<<<<<< HEAD
+func local_request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppGoodScopesRequest
+=======
+func local_request_Gateway_CreateAppScope_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreateAppScopeRequest
+>>>>>>> 569d52611 (update scope)
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
 	msg, err := server.GetAppScopes(ctx, &protoReq)
 >>>>>>> 789287843 (update scope)
 =======
 	msg, err := server.GetAppGoodScopes(ctx, &protoReq)
 >>>>>>> ce3f1742c (delete createappscope)
+=======
+	msg, err := server.GetAppGoodScopes(ctx, &protoReq)
+=======
+	msg, err := server.CreateAppScope(ctx, &protoReq)
+	return msg, metadata, err
+
+}
+
+func request_Gateway_GetAppScopes_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppScopesRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.GetAppScopes(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_Gateway_GetAppScopes_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetAppScopesRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := server.GetAppScopes(ctx, &protoReq)
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 	return msg, metadata, err
 
 }
@@ -198,6 +257,9 @@ func local_request_Gateway_DeleteAppGoodScope_0(ctx context.Context, marshaler r
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
 =======
 func request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAppGoodScopesRequest
@@ -233,15 +295,20 @@ func local_request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler run
 
 }
 
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> 60afcdcd5 (update scope)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 // RegisterGatewayHandlerServer registers the http handlers for service Gateway to "mux".
 // UnaryRPC     :call GatewayServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 // Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterGatewayHandlerFromEndpoint instead.
 func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, server GatewayServer) error {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	mux.Handle("POST", pattern_Gateway_GetAppGoodScopes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -251,11 +318,18 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 =======
 	mux.Handle("POST", pattern_Gateway_GetAppGoodScopes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 >>>>>>> ce3f1742c (delete createappscope)
+=======
+	mux.Handle("POST", pattern_Gateway_GetAppGoodScopes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+=======
+	mux.Handle("POST", pattern_Gateway_CreateAppScope_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coupon.app.scope.v1.Gateway/GetAppGoodScopes", runtime.WithHTTPPathPattern("/v1/get/appgoodscopes"))
@@ -265,10 +339,17 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 =======
 		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coupon.app.scope.v1.Gateway/GetAppGoodScopes", runtime.WithHTTPPathPattern("/v1/get/appgoodscopes"))
 >>>>>>> ce3f1742c (delete createappscope)
+=======
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coupon.app.scope.v1.Gateway/GetAppGoodScopes", runtime.WithHTTPPathPattern("/v1/get/appgoodscopes"))
+=======
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coupon.app.scope.v1.Gateway/CreateAppScope", runtime.WithHTTPPathPattern("/v1/create/appscope"))
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 		resp, md, err := local_request_Gateway_GetAppGoodScopes_0(rctx, inboundMarshaler, server, req, pathParams)
@@ -278,6 +359,12 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 =======
 		resp, md, err := local_request_Gateway_GetAppGoodScopes_0(rctx, inboundMarshaler, server, req, pathParams)
 >>>>>>> ce3f1742c (delete createappscope)
+=======
+		resp, md, err := local_request_Gateway_GetAppGoodScopes_0(rctx, inboundMarshaler, server, req, pathParams)
+=======
+		resp, md, err := local_request_Gateway_CreateAppScope_0(rctx, inboundMarshaler, server, req, pathParams)
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -287,6 +374,9 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
 		forward_Gateway_GetAppGoodScopes_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 =======
 		forward_Gateway_CreateAppScope_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
@@ -313,10 +403,14 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		}
 
 		forward_Gateway_GetAppScopes_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
 		forward_Gateway_GetAppGoodScopes_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 >>>>>>> ce3f1742c (delete createappscope)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 
 	})
 
@@ -368,6 +462,9 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
 =======
 	mux.Handle("POST", pattern_Gateway_GetAppGoodScopes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
@@ -392,9 +489,13 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 	})
 
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> 60afcdcd5 (update scope)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 	return nil
 }
 
@@ -438,6 +539,9 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
 	mux.Handle("POST", pattern_Gateway_GetAppGoodScopes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -449,6 +553,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coupon.app.scope.v1.Gateway/CreateAppScope", runtime.WithHTTPPathPattern("/v1/create/appscope"))
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
 	mux.Handle("POST", pattern_Gateway_GetAppGoodScopes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -457,10 +562,14 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coupon.app.scope.v1.Gateway/GetAppGoodScopes", runtime.WithHTTPPathPattern("/v1/get/appgoodscopes"))
 >>>>>>> ce3f1742c (delete createappscope)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 		resp, md, err := request_Gateway_GetAppGoodScopes_0(rctx, inboundMarshaler, client, req, pathParams)
@@ -470,6 +579,12 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 =======
 		resp, md, err := request_Gateway_GetAppGoodScopes_0(rctx, inboundMarshaler, client, req, pathParams)
 >>>>>>> ce3f1742c (delete createappscope)
+=======
+		resp, md, err := request_Gateway_GetAppGoodScopes_0(rctx, inboundMarshaler, client, req, pathParams)
+=======
+		resp, md, err := request_Gateway_CreateAppScope_0(rctx, inboundMarshaler, client, req, pathParams)
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -478,6 +593,9 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
 		forward_Gateway_GetAppGoodScopes_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 =======
 		forward_Gateway_CreateAppScope_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
@@ -501,10 +619,14 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		}
 
 		forward_Gateway_GetAppScopes_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
 		forward_Gateway_GetAppGoodScopes_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 >>>>>>> ce3f1742c (delete createappscope)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 
 	})
 
@@ -550,6 +672,9 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
 =======
 	mux.Handle("POST", pattern_Gateway_GetAppGoodScopes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
@@ -571,30 +696,44 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 	})
 
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> 60afcdcd5 (update scope)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 	return nil
 }
 
 var (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
 	pattern_Gateway_GetAppGoodScopes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "appgoodscopes"}, ""))
 =======
 	pattern_Gateway_CreateAppScope_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "appscope"}, ""))
 
 	pattern_Gateway_GetAppScopes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "appscopes"}, ""))
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
 	pattern_Gateway_GetAppGoodScopes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "appgoodscopes"}, ""))
 >>>>>>> ce3f1742c (delete createappscope)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 
 	pattern_Gateway_CreateAppGoodScope_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "appgoodscope"}, ""))
 
 	pattern_Gateway_DeleteAppGoodScope_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "delete", "appgoodscope"}, ""))
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
 )
 
 var (
@@ -602,6 +741,7 @@ var (
 =======
 
 	pattern_Gateway_GetAppGoodScopes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "appgoodscopes"}, ""))
+<<<<<<< HEAD
 =======
 >>>>>>> 60afcdcd5 (update scope)
 )
@@ -615,10 +755,20 @@ var (
 =======
 	forward_Gateway_GetAppGoodScopes_0 = runtime.ForwardResponseMessage
 >>>>>>> ce3f1742c (delete createappscope)
+=======
+)
+
+var (
+	forward_Gateway_CreateAppScope_0 = runtime.ForwardResponseMessage
+
+	forward_Gateway_GetAppScopes_0 = runtime.ForwardResponseMessage
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 
 	forward_Gateway_CreateAppGoodScope_0 = runtime.ForwardResponseMessage
 
 	forward_Gateway_DeleteAppGoodScope_0 = runtime.ForwardResponseMessage
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -627,4 +777,10 @@ var (
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> 60afcdcd5 (update scope)
+=======
+=======
+
+	forward_Gateway_GetAppGoodScopes_0 = runtime.ForwardResponseMessage
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 )

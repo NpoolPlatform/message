@@ -55,13 +55,20 @@
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
 =======
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> f4b9a2125 (delete ScopeID)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
         "AppGoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -98,6 +105,7 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "v1CreateAppGoodScopeResponse": {
 =======
     "v1CreateScopeResponse": {
@@ -105,6 +113,12 @@
 =======
     "v1CreateAppGoodScopeResponse": {
 >>>>>>> f810a58c9 (update appgoodscope)
+=======
+    "v1CreateAppGoodScopeResponse": {
+=======
+    "v1CreateScopeResponse": {
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
       "type": "object",
       "properties": {
         "Info": {
@@ -112,6 +126,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     "v1DeleteAppGoodScopeResponse": {
@@ -121,6 +136,12 @@
 =======
     "v1DeleteAppGoodScopeResponse": {
 >>>>>>> f810a58c9 (update appgoodscope)
+=======
+    "v1DeleteAppGoodScopeResponse": {
+=======
+    "v1DeleteScopeResponse": {
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
       "type": "object",
       "properties": {
         "Info": {
@@ -130,8 +151,11 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> f810a58c9 (update appgoodscope)
+=======
+>>>>>>> 2e441a23e (update scope)
     "v1ExistAppGoodScopeCondsResponse": {
       "type": "object",
       "properties": {
@@ -155,10 +179,14 @@
     "v1GetAppGoodScopesResponse": {
 =======
     "v1GetScopesResponse": {
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
     "v1GetAppGoodScopesResponse": {
 >>>>>>> f810a58c9 (update appgoodscope)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
       "type": "object",
       "properties": {
         "Infos": {
@@ -187,6 +215,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
         "ScopeID": {
@@ -194,13 +223,20 @@
           "title": "@inject_tag: sql:\"scope_id\""
         },
 >>>>>>> f810a58c9 (update appgoodscope)
+=======
+=======
+>>>>>>> 2e441a23e (update scope)
         "GoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
         },
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> f4b9a2125 (delete ScopeID)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
         "AppGoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_id\""
@@ -254,12 +290,16 @@
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
         "AppGoodID": {
           "type": "string"
         },
         "CouponID": {
 =======
         "ScopeID": {
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
           "type": "string"
         },
@@ -281,12 +321,19 @@
 =======
         "CouponID": {
 >>>>>>> f4b9a2125 (delete ScopeID)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
           "type": "string"
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+<<<<<<< HEAD
         "GoodID": {
+=======
+        "CouponID": {
+>>>>>>> 569d52611 (update scope)
           "type": "string"
         }
       }
@@ -329,10 +376,14 @@
       }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
     },
     "v1VerifyCouponScopesResponse": {
       "type": "object"
 =======
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
     },
@@ -348,6 +399,9 @@
 =======
       "type": "object"
 >>>>>>> 2cf3dd208 (delete Info)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
     }
   }
 }

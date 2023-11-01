@@ -50,6 +50,9 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
 =======
     "/v1/create/appscope": {
       "post": {
@@ -83,9 +86,13 @@
         ]
       }
     },
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> ce3f1742c (delete createappscope)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
     "/v1/delete/appgoodscope": {
       "post": {
         "operationId": "Gateway_DeleteAppGoodScope",
@@ -155,6 +162,7 @@
 <<<<<<< HEAD
 =======
     },
+<<<<<<< HEAD
 =======
 >>>>>>> 60afcdcd5 (update scope)
     "/v1/get/appscopes": {
@@ -163,13 +171,21 @@
 >>>>>>> ce3f1742c (delete createappscope)
       "post": {
         "operationId": "Gateway_GetAppGoodScopes",
+=======
+    "/v1/get/appscopes": {
+      "post": {
+        "operationId": "Gateway_GetAppScopes",
+>>>>>>> 2e441a23e (update scope)
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
               "$ref": "#/definitions/v1GetAppScopesResponse"
+<<<<<<< HEAD
 =======
 >>>>>>> 808e18b40 (update req)
+=======
+>>>>>>> 2e441a23e (update scope)
             }
           },
           "default": {
@@ -185,7 +201,11 @@
             "in": "body",
             "required": true,
             "schema": {
+<<<<<<< HEAD
               "$ref": "#/definitions/v1GetAppGoodScopesRequest"
+=======
+              "$ref": "#/definitions/v1GetAppScopesRequest"
+>>>>>>> 2e441a23e (update scope)
             }
           }
         ],
@@ -193,7 +213,11 @@
           "Gateway"
         ]
       }
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
     }
   },
   "definitions": {
@@ -249,10 +273,14 @@
       "properties": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
         "AppID": {
           "type": "string"
         },
         "CouponID": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -264,6 +292,11 @@
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> 285abcef6 (delete ScopeID)
+=======
+=======
+        "ScopeID": {
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
           "type": "string"
         },
         "AppGoodID": {
@@ -284,6 +317,9 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
 =======
     "v1CreateAppScopeRequest": {
       "type": "object",
@@ -304,9 +340,13 @@
         }
       }
     },
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> ce3f1742c (delete createappscope)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
     "v1DeleteAppGoodScopeRequest": {
       "type": "object",
       "properties": {
@@ -314,16 +354,23 @@
           "type": "string"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e441a23e (update scope)
         },
         "AppID": {
           "type": "string"
 =======
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
         },
         "AppID": {
           "type": "string"
 >>>>>>> f4b9a2125 (delete ScopeID)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
         }
       }
     },
@@ -370,12 +417,16 @@
     },
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 60afcdcd5 (update scope)
     "v1GetAppScopesRequest": {
 =======
     "v1GetAppGoodScopesRequest": {
 >>>>>>> 808e18b40 (update req)
+=======
+    "v1GetAppScopesRequest": {
+>>>>>>> 2e441a23e (update scope)
       "type": "object",
       "properties": {
         "AppID": {
@@ -391,7 +442,11 @@
         }
       }
     },
+<<<<<<< HEAD
     "v1GetAppGoodScopesResponse": {
+=======
+    "v1GetAppScopesResponse": {
+>>>>>>> 2e441a23e (update scope)
       "type": "object",
       "properties": {
         "Infos": {
@@ -406,7 +461,11 @@
         }
       }
     },
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
     "v1Scope": {
       "type": "object",
       "properties": {
@@ -430,10 +489,16 @@
         "GoodID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "AppID": {
           "type": "string"
         },
+<<<<<<< HEAD
 >>>>>>> 9595f0f01 (return appid)
+=======
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
         "AppGoodID": {
           "type": "string"
         },
@@ -454,6 +519,7 @@
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CouponDenomination": {
 =======
         "CouponCirculation": {
@@ -461,6 +527,12 @@
 =======
         "CouponDenomination": {
 >>>>>>> 68862949b (fix wrong attr)
+=======
+        "CouponDenomination": {
+=======
+        "CouponCirculation": {
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
           "type": "string"
         },
         "CreatedAt": {

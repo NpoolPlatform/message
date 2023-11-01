@@ -54,10 +54,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
 >>>>>>> 809aa181a (update scope)
+=======
+>>>>>>> 2e441a23e (update scope)
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -73,6 +76,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "AppGoodID": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         "GoodID": {
@@ -96,6 +100,11 @@
         "CouponIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
 =======
+=======
+=======
+        "GoodID": {
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
           "$ref": "#/definitions/v1StringVal"
         },
 <<<<<<< HEAD
@@ -264,10 +273,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
 >>>>>>> 809aa181a (update scope)
+=======
+>>>>>>> 2e441a23e (update scope)
         "GoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
@@ -341,6 +353,11 @@
           "$ref": "#/definitions/v1CouponType"
 =======
 >>>>>>> 2af3a1403 (update scope)
+=======
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+>>>>>>> 569d52611 (update scope)
         },
         "CouponID": {
           "type": "string",
@@ -401,8 +418,11 @@
           "title": "@inject_tag: sql:\"coupon_circulation\""
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
+=======
+>>>>>>> 2e441a23e (update scope)
 =======
 =======
 >>>>>>> 2af3a1403 (update scope)
@@ -489,7 +509,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
 >>>>>>> 3f5158662 (fix wrong word)
+<<<<<<< HEAD
 >>>>>>> 539c56151 (fix wrong word)
+=======
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
         },
         "CreatedAt": {
           "type": "integer",
@@ -513,10 +538,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
 >>>>>>> 809aa181a (update scope)
+=======
+>>>>>>> 2e441a23e (update scope)
         "GoodID": {
 =======
 =======
@@ -538,7 +566,13 @@
 >>>>>>> e2ba5c456 (update scope)
 =======
 >>>>>>> 2af3a1403 (update scope)
+<<<<<<< HEAD
 >>>>>>> 809aa181a (update scope)
+=======
+=======
+        "GoodID": {
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
           "type": "string"
         },
         "CouponScope": {

@@ -32,10 +32,13 @@ type Scope struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
 >>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
+>>>>>>> 2e441a23e (update scope)
 	GoodID             string         `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
 	GoodTitle          string         `protobuf:"bytes,40,opt,name=GoodTitle,proto3" json:"GoodTitle,omitempty"`
 	CouponID           string         `protobuf:"bytes,50,opt,name=CouponID,proto3" json:"CouponID,omitempty"`
@@ -50,10 +53,17 @@ type Scope struct {
 	AppGoodID          string         `protobuf:"bytes,30,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty"`
 	GoodName           string         `protobuf:"bytes,40,opt,name=GoodName,proto3" json:"GoodName,omitempty"`
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	GoodID             string         `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
 	GoodTitle          string         `protobuf:"bytes,40,opt,name=GoodTitle,proto3" json:"GoodTitle,omitempty"`
 >>>>>>> 789287843 (update scope)
+=======
+=======
+	GoodID             string         `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
+	GoodTitle          string         `protobuf:"bytes,40,opt,name=GoodTitle,proto3" json:"GoodTitle,omitempty"`
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 	CouponID           string         `protobuf:"bytes,50,opt,name=CouponID,proto3" json:"CouponID,omitempty"`
 	CouponName         string         `protobuf:"bytes,60,opt,name=CouponName,proto3" json:"CouponName,omitempty"`
 <<<<<<< HEAD
@@ -92,8 +102,15 @@ type Scope struct {
 =======
 	CouponType         v1.CouponType  `protobuf:"varint,70,opt,name=CouponType,proto3,enum=basetypes.inspire.v1.CouponType" json:"CouponType,omitempty"`
 	CouponScope        v1.CouponScope `protobuf:"varint,80,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope" json:"CouponScope,omitempty"`
+<<<<<<< HEAD
 >>>>>>> 8db49e034 (make AppGoodID must)
+<<<<<<< HEAD
 >>>>>>> 0b22a17fb (make AppGoodID must)
+=======
+=======
+	CouponCirculation  string         `protobuf:"bytes,90,opt,name=CouponCirculation,proto3" json:"CouponCirculation,omitempty"`
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 	CouponDenomination string         `protobuf:"bytes,110,opt,name=CouponDenomination,proto3" json:"CouponDenomination,omitempty"`
 	CreatedAt          uint32         `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
 	UpdatedAt          uint32         `protobuf:"varint,1010,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
@@ -142,10 +159,13 @@ func (x *Scope) GetID() string {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
 >>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
+>>>>>>> 2e441a23e (update scope)
 func (x *Scope) GetGoodID() string {
 	if x != nil {
 		return x.GoodID
@@ -170,7 +190,15 @@ func (x *Scope) GetAppID() string {
 	if x != nil {
 		return x.AppID
 >>>>>>> 3a2981d70 (add coupon scope in gw)
+<<<<<<< HEAD
 >>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
+=======
+func (x *Scope) GetGoodID() string {
+	if x != nil {
+		return x.GoodID
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 	}
 	return ""
 }
@@ -179,10 +207,13 @@ func (x *Scope) GetAppID() string {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
 >>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
+>>>>>>> 2e441a23e (update scope)
 func (x *Scope) GetGoodTitle() string {
 	if x != nil {
 		return x.GoodTitle
@@ -214,7 +245,15 @@ func (x *Scope) GetGoodTitle() string {
 >>>>>>> e243bad0c (add coupon scope in gw)
 =======
 >>>>>>> 3a2981d70 (add coupon scope in gw)
+<<<<<<< HEAD
 >>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
+=======
+func (x *Scope) GetGoodTitle() string {
+	if x != nil {
+		return x.GoodTitle
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 	}
 	return ""
 }
@@ -329,12 +368,17 @@ func (x *Scope) GetCouponScope() v1.CouponScope {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
 >>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 func (x *Scope) GetCouponCirculation() string {
 	if x != nil {
 		return x.CouponCirculation
@@ -344,11 +388,14 @@ func (x *Scope) GetCouponCirculation() string {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> f213f6ed2 (add coupon scope in gw)
 =======
 >>>>>>> 789287843 (update scope)
 =======
+=======
+>>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> e243bad0c (add coupon scope in gw)
 <<<<<<< HEAD
@@ -356,7 +403,12 @@ func (x *Scope) GetCouponCirculation() string {
 =======
 =======
 >>>>>>> 3a2981d70 (add coupon scope in gw)
+<<<<<<< HEAD
 >>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 func (x *Scope) GetCouponDenomination() string {
 	if x != nil {
 		return x.CouponDenomination
@@ -390,6 +442,7 @@ type CreateScopeRequest struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
@@ -398,6 +451,8 @@ type CreateScopeRequest struct {
 >>>>>>> c3156b2f2 (add coupon scope in gw)
 =======
 >>>>>>> 2c48ebb04 (update scope)
+=======
+>>>>>>> 2e441a23e (update scope)
 	GoodID      string         `protobuf:"bytes,10,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
 	CouponID    string         `protobuf:"bytes,20,opt,name=CouponID,proto3" json:"CouponID,omitempty"`
 	CouponScope v1.CouponScope `protobuf:"varint,30,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope" json:"CouponScope,omitempty"`
@@ -439,7 +494,15 @@ type CreateScopeRequest struct {
 	AppGoodID   *string        `protobuf:"bytes,30,opt,name=AppGoodID,proto3,oneof" json:"AppGoodID,omitempty"`
 	CouponScope v1.CouponScope `protobuf:"varint,40,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope" json:"CouponScope,omitempty"`
 >>>>>>> 3a2981d70 (add coupon scope in gw)
+<<<<<<< HEAD
 >>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
+=======
+	GoodID      string         `protobuf:"bytes,10,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
+	CouponID    string         `protobuf:"bytes,20,opt,name=CouponID,proto3" json:"CouponID,omitempty"`
+	CouponScope v1.CouponScope `protobuf:"varint,30,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope" json:"CouponScope,omitempty"`
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 }
 
 func (x *CreateScopeRequest) Reset() {
@@ -481,6 +544,7 @@ func (*CreateScopeRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
@@ -489,6 +553,8 @@ func (*CreateScopeRequest) Descriptor() ([]byte, []int) {
 >>>>>>> c3156b2f2 (add coupon scope in gw)
 =======
 >>>>>>> 2c48ebb04 (update scope)
+=======
+>>>>>>> 2e441a23e (update scope)
 func (x *CreateScopeRequest) GetGoodID() string {
 	if x != nil {
 		return x.GoodID
@@ -534,7 +600,15 @@ func (x *CreateScopeRequest) GetTargetAppID() string {
 	if x != nil {
 		return x.TargetAppID
 >>>>>>> 9589c2455 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2c48ebb04 (update scope)
+=======
+=======
+func (x *CreateScopeRequest) GetGoodID() string {
+	if x != nil {
+		return x.GoodID
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 	}
 	return ""
 }
@@ -550,6 +624,7 @@ func (x *CreateScopeRequest) GetCouponID() string {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func (x *CreateScopeRequest) GetAppGoodID() string {
 	if x != nil {
@@ -557,6 +632,8 @@ func (x *CreateScopeRequest) GetAppGoodID() string {
 =======
 =======
 >>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
+>>>>>>> 2e441a23e (update scope)
 =======
 =======
 >>>>>>> 3a2981d70 (add coupon scope in gw)
@@ -585,7 +662,12 @@ func (x *CreateScopeRequest) GetAppGoodID() string {
 >>>>>>> e243bad0c (add coupon scope in gw)
 =======
 >>>>>>> 3a2981d70 (add coupon scope in gw)
+<<<<<<< HEAD
 >>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 func (x *CreateScopeRequest) GetCouponScope() v1.CouponScope {
 	if x != nil {
 		return x.CouponScope
@@ -652,6 +734,7 @@ type DeleteScopeRequest struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
@@ -660,6 +743,8 @@ type DeleteScopeRequest struct {
 >>>>>>> c3156b2f2 (add coupon scope in gw)
 =======
 >>>>>>> 2c48ebb04 (update scope)
+=======
+>>>>>>> 2e441a23e (update scope)
 	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
 =======
 	ID    string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
@@ -696,7 +781,13 @@ type DeleteScopeRequest struct {
 	ID          string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
 	TargetAppID string `protobuf:"bytes,20,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
 >>>>>>> 9589c2455 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2c48ebb04 (update scope)
+=======
+=======
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 }
 
 func (x *DeleteScopeRequest) Reset() {
@@ -745,6 +836,7 @@ func (x *DeleteScopeRequest) GetID() string {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func (x *DeleteScopeRequest) GetAppID() string {
 =======
@@ -759,6 +851,8 @@ func (x *DeleteScopeRequest) GetTargetAppID() string {
 >>>>>>> c3156b2f2 (add coupon scope in gw)
 =======
 >>>>>>> 2c48ebb04 (update scope)
+=======
+>>>>>>> 2e441a23e (update scope)
 =======
 func (x *DeleteScopeRequest) GetAppID() string {
 =======
@@ -803,7 +897,12 @@ func (x *DeleteScopeRequest) GetTargetAppID() string {
 >>>>>>> e243bad0c (add coupon scope in gw)
 =======
 >>>>>>> 3a2981d70 (add coupon scope in gw)
+<<<<<<< HEAD
 >>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 type DeleteScopeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -990,10 +1089,13 @@ type GetScopesRequest struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
 >>>>>>> c3156b2f2 (add coupon scope in gw)
+=======
+>>>>>>> 2e441a23e (update scope)
 	Offset int32 `protobuf:"varint,30,opt,name=Offset,proto3" json:"Offset,omitempty"`
 	Limit  int32 `protobuf:"varint,40,opt,name=Limit,proto3" json:"Limit,omitempty"`
 =======
@@ -1035,7 +1137,14 @@ type GetScopesRequest struct {
 	Offset int32  `protobuf:"varint,30,opt,name=Offset,proto3" json:"Offset,omitempty"`
 	Limit  int32  `protobuf:"varint,40,opt,name=Limit,proto3" json:"Limit,omitempty"`
 >>>>>>> 960f133ce (update scope pb)
+<<<<<<< HEAD
 >>>>>>> 3b0497879 (update scope pb)
+=======
+=======
+	Offset int32 `protobuf:"varint,30,opt,name=Offset,proto3" json:"Offset,omitempty"`
+	Limit  int32 `protobuf:"varint,40,opt,name=Limit,proto3" json:"Limit,omitempty"`
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 }
 
 func (x *GetScopesRequest) Reset() {
@@ -1103,8 +1212,11 @@ func (*GetScopesRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
+=======
+>>>>>>> 2e441a23e (update scope)
 =======
 =======
 	return file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescGZIP(), []int{5}
@@ -1158,7 +1270,12 @@ func (x *GetScopesRequest) GetUserID() string {
 }
 
 >>>>>>> 960f133ce (update scope pb)
+<<<<<<< HEAD
 >>>>>>> 3b0497879 (update scope pb)
+=======
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 func (x *GetScopesRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
@@ -1273,6 +1390,7 @@ func (x *GetScopesResponse) GetTotal() uint32 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e8948f8dc (delete get app scopes)
 =======
@@ -1289,6 +1407,8 @@ func (x *GetScopesResponse) GetTotal() uint32 {
 >>>>>>> 3a2981d70 (add coupon scope in gw)
 >>>>>>> c3156b2f2 (add coupon scope in gw)
 =======
+=======
+>>>>>>> 2e441a23e (update scope)
 =======
 =======
 >>>>>>> 3a2981d70 (add coupon scope in gw)
@@ -1724,7 +1844,12 @@ func (x *GetNAppScopesResponse) GetTotal() uint32 {
 }
 
 >>>>>>> 960f133ce (update scope pb)
+<<<<<<< HEAD
 >>>>>>> 3b0497879 (update scope pb)
+=======
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 var File_npool_inspire_gw_v1_coupon_scope_scope_proto protoreflect.FileDescriptor
 
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
@@ -1737,6 +1862,7 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 	0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x26, 0x6e,
 	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x69,
 	0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x76, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2162,6 +2288,8 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 >>>>>>> c3156b2f2 (add coupon scope in gw)
 =======
 >>>>>>> 0b22a17fb (make AppGoodID must)
+=======
+>>>>>>> 2e441a23e (update scope)
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xac, 0x03, 0x0a, 0x05, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x12,
 	0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12,
 	0x16, 0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52,
@@ -2770,12 +2898,68 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 	0x52, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c, 0x69, 0x6d, 0x69,
 	0x74, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x6b,
 	0x0a, 0x15, 0x47, 0x65, 0x74, 0x4e, 0x41, 0x70, 0x70, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x73, 0x52,
+=======
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xac, 0x03, 0x0a, 0x05, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x12,
+	0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12,
+	0x16, 0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x12, 0x1c, 0x0a, 0x09, 0x47, 0x6f, 0x6f, 0x64, 0x54,
+	0x69, 0x74, 0x6c, 0x65, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x47, 0x6f, 0x6f, 0x64,
+	0x54, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x49,
+	0x44, 0x18, 0x32, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x49,
+	0x44, 0x12, 0x1e, 0x0a, 0x0a, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x18,
+	0x3c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x4e, 0x61, 0x6d,
+	0x65, 0x12, 0x40, 0x0a, 0x0a, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x18,
+	0x46, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x20, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65,
+	0x73, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75,
+	0x70, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x0a, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x54,
+	0x79, 0x70, 0x65, 0x12, 0x43, 0x0a, 0x0b, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x53, 0x63, 0x6f,
+	0x70, 0x65, 0x18, 0x50, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x21, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74,
+	0x79, 0x70, 0x65, 0x73, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e,
+	0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x52, 0x0b, 0x43, 0x6f, 0x75,
+	0x70, 0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x12, 0x2c, 0x0a, 0x11, 0x43, 0x6f, 0x75, 0x70,
+	0x6f, 0x6e, 0x43, 0x69, 0x72, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x5a, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x11, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x43, 0x69, 0x72, 0x63, 0x75,
+	0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2e, 0x0a, 0x12, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e,
+	0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x6e, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x12, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x69,
+	0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x1d, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x64, 0x41, 0x74, 0x18, 0xe8, 0x07, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x1d, 0x0a, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64,
+	0x41, 0x74, 0x18, 0xf2, 0x07, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x64, 0x41, 0x74, 0x22, 0x8d, 0x01, 0x0a, 0x12, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53,
+	0x63, 0x6f, 0x70, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x47,
+	0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x47, 0x6f, 0x6f,
+	0x64, 0x49, 0x44, 0x12, 0x1a, 0x0a, 0x08, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x49, 0x44, 0x18,
+	0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x49, 0x44, 0x12,
+	0x43, 0x0a, 0x0b, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x18, 0x1e,
+	0x20, 0x01, 0x28, 0x0e, 0x32, 0x21, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73,
+	0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x70,
+	0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x52, 0x0b, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x53,
+	0x63, 0x6f, 0x70, 0x65, 0x22, 0x51, 0x0a, 0x13, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x63,
+	0x6f, 0x70, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3a, 0x0a, 0x04, 0x49,
+	0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x69, 0x6e, 0x73, 0x70,
+	0x69, 0x72, 0x65, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x63, 0x6f, 0x75, 0x70,
+	0x6f, 0x6e, 0x2e, 0x73, 0x63, 0x6f, 0x70, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x63, 0x6f, 0x70,
+	0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x24, 0x0a, 0x12, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x65, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a,
+	0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x22, 0x51, 0x0a,
+	0x13, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3a, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x26, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x67, 0x61, 0x74,
+	0x65, 0x77, 0x61, 0x79, 0x2e, 0x63, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x2e, 0x73, 0x63, 0x6f, 0x70,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x22, 0x40, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x73, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x1e,
+	0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05,
+	0x4c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x28, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x4c, 0x69, 0x6d,
+	0x69, 0x74, 0x22, 0x67, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x73, 0x52,
+>>>>>>> 569d52611 (update scope)
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3c, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
 	0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65,
 	0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x63, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x2e,
 	0x73, 0x63, 0x6f, 0x70, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x52, 0x05,
 	0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14,
-	0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0x88, 0x06, 0x0a, 0x07,
+	0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0xc9, 0x03, 0x0a, 0x07,
 	0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0x95, 0x01, 0x0a, 0x0b, 0x43, 0x72, 0x65, 0x61,
 	0x74, 0x65, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x12, 0x33, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72,
 	0x65, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x63, 0x6f, 0x75, 0x70, 0x6f, 0x6e,
@@ -2842,6 +3026,7 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 	0x6e, 0x2e, 0x73, 0x63, 0x6f, 0x70, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x63,
 	0x6f, 0x70, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x19, 0x82, 0xd3,
 	0xe4, 0x93, 0x02, 0x13, 0x3a, 0x01, 0x2a, 0x22, 0x0e, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74,
+<<<<<<< HEAD
 	0x2f, 0x73, 0x63, 0x6f, 0x70, 0x65, 0x73, 0x12, 0x9a, 0x01, 0x0a, 0x0c, 0x47, 0x65, 0x74, 0x41,
 	0x70, 0x70, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x73, 0x12, 0x34, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69,
 	0x72, 0x65, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x63, 0x6f, 0x75, 0x70, 0x6f,
@@ -2869,7 +3054,18 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 	0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x2f, 0x73, 0x63, 0x6f, 0x70, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x33,
 >>>>>>> 8db49e034 (make AppGoodID must)
+<<<<<<< HEAD
 >>>>>>> 0b22a17fb (make AppGoodID must)
+=======
+=======
+	0x2f, 0x73, 0x63, 0x6f, 0x70, 0x65, 0x73, 0x42, 0x43, 0x5a, 0x41, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66,
+	0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f,
+	0x6c, 0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x67, 0x77, 0x2f, 0x76, 0x31, 0x2f,
+	0x63, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x2f, 0x73, 0x63, 0x6f, 0x70, 0x65, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 }
 
 var (
@@ -2884,6 +3080,7 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescGZIP() []byte {
 	return file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescData
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2927,6 +3124,8 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimp
 >>>>>>> 2c48ebb04 (update scope)
 =======
 >>>>>>> 3b0497879 (update scope pb)
+=======
+>>>>>>> 2e441a23e (update scope)
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 =======
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
@@ -2980,26 +3179,31 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimp
 =======
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 >>>>>>> 960f133ce (update scope pb)
+=======
+var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+>>>>>>> 569d52611 (update scope)
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_goTypes = []interface{}{
-	(*Scope)(nil),                 // 0: inspire.gateway.coupon.scope.v1.Scope
-	(*CreateScopeRequest)(nil),    // 1: inspire.gateway.coupon.scope.v1.CreateScopeRequest
-	(*CreateScopeResponse)(nil),   // 2: inspire.gateway.coupon.scope.v1.CreateScopeResponse
-	(*DeleteScopeRequest)(nil),    // 3: inspire.gateway.coupon.scope.v1.DeleteScopeRequest
-	(*DeleteScopeResponse)(nil),   // 4: inspire.gateway.coupon.scope.v1.DeleteScopeResponse
-	(*GetScopesRequest)(nil),      // 5: inspire.gateway.coupon.scope.v1.GetScopesRequest
-	(*GetScopesResponse)(nil),     // 6: inspire.gateway.coupon.scope.v1.GetScopesResponse
-	(*GetAppScopesRequest)(nil),   // 7: inspire.gateway.coupon.scope.v1.GetAppScopesRequest
-	(*GetAppScopesResponse)(nil),  // 8: inspire.gateway.coupon.scope.v1.GetAppScopesResponse
-	(*GetNAppScopesRequest)(nil),  // 9: inspire.gateway.coupon.scope.v1.GetNAppScopesRequest
-	(*GetNAppScopesResponse)(nil), // 10: inspire.gateway.coupon.scope.v1.GetNAppScopesResponse
-	(v1.CouponType)(0),            // 11: basetypes.inspire.v1.CouponType
-	(v1.CouponScope)(0),           // 12: basetypes.inspire.v1.CouponScope
+	(*Scope)(nil),               // 0: inspire.gateway.coupon.scope.v1.Scope
+	(*CreateScopeRequest)(nil),  // 1: inspire.gateway.coupon.scope.v1.CreateScopeRequest
+	(*CreateScopeResponse)(nil), // 2: inspire.gateway.coupon.scope.v1.CreateScopeResponse
+	(*DeleteScopeRequest)(nil),  // 3: inspire.gateway.coupon.scope.v1.DeleteScopeRequest
+	(*DeleteScopeResponse)(nil), // 4: inspire.gateway.coupon.scope.v1.DeleteScopeResponse
+	(*GetScopesRequest)(nil),    // 5: inspire.gateway.coupon.scope.v1.GetScopesRequest
+	(*GetScopesResponse)(nil),   // 6: inspire.gateway.coupon.scope.v1.GetScopesResponse
+	(v1.CouponType)(0),          // 7: basetypes.inspire.v1.CouponType
+	(v1.CouponScope)(0),         // 8: basetypes.inspire.v1.CouponScope
 }
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_depIdxs = []int32{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 67de434f0 (delete get app scopes)
+<<<<<<< HEAD
 >>>>>>> 343ac084f (delete get app scopes)
+=======
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 	7, // 0: inspire.gateway.coupon.scope.v1.Scope.CouponType:type_name -> basetypes.inspire.v1.CouponType
 	8, // 1: inspire.gateway.coupon.scope.v1.Scope.CouponScope:type_name -> basetypes.inspire.v1.CouponScope
 	8, // 2: inspire.gateway.coupon.scope.v1.CreateScopeRequest.CouponScope:type_name -> basetypes.inspire.v1.CouponScope
@@ -3017,6 +3221,7 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_depIdxs = []int32{
 	6, // [6:6] is the sub-list for extension type_name
 	6, // [6:6] is the sub-list for extension extendee
 	0, // [0:6] is the sub-list for field type_name
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3043,6 +3248,8 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_depIdxs = []int32{
 =======
 =======
 >>>>>>> 343ac084f (delete get app scopes)
+=======
+>>>>>>> 2e441a23e (update scope)
 =======
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 =======
@@ -3287,7 +3494,12 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_depIdxs = []int32{
 	8,  // [8:8] is the sub-list for extension extendee
 	0,  // [0:8] is the sub-list for field type_name
 >>>>>>> 960f133ce (update scope pb)
+<<<<<<< HEAD
 >>>>>>> 3b0497879 (update scope pb)
+=======
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 }
 
 func init() { file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() }
@@ -3437,6 +3649,7 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e8948f8dc (delete get app scopes)
 	}
@@ -3452,6 +3665,8 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 >>>>>>> 343ac084f (delete get app scopes)
 =======
 >>>>>>> 3b0497879 (update scope pb)
+=======
+>>>>>>> 2e441a23e (update scope)
 	}
 =======
 =======
@@ -3569,7 +3784,12 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 			}
 		}
 >>>>>>> 960f133ce (update scope pb)
+<<<<<<< HEAD
 >>>>>>> 3b0497879 (update scope pb)
+=======
+=======
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 	}
 <<<<<<< HEAD
 	file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[1].OneofWrappers = []interface{}{}
@@ -3593,6 +3813,7 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc,
 			NumEnums:      0,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3642,6 +3863,8 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 >>>>>>> 2c48ebb04 (update scope)
 =======
 >>>>>>> 3b0497879 (update scope pb)
+=======
+>>>>>>> 2e441a23e (update scope)
 			NumMessages:   7,
 =======
 			NumMessages:   9,
@@ -3682,7 +3905,13 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 =======
 			NumMessages:   11,
 >>>>>>> 960f133ce (update scope pb)
+<<<<<<< HEAD
 >>>>>>> 3b0497879 (update scope pb)
+=======
+=======
+			NumMessages:   7,
+>>>>>>> 569d52611 (update scope)
+>>>>>>> 2e441a23e (update scope)
 			NumExtensions: 0,
 			NumServices:   1,
 		},
