@@ -122,6 +122,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "v1CreateAppGoodScopeResponse": {
 =======
     "v1CreateScopeResponse": {
@@ -146,6 +147,9 @@
 =======
     "v1CreateScopeResponse": {
 >>>>>>> b20bec5db (update scope)
+=======
+    "v1CreateAppGoodScopeResponse": {
+>>>>>>> 7f099cff7 (update appgoodscope)
       "type": "object",
       "properties": {
         "Info": {
@@ -153,6 +157,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -182,6 +187,9 @@
 =======
     "v1DeleteScopeResponse": {
 >>>>>>> b20bec5db (update scope)
+=======
+    "v1DeleteAppGoodScopeResponse": {
+>>>>>>> 7f099cff7 (update appgoodscope)
       "type": "object",
       "properties": {
         "Info": {
@@ -189,6 +197,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -202,6 +211,8 @@
 =======
 >>>>>>> d834bcbdf (update appgoodscope)
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+>>>>>>> 7f099cff7 (update appgoodscope)
     "v1ExistAppGoodScopeCondsResponse": {
       "type": "object",
       "properties": {
@@ -210,6 +221,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -250,6 +262,9 @@
 =======
     "v1GetScopesResponse": {
 >>>>>>> b20bec5db (update scope)
+=======
+    "v1GetAppGoodScopesResponse": {
+>>>>>>> 7f099cff7 (update appgoodscope)
       "type": "object",
       "properties": {
         "Infos": {
@@ -282,16 +297,20 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> f3b0e6a12 (update appgoodscope)
 =======
 >>>>>>> 13913ec01 (delete ScopeID)
 =======
 =======
+=======
+>>>>>>> 7f099cff7 (update appgoodscope)
         "ScopeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"scope_id\""
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> f810a58c9 (update appgoodscope)
 =======
@@ -302,6 +321,8 @@
 >>>>>>> f3b0e6a12 (update appgoodscope)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> 7f099cff7 (update appgoodscope)
         "GoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
