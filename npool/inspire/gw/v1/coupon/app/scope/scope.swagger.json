@@ -144,6 +144,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 6712e122f (update scope)
 =======
@@ -217,6 +218,8 @@
 >>>>>>> e6bdbe852 (delete createappscope)
 =======
     },
+=======
+>>>>>>> ef49b6dd6 (update scope)
     "/v1/get/appscopes": {
       "post": {
         "operationId": "Gateway_GetAppScopes",
@@ -503,6 +506,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 6712e122f (update scope)
 =======
@@ -555,6 +559,8 @@
 =======
 >>>>>>> 909af8f64 (update scope)
 >>>>>>> 6712e122f (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
     "v1GetAppScopesRequest": {
 =======
     "v1GetAppGoodScopesRequest": {

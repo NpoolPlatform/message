@@ -310,6 +310,7 @@ func local_request_Gateway_DeleteAppGoodScope_0(ctx context.Context, marshaler r
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -366,6 +367,8 @@ func local_request_Gateway_GetAppGoodScopes_0(ctx context.Context, marshaler run
 >>>>>>> 6712e122f (update scope)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 // RegisterGatewayHandlerServer registers the http handlers for service Gateway to "mux".
 // UnaryRPC     :call GatewayServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
@@ -658,6 +661,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 	})
 
+<<<<<<< HEAD
 >>>>>>> b20bec5db (update scope)
 	mux.Handle("POST", pattern_Gateway_GetAppGoodScopes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
@@ -697,6 +701,8 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 >>>>>>> 6712e122f (update scope)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 	return nil
 }
 
@@ -995,6 +1001,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 	})
 
+<<<<<<< HEAD
 >>>>>>> b20bec5db (update scope)
 	mux.Handle("POST", pattern_Gateway_GetAppGoodScopes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
@@ -1031,6 +1038,8 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 >>>>>>> 6712e122f (update scope)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 	return nil
 }
 
@@ -1077,6 +1086,7 @@ var (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -1126,6 +1136,8 @@ var (
 =======
 
 	pattern_Gateway_GetAppGoodScopes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "appgoodscopes"}, ""))
+=======
+>>>>>>> ef49b6dd6 (update scope)
 )
 
 var (
@@ -1137,6 +1149,7 @@ var (
 	forward_Gateway_CreateAppGoodScope_0 = runtime.ForwardResponseMessage
 
 	forward_Gateway_DeleteAppGoodScope_0 = runtime.ForwardResponseMessage
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1165,4 +1178,6 @@ var (
 
 	forward_Gateway_GetAppGoodScopes_0 = runtime.ForwardResponseMessage
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 )

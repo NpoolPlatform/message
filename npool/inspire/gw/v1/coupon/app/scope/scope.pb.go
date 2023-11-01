@@ -922,6 +922,7 @@ func (x *DeleteAppGoodScopeResponse) GetInfo() *Scope {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 569d52611 (update scope)
 >>>>>>> 2e441a23e (update scope)
 type GetAppGoodScopesRequest struct {
@@ -1697,6 +1698,8 @@ func (x *DeleteAppGoodScopeResponse) GetInfo() *Scope {
 >>>>>>> 6712e122f (update scope)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 var File_npool_inspire_gw_v1_coupon_app_scope_scope_proto protoreflect.FileDescriptor
 
 var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_rawDesc = []byte{
@@ -1945,6 +1948,7 @@ var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -2031,6 +2035,8 @@ var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_rawDesc = []byte{
 <<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
+=======
+>>>>>>> ef49b6dd6 (update scope)
 	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xd1, 0x05, 0x0a, 0x07, 0x47, 0x61, 0x74, 0x65, 0x77,
 	0x61, 0x79, 0x12, 0xa9, 0x01, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70,
 	0x53, 0x63, 0x6f, 0x70, 0x65, 0x12, 0x3a, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e,
@@ -2082,6 +2088,7 @@ var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_rawDesc = []byte{
 	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x67, 0x77, 0x2f,
 	0x76, 0x31, 0x2f, 0x63, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x73, 0x63,
 	0x6f, 0x70, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 >>>>>>> 60afcdcd5 (update scope)
 =======
 	0x0b, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x12, 0x2e, 0x0a, 0x12,
@@ -3099,6 +3106,8 @@ var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_rawDesc = []byte{
 >>>>>>> 6a8a83f8c (delete ScopeID)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 }
 
 var (
@@ -3113,6 +3122,7 @@ func file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_rawDescGZIP() []byte 
 	return file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_rawDescData
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3231,6 +3241,9 @@ var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_depIdxs = []int32{
 >>>>>>> e6bdbe852 (delete createappscope)
 =======
 var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+=======
+var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+>>>>>>> ef49b6dd6 (update scope)
 var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_goTypes = []interface{}{
 	(*Scope)(nil),                      // 0: inspire.gateway.coupon.app.scope.v1.Scope
 	(*CreateAppScopeRequest)(nil),      // 1: inspire.gateway.coupon.app.scope.v1.CreateAppScopeRequest
@@ -3241,19 +3254,18 @@ var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_goTypes = []interface{
 	(*CreateAppGoodScopeResponse)(nil), // 6: inspire.gateway.coupon.app.scope.v1.CreateAppGoodScopeResponse
 	(*DeleteAppGoodScopeRequest)(nil),  // 7: inspire.gateway.coupon.app.scope.v1.DeleteAppGoodScopeRequest
 	(*DeleteAppGoodScopeResponse)(nil), // 8: inspire.gateway.coupon.app.scope.v1.DeleteAppGoodScopeResponse
-	(*GetAppGoodScopesRequest)(nil),    // 9: inspire.gateway.coupon.app.scope.v1.GetAppGoodScopesRequest
-	(*GetAppGoodScopesResponse)(nil),   // 10: inspire.gateway.coupon.app.scope.v1.GetAppGoodScopesResponse
-	(v1.CouponType)(0),                 // 11: basetypes.inspire.v1.CouponType
-	(v1.CouponScope)(0),                // 12: basetypes.inspire.v1.CouponScope
+	(v1.CouponType)(0),                 // 9: basetypes.inspire.v1.CouponType
+	(v1.CouponScope)(0),                // 10: basetypes.inspire.v1.CouponScope
 }
 var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_depIdxs = []int32{
-	11, // 0: inspire.gateway.coupon.app.scope.v1.Scope.CouponType:type_name -> basetypes.inspire.v1.CouponType
-	12, // 1: inspire.gateway.coupon.app.scope.v1.Scope.CouponScope:type_name -> basetypes.inspire.v1.CouponScope
+	9,  // 0: inspire.gateway.coupon.app.scope.v1.Scope.CouponType:type_name -> basetypes.inspire.v1.CouponType
+	10, // 1: inspire.gateway.coupon.app.scope.v1.Scope.CouponScope:type_name -> basetypes.inspire.v1.CouponScope
 	0,  // 2: inspire.gateway.coupon.app.scope.v1.CreateAppScopeResponse.Info:type_name -> inspire.gateway.coupon.app.scope.v1.Scope
 	0,  // 3: inspire.gateway.coupon.app.scope.v1.GetAppScopesResponse.Infos:type_name -> inspire.gateway.coupon.app.scope.v1.Scope
-	12, // 4: inspire.gateway.coupon.app.scope.v1.CreateAppGoodScopeRequest.CouponScope:type_name -> basetypes.inspire.v1.CouponScope
+	10, // 4: inspire.gateway.coupon.app.scope.v1.CreateAppGoodScopeRequest.CouponScope:type_name -> basetypes.inspire.v1.CouponScope
 	0,  // 5: inspire.gateway.coupon.app.scope.v1.CreateAppGoodScopeResponse.Info:type_name -> inspire.gateway.coupon.app.scope.v1.Scope
 	0,  // 6: inspire.gateway.coupon.app.scope.v1.DeleteAppGoodScopeResponse.Info:type_name -> inspire.gateway.coupon.app.scope.v1.Scope
+<<<<<<< HEAD
 >>>>>>> b20bec5db (update scope)
 	0,  // 7: inspire.gateway.coupon.app.scope.v1.GetAppGoodScopesResponse.Infos:type_name -> inspire.gateway.coupon.app.scope.v1.Scope
 	1,  // 8: inspire.gateway.coupon.app.scope.v1.Gateway.CreateAppScope:input_type -> inspire.gateway.coupon.app.scope.v1.CreateAppScopeRequest
@@ -3275,6 +3287,8 @@ var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_depIdxs = []int32{
 <<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
+=======
+>>>>>>> ef49b6dd6 (update scope)
 	1,  // 7: inspire.gateway.coupon.app.scope.v1.Gateway.CreateAppScope:input_type -> inspire.gateway.coupon.app.scope.v1.CreateAppScopeRequest
 	3,  // 8: inspire.gateway.coupon.app.scope.v1.Gateway.GetAppScopes:input_type -> inspire.gateway.coupon.app.scope.v1.GetAppScopesRequest
 	5,  // 9: inspire.gateway.coupon.app.scope.v1.Gateway.CreateAppGoodScope:input_type -> inspire.gateway.coupon.app.scope.v1.CreateAppGoodScopeRequest
@@ -3285,6 +3299,7 @@ var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_depIdxs = []int32{
 	8,  // 14: inspire.gateway.coupon.app.scope.v1.Gateway.DeleteAppGoodScope:output_type -> inspire.gateway.coupon.app.scope.v1.DeleteAppGoodScopeResponse
 	11, // [11:15] is the sub-list for method output_type
 	7,  // [7:11] is the sub-list for method input_type
+<<<<<<< HEAD
 =======
 	3,  // 7: inspire.gateway.coupon.app.scope.v1.Gateway.GetAppGoodScopes:input_type -> inspire.gateway.coupon.app.scope.v1.GetAppScopesRequest
 	5,  // 8: inspire.gateway.coupon.app.scope.v1.Gateway.CreateAppGoodScope:input_type -> inspire.gateway.coupon.app.scope.v1.CreateAppGoodScopeRequest
@@ -3378,6 +3393,11 @@ var file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_depIdxs = []int32{
 >>>>>>> 6a275f7a6 (add couponscope)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+	7,  // [7:7] is the sub-list for extension type_name
+	7,  // [7:7] is the sub-list for extension extendee
+	0,  // [0:7] is the sub-list for field type_name
+>>>>>>> ef49b6dd6 (update scope)
 }
 
 func init() { file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_init() }
@@ -3670,6 +3690,7 @@ func file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_init() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 6712e122f (update scope)
 	}
@@ -3714,6 +3735,8 @@ func file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_init() {
 <<<<<<< HEAD
 =======
 >>>>>>> 60afcdcd5 (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 	}
 >>>>>>> 789287843 (update scope)
 =======
@@ -3740,6 +3763,7 @@ func file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_rawDesc,
 			NumEnums:      0,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3782,6 +3806,9 @@ func file_npool_inspire_gw_v1_coupon_app_scope_scope_proto_init() {
 =======
 			NumMessages:   11,
 >>>>>>> b20bec5db (update scope)
+=======
+			NumMessages:   9,
+>>>>>>> ef49b6dd6 (update scope)
 			NumExtensions: 0,
 			NumServices:   1,
 		},

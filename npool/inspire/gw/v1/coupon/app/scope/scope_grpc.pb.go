@@ -68,8 +68,11 @@ const (
 	Gateway_GetAppScopes_FullMethodName       = "/inspire.gateway.coupon.app.scope.v1.Gateway/GetAppScopes"
 	Gateway_CreateAppGoodScope_FullMethodName = "/inspire.gateway.coupon.app.scope.v1.Gateway/CreateAppGoodScope"
 	Gateway_DeleteAppGoodScope_FullMethodName = "/inspire.gateway.coupon.app.scope.v1.Gateway/DeleteAppGoodScope"
+<<<<<<< HEAD
 	Gateway_GetAppGoodScopes_FullMethodName   = "/inspire.gateway.coupon.app.scope.v1.Gateway/GetAppGoodScopes"
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -133,8 +136,11 @@ type GatewayClient interface {
 	GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
 	CreateAppGoodScope(ctx context.Context, in *CreateAppGoodScopeRequest, opts ...grpc.CallOption) (*CreateAppGoodScopeResponse, error)
 	DeleteAppGoodScope(ctx context.Context, in *DeleteAppGoodScopeRequest, opts ...grpc.CallOption) (*DeleteAppGoodScopeResponse, error)
+<<<<<<< HEAD
 	GetAppGoodScopes(ctx context.Context, in *GetAppGoodScopesRequest, opts ...grpc.CallOption) (*GetAppGoodScopesResponse, error)
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 }
 
 type gatewayClient struct {
@@ -234,6 +240,7 @@ func (c *gatewayClient) DeleteAppGoodScope(ctx context.Context, in *DeleteAppGoo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -265,6 +272,8 @@ func (c *gatewayClient) GetAppGoodScopes(ctx context.Context, in *GetAppGoodScop
 >>>>>>> 6712e122f (update scope)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -326,8 +335,11 @@ type GatewayServer interface {
 	GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
 	CreateAppGoodScope(context.Context, *CreateAppGoodScopeRequest) (*CreateAppGoodScopeResponse, error)
 	DeleteAppGoodScope(context.Context, *DeleteAppGoodScopeRequest) (*DeleteAppGoodScopeResponse, error)
+<<<<<<< HEAD
 	GetAppGoodScopes(context.Context, *GetAppGoodScopesRequest) (*GetAppGoodScopesResponse, error)
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -395,6 +407,7 @@ func (UnimplementedGatewayServer) DeleteAppGoodScope(context.Context, *DeleteApp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -420,6 +433,8 @@ func (UnimplementedGatewayServer) GetAppGoodScopes(context.Context, *GetAppGoodS
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodScopes not implemented")
 }
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
 // UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
@@ -628,6 +643,7 @@ func _Gateway_DeleteAppGoodScope_Handler(srv interface{}, ctx context.Context, d
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -668,6 +684,8 @@ func _Gateway_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, dec
 >>>>>>> 6712e122f (update scope)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -729,6 +747,7 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -755,6 +774,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 >>>>>>> 6712e122f (update scope)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> ef49b6dd6 (update scope)
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "npool/inspire/gw/v1/coupon/app/scope/scope.proto",
