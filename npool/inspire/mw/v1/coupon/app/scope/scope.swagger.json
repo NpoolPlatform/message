@@ -377,6 +377,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -445,6 +446,12 @@
 =======
         "CouponID": {
 >>>>>>> b20bec5db (update scope)
+=======
+        "AppGoodID": {
+          "type": "string"
+        },
+        "ScopeID": {
+>>>>>>> 4909ff031 (update appscope)
           "type": "string"
         }
       }
