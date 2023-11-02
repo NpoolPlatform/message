@@ -265,6 +265,9 @@
         },
         "AppGoodID": {
           "type": "string"
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
         }
       }
     },
