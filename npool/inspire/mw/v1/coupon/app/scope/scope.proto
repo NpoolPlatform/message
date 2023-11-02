@@ -13,6 +13,7 @@ service Middleware {
     rpc DeleteAppGoodScope     (DeleteAppGoodScopeRequest)    returns (DeleteAppGoodScopeResponse)   {}
     rpc GetAppGoodScopes       (GetAppGoodScopesRequest)      returns (GetAppGoodScopesResponse)     {}
     rpc ExistAppGoodScopeConds (ExistAppGoodScopeCondsRequest)returns (ExistAppGoodScopeCondsResponse)    {}
+    rpc VerifyCouponScope      (VerifyCouponScopeRequest)     returns (VerifyCouponScopeResponse)    {}
 }
 
 message ScopeReq {
@@ -103,4 +104,16 @@ message ExistAppGoodScopeCondsRequest {
 
 message ExistAppGoodScopeCondsResponse {
     bool Info   = 10;
+}
+
+message VerifyCouponScopeRequest {
+    string AppID         = 10;
+    string GoodID        = 20;
+    string AppGoodID     = 30;
+    string CouponID      = 40;
+    basetypes.inspire.v1.CouponScope CouponScope   = 50;
+}
+
+message VerifyCouponScopeResponse {
+    bool Info            = 10;
 }
