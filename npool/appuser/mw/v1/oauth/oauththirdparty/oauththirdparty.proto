@@ -21,6 +21,7 @@ service Middleware {
 }
 
 message OAuthThirdPartyReq {
+    optional uint32 ID             = 9;
     optional string EntID          = 10;
     optional basetypes.v1.SignMethod ClientName = 20;
     optional string ClientTag      = 30;
