@@ -111,7 +111,7 @@ message GetOAuthThirdPartyResponse {
 }
 
 message ExistOAuthThirdPartyRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistOAuthThirdPartyResponse {
