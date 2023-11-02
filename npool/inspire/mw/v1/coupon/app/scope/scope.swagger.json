@@ -114,6 +114,14 @@
         }
       }
     },
+    "v1GetAppGoodScopeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Scope"
+        }
+      }
+    },
     "v1GetAppGoodScopesResponse": {
       "type": "object",
       "properties": {
