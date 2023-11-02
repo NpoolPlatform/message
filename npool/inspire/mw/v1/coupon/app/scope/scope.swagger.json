@@ -269,6 +269,9 @@
         "ScopeID": {
 >>>>>>> 12249ae47 (update appscope)
           "type": "string"
+        },
+        "CouponScope": {
+          "type": "string"
         }
       }
     },
