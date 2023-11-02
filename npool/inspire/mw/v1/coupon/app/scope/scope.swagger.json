@@ -138,6 +138,9 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3fce0b5b6 (export getappgoodscope)
     "v1GetAppGoodScopeResponse": {
       "type": "object",
       "properties": {
