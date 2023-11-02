@@ -476,7 +476,7 @@
           "type": "string"
         },
         "CouponScope": {
-          "type": "string"
+          "$ref": "#/definitions/v1CouponType"
         }
       }
     },
