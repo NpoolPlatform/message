@@ -215,6 +215,9 @@
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
+        },
+        "GoodID": {
+          "type": "string"
         }
       }
     },
@@ -255,7 +258,7 @@
         }
       }
     },
-    "v1VerifyCouponScopeResponse": {
+    "v1VerifyCouponScopesResponse": {
       "type": "object",
       "properties": {
         "Info": {
