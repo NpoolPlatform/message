@@ -521,6 +521,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -535,12 +536,17 @@
     },
     "v1VerifyCouponScopesResponse": {
 <<<<<<< HEAD
+=======
+    },
+    "v1VerifyCouponScopeResponse": {
+>>>>>>> bf4f155fd (add verifycouponscope method)
       "type": "object",
       "properties": {
         "Info": {
           "type": "boolean"
         }
       }
+<<<<<<< HEAD
 >>>>>>> 63539b94d (add verifycouponscope method)
 =======
       "type": "object"
@@ -570,6 +576,8 @@
 >>>>>>> be65d63d5 (delete Info)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> bf4f155fd (add verifycouponscope method)
     }
   }
 }
