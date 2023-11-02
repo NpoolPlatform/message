@@ -88,12 +88,18 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d5be11d2e (Add ID to req)
         "ID": {
           "type": "integer",
           "format": "int64"
         },
+<<<<<<< HEAD
 =======
 >>>>>>> 8eb981ff1 (Add auto increment id)
+=======
+>>>>>>> d5be11d2e (Add ID to req)
         "EntID": {
           "type": "string"
         },
