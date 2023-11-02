@@ -204,6 +204,9 @@
         },
         "ScopeID": {
           "type": "string"
+        },
+        "CouponScope": {
+          "type": "string"
         }
       }
     },
