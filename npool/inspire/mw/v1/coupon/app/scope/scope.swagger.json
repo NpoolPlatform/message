@@ -246,6 +246,14 @@
           "format": "int64"
         }
       }
+    },
+    "v1VerifyCouponScopeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
     }
   }
 }
