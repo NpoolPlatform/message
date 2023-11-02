@@ -226,6 +226,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5680b7b6f (export getappgoodscope)
 =======
@@ -234,6 +235,8 @@
 =======
 >>>>>>> 3fce0b5b6 (export getappgoodscope)
 >>>>>>> 587e7fc0f (export getappgoodscope)
+=======
+>>>>>>> ea160715e (export getappgoodscope)
     "v1GetAppGoodScopeResponse": {
       "type": "object",
       "properties": {
