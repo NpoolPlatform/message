@@ -394,6 +394,9 @@
         },
         "GoodID": {
           "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
         }
       }
     },
