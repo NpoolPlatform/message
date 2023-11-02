@@ -23,7 +23,8 @@ message ScopeReq {
     optional string AppGoodID = 30;
     optional string ScopeID   = 40;
     optional basetypes.inspire.v1.CouponScope CouponScope  = 50;
-    optional string GoodID    = 60;
+    optional string GoodID    = 60; // only for VerifyCouponScopes
+    optional string CouponID  = 70; // only for VerifyCouponScopes
 }
 
 message Scope {
