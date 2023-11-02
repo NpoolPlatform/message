@@ -164,6 +164,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64",
@@ -185,6 +186,11 @@
           "type": "integer",
           "format": "int64",
 >>>>>>> ea1c9973f (Add ID to req)
+=======
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+>>>>>>> d5be11d2e (Add ID to req)
           "title": "Base info"
         },
         "EntID": {

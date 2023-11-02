@@ -198,14 +198,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d5be11d2e (Add ID to req)
 =======
 >>>>>>> ea1c9973f (Add ID to req)
+=======
+>>>>>>> d5be11d2e (Add ID to req)
         "ID": {
           "type": "integer",
           "format": "int64"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -218,6 +222,8 @@
 >>>>>>> ea1c9973f (Add ID to req)
 =======
 >>>>>>> 8eb981ff1 (Add auto increment id)
+=======
+>>>>>>> d5be11d2e (Add ID to req)
         "EntID": {
           "type": "string"
         },
