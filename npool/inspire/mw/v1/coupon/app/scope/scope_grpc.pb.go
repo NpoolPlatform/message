@@ -39,8 +39,11 @@ const (
 	Middleware_VerifyCouponScopes_FullMethodName     = "/inspire.middleware.coupon.app.scope.v1.Middleware/VerifyCouponScopes"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 =======
 	Middleware_CreateScope_FullMethodName = "/inspire.middleware.coupon.app.scope.v1.Middleware/CreateScope"
 	Middleware_DeleteScope_FullMethodName = "/inspire.middleware.coupon.app.scope.v1.Middleware/DeleteScope"
@@ -94,7 +97,12 @@ const (
 =======
 	Middleware_VerifyCouponScope_FullMethodName      = "/inspire.middleware.coupon.app.scope.v1.Middleware/VerifyCouponScope"
 >>>>>>> 67f0a1dbd (add verifycouponscope method)
+<<<<<<< HEAD
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+=======
+>>>>>>> c30c37510 (change to verifycouponscopes)
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -117,8 +125,11 @@ type MiddlewareClient interface {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 	VerifyCouponScopes(ctx context.Context, in *VerifyCouponScopesRequest, opts ...grpc.CallOption) (*VerifyCouponScopesResponse, error)
 =======
 	CreateScope(ctx context.Context, in *CreateScopeRequest, opts ...grpc.CallOption) (*CreateScopeResponse, error)
@@ -166,7 +177,13 @@ type MiddlewareClient interface {
 =======
 	VerifyCouponScope(ctx context.Context, in *VerifyCouponScopeRequest, opts ...grpc.CallOption) (*VerifyCouponScopeResponse, error)
 >>>>>>> 67f0a1dbd (add verifycouponscope method)
+<<<<<<< HEAD
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+=======
+	VerifyCouponScopes(ctx context.Context, in *VerifyCouponScopesRequest, opts ...grpc.CallOption) (*VerifyCouponScopesResponse, error)
+>>>>>>> c30c37510 (change to verifycouponscopes)
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 }
 
 type middlewareClient struct {
@@ -313,8 +330,11 @@ func (c *middlewareClient) ExistAppGoodScopeConds(ctx context.Context, in *Exist
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 func (c *middlewareClient) VerifyCouponScopes(ctx context.Context, in *VerifyCouponScopesRequest, opts ...grpc.CallOption) (*VerifyCouponScopesResponse, error) {
 	out := new(VerifyCouponScopesResponse)
 	err := c.cc.Invoke(ctx, Middleware_VerifyCouponScopes_FullMethodName, in, out, opts...)
@@ -370,7 +390,15 @@ func (c *middlewareClient) VerifyCouponScope(ctx context.Context, in *VerifyCoup
 	out := new(VerifyCouponScopeResponse)
 	err := c.cc.Invoke(ctx, Middleware_VerifyCouponScope_FullMethodName, in, out, opts...)
 >>>>>>> 67f0a1dbd (add verifycouponscope method)
+<<<<<<< HEAD
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+=======
+func (c *middlewareClient) VerifyCouponScopes(ctx context.Context, in *VerifyCouponScopesRequest, opts ...grpc.CallOption) (*VerifyCouponScopesResponse, error) {
+	out := new(VerifyCouponScopesResponse)
+	err := c.cc.Invoke(ctx, Middleware_VerifyCouponScopes_FullMethodName, in, out, opts...)
+>>>>>>> c30c37510 (change to verifycouponscopes)
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 	if err != nil {
 		return nil, err
 	}
@@ -397,8 +425,11 @@ type MiddlewareServer interface {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 	VerifyCouponScopes(context.Context, *VerifyCouponScopesRequest) (*VerifyCouponScopesResponse, error)
 =======
 	CreateScope(context.Context, *CreateScopeRequest) (*CreateScopeResponse, error)
@@ -446,7 +477,13 @@ type MiddlewareServer interface {
 =======
 	VerifyCouponScope(context.Context, *VerifyCouponScopeRequest) (*VerifyCouponScopeResponse, error)
 >>>>>>> 67f0a1dbd (add verifycouponscope method)
+<<<<<<< HEAD
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+=======
+	VerifyCouponScopes(context.Context, *VerifyCouponScopesRequest) (*VerifyCouponScopesResponse, error)
+>>>>>>> c30c37510 (change to verifycouponscopes)
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -492,8 +529,11 @@ func (UnimplementedMiddlewareServer) ExistAppGoodScopeConds(context.Context, *Ex
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 func (UnimplementedMiddlewareServer) VerifyCouponScopes(context.Context, *VerifyCouponScopesRequest) (*VerifyCouponScopesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VerifyCouponScopes not implemented")
 =======
@@ -571,7 +611,14 @@ func (UnimplementedMiddlewareServer) ExistAppGoodScopeConds(context.Context, *Ex
 func (UnimplementedMiddlewareServer) VerifyCouponScope(context.Context, *VerifyCouponScopeRequest) (*VerifyCouponScopeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VerifyCouponScope not implemented")
 >>>>>>> 67f0a1dbd (add verifycouponscope method)
+<<<<<<< HEAD
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+=======
+func (UnimplementedMiddlewareServer) VerifyCouponScopes(context.Context, *VerifyCouponScopesRequest) (*VerifyCouponScopesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method VerifyCouponScopes not implemented")
+>>>>>>> c30c37510 (change to verifycouponscopes)
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -878,8 +925,11 @@ func _Middleware_ExistAppGoodScopeConds_Handler(srv interface{}, ctx context.Con
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 func _Middleware_VerifyCouponScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(VerifyCouponScopesRequest)
 =======
@@ -893,7 +943,14 @@ func _Middleware_VerifyCouponScopes_Handler(srv interface{}, ctx context.Context
 >>>>>>> 8cfdb82ab (change to verifycouponscopes)
 =======
 >>>>>>> 67f0a1dbd (add verifycouponscope method)
+<<<<<<< HEAD
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+=======
+func _Middleware_VerifyCouponScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyCouponScopesRequest)
+>>>>>>> c30c37510 (change to verifycouponscopes)
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -901,8 +958,11 @@ func _Middleware_VerifyCouponScopes_Handler(srv interface{}, ctx context.Context
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 		return srv.(MiddlewareServer).VerifyCouponScopes(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
@@ -1026,15 +1086,25 @@ func _Middleware_ExistAppGoodScopeConds_Handler(srv interface{}, ctx context.Con
 =======
 =======
 		return srv.(MiddlewareServer).VerifyCouponScope(ctx, in)
+=======
+		return srv.(MiddlewareServer).VerifyCouponScopes(ctx, in)
+>>>>>>> c30c37510 (change to verifycouponscopes)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_VerifyCouponScope_FullMethodName,
+		FullMethod: Middleware_VerifyCouponScopes_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+<<<<<<< HEAD
 		return srv.(MiddlewareServer).VerifyCouponScope(ctx, req.(*VerifyCouponScopeRequest))
 >>>>>>> 67f0a1dbd (add verifycouponscope method)
+<<<<<<< HEAD
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+=======
+		return srv.(MiddlewareServer).VerifyCouponScopes(ctx, req.(*VerifyCouponScopesRequest))
+>>>>>>> c30c37510 (change to verifycouponscopes)
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1090,8 +1160,11 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 			MethodName: "VerifyCouponScopes",
 			Handler:    _Middleware_VerifyCouponScopes_Handler,
 =======
@@ -1175,7 +1248,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "VerifyCouponScope",
 			Handler:    _Middleware_VerifyCouponScope_Handler,
 >>>>>>> 67f0a1dbd (add verifycouponscope method)
+<<<<<<< HEAD
 >>>>>>> 3b06b1838 (add verifycouponscope method)
+=======
+=======
+			MethodName: "VerifyCouponScopes",
+			Handler:    _Middleware_VerifyCouponScopes_Handler,
+>>>>>>> c30c37510 (change to verifycouponscopes)
+>>>>>>> fbc5cffab (change to verifycouponscopes)
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
