@@ -206,7 +206,7 @@
           "type": "string"
         },
         "CouponScope": {
-          "$ref": "#/definitions/v1CouponType"
+          "$ref": "#/definitions/v1CouponScope"
         }
       }
     },
