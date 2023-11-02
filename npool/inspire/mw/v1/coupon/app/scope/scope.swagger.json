@@ -312,11 +312,22 @@
         }
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
     },
     "v1VerifyCouponScopesResponse": {
       "type": "object"
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+    },
+    "v1VerifyCouponScopeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+>>>>>>> 67f0a1dbd (add verifycouponscope method)
     }
   }
 }
