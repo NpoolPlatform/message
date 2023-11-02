@@ -480,6 +480,9 @@
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
+        },
+        "GoodID": {
+          "type": "string"
         }
       }
     },
@@ -541,8 +544,12 @@
 <<<<<<< HEAD
 =======
     },
+<<<<<<< HEAD
     "v1VerifyCouponScopeResponse": {
 >>>>>>> bf4f155fd (add verifycouponscope method)
+=======
+    "v1VerifyCouponScopesResponse": {
+>>>>>>> f192ebf11 (change to verifycouponscopes)
       "type": "object",
       "properties": {
         "Info": {
