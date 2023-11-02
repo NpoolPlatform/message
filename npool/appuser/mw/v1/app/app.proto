@@ -22,6 +22,7 @@ service Middleware {
 
 message AppReq {
     // Base info
+    optional uint32          ID                 = 9;
     optional string          EntID              = 10;
     optional string          CreatedBy          = 20;
     optional string          Name               = 30;

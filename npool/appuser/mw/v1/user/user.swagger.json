@@ -440,9 +440,13 @@
     "v1UserReq": {
       "type": "object",
       "properties": {
-        "EntID": {
-          "type": "string",
+        "ID": {
+          "type": "integer",
+          "format": "int64",
           "title": "Base"
+        },
+        "EntID": {
+          "type": "string"
         },
         "AppID": {
           "type": "string"
