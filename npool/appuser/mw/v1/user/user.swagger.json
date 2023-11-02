@@ -441,6 +441,7 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64",
@@ -448,6 +449,11 @@
         "EntID": {
           "type": "string",
 >>>>>>> 8eb981ff1 (Add auto increment id)
+=======
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+>>>>>>> d5be11d2e (Add ID to req)
           "title": "Base"
         },
         "EntID": {
