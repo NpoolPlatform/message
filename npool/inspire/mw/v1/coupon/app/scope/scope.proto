@@ -12,6 +12,7 @@ service Middleware {
     rpc CreateAppGoodScope     (CreateAppGoodScopeRequest)    returns (CreateAppGoodScopeResponse)   {}
     rpc DeleteAppGoodScope     (DeleteAppGoodScopeRequest)    returns (DeleteAppGoodScopeResponse)   {}
     rpc GetAppGoodScopes       (GetAppGoodScopesRequest)      returns (GetAppGoodScopesResponse)     {}
+    rpc GetAppGoodScope        (GetAppGoodScopeRequest)       returns (GetAppGoodScopeResponse)      {}
     rpc ExistAppGoodScopeConds (ExistAppGoodScopeCondsRequest)returns (ExistAppGoodScopeCondsResponse)    {}
     rpc VerifyCouponScope      (VerifyCouponScopeRequest)     returns (VerifyCouponScopeResponse)    {}
 }
