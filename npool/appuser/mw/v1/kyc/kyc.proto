@@ -22,6 +22,7 @@ service Middleware {
 }
 
 message KycReq {
+    optional uint32          ID            = 9;
     optional string          EntID         = 10;
     optional string          AppID         = 20;
     optional string          UserID        = 30;

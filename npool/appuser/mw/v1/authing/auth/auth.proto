@@ -17,6 +17,7 @@ service Middleware {
 }
 
 message AuthReq {
+    optional uint32 ID          = 9;
     optional string EntID       = 10;
     optional string AppID       = 20;
     optional string RoleID      = 30;

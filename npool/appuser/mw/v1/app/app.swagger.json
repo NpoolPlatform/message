@@ -158,9 +158,13 @@
     "v1AppReq": {
       "type": "object",
       "properties": {
-        "EntID": {
-          "type": "string",
+        "ID": {
+          "type": "integer",
+          "format": "int64",
           "title": "Base info"
+        },
+        "EntID": {
+          "type": "string"
         },
         "CreatedBy": {
           "type": "string"
