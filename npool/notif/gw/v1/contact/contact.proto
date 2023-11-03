@@ -125,6 +125,7 @@ message GetAppContactsResponse {
 
 message UpdateContactRequest {
     uint32          ID          = 10;
+    string          EntID       = 11;
     string          AppID       = 20;
     optional string Account     = 30;
     optional basetypes.v1.SignMethod AccountType = 40;
@@ -136,6 +137,7 @@ message UpdateContactResponse {
 }
 message UpdateAppContactRequest {
     uint32          ID          = 10;
+    string          EntID       = 11;
     string          TargetAppID = 20;
     optional string Account     = 30;
     optional basetypes.v1.SignMethod AccountType = 40;

@@ -89,6 +89,7 @@ message CreateAppAnnouncementUserResponse {
 
 message DeleteAnnouncementUserRequest {
     uint32 ID    = 10;
+    string EntID = 11;
     string AppID = 20;
 }
 
@@ -98,6 +99,7 @@ message DeleteAnnouncementUserResponse {
 
 message DeleteAppAnnouncementUserRequest {
     uint32 ID          = 10;
+    string EntID       = 11;
     string TargetAppID = 20;
 }
 

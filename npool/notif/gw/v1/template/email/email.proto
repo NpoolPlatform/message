@@ -124,6 +124,7 @@ message GetAppEmailTemplatesResponse {
 
 message UpdateEmailTemplateRequest {
     uint32 ID                = 10;
+    string EntID             = 11;
     string AppID             = 20;
     optional string Sender   = 30;
     repeated string ReplyTos = 40;
@@ -139,6 +140,7 @@ message UpdateEmailTemplateResponse {
 
 message UpdateAppEmailTemplateRequest {
     uint32 ID                = 10;
+    string EntID             = 11;
     string TargetAppID       = 20;
     optional string Sender   = 30;
     repeated string ReplyTos = 40;
