@@ -748,6 +748,10 @@
     "appusergatewayuserv1UpdateUserRequest": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
         "AppID": {
           "type": "string"
         },
