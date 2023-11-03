@@ -137,9 +137,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "TargetAppID": {
+          "type": "string"
+        },
+        "EntID": {
           "type": "string"
         }
       }
