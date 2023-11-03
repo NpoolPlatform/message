@@ -4,23 +4,53 @@ package review.middleware.review.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/review/mw/v2/review";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/review/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateReview     (CreateReviewRequest)     returns (CreateReviewResponse)     {}
-    rpc UpdateReview     (UpdateReviewRequest)     returns (UpdateReviewResponse)     {}
-    rpc GetObjectReview  (GetObjectReviewRequest)  returns (GetObjectReviewResponse)  {}
-    rpc GetObjectReviews (GetObjectReviewsRequest) returns (GetObjectReviewsResponse) {}
-    rpc GetReviews       (GetReviewsRequest)       returns (GetReviewsResponse)       {}
-    rpc DeleteReview     (DeleteReviewRequest)     returns (DeleteReviewResponse)     {}
-    rpc GetReview        (GetReviewRequest)        returns (GetReviewResponse)        {}
-    rpc ExistReviewConds (ExistReviewCondsRequest) returns (ExistReviewCondsResponse) {}
+    rpc CreateReview     (CreateReviewRequest)     returns (CreateReviewResponse)     {
+        option (google.api.http) = {
+            post: "/v1/review_CreateReview"
+            body: "*"
+        };
+    }
+    rpc UpdateReview     (UpdateReviewRequest)     returns (UpdateReviewResponse)     {
+        option (google.api.http) = {
+            post: "/v1/review_UpdateReview"
+            body: "*"
+        };
+    }
+    rpc GetReviews       (GetReviewsRequest)       returns (GetReviewsResponse)       {
+        option (google.api.http) = {
+            post: "/v1/review_GetReviews"
+            body: "*"
+        };
+    }
+    rpc DeleteReview     (DeleteReviewRequest)     returns (DeleteReviewResponse)     {
+        option (google.api.http) = {
+            post: "/v1/review_DeleteReview"
+            body: "*"
+        };
+    }
+    rpc GetReview        (GetReviewRequest)        returns (GetReviewResponse)        {
+        option (google.api.http) = {
+            post: "/v1/review_GetReview"
+            body: "*"
+        };
+    }
+    rpc ExistReviewConds (ExistReviewCondsRequest) returns (ExistReviewCondsResponse) {
+        option (google.api.http) = {
+            post: "/v1/review_ExistReviewConds"
+            body: "*"
+        };
+    }
 }
 
 message ReviewReq {
-    optional string            ID         = 10;
+    optional uint32            ID         = 9;
+    optional string            EntID      = 10;
     optional string            AppID      = 20;
     optional string            ReviewerID = 30;
     optional string            Domain     = 40;
@@ -33,7 +63,9 @@ message ReviewReq {
 
 message Review {
     // @inject_tag: sql:"id"
-    string            ID         = 10;
+    uint32            ID         = 9;
+    // @inject_tag: sql:"ent_id"
+    string            EntID      = 10;
     // @inject_tag: sql:"app_id"
     string            AppID      = 20;
     // @inject_tag: sql:"reviewer_id"
@@ -44,30 +76,31 @@ message Review {
     string            ObjectID   = 50;
     // @inject_tag: sql:"trigger"
     string            TriggerStr = 51;
-    basetypes.review.v1.ReviewTriggerType Trigger    = 60;
+    basetypes.review.v1.ReviewTriggerType Trigger   = 60;
     // @inject_tag: sql:"object_type"
     string            ObjectTypeStr = 61;
     basetypes.review.v1.ReviewObjectType ObjectType = 70;
     // @inject_tag: sql:"state"
-    string            StateStr      = 71;
+    string            StateStr    = 71;
     basetypes.review.v1.ReviewState State = 80;
     // @inject_tag: sql:"message"
-    string            Message       = 90;
+    string            Message     = 90;
     // @inject_tag: sql:"created_at"
-    uint32            CreatedAt     = 100;
+    uint32            CreatedAt   = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32            UpdatedAt     = 110;
+    uint32            UpdatedAt   = 1100;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID         = 10;
+    optional basetypes.v1.StringVal EntID      = 10;
     optional basetypes.v1.StringVal AppID      = 20;
     optional basetypes.v1.StringVal ReviewerID = 30;
     optional basetypes.v1.StringVal Domain     = 40;
     optional basetypes.v1.StringVal ObjectID   = 50;
-    optional basetypes.v1.Int32Val  Trigger    = 60;
-    optional basetypes.v1.Int32Val  ObjectType = 70;
-    optional basetypes.v1.Int32Val  State      = 80;
+    optional basetypes.v1.Uint32Val Trigger    = 60;
+    optional basetypes.v1.Uint32Val ObjectType = 70;
+    optional basetypes.v1.Uint32Val State      = 80;
+    optional basetypes.v1.StringSliceVal EntIDs     = 90;
 }
 
 message CreateReviewRequest {
@@ -97,28 +130,6 @@ message GetReviewsResponse {
     uint32                            Total = 20;
 }
 
-message GetObjectReviewRequest {
-    string AppID     = 10;
-    string Domain    = 20;
-    string ObjectID  = 30;
-    basetypes.review.v1.ReviewObjectType ObjectType = 40;
-}
-
-message GetObjectReviewResponse {
-    Review Info = 10;
-}
-
-message GetObjectReviewsRequest {
-    string          AppID     = 10;
-    string          Domain    = 20;
-    repeated string ObjectIDs = 30;
-    basetypes.review.v1.ReviewObjectType ObjectType = 40;
-}
-
-message GetObjectReviewsResponse {
-    repeated Review Infos = 10;
-}
-
 message DeleteReviewRequest {
     ReviewReq Info = 10;
 }
@@ -128,7 +139,7 @@ message DeleteReviewResponse {
 }
 
 message GetReviewRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetReviewResponse {

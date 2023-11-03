@@ -35,7 +35,8 @@ service Gateway {
 }
 
 message Country {
-    string ID         = 10;
+    uint32 ID         = 9;
+    string EntID      = 10;
     string AppID      = 20;
     string AppName    = 30;
     string CountryID  = 40;
@@ -79,7 +80,7 @@ message GetAppCountriesResponse {
 }
 
 message DeleteCountryRequest {
-    string ID          = 10;
+    uint32 ID          = 10;
     string TargetAppID = 20;
 }
 

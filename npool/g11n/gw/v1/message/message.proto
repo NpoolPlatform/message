@@ -72,7 +72,9 @@ service Gateway {
 }
 
 message Message {
-    string ID         = 10;
+    uint32 ID         = 9;
+    string EntID      = 10;
+    string AppID      = 19;
     string AppName    = 20;
     string LangID     = 30;
     string Lang       = 40;
@@ -112,7 +114,7 @@ message CreateAppMessageResponse {
 message CreateMessagesRequest {
     string                                       AppID        = 10;
     string                                       TargetLangID = 20;
-    repeated g11n.middleware.message1.v1.MessageReq Infos        = 30;
+    repeated g11n.middleware.message1.v1.MessageReq Infos     = 30;
 }
 
 message CreateMessagesResponse {
@@ -122,7 +124,7 @@ message CreateMessagesResponse {
 message CreateAppMessagesRequest {
     string                                       TargetAppID  = 10;
     string                                       TargetLangID = 20;
-    repeated g11n.middleware.message1.v1.MessageReq Infos        = 30;
+    repeated g11n.middleware.message1.v1.MessageReq Infos     = 30;
 }
 
 message CreateAppMessagesResponse {
@@ -130,7 +132,7 @@ message CreateAppMessagesResponse {
 }
 
 message UpdateMessageRequest {
-    string          ID           = 10;
+    uint32          ID           = 10;
     string          AppID        = 20;
     optional string TargetLangID = 30;
     optional string MessageID    = 40;
@@ -144,7 +146,7 @@ message UpdateMessageResponse {
 }
 
 message UpdateAppMessageRequest {
-    string          ID           = 10;
+    uint32          ID           = 10;
     string          AppID        = 20;
     string          TargetAppID  = 30;
     optional string TargetLangID = 40;
@@ -160,7 +162,7 @@ message UpdateAppMessageResponse {
 
 message GetMessagesRequest {
     string        AppID    = 10;
-    optional string LangID   = 11;
+    optional string LangID = 11;
     optional bool Disabled = 20;
     int32         Offset   = 30;
     int32         Limit    = 40;
@@ -185,7 +187,7 @@ message GetAppMessagesResponse {
 }
 
 message DeleteMessageRequest {
-    string ID    = 10;
+    uint32 ID    = 10;
     string AppID = 20;
 }
 
@@ -194,7 +196,7 @@ message DeleteMessageResponse {
 }
 
 message DeleteAppMessageRequest {
-    string ID          = 10;
+    uint32 ID          = 10;
     string TargetAppID = 20;
 }
 

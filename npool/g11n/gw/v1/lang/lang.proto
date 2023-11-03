@@ -36,7 +36,7 @@ service Gateway {
 }
 
 message CreateLangRequest {
-    optional string ID     = 10;
+    optional string EntID  = 10;
     string          Lang   = 20;
     string          Logo   = 30;
     string          Name   = 40;
@@ -56,7 +56,7 @@ message CreateLangsResponse {
 }
 
 message UpdateLangRequest {
-    string          ID    = 10;
+    uint32          ID    = 10;
     optional string Lang  = 20;
     optional string Logo  = 30;
     optional string Name  = 40;
@@ -74,7 +74,7 @@ message GetLangsRequest {
 
 message GetLangsResponse {
     repeated g11n.middleware.lang.v1.Lang Infos = 10;
-    uint32                             Total = 20;
+    uint32                                Total = 20;
 }
 
 
