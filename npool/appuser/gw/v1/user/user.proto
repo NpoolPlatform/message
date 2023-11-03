@@ -262,6 +262,7 @@ message UpdateUserKolResponse {
 }
 
 message UpdateAppUserRequest {
+    uint32          ID           = 9;
     string          AppID        = 10;
     string          TargetUserID = 20;
     optional bool   Kol          = 30;
