@@ -66,6 +66,7 @@ message CreateNotifUserResponse {
 
 message DeleteNotifUserRequest {
     uint32 ID    = 10;
+    string EntID = 11;
     string AppID = 20;
 }
 

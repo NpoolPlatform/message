@@ -115,6 +115,7 @@ message GetAppFrontendTemplatesResponse {
 
 message UpdateFrontendTemplateRequest {
     uint32 ID                    = 10;
+    string EntID                 = 11;
     string AppID                 = 20;
     optional string Title        = 30;
     optional string Content      = 40;
@@ -126,6 +127,7 @@ message UpdateFrontendTemplateResponse {
 
 message UpdateAppFrontendTemplateRequest {
     uint32          ID           = 10;
+    string          EntID        = 11;
     string          TargetAppID  = 20;
     optional string Title        = 30;
     optional string Content      = 40;

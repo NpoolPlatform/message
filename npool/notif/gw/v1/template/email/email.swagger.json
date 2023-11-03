@@ -343,6 +343,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "EntID": {
+          "type": "string"
+        },
         "AppID": {
           "type": "string"
         },
@@ -567,6 +570,9 @@
         "ID": {
           "type": "integer",
           "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
         },
         "TargetAppID": {
           "type": "string"
