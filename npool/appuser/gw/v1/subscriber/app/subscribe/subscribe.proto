@@ -51,8 +51,9 @@ message GetAppSubscribesResponse {
 }
 
 message DeleteAppSubscribeRequest {
-    string ID          = 10;
+    uint32 ID          = 10;
     string TargetAppID = 20;
+    string EntID       = 30;
 }
 
 message DeleteAppSubscribeResponse {

@@ -74,9 +74,10 @@ message GetUsersResponse {
 }
 
 message DeleteUserRequest {
-    string ID            = 9;
+    uint32 ID            = 9;
     string AppID         = 10;
     string TargetUserID  = 20;
+    string EntID         = 30;
 }
 
 message DeleteUserResponse {
@@ -84,9 +85,10 @@ message DeleteUserResponse {
 }
 
 message DeleteAppUserRequest {
-    string ID            = 9;
+    uint32 ID            = 9;
     string TargetAppID   = 10;
     string TargetUserID  = 20;
+    string EntID         = 30;
 }
 
 message DeleteAppUserResponse {

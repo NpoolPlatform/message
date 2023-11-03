@@ -63,7 +63,8 @@ message CreateAppAuthResponse {
 
 message DeleteAppAuthRequest {
     string TargetAppID = 10;
-    string ID          = 20;
+    uint32 ID          = 20;
+    string EntID       = 30;
 }
 
 message DeleteAppAuthResponse {

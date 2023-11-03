@@ -57,7 +57,8 @@ message CreateOAuthThirdPartyResponse {
 }
 
 message UpdateOAuthThirdPartyRequest {
-    string          ID             = 10;
+    uint32          ID             = 10;
+    string          EntID          = 11;
     string          TargetAppID    = 20;
     optional string ThirdPartyID   = 30;
     optional string ClientID       = 40;
@@ -77,7 +78,7 @@ message GetOAuthThirdPartiesRequest {
 
 message GetOAuthThirdPartiesResponse {
     repeated appuser.middleware.oauth.appoauththirdparty.v1.OAuthThirdParty Infos = 10;
-    uint32                                                                          Total = 20;
+    uint32                                                                  Total = 20;
 }
 
 message GetAppOAuthThirdPartiesRequest {
@@ -88,12 +89,13 @@ message GetAppOAuthThirdPartiesRequest {
 
 message GetAppOAuthThirdPartiesResponse {
     repeated appuser.middleware.oauth.appoauththirdparty.v1.OAuthThirdParty Infos = 10;
-    uint32                                                                          Total = 20;
+    uint32                                                                  Total = 20;
 }
 
 message DeleteOAuthThirdPartyRequest {
-    string ID          = 10;
+    uint32 ID          = 10;
     string TargetAppID = 20;
+    string EntID       = 30;
 }
 
 message DeleteOAuthThirdPartyResponse {
