@@ -349,9 +349,12 @@
           "format": "int64"
         },
         "EntID": {
+<<<<<<< HEAD
           "type": "string"
         },
         "NewEntID": {
+=======
+>>>>>>> 6b2d1d40f (Add ent id)
           "type": "string"
         },
         "Name": {
