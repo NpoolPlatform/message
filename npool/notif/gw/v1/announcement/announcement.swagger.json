@@ -357,6 +357,9 @@
 =======
 >>>>>>> a8aaa956a (Change id to entid)
         },
+        "EntID": {
+          "type": "string"
+        },
         "AppID": {
           "type": "string"
         }
@@ -510,6 +513,9 @@
           "type": "string"
 =======
 >>>>>>> a8aaa956a (Change id to entid)
+        },
+        "EntID": {
+          "type": "string"
         },
         "AppID": {
           "type": "string"
