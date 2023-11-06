@@ -47,7 +47,8 @@ service Gateway {
 }
 
 message Transfer {
-    string ID            = 10;
+    uint32 ID            = 9;
+    string EntID         = 10;
     string AppID         = 20;
     string UserID        = 30;
     string TargetUserID  = 40;
@@ -77,7 +78,8 @@ message CreateTransferResponse {
 message DeleteTransferRequest {
     string AppID      = 10;
     string UserID     = 20;
-    string TransferID = 30;
+    uint32 TransferID = 30;
+    string EntID      = 40;
 }
 
 message DeleteTransferResponse {
