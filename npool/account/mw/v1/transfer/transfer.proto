@@ -10,7 +10,6 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
   rpc CreateTransfer     (CreateTransferRequest)     returns (CreateTransferResponse)     {}
   rpc GetTransfer        (GetTransferRequest)        returns (GetTransferResponse)        {}
-  rpc GetTransferOnly    (GetTransferOnlyRequest)    returns (GetTransferOnlyResponse)    {}
   rpc GetTransfers       (GetTransfersRequest)       returns (GetTransfersResponse)       {}
   rpc ExistTransfer      (ExistTransferRequest)      returns (ExistTransferResponse)      {}
   rpc ExistTransferConds (ExistTransferCondsRequest) returns (ExistTransferCondsResponse) {}
@@ -18,7 +17,8 @@ service Middleware {
 }
 
 message TransferReq {
-  optional string ID           = 10;
+  optional uint32 ID           = 9;
+  optional string EntID        = 10;
   optional string AppID        = 20;
   optional string UserID       = 30;
   optional string TargetUserID = 40;
@@ -26,7 +26,9 @@ message TransferReq {
 
 message Transfer {
   // @inject_tag: sql:"id"
-  string ID           = 10;
+  uint32 ID           = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID        = 10;
   // @inject_tag: sql:"app_id"
   string AppID        = 20;
   // @inject_tag: sql:"user_id"
@@ -34,15 +36,16 @@ message Transfer {
   // @inject_tag: sql:"target_user_id"
   string TargetUserID = 40;
   // @inject_tag: sql:"created_at"
-  uint32 CreatedAt    = 50;
+  uint32 CreatedAt    = 1000;
   // @inject_tag: sql:"updated_at"
-  uint32 UpdatedAt  = 60;
+  uint32 UpdatedAt    = 1010;
   // @inject_tag: sql:"deleted_at"
-  uint32 DeletedAt  = 70;
+  uint32 DeletedAt    = 1020;
 }
 
 message Conds {
-  optional basetypes.v1.StringVal ID           = 10;
+  optional basetypes.v1.Uint32Val ID           = 9;
+  optional basetypes.v1.StringVal EntID        = 10;
   optional basetypes.v1.StringVal AppID        = 20;
   optional basetypes.v1.StringVal UserID       = 30;
   optional basetypes.v1.StringVal TargetUserID = 40;
@@ -57,7 +60,7 @@ message CreateTransferResponse {
 }
 
 message GetTransferRequest {
-  string ID = 10;
+  string EntID = 10;
 }
 
 message GetTransferResponse {
@@ -75,16 +78,8 @@ message GetTransfersResponse {
   uint32            Total = 20;
 }
 
-message GetTransferOnlyRequest {
-  Conds Conds = 10;
-}
-
-message GetTransferOnlyResponse {
-  Transfer Info = 10;
-}
-
 message ExistTransferRequest {
-  string ID = 10;
+  string EntID = 10;
 }
 
 message ExistTransferResponse {
