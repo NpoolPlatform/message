@@ -93,7 +93,7 @@ message CreateAppContactResponse {
 }
 
 message GetContactRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetContactResponse {
@@ -124,7 +124,8 @@ message GetAppContactsResponse {
 }
 
 message UpdateContactRequest {
-    string          ID          = 10;
+    uint32          ID          = 10;
+    string          EntID       = 11;
     string          AppID       = 20;
     optional string Account     = 30;
     optional basetypes.v1.SignMethod AccountType = 40;
@@ -135,7 +136,8 @@ message UpdateContactResponse {
     notif.middleware.contact.v1.Contact Info = 10;
 }
 message UpdateAppContactRequest {
-    string          ID          = 10;
+    uint32          ID          = 10;
+    string          EntID       = 11;
     string          TargetAppID = 20;
     optional string Account     = 30;
     optional basetypes.v1.SignMethod AccountType = 40;

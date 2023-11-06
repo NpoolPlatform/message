@@ -9,18 +9,17 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateAnnouncementUser     (CreateAnnouncementUserRequest)     returns (CreateAnnouncementUserResponse)     {}
-    rpc UpdateAnnouncementUser     (UpdateAnnouncementUserRequest)     returns (UpdateAnnouncementUserResponse)     {}
     rpc GetAnnouncementUser        (GetAnnouncementUserRequest)        returns (GetAnnouncementUserResponse)        {}
-    rpc GetAnnouncementUserOnly    (GetAnnouncementUserOnlyRequest)    returns (GetAnnouncementUserOnlyResponse)    {}
     rpc GetAnnouncementUsers       (GetAnnouncementUsersRequest)       returns (GetAnnouncementUsersResponse)       {}
-    rpc ExistAnnouncementUser      (ExistAnnouncementUserRequest)      returns (ExistAnnouncementUserResponse)      {}
     rpc ExistAnnouncementUserConds (ExistAnnouncementUserCondsRequest) returns (ExistAnnouncementUserCondsResponse) {}
     rpc DeleteAnnouncementUser     (DeleteAnnouncementUserRequest)     returns (DeleteAnnouncementUserResponse)     {}
 }
 
 message AnnouncementUser {
     // @inject_tag: sql:"id"
-    string ID             = 10;
+    uint32 ID             = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID          = 10;
     // @inject_tag: sql:"app_id"
     string AppID          = 20;
     // @inject_tag: sql:"user_id"
@@ -48,17 +47,19 @@ message AnnouncementUser {
 }
 
 message AnnouncementUserReq {
-    optional string ID             = 10;
+    optional uint32 ID             = 9;
+    optional string EntID          = 10;
     optional string AppID          = 20;
     optional string UserID         = 30;
     optional string AnnouncementID = 40;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID             = 10;
-    optional basetypes.v1.StringVal      AppID          = 30;
-    optional basetypes.v1.StringVal      UserID         = 40;
-    optional basetypes.v1.StringVal      AnnouncementID = 50;
+    optional basetypes.v1.Uint32Val ID             = 9;
+    optional basetypes.v1.StringVal EntID          = 10;
+    optional basetypes.v1.StringVal AppID          = 30;
+    optional basetypes.v1.StringVal UserID         = 40;
+    optional basetypes.v1.StringVal AnnouncementID = 50;
 }
 
 message CreateAnnouncementUserRequest {
@@ -69,16 +70,8 @@ message CreateAnnouncementUserResponse {
     AnnouncementUser Info = 10;
 }
 
-message UpdateAnnouncementUserRequest {
-    AnnouncementUserReq Info = 10;
-}
-
-message UpdateAnnouncementUserResponse {
-    AnnouncementUser Info = 10;
-}
-
 message GetAnnouncementUserRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetAnnouncementUserResponse {
@@ -94,22 +87,6 @@ message GetAnnouncementUsersRequest {
 message GetAnnouncementUsersResponse {
     repeated AnnouncementUser Infos = 10;
     uint32                    Total = 20;
-}
-
-message GetAnnouncementUserOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetAnnouncementUserOnlyResponse {
-    AnnouncementUser Info = 10;
-}
-
-message ExistAnnouncementUserRequest {
-    string ID = 10;
-}
-
-message ExistAnnouncementUserResponse {
-    bool Info = 10;
 }
 
 message ExistAnnouncementUserCondsRequest {

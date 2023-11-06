@@ -4,31 +4,37 @@ package notif.middleware.template.frontend.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/template/frontend";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
     rpc GetFrontendTemplate        (GetFrontendTemplateRequest)        returns (GetFrontendTemplateResponse)        {}
     rpc GetFrontendTemplates       (GetFrontendTemplatesRequest)       returns (GetFrontendTemplatesResponse)       {}
-    rpc GetFrontendTemplateOnly    (GetFrontendTemplateOnlyRequest)    returns (GetFrontendTemplateOnlyResponse)    {}
     rpc CreateFrontendTemplate     (CreateFrontendTemplateRequest)     returns (CreateFrontendTemplateResponse)     {}
     rpc CreateFrontendTemplates    (CreateFrontendTemplatesRequest)    returns (CreateFrontendTemplatesResponse)    {}
     rpc UpdateFrontendTemplate     (UpdateFrontendTemplateRequest)     returns (UpdateFrontendTemplateResponse)     {}
     rpc ExistFrontendTemplate      (ExistFrontendTemplateRequest)      returns (ExistFrontendTemplateResponse)      {}
     rpc ExistFrontendTemplateConds (ExistFrontendTemplateCondsRequest) returns (ExistFrontendTemplateCondsResponse) {}
-    rpc CountFrontendTemplates     (CountFrontendTemplatesRequest)     returns (CountFrontendTemplatesResponse)     {}
-    rpc DeleteFrontendTemplate     (DeleteFrontendTemplateRequest)     returns (DeleteFrontendTemplateResponse)     {}
+    rpc DeleteFrontendTemplate     (DeleteFrontendTemplateRequest)     returns (DeleteFrontendTemplateResponse)     {
+        option (google.api.http) = {
+            post: "/v1/template_DeleteFrontendTemplate"
+            body: "*"
+        };
+    }
 }
 
 message FrontendTemplate {
     // @inject_tag: sql:"id"
-    string ID          = 10;
+    uint32 ID          = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID       = 10;
     // @inject_tag: sql:"app_id"
     string AppID       = 20;
     // @inject_tag: sql:"lang_id"
     string LangID      = 30;
     // @inject_tag: sql:"used_for"
-    string UsedForStr        = 40;
+    string UsedForStr            = 40;
     basetypes.v1.UsedFor UsedFor = 50;
     // @inject_tag: sql:"title"
     string Title       = 60;
@@ -41,7 +47,8 @@ message FrontendTemplate {
 }
 
 message FrontendTemplateReq {
-    optional string ID          = 10;
+    optional uint32 ID          = 9;
+    optional string EntID       = 10;
     optional string AppID       = 20;
     optional string LangID      = 30;
     optional basetypes.v1.UsedFor UsedFor = 40;
@@ -50,7 +57,8 @@ message FrontendTemplateReq {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID      = 10;
+    optional basetypes.v1.Uint32Val ID      = 9;
+    optional basetypes.v1.StringVal EntID   = 10;
     optional basetypes.v1.StringVal AppID   = 20;
     optional basetypes.v1.StringVal LangID  = 30;
     optional basetypes.v1.Uint32Val UsedFor = 40;
@@ -60,7 +68,7 @@ message Conds {
 }
 
 message GetFrontendTemplateRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetFrontendTemplateResponse {
@@ -76,14 +84,6 @@ message GetFrontendTemplatesRequest {
 message GetFrontendTemplatesResponse {
     repeated FrontendTemplate Infos = 10;
     uint32                    Total = 20;
-}
-
-message GetFrontendTemplateOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetFrontendTemplateOnlyResponse {
-    FrontendTemplate Info = 10;
 }
 
 message CreateFrontendTemplateRequest {
@@ -111,7 +111,7 @@ message UpdateFrontendTemplateResponse {
 }
 
 message ExistFrontendTemplateRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistFrontendTemplateResponse {
@@ -124,14 +124,6 @@ message ExistFrontendTemplateCondsRequest {
 
 message ExistFrontendTemplateCondsResponse {
     bool Info = 10;
-}
-
-message CountFrontendTemplatesRequest {
-    Conds Conds = 10;
-}
-
-message CountFrontendTemplatesResponse {
-    uint32 Info = 10;
 }
 
 message DeleteFrontendTemplateRequest {

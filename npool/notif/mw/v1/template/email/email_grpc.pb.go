@@ -21,7 +21,6 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Middleware_GetEmailTemplate_FullMethodName        = "/notif.middleware.template.email.v1.Middleware/GetEmailTemplate"
 	Middleware_GetEmailTemplates_FullMethodName       = "/notif.middleware.template.email.v1.Middleware/GetEmailTemplates"
-	Middleware_GetEmailTemplateOnly_FullMethodName    = "/notif.middleware.template.email.v1.Middleware/GetEmailTemplateOnly"
 	Middleware_CreateEmailTemplate_FullMethodName     = "/notif.middleware.template.email.v1.Middleware/CreateEmailTemplate"
 	Middleware_CreateEmailTemplates_FullMethodName    = "/notif.middleware.template.email.v1.Middleware/CreateEmailTemplates"
 	Middleware_UpdateEmailTemplate_FullMethodName     = "/notif.middleware.template.email.v1.Middleware/UpdateEmailTemplate"
@@ -36,7 +35,6 @@ const (
 type MiddlewareClient interface {
 	GetEmailTemplate(ctx context.Context, in *GetEmailTemplateRequest, opts ...grpc.CallOption) (*GetEmailTemplateResponse, error)
 	GetEmailTemplates(ctx context.Context, in *GetEmailTemplatesRequest, opts ...grpc.CallOption) (*GetEmailTemplatesResponse, error)
-	GetEmailTemplateOnly(ctx context.Context, in *GetEmailTemplateOnlyRequest, opts ...grpc.CallOption) (*GetEmailTemplateOnlyResponse, error)
 	CreateEmailTemplate(ctx context.Context, in *CreateEmailTemplateRequest, opts ...grpc.CallOption) (*CreateEmailTemplateResponse, error)
 	CreateEmailTemplates(ctx context.Context, in *CreateEmailTemplatesRequest, opts ...grpc.CallOption) (*CreateEmailTemplatesResponse, error)
 	UpdateEmailTemplate(ctx context.Context, in *UpdateEmailTemplateRequest, opts ...grpc.CallOption) (*UpdateEmailTemplateResponse, error)
@@ -65,15 +63,6 @@ func (c *middlewareClient) GetEmailTemplate(ctx context.Context, in *GetEmailTem
 func (c *middlewareClient) GetEmailTemplates(ctx context.Context, in *GetEmailTemplatesRequest, opts ...grpc.CallOption) (*GetEmailTemplatesResponse, error) {
 	out := new(GetEmailTemplatesResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetEmailTemplates_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) GetEmailTemplateOnly(ctx context.Context, in *GetEmailTemplateOnlyRequest, opts ...grpc.CallOption) (*GetEmailTemplateOnlyResponse, error) {
-	out := new(GetEmailTemplateOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetEmailTemplateOnly_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -140,7 +129,6 @@ func (c *middlewareClient) DeleteEmailTemplate(ctx context.Context, in *DeleteEm
 type MiddlewareServer interface {
 	GetEmailTemplate(context.Context, *GetEmailTemplateRequest) (*GetEmailTemplateResponse, error)
 	GetEmailTemplates(context.Context, *GetEmailTemplatesRequest) (*GetEmailTemplatesResponse, error)
-	GetEmailTemplateOnly(context.Context, *GetEmailTemplateOnlyRequest) (*GetEmailTemplateOnlyResponse, error)
 	CreateEmailTemplate(context.Context, *CreateEmailTemplateRequest) (*CreateEmailTemplateResponse, error)
 	CreateEmailTemplates(context.Context, *CreateEmailTemplatesRequest) (*CreateEmailTemplatesResponse, error)
 	UpdateEmailTemplate(context.Context, *UpdateEmailTemplateRequest) (*UpdateEmailTemplateResponse, error)
@@ -159,9 +147,6 @@ func (UnimplementedMiddlewareServer) GetEmailTemplate(context.Context, *GetEmail
 }
 func (UnimplementedMiddlewareServer) GetEmailTemplates(context.Context, *GetEmailTemplatesRequest) (*GetEmailTemplatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEmailTemplates not implemented")
-}
-func (UnimplementedMiddlewareServer) GetEmailTemplateOnly(context.Context, *GetEmailTemplateOnlyRequest) (*GetEmailTemplateOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetEmailTemplateOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) CreateEmailTemplate(context.Context, *CreateEmailTemplateRequest) (*CreateEmailTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateEmailTemplate not implemented")
@@ -226,24 +211,6 @@ func _Middleware_GetEmailTemplates_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetEmailTemplates(ctx, req.(*GetEmailTemplatesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_GetEmailTemplateOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetEmailTemplateOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetEmailTemplateOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetEmailTemplateOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetEmailTemplateOnly(ctx, req.(*GetEmailTemplateOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -370,10 +337,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetEmailTemplates",
 			Handler:    _Middleware_GetEmailTemplates_Handler,
-		},
-		{
-			MethodName: "GetEmailTemplateOnly",
-			Handler:    _Middleware_GetEmailTemplateOnly_Handler,
 		},
 		{
 			MethodName: "CreateEmailTemplate",

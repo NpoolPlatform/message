@@ -22,7 +22,6 @@ const (
 	Middleware_CreateNotifUser_FullMethodName     = "/notif.middleware.notif.user.v1.Middleware/CreateNotifUser"
 	Middleware_UpdateNotifUser_FullMethodName     = "/notif.middleware.notif.user.v1.Middleware/UpdateNotifUser"
 	Middleware_GetNotifUser_FullMethodName        = "/notif.middleware.notif.user.v1.Middleware/GetNotifUser"
-	Middleware_GetNotifUserOnly_FullMethodName    = "/notif.middleware.notif.user.v1.Middleware/GetNotifUserOnly"
 	Middleware_GetNotifUsers_FullMethodName       = "/notif.middleware.notif.user.v1.Middleware/GetNotifUsers"
 	Middleware_ExistNotifUser_FullMethodName      = "/notif.middleware.notif.user.v1.Middleware/ExistNotifUser"
 	Middleware_ExistNotifUserConds_FullMethodName = "/notif.middleware.notif.user.v1.Middleware/ExistNotifUserConds"
@@ -36,7 +35,6 @@ type MiddlewareClient interface {
 	CreateNotifUser(ctx context.Context, in *CreateNotifUserRequest, opts ...grpc.CallOption) (*CreateNotifUserResponse, error)
 	UpdateNotifUser(ctx context.Context, in *UpdateNotifUserRequest, opts ...grpc.CallOption) (*UpdateNotifUserResponse, error)
 	GetNotifUser(ctx context.Context, in *GetNotifUserRequest, opts ...grpc.CallOption) (*GetNotifUserResponse, error)
-	GetNotifUserOnly(ctx context.Context, in *GetNotifUserOnlyRequest, opts ...grpc.CallOption) (*GetNotifUserOnlyResponse, error)
 	GetNotifUsers(ctx context.Context, in *GetNotifUsersRequest, opts ...grpc.CallOption) (*GetNotifUsersResponse, error)
 	ExistNotifUser(ctx context.Context, in *ExistNotifUserRequest, opts ...grpc.CallOption) (*ExistNotifUserResponse, error)
 	ExistNotifUserConds(ctx context.Context, in *ExistNotifUserCondsRequest, opts ...grpc.CallOption) (*ExistNotifUserCondsResponse, error)
@@ -72,15 +70,6 @@ func (c *middlewareClient) UpdateNotifUser(ctx context.Context, in *UpdateNotifU
 func (c *middlewareClient) GetNotifUser(ctx context.Context, in *GetNotifUserRequest, opts ...grpc.CallOption) (*GetNotifUserResponse, error) {
 	out := new(GetNotifUserResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetNotifUser_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) GetNotifUserOnly(ctx context.Context, in *GetNotifUserOnlyRequest, opts ...grpc.CallOption) (*GetNotifUserOnlyResponse, error) {
-	out := new(GetNotifUserOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetNotifUserOnly_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -130,7 +119,6 @@ type MiddlewareServer interface {
 	CreateNotifUser(context.Context, *CreateNotifUserRequest) (*CreateNotifUserResponse, error)
 	UpdateNotifUser(context.Context, *UpdateNotifUserRequest) (*UpdateNotifUserResponse, error)
 	GetNotifUser(context.Context, *GetNotifUserRequest) (*GetNotifUserResponse, error)
-	GetNotifUserOnly(context.Context, *GetNotifUserOnlyRequest) (*GetNotifUserOnlyResponse, error)
 	GetNotifUsers(context.Context, *GetNotifUsersRequest) (*GetNotifUsersResponse, error)
 	ExistNotifUser(context.Context, *ExistNotifUserRequest) (*ExistNotifUserResponse, error)
 	ExistNotifUserConds(context.Context, *ExistNotifUserCondsRequest) (*ExistNotifUserCondsResponse, error)
@@ -150,9 +138,6 @@ func (UnimplementedMiddlewareServer) UpdateNotifUser(context.Context, *UpdateNot
 }
 func (UnimplementedMiddlewareServer) GetNotifUser(context.Context, *GetNotifUserRequest) (*GetNotifUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNotifUser not implemented")
-}
-func (UnimplementedMiddlewareServer) GetNotifUserOnly(context.Context, *GetNotifUserOnlyRequest) (*GetNotifUserOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNotifUserOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetNotifUsers(context.Context, *GetNotifUsersRequest) (*GetNotifUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNotifUsers not implemented")
@@ -229,24 +214,6 @@ func _Middleware_GetNotifUser_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetNotifUser(ctx, req.(*GetNotifUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_GetNotifUserOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNotifUserOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetNotifUserOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetNotifUserOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetNotifUserOnly(ctx, req.(*GetNotifUserOnlyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -341,10 +308,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetNotifUser",
 			Handler:    _Middleware_GetNotifUser_Handler,
-		},
-		{
-			MethodName: "GetNotifUserOnly",
-			Handler:    _Middleware_GetNotifUserOnly_Handler,
 		},
 		{
 			MethodName: "GetNotifUsers",
