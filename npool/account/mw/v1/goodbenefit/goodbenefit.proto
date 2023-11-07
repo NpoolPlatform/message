@@ -4,6 +4,7 @@ package account.middleware.goodbenefit.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/goodbenefit";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/v1/accountlockedby.proto";
 
@@ -15,7 +16,12 @@ service Middleware {
     rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
     rpc ExistAccount      (ExistAccountRequest)      returns (ExistAccountResponse)      {}
     rpc ExistAccountConds (ExistAccountCondsRequest) returns (ExistAccountCondsResponse) {}
-    rpc DeleteAccount     (DeleteAccountRequest)     returns (DeleteAccountResponse)     {}
+    rpc DeleteAccount     (DeleteAccountRequest)     returns (DeleteAccountResponse)     {
+        option (google.api.http) = {
+            post: "/v1/goodbenefit_DeleteAccount"
+            body: "*"
+        };
+    }
 }
 
 message AccountReq {

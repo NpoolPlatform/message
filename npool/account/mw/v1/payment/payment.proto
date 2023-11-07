@@ -4,12 +4,18 @@ package account.middleware.payment.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/payment";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/accountlockedby.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)  {}
+    rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)  {
+        option (google.api.http) = {
+            post: "/v1/payment_CreateAccount"
+            body: "*"
+        };
+    }
     rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)  {}
     rpc LockAccount       (LockAccountRequest)       returns (LockAccountResponse)    {}
     rpc UnlockAccount     (UnlockAccountRequest)     returns (UnlockAccountResponse)  {}
