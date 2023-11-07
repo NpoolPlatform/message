@@ -18,7 +18,8 @@ service Middleware {
 }
 
 message EventReq {
-    optional string               ID            = 10;
+    optional uint32               ID            = 10;
+    optional string               EntID         = 11;
     optional string               AppID         = 20;
     optional basetypes.v1.UsedFor EventType     = 30;
     repeated string               CouponIDs     = 40;
@@ -32,7 +33,9 @@ message EventReq {
 
 message Event {
     // @inject_tag: sql:"id"
-    string               ID            = 10;
+    uint32               ID            = 10;
+    // @inject_tag: sql:"ent_id"
+    string               EntID         = 11;
     // @inject_tag: sql:"app_id"
     string               AppID         = 20;
     // @inject_tag: sql:"event_type"
@@ -62,7 +65,7 @@ message Event {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID        = 10;
+    optional basetypes.v1.StringVal EntID     = 10;
     optional basetypes.v1.StringVal AppID     = 20;
     optional basetypes.v1.Uint32Val EventType = 30;
     optional basetypes.v1.StringVal GoodID    = 40;

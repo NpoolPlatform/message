@@ -20,7 +20,8 @@ service Middleware {
 }
 
 message RegistrationReq {
-    optional string ID        = 10;
+    optional uint32 ID        = 10;
+    optional string EntID     = 11;
     optional string AppID     = 20;
     optional string InviterID = 30;
     optional string InviteeID = 40;
@@ -28,7 +29,9 @@ message RegistrationReq {
 
 message Registration {
     // @inject_tag: sql:"id"
-    string ID        = 10;
+    uint32 ID        = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID     = 11;
     // @inject_tag: sql:"app_id"
     string AppID     = 20;
     // @inject_tag: sql:"inviter_id"
@@ -44,7 +47,7 @@ message Registration {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID        = 10;
+    optional basetypes.v1.StringVal EntID     = 10;
     optional basetypes.v1.StringVal AppID     = 20;
     optional basetypes.v1.StringVal InviterID = 30;
     optional basetypes.v1.StringVal InviteeID = 40;

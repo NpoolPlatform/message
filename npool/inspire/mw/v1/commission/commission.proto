@@ -17,7 +17,8 @@ service Middleware {
 }
 
 message CommissionReq {
-    optional string ID       = 10;
+    optional uint32 ID       = 10;
+    optional string EntID    = 11;
     optional string AppID    = 20;
     optional string UserID   = 30;
     optional string GoodID   = 40;
@@ -26,7 +27,7 @@ message CommissionReq {
     optional basetypes.inspire.v1.SettleMode SettleMode = 60;
     optional basetypes.inspire.v1.SettleInterval SettleInterval = 70;
     optional string AmountOrPercent = 80;
-    optional uint32 StartAt  = 100;
+    optional uint32 StartAt   = 100;
     optional string Threshold = 110;
     optional basetypes.inspire.v1.SettleAmountType SettleAmountType = 120;
 }
@@ -37,7 +38,9 @@ message CommissionReq {
 
 message Commission {
     // @inject_tag: sql:"id"
-    string     ID              = 10;
+    uint32     ID              = 10;
+    // @inject_tag: sql:"ent_id"
+    string     EntID           = 11;
     // @inject_tag: sql:"app_id"
     string     AppID           = 20;
     // @inject_tag: sql:"user_id"
@@ -81,7 +84,7 @@ message Commission {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID     = 10;
+    optional basetypes.v1.StringVal EntID  = 10;
     optional basetypes.v1.StringVal AppID  = 20;
     optional basetypes.v1.StringVal UserID = 30;
     optional basetypes.v1.StringVal GoodID = 40;
@@ -130,12 +133,12 @@ message GetCommissionsResponse {
 }
 
 message CloneCommissionsRequest {
-    string AppID        = 10;
-    string FromGoodID   = 20;
-    string ToGoodID     = 30;
+    string AppID         = 10;
+    string FromGoodID    = 20;
+    string ToGoodID      = 30;
     string FromAppGoodID = 40;
     string ToAppGoodID   = 50;
-    string ScalePercent = 60;
+    string ScalePercent  = 60;
 }
 
 message CloneCommissionsResponse {
