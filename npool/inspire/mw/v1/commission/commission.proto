@@ -114,7 +114,7 @@ message UpdateCommissionResponse {
 }
 
 message GetCommissionRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetCommissionResponse {
