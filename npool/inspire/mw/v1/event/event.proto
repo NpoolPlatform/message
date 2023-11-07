@@ -90,7 +90,7 @@ message UpdateEventResponse {
 }
 
 message GetEventRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetEventResponse {
