@@ -545,8 +545,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> b695b1f4b (update req)
+=======
+>>>>>>> 7fbe0f2f5 (return appid)
         "GoodID": {
           "type": "string"
         },
@@ -576,7 +579,18 @@
 =======
 =======
 >>>>>>> f7e76ad3e (update req)
+<<<<<<< HEAD
 >>>>>>> b695b1f4b (update req)
+=======
+=======
+        "GoodID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+>>>>>>> 614c347ff (return appid)
+>>>>>>> 7fbe0f2f5 (return appid)
         "AppGoodID": {
           "type": "string"
         },
@@ -584,9 +598,6 @@
           "type": "string"
         },
         "ScopeID": {
-          "type": "string"
-        },
-        "GoodID": {
           "type": "string"
         },
         "CouponID": {
