@@ -62,7 +62,7 @@
         "AppGoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "IDs": {
+        "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
       }

@@ -70,7 +70,7 @@ message Conds {
     optional basetypes.v1.Uint32Val EventType = 30;
     optional basetypes.v1.StringVal GoodID    = 40;
     optional basetypes.v1.StringVal AppGoodID = 41;
-    optional basetypes.v1.StringSliceVal IDs  = 50;
+    optional basetypes.v1.StringSliceVal EntIDs  = 50;
 }
 
 message CreateEventRequest {
