@@ -405,6 +405,7 @@
           "type": "string"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "GoodID": {
           "type": "string"
         },
@@ -416,6 +417,14 @@
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> 808e18b40 (update req)
+=======
+        "GoodID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+>>>>>>> 9595f0f01 (return appid)
         "AppGoodID": {
           "type": "string"
         },
@@ -423,9 +432,6 @@
           "type": "string"
         },
         "ScopeID": {
-          "type": "string"
-        },
-        "GoodID": {
           "type": "string"
         },
         "CouponID": {
