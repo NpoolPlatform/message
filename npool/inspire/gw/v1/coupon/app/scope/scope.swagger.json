@@ -239,6 +239,12 @@
         "ID": {
           "type": "string"
         },
+        "GoodID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
         "AppGoodID": {
           "type": "string"
         },
@@ -246,9 +252,6 @@
           "type": "string"
         },
         "ScopeID": {
-          "type": "string"
-        },
-        "GoodID": {
           "type": "string"
         },
         "CouponID": {
