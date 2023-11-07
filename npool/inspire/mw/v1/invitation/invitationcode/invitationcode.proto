@@ -71,7 +71,7 @@ message UpdateInvitationCodeResponse {
 }
 
 message GetInvitationCodeRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetInvitationCodeResponse {
