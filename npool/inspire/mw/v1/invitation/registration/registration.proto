@@ -72,7 +72,7 @@ message UpdateRegistrationResponse {
 }
 
 message GetRegistrationRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetRegistrationResponse {
