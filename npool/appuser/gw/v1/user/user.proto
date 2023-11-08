@@ -187,6 +187,7 @@ message CreateUserResponse {
 }
 
 message DeleteUserRequest {
+    uint32 ID           = 9;
     string AppID        = 10;
     string TargetUserID = 20;
 }
