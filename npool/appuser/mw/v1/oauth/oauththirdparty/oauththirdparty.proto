@@ -56,6 +56,7 @@ message OAuthThirdParty {
 }
 
 message Conds {
+    optional basetypes.v1.Uint32Val      ID            = 9;
     optional basetypes.v1.StringVal      EntID         = 10;
     optional basetypes.v1.Int32Val       ClientName    = 20;
     optional basetypes.v1.StringVal      ClientTag     = 30;

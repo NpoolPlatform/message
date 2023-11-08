@@ -57,13 +57,14 @@ message User {
 }
 
 message Conds {
-    basetypes.v1.StringVal      EntID   = 10;
-    basetypes.v1.StringVal      AppID   = 20;
-    basetypes.v1.StringVal      RoleID  = 30;
-    basetypes.v1.StringVal      UserID  = 40;
-    basetypes.v1.StringSliceVal AppIDs  = 50;
-    basetypes.v1.StringSliceVal RoleIDs = 60;
-    basetypes.v1.BoolVal        Genesis = 70;
+    optional basetypes.v1.Uint32Val      ID      = 9;
+    optional basetypes.v1.StringVal      EntID   = 10;
+    optional basetypes.v1.StringVal      AppID   = 20;
+    optional basetypes.v1.StringVal      RoleID  = 30;
+    optional basetypes.v1.StringVal      UserID  = 40;
+    optional basetypes.v1.StringSliceVal AppIDs  = 50;
+    optional basetypes.v1.StringSliceVal RoleIDs = 60;
+    optional basetypes.v1.BoolVal        Genesis = 70;
 }
 
 message CreateUserRequest {
