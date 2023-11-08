@@ -36,6 +36,7 @@ type KycReq struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ID           *uint32             `protobuf:"varint,9,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
 =======
 >>>>>>> 8eb981ff1 (Add auto increment id)
@@ -65,6 +66,9 @@ type KycReq struct {
 =======
 >>>>>>> 696b80d22 (Add auto increment id)
 >>>>>>> 12ef4547d (Add auto increment id)
+=======
+	ID           *uint32             `protobuf:"varint,9,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
+>>>>>>> 320847e56 (Add ID to conds)
 	EntID        *string             `protobuf:"bytes,10,opt,name=EntID,proto3,oneof" json:"EntID,omitempty"`
 	AppID        *string             `protobuf:"bytes,20,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
 	UserID       *string             `protobuf:"bytes,30,opt,name=UserID,proto3,oneof" json:"UserID,omitempty"`
@@ -119,6 +123,7 @@ func (*KycReq) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 12ef4547d (Add auto increment id)
 =======
@@ -159,6 +164,11 @@ func (x *KycReq) GetID() uint32 {
 =======
 >>>>>>> 696b80d22 (Add auto increment id)
 >>>>>>> 12ef4547d (Add auto increment id)
+=======
+func (x *KycReq) GetID() uint32 {
+	if x != nil && x.ID != nil {
+		return *x.ID
+>>>>>>> 320847e56 (Add ID to conds)
 	}
 	return 0
 }
@@ -492,10 +502,13 @@ type Conds struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 12ed827a0 (Add ID to conds)
 =======
 >>>>>>> 12ef4547d (Add auto increment id)
+=======
+>>>>>>> 320847e56 (Add ID to conds)
 	ID           *v1.Uint32Val `protobuf:"bytes,9,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
 	EntID        *v1.StringVal `protobuf:"bytes,10,opt,name=EntID,proto3,oneof" json:"EntID,omitempty"`
 	AppID        *v1.StringVal `protobuf:"bytes,20,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
@@ -505,6 +518,7 @@ type Conds struct {
 	DocumentType *v1.Uint32Val `protobuf:"bytes,60,opt,name=DocumentType,proto3,oneof" json:"DocumentType,omitempty"`
 	EntityType   *v1.Uint32Val `protobuf:"bytes,70,opt,name=EntityType,proto3,oneof" json:"EntityType,omitempty"`
 	State        *v1.Uint32Val `protobuf:"bytes,80,opt,name=State,proto3,oneof" json:"State,omitempty"`
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -528,6 +542,8 @@ type Conds struct {
 =======
 >>>>>>> 696b80d22 (Add auto increment id)
 >>>>>>> 12ef4547d (Add auto increment id)
+=======
+>>>>>>> 320847e56 (Add ID to conds)
 }
 
 func (x *Conds) Reset() {
@@ -566,6 +582,7 @@ func (*Conds) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 func (x *Conds) GetID() *v1.Uint32Val {
 =======
 func (x *Conds) GetEntID() *v1.StringVal {
@@ -575,17 +592,20 @@ func (x *Conds) GetEntID() *v1.StringVal {
 =======
 =======
 >>>>>>> 12ef4547d (Add auto increment id)
-func (x *Conds) GetID() *v1.Uint32Val {
 =======
-func (x *Conds) GetEntID() *v1.StringVal {
->>>>>>> 696b80d22 (Add auto increment id)
+>>>>>>> 320847e56 (Add ID to conds)
+func (x *Conds) GetID() *v1.Uint32Val {
 	if x != nil {
+<<<<<<< HEAD
 <<<<<<< HEAD
 		return x.ID
 >>>>>>> 12ed827a0 (Add ID to conds)
 =======
 		return x.EntID
 >>>>>>> 12ef4547d (Add auto increment id)
+=======
+		return x.ID
+>>>>>>> 320847e56 (Add ID to conds)
 	}
 	return nil
 }

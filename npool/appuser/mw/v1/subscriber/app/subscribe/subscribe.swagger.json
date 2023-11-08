@@ -137,6 +137,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 12ef4547d (Add auto increment id)
         "ID": {
@@ -155,6 +156,11 @@
 =======
 >>>>>>> 696b80d22 (Add auto increment id)
 >>>>>>> 12ef4547d (Add auto increment id)
+=======
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+>>>>>>> 320847e56 (Add ID to conds)
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },

@@ -345,6 +345,7 @@ func (x *Conds) GetID() *v1.Uint32Val {
 func (x *Conds) GetEntID() *v1.StringVal {
 >>>>>>> 2283e696c (Add auto increment id)
 	if x != nil {
+<<<<<<< HEAD
 		return x.EntID
 =======
 func (x *Conds) GetID() *v1.Uint32Val {
@@ -355,6 +356,9 @@ func (x *Conds) GetID() *v1.Uint32Val {
 =======
 		return x.EntID
 >>>>>>> 12ef4547d (Add auto increment id)
+=======
+		return x.ID
+>>>>>>> 320847e56 (Add ID to conds)
 	}
 	return nil
 }
