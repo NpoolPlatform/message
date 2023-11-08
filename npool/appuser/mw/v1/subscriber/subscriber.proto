@@ -43,10 +43,11 @@ message Subscriber {
 }
 
 message Conds {
-    basetypes.v1.StringVal EntID         = 10;
-    basetypes.v1.StringVal AppID         = 20;
-    basetypes.v1.StringVal EmailAddress  = 30;
-    basetypes.v1.BoolVal   Registered    = 40;
+    optional basetypes.v1.Uint32Val ID            = 9;
+    optional basetypes.v1.StringVal EntID         = 10;
+    optional basetypes.v1.StringVal AppID         = 20;
+    optional basetypes.v1.StringVal EmailAddress  = 30;
+    optional basetypes.v1.BoolVal   Registered    = 40;
 }
 
 message CreateSubscriberRequest {

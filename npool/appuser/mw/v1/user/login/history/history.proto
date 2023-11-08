@@ -55,13 +55,13 @@ message History {
 }
 
 message Conds {
-    basetypes.v1.StringVal EntID     = 10;
-    basetypes.v1.StringVal AppID     = 20;
-    basetypes.v1.StringVal UserID    = 30;
-    basetypes.v1.Uint32Val LoginType = 40;
-    basetypes.v1.StringVal ClientIP  = 50;
-    basetypes.v1.StringVal Location  = 60;
-    basetypes.v1.StringVal UserAgent = 70;
+    optional basetypes.v1.StringVal EntID     = 10;
+    optional basetypes.v1.StringVal AppID     = 20;
+    optional basetypes.v1.StringVal UserID    = 30;
+    optional basetypes.v1.Uint32Val LoginType = 40;
+    optional basetypes.v1.StringVal ClientIP  = 50;
+    optional basetypes.v1.StringVal Location  = 60;
+    optional basetypes.v1.StringVal UserAgent = 70;
 }
 
 message CreateHistoryRequest {

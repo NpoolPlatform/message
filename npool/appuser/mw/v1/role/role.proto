@@ -55,15 +55,16 @@ message Role {
 }
 
 message Conds {
-    basetypes.v1.StringVal       EntID     = 10;
-    basetypes.v1.StringVal       AppID     = 20;
-    basetypes.v1.StringVal       CreatedBy = 30;
-    basetypes.v1.StringVal       Role      = 40;
-    basetypes.v1.BoolVal         Default   = 50;
-    basetypes.v1.StringSliceVal  Roles     = 60;
-    basetypes.v1.BoolVal         Genesis   = 70;
-    basetypes.v1.StringSliceVal  EntIDs    = 80;
-    basetypes.v1.StringSliceVal  AppIDs    = 90;
+    optional basetypes.v1.Uint32Val       ID        = 9;
+    optional basetypes.v1.StringVal       EntID     = 10;
+    optional basetypes.v1.StringVal       AppID     = 20;
+    optional basetypes.v1.StringVal       CreatedBy = 30;
+    optional basetypes.v1.StringVal       Role      = 40;
+    optional basetypes.v1.BoolVal         Default   = 50;
+    optional basetypes.v1.StringSliceVal  Roles     = 60;
+    optional basetypes.v1.BoolVal         Genesis   = 70;
+    optional basetypes.v1.StringSliceVal  EntIDs    = 80;
+    optional basetypes.v1.StringSliceVal  AppIDs    = 90;
 }
 
 message CreateRoleRequest {
