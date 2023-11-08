@@ -358,7 +358,7 @@
         "GoodID": {
           "type": "string"
         },
-        "GoodName": {
+        "GoodTitle": {
           "type": "string"
         },
         "CoinTypeID": {
@@ -395,7 +395,7 @@
         "AppGoodID": {
           "type": "string"
         },
-        "AppGoodName": {
+        "GoodName": {
           "type": "string"
         }
       }
