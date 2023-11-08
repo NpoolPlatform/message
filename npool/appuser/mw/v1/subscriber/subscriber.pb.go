@@ -258,7 +258,7 @@ func (*Conds) Descriptor() ([]byte, []int) {
 
 func (x *Conds) GetID() *v1.Uint32Val {
 	if x != nil {
-		return x.EntID
+		return x.ID
 	}
 	return nil
 }
