@@ -53,9 +53,6 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "AppGoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -148,14 +145,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
-        "ScopeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"scope_id\""
-        },
-        "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
-        },
         "AppGoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_id\""
@@ -210,16 +199,13 @@
         "AppGoodID": {
           "type": "string"
         },
-        "ScopeID": {
+        "CouponID": {
           "type": "string"
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
         "GoodID": {
-          "type": "string"
-        },
-        "CouponID": {
           "type": "string"
         }
       }
