@@ -480,6 +480,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -508,6 +509,11 @@
 >>>>>>> 13913ec01 (delete ScopeID)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+        },
+        "AppID": {
+          "type": "string"
+>>>>>>> dd939f282 (delete ScopeID)
         }
       }
     },
