@@ -31,7 +31,8 @@ service Gateway {
 }
 
 message Event {
-    string               ID            = 10;
+    uint32               ID            = 10;
+    string               EntID         = 11;
     string               AppID         = 20;
     string               AppName       = 30;
     basetypes.v1.UsedFor EventType     = 40;
@@ -77,7 +78,8 @@ message GetEventsResponse {
 
 
 message UpdateEventRequest {
-    string          ID            = 10;
+    uint32          ID            = 10;
+    string          EntID         = 11;
     string          AppID         = 20;
     repeated string CouponIDs     = 30;
     optional string Credits       = 40;

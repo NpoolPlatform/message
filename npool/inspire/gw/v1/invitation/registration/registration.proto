@@ -29,7 +29,8 @@ service Gateway {
 }
 
 message Registration {
-    string ID                    = 10;
+    uint32 ID                    = 10;
+    string EntID                 = 11;
     string AppID                 = 20;
     string InviterID             = 30;
     string InviterEmailAddress   = 40;
@@ -44,7 +45,8 @@ message Registration {
 }
 
 message UpdateRegistrationRequest {
-    string ID           = 10;
+    uint32 ID           = 10;
+    string EntID        = 11;
     string AppID        = 20;
     string InviterID    = 30;
 }
