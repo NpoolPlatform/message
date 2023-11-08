@@ -106,6 +106,7 @@ message App {
 }
 
 message Conds {
+    optional basetypes.v1.Uint32Val      ID        = 9;
     optional basetypes.v1.StringVal      EntID     = 10;
     optional basetypes.v1.StringSliceVal EntIDs    = 20;
     optional basetypes.v1.StringVal      CreatedBy = 30;
