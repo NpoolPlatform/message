@@ -120,6 +120,7 @@ message GetAppKycsResponse {
 }
 
 message UpdateKycRequest {
+    uint32          ID        = 9;
     string          AppID     = 10;
     string          UserID    = 20;
     string          KycID     = 30;

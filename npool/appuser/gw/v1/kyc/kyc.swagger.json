@@ -396,6 +396,10 @@
     "appusergatewaykycv1UpdateKycRequest": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
         "AppID": {
           "type": "string"
         },
