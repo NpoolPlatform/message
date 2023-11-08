@@ -310,11 +310,17 @@
         "ID": {
           "type": "string"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         "AppID": {
           "type": "string"
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+        },
+        "AppID": {
+          "type": "string"
+>>>>>>> 3db4b034a (delete ScopeID)
         }
       }
     },
