@@ -406,8 +406,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> 13913ec01 (delete ScopeID)
         },
         "AppID": {
           "type": "string"
@@ -421,7 +424,15 @@
 >>>>>>> f4b9a2125 (delete ScopeID)
 =======
 >>>>>>> 569d52611 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2e441a23e (update scope)
+=======
+=======
+        },
+        "AppID": {
+          "type": "string"
+>>>>>>> 3db4b034a (delete ScopeID)
+>>>>>>> 13913ec01 (delete ScopeID)
         }
       }
     },
