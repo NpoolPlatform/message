@@ -264,6 +264,7 @@
       "properties": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "ID": {
           "$ref": "#/definitions/v1Uint32Val"
         },
@@ -271,6 +272,11 @@
 >>>>>>> 2283e696c (Add auto increment id)
 =======
 >>>>>>> 8eb981ff1 (Add auto increment id)
+=======
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+>>>>>>> 4f1357410 (Add id to app conds)
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
