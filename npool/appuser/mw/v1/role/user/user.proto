@@ -11,6 +11,7 @@ service Middleware {
     rpc UpdateUser    (UpdateUserRequest)   returns (UpdateUserResponse)   {}
     rpc GetUser       (GetUserRequest)      returns (GetUserResponse)      {}
     rpc GetUsers      (GetUsersRequest)     returns (GetUsersResponse)     {}
+    rpc ExistUserConds (ExistUserCondsRequest) returns (ExistUserCondsResponse)     {}
     rpc DeleteUser    (DeleteUserRequest)   returns (DeleteUserResponse)   {}
 }
 
@@ -89,6 +90,14 @@ message GetUserRequest {
 
 message GetUserResponse {
     User Info = 10;
+}
+
+message ExistUserCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistUserCondsResponse {
+    bool Info = 10;
 }
 
 message GetUsersRequest {

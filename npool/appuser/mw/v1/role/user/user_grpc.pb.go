@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateUser_FullMethodName = "/appuser.middleware.role.user.v1.Middleware/CreateUser"
-	Middleware_UpdateUser_FullMethodName = "/appuser.middleware.role.user.v1.Middleware/UpdateUser"
-	Middleware_GetUser_FullMethodName    = "/appuser.middleware.role.user.v1.Middleware/GetUser"
-	Middleware_GetUsers_FullMethodName   = "/appuser.middleware.role.user.v1.Middleware/GetUsers"
-	Middleware_DeleteUser_FullMethodName = "/appuser.middleware.role.user.v1.Middleware/DeleteUser"
+	Middleware_CreateUser_FullMethodName     = "/appuser.middleware.role.user.v1.Middleware/CreateUser"
+	Middleware_UpdateUser_FullMethodName     = "/appuser.middleware.role.user.v1.Middleware/UpdateUser"
+	Middleware_GetUser_FullMethodName        = "/appuser.middleware.role.user.v1.Middleware/GetUser"
+	Middleware_GetUsers_FullMethodName       = "/appuser.middleware.role.user.v1.Middleware/GetUsers"
+	Middleware_ExistUserConds_FullMethodName = "/appuser.middleware.role.user.v1.Middleware/ExistUserConds"
+	Middleware_DeleteUser_FullMethodName     = "/appuser.middleware.role.user.v1.Middleware/DeleteUser"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
 	GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error)
 	GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error)
+	ExistUserConds(ctx context.Context, in *ExistUserCondsRequest, opts ...grpc.CallOption) (*ExistUserCondsResponse, error)
 	DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetUsers(ctx context.Context, in *GetUsersRequest, op
 	return out, nil
 }
 
+func (c *middlewareClient) ExistUserConds(ctx context.Context, in *ExistUserCondsRequest, opts ...grpc.CallOption) (*ExistUserCondsResponse, error) {
+	out := new(ExistUserCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistUserConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error) {
 	out := new(DeleteUserResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteUser_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
 	GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error)
 	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
+	ExistUserConds(context.Context, *ExistUserCondsRequest) (*ExistUserCondsResponse, error)
 	DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetUser(context.Context, *GetUserRequest) (
 }
 func (UnimplementedMiddlewareServer) GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUsers not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistUserConds(context.Context, *ExistUserCondsRequest) (*ExistUserCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistUserConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUser not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetUsers_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistUserConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistUserCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistUserConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistUserConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistUserConds(ctx, req.(*ExistUserCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteUserRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetUsers",
 			Handler:    _Middleware_GetUsers_Handler,
+		},
+		{
+			MethodName: "ExistUserConds",
+			Handler:    _Middleware_ExistUserConds_Handler,
 		},
 		{
 			MethodName: "DeleteUser",
