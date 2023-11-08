@@ -114,12 +114,9 @@
     "v1Conds": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
         "ID": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-=======
->>>>>>> 696b80d22 (Add auto increment id)
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
