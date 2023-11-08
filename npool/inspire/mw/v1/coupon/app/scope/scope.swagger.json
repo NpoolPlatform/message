@@ -54,11 +54,14 @@
           "$ref": "#/definitions/v1StringVal"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
 >>>>>>> 789287843 (update scope)
+=======
+>>>>>>> f4b9a2125 (delete ScopeID)
         "AppGoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -183,6 +186,7 @@
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
         "ScopeID": {
@@ -195,6 +199,8 @@
           "title": "@inject_tag: sql:\"good_id\""
         },
 >>>>>>> 789287843 (update scope)
+=======
+>>>>>>> f4b9a2125 (delete ScopeID)
         "AppGoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_id\""
@@ -269,17 +275,18 @@
         "AppGoodID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "ScopeID": {
 >>>>>>> 12249ae47 (update appscope)
+=======
+        "CouponID": {
+>>>>>>> f4b9a2125 (delete ScopeID)
           "type": "string"
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
         "GoodID": {
-          "type": "string"
-        },
-        "CouponID": {
           "type": "string"
         }
       }
