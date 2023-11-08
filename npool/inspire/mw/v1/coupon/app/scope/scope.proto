@@ -21,10 +21,9 @@ message ScopeReq {
     optional string ID        = 10;
     optional string AppID     = 20;
     optional string AppGoodID = 30;
-    optional string ScopeID   = 40;
+    optional string CouponID  = 40;
     optional basetypes.inspire.v1.CouponScope CouponScope  = 50;
     optional string GoodID    = 60; // only for VerifyCouponScopes
-    optional string CouponID  = 70; // only for VerifyCouponScopes
 }
 
 message Scope {
@@ -32,10 +31,6 @@ message Scope {
     string     ID              = 10;
     // @inject_tag: sql:"app_id"
     string     AppID           = 20;
-    // @inject_tag: sql:"scope_id"
-    string     ScopeID         = 30;
-    // @inject_tag: sql:"good_id"
-    string     GoodID          = 31;
     // @inject_tag: sql:"app_good_id"
     string     AppGoodID       = 40;
     // @inject_tag: sql:"coupon_id"
@@ -59,7 +54,6 @@ message Scope {
 message Conds {
     optional basetypes.v1.StringVal ID          = 10;
     optional basetypes.v1.StringVal AppID       = 20;
-    optional basetypes.v1.StringVal GoodID      = 30;
     optional basetypes.v1.StringVal AppGoodID   = 40;
     optional basetypes.v1.StringVal CouponID    = 50;
     optional basetypes.v1.StringSliceVal CouponIDs   = 60;
