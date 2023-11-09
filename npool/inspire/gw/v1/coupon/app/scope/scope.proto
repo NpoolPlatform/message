@@ -35,7 +35,6 @@ message Scope {
     string     AppID           = 30;
     string     AppGoodID       = 40;
     string     GoodName        = 50;
-    string     ScopeID         = 60;
     string     CouponID        = 70;
     string     CouponName      = 80;
     basetypes.inspire.v1.CouponType  CouponType   = 90;
@@ -58,7 +57,7 @@ message GetAppGoodScopesResponse {
 
 message CreateAppGoodScopeRequest {
     string AppID          = 10;
-    string ScopeID        = 20;
+    string CouponID       = 20;
     string AppGoodID      = 30;
     optional basetypes.inspire.v1.CouponScope CouponScope      = 40;
 }
