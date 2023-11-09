@@ -545,6 +545,7 @@
     },
     "v1VerifyCouponScopesResponse": {
       "type": "object"
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
@@ -598,6 +599,8 @@
 >>>>>>> b20bec5db (update scope)
 =======
 >>>>>>> bf4f155fd (add verifycouponscope method)
+=======
+>>>>>>> 099e1c3a3 (delete Info)
     }
   }
 }
