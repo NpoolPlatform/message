@@ -242,10 +242,13 @@
     "v1CouponReq": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64"
         },
+=======
+>>>>>>> 7499a8186 (add EntID in mw)
         "EntID": {
           "type": "string"
         },
