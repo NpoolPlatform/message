@@ -253,6 +253,7 @@
           "type": "string"
         },
         "CouponID": {
+<<<<<<< HEAD
 =======
 =======
         "AppID": {
@@ -261,6 +262,8 @@
 >>>>>>> 808e18b40 (update req)
         "ScopeID": {
 >>>>>>> 789287843 (update scope)
+=======
+>>>>>>> 285abcef6 (delete ScopeID)
           "type": "string"
         },
         "AppGoodID": {
@@ -435,9 +438,6 @@
           "type": "string"
         },
         "GoodName": {
-          "type": "string"
-        },
-        "ScopeID": {
           "type": "string"
         },
         "CouponID": {
