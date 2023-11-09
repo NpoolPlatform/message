@@ -320,6 +320,7 @@
         "CouponID": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
         "AppID": {
@@ -332,6 +333,8 @@
 >>>>>>> 285abcef6 (delete ScopeID)
 =======
 =======
+>>>>>>> 6a8a83f8c (delete ScopeID)
+=======
 =======
         "AppID": {
           "type": "string"
@@ -339,7 +342,12 @@
 >>>>>>> f7e76ad3e (update req)
         "ScopeID": {
 >>>>>>> 569d52611 (update scope)
+<<<<<<< HEAD
 >>>>>>> 2e441a23e (update scope)
+=======
+=======
+>>>>>>> ef4cde60c (delete ScopeID)
+>>>>>>> 6a8a83f8c (delete ScopeID)
           "type": "string"
         },
         "AppGoodID": {
@@ -606,9 +614,6 @@
           "type": "string"
         },
         "GoodName": {
-          "type": "string"
-        },
-        "ScopeID": {
           "type": "string"
         },
         "CouponID": {
