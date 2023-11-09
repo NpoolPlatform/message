@@ -108,5 +108,4 @@ message VerifyCouponScopesRequest {
 }
 
 message VerifyCouponScopesResponse {
-    bool Info            = 10;
 }
