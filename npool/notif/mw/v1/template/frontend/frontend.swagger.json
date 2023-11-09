@@ -15,7 +15,40 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/template_DeleteFrontendTemplate": {
+      "post": {
+        "operationId": "Middleware_DeleteFrontendTemplate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteFrontendTemplateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteFrontendTemplateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -39,6 +72,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -48,6 +82,9 @@
       "type": "object",
       "properties": {
         "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
@@ -70,15 +107,6 @@
         }
       }
     },
-    "v1CountFrontendTemplatesResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1CreateFrontendTemplateResponse": {
       "type": "object",
       "properties": {
@@ -93,8 +121,17 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1FrontendTemplate"
           }
+        }
+      }
+    },
+    "v1DeleteFrontendTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplateReq"
         }
       }
     },
@@ -126,8 +163,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "AppID": {
           "type": "string",
@@ -168,6 +210,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "AppID": {
@@ -187,14 +233,6 @@
         }
       }
     },
-    "v1GetFrontendTemplateOnlyResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FrontendTemplate"
-        }
-      }
-    },
     "v1GetFrontendTemplateResponse": {
       "type": "object",
       "properties": {
@@ -209,6 +247,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1FrontendTemplate"
           }
         },

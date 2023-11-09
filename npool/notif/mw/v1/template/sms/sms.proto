@@ -4,24 +4,31 @@ package notif.middleware.template.sms.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/template/sms";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
     rpc GetSMSTemplate        (GetSMSTemplateRequest)        returns (GetSMSTemplateResponse)        {}
     rpc GetSMSTemplates       (GetSMSTemplatesRequest)       returns (GetSMSTemplatesResponse)       {}
-    rpc GetSMSTemplateOnly    (GetSMSTemplateOnlyRequest)    returns (GetSMSTemplateOnlyResponse)    {}
     rpc CreateSMSTemplate     (CreateSMSTemplateRequest)     returns (CreateSMSTemplateResponse)     {}
     rpc CreateSMSTemplates    (CreateSMSTemplatesRequest)    returns (CreateSMSTemplatesResponse)    {}
     rpc UpdateSMSTemplate     (UpdateSMSTemplateRequest)     returns (UpdateSMSTemplateResponse)     {}
     rpc ExistSMSTemplate      (ExistSMSTemplateRequest)      returns (ExistSMSTemplateResponse)      {}
     rpc ExistSMSTemplateConds (ExistSMSTemplateCondsRequest) returns (ExistSMSTemplateCondsResponse) {}
-    rpc DeleteSMSTemplate     (DeleteSMSTemplateRequest)     returns (DeleteSMSTemplateResponse)     {}
+    rpc DeleteSMSTemplate     (DeleteSMSTemplateRequest)     returns (DeleteSMSTemplateResponse)     {
+        option (google.api.http) = {
+            post: "/v1/template_DeleteSMSTemplate"
+            body: "*"
+        };
+    }
 }
 
 message SMSTemplate {
     // @inject_tag: sql:"id"
-    string ID      = 10;
+    uint32 ID      = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID   = 10;
     // @inject_tag: sql:"app_id"
     string AppID   = 20;
     // @inject_tag: sql:"lang_id"
@@ -40,7 +47,8 @@ message SMSTemplate {
 }
 
 message SMSTemplateReq {
-    optional string ID      = 10;
+    optional uint32 ID      = 9;
+    optional string EntID   = 10;
     optional string AppID   = 20;
     optional string LangID  = 30;
     optional basetypes.v1.UsedFor UsedFor = 40;
@@ -49,14 +57,15 @@ message SMSTemplateReq {
 }
 
 message Conds {
-    basetypes.v1.StringVal ID      = 10;
+    basetypes.v1.Uint32Val ID      = 9;
+    basetypes.v1.StringVal EntID   = 10;
     basetypes.v1.StringVal AppID   = 30;
     basetypes.v1.StringVal LangID  = 40;
     basetypes.v1.Int32Val  UsedFor = 50;
 }
 
 message GetSMSTemplateRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetSMSTemplateResponse {
@@ -72,14 +81,6 @@ message GetSMSTemplatesRequest {
 message GetSMSTemplatesResponse {
     repeated SMSTemplate Infos = 10;
     uint32               Total = 20;
-}
-
-message GetSMSTemplateOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetSMSTemplateOnlyResponse {
-    SMSTemplate Info = 10;
 }
 
 message CreateSMSTemplateRequest {
@@ -107,7 +108,7 @@ message UpdateSMSTemplateResponse {
 }
 
 message ExistSMSTemplateRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistSMSTemplateResponse {

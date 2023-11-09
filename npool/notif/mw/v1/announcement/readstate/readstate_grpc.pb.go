@@ -21,9 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Middleware_CreateReadState_FullMethodName     = "/notif.middleware.announcement.readstate.v1.Middleware/CreateReadState"
 	Middleware_GetReadState_FullMethodName        = "/notif.middleware.announcement.readstate.v1.Middleware/GetReadState"
-	Middleware_GetReadStateOnly_FullMethodName    = "/notif.middleware.announcement.readstate.v1.Middleware/GetReadStateOnly"
 	Middleware_GetReadStates_FullMethodName       = "/notif.middleware.announcement.readstate.v1.Middleware/GetReadStates"
-	Middleware_ExistReadState_FullMethodName      = "/notif.middleware.announcement.readstate.v1.Middleware/ExistReadState"
 	Middleware_ExistReadStateConds_FullMethodName = "/notif.middleware.announcement.readstate.v1.Middleware/ExistReadStateConds"
 	Middleware_DeleteReadState_FullMethodName     = "/notif.middleware.announcement.readstate.v1.Middleware/DeleteReadState"
 )
@@ -34,9 +32,7 @@ const (
 type MiddlewareClient interface {
 	CreateReadState(ctx context.Context, in *CreateReadStateRequest, opts ...grpc.CallOption) (*CreateReadStateResponse, error)
 	GetReadState(ctx context.Context, in *GetReadStateRequest, opts ...grpc.CallOption) (*GetReadStateResponse, error)
-	GetReadStateOnly(ctx context.Context, in *GetReadStateOnlyRequest, opts ...grpc.CallOption) (*GetReadStateOnlyResponse, error)
 	GetReadStates(ctx context.Context, in *GetReadStatesRequest, opts ...grpc.CallOption) (*GetReadStatesResponse, error)
-	ExistReadState(ctx context.Context, in *ExistReadStateRequest, opts ...grpc.CallOption) (*ExistReadStateResponse, error)
 	ExistReadStateConds(ctx context.Context, in *ExistReadStateCondsRequest, opts ...grpc.CallOption) (*ExistReadStateCondsResponse, error)
 	DeleteReadState(ctx context.Context, in *DeleteReadStateRequest, opts ...grpc.CallOption) (*DeleteReadStateResponse, error)
 }
@@ -67,27 +63,9 @@ func (c *middlewareClient) GetReadState(ctx context.Context, in *GetReadStateReq
 	return out, nil
 }
 
-func (c *middlewareClient) GetReadStateOnly(ctx context.Context, in *GetReadStateOnlyRequest, opts ...grpc.CallOption) (*GetReadStateOnlyResponse, error) {
-	out := new(GetReadStateOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetReadStateOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) GetReadStates(ctx context.Context, in *GetReadStatesRequest, opts ...grpc.CallOption) (*GetReadStatesResponse, error) {
 	out := new(GetReadStatesResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetReadStates_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) ExistReadState(ctx context.Context, in *ExistReadStateRequest, opts ...grpc.CallOption) (*ExistReadStateResponse, error) {
-	out := new(ExistReadStateResponse)
-	err := c.cc.Invoke(ctx, Middleware_ExistReadState_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -118,9 +96,7 @@ func (c *middlewareClient) DeleteReadState(ctx context.Context, in *DeleteReadSt
 type MiddlewareServer interface {
 	CreateReadState(context.Context, *CreateReadStateRequest) (*CreateReadStateResponse, error)
 	GetReadState(context.Context, *GetReadStateRequest) (*GetReadStateResponse, error)
-	GetReadStateOnly(context.Context, *GetReadStateOnlyRequest) (*GetReadStateOnlyResponse, error)
 	GetReadStates(context.Context, *GetReadStatesRequest) (*GetReadStatesResponse, error)
-	ExistReadState(context.Context, *ExistReadStateRequest) (*ExistReadStateResponse, error)
 	ExistReadStateConds(context.Context, *ExistReadStateCondsRequest) (*ExistReadStateCondsResponse, error)
 	DeleteReadState(context.Context, *DeleteReadStateRequest) (*DeleteReadStateResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -136,14 +112,8 @@ func (UnimplementedMiddlewareServer) CreateReadState(context.Context, *CreateRea
 func (UnimplementedMiddlewareServer) GetReadState(context.Context, *GetReadStateRequest) (*GetReadStateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetReadState not implemented")
 }
-func (UnimplementedMiddlewareServer) GetReadStateOnly(context.Context, *GetReadStateOnlyRequest) (*GetReadStateOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetReadStateOnly not implemented")
-}
 func (UnimplementedMiddlewareServer) GetReadStates(context.Context, *GetReadStatesRequest) (*GetReadStatesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetReadStates not implemented")
-}
-func (UnimplementedMiddlewareServer) ExistReadState(context.Context, *ExistReadStateRequest) (*ExistReadStateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistReadState not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistReadStateConds(context.Context, *ExistReadStateCondsRequest) (*ExistReadStateCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistReadStateConds not implemented")
@@ -200,24 +170,6 @@ func _Middleware_GetReadState_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetReadStateOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetReadStateOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetReadStateOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetReadStateOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetReadStateOnly(ctx, req.(*GetReadStateOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_GetReadStates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetReadStatesRequest)
 	if err := dec(in); err != nil {
@@ -232,24 +184,6 @@ func _Middleware_GetReadStates_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetReadStates(ctx, req.(*GetReadStatesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_ExistReadState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistReadStateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistReadState(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_ExistReadState_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ExistReadState(ctx, req.(*ExistReadStateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -306,16 +240,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetReadState_Handler,
 		},
 		{
-			MethodName: "GetReadStateOnly",
-			Handler:    _Middleware_GetReadStateOnly_Handler,
-		},
-		{
 			MethodName: "GetReadStates",
 			Handler:    _Middleware_GetReadStates_Handler,
-		},
-		{
-			MethodName: "ExistReadState",
-			Handler:    _Middleware_ExistReadState_Handler,
 		},
 		{
 			MethodName: "ExistReadStateConds",
