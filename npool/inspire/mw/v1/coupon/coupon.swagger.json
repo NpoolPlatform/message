@@ -171,12 +171,18 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5b7142123 (add ID)
         "ID": {
           "type": "integer",
           "format": "int64"
         },
+<<<<<<< HEAD
 =======
 >>>>>>> 7499a8186 (add EntID in mw)
+=======
+>>>>>>> 5b7142123 (add ID)
         "EntID": {
           "type": "string"
         },
