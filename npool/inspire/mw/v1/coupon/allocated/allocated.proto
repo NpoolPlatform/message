@@ -18,7 +18,7 @@ service Middleware {
 }
 
 message CouponReq {
-    optional string ID       = 10;
+    optional string EntID    = 10;
     optional string AppID    = 30;
     optional string CouponID = 40;
     optional string UserID   = 50;
@@ -29,7 +29,9 @@ message CouponReq {
 
 message Coupon {
     // @inject_tag: sql:"id"
-    string     ID              = 10;
+    uint32     ID              = 10;
+    // @inject_tag: sql:"ent_id"
+    string     EntID           = 11;
     // @inject_tag: sql:"coupon_type"
     string     CouponTypeStr   = 20;
     basetypes.inspire.v1.CouponType CouponType = 30;
@@ -89,15 +91,15 @@ message Coupon {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID       = 10;
+    optional basetypes.v1.StringVal EntID    = 10;
     optional basetypes.v1.StringVal AppID    = 20;
     optional basetypes.v1.StringVal UserID   = 30;
     optional basetypes.v1.Uint32Val CouponType = 40;
-    optional basetypes.v1.StringVal CouponID = 50;
+    optional basetypes.v1.StringVal CouponID   = 50;
     optional basetypes.v1.StringSliceVal CouponIDs = 51;
     optional basetypes.v1.BoolVal   Used     = 60;
     optional basetypes.v1.StringVal UsedByOrderID = 70;
-    optional basetypes.v1.StringSliceVal IDs = 80;
+    optional basetypes.v1.StringSliceVal EntIDs   = 80;
     optional basetypes.v1.StringSliceVal UsedByOrderIDs = 90;
 }
 
@@ -126,7 +128,7 @@ message UpdateCouponsResponse {
 }
 
 message GetCouponRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetCouponResponse {
