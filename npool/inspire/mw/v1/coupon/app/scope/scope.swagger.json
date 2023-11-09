@@ -195,6 +195,10 @@
     "v1ScopeReq": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
         "EntID": {
           "type": "string"
         },
