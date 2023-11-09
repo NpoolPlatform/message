@@ -40,6 +40,8 @@ service Gateway {
 }
 
 message CreateCouponRequest {
+    uint32 ID           = 8;
+    string EntID        = 9;
     string AppID        = 10;
     string UserID       = 20;
     string TargetAppID  = 30;
