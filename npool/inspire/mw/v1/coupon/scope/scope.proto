@@ -17,6 +17,7 @@ service Middleware {
 }
 
 message ScopeReq {
+    optional uint32 ID        = 9;
     optional string EntID     = 10;
     optional string GoodID    = 20;
     optional basetypes.inspire.v1.CouponScope  CouponScope  = 30;
