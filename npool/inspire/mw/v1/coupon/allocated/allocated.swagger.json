@@ -58,7 +58,7 @@
     "v1Conds": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
@@ -82,7 +82,7 @@
         "UsedByOrderID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "IDs": {
+        "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
         "UsedByOrderIDs": {
@@ -94,8 +94,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "CouponTypeStr": {
           "type": "string",
@@ -237,7 +242,7 @@
     "v1CouponReq": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "type": "string"
         },
         "AppID": {

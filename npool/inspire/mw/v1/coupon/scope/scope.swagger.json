@@ -47,7 +47,7 @@
     "v1Conds": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "GoodID": {
@@ -135,8 +135,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "GoodID": {
           "type": "string",
@@ -187,7 +192,7 @@
     "v1ScopeReq": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "type": "string"
         },
         "GoodID": {
