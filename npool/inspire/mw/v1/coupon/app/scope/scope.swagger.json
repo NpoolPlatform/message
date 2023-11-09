@@ -337,6 +337,7 @@
 =======
     },
     "v1VerifyCouponScopesResponse": {
+<<<<<<< HEAD
       "type": "object",
       "properties": {
         "Info": {
@@ -344,6 +345,9 @@
         }
       }
 >>>>>>> 63539b94d (add verifycouponscope method)
+=======
+      "type": "object"
+>>>>>>> 2cf3dd208 (delete Info)
     }
   }
 }
