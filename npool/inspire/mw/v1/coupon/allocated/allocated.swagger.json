@@ -73,6 +73,9 @@
         "CouponID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "CouponIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "Used": {
           "$ref": "#/definitions/v1BoolVal"
         },
@@ -201,6 +204,13 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"random\""
         },
+        "CouponScopeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_scope\""
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -246,6 +256,16 @@
           "type": "string"
         }
       }
+    },
+    "v1CouponScope": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponScope",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponScope"
     },
     "v1CouponType": {
       "type": "string",

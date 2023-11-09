@@ -29,15 +29,13 @@ message CouponReq {
     optional string Name         = 100;
     // For special offer
     optional string UserID       = 110;
-    // For good specific coupon
-    optional string GoodID       = 120;
-    optional string AppGoodID    = 121;
     // For threshold coupon
     optional string Threshold    = 130;
     // We may have random amount coupon
     optional string Allocated    = 140;
     optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 150;
     optional bool   Random       = 160;
+    optional basetypes.inspire.v1.CouponScope CouponScope           = 170;
 }
 
 message Coupon {
@@ -64,10 +62,6 @@ message Coupon {
     string          Name            = 110;
     // @inject_tag: sql:"user_id"
     optional string UserID          = 120;
-    // @inject_tag: sql:"good_id"
-    optional string GoodID          = 130;
-    // @inject_tag: sql:"app_good_id"
-    optional string AppGoodID       = 131;
     // @inject_tag: sql:"threshold"
     optional string Threshold       = 140;
     // @inject_tag: sql:"allocated"
@@ -77,6 +71,9 @@ message Coupon {
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 170;
     // @inject_tag: sql:"random"
     bool            Random          = 180;
+    // @inject_tag: sql:"coupon_scope"
+    string          CouponScopeStr  = 190;
+    basetypes.inspire.v1.CouponScope      CouponScope      = 200;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
@@ -89,8 +86,6 @@ message Conds {
     optional basetypes.v1.StringVal  ID         = 10;
     optional basetypes.v1.Uint32Val  CouponType = 20;
     optional basetypes.v1.StringVal  AppID      = 30;
-    optional basetypes.v1.StringVal  GoodID     = 40;
-    optional basetypes.v1.StringVal  AppGoodID  = 41;
     optional basetypes.v1.StringSliceVal IDs    = 50;
 }
 

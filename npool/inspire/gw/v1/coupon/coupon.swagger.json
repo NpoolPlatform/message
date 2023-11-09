@@ -184,9 +184,6 @@
         "TargetUserID": {
           "type": "string"
         },
-        "AppGoodID": {
-          "type": "string"
-        },
         "Threshold": {
           "type": "string"
         },
@@ -195,6 +192,9 @@
         },
         "Random": {
           "type": "boolean"
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
         }
       }
     },
@@ -272,9 +272,6 @@
         "TargetUserID": {
           "type": "string"
         },
-        "AppGoodID": {
-          "type": "string"
-        },
         "Threshold": {
           "type": "string"
         },
@@ -283,6 +280,9 @@
         },
         "Random": {
           "type": "boolean"
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
         }
       }
     },
@@ -373,14 +373,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
         },
-        "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
-        },
-        "AppGoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_good_id\""
-        },
         "Threshold": {
           "type": "string",
           "title": "@inject_tag: sql:\"threshold\""
@@ -399,6 +391,13 @@
         "Random": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"random\""
+        },
+        "CouponScopeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_scope\""
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
         },
         "CreatedAt": {
           "type": "integer",
@@ -427,6 +426,16 @@
         "GoodThreshold"
       ],
       "default": "DefaultCouponConstraint"
+    },
+    "v1CouponScope": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponScope",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponScope"
     },
     "v1CouponType": {
       "type": "string",

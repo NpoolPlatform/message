@@ -77,6 +77,9 @@ message Coupon {
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 230;
     // @inject_tag: sql:"random"
     bool       Random          = 240;
+    // @inject_tag: sql:"coupon_scope"
+    string     CouponScopeStr  = 250;
+    basetypes.inspire.v1.CouponScope CouponScope = 260;
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
@@ -89,6 +92,7 @@ message Conds {
     optional basetypes.v1.StringVal UserID   = 30;
     optional basetypes.v1.Uint32Val CouponType = 40;
     optional basetypes.v1.StringVal CouponID = 50;
+    optional basetypes.v1.StringSliceVal CouponIDs = 51;
     optional basetypes.v1.BoolVal   Used     = 60;
     optional basetypes.v1.StringVal UsedByOrderID = 70;
     optional basetypes.v1.StringSliceVal IDs = 80;

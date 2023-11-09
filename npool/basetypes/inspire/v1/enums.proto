@@ -52,3 +52,11 @@ enum CouponConstraint {
     GoodOnly         = 30;
     GoodThreshold    = 40;
 }
+
+enum CouponScope {
+    DefaultCouponScope = 0;
+
+    AllGood            = 10;
+    Whitelist          = 20;
+    Blacklist          = 30;
+}
