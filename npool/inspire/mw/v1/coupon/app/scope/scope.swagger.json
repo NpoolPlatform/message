@@ -248,12 +248,7 @@
       }
     },
     "v1VerifyCouponScopesResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
+      "type": "object"
     }
   }
 }
