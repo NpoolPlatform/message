@@ -368,6 +368,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
         "AppID": {
@@ -403,6 +404,8 @@
 =======
         "ScopeID": {
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> e1bcdac3f (delete ScopeID)
           "type": "string"
         },
         "AppGoodID": {
@@ -729,9 +732,6 @@
           "type": "string"
         },
         "GoodName": {
-          "type": "string"
-        },
-        "ScopeID": {
           "type": "string"
         },
         "CouponID": {
