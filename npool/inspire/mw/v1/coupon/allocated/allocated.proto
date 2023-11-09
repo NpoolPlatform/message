@@ -18,6 +18,7 @@ service Middleware {
 }
 
 message CouponReq {
+    optional uint32 ID       = 9;
     optional string EntID    = 10;
     optional string AppID    = 30;
     optional string CouponID = 40;
