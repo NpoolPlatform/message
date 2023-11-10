@@ -11,6 +11,7 @@ import "npool/basetypes/inspire/v1/enums.proto";
 service Middleware {
     rpc CreateCoupon   (CreateCouponRequest)   returns (CreateCouponResponse)   {}
     rpc UpdateCoupon   (UpdateCouponRequest)   returns (UpdateCouponResponse)   {}
+    rpc UpdateCoupons  (UpdateCouponsRequest)  returns (UpdateCouponsResponse)   {}
     rpc GetCoupon      (GetCouponRequest)      returns (GetCouponResponse)      {}
     rpc GetCoupons     (GetCouponsRequest)     returns (GetCouponsResponse)     {}
     rpc DeleteCoupon   (DeleteCouponRequest)   returns (DeleteCouponResponse)   {}
@@ -113,6 +114,14 @@ message UpdateCouponRequest {
 
 message UpdateCouponResponse {
     Coupon Info = 10;
+}
+
+message UpdateCouponsRequest {
+    repeated CouponReq Info = 10;
+}
+
+message UpdateCouponsResponse {
+    repeated Coupon Info = 10;
 }
 
 message GetCouponRequest {
