@@ -384,7 +384,11 @@
     "v1UpdateCouponsResponse": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "Infos": {
+=======
+        "Info": {
+>>>>>>> a13c7c34b (add update coupons)
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Coupon"
