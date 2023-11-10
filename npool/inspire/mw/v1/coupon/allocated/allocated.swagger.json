@@ -252,6 +252,10 @@
         "Used": {
           "type": "boolean"
         },
+        "UsedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "UsedByOrderID": {
           "type": "string"
         }
@@ -364,7 +368,7 @@
     "v1UpdateCouponsResponse": {
       "type": "object",
       "properties": {
-        "Info": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Coupon"
