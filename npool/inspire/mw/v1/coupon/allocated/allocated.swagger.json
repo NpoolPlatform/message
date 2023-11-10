@@ -360,6 +360,17 @@
           "$ref": "#/definitions/v1Coupon"
         }
       }
+    },
+    "v1UpdateCouponsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coupon"
+          }
+        }
+      }
     }
   }
 }
