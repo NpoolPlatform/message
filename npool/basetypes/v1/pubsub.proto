@@ -15,7 +15,7 @@ enum MsgID {
     UpdateOpLogHumanReadableReq  = 70;
     CreateNewLoginReq            = 80;
     CreateCommissionReq          = 90;
-    UpdateCouponsUsedReq          = 100;
+    UpdateCouponsUsedReq         = 100;
 
     DepositReceivedReq           = 1000;
     DepositCheckFailReq          = 1010;
