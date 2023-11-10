@@ -385,10 +385,14 @@
       "type": "object",
       "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "Infos": {
 =======
         "Info": {
 >>>>>>> a13c7c34b (add update coupons)
+=======
+        "Infos": {
+>>>>>>> 2d1271a2f (change to infos & add UsedAt)
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Coupon"
