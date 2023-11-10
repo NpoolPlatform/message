@@ -18,7 +18,8 @@ service Middleware {
 }
 
 message OutOfGasReq {
-    optional string     ID        = 10;
+    optional uint32     ID        = 9;
+    optional string     EntID     = 10;
     optional string     OrderID   = 20;
     optional uint32     StartAt   = 30;
     optional uint32     EndAt     = 40;
@@ -27,7 +28,9 @@ message OutOfGasReq {
 
 message OutOfGas {
     // @inject_tag: sql:"id"
-    string     ID        = 10;
+    uint32     ID        = 9;
+    // @inject_tag: sql:"ent_id"
+    string     EntID     = 10;
     // @inject_tag: sql:"order_id"
     string     OrderID   = 20;
     // @inject_tag: sql:"start_at"
@@ -41,7 +44,8 @@ message OutOfGas {
 }
 
 message Conds {
-    basetypes.v1.StringVal ID      = 10;
+    basetypes.v1.Uint32Val ID      = 9;
+    basetypes.v1.StringVal EntID   = 10;
     basetypes.v1.StringVal OrderID = 20;
     basetypes.v1.Uint32Val StartAt = 30;
     basetypes.v1.Uint32Val EndAt   = 40;
@@ -64,7 +68,7 @@ message UpdateOutOfGasResponse {
 }
 
 message GetOutOfGasRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetOutOfGasResponse {
@@ -83,7 +87,7 @@ message GetOutOfGasesResponse {
 }
 
 message ExistOutOfGasRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistOutOfGasResponse {

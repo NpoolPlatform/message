@@ -26,7 +26,8 @@ service Middleware {
 
 message OrderReq {
     // order
-    optional string ID                        = 10;
+    optional uint32 ID                        = 9;
+    optional string EntID                     = 10;
     optional string AppID                     = 20;
     optional string UserID                    = 30;
     optional string GoodID                    = 40;
@@ -79,7 +80,9 @@ message OrderReq {
 message Order {
     // order
     // @inject_tag: sql:"id"
-    string ID                                        = 10;
+    uint32 ID                                        = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID                                     = 10;
     // @inject_tag: sql:"app_id"
     string AppID                                     = 20;
     // @inject_tag: sql:"user_id"
@@ -192,7 +195,8 @@ message Order {
 
 message Conds {
     // order
-    optional basetypes.v1.StringVal      ID                    = 10;
+    optional basetypes.v1.Uint32Val      ID                    = 9;
+    optional basetypes.v1.StringVal      EntID                 = 10;
     optional basetypes.v1.StringVal      AppID                 = 20;
     optional basetypes.v1.StringVal      UserID                = 30;
     optional basetypes.v1.StringVal      GoodID                = 40;
@@ -215,7 +219,8 @@ message Conds {
     optional basetypes.v1.Uint32Val      PaymentState          = 190;
 
     // other
-    optional basetypes.v1.StringSliceVal IDs                   = 200;
+    optional basetypes.v1.Uint32SliceVal IDs                   = 199;
+    optional basetypes.v1.StringSliceVal EntIDs                = 200;
     optional basetypes.v1.StringVal      CouponID              = 210;
     optional basetypes.v1.Uint32SliceVal OrderStates           = 220;
     optional basetypes.v1.Uint32SliceVal PaymentTypes          = 230;
@@ -258,7 +263,7 @@ message UpdateOrdersResponse {
 }
 
 message GetOrderRequest {
-    string ID  = 10;
+    string EntID  = 10;
 }
 
 message GetOrderResponse {
@@ -293,7 +298,7 @@ message CountOrdersResponse {
 }
 
 message ExistOrderRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistOrderResponse {

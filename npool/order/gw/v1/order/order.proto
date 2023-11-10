@@ -112,7 +112,8 @@ message Coupon {
 }
 
 message Order {
-    string ID                     = 10;
+    uint32 ID                     = 9;
+    string EntID                  = 10;
 
     string ParentOrderID          = 20;
     string ParentOrderGoodID      = 30;
@@ -213,7 +214,8 @@ message CreateOrdersResponse {
 message UpdateOrderRequest {
     string          AppID     = 10;
     string          UserID    = 20;
-    string          ID        = 30;
+    uint32          ID        = 30;
+    string          EntID     = 40;
     optional bool   Canceled  = 50;
 }
 
@@ -224,7 +226,8 @@ message UpdateOrderResponse {
 message UpdateUserOrderRequest {
     string          AppID        = 10;
     string          TargetUserID = 20;
-    string          ID           = 30;
+    uint32          ID           = 30;
+    string          EntID        = 40;
     optional bool   Canceled     = 50;
 }
 
@@ -235,7 +238,8 @@ message UpdateUserOrderResponse {
 message UpdateAppUserOrderRequest {
     string          TargetAppID  = 10;
     string          TargetUserID = 20;
-    string          ID           = 30;
+    uint32          ID           = 30;
+    string          EntID        = 40;
     optional bool   Canceled     = 50;
 }
 
@@ -246,7 +250,7 @@ message UpdateAppUserOrderResponse {
 message GetOrderRequest {
     string AppID     = 10;
     string UserID    = 20;
-    string ID        = 30;
+    string EntID     = 30;
 }
 
 message GetOrderResponse {
