@@ -4,8 +4,6 @@ package basetypes.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
-import "google/protobuf/any.proto";
-
 enum MsgID {
     DefaultMsgID                 = 0;
     RewardEventReq               = 10;
@@ -17,6 +15,7 @@ enum MsgID {
     UpdateOpLogHumanReadableReq  = 70;
     CreateNewLoginReq            = 80;
     CreateCommissionReq          = 90;
+    UpdateCouponsUsedReq         = 100;
 
     DepositReceivedReq           = 1000;
     DepositCheckFailReq          = 1010;
