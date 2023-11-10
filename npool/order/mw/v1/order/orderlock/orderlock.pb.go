@@ -800,8 +800,13 @@ var file_npool_order_mw_v1_order_orderlock_orderlock_proto_rawDesc = []byte{
 	0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x69, 0x6e, 0x74,
 	0x33, 0x32, 0x56, 0x61, 0x6c, 0x52, 0x08, 0x4c, 0x6f, 0x63, 0x6b, 0x54, 0x79, 0x70, 0x65, 0x12,
 	0x2e, 0x0a, 0x03, 0x49, 0x44, 0x73, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x62,
+<<<<<<< HEAD
 	0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x69, 0x6e, 0x74,
 	0x33, 0x32, 0x53, 0x6c, 0x69, 0x63, 0x65, 0x56, 0x61, 0x6c, 0x52, 0x03, 0x49, 0x44, 0x73, 0x12,
+=======
+	0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69,
+	0x6e, 0x67, 0x53, 0x6c, 0x69, 0x63, 0x65, 0x56, 0x61, 0x6c, 0x52, 0x03, 0x49, 0x44, 0x73, 0x12,
+>>>>>>> dbd0ec61d (Change id to entid)
 	0x38, 0x0a, 0x08, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x73, 0x18, 0x46, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x1c, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31,
 	0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x53, 0x6c, 0x69, 0x63, 0x65, 0x56, 0x61, 0x6c, 0x52,
@@ -928,8 +933,12 @@ var file_npool_order_mw_v1_order_orderlock_orderlock_proto_goTypes = []interface
 	(v1.OrderLockType)(0),            // 11: basetypes.order.v1.OrderLockType
 	(*v11.Uint32Val)(nil),            // 12: basetypes.v1.Uint32Val
 	(*v11.StringVal)(nil),            // 13: basetypes.v1.StringVal
+<<<<<<< HEAD
 	(*v11.Uint32SliceVal)(nil),       // 14: basetypes.v1.Uint32SliceVal
 	(*v11.StringSliceVal)(nil),       // 15: basetypes.v1.StringSliceVal
+=======
+	(*v11.StringSliceVal)(nil),       // 14: basetypes.v1.StringSliceVal
+>>>>>>> dbd0ec61d (Change id to entid)
 }
 var file_npool_order_mw_v1_order_orderlock_orderlock_proto_depIdxs = []int32{
 	11, // 0: order.middleware.order1.orderlock.v1.OrderLockReq.LockType:type_name -> basetypes.order.v1.OrderLockType
@@ -940,8 +949,13 @@ var file_npool_order_mw_v1_order_orderlock_orderlock_proto_depIdxs = []int32{
 	13, // 5: order.middleware.order1.orderlock.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
 	13, // 6: order.middleware.order1.orderlock.v1.Conds.OrderID:type_name -> basetypes.v1.StringVal
 	12, // 7: order.middleware.order1.orderlock.v1.Conds.LockType:type_name -> basetypes.v1.Uint32Val
+<<<<<<< HEAD
 	14, // 8: order.middleware.order1.orderlock.v1.Conds.IDs:type_name -> basetypes.v1.Uint32SliceVal
 	15, // 9: order.middleware.order1.orderlock.v1.Conds.OrderIDs:type_name -> basetypes.v1.StringSliceVal
+=======
+	14, // 8: order.middleware.order1.orderlock.v1.Conds.IDs:type_name -> basetypes.v1.StringSliceVal
+	14, // 9: order.middleware.order1.orderlock.v1.Conds.OrderIDs:type_name -> basetypes.v1.StringSliceVal
+>>>>>>> dbd0ec61d (Change id to entid)
 	1,  // 10: order.middleware.order1.orderlock.v1.GetOrderLockResponse.Info:type_name -> order.middleware.order1.orderlock.v1.OrderLock
 	2,  // 11: order.middleware.order1.orderlock.v1.GetOrderLocksRequest.Conds:type_name -> order.middleware.order1.orderlock.v1.Conds
 	1,  // 12: order.middleware.order1.orderlock.v1.GetOrderLocksResponse.Infos:type_name -> order.middleware.order1.orderlock.v1.OrderLock
