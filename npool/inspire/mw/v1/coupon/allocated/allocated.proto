@@ -23,6 +23,7 @@ message CouponReq {
     optional string CouponID = 40;
     optional string UserID   = 50;
     optional bool   Used     = 60;
+    optional uint32 UsedAt   = 61;
     optional string UsedByOrderID = 70;
 }
 
@@ -117,11 +118,11 @@ message UpdateCouponResponse {
 }
 
 message UpdateCouponsRequest {
-    repeated CouponReq Info = 10;
+    repeated CouponReq Infos = 10;
 }
 
 message UpdateCouponsResponse {
-    repeated Coupon Info = 10;
+    repeated Coupon    Infos = 10;
 }
 
 message GetCouponRequest {
