@@ -68,8 +68,9 @@ message CreateAppGoodScopeResponse {
 }
 
 message DeleteAppGoodScopeRequest {
-    string ID        = 10;
-    string AppID     = 20;
+    uint32 ID        = 10;
+    string EntID     = 20;
+    string AppID     = 30;
 }
 
 message DeleteAppGoodScopeResponse {

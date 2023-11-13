@@ -57,7 +57,8 @@ message CreateScopeResponse {
 }
 
 message DeleteScopeRequest {
-    string ID        = 10;
+    uint32 ID        = 10;
+    string EntID     = 20;
 }
 
 message DeleteScopeResponse {
