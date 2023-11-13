@@ -149,13 +149,6 @@
     "inspiregatewaycouponv1CreateCouponRequest": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
         "AppID": {
           "type": "string"
         },
