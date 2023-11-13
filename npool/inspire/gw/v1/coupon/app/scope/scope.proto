@@ -60,7 +60,7 @@ message CreateAppGoodScopeRequest {
     string AppID          = 10;
     string CouponID       = 20;
     string AppGoodID      = 30;
-    optional basetypes.inspire.v1.CouponScope CouponScope      = 40;
+    basetypes.inspire.v1.CouponScope CouponScope      = 40;
 }
 
 message CreateAppGoodScopeResponse {
