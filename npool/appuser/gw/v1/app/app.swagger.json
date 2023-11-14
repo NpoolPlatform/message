@@ -357,6 +357,9 @@
 >>>>>>> 6b2d1d40f (Add ent id)
           "type": "string"
         },
+        "NewEntID": {
+          "type": "string"
+        },
         "Name": {
           "type": "string"
         },
