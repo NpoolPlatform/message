@@ -79,6 +79,7 @@ message CreateAppResponse {
 message UpdateAppRequest {
     uint32          ID          = 10;
     string          EntID       = 11;
+    optional string NewEntID    = 12;
     optional string Name        = 20;
     optional string Logo        = 30;
     optional string Description = 40;
