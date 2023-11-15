@@ -81,8 +81,6 @@ message Coupon {
     uint32          CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
     uint32          UpdatedAt       = 1010;
-    // @inject_tag: sql:"deleted_at"
-    uint32          DeletedAt       = 1020;
 }
 
 message Conds {
