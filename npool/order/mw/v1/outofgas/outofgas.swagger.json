@@ -15,7 +15,136 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/outofgas_CreateOutOfGas": {
+      "post": {
+        "operationId": "Middleware_CreateOutOfGas",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateOutOfGasResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateOutOfGasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/outofgas_DeleteOutOfGas": {
+      "post": {
+        "operationId": "Middleware_DeleteOutOfGas",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteOutOfGasResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteOutOfGasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/outofgas_GetOutOfGas": {
+      "post": {
+        "operationId": "Middleware_GetOutOfGas",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetOutOfGasResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetOutOfGasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/outofgas_UpdateOutOfGas": {
+      "post": {
+        "operationId": "Middleware_UpdateOutOfGas",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateOutOfGasResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateOutOfGasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -65,11 +194,27 @@
         }
       }
     },
+    "v1CreateOutOfGasRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OutOfGasReq"
+        }
+      }
+    },
     "v1CreateOutOfGasResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1OutOfGas"
+        }
+      }
+    },
+    "v1DeleteOutOfGasRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OutOfGasReq"
         }
       }
     },
@@ -94,6 +239,14 @@
       "properties": {
         "Info": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1GetOutOfGasRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
         }
       }
     },
@@ -206,6 +359,14 @@
         "Value": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateOutOfGasRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OutOfGasReq"
         }
       }
     },

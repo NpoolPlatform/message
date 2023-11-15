@@ -4,17 +4,38 @@ package order.middleware.outofgas.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/outofgas";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateOutOfGas     (CreateOutOfGasRequest)     returns (CreateOutOfGasResponse)     {}
-    rpc UpdateOutOfGas     (UpdateOutOfGasRequest)     returns (UpdateOutOfGasResponse)     {}
-    rpc GetOutOfGas        (GetOutOfGasRequest)        returns (GetOutOfGasResponse)        {}
-    rpc GetOutOfGases      (GetOutOfGasesRequest)      returns (GetOutOfGasesResponse)       {}
+    rpc CreateOutOfGas     (CreateOutOfGasRequest)     returns (CreateOutOfGasResponse)     {
+        option (google.api.http) = {
+            post: "/v1/outofgas_CreateOutOfGas"
+            body: "*"
+        };
+    }
+    rpc UpdateOutOfGas     (UpdateOutOfGasRequest)     returns (UpdateOutOfGasResponse)     {
+        option (google.api.http) = {
+            post: "/v1/outofgas_UpdateOutOfGas"
+            body: "*"
+        };
+    }
+    rpc GetOutOfGas        (GetOutOfGasRequest)        returns (GetOutOfGasResponse)        {
+        option (google.api.http) = {
+            post: "/v1/outofgas_GetOutOfGas"
+            body: "*"
+        };
+    }
+    rpc GetOutOfGases      (GetOutOfGasesRequest)      returns (GetOutOfGasesResponse)      {}
     rpc ExistOutOfGas      (ExistOutOfGasRequest)      returns (ExistOutOfGasResponse)      {}
     rpc ExistOutOfGasConds (ExistOutOfGasCondsRequest) returns (ExistOutOfGasCondsResponse) {}
-    rpc DeleteOutOfGas     (DeleteOutOfGasRequest)     returns (DeleteOutOfGasResponse)     {}
+    rpc DeleteOutOfGas     (DeleteOutOfGasRequest)     returns (DeleteOutOfGasResponse)     {
+        option (google.api.http) = {
+            post: "/v1/outofgas_DeleteOutOfGas"
+            body: "*"
+        };
+    }
 }
 
 message OutOfGasReq {

@@ -4,17 +4,38 @@ package order.middleware.compensate.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/compensate";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateCompensate     (CreateCompensateRequest)     returns (CreateCompensateResponse)     {}
-    rpc UpdateCompensate     (UpdateCompensateRequest)     returns (UpdateCompensateResponse)     {}
-    rpc GetCompensate        (GetCompensateRequest)        returns (GetCompensateResponse)        {}
+    rpc CreateCompensate     (CreateCompensateRequest)     returns (CreateCompensateResponse)     {
+        option (google.api.http) = {
+            post: "/v1/compensate_CreateCompensate"
+            body: "*"
+        };
+    }
+    rpc UpdateCompensate     (UpdateCompensateRequest)     returns (UpdateCompensateResponse)     {
+        option (google.api.http) = {
+            post: "/v1/compensate_UpdateCompensate"
+            body: "*"
+        };
+    }
+    rpc GetCompensate        (GetCompensateRequest)        returns (GetCompensateResponse)        {
+        option (google.api.http) = {
+            post: "/v1/compensate_GetCompensate"
+            body: "*"
+        };
+    }
     rpc GetCompensates       (GetCompensatesRequest)       returns (GetCompensatesResponse)       {}
     rpc ExistCompensate      (ExistCompensateRequest)      returns (ExistCompensateResponse)      {}
     rpc ExistCompensateConds (ExistCompensateCondsRequest) returns (ExistCompensateCondsResponse) {}
-    rpc DeleteCompensate     (DeleteCompensateRequest)     returns (DeleteCompensateResponse)     {}
+    rpc DeleteCompensate     (DeleteCompensateRequest)     returns (DeleteCompensateResponse)     {
+        option (google.api.http) = {
+            post: "/v1/compensate_DeleteCompensate"
+            body: "*"
+        };
+    }
 }
 
 message CompensateReq {
