@@ -42,8 +42,6 @@ message Registration {
     uint32 CreatedAt = 50;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt = 60;
-    // @inject_tag: sql:"deleted_at"
-    uint32 DeletedAt = 70;
 }
 
 message Conds {

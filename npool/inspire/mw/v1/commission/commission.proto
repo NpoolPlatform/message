@@ -74,8 +74,6 @@ message Commission {
     uint32     CreatedAt       = 130;
     // @inject_tag: sql:"updated_at"
     uint32     UpdatedAt       = 140;
-    // @inject_tag: sql:"deleted_at"
-    uint32     DeletedAt       = 150;
     // @inject_tag: sql:"order_limit"
     uint32     OrderLimit      = 160;
     // @inject_tag: sql:"settle_amount_type"
