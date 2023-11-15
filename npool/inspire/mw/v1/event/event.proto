@@ -60,8 +60,6 @@ message Event {
     uint32               CreatedAt     = 200;
     // @inject_tag: sql:"updated_at"
     uint32               UpdatedAt     = 210;
-    // @inject_tag: sql:"deleted_at"
-    uint32               DeletedAt     = 220;
 }
 
 message Conds {
