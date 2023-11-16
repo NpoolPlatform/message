@@ -4,17 +4,48 @@ package inspire.middleware.coupon.allocated.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/coupon/allocated";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateCoupon   (CreateCouponRequest)   returns (CreateCouponResponse)   {}
-    rpc UpdateCoupon   (UpdateCouponRequest)   returns (UpdateCouponResponse)   {}
-    rpc UpdateCoupons  (UpdateCouponsRequest)  returns (UpdateCouponsResponse)   {}
-    rpc GetCoupon      (GetCouponRequest)      returns (GetCouponResponse)      {}
-    rpc GetCoupons     (GetCouponsRequest)     returns (GetCouponsResponse)     {}
-    rpc DeleteCoupon   (DeleteCouponRequest)   returns (DeleteCouponResponse)   {}
+    rpc CreateCoupon   (CreateCouponRequest)   returns (CreateCouponResponse)   {
+        option (google.api.http) = {
+            post: "/v1/allocated_CreateCoupon"
+            body: "*"
+        };
+    }
+    rpc UpdateCoupon   (UpdateCouponRequest)   returns (UpdateCouponResponse)   {
+        option (google.api.http) = {
+            post: "/v1/allocated_UpdateCoupon"
+            body: "*"
+        };
+    }
+    rpc UpdateCoupons  (UpdateCouponsRequest)  returns (UpdateCouponsResponse)  {
+        option (google.api.http) = {
+            post: "/v1/allocated_UpdateCoupons"
+            body: "*"
+        };
+    }
+    rpc GetCoupon      (GetCouponRequest)      returns (GetCouponResponse)      {
+        option (google.api.http) = {
+            post: "/v1/allocated_GetCoupon"
+            body: "*"
+        };
+    }
+    rpc GetCoupons     (GetCouponsRequest)     returns (GetCouponsResponse)     {
+        option (google.api.http) = {
+            post: "/v1/allocated_GetCoupons"
+            body: "*"
+        };
+    }
+    rpc DeleteCoupon   (DeleteCouponRequest)   returns (DeleteCouponResponse)   {
+        option (google.api.http) = {
+            post: "/v1/allocated_DeleteCoupon"
+            body: "*"
+        };
+    }
 }
 
 message CouponReq {

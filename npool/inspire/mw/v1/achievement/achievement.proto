@@ -4,13 +4,29 @@ package inspire.middleware.achievement.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/achievement";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc ExpropriateAchievement (ExpropriateAchievementRequest) returns (ExpropriateAchievementResponse) {}
-    rpc GetAchievements        (GetAchievementsRequest)        returns (GetAchievementsResponse)        {}
-    rpc DeleteAchievement      (DeleteAchievementRequest)      returns (DeleteAchievementResponse)      {}
+    rpc ExpropriateAchievement (ExpropriateAchievementRequest) returns (ExpropriateAchievementResponse) {
+        option (google.api.http) = {
+            post: "/v1/achievement_ExpropriateAchievement"
+            body: "*"
+        };
+    }
+    rpc GetAchievements        (GetAchievementsRequest)        returns (GetAchievementsResponse)        {
+        option (google.api.http) = {
+            post: "/v1/achievement_GetAchievements"
+            body: "*"
+        };
+    }
+    rpc DeleteAchievement      (DeleteAchievementRequest)      returns (DeleteAchievementResponse)      {
+        option (google.api.http) = {
+            post: "/v1/achievement_DeleteAchievement"
+            body: "*"
+        };
+    }
 }
 
 message AchievementReq {

@@ -4,6 +4,7 @@ package inspire.middleware.event.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/event";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/conds.proto";
 
@@ -13,8 +14,18 @@ service Middleware {
     rpc UpdateEvent     (UpdateEventRequest)     returns (UpdateEventResponse)     {}
     rpc GetEvent        (GetEventRequest)        returns (GetEventResponse)        {}
     rpc GetEvents       (GetEventsRequest)       returns (GetEventsResponse)       {}
-    rpc DeleteEvent     (DeleteEventRequest)     returns (DeleteEventResponse)     {}
-    rpc RewardEvent     (RewardEventRequest)     returns (RewardEventResponse)     {}
+    rpc DeleteEvent     (DeleteEventRequest)     returns (DeleteEventResponse)     {
+        option (google.api.http) = {
+            post: "/v1/event_DeleteEvent"
+            body: "*"
+        };
+    }
+    rpc RewardEvent     (RewardEventRequest)     returns (RewardEventResponse)     {
+        option (google.api.http) = {
+            post: "/v1/event_RewardEvent"
+            body: "*"
+        };
+    }
 }
 
 message EventReq {

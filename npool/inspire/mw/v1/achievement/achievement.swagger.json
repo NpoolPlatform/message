@@ -15,7 +15,104 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/achievement_DeleteAchievement": {
+      "post": {
+        "operationId": "Middleware_DeleteAchievement",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAchievementResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAchievementRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/achievement_ExpropriateAchievement": {
+      "post": {
+        "operationId": "Middleware_ExpropriateAchievement",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ExpropriateAchievementResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ExpropriateAchievementRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/achievement_GetAchievements": {
+      "post": {
+        "operationId": "Middleware_GetAchievements",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAchievementsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAchievementsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -188,6 +285,14 @@
         }
       }
     },
+    "v1DeleteAchievementRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AchievementReq"
+        }
+      }
+    },
     "v1DeleteAchievementResponse": {
       "type": "object",
       "properties": {
@@ -196,8 +301,32 @@
         }
       }
     },
+    "v1ExpropriateAchievementRequest": {
+      "type": "object",
+      "properties": {
+        "OrderID": {
+          "type": "string"
+        }
+      }
+    },
     "v1ExpropriateAchievementResponse": {
       "type": "object"
+    },
+    "v1GetAchievementsRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "$ref": "#/definitions/v1Conds"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
     },
     "v1GetAchievementsResponse": {
       "type": "object",

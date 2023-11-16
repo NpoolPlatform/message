@@ -4,6 +4,7 @@ package inspire.middleware.invitation.registration.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/invitation/registration";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
@@ -14,9 +15,24 @@ service Middleware {
     rpc GetRegistration     (GetRegistrationRequest)     returns (GetRegistrationResponse)     {}
     rpc ExistRegistrationConds (ExistRegistrationCondsRequest) returns (ExistRegistrationCondsResponse) {}
     rpc GetRegistrations    (GetRegistrationsRequest)    returns (GetRegistrationsResponse)    {}
-    rpc GetSubordinates     (GetSubordinatesRequest)     returns (GetSubordinatesResponse)     {}
-    rpc GetSuperiores       (GetSuperioresRequest)       returns (GetSuperioresResponse)       {}
-    rpc DeleteRegistration  (DeleteRegistrationRequest)  returns (DeleteRegistrationResponse)  {}
+    rpc GetSubordinates     (GetSubordinatesRequest)     returns (GetSubordinatesResponse)     {
+        option (google.api.http) = {
+            post: "/v1/registration_GetSubordinates"
+            body: "*"
+        };
+    }
+    rpc GetSuperiores       (GetSuperioresRequest)       returns (GetSuperioresResponse)       {
+        option (google.api.http) = {
+            post: "/v1/registration_GetSuperiores"
+            body: "*"
+        };
+    }
+    rpc DeleteRegistration  (DeleteRegistrationRequest)  returns (DeleteRegistrationResponse)  {
+        option (google.api.http) = {
+            post: "/v1/registration_DeleteRegistration"
+            body: "*"
+        };
+    }
 }
 
 message RegistrationReq {

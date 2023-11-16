@@ -4,16 +4,42 @@ package inspire.middleware.commission.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/commission";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateCommission   (CreateCommissionRequest)   returns (CreateCommissionResponse)   {}
-    rpc UpdateCommission   (UpdateCommissionRequest)   returns (UpdateCommissionResponse)   {}
-    rpc GetCommission      (GetCommissionRequest)      returns (GetCommissionResponse)      {}
-    rpc GetCommissions     (GetCommissionsRequest)     returns (GetCommissionsResponse)     {}
-    rpc CloneCommissions   (CloneCommissionsRequest)   returns (CloneCommissionsResponse)   {}
+    rpc CreateCommission   (CreateCommissionRequest)   returns (CreateCommissionResponse)   {
+        option (google.api.http) = {
+            post: "/v1/commission_CreateCommission"
+            body: "*"
+        };
+    }
+    rpc UpdateCommission   (UpdateCommissionRequest)   returns (UpdateCommissionResponse)   {
+        option (google.api.http) = {
+            post: "/v1/commission_UpdateCommission"
+            body: "*"
+        };
+    }
+    rpc GetCommission      (GetCommissionRequest)      returns (GetCommissionResponse)      {
+        option (google.api.http) = {
+            post: "/v1/commission_GetCommission"
+            body: "*"
+        };
+    }
+    rpc GetCommissions     (GetCommissionsRequest)     returns (GetCommissionsResponse)     {
+        option (google.api.http) = {
+            post: "/v1/commission_GetCommissions"
+            body: "*"
+        };
+    }
+    rpc CloneCommissions   (CloneCommissionsRequest)   returns (CloneCommissionsResponse)   {
+        option (google.api.http) = {
+            post: "/v1/commission_CloneCommissions"
+            body: "*"
+        };
+    }
 }
 
 message CommissionReq {

@@ -4,6 +4,7 @@ package inspire.middleware.coupon.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/coupon";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/inspire/v1/enums.proto";
 
@@ -13,7 +14,12 @@ service Middleware {
     rpc UpdateCoupon   (UpdateCouponRequest)   returns (UpdateCouponResponse)   {}
     rpc GetCoupon      (GetCouponRequest)      returns (GetCouponResponse)      {}
     rpc GetCoupons     (GetCouponsRequest)     returns (GetCouponsResponse)     {}
-    rpc DeleteCoupon   (DeleteCouponRequest)   returns (DeleteCouponResponse)   {}
+    rpc DeleteCoupon   (DeleteCouponRequest)   returns (DeleteCouponResponse)   {
+        option (google.api.http) = {
+            post: "/v1/coupon_DeleteCoupon"
+            body: "*"
+        };
+    }
 }
 
 message CouponReq {
