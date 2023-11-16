@@ -4,6 +4,7 @@ package inspire.middleware.invitation.invitationcode.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/invitation/invitationcode";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
@@ -12,7 +13,12 @@ service Middleware {
     rpc UpdateInvitationCode     (UpdateInvitationCodeRequest)     returns (UpdateInvitationCodeResponse)     {}
     rpc GetInvitationCode        (GetInvitationCodeRequest)        returns (GetInvitationCodeResponse)        {}
     rpc GetInvitationCodes       (GetInvitationCodesRequest)       returns (GetInvitationCodesResponse)       {}
-    rpc DeleteInvitationCode     (DeleteInvitationCodeRequest)     returns (DeleteInvitationCodeResponse)     {}
+    rpc DeleteInvitationCode     (DeleteInvitationCodeRequest)     returns (DeleteInvitationCodeResponse)     {
+        option (google.api.http) = {
+            post: "/v1/invitationcode_DeleteInvitationCode"
+            body: "*"
+        };
+    }
 }
 
 message InvitationCodeReq {

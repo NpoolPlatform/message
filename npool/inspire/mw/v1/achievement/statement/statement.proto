@@ -4,15 +4,41 @@ package inspire.middleware.achievement.statement.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/achievement/statement";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateStatement     (CreateStatementRequest)     returns (CreateStatementResponse)     {}
-    rpc CreateStatements    (CreateStatementsRequest)    returns (CreateStatementsResponse)    {}
-    rpc DeleteStatements    (DeleteStatementsRequest)    returns (DeleteStatementsResponse)    {}
-    rpc GetStatements       (GetStatementsRequest)       returns (GetStatementsResponse)       {}
-    rpc DeleteStatement     (DeleteStatementRequest)     returns (DeleteStatementResponse)     {}
+    rpc CreateStatement     (CreateStatementRequest)     returns (CreateStatementResponse)     {
+        option (google.api.http) = {
+            post: "/v1/statement_CreateStatement"
+            body: "*"
+        };
+    }
+    rpc CreateStatements    (CreateStatementsRequest)    returns (CreateStatementsResponse)    {
+        option (google.api.http) = {
+            post: "/v1/statement_CreateStatements"
+            body: "*"
+        };
+    }
+    rpc DeleteStatements    (DeleteStatementsRequest)    returns (DeleteStatementsResponse)    {
+        option (google.api.http) = {
+            post: "/v1/statement_DeleteStatements"
+            body: "*"
+        };
+    }
+    rpc GetStatements       (GetStatementsRequest)       returns (GetStatementsResponse)       {
+        option (google.api.http) = {
+            post: "/v1/statement_GetStatements"
+            body: "*"
+        };
+    }
+    rpc DeleteStatement     (DeleteStatementRequest)     returns (DeleteStatementResponse)     {
+        option (google.api.http) = {
+            post: "/v1/statement_DeleteStatement"
+            body: "*"
+        };
+    }
 }
 
 message StatementReq {
