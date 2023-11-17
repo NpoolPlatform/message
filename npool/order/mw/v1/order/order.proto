@@ -26,7 +26,12 @@ service Middleware {
     rpc CountOrders     (CountOrdersRequest)    returns (CountOrdersResponse)    {}
     rpc ExistOrder      (ExistOrderRequest)      returns (ExistOrderResponse)      {}
     rpc ExistOrderConds (ExistOrderCondsRequest) returns (ExistOrderCondsResponse) {}
-    rpc DeleteOrder     (DeleteOrderRequest)     returns (DeleteOrderResponse)     {}
+    rpc DeleteOrder     (DeleteOrderRequest)     returns (DeleteOrderResponse)     {
+        option (google.api.http) = {
+            post: "/v1/order_DeleteOrder"
+            body: "*"
+        };
+    }
     rpc DeleteOrders    (DeleteOrdersRequest)    returns (DeleteOrdersResponse)    {}
 }
 

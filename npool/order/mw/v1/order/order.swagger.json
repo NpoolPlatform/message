@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/order_DeleteOrder": {
+      "post": {
+        "operationId": "Middleware_DeleteOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
     "/v1/order_UpdateOrder": {
       "post": {
         "operationId": "Middleware_UpdateOrder",
@@ -220,6 +252,14 @@
             "type": "object",
             "$ref": "#/definitions/v1Order"
           }
+        }
+      }
+    },
+    "v1DeleteOrderRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderReq"
         }
       }
     },
