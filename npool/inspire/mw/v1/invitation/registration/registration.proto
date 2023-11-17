@@ -10,7 +10,12 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     // Method Version
-    rpc CreateRegistration  (CreateRegistrationRequest)  returns (CreateRegistrationResponse)  {}
+    rpc CreateRegistration  (CreateRegistrationRequest)  returns (CreateRegistrationResponse)  {
+        option (google.api.http) = {
+            post: "/v1/registration_CreateRegistration"
+            body: "*"
+        };
+    }
     rpc UpdateRegistration  (UpdateRegistrationRequest)  returns (UpdateRegistrationResponse)  {}
     rpc GetRegistration     (GetRegistrationRequest)     returns (GetRegistrationResponse)     {}
     rpc ExistRegistrationConds (ExistRegistrationCondsRequest) returns (ExistRegistrationCondsResponse) {}
