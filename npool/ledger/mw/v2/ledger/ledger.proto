@@ -18,7 +18,9 @@ service Middleware {
 
 message Ledger {
     // @inject_tag: sql:"id"
-    string      ID                             = 10;
+    uint32      ID                             = 9;
+    // @inject_tag: sql:"ent_id"
+    string      EntID                          = 10;
     // @inject_tag: sql:"app_id"
     string      AppID                          = 20;
     // @inject_tag: sql:"user_id"
@@ -40,7 +42,7 @@ message Ledger {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID          = 10;
+    optional basetypes.v1.StringVal EntID       = 10;
     optional basetypes.v1.StringVal AppID       = 20;
     optional basetypes.v1.StringVal UserID      = 30;
     optional basetypes.v1.StringVal CoinTypeID  = 40;
@@ -48,7 +50,7 @@ message Conds {
 }
 
 message GetLedgerRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetLedgerResponse {
