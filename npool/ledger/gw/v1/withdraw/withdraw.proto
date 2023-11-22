@@ -53,7 +53,8 @@ message Withdraw {
     string        Message       = 100;
     string        AppID         = 110;
     string        UserID        = 120;
-    string        ID            = 130;
+    uint32        ID            = 130;
+    string        EntID         = 140;
 }
 
 message CreateWithdrawRequest {
