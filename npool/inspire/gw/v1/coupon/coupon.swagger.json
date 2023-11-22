@@ -182,7 +182,8 @@
           "type": "string"
         },
         "TargetUserID": {
-          "type": "string"
+          "type": "string",
+          "title": "only for special offer"
         },
         "Threshold": {
           "type": "string"
@@ -231,6 +232,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Coupon"
           }
         },
@@ -316,6 +318,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -475,6 +478,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Coupon"
           }
         },
