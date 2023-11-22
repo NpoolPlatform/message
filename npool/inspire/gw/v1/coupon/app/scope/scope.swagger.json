@@ -320,9 +320,13 @@
           "type": "array",
           "items": {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "type": "object",
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+            "type": "object",
+>>>>>>> 81d497829 (generate proto)
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -641,6 +645,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Scope"
           }
         },

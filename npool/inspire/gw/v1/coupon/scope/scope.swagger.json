@@ -395,9 +395,13 @@
           "type": "array",
           "items": {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "type": "object",
 =======
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
+=======
+            "type": "object",
+>>>>>>> 81d497829 (generate proto)
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -951,9 +955,13 @@
           "type": "array",
           "items": {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "type": "object",
 =======
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
+=======
+            "type": "object",
+>>>>>>> 81d497829 (generate proto)
             "$ref": "#/definitions/v1Scope"
           }
         },
