@@ -234,6 +234,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1OpLog"
           }
         },
@@ -246,6 +247,10 @@
     "oploggatewayoplog1v1UpdateOpLogRequest": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
         "EntID": {
           "type": "string"
         },
@@ -304,6 +309,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -331,6 +337,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1OpLog"
           }
         },
@@ -362,6 +369,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1OpLog"
           }
         },
