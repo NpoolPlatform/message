@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package build.chain.v1;
 
-option go_package = "github.com/NpoolPlatform/pkg/buildchain";
+option go_package = "github.com/NpoolPlatform/message/npool/buildchain/v1";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -38,21 +38,47 @@ service BuildChain {
   }
 }
 
+message TokenInfoReq {
+  optional uint32 ID = 10;
+  optional string EntID = 11;
+  optional string Name = 20;
+  optional string Unit = 30;
+  optional string Decimal = 40;
+  optional string ChainType = 50;
+  optional string TokenType = 60;
+  optional string OfficialContract = 70;
+  optional string PrivateContract = 80;
+  optional string Remark = 90;
+  optional bytes Data = 100;
+}
+
 message TokenInfo {
-  string ID = 10;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 11;
+  // @inject_tag: sql:"name"
   string Name = 20;
+  // @inject_tag: sql:"unit"
   string Unit = 30;
+  // @inject_tag: sql:"decimal"
   string Decimal = 40;
+  // @inject_tag: sql:"chain_type"
   string ChainType = 50;
+  // @inject_tag: sql:"token_type"
   string TokenType = 60;
+  // @inject_tag: sql:"official_contract"
   string OfficialContract = 70;
+  // @inject_tag: sql:"private_contract"
   string PrivateContract = 80;
+  // @inject_tag: sql:"remark"
   string Remark = 90;
+  // @inject_tag: sql:"data"
   bytes Data = 100;
 }
 
 message CreateTokenInfoRequest {
-  TokenInfo Info = 10;
+  TokenInfoReq Info = 10;
   bool Force = 20;
 }
 
@@ -63,16 +89,18 @@ message CreateTokenInfoResponse {
 }
 
 message Conds {
-  optional basetypes.v1.StringVal ChainType = 10;
-  optional basetypes.v1.StringVal TokenType = 20;
-  optional basetypes.v1.StringVal OfficialContract = 30;
-  optional basetypes.v1.StringVal Name = 40;
-  optional basetypes.v1.StringVal Unit = 50;
-  optional basetypes.v1.StringVal Decimal = 60;
-  optional basetypes.v1.StringVal PrivateContract = 70;
-  optional basetypes.v1.StringVal Remark = 80;
-  optional basetypes.v1.StringVal Data = 90;
-  optional basetypes.v1.StringVal ID = 100;
+  optional basetypes.v1.Uint32Val ID = 10;
+  optional basetypes.v1.StringVal EntID = 20;
+  optional basetypes.v1.StringVal ChainType = 30;
+  optional basetypes.v1.StringVal TokenType = 40;
+  optional basetypes.v1.StringVal OfficialContract = 50;
+  optional basetypes.v1.StringVal Name = 60;
+  optional basetypes.v1.StringVal Unit = 70;
+  optional basetypes.v1.StringVal Decimal = 80;
+  optional basetypes.v1.StringVal PrivateContract = 90;
+  optional basetypes.v1.StringVal Remark = 100;
+  optional basetypes.v1.StringVal Data = 110;
+  optional basetypes.v1.StringSliceVal EntIDs = 120;
 }
 
 message GetTokenInfosRequest {

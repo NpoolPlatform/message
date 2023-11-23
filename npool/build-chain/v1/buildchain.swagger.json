@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/build-chain/buildchain.proto",
+    "title": "npool/build-chain/v1/buildchain.proto",
     "version": "version not set"
   },
   "tags": [
@@ -176,6 +176,12 @@
     "v1Conds": {
       "type": "object",
       "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "ChainType": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -203,8 +209,8 @@
         "Data": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "ID": {
-          "$ref": "#/definitions/v1StringVal"
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -212,7 +218,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TokenInfo"
+          "$ref": "#/definitions/v1TokenInfoReq"
         },
         "Force": {
           "type": "boolean"
@@ -281,6 +287,20 @@
         }
       }
     },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -296,6 +316,61 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "Unit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit\""
+        },
+        "Decimal": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"decimal\""
+        },
+        "ChainType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"chain_type\""
+        },
+        "TokenType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"token_type\""
+        },
+        "OfficialContract": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"official_contract\""
+        },
+        "PrivateContract": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"private_contract\""
+        },
+        "Remark": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"remark\""
+        },
+        "Data": {
+          "type": "string",
+          "format": "byte",
+          "title": "@inject_tag: sql:\"data\""
+        }
+      }
+    },
+    "v1TokenInfoReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "Name": {
@@ -325,6 +400,18 @@
         "Data": {
           "type": "string",
           "format": "byte"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
