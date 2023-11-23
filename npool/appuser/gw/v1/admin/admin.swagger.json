@@ -267,7 +267,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -452,7 +451,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Auth"
           }
         },
@@ -463,8 +461,7 @@
       }
     },
     "v1CreateAdminAppsRequest": {
-      "type": "object",
-      "title": "Permissioned by path (now we don't have any app / user available)"
+      "type": "object"
     },
     "v1CreateAdminAppsResponse": {
       "type": "object",
@@ -472,15 +469,13 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1App"
           }
         }
       }
     },
     "v1CreateGenesisRolesRequest": {
-      "type": "object",
-      "title": "Permissioned by path (now we only have admin app without any user)"
+      "type": "object"
     },
     "v1CreateGenesisRolesResponse": {
       "type": "object",
@@ -488,7 +483,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Role"
           }
         }
@@ -535,7 +529,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1App"
           }
         }
@@ -550,7 +543,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Role"
           }
         },
@@ -569,7 +561,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1User"
           }
         },
@@ -688,8 +679,7 @@
         "Google",
         "Username"
       ],
-      "default": "DefaultSignMethod",
-      "title": "- Mobile: For signup, signin, verify\n - Email: For signup, signin, verify\n - Twitter: For signin\n - Github: For signin\n - Facebook: For signin\n - Linkedin: For signin\n - Wechat: For signin\n - Google: For signin, verify\n - Username: For signup, signin"
+      "default": "DefaultSignMethod"
     },
     "v1User": {
       "type": "object",
@@ -903,7 +893,6 @@
         "OAuthThirdParties": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1OAuthThirdParty"
           }
         }

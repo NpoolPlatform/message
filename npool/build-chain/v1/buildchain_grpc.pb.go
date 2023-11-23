@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/build-chain/buildchain.proto
+// source: npool/build-chain/v1/buildchain.proto
 
-package buildchain
+package v1
 
 import (
 	context "context"
@@ -218,5 +218,5 @@ var BuildChain_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/build-chain/buildchain.proto",
+	Metadata: "npool/build-chain/v1/buildchain.proto",
 }

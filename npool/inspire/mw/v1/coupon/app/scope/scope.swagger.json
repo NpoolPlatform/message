@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -126,7 +125,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Scope"
           }
         },
@@ -208,8 +206,7 @@
           "$ref": "#/definitions/v1CouponScope"
         },
         "GoodID": {
-          "type": "string",
-          "title": "only for VerifyCouponScopes"
+          "type": "string"
         }
       }
     },
