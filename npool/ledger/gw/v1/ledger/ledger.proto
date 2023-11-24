@@ -39,6 +39,8 @@ message Ledger {
     string PhoneNO        = 100;
     string EmailAddress   = 110;
     string AppID          = 120;
+    uint32 ID             = 130;
+    string EntID          = 140;
 }
 
 message GetLedgersRequest {

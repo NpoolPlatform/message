@@ -455,13 +455,6 @@
         },
         "AppID": {
           "type": "string"
-        },
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
         }
       }
     },
