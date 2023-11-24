@@ -99,7 +99,6 @@ message Conds {
   optional basetypes.v1.StringVal Decimal = 80;
   optional basetypes.v1.StringVal PrivateContract = 90;
   optional basetypes.v1.StringVal Remark = 100;
-  optional basetypes.v1.StringVal Data = 110;
   optional basetypes.v1.StringSliceVal EntIDs = 120;
 }
 
