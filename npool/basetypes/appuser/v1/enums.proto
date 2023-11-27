@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package basetypes.appuser.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/appuser/v1";
+
+enum UpdateCacheMode {
+    DefaultUpdateCacheMode  = 0;
+
+    RequiredUpdateCache     = 10;
+    UpdateCacheIfExist      = 20;
+    DontUpdateCache         = 30;
+}
