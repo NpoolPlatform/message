@@ -15,7 +15,168 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/ledger_GetLedger": {
+      "post": {
+        "operationId": "Middleware_GetLedger",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GetLedgerResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2GetLedgerRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/ledger_GetLedgers": {
+      "post": {
+        "operationId": "Middleware_GetLedgers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GetLedgersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2GetLedgersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/ledger_LockBalance": {
+      "post": {
+        "operationId": "Middleware_LockBalance",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2LockBalanceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2LockBalanceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/ledger_SettleBalance": {
+      "post": {
+        "operationId": "Middleware_SettleBalance",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2SettleBalanceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2SettleBalanceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/ledger_UnlockBalance": {
+      "post": {
+        "operationId": "Middleware_UnlockBalance",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UnlockBalanceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UnlockBalanceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -106,11 +267,35 @@
         }
       }
     },
+    "v2GetLedgerRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
     "v2GetLedgerResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v2Ledger"
+        }
+      }
+    },
+    "v2GetLedgersRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "$ref": "#/definitions/v2Conds"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -181,6 +366,30 @@
         }
       }
     },
+    "v2LockBalanceRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "LockID": {
+          "type": "string",
+          "title": "Must same as unlock"
+        },
+        "Rollback": {
+          "type": "boolean"
+        }
+      }
+    },
     "v2LockBalanceResponse": {
       "type": "object",
       "properties": {
@@ -189,11 +398,40 @@
         }
       }
     },
+    "v2SettleBalanceRequest": {
+      "type": "object",
+      "properties": {
+        "LockID": {
+          "type": "string"
+        },
+        "IOSubType": {
+          "$ref": "#/definitions/v1IOSubType"
+        },
+        "IOExtra": {
+          "type": "string"
+        },
+        "StatementID": {
+          "type": "string"
+        }
+      }
+    },
     "v2SettleBalanceResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v2Ledger"
+        }
+      }
+    },
+    "v2UnlockBalanceRequest": {
+      "type": "object",
+      "properties": {
+        "LockID": {
+          "type": "string",
+          "title": "Must same as unlock"
+        },
+        "Rollback": {
+          "type": "boolean"
         }
       }
     },

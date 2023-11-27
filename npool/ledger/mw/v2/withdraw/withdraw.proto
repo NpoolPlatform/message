@@ -4,16 +4,42 @@ package ledger.middleware.withdraw.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/withdraw";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/ledger/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateWithdraw     (CreateWithdrawRequest)     returns (CreateWithdrawResponse)     {}
-    rpc UpdateWithdraw     (UpdateWithdrawRequest)     returns (UpdateWithdrawResponse)     {}
-    rpc DeleteWithdraw     (DeleteWithdrawRequest)     returns (DeleteWithdrawResponse)     {}
-    rpc GetWithdraw        (GetWithdrawRequest)        returns (GetWithdrawResponse)        {}
-    rpc GetWithdraws       (GetWithdrawsRequest)       returns (GetWithdrawsResponse)       {}
+    rpc CreateWithdraw     (CreateWithdrawRequest)     returns (CreateWithdrawResponse)     {
+        option (google.api.http) = {
+            post: "/v1/withdraw_CreateWithdraw"
+            body: "*"
+        };
+    }
+    rpc UpdateWithdraw     (UpdateWithdrawRequest)     returns (UpdateWithdrawResponse)     {
+        option (google.api.http) = {
+            post: "/v1/withdraw_UpdateWithdraw"
+            body: "*"
+        };
+    }
+    rpc DeleteWithdraw     (DeleteWithdrawRequest)     returns (DeleteWithdrawResponse)     {
+        option (google.api.http) = {
+            post: "/v1/withdraw_DeleteWithdraw"
+            body: "*"
+        };
+    }
+    rpc GetWithdraw        (GetWithdrawRequest)        returns (GetWithdrawResponse)        {
+        option (google.api.http) = {
+            post: "/v1/withdraw_GetWithdraw"
+            body: "*"
+        };
+    }
+    rpc GetWithdraws       (GetWithdrawsRequest)       returns (GetWithdrawsResponse)       {
+        option (google.api.http) = {
+            post: "/v1/withdraw_GetWithdraws"
+            body: "*"
+        };
+    }
 }
 
 message WithdrawReq {

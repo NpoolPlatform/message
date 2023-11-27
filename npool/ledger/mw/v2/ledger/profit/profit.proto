@@ -4,12 +4,23 @@ package ledger.middleware.ledger.profit.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/ledger/profit";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc GetProfit        (GetProfitRequest)        returns (GetProfitResponse)        {}
-    rpc GetProfits       (GetProfitsRequest)       returns (GetProfitsResponse)       {}
+    rpc GetProfit        (GetProfitRequest)        returns (GetProfitResponse)   {
+        option (google.api.http) = {
+            post: "/v1/profit_GetProfit"
+            body: "*"
+        };
+    }
+    rpc GetProfits       (GetProfitsRequest)       returns (GetProfitsResponse)   {
+        option (google.api.http) = {
+            post: "/v1/profit_GetProfits"
+            body: "*"
+        };
+    }
 }
 
 message ProfitReq {
