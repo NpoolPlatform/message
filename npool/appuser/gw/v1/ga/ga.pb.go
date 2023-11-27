@@ -2,6 +2,7 @@
 // versions:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // 	protoc-gen-go v1.27.1
 =======
 // 	protoc-gen-go v1.31.0
@@ -9,6 +10,9 @@
 =======
 // 	protoc-gen-go v1.31.0
 >>>>>>> 8eb981ff1 (Add auto increment id)
+=======
+// 	protoc-gen-go v1.27.1
+>>>>>>> d33cd1dca (Fix appuser)
 // 	protoc        v3.18.1
 // source: npool/appuser/gw/v1/ga/ga.proto
 
