@@ -4,16 +4,47 @@ package ledger.middleware.good.ledger.statement.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/good/ledger/statement";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc GetGoodStatements       (GetGoodStatementsRequest)      returns (GetGoodStatementsResponse)    {}
-    rpc CreateGoodStatement     (CreateGoodStatementRequest)    returns (CreateGoodStatementResponse) {}
-    rpc CreateGoodStatements    (CreateGoodStatementsRequest)   returns (CreateGoodStatementsResponse) {}
-    rpc DeleteGoodStatement     (DeleteGoodStatementRequest)    returns (DeleteGoodStatementResponse) {}
-    rpc DeleteGoodStatements    (DeleteGoodStatementsRequest)   returns (DeleteGoodStatementsResponse) {}
-    rpc ExistGoodStatementConds (ExistGoodStatementCondsRequest) returns (ExistGoodStatementCondsResponse) {}
+    rpc GetGoodStatements       (GetGoodStatementsRequest)      returns (GetGoodStatementsResponse)    {
+        option (google.api.http) = {
+            post: "/v1/goodstatement_GetGoodStatements"
+            body: "*"
+        };
+    }
+    rpc CreateGoodStatement     (CreateGoodStatementRequest)    returns (CreateGoodStatementResponse) {
+        option (google.api.http) = {
+            post: "/v1/goodstatement_CreateGoodStatement"
+            body: "*"
+        };
+    }
+    rpc CreateGoodStatements    (CreateGoodStatementsRequest)   returns (CreateGoodStatementsResponse) {
+        option (google.api.http) = {
+            post: "/v1/goodstatement_CreateGoodStatements"
+            body: "*"
+        };
+    }
+    rpc DeleteGoodStatement     (DeleteGoodStatementRequest)    returns (DeleteGoodStatementResponse) {
+        option (google.api.http) = {
+            post: "/v1/goodstatement_DeleteGoodStatement"
+            body: "*"
+        };
+    }
+    rpc DeleteGoodStatements    (DeleteGoodStatementsRequest)   returns (DeleteGoodStatementsResponse) {
+        option (google.api.http) = {
+            post: "/v1/goodstatement_DeleteGoodStatements"
+            body: "*"
+        };
+    }
+    rpc ExistGoodStatementConds (ExistGoodStatementCondsRequest) returns (ExistGoodStatementCondsResponse) {
+        option (google.api.http) = {
+            post: "/v1/goodstatement_ExistGoodStatementConds"
+            body: "*"
+        };
+    }
 }
 
 message GoodStatementReq {
