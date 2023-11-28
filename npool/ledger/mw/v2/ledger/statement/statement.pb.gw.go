@@ -281,7 +281,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/GetStatements", runtime.WithHTTPPathPattern("/v1/statement_GetStatements"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/GetStatements", runtime.WithHTTPPathPattern("/v1/ledgerstatement_GetStatements"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -304,7 +304,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/GetStatement", runtime.WithHTTPPathPattern("/v1/statement_GetStatement"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/GetStatement", runtime.WithHTTPPathPattern("/v1/ledgerstatement_GetStatement"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -327,7 +327,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/ExistStatementConds", runtime.WithHTTPPathPattern("/v1/statement_ExistStatementConds"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/ExistStatementConds", runtime.WithHTTPPathPattern("/v1/ledgerstatement_ExistStatementConds"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -350,7 +350,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatements", runtime.WithHTTPPathPattern("/v1/statement_CreateStatements"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatements", runtime.WithHTTPPathPattern("/v1/ledgerstatement_CreateStatements"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -373,7 +373,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatements", runtime.WithHTTPPathPattern("/v1/statement_DeleteStatements"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatements", runtime.WithHTTPPathPattern("/v1/ledgerstatement_DeleteStatements"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -396,7 +396,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatement", runtime.WithHTTPPathPattern("/v1/statement_CreateStatement"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatement", runtime.WithHTTPPathPattern("/v1/ledgerstatement_CreateStatement"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -419,7 +419,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatement", runtime.WithHTTPPathPattern("/v1/statement_DeleteStatement"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatement", runtime.WithHTTPPathPattern("/v1/ledgerstatement_DeleteStatement"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -481,7 +481,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/GetStatements", runtime.WithHTTPPathPattern("/v1/statement_GetStatements"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/GetStatements", runtime.WithHTTPPathPattern("/v1/ledgerstatement_GetStatements"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -501,7 +501,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/GetStatement", runtime.WithHTTPPathPattern("/v1/statement_GetStatement"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/GetStatement", runtime.WithHTTPPathPattern("/v1/ledgerstatement_GetStatement"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -521,7 +521,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/ExistStatementConds", runtime.WithHTTPPathPattern("/v1/statement_ExistStatementConds"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/ExistStatementConds", runtime.WithHTTPPathPattern("/v1/ledgerstatement_ExistStatementConds"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -541,7 +541,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatements", runtime.WithHTTPPathPattern("/v1/statement_CreateStatements"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatements", runtime.WithHTTPPathPattern("/v1/ledgerstatement_CreateStatements"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -561,7 +561,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatements", runtime.WithHTTPPathPattern("/v1/statement_DeleteStatements"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatements", runtime.WithHTTPPathPattern("/v1/ledgerstatement_DeleteStatements"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -581,7 +581,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatement", runtime.WithHTTPPathPattern("/v1/statement_CreateStatement"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/CreateStatement", runtime.WithHTTPPathPattern("/v1/ledgerstatement_CreateStatement"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -601,7 +601,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatement", runtime.WithHTTPPathPattern("/v1/statement_DeleteStatement"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.middleware.ledger.statement.v2.Middleware/DeleteStatement", runtime.WithHTTPPathPattern("/v1/ledgerstatement_DeleteStatement"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -621,19 +621,19 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 }
 
 var (
-	pattern_Middleware_GetStatements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "statement_GetStatements"}, ""))
+	pattern_Middleware_GetStatements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "ledgerstatement_GetStatements"}, ""))
 
-	pattern_Middleware_GetStatement_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "statement_GetStatement"}, ""))
+	pattern_Middleware_GetStatement_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "ledgerstatement_GetStatement"}, ""))
 
-	pattern_Middleware_ExistStatementConds_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "statement_ExistStatementConds"}, ""))
+	pattern_Middleware_ExistStatementConds_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "ledgerstatement_ExistStatementConds"}, ""))
 
-	pattern_Middleware_CreateStatements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "statement_CreateStatements"}, ""))
+	pattern_Middleware_CreateStatements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "ledgerstatement_CreateStatements"}, ""))
 
-	pattern_Middleware_DeleteStatements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "statement_DeleteStatements"}, ""))
+	pattern_Middleware_DeleteStatements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "ledgerstatement_DeleteStatements"}, ""))
 
-	pattern_Middleware_CreateStatement_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "statement_CreateStatement"}, ""))
+	pattern_Middleware_CreateStatement_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "ledgerstatement_CreateStatement"}, ""))
 
-	pattern_Middleware_DeleteStatement_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "statement_DeleteStatement"}, ""))
+	pattern_Middleware_DeleteStatement_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "ledgerstatement_DeleteStatement"}, ""))
 )
 
 var (

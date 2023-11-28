@@ -12,43 +12,43 @@ import "npool/basetypes/ledger/v1/enums.proto";
 service Middleware {
     rpc GetStatements       (GetStatementsRequest)       returns (GetStatementsResponse) {
         option (google.api.http) = {
-            post: "/v1/statement_GetStatements"
+            post: "/v1/ledgerstatement_GetStatements"
             body: "*"
         };
     }
     rpc GetStatement        (GetStatementRequest)        returns (GetStatementResponse)  {
         option (google.api.http) = {
-            post: "/v1/statement_GetStatement"
+            post: "/v1/ledgerstatement_GetStatement"
             body: "*"
         };
     }
     rpc ExistStatementConds (ExistStatementCondsRequest) returns (ExistStatementCondsResponse) {
         option (google.api.http) = {
-            post: "/v1/statement_ExistStatementConds"
+            post: "/v1/ledgerstatement_ExistStatementConds"
             body: "*"
         };
     }
     rpc CreateStatements    (CreateStatementsRequest)    returns (CreateStatementsResponse)  {
         option (google.api.http) = {
-            post: "/v1/statement_CreateStatements"
+            post: "/v1/ledgerstatement_CreateStatements"
             body: "*"
         };
     }
     rpc DeleteStatements    (DeleteStatementsRequest)    returns (DeleteStatementsResponse)  {
         option (google.api.http) = {
-            post: "/v1/statement_DeleteStatements"
+            post: "/v1/ledgerstatement_DeleteStatements"
             body: "*"
         };
     }
     rpc CreateStatement     (CreateStatementRequest)     returns (CreateStatementResponse)   {
         option (google.api.http) = {
-            post: "/v1/statement_CreateStatement"
+            post: "/v1/ledgerstatement_CreateStatement"
             body: "*"
         };
     }
     rpc DeleteStatement     (DeleteStatementRequest)     returns (DeleteStatementResponse)    {
         option (google.api.http) = {
-            post: "/v1/statement_DeleteStatement"
+            post: "/v1/ledgerstatement_DeleteStatement"
             body: "*"
         };
     }

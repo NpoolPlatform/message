@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/statement_CreateStatement": {
+    "/v1/ledgerstatement_CreateStatement": {
       "post": {
         "operationId": "Middleware_CreateStatement",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/statement_CreateStatements": {
+    "/v1/ledgerstatement_CreateStatements": {
       "post": {
         "operationId": "Middleware_CreateStatements",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/statement_DeleteStatement": {
+    "/v1/ledgerstatement_DeleteStatement": {
       "post": {
         "operationId": "Middleware_DeleteStatement",
         "responses": {
@@ -112,7 +112,7 @@
         ]
       }
     },
-    "/v1/statement_DeleteStatements": {
+    "/v1/ledgerstatement_DeleteStatements": {
       "post": {
         "operationId": "Middleware_DeleteStatements",
         "responses": {
@@ -144,7 +144,7 @@
         ]
       }
     },
-    "/v1/statement_ExistStatementConds": {
+    "/v1/ledgerstatement_ExistStatementConds": {
       "post": {
         "operationId": "Middleware_ExistStatementConds",
         "responses": {
@@ -176,7 +176,7 @@
         ]
       }
     },
-    "/v1/statement_GetStatement": {
+    "/v1/ledgerstatement_GetStatement": {
       "post": {
         "operationId": "Middleware_GetStatement",
         "responses": {
@@ -208,7 +208,7 @@
         ]
       }
     },
-    "/v1/statement_GetStatements": {
+    "/v1/ledgerstatement_GetStatements": {
       "post": {
         "operationId": "Middleware_GetStatements",
         "responses": {
