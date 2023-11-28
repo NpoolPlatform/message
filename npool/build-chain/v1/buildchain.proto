@@ -75,6 +75,10 @@ message TokenInfo {
   string Remark = 90;
   // @inject_tag: sql:"data"
   bytes Data = 100;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message CreateTokenInfoRequest {
