@@ -54,7 +54,7 @@ message Conds {
     basetypes.v1.StringVal      UserID                = 30;
     basetypes.v1.StringVal      OrderID               = 40;
     basetypes.v1.Uint32Val      LockType              = 50;
-    basetypes.v1.StringSliceVal IDs                   = 60;
+    basetypes.v1.Uint32SliceVal IDs                   = 60;
     basetypes.v1.StringSliceVal OrderIDs              = 70;
 }
 
