@@ -108,6 +108,8 @@ message Conds {
 
 message GetTokenInfosRequest {
   Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit  = 30;
 }
 
 message GetTokenInfosResponse {
