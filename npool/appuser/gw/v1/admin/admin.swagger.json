@@ -267,6 +267,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -276,8 +277,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "Base info\n@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "CreatedBy": {
           "type": "string",
@@ -382,8 +388,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "AppID": {
           "type": "string",
@@ -441,6 +452,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Auth"
           }
         },
@@ -451,7 +463,8 @@
       }
     },
     "v1CreateAdminAppsRequest": {
-      "type": "object"
+      "type": "object",
+      "title": "Permissioned by path (now we don't have any app / user available)"
     },
     "v1CreateAdminAppsResponse": {
       "type": "object",
@@ -459,13 +472,15 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1App"
           }
         }
       }
     },
     "v1CreateGenesisRolesRequest": {
-      "type": "object"
+      "type": "object",
+      "title": "Permissioned by path (now we only have admin app without any user)"
     },
     "v1CreateGenesisRolesResponse": {
       "type": "object",
@@ -473,6 +488,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Role"
           }
         }
@@ -519,6 +535,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1App"
           }
         }
@@ -533,6 +550,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Role"
           }
         },
@@ -551,6 +569,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1User"
           }
         },
@@ -608,8 +627,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "Base info\n@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "CreatedBy": {
           "type": "string",
@@ -664,14 +688,20 @@
         "Google",
         "Username"
       ],
-      "default": "DefaultSignMethod"
+      "default": "DefaultSignMethod",
+      "title": "- Mobile: For signup, signin, verify\n - Email: For signup, signin, verify\n - Twitter: For signin\n - Github: For signin\n - Facebook: For signin\n - Linkedin: For signin\n - Wechat: For signin\n - Google: For signin, verify\n - Username: For signup, signin"
     },
     "v1User": {
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "Base\n@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "AppID": {
           "type": "string",
@@ -873,6 +903,7 @@
         "OAuthThirdParties": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1OAuthThirdParty"
           }
         }

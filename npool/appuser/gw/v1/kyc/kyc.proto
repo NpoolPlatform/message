@@ -105,7 +105,7 @@ message GetKycsRequest {
 
 message GetKycsResponse {
     repeated appuser.middleware.kyc.v1.Kyc Infos = 10;
-    uint32       Total = 20;
+    uint32                                 Total = 20;
 }
 
 message GetAppKycsRequest {
@@ -116,10 +116,11 @@ message GetAppKycsRequest {
 
 message GetAppKycsResponse {
     repeated appuser.middleware.kyc.v1.Kyc Infos = 10;
-    uint32       Total = 20;
+    uint32                                 Total = 20;
 }
 
 message UpdateKycRequest {
+    uint32          ID        = 9;
     string          AppID     = 10;
     string          UserID    = 20;
     string          KycID     = 30;

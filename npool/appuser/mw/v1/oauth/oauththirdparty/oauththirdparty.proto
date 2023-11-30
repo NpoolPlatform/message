@@ -21,7 +21,8 @@ service Middleware {
 }
 
 message OAuthThirdPartyReq {
-    optional string ID             = 10;
+    optional uint32 ID             = 9;
+    optional string EntID          = 10;
     optional basetypes.v1.SignMethod ClientName = 20;
     optional string ClientTag      = 30;
     optional string ClientLogoURL  = 40;
@@ -32,7 +33,9 @@ message OAuthThirdPartyReq {
 
 message OAuthThirdParty {
     // @inject_tag: sql:"id"
-    string ID             = 10;
+    uint32 ID             = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID          = 10;
     // @inject_tag: sql:"client_name"
     string ClientNameStr               = 19;
     basetypes.v1.SignMethod ClientName = 20;
@@ -53,10 +56,11 @@ message OAuthThirdParty {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID            = 10;
+    optional basetypes.v1.Uint32Val      ID            = 9;
+    optional basetypes.v1.StringVal      EntID         = 10;
     optional basetypes.v1.Int32Val       ClientName    = 20;
     optional basetypes.v1.StringVal      ClientTag     = 30;
-    optional basetypes.v1.StringSliceVal IDs           = 40;
+    optional basetypes.v1.StringSliceVal EntIDs        = 40;
 }
 
 message CreateOAuthThirdPartyRequest {
@@ -87,7 +91,7 @@ message GetOAuthThirdPartiesResponse {
 }
 
 message GetOAuthThirdPartyRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetOAuthThirdPartyResponse {
@@ -95,7 +99,7 @@ message GetOAuthThirdPartyResponse {
 }
 
 message ExistOAuthThirdPartyRequest {
-    string ID  = 10;
+    string EntID = 10;
 }
 
 message ExistOAuthThirdPartyResponse {

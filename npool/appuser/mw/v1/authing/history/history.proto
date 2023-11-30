@@ -12,7 +12,8 @@ service Middleware {
 }
 
 message HistoryReq {
-    optional string ID          = 10;
+    optional uint32 ID          = 9;
+    optional string EntID       = 10;
     optional string AppID       = 20;
     optional string UserID      = 30;
     optional string Resource    = 40;
@@ -44,12 +45,12 @@ message History {
 }
 
 message Conds {
-    basetypes.v1.StringVal ID        = 10;
-    basetypes.v1.StringVal AppID     = 20;
-    basetypes.v1.StringVal UserID    = 30;
-    basetypes.v1.StringVal Resource  = 40;
-    basetypes.v1.StringVal Method    = 50;
-    basetypes.v1.BoolVal   Allowed   = 60;
+    optional basetypes.v1.StringVal EntID     = 10;
+    optional basetypes.v1.StringVal AppID     = 20;
+    optional basetypes.v1.StringVal UserID    = 30;
+    optional basetypes.v1.StringVal Resource  = 40;
+    optional basetypes.v1.StringVal Method    = 50;
+    optional basetypes.v1.BoolVal   Allowed   = 60;
 }
 
 message CreateHistoryRequest {

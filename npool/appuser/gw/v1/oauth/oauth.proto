@@ -25,7 +25,7 @@ service Gateway {
 }
 
 message GetOAuthLoginURLRequest {
-    string AppID      = 10;
+    string                  AppID      = 10;
     basetypes.v1.SignMethod ClientName = 20;
 }
 

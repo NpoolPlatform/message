@@ -11,11 +11,13 @@ service Middleware {
     rpc UpdateUser    (UpdateUserRequest)   returns (UpdateUserResponse)   {}
     rpc GetUser       (GetUserRequest)      returns (GetUserResponse)      {}
     rpc GetUsers      (GetUsersRequest)     returns (GetUsersResponse)     {}
+    rpc ExistUserConds (ExistUserCondsRequest) returns (ExistUserCondsResponse)     {}
     rpc DeleteUser    (DeleteUserRequest)   returns (DeleteUserResponse)   {}
 }
 
 message UserReq {
-    optional string ID     = 10;
+    optional uint32 ID     = 9;
+    optional string EntID  = 10;
     optional string AppID  = 20;
     optional string RoleID = 30;
     optional string UserID = 40;
@@ -23,7 +25,9 @@ message UserReq {
 
 message User {
     // @inject_tag: sql:"id"
-    string  ID           = 10;
+    uint32  ID           = 9;
+    // @inject_tag: sql:"ent_id"
+    string  EntID        = 10;
     // @inject_tag: sql:"created_by"
     string  CreatedBy    = 20;
     // @inject_tag: sql:"role_id"
@@ -54,13 +58,14 @@ message User {
 }
 
 message Conds {
-    basetypes.v1.StringVal      ID      = 10;
-    basetypes.v1.StringVal      AppID   = 20;
-    basetypes.v1.StringVal      RoleID  = 30;
-    basetypes.v1.StringVal      UserID  = 40;
-    basetypes.v1.StringSliceVal AppIDs  = 50;
-    basetypes.v1.StringSliceVal RoleIDs = 60;
-    basetypes.v1.BoolVal        Genesis = 70;
+    optional basetypes.v1.Uint32Val      ID      = 9;
+    optional basetypes.v1.StringVal      EntID   = 10;
+    optional basetypes.v1.StringVal      AppID   = 20;
+    optional basetypes.v1.StringVal      RoleID  = 30;
+    optional basetypes.v1.StringVal      UserID  = 40;
+    optional basetypes.v1.StringSliceVal AppIDs  = 50;
+    optional basetypes.v1.StringSliceVal RoleIDs = 60;
+    optional basetypes.v1.BoolVal        Genesis = 70;
 }
 
 message CreateUserRequest {
@@ -80,11 +85,19 @@ message UpdateUserResponse {
 }
 
 message GetUserRequest {
-    string ID  = 10;
+    string EntID = 10;
 }
 
 message GetUserResponse {
     User Info = 10;
+}
+
+message ExistUserCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistUserCondsResponse {
+    bool Info = 10;
 }
 
 message GetUsersRequest {

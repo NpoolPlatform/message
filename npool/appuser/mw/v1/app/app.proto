@@ -22,7 +22,8 @@ service Middleware {
 
 message AppReq {
     // Base info
-    optional string          ID                 = 10;
+    optional uint32          ID                 = 9;
+    optional string          EntID              = 10;
     optional string          CreatedBy          = 20;
     optional string          Name               = 30;
     optional string          Logo               = 40;
@@ -50,7 +51,9 @@ message AppReq {
 message App {
     // Base info
     // @inject_tag: sql:"id"
-    string          ID                     = 10;
+    uint32          ID                     = 9;
+    // @inject_tag: sql:"ent_id"
+    string          EntID                  = 10;
     // @inject_tag: sql:"created_by"
     string          CreatedBy              = 20;
     // @inject_tag: sql:"name"
@@ -103,8 +106,9 @@ message App {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID        = 10;
-    optional basetypes.v1.StringSliceVal IDs       = 20;
+    optional basetypes.v1.Uint32Val      ID        = 9;
+    optional basetypes.v1.StringVal      EntID     = 10;
+    optional basetypes.v1.StringSliceVal EntIDs    = 20;
     optional basetypes.v1.StringVal      CreatedBy = 30;
     optional basetypes.v1.StringVal      Name      = 40;
 }
@@ -134,7 +138,7 @@ message UpdateAppResponse {
 }
 
 message GetAppRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetAppResponse {
@@ -153,7 +157,7 @@ message GetAppsResponse {
 }
 
 message ExistAppRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistAppResponse {
