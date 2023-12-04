@@ -87,6 +87,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 1fb4844cc (update scope)
@@ -177,6 +178,8 @@
 >>>>>>> 960f133ce (update scope pb)
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -267,6 +270,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "GoodID": {
 =======
         "AppID": {
@@ -283,11 +287,15 @@
 =======
         "GoodID": {
 >>>>>>> 569d52611 (update scope)
+=======
+        "GoodID": {
+>>>>>>> master
           "type": "string"
         },
         "CouponID": {
           "type": "string"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -303,6 +311,8 @@
 >>>>>>> 3a2981d70 (add coupon scope in gw)
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         }
@@ -324,6 +334,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         },
         "TargetAppID": {
@@ -336,6 +347,8 @@
 >>>>>>> 3a2981d70 (add coupon scope in gw)
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
         }
       }
     },
@@ -347,6 +360,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -463,6 +477,11 @@
       "type": "object",
       "properties": {
 >>>>>>> 569d52611 (update scope)
+=======
+    "v1GetScopesRequest": {
+      "type": "object",
+      "properties": {
+>>>>>>> master
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -498,10 +517,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
         "GoodID": {
           "type": "string"
         },
         "GoodTitle": {
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 3a2981d70 (add coupon scope in gw)
@@ -522,6 +545,8 @@
         },
         "GoodTitle": {
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
           "type": "string"
         },
         "CouponID": {
@@ -533,6 +558,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
         },
@@ -542,6 +570,7 @@
         "CouponCirculation": {
           "type": "string"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -563,6 +592,8 @@
 >>>>>>> 3a2981d70 (add coupon scope in gw)
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
         "CouponDenomination": {
           "type": "string"
         },

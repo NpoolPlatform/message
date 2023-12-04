@@ -21,6 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Gateway_GetAppGoodScopes_FullMethodName   = "/inspire.gateway.coupon.app.scope.v1.Gateway/GetAppGoodScopes"
 	Gateway_CreateAppGoodScope_FullMethodName = "/inspire.gateway.coupon.app.scope.v1.Gateway/CreateAppGoodScope"
 	Gateway_DeleteAppGoodScope_FullMethodName = "/inspire.gateway.coupon.app.scope.v1.Gateway/DeleteAppGoodScope"
@@ -37,12 +38,18 @@ const (
 >>>>>>> 569d52611 (update scope)
 =======
 >>>>>>> 909af8f64 (update scope)
+=======
+	Gateway_GetAppGoodScopes_FullMethodName   = "/inspire.gateway.coupon.app.scope.v1.Gateway/GetAppGoodScopes"
+	Gateway_CreateAppGoodScope_FullMethodName = "/inspire.gateway.coupon.app.scope.v1.Gateway/CreateAppGoodScope"
+	Gateway_DeleteAppGoodScope_FullMethodName = "/inspire.gateway.coupon.app.scope.v1.Gateway/DeleteAppGoodScope"
+>>>>>>> master
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -64,6 +71,11 @@ type GatewayClient interface {
 >>>>>>> 569d52611 (update scope)
 =======
 >>>>>>> 909af8f64 (update scope)
+=======
+	GetAppGoodScopes(ctx context.Context, in *GetAppGoodScopesRequest, opts ...grpc.CallOption) (*GetAppGoodScopesResponse, error)
+	CreateAppGoodScope(ctx context.Context, in *CreateAppGoodScopeRequest, opts ...grpc.CallOption) (*CreateAppGoodScopeResponse, error)
+	DeleteAppGoodScope(ctx context.Context, in *DeleteAppGoodScopeRequest, opts ...grpc.CallOption) (*DeleteAppGoodScopeResponse, error)
+>>>>>>> master
 }
 
 type gatewayClient struct {
@@ -74,6 +86,7 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -103,6 +116,11 @@ func (c *gatewayClient) GetAppGoodScopes(ctx context.Context, in *GetAppGoodScop
 >>>>>>> f7e76ad3e (update req)
 	err := c.cc.Invoke(ctx, Gateway_GetAppGoodScopes_FullMethodName, in, out, opts...)
 >>>>>>> 80bc5ee31 (delete createappscope)
+=======
+func (c *gatewayClient) GetAppGoodScopes(ctx context.Context, in *GetAppGoodScopesRequest, opts ...grpc.CallOption) (*GetAppGoodScopesResponse, error) {
+	out := new(GetAppGoodScopesResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetAppGoodScopes_FullMethodName, in, out, opts...)
+>>>>>>> master
 	if err != nil {
 		return nil, err
 	}
@@ -129,6 +147,7 @@ func (c *gatewayClient) DeleteAppGoodScope(ctx context.Context, in *DeleteAppGoo
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func (c *gatewayClient) GetAppGoodScopes(ctx context.Context, in *GetAppGoodScopesRequest, opts ...grpc.CallOption) (*GetAppGoodScopesResponse, error) {
 	out := new(GetAppGoodScopesResponse)
@@ -142,10 +161,13 @@ func (c *gatewayClient) GetAppGoodScopes(ctx context.Context, in *GetAppGoodScop
 >>>>>>> 569d52611 (update scope)
 =======
 >>>>>>> 909af8f64 (update scope)
+=======
+>>>>>>> master
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -167,6 +189,11 @@ type GatewayServer interface {
 >>>>>>> 569d52611 (update scope)
 =======
 >>>>>>> 909af8f64 (update scope)
+=======
+	GetAppGoodScopes(context.Context, *GetAppGoodScopesRequest) (*GetAppGoodScopesResponse, error)
+	CreateAppGoodScope(context.Context, *CreateAppGoodScopeRequest) (*CreateAppGoodScopeResponse, error)
+	DeleteAppGoodScope(context.Context, *DeleteAppGoodScopeRequest) (*DeleteAppGoodScopeResponse, error)
+>>>>>>> master
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -174,6 +201,7 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -193,6 +221,10 @@ func (UnimplementedGatewayServer) GetAppGoodScopes(context.Context, *GetAppGoodS
 >>>>>>> f7e76ad3e (update req)
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodScopes not implemented")
 >>>>>>> 80bc5ee31 (delete createappscope)
+=======
+func (UnimplementedGatewayServer) GetAppGoodScopes(context.Context, *GetAppGoodScopesRequest) (*GetAppGoodScopesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodScopes not implemented")
+>>>>>>> master
 }
 func (UnimplementedGatewayServer) CreateAppGoodScope(context.Context, *CreateAppGoodScopeRequest) (*CreateAppGoodScopeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppGoodScope not implemented")
@@ -202,6 +234,7 @@ func (UnimplementedGatewayServer) DeleteAppGoodScope(context.Context, *DeleteApp
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func (UnimplementedGatewayServer) GetAppGoodScopes(context.Context, *GetAppGoodScopesRequest) (*GetAppGoodScopesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodScopes not implemented")
@@ -209,6 +242,8 @@ func (UnimplementedGatewayServer) GetAppGoodScopes(context.Context, *GetAppGoodS
 >>>>>>> 569d52611 (update scope)
 =======
 >>>>>>> 909af8f64 (update scope)
+=======
+>>>>>>> master
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
 // UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
@@ -222,6 +257,7 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 func _Gateway_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -264,6 +300,10 @@ func _Gateway_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, dec
 	in := new(GetAppScopesRequest)
 =======
 >>>>>>> f7e76ad3e (update req)
+=======
+func _Gateway_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppGoodScopesRequest)
+>>>>>>> master
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -277,6 +317,7 @@ func _Gateway_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, dec
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		return srv.(GatewayServer).GetAppScopes(ctx, req.(*GetAppScopesRequest))
 >>>>>>> 569d52611 (update scope)
 =======
@@ -285,6 +326,9 @@ func _Gateway_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, dec
 =======
 		return srv.(GatewayServer).GetAppGoodScopes(ctx, req.(*GetAppGoodScopesRequest))
 >>>>>>> f7e76ad3e (update req)
+=======
+		return srv.(GatewayServer).GetAppGoodScopes(ctx, req.(*GetAppGoodScopesRequest))
+>>>>>>> master
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -327,6 +371,7 @@ func _Gateway_DeleteAppGoodScope_Handler(srv interface{}, ctx context.Context, d
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func _Gateway_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppGoodScopesRequest)
@@ -349,6 +394,8 @@ func _Gateway_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, dec
 >>>>>>> 569d52611 (update scope)
 =======
 >>>>>>> 909af8f64 (update scope)
+=======
+>>>>>>> master
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -357,6 +404,7 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 			MethodName: "GetAppGoodScopes",
@@ -373,6 +421,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GetAppGoodScopes",
 			Handler:    _Gateway_GetAppGoodScopes_Handler,
 >>>>>>> 80bc5ee31 (delete createappscope)
+=======
+			MethodName: "GetAppGoodScopes",
+			Handler:    _Gateway_GetAppGoodScopes_Handler,
+>>>>>>> master
 		},
 		{
 			MethodName: "CreateAppGoodScope",
@@ -384,6 +436,7 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		{
 			MethodName: "GetAppGoodScopes",
@@ -392,6 +445,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 >>>>>>> 569d52611 (update scope)
 =======
 >>>>>>> 909af8f64 (update scope)
+=======
+>>>>>>> master
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "npool/inspire/gw/v1/coupon/app/scope/scope.proto",

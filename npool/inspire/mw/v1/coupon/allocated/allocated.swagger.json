@@ -210,6 +210,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           "title": "@inject_tag: sql:\"coupon_scope\""
 =======
           "title": "@inject_tag: sql:\"coupon_constraint\""
@@ -223,6 +224,9 @@
 =======
           "title": "@inject_tag: sql:\"coupon_scope\""
 >>>>>>> 880c4a0bc (fix wrong tag)
+=======
+          "title": "@inject_tag: sql:\"coupon_scope\""
+>>>>>>> master
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
@@ -386,6 +390,7 @@
       "properties": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "Infos": {
 =======
         "Info": {
@@ -393,6 +398,9 @@
 =======
         "Infos": {
 >>>>>>> 2d1271a2f (change to infos & add UsedAt)
+=======
+        "Infos": {
+>>>>>>> master
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1Coupon"

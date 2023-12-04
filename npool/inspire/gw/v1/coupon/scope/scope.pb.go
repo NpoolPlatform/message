@@ -31,6 +31,9 @@ type Scope struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 	GoodID             string         `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
 	GoodTitle          string         `protobuf:"bytes,40,opt,name=GoodTitle,proto3" json:"GoodTitle,omitempty"`
 	CouponID           string         `protobuf:"bytes,50,opt,name=CouponID,proto3" json:"CouponID,omitempty"`
@@ -38,6 +41,7 @@ type Scope struct {
 	CouponType         v1.CouponType  `protobuf:"varint,70,opt,name=CouponType,proto3,enum=basetypes.inspire.v1.CouponType" json:"CouponType,omitempty"`
 	CouponScope        v1.CouponScope `protobuf:"varint,80,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope" json:"CouponScope,omitempty"`
 	CouponCirculation  string         `protobuf:"bytes,90,opt,name=CouponCirculation,proto3" json:"CouponCirculation,omitempty"`
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 3a2981d70 (add coupon scope in gw)
@@ -67,6 +71,8 @@ type Scope struct {
 =======
 	CouponCirculation  string         `protobuf:"bytes,90,opt,name=CouponCirculation,proto3" json:"CouponCirculation,omitempty"`
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
 	CouponDenomination string         `protobuf:"bytes,110,opt,name=CouponDenomination,proto3" json:"CouponDenomination,omitempty"`
 	CreatedAt          uint32         `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
 	UpdatedAt          uint32         `protobuf:"varint,1010,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
@@ -114,6 +120,7 @@ func (x *Scope) GetID() string {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 func (x *Scope) GetGoodID() string {
 	if x != nil {
 		return x.GoodID
@@ -132,10 +139,16 @@ func (x *Scope) GetGoodID() string {
 	if x != nil {
 		return x.GoodID
 >>>>>>> 569d52611 (update scope)
+=======
+func (x *Scope) GetGoodID() string {
+	if x != nil {
+		return x.GoodID
+>>>>>>> master
 	}
 	return ""
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -164,6 +177,11 @@ func (x *Scope) GetGoodTitle() string {
 	if x != nil {
 		return x.GoodTitle
 >>>>>>> 569d52611 (update scope)
+=======
+func (x *Scope) GetGoodTitle() string {
+	if x != nil {
+		return x.GoodTitle
+>>>>>>> master
 	}
 	return ""
 }
@@ -185,6 +203,7 @@ func (x *Scope) GetCouponName() string {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 3a2981d70 (add coupon scope in gw)
@@ -201,6 +220,8 @@ func (x *Scope) GetCouponTypeStr() string {
 >>>>>>> 3a2981d70 (add coupon scope in gw)
 =======
 >>>>>>> 8db49e034 (make AppGoodID must)
+=======
+>>>>>>> master
 func (x *Scope) GetCouponType() v1.CouponType {
 	if x != nil {
 		return x.CouponType
@@ -208,6 +229,7 @@ func (x *Scope) GetCouponType() v1.CouponType {
 	return v1.CouponType(0)
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -227,6 +249,8 @@ func (x *Scope) GetCouponScopeStr() string {
 >>>>>>> 3a2981d70 (add coupon scope in gw)
 =======
 >>>>>>> 8db49e034 (make AppGoodID must)
+=======
+>>>>>>> master
 func (x *Scope) GetCouponScope() v1.CouponScope {
 	if x != nil {
 		return x.CouponScope
@@ -237,8 +261,11 @@ func (x *Scope) GetCouponScope() v1.CouponScope {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
 func (x *Scope) GetCouponCirculation() string {
 	if x != nil {
 		return x.CouponCirculation
@@ -247,12 +274,15 @@ func (x *Scope) GetCouponCirculation() string {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e243bad0c (add coupon scope in gw)
 =======
 >>>>>>> 3a2981d70 (add coupon scope in gw)
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
 func (x *Scope) GetCouponDenomination() string {
 	if x != nil {
 		return x.CouponDenomination
@@ -284,6 +314,7 @@ type CreateScopeRequest struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	GoodID      string         `protobuf:"bytes,10,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
 	CouponID    string         `protobuf:"bytes,20,opt,name=CouponID,proto3" json:"CouponID,omitempty"`
 	CouponScope v1.CouponScope `protobuf:"varint,30,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope" json:"CouponScope,omitempty"`
@@ -310,6 +341,11 @@ type CreateScopeRequest struct {
 	CouponID    string         `protobuf:"bytes,20,opt,name=CouponID,proto3" json:"CouponID,omitempty"`
 	CouponScope v1.CouponScope `protobuf:"varint,30,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope" json:"CouponScope,omitempty"`
 >>>>>>> 569d52611 (update scope)
+=======
+	GoodID      string         `protobuf:"bytes,10,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
+	CouponID    string         `protobuf:"bytes,20,opt,name=CouponID,proto3" json:"CouponID,omitempty"`
+	CouponScope v1.CouponScope `protobuf:"varint,30,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope" json:"CouponScope,omitempty"`
+>>>>>>> master
 }
 
 func (x *CreateScopeRequest) Reset() {
@@ -349,6 +385,7 @@ func (*CreateScopeRequest) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 func (x *CreateScopeRequest) GetGoodID() string {
 	if x != nil {
 		return x.GoodID
@@ -377,6 +414,11 @@ func (x *CreateScopeRequest) GetGoodID() string {
 	if x != nil {
 		return x.GoodID
 >>>>>>> 569d52611 (update scope)
+=======
+func (x *CreateScopeRequest) GetGoodID() string {
+	if x != nil {
+		return x.GoodID
+>>>>>>> master
 	}
 	return ""
 }
@@ -388,6 +430,7 @@ func (x *CreateScopeRequest) GetCouponID() string {
 	return ""
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -407,6 +450,8 @@ func (x *CreateScopeRequest) GetAppGoodID() string {
 >>>>>>> 3a2981d70 (add coupon scope in gw)
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
 func (x *CreateScopeRequest) GetCouponScope() v1.CouponScope {
 	if x != nil {
 		return x.CouponScope
@@ -471,6 +516,7 @@ type DeleteScopeRequest struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
 =======
 	ID    string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
@@ -491,6 +537,9 @@ type DeleteScopeRequest struct {
 =======
 	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
 >>>>>>> 569d52611 (update scope)
+=======
+	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+>>>>>>> master
 }
 
 func (x *DeleteScopeRequest) Reset() {
@@ -537,6 +586,7 @@ func (x *DeleteScopeRequest) GetID() string {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func (x *DeleteScopeRequest) GetAppID() string {
 =======
@@ -564,6 +614,8 @@ func (x *DeleteScopeRequest) GetTargetAppID() string {
 >>>>>>> 3a2981d70 (add coupon scope in gw)
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
 type DeleteScopeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -611,6 +663,7 @@ func (x *DeleteScopeResponse) GetInfo() *Scope {
 	return nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -741,11 +794,14 @@ func (x *GetAppScopesResponse) GetTotal() uint32 {
 >>>>>>> 9589c2455 (update scope)
 =======
 >>>>>>> 960f133ce (update scope pb)
+=======
+>>>>>>> master
 type GetScopesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -771,11 +827,16 @@ type GetScopesRequest struct {
 	Offset int32 `protobuf:"varint,30,opt,name=Offset,proto3" json:"Offset,omitempty"`
 	Limit  int32 `protobuf:"varint,40,opt,name=Limit,proto3" json:"Limit,omitempty"`
 >>>>>>> 569d52611 (update scope)
+=======
+	Offset int32 `protobuf:"varint,30,opt,name=Offset,proto3" json:"Offset,omitempty"`
+	Limit  int32 `protobuf:"varint,40,opt,name=Limit,proto3" json:"Limit,omitempty"`
+>>>>>>> master
 }
 
 func (x *GetScopesRequest) Reset() {
 	*x = GetScopesRequest{}
 	if protoimpl.UnsafeEnabled {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -789,6 +850,9 @@ func (x *GetScopesRequest) Reset() {
 =======
 		mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[5]
 >>>>>>> 960f133ce (update scope pb)
+=======
+		mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[5]
+>>>>>>> master
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -804,6 +868,7 @@ func (x *GetScopesRequest) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[7]
 =======
 	mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[5]
@@ -814,6 +879,9 @@ func (x *GetScopesRequest) ProtoReflect() protoreflect.Message {
 =======
 	mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[5]
 >>>>>>> 960f133ce (update scope pb)
+=======
+	mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[5]
+>>>>>>> master
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -826,6 +894,7 @@ func (x *GetScopesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetScopesRequest.ProtoReflect.Descriptor instead.
 func (*GetScopesRequest) Descriptor() ([]byte, []int) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -869,6 +938,11 @@ func (x *GetScopesRequest) GetUserID() string {
 >>>>>>> 960f133ce (update scope pb)
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+	return file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescGZIP(), []int{5}
+}
+
+>>>>>>> master
 func (x *GetScopesRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
@@ -898,6 +972,7 @@ func (x *GetScopesResponse) Reset() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[8]
 =======
 		mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[6]
@@ -908,6 +983,9 @@ func (x *GetScopesResponse) Reset() {
 =======
 		mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[6]
 >>>>>>> 960f133ce (update scope pb)
+=======
+		mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[6]
+>>>>>>> master
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -923,6 +1001,7 @@ func (x *GetScopesResponse) ProtoReflect() protoreflect.Message {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[8]
 =======
 	mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[6]
@@ -933,6 +1012,9 @@ func (x *GetScopesResponse) ProtoReflect() protoreflect.Message {
 =======
 	mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[6]
 >>>>>>> 960f133ce (update scope pb)
+=======
+	mi := &file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[6]
+>>>>>>> master
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -948,6 +1030,7 @@ func (*GetScopesResponse) Descriptor() ([]byte, []int) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescGZIP(), []int{8}
 =======
 	return file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescGZIP(), []int{6}
@@ -958,6 +1041,9 @@ func (*GetScopesResponse) Descriptor() ([]byte, []int) {
 =======
 	return file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescGZIP(), []int{6}
 >>>>>>> 960f133ce (update scope pb)
+=======
+	return file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescGZIP(), []int{6}
+>>>>>>> master
 }
 
 func (x *GetScopesResponse) GetInfos() []*Scope {
@@ -974,6 +1060,7 @@ func (x *GetScopesResponse) GetTotal() uint32 {
 	return 0
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1246,6 +1333,8 @@ func (x *GetNAppScopesResponse) GetTotal() uint32 {
 >>>>>>> 960f133ce (update scope pb)
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
 var File_npool_inspire_gw_v1_coupon_scope_scope_proto protoreflect.FileDescriptor
 
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
@@ -1258,6 +1347,7 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 	0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x26, 0x6e,
 	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x69,
 	0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x76, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1794,6 +1884,8 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 	0x74, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x6b,
 	0x0a, 0x15, 0x47, 0x65, 0x74, 0x4e, 0x41, 0x70, 0x70, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x73, 0x52,
 =======
+=======
+>>>>>>> master
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xac, 0x03, 0x0a, 0x05, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x12,
 	0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x44, 0x12,
 	0x16, 0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52,
@@ -1848,7 +1940,10 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 	0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05,
 	0x4c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x28, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x4c, 0x69, 0x6d,
 	0x69, 0x74, 0x22, 0x67, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x73, 0x52,
+<<<<<<< HEAD
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3c, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
 	0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65,
 	0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x63, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x2e,
@@ -1858,6 +1953,7 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 	0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0x95, 0x01, 0x0a, 0x0b, 0x43, 0x72, 0x65, 0x61,
 	0x74, 0x65, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x12, 0x33, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72,
 	0x65, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x63, 0x6f, 0x75, 0x70, 0x6f, 0x6e,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	0x2e, 0x73, 0x63, 0x6f, 0x70, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70,
@@ -1890,6 +1986,8 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 	0x6f, 0x74, 0x6f, 0x33,
 >>>>>>> 0e532945d (update scope pb)
 =======
+=======
+>>>>>>> master
 	0x2e, 0x73, 0x63, 0x6f, 0x70, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
 	0x53, 0x63, 0x6f, 0x70, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34, 0x2e, 0x69,
 	0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x63,
@@ -1915,6 +2013,7 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 	0x6e, 0x2e, 0x73, 0x63, 0x6f, 0x70, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x63,
 	0x6f, 0x70, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x19, 0x82, 0xd3,
 	0xe4, 0x93, 0x02, 0x13, 0x3a, 0x01, 0x2a, 0x22, 0x0e, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x74,
+<<<<<<< HEAD
 <<<<<<< HEAD
 	0x2f, 0x73, 0x63, 0x6f, 0x70, 0x65, 0x73, 0x12, 0x9a, 0x01, 0x0a, 0x0c, 0x47, 0x65, 0x74, 0x41,
 	0x70, 0x70, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x73, 0x12, 0x34, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69,
@@ -1944,13 +2043,18 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc = []byte{
 	0x74, 0x6f, 0x33,
 >>>>>>> 8db49e034 (make AppGoodID must)
 =======
+=======
+>>>>>>> master
 	0x2f, 0x73, 0x63, 0x6f, 0x70, 0x65, 0x73, 0x42, 0x43, 0x5a, 0x41, 0x67, 0x69, 0x74, 0x68, 0x75,
 	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66,
 	0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f,
 	0x6c, 0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x67, 0x77, 0x2f, 0x76, 0x31, 0x2f,
 	0x63, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x2f, 0x73, 0x63, 0x6f, 0x70, 0x65, 0x62, 0x06, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
 }
 
 var (
@@ -1965,6 +2069,7 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescGZIP() []byte {
 	return file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDescData
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2014,6 +2119,9 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimp
 =======
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 >>>>>>> 569d52611 (update scope)
+=======
+var file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+>>>>>>> master
 var file_npool_inspire_gw_v1_coupon_scope_scope_proto_goTypes = []interface{}{
 	(*Scope)(nil),               // 0: inspire.gateway.coupon.scope.v1.Scope
 	(*CreateScopeRequest)(nil),  // 1: inspire.gateway.coupon.scope.v1.CreateScopeRequest
@@ -2029,9 +2137,12 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_depIdxs = []int32{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 67de434f0 (delete get app scopes)
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
 	7, // 0: inspire.gateway.coupon.scope.v1.Scope.CouponType:type_name -> basetypes.inspire.v1.CouponType
 	8, // 1: inspire.gateway.coupon.scope.v1.Scope.CouponScope:type_name -> basetypes.inspire.v1.CouponScope
 	8, // 2: inspire.gateway.coupon.scope.v1.CreateScopeRequest.CouponScope:type_name -> basetypes.inspire.v1.CouponScope
@@ -2049,6 +2160,7 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_depIdxs = []int32{
 	6, // [6:6] is the sub-list for extension type_name
 	6, // [6:6] is the sub-list for extension extendee
 	0, // [0:6] is the sub-list for field type_name
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -2178,6 +2290,8 @@ var file_npool_inspire_gw_v1_coupon_scope_scope_proto_depIdxs = []int32{
 >>>>>>> 960f133ce (update scope pb)
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
 }
 
 func init() { file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() }
@@ -2250,6 +2364,7 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9589c2455 (update scope)
 			switch v := v.(*GetAppScopesRequest); i {
@@ -2283,6 +2398,8 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 >>>>>>> 9589c2455 (update scope)
 =======
 >>>>>>> 960f133ce (update scope pb)
+=======
+>>>>>>> master
 			switch v := v.(*GetScopesRequest); i {
 			case 0:
 				return &v.state
@@ -2297,6 +2414,7 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 =======
 		file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
@@ -2307,6 +2425,9 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 =======
 		file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 >>>>>>> 960f133ce (update scope pb)
+=======
+		file_npool_inspire_gw_v1_coupon_scope_scope_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+>>>>>>> master
 			switch v := v.(*GetScopesResponse); i {
 			case 0:
 				return &v.state
@@ -2318,6 +2439,7 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2398,12 +2520,16 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 >>>>>>> 3a2981d70 (add coupon scope in gw)
 =======
 >>>>>>> 8db49e034 (make AppGoodID must)
+=======
+	}
+>>>>>>> master
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_inspire_gw_v1_coupon_scope_scope_proto_rawDesc,
 			NumEnums:      0,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2437,6 +2563,9 @@ func file_npool_inspire_gw_v1_coupon_scope_scope_proto_init() {
 =======
 			NumMessages:   7,
 >>>>>>> 569d52611 (update scope)
+=======
+			NumMessages:   7,
+>>>>>>> master
 			NumExtensions: 0,
 			NumServices:   1,
 		},

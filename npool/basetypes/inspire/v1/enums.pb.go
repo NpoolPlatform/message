@@ -335,6 +335,9 @@ func (CouponConstraint) EnumDescriptor() ([]byte, []int) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 type CouponScope int32
 
 const (
@@ -348,6 +351,7 @@ const (
 var (
 	CouponScope_name = map[int32]string{
 		0:  "DefaultCouponScope",
+<<<<<<< HEAD
 =======
 type CouponAvailableIn int32
 =======
@@ -394,6 +398,8 @@ var (
 	CouponScope_name = map[int32]string{
 		0:  "DefaultCouponScope",
 >>>>>>> 265f77efc (change to CouponScope)
+=======
+>>>>>>> master
 		10: "AllGood",
 		20: "Whitelist",
 		30: "Blacklist",
@@ -402,10 +408,13 @@ var (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 35797011c (change to CouponScope)
 =======
 >>>>>>> 265f77efc (change to CouponScope)
+=======
+>>>>>>> master
 	CouponScope_value = map[string]int32{
 		"DefaultCouponScope": 0,
 		"AllGood":            10,
@@ -413,11 +422,15 @@ var (
 		"Blacklist":          30,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 	}
 )
 
 func (x CouponScope) Enum() *CouponScope {
 	p := new(CouponScope)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> b80b41f78 (add CouponAvailableIn)
@@ -449,6 +462,8 @@ func (x CouponScope) Enum() *CouponScope {
 func (x CouponScope) Enum() *CouponScope {
 	p := new(CouponScope)
 >>>>>>> 265f77efc (change to CouponScope)
+=======
+>>>>>>> master
 	*p = x
 	return p
 }
@@ -457,6 +472,9 @@ func (x CouponScope) Enum() *CouponScope {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 func (x CouponScope) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
@@ -475,6 +493,7 @@ func (x CouponScope) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use CouponScope.Descriptor instead.
 func (CouponScope) EnumDescriptor() ([]byte, []int) {
+<<<<<<< HEAD
 =======
 func (x CouponAvailableIn) String() string {
 =======
@@ -531,6 +550,8 @@ func (CouponAvailableIn) EnumDescriptor() ([]byte, []int) {
 // Deprecated: Use CouponScope.Descriptor instead.
 func (CouponScope) EnumDescriptor() ([]byte, []int) {
 >>>>>>> 265f77efc (change to CouponScope)
+=======
+>>>>>>> master
 	return file_npool_basetypes_inspire_v1_enums_proto_rawDescGZIP(), []int{6}
 }
 
@@ -581,10 +602,13 @@ var file_npool_basetypes_inspire_v1_enums_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 35797011c (change to CouponScope)
 =======
 >>>>>>> 265f77efc (change to CouponScope)
+=======
+>>>>>>> master
 	0x64, 0x54, 0x68, 0x72, 0x65, 0x73, 0x68, 0x6f, 0x6c, 0x64, 0x10, 0x28, 0x2a, 0x50, 0x0a, 0x0b,
 	0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x12, 0x16, 0x0a, 0x12, 0x44,
 	0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70,
@@ -596,6 +620,7 @@ var file_npool_basetypes_inspire_v1_enums_proto_rawDesc = []byte{
 	0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70,
 	0x65, 0x73, 0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -621,6 +646,8 @@ var file_npool_basetypes_inspire_v1_enums_proto_rawDesc = []byte{
 >>>>>>> b80b41f78 (add CouponAvailableIn)
 =======
 >>>>>>> 265f77efc (change to CouponScope)
+=======
+>>>>>>> master
 }
 
 var (
@@ -654,6 +681,7 @@ var file_npool_basetypes_inspire_v1_enums_proto_goTypes = []interface{}{
 	(CouponScope)(0),      // 6: basetypes.inspire.v1.CouponScope
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> b80b41f78 (add CouponAvailableIn)
@@ -672,6 +700,8 @@ var file_npool_basetypes_inspire_v1_enums_proto_goTypes = []interface{}{
 >>>>>>> b80b41f78 (add CouponAvailableIn)
 =======
 >>>>>>> 265f77efc (change to CouponScope)
+=======
+>>>>>>> master
 }
 var file_npool_basetypes_inspire_v1_enums_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

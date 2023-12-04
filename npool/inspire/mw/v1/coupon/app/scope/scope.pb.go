@@ -31,6 +31,7 @@ type ScopeReq struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ID          *string         `protobuf:"bytes,10,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
 	AppID       *string         `protobuf:"bytes,20,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
 <<<<<<< HEAD
@@ -64,11 +65,14 @@ type ScopeReq struct {
 	CouponScope *v1.CouponType `protobuf:"varint,50,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponType,oneof" json:"CouponScope,omitempty"`
 >>>>>>> 258747a1b (change type)
 =======
+=======
+>>>>>>> master
 	ID          *string         `protobuf:"bytes,10,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
 	AppID       *string         `protobuf:"bytes,20,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
 	AppGoodID   *string         `protobuf:"bytes,30,opt,name=AppGoodID,proto3,oneof" json:"AppGoodID,omitempty"`
 	CouponID    *string         `protobuf:"bytes,40,opt,name=CouponID,proto3,oneof" json:"CouponID,omitempty"`
 	CouponScope *v1.CouponScope `protobuf:"varint,50,opt,name=CouponScope,proto3,enum=basetypes.inspire.v1.CouponScope,oneof" json:"CouponScope,omitempty"`
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -83,6 +87,9 @@ type ScopeReq struct {
 =======
 	GoodID      *string         `protobuf:"bytes,60,opt,name=GoodID,proto3,oneof" json:"GoodID,omitempty"` // only for VerifyCouponScopes
 >>>>>>> 3db4b034a (delete ScopeID)
+=======
+	GoodID      *string         `protobuf:"bytes,60,opt,name=GoodID,proto3,oneof" json:"GoodID,omitempty"` // only for VerifyCouponScopes
+>>>>>>> master
 }
 
 func (x *ScopeReq) Reset() {
@@ -133,6 +140,9 @@ func (x *ScopeReq) GetAppID() string {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 func (x *ScopeReq) GetAppGoodID() string {
 	if x != nil && x.AppGoodID != nil {
 		return *x.AppGoodID
@@ -143,6 +153,7 @@ func (x *ScopeReq) GetAppGoodID() string {
 func (x *ScopeReq) GetCouponID() string {
 	if x != nil && x.CouponID != nil {
 		return *x.CouponID
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 func (x *ScopeReq) GetScopeID() string {
@@ -182,6 +193,8 @@ func (x *ScopeReq) GetScopeID() string {
 >>>>>>> 75aee1dff (update appscope)
 =======
 >>>>>>> 3db4b034a (delete ScopeID)
+=======
+>>>>>>> master
 	}
 	return ""
 }
@@ -212,6 +225,7 @@ type Scope struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	// @inject_tag: sql:"good_id"
 	GoodID string `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id"`
@@ -234,6 +248,8 @@ type Scope struct {
 >>>>>>> 06a7b035f (change to goodid)
 =======
 >>>>>>> 3db4b034a (delete ScopeID)
+=======
+>>>>>>> master
 	// @inject_tag: sql:"app_good_id"
 	AppGoodID string `protobuf:"bytes,40,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty" sql:"app_good_id"`
 	// @inject_tag: sql:"coupon_id"
@@ -303,6 +319,7 @@ func (x *Scope) GetAppID() string {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 func (x *Scope) GetScopeID() string {
@@ -323,6 +340,8 @@ func (x *Scope) GetGoodID() string {
 >>>>>>> 569d52611 (update scope)
 =======
 >>>>>>> 3db4b034a (delete ScopeID)
+=======
+>>>>>>> master
 func (x *Scope) GetAppGoodID() string {
 	if x != nil {
 		return x.AppGoodID
@@ -402,11 +421,14 @@ type Conds struct {
 	AppID       *v11.StringVal      `protobuf:"bytes,20,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	GoodID      *v11.StringVal      `protobuf:"bytes,30,opt,name=GoodID,proto3,oneof" json:"GoodID,omitempty"`
 >>>>>>> 569d52611 (update scope)
 =======
 >>>>>>> 3db4b034a (delete ScopeID)
+=======
+>>>>>>> master
 	AppGoodID   *v11.StringVal      `protobuf:"bytes,40,opt,name=AppGoodID,proto3,oneof" json:"AppGoodID,omitempty"`
 	CouponID    *v11.StringVal      `protobuf:"bytes,50,opt,name=CouponID,proto3,oneof" json:"CouponID,omitempty"`
 	CouponIDs   *v11.StringSliceVal `protobuf:"bytes,60,opt,name=CouponIDs,proto3,oneof" json:"CouponIDs,omitempty"`
@@ -461,6 +483,7 @@ func (x *Conds) GetAppID() *v11.StringVal {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 func (x *Conds) GetGoodID() *v11.StringVal {
 	if x != nil {
@@ -472,6 +495,8 @@ func (x *Conds) GetGoodID() *v11.StringVal {
 >>>>>>> 569d52611 (update scope)
 =======
 >>>>>>> 3db4b034a (delete ScopeID)
+=======
+>>>>>>> master
 func (x *Conds) GetAppGoodID() *v11.StringVal {
 	if x != nil {
 		return x.AppGoodID
@@ -502,6 +527,7 @@ func (x *Conds) GetCouponScope() *v11.Uint32Val {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type CreateAppGoodScopeRequest struct {
 =======
 type CreateScopeRequest struct {
@@ -509,6 +535,9 @@ type CreateScopeRequest struct {
 =======
 type CreateAppGoodScopeRequest struct {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+type CreateAppGoodScopeRequest struct {
+>>>>>>> master
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -516,6 +545,7 @@ type CreateAppGoodScopeRequest struct {
 	Info *ScopeReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 func (x *CreateAppGoodScopeRequest) Reset() {
@@ -528,6 +558,10 @@ func (x *CreateScopeRequest) Reset() {
 func (x *CreateAppGoodScopeRequest) Reset() {
 	*x = CreateAppGoodScopeRequest{}
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+func (x *CreateAppGoodScopeRequest) Reset() {
+	*x = CreateAppGoodScopeRequest{}
+>>>>>>> master
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -537,6 +571,9 @@ func (x *CreateAppGoodScopeRequest) Reset() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 func (x *CreateAppGoodScopeRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -544,6 +581,7 @@ func (x *CreateAppGoodScopeRequest) String() string {
 func (*CreateAppGoodScopeRequest) ProtoMessage() {}
 
 func (x *CreateAppGoodScopeRequest) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 =======
 func (x *CreateScopeRequest) String() string {
 =======
@@ -560,6 +598,8 @@ func (x *CreateScopeRequest) ProtoReflect() protoreflect.Message {
 =======
 func (x *CreateAppGoodScopeRequest) ProtoReflect() protoreflect.Message {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -573,12 +613,16 @@ func (x *CreateAppGoodScopeRequest) ProtoReflect() protoreflect.Message {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 // Deprecated: Use CreateAppGoodScopeRequest.ProtoReflect.Descriptor instead.
 func (*CreateAppGoodScopeRequest) Descriptor() ([]byte, []int) {
 	return file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateAppGoodScopeRequest) GetInfo() *ScopeReq {
+<<<<<<< HEAD
 =======
 // Deprecated: Use CreateScopeRequest.ProtoReflect.Descriptor instead.
 func (*CreateScopeRequest) Descriptor() ([]byte, []int) {
@@ -595,12 +639,15 @@ func (*CreateAppGoodScopeRequest) Descriptor() ([]byte, []int) {
 
 func (x *CreateAppGoodScopeRequest) GetInfo() *ScopeReq {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	if x != nil {
 		return x.Info
 	}
 	return nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type CreateAppGoodScopeResponse struct {
@@ -610,6 +657,9 @@ type CreateScopeResponse struct {
 =======
 type CreateAppGoodScopeResponse struct {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+type CreateAppGoodScopeResponse struct {
+>>>>>>> master
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -617,6 +667,7 @@ type CreateAppGoodScopeResponse struct {
 	Info *Scope `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 func (x *CreateAppGoodScopeResponse) Reset() {
@@ -629,6 +680,10 @@ func (x *CreateScopeResponse) Reset() {
 func (x *CreateAppGoodScopeResponse) Reset() {
 	*x = CreateAppGoodScopeResponse{}
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+func (x *CreateAppGoodScopeResponse) Reset() {
+	*x = CreateAppGoodScopeResponse{}
+>>>>>>> master
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -638,6 +693,9 @@ func (x *CreateAppGoodScopeResponse) Reset() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 func (x *CreateAppGoodScopeResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -645,6 +703,7 @@ func (x *CreateAppGoodScopeResponse) String() string {
 func (*CreateAppGoodScopeResponse) ProtoMessage() {}
 
 func (x *CreateAppGoodScopeResponse) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 =======
 func (x *CreateScopeResponse) String() string {
 =======
@@ -661,6 +720,8 @@ func (x *CreateScopeResponse) ProtoReflect() protoreflect.Message {
 =======
 func (x *CreateAppGoodScopeResponse) ProtoReflect() protoreflect.Message {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -674,12 +735,16 @@ func (x *CreateAppGoodScopeResponse) ProtoReflect() protoreflect.Message {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 // Deprecated: Use CreateAppGoodScopeResponse.ProtoReflect.Descriptor instead.
 func (*CreateAppGoodScopeResponse) Descriptor() ([]byte, []int) {
 	return file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateAppGoodScopeResponse) GetInfo() *Scope {
+<<<<<<< HEAD
 =======
 // Deprecated: Use CreateScopeResponse.ProtoReflect.Descriptor instead.
 func (*CreateScopeResponse) Descriptor() ([]byte, []int) {
@@ -696,12 +761,15 @@ func (*CreateAppGoodScopeResponse) Descriptor() ([]byte, []int) {
 
 func (x *CreateAppGoodScopeResponse) GetInfo() *Scope {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	if x != nil {
 		return x.Info
 	}
 	return nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type GetAppGoodScopeRequest struct {
@@ -711,6 +779,9 @@ type GetScopeRequest struct {
 =======
 type GetAppGoodScopeRequest struct {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+type GetAppGoodScopeRequest struct {
+>>>>>>> master
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -718,6 +789,7 @@ type GetAppGoodScopeRequest struct {
 	ID string `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 func (x *GetAppGoodScopeRequest) Reset() {
@@ -730,6 +802,10 @@ func (x *GetScopeRequest) Reset() {
 func (x *GetAppGoodScopeRequest) Reset() {
 	*x = GetAppGoodScopeRequest{}
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+func (x *GetAppGoodScopeRequest) Reset() {
+	*x = GetAppGoodScopeRequest{}
+>>>>>>> master
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -739,6 +815,9 @@ func (x *GetAppGoodScopeRequest) Reset() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 func (x *GetAppGoodScopeRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -746,6 +825,7 @@ func (x *GetAppGoodScopeRequest) String() string {
 func (*GetAppGoodScopeRequest) ProtoMessage() {}
 
 func (x *GetAppGoodScopeRequest) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 =======
 func (x *GetScopeRequest) String() string {
 =======
@@ -762,6 +842,8 @@ func (x *GetScopeRequest) ProtoReflect() protoreflect.Message {
 =======
 func (x *GetAppGoodScopeRequest) ProtoReflect() protoreflect.Message {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -775,12 +857,16 @@ func (x *GetAppGoodScopeRequest) ProtoReflect() protoreflect.Message {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 // Deprecated: Use GetAppGoodScopeRequest.ProtoReflect.Descriptor instead.
 func (*GetAppGoodScopeRequest) Descriptor() ([]byte, []int) {
 	return file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetAppGoodScopeRequest) GetID() string {
+<<<<<<< HEAD
 =======
 // Deprecated: Use GetScopeRequest.ProtoReflect.Descriptor instead.
 func (*GetScopeRequest) Descriptor() ([]byte, []int) {
@@ -797,12 +883,15 @@ func (*GetAppGoodScopeRequest) Descriptor() ([]byte, []int) {
 
 func (x *GetAppGoodScopeRequest) GetID() string {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	if x != nil {
 		return x.ID
 	}
 	return ""
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type GetAppGoodScopeResponse struct {
@@ -812,6 +901,9 @@ type GetScopeResponse struct {
 =======
 type GetAppGoodScopeResponse struct {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+type GetAppGoodScopeResponse struct {
+>>>>>>> master
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -819,6 +911,7 @@ type GetAppGoodScopeResponse struct {
 	Info *Scope `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 func (x *GetAppGoodScopeResponse) Reset() {
@@ -831,6 +924,10 @@ func (x *GetScopeResponse) Reset() {
 func (x *GetAppGoodScopeResponse) Reset() {
 	*x = GetAppGoodScopeResponse{}
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+func (x *GetAppGoodScopeResponse) Reset() {
+	*x = GetAppGoodScopeResponse{}
+>>>>>>> master
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -840,6 +937,9 @@ func (x *GetAppGoodScopeResponse) Reset() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 func (x *GetAppGoodScopeResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -847,6 +947,7 @@ func (x *GetAppGoodScopeResponse) String() string {
 func (*GetAppGoodScopeResponse) ProtoMessage() {}
 
 func (x *GetAppGoodScopeResponse) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 =======
 func (x *GetScopeResponse) String() string {
 =======
@@ -863,6 +964,8 @@ func (x *GetScopeResponse) ProtoReflect() protoreflect.Message {
 =======
 func (x *GetAppGoodScopeResponse) ProtoReflect() protoreflect.Message {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -876,12 +979,16 @@ func (x *GetAppGoodScopeResponse) ProtoReflect() protoreflect.Message {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 // Deprecated: Use GetAppGoodScopeResponse.ProtoReflect.Descriptor instead.
 func (*GetAppGoodScopeResponse) Descriptor() ([]byte, []int) {
 	return file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetAppGoodScopeResponse) GetInfo() *Scope {
+<<<<<<< HEAD
 =======
 // Deprecated: Use GetScopeResponse.ProtoReflect.Descriptor instead.
 func (*GetScopeResponse) Descriptor() ([]byte, []int) {
@@ -898,12 +1005,15 @@ func (*GetAppGoodScopeResponse) Descriptor() ([]byte, []int) {
 
 func (x *GetAppGoodScopeResponse) GetInfo() *Scope {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	if x != nil {
 		return x.Info
 	}
 	return nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type GetAppGoodScopesRequest struct {
@@ -913,6 +1023,9 @@ type GetScopesRequest struct {
 =======
 type GetAppGoodScopesRequest struct {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+type GetAppGoodScopesRequest struct {
+>>>>>>> master
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -922,6 +1035,7 @@ type GetAppGoodScopesRequest struct {
 	Limit  int32  `protobuf:"varint,30,opt,name=Limit,proto3" json:"Limit,omitempty"`
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 func (x *GetAppGoodScopesRequest) Reset() {
@@ -934,6 +1048,10 @@ func (x *GetScopesRequest) Reset() {
 func (x *GetAppGoodScopesRequest) Reset() {
 	*x = GetAppGoodScopesRequest{}
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+func (x *GetAppGoodScopesRequest) Reset() {
+	*x = GetAppGoodScopesRequest{}
+>>>>>>> master
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -943,6 +1061,9 @@ func (x *GetAppGoodScopesRequest) Reset() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 func (x *GetAppGoodScopesRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -950,6 +1071,7 @@ func (x *GetAppGoodScopesRequest) String() string {
 func (*GetAppGoodScopesRequest) ProtoMessage() {}
 
 func (x *GetAppGoodScopesRequest) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 =======
 func (x *GetScopesRequest) String() string {
 =======
@@ -966,6 +1088,8 @@ func (x *GetScopesRequest) ProtoReflect() protoreflect.Message {
 =======
 func (x *GetAppGoodScopesRequest) ProtoReflect() protoreflect.Message {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -979,12 +1103,16 @@ func (x *GetAppGoodScopesRequest) ProtoReflect() protoreflect.Message {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 // Deprecated: Use GetAppGoodScopesRequest.ProtoReflect.Descriptor instead.
 func (*GetAppGoodScopesRequest) Descriptor() ([]byte, []int) {
 	return file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetAppGoodScopesRequest) GetConds() *Conds {
+<<<<<<< HEAD
 =======
 // Deprecated: Use GetScopesRequest.ProtoReflect.Descriptor instead.
 func (*GetScopesRequest) Descriptor() ([]byte, []int) {
@@ -1001,12 +1129,15 @@ func (*GetAppGoodScopesRequest) Descriptor() ([]byte, []int) {
 
 func (x *GetAppGoodScopesRequest) GetConds() *Conds {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	if x != nil {
 		return x.Conds
 	}
 	return nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 func (x *GetAppGoodScopesRequest) GetOffset() int32 {
@@ -1016,12 +1147,16 @@ func (x *GetScopesRequest) GetOffset() int32 {
 =======
 func (x *GetAppGoodScopesRequest) GetOffset() int32 {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+func (x *GetAppGoodScopesRequest) GetOffset() int32 {
+>>>>>>> master
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 func (x *GetAppGoodScopesRequest) GetLimit() int32 {
@@ -1031,12 +1166,16 @@ func (x *GetScopesRequest) GetLimit() int32 {
 =======
 func (x *GetAppGoodScopesRequest) GetLimit() int32 {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+func (x *GetAppGoodScopesRequest) GetLimit() int32 {
+>>>>>>> master
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type GetAppGoodScopesResponse struct {
@@ -1046,6 +1185,9 @@ type GetScopesResponse struct {
 =======
 type GetAppGoodScopesResponse struct {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+type GetAppGoodScopesResponse struct {
+>>>>>>> master
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1054,6 +1196,7 @@ type GetAppGoodScopesResponse struct {
 	Total uint32   `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 func (x *GetAppGoodScopesResponse) Reset() {
@@ -1066,6 +1209,10 @@ func (x *GetScopesResponse) Reset() {
 func (x *GetAppGoodScopesResponse) Reset() {
 	*x = GetAppGoodScopesResponse{}
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+func (x *GetAppGoodScopesResponse) Reset() {
+	*x = GetAppGoodScopesResponse{}
+>>>>>>> master
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1075,6 +1222,9 @@ func (x *GetAppGoodScopesResponse) Reset() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 func (x *GetAppGoodScopesResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -1082,6 +1232,7 @@ func (x *GetAppGoodScopesResponse) String() string {
 func (*GetAppGoodScopesResponse) ProtoMessage() {}
 
 func (x *GetAppGoodScopesResponse) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 =======
 func (x *GetScopesResponse) String() string {
 =======
@@ -1098,6 +1249,8 @@ func (x *GetScopesResponse) ProtoReflect() protoreflect.Message {
 =======
 func (x *GetAppGoodScopesResponse) ProtoReflect() protoreflect.Message {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1111,12 +1264,16 @@ func (x *GetAppGoodScopesResponse) ProtoReflect() protoreflect.Message {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 // Deprecated: Use GetAppGoodScopesResponse.ProtoReflect.Descriptor instead.
 func (*GetAppGoodScopesResponse) Descriptor() ([]byte, []int) {
 	return file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetAppGoodScopesResponse) GetInfos() []*Scope {
+<<<<<<< HEAD
 =======
 // Deprecated: Use GetScopesResponse.ProtoReflect.Descriptor instead.
 func (*GetScopesResponse) Descriptor() ([]byte, []int) {
@@ -1133,12 +1290,15 @@ func (*GetAppGoodScopesResponse) Descriptor() ([]byte, []int) {
 
 func (x *GetAppGoodScopesResponse) GetInfos() []*Scope {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	if x != nil {
 		return x.Infos
 	}
 	return nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 func (x *GetAppGoodScopesResponse) GetTotal() uint32 {
@@ -1148,12 +1308,16 @@ func (x *GetScopesResponse) GetTotal() uint32 {
 =======
 func (x *GetAppGoodScopesResponse) GetTotal() uint32 {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+func (x *GetAppGoodScopesResponse) GetTotal() uint32 {
+>>>>>>> master
 	if x != nil {
 		return x.Total
 	}
 	return 0
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type DeleteAppGoodScopeRequest struct {
@@ -1163,6 +1327,9 @@ type DeleteScopeRequest struct {
 =======
 type DeleteAppGoodScopeRequest struct {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+type DeleteAppGoodScopeRequest struct {
+>>>>>>> master
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1170,6 +1337,7 @@ type DeleteAppGoodScopeRequest struct {
 	Info *ScopeReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 func (x *DeleteAppGoodScopeRequest) Reset() {
@@ -1182,6 +1350,10 @@ func (x *DeleteScopeRequest) Reset() {
 func (x *DeleteAppGoodScopeRequest) Reset() {
 	*x = DeleteAppGoodScopeRequest{}
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+func (x *DeleteAppGoodScopeRequest) Reset() {
+	*x = DeleteAppGoodScopeRequest{}
+>>>>>>> master
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1191,6 +1363,9 @@ func (x *DeleteAppGoodScopeRequest) Reset() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 func (x *DeleteAppGoodScopeRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -1198,6 +1373,7 @@ func (x *DeleteAppGoodScopeRequest) String() string {
 func (*DeleteAppGoodScopeRequest) ProtoMessage() {}
 
 func (x *DeleteAppGoodScopeRequest) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 =======
 func (x *DeleteScopeRequest) String() string {
 =======
@@ -1214,6 +1390,8 @@ func (x *DeleteScopeRequest) ProtoReflect() protoreflect.Message {
 =======
 func (x *DeleteAppGoodScopeRequest) ProtoReflect() protoreflect.Message {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1227,12 +1405,16 @@ func (x *DeleteAppGoodScopeRequest) ProtoReflect() protoreflect.Message {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 // Deprecated: Use DeleteAppGoodScopeRequest.ProtoReflect.Descriptor instead.
 func (*DeleteAppGoodScopeRequest) Descriptor() ([]byte, []int) {
 	return file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DeleteAppGoodScopeRequest) GetInfo() *ScopeReq {
+<<<<<<< HEAD
 =======
 // Deprecated: Use DeleteScopeRequest.ProtoReflect.Descriptor instead.
 func (*DeleteScopeRequest) Descriptor() ([]byte, []int) {
@@ -1249,12 +1431,15 @@ func (*DeleteAppGoodScopeRequest) Descriptor() ([]byte, []int) {
 
 func (x *DeleteAppGoodScopeRequest) GetInfo() *ScopeReq {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	if x != nil {
 		return x.Info
 	}
 	return nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type DeleteAppGoodScopeResponse struct {
@@ -1264,6 +1449,9 @@ type DeleteScopeResponse struct {
 =======
 type DeleteAppGoodScopeResponse struct {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+type DeleteAppGoodScopeResponse struct {
+>>>>>>> master
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1271,6 +1459,7 @@ type DeleteAppGoodScopeResponse struct {
 	Info *Scope `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 func (x *DeleteAppGoodScopeResponse) Reset() {
@@ -1283,6 +1472,10 @@ func (x *DeleteScopeResponse) Reset() {
 func (x *DeleteAppGoodScopeResponse) Reset() {
 	*x = DeleteAppGoodScopeResponse{}
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+func (x *DeleteAppGoodScopeResponse) Reset() {
+	*x = DeleteAppGoodScopeResponse{}
+>>>>>>> master
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1292,6 +1485,9 @@ func (x *DeleteAppGoodScopeResponse) Reset() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 func (x *DeleteAppGoodScopeResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -1299,6 +1495,7 @@ func (x *DeleteAppGoodScopeResponse) String() string {
 func (*DeleteAppGoodScopeResponse) ProtoMessage() {}
 
 func (x *DeleteAppGoodScopeResponse) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 =======
 func (x *DeleteScopeResponse) String() string {
 =======
@@ -1315,6 +1512,8 @@ func (x *DeleteScopeResponse) ProtoReflect() protoreflect.Message {
 =======
 func (x *DeleteAppGoodScopeResponse) ProtoReflect() protoreflect.Message {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1328,12 +1527,16 @@ func (x *DeleteAppGoodScopeResponse) ProtoReflect() protoreflect.Message {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 // Deprecated: Use DeleteAppGoodScopeResponse.ProtoReflect.Descriptor instead.
 func (*DeleteAppGoodScopeResponse) Descriptor() ([]byte, []int) {
 	return file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *DeleteAppGoodScopeResponse) GetInfo() *Scope {
+<<<<<<< HEAD
 =======
 // Deprecated: Use DeleteScopeResponse.ProtoReflect.Descriptor instead.
 func (*DeleteScopeResponse) Descriptor() ([]byte, []int) {
@@ -1350,6 +1553,8 @@ func (*DeleteAppGoodScopeResponse) Descriptor() ([]byte, []int) {
 
 func (x *DeleteAppGoodScopeResponse) GetInfo() *Scope {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 	if x != nil {
 		return x.Info
 	}
@@ -1358,8 +1563,11 @@ func (x *DeleteAppGoodScopeResponse) GetInfo() *Scope {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 type ExistAppGoodScopeCondsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1457,6 +1665,7 @@ func (x *ExistAppGoodScopeCondsResponse) GetInfo() bool {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type VerifyCouponScopesRequest struct {
 =======
 type VerifyCouponScopeRequest struct {
@@ -1464,17 +1673,24 @@ type VerifyCouponScopeRequest struct {
 =======
 type VerifyCouponScopesRequest struct {
 >>>>>>> c30c37510 (change to verifycouponscopes)
+=======
+type VerifyCouponScopesRequest struct {
+>>>>>>> master
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 	Infos []*ScopeReq `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
 }
 
 func (x *VerifyCouponScopesRequest) Reset() {
 	*x = VerifyCouponScopesRequest{}
+<<<<<<< HEAD
 =======
 	AppID       string         `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
 	GoodID      string         `protobuf:"bytes,20,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
@@ -1493,6 +1709,8 @@ func (x *VerifyCouponScopeRequest) Reset() {
 func (x *VerifyCouponScopesRequest) Reset() {
 	*x = VerifyCouponScopesRequest{}
 >>>>>>> c30c37510 (change to verifycouponscopes)
+=======
+>>>>>>> master
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1502,6 +1720,9 @@ func (x *VerifyCouponScopesRequest) Reset() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 func (x *VerifyCouponScopesRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -1509,6 +1730,7 @@ func (x *VerifyCouponScopesRequest) String() string {
 func (*VerifyCouponScopesRequest) ProtoMessage() {}
 
 func (x *VerifyCouponScopesRequest) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 =======
 func (x *VerifyCouponScopeRequest) String() string {
 =======
@@ -1525,6 +1747,8 @@ func (x *VerifyCouponScopeRequest) ProtoReflect() protoreflect.Message {
 =======
 func (x *VerifyCouponScopesRequest) ProtoReflect() protoreflect.Message {
 >>>>>>> c30c37510 (change to verifycouponscopes)
+=======
+>>>>>>> master
 	mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1538,6 +1762,9 @@ func (x *VerifyCouponScopesRequest) ProtoReflect() protoreflect.Message {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 // Deprecated: Use VerifyCouponScopesRequest.ProtoReflect.Descriptor instead.
 func (*VerifyCouponScopesRequest) Descriptor() ([]byte, []int) {
 	return file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDescGZIP(), []int{13}
@@ -1555,10 +1782,14 @@ type VerifyCouponScopesResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 }
 
 func (x *VerifyCouponScopesResponse) Reset() {
 	*x = VerifyCouponScopesResponse{}
+<<<<<<< HEAD
 =======
 // Deprecated: Use VerifyCouponScopeRequest.ProtoReflect.Descriptor instead.
 func (*VerifyCouponScopeRequest) Descriptor() ([]byte, []int) {
@@ -1594,6 +1825,8 @@ func (x *VerifyCouponScopeResponse) Reset() {
 func (x *VerifyCouponScopesResponse) Reset() {
 	*x = VerifyCouponScopesResponse{}
 >>>>>>> c30c37510 (change to verifycouponscopes)
+=======
+>>>>>>> master
 	if protoimpl.UnsafeEnabled {
 		mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1603,6 +1836,9 @@ func (x *VerifyCouponScopesResponse) Reset() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 func (x *VerifyCouponScopesResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -1610,6 +1846,7 @@ func (x *VerifyCouponScopesResponse) String() string {
 func (*VerifyCouponScopesResponse) ProtoMessage() {}
 
 func (x *VerifyCouponScopesResponse) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 =======
 func (x *VerifyCouponScopeResponse) String() string {
 =======
@@ -1626,6 +1863,8 @@ func (x *VerifyCouponScopeResponse) ProtoReflect() protoreflect.Message {
 =======
 func (x *VerifyCouponScopesResponse) ProtoReflect() protoreflect.Message {
 >>>>>>> c30c37510 (change to verifycouponscopes)
+=======
+>>>>>>> master
 	mi := &file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1639,11 +1878,15 @@ func (x *VerifyCouponScopesResponse) ProtoReflect() protoreflect.Message {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 // Deprecated: Use VerifyCouponScopesResponse.ProtoReflect.Descriptor instead.
 func (*VerifyCouponScopesResponse) Descriptor() ([]byte, []int) {
 	return file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDescGZIP(), []int{14}
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> 569d52611 (update scope)
@@ -1669,6 +1912,8 @@ func (x *VerifyCouponScopesResponse) GetInfo() bool {
 >>>>>>> 67f0a1dbd (add verifycouponscope method)
 =======
 >>>>>>> 79ebb581b (delete Info)
+=======
+>>>>>>> master
 var File_npool_inspire_mw_v1_coupon_app_scope_scope_proto protoreflect.FileDescriptor
 
 var file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDesc = []byte{
@@ -1690,6 +1935,9 @@ var file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 	0x74, 0x6f, 0x22, 0xac, 0x02, 0x0a, 0x08, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x52, 0x65, 0x71, 0x12,
 	0x13, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x02, 0x49,
 	0x44, 0x88, 0x01, 0x01, 0x12, 0x19, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x14, 0x20,
@@ -1832,6 +2080,9 @@ var file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDesc = []byte{
 	0x76, 0x31, 0x2e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x52, 0x65, 0x71, 0x52, 0x05, 0x49, 0x6e, 0x66,
 	0x6f, 0x73, 0x22, 0x1c, 0x0a, 0x1a, 0x56, 0x65, 0x72, 0x69, 0x66, 0x79, 0x43, 0x6f, 0x75, 0x70,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 	0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x32, 0xc9, 0x07, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12,
 	0x9d, 0x01, 0x0a, 0x12, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f,
@@ -1899,6 +2150,7 @@ var file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDesc = []byte{
 	0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x6d,
 	0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x2f, 0x61, 0x70, 0x70, 0x2f,
 	0x73, 0x63, 0x6f, 0x70, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 =======
 	0x74, 0x6f, 0x22, 0xfe, 0x01, 0x0a, 0x08, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x52, 0x65, 0x71, 0x12,
 =======
@@ -3089,6 +3341,8 @@ var file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDesc = []byte{
 	0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x2f, 0x61, 0x70, 0x70, 0x2f,
 	0x73, 0x63, 0x6f, 0x70, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 >>>>>>> 79ebb581b (delete Info)
+=======
+>>>>>>> master
 }
 
 var (
@@ -3106,6 +3360,9 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_rawDescGZIP() []byte 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 var file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_goTypes = []interface{}{
 	(*ScopeReq)(nil),                       // 0: inspire.middleware.coupon.app.scope.v1.ScopeReq
@@ -3124,6 +3381,9 @@ var file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_goTypes = []interface{
 	(*VerifyCouponScopesRequest)(nil),      // 13: inspire.middleware.coupon.app.scope.v1.VerifyCouponScopesRequest
 	(*VerifyCouponScopesResponse)(nil),     // 14: inspire.middleware.coupon.app.scope.v1.VerifyCouponScopesResponse
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 	(v1.CouponScope)(0),                    // 15: basetypes.inspire.v1.CouponScope
 	(v1.CouponType)(0),                     // 16: basetypes.inspire.v1.CouponType
 	(*v11.StringVal)(nil),                  // 17: basetypes.v1.StringVal
@@ -3166,6 +3426,7 @@ var file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_depIdxs = []int32{
 	18, // [18:18] is the sub-list for extension type_name
 	18, // [18:18] is the sub-list for extension extendee
 	0,  // [0:18] is the sub-list for field type_name
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 var file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
@@ -3372,6 +3633,8 @@ var file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_depIdxs = []int32{
 >>>>>>> 67f0a1dbd (add verifycouponscope method)
 =======
 >>>>>>> 3db4b034a (delete ScopeID)
+=======
+>>>>>>> master
 }
 
 func init() { file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() }
@@ -3419,6 +3682,7 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 		file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			switch v := v.(*CreateAppGoodScopeRequest); i {
 =======
 			switch v := v.(*CreateScopeRequest); i {
@@ -3426,6 +3690,9 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 =======
 			switch v := v.(*CreateAppGoodScopeRequest); i {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+			switch v := v.(*CreateAppGoodScopeRequest); i {
+>>>>>>> master
 			case 0:
 				return &v.state
 			case 1:
@@ -3439,6 +3706,7 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 		file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			switch v := v.(*CreateAppGoodScopeResponse); i {
 =======
 			switch v := v.(*CreateScopeResponse); i {
@@ -3446,6 +3714,9 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 =======
 			switch v := v.(*CreateAppGoodScopeResponse); i {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+			switch v := v.(*CreateAppGoodScopeResponse); i {
+>>>>>>> master
 			case 0:
 				return &v.state
 			case 1:
@@ -3459,6 +3730,7 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 		file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			switch v := v.(*GetAppGoodScopeRequest); i {
 =======
 			switch v := v.(*GetScopeRequest); i {
@@ -3466,6 +3738,9 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 =======
 			switch v := v.(*GetAppGoodScopeRequest); i {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+			switch v := v.(*GetAppGoodScopeRequest); i {
+>>>>>>> master
 			case 0:
 				return &v.state
 			case 1:
@@ -3479,6 +3754,7 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 		file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			switch v := v.(*GetAppGoodScopeResponse); i {
 =======
 			switch v := v.(*GetScopeResponse); i {
@@ -3486,6 +3762,9 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 =======
 			switch v := v.(*GetAppGoodScopeResponse); i {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+			switch v := v.(*GetAppGoodScopeResponse); i {
+>>>>>>> master
 			case 0:
 				return &v.state
 			case 1:
@@ -3499,6 +3778,7 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 		file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			switch v := v.(*GetAppGoodScopesRequest); i {
 =======
 			switch v := v.(*GetScopesRequest); i {
@@ -3506,6 +3786,9 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 =======
 			switch v := v.(*GetAppGoodScopesRequest); i {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+			switch v := v.(*GetAppGoodScopesRequest); i {
+>>>>>>> master
 			case 0:
 				return &v.state
 			case 1:
@@ -3519,6 +3802,7 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 		file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			switch v := v.(*GetAppGoodScopesResponse); i {
 =======
 			switch v := v.(*GetScopesResponse); i {
@@ -3526,6 +3810,9 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 =======
 			switch v := v.(*GetAppGoodScopesResponse); i {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+			switch v := v.(*GetAppGoodScopesResponse); i {
+>>>>>>> master
 			case 0:
 				return &v.state
 			case 1:
@@ -3539,6 +3826,7 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 		file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			switch v := v.(*DeleteAppGoodScopeRequest); i {
 =======
 			switch v := v.(*DeleteScopeRequest); i {
@@ -3546,6 +3834,9 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 =======
 			switch v := v.(*DeleteAppGoodScopeRequest); i {
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+			switch v := v.(*DeleteAppGoodScopeRequest); i {
+>>>>>>> master
 			case 0:
 				return &v.state
 			case 1:
@@ -3559,8 +3850,11 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 		file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 			switch v := v.(*DeleteAppGoodScopeResponse); i {
 			case 0:
 				return &v.state
@@ -3586,6 +3880,7 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 		}
 		file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistAppGoodScopeCondsResponse); i {
+<<<<<<< HEAD
 <<<<<<< HEAD
 			case 0:
 				return &v.state
@@ -3616,6 +3911,8 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 >>>>>>> 569d52611 (update scope)
 =======
 >>>>>>> d834bcbdf (update appgoodscope)
+=======
+>>>>>>> master
 			case 0:
 				return &v.state
 			case 1:
@@ -3662,6 +3959,7 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			NumMessages:   15,
 =======
 			NumMessages:   11,
@@ -3672,6 +3970,9 @@ func file_npool_inspire_mw_v1_coupon_app_scope_scope_proto_init() {
 =======
 			NumMessages:   15,
 >>>>>>> 67f0a1dbd (add verifycouponscope method)
+=======
+			NumMessages:   15,
+>>>>>>> master
 			NumExtensions: 0,
 			NumServices:   1,
 		},

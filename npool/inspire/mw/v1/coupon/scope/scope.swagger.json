@@ -53,6 +53,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -61,6 +64,7 @@
         },
         "CouponIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 2af3a1403 (update scope)
@@ -99,6 +103,8 @@
         },
         "CouponIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+=======
+>>>>>>> master
         },
         "CouponScope": {
           "$ref": "#/definitions/v1Uint32Val"
@@ -145,10 +151,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 7b4ce1d7e (add ExistScopeConds)
 =======
 >>>>>>> 1696c7238 (add ExistScopeConds)
+=======
+>>>>>>> master
     "v1ExistScopeCondsResponse": {
       "type": "object",
       "properties": {
@@ -159,6 +168,7 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e2ba5c456 (update scope)
 =======
@@ -167,6 +177,8 @@
 >>>>>>> 2af3a1403 (update scope)
 =======
 >>>>>>> 1696c7238 (add ExistScopeConds)
+=======
+>>>>>>> master
     "v1GetScopeResponse": {
       "type": "object",
       "properties": {
@@ -200,6 +212,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
         "GoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
@@ -218,6 +233,7 @@
         },
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 2af3a1403 (update scope)
@@ -267,6 +283,8 @@
         },
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
+=======
+>>>>>>> master
         },
         "CouponScopeStr": {
           "type": "string",
@@ -283,6 +301,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
         "CouponDenomination": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
@@ -290,6 +311,7 @@
         "CouponCirculation": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_circulation\""
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -336,6 +358,8 @@
 >>>>>>> 3f5158662 (fix wrong word)
 =======
 >>>>>>> 569d52611 (update scope)
+=======
+>>>>>>> master
         },
         "CreatedAt": {
           "type": "integer",
@@ -358,6 +382,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "GoodID": {
 =======
 =======
@@ -373,6 +398,9 @@
 =======
         "GoodID": {
 >>>>>>> 569d52611 (update scope)
+=======
+        "GoodID": {
+>>>>>>> master
           "type": "string"
         },
         "CouponScope": {
@@ -382,6 +410,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
         "CouponID": {
           "type": "string"
         }
@@ -398,6 +429,7 @@
           "items": {
             "type": "string"
           }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -420,6 +452,8 @@
 >>>>>>> f7ba44c19 (change to CouponID)
 =======
 >>>>>>> 0be619288 (add CouponIDs conds)
+=======
+>>>>>>> master
         }
       }
     },
@@ -449,6 +483,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 2af3a1403 (update scope)
@@ -468,6 +503,8 @@
 >>>>>>> 2af3a1403 (update scope)
 =======
 >>>>>>> 93c017168 (delete update)
+=======
+>>>>>>> master
     }
   }
 }

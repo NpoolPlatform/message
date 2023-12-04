@@ -464,6 +464,7 @@
         "ID": {
           "type": "integer",
           "format": "int64",
+<<<<<<< HEAD
 =======
         "EntID": {
           "type": "string",
@@ -473,6 +474,8 @@
           "type": "integer",
           "format": "int64",
 >>>>>>> d5be11d2e (Add ID to req)
+=======
+>>>>>>> master
           "title": "Base"
         },
         "EntID": {

@@ -140,15 +140,19 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 7ec96802f (add CouponScope in Coupon)
 =======
 >>>>>>> 69b822e19 (add CouponScope in Coupon)
+=======
+>>>>>>> master
         "CouponScopeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_scope\""
         },
         "CouponScope": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -203,6 +207,10 @@
 >>>>>>> fe359a10c (fix wrong name)
         },
 >>>>>>> 69b822e19 (add CouponScope in Coupon)
+=======
+          "$ref": "#/definitions/v1CouponScope"
+        },
+>>>>>>> master
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -288,6 +296,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -325,6 +334,11 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
 >>>>>>> 3b78b9c40 (add CouponScope in Coupon)
+=======
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+>>>>>>> master
         }
       }
     },

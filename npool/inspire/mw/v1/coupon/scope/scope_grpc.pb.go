@@ -23,6 +23,7 @@ const (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Middleware_CreateScope_FullMethodName     = "/inspire.middleware.coupon.scope.v1.Middleware/CreateScope"
 =======
 	Middleware_CreateScope_FullMethodName     = "/inspire.middleware.coupon.scope.v1.Middleware/CreateScope"
@@ -38,10 +39,14 @@ const (
 >>>>>>> 1696c7238 (add ExistScopeConds)
 =======
 >>>>>>> 93c017168 (delete update)
+=======
+	Middleware_CreateScope_FullMethodName     = "/inspire.middleware.coupon.scope.v1.Middleware/CreateScope"
+>>>>>>> master
 	Middleware_ExistScopeConds_FullMethodName = "/inspire.middleware.coupon.scope.v1.Middleware/ExistScopeConds"
 	Middleware_GetScope_FullMethodName        = "/inspire.middleware.coupon.scope.v1.Middleware/GetScope"
 	Middleware_GetScopes_FullMethodName       = "/inspire.middleware.coupon.scope.v1.Middleware/GetScopes"
 	Middleware_DeleteScope_FullMethodName     = "/inspire.middleware.coupon.scope.v1.Middleware/DeleteScope"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -60,6 +65,8 @@ const (
 >>>>>>> 2af3a1403 (update scope)
 =======
 >>>>>>> 1696c7238 (add ExistScopeConds)
+=======
+>>>>>>> master
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -67,6 +74,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateScope(ctx context.Context, in *CreateScopeRequest, opts ...grpc.CallOption) (*CreateScopeResponse, error)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -90,6 +98,9 @@ type MiddlewareClient interface {
 =======
 	ExistScopeConds(ctx context.Context, in *ExistScopeCondsRequest, opts ...grpc.CallOption) (*ExistScopeCondsResponse, error)
 >>>>>>> 1696c7238 (add ExistScopeConds)
+=======
+	ExistScopeConds(ctx context.Context, in *ExistScopeCondsRequest, opts ...grpc.CallOption) (*ExistScopeCondsResponse, error)
+>>>>>>> master
 	GetScope(ctx context.Context, in *GetScopeRequest, opts ...grpc.CallOption) (*GetScopeResponse, error)
 	GetScopes(ctx context.Context, in *GetScopesRequest, opts ...grpc.CallOption) (*GetScopesResponse, error)
 	DeleteScope(ctx context.Context, in *DeleteScopeRequest, opts ...grpc.CallOption) (*DeleteScopeResponse, error)
@@ -116,6 +127,7 @@ func (c *middlewareClient) CreateScope(ctx context.Context, in *CreateScopeReque
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 func (c *middlewareClient) ExistScopeConds(ctx context.Context, in *ExistScopeCondsRequest, opts ...grpc.CallOption) (*ExistScopeCondsResponse, error) {
 	out := new(ExistScopeCondsResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistScopeConds_FullMethodName, in, out, opts...)
@@ -148,6 +160,8 @@ func (c *middlewareClient) UpdateScope(ctx context.Context, in *UpdateScopeReque
 
 =======
 >>>>>>> 93c017168 (delete update)
+=======
+>>>>>>> master
 func (c *middlewareClient) ExistScopeConds(ctx context.Context, in *ExistScopeCondsRequest, opts ...grpc.CallOption) (*ExistScopeCondsResponse, error) {
 	out := new(ExistScopeCondsResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistScopeConds_FullMethodName, in, out, opts...)
@@ -193,6 +207,7 @@ type MiddlewareServer interface {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9de0afdf4 (delete update)
 =======
@@ -212,6 +227,9 @@ type MiddlewareServer interface {
 =======
 	ExistScopeConds(context.Context, *ExistScopeCondsRequest) (*ExistScopeCondsResponse, error)
 >>>>>>> 1696c7238 (add ExistScopeConds)
+=======
+	ExistScopeConds(context.Context, *ExistScopeCondsRequest) (*ExistScopeCondsResponse, error)
+>>>>>>> master
 	GetScope(context.Context, *GetScopeRequest) (*GetScopeResponse, error)
 	GetScopes(context.Context, *GetScopesRequest) (*GetScopesResponse, error)
 	DeleteScope(context.Context, *DeleteScopeRequest) (*DeleteScopeResponse, error)
@@ -225,6 +243,7 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) CreateScope(context.Context, *CreateScopeRequest) (*CreateScopeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateScope not implemented")
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -247,6 +266,8 @@ func (UnimplementedMiddlewareServer) UpdateScope(context.Context, *UpdateScopeRe
 }
 =======
 >>>>>>> 93c017168 (delete update)
+=======
+>>>>>>> master
 func (UnimplementedMiddlewareServer) ExistScopeConds(context.Context, *ExistScopeCondsRequest) (*ExistScopeCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistScopeConds not implemented")
 }
@@ -290,6 +311,7 @@ func _Middleware_CreateScope_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -359,6 +381,8 @@ func _Middleware_ExistScopeConds_Handler(srv interface{}, ctx context.Context, d
 
 =======
 >>>>>>> 93c017168 (delete update)
+=======
+>>>>>>> master
 func _Middleware_ExistScopeConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistScopeCondsRequest)
 	if err := dec(in); err != nil {
@@ -447,6 +471,7 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			MethodName: "ExistScopeConds",
 			Handler:    _Middleware_ExistScopeConds_Handler,
 =======
@@ -467,6 +492,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 =======
 >>>>>>> 93c017168 (delete update)
+=======
+>>>>>>> master
 			MethodName: "ExistScopeConds",
 			Handler:    _Middleware_ExistScopeConds_Handler,
 		},
