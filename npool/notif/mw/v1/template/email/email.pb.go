@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // 	protoc-gen-go v1.27.1
 =======
 // 	protoc-gen-go v1.31.0
@@ -25,6 +26,9 @@
 =======
 // 	protoc-gen-go v1.31.0
 >>>>>>> 12ef4547d (Add auto increment id)
+=======
+// 	protoc-gen-go v1.27.1
+>>>>>>> 53161d938 (generate rebase proto)
 // 	protoc        v3.18.1
 // source: npool/notif/mw/v1/template/email/email.proto
 
@@ -1552,10 +1556,13 @@ var file_npool_notif_mw_v1_template_email_email_proto_goTypes = []interface{}{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	(*UpdateEmailTemplateRequest)(nil),      // 11: notif.middleware.template.email.v1.UpdateEmailTemplateRequest
 	(*UpdateEmailTemplateResponse)(nil),     // 12: notif.middleware.template.email.v1.UpdateEmailTemplateResponse
 	(*ExistEmailTemplateRequest)(nil),       // 13: notif.middleware.template.email.v1.ExistEmailTemplateRequest
@@ -1572,6 +1579,9 @@ var file_npool_notif_mw_v1_template_email_email_proto_goTypes = []interface{}{
 	(*v1.Uint32SliceVal)(nil),               // 24: basetypes.v1.Uint32SliceVal
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
 	19, // 0: notif.middleware.template.email.v1.EmailTemplate.UsedFor:type_name -> basetypes.v1.UsedFor
@@ -1585,6 +1595,7 @@ var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
 	23, // 8: notif.middleware.template.email.v1.Conds.AppIDs:type_name -> basetypes.v1.StringSliceVal
 	23, // 9: notif.middleware.template.email.v1.Conds.LangIDs:type_name -> basetypes.v1.StringSliceVal
 	24, // 10: notif.middleware.template.email.v1.Conds.UsedFors:type_name -> basetypes.v1.Uint32SliceVal
+<<<<<<< HEAD
 =======
 	(*GetEmailTemplateOnlyRequest)(nil),     // 11: notif.middleware.template.email.v1.GetEmailTemplateOnlyRequest
 	(*GetEmailTemplateOnlyResponse)(nil),    // 12: notif.middleware.template.email.v1.GetEmailTemplateOnlyResponse
@@ -1641,6 +1652,8 @@ var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	1,  // 11: notif.middleware.template.email.v1.CreateEmailTemplateRequest.Info:type_name -> notif.middleware.template.email.v1.EmailTemplateReq
 	0,  // 12: notif.middleware.template.email.v1.CreateEmailTemplateResponse.Info:type_name -> notif.middleware.template.email.v1.EmailTemplate
 	1,  // 13: notif.middleware.template.email.v1.CreateEmailTemplatesRequest.Infos:type_name -> notif.middleware.template.email.v1.EmailTemplateReq
@@ -1652,10 +1665,13 @@ var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	1,  // 18: notif.middleware.template.email.v1.UpdateEmailTemplateRequest.Info:type_name -> notif.middleware.template.email.v1.EmailTemplateReq
 	0,  // 19: notif.middleware.template.email.v1.UpdateEmailTemplateResponse.Info:type_name -> notif.middleware.template.email.v1.EmailTemplate
 	2,  // 20: notif.middleware.template.email.v1.ExistEmailTemplateCondsRequest.Conds:type_name -> notif.middleware.template.email.v1.Conds
@@ -1682,6 +1698,7 @@ var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
 	23, // [23:23] is the sub-list for extension type_name
 	23, // [23:23] is the sub-list for extension extendee
 	0,  // [0:23] is the sub-list for field type_name
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1725,6 +1742,8 @@ var file_npool_notif_mw_v1_template_email_email_proto_depIdxs = []int32{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func init() { file_npool_notif_mw_v1_template_email_email_proto_init() }

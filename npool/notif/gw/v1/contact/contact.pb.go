@@ -615,6 +615,7 @@ type UpdateContactRequest struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EntID       string         `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 =======
 >>>>>>> a8aaa956a (Change id to entid)
@@ -626,6 +627,9 @@ type UpdateContactRequest struct {
 =======
 	EntID       string         `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 >>>>>>> 96dc04b8f (Add entid check)
+=======
+	EntID       string         `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
+>>>>>>> 53161d938 (generate rebase proto)
 	AppID       string         `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
 	Account     *string        `protobuf:"bytes,30,opt,name=Account,proto3,oneof" json:"Account,omitempty"`
 	AccountType *v1.SignMethod `protobuf:"varint,40,opt,name=AccountType,proto3,enum=basetypes.v1.SignMethod,oneof" json:"AccountType,omitempty"`
@@ -671,6 +675,7 @@ func (x *UpdateContactRequest) GetID() uint32 {
 	return 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 func (x *UpdateContactRequest) GetEntID() string {
@@ -689,6 +694,8 @@ func (x *UpdateContactRequest) GetEntID() string {
 	return ""
 =======
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func (x *UpdateContactRequest) GetEntID() string {
@@ -783,6 +790,7 @@ type UpdateAppContactRequest struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EntID       string         `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 =======
 >>>>>>> a8aaa956a (Change id to entid)
@@ -794,6 +802,9 @@ type UpdateAppContactRequest struct {
 =======
 	EntID       string         `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 >>>>>>> 96dc04b8f (Add entid check)
+=======
+	EntID       string         `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
+>>>>>>> 53161d938 (generate rebase proto)
 	TargetAppID string         `protobuf:"bytes,20,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
 	Account     *string        `protobuf:"bytes,30,opt,name=Account,proto3,oneof" json:"Account,omitempty"`
 	AccountType *v1.SignMethod `protobuf:"varint,40,opt,name=AccountType,proto3,enum=basetypes.v1.SignMethod,oneof" json:"AccountType,omitempty"`
@@ -839,6 +850,7 @@ func (x *UpdateAppContactRequest) GetID() uint32 {
 	return 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 func (x *UpdateAppContactRequest) GetEntID() string {
@@ -857,6 +869,8 @@ func (x *UpdateAppContactRequest) GetEntID() string {
 	return ""
 =======
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func (x *UpdateAppContactRequest) GetEntID() string {
@@ -1164,6 +1178,9 @@ var file_npool_notif_gw_v1_contact_contact_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0xf6, 0x01, 0x0a, 0x14, 0x55, 0x70, 0x64,
 	0x61, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x49,
@@ -1303,6 +1320,7 @@ var file_npool_notif_gw_v1_contact_contact_proto_rawDesc = []byte{
 	0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2f, 0x67, 0x77, 0x2f,
 	0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x33,
+<<<<<<< HEAD
 =======
 	0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0xe0, 0x01, 0x0a, 0x14, 0x55, 0x70, 0x64,
 =======
@@ -1620,6 +1638,8 @@ var file_npool_notif_gw_v1_contact_contact_proto_rawDesc = []byte{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 96dc04b8f (Add entid check)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 var (

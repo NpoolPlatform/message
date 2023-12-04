@@ -99,6 +99,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e8948f8dc (delete get app scopes)
 =======
@@ -338,6 +339,8 @@
 >>>>>>> 56bff6edf (update scope pb)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     "/v1/get/scopes": {
       "post": {
         "operationId": "Gateway_GetScopes",
@@ -441,6 +444,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "GoodID": {
 =======
         "AppID": {
@@ -498,11 +502,15 @@
 =======
         "GoodID": {
 >>>>>>> b20bec5db (update scope)
+=======
+        "GoodID": {
+>>>>>>> 53161d938 (generate rebase proto)
           "type": "string"
         },
         "CouponID": {
           "type": "string"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -547,6 +555,8 @@
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         }
@@ -572,6 +582,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         },
         "TargetAppID": {
@@ -610,6 +621,8 @@
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         }
       }
     },
@@ -621,6 +634,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -938,6 +952,11 @@
       "type": "object",
       "properties": {
 >>>>>>> b20bec5db (update scope)
+=======
+    "v1GetScopesRequest": {
+      "type": "object",
+      "properties": {
+>>>>>>> 53161d938 (generate rebase proto)
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -984,16 +1003,20 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
 >>>>>>> c3156b2f2 (add coupon scope in gw)
 =======
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "GoodID": {
           "type": "string"
         },
         "GoodTitle": {
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 3a2981d70 (add coupon scope in gw)
@@ -1041,6 +1064,8 @@
         },
         "GoodTitle": {
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
           "type": "string"
         },
         "CouponID": {
@@ -1056,12 +1081,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eb5c69d26 (add coupon scope in gw)
 =======
 >>>>>>> c3156b2f2 (add coupon scope in gw)
 =======
 >>>>>>> 0b22a17fb (make AppGoodID must)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
         },
@@ -1071,6 +1099,7 @@
         "CouponCirculation": {
           "type": "string"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1137,6 +1166,8 @@
 >>>>>>> 6dc6b83d5 (add coupon scope in gw)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "CouponDenomination": {
           "type": "string"
         },

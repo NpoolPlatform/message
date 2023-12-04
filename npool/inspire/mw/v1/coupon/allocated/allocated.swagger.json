@@ -39,6 +39,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -214,6 +215,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           "title": "@inject_tag: sql:\"coupon_scope\""
 =======
           "title": "@inject_tag: sql:\"coupon_constraint\""
@@ -257,6 +259,9 @@
 =======
           "title": "@inject_tag: sql:\"coupon_scope\""
 >>>>>>> 7cc32f688 (fix wrong tag)
+=======
+          "title": "@inject_tag: sql:\"coupon_scope\""
+>>>>>>> 53161d938 (generate rebase proto)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
@@ -361,6 +366,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Coupon"
           }
         },
@@ -420,6 +426,7 @@
       "properties": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "Infos": {
 =======
         "Info": {
@@ -427,8 +434,12 @@
 =======
         "Infos": {
 >>>>>>> 2d1271a2f (change to infos & add UsedAt)
+=======
+        "Infos": {
+>>>>>>> 53161d938 (generate rebase proto)
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Coupon"
           }
         }

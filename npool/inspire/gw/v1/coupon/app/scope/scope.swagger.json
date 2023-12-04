@@ -54,6 +54,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -110,6 +111,8 @@
 >>>>>>> b20bec5db (update scope)
 =======
 >>>>>>> 4dcc07bdf (delete createappscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     "/v1/delete/appgoodscope": {
       "post": {
         "operationId": "Gateway_DeleteAppGoodScope",
@@ -149,6 +152,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 6712e122f (update scope)
 =======
@@ -157,6 +161,8 @@
 >>>>>>> b20bec5db (update scope)
 =======
 >>>>>>> 4dcc07bdf (delete createappscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     "/v1/get/appgoodscopes": {
       "post": {
         "operationId": "Gateway_GetAppGoodScopes",
@@ -168,10 +174,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> b20bec5db (update scope)
 =======
 >>>>>>> fa9719ac3 (update req)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
             }
           },
           "default": {
@@ -195,6 +204,7 @@
           "Gateway"
         ]
       }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -294,6 +304,8 @@
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     }
   },
   "definitions": {
@@ -361,14 +373,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> b695b1f4b (update req)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "AppID": {
           "type": "string"
         },
         "CouponID": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -410,6 +426,8 @@
 >>>>>>> b20bec5db (update scope)
 =======
 >>>>>>> e1bcdac3f (delete ScopeID)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
           "type": "string"
         },
         "AppGoodID": {
@@ -428,6 +446,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -477,11 +496,14 @@
 >>>>>>> b20bec5db (update scope)
 =======
 >>>>>>> 4dcc07bdf (delete createappscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     "v1DeleteAppGoodScopeRequest": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -521,6 +543,11 @@
         "AppID": {
           "type": "string"
 >>>>>>> dd939f282 (delete ScopeID)
+=======
+        },
+        "AppID": {
+          "type": "string"
+>>>>>>> 53161d938 (generate rebase proto)
         }
       }
     },
@@ -539,6 +566,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 6712e122f (update scope)
 =======
@@ -547,6 +575,8 @@
 >>>>>>> b20bec5db (update scope)
 =======
 >>>>>>> fa9719ac3 (update req)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     "v1GetAppGoodScopesRequest": {
       "type": "object",
       "properties": {
@@ -657,18 +687,22 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 789287843 (update scope)
 =======
 >>>>>>> 569d52611 (update scope)
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     "v1Scope": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -715,12 +749,15 @@
 =======
 =======
 >>>>>>> 9755e1647 (return appid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "GoodID": {
           "type": "string"
         },
         "AppID": {
           "type": "string"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 614c347ff (return appid)
 >>>>>>> 7fbe0f2f5 (return appid)
@@ -733,6 +770,8 @@
 >>>>>>> fa9719ac3 (update req)
 =======
 >>>>>>> 9755e1647 (return appid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "AppGoodID": {
           "type": "string"
         },
@@ -751,6 +790,7 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -784,6 +824,9 @@
 =======
         "CouponDenomination": {
 >>>>>>> 2078ff30e (fix wrong attr)
+=======
+        "CouponDenomination": {
+>>>>>>> 53161d938 (generate rebase proto)
           "type": "string"
         },
         "CreatedAt": {

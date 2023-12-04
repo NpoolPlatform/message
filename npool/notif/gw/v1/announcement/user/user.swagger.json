@@ -340,6 +340,7 @@
           "format": "int64"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         "EntID": {
           "type": "string"
@@ -350,6 +351,8 @@
           "type": "string"
 =======
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         },
         "EntID": {
           "type": "string"
@@ -375,6 +378,7 @@
           "format": "int64"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         "EntID": {
           "type": "string"
@@ -385,6 +389,8 @@
           "type": "string"
 =======
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         },
         "EntID": {
           "type": "string"

@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // 	protoc-gen-go v1.30.0
 =======
 // 	protoc-gen-go v1.31.0
@@ -17,6 +18,9 @@
 =======
 // 	protoc-gen-go v1.31.0
 >>>>>>> 8eb981ff1 (Add auto increment id)
+=======
+// 	protoc-gen-go v1.27.1
+>>>>>>> 53161d938 (generate rebase proto)
 // 	protoc        v3.18.1
 // source: npool/chain/mw/v1/coin/coin.proto
 

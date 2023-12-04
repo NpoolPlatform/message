@@ -653,6 +653,7 @@ func (x *GetAnnouncementUsersResponse) GetTotal() uint32 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 type GetAnnouncementUserOnlyRequest struct {
 	state         protoimpl.MessageState
@@ -847,6 +848,8 @@ func (x *ExistAnnouncementUserResponse) GetInfo() bool {
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 type ExistAnnouncementUserCondsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1123,6 +1126,7 @@ var file_npool_notif_mw_v1_announcement_user_user_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a8aaa956a (Change id to entid)
@@ -1148,6 +1152,8 @@ var file_npool_notif_mw_v1_announcement_user_user_proto_rawDesc = []byte{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x65, 0x6e, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x32, 0x0a,
 	0x1a, 0x47, 0x65, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74,
 	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x45,
@@ -1180,16 +1186,22 @@ var file_npool_notif_mw_v1_announcement_user_user_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x67, 0x0a, 0x21, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x6e,
 	0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f,
 	0x6e, 0x64, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x42, 0x0a, 0x05, 0x43, 0x6f,
 	0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x6e, 0x6f, 0x74, 0x69,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e,
 	0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76,
 	0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x22, 0x38,
@@ -1270,6 +1282,7 @@ var file_npool_notif_mw_v1_announcement_user_user_proto_rawDesc = []byte{
 	0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x6e, 0x6e,
 	0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x62, 0x06,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 =======
 	0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x64, 0x0a, 0x1e, 0x47, 0x65, 0x74, 0x41, 0x6e, 0x6e, 0x6f,
 	0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x55, 0x73, 0x65, 0x72, 0x4f, 0x6e, 0x6c, 0x79,
@@ -1522,6 +1535,8 @@ var file_npool_notif_mw_v1_announcement_user_user_proto_rawDesc = []byte{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 var (
@@ -1546,10 +1561,13 @@ var file_npool_notif_mw_v1_announcement_user_user_proto_goTypes = []interface{}{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	(*GetAnnouncementUserRequest)(nil),         // 5: notif.middleware.announcement.user.v1.GetAnnouncementUserRequest
 	(*GetAnnouncementUserResponse)(nil),        // 6: notif.middleware.announcement.user.v1.GetAnnouncementUserResponse
 	(*GetAnnouncementUsersRequest)(nil),        // 7: notif.middleware.announcement.user.v1.GetAnnouncementUsersRequest
@@ -1562,6 +1580,9 @@ var file_npool_notif_mw_v1_announcement_user_user_proto_goTypes = []interface{}{
 	(*v1.StringVal)(nil),                       // 14: basetypes.v1.StringVal
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 var file_npool_notif_mw_v1_announcement_user_user_proto_depIdxs = []int32{
 	13, // 0: notif.middleware.announcement.user.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
@@ -1592,6 +1613,7 @@ var file_npool_notif_mw_v1_announcement_user_user_proto_depIdxs = []int32{
 	13, // [13:13] is the sub-list for extension type_name
 	13, // [13:13] is the sub-list for extension extendee
 	0,  // [0:13] is the sub-list for field type_name
+<<<<<<< HEAD
 =======
 	(*UpdateAnnouncementUserRequest)(nil),      // 5: notif.middleware.announcement.user.v1.UpdateAnnouncementUserRequest
 	(*UpdateAnnouncementUserResponse)(nil),     // 6: notif.middleware.announcement.user.v1.UpdateAnnouncementUserResponse
@@ -1699,6 +1721,8 @@ var file_npool_notif_mw_v1_announcement_user_user_proto_depIdxs = []int32{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func init() { file_npool_notif_mw_v1_announcement_user_user_proto_init() }

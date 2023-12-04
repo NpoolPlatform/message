@@ -956,6 +956,7 @@ func (x *UpdateContactResponse) GetInfo() *Contact {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 type ExistContactRequest struct {
 	state         protoimpl.MessageState
@@ -1056,6 +1057,8 @@ func (x *ExistContactResponse) GetInfo() bool {
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 type ExistContactCondsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1254,10 +1257,13 @@ var file_npool_notif_mw_v1_contact_contact_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d2edc29a2 (Add contact api)
 =======
 >>>>>>> d2edc29a2 (Add contact api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61,
 	0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65,
@@ -1370,6 +1376,9 @@ var file_npool_notif_mw_v1_contact_contact_proto_rawDesc = []byte{
 	0x09, 0x52, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x22, 0x4e, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x43,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x38,
 	0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x6e,
 	0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
@@ -1480,6 +1489,7 @@ var file_npool_notif_mw_v1_contact_contact_proto_rawDesc = []byte{
 	0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6e,
 	0x6f, 0x74, 0x69, 0x66, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x61,
 	0x63, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 =======
 	0x61, 0x63, 0x74, 0x2e, 0x76, 0x31, 0x1a, 0x1e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61,
 	0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6e, 0x64, 0x73,
@@ -1987,6 +1997,8 @@ var file_npool_notif_mw_v1_contact_contact_proto_rawDesc = []byte{
 	0x6f, 0x74, 0x69, 0x66, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x61,
 	0x63, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 >>>>>>> d2edc29a2 (Add contact api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 var (
@@ -2018,10 +2030,13 @@ var file_npool_notif_mw_v1_contact_contact_proto_goTypes = []interface{}{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	(*UpdateContactRequest)(nil),      // 12: notif.middleware.contact.v1.UpdateContactRequest
 	(*UpdateContactResponse)(nil),     // 13: notif.middleware.contact.v1.UpdateContactResponse
 	(*ExistContactCondsRequest)(nil),  // 14: notif.middleware.contact.v1.ExistContactCondsRequest
@@ -2034,6 +2049,9 @@ var file_npool_notif_mw_v1_contact_contact_proto_goTypes = []interface{}{
 	(*v1.StringVal)(nil),              // 21: basetypes.v1.StringVal
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 var file_npool_notif_mw_v1_contact_contact_proto_depIdxs = []int32{
 	18, // 0: notif.middleware.contact.v1.ContactReq.AccountType:type_name -> basetypes.v1.SignMethod
@@ -2046,6 +2064,7 @@ var file_npool_notif_mw_v1_contact_contact_proto_depIdxs = []int32{
 	20, // 7: notif.middleware.contact.v1.Conds.AccountType:type_name -> basetypes.v1.Uint32Val
 	20, // 8: notif.middleware.contact.v1.Conds.UsedFor:type_name -> basetypes.v1.Uint32Val
 	19, // 9: notif.middleware.contact.v1.GenerateContactRequest.UsedFor:type_name -> basetypes.v1.UsedFor
+<<<<<<< HEAD
 =======
 	(*GetContactOnlyRequest)(nil),     // 12: notif.middleware.contact.v1.GetContactOnlyRequest
 	(*GetContactOnlyResponse)(nil),    // 13: notif.middleware.contact.v1.GetContactOnlyResponse
@@ -2098,6 +2117,8 @@ var file_npool_notif_mw_v1_contact_contact_proto_depIdxs = []int32{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	3,  // 10: notif.middleware.contact.v1.GenerateContactResponse.Info:type_name -> notif.middleware.contact.v1.TextInfo
 	0,  // 11: notif.middleware.contact.v1.CreateContactRequest.Info:type_name -> notif.middleware.contact.v1.ContactReq
 	1,  // 12: notif.middleware.contact.v1.CreateContactResponse.Info:type_name -> notif.middleware.contact.v1.Contact
@@ -2108,10 +2129,13 @@ var file_npool_notif_mw_v1_contact_contact_proto_depIdxs = []int32{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0,  // 16: notif.middleware.contact.v1.UpdateContactRequest.Info:type_name -> notif.middleware.contact.v1.ContactReq
 	1,  // 17: notif.middleware.contact.v1.UpdateContactResponse.Info:type_name -> notif.middleware.contact.v1.Contact
 	2,  // 18: notif.middleware.contact.v1.ExistContactCondsRequest.Conds:type_name -> notif.middleware.contact.v1.Conds
@@ -2136,6 +2160,7 @@ var file_npool_notif_mw_v1_contact_contact_proto_depIdxs = []int32{
 	21, // [21:21] is the sub-list for extension type_name
 	21, // [21:21] is the sub-list for extension extendee
 	0,  // [0:21] is the sub-list for field type_name
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -2179,6 +2204,8 @@ var file_npool_notif_mw_v1_contact_contact_proto_depIdxs = []int32{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func init() { file_npool_notif_mw_v1_contact_contact_proto_init() }

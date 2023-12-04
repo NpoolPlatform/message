@@ -780,6 +780,7 @@ func (x *GetSendStateResponse) GetInfo() *SendState {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 type GetSendStateOnlyRequest struct {
 	state         protoimpl.MessageState
@@ -974,6 +975,8 @@ func (x *ExistSendStateResponse) GetInfo() bool {
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 type ExistSendStateCondsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1175,10 +1178,13 @@ var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_rawDesc = []by
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 0258996af (Add sendstate api)
 =======
 >>>>>>> 0258996af (Add sendstate api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x61, 0x74, 0x65, 0x2e, 0x76, 0x31, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61,
 	0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x20, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65,
@@ -1238,6 +1244,9 @@ var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_rawDesc = []by
 	0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x62, 0x61,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e,
 	0x67, 0x56, 0x61, 0x6c, 0x48, 0x02, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x88, 0x01, 0x01,
 	0x12, 0x34, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x0b,
@@ -1380,6 +1389,7 @@ var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_rawDesc = []by
 	0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e,
 	0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x65, 0x6e, 0x64, 0x73, 0x74,
 	0x61, 0x74, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x65, 0x6e, 0x64, 0x53, 0x74,
+<<<<<<< HEAD
 =======
 	0x61, 0x74, 0x65, 0x2e, 0x76, 0x31, 0x1a, 0x20, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61,
 	0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x68, 0x61, 0x6e, 0x6e,
@@ -2087,6 +2097,8 @@ var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_rawDesc = []by
 	0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e,
 	0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x73, 0x65, 0x6e, 0x64, 0x73, 0x74,
 	0x61, 0x74, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x65, 0x6e, 0x64, 0x53, 0x74,
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0xa8, 0x01,
 	0x0a, 0x13, 0x45, 0x78, 0x69, 0x73, 0x74, 0x53, 0x65, 0x6e, 0x64, 0x53, 0x74, 0x61, 0x74, 0x65,
 	0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x46, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69,
@@ -2118,6 +2130,7 @@ var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_rawDesc = []by
 	0x6e, 0x74, 0x2f, 0x73, 0x65, 0x6e, 0x64, 0x73, 0x74, 0x61, 0x74, 0x65, 0x62, 0x06, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x33,
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 0258996af (Add sendstate api)
 =======
 >>>>>>> a8aaa956a (Change id to entid)
@@ -2125,6 +2138,8 @@ var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_rawDesc = []by
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 0258996af (Add sendstate api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 var (
@@ -2155,10 +2170,13 @@ var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_goTypes = []in
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	(*ExistSendStateCondsRequest)(nil),  // 11: notif.middleware.announcement.sendstate.v1.ExistSendStateCondsRequest
 	(*ExistSendStateCondsResponse)(nil), // 12: notif.middleware.announcement.sendstate.v1.ExistSendStateCondsResponse
 	(*DeleteSendStateRequest)(nil),      // 13: notif.middleware.announcement.sendstate.v1.DeleteSendStateRequest
@@ -2169,6 +2187,9 @@ var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_goTypes = []in
 	(*v1.StringSliceVal)(nil),           // 18: basetypes.v1.StringSliceVal
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_depIdxs = []int32{
 	15, // 0: notif.middleware.announcement.sendstate.v1.SendStateReq.Channel:type_name -> basetypes.v1.NotifChannel
@@ -2180,6 +2201,7 @@ var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_depIdxs = []in
 	16, // 6: notif.middleware.announcement.sendstate.v1.Conds.Channel:type_name -> basetypes.v1.Uint32Val
 	16, // 7: notif.middleware.announcement.sendstate.v1.Conds.EndAt:type_name -> basetypes.v1.Uint32Val
 	18, // 8: notif.middleware.announcement.sendstate.v1.Conds.UserIDs:type_name -> basetypes.v1.StringSliceVal
+<<<<<<< HEAD
 =======
 	(*GetSendStateOnlyRequest)(nil),     // 11: notif.middleware.announcement.sendstate.v1.GetSendStateOnlyRequest
 	(*GetSendStateOnlyResponse)(nil),    // 12: notif.middleware.announcement.sendstate.v1.GetSendStateOnlyResponse
@@ -2228,6 +2250,8 @@ var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_depIdxs = []in
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	1,  // 9: notif.middleware.announcement.sendstate.v1.CreateSendStateRequest.Info:type_name -> notif.middleware.announcement.sendstate.v1.SendStateReq
 	0,  // 10: notif.middleware.announcement.sendstate.v1.CreateSendStateResponse.Info:type_name -> notif.middleware.announcement.sendstate.v1.SendState
 	1,  // 11: notif.middleware.announcement.sendstate.v1.CreateSendStatesRequest.Infos:type_name -> notif.middleware.announcement.sendstate.v1.SendStateReq
@@ -2239,10 +2263,13 @@ var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_depIdxs = []in
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	2,  // 16: notif.middleware.announcement.sendstate.v1.ExistSendStateCondsRequest.Conds:type_name -> notif.middleware.announcement.sendstate.v1.Conds
 	1,  // 17: notif.middleware.announcement.sendstate.v1.DeleteSendStateRequest.Info:type_name -> notif.middleware.announcement.sendstate.v1.SendStateReq
 	0,  // 18: notif.middleware.announcement.sendstate.v1.DeleteSendStateResponse.Info:type_name -> notif.middleware.announcement.sendstate.v1.SendState
@@ -2263,6 +2290,7 @@ var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_depIdxs = []in
 	19, // [19:19] is the sub-list for extension type_name
 	19, // [19:19] is the sub-list for extension extendee
 	0,  // [0:19] is the sub-list for field type_name
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -2302,6 +2330,8 @@ var file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_depIdxs = []in
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func init() { file_npool_notif_mw_v1_announcement_sendstate_sendstate_proto_init() }

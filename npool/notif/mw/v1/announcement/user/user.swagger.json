@@ -214,6 +214,7 @@
     "v1Uint32Val": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
       "type": "object",
@@ -230,6 +231,8 @@
     },
     "v1UpdateAnnouncementUserResponse": {
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
       "type": "object",
       "properties": {
         "Op": {
@@ -240,6 +243,7 @@
           "format": "int64"
         }
       }
+<<<<<<< HEAD
 <<<<<<< HEAD
     },
     "v1UpdateAnnouncementUserResponse": {
@@ -258,6 +262,8 @@
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     }
   }
 }

@@ -615,6 +615,7 @@ type UpdateSMSTemplateRequest struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EntID   string  `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 =======
 >>>>>>> a8aaa956a (Change id to entid)
@@ -626,6 +627,9 @@ type UpdateSMSTemplateRequest struct {
 =======
 	EntID   string  `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 >>>>>>> 96dc04b8f (Add entid check)
+=======
+	EntID   string  `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
+>>>>>>> 53161d938 (generate rebase proto)
 	AppID   string  `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
 	Subject *string `protobuf:"bytes,30,opt,name=Subject,proto3,oneof" json:"Subject,omitempty"`
 	Message *string `protobuf:"bytes,40,opt,name=Message,proto3,oneof" json:"Message,omitempty"`
@@ -670,6 +674,7 @@ func (x *UpdateSMSTemplateRequest) GetID() uint32 {
 	return 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 func (x *UpdateSMSTemplateRequest) GetEntID() string {
@@ -688,6 +693,8 @@ func (x *UpdateSMSTemplateRequest) GetEntID() string {
 	return ""
 =======
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func (x *UpdateSMSTemplateRequest) GetEntID() string {
@@ -775,6 +782,7 @@ type UpdateAppSMSTemplateRequest struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EntID       string  `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 =======
 >>>>>>> a8aaa956a (Change id to entid)
@@ -786,6 +794,9 @@ type UpdateAppSMSTemplateRequest struct {
 =======
 	EntID       string  `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 >>>>>>> 96dc04b8f (Add entid check)
+=======
+	EntID       string  `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
+>>>>>>> 53161d938 (generate rebase proto)
 	TargetAppID string  `protobuf:"bytes,20,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
 	Subject     *string `protobuf:"bytes,40,opt,name=Subject,proto3,oneof" json:"Subject,omitempty"`
 	Message     *string `protobuf:"bytes,50,opt,name=Message,proto3,oneof" json:"Message,omitempty"`
@@ -830,6 +841,7 @@ func (x *UpdateAppSMSTemplateRequest) GetID() uint32 {
 	return 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 func (x *UpdateAppSMSTemplateRequest) GetEntID() string {
@@ -848,6 +860,8 @@ func (x *UpdateAppSMSTemplateRequest) GetEntID() string {
 	return ""
 =======
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func (x *UpdateAppSMSTemplateRequest) GetEntID() string {
@@ -1016,6 +1030,9 @@ var file_npool_notif_gw_v1_template_sms_sms_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x74, 0x61, 0x6c, 0x22, 0xac, 0x01, 0x0a, 0x18, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x53, 0x4d,
 	0x53, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x49, 0x44,
@@ -1133,6 +1150,7 @@ var file_npool_notif_gw_v1_template_sms_sms_proto_rawDesc = []byte{
 	0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2f, 0x67,
 	0x77, 0x2f, 0x76, 0x31, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x2f, 0x73, 0x6d,
 	0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 =======
 	0x74, 0x61, 0x6c, 0x22, 0x96, 0x01, 0x0a, 0x18, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x53, 0x4d,
 =======
@@ -1385,6 +1403,8 @@ var file_npool_notif_gw_v1_template_sms_sms_proto_rawDesc = []byte{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 96dc04b8f (Add entid check)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 var (

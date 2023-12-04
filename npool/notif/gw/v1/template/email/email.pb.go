@@ -679,6 +679,7 @@ type UpdateEmailTemplateRequest struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EntID             string   `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 =======
 >>>>>>> a8aaa956a (Change id to entid)
@@ -690,6 +691,9 @@ type UpdateEmailTemplateRequest struct {
 =======
 	EntID             string   `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 >>>>>>> 96dc04b8f (Add entid check)
+=======
+	EntID             string   `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
+>>>>>>> 53161d938 (generate rebase proto)
 	AppID             string   `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
 	Sender            *string  `protobuf:"bytes,30,opt,name=Sender,proto3,oneof" json:"Sender,omitempty"`
 	ReplyTos          []string `protobuf:"bytes,40,rep,name=ReplyTos,proto3" json:"ReplyTos,omitempty"`
@@ -738,6 +742,7 @@ func (x *UpdateEmailTemplateRequest) GetID() uint32 {
 	return 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 func (x *UpdateEmailTemplateRequest) GetEntID() string {
@@ -756,6 +761,8 @@ func (x *UpdateEmailTemplateRequest) GetEntID() string {
 	return ""
 =======
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func (x *UpdateEmailTemplateRequest) GetEntID() string {
@@ -871,6 +878,7 @@ type UpdateAppEmailTemplateRequest struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EntID             string   `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 =======
 >>>>>>> a8aaa956a (Change id to entid)
@@ -882,6 +890,9 @@ type UpdateAppEmailTemplateRequest struct {
 =======
 	EntID             string   `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 >>>>>>> 96dc04b8f (Add entid check)
+=======
+	EntID             string   `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
+>>>>>>> 53161d938 (generate rebase proto)
 	TargetAppID       string   `protobuf:"bytes,20,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
 	Sender            *string  `protobuf:"bytes,30,opt,name=Sender,proto3,oneof" json:"Sender,omitempty"`
 	ReplyTos          []string `protobuf:"bytes,40,rep,name=ReplyTos,proto3" json:"ReplyTos,omitempty"`
@@ -930,6 +941,7 @@ func (x *UpdateAppEmailTemplateRequest) GetID() uint32 {
 	return 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 func (x *UpdateAppEmailTemplateRequest) GetEntID() string {
@@ -948,6 +960,8 @@ func (x *UpdateAppEmailTemplateRequest) GetEntID() string {
 	return ""
 =======
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func (x *UpdateAppEmailTemplateRequest) GetEntID() string {
@@ -1161,6 +1175,9 @@ var file_npool_notif_gw_v1_template_email_email_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0xc8, 0x02, 0x0a, 0x1a, 0x55, 0x70,
 	0x64, 0x61, 0x74, 0x65, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74,
 	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a,
@@ -1304,6 +1321,7 @@ var file_npool_notif_gw_v1_template_email_email_proto_rawDesc = []byte{
 	0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2f, 0x67, 0x77, 0x2f,
 	0x76, 0x31, 0x2f, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x2f, 0x65, 0x6d, 0x61, 0x69,
 	0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 =======
 	0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0xb2, 0x02, 0x0a, 0x1a, 0x55, 0x70,
 =======
@@ -1585,6 +1603,8 @@ var file_npool_notif_gw_v1_template_email_email_proto_rawDesc = []byte{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 96dc04b8f (Add entid check)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 var (

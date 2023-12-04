@@ -357,6 +357,7 @@ type UpdateAnnouncementRequest struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EntID            string        `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 	AppID            string        `protobuf:"bytes,12,opt,name=AppID,proto3" json:"AppID,omitempty"`
 =======
@@ -372,6 +373,10 @@ type UpdateAnnouncementRequest struct {
 	EntID            string        `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 	AppID            string        `protobuf:"bytes,12,opt,name=AppID,proto3" json:"AppID,omitempty"`
 >>>>>>> 96dc04b8f (Add entid check)
+=======
+	EntID            string        `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
+	AppID            string        `protobuf:"bytes,12,opt,name=AppID,proto3" json:"AppID,omitempty"`
+>>>>>>> 53161d938 (generate rebase proto)
 	Title            *string       `protobuf:"bytes,20,opt,name=Title,proto3,oneof" json:"Title,omitempty"`
 	Content          *string       `protobuf:"bytes,30,opt,name=Content,proto3,oneof" json:"Content,omitempty"`
 	EndAt            *uint32       `protobuf:"varint,50,opt,name=EndAt,proto3,oneof" json:"EndAt,omitempty"`
@@ -418,6 +423,7 @@ func (x *UpdateAnnouncementRequest) GetID() uint32 {
 	return 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 func (x *UpdateAnnouncementRequest) GetEntID() string {
@@ -436,6 +442,8 @@ func (x *UpdateAnnouncementRequest) GetEntID() string {
 	return ""
 =======
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func (x *UpdateAnnouncementRequest) GetEntID() string {
@@ -544,6 +552,7 @@ type DeleteAnnouncementRequest struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EntID string `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 =======
 >>>>>>> a8aaa956a (Change id to entid)
@@ -555,6 +564,9 @@ type DeleteAnnouncementRequest struct {
 =======
 	EntID string `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
 >>>>>>> 96dc04b8f (Add entid check)
+=======
+	EntID string `protobuf:"bytes,11,opt,name=EntID,proto3" json:"EntID,omitempty"`
+>>>>>>> 53161d938 (generate rebase proto)
 	AppID string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty"`
 }
 
@@ -597,6 +609,7 @@ func (x *DeleteAnnouncementRequest) GetID() uint32 {
 	return 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 func (x *DeleteAnnouncementRequest) GetEntID() string {
@@ -615,6 +628,8 @@ func (x *DeleteAnnouncementRequest) GetEntID() string {
 	return ""
 =======
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func (x *DeleteAnnouncementRequest) GetEntID() string {
@@ -1124,6 +1139,9 @@ var file_npool_notif_gw_v1_announcement_announcement_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x6e, 0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0xd6, 0x02, 0x0a, 0x19, 0x55, 0x70, 0x64,
 	0x61, 0x74, 0x65, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01,
@@ -1280,6 +1298,7 @@ var file_npool_notif_gw_v1_announcement_announcement_proto_rawDesc = []byte{
 	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6e, 0x6f, 0x74,
 	0x69, 0x66, 0x2f, 0x67, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63,
 	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 =======
 	0x6e, 0x74, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0xc0, 0x02, 0x0a, 0x19, 0x55, 0x70, 0x64,
 =======
@@ -1611,6 +1630,8 @@ var file_npool_notif_gw_v1_announcement_announcement_proto_rawDesc = []byte{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 96dc04b8f (Add entid check)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 var (

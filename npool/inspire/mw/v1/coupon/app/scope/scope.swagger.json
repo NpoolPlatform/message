@@ -39,6 +39,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -53,6 +54,7 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -86,6 +88,8 @@
 >>>>>>> b20bec5db (update scope)
 =======
 >>>>>>> dd939f282 (delete ScopeID)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "AppGoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -126,6 +130,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "v1CreateAppGoodScopeResponse": {
 =======
     "v1CreateScopeResponse": {
@@ -153,6 +158,9 @@
 =======
     "v1CreateAppGoodScopeResponse": {
 >>>>>>> 7f099cff7 (update appgoodscope)
+=======
+    "v1CreateAppGoodScopeResponse": {
+>>>>>>> 53161d938 (generate rebase proto)
       "type": "object",
       "properties": {
         "Info": {
@@ -160,6 +168,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -193,6 +202,9 @@
 =======
     "v1DeleteAppGoodScopeResponse": {
 >>>>>>> 7f099cff7 (update appgoodscope)
+=======
+    "v1DeleteAppGoodScopeResponse": {
+>>>>>>> 53161d938 (generate rebase proto)
       "type": "object",
       "properties": {
         "Info": {
@@ -200,6 +212,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -216,6 +229,8 @@
 >>>>>>> f3b0e6a12 (update appgoodscope)
 =======
 >>>>>>> 7f099cff7 (update appgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     "v1ExistAppGoodScopeCondsResponse": {
       "type": "object",
       "properties": {
@@ -224,6 +239,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -240,6 +256,8 @@
 >>>>>>> 587e7fc0f (export getappgoodscope)
 =======
 >>>>>>> ea160715e (export getappgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     "v1GetAppGoodScopeResponse": {
       "type": "object",
       "properties": {
@@ -249,6 +267,7 @@
       }
     },
     "v1GetAppGoodScopesResponse": {
+<<<<<<< HEAD
 =======
     "v1GetScopesResponse": {
 <<<<<<< HEAD
@@ -271,11 +290,14 @@
 =======
     "v1GetAppGoodScopesResponse": {
 >>>>>>> 7f099cff7 (update appgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Scope"
           }
         },
@@ -296,6 +318,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -351,6 +374,8 @@
 >>>>>>> b20bec5db (update scope)
 =======
 >>>>>>> dd939f282 (delete ScopeID)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "AppGoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_id\""
@@ -408,14 +433,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> badf0f1df (update appscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "AppGoodID": {
           "type": "string"
         },
         "CouponID": {
+<<<<<<< HEAD
 =======
         "ScopeID": {
 <<<<<<< HEAD
@@ -486,13 +515,16 @@
 =======
         "CouponID": {
 >>>>>>> dd939f282 (delete ScopeID)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
           "type": "string"
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
         "GoodID": {
-          "type": "string"
+          "type": "string",
+          "title": "only for VerifyCouponScopes"
         }
       }
     },
@@ -532,6 +564,7 @@
           "format": "int64"
         }
       }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -601,6 +634,11 @@
 >>>>>>> bf4f155fd (add verifycouponscope method)
 =======
 >>>>>>> 099e1c3a3 (delete Info)
+=======
+    },
+    "v1VerifyCouponScopesResponse": {
+      "type": "object"
+>>>>>>> 53161d938 (generate rebase proto)
     }
   }
 }

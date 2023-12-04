@@ -39,6 +39,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -57,6 +58,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
@@ -65,6 +67,8 @@
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -73,6 +77,7 @@
         },
         "CouponIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -166,6 +171,8 @@
 >>>>>>> f59ffb7e1 (change to CouponID)
 =======
 >>>>>>> fa75f741d (update coupon scope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1Uint32Val"
@@ -216,6 +223,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 0c59f0169 (add ExistScopeConds)
 =======
@@ -234,6 +242,8 @@
 >>>>>>> 3278e274c (add ExistScopeConds)
 =======
 >>>>>>> f950bb171 (add ExistScopeConds)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     "v1ExistScopeCondsResponse": {
       "type": "object",
       "properties": {
@@ -242,6 +252,7 @@
         }
       }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -277,6 +288,8 @@
 >>>>>>> 620df297b (update scope)
 =======
 >>>>>>> f950bb171 (add ExistScopeConds)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     "v1GetScopeResponse": {
       "type": "object",
       "properties": {
@@ -291,6 +304,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Scope"
           }
         },
@@ -314,12 +328,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fdf74a356 (update scope)
 =======
 >>>>>>> 809aa181a (update scope)
 =======
 >>>>>>> 2e441a23e (update scope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "GoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
@@ -338,6 +355,7 @@
         },
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 2af3a1403 (update scope)
@@ -438,6 +456,8 @@
         },
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         },
         "CouponScopeStr": {
           "type": "string",
@@ -446,6 +466,7 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -478,6 +499,8 @@
 >>>>>>> 28c374a4a (update coupon scope)
 =======
 >>>>>>> 539c56151 (fix wrong word)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "CouponDenomination": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
@@ -485,6 +508,7 @@
         "CouponCirculation": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_circulation\""
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -607,6 +631,8 @@
 >>>>>>> 308712c13 (fix wrong word)
 =======
 >>>>>>> b20bec5db (update scope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         },
         "CreatedAt": {
           "type": "integer",
@@ -626,6 +652,7 @@
         "ID": {
           "type": "string"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -675,11 +702,15 @@
 =======
         "GoodID": {
 >>>>>>> b20bec5db (update scope)
+=======
+        "GoodID": {
+>>>>>>> 53161d938 (generate rebase proto)
           "type": "string"
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -696,6 +727,8 @@
 >>>>>>> 809aa181a (update scope)
 =======
 >>>>>>> 52a05eeef (change to CouponID)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         "CouponID": {
           "type": "string"
         }
@@ -712,6 +745,7 @@
           "items": {
             "type": "string"
           }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -794,6 +828,8 @@
 >>>>>>> f59ffb7e1 (change to CouponID)
 =======
 >>>>>>> fa75f741d (update coupon scope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         }
       }
     },
@@ -819,6 +855,7 @@
           "format": "int64"
         }
       }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -878,6 +915,8 @@
 >>>>>>> 620df297b (update scope)
 =======
 >>>>>>> c6e84bead (delete update)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     }
   }
 }

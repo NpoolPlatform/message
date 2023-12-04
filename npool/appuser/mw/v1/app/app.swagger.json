@@ -165,6 +165,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64",
@@ -191,6 +192,11 @@
           "type": "integer",
           "format": "int64",
 >>>>>>> d5be11d2e (Add ID to req)
+=======
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+>>>>>>> 53161d938 (generate rebase proto)
           "title": "Base info"
         },
         "EntID": {

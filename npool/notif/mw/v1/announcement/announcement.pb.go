@@ -1283,6 +1283,7 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a8aaa956a (Change id to entid)
@@ -1306,6 +1307,8 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_rawDesc = []byte{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x30, 0x0a, 0x18, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x6e,
 	0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x12, 0x14, 0x0a, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
@@ -1338,6 +1341,7 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	0x49, 0x6e, 0x66, 0x6f, 0x32, 0x92, 0x08, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
 =======
 	0x49, 0x6e, 0x66, 0x6f, 0x32, 0xa9, 0x09, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
@@ -1351,6 +1355,9 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_rawDesc = []byte{
 =======
 	0x49, 0x6e, 0x66, 0x6f, 0x32, 0x92, 0x08, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+	0x49, 0x6e, 0x66, 0x6f, 0x32, 0x92, 0x08, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+>>>>>>> 53161d938 (generate rebase proto)
 	0x61, 0x72, 0x65, 0x12, 0x91, 0x01, 0x0a, 0x12, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x6e,
 	0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x3b, 0x2e, 0x6e, 0x6f, 0x74,
 	0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e,
@@ -1382,10 +1389,13 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_rawDesc = []byte{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x8b, 0x01, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x41, 0x6e,
 	0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x39, 0x2e, 0x6e, 0x6f,
 	0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61,
@@ -1413,6 +1423,9 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_rawDesc = []byte{
 	0x74, 0x1a, 0x40, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e,
 	0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x6e, 0x6e, 0x6f, 0x75, 0x6e,
 	0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
@@ -1431,6 +1444,7 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_rawDesc = []byte{
 	0x6f, 0x6f, 0x6c, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f,
 	0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x62, 0x06, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a8aaa956a (Change id to entid)
@@ -1517,6 +1531,8 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_rawDesc = []byte{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 var (
@@ -1547,10 +1563,13 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_goTypes = []interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	(*ExistAnnouncementRequest)(nil),       // 11: notif.middleware.announcement.v1.ExistAnnouncementRequest
 	(*ExistAnnouncementResponse)(nil),      // 12: notif.middleware.announcement.v1.ExistAnnouncementResponse
 	(*ExistAnnouncementCondsRequest)(nil),  // 13: notif.middleware.announcement.v1.ExistAnnouncementCondsRequest
@@ -1563,6 +1582,9 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_goTypes = []interface
 	(*v1.StringVal)(nil),                   // 20: basetypes.v1.StringVal
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 var file_npool_notif_mw_v1_announcement_announcement_proto_depIdxs = []int32{
 	17, // 0: notif.middleware.announcement.v1.AnnouncementReq.Channel:type_name -> basetypes.v1.NotifChannel
@@ -1578,6 +1600,7 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_depIdxs = []int32{
 	19, // 10: notif.middleware.announcement.v1.Conds.StartAt:type_name -> basetypes.v1.Uint32Val
 	19, // 11: notif.middleware.announcement.v1.Conds.EndAt:type_name -> basetypes.v1.Uint32Val
 	19, // 12: notif.middleware.announcement.v1.Conds.Channel:type_name -> basetypes.v1.Uint32Val
+<<<<<<< HEAD
 =======
 	(*GetAnnouncementOnlyRequest)(nil),     // 11: notif.middleware.announcement.v1.GetAnnouncementOnlyRequest
 	(*GetAnnouncementOnlyResponse)(nil),    // 12: notif.middleware.announcement.v1.GetAnnouncementOnlyResponse
@@ -1634,6 +1657,8 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_depIdxs = []int32{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	2,  // 13: notif.middleware.announcement.v1.GetAnnouncementsRequest.Conds:type_name -> notif.middleware.announcement.v1.Conds
 	1,  // 14: notif.middleware.announcement.v1.GetAnnouncementsResponse.Infos:type_name -> notif.middleware.announcement.v1.Announcement
 	0,  // 15: notif.middleware.announcement.v1.CreateAnnouncementRequest.Info:type_name -> notif.middleware.announcement.v1.AnnouncementReq
@@ -1645,10 +1670,13 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_depIdxs = []int32{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	2,  // 20: notif.middleware.announcement.v1.ExistAnnouncementCondsRequest.Conds:type_name -> notif.middleware.announcement.v1.Conds
 	0,  // 21: notif.middleware.announcement.v1.DeleteAnnouncementRequest.Info:type_name -> notif.middleware.announcement.v1.AnnouncementReq
 	1,  // 22: notif.middleware.announcement.v1.DeleteAnnouncementResponse.Info:type_name -> notif.middleware.announcement.v1.Announcement
@@ -1671,6 +1699,7 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_depIdxs = []int32{
 	23, // [23:23] is the sub-list for extension type_name
 	23, // [23:23] is the sub-list for extension extendee
 	0,  // [0:23] is the sub-list for field type_name
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1710,6 +1739,8 @@ var file_npool_notif_mw_v1_announcement_announcement_proto_depIdxs = []int32{
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func init() { file_npool_notif_mw_v1_announcement_announcement_proto_init() }

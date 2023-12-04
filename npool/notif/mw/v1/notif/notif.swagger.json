@@ -83,10 +83,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 8553a2081 (Add delete api)
 =======
 >>>>>>> 8553a2081 (Add delete api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     },
     "/v1/notif_DeleteNotif": {
       "post": {
@@ -121,6 +124,7 @@
       }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 423530abb (Add notif mw api)
 =======
@@ -129,6 +133,8 @@
 >>>>>>> 423530abb (Add notif mw api)
 =======
 >>>>>>> 8553a2081 (Add delete api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
     }
   },
   "definitions": {
@@ -226,6 +232,7 @@
           "$ref": "#/definitions/v1Uint32SliceVal"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         }
       }
     },
@@ -246,6 +253,8 @@
           "$ref": "#/definitions/v1NotifReq"
 =======
 >>>>>>> a8aaa956a (Change id to entid)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
         }
       }
     },

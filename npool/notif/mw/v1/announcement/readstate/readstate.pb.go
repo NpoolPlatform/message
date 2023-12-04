@@ -747,6 +747,7 @@ func (x *GetReadStatesResponse) GetTotal() uint32 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 type GetReadStateOnlyRequest struct {
 	state         protoimpl.MessageState
@@ -941,6 +942,8 @@ func (x *ExistReadStateResponse) GetInfo() bool {
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 type ExistReadStateCondsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1255,10 +1258,13 @@ var file_npool_notif_mw_v1_announcement_readstate_readstate_proto_rawDesc = []by
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x65, 0x0a, 0x1a, 0x45, 0x78, 0x69, 0x73, 0x74, 0x52,
 	0x65, 0x61, 0x64, 0x53, 0x74, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x12, 0x47, 0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x0a, 0x20,
@@ -1291,6 +1297,9 @@ var file_npool_notif_mw_v1_announcement_readstate_readstate_proto_rawDesc = []by
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x43, 0x2e, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2e, 0x6d, 0x69,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x6e, 0x6e, 0x6f, 0x75, 0x6e, 0x63,
 	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x72, 0x65, 0x61, 0x64, 0x73, 0x74, 0x61, 0x74, 0x65, 0x2e,
 	0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x61, 0x64, 0x53, 0x74, 0x61,
@@ -1340,6 +1349,7 @@ var file_npool_notif_mw_v1_announcement_readstate_readstate_proto_rawDesc = []by
 	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x6e, 0x6e, 0x6f,
 	0x75, 0x6e, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2f, 0x72, 0x65, 0x61, 0x64, 0x73, 0x74, 0x61,
 	0x74, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a8aaa956a (Change id to entid)
@@ -1525,6 +1535,8 @@ var file_npool_notif_mw_v1_announcement_readstate_readstate_proto_rawDesc = []by
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 var (
@@ -1555,10 +1567,13 @@ var file_npool_notif_mw_v1_announcement_readstate_readstate_proto_goTypes = []in
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	(*ExistReadStateCondsRequest)(nil),  // 11: notif.middleware.announcement.readstate.v1.ExistReadStateCondsRequest
 	(*ExistReadStateCondsResponse)(nil), // 12: notif.middleware.announcement.readstate.v1.ExistReadStateCondsResponse
 	(*DeleteReadStateRequest)(nil),      // 13: notif.middleware.announcement.readstate.v1.DeleteReadStateRequest
@@ -1567,6 +1582,9 @@ var file_npool_notif_mw_v1_announcement_readstate_readstate_proto_goTypes = []in
 	(*v1.StringVal)(nil),                // 16: basetypes.v1.StringVal
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 var file_npool_notif_mw_v1_announcement_readstate_readstate_proto_depIdxs = []int32{
 	15, // 0: notif.middleware.announcement.readstate.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
@@ -1574,6 +1592,7 @@ var file_npool_notif_mw_v1_announcement_readstate_readstate_proto_depIdxs = []in
 	16, // 2: notif.middleware.announcement.readstate.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
 	16, // 3: notif.middleware.announcement.readstate.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
 	16, // 4: notif.middleware.announcement.readstate.v1.Conds.AnnouncementID:type_name -> basetypes.v1.StringVal
+<<<<<<< HEAD
 =======
 	(*GetReadStateOnlyRequest)(nil),     // 11: notif.middleware.announcement.readstate.v1.GetReadStateOnlyRequest
 	(*GetReadStateOnlyResponse)(nil),    // 12: notif.middleware.announcement.readstate.v1.GetReadStateOnlyResponse
@@ -1612,6 +1631,8 @@ var file_npool_notif_mw_v1_announcement_readstate_readstate_proto_depIdxs = []in
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	2,  // 5: notif.middleware.announcement.readstate.v1.CreateReadStateRequest.Info:type_name -> notif.middleware.announcement.readstate.v1.ReadStateReq
 	0,  // 6: notif.middleware.announcement.readstate.v1.CreateReadStateResponse.Info:type_name -> notif.middleware.announcement.readstate.v1.ReadState
 	2,  // 7: notif.middleware.announcement.readstate.v1.UpdateReadStateRequest.Info:type_name -> notif.middleware.announcement.readstate.v1.ReadStateReq
@@ -1623,10 +1644,13 @@ var file_npool_notif_mw_v1_announcement_readstate_readstate_proto_depIdxs = []in
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	1,  // 12: notif.middleware.announcement.readstate.v1.ExistReadStateCondsRequest.Conds:type_name -> notif.middleware.announcement.readstate.v1.Conds
 	2,  // 13: notif.middleware.announcement.readstate.v1.DeleteReadStateRequest.Info:type_name -> notif.middleware.announcement.readstate.v1.ReadStateReq
 	0,  // 14: notif.middleware.announcement.readstate.v1.DeleteReadStateResponse.Info:type_name -> notif.middleware.announcement.readstate.v1.ReadState
@@ -1645,6 +1669,7 @@ var file_npool_notif_mw_v1_announcement_readstate_readstate_proto_depIdxs = []in
 	15, // [15:15] is the sub-list for extension type_name
 	15, // [15:15] is the sub-list for extension extendee
 	0,  // [0:15] is the sub-list for field type_name
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1682,6 +1707,8 @@ var file_npool_notif_mw_v1_announcement_readstate_readstate_proto_depIdxs = []in
 >>>>>>> a8aaa956a (Change id to entid)
 =======
 >>>>>>> 4ebcffd26 (Remove unnecessary api)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 func init() { file_npool_notif_mw_v1_announcement_readstate_readstate_proto_init() }

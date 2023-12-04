@@ -28,18 +28,22 @@ const (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> f3b0e6a12 (update appgoodscope)
 =======
 >>>>>>> 08c68e544 (fix wrong name)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	Middleware_CreateAppGoodScope_FullMethodName     = "/inspire.middleware.coupon.app.scope.v1.Middleware/CreateAppGoodScope"
 	Middleware_DeleteAppGoodScope_FullMethodName     = "/inspire.middleware.coupon.app.scope.v1.Middleware/DeleteAppGoodScope"
 	Middleware_GetAppGoodScopes_FullMethodName       = "/inspire.middleware.coupon.app.scope.v1.Middleware/GetAppGoodScopes"
 	Middleware_GetAppGoodScope_FullMethodName        = "/inspire.middleware.coupon.app.scope.v1.Middleware/GetAppGoodScope"
 	Middleware_ExistAppGoodScopeConds_FullMethodName = "/inspire.middleware.coupon.app.scope.v1.Middleware/ExistAppGoodScopeConds"
 	Middleware_VerifyCouponScopes_FullMethodName     = "/inspire.middleware.coupon.app.scope.v1.Middleware/VerifyCouponScopes"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -130,6 +134,8 @@ const (
 >>>>>>> bf4f155fd (add verifycouponscope method)
 =======
 >>>>>>> f192ebf11 (change to verifycouponscopes)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -142,15 +148,19 @@ type MiddlewareClient interface {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	CreateAppGoodScope(ctx context.Context, in *CreateAppGoodScopeRequest, opts ...grpc.CallOption) (*CreateAppGoodScopeResponse, error)
 	DeleteAppGoodScope(ctx context.Context, in *DeleteAppGoodScopeRequest, opts ...grpc.CallOption) (*DeleteAppGoodScopeResponse, error)
 	GetAppGoodScopes(ctx context.Context, in *GetAppGoodScopesRequest, opts ...grpc.CallOption) (*GetAppGoodScopesResponse, error)
 	GetAppGoodScope(ctx context.Context, in *GetAppGoodScopeRequest, opts ...grpc.CallOption) (*GetAppGoodScopeResponse, error)
 	ExistAppGoodScopeConds(ctx context.Context, in *ExistAppGoodScopeCondsRequest, opts ...grpc.CallOption) (*ExistAppGoodScopeCondsResponse, error)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -236,6 +246,9 @@ type MiddlewareClient interface {
 =======
 	VerifyCouponScopes(ctx context.Context, in *VerifyCouponScopesRequest, opts ...grpc.CallOption) (*VerifyCouponScopesResponse, error)
 >>>>>>> f192ebf11 (change to verifycouponscopes)
+=======
+	VerifyCouponScopes(ctx context.Context, in *VerifyCouponScopesRequest, opts ...grpc.CallOption) (*VerifyCouponScopesResponse, error)
+>>>>>>> 53161d938 (generate rebase proto)
 }
 
 type middlewareClient struct {
@@ -252,6 +265,7 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -291,12 +305,18 @@ func (c *middlewareClient) CreateAppGoodScope(ctx context.Context, in *CreateApp
 	out := new(CreateAppGoodScopeResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateAppGoodScope_FullMethodName, in, out, opts...)
 >>>>>>> 7f099cff7 (update appgoodscope)
+=======
+func (c *middlewareClient) CreateAppGoodScope(ctx context.Context, in *CreateAppGoodScopeRequest, opts ...grpc.CallOption) (*CreateAppGoodScopeResponse, error) {
+	out := new(CreateAppGoodScopeResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateAppGoodScope_FullMethodName, in, out, opts...)
+>>>>>>> 53161d938 (generate rebase proto)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -342,12 +362,18 @@ func (c *middlewareClient) DeleteAppGoodScope(ctx context.Context, in *DeleteApp
 	out := new(DeleteAppGoodScopeResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteAppGoodScope_FullMethodName, in, out, opts...)
 >>>>>>> 7f099cff7 (update appgoodscope)
+=======
+func (c *middlewareClient) DeleteAppGoodScope(ctx context.Context, in *DeleteAppGoodScopeRequest, opts ...grpc.CallOption) (*DeleteAppGoodScopeResponse, error) {
+	out := new(DeleteAppGoodScopeResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteAppGoodScope_FullMethodName, in, out, opts...)
+>>>>>>> 53161d938 (generate rebase proto)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -364,6 +390,8 @@ func (c *middlewareClient) DeleteAppGoodScope(ctx context.Context, in *DeleteApp
 >>>>>>> f3b0e6a12 (update appgoodscope)
 =======
 >>>>>>> 7f099cff7 (update appgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 func (c *middlewareClient) GetAppGoodScopes(ctx context.Context, in *GetAppGoodScopesRequest, opts ...grpc.CallOption) (*GetAppGoodScopesResponse, error) {
 	out := new(GetAppGoodScopesResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetAppGoodScopes_FullMethodName, in, out, opts...)
@@ -373,6 +401,7 @@ func (c *middlewareClient) GetAppGoodScopes(ctx context.Context, in *GetAppGoodS
 	return out, nil
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -394,6 +423,8 @@ func (c *middlewareClient) GetAppGoodScopes(ctx context.Context, in *GetAppGoodS
 >>>>>>> 587e7fc0f (export getappgoodscope)
 =======
 >>>>>>> ea160715e (export getappgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 func (c *middlewareClient) GetAppGoodScope(ctx context.Context, in *GetAppGoodScopeRequest, opts ...grpc.CallOption) (*GetAppGoodScopeResponse, error) {
 	out := new(GetAppGoodScopeResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetAppGoodScope_FullMethodName, in, out, opts...)
@@ -418,6 +449,7 @@ func (c *middlewareClient) ExistAppGoodScopeConds(ctx context.Context, in *Exist
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3b06b1838 (add verifycouponscope method)
 =======
@@ -511,6 +543,11 @@ func (c *middlewareClient) VerifyCouponScopes(ctx context.Context, in *VerifyCou
 	out := new(VerifyCouponScopesResponse)
 	err := c.cc.Invoke(ctx, Middleware_VerifyCouponScopes_FullMethodName, in, out, opts...)
 >>>>>>> f192ebf11 (change to verifycouponscopes)
+=======
+func (c *middlewareClient) VerifyCouponScopes(ctx context.Context, in *VerifyCouponScopesRequest, opts ...grpc.CallOption) (*VerifyCouponScopesResponse, error) {
+	out := new(VerifyCouponScopesResponse)
+	err := c.cc.Invoke(ctx, Middleware_VerifyCouponScopes_FullMethodName, in, out, opts...)
+>>>>>>> 53161d938 (generate rebase proto)
 	if err != nil {
 		return nil, err
 	}
@@ -527,15 +564,19 @@ type MiddlewareServer interface {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	CreateAppGoodScope(context.Context, *CreateAppGoodScopeRequest) (*CreateAppGoodScopeResponse, error)
 	DeleteAppGoodScope(context.Context, *DeleteAppGoodScopeRequest) (*DeleteAppGoodScopeResponse, error)
 	GetAppGoodScopes(context.Context, *GetAppGoodScopesRequest) (*GetAppGoodScopesResponse, error)
 	GetAppGoodScope(context.Context, *GetAppGoodScopeRequest) (*GetAppGoodScopeResponse, error)
 	ExistAppGoodScopeConds(context.Context, *ExistAppGoodScopeCondsRequest) (*ExistAppGoodScopeCondsResponse, error)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -621,6 +662,9 @@ type MiddlewareServer interface {
 =======
 	VerifyCouponScopes(context.Context, *VerifyCouponScopesRequest) (*VerifyCouponScopesResponse, error)
 >>>>>>> f192ebf11 (change to verifycouponscopes)
+=======
+	VerifyCouponScopes(context.Context, *VerifyCouponScopesRequest) (*VerifyCouponScopesResponse, error)
+>>>>>>> 53161d938 (generate rebase proto)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -634,10 +678,13 @@ type UnimplementedMiddlewareServer struct {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 func (UnimplementedMiddlewareServer) CreateAppGoodScope(context.Context, *CreateAppGoodScopeRequest) (*CreateAppGoodScopeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppGoodScope not implemented")
 }
@@ -647,6 +694,7 @@ func (UnimplementedMiddlewareServer) DeleteAppGoodScope(context.Context, *Delete
 func (UnimplementedMiddlewareServer) GetAppGoodScopes(context.Context, *GetAppGoodScopesRequest) (*GetAppGoodScopesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodScopes not implemented")
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -663,12 +711,15 @@ func (UnimplementedMiddlewareServer) GetAppGoodScopes(context.Context, *GetAppGo
 >>>>>>> 587e7fc0f (export getappgoodscope)
 =======
 >>>>>>> ea160715e (export getappgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 func (UnimplementedMiddlewareServer) GetAppGoodScope(context.Context, *GetAppGoodScopeRequest) (*GetAppGoodScopeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodScope not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistAppGoodScopeConds(context.Context, *ExistAppGoodScopeCondsRequest) (*ExistAppGoodScopeCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAppGoodScopeConds not implemented")
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -798,6 +849,10 @@ func (UnimplementedMiddlewareServer) VerifyCouponScope(context.Context, *VerifyC
 func (UnimplementedMiddlewareServer) VerifyCouponScopes(context.Context, *VerifyCouponScopesRequest) (*VerifyCouponScopesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VerifyCouponScopes not implemented")
 >>>>>>> f192ebf11 (change to verifycouponscopes)
+=======
+func (UnimplementedMiddlewareServer) VerifyCouponScopes(context.Context, *VerifyCouponScopesRequest) (*VerifyCouponScopesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method VerifyCouponScopes not implemented")
+>>>>>>> 53161d938 (generate rebase proto)
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -818,6 +873,7 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
@@ -851,6 +907,10 @@ func _Middleware_CreateScope_Handler(srv interface{}, ctx context.Context, dec f
 func _Middleware_CreateAppGoodScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppGoodScopeRequest)
 >>>>>>> 7f099cff7 (update appgoodscope)
+=======
+func _Middleware_CreateAppGoodScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppGoodScopeRequest)
+>>>>>>> 53161d938 (generate rebase proto)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -861,10 +921,13 @@ func _Middleware_CreateAppGoodScope_Handler(srv interface{}, ctx context.Context
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 		return srv.(MiddlewareServer).CreateAppGoodScope(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
@@ -873,6 +936,7 @@ func _Middleware_CreateAppGoodScope_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateAppGoodScope(ctx, req.(*CreateAppGoodScopeRequest))
+<<<<<<< HEAD
 =======
 		return srv.(MiddlewareServer).CreateScope(ctx, in)
 <<<<<<< HEAD
@@ -931,10 +995,13 @@ func _Middleware_CreateAppGoodScope_Handler(srv interface{}, ctx context.Context
 =======
 		return srv.(MiddlewareServer).CreateAppGoodScope(ctx, req.(*CreateAppGoodScopeRequest))
 >>>>>>> 7f099cff7 (update appgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -974,6 +1041,10 @@ func _Middleware_DeleteScope_Handler(srv interface{}, ctx context.Context, dec f
 func _Middleware_DeleteAppGoodScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAppGoodScopeRequest)
 >>>>>>> 7f099cff7 (update appgoodscope)
+=======
+func _Middleware_DeleteAppGoodScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppGoodScopeRequest)
+>>>>>>> 53161d938 (generate rebase proto)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -984,10 +1055,13 @@ func _Middleware_DeleteAppGoodScope_Handler(srv interface{}, ctx context.Context
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 		return srv.(MiddlewareServer).DeleteAppGoodScope(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
@@ -996,6 +1070,7 @@ func _Middleware_DeleteAppGoodScope_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).DeleteAppGoodScope(ctx, req.(*DeleteAppGoodScopeRequest))
+<<<<<<< HEAD
 =======
 		return srv.(MiddlewareServer).DeleteScope(ctx, in)
 <<<<<<< HEAD
@@ -1054,10 +1129,13 @@ func _Middleware_DeleteAppGoodScope_Handler(srv interface{}, ctx context.Context
 =======
 		return srv.(MiddlewareServer).DeleteAppGoodScope(ctx, req.(*DeleteAppGoodScopeRequest))
 >>>>>>> 7f099cff7 (update appgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1097,6 +1175,10 @@ func _Middleware_GetScopes_Handler(srv interface{}, ctx context.Context, dec fun
 func _Middleware_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppGoodScopesRequest)
 >>>>>>> 7f099cff7 (update appgoodscope)
+=======
+func _Middleware_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppGoodScopesRequest)
+>>>>>>> 53161d938 (generate rebase proto)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1107,10 +1189,13 @@ func _Middleware_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 		return srv.(MiddlewareServer).GetAppGoodScopes(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
@@ -1129,6 +1214,7 @@ func _Middleware_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5680b7b6f (export getappgoodscope)
 =======
@@ -1139,6 +1225,8 @@ func _Middleware_GetAppGoodScopes_Handler(srv interface{}, ctx context.Context, 
 >>>>>>> 587e7fc0f (export getappgoodscope)
 =======
 >>>>>>> ea160715e (export getappgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 func _Middleware_GetAppGoodScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppGoodScopeRequest)
 	if err := dec(in); err != nil {
@@ -1181,6 +1269,7 @@ func _Middleware_ExistAppGoodScopeConds_Handler(srv interface{}, ctx context.Con
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3b06b1838 (add verifycouponscope method)
 =======
@@ -1214,6 +1303,10 @@ func _Middleware_VerifyCouponScope_Handler(srv interface{}, ctx context.Context,
 func _Middleware_VerifyCouponScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(VerifyCouponScopesRequest)
 >>>>>>> f192ebf11 (change to verifycouponscopes)
+=======
+func _Middleware_VerifyCouponScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyCouponScopesRequest)
+>>>>>>> 53161d938 (generate rebase proto)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1224,10 +1317,13 @@ func _Middleware_VerifyCouponScopes_Handler(srv interface{}, ctx context.Context
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3b06b1838 (add verifycouponscope method)
 =======
 >>>>>>> fbc5cffab (change to verifycouponscopes)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 		return srv.(MiddlewareServer).VerifyCouponScopes(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
@@ -1236,6 +1332,7 @@ func _Middleware_VerifyCouponScopes_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).VerifyCouponScopes(ctx, req.(*VerifyCouponScopesRequest))
+<<<<<<< HEAD
 =======
 		return srv.(MiddlewareServer).GetScopes(ctx, in)
 <<<<<<< HEAD
@@ -1429,6 +1526,8 @@ func _Middleware_ExistAppGoodScopeConds_Handler(srv interface{}, ctx context.Con
 =======
 		return srv.(MiddlewareServer).VerifyCouponScopes(ctx, req.(*VerifyCouponScopesRequest))
 >>>>>>> f192ebf11 (change to verifycouponscopes)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1447,10 +1546,13 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2e441a23e (update scope)
 =======
 >>>>>>> f3b0e6a12 (update appgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 			MethodName: "CreateAppGoodScope",
 			Handler:    _Middleware_CreateAppGoodScope_Handler,
 		},
@@ -1469,6 +1571,7 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5680b7b6f (export getappgoodscope)
 =======
@@ -1479,6 +1582,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 >>>>>>> 587e7fc0f (export getappgoodscope)
 =======
 >>>>>>> ea160715e (export getappgoodscope)
+=======
+>>>>>>> 53161d938 (generate rebase proto)
 			MethodName: "GetAppGoodScope",
 			Handler:    _Middleware_GetAppGoodScope_Handler,
 		},
@@ -1487,6 +1592,7 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_ExistAppGoodScopeConds_Handler,
 		},
 		{
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1625,6 +1731,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "VerifyCouponScopes",
 			Handler:    _Middleware_VerifyCouponScopes_Handler,
 >>>>>>> f192ebf11 (change to verifycouponscopes)
+=======
+			MethodName: "VerifyCouponScopes",
+			Handler:    _Middleware_VerifyCouponScopes_Handler,
+>>>>>>> 53161d938 (generate rebase proto)
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
