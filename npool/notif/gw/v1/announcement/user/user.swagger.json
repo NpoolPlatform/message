@@ -338,12 +338,6 @@
         "ID": {
           "type": "integer",
           "format": "int64"
-<<<<<<< HEAD
-        },
-        "EntID": {
-          "type": "string"
-=======
->>>>>>> a8aaa956a (Change id to entid)
         },
         "EntID": {
           "type": "string"
@@ -367,12 +361,6 @@
         "ID": {
           "type": "integer",
           "format": "int64"
-<<<<<<< HEAD
-        },
-        "EntID": {
-          "type": "string"
-=======
->>>>>>> a8aaa956a (Change id to entid)
         },
         "EntID": {
           "type": "string"

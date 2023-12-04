@@ -99,10 +99,6 @@ func local_request_Middleware_CreateNotifs_0(ctx context.Context, marshaler runt
 
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8553a2081 (Add delete api)
 func request_Middleware_DeleteNotif_0(ctx context.Context, marshaler runtime.Marshaler, client MiddlewareClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteNotifRequest
 	var metadata runtime.ServerMetadata
@@ -137,11 +133,6 @@ func local_request_Middleware_DeleteNotif_0(ctx context.Context, marshaler runti
 
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> 423530abb (Add notif mw api)
-=======
->>>>>>> 8553a2081 (Add delete api)
 // RegisterMiddlewareHandlerServer registers the http handlers for service Middleware to "mux".
 // UnaryRPC     :call MiddlewareServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
@@ -198,10 +189,6 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 
 	})
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8553a2081 (Add delete api)
 	mux.Handle("POST", pattern_Middleware_DeleteNotif_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -227,11 +214,6 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 
 	})
 
-<<<<<<< HEAD
-=======
->>>>>>> 423530abb (Add notif mw api)
-=======
->>>>>>> 8553a2081 (Add delete api)
 	return nil
 }
 
@@ -317,10 +299,6 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 
 	})
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8553a2081 (Add delete api)
 	mux.Handle("POST", pattern_Middleware_DeleteNotif_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -343,11 +321,6 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 
 	})
 
-<<<<<<< HEAD
-=======
->>>>>>> 423530abb (Add notif mw api)
-=======
->>>>>>> 8553a2081 (Add delete api)
 	return nil
 }
 
@@ -355,30 +328,14 @@ var (
 	pattern_Middleware_CreateNotif_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "notif_CreateNotif"}, ""))
 
 	pattern_Middleware_CreateNotifs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "notif_CreateNotifs"}, ""))
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 	pattern_Middleware_DeleteNotif_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "notif_DeleteNotif"}, ""))
-=======
->>>>>>> 423530abb (Add notif mw api)
-=======
-
-	pattern_Middleware_DeleteNotif_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "notif_DeleteNotif"}, ""))
->>>>>>> 8553a2081 (Add delete api)
 )
 
 var (
 	forward_Middleware_CreateNotif_0 = runtime.ForwardResponseMessage
 
 	forward_Middleware_CreateNotifs_0 = runtime.ForwardResponseMessage
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 	forward_Middleware_DeleteNotif_0 = runtime.ForwardResponseMessage
-=======
->>>>>>> 423530abb (Add notif mw api)
-=======
-
-	forward_Middleware_DeleteNotif_0 = runtime.ForwardResponseMessage
->>>>>>> 8553a2081 (Add delete api)
 )

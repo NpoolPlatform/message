@@ -39,6 +39,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -132,85 +133,13 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"random\""
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 7ec96802f (add CouponScope in Coupon)
-=======
->>>>>>> 69b822e19 (add CouponScope in Coupon)
-=======
->>>>>>> master
         "CouponScopeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_scope\""
         },
         "CouponScope": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          "$ref": "#/definitions/v1CouponScope"
-=======
-=======
->>>>>>> 1d00d34ce (add AvailableIn)
-        "AvailableInStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"available_in\""
-        },
-        "AvailableIn": {
-          "$ref": "#/definitions/v1CouponAvailableIn"
-<<<<<<< HEAD
->>>>>>> 48d282860 (add AvailableIn)
-=======
-        "CouponScopeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"available_in\""
-=======
-        "CouponScopeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"available_in\""
-        },
-        "CouponScope": {
-          "$ref": "#/definitions/v1CouponScope"
->>>>>>> 265f77efc (change to CouponScope)
-        },
-        "CouponScope": {
-          "$ref": "#/definitions/v1CouponScope"
->>>>>>> 35797011c (change to CouponScope)
-        },
-=======
->>>>>>> e2ba5c456 (update scope)
-=======
-          "$ref": "#/definitions/v1CouponConstraint"
-=======
-          "$ref": "#/definitions/v1CouponScope"
->>>>>>> 1d4daf6dd (fix wrong name)
-        },
->>>>>>> 7ec96802f (add CouponScope in Coupon)
-=======
-        },
->>>>>>> 1d00d34ce (add AvailableIn)
-=======
->>>>>>> 2af3a1403 (update scope)
-=======
-          "$ref": "#/definitions/v1CouponConstraint"
-=======
-          "$ref": "#/definitions/v1CouponScope"
->>>>>>> fe359a10c (fix wrong name)
-        },
->>>>>>> 69b822e19 (add CouponScope in Coupon)
-=======
           "$ref": "#/definitions/v1CouponScope"
         },
->>>>>>> master
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -291,54 +220,9 @@
         },
         "Random": {
           "type": "boolean"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        },
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "CouponScope": {
-          "$ref": "#/definitions/v1CouponScope"
-=======
-        "AvailableIn": {
-          "$ref": "#/definitions/v1CouponAvailableIn"
->>>>>>> 48d282860 (add AvailableIn)
-=======
-        "CouponScope": {
-          "$ref": "#/definitions/v1CouponScope"
->>>>>>> 35797011c (change to CouponScope)
-=======
->>>>>>> e2ba5c456 (update scope)
-=======
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
->>>>>>> efeee4eee (add CouponScope in Coupon)
-=======
-        },
-<<<<<<< HEAD
-        "AvailableIn": {
-          "$ref": "#/definitions/v1CouponAvailableIn"
->>>>>>> 1d00d34ce (add AvailableIn)
-=======
-        "CouponScope": {
-          "$ref": "#/definitions/v1CouponScope"
->>>>>>> 265f77efc (change to CouponScope)
-=======
->>>>>>> 2af3a1403 (update scope)
-=======
-        },
-        "CouponScope": {
-          "$ref": "#/definitions/v1CouponScope"
->>>>>>> 3b78b9c40 (add CouponScope in Coupon)
-=======
-        },
-        "CouponScope": {
-          "$ref": "#/definitions/v1CouponScope"
->>>>>>> master
         }
       }
     },
@@ -392,6 +276,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Coupon"
           }
         },

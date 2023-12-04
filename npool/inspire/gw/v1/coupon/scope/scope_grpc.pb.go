@@ -19,66 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 	Gateway_CreateScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/CreateScope"
 	Gateway_DeleteScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/DeleteScope"
 	Gateway_GetScopes_FullMethodName   = "/inspire.gateway.coupon.scope.v1.Gateway/GetScopes"
-=======
-=======
->>>>>>> 1fb4844cc (update scope)
-=======
->>>>>>> 3a2981d70 (add coupon scope in gw)
-=======
->>>>>>> 9589c2455 (update scope)
-	Gateway_CreateScope_FullMethodName  = "/inspire.gateway.coupon.scope.v1.Gateway/CreateScope"
-	Gateway_DeleteScope_FullMethodName  = "/inspire.gateway.coupon.scope.v1.Gateway/DeleteScope"
-	Gateway_GetScopes_FullMethodName    = "/inspire.gateway.coupon.scope.v1.Gateway/GetScopes"
-	Gateway_GetAppScopes_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/GetAppScopes"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e243bad0c (add coupon scope in gw)
-=======
-	Gateway_CreateScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/CreateScope"
-	Gateway_DeleteScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/DeleteScope"
-	Gateway_GetScopes_FullMethodName   = "/inspire.gateway.coupon.scope.v1.Gateway/GetScopes"
->>>>>>> feba7689e (delete get app scopes)
-=======
->>>>>>> 1fb4844cc (update scope)
-=======
->>>>>>> 3a2981d70 (add coupon scope in gw)
-=======
-	Gateway_CreateScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/CreateScope"
-	Gateway_DeleteScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/DeleteScope"
-	Gateway_GetScopes_FullMethodName   = "/inspire.gateway.coupon.scope.v1.Gateway/GetScopes"
->>>>>>> 67de434f0 (delete get app scopes)
-=======
->>>>>>> 9589c2455 (update scope)
-=======
-	Gateway_CreateScope_FullMethodName   = "/inspire.gateway.coupon.scope.v1.Gateway/CreateScope"
-	Gateway_DeleteScope_FullMethodName   = "/inspire.gateway.coupon.scope.v1.Gateway/DeleteScope"
-	Gateway_GetScopes_FullMethodName     = "/inspire.gateway.coupon.scope.v1.Gateway/GetScopes"
-	Gateway_GetAppScopes_FullMethodName  = "/inspire.gateway.coupon.scope.v1.Gateway/GetAppScopes"
-	Gateway_GetNAppScopes_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/GetNAppScopes"
->>>>>>> 960f133ce (update scope pb)
-=======
-	Gateway_CreateScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/CreateScope"
-	Gateway_DeleteScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/DeleteScope"
-	Gateway_GetScopes_FullMethodName   = "/inspire.gateway.coupon.scope.v1.Gateway/GetScopes"
->>>>>>> 569d52611 (update scope)
-=======
-	Gateway_CreateScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/CreateScope"
-	Gateway_DeleteScope_FullMethodName = "/inspire.gateway.coupon.scope.v1.Gateway/DeleteScope"
-	Gateway_GetScopes_FullMethodName   = "/inspire.gateway.coupon.scope.v1.Gateway/GetScopes"
->>>>>>> master
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -88,42 +31,6 @@ type GatewayClient interface {
 	CreateScope(ctx context.Context, in *CreateScopeRequest, opts ...grpc.CallOption) (*CreateScopeResponse, error)
 	DeleteScope(ctx context.Context, in *DeleteScopeRequest, opts ...grpc.CallOption) (*DeleteScopeResponse, error)
 	GetScopes(ctx context.Context, in *GetScopesRequest, opts ...grpc.CallOption) (*GetScopesResponse, error)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e243bad0c (add coupon scope in gw)
-=======
->>>>>>> feba7689e (delete get app scopes)
-=======
-	GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
->>>>>>> 1fb4844cc (update scope)
-=======
-	GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
->>>>>>> 3a2981d70 (add coupon scope in gw)
-=======
->>>>>>> 67de434f0 (delete get app scopes)
-=======
-	GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
->>>>>>> 9589c2455 (update scope)
-=======
-	GetNAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error)
->>>>>>> 960f133ce (update scope pb)
-=======
-	GetNAppScopes(ctx context.Context, in *GetNAppScopesRequest, opts ...grpc.CallOption) (*GetNAppScopesResponse, error)
->>>>>>> 0e532945d (update scope pb)
-=======
->>>>>>> 569d52611 (update scope)
-=======
->>>>>>> master
 }
 
 type gatewayClient struct {
@@ -161,65 +68,6 @@ func (c *gatewayClient) GetScopes(ctx context.Context, in *GetScopesRequest, opt
 	return out, nil
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1fb4844cc (update scope)
-=======
->>>>>>> 3a2981d70 (add coupon scope in gw)
-=======
->>>>>>> 9589c2455 (update scope)
-func (c *gatewayClient) GetAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error) {
-	out := new(GetAppScopesResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetAppScopes_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e243bad0c (add coupon scope in gw)
-=======
->>>>>>> feba7689e (delete get app scopes)
-=======
->>>>>>> 1fb4844cc (update scope)
-=======
->>>>>>> 3a2981d70 (add coupon scope in gw)
-=======
->>>>>>> 67de434f0 (delete get app scopes)
-=======
->>>>>>> 9589c2455 (update scope)
-=======
-func (c *gatewayClient) GetNAppScopes(ctx context.Context, in *GetAppScopesRequest, opts ...grpc.CallOption) (*GetAppScopesResponse, error) {
-	out := new(GetAppScopesResponse)
-=======
-func (c *gatewayClient) GetNAppScopes(ctx context.Context, in *GetNAppScopesRequest, opts ...grpc.CallOption) (*GetNAppScopesResponse, error) {
-	out := new(GetNAppScopesResponse)
->>>>>>> 0e532945d (update scope pb)
-	err := c.cc.Invoke(ctx, Gateway_GetNAppScopes_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
->>>>>>> 960f133ce (update scope pb)
-=======
->>>>>>> 569d52611 (update scope)
-=======
->>>>>>> master
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -227,42 +75,6 @@ type GatewayServer interface {
 	CreateScope(context.Context, *CreateScopeRequest) (*CreateScopeResponse, error)
 	DeleteScope(context.Context, *DeleteScopeRequest) (*DeleteScopeResponse, error)
 	GetScopes(context.Context, *GetScopesRequest) (*GetScopesResponse, error)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e243bad0c (add coupon scope in gw)
-=======
->>>>>>> feba7689e (delete get app scopes)
-=======
-	GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
->>>>>>> 1fb4844cc (update scope)
-=======
-	GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
->>>>>>> 3a2981d70 (add coupon scope in gw)
-=======
->>>>>>> 67de434f0 (delete get app scopes)
-=======
-	GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
->>>>>>> 9589c2455 (update scope)
-=======
-	GetNAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error)
->>>>>>> 960f133ce (update scope pb)
-=======
-	GetNAppScopes(context.Context, *GetNAppScopesRequest) (*GetNAppScopesResponse, error)
->>>>>>> 0e532945d (update scope pb)
-=======
->>>>>>> 569d52611 (update scope)
-=======
->>>>>>> master
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -279,52 +91,6 @@ func (UnimplementedGatewayServer) DeleteScope(context.Context, *DeleteScopeReque
 func (UnimplementedGatewayServer) GetScopes(context.Context, *GetScopesRequest) (*GetScopesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetScopes not implemented")
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-func (UnimplementedGatewayServer) GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppScopes not implemented")
-}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e243bad0c (add coupon scope in gw)
-=======
->>>>>>> feba7689e (delete get app scopes)
-=======
-func (UnimplementedGatewayServer) GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppScopes not implemented")
-}
->>>>>>> 1fb4844cc (update scope)
-=======
-func (UnimplementedGatewayServer) GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppScopes not implemented")
-}
->>>>>>> 3a2981d70 (add coupon scope in gw)
-=======
->>>>>>> 67de434f0 (delete get app scopes)
-=======
-func (UnimplementedGatewayServer) GetAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppScopes not implemented")
-}
->>>>>>> 9589c2455 (update scope)
-=======
-func (UnimplementedGatewayServer) GetNAppScopes(context.Context, *GetAppScopesRequest) (*GetAppScopesResponse, error) {
-=======
-func (UnimplementedGatewayServer) GetNAppScopes(context.Context, *GetNAppScopesRequest) (*GetNAppScopesResponse, error) {
->>>>>>> 0e532945d (update scope pb)
-	return nil, status.Errorf(codes.Unimplemented, "method GetNAppScopes not implemented")
-}
->>>>>>> 960f133ce (update scope pb)
-=======
->>>>>>> 569d52611 (update scope)
-=======
->>>>>>> master
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
 // UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
@@ -392,78 +158,6 @@ func _Gateway_GetScopes_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1fb4844cc (update scope)
-=======
->>>>>>> 3a2981d70 (add coupon scope in gw)
-=======
->>>>>>> 9589c2455 (update scope)
-func _Gateway_GetAppScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppScopesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetAppScopes(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetAppScopes_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppScopes(ctx, req.(*GetAppScopesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e243bad0c (add coupon scope in gw)
-=======
->>>>>>> feba7689e (delete get app scopes)
-=======
->>>>>>> 1fb4844cc (update scope)
-=======
->>>>>>> 3a2981d70 (add coupon scope in gw)
-=======
->>>>>>> 67de434f0 (delete get app scopes)
-=======
->>>>>>> 9589c2455 (update scope)
-=======
-func _Gateway_GetNAppScopes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNAppScopesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetNAppScopes(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetNAppScopes_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNAppScopes(ctx, req.(*GetNAppScopesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
->>>>>>> 960f133ce (update scope pb)
-=======
->>>>>>> 569d52611 (update scope)
-=======
->>>>>>> master
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -483,50 +177,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GetScopes",
 			Handler:    _Gateway_GetScopes_Handler,
 		},
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1fb4844cc (update scope)
-=======
->>>>>>> 3a2981d70 (add coupon scope in gw)
-=======
->>>>>>> 9589c2455 (update scope)
-		{
-			MethodName: "GetAppScopes",
-			Handler:    _Gateway_GetAppScopes_Handler,
-		},
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e243bad0c (add coupon scope in gw)
-=======
->>>>>>> feba7689e (delete get app scopes)
-=======
->>>>>>> 1fb4844cc (update scope)
-=======
->>>>>>> 3a2981d70 (add coupon scope in gw)
-=======
->>>>>>> 67de434f0 (delete get app scopes)
-=======
->>>>>>> 9589c2455 (update scope)
-=======
-		{
-			MethodName: "GetNAppScopes",
-			Handler:    _Gateway_GetNAppScopes_Handler,
-		},
->>>>>>> 960f133ce (update scope pb)
-=======
->>>>>>> 569d52611 (update scope)
-=======
->>>>>>> master
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "npool/inspire/gw/v1/coupon/scope/scope.proto",

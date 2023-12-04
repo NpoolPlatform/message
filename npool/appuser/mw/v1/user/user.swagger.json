@@ -459,23 +459,9 @@
     "v1UserReq": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
-<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64",
-<<<<<<< HEAD
-=======
-        "EntID": {
-          "type": "string",
->>>>>>> 8eb981ff1 (Add auto increment id)
-=======
-        "ID": {
-          "type": "integer",
-          "format": "int64",
->>>>>>> d5be11d2e (Add ID to req)
-=======
->>>>>>> master
           "title": "Base"
         },
         "EntID": {

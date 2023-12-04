@@ -79,10 +79,6 @@
           "Middleware"
         ]
       }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8553a2081 (Add delete api)
     },
     "/v1/notif_DeleteNotif": {
       "post": {
@@ -115,11 +111,6 @@
           "Middleware"
         ]
       }
-<<<<<<< HEAD
-=======
->>>>>>> 423530abb (Add notif mw api)
-=======
->>>>>>> 8553a2081 (Add delete api)
     }
   },
   "definitions": {
@@ -215,17 +206,6 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1Uint32SliceVal"
-<<<<<<< HEAD
-        }
-      }
-    },
-    "v1CreateNotifRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1NotifReq"
-=======
->>>>>>> a8aaa956a (Change id to entid)
         }
       }
     },

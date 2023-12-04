@@ -249,7 +249,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "v1CreateAccountResponse": {
       "type": "object",
       "properties": {
@@ -258,8 +257,6 @@
         }
       }
     },
-=======
->>>>>>> f5935a7d3 (Change account mw id to entid)
     "v1GetAccountResponse": {
       "type": "object",
       "properties": {
