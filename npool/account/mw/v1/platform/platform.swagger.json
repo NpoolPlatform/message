@@ -15,7 +15,40 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/platform_DeleteAccount": {
+      "post": {
+        "operationId": "Middleware_DeleteAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -39,6 +72,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -48,8 +82,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "CoinTypeID": {
           "type": "string",
@@ -118,6 +157,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "CoinTypeID": {
@@ -140,7 +183,8 @@
           "type": "boolean"
         },
         "Locked": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "Locked when collecting"
         },
         "LockedBy": {
           "$ref": "#/definitions/v1AccountLockedBy"
@@ -165,7 +209,8 @@
         "PaymentCollector",
         "UserDirectBenefit"
       ],
-      "default": "DefaultAccountUsedFor"
+      "default": "DefaultAccountUsedFor",
+      "title": "- GoodBenefit: Daily good benefit receiver              - Platform Hot\n - UserBenefitHot: Limited amount money for withdrawal      - Platform Hot\n - UserBenefitCold: Money of user benefit over limitation    - Platform Cold\n - PlatformBenefitCold: Money over limitation                    - Platform Cold\n - GasProvider: Deposit money for transaction gas        - Platform Hot\n - UserWithdraw: User set withdraw address                - User Set\n - UserDeposit: Platform created user deposit address    - Platform Create\n - GoodPayment: Platform created for good payment        - Platform Created\n - PaymentCollector: Money for payment over limitation        - Platform Cold\n - UserDirectBenefit: Benefit address for user set to product  - User set"
     },
     "v1BoolVal": {
       "type": "object",
@@ -182,6 +227,9 @@
       "type": "object",
       "properties": {
         "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "CoinTypeID": {
@@ -218,6 +266,14 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1DeleteAccountRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AccountReq"
         }
       }
     },
@@ -259,6 +315,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Account"
           }
         },

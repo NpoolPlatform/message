@@ -4,36 +4,44 @@ package account.middleware.payment.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/payment";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/accountlockedby.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)  {}
+    rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)  {
+        option (google.api.http) = {
+            post: "/v1/payment_CreateAccount"
+            body: "*"
+        };
+    }
     rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)  {}
     rpc LockAccount       (LockAccountRequest)       returns (LockAccountResponse)    {}
     rpc UnlockAccount     (UnlockAccountRequest)     returns (UnlockAccountResponse)  {}
     rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)     {}
-    rpc GetAccountOnly    (GetAccountOnlyRequest)    returns (GetAccountOnlyResponse) {}
     rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)    {}
 }
 
 message AccountReq {
-    optional string     ID             = 10;
-    optional string     CoinTypeID     = 20;
-    optional string     AccountID      = 30;
-    optional string     Address        = 40;
-    optional bool       Active         = 50;
-    optional bool       Locked         = 60;
+    optional uint32 ID             = 9;
+    optional string EntID          = 10;
+    optional string CoinTypeID     = 20;
+    optional string AccountID      = 30;
+    optional string Address        = 40;
+    optional bool Active           = 50;
+    optional bool Locked           = 60;
     optional basetypes.v1.AccountLockedBy LockedBy = 70;
-    optional bool       Blocked        = 80;
-    optional string     CollectingTID  = 90;  // Used to free the address when transaction done
-    optional uint32     AvailableAt    = 100;
+    optional bool Blocked          = 80;
+    optional string CollectingTID  = 90;  // Used to free the address when transaction done
+    optional uint32 AvailableAt    = 100;
 }
 
 message Account {
     // @inject_tag: sql:"id"
-    string     ID            = 10;
+    uint32     ID            = 9;
+    // @inject_tag: sql:"ent_id"
+    string     EntID         = 10;
     // @inject_tag: sql:"coin_type_id"
     string     CoinTypeID    = 20;
     // @inject_tag: sql:"account_id"
@@ -51,16 +59,17 @@ message Account {
     bool       Blocked       = 80;
     // @inject_tag: sql:"collecting_tid"
     string     CollectingTID = 90;
-    // @inject_tag: sql:"created_at"
-    uint32     CreatedAt     = 100;
     // @inject_tag: sql:"available_at"
-    uint32     AvailableAt   = 110;
+    uint32     AvailableAt   = 100;
+    // @inject_tag: sql:"created_at"
+    uint32     CreatedAt     = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32     UpdatedAt     = 120;
+    uint32     UpdatedAt     = 1010;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID          = 10;
+    optional basetypes.v1.Uint32Val ID          = 9;
+    optional basetypes.v1.StringVal EntID       = 10;
     optional basetypes.v1.StringVal CoinTypeID  = 20;
     optional basetypes.v1.StringVal AccountID   = 30;
     optional basetypes.v1.StringVal Address     = 40;
@@ -89,7 +98,7 @@ message UpdateAccountResponse {
 }
 
 message LockAccountRequest {
-    string ID = 10;
+    uint32 ID = 10;
     basetypes.v1.AccountLockedBy LockedBy = 20;
 }
 
@@ -98,7 +107,7 @@ message LockAccountResponse {
 }
 
 message UnlockAccountRequest {
-    string ID = 10;
+    uint32 ID = 10;
 }
 
 message UnlockAccountResponse {
@@ -106,7 +115,7 @@ message UnlockAccountResponse {
 }
 
 message GetAccountRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetAccountResponse {
@@ -123,12 +132,3 @@ message GetAccountsResponse {
     repeated Account Infos = 10;
     uint32           Total = 20;
 }
-
-message GetAccountOnlyRequest {
-    Conds Conds = 10;
-}
-
-message GetAccountOnlyResponse {
-    Account Info = 10;
-}
-

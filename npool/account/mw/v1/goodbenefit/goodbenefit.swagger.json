@@ -15,7 +15,40 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/goodbenefit_DeleteAccount": {
+      "post": {
+        "operationId": "Middleware_DeleteAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -39,6 +72,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -48,8 +82,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "GoodID": {
           "type": "string",
@@ -119,13 +158,18 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "GoodID": {
           "type": "string"
         },
         "CoinTypeID": {
-          "type": "string"
+          "type": "string",
+          "title": "CoinTypeID of the good"
         },
         "AccountID": {
           "type": "string"
@@ -140,7 +184,8 @@
           "type": "boolean"
         },
         "Locked": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "Locked when transferring"
         },
         "LockedBy": {
           "$ref": "#/definitions/v1AccountLockedBy"
@@ -168,6 +213,9 @@
       "type": "object",
       "properties": {
         "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "GoodID": {
@@ -204,6 +252,14 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1DeleteAccountRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AccountReq"
         }
       }
     },
@@ -245,6 +301,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Account"
           }
         },

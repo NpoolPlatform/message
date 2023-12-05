@@ -24,7 +24,6 @@ const (
 	Middleware_DeleteAccount_FullMethodName     = "/account.middleware.user.v1.Middleware/DeleteAccount"
 	Middleware_ExistAccountConds_FullMethodName = "/account.middleware.user.v1.Middleware/ExistAccountConds"
 	Middleware_GetAccount_FullMethodName        = "/account.middleware.user.v1.Middleware/GetAccount"
-	Middleware_GetAccountOnly_FullMethodName    = "/account.middleware.user.v1.Middleware/GetAccountOnly"
 	Middleware_GetAccounts_FullMethodName       = "/account.middleware.user.v1.Middleware/GetAccounts"
 )
 
@@ -37,7 +36,6 @@ type MiddlewareClient interface {
 	DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error)
 	ExistAccountConds(ctx context.Context, in *ExistAccountCondsRequest, opts ...grpc.CallOption) (*ExistAccountCondsResponse, error)
 	GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error)
-	GetAccountOnly(ctx context.Context, in *GetAccountOnlyRequest, opts ...grpc.CallOption) (*GetAccountOnlyResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
 }
 
@@ -94,15 +92,6 @@ func (c *middlewareClient) GetAccount(ctx context.Context, in *GetAccountRequest
 	return out, nil
 }
 
-func (c *middlewareClient) GetAccountOnly(ctx context.Context, in *GetAccountOnlyRequest, opts ...grpc.CallOption) (*GetAccountOnlyResponse, error) {
-	out := new(GetAccountOnlyResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetAccountOnly_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error) {
 	out := new(GetAccountsResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetAccounts_FullMethodName, in, out, opts...)
@@ -121,7 +110,6 @@ type MiddlewareServer interface {
 	DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error)
 	ExistAccountConds(context.Context, *ExistAccountCondsRequest) (*ExistAccountCondsResponse, error)
 	GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error)
-	GetAccountOnly(context.Context, *GetAccountOnlyRequest) (*GetAccountOnlyResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -144,9 +132,6 @@ func (UnimplementedMiddlewareServer) ExistAccountConds(context.Context, *ExistAc
 }
 func (UnimplementedMiddlewareServer) GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccount not implemented")
-}
-func (UnimplementedMiddlewareServer) GetAccountOnly(context.Context, *GetAccountOnlyRequest) (*GetAccountOnlyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAccountOnly not implemented")
 }
 func (UnimplementedMiddlewareServer) GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccounts not implemented")
@@ -254,24 +239,6 @@ func _Middleware_GetAccount_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetAccountOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAccountOnlyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetAccountOnly(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetAccountOnly_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetAccountOnly(ctx, req.(*GetAccountOnlyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_GetAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAccountsRequest)
 	if err := dec(in); err != nil {
@@ -316,10 +283,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAccount",
 			Handler:    _Middleware_GetAccount_Handler,
-		},
-		{
-			MethodName: "GetAccountOnly",
-			Handler:    _Middleware_GetAccountOnly_Handler,
 		},
 		{
 			MethodName: "GetAccounts",

@@ -82,7 +82,8 @@ service Gateway {
 }
 
 message Account {
-    string ID         = 10;
+    uint32 ID         = 9;
+    string EntID      = 10;
     string AppID      = 20;
     string UserID     = 30;
     string CoinTypeID = 40;
@@ -157,7 +158,8 @@ message CreateAccountResponse {
 }
 
 message UpdateAccountRequest {
-    string          ID     = 10;
+    uint32          ID     = 10;
+    string          EntID  = 11;
     string          AppID  = 20;
     string          UserID = 30;
     repeated string Labels = 40;
@@ -169,7 +171,8 @@ message UpdateAccountResponse {
 }
 
 message DeleteAccountRequest {
-    string ID     = 10;
+    uint32 ID     = 10;
+    string EntID  = 11;
     string AppID  = 20;
     string UserID = 30;
 }
@@ -179,7 +182,8 @@ message DeleteAccountResponse {
 }
 
 message UpdateAppUserAccountRequest {
-    string        ID           = 10;
+    uint32        ID           = 10;
+    string        EntID        = 11;
     string        TargetAppID  = 20;
     string        TargetUserID = 30;
     optional bool Active       = 40;
