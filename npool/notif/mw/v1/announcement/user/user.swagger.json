@@ -212,11 +212,6 @@
       }
     },
     "v1Uint32Val": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
       "type": "object",
       "properties": {
         "Op": {
@@ -227,43 +222,6 @@
           "format": "int64"
         }
       }
-<<<<<<< HEAD
-    },
-    "v1UpdateAnnouncementUserResponse": {
->>>>>>> a8aaa956a (Change id to entid)
-=======
->>>>>>> 53161d938 (generate rebase proto)
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    },
-    "v1UpdateAnnouncementUserResponse": {
->>>>>>> a8aaa956a (Change id to entid)
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-=======
->>>>>>> 4ebcffd26 (Remove unnecessary api)
-=======
->>>>>>> 4ebcffd26 (Remove unnecessary api)
-=======
->>>>>>> 53161d938 (generate rebase proto)
     }
   }
 }

@@ -159,44 +159,9 @@
     "v1AppReq": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         "ID": {
           "type": "integer",
           "format": "int64",
-=======
-=======
->>>>>>> 2283e696c (Add auto increment id)
-=======
->>>>>>> 8eb981ff1 (Add auto increment id)
-        "EntID": {
-          "type": "string",
->>>>>>> 8eb981ff1 (Add auto increment id)
-=======
-        "ID": {
-          "type": "integer",
-          "format": "int64",
->>>>>>> d5be11d2e (Add ID to req)
-=======
-        "ID": {
-          "type": "integer",
-          "format": "int64",
->>>>>>> ea1c9973f (Add ID to req)
-=======
-        "ID": {
-          "type": "integer",
-          "format": "int64",
->>>>>>> d5be11d2e (Add ID to req)
-=======
-        "ID": {
-          "type": "integer",
-          "format": "int64",
->>>>>>> 53161d938 (generate rebase proto)
           "title": "Base info"
         },
         "EntID": {
@@ -268,21 +233,9 @@
     "v1Conds": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         "ID": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-=======
->>>>>>> 2283e696c (Add auto increment id)
-=======
->>>>>>> 8eb981ff1 (Add auto increment id)
-=======
-        "ID": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
->>>>>>> 4f1357410 (Add id to app conds)
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },

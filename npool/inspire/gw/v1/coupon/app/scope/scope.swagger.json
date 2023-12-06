@@ -48,71 +48,6 @@
         ]
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2e441a23e (update scope)
-=======
->>>>>>> e6bdbe852 (delete createappscope)
-=======
-=======
->>>>>>> b20bec5db (update scope)
-    "/v1/create/appscope": {
-      "post": {
-        "operationId": "Gateway_CreateAppScope",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateAppScopeResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateAppScopeRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 789287843 (update scope)
-=======
->>>>>>> ce3f1742c (delete createappscope)
-=======
->>>>>>> 569d52611 (update scope)
-<<<<<<< HEAD
->>>>>>> 2e441a23e (update scope)
-=======
-=======
->>>>>>> 80bc5ee31 (delete createappscope)
->>>>>>> e6bdbe852 (delete createappscope)
-=======
->>>>>>> b20bec5db (update scope)
-=======
->>>>>>> 4dcc07bdf (delete createappscope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
     "/v1/delete/appgoodscope": {
       "post": {
         "operationId": "Gateway_DeleteAppGoodScope",
@@ -145,24 +80,6 @@
         ]
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 6712e122f (update scope)
-=======
->>>>>>> e6bdbe852 (delete createappscope)
-=======
->>>>>>> b20bec5db (update scope)
-=======
->>>>>>> 4dcc07bdf (delete createappscope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
     "/v1/get/appgoodscopes": {
       "post": {
         "operationId": "Gateway_GetAppGoodScopes",
@@ -171,16 +88,6 @@
             "description": "A successful response.",
             "schema": {
               "$ref": "#/definitions/v1GetAppGoodScopesResponse"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b20bec5db (update scope)
-=======
->>>>>>> fa9719ac3 (update req)
-=======
->>>>>>> 53161d938 (generate rebase proto)
             }
           },
           "default": {
@@ -204,108 +111,6 @@
           "Gateway"
         ]
       }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60afcdcd5 (update scope)
-    "/v1/get/appscopes": {
-=======
-    "/v1/get/appgoodscopes": {
->>>>>>> ce3f1742c (delete createappscope)
-      "post": {
-        "operationId": "Gateway_GetAppGoodScopes",
-=======
-=======
-=======
->>>>>>> 909af8f64 (update scope)
->>>>>>> 6712e122f (update scope)
-    "/v1/get/appscopes": {
-=======
-    "/v1/get/appgoodscopes": {
->>>>>>> 80bc5ee31 (delete createappscope)
-      "post": {
-<<<<<<< HEAD
-        "operationId": "Gateway_GetAppScopes",
->>>>>>> 2e441a23e (update scope)
-=======
-        "operationId": "Gateway_GetAppGoodScopes",
->>>>>>> e6bdbe852 (delete createappscope)
-=======
-    },
-=======
->>>>>>> ef49b6dd6 (update scope)
-    "/v1/get/appscopes": {
-      "post": {
-        "operationId": "Gateway_GetAppScopes",
->>>>>>> b20bec5db (update scope)
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppScopesResponse"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 808e18b40 (update req)
-=======
->>>>>>> 2e441a23e (update scope)
-=======
-=======
->>>>>>> f7e76ad3e (update req)
->>>>>>> b695b1f4b (update req)
-=======
->>>>>>> b20bec5db (update scope)
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "$ref": "#/definitions/v1GetAppGoodScopesRequest"
-=======
-              "$ref": "#/definitions/v1GetAppScopesRequest"
->>>>>>> 2e441a23e (update scope)
-=======
-              "$ref": "#/definitions/v1GetAppGoodScopesRequest"
->>>>>>> b695b1f4b (update req)
-=======
-              "$ref": "#/definitions/v1GetAppScopesRequest"
->>>>>>> b20bec5db (update scope)
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 789287843 (update scope)
-=======
->>>>>>> 569d52611 (update scope)
->>>>>>> 2e441a23e (update scope)
-=======
->>>>>>> b20bec5db (update scope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
     }
   },
   "definitions": {
@@ -331,14 +136,7 @@
         "details": {
           "type": "array",
           "items": {
-<<<<<<< HEAD
-<<<<<<< HEAD
             "type": "object",
-=======
->>>>>>> b20bec5db (update scope)
-=======
-            "type": "object",
->>>>>>> 81d497829 (generate proto)
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -367,67 +165,10 @@
     "v1CreateAppGoodScopeRequest": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2e441a23e (update scope)
-=======
->>>>>>> b695b1f4b (update req)
-=======
->>>>>>> 53161d938 (generate rebase proto)
         "AppID": {
           "type": "string"
         },
         "CouponID": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-        "AppID": {
-          "type": "string"
-        },
->>>>>>> 808e18b40 (update req)
-=======
-        "AppID": {
-          "type": "string"
-        },
->>>>>>> fa9719ac3 (update req)
-        "ScopeID": {
->>>>>>> 789287843 (update scope)
-=======
->>>>>>> 285abcef6 (delete ScopeID)
-=======
-=======
->>>>>>> 6a8a83f8c (delete ScopeID)
-=======
-=======
-        "AppID": {
-          "type": "string"
-        },
->>>>>>> f7e76ad3e (update req)
-        "ScopeID": {
->>>>>>> 569d52611 (update scope)
-<<<<<<< HEAD
->>>>>>> 2e441a23e (update scope)
-=======
-=======
->>>>>>> ef4cde60c (delete ScopeID)
->>>>>>> 6a8a83f8c (delete ScopeID)
-=======
-        "ScopeID": {
->>>>>>> b20bec5db (update scope)
-=======
->>>>>>> e1bcdac3f (delete ScopeID)
-=======
->>>>>>> 53161d938 (generate rebase proto)
           "type": "string"
         },
         "AppGoodID": {
@@ -446,108 +187,14 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2e441a23e (update scope)
-=======
->>>>>>> e6bdbe852 (delete createappscope)
-=======
-=======
->>>>>>> b20bec5db (update scope)
-    "v1CreateAppScopeRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "ScopeID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CreateAppScopeResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Scope"
-        }
-      }
-    },
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 789287843 (update scope)
-=======
->>>>>>> ce3f1742c (delete createappscope)
-=======
->>>>>>> 569d52611 (update scope)
-<<<<<<< HEAD
->>>>>>> 2e441a23e (update scope)
-=======
-=======
->>>>>>> 80bc5ee31 (delete createappscope)
->>>>>>> e6bdbe852 (delete createappscope)
-=======
->>>>>>> b20bec5db (update scope)
-=======
->>>>>>> 4dcc07bdf (delete createappscope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
     "v1DeleteAppGoodScopeRequest": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2e441a23e (update scope)
-=======
->>>>>>> 13913ec01 (delete ScopeID)
         },
         "AppID": {
           "type": "string"
-=======
-<<<<<<< HEAD
->>>>>>> 789287843 (update scope)
-=======
-        },
-        "AppID": {
-          "type": "string"
->>>>>>> f4b9a2125 (delete ScopeID)
-=======
->>>>>>> 569d52611 (update scope)
-<<<<<<< HEAD
->>>>>>> 2e441a23e (update scope)
-=======
-=======
-        },
-        "AppID": {
-          "type": "string"
->>>>>>> 3db4b034a (delete ScopeID)
->>>>>>> 13913ec01 (delete ScopeID)
-=======
->>>>>>> b20bec5db (update scope)
-=======
-        },
-        "AppID": {
-          "type": "string"
->>>>>>> dd939f282 (delete ScopeID)
-=======
-        },
-        "AppID": {
-          "type": "string"
->>>>>>> 53161d938 (generate rebase proto)
         }
       }
     },
@@ -559,24 +206,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 6712e122f (update scope)
-=======
->>>>>>> b695b1f4b (update req)
-=======
->>>>>>> b20bec5db (update scope)
-=======
->>>>>>> fa9719ac3 (update req)
-=======
->>>>>>> 53161d938 (generate rebase proto)
     "v1GetAppGoodScopesRequest": {
       "type": "object",
       "properties": {
@@ -594,82 +223,6 @@
       }
     },
     "v1GetAppGoodScopesResponse": {
-<<<<<<< HEAD
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-<<<<<<< HEAD
-            "type": "object",
-=======
->>>>>>> b20bec5db (update scope)
-            "$ref": "#/definitions/v1Scope"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60afcdcd5 (update scope)
-=======
-=======
->>>>>>> 909af8f64 (update scope)
->>>>>>> 6712e122f (update scope)
-=======
->>>>>>> ef49b6dd6 (update scope)
-    "v1GetAppScopesRequest": {
-=======
-    "v1GetAppGoodScopesRequest": {
-<<<<<<< HEAD
->>>>>>> 808e18b40 (update req)
-=======
-    "v1GetAppScopesRequest": {
->>>>>>> 2e441a23e (update scope)
-=======
->>>>>>> f7e76ad3e (update req)
->>>>>>> b695b1f4b (update req)
-=======
-    "v1GetAppScopesRequest": {
->>>>>>> b20bec5db (update scope)
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "v1GetAppGoodScopesResponse": {
-=======
-    "v1GetAppScopesResponse": {
->>>>>>> 2e441a23e (update scope)
-=======
-    "v1GetAppGoodScopesResponse": {
->>>>>>> b695b1f4b (update req)
-=======
-    "v1GetAppScopesResponse": {
->>>>>>> b20bec5db (update scope)
-=======
->>>>>>> fa9719ac3 (update req)
       "type": "object",
       "properties": {
         "Infos": {
@@ -685,93 +238,18 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 789287843 (update scope)
-=======
->>>>>>> 569d52611 (update scope)
->>>>>>> 2e441a23e (update scope)
-=======
->>>>>>> b20bec5db (update scope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
     "v1Scope": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "string"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b695b1f4b (update req)
-=======
->>>>>>> 7fbe0f2f5 (return appid)
-        "GoodID": {
-          "type": "string"
-        },
-<<<<<<< HEAD
-        "AppID": {
-          "type": "string"
-        },
-=======
->>>>>>> 789287843 (update scope)
-=======
->>>>>>> 808e18b40 (update req)
-=======
-        "GoodID": {
-          "type": "string"
-        },
-<<<<<<< HEAD
-        "AppID": {
-          "type": "string"
-        },
-<<<<<<< HEAD
->>>>>>> 9595f0f01 (return appid)
-=======
-=======
->>>>>>> 569d52611 (update scope)
-<<<<<<< HEAD
->>>>>>> 2e441a23e (update scope)
-=======
-=======
->>>>>>> f7e76ad3e (update req)
-<<<<<<< HEAD
->>>>>>> b695b1f4b (update req)
-=======
-=======
-=======
->>>>>>> 9755e1647 (return appid)
-=======
->>>>>>> 53161d938 (generate rebase proto)
         "GoodID": {
           "type": "string"
         },
         "AppID": {
           "type": "string"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 614c347ff (return appid)
->>>>>>> 7fbe0f2f5 (return appid)
-=======
-        "GoodID": {
-          "type": "string"
-        },
->>>>>>> b20bec5db (update scope)
-=======
->>>>>>> fa9719ac3 (update req)
-=======
->>>>>>> 9755e1647 (return appid)
-=======
->>>>>>> 53161d938 (generate rebase proto)
         "AppGoodID": {
           "type": "string"
         },
@@ -790,43 +268,7 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         "CouponDenomination": {
-=======
-        "CouponCirculation": {
->>>>>>> 789287843 (update scope)
-=======
-        "CouponDenomination": {
->>>>>>> 68862949b (fix wrong attr)
-=======
-=======
->>>>>>> d90d6004c (fix wrong attr)
-        "CouponDenomination": {
-=======
-        "CouponCirculation": {
->>>>>>> 569d52611 (update scope)
-<<<<<<< HEAD
->>>>>>> 2e441a23e (update scope)
-=======
-=======
-        "CouponDenomination": {
->>>>>>> ae4432532 (fix wrong attr)
->>>>>>> d90d6004c (fix wrong attr)
-=======
-        "CouponCirculation": {
->>>>>>> b20bec5db (update scope)
-=======
-        "CouponDenomination": {
->>>>>>> 2078ff30e (fix wrong attr)
-=======
-        "CouponDenomination": {
->>>>>>> 53161d938 (generate rebase proto)
           "type": "string"
         },
         "CreatedAt": {

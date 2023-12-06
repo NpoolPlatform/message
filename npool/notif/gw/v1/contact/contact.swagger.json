@@ -356,21 +356,6 @@
         "ID": {
           "type": "integer",
           "format": "int64"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        },
-        "EntID": {
-          "type": "string"
-=======
->>>>>>> a8aaa956a (Change id to entid)
-        },
-        "EntID": {
-          "type": "string"
-=======
->>>>>>> a8aaa956a (Change id to entid)
-=======
->>>>>>> 53161d938 (generate rebase proto)
         },
         "EntID": {
           "type": "string"
@@ -587,21 +572,6 @@
         "ID": {
           "type": "integer",
           "format": "int64"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        },
-        "EntID": {
-          "type": "string"
-=======
->>>>>>> a8aaa956a (Change id to entid)
-        },
-        "EntID": {
-          "type": "string"
-=======
->>>>>>> a8aaa956a (Change id to entid)
-=======
->>>>>>> 53161d938 (generate rebase proto)
         },
         "EntID": {
           "type": "string"

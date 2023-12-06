@@ -79,17 +79,6 @@
           "Middleware"
         ]
       }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8553a2081 (Add delete api)
-=======
->>>>>>> 8553a2081 (Add delete api)
-=======
->>>>>>> 53161d938 (generate rebase proto)
     },
     "/v1/notif_DeleteNotif": {
       "post": {
@@ -122,19 +111,6 @@
           "Middleware"
         ]
       }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 423530abb (Add notif mw api)
-=======
->>>>>>> 8553a2081 (Add delete api)
-=======
->>>>>>> 423530abb (Add notif mw api)
-=======
->>>>>>> 8553a2081 (Add delete api)
-=======
->>>>>>> 53161d938 (generate rebase proto)
     }
   },
   "definitions": {
@@ -230,31 +206,6 @@
         },
         "IDs": {
           "$ref": "#/definitions/v1Uint32SliceVal"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        }
-      }
-    },
-    "v1CreateNotifRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1NotifReq"
-=======
->>>>>>> a8aaa956a (Change id to entid)
-        }
-      }
-    },
-    "v1CreateNotifRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1NotifReq"
-=======
->>>>>>> a8aaa956a (Change id to entid)
-=======
->>>>>>> 53161d938 (generate rebase proto)
         }
       }
     },

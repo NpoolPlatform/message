@@ -315,52 +315,7 @@
         },
         "CouponScopeStr": {
           "type": "string",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
           "title": "@inject_tag: sql:\"coupon_scope\""
-=======
-          "title": "@inject_tag: sql:\"coupon_constraint\""
->>>>>>> 447c10d15 (delete get app scopes)
-=======
-          "title": "@inject_tag: sql:\"coupon_scope\""
->>>>>>> 32c16c6a8 (make AppGoodID must)
-=======
-=======
->>>>>>> 343ac084f (delete get app scopes)
-=======
->>>>>>> 0b22a17fb (make AppGoodID must)
-          "title": "@inject_tag: sql:\"coupon_scope\""
-=======
-          "title": "@inject_tag: sql:\"coupon_constraint\""
->>>>>>> feba7689e (delete get app scopes)
-<<<<<<< HEAD
->>>>>>> e8948f8dc (delete get app scopes)
-=======
-=======
-          "title": "@inject_tag: sql:\"coupon_constraint\""
->>>>>>> 67de434f0 (delete get app scopes)
-<<<<<<< HEAD
->>>>>>> 343ac084f (delete get app scopes)
-=======
-=======
-          "title": "@inject_tag: sql:\"coupon_scope\""
->>>>>>> 8db49e034 (make AppGoodID must)
->>>>>>> 0b22a17fb (make AppGoodID must)
-=======
-          "title": "@inject_tag: sql:\"coupon_constraint\""
->>>>>>> 61a423dc4 (delete get app scopes)
-=======
-          "title": "@inject_tag: sql:\"coupon_scope\""
->>>>>>> cb372d17f (make AppGoodID must)
-=======
-          "title": "@inject_tag: sql:\"coupon_scope\""
->>>>>>> 53161d938 (generate rebase proto)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"

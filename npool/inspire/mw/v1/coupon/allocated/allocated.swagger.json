@@ -207,61 +207,7 @@
         },
         "CouponScopeStr": {
           "type": "string",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
           "title": "@inject_tag: sql:\"coupon_scope\""
-=======
-          "title": "@inject_tag: sql:\"coupon_constraint\""
->>>>>>> ca15e0eda (return CouponScope in allocated coupon)
-=======
-          "title": "@inject_tag: sql:\"coupon_scope\""
->>>>>>> 9723cb03b (fix wrong tag)
-=======
-=======
->>>>>>> 2d76a9423 (fix wrong tag)
-=======
->>>>>>> fae489c28 (return CouponScope in allocated coupon)
-=======
->>>>>>> adb7151e3 (fix wrong tag)
-          "title": "@inject_tag: sql:\"coupon_scope\""
-=======
-          "title": "@inject_tag: sql:\"coupon_constraint\""
->>>>>>> f4be3b7f8 (return CouponScope in allocated coupon)
-<<<<<<< HEAD
->>>>>>> c8e745dab (return CouponScope in allocated coupon)
-=======
-=======
-          "title": "@inject_tag: sql:\"coupon_scope\""
->>>>>>> 91bbc9509 (fix wrong tag)
-<<<<<<< HEAD
->>>>>>> 2d76a9423 (fix wrong tag)
-=======
-=======
-          "title": "@inject_tag: sql:\"coupon_constraint\""
->>>>>>> 2ee08c10e (return CouponScope in allocated coupon)
-<<<<<<< HEAD
->>>>>>> fae489c28 (return CouponScope in allocated coupon)
-=======
-=======
-          "title": "@inject_tag: sql:\"coupon_scope\""
->>>>>>> 880c4a0bc (fix wrong tag)
->>>>>>> adb7151e3 (fix wrong tag)
-=======
-          "title": "@inject_tag: sql:\"coupon_constraint\""
->>>>>>> d729dacfb (return CouponScope in allocated coupon)
-=======
-          "title": "@inject_tag: sql:\"coupon_scope\""
->>>>>>> 7cc32f688 (fix wrong tag)
-=======
-          "title": "@inject_tag: sql:\"coupon_scope\""
->>>>>>> 53161d938 (generate rebase proto)
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
@@ -424,19 +370,7 @@
     "v1UpdateCouponsResponse": {
       "type": "object",
       "properties": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         "Infos": {
-=======
-        "Info": {
->>>>>>> a13c7c34b (add update coupons)
-=======
-        "Infos": {
->>>>>>> 2d1271a2f (change to infos & add UsedAt)
-=======
-        "Infos": {
->>>>>>> 53161d938 (generate rebase proto)
           "type": "array",
           "items": {
             "type": "object",

@@ -331,25 +331,6 @@ func (CouponConstraint) EnumDescriptor() ([]byte, []int) {
 	return file_npool_basetypes_inspire_v1_enums_proto_rawDescGZIP(), []int{5}
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 830fcd1c6 (add CouponAvailableIn)
-=======
->>>>>>> 36fa23794 (change to CouponScope)
-=======
->>>>>>> 3df62ddde (add CouponAvailableIn)
-=======
->>>>>>> 4fa24c6fa (change to CouponScope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
 type CouponScope int32
 
 const (
@@ -363,254 +344,24 @@ const (
 var (
 	CouponScope_name = map[int32]string{
 		0:  "DefaultCouponScope",
-<<<<<<< HEAD
-=======
-type CouponAvailableIn int32
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-type CouponScope int32
->>>>>>> eea2b6fff (change to CouponScope)
-
-const (
-	CouponScope_DefaultCouponScope CouponScope = 0
-	CouponScope_AllGood            CouponScope = 10
-	CouponScope_Whitelist          CouponScope = 20
-	CouponScope_Blacklist          CouponScope = 30
-)
-
-// Enum value maps for CouponScope.
-var (
-<<<<<<< HEAD
-	CouponAvailableIn_name = map[int32]string{
-		0:  "DefaultCouponAvailableIn",
->>>>>>> 9b918d201 (add CouponAvailableIn)
-=======
-	CouponScope_name = map[int32]string{
-		0:  "DefaultCouponScope",
->>>>>>> eea2b6fff (change to CouponScope)
-=======
-=======
-=======
-type CouponScope int32
->>>>>>> 35797011c (change to CouponScope)
->>>>>>> 36fa23794 (change to CouponScope)
-
-const (
-	CouponScope_DefaultCouponScope CouponScope = 0
-	CouponScope_AllGood            CouponScope = 10
-	CouponScope_Whitelist          CouponScope = 20
-	CouponScope_Blacklist          CouponScope = 30
-)
-
-// Enum value maps for CouponScope.
-var (
-<<<<<<< HEAD
-	CouponAvailableIn_name = map[int32]string{
-		0:  "DefaultCouponAvailableIn",
->>>>>>> 025211b03 (add CouponAvailableIn)
-<<<<<<< HEAD
->>>>>>> 830fcd1c6 (add CouponAvailableIn)
-=======
-=======
-	CouponScope_name = map[int32]string{
-		0:  "DefaultCouponScope",
->>>>>>> 35797011c (change to CouponScope)
-<<<<<<< HEAD
->>>>>>> 36fa23794 (change to CouponScope)
-=======
-=======
-type CouponAvailableIn int32
-=======
-type CouponScope int32
->>>>>>> 265f77efc (change to CouponScope)
-
-const (
-	CouponScope_DefaultCouponScope CouponScope = 0
-	CouponScope_AllGood            CouponScope = 10
-	CouponScope_Whitelist          CouponScope = 20
-	CouponScope_Blacklist          CouponScope = 30
-)
-
-// Enum value maps for CouponScope.
-var (
-<<<<<<< HEAD
-	CouponAvailableIn_name = map[int32]string{
-		0:  "DefaultCouponAvailableIn",
->>>>>>> b80b41f78 (add CouponAvailableIn)
-<<<<<<< HEAD
->>>>>>> 3df62ddde (add CouponAvailableIn)
-=======
-=======
-	CouponScope_name = map[int32]string{
-		0:  "DefaultCouponScope",
->>>>>>> 265f77efc (change to CouponScope)
->>>>>>> 4fa24c6fa (change to CouponScope)
-=======
-type CouponAvailableIn int32
-=======
-type CouponScope int32
->>>>>>> 8c2c26e70 (change to CouponScope)
-
-const (
-	CouponScope_DefaultCouponScope CouponScope = 0
-	CouponScope_AllGood            CouponScope = 10
-	CouponScope_Whitelist          CouponScope = 20
-	CouponScope_Blacklist          CouponScope = 30
-)
-
-// Enum value maps for CouponScope.
-var (
-<<<<<<< HEAD
-	CouponAvailableIn_name = map[int32]string{
-		0:  "DefaultCouponAvailableIn",
->>>>>>> b4f311c56 (add CouponAvailableIn)
-=======
-	CouponScope_name = map[int32]string{
-		0:  "DefaultCouponScope",
->>>>>>> 8c2c26e70 (change to CouponScope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
 		10: "AllGood",
 		20: "Whitelist",
 		30: "Blacklist",
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eea2b6fff (change to CouponScope)
-=======
->>>>>>> 830fcd1c6 (add CouponAvailableIn)
-=======
-=======
->>>>>>> 3df62ddde (add CouponAvailableIn)
-=======
->>>>>>> 35797011c (change to CouponScope)
->>>>>>> 36fa23794 (change to CouponScope)
-=======
-=======
->>>>>>> 35797011c (change to CouponScope)
-=======
->>>>>>> 265f77efc (change to CouponScope)
->>>>>>> 4fa24c6fa (change to CouponScope)
-=======
->>>>>>> 8c2c26e70 (change to CouponScope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
 	CouponScope_value = map[string]int32{
 		"DefaultCouponScope": 0,
 		"AllGood":            10,
 		"Whitelist":          20,
 		"Blacklist":          30,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 53161d938 (generate rebase proto)
 	}
 )
 
 func (x CouponScope) Enum() *CouponScope {
 	p := new(CouponScope)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b80b41f78 (add CouponAvailableIn)
-=======
->>>>>>> b4f311c56 (add CouponAvailableIn)
-	CouponAvailableIn_value = map[string]int32{
-		"DefaultCouponAvailableIn": 0,
-		"AllGood":                  10,
-		"Whitelist":                20,
-		"Blacklist":                30,
-	}
-)
-
-func (x CouponAvailableIn) Enum() *CouponAvailableIn {
-	p := new(CouponAvailableIn)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 9b918d201 (add CouponAvailableIn)
-=======
-	}
-)
-
-func (x CouponScope) Enum() *CouponScope {
-	p := new(CouponScope)
->>>>>>> eea2b6fff (change to CouponScope)
-=======
-=======
->>>>>>> 3df62ddde (add CouponAvailableIn)
->>>>>>> 025211b03 (add CouponAvailableIn)
-<<<<<<< HEAD
->>>>>>> 830fcd1c6 (add CouponAvailableIn)
-=======
-=======
-	}
-)
-
-func (x CouponScope) Enum() *CouponScope {
-	p := new(CouponScope)
->>>>>>> 35797011c (change to CouponScope)
-<<<<<<< HEAD
->>>>>>> 36fa23794 (change to CouponScope)
-=======
-=======
->>>>>>> b80b41f78 (add CouponAvailableIn)
-<<<<<<< HEAD
->>>>>>> 3df62ddde (add CouponAvailableIn)
-=======
-=======
-	}
-)
-
-func (x CouponScope) Enum() *CouponScope {
-	p := new(CouponScope)
->>>>>>> 265f77efc (change to CouponScope)
->>>>>>> 4fa24c6fa (change to CouponScope)
-=======
->>>>>>> b4f311c56 (add CouponAvailableIn)
-=======
-	}
-)
-
-func (x CouponScope) Enum() *CouponScope {
-	p := new(CouponScope)
->>>>>>> 8c2c26e70 (change to CouponScope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
 	*p = x
 	return p
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 830fcd1c6 (add CouponAvailableIn)
-=======
->>>>>>> 36fa23794 (change to CouponScope)
-=======
->>>>>>> 3df62ddde (add CouponAvailableIn)
-=======
->>>>>>> 4fa24c6fa (change to CouponScope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
 func (x CouponScope) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
@@ -629,134 +380,6 @@ func (x CouponScope) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use CouponScope.Descriptor instead.
 func (CouponScope) EnumDescriptor() ([]byte, []int) {
-<<<<<<< HEAD
-=======
-func (x CouponAvailableIn) String() string {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-func (x CouponScope) String() string {
->>>>>>> eea2b6fff (change to CouponScope)
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (CouponScope) Descriptor() protoreflect.EnumDescriptor {
-	return file_npool_basetypes_inspire_v1_enums_proto_enumTypes[6].Descriptor()
-}
-
-func (CouponScope) Type() protoreflect.EnumType {
-	return &file_npool_basetypes_inspire_v1_enums_proto_enumTypes[6]
-}
-
-func (x CouponScope) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-<<<<<<< HEAD
-// Deprecated: Use CouponAvailableIn.Descriptor instead.
-func (CouponAvailableIn) EnumDescriptor() ([]byte, []int) {
->>>>>>> 9b918d201 (add CouponAvailableIn)
-=======
-// Deprecated: Use CouponScope.Descriptor instead.
-func (CouponScope) EnumDescriptor() ([]byte, []int) {
->>>>>>> eea2b6fff (change to CouponScope)
-=======
-=======
-=======
-func (x CouponScope) String() string {
->>>>>>> 35797011c (change to CouponScope)
->>>>>>> 36fa23794 (change to CouponScope)
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (CouponScope) Descriptor() protoreflect.EnumDescriptor {
-	return file_npool_basetypes_inspire_v1_enums_proto_enumTypes[6].Descriptor()
-}
-
-func (CouponScope) Type() protoreflect.EnumType {
-	return &file_npool_basetypes_inspire_v1_enums_proto_enumTypes[6]
-}
-
-func (x CouponScope) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-<<<<<<< HEAD
-// Deprecated: Use CouponAvailableIn.Descriptor instead.
-func (CouponAvailableIn) EnumDescriptor() ([]byte, []int) {
->>>>>>> 025211b03 (add CouponAvailableIn)
-<<<<<<< HEAD
->>>>>>> 830fcd1c6 (add CouponAvailableIn)
-=======
-=======
-// Deprecated: Use CouponScope.Descriptor instead.
-func (CouponScope) EnumDescriptor() ([]byte, []int) {
->>>>>>> 35797011c (change to CouponScope)
-<<<<<<< HEAD
->>>>>>> 36fa23794 (change to CouponScope)
-=======
-=======
-func (x CouponAvailableIn) String() string {
-=======
-func (x CouponScope) String() string {
->>>>>>> 265f77efc (change to CouponScope)
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (CouponScope) Descriptor() protoreflect.EnumDescriptor {
-	return file_npool_basetypes_inspire_v1_enums_proto_enumTypes[6].Descriptor()
-}
-
-func (CouponScope) Type() protoreflect.EnumType {
-	return &file_npool_basetypes_inspire_v1_enums_proto_enumTypes[6]
-}
-
-func (x CouponScope) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-<<<<<<< HEAD
-// Deprecated: Use CouponAvailableIn.Descriptor instead.
-func (CouponAvailableIn) EnumDescriptor() ([]byte, []int) {
->>>>>>> b80b41f78 (add CouponAvailableIn)
-<<<<<<< HEAD
->>>>>>> 3df62ddde (add CouponAvailableIn)
-=======
-=======
-// Deprecated: Use CouponScope.Descriptor instead.
-func (CouponScope) EnumDescriptor() ([]byte, []int) {
->>>>>>> 265f77efc (change to CouponScope)
->>>>>>> 4fa24c6fa (change to CouponScope)
-=======
-func (x CouponAvailableIn) String() string {
-=======
-func (x CouponScope) String() string {
->>>>>>> 8c2c26e70 (change to CouponScope)
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (CouponScope) Descriptor() protoreflect.EnumDescriptor {
-	return file_npool_basetypes_inspire_v1_enums_proto_enumTypes[6].Descriptor()
-}
-
-func (CouponScope) Type() protoreflect.EnumType {
-	return &file_npool_basetypes_inspire_v1_enums_proto_enumTypes[6]
-}
-
-func (x CouponScope) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-<<<<<<< HEAD
-// Deprecated: Use CouponAvailableIn.Descriptor instead.
-func (CouponAvailableIn) EnumDescriptor() ([]byte, []int) {
->>>>>>> b4f311c56 (add CouponAvailableIn)
-=======
-// Deprecated: Use CouponScope.Descriptor instead.
-func (CouponScope) EnumDescriptor() ([]byte, []int) {
->>>>>>> 8c2c26e70 (change to CouponScope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
 	return file_npool_basetypes_inspire_v1_enums_proto_rawDescGZIP(), []int{6}
 }
 
@@ -803,35 +426,6 @@ var file_npool_basetypes_inspire_v1_enums_proto_rawDesc = []byte{
 	0x6d, 0x61, 0x6c, 0x10, 0x0a, 0x12, 0x14, 0x0a, 0x10, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74,
 	0x54, 0x68, 0x72, 0x65, 0x73, 0x68, 0x6f, 0x6c, 0x64, 0x10, 0x14, 0x12, 0x0c, 0x0a, 0x08, 0x47,
 	0x6f, 0x6f, 0x64, 0x4f, 0x6e, 0x6c, 0x79, 0x10, 0x1e, 0x12, 0x11, 0x0a, 0x0d, 0x47, 0x6f, 0x6f,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eea2b6fff (change to CouponScope)
-=======
->>>>>>> 830fcd1c6 (add CouponAvailableIn)
-=======
-=======
->>>>>>> 3df62ddde (add CouponAvailableIn)
-=======
->>>>>>> 35797011c (change to CouponScope)
->>>>>>> 36fa23794 (change to CouponScope)
-=======
-=======
->>>>>>> 35797011c (change to CouponScope)
-=======
->>>>>>> 265f77efc (change to CouponScope)
->>>>>>> 4fa24c6fa (change to CouponScope)
-=======
->>>>>>> 8c2c26e70 (change to CouponScope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
 	0x64, 0x54, 0x68, 0x72, 0x65, 0x73, 0x68, 0x6f, 0x6c, 0x64, 0x10, 0x28, 0x2a, 0x50, 0x0a, 0x0b,
 	0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x12, 0x16, 0x0a, 0x12, 0x44,
 	0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70,
@@ -843,67 +437,6 @@ var file_npool_basetypes_inspire_v1_enums_proto_rawDesc = []byte{
 	0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70,
 	0x65, 0x73, 0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x33,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 830fcd1c6 (add CouponAvailableIn)
-=======
->>>>>>> 36fa23794 (change to CouponScope)
-=======
->>>>>>> 4fa24c6fa (change to CouponScope)
-=======
-=======
->>>>>>> b80b41f78 (add CouponAvailableIn)
-=======
->>>>>>> b4f311c56 (add CouponAvailableIn)
-	0x64, 0x54, 0x68, 0x72, 0x65, 0x73, 0x68, 0x6f, 0x6c, 0x64, 0x10, 0x28, 0x2a, 0x5c, 0x0a, 0x11,
-	0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x41, 0x76, 0x61, 0x69, 0x6c, 0x61, 0x62, 0x6c, 0x65, 0x49,
-	0x6e, 0x12, 0x1c, 0x0a, 0x18, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x43, 0x6f, 0x75, 0x70,
-	0x6f, 0x6e, 0x41, 0x76, 0x61, 0x69, 0x6c, 0x61, 0x62, 0x6c, 0x65, 0x49, 0x6e, 0x10, 0x00, 0x12,
-	0x0b, 0x0a, 0x07, 0x41, 0x6c, 0x6c, 0x47, 0x6f, 0x6f, 0x64, 0x10, 0x0a, 0x12, 0x0d, 0x0a, 0x09,
-	0x57, 0x68, 0x69, 0x74, 0x65, 0x6c, 0x69, 0x73, 0x74, 0x10, 0x14, 0x12, 0x0d, 0x0a, 0x09, 0x42,
-	0x6c, 0x61, 0x63, 0x6b, 0x6c, 0x69, 0x73, 0x74, 0x10, 0x1e, 0x42, 0x3d, 0x5a, 0x3b, 0x67, 0x69,
-	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c,
-	0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e,
-	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x69,
-	0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x33,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 9b918d201 (add CouponAvailableIn)
-=======
->>>>>>> eea2b6fff (change to CouponScope)
-=======
-=======
->>>>>>> 3df62ddde (add CouponAvailableIn)
->>>>>>> 025211b03 (add CouponAvailableIn)
-<<<<<<< HEAD
->>>>>>> 830fcd1c6 (add CouponAvailableIn)
-=======
-=======
->>>>>>> 35797011c (change to CouponScope)
-<<<<<<< HEAD
->>>>>>> 36fa23794 (change to CouponScope)
-=======
-=======
->>>>>>> b80b41f78 (add CouponAvailableIn)
-<<<<<<< HEAD
->>>>>>> 3df62ddde (add CouponAvailableIn)
-=======
-=======
->>>>>>> 265f77efc (change to CouponScope)
->>>>>>> 4fa24c6fa (change to CouponScope)
-=======
->>>>>>> b4f311c56 (add CouponAvailableIn)
-=======
->>>>>>> 8c2c26e70 (change to CouponScope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
 }
 
 var (
@@ -920,35 +453,6 @@ func file_npool_basetypes_inspire_v1_enums_proto_rawDescGZIP() []byte {
 
 var file_npool_basetypes_inspire_v1_enums_proto_enumTypes = make([]protoimpl.EnumInfo, 7)
 var file_npool_basetypes_inspire_v1_enums_proto_goTypes = []interface{}{
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eea2b6fff (change to CouponScope)
-=======
->>>>>>> 830fcd1c6 (add CouponAvailableIn)
-=======
-=======
->>>>>>> 3df62ddde (add CouponAvailableIn)
-=======
->>>>>>> 35797011c (change to CouponScope)
->>>>>>> 36fa23794 (change to CouponScope)
-=======
-=======
->>>>>>> 35797011c (change to CouponScope)
-=======
->>>>>>> 265f77efc (change to CouponScope)
->>>>>>> 4fa24c6fa (change to CouponScope)
-=======
->>>>>>> 8c2c26e70 (change to CouponScope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
 	(SettleType)(0),       // 0: basetypes.inspire.v1.SettleType
 	(SettleMode)(0),       // 1: basetypes.inspire.v1.SettleMode
 	(SettleAmountType)(0), // 2: basetypes.inspire.v1.SettleAmountType
@@ -956,62 +460,6 @@ var file_npool_basetypes_inspire_v1_enums_proto_goTypes = []interface{}{
 	(CouponType)(0),       // 4: basetypes.inspire.v1.CouponType
 	(CouponConstraint)(0), // 5: basetypes.inspire.v1.CouponConstraint
 	(CouponScope)(0),      // 6: basetypes.inspire.v1.CouponScope
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 830fcd1c6 (add CouponAvailableIn)
-=======
->>>>>>> 36fa23794 (change to CouponScope)
-=======
->>>>>>> 4fa24c6fa (change to CouponScope)
-=======
-=======
->>>>>>> b80b41f78 (add CouponAvailableIn)
-=======
->>>>>>> b4f311c56 (add CouponAvailableIn)
-	(SettleType)(0),        // 0: basetypes.inspire.v1.SettleType
-	(SettleMode)(0),        // 1: basetypes.inspire.v1.SettleMode
-	(SettleAmountType)(0),  // 2: basetypes.inspire.v1.SettleAmountType
-	(SettleInterval)(0),    // 3: basetypes.inspire.v1.SettleInterval
-	(CouponType)(0),        // 4: basetypes.inspire.v1.CouponType
-	(CouponConstraint)(0),  // 5: basetypes.inspire.v1.CouponConstraint
-	(CouponAvailableIn)(0), // 6: basetypes.inspire.v1.CouponAvailableIn
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 9b918d201 (add CouponAvailableIn)
-=======
->>>>>>> eea2b6fff (change to CouponScope)
-=======
-=======
->>>>>>> 3df62ddde (add CouponAvailableIn)
->>>>>>> 025211b03 (add CouponAvailableIn)
-<<<<<<< HEAD
->>>>>>> 830fcd1c6 (add CouponAvailableIn)
-=======
-=======
->>>>>>> 35797011c (change to CouponScope)
-<<<<<<< HEAD
->>>>>>> 36fa23794 (change to CouponScope)
-=======
-=======
->>>>>>> b80b41f78 (add CouponAvailableIn)
-<<<<<<< HEAD
->>>>>>> 3df62ddde (add CouponAvailableIn)
-=======
-=======
->>>>>>> 265f77efc (change to CouponScope)
->>>>>>> 4fa24c6fa (change to CouponScope)
-=======
->>>>>>> b4f311c56 (add CouponAvailableIn)
-=======
->>>>>>> 8c2c26e70 (change to CouponScope)
-=======
->>>>>>> 53161d938 (generate rebase proto)
 }
 var file_npool_basetypes_inspire_v1_enums_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
