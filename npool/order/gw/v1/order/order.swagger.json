@@ -767,7 +767,7 @@
         "UserID": {
           "type": "string"
         },
-        "ID": {
+        "EntID": {
           "type": "string"
         }
       }
@@ -863,6 +863,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "ParentOrderID": {
@@ -1112,6 +1116,10 @@
           "type": "string"
         },
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "Canceled": {
@@ -1137,6 +1145,10 @@
           "type": "string"
         },
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "Canceled": {
@@ -1162,6 +1174,10 @@
           "type": "string"
         },
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "Canceled": {

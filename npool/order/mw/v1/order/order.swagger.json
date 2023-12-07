@@ -15,7 +15,72 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/order_DeleteOrder": {
+      "post": {
+        "operationId": "Middleware_DeleteOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/order_UpdateOrder": {
+      "post": {
+        "operationId": "Middleware_UpdateOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -70,8 +135,11 @@
       "type": "object",
       "properties": {
         "ID": {
-          "$ref": "#/definitions/v1StringVal",
+          "$ref": "#/definitions/v1Uint32Val",
           "title": "order"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
@@ -129,8 +197,11 @@
           "$ref": "#/definitions/v1Uint32Val"
         },
         "IDs": {
-          "$ref": "#/definitions/v1StringSliceVal",
+          "$ref": "#/definitions/v1Uint32SliceVal",
           "title": "other"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         },
         "CouponID": {
           "$ref": "#/definitions/v1StringVal"
@@ -181,6 +252,14 @@
             "type": "object",
             "$ref": "#/definitions/v1Order"
           }
+        }
+      }
+    },
+    "v1DeleteOrderRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderReq"
         }
       }
     },
@@ -257,8 +336,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "order\n@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "AppID": {
           "type": "string",
@@ -493,8 +577,12 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "order"
+        },
+        "EntID": {
+          "type": "string"
         },
         "AppID": {
           "type": "string"
@@ -773,6 +861,14 @@
         "Value": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateOrderRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderReq"
         }
       }
     },

@@ -15,7 +15,136 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/compensate_CreateCompensate": {
+      "post": {
+        "operationId": "Middleware_CreateCompensate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateCompensateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateCompensateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/compensate_DeleteCompensate": {
+      "post": {
+        "operationId": "Middleware_DeleteCompensate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteCompensateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteCompensateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/compensate_GetCompensate": {
+      "post": {
+        "operationId": "Middleware_GetCompensate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCompensateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCompensateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/compensate_UpdateCompensate": {
+      "post": {
+        "operationId": "Middleware_UpdateCompensate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCompensateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateCompensateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -49,8 +178,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "OrderID": {
           "type": "string",
@@ -120,6 +254,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "OrderID": {
@@ -145,6 +283,9 @@
       "type": "object",
       "properties": {
         "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "OrderID": {
@@ -158,11 +299,27 @@
         }
       }
     },
+    "v1CreateCompensateRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CompensateReq"
+        }
+      }
+    },
     "v1CreateCompensateResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Compensate"
+        }
+      }
+    },
+    "v1DeleteCompensateRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CompensateReq"
         }
       }
     },
@@ -187,6 +344,14 @@
       "properties": {
         "Info": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1GetCompensateRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
         }
       }
     },
@@ -234,6 +399,14 @@
         "Value": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateCompensateRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CompensateReq"
         }
       }
     },
