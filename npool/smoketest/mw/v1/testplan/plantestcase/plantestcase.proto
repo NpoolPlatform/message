@@ -25,7 +25,9 @@ enum TestCaseResult {
 
 message PlanTestCase {
     // @inject_tag: sql:"id"
-    string          ID                                      = 10;
+    uint32          ID                                      = 9;
+    // @inject_tag: sql:"ent_id"
+    string          EntID                                   = 10;
     // @inject_tag: sql:"test_plan_id"
     string          TestPlanID                              = 20;
     // @inject_tag: sql:"test_case_id"
@@ -68,7 +70,8 @@ message PlanTestCase {
 }
 
 message PlanTestCaseReq {
-    optional string          ID          = 10;
+    optional uint32          ID          = 9;
+    optional string          EntID       = 10;
     optional string          TestPlanID  = 20;
     optional string          TestCaseID  = 30;
     optional string          Input       = 40;
@@ -76,16 +79,16 @@ message PlanTestCaseReq {
     optional string          Description = 60;
     optional uint32          RunDuration = 70;
     optional string          TestUserID  = 80;
-    optional string          AppID       = 90;
     optional TestCaseResult  Result      = 100;
     optional uint32          Index       = 110;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID             = 10;
+    optional basetypes.v1.Uint32Val      ID             = 9;
+    optional basetypes.v1.StringVal      EntID          = 10;
     optional basetypes.v1.StringVal      TestPlanID     = 20;
     optional basetypes.v1.StringVal      TestUserID     = 30;
-    optional basetypes.v1.StringVal      Result         = 40;
+    optional basetypes.v1.Uint32Val      Result         = 40;
     optional basetypes.v1.StringSliceVal TestPlanIDs    = 50;
 }
 
@@ -106,7 +109,7 @@ message UpdatePlanTestCaseResponse {
 }
 
 message GetPlanTestCaseRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetPlanTestCaseResponse {
@@ -133,7 +136,7 @@ message GetPlanTestCaseOnlyResponse {
 }
 
 message ExistPlanTestCaseRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistPlanTestCaseResponse {

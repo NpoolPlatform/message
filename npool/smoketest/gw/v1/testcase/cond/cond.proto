@@ -44,7 +44,7 @@ message CreateCondRequest {
     optional string ArgumentMap        = 30;
     uint32          Index              = 40;
     smoketest.middleware.testcase.cond.v1.CondType CondType = 50;
-    optional string ID                 = 60;
+    optional string EntID              = 60;
 }
 
 message CreateCondResponse {
@@ -52,7 +52,8 @@ message CreateCondResponse {
 }
 
 message DeleteCondRequest {
-    string ID        = 10;
+    uint32 ID        = 10;
+    string EntID     = 20;
 }
 
 message DeleteCondResponse {
@@ -70,7 +71,8 @@ message GetCondsResponse {
 }
 
 message UpdateCondRequest {
-    string          ID           = 10;
+    uint32          ID           = 9;
+    string          EntID        = 10;
     optional string ArgumentMap  = 20;
     optional smoketest.middleware.testcase.cond.v1.CondType CondType  = 30;
     optional uint32 Index        = 40;

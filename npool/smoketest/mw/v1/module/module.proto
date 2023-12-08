@@ -19,7 +19,9 @@ service Middleware {
 
 message Module {
     // @inject_tag: sql:"id"
-    string          ID                                                = 10;
+    uint32          ID                                                = 9;
+    // @inject_tag: sql:"ent_id"
+    string          EntID                                             = 10;
     // @inject_tag: sql:"name"
     string          Name                                              = 20;
     // @inject_tag: sql:"description"
@@ -33,15 +35,16 @@ message Module {
 }
 
 message ModuleReq {
-    optional string ID          = 10;
+    optional uint32 ID          = 9;
+    optional string EntID       = 10;
     optional string Name        = 20;
     optional string Description = 30;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID   = 10;
-    optional basetypes.v1.StringVal Name = 20;
-
+    optional basetypes.v1.Uint32Val ID    = 9;
+    optional basetypes.v1.StringVal EntID = 10;
+    optional basetypes.v1.StringVal Name  = 20;
 }
 
 message CreateModuleRequest {
@@ -53,7 +56,7 @@ message CreateModuleResponse {
 }
 
 message ExistModuleRequest {
-    string     ID = 10;
+    string EntID = 10;
 }
 
 message ExistModuleResponse {
@@ -88,7 +91,7 @@ message GetModulesResponse {
 }
 
 message GetModuleRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetModuleResponse {

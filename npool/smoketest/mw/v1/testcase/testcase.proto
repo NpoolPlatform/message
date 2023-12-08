@@ -18,7 +18,9 @@ service Middleware {
 
 message TestCase {
     // @inject_tag: sql:"id"
-    string       ID               = 10;
+    uint32       ID               = 9;
+    // @inject_tag: sql:"ent_id"
+    string       EntID            = 10;
     // @inject_tag: sql:"name"
     string       Name             = 20;
     // @inject_tag: sql:"description"
@@ -64,7 +66,8 @@ enum TestCaseClass {
 }
 
 message TestCaseReq {
-    optional string        ID            = 10;
+    optional uint32        ID            = 9;
+    optional string        EntID         = 10;
     optional string        Name          = 20;
     optional string        Description   = 30;
     optional string        ModuleID      = 40;
@@ -79,11 +82,13 @@ message TestCaseReq {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID                 = 10;
+    optional basetypes.v1.Uint32Val      ID                 = 9;
+    optional basetypes.v1.StringVal      EntID              = 10;
     optional basetypes.v1.StringVal      ModuleID           = 20;
     optional basetypes.v1.StringVal      ApiID              = 30;
     optional basetypes.v1.BoolVal        Deprecated         = 50;
-    optional basetypes.v1.StringSliceVal IDs                = 60;
+    optional basetypes.v1.Uint32SliceVal IDs                = 60;
+    optional basetypes.v1.StringSliceVal EntIDs             = 70;
 }
 
 message CreateTestCaseRequest {
@@ -95,7 +100,7 @@ message CreateTestCaseResponse {
 }
 
 message ExistTestCaseRequest {
-    string ID   = 10;
+    string EntID   = 10;
 }
 
 message ExistTestCaseResponse {
@@ -122,7 +127,7 @@ message GetTestCasesResponse {
 }
 
 message GetTestCaseRequest {
-    string ID   = 10;
+    string EntID   = 10;
 }
 
 message GetTestCaseResponse {

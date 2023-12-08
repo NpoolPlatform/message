@@ -22,18 +22,20 @@ enum CondType {
 }
 
 message CondReq {
-    optional string   ID               = 10;
+    optional uint32   ID               = 9;
+    optional string   EntID            = 10;
     optional CondType CondType         = 20;
     optional string   TestCaseID       = 30;
     optional string   CondTestCaseID   = 40;
     optional uint32   Index            = 50;
-    optional uint32   CreatedAt        = 60;
-    optional string   ArgumentMap      = 70;
+    optional string   ArgumentMap      = 60;
 }
 
 message Cond {
     // @inject_tag: sql:"id"
-    string          ID                       = 10;
+    uint32          ID                       = 9;
+    // @inject_tag: sql:"ent_id"
+    string          EntID                    = 10;
     // @inject_tag: sql:"cond_type"
     string          CondTypeStr              = 20;
     CondType        CondType                 = 30;
@@ -54,8 +56,9 @@ message Cond {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal  ID             = 10;
-    optional basetypes.v1.StringVal  CondType       = 20;
+    optional basetypes.v1.Uint32Val  ID             = 9;
+    optional basetypes.v1.StringVal  EntID          = 10;
+    optional basetypes.v1.Uint32Val  CondType       = 20;
     optional basetypes.v1.StringVal  TestCaseID     = 30;
     optional basetypes.v1.StringVal  CondTestCaseID = 40;
 }
@@ -85,7 +88,7 @@ message UpdateCondResponse {
 }
 
 message GetCondRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetCondResponse {
@@ -94,13 +97,13 @@ message GetCondResponse {
 
 message GetCondsRequest {
     Conds Conds   = 10;
-    int32  Offset                                    = 20;
-    int32  Limit                                     = 30;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
 }
 
 message GetCondsResponse {
     repeated Cond Infos = 10;
-    uint32                                           Total = 20;
+    uint32        Total = 20;
 }
 
 message DeleteCondRequest {
