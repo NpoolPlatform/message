@@ -39,7 +39,8 @@ service Gateway {
 }
 
 message TestPlan {
-    string          ID                                      = 10;
+    uint32          ID                                      = 9;
+    string          EntID                                   = 10;
     string          Name                                    = 20;
     smoketest.middleware.testplan.v1.TestPlanState   State  = 30;
     string          CreatedBy                               = 40;
@@ -57,7 +58,8 @@ message TestPlan {
 }
 
 message DeleteTestPlanRequest {
-    string ID = 10;
+    uint32 ID    = 10;
+    string EntID = 20;
 }
 
 message DeleteTestPlanResponse {
@@ -75,7 +77,8 @@ message GetTestPlansResponse {
 }
 
 message UpdateTestPlanRequest {
-    string                   ID                                      = 10;
+    uint32                   ID                                      = 9;
+    string                   EntID                                   = 10;
     optional string          Name                                    = 20;
     optional smoketest.middleware.testplan.v1.TestPlanState  State   = 30;
     optional string          Executor                                = 40;
@@ -96,7 +99,7 @@ message CreateTestPlanRequest {
     string          CreatedBy = 20;
     optional string Executor  = 30;
     optional uint32 Deadline  = 40;
-    optional string ID        = 50;
+    optional string EntID     = 50;
 }
 
 message CreateTestPlanResponse {
