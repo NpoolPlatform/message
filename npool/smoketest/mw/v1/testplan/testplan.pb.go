@@ -457,7 +457,7 @@ type Conds struct {
 
 	ID        *v1.Uint32Val `protobuf:"bytes,9,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
 	EntID     *v1.StringVal `protobuf:"bytes,10,opt,name=EntID,proto3,oneof" json:"EntID,omitempty"`
-	State     *v1.StringVal `protobuf:"bytes,20,opt,name=State,proto3,oneof" json:"State,omitempty"`
+	State     *v1.Uint32Val `protobuf:"bytes,20,opt,name=State,proto3,oneof" json:"State,omitempty"`
 	CreatedBy *v1.StringVal `protobuf:"bytes,30,opt,name=CreatedBy,proto3,oneof" json:"CreatedBy,omitempty"`
 	Executor  *v1.StringVal `protobuf:"bytes,40,opt,name=Executor,proto3,oneof" json:"Executor,omitempty"`
 }
@@ -508,7 +508,7 @@ func (x *Conds) GetEntID() *v1.StringVal {
 	return nil
 }
 
-func (x *Conds) GetState() *v1.StringVal {
+func (x *Conds) GetState() *v1.Uint32Val {
 	if x != nil {
 		return x.State
 	}
@@ -1208,7 +1208,7 @@ var file_npool_smoketest_mw_v1_testplan_testplan_proto_rawDesc = []byte{
 	0x74, 0x72, 0x69, 0x6e, 0x67, 0x56, 0x61, 0x6c, 0x48, 0x01, 0x52, 0x05, 0x45, 0x6e, 0x74, 0x49,
 	0x44, 0x88, 0x01, 0x01, 0x12, 0x32, 0x0a, 0x05, 0x53, 0x74, 0x61, 0x74, 0x65, 0x18, 0x14, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e,
-	0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x56, 0x61, 0x6c, 0x48, 0x02, 0x52, 0x05,
+	0x76, 0x31, 0x2e, 0x55, 0x69, 0x6e, 0x74, 0x33, 0x32, 0x56, 0x61, 0x6c, 0x48, 0x02, 0x52, 0x05,
 	0x53, 0x74, 0x61, 0x74, 0x65, 0x88, 0x01, 0x01, 0x12, 0x3a, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61,
 	0x74, 0x65, 0x64, 0x42, 0x79, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x62, 0x61,
 	0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e,
@@ -1394,7 +1394,7 @@ var file_npool_smoketest_mw_v1_testplan_testplan_proto_depIdxs = []int32{
 	0,  // 3: smoketest.middleware.testplan.v1.TestPlanReq.Result:type_name -> smoketest.middleware.testplan.v1.TestResultState
 	17, // 4: smoketest.middleware.testplan.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
 	18, // 5: smoketest.middleware.testplan.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	18, // 6: smoketest.middleware.testplan.v1.Conds.State:type_name -> basetypes.v1.StringVal
+	17, // 6: smoketest.middleware.testplan.v1.Conds.State:type_name -> basetypes.v1.Uint32Val
 	18, // 7: smoketest.middleware.testplan.v1.Conds.CreatedBy:type_name -> basetypes.v1.StringVal
 	18, // 8: smoketest.middleware.testplan.v1.Conds.Executor:type_name -> basetypes.v1.StringVal
 	3,  // 9: smoketest.middleware.testplan.v1.CreateTestPlanRequest.Info:type_name -> smoketest.middleware.testplan.v1.TestPlanReq

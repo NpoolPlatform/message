@@ -61,7 +61,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "Result": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "TestPlanIDs": {
           "$ref": "#/definitions/v1StringSliceVal"

@@ -89,7 +89,7 @@ message Conds {
     optional basetypes.v1.StringVal      EntID          = 10;
     optional basetypes.v1.StringVal      TestPlanID     = 20;
     optional basetypes.v1.StringVal      TestUserID     = 30;
-    optional basetypes.v1.StringVal      Result         = 40;
+    optional basetypes.v1.Uint32Val      Result         = 40;
     optional basetypes.v1.StringSliceVal TestPlanIDs    = 50;
 }
 

@@ -83,7 +83,7 @@ message TestPlanReq {
 message Conds {
     optional basetypes.v1.Uint32Val      ID                         = 9;
     optional basetypes.v1.StringVal      EntID                      = 10;
-    optional basetypes.v1.StringVal      State                      = 20;
+    optional basetypes.v1.Uint32Val      State                      = 20;
     optional basetypes.v1.StringVal      CreatedBy                  = 30;
     optional basetypes.v1.StringVal      Executor                   = 40;
 }

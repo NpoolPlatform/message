@@ -55,7 +55,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "State": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "CreatedBy": {
           "$ref": "#/definitions/v1StringVal"

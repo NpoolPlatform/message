@@ -461,7 +461,7 @@ type Conds struct {
 	EntID       *v1.StringVal      `protobuf:"bytes,10,opt,name=EntID,proto3,oneof" json:"EntID,omitempty"`
 	TestPlanID  *v1.StringVal      `protobuf:"bytes,20,opt,name=TestPlanID,proto3,oneof" json:"TestPlanID,omitempty"`
 	TestUserID  *v1.StringVal      `protobuf:"bytes,30,opt,name=TestUserID,proto3,oneof" json:"TestUserID,omitempty"`
-	Result      *v1.StringVal      `protobuf:"bytes,40,opt,name=Result,proto3,oneof" json:"Result,omitempty"`
+	Result      *v1.Uint32Val      `protobuf:"bytes,40,opt,name=Result,proto3,oneof" json:"Result,omitempty"`
 	TestPlanIDs *v1.StringSliceVal `protobuf:"bytes,50,opt,name=TestPlanIDs,proto3,oneof" json:"TestPlanIDs,omitempty"`
 }
 
@@ -525,7 +525,7 @@ func (x *Conds) GetTestUserID() *v1.StringVal {
 	return nil
 }
 
-func (x *Conds) GetResult() *v1.StringVal {
+func (x *Conds) GetResult() *v1.Uint32Val {
 	if x != nil {
 		return x.Result
 	}
@@ -1346,7 +1346,7 @@ var file_npool_smoketest_mw_v1_testplan_plantestcase_plantestcase_proto_rawDesc 
 	0x6c, 0x48, 0x03, 0x52, 0x0a, 0x54, 0x65, 0x73, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x88,
 	0x01, 0x01, 0x12, 0x34, 0x0a, 0x06, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x28, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x17, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76,
-	0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x56, 0x61, 0x6c, 0x48, 0x04, 0x52, 0x06, 0x52,
+	0x31, 0x2e, 0x55, 0x69, 0x6e, 0x74, 0x33, 0x32, 0x56, 0x61, 0x6c, 0x48, 0x04, 0x52, 0x06, 0x52,
 	0x65, 0x73, 0x75, 0x6c, 0x74, 0x88, 0x01, 0x01, 0x12, 0x43, 0x0a, 0x0b, 0x54, 0x65, 0x73, 0x74,
 	0x50, 0x6c, 0x61, 0x6e, 0x49, 0x44, 0x73, 0x18, 0x32, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e,
 	0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72,
@@ -1561,7 +1561,7 @@ var file_npool_smoketest_mw_v1_testplan_plantestcase_plantestcase_proto_depIdxs 
 	21, // 5: smoketest.middleware.testplan.plantestcase.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
 	21, // 6: smoketest.middleware.testplan.plantestcase.v1.Conds.TestPlanID:type_name -> basetypes.v1.StringVal
 	21, // 7: smoketest.middleware.testplan.plantestcase.v1.Conds.TestUserID:type_name -> basetypes.v1.StringVal
-	21, // 8: smoketest.middleware.testplan.plantestcase.v1.Conds.Result:type_name -> basetypes.v1.StringVal
+	20, // 8: smoketest.middleware.testplan.plantestcase.v1.Conds.Result:type_name -> basetypes.v1.Uint32Val
 	22, // 9: smoketest.middleware.testplan.plantestcase.v1.Conds.TestPlanIDs:type_name -> basetypes.v1.StringSliceVal
 	2,  // 10: smoketest.middleware.testplan.plantestcase.v1.CreatePlanTestCaseRequest.Info:type_name -> smoketest.middleware.testplan.plantestcase.v1.PlanTestCaseReq
 	1,  // 11: smoketest.middleware.testplan.plantestcase.v1.CreatePlanTestCaseResponse.Info:type_name -> smoketest.middleware.testplan.plantestcase.v1.PlanTestCase
