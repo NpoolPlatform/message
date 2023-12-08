@@ -149,7 +149,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "CondType": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "TestCaseID": {
           "$ref": "#/definitions/v1StringVal"

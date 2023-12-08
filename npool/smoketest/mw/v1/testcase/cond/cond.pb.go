@@ -317,7 +317,7 @@ type Conds struct {
 
 	ID             *v1.Uint32Val `protobuf:"bytes,9,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
 	EntID          *v1.StringVal `protobuf:"bytes,10,opt,name=EntID,proto3,oneof" json:"EntID,omitempty"`
-	CondType       *v1.StringVal `protobuf:"bytes,20,opt,name=CondType,proto3,oneof" json:"CondType,omitempty"`
+	CondType       *v1.Uint32Val `protobuf:"bytes,20,opt,name=CondType,proto3,oneof" json:"CondType,omitempty"`
 	TestCaseID     *v1.StringVal `protobuf:"bytes,30,opt,name=TestCaseID,proto3,oneof" json:"TestCaseID,omitempty"`
 	CondTestCaseID *v1.StringVal `protobuf:"bytes,40,opt,name=CondTestCaseID,proto3,oneof" json:"CondTestCaseID,omitempty"`
 }
@@ -368,7 +368,7 @@ func (x *Conds) GetEntID() *v1.StringVal {
 	return nil
 }
 
-func (x *Conds) GetCondType() *v1.StringVal {
+func (x *Conds) GetCondType() *v1.Uint32Val {
 	if x != nil {
 		return x.CondType
 	}
@@ -1046,7 +1046,7 @@ var file_npool_smoketest_mw_v1_testcase_cond_cond_proto_rawDesc = []byte{
 	0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x56, 0x61, 0x6c, 0x48, 0x01, 0x52, 0x05,
 	0x45, 0x6e, 0x74, 0x49, 0x44, 0x88, 0x01, 0x01, 0x12, 0x38, 0x0a, 0x08, 0x43, 0x6f, 0x6e, 0x64,
 	0x54, 0x79, 0x70, 0x65, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x62, 0x61, 0x73,
-	0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67,
+	0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x69, 0x6e, 0x74, 0x33, 0x32,
 	0x56, 0x61, 0x6c, 0x48, 0x02, 0x52, 0x08, 0x43, 0x6f, 0x6e, 0x64, 0x54, 0x79, 0x70, 0x65, 0x88,
 	0x01, 0x01, 0x12, 0x3c, 0x0a, 0x0a, 0x54, 0x65, 0x73, 0x74, 0x43, 0x61, 0x73, 0x65, 0x49, 0x44,
 	0x18, 0x1e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70,
@@ -1220,7 +1220,7 @@ var file_npool_smoketest_mw_v1_testcase_cond_cond_proto_depIdxs = []int32{
 	0,  // 1: smoketest.middleware.testcase.cond.v1.Cond.CondType:type_name -> smoketest.middleware.testcase.cond.v1.CondType
 	16, // 2: smoketest.middleware.testcase.cond.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
 	17, // 3: smoketest.middleware.testcase.cond.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	17, // 4: smoketest.middleware.testcase.cond.v1.Conds.CondType:type_name -> basetypes.v1.StringVal
+	16, // 4: smoketest.middleware.testcase.cond.v1.Conds.CondType:type_name -> basetypes.v1.Uint32Val
 	17, // 5: smoketest.middleware.testcase.cond.v1.Conds.TestCaseID:type_name -> basetypes.v1.StringVal
 	17, // 6: smoketest.middleware.testcase.cond.v1.Conds.CondTestCaseID:type_name -> basetypes.v1.StringVal
 	1,  // 7: smoketest.middleware.testcase.cond.v1.CreateCondRequest.Info:type_name -> smoketest.middleware.testcase.cond.v1.CondReq

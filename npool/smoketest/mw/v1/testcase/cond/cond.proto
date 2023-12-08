@@ -59,7 +59,7 @@ message Cond {
 message Conds {
     optional basetypes.v1.Uint32Val  ID             = 9;
     optional basetypes.v1.StringVal  EntID          = 10;
-    optional basetypes.v1.StringVal  CondType       = 20;
+    optional basetypes.v1.Uint32Val  CondType       = 20;
     optional basetypes.v1.StringVal  TestCaseID     = 30;
     optional basetypes.v1.StringVal  CondTestCaseID = 40;
 }
