@@ -240,9 +240,6 @@
         "TestUserID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
         "Result": {
           "$ref": "#/definitions/v1TestCaseResult"
         },

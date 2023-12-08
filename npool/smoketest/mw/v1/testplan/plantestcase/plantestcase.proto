@@ -79,7 +79,6 @@ message PlanTestCaseReq {
     optional string          Description = 60;
     optional uint32          RunDuration = 70;
     optional string          TestUserID  = 80;
-    optional string          AppID       = 90;
     optional TestCaseResult  Result      = 100;
     optional uint32          Index       = 110;
 }

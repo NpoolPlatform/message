@@ -28,8 +28,7 @@ message CondReq {
     optional string   TestCaseID       = 30;
     optional string   CondTestCaseID   = 40;
     optional uint32   Index            = 50;
-    optional uint32   CreatedAt        = 60;
-    optional string   ArgumentMap      = 70;
+    optional string   ArgumentMap      = 60;
 }
 
 message Cond {
