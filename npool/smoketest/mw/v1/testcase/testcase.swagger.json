@@ -60,6 +60,9 @@
       "type": "object",
       "properties": {
         "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "ModuleID": {
@@ -72,6 +75,9 @@
           "$ref": "#/definitions/v1BoolVal"
         },
         "IDs": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        },
+        "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
       }
@@ -153,8 +159,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "Name": {
           "type": "string",
@@ -235,6 +246,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "Name": {
@@ -280,6 +295,33 @@
         "Automatic"
       ],
       "default": "DefaultTestCaseType"
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     },
     "v1UpdateTestCaseResponse": {
       "type": "object",

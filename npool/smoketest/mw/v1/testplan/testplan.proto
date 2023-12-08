@@ -32,7 +32,9 @@ enum TestPlanState {
 
 message TestPlan {
     // @inject_tag: sql:"id"
-    string          ID                                = 10;
+    uint32          ID                                = 9;
+    // @inject_tag: sql:"ent_id"
+    string          EntID                             = 10;
     // @inject_tag: sql:"name"
     string          Name                              = 20;
     // @inject_tag: sql:"state"
@@ -64,7 +66,8 @@ message TestPlan {
 }
 
 message TestPlanReq {
-    optional string          ID                                = 10;
+    optional uint32          ID                                = 9;
+    optional string          EntID                             = 10;
     optional string          Name                              = 20;
     optional TestPlanState   State                             = 30;
     optional string          CreatedBy                         = 40;
@@ -78,7 +81,8 @@ message TestPlanReq {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID                         = 10;
+    optional basetypes.v1.Uint32Val      ID                         = 9;
+    optional basetypes.v1.StringVal      EntID                      = 10;
     optional basetypes.v1.StringVal      State                      = 20;
     optional basetypes.v1.StringVal      CreatedBy                  = 30;
     optional basetypes.v1.StringVal      Executor                   = 40;
@@ -101,7 +105,7 @@ message UpdateTestPlanResponse {
 }
 
 message GetTestPlanRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetTestPlanResponse {
@@ -110,8 +114,8 @@ message GetTestPlanResponse {
 
 message GetTestPlansRequest {
     Conds Conds   = 10;
-    int32 Offset                                = 20;
-    int32 Limit                                 = 30;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
 }
 
 message GetTestPlansResponse {
@@ -120,7 +124,7 @@ message GetTestPlansResponse {
 }
 
 message ExistTestPlanRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistTestPlanResponse {
