@@ -72,7 +72,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -168,8 +167,7 @@
           "type": "string"
         },
         "CoinTypeID": {
-          "type": "string",
-          "title": "CoinTypeID of the good"
+          "type": "string"
         },
         "AccountID": {
           "type": "string"
@@ -184,8 +182,7 @@
           "type": "boolean"
         },
         "Locked": {
-          "type": "boolean",
-          "title": "Locked when transferring"
+          "type": "boolean"
         },
         "LockedBy": {
           "$ref": "#/definitions/v1AccountLockedBy"
@@ -301,7 +298,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Account"
           }
         },
