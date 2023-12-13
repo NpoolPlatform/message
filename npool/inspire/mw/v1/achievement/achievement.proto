@@ -4,17 +4,34 @@ package inspire.middleware.achievement.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/achievement";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc ExpropriateAchievement (ExpropriateAchievementRequest) returns (ExpropriateAchievementResponse) {}
-    rpc GetAchievements        (GetAchievementsRequest)        returns (GetAchievementsResponse)        {}
-    rpc DeleteAchievement      (DeleteAchievementRequest)      returns (DeleteAchievementResponse)      {}
+    rpc ExpropriateAchievement (ExpropriateAchievementRequest) returns (ExpropriateAchievementResponse) {
+        option (google.api.http) = {
+            post: "/v1/achievement_ExpropriateAchievement"
+            body: "*"
+        };
+    }
+    rpc GetAchievements        (GetAchievementsRequest)        returns (GetAchievementsResponse)        {
+        option (google.api.http) = {
+            post: "/v1/achievement_GetAchievements"
+            body: "*"
+        };
+    }
+    rpc DeleteAchievement      (DeleteAchievementRequest)      returns (DeleteAchievementResponse)      {
+        option (google.api.http) = {
+            post: "/v1/achievement_DeleteAchievement"
+            body: "*"
+        };
+    }
 }
 
 message AchievementReq {
-    optional string ID              = 10;
+    optional uint32 ID              = 10;
+    optional string EntID           = 11;
     optional string AppID           = 20;
     optional string UserID          = 30;
     optional string GoodID          = 40;
@@ -30,7 +47,9 @@ message AchievementReq {
 
 message Achievement {
     // @inject_tag: sql:"id"
-    string ID                 = 10;
+    uint32 ID                 = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID              = 11;
     // @inject_tag: sql:"app_id"
     string AppID              = 20;
     // @inject_tag: sql:"user_id"
@@ -65,7 +84,7 @@ message Achievement {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID           = 10;
+    optional basetypes.v1.StringVal EntID        = 10;
     optional basetypes.v1.StringVal AppID        = 20;
     optional basetypes.v1.StringVal UserID       = 30;
     optional basetypes.v1.StringVal GoodID       = 40;

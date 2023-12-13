@@ -30,7 +30,8 @@ service Gateway {
 }
 
 message Scope {
-    string     ID              = 10;
+    uint32     ID              = 10;
+    string     EntID           = 11;
     string     GoodID          = 20;
     string     AppID           = 30;
     string     AppGoodID       = 40;
@@ -59,7 +60,7 @@ message CreateAppGoodScopeRequest {
     string AppID          = 10;
     string CouponID       = 20;
     string AppGoodID      = 30;
-    optional basetypes.inspire.v1.CouponScope CouponScope      = 40;
+    basetypes.inspire.v1.CouponScope CouponScope      = 40;
 }
 
 message CreateAppGoodScopeResponse {
@@ -67,8 +68,9 @@ message CreateAppGoodScopeResponse {
 }
 
 message DeleteAppGoodScopeRequest {
-    string ID        = 10;
-    string AppID     = 20;
+    uint32 ID        = 10;
+    string EntID     = 20;
+    string AppID     = 30;
 }
 
 message DeleteAppGoodScopeResponse {

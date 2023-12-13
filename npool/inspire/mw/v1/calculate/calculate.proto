@@ -4,12 +4,18 @@ package inspire.middleware.calculate.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/calculate";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/inspire/v1/enums.proto";
 import "npool/inspire/mw/v1/achievement/statement/statement.proto";
 
 // Service Name
 service Middleware {
-    rpc Calculate (CalculateRequest) returns (CalculateResponse) {}
+    rpc Calculate (CalculateRequest) returns (CalculateResponse) {
+        option (google.api.http) = {
+            post: "/v1/calculate_Calculate"
+            body: "*"
+        };
+    }
 }
 
 message CalculateRequest {

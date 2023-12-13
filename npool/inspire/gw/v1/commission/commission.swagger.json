@@ -313,6 +313,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "AppID": {
@@ -354,7 +358,7 @@
         "GoodID": {
           "type": "string"
         },
-        "GoodName": {
+        "GoodTitle": {
           "type": "string"
         },
         "CoinTypeID": {
@@ -391,7 +395,7 @@
         "AppGoodID": {
           "type": "string"
         },
-        "AppGoodName": {
+        "GoodName": {
           "type": "string"
         }
       }
@@ -599,6 +603,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "AppID": {

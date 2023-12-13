@@ -18,7 +18,8 @@ service Middleware {
 }
 
 message ScopeReq {
-    optional string ID        = 10;
+    optional uint32 ID        = 9;
+    optional string EntID     = 10;
     optional string AppID     = 20;
     optional string AppGoodID = 30;
     optional string CouponID  = 40;
@@ -28,7 +29,9 @@ message ScopeReq {
 
 message Scope {
     // @inject_tag: sql:"id"
-    string     ID              = 10;
+    uint32     ID              = 10;
+    // @inject_tag: sql:"ent_id"
+    string     EntID           = 11;
     // @inject_tag: sql:"app_id"
     string     AppID           = 20;
     // @inject_tag: sql:"app_good_id"
@@ -52,7 +55,7 @@ message Scope {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID          = 10;
+    optional basetypes.v1.StringVal EntID       = 10;
     optional basetypes.v1.StringVal AppID       = 20;
     optional basetypes.v1.StringVal AppGoodID   = 40;
     optional basetypes.v1.StringVal CouponID    = 50;
@@ -69,7 +72,7 @@ message CreateAppGoodScopeResponse {
 }
 
 message GetAppGoodScopeRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetAppGoodScopeResponse {

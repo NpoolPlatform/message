@@ -4,6 +4,7 @@ package inspire.middleware.invitation.invitationcode.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/invitation/invitationcode";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
@@ -12,11 +13,17 @@ service Middleware {
     rpc UpdateInvitationCode     (UpdateInvitationCodeRequest)     returns (UpdateInvitationCodeResponse)     {}
     rpc GetInvitationCode        (GetInvitationCodeRequest)        returns (GetInvitationCodeResponse)        {}
     rpc GetInvitationCodes       (GetInvitationCodesRequest)       returns (GetInvitationCodesResponse)       {}
-    rpc DeleteInvitationCode     (DeleteInvitationCodeRequest)     returns (DeleteInvitationCodeResponse)     {}
+    rpc DeleteInvitationCode     (DeleteInvitationCodeRequest)     returns (DeleteInvitationCodeResponse)     {
+        option (google.api.http) = {
+            post: "/v1/invitationcode_DeleteInvitationCode"
+            body: "*"
+        };
+    }
 }
 
 message InvitationCodeReq {
-    optional string ID             = 10;
+    optional uint32 ID             = 10;
+    optional string EntID          = 11;
     optional string AppID          = 20;
     optional string UserID         = 30;
     optional string InvitationCode = 40;
@@ -25,7 +32,9 @@ message InvitationCodeReq {
 
 message InvitationCode {
     // @inject_tag: sql:"id"
-    string ID             = 10;
+    uint32 ID             = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID          = 11;
     // @inject_tag: sql:"app_id"
     string AppID          = 20;
     // @inject_tag: sql:"user_id"
@@ -38,12 +47,10 @@ message InvitationCode {
     uint32 CreatedAt      = 60;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt      = 70;
-    // @inject_tag: sql:"deleted_at"
-    uint32 DeletedAt      = 80;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID             = 10;
+    optional basetypes.v1.StringVal EntID          = 10;
     optional basetypes.v1.StringVal AppID          = 20;
     optional basetypes.v1.StringVal UserID         = 30;
     optional basetypes.v1.StringVal InvitationCode = 40;
@@ -68,7 +75,7 @@ message UpdateInvitationCodeResponse {
 }
 
 message GetInvitationCodeRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetInvitationCodeResponse {
