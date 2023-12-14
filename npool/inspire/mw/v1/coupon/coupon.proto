@@ -72,7 +72,7 @@ message Coupon {
     // @inject_tag: sql:"allocated"
     string          Allocated       = 150;
     // @inject_tag: sql:"threshold"
-    optional string Threshold       = 140;
+    string          Threshold       = 140;
     // @inject_tag: sql:"coupon_constraint"
     string          CouponConstraintStr = 160;
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 170;
