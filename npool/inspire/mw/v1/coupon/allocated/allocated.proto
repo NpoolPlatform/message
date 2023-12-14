@@ -116,6 +116,8 @@ message Coupon {
     // @inject_tag: sql:"coupon_scope"
     string     CouponScopeStr  = 250;
     basetypes.inspire.v1.CouponScope CouponScope = 260;
+    // @inject_tag: sql:"cashable"
+    bool       Cashable        = 270;
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
