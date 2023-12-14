@@ -438,12 +438,27 @@
         },
         "PromotionTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"issue_type\""
+          "title": "@inject_tag: sql:\"promotion_type\""
         },
         "PromotionType": {
           "$ref": "#/definitions/v1PromotionType"
         },
         "LimitRule": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"limit_rule\""
+        },
+        "TimelinessStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"timeliness\""
+        },
+        "Timeliness": {
+          "$ref": "#/definitions/v1Timeliness"
+        },
+        "RandomCash": {
+          "type": "boolean"
+        },
+        "Rate": {
           "type": "integer",
           "format": "int64"
 >>>>>>> a30bd6312 (add full discount coupons design)
@@ -529,9 +544,10 @@
       "type": "string",
       "enum": [
         "DefaultIssueType",
-        "Fetchable",
-        "Issueable",
-        "Both"
+        "UserClaim",
+        "AdminIssue",
+        "BothIssueAndClaim",
+        "SystemIssue"
       ],
       "default": "DefaultIssueType"
     },
@@ -543,6 +559,15 @@
         "Score"
       ],
       "default": "DefaultPromotionType"
+    },
+    "v1Timeliness": {
+      "type": "string",
+      "enum": [
+        "DefaultTimeliness",
+        "Relative",
+        "Absolute"
+      ],
+      "default": "DefaultTimeliness"
     }
   }
 }
