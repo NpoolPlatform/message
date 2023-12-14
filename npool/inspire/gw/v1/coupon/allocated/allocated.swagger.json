@@ -231,7 +231,12 @@
           "$ref": "#/definitions/v1CouponScope"
         },
         "Cashable": {
+<<<<<<< HEAD
           "type": "boolean"
+=======
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"cashable\""
+>>>>>>> f2a2b2483 (add Cashable in allocatedcoupon)
         },
         "CreatedAt": {
           "type": "integer",
