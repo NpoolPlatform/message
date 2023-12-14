@@ -60,3 +60,18 @@ enum CouponScope {
     Whitelist          = 20;
     Blacklist          = 30;
 }
+
+enum IssueType {
+    DefaultIssueType   = 0;
+
+    Fetchable          = 10; // 只可以领取
+    Issueable          = 20; // 可可以发放
+    Both               = 30; // 可领取可发放
+}
+
+enum PromotionType {
+    DefaultPromotionType   = 0;
+
+    Free                  = 10; // 免费领取
+    Score                 = 20; // 积分兑换
+}
