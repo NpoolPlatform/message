@@ -178,10 +178,9 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
-        "CashRatio": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"cash_ratio\""
+        "Probability": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"probability\""
         },
         "CreatedAt": {
           "type": "integer",
