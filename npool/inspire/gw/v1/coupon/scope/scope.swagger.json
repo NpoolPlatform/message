@@ -157,12 +157,16 @@
         "DefaultCouponType",
         "FixAmount",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "Discount"
 =======
         "Discount",
         "SpecialOffer",
         "FullReduction"
 >>>>>>> 3c2cae7d0 (update coupon)
+=======
+        "Discount"
+>>>>>>> d088163df (generate proto)
       ],
       "default": "DefaultCouponType"
     },

@@ -420,6 +420,7 @@
           "$ref": "#/definitions/v1CouponScope"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CashableProbabilityPerMillion": {
           "type": "string",
           "title": "@inject_tag: sql:\"cashable_probability_per_million\""
@@ -462,6 +463,12 @@
           "type": "integer",
           "format": "int64"
 >>>>>>> a30bd6312 (add full discount coupons design)
+=======
+        "CashRatio": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"cash_ratio\""
+>>>>>>> d088163df (generate proto)
         },
         "CreatedAt": {
           "type": "integer",
@@ -500,12 +507,16 @@
         "DefaultCouponType",
         "FixAmount",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "Discount"
 =======
         "Discount",
         "SpecialOffer",
         "FullReduction"
 >>>>>>> 3c2cae7d0 (update coupon)
+=======
+        "Discount"
+>>>>>>> d088163df (generate proto)
       ],
       "default": "DefaultCouponType"
     },
@@ -545,35 +556,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1IssueType": {
-      "type": "string",
-      "enum": [
-        "DefaultIssueType",
-        "UserClaim",
-        "AdminIssue",
-        "BothIssueAndClaim",
-        "SystemIssue"
-      ],
-      "default": "DefaultIssueType"
-    },
-    "v1PromotionType": {
-      "type": "string",
-      "enum": [
-        "DefaultPromotionType",
-        "Free",
-        "Score"
-      ],
-      "default": "DefaultPromotionType"
-    },
-    "v1Timeliness": {
-      "type": "string",
-      "enum": [
-        "DefaultTimeliness",
-        "Relative",
-        "Absolute"
-      ],
-      "default": "DefaultTimeliness"
     }
   }
 }

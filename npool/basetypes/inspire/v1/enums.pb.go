@@ -231,10 +231,13 @@ const (
 	CouponType_FixAmount         CouponType = 10
 	CouponType_Discount          CouponType = 20
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	CouponType_SpecialOffer      CouponType = 30
 	CouponType_FullReduction     CouponType = 40
 >>>>>>> 3c2cae7d0 (update coupon)
+=======
+>>>>>>> d088163df (generate proto)
 )
 
 // Enum value maps for CouponType.
@@ -244,20 +247,26 @@ var (
 		10: "FixAmount",
 		20: "Discount",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		30: "SpecialOffer",
 		40: "FullReduction",
 >>>>>>> 3c2cae7d0 (update coupon)
+=======
+>>>>>>> d088163df (generate proto)
 	}
 	CouponType_value = map[string]int32{
 		"DefaultCouponType": 0,
 		"FixAmount":         10,
 		"Discount":          20,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		"SpecialOffer":      30,
 		"FullReduction":     40,
 >>>>>>> 3c2cae7d0 (update coupon)
+=======
+>>>>>>> d088163df (generate proto)
 	}
 )
 
@@ -389,159 +398,6 @@ func (CouponScope) EnumDescriptor() ([]byte, []int) {
 	return file_npool_basetypes_inspire_v1_enums_proto_rawDescGZIP(), []int{6}
 }
 
-type IssueType int32
-
-const (
-	IssueType_DefaultIssueType  IssueType = 0
-	IssueType_UserClaim         IssueType = 10 // 用户领取
-	IssueType_AdminIssue        IssueType = 20 // 管理员发放
-	IssueType_BothIssueAndClaim IssueType = 30 // 既可管理员发放也可以用户领取
-	IssueType_SystemIssue       IssueType = 40 // 系统发放
-)
-
-// Enum value maps for IssueType.
-var (
-	IssueType_name = map[int32]string{
-		0:  "DefaultIssueType",
-		10: "UserClaim",
-		20: "AdminIssue",
-		30: "BothIssueAndClaim",
-		40: "SystemIssue",
-	}
-	IssueType_value = map[string]int32{
-		"DefaultIssueType":  0,
-		"UserClaim":         10,
-		"AdminIssue":        20,
-		"BothIssueAndClaim": 30,
-		"SystemIssue":       40,
-	}
-)
-
-func (x IssueType) Enum() *IssueType {
-	p := new(IssueType)
-	*p = x
-	return p
-}
-
-func (x IssueType) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (IssueType) Descriptor() protoreflect.EnumDescriptor {
-	return file_npool_basetypes_inspire_v1_enums_proto_enumTypes[7].Descriptor()
-}
-
-func (IssueType) Type() protoreflect.EnumType {
-	return &file_npool_basetypes_inspire_v1_enums_proto_enumTypes[7]
-}
-
-func (x IssueType) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use IssueType.Descriptor instead.
-func (IssueType) EnumDescriptor() ([]byte, []int) {
-	return file_npool_basetypes_inspire_v1_enums_proto_rawDescGZIP(), []int{7}
-}
-
-type PromotionType int32
-
-const (
-	PromotionType_DefaultPromotionType PromotionType = 0
-	PromotionType_Free                 PromotionType = 10 // 免费领取
-	PromotionType_Score                PromotionType = 20 // 积分兑换
-)
-
-// Enum value maps for PromotionType.
-var (
-	PromotionType_name = map[int32]string{
-		0:  "DefaultPromotionType",
-		10: "Free",
-		20: "Score",
-	}
-	PromotionType_value = map[string]int32{
-		"DefaultPromotionType": 0,
-		"Free":                 10,
-		"Score":                20,
-	}
-)
-
-func (x PromotionType) Enum() *PromotionType {
-	p := new(PromotionType)
-	*p = x
-	return p
-}
-
-func (x PromotionType) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (PromotionType) Descriptor() protoreflect.EnumDescriptor {
-	return file_npool_basetypes_inspire_v1_enums_proto_enumTypes[8].Descriptor()
-}
-
-func (PromotionType) Type() protoreflect.EnumType {
-	return &file_npool_basetypes_inspire_v1_enums_proto_enumTypes[8]
-}
-
-func (x PromotionType) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use PromotionType.Descriptor instead.
-func (PromotionType) EnumDescriptor() ([]byte, []int) {
-	return file_npool_basetypes_inspire_v1_enums_proto_rawDescGZIP(), []int{8}
-}
-
-type Timeliness int32
-
-const (
-	Timeliness_DefaultTimeliness Timeliness = 0
-	Timeliness_Relative          Timeliness = 10 // 相对时效
-	Timeliness_Absolute          Timeliness = 20 // 绝对时效
-)
-
-// Enum value maps for Timeliness.
-var (
-	Timeliness_name = map[int32]string{
-		0:  "DefaultTimeliness",
-		10: "Relative",
-		20: "Absolute",
-	}
-	Timeliness_value = map[string]int32{
-		"DefaultTimeliness": 0,
-		"Relative":          10,
-		"Absolute":          20,
-	}
-)
-
-func (x Timeliness) Enum() *Timeliness {
-	p := new(Timeliness)
-	*p = x
-	return p
-}
-
-func (x Timeliness) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (Timeliness) Descriptor() protoreflect.EnumDescriptor {
-	return file_npool_basetypes_inspire_v1_enums_proto_enumTypes[9].Descriptor()
-}
-
-func (Timeliness) Type() protoreflect.EnumType {
-	return &file_npool_basetypes_inspire_v1_enums_proto_enumTypes[9]
-}
-
-func (x Timeliness) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use Timeliness.Descriptor instead.
-func (Timeliness) EnumDescriptor() ([]byte, []int) {
-	return file_npool_basetypes_inspire_v1_enums_proto_rawDescGZIP(), []int{9}
-}
-
 var File_npool_basetypes_inspire_v1_enums_proto protoreflect.FileDescriptor
 
 var file_npool_basetypes_inspire_v1_enums_proto_rawDesc = []byte{
@@ -574,6 +430,7 @@ var file_npool_basetypes_inspire_v1_enums_proto_rawDesc = []byte{
 	0x53, 0x65, 0x74, 0x74, 0x6c, 0x65, 0x59, 0x65, 0x61, 0x72, 0x6c, 0x79, 0x10, 0x1e, 0x12, 0x14,
 	0x0a, 0x10, 0x53, 0x65, 0x74, 0x74, 0x6c, 0x65, 0x45, 0x76, 0x65, 0x72, 0x79, 0x4f, 0x72, 0x64,
 <<<<<<< HEAD
+<<<<<<< HEAD
 	0x65, 0x72, 0x10, 0x28, 0x2a, 0x40, 0x0a, 0x0a, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x54, 0x79,
 =======
 	0x65, 0x72, 0x10, 0x28, 0x2a, 0x65, 0x0a, 0x0a, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x54, 0x79,
@@ -582,6 +439,12 @@ var file_npool_basetypes_inspire_v1_enums_proto_rawDesc = []byte{
 	0x70, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x10, 0x00, 0x12, 0x0d, 0x0a, 0x09, 0x46, 0x69, 0x78,
 	0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x10, 0x0a, 0x12, 0x0c, 0x0a, 0x08, 0x44, 0x69, 0x73, 0x63,
 <<<<<<< HEAD
+=======
+	0x65, 0x72, 0x10, 0x28, 0x2a, 0x40, 0x0a, 0x0a, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x54, 0x79,
+	0x70, 0x65, 0x12, 0x15, 0x0a, 0x11, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x43, 0x6f, 0x75,
+	0x70, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x10, 0x00, 0x12, 0x0d, 0x0a, 0x09, 0x46, 0x69, 0x78,
+	0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x10, 0x0a, 0x12, 0x0c, 0x0a, 0x08, 0x44, 0x69, 0x73, 0x63,
+>>>>>>> d088163df (generate proto)
 	0x6f, 0x75, 0x6e, 0x74, 0x10, 0x14, 0x2a, 0x51, 0x0a, 0x10, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e,
 	0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x12, 0x1b, 0x0a, 0x17, 0x44, 0x65,
 	0x66, 0x61, 0x75, 0x6c, 0x74, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x73, 0x74,
@@ -598,6 +461,7 @@ var file_npool_basetypes_inspire_v1_enums_proto_rawDesc = []byte{
 	0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f,
 	0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x33,
+<<<<<<< HEAD
 =======
 	0x6f, 0x75, 0x6e, 0x74, 0x10, 0x14, 0x12, 0x10, 0x0a, 0x0c, 0x53, 0x70, 0x65, 0x63, 0x69, 0x61,
 <<<<<<< HEAD
@@ -670,6 +534,8 @@ var file_npool_basetypes_inspire_v1_enums_proto_rawDesc = []byte{
 	0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x33,
 >>>>>>> 3c2cae7d0 (update coupon)
+=======
+>>>>>>> d088163df (generate proto)
 }
 
 var (
@@ -684,7 +550,7 @@ func file_npool_basetypes_inspire_v1_enums_proto_rawDescGZIP() []byte {
 	return file_npool_basetypes_inspire_v1_enums_proto_rawDescData
 }
 
-var file_npool_basetypes_inspire_v1_enums_proto_enumTypes = make([]protoimpl.EnumInfo, 10)
+var file_npool_basetypes_inspire_v1_enums_proto_enumTypes = make([]protoimpl.EnumInfo, 7)
 var file_npool_basetypes_inspire_v1_enums_proto_goTypes = []interface{}{
 	(SettleType)(0),       // 0: basetypes.inspire.v1.SettleType
 	(SettleMode)(0),       // 1: basetypes.inspire.v1.SettleMode
@@ -693,9 +559,6 @@ var file_npool_basetypes_inspire_v1_enums_proto_goTypes = []interface{}{
 	(CouponType)(0),       // 4: basetypes.inspire.v1.CouponType
 	(CouponConstraint)(0), // 5: basetypes.inspire.v1.CouponConstraint
 	(CouponScope)(0),      // 6: basetypes.inspire.v1.CouponScope
-	(IssueType)(0),        // 7: basetypes.inspire.v1.IssueType
-	(PromotionType)(0),    // 8: basetypes.inspire.v1.PromotionType
-	(Timeliness)(0),       // 9: basetypes.inspire.v1.Timeliness
 }
 var file_npool_basetypes_inspire_v1_enums_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -715,7 +578,7 @@ func file_npool_basetypes_inspire_v1_enums_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_basetypes_inspire_v1_enums_proto_rawDesc,
-			NumEnums:      10,
+			NumEnums:      7,
 			NumMessages:   0,
 			NumExtensions: 0,
 			NumServices:   0,
