@@ -96,10 +96,6 @@ message Coupon {
     uint32     UsedAt          = 170;
     // @inject_tag: sql:"used_by_order_id"
     string     UsedByOrderID   = 180;
-    // @inject_tag: sql:"good_id"
-    string     GoodID          = 190;
-    // @inject_tag: sql:"app_good_id"
-    string     AppGoodID       = 191;
     // @inject_tag: sql:"threshold"
     string     Threshold       = 200;
     // @inject_tag: sql:"allocated"
