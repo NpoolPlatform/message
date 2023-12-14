@@ -9,7 +9,9 @@ service Middleware {}
 
 message GoodLedger {
     // @inject_tag: sql:"id"
-    string ID         = 10;
+    uint32 ID         = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID      = 10;
     // @inject_tag: sql:"good_id"
     string GoodID     = 20;
     // @inject_tag: sql:"coin_type_id"

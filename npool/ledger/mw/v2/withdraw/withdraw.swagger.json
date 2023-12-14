@@ -15,7 +15,168 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/withdraw_CreateWithdraw": {
+      "post": {
+        "operationId": "Middleware_CreateWithdraw",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2CreateWithdrawResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2CreateWithdrawRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/withdraw_DeleteWithdraw": {
+      "post": {
+        "operationId": "Middleware_DeleteWithdraw",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2DeleteWithdrawResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2DeleteWithdrawRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/withdraw_GetWithdraw": {
+      "post": {
+        "operationId": "Middleware_GetWithdraw",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GetWithdrawResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2GetWithdrawRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/withdraw_GetWithdraws": {
+      "post": {
+        "operationId": "Middleware_GetWithdraws",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GetWithdrawsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2GetWithdrawsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/withdraw_UpdateWithdraw": {
+      "post": {
+        "operationId": "Middleware_UpdateWithdraw",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UpdateWithdrawResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UpdateWithdrawRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -90,7 +251,7 @@
     "v2Conds": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "AppID": {
@@ -116,11 +277,27 @@
         }
       }
     },
+    "v2CreateWithdrawRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2WithdrawReq"
+        }
+      }
+    },
     "v2CreateWithdrawResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v2Withdraw"
+        }
+      }
+    },
+    "v2DeleteWithdrawRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2WithdrawReq"
         }
       }
     },
@@ -132,11 +309,35 @@
         }
       }
     },
+    "v2GetWithdrawRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
     "v2GetWithdrawResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v2Withdraw"
+        }
+      }
+    },
+    "v2GetWithdrawsRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "$ref": "#/definitions/v2Conds"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -155,6 +356,14 @@
         }
       }
     },
+    "v2UpdateWithdrawRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2WithdrawReq"
+        }
+      }
+    },
     "v2UpdateWithdrawResponse": {
       "type": "object",
       "properties": {
@@ -167,8 +376,13 @@
       "type": "object",
       "properties": {
         "ID": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "AppID": {
           "type": "string",
@@ -229,6 +443,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "AppID": {

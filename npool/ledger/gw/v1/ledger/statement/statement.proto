@@ -39,7 +39,8 @@ message Statement {
     string PhoneNO       = 110;
     string EmailAddress  = 120;
     string AppID      = 130;
-    string ID         = 140;
+    uint32 ID         = 140;
+    string EntID      = 150;
 }
 
 message GetStatementsRequest {

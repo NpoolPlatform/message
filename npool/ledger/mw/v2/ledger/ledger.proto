@@ -4,21 +4,49 @@ package ledger.middleware.ledger.v2;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/ledger";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/ledger/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc GetLedger     (GetLedgerRequest)     returns (GetLedgerResponse)     {}
-    rpc GetLedgers    (GetLedgersRequest)    returns (GetLedgersResponse)    {}
-    rpc LockBalance   (LockBalanceRequest)   returns (LockBalanceResponse)   {}
-    rpc UnlockBalance (UnlockBalanceRequest) returns (UnlockBalanceResponse) {}
-    rpc SettleBalance (SettleBalanceRequest) returns (SettleBalanceResponse) {}
+    rpc GetLedger     (GetLedgerRequest)     returns (GetLedgerResponse)     {
+        option (google.api.http) = {
+            post: "/v1/ledger_GetLedger"
+            body: "*"
+        };
+    }
+    rpc GetLedgers    (GetLedgersRequest)    returns (GetLedgersResponse)    {
+        option (google.api.http) = {
+            post: "/v1/ledger_GetLedgers"
+            body: "*"
+        };
+    }
+    rpc LockBalance   (LockBalanceRequest)   returns (LockBalanceResponse)   {
+        option (google.api.http) = {
+            post: "/v1/ledger_LockBalance"
+            body: "*"
+        };
+    }
+    rpc UnlockBalance (UnlockBalanceRequest) returns (UnlockBalanceResponse) {
+        option (google.api.http) = {
+            post: "/v1/ledger_UnlockBalance"
+            body: "*"
+        };
+    }
+    rpc SettleBalance (SettleBalanceRequest) returns (SettleBalanceResponse) {
+        option (google.api.http) = {
+            post: "/v1/ledger_SettleBalance"
+            body: "*"
+        };
+    }
 }
 
 message Ledger {
     // @inject_tag: sql:"id"
-    string      ID                             = 10;
+    uint32      ID                             = 9;
+    // @inject_tag: sql:"ent_id"
+    string      EntID                          = 10;
     // @inject_tag: sql:"app_id"
     string      AppID                          = 20;
     // @inject_tag: sql:"user_id"
@@ -40,7 +68,7 @@ message Ledger {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID          = 10;
+    optional basetypes.v1.StringVal EntID       = 10;
     optional basetypes.v1.StringVal AppID       = 20;
     optional basetypes.v1.StringVal UserID      = 30;
     optional basetypes.v1.StringVal CoinTypeID  = 40;
@@ -48,7 +76,7 @@ message Conds {
 }
 
 message GetLedgerRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetLedgerResponse {
