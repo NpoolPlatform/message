@@ -87,7 +87,7 @@ message Coupon {
     uint32          Condition      = 210; // 满减券,实付款达到Condition才能使用
     // @inject_tag: sql:"issue_type"
     string          IssueTypeStr             = 220;
-    basetypes.inspire.v1.IssueType IssueType = 221; // 用户领取 | 管理员发放 | 系统发放(触发了特定条件,加一张表用来配置触发条件)| 可用户领取也可以管理员发放
+    basetypes.inspire.v1.IssueType IssueType = 221; // 用户领取 | 管理员发放 | 系统发放(触发了特定条件,加一张表用来配置触发某个条件时发什么券)| 可用户领取也可以管理员发放
     // @inject_tag: sql:"promotion_type"
     string          PromotionTypeStr         = 230;
     basetypes.inspire.v1.PromotionType PromotionType = 231; // 免费领取 | 积分兑换
@@ -96,8 +96,8 @@ message Coupon {
     // @inject_tag: sql:"timeliness"
     string          TimelinessStr  = 250; 
     basetypes.inspire.v1.Timeliness Timeliness = 251; // 时效性, Absolute | Relative
-    bool            RandomCash     = 260; // 是否可提现
-    uint32          Rate           = 270;  // 生成可提现代金券的概率
+    bool            Cashable       = 260; // 是否可提现
+    uint32          CashRate           = 270;  // 生成可提现代金券的概率
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt      = 1000;
     // @inject_tag: sql:"updated_at"
