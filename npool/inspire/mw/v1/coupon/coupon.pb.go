@@ -247,11 +247,17 @@ type Coupon struct {
 	Condition uint32 `protobuf:"varint,210,opt,name=Condition,proto3" json:"Condition,omitempty" sql:"condition"` // 满减券,实付款达到Condition才能使用
 	// @inject_tag: sql:"issue_type"
 	IssueTypeStr string       `protobuf:"bytes,220,opt,name=IssueTypeStr,proto3" json:"IssueTypeStr,omitempty" sql:"issue_type"`
-	IssueType    v1.IssueType `protobuf:"varint,221,opt,name=IssueType,proto3,enum=basetypes.inspire.v1.IssueType" json:"IssueType,omitempty"` // 只能领取 | 只能发放 | 可领取可发放
-	// @inject_tag: sql:"issue_type"
-	PromotionTypeStr string           `protobuf:"bytes,230,opt,name=PromotionTypeStr,proto3" json:"PromotionTypeStr,omitempty" sql:"issue_type"`
+	IssueType    v1.IssueType `protobuf:"varint,221,opt,name=IssueType,proto3,enum=basetypes.inspire.v1.IssueType" json:"IssueType,omitempty"` // 用户领取 | 管理员发放 | 系统发放(触发了特定条件,加一张表用来配置触发条件)| 可用户领取也可以管理员发放
+	// @inject_tag: sql:"promotion_type"
+	PromotionTypeStr string           `protobuf:"bytes,230,opt,name=PromotionTypeStr,proto3" json:"PromotionTypeStr,omitempty" sql:"promotion_type"`
 	PromotionType    v1.PromotionType `protobuf:"varint,231,opt,name=PromotionType,proto3,enum=basetypes.inspire.v1.PromotionType" json:"PromotionType,omitempty"` // 免费领取 | 积分兑换
-	LimitRule        uint32           `protobuf:"varint,240,opt,name=LimitRule,proto3" json:"LimitRule,omitempty"`                                                 // 限领的张数
+	// @inject_tag: sql:"limit_rule"
+	LimitRule uint32 `protobuf:"varint,240,opt,name=LimitRule,proto3" json:"LimitRule,omitempty" sql:"limit_rule"` // 限领的张数
+	// @inject_tag: sql:"timeliness"
+	TimelinessStr string        `protobuf:"bytes,250,opt,name=TimelinessStr,proto3" json:"TimelinessStr,omitempty" sql:"timeliness"`
+	Timeliness    v1.Timeliness `protobuf:"varint,251,opt,name=Timeliness,proto3,enum=basetypes.inspire.v1.Timeliness" json:"Timeliness,omitempty"` // 时效性, Absolute | Relative
+	RandomCash    bool          `protobuf:"varint,260,opt,name=RandomCash,proto3" json:"RandomCash,omitempty"`                                      // 是否可提现
+	Rate          uint32        `protobuf:"varint,270,opt,name=Rate,proto3" json:"Rate,omitempty"`                                                  // 生成可提现代金券的概率
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
@@ -468,6 +474,34 @@ func (x *Coupon) GetPromotionType() v1.PromotionType {
 func (x *Coupon) GetLimitRule() uint32 {
 	if x != nil {
 		return x.LimitRule
+	}
+	return 0
+}
+
+func (x *Coupon) GetTimelinessStr() string {
+	if x != nil {
+		return x.TimelinessStr
+	}
+	return ""
+}
+
+func (x *Coupon) GetTimeliness() v1.Timeliness {
+	if x != nil {
+		return x.Timeliness
+	}
+	return v1.Timeliness(0)
+}
+
+func (x *Coupon) GetRandomCash() bool {
+	if x != nil {
+		return x.RandomCash
+	}
+	return false
+}
+
+func (x *Coupon) GetRate() uint32 {
+	if x != nil {
+		return x.Rate
 	}
 	return 0
 }
@@ -1122,7 +1156,7 @@ var file_npool_inspire_mw_v1_coupon_coupon_proto_rawDesc = []byte{
 	0x6c, 0x6f, 0x63, 0x61, 0x74, 0x65, 0x64, 0x42, 0x13, 0x0a, 0x11, 0x5f, 0x43, 0x6f, 0x75, 0x70,
 	0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x42, 0x09, 0x0a, 0x07,
 	0x5f, 0x52, 0x61, 0x6e, 0x64, 0x6f, 0x6d, 0x42, 0x0e, 0x0a, 0x0c, 0x5f, 0x43, 0x6f, 0x75, 0x70,
-	0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x22, 0xdd, 0x08, 0x0a, 0x06, 0x43, 0x6f, 0x75, 0x70,
+	0x6f, 0x6e, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x22, 0xfd, 0x09, 0x0a, 0x06, 0x43, 0x6f, 0x75, 0x70,
 	0x6f, 0x6e, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02,
 	0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x0b, 0x20, 0x01, 0x28,
 	0x09, 0x52, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x12, 0x24, 0x0a, 0x0d, 0x43, 0x6f, 0x75, 0x70,
@@ -1187,6 +1221,16 @@ var file_npool_inspire_mw_v1_coupon_coupon_proto_rawDesc = []byte{
 	0x70, 0x65, 0x52, 0x0d, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70,
 	0x65, 0x12, 0x1d, 0x0a, 0x09, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x52, 0x75, 0x6c, 0x65, 0x18, 0xf0,
 	0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x52, 0x75, 0x6c, 0x65,
+	0x12, 0x25, 0x0a, 0x0d, 0x54, 0x69, 0x6d, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x73, 0x53, 0x74,
+	0x72, 0x18, 0xfa, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x54, 0x69, 0x6d, 0x65, 0x6c, 0x69,
+	0x6e, 0x65, 0x73, 0x73, 0x53, 0x74, 0x72, 0x12, 0x41, 0x0a, 0x0a, 0x54, 0x69, 0x6d, 0x65, 0x6c,
+	0x69, 0x6e, 0x65, 0x73, 0x73, 0x18, 0xfb, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x20, 0x2e, 0x62,
+	0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65,
+	0x2e, 0x76, 0x31, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x73, 0x52, 0x0a,
+	0x54, 0x69, 0x6d, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x73, 0x12, 0x1f, 0x0a, 0x0a, 0x52, 0x61,
+	0x6e, 0x64, 0x6f, 0x6d, 0x43, 0x61, 0x73, 0x68, 0x18, 0x84, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52,
+	0x0a, 0x52, 0x61, 0x6e, 0x64, 0x6f, 0x6d, 0x43, 0x61, 0x73, 0x68, 0x12, 0x13, 0x0a, 0x04, 0x52,
+	0x61, 0x74, 0x65, 0x18, 0x8e, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x52, 0x61, 0x74, 0x65,
 	0x12, 0x1d, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xe8, 0x07,
 	0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12,
 	0x1d, 0x0a, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xf2, 0x07, 0x20,
@@ -1342,9 +1386,10 @@ var file_npool_inspire_mw_v1_coupon_coupon_proto_goTypes = []interface{}{
 	(v1.CouponScope)(0),          // 15: basetypes.inspire.v1.CouponScope
 	(v1.IssueType)(0),            // 16: basetypes.inspire.v1.IssueType
 	(v1.PromotionType)(0),        // 17: basetypes.inspire.v1.PromotionType
-	(*v11.StringVal)(nil),        // 18: basetypes.v1.StringVal
-	(*v11.Uint32Val)(nil),        // 19: basetypes.v1.Uint32Val
-	(*v11.StringSliceVal)(nil),   // 20: basetypes.v1.StringSliceVal
+	(v1.Timeliness)(0),           // 18: basetypes.inspire.v1.Timeliness
+	(*v11.StringVal)(nil),        // 19: basetypes.v1.StringVal
+	(*v11.Uint32Val)(nil),        // 20: basetypes.v1.Uint32Val
+	(*v11.StringSliceVal)(nil),   // 21: basetypes.v1.StringSliceVal
 }
 var file_npool_inspire_mw_v1_coupon_coupon_proto_depIdxs = []int32{
 	13, // 0: inspire.middleware.coupon.v1.CouponReq.CouponType:type_name -> basetypes.inspire.v1.CouponType
@@ -1355,34 +1400,35 @@ var file_npool_inspire_mw_v1_coupon_coupon_proto_depIdxs = []int32{
 	15, // 5: inspire.middleware.coupon.v1.Coupon.CouponScope:type_name -> basetypes.inspire.v1.CouponScope
 	16, // 6: inspire.middleware.coupon.v1.Coupon.IssueType:type_name -> basetypes.inspire.v1.IssueType
 	17, // 7: inspire.middleware.coupon.v1.Coupon.PromotionType:type_name -> basetypes.inspire.v1.PromotionType
-	18, // 8: inspire.middleware.coupon.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	19, // 9: inspire.middleware.coupon.v1.Conds.CouponType:type_name -> basetypes.v1.Uint32Val
-	18, // 10: inspire.middleware.coupon.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	20, // 11: inspire.middleware.coupon.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
-	2,  // 12: inspire.middleware.coupon.v1.GetCouponsRequest.Conds:type_name -> inspire.middleware.coupon.v1.Conds
-	1,  // 13: inspire.middleware.coupon.v1.GetCouponsResponse.Infos:type_name -> inspire.middleware.coupon.v1.Coupon
-	0,  // 14: inspire.middleware.coupon.v1.CreateCouponRequest.Info:type_name -> inspire.middleware.coupon.v1.CouponReq
-	1,  // 15: inspire.middleware.coupon.v1.CreateCouponResponse.Info:type_name -> inspire.middleware.coupon.v1.Coupon
-	0,  // 16: inspire.middleware.coupon.v1.UpdateCouponRequest.Info:type_name -> inspire.middleware.coupon.v1.CouponReq
-	1,  // 17: inspire.middleware.coupon.v1.UpdateCouponResponse.Info:type_name -> inspire.middleware.coupon.v1.Coupon
-	1,  // 18: inspire.middleware.coupon.v1.GetCouponResponse.Info:type_name -> inspire.middleware.coupon.v1.Coupon
-	0,  // 19: inspire.middleware.coupon.v1.DeleteCouponRequest.Info:type_name -> inspire.middleware.coupon.v1.CouponReq
-	1,  // 20: inspire.middleware.coupon.v1.DeleteCouponResponse.Info:type_name -> inspire.middleware.coupon.v1.Coupon
-	5,  // 21: inspire.middleware.coupon.v1.Middleware.CreateCoupon:input_type -> inspire.middleware.coupon.v1.CreateCouponRequest
-	7,  // 22: inspire.middleware.coupon.v1.Middleware.UpdateCoupon:input_type -> inspire.middleware.coupon.v1.UpdateCouponRequest
-	9,  // 23: inspire.middleware.coupon.v1.Middleware.GetCoupon:input_type -> inspire.middleware.coupon.v1.GetCouponRequest
-	3,  // 24: inspire.middleware.coupon.v1.Middleware.GetCoupons:input_type -> inspire.middleware.coupon.v1.GetCouponsRequest
-	11, // 25: inspire.middleware.coupon.v1.Middleware.DeleteCoupon:input_type -> inspire.middleware.coupon.v1.DeleteCouponRequest
-	6,  // 26: inspire.middleware.coupon.v1.Middleware.CreateCoupon:output_type -> inspire.middleware.coupon.v1.CreateCouponResponse
-	8,  // 27: inspire.middleware.coupon.v1.Middleware.UpdateCoupon:output_type -> inspire.middleware.coupon.v1.UpdateCouponResponse
-	10, // 28: inspire.middleware.coupon.v1.Middleware.GetCoupon:output_type -> inspire.middleware.coupon.v1.GetCouponResponse
-	4,  // 29: inspire.middleware.coupon.v1.Middleware.GetCoupons:output_type -> inspire.middleware.coupon.v1.GetCouponsResponse
-	12, // 30: inspire.middleware.coupon.v1.Middleware.DeleteCoupon:output_type -> inspire.middleware.coupon.v1.DeleteCouponResponse
-	26, // [26:31] is the sub-list for method output_type
-	21, // [21:26] is the sub-list for method input_type
-	21, // [21:21] is the sub-list for extension type_name
-	21, // [21:21] is the sub-list for extension extendee
-	0,  // [0:21] is the sub-list for field type_name
+	18, // 8: inspire.middleware.coupon.v1.Coupon.Timeliness:type_name -> basetypes.inspire.v1.Timeliness
+	19, // 9: inspire.middleware.coupon.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	20, // 10: inspire.middleware.coupon.v1.Conds.CouponType:type_name -> basetypes.v1.Uint32Val
+	19, // 11: inspire.middleware.coupon.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	21, // 12: inspire.middleware.coupon.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
+	2,  // 13: inspire.middleware.coupon.v1.GetCouponsRequest.Conds:type_name -> inspire.middleware.coupon.v1.Conds
+	1,  // 14: inspire.middleware.coupon.v1.GetCouponsResponse.Infos:type_name -> inspire.middleware.coupon.v1.Coupon
+	0,  // 15: inspire.middleware.coupon.v1.CreateCouponRequest.Info:type_name -> inspire.middleware.coupon.v1.CouponReq
+	1,  // 16: inspire.middleware.coupon.v1.CreateCouponResponse.Info:type_name -> inspire.middleware.coupon.v1.Coupon
+	0,  // 17: inspire.middleware.coupon.v1.UpdateCouponRequest.Info:type_name -> inspire.middleware.coupon.v1.CouponReq
+	1,  // 18: inspire.middleware.coupon.v1.UpdateCouponResponse.Info:type_name -> inspire.middleware.coupon.v1.Coupon
+	1,  // 19: inspire.middleware.coupon.v1.GetCouponResponse.Info:type_name -> inspire.middleware.coupon.v1.Coupon
+	0,  // 20: inspire.middleware.coupon.v1.DeleteCouponRequest.Info:type_name -> inspire.middleware.coupon.v1.CouponReq
+	1,  // 21: inspire.middleware.coupon.v1.DeleteCouponResponse.Info:type_name -> inspire.middleware.coupon.v1.Coupon
+	5,  // 22: inspire.middleware.coupon.v1.Middleware.CreateCoupon:input_type -> inspire.middleware.coupon.v1.CreateCouponRequest
+	7,  // 23: inspire.middleware.coupon.v1.Middleware.UpdateCoupon:input_type -> inspire.middleware.coupon.v1.UpdateCouponRequest
+	9,  // 24: inspire.middleware.coupon.v1.Middleware.GetCoupon:input_type -> inspire.middleware.coupon.v1.GetCouponRequest
+	3,  // 25: inspire.middleware.coupon.v1.Middleware.GetCoupons:input_type -> inspire.middleware.coupon.v1.GetCouponsRequest
+	11, // 26: inspire.middleware.coupon.v1.Middleware.DeleteCoupon:input_type -> inspire.middleware.coupon.v1.DeleteCouponRequest
+	6,  // 27: inspire.middleware.coupon.v1.Middleware.CreateCoupon:output_type -> inspire.middleware.coupon.v1.CreateCouponResponse
+	8,  // 28: inspire.middleware.coupon.v1.Middleware.UpdateCoupon:output_type -> inspire.middleware.coupon.v1.UpdateCouponResponse
+	10, // 29: inspire.middleware.coupon.v1.Middleware.GetCoupon:output_type -> inspire.middleware.coupon.v1.GetCouponResponse
+	4,  // 30: inspire.middleware.coupon.v1.Middleware.GetCoupons:output_type -> inspire.middleware.coupon.v1.GetCouponsResponse
+	12, // 31: inspire.middleware.coupon.v1.Middleware.DeleteCoupon:output_type -> inspire.middleware.coupon.v1.DeleteCouponResponse
+	27, // [27:32] is the sub-list for method output_type
+	22, // [22:27] is the sub-list for method input_type
+	22, // [22:22] is the sub-list for extension type_name
+	22, // [22:22] is the sub-list for extension extendee
+	0,  // [0:22] is the sub-list for field type_name
 }
 
 func init() { file_npool_inspire_mw_v1_coupon_coupon_proto_init() }
