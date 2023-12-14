@@ -37,11 +37,10 @@ message CouponReq {
     optional string Name         = 100;
     // For threshold coupon
     optional string Threshold    = 130;
-    // We may have random amount coupon
-    optional string Allocated    = 140;
     optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 150;
     optional bool   Random       = 160;
     optional basetypes.inspire.v1.CouponScope CouponScope           = 170;
+    optional string CashableProbabilityPerMillion = 180;
 }
 
 message Coupon {
