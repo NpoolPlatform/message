@@ -310,15 +310,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
         },
-        "Username": {
-          "type": "string"
-        },
-        "EmailAddress": {
-          "type": "string"
-        },
-        "PhoneNO": {
-          "type": "string"
-        },
         "Denomination": {
           "type": "string",
           "title": "@inject_tag: sql:\"denomination\""
@@ -455,10 +446,6 @@
         },
         "Used": {
           "type": "boolean"
-        },
-        "UsedAt": {
-          "type": "integer",
-          "format": "int64"
         },
         "UsedByOrderID": {
           "type": "string"
