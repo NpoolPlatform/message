@@ -323,6 +323,10 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+        "Cashable": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"cashable\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
