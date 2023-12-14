@@ -214,10 +214,10 @@
         "Timeliness": {
           "$ref": "#/definitions/v1Timeliness"
         },
-        "RandomCash": {
+        "Cashable": {
           "type": "boolean"
         },
-        "Rate": {
+        "CashRate": {
           "type": "integer",
           "format": "int64"
 >>>>>>> a30bd6312 (add full discount coupons design)
@@ -319,7 +319,13 @@
       "enum": [
         "DefaultCouponType",
         "FixAmount",
+<<<<<<< HEAD
         "Discount"
+=======
+        "Discount",
+        "SpecialOffer",
+        "FullReduction"
+>>>>>>> 3c2cae7d0 (update coupon)
       ],
       "default": "DefaultCouponType"
     },

@@ -267,7 +267,13 @@
       "enum": [
         "DefaultCouponType",
         "FixAmount",
+<<<<<<< HEAD
         "Discount"
+=======
+        "Discount",
+        "SpecialOffer",
+        "FullReduction"
+>>>>>>> 3c2cae7d0 (update coupon)
       ],
       "default": "DefaultCouponType"
     },
