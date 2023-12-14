@@ -42,6 +42,7 @@ enum CouponType {
     FixAmount         = 10;
     Discount          = 20;
     SpecialOffer      = 30;
+    FullReduction     = 40;
 }
 
 enum CouponConstraint {
