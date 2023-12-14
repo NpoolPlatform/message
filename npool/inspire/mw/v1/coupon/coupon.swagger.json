@@ -250,10 +250,6 @@
           "type": "string",
           "title": "For threshold coupon"
         },
-        "Allocated": {
-          "type": "string",
-          "title": "We may have random amount coupon"
-        },
         "CouponConstraint": {
           "$ref": "#/definitions/v1CouponConstraint"
         },
@@ -262,6 +258,9 @@
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
+        },
+        "CashableProbabilityPerMillion": {
+          "type": "string"
         }
       }
     },
