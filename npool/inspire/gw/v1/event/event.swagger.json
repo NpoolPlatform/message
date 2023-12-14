@@ -224,6 +224,29 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+        "Condition": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"condition\""
+        },
+        "IssueTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"issue_type\""
+        },
+        "IssueType": {
+          "$ref": "#/definitions/v1IssueType"
+        },
+        "PromotionTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"issue_type\""
+        },
+        "PromotionType": {
+          "$ref": "#/definitions/v1PromotionType"
+        },
+        "LimitRule": {
+          "type": "integer",
+          "format": "int64"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -404,6 +427,25 @@
           "format": "int64"
         }
       }
+    },
+    "v1IssueType": {
+      "type": "string",
+      "enum": [
+        "DefaultIssueType",
+        "Fetchable",
+        "Issueable",
+        "Both"
+      ],
+      "default": "DefaultIssueType"
+    },
+    "v1PromotionType": {
+      "type": "string",
+      "enum": [
+        "DefaultPromotionType",
+        "Free",
+        "Score"
+      ],
+      "default": "DefaultPromotionType"
     },
     "v1UpdateEventRequest": {
       "type": "object",
