@@ -155,6 +155,7 @@
           "type": "string"
         },
         "UserID": {
+<<<<<<< HEAD
           "type": "string"
         },
         "EmailAddress": {
@@ -162,6 +163,10 @@
         },
         "PhoneNO": {
           "type": "string"
+=======
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+>>>>>>> fa3deef6c (update allocatedcoupon)
         },
         "Denomination": {
           "type": "string"
