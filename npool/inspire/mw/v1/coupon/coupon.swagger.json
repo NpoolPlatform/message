@@ -134,6 +134,11 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"start_at\""
         },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end_at\""
+        },
         "DurationDays": {
           "type": "integer",
           "format": "int64",
@@ -147,17 +152,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"name\""
         },
-        "UserID": {
+        "Allocated": {
           "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
+          "title": "@inject_tag: sql:\"allocated\""
         },
         "Threshold": {
           "type": "string",
           "title": "@inject_tag: sql:\"threshold\""
-        },
-        "Allocated": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"allocated\""
         },
         "CouponConstraintStr": {
           "type": "string",
@@ -177,43 +178,10 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
-        "Condition": {
+        "CashRatio": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"condition\""
-        },
-        "IssueTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"issue_type\""
-        },
-        "IssueType": {
-          "$ref": "#/definitions/v1IssueType"
-        },
-        "PromotionTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"promotion_type\""
-        },
-        "PromotionType": {
-          "$ref": "#/definitions/v1PromotionType"
-        },
-        "LimitRule": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"limit_rule\""
-        },
-        "TimelinessStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"timeliness\""
-        },
-        "Timeliness": {
-          "$ref": "#/definitions/v1Timeliness"
-        },
-        "Cashable": {
-          "type": "boolean"
-        },
-        "CashRate": {
-          "type": "integer",
-          "format": "int64"
+          "title": "@inject_tag: sql:\"cash_ratio\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -232,9 +200,7 @@
       "enum": [
         "DefaultCouponConstraint",
         "Normal",
-        "PaymentThreshold",
-        "GoodOnly",
-        "GoodThreshold"
+        "PaymentThreshold"
       ],
       "default": "DefaultCouponConstraint"
     },
@@ -315,9 +281,7 @@
       "enum": [
         "DefaultCouponType",
         "FixAmount",
-        "Discount",
-        "SpecialOffer",
-        "FullReduction"
+        "Discount"
       ],
       "default": "DefaultCouponType"
     },
@@ -368,26 +332,6 @@
         }
       }
     },
-    "v1IssueType": {
-      "type": "string",
-      "enum": [
-        "DefaultIssueType",
-        "UserClaim",
-        "AdminIssue",
-        "BothIssueAndClaim",
-        "SystemIssue"
-      ],
-      "default": "DefaultIssueType"
-    },
-    "v1PromotionType": {
-      "type": "string",
-      "enum": [
-        "DefaultPromotionType",
-        "Free",
-        "Score"
-      ],
-      "default": "DefaultPromotionType"
-    },
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -412,15 +356,6 @@
           "type": "string"
         }
       }
-    },
-    "v1Timeliness": {
-      "type": "string",
-      "enum": [
-        "DefaultTimeliness",
-        "Relative",
-        "Absolute"
-      ],
-      "default": "DefaultTimeliness"
     },
     "v1Uint32Val": {
       "type": "object",
