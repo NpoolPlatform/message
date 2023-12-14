@@ -180,6 +180,7 @@
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CashableProbabilityPerMillion": {
           "type": "string",
           "title": "@inject_tag: sql:\"cashable_probability_per_million\""
@@ -228,6 +229,11 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"cash_ratio\""
 >>>>>>> d088163df (generate proto)
+=======
+        "Probability": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"probability\""
+>>>>>>> 24502801b (generate proto)
         },
         "CreatedAt": {
           "type": "integer",

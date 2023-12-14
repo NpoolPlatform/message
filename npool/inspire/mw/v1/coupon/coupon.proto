@@ -84,9 +84,9 @@ message Coupon {
     // @inject_tag: sql:"cashable_probability_per_million"
     string          CashableProbabilityPerMillion     = 210;
     // @inject_tag: sql:"created_at"
-    uint32          CreatedAt      = 1000;
+    uint32          CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32          UpdatedAt      = 1010;
+    uint32          UpdatedAt       = 1010;
 }
 
 message Conds {
