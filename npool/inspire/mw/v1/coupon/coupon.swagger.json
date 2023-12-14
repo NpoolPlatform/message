@@ -178,9 +178,9 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
-        "Probability": {
+        "CashableProbabilityPerMillion": {
           "type": "string",
-          "title": "@inject_tag: sql:\"probability\""
+          "title": "@inject_tag: sql:\"cashable_probability_per_million\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -232,6 +232,10 @@
           "type": "integer",
           "format": "int64"
         },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "DurationDays": {
           "type": "integer",
           "format": "int64"
@@ -241,10 +245,6 @@
         },
         "Name": {
           "type": "string"
-        },
-        "UserID": {
-          "type": "string",
-          "title": "For special offer"
         },
         "Threshold": {
           "type": "string",

@@ -409,9 +409,9 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
-        "Probability": {
+        "CashableProbabilityPerMillion": {
           "type": "string",
-          "title": "@inject_tag: sql:\"probability\""
+          "title": "@inject_tag: sql:\"cashable_probability_per_million\""
         },
         "CreatedAt": {
           "type": "integer",
