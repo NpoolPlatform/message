@@ -82,9 +82,7 @@
       "enum": [
         "DefaultCouponType",
         "FixAmount",
-        "Discount",
-        "SpecialOffer",
-        "FullReduction"
+        "Discount"
       ],
       "default": "DefaultCouponType"
     },

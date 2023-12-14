@@ -41,8 +41,6 @@ enum CouponType {
 
     FixAmount         = 10;
     Discount          = 20;
-    SpecialOffer      = 30;
-    FullReduction     = 40;
 }
 
 enum CouponConstraint {
@@ -50,8 +48,6 @@ enum CouponConstraint {
 
     Normal           = 10;
     PaymentThreshold = 20;
-    GoodOnly         = 30;
-    GoodThreshold    = 40;
 }
 
 enum CouponScope {
@@ -60,27 +56,4 @@ enum CouponScope {
     AllGood            = 10;
     Whitelist          = 20;
     Blacklist          = 30;
-}
-
-enum IssueType {
-    DefaultIssueType   = 0;
-
-    UserClaim              = 10; // 用户领取
-    AdminIssue             = 20; // 管理员发放
-    BothIssueAndClaim      = 30; // 既可管理员发放也可以用户领取
-    SystemIssue            = 40; // 系统发放
-}
-
-enum PromotionType {
-    DefaultPromotionType   = 0;
-
-    Free                  = 10; // 免费领取
-    Score                 = 20; // 积分兑换
-}
-
-enum Timeliness {
-    DefaultTimeliness  = 0;
-
-    Relative          = 10; // 相对时效
-    Absolute          = 20; // 绝对时效
 }

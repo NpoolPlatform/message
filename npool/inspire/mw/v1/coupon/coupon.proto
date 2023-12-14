@@ -63,18 +63,18 @@ message Coupon {
     string          IssuedBy        = 70;
     // @inject_tag: sql:"start_at"
     uint32          StartAt         = 80;
+    // @inject_tag: sql:"end_at"
+    uint32          EndAt           = 81;
     // @inject_tag: sql:"duration_days"
     uint32          DurationDays    = 90;
     // @inject_tag: sql:"message"
     string          Message         = 100;
     // @inject_tag: sql:"name"
     string          Name            = 110;
-    // @inject_tag: sql:"user_id"
-    optional string UserID          = 120;
-    // @inject_tag: sql:"threshold"
-    optional string Threshold       = 140;
     // @inject_tag: sql:"allocated"
     string          Allocated       = 150;
+    // @inject_tag: sql:"threshold"
+    optional string Threshold       = 140;
     // @inject_tag: sql:"coupon_constraint"
     string          CouponConstraintStr = 160;
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 170;
@@ -83,21 +83,8 @@ message Coupon {
     // @inject_tag: sql:"coupon_scope"
     string          CouponScopeStr  = 190;
     basetypes.inspire.v1.CouponScope      CouponScope      = 200;
-    // @inject_tag: sql:"condition"
-    uint32          Condition      = 210; // 满减券,实付款达到Condition才能使用
-    // @inject_tag: sql:"issue_type"
-    string          IssueTypeStr             = 220;
-    basetypes.inspire.v1.IssueType IssueType = 221; // 用户领取 | 管理员发放 | 系统发放(触发了特定条件,加一张表用来配置触发某个条件时发什么券)| 可用户领取也可以管理员发放
-    // @inject_tag: sql:"promotion_type"
-    string          PromotionTypeStr         = 230;
-    basetypes.inspire.v1.PromotionType PromotionType = 231; // 免费领取 | 积分兑换
-    // @inject_tag: sql:"limit_rule"
-    uint32          LimitRule      = 240; // 限领的张数
-    // @inject_tag: sql:"timeliness"
-    string          TimelinessStr  = 250; 
-    basetypes.inspire.v1.Timeliness Timeliness = 251; // 时效性, Absolute | Relative
-    bool            Cashable       = 260; // 是否可提现
-    uint32          CashRate       = 270;  // 生成可提现代金券的概率
+    // @inject_tag: sql:"cash_ratio"
+    uint32          CashRatio       = 210;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt      = 1000;
     // @inject_tag: sql:"updated_at"
