@@ -255,10 +255,10 @@
         "Timeliness": {
           "$ref": "#/definitions/v1Timeliness"
         },
-        "RandomCash": {
+        "Cashable": {
           "type": "boolean"
         },
-        "Rate": {
+        "CashRate": {
           "type": "integer",
           "format": "int64"
         },
@@ -301,7 +301,8 @@
         "DefaultCouponType",
         "FixAmount",
         "Discount",
-        "SpecialOffer"
+        "SpecialOffer",
+        "FullReduction"
       ],
       "default": "DefaultCouponType"
     },

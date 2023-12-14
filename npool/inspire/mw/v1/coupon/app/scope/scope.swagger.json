@@ -83,7 +83,8 @@
         "DefaultCouponType",
         "FixAmount",
         "Discount",
-        "SpecialOffer"
+        "SpecialOffer",
+        "FullReduction"
       ],
       "default": "DefaultCouponType"
     },
