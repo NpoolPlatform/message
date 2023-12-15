@@ -1,0 +1,105 @@
+syntax = "proto3";
+
+package ledger.gateway.withdraw.coupon.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/gw/v1/withdraw/coupon";
+
+import "npool/basetypes/v1/signmethod.proto";
+import "google/api/annotations.proto";
+import "npool/basetypes/ledger/v1/enums.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateCouponWithdraw (CreateCouponWithdrawRequest) returns (CreateCouponWithdrawResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/couponwithdraw"
+            body: "*"
+        };
+    }
+
+    rpc GetCouponWithdraws (GetCouponWithdrawsRequest) returns (GetCouponWithdrawsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/couponwithdraws"
+            body: "*"
+        };
+    }
+
+    rpc GetAppCouponWithdraws (GetAppCouponWithdrawsRequest) returns (GetAppCouponWithdrawsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/couponwithdraws"
+            body: "*"
+        };
+    }
+
+    rpc GetNAppCouponWithdraws (GetNAppCouponWithdrawsRequest) returns (GetNAppCouponWithdrawsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/n/app/couponwithdraws"
+            body: "*"
+        };
+    }
+}
+
+message CouponWithdraw {
+    string          ID             = 10;
+    string          EntID          = 20;
+    string          AppID          = 30;
+    string          UserID         = 40;
+    string          EmailAddress   = 50;
+    string          PhoneNO        = 60;
+    string          CoinTypeID     = 70;
+    string          CoinName       = 80;
+    repeated string DisplayNames   = 90;
+    string          CoinLogo       = 100;
+    string          CoinUnit       = 110;
+    string          Amount         = 120;
+    string          Message        = 130;
+    basetypes.ledger.v1.WithdrawState State = 140;
+    uint32          CreatedAt      = 150;
+}
+
+message CreateCouponWithdrawRequest {
+    string AppID             = 10;
+    string UserID            = 20;
+    string Amount            = 30;
+    basetypes.v1.SignMethod AccountType = 40;
+    string VerificationCode  = 50;
+}
+
+message CreateCouponWithdrawResponse {
+    CouponWithdraw Info = 10;
+}
+
+message GetCouponWithdrawsRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
+}
+
+message GetCouponWithdrawsResponse {
+    repeated CouponWithdraw Infos = 10;
+    uint32                  Total = 20;
+}
+
+message GetAppCouponWithdrawsRequest {
+    string AppID   = 10;
+    int32  Offset  = 20;
+    int32  Limit   = 30;
+}
+
+message GetAppCouponWithdrawsResponse {
+    repeated CouponWithdraw Infos = 10;
+    uint32            Total = 20;
+}
+
+message GetNAppCouponWithdrawsRequest {
+    string TargetAppID   = 10;
+    int32  Offset        = 20;
+    int32  Limit         = 30;
+}
+
+message GetNAppCouponWithdrawsResponse {
+    repeated CouponWithdraw Infos = 10;
+    uint32            Total = 20;
+}
+
