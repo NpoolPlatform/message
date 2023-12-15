@@ -17,7 +17,8 @@ service Middleware {
 }
 
 message TopMostGoodReq {
-    optional string ID         = 10;
+    optional uint32 ID         = 9;
+    optional string EntID      = 10;
     optional string AppGoodID  = 20;
     optional string TopMostID  = 30;
     optional uint32 DisplayIndex = 40;
@@ -27,7 +28,9 @@ message TopMostGoodReq {
 
 message TopMostGood {
     // @inject_tag: sql:"id"
-    string ID         = 10;
+    uint32 ID         = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID      = 10;
     // @inject_tag: sql:"app_id"
     string AppID      = 20;
     // @inject_tag: sql:"good_id"
@@ -63,8 +66,9 @@ message TopMostGood {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID    = 10;
-    optional basetypes.v1.StringVal AppID = 20;
+    optional basetypes.v1.Uint32Val ID     = 9;
+    optional basetypes.v1.StringVal EntID  = 10;
+    optional basetypes.v1.StringVal AppID  = 20;
     optional basetypes.v1.StringVal GoodID = 30;
     optional basetypes.v1.StringVal AppGoodID   = 40;
     optional basetypes.v1.StringVal TopMostID   = 50;
@@ -89,7 +93,7 @@ message UpdateTopMostGoodResponse {
 }
 
 message GetTopMostGoodRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetTopMostGoodResponse {

@@ -19,7 +19,8 @@ service Middleware {
 }
 
 message GoodReq {
-    optional string ID                  = 10;
+    optional uint32 ID                  = 9;
+    optional string EntID               = 10;
     optional string AppID               = 20;
     optional string GoodID              = 30;
     optional bool   Online              = 40;
@@ -49,7 +50,9 @@ message GoodReq {
 
 message Good {
     // @inject_tag: sql:"id"
-    string           ID                          = 10;
+    uint32           ID                          = 9;
+    // @inject_tag: sql:"ent_id"
+    string           EntID                       = 10;
     // @inject_tag: sql:"app_id"
     string           AppID                       = 20;
     // @inject_tag: sql:"good_id"
@@ -223,12 +226,14 @@ message Good {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID     = 10;
+    optional basetypes.v1.Uint32Val      ID     = 9;
+    optional basetypes.v1.StringVal      EntID  = 10;
     optional basetypes.v1.StringVal      AppID  = 20;
     optional basetypes.v1.StringVal      GoodID = 30;
     optional basetypes.v1.StringSliceVal GoodIDs = 40;
     optional basetypes.v1.StringSliceVal AppIDs = 50;
-    optional basetypes.v1.StringSliceVal IDs    = 60;
+    optional basetypes.v1.Uint32SliceVal IDs    = 60;
+    optional basetypes.v1.StringSliceVal EntIDs = 70;
 }
 
 message CreateGoodRequest {
@@ -240,7 +245,7 @@ message CreateGoodResponse {
 }
 
 message GetGoodRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetGoodResponse {
@@ -259,7 +264,7 @@ message GetGoodsResponse {
 }
 
 message ExistGoodRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message ExistGoodResponse {

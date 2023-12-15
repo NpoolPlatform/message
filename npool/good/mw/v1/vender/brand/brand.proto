@@ -16,14 +16,17 @@ service Middleware {
 }
 
 message BrandReq {
-    optional string ID   = 10;
-    optional string Name = 20;
-    optional string Logo = 30;
+    optional uint32 ID    = 9;
+    optional string EntID = 10;
+    optional string Name  = 20;
+    optional string Logo  = 30;
 }
 
 message Brand {
     // @inject_tag: sql:"id"
-    string ID        = 10;
+    uint32 ID        = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID     = 10;
     // @inject_tag: sql:"name"
     string Name      = 20;
     // @inject_tag: sql:"logo"
@@ -35,8 +38,9 @@ message Brand {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID   = 10;
-    optional basetypes.v1.StringVal Name = 20;
+    optional basetypes.v1.Uint32Val ID    = 9;
+    optional basetypes.v1.StringVal EntID = 10;
+    optional basetypes.v1.StringVal Name  = 20;
 }
 
 
@@ -57,7 +61,7 @@ message UpdateBrandResponse {
 }
 
 message GetBrandRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetBrandResponse {

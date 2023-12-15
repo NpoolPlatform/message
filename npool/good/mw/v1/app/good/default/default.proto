@@ -16,13 +16,16 @@ service Middleware {
 }
 
 message DefaultReq {
-    optional string ID        = 10;
+    optional uint32 ID        = 9;
+    optional string EntID     = 10;
     optional string AppGoodID = 20;
 }
 
 message Default {
     // @inject_tag: sql:"id"
-    string ID         = 10;
+    uint32 ID         = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID      = 10;
     // @inject_tag: sql:"app_id"
     string AppID      = 20;
     // @inject_tag: sql:"good_id"
@@ -42,7 +45,8 @@ message Default {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID          = 10;
+    optional basetypes.v1.Uint32Val      ID          = 9;
+    optional basetypes.v1.StringVal      EntID       = 10;
     optional basetypes.v1.StringVal      AppID       = 20;
     optional basetypes.v1.StringVal      GoodID      = 30;
     optional basetypes.v1.StringVal      AppGoodID   = 40;
@@ -68,7 +72,7 @@ message UpdateDefaultResponse {
 }
 
 message GetDefaultRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetDefaultResponse {

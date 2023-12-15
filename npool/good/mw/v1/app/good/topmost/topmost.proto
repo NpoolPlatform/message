@@ -17,7 +17,8 @@ service Middleware {
 }
 
 message TopMostReq {
-    optional string ID         = 10;
+    optional uint32 ID         = 9;
+    optional string EntID      = 10;
     optional string AppID      = 20;
     optional basetypes.good.v1.GoodTopMostType TopMostType = 30;
     optional string Title      = 40;
@@ -36,7 +37,9 @@ message TopMostReq {
 
 message TopMost {
     // @inject_tag: sql:"id"
-    string ID         = 10;
+    uint32 ID         = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID      = 10;
     // @inject_tag: sql:"app_id"
     string AppID      = 20;
     // @inject_tag: sql:"top_most_type"
@@ -70,7 +73,8 @@ message TopMost {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID    = 10;
+    optional basetypes.v1.Uint32Val ID    = 9;
+    optional basetypes.v1.StringVal EntID = 10;
     optional basetypes.v1.StringVal AppID = 20;
     optional basetypes.v1.Uint32Val TopMostType = 30;
     optional basetypes.v1.StringVal Title = 40;
@@ -93,7 +97,7 @@ message UpdateTopMostResponse {
 }
 
 message GetTopMostRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetTopMostResponse {

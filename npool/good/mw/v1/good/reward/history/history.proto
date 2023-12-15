@@ -12,7 +12,8 @@ service Middleware {
 }
 
 message HistoryReq {
-    optional string ID         = 10;
+    optional uint32 ID         = 9;
+    optional string EntID      = 10;
     optional string GoodID     = 20;
     optional uint32 RewardDate = 30;
     optional string TID        = 40;
@@ -22,7 +23,9 @@ message HistoryReq {
 
 message History {
     // @inject_tag: sql:"id"
-    string ID        = 10;
+    uint32 ID        = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID     = 10;
     // @inject_tag: sql:"good_id"
     string GoodID    = 20;
     // @inject_tag: sql:"good_name"
@@ -42,7 +45,8 @@ message History {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID      = 10;
+    optional basetypes.v1.Uint32Val      ID      = 9;
+    optional basetypes.v1.StringVal      EntID   = 10;
     optional basetypes.v1.StringVal      GoodID  = 20;
     optional basetypes.v1.StringSliceVal GoodIDs = 30;
     optional basetypes.v1.Uint32Val      RewardDate = 40;
