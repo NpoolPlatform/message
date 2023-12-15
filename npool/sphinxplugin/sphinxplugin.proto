@@ -20,6 +20,7 @@ enum CoinType {
   CoinTypeusdcerc20 = 11;
   CoinTypealeo = 12;
   CoinTypeironfish = 13;
+  CoinTypebscusd = 14;
 
   // testnet
   CoinTypetfilecoin = 100;
@@ -35,6 +36,7 @@ enum CoinType {
   CoinTypetusdcerc20 = 110;
   CoinTypetaleo = 111;
   CoinTypetironfish = 112;
+  CoinTypetbscusd = 113;
 }
 
 enum ChainType{
