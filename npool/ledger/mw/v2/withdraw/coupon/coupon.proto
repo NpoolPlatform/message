@@ -20,10 +20,7 @@ message CouponWithdrawReq {
     optional string ID                     = 10;
     optional string AppID                  = 20;
     optional string UserID                 = 30;
-<<<<<<< HEAD
     optional string CoinTypeID             = 31;
-=======
->>>>>>> 17246f05a (add CouponWithdraw)
     optional string Amount                 = 50;
     optional basetypes.ledger.v1.WithdrawState State = 60;
     optional string ReviewID               = 70;
