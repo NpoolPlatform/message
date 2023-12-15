@@ -228,10 +228,13 @@
 <<<<<<< HEAD
 =======
         },
+<<<<<<< HEAD
         "Allocated": {
           "type": "string"
 >>>>>>> 0b45c3311 (update coupon gw)
         },
+=======
+>>>>>>> f6a28ea87 (delete allocated)
         "CouponTypeStr": {
           "type": "string"
         },
