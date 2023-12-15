@@ -44,7 +44,8 @@ service Gateway {
 }
 
 message Recommend {
-    string ID         = 10;
+    uint32 ID         = 9;
+    string EntID      = 10;
     string AppID      = 20;
     string AppName    = 30;
     string RecommenderID = 40;
@@ -72,7 +73,8 @@ message CreateRecommendResponse {
 }
 
 message UpdateRecommendRequest {
-    string ID      = 10;
+    uint32 ID      = 9;
+    string EntID   = 10;
     string AppID   = 20;
     string UserID  = 30;
     string RecommendIndex = 40;
@@ -107,7 +109,8 @@ message GetMyRecommendsResponse {
 }
 
 message DeleteRecommendRequest {
-    string ID     = 10;
+    uint32 ID     = 9;
+    string EntID  = 10;
     string AppID  = 20;
     string UserID = 30;
 }

@@ -397,7 +397,7 @@
     "v1GetGoodRequest": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "type": "string"
         },
         "AppID": {
@@ -481,6 +481,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "AppID": {
@@ -795,6 +799,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "AppID": {
@@ -901,6 +909,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "TargetAppID": {

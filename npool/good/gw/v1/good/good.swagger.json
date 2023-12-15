@@ -295,7 +295,7 @@
     "v1GetGoodRequest": {
       "type": "object",
       "properties": {
-        "ID": {
+        "EntID": {
           "type": "string"
         }
       }
@@ -341,6 +341,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "DeviceInfoID": {
@@ -569,6 +573,10 @@
       "type": "object",
       "properties": {
         "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
           "type": "string"
         },
         "DeviceInfoID": {

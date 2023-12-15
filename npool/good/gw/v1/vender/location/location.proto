@@ -48,7 +48,8 @@ message CreateLocationResponse {
 }
 
 message UpdateLocationRequest {
-    string          ID       = 10;
+    uint32          ID       = 9;
+    string          EntID    = 10;
     optional string Country  = 20;
     optional string Province = 30;
     optional string City     = 40;
@@ -72,7 +73,8 @@ message GetLocationsResponse {
 }
 
 message DeleteLocationRequest {
-    string ID = 10;
+    uint32 ID    = 9;
+    string EntID = 10;
 }
 
 message DeleteLocationResponse {

@@ -59,7 +59,8 @@ service Gateway {
 }
 
 message Default {
-    string ID         = 10;
+    uint32 ID         = 9;
+    string EntID      = 10;
     string AppID      = 20;
     string AppName    = 30;
     string GoodID     = 40;
@@ -116,7 +117,8 @@ message GetNDefaultsResponse {
 }
 
 message DeleteDefaultRequest {
-    string ID    = 10;
+    uint32 ID    = 9;
+    string EntID = 10;
     string AppID = 20;
 }
 
@@ -125,7 +127,8 @@ message DeleteDefaultResponse {
 }
 
 message UpdateDefaultRequest {
-    string          ID        = 10;
+    uint32          ID        = 9;
+    string          EntID     = 10;
     string          AppID     = 20;
     optional string AppGoodID = 30;
 }
@@ -135,7 +138,8 @@ message UpdateDefaultResponse {
 }
 
 message UpdateNDefaultRequest {
-    string          ID          = 10;
+    uint32          ID          = 9;
+    string          EntID       = 10;
     string          TargetAppID = 20;
     optional string AppGoodID   = 30;
 }
