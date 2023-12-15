@@ -104,6 +104,9 @@
         },
         "ReviewID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -163,6 +166,9 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
           "type": "string"
         },
         "Amount": {
