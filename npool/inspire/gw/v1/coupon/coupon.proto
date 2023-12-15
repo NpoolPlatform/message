@@ -69,6 +69,7 @@ message UpdateCouponRequest {
     optional string Denomination = 40;
     optional string Circulation  = 50;
     optional uint32 StartAt      = 60;
+    optional uint32 EndAt        = 61;
     optional uint32 DurationDays = 70;
     optional string Message      = 80;
     optional string Name         = 90;
