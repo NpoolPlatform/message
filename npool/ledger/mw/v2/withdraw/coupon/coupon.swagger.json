@@ -104,9 +104,12 @@
         },
         "ReviewID": {
           "$ref": "#/definitions/v1StringVal"
+<<<<<<< HEAD
         },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
+=======
+>>>>>>> 17246f05a (add CouponWithdraw)
         }
       }
     },
@@ -168,9 +171,12 @@
         "UserID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "CoinTypeID": {
           "type": "string"
         },
+=======
+>>>>>>> 17246f05a (add CouponWithdraw)
         "Amount": {
           "type": "string"
         },
