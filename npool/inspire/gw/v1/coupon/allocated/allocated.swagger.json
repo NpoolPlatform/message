@@ -209,9 +209,6 @@
         "Threshold": {
           "type": "string"
         },
-        "Allocated": {
-          "type": "string"
-        },
         "CouponTypeStr": {
           "type": "string"
         },
