@@ -34,7 +34,7 @@ message Coupon {
     string     AppID           = 30;
     string     UserID          = 40;
     string     EmailAddress    = 50;
-    string     PhoneNo         = 51;
+    string     PhoneNO         = 51;
     string     Denomination    = 60;
     string     Circulation     = 70;
     uint32     StartAt         = 80;
