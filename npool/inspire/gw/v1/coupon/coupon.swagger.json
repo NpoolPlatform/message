@@ -195,6 +195,9 @@
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
+        },
+        "CashableProbabilityPerMillion": {
+          "type": "string"
         }
       }
     },
@@ -287,6 +290,9 @@
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
+        },
+        "CashableProbabilityPerMillion": {
+          "type": "string"
         }
       }
     },
