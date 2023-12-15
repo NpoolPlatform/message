@@ -49,7 +49,6 @@ message Coupon {
     uint32     UsedAt          = 170;
     string     UsedByOrderID   = 180;
     string     Threshold       = 200;
-    string     Allocated       = 210;
     string     CouponTypeStr   = 220;
     basetypes.inspire.v1.CouponType CouponType = 230;
     string     CouponConstraintStr = 240;
