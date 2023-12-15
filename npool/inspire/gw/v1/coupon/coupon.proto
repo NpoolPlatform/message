@@ -55,6 +55,7 @@ message CreateCouponRequest {
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 140;
     bool   Random       = 150;
     basetypes.inspire.v1.CouponScope CouponScope = 160;
+    optional string CashableProbabilityPerMillion = 170;
 }
 
 message CreateCouponResponse {
@@ -76,6 +77,7 @@ message UpdateCouponRequest {
     optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 130;
     optional bool   Random       = 140;
     optional basetypes.inspire.v1.CouponScope CouponScope = 150;
+    optional string CashableProbabilityPerMillion         = 160;
 }
 
 message UpdateCouponResponse {
@@ -106,4 +108,3 @@ message GetAppCouponsResponse {
     repeated inspire.middleware.coupon.v1.Coupon Infos = 10;
     uint32                                       Total = 20;
 }
-
