@@ -156,17 +156,25 @@
         },
         "UserID": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0b45c3311 (update coupon gw)
           "type": "string"
         },
         "EmailAddress": {
           "type": "string"
         },
+<<<<<<< HEAD
         "PhoneNO": {
           "type": "string"
 =======
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
 >>>>>>> fa3deef6c (update allocatedcoupon)
+=======
+        "PhoneNo": {
+          "type": "string"
+>>>>>>> 0b45c3311 (update coupon gw)
         },
         "Denomination": {
           "type": "string"
@@ -213,6 +221,12 @@
         },
         "Threshold": {
           "type": "string"
+<<<<<<< HEAD
+=======
+        },
+        "Allocated": {
+          "type": "string"
+>>>>>>> 0b45c3311 (update coupon gw)
         },
         "CouponTypeStr": {
           "type": "string"
@@ -220,6 +234,7 @@
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         "AppID": {
@@ -295,6 +310,8 @@
           "title": "@inject_tag: sql:\"allocated\""
         },
 >>>>>>> 23e7e37d8 (update allocatedcoupon)
+=======
+>>>>>>> 0b45c3311 (update coupon gw)
         "CouponConstraintStr": {
           "type": "string"
         },
@@ -312,11 +329,15 @@
         },
         "Cashable": {
 <<<<<<< HEAD
+<<<<<<< HEAD
           "type": "boolean"
 =======
           "type": "boolean",
           "title": "@inject_tag: sql:\"cashable\""
 >>>>>>> f2a2b2483 (add Cashable in allocatedcoupon)
+=======
+          "type": "boolean"
+>>>>>>> 0b45c3311 (update coupon gw)
         },
         "CreatedAt": {
           "type": "integer",
