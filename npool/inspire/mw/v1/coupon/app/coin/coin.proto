@@ -1,0 +1,103 @@
+syntax = "proto3";
+
+package inspire.middleware.coupon.app.coin.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/coupon/app/coin";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateCouponCoin     (CreateCouponCoinRequest)    returns (CreateCouponCoinResponse)   {}
+    rpc DeleteCouponCoin     (DeleteCouponCoinRequest)    returns (DeleteCouponCoinResponse)   {}
+    rpc GetCouponCoins       (GetCouponCoinsRequest)      returns (GetCouponCoinsResponse)     {}
+    rpc GetCouponCoin        (GetCouponCoinRequest)       returns (GetCouponCoinResponse)      {}
+    rpc ExistCouponCoinConds (ExistCouponCoinCondsRequest)returns (ExistCouponCoinCondsResponse)    {}
+}
+
+message CouponCoinReq {
+    optional uint32 ID         = 9;
+    optional string EntID      = 10;
+    optional string AppID      = 20;
+    optional string CouponCoinTypeID = 30;
+    optional string CouponID   = 40;
+}
+
+message CouponCoin {
+    // @inject_tag: sql:"id"
+    uint32     ID              = 10;
+    // @inject_tag: sql:"ent_id"
+    string     EntID           = 20;
+    // @inject_tag: sql:"app_id"
+    string     AppID           = 30;
+    // @inject_tag: sql:"coin_type_id"
+    string     CouponCoinTypeID      = 40;
+    // @inject_tag: sql:"coupon_id"
+    string     CouponID        = 50;
+    // @inject_tag: sql:"coupon_name"
+    string     CouponName      = 60;
+    // @inject_tag: sql:"coupon_denomination"
+    string     CouponDenomination  = 110;
+    // @inject_tag: sql:"created_at"
+    uint32     CreatedAt       = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32     UpdatedAt       = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal EntID       = 10;
+    optional basetypes.v1.StringVal AppID       = 20;
+    optional basetypes.v1.StringVal CouponCoinTypeID  = 40;
+    optional basetypes.v1.StringVal CouponID    = 50;
+    optional basetypes.v1.StringSliceVal CouponIDs   = 60;
+}
+
+message CreateCouponCoinRequest {
+    CouponCoinReq Info = 10;
+}
+
+message CreateCouponCoinResponse {
+    CouponCoin Info = 10;
+}
+
+message GetCouponCoinRequest {
+    string EntID = 10;
+}
+
+message GetCouponCoinResponse {
+    CouponCoin Info = 10;
+}
+
+message GetCouponCoinsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetCouponCoinsResponse {
+    repeated CouponCoin Infos = 10;
+    uint32         Total = 20;
+}
+
+message DeleteCouponCoinRequest {
+    CouponCoinReq Info = 10;
+}
+
+message DeleteCouponCoinResponse {
+    CouponCoin    Info = 10;
+}
+
+message ExistCouponCoinCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistCouponCoinCondsResponse {
+    bool Info   = 10;
+}
+
+message VerifyCouponCouponCoinsRequest {
+    repeated CouponCoinReq Infos  = 10;
+}
+
+message VerifyCouponCouponCoinsResponse {
+}
