@@ -112,6 +112,7 @@
         },
         "CopuonID": {
           "$ref": "#/definitions/v1StringVal"
+<<<<<<< HEAD
 =======
 >>>>>>> 17246f05a (add CouponWithdraw)
 =======
@@ -119,6 +120,11 @@
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
 >>>>>>> 01cdd3260 (fix wrong word)
+=======
+        },
+        "CreatedAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+>>>>>>> 550b2eada (add CreatedAt)
         }
       }
     },

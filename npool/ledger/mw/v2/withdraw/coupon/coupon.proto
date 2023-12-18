@@ -59,6 +59,7 @@ message Conds {
     optional basetypes.v1.StringVal CoinTypeID = 50;
     optional basetypes.v1.StringVal ReviewID   = 60;
     optional basetypes.v1.StringVal CopuonID   = 70;
+    optional basetypes.v1.Uint32Val CreatedAt  = 80;
 }
 
 message CreateCouponWithdrawRequest {
