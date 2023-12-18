@@ -31,7 +31,7 @@ message CouponCoin {
     // @inject_tag: sql:"app_id"
     string     AppID           = 30;
     // @inject_tag: sql:"coin_type_id"
-    string     CouponCoinTypeID      = 40;
+    string     CoinTypeID      = 40;
     // @inject_tag: sql:"coupon_id"
     string     CouponID        = 50;
     // @inject_tag: sql:"coupon_name"
@@ -47,7 +47,7 @@ message CouponCoin {
 message Conds {
     optional basetypes.v1.StringVal EntID       = 10;
     optional basetypes.v1.StringVal AppID       = 20;
-    optional basetypes.v1.StringVal CouponCoinTypeID  = 40;
+    optional basetypes.v1.StringVal CoinTypeID  = 40;
     optional basetypes.v1.StringVal CouponID    = 50;
     optional basetypes.v1.StringSliceVal CouponIDs   = 60;
 }
@@ -93,11 +93,4 @@ message ExistCouponCoinCondsRequest {
 
 message ExistCouponCoinCondsResponse {
     bool Info   = 10;
-}
-
-message VerifyCouponCouponCoinsRequest {
-    repeated CouponCoinReq Infos  = 10;
-}
-
-message VerifyCouponCouponCoinsResponse {
 }
