@@ -110,7 +110,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
         },
-        "CopuonID": {
+        "CouponID": {
           "$ref": "#/definitions/v1StringVal"
 <<<<<<< HEAD
 =======
