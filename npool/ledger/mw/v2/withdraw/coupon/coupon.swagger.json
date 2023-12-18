@@ -102,12 +102,15 @@
         "State": {
           "$ref": "#/definitions/v1Uint32Val"
         },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "ReviewID": {
           "$ref": "#/definitions/v1StringVal"
 <<<<<<< HEAD
 <<<<<<< HEAD
         },
-        "CoinTypeID": {
+        "CopuonID": {
           "$ref": "#/definitions/v1StringVal"
 =======
 >>>>>>> 17246f05a (add CouponWithdraw)
@@ -148,6 +151,10 @@
         },
         "State": {
           "$ref": "#/definitions/v1WithdrawState"
+        },
+        "CouponID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_id\""
         },
         "ReviewID": {
           "type": "string",
@@ -194,6 +201,9 @@
         },
         "State": {
           "$ref": "#/definitions/v1WithdrawState"
+        },
+        "CouponID": {
+          "type": "string"
         },
         "ReviewID": {
           "type": "string"
