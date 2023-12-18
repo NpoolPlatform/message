@@ -110,6 +110,9 @@
         },
         "CopuonID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "CreatedAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
