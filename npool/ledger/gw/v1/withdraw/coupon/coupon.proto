@@ -4,7 +4,6 @@ package ledger.gateway.withdraw.coupon.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/ledger/gw/v1/withdraw/coupon";
 
-import "npool/basetypes/v1/signmethod.proto";
 import "google/api/annotations.proto";
 import "npool/basetypes/ledger/v1/enums.proto";
 
@@ -64,9 +63,7 @@ message CouponWithdraw {
 message CreateCouponWithdrawRequest {
     string AppID             = 10;
     string UserID            = 20;
-    string Amount            = 30;
-    basetypes.v1.SignMethod AccountType = 40;
-    string VerificationCode  = 50;
+    string CouponID          = 30;
 }
 
 message CreateCouponWithdrawResponse {

@@ -249,13 +249,7 @@
         "UserID": {
           "type": "string"
         },
-        "Amount": {
-          "type": "string"
-        },
-        "AccountType": {
-          "$ref": "#/definitions/v1SignMethod"
-        },
-        "VerificationCode": {
+        "CouponID": {
           "type": "string"
         }
       }
@@ -363,22 +357,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1SignMethod": {
-      "type": "string",
-      "enum": [
-        "DefaultSignMethod",
-        "Mobile",
-        "Email",
-        "Twitter",
-        "Github",
-        "Facebook",
-        "Linkedin",
-        "Wechat",
-        "Google",
-        "Username"
-      ],
-      "default": "DefaultSignMethod"
     },
     "v1WithdrawState": {
       "type": "string",
