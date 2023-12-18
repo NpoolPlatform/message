@@ -82,7 +82,7 @@ message UpdateCouponWithdrawResponse {
 }
 
 message GetCouponWithdrawRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetCouponWithdrawResponse {
