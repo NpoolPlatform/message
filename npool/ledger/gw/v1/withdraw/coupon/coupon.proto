@@ -39,7 +39,7 @@ service Gateway {
 }
 
 message CouponWithdraw {
-    string          ID             = 10;
+    uint32          ID             = 10;
     string          EntID          = 20;
     string          AppID          = 30;
     string          UserID         = 40;
