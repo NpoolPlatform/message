@@ -51,10 +51,14 @@ message CouponWithdraw {
     repeated string DisplayNames   = 90;
     string          CoinLogo       = 100;
     string          CoinUnit       = 110;
-    string          Amount         = 120;
-    string          Message        = 130;
-    basetypes.ledger.v1.WithdrawState State = 140;
-    uint32          CreatedAt      = 150;
+    string          CouponID       = 120;
+    string          CouponName     = 130;
+    string          CouponMessage  = 140;
+    string          Amount         = 150;
+    string          Message        = 160;
+    basetypes.ledger.v1.WithdrawState State = 170;
+    uint32          CreatedAt      = 180;
+    uint32          UpdatedAt      = 190;
 }
 
 message CreateCouponWithdrawRequest {

@@ -212,6 +212,15 @@
         "CoinUnit": {
           "type": "string"
         },
+        "CouponID": {
+          "type": "string"
+        },
+        "CouponName": {
+          "type": "string"
+        },
+        "CouponMessage": {
+          "type": "string"
+        },
         "Amount": {
           "type": "string"
         },
@@ -222,6 +231,10 @@
           "$ref": "#/definitions/v1WithdrawState"
         },
         "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
           "type": "integer",
           "format": "int64"
         }
