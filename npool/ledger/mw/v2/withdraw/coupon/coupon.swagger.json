@@ -108,7 +108,7 @@
         "ReviewID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "CopuonID": {
+        "CouponID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "CreatedAt": {
