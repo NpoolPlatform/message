@@ -17,7 +17,8 @@ service Middleware {
 }
 
 message CouponWithdrawReq {
-    optional string ID                     = 10;
+    optional uint32 ID                     = 10;
+    optional string EntID                  = 11;
     optional string AppID                  = 20;
     optional string UserID                 = 30;
     optional string CoinTypeID             = 40;
