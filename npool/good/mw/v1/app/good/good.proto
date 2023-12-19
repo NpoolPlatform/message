@@ -45,6 +45,10 @@ message GoodReq {
     optional string ProductPage         = 270;
     optional bool   EnableSetCommission = 310;
     repeated string Posters             = 320;
+    optional string MinOrderAmount      = 330;
+    optional string MaxOrderAmount      = 340;
+    optional uint32 MinOrderDuration    = 350;
+    optional uint32 MaxOrderDuration    = 360;
 }
 
 message Good {
@@ -135,10 +139,6 @@ message Good {
     // @inject_tag: sql:"start_mode"
     string           StartModeStr       = 411;
     basetypes.good.v1.GoodStartMode StartMode = 412;
-    // @inject_tag: sql:"created_at"
-    uint32           CreatedAt          = 420;
-    // @inject_tag: sql:"updated_at"
-    uint32           UpdatedAt          = 421;
 
     // @inject_tag: sql:"sale_start_at"
     uint32           SaleStartAt         = 430;
@@ -220,6 +220,20 @@ message Good {
     // @inject_tag: sql:"app_good_posters"
     string           AppGoodPostersStr  = 840;
     repeated string  AppGoodPosters     = 850;
+
+    // @inject_tag: sql:"min_order_amount"
+    string           MinOrderAmount     = 860;
+    // @inject_tag: sql:"max_order_amount"
+    string           MaxOrderAmount     = 870;
+    // @inject_tag: sql:"min_order_duration"
+    uint32           MinOrderDuration   = 880;
+    // @inject_tag: sql:"max_order_duration"
+    uint32           MaxOrderDuration   = 890;
+
+    // @inject_tag: sql:"created_at"
+    uint32           CreatedAt          = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32           UpdatedAt          = 1100;
 }
 
 message Conds {

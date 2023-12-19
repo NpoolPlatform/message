@@ -331,16 +331,6 @@
         "StartMode": {
           "$ref": "#/definitions/v1GoodStartMode"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        },
         "SaleStartAt": {
           "type": "integer",
           "format": "int64",
@@ -513,6 +503,34 @@
           "items": {
             "type": "string"
           }
+        },
+        "MinOrderAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"min_order_amount\""
+        },
+        "MaxOrderAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"max_order_amount\""
+        },
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"min_order_duration\""
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"max_order_duration\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -625,6 +643,20 @@
           "items": {
             "type": "string"
           }
+        },
+        "MinOrderAmount": {
+          "type": "string"
+        },
+        "MaxOrderAmount": {
+          "type": "string"
+        },
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
