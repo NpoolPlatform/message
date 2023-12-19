@@ -121,7 +121,7 @@
         "AppID": {
           "type": "string"
         },
-        "CouponCoinTypeID": {
+        "CoinTypeID": {
           "type": "string"
         },
         "CouponID": {
