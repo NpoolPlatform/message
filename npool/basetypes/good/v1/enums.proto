@@ -82,3 +82,27 @@ enum AppStockLockState {
     AppStockRollback   = 60;
     AppStockCanceled   = 70;
 }
+
+enum GoodUnitType {
+    DefaultGoodUnitType = 0;
+
+    GoodUnitByDuration = 10;
+    GoodUnitByQuantity = 20;
+    GoodUnitByDurationAndQuantity = 30;
+}
+
+enum GoodUnitCalculateType {
+    DefaultGoodUnitCalculateType = 0;
+
+    GoodUnitCalculateBySelf   = 10;
+    GoodUnitCalculateByParent = 20;
+}
+
+enum GoodUnitDurationType {
+    DefaultGoodUnitDurationType = 0;
+
+    GoodUnitDurationByHour  = 10;
+    GoodUnitDurationByDay   = 20;
+    GoodUnitDurationByMonth = 30;
+    GoodUnitDurationByYear  = 40;
+}
