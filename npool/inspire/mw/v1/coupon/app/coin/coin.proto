@@ -19,7 +19,7 @@ message CouponCoinReq {
     optional uint32 ID         = 9;
     optional string EntID      = 10;
     optional string AppID      = 20;
-    optional string CouponCoinTypeID = 30;
+    optional string CoinTypeID = 30;
     optional string CouponID   = 40;
 }
 
