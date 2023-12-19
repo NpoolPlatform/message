@@ -141,83 +141,7 @@
         }
       }
     },
-    "v1CreateCouponCoinRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "CouponID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CreateCouponCoinResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Scope"
-        }
-      }
-    },
-    "v1DeleteCouponCoinRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteCouponCoinResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Scope"
-        }
-      }
-    },
-    "v1GetCouponCoinsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetCouponCoinsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Scope"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1Scope": {
+    "v1CouponCoin": {
       "type": "object",
       "properties": {
         "ID": {
@@ -253,6 +177,82 @@
           "format": "int64"
         },
         "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateCouponCoinRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateCouponCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CouponCoin"
+        }
+      }
+    },
+    "v1DeleteCouponCoinRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteCouponCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CouponCoin"
+        }
+      }
+    },
+    "v1GetCouponCoinsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetCouponCoinsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CouponCoin"
+          }
+        },
+        "Total": {
           "type": "integer",
           "format": "int64"
         }
