@@ -366,16 +366,6 @@
         "StartMode": {
           "$ref": "#/definitions/v1GoodStartMode"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        },
         "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64",
@@ -420,6 +410,37 @@
         "TotalRewardAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"total_reward_amount\""
+        },
+        "GoodUnitTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_unit_type\""
+        },
+        "GoodUnitType": {
+          "$ref": "#/definitions/v1GoodUnitType"
+        },
+        "GoodUnitCalculateTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_unit_calculate_type\""
+        },
+        "GoodUnitCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "GoodUnitDurationTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit_duration\""
+        },
+        "GoodUnitDurationType": {
+          "$ref": "#/definitions/v1GoodUnitDurationType"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -539,6 +560,19 @@
         },
         "StartMode": {
           "$ref": "#/definitions/v1GoodStartMode"
+        },
+        "UnitDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodUnitType": {
+          "$ref": "#/definitions/v1GoodUnitType"
+        },
+        "GoodUnitCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "GoodUnitDurationType": {
+          "$ref": "#/definitions/v1GoodUnitDurationType"
         }
       }
     },
@@ -562,6 +596,36 @@
         "ElectricityFee"
       ],
       "default": "DefaultGoodType"
+    },
+    "v1GoodUnitCalculateType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitCalculateType",
+        "GoodUnitCalculateBySelf",
+        "GoodUnitCalculateByParent"
+      ],
+      "default": "DefaultGoodUnitCalculateType"
+    },
+    "v1GoodUnitDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitDurationType",
+        "GoodUnitDurationByHour",
+        "GoodUnitDurationByDay",
+        "GoodUnitDurationByMonth",
+        "GoodUnitDurationByYear"
+      ],
+      "default": "DefaultGoodUnitDurationType"
+    },
+    "v1GoodUnitType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitType",
+        "GoodUnitByDuration",
+        "GoodUnitByQuantity",
+        "GoodUnitByDurationAndQuantity"
+      ],
+      "default": "DefaultGoodUnitType"
     },
     "v1StringSliceVal": {
       "type": "object",

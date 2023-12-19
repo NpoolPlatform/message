@@ -46,6 +46,10 @@ message GoodReq {
     optional string        RewardAmount       = 300;
     optional string        UnitRewardAmount   = 310;
     optional basetypes.good.v1.GoodStartMode StartMode = 320;
+    optional uint32        UnitDuration       = 330;
+    optional basetypes.good.v1.GoodUnitType GoodUnitType = 340;
+    optional basetypes.good.v1.GoodUnitCalculateType GoodUnitCalculateType = 350;
+    optional basetypes.good.v1.GoodUnitDurationType GoodUnitDurationType = 360;
 }
 
 message Good {
@@ -154,10 +158,6 @@ message Good {
     // @inject_tag: sql:"start_mode"
     string           StartModeStr       = 371;
     basetypes.good.v1.GoodStartMode StartMode = 372;
-    // @inject_tag: sql:"created_at"
-    uint32           CreatedAt          = 380;
-    // @inject_tag: sql:"updated_at"
-    uint32           UpdatedAt          = 390;
 
     // @inject_tag: sql:"benefit_interval_hours"
     uint32           BenefitIntervalHours = 400;
@@ -181,6 +181,21 @@ message Good {
     string           LastUnitRewardAmount = 490;
     // @inject_tag: sql:"total_reward_amount"
     string           TotalRewardAmount    = 500;
+
+    // @inject_tag: sql:"good_unit_type"
+    string           GoodUnitTypeStr      = 510;
+    basetypes.good.v1.GoodUnitType GoodUnitType = 520;
+    // @inject_tag: sql:"good_unit_calculate_type"
+    string           GoodUnitCalculateTypeStr = 530;
+    basetypes.good.v1.GoodUnitCalculateType GoodUnitCalculateType = 540;
+    // @inject_tag: sql:"unit_duration"
+    string           GoodUnitDurationTypeStr = 550;
+    basetypes.good.v1.GoodUnitDurationType GoodUnitDurationType = 560;
+
+    // @inject_tag: sql:"created_at"
+    uint32           CreatedAt          = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32           UpdatedAt          = 1100;
 }
 
 message Conds {
