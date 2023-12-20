@@ -51,6 +51,7 @@ message CouponWithdraw {
     string          CoinLogo       = 100;
     string          CoinUnit       = 110;
     string          CouponID       = 120;
+    string          AllocatedID    = 121;
     string          CouponName     = 130;
     string          CouponMessage  = 140;
     string          Amount         = 150;
@@ -63,7 +64,7 @@ message CouponWithdraw {
 message CreateCouponWithdrawRequest {
     string AppID             = 10;
     string UserID            = 20;
-    string CouponID          = 30;
+    string AllocatedID       = 30;
 }
 
 message CreateCouponWithdrawResponse {
