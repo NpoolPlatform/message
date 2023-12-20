@@ -86,8 +86,8 @@ enum AppStockLockState {
 enum GoodUnitType {
     DefaultGoodUnitType = 0;
 
-    GoodUnitByDuration = 10;
-    GoodUnitByQuantity = 20;
+    GoodUnitByDuration            = 10;
+    GoodUnitByQuantity            = 20;
     GoodUnitByDurationAndQuantity = 30;
 }
 
