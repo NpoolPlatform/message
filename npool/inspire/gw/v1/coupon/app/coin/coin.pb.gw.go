@@ -2,11 +2,11 @@
 // source: npool/inspire/gw/v1/coupon/app/coin/coin.proto
 
 /*
-Package CouponCoin is a reverse proxy.
+Package coin is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package CouponCoin
+package coin
 
 import (
 	"context"
@@ -145,7 +145,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coupon.app.CouponCoin.v1.Gateway/GetCouponCoins", runtime.WithHTTPPathPattern("/v1/get/couponcoins"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coupon.app.coin.v1.Gateway/GetCouponCoins", runtime.WithHTTPPathPattern("/v1/get/couponcoins"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -168,7 +168,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coupon.app.CouponCoin.v1.Gateway/CreateCouponCoin", runtime.WithHTTPPathPattern("/v1/create/couponcoin"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coupon.app.coin.v1.Gateway/CreateCouponCoin", runtime.WithHTTPPathPattern("/v1/create/couponcoin"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -191,7 +191,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coupon.app.CouponCoin.v1.Gateway/DeleteCouponCoin", runtime.WithHTTPPathPattern("/v1/delete/couponcoin"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coupon.app.coin.v1.Gateway/DeleteCouponCoin", runtime.WithHTTPPathPattern("/v1/delete/couponcoin"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -253,7 +253,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coupon.app.CouponCoin.v1.Gateway/GetCouponCoins", runtime.WithHTTPPathPattern("/v1/get/couponcoins"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coupon.app.coin.v1.Gateway/GetCouponCoins", runtime.WithHTTPPathPattern("/v1/get/couponcoins"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -273,7 +273,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coupon.app.CouponCoin.v1.Gateway/CreateCouponCoin", runtime.WithHTTPPathPattern("/v1/create/couponcoin"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coupon.app.coin.v1.Gateway/CreateCouponCoin", runtime.WithHTTPPathPattern("/v1/create/couponcoin"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -293,7 +293,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coupon.app.CouponCoin.v1.Gateway/DeleteCouponCoin", runtime.WithHTTPPathPattern("/v1/delete/couponcoin"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coupon.app.coin.v1.Gateway/DeleteCouponCoin", runtime.WithHTTPPathPattern("/v1/delete/couponcoin"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

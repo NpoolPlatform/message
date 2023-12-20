@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-package inspire.gateway.coupon.app.CouponCoin.v1;
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/coupon/app/CouponCoin";
+package inspire.gateway.coupon.app.coin.v1;
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/coupon/app/coin";
 import "google/api/annotations.proto";
 
 // Service Name
