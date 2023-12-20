@@ -47,6 +47,7 @@ message CreateCouponRequest {
     string Denomination = 50;
     string Circulation  = 60;
     uint32 StartAt      = 70;
+    uint32 EndAT        = 71;
     uint32 DurationDays = 80;
     string Message      = 90;
     string Name         = 100;
