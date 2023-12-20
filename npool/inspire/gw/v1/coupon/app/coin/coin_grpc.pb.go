@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/inspire/gw/v1/coupon/app/coin/coin.proto
 
-package CouponCoin
+package coin
 
 import (
 	context "context"
@@ -19,9 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetCouponCoins_FullMethodName   = "/inspire.gateway.coupon.app.CouponCoin.v1.Gateway/GetCouponCoins"
-	Gateway_CreateCouponCoin_FullMethodName = "/inspire.gateway.coupon.app.CouponCoin.v1.Gateway/CreateCouponCoin"
-	Gateway_DeleteCouponCoin_FullMethodName = "/inspire.gateway.coupon.app.CouponCoin.v1.Gateway/DeleteCouponCoin"
+	Gateway_GetCouponCoins_FullMethodName   = "/inspire.gateway.coupon.app.coin.v1.Gateway/GetCouponCoins"
+	Gateway_CreateCouponCoin_FullMethodName = "/inspire.gateway.coupon.app.coin.v1.Gateway/CreateCouponCoin"
+	Gateway_DeleteCouponCoin_FullMethodName = "/inspire.gateway.coupon.app.coin.v1.Gateway/DeleteCouponCoin"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -162,7 +162,7 @@ func _Gateway_DeleteCouponCoin_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.gateway.coupon.app.CouponCoin.v1.Gateway",
+	ServiceName: "inspire.gateway.coupon.app.coin.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

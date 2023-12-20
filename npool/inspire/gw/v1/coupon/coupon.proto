@@ -73,7 +73,6 @@ message UpdateCouponRequest {
     optional uint32 DurationDays = 70;
     optional string Message      = 80;
     optional string Name         = 90;
-    optional string TargetUserID = 100;
     optional string Threshold    = 120;
     optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 130;
     optional bool   Random       = 140;

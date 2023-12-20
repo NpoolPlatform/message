@@ -281,9 +281,6 @@
         "Name": {
           "type": "string"
         },
-        "TargetUserID": {
-          "type": "string"
-        },
         "Threshold": {
           "type": "string"
         },
