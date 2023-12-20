@@ -47,11 +47,10 @@ message CreateCouponRequest {
     string Denomination = 50;
     string Circulation  = 60;
     uint32 StartAt      = 70;
-    uint32 EndAT        = 71;
+    uint32 EndAt        = 71;
     uint32 DurationDays = 80;
     string Message      = 90;
     string Name         = 100;
-    optional string TargetUserID = 110; // only for special offer
     optional string Threshold    = 130;
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 140;
     bool   Random       = 150;

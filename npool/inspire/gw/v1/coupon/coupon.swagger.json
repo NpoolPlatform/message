@@ -171,7 +171,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "EndAT": {
+        "EndAt": {
           "type": "integer",
           "format": "int64"
         },
@@ -183,9 +183,6 @@
           "type": "string"
         },
         "Name": {
-          "type": "string"
-        },
-        "TargetUserID": {
           "type": "string"
         },
         "Threshold": {
