@@ -216,6 +216,9 @@
         "CouponID": {
           "type": "string"
         },
+        "AllocatedID": {
+          "type": "string"
+        },
         "CouponName": {
           "type": "string"
         },
@@ -250,7 +253,7 @@
         "UserID": {
           "type": "string"
         },
-        "CouponID": {
+        "AllocatedID": {
           "type": "string"
         }
       }

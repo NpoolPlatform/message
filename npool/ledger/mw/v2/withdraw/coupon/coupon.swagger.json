@@ -110,7 +110,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
         },
-        "CouponID": {
+        "AllocatedID": {
           "$ref": "#/definitions/v1StringVal"
 <<<<<<< HEAD
 =======
@@ -163,9 +163,9 @@
         "State": {
           "$ref": "#/definitions/v1WithdrawState"
         },
-        "CouponID": {
+        "AllocatedID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coupon_id\""
+          "title": "@inject_tag: sql:\"allocated_id\""
         },
         "ReviewID": {
           "type": "string",
@@ -217,7 +217,7 @@
         "State": {
           "$ref": "#/definitions/v1WithdrawState"
         },
-        "CouponID": {
+        "AllocatedID": {
           "type": "string"
         },
         "ReviewID": {
