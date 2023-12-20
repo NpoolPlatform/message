@@ -171,6 +171,10 @@
           "type": "integer",
           "format": "int64"
         },
+        "EndAT": {
+          "type": "integer",
+          "format": "int64"
+        },
         "DurationDays": {
           "type": "integer",
           "format": "int64"
