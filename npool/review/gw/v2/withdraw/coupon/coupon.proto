@@ -60,7 +60,7 @@ message CouponWithdrawReview {
     string CoinName                             = 190;
     string CoinLogo                             = 200;
     string CoinUnit                             = 210;
-    string CouponID                             = 230;
+    string AllocatedID                          = 230;
     string CouponName                           = 240;
     string CouponWithdrawID                     = 250;
     basetypes.ledger.v1.WithdrawState CouponWithdrawState = 260;
