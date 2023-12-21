@@ -60,7 +60,6 @@ message CouponWithdrawReview {
     string CoinName                             = 190;
     string CoinLogo                             = 200;
     string CoinUnit                             = 210;
-    string CouponID                             = 220;
     string AllocatedID                          = 230;
     string CouponName                           = 240;
     string CouponWithdrawID                     = 250;
