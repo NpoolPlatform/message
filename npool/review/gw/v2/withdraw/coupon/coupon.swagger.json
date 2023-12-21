@@ -299,9 +299,6 @@
         "CoinUnit": {
           "type": "string"
         },
-        "CouponID": {
-          "type": "string"
-        },
         "AllocatedID": {
           "type": "string"
         },
