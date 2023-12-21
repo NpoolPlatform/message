@@ -17,7 +17,8 @@ service Middleware {
 }
 
 message RequiredReq {
-    optional string ID             = 10;
+    optional uint32 ID             = 9;
+    optional string EntID          = 10;
     optional string MainGoodID     = 20;
     optional string RequiredGoodID = 30;
     optional bool   Must           = 40;
@@ -25,7 +26,9 @@ message RequiredReq {
 
 message Required {
     // @inject_tag: sql:"id"
-    string ID             = 10;
+    uint32 ID             = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID          = 10;
     // @inject_tag: sql:"main_good_id"
     string MainGoodID     = 20;
     // @inject_tag: sql:"main_good_name"
@@ -43,7 +46,8 @@ message Required {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      ID              = 10;
+    optional basetypes.v1.Uint32Val      ID              = 9;
+    optional basetypes.v1.StringVal      EntID           = 10;
     optional basetypes.v1.StringVal      GoodID          = 20;
     optional basetypes.v1.StringSliceVal GoodIDs         = 30;
     optional basetypes.v1.StringVal      MainGoodID      = 40;
@@ -59,7 +63,7 @@ message CreateRequiredResponse {
 }
 
 message GetRequiredRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetRequiredResponse {

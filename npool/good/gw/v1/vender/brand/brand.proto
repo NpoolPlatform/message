@@ -45,9 +45,10 @@ message CreateBrandResponse {
 }
 
 message UpdateBrandRequest {
-    string          ID   = 10;
-    optional string Name = 20;
-    optional string Logo = 30;
+    uint32          ID    = 9;
+    string          EntID = 10;
+    optional string Name  = 20;
+    optional string Logo  = 30;
 }
 
 message UpdateBrandResponse {
@@ -65,7 +66,8 @@ message GetBrandsResponse {
 }
 
 message DeleteBrandRequest {
-    string ID = 10;
+    uint32 ID    = 9;
+    string EntID = 10;
 }
 
 message DeleteBrandResponse {

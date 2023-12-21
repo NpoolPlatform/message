@@ -60,7 +60,8 @@ service Gateway {
 }
 
 message TopMostGood {
-    string ID         = 10;
+    uint32 ID         = 9;
+    string EntID      = 10;
     string AppID      = 20;
     string AppName    = 30;
     string GoodID     = 40;
@@ -129,7 +130,8 @@ message GetNTopMostGoodsResponse {
 }
 
 message DeleteTopMostGoodRequest {
-    string ID    = 10;
+    uint32 ID    = 9;
+    string EntID = 10;
     string AppID = 20;
 }
 
@@ -138,7 +140,8 @@ message DeleteTopMostGoodResponse {
 }
 
 message UpdateTopMostGoodRequest {
-    string          ID      = 10;
+    uint32          ID      = 9;
+    string          EntID   = 10;
     string          AppID   = 20;
     repeated string Posters = 30;
     optional string Price   = 40;
@@ -149,7 +152,8 @@ message UpdateTopMostGoodResponse {
 }
 
 message UpdateNTopMostGoodRequest {
-    string          ID          = 10;
+    uint32          ID          = 9;
+    string          EntID       = 10;
     string          TargetAppID = 20;
     repeated string Posters     = 30;
     optional string Price       = 40;

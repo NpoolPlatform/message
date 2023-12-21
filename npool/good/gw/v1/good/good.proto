@@ -39,7 +39,8 @@ service Gateway {
 }
 
 message Good {
-    string           ID                          = 10;
+    uint32           ID                          = 9;
+    string           EntID                       = 10;
 
     string           DeviceInfoID                = 20;
     string           DeviceType                  = 30;
@@ -141,7 +142,7 @@ message CreateGoodResponse {
 }
 
 message GetGoodRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetGoodResponse {
@@ -159,7 +160,8 @@ message GetGoodsResponse {
 }
 
 message UpdateGoodRequest {
-    string          ID                 = 10;
+    uint32          ID                 = 9;
+    string          EntID              = 10;
     optional string DeviceInfoID       = 20;
     optional int32  DurationDays       = 30;
     optional string CoinTypeID         = 40;

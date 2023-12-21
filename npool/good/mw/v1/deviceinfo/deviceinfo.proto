@@ -16,7 +16,8 @@ service Middleware {
 }
 
 message DeviceInfoReq {
-    optional string ID              = 10;
+    optional uint32 ID              = 9;
+    optional string EntID           = 10;
     optional string Type            = 20;
     optional string Manufacturer    = 30;
     optional uint32 PowerConsumption = 40;
@@ -26,7 +27,9 @@ message DeviceInfoReq {
 
 message DeviceInfo {
     // @inject_tag: sql:"id"
-    string          ID              = 10;
+    uint32          ID              = 9;
+    // @inject_tag: sql:"ent_id"
+    string          EntID           = 10;
     // @inject_tag: sql:"type"
     string          Type            = 20;
     // @inject_tag: sql:"manufacturer"
@@ -47,7 +50,8 @@ message DeviceInfo {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID           = 10;
+    optional basetypes.v1.Uint32Val ID           = 9;
+    optional basetypes.v1.StringVal EntID        = 10;
     optional basetypes.v1.StringVal Type         = 20;
     optional basetypes.v1.StringVal Manufacturer = 30;
 }
@@ -70,7 +74,7 @@ message UpdateDeviceInfoResponse {
 }
 
 message GetDeviceInfoRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetDeviceInfoResponse {

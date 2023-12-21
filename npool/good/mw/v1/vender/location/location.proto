@@ -16,7 +16,8 @@ service Middleware {
 }
 
 message LocationReq {
-    optional string ID       = 10;
+    optional uint32 ID       = 9;
+    optional string EntID    = 10;
     optional string Country  = 20;
     optional string Province = 30;
     optional string City     = 40;
@@ -26,7 +27,9 @@ message LocationReq {
 
 message Location {
     // @inject_tag: sql:"id"
-    string ID        = 10;
+    uint32 ID        = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID     = 10;
     // @inject_tag: sql:"country"
     string Country   = 20;
     // @inject_tag: sql:"province"
@@ -44,7 +47,8 @@ message Location {
 }
 
 message Conds {
-    optional basetypes.v1.StringVal ID       = 10;
+    optional basetypes.v1.Uint32Val ID       = 9;
+    optional basetypes.v1.StringVal EntID    = 10;
     optional basetypes.v1.StringVal Country  = 20;
     optional basetypes.v1.StringVal Province = 30;
     optional basetypes.v1.StringVal BrandID  = 40;
@@ -68,7 +72,7 @@ message UpdateLocationResponse {
 }
 
 message GetLocationRequest {
-    string ID = 10;
+    string EntID = 10;
 }
 
 message GetLocationResponse {
