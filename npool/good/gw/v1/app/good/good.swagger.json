@@ -773,7 +773,10 @@
       "enum": [
         "DefaultGoodStartMode",
         "GoodStartModeTBD",
-        "GoodStartModeConfirmed"
+        "GoodStartModeConfirmed",
+        "GoodStartModeInstantly",
+        "GoodStartModeNextDay",
+        "GoodStartModePreset"
       ],
       "default": "DefaultGoodStartMode"
     },
