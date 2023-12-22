@@ -258,16 +258,6 @@
           "format": "int32",
           "title": "@inject_tag: sql:\"unit_amount\""
         },
-        "SupportCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "SupportCoinTypeIDsStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"support_coin_type_ids\""
-        },
         "TestOnly": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"test_only\""
@@ -496,12 +486,6 @@
         "UnitAmount": {
           "type": "integer",
           "format": "int32"
-        },
-        "SupportCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         },
         "DeliveryAt": {
           "type": "integer",
