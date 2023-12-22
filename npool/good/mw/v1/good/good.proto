@@ -29,7 +29,6 @@ message GoodReq {
     optional string        Title              = 100;
     optional string        Unit               = 110;
     optional int32         UnitAmount         = 120;
-    repeated string        SupportCoinTypeIDs = 130;
     optional uint32        DeliveryAt         = 140;
     optional uint32        StartAt            = 150;
     optional bool          TestOnly           = 160;
@@ -108,10 +107,6 @@ message Good {
     string           Unit               = 230;
     // @inject_tag: sql:"unit_amount"
     int32            UnitAmount         = 240;
-
-    repeated string  SupportCoinTypeIDs = 250;
-    // @inject_tag: sql:"support_coin_type_ids"
-    string           SupportCoinTypeIDsStr = 251;
 
     // @inject_tag: sql:"test_only"
     bool             TestOnly           = 260;
