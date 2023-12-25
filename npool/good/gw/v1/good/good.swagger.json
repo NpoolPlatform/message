@@ -200,7 +200,7 @@
         "VendorLocationID": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
           "type": "string"
         },
         "BenefitType": {
@@ -399,7 +399,7 @@
         "BenefitType": {
           "$ref": "#/definitions/v1BenefitType"
         },
-        "Price": {
+        "UnitPrice": {
           "type": "string"
         },
         "Title": {
@@ -611,7 +611,7 @@
         "VendorLocationID": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
           "type": "string"
         },
         "BenefitType": {

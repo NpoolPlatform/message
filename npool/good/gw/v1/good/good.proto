@@ -68,7 +68,7 @@ message Good {
     basetypes.good.v1.GoodType    GoodType    = 230;
     basetypes.good.v1.BenefitType BenefitType = 240;
 
-    string           Price              = 250;
+    string           UnitPrice          = 250;
     string           Title              = 260;
     string           QuantityUnit       = 270;
     string           QuantityUnitAmount = 280;
@@ -114,7 +114,7 @@ message CreateGoodRequest {
     int32           DurationDays       = 30;
     string          CoinTypeID         = 40;
     string          VendorLocationID   = 60;
-    string          Price              = 70;
+    string          UnitPrice          = 70;
     basetypes.good.v1.BenefitType BenefitType = 80;
     basetypes.good.v1.GoodType    GoodType    = 90;
     string          Title              = 100;
@@ -164,7 +164,7 @@ message UpdateGoodRequest {
     optional int32  DurationDays       = 30;
     optional string CoinTypeID         = 40;
     optional string VendorLocationID   = 60;
-    optional string Price              = 70;
+    optional string UnitPrice          = 70;
     optional basetypes.good.v1.BenefitType BenefitType = 80;
     optional basetypes.good.v1.GoodType    GoodType    = 90;
     optional string Title              = 100;

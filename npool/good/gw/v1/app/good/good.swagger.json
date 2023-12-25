@@ -276,7 +276,10 @@
         "GoodName": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         },
         "DisplayIndex": {
@@ -370,6 +373,9 @@
         "MaxOrderDuration": {
           "type": "integer",
           "format": "int64"
+        },
+        "PackageWithRequireds": {
+          "type": "boolean"
         }
       }
     },
@@ -487,7 +493,10 @@
         "Visible": {
           "type": "boolean"
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         },
         "DisplayIndex": {
@@ -764,6 +773,9 @@
         },
         "DurationCalculateType": {
           "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "PackageWithRequireds": {
+          "type": "boolean"
         }
       }
     },
@@ -854,7 +866,10 @@
         "GoodName": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         },
         "DisplayIndex": {
@@ -948,6 +963,9 @@
         "MaxOrderDuration": {
           "type": "integer",
           "format": "int64"
+        },
+        "PackageWithRequireds": {
+          "type": "boolean"
         }
       }
     },
@@ -981,7 +999,10 @@
         "GoodName": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         },
         "DisplayIndex": {
@@ -1067,6 +1088,9 @@
         "MaxOrderDuration": {
           "type": "integer",
           "format": "int64"
+        },
+        "PackageWithRequireds": {
+          "type": "boolean"
         }
       }
     },
