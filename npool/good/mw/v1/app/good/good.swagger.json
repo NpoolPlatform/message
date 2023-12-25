@@ -177,9 +177,13 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"visible\""
         },
-        "Price": {
+        "UnitPrice": {
           "type": "string",
-          "title": "@inject_tag: sql:\"price\""
+          "title": "@inject_tag: sql:\"unit_price\""
+        },
+        "PackagePrice": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"package_price\""
         },
         "DisplayIndex": {
           "type": "integer",
@@ -613,7 +617,10 @@
         "GoodName": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         },
         "DisplayIndex": {

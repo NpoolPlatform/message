@@ -26,7 +26,8 @@ message GoodReq {
     optional bool   Online              = 40;
     optional bool   Visible             = 50;
     optional string GoodName            = 60;
-    optional string Price               = 70;
+    optional string UnitPrice           = 70;
+    optional string PackagePrice        = 71;
     optional int32  DisplayIndex        = 80;
     optional int32  PurchaseLimit       = 90;
     optional uint32 SaleStartAt         = 110;
@@ -66,8 +67,10 @@ message Good {
     bool             Online                      = 40;
     // @inject_tag: sql:"visible"
     bool             Visible                     = 50;
-    // @inject_tag: sql:"price"
-    string           Price                       = 60;
+    // @inject_tag: sql:"unit_price"
+    string           UnitPrice                   = 60;
+    // @inject_tag: sql:"package_price"
+    string           PackagePrice                = 61;
     // @inject_tag: sql:"display_index"
     int32            DisplayIndex                = 70;
     // @inject_tag: sql:"purchase_limit"

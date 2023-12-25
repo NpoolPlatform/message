@@ -241,9 +241,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"benefit_type\""
         },
-        "Price": {
+        "UnitPrice": {
           "type": "string",
-          "title": "@inject_tag: sql:\"price\""
+          "title": "@inject_tag: sql:\"unit_price\""
         },
         "Title": {
           "type": "string",
@@ -485,7 +485,7 @@
         "VendorLocationID": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
           "type": "string"
         },
         "BenefitType": {

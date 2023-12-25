@@ -60,7 +60,8 @@ message Good {
     string           GoodID                      = 30;
     bool             Online                      = 40;
     bool             Visible                     = 50;
-    string           Price                       = 60;
+    string           UnitPrice                   = 60;
+    string           PackagePrice                = 61;
     int32            DisplayIndex                = 70;
     int32            PurchaseLimit               = 80;
 
@@ -149,8 +150,9 @@ message Good {
 
     basetypes.good.v1.GoodUnitType UnitType = 980;
     basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 990;
-    basetypes.good.v1.GoodDurationType DurationType = 100;
+    basetypes.good.v1.GoodDurationType DurationType = 1000;
     basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 1010;
+    bool             PackageWithRequireds = 1020;
 }
 
 message CreateGoodRequest {
@@ -159,7 +161,8 @@ message CreateGoodRequest {
     bool   Online              = 30;
     bool   Visible             = 40;
     string GoodName            = 50;
-    string Price               = 60;
+    string UnitPrice           = 60;
+    optional string PackagePrice = 61;
     int32  DisplayIndex        = 70;
     int32  PurchaseLimit       = 80;
     optional uint32 SaleStartAt    = 100;
@@ -184,6 +187,7 @@ message CreateGoodRequest {
     optional string MaxUserAmount   = 300;
     optional uint32 MinOrderDuration = 310;
     optional uint32 MaxOrderDuration = 320;
+    optional bool   PackageWithRequireds = 330;
 }
 
 message CreateGoodResponse {
@@ -228,7 +232,8 @@ message UpdateGoodRequest {
     optional bool   Online              = 30;
     optional bool   Visible             = 40;
     optional string GoodName            = 50;
-    optional string Price               = 60;
+    optional string UnitPrice           = 60;
+    optional string PackagePrice        = 61;
     optional int32  DisplayIndex        = 70;
     optional int32  PurchaseLimit       = 80;
     optional uint32 SaleStartAt         = 100;
@@ -253,6 +258,7 @@ message UpdateGoodRequest {
     optional string MaxUserAmount   = 310;
     optional uint32 MinOrderDuration = 320;
     optional uint32 MaxOrderDuration = 330;
+    optional bool   PackageWithRequireds = 340;
 }
 
 message UpdateGoodResponse {
@@ -266,7 +272,8 @@ message UpdateNGoodRequest {
     optional bool   Online              = 30;
     optional bool   Visible             = 40;
     optional string GoodName            = 50;
-    optional string Price               = 60;
+    optional string UnitPrice           = 60;
+    optional string PackagePrice        = 61;
     optional int32  DisplayIndex        = 70;
     optional int32  PurchaseLimit       = 80;
     optional uint32 ServiceStartAt      = 100;
@@ -289,6 +296,7 @@ message UpdateNGoodRequest {
     optional string MaxUserAmount   = 310;
     optional uint32 MinOrderDuration = 320;
     optional uint32 MaxOrderDuration = 330;
+    optional bool   PackageWithRequireds = 340;
 }
 
 message UpdateNGoodResponse {

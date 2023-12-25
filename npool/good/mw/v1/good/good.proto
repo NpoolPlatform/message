@@ -23,7 +23,7 @@ message GoodReq {
     optional int32         DurationDays       = 30;
     optional string        CoinTypeID         = 40;
     optional string        VendorLocationID   = 60;
-    optional string        Price              = 70;
+    optional string        UnitPrice          = 70;
     optional basetypes.good.v1.BenefitType BenefitType = 80;
     optional basetypes.good.v1.GoodType    GoodType    = 90;
     optional string        Title              = 100;
@@ -100,8 +100,8 @@ message Good {
     // @inject_tag: sql:"benefit_type"
     string           BenefitTypeStr              = 201;
 
-    // @inject_tag: sql:"price"
-    string           Price              = 210;
+    // @inject_tag: sql:"unit_price"
+    string           UnitPrice          = 210;
     // @inject_tag: sql:"title"
     string           Title              = 220;
     // @inject_tag: sql:"quantity_unit"
