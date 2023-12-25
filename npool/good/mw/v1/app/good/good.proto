@@ -48,8 +48,9 @@ message GoodReq {
     repeated string Posters             = 320;
     optional string MinOrderAmount      = 330;
     optional string MaxOrderAmount      = 340;
-    optional uint32 MinOrderDuration    = 350;
-    optional uint32 MaxOrderDuration    = 360;
+    optional string MaxUserAmount       = 350;
+    optional uint32 MinOrderDuration    = 360;
+    optional uint32 MaxOrderDuration    = 370;
 }
 
 message Good {
@@ -225,23 +226,25 @@ message Good {
     string           MinOrderAmount     = 860;
     // @inject_tag: sql:"max_order_amount"
     string           MaxOrderAmount     = 870;
+    // @inject_tag: sql:"max_user_amount"
+    string           MaxUserAmount      = 880;
     // @inject_tag: sql:"min_order_duration"
-    uint32           MinOrderDuration   = 880;
+    uint32           MinOrderDuration   = 890;
     // @inject_tag: sql:"max_order_duration"
-    uint32           MaxOrderDuration   = 890;
+    uint32           MaxOrderDuration   = 900;
 
     // @inject_tag: sql:"unit_type"
-    string           UnitTypeStr        = 900;
-    basetypes.good.v1.GoodUnitType UnitType = 910;
+    string           UnitTypeStr        = 910;
+    basetypes.good.v1.GoodUnitType UnitType = 920;
     // @inject_tag: sql:"quantity_calculate_type"
-    string           QuantityCalculateTypeStr = 920;
-    basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 930;
+    string           QuantityCalculateTypeStr = 930;
+    basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 940;
     // @inject_tag: sql:"duration_type"
-    string           DurationTypeStr = 940;
-    basetypes.good.v1.GoodDurationType DurationType = 950;
+    string           DurationTypeStr = 950;
+    basetypes.good.v1.GoodDurationType DurationType = 960;
     // @inject_tag: sql:"duration_calculate_type"
-    string           DurationCalculateTypeStr = 960;
-    basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 970;
+    string           DurationCalculateTypeStr = 970;
+    basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 980;
 
     // @inject_tag: sql:"created_at"
     uint32           CreatedAt          = 1000;

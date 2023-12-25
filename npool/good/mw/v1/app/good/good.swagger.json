@@ -512,6 +512,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"max_order_amount\""
         },
+        "MaxUserAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"max_user_amount\""
+        },
         "MinOrderDuration": {
           "type": "integer",
           "format": "int64",
@@ -691,6 +695,9 @@
           "type": "string"
         },
         "MaxOrderAmount": {
+          "type": "string"
+        },
+        "MaxUserAmount": {
           "type": "string"
         },
         "MinOrderDuration": {
