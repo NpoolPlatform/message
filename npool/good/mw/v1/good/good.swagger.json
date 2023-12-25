@@ -606,11 +606,11 @@
     "v1GoodUnitCalculateType": {
       "type": "string",
       "enum": [
-        "DefaultGoodQuantityCalculateType",
-        "GoodQuantityCalculateBySelf",
-        "GoodQuantityCalculateByParent"
+        "DefaultGoodUnitCalculateType",
+        "GoodUnitCalculateBySelf",
+        "GoodUnitCalculateByParent"
       ],
-      "default": "DefaultGoodQuantityCalculateType"
+      "default": "DefaultGoodUnitCalculateType"
     },
     "v1GoodUnitType": {
       "type": "string",

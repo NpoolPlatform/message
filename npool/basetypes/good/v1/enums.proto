@@ -95,10 +95,10 @@ enum GoodUnitType {
 }
 
 enum GoodUnitCalculateType {
-    DefaultGoodQuantityCalculateType = 0;
+    DefaultGoodUnitCalculateType = 0;
 
-    GoodQuantityCalculateBySelf   = 10;
-    GoodQuantityCalculateByParent = 20;
+    GoodUnitCalculateBySelf   = 10;
+    GoodUnitCalculateByParent = 20;
 }
 
 enum GoodDurationType {
