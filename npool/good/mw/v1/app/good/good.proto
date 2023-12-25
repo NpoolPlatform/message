@@ -110,13 +110,10 @@ message Good {
 
     // @inject_tag: sql:"good_name"
     string           GoodName           = 280;
-    // @inject_tag: sql:"unit"
-    string           Unit               = 290;
-    // @inject_tag: sql:"unit_amount"
-    int32            UnitAmount         = 300;
-    repeated string  SupportCoinTypeIDs = 310;
-    // @inject_tag: sql:"support_coin_type_ids"
-    string           SupportCoinTypeIDsStr = 311;
+    // @inject_tag: sql:"quantity_unit"
+    string           QuantityUnit       = 290;
+    // @inject_tag: sql:"quantity_unit_amount"
+    string           QuantityUnitAmount = 300;
     // @inject_tag: sql:"test_only"
     bool             TestOnly           = 320;
     repeated string  Posters            = 330;
@@ -232,6 +229,19 @@ message Good {
     uint32           MinOrderDuration   = 880;
     // @inject_tag: sql:"max_order_duration"
     uint32           MaxOrderDuration   = 890;
+
+    // @inject_tag: sql:"unit_type"
+    string           UnitTypeStr        = 900;
+    basetypes.good.v1.GoodUnitType UnitType = 910;
+    // @inject_tag: sql:"quantity_calculate_type"
+    string           QuantityCalculateTypeStr = 920;
+    basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 930;
+    // @inject_tag: sql:"duration_type"
+    string           DurationTypeStr = 940;
+    basetypes.good.v1.GoodDurationType DurationType = 950;
+    // @inject_tag: sql:"duration_calculate_type"
+    string           DurationCalculateTypeStr = 960;
+    basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 970;
 
     // @inject_tag: sql:"created_at"
     uint32           CreatedAt          = 1000;

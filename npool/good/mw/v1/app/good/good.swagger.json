@@ -266,24 +266,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_name\""
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string",
-          "title": "@inject_tag: sql:\"unit\""
+          "title": "@inject_tag: sql:\"quantity_unit\""
         },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"unit_amount\""
-        },
-        "SupportCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "SupportCoinTypeIDsStr": {
+        "QuantityUnitAmount": {
           "type": "string",
-          "title": "@inject_tag: sql:\"support_coin_type_ids\""
+          "title": "@inject_tag: sql:\"quantity_unit_amount\""
         },
         "TestOnly": {
           "type": "boolean",
@@ -533,6 +522,34 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"max_order_duration\""
         },
+        "UnitTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit_type\""
+        },
+        "UnitType": {
+          "$ref": "#/definitions/v1GoodUnitType"
+        },
+        "QuantityCalculateTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"quantity_calculate_type\""
+        },
+        "QuantityCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "DurationTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"duration_type\""
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationCalculateTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"duration_calculate_type\""
+        },
+        "DurationCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -544,6 +561,17 @@
           "title": "@inject_tag: sql:\"updated_at\""
         }
       }
+    },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
     },
     "v1GoodLabel": {
       "type": "string",
@@ -698,6 +726,25 @@
         "ElectricityFee"
       ],
       "default": "DefaultGoodType"
+    },
+    "v1GoodUnitCalculateType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitCalculateType",
+        "GoodUnitCalculateBySelf",
+        "GoodUnitCalculateByParent"
+      ],
+      "default": "DefaultGoodUnitCalculateType"
+    },
+    "v1GoodUnitType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitType",
+        "GoodUnitByDuration",
+        "GoodUnitByQuantity",
+        "GoodUnitByDurationAndQuantity"
+      ],
+      "default": "DefaultGoodUnitType"
     },
     "v1StringSliceVal": {
       "type": "object",
