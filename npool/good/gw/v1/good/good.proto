@@ -70,8 +70,8 @@ message Good {
 
     string           Price              = 250;
     string           Title              = 260;
-    string           Unit               = 270;
-    int32            UnitAmount         = 280;
+    string           QuantityUnit       = 270;
+    string           QuantityUnitAmount = 280;
     bool             TestOnly           = 290;
     repeated string  Posters            = 300;
     repeated basetypes.good.v1.GoodLabel Labels = 310;
@@ -123,8 +123,8 @@ message CreateGoodRequest {
     basetypes.good.v1.BenefitType BenefitType = 80;
     basetypes.good.v1.GoodType    GoodType    = 90;
     string          Title              = 100;
-    string          Unit               = 110;
-    int32           UnitAmount         = 120;
+    string          QuantityUnit       = 110;
+    string          QuantityUnitAmount = 120;
     repeated string SupportCoinTypeIDs = 130;
     uint32          DeliveryAt         = 140;
     uint32          StartAt            = 150;
@@ -170,8 +170,8 @@ message UpdateGoodRequest {
     optional basetypes.good.v1.BenefitType BenefitType = 80;
     optional basetypes.good.v1.GoodType    GoodType    = 90;
     optional string Title              = 100;
-    optional string Unit               = 110;
-    optional int32  UnitAmount         = 120;
+    optional string QuantityUnit       = 110;
+    optional string QuantityUnitAmount = 120;
     repeated string SupportCoinTypeIDs = 130;
     optional uint32 DeliveryAt         = 140;
     optional uint32 StartAt            = 150;

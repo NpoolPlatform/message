@@ -382,6 +382,23 @@
           "items": {
             "type": "string"
           }
+        },
+        "MinOrderAmount": {
+          "type": "string"
+        },
+        "MaxOrderAmount": {
+          "type": "string"
+        },
+        "MaxUserAmount": {
+          "type": "string"
+        },
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -576,12 +593,11 @@
         "GoodName": {
           "type": "string"
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string"
         },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32"
+        "QuantityUnitAmount": {
+          "type": "string"
         },
         "BenefitIntervalHours": {
           "type": "integer",
@@ -754,6 +770,23 @@
           "items": {
             "type": "string"
           }
+        },
+        "MinOrderAmount": {
+          "type": "string"
+        },
+        "MaxOrderAmount": {
+          "type": "string"
+        },
+        "MaxUserAmount": {
+          "type": "string"
+        },
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -891,6 +924,23 @@
           "items": {
             "type": "string"
           }
+        },
+        "MinOrderAmount": {
+          "type": "string"
+        },
+        "MaxOrderAmount": {
+          "type": "string"
+        },
+        "MaxUserAmount": {
+          "type": "string"
+        },
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -993,6 +1043,23 @@
           "items": {
             "type": "string"
           }
+        },
+        "MinOrderAmount": {
+          "type": "string"
+        },
+        "MaxOrderAmount": {
+          "type": "string"
+        },
+        "MaxUserAmount": {
+          "type": "string"
+        },
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
