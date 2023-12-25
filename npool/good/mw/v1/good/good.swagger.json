@@ -249,11 +249,11 @@
           "type": "string",
           "title": "@inject_tag: sql:\"title\""
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string",
           "title": "@inject_tag: sql:\"quantity_unit\""
         },
-        "UnitAmount": {
+        "QuantityUnitAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"quantity_unit_amount\""
         },

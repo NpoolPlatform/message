@@ -105,9 +105,9 @@ message Good {
     // @inject_tag: sql:"title"
     string           Title              = 220;
     // @inject_tag: sql:"quantity_unit"
-    string           Unit               = 230;
+    string           QuantityUnit       = 230;
     // @inject_tag: sql:"quantity_unit_amount"
-    string           UnitAmount         = 240;
+    string           QuantityUnitAmount = 240;
 
     // @inject_tag: sql:"test_only"
     bool             TestOnly           = 260;
