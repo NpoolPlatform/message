@@ -210,35 +210,6 @@
     }
   },
   "definitions": {
-    "GoodCoinInfo": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "CoinPreSale": {
-          "type": "boolean"
-        },
-        "CoinEnv": {
-          "type": "string"
-        },
-        "CoinHomePage": {
-          "type": "string"
-        },
-        "CoinSpecs": {
-          "type": "string"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -616,12 +587,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1GoodLabel"
-          }
-        },
-        "SupportCoins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/GoodCoinInfo"
           }
         },
         "GoodTotal": {

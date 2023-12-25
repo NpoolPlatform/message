@@ -146,26 +146,6 @@
     }
   },
   "definitions": {
-    "GoodCoinInfo": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "CoinPreSale": {
-          "type": "boolean"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -237,12 +217,6 @@
         },
         "QuantityUnitAmount": {
           "type": "string"
-        },
-        "SupportCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         },
         "DeliveryAt": {
           "type": "integer",
@@ -440,12 +414,6 @@
             "$ref": "#/definitions/v1GoodLabel"
           }
         },
-        "SupportCoins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/GoodCoinInfo"
-          }
-        },
         "StockID": {
           "type": "string"
         },
@@ -606,12 +574,6 @@
         },
         "QuantityUnitAmount": {
           "type": "string"
-        },
-        "SupportCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         },
         "DeliveryAt": {
           "type": "integer",
