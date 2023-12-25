@@ -251,12 +251,11 @@
         },
         "Unit": {
           "type": "string",
-          "title": "@inject_tag: sql:\"unit\""
+          "title": "@inject_tag: sql:\"quantity_unit\""
         },
         "UnitAmount": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"unit_amount\""
+          "type": "string",
+          "title": "@inject_tag: sql:\"quantity_unit_amount\""
         },
         "TestOnly": {
           "type": "boolean",
@@ -401,26 +400,33 @@
           "type": "string",
           "title": "@inject_tag: sql:\"total_reward_amount\""
         },
-        "GoodUnitTypeStr": {
+        "UnitTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_unit_type\""
+          "title": "@inject_tag: sql:\"unit_type\""
         },
-        "GoodUnitType": {
+        "UnitType": {
           "$ref": "#/definitions/v1GoodUnitType"
         },
-        "GoodUnitCalculateTypeStr": {
+        "QuantityCalculateTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_unit_calculate_type\""
+          "title": "@inject_tag: sql:\"quantity_calculate_type\""
         },
-        "GoodUnitCalculateType": {
+        "QuantityCalculateType": {
           "$ref": "#/definitions/v1GoodUnitCalculateType"
         },
-        "GoodUnitDurationTypeStr": {
+        "DurationTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"unit_duration\""
+          "title": "@inject_tag: sql:\"duration_type\""
         },
-        "GoodUnitDurationType": {
-          "$ref": "#/definitions/v1GoodUnitDurationType"
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationCalculateTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"duration_calculate_type\""
+        },
+        "DurationCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -433,6 +439,17 @@
           "title": "@inject_tag: sql:\"updated_at\""
         }
       }
+    },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
     },
     "v1GoodLabel": {
       "type": "string",
@@ -480,12 +497,11 @@
         "Title": {
           "type": "string"
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string"
         },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32"
+        "QuantityUnitAmount": {
+          "type": "string"
         },
         "DeliveryAt": {
           "type": "integer",
@@ -549,14 +565,17 @@
           "type": "integer",
           "format": "int64"
         },
-        "GoodUnitType": {
+        "UnitType": {
           "$ref": "#/definitions/v1GoodUnitType"
         },
-        "GoodUnitCalculateType": {
+        "QuantityCalculateType": {
           "$ref": "#/definitions/v1GoodUnitCalculateType"
         },
-        "GoodUnitDurationType": {
-          "$ref": "#/definitions/v1GoodUnitDurationType"
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
         }
       }
     },
@@ -587,22 +606,11 @@
     "v1GoodUnitCalculateType": {
       "type": "string",
       "enum": [
-        "DefaultGoodUnitCalculateType",
-        "GoodUnitCalculateBySelf",
-        "GoodUnitCalculateByParent"
+        "DefaultGoodQuantityCalculateType",
+        "GoodQuantityCalculateBySelf",
+        "GoodQuantityCalculateByParent"
       ],
-      "default": "DefaultGoodUnitCalculateType"
-    },
-    "v1GoodUnitDurationType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodUnitDurationType",
-        "GoodUnitDurationByHour",
-        "GoodUnitDurationByDay",
-        "GoodUnitDurationByMonth",
-        "GoodUnitDurationByYear"
-      ],
-      "default": "DefaultGoodUnitDurationType"
+      "default": "DefaultGoodQuantityCalculateType"
     },
     "v1GoodUnitType": {
       "type": "string",
