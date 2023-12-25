@@ -76,15 +76,6 @@ message Good {
     repeated string  Posters            = 300;
     repeated basetypes.good.v1.GoodLabel Labels = 310;
 
-    message CoinInfo {
-        string CoinTypeID  = 10;
-        string CoinLogo    = 20;
-        string CoinName    = 30;
-        string CoinUnit    = 40;
-        bool   CoinPreSale = 50;
-    }
-    repeated CoinInfo SupportCoins      = 340;
-
     string           StockID        = 350;
     string           Total          = 360;
     string           SpotQuantity   = 361;
@@ -125,7 +116,6 @@ message CreateGoodRequest {
     string          Title              = 100;
     string          QuantityUnit       = 110;
     string          QuantityUnitAmount = 120;
-    repeated string SupportCoinTypeIDs = 130;
     uint32          DeliveryAt         = 140;
     uint32          StartAt            = 150;
     basetypes.good.v1.GoodStartMode StartMode = 151;
@@ -172,7 +162,6 @@ message UpdateGoodRequest {
     optional string Title              = 100;
     optional string QuantityUnit       = 110;
     optional string QuantityUnitAmount = 120;
-    repeated string SupportCoinTypeIDs = 130;
     optional uint32 DeliveryAt         = 140;
     optional uint32 StartAt            = 150;
     optional basetypes.good.v1.GoodStartMode StartMode = 151;

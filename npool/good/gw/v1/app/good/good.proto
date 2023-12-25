@@ -95,18 +95,6 @@ message Good {
     repeated string  Posters            = 420;
     repeated basetypes.good.v1.GoodLabel Labels = 430;
 
-    message CoinInfo {
-        string CoinTypeID    = 10;
-        string CoinLogo      = 20;
-        string CoinName      = 30;
-        string CoinUnit      = 40;
-        bool   CoinPreSale   = 50;
-        string CoinEnv       = 60;
-        string CoinHomePage  = 70;
-        string CoinSpecs     = 80;
-    }
-    repeated CoinInfo SupportCoins  = 460;
-
     string           GoodTotal          = 470;
     string           GoodSpotQuantity   = 480;
 
