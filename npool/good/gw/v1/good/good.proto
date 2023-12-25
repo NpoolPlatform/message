@@ -103,6 +103,10 @@ message Good {
     uint32           RecommendCount = 530;
     uint32           CommentCount = 540;
     string           UnitLockDeposit = 550;
+    basetypes.good.v1.GoodUnitType UnitType = 560;
+    basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 570;
+    basetypes.good.v1.GoodDurationType DurationType = 580;
+    basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 590;
 }
 
 message CreateGoodRequest {
@@ -125,6 +129,10 @@ message CreateGoodRequest {
     repeated basetypes.good.v1.GoodLabel Labels = 220;
     optional uint32 BenefitIntervalHours = 230;
     optional string UnitLockDeposit    = 240;
+    optional basetypes.good.v1.GoodUnitType UnitType = 250;
+    optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 260;
+    optional basetypes.good.v1.GoodDurationType DurationType = 270;
+    optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 280;
 }
 
 message CreateGoodResponse {
@@ -171,6 +179,10 @@ message UpdateGoodRequest {
     repeated basetypes.good.v1.GoodLabel Labels = 220;
     optional uint32 BenefitIntervalHours = 230;
     optional string UnitLockDeposit    = 240;
+    optional basetypes.good.v1.GoodUnitType UnitType = 250;
+    optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 260;
+    optional basetypes.good.v1.GoodDurationType DurationType = 270;
+    optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 280;
 }
 
 message UpdateGoodResponse {

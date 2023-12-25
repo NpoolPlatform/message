@@ -146,6 +146,11 @@ message Good {
     string           MaxUserAmount   = 950;
     uint32           MinOrderDuration = 960;
     uint32           MaxOrderDuration = 970;
+
+    basetypes.good.v1.GoodUnitType UnitType = 980;
+    basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 990;
+    basetypes.good.v1.GoodDurationType DurationType = 100;
+    basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 1010;
 }
 
 message CreateGoodRequest {
