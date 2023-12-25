@@ -253,6 +253,18 @@
         },
         "UnitLockDeposit": {
           "type": "string"
+        },
+        "UnitType": {
+          "$ref": "#/definitions/v1GoodUnitType"
+        },
+        "QuantityCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
         }
       }
     },
@@ -496,8 +508,31 @@
         },
         "UnitLockDeposit": {
           "type": "string"
+        },
+        "UnitType": {
+          "$ref": "#/definitions/v1GoodUnitType"
+        },
+        "QuantityCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
         }
       }
+    },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
     },
     "v1GoodLabel": {
       "type": "string",
@@ -533,6 +568,25 @@
         "ElectricityFee"
       ],
       "default": "DefaultGoodType"
+    },
+    "v1GoodUnitCalculateType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitCalculateType",
+        "GoodUnitCalculateBySelf",
+        "GoodUnitCalculateByParent"
+      ],
+      "default": "DefaultGoodUnitCalculateType"
+    },
+    "v1GoodUnitType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitType",
+        "GoodUnitByDuration",
+        "GoodUnitByQuantity",
+        "GoodUnitByDurationAndQuantity"
+      ],
+      "default": "DefaultGoodUnitType"
     },
     "v1UpdateGoodRequest": {
       "type": "object",
@@ -610,6 +664,18 @@
         },
         "UnitLockDeposit": {
           "type": "string"
+        },
+        "UnitType": {
+          "$ref": "#/definitions/v1GoodUnitType"
+        },
+        "QuantityCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
         }
       }
     },
