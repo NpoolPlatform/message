@@ -232,12 +232,11 @@
         "Title": {
           "type": "string"
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string"
         },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32"
+        "QuantityUnitAmount": {
+          "type": "string"
         },
         "SupportCoinTypeIDs": {
           "type": "array",
@@ -420,12 +419,11 @@
         "Title": {
           "type": "string"
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string"
         },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32"
+        "QuantityUnitAmount": {
+          "type": "string"
         },
         "TestOnly": {
           "type": "boolean"
@@ -603,12 +601,11 @@
         "Title": {
           "type": "string"
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string"
         },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32"
+        "QuantityUnitAmount": {
+          "type": "string"
         },
         "SupportCoinTypeIDs": {
           "type": "array",
