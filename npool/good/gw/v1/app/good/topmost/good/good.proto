@@ -78,7 +78,8 @@ message TopMostGood {
     string TopMostTitle = 150;
     string TopMostMessage = 160;
     repeated string Posters = 170;
-    string Price      = 180;
+    string UnitPrice    = 180;
+    string PackagePrice = 190;
     uint32 CreatedAt  = 1000;
     uint32 UpdatedAt  = 1010;
 }
@@ -88,7 +89,8 @@ message CreateTopMostGoodRequest {
     string TopMostID  = 20;
     string AppGoodID  = 30;
     repeated string Posters = 40;
-    string Price      = 50;
+    string UnitPrice    = 50;
+    string PackagePrice = 60;
 }
 
 message CreateTopMostGoodResponse {
@@ -100,7 +102,8 @@ message CreateNTopMostGoodRequest {
     string TopMostID   = 20;
     string AppGoodID   = 30;
     repeated string Posters = 40;
-    string Price       = 50;
+    string UnitPrice    = 50;
+    string PackagePrice = 60;
 }
 
 message CreateNTopMostGoodResponse {
@@ -144,7 +147,8 @@ message UpdateTopMostGoodRequest {
     string          EntID   = 10;
     string          AppID   = 20;
     repeated string Posters = 30;
-    optional string Price   = 40;
+    optional string UnitPrice = 40;
+    optional string PackagePrice = 50;
 }
 
 message UpdateTopMostGoodResponse {
@@ -156,7 +160,8 @@ message UpdateNTopMostGoodRequest {
     string          EntID       = 10;
     string          TargetAppID = 20;
     repeated string Posters     = 30;
-    optional string Price       = 40;
+    optional string UnitPrice   = 40;
+    optional string PackagePrice = 50;
 }
 
 message UpdateNTopMostGoodResponse {
