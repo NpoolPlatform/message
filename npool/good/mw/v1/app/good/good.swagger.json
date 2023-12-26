@@ -558,6 +558,10 @@
         "DurationCalculateType": {
           "$ref": "#/definitions/v1GoodUnitCalculateType"
         },
+        "PackageWithRequireds": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"package_with_requireds\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -714,6 +718,9 @@
         "MaxOrderDuration": {
           "type": "integer",
           "format": "int64"
+        },
+        "PackageWithRequireds": {
+          "type": "boolean"
         }
       }
     },
