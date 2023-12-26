@@ -52,6 +52,7 @@ message GoodReq {
     optional string MaxUserAmount       = 350;
     optional uint32 MinOrderDuration    = 360;
     optional uint32 MaxOrderDuration    = 370;
+    optional bool   PackageWithRequireds = 380;
 }
 
 message Good {
@@ -248,6 +249,9 @@ message Good {
     // @inject_tag: sql:"duration_calculate_type"
     string           DurationCalculateTypeStr = 970;
     basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 980;
+
+    // @inject_tag: sql:"package_with_requireds"
+    bool             PackageWithRequireds = 990;
 
     // @inject_tag: sql:"created_at"
     uint32           CreatedAt          = 1000;
