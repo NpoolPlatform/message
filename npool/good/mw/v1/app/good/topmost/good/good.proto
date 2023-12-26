@@ -23,7 +23,8 @@ message TopMostGoodReq {
     optional string TopMostID  = 30;
     optional uint32 DisplayIndex = 40;
     repeated string Posters    = 50;
-    optional string Price      = 60;
+    optional string UnitPrice  = 60;
+    optional string PackagePrice = 70;
 }
 
 message TopMostGood {
@@ -57,8 +58,10 @@ message TopMostGood {
     // @inject_tag: sql:"posters"
     string PostersStr = 140;
     repeated string Posters = 150;
-    // @inject_tag: sql:"price"
-    string Price      = 160;
+    // @inject_tag: sql:"unit_price"
+    string UnitPrice  = 160;
+    // @inject_tag: sql:"package_price"
+    string PackagePrice = 161;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
