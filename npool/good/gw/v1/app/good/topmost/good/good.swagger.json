@@ -287,7 +287,10 @@
             "type": "string"
           }
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         }
       }
@@ -318,7 +321,10 @@
             "type": "string"
           }
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         }
       }
@@ -489,7 +495,10 @@
             "type": "string"
           }
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         },
         "CreatedAt": {
@@ -521,7 +530,10 @@
             "type": "string"
           }
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         }
       }
@@ -553,7 +565,10 @@
             "type": "string"
           }
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         }
       }
