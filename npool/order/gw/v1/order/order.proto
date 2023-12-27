@@ -140,6 +140,7 @@ message Order {
     string GoodValue              = 134;
     string GoodValueUSD           = 135;
     string Units                  = 140;
+    uint32 Duration               = 141;
 
     string PaymentID              = 150;
     string PaymentCoinTypeID      = 160;
@@ -180,7 +181,8 @@ message CreateOrderRequest {
     string          AppID                = 10;
     string          UserID               = 20;
     string          AppGoodID            = 30;
-    string          Units                = 40;
+    optional string Units                = 40;
+    optional uint32 Duration             = 41;
     string          PaymentCoinID        = 50;
     optional string ParentOrderID        = 60;
     optional string PayWithBalanceAmount = 70;

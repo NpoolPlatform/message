@@ -107,6 +107,7 @@ message Good {
     basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 570;
     basetypes.good.v1.GoodDurationType DurationType = 580;
     basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 590;
+    basetypes.good.v1.GoodSettlementType SettlementType = 600;
 }
 
 message CreateGoodRequest {
@@ -133,6 +134,7 @@ message CreateGoodRequest {
     optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 260;
     optional basetypes.good.v1.GoodDurationType DurationType = 270;
     optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 280;
+    optional basetypes.good.v1.GoodSettlementType SettlementType = 290;
 }
 
 message CreateGoodResponse {
@@ -183,6 +185,7 @@ message UpdateGoodRequest {
     optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 260;
     optional basetypes.good.v1.GoodDurationType DurationType = 270;
     optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 280;
+    optional basetypes.good.v1.GoodSettlementType SettlementType = 290;
 }
 
 message UpdateGoodResponse {

@@ -50,6 +50,7 @@ message GoodReq {
     optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 350;
     optional basetypes.good.v1.GoodDurationType DurationType = 360;
     optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 370;
+    optional basetypes.good.v1.GoodSettlementType SettlementType = 380;
 }
 
 message Good {
@@ -190,6 +191,9 @@ message Good {
     // @inject_tag: sql:"duration_calculate_type"
     string           DurationCalculateTypeStr = 570;
     basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 580;
+    // @inject_tag: sql:"settlement_type"
+    string           SettlementTypeStr = 590;
+    basetypes.good.v1.GoodSettlementType SettlementType = 600;
 
     // @inject_tag: sql:"created_at"
     uint32           CreatedAt          = 1000;
