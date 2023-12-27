@@ -109,3 +109,10 @@ enum GoodDurationType {
     GoodDurationByMonth = 30;
     GoodDurationByYear  = 40;
 }
+
+enum GoodSettlementType {
+    DefaultGoodSettlementType = 0;
+
+    GoodSettledByCash   = 10;
+    GoodSettledByProfit = 20; // Percent in default
+}

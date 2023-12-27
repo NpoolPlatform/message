@@ -550,6 +550,10 @@
         "Units": {
           "type": "string"
         },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
         "PaymentCoinID": {
           "type": "string"
         },
@@ -926,6 +930,10 @@
         },
         "Units": {
           "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
         },
         "PaymentID": {
           "type": "string"

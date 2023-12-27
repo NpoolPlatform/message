@@ -265,6 +265,9 @@
         },
         "DurationCalculateType": {
           "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "SettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
         }
       }
     },
@@ -520,6 +523,9 @@
         },
         "DurationCalculateType": {
           "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "SettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
         }
       }
     },
@@ -544,6 +550,15 @@
         "GoodLabelLoyaltyExclusive"
       ],
       "default": "DefaultGoodLabel"
+    },
+    "v1GoodSettlementType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodSettlementType",
+        "GoodSettledByCash",
+        "GoodSettledByProfit"
+      ],
+      "default": "DefaultGoodSettlementType"
     },
     "v1GoodStartMode": {
       "type": "string",
@@ -676,6 +691,9 @@
         },
         "DurationCalculateType": {
           "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "SettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
         }
       }
     },
