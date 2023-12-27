@@ -558,6 +558,13 @@
         "DurationCalculateType": {
           "$ref": "#/definitions/v1GoodUnitCalculateType"
         },
+        "SettlementTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settlement_type\""
+        },
+        "SettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
+        },
         "PackageWithRequireds": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"package_with_requireds\""
@@ -723,6 +730,15 @@
           "type": "boolean"
         }
       }
+    },
+    "v1GoodSettlementType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodSettlementType",
+        "GoodSettledByCash",
+        "GoodSettledByProfit"
+      ],
+      "default": "DefaultGoodSettlementType"
     },
     "v1GoodStartMode": {
       "type": "string",

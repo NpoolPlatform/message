@@ -152,7 +152,8 @@ message Good {
     basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 990;
     basetypes.good.v1.GoodDurationType DurationType = 1000;
     basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 1010;
-    bool             PackageWithRequireds = 1020;
+    basetypes.good.v1.GoodSettlementType SettlementType = 1020;
+    bool             PackageWithRequireds = 1030;
 }
 
 message CreateGoodRequest {
