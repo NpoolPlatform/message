@@ -113,7 +113,8 @@ type Good struct {
 	QuantityCalculateType  v1.GoodUnitCalculateType `protobuf:"varint,990,opt,name=QuantityCalculateType,proto3,enum=basetypes.good.v1.GoodUnitCalculateType" json:"QuantityCalculateType,omitempty"`
 	DurationType           v1.GoodDurationType      `protobuf:"varint,1000,opt,name=DurationType,proto3,enum=basetypes.good.v1.GoodDurationType" json:"DurationType,omitempty"`
 	DurationCalculateType  v1.GoodUnitCalculateType `protobuf:"varint,1010,opt,name=DurationCalculateType,proto3,enum=basetypes.good.v1.GoodUnitCalculateType" json:"DurationCalculateType,omitempty"`
-	PackageWithRequireds   bool                     `protobuf:"varint,1020,opt,name=PackageWithRequireds,proto3" json:"PackageWithRequireds,omitempty"`
+	SettlementType         v1.GoodSettlementType    `protobuf:"varint,1020,opt,name=SettlementType,proto3,enum=basetypes.good.v1.GoodSettlementType" json:"SettlementType,omitempty"`
+	PackageWithRequireds   bool                     `protobuf:"varint,1030,opt,name=PackageWithRequireds,proto3" json:"PackageWithRequireds,omitempty"`
 }
 
 func (x *Good) Reset() {
@@ -748,6 +749,13 @@ func (x *Good) GetDurationCalculateType() v1.GoodUnitCalculateType {
 		return x.DurationCalculateType
 	}
 	return v1.GoodUnitCalculateType(0)
+}
+
+func (x *Good) GetSettlementType() v1.GoodSettlementType {
+	if x != nil {
+		return x.SettlementType
+	}
+	return v1.GoodSettlementType(0)
 }
 
 func (x *Good) GetPackageWithRequireds() bool {
@@ -2132,7 +2140,7 @@ var file_npool_good_gw_v1_app_good_good_proto_rawDesc = []byte{
 	0x65, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x76, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61,
 	0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x22, 0xa3, 0x1c, 0x0a, 0x04, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x0e, 0x0a,
+	0x72, 0x6f, 0x74, 0x6f, 0x22, 0xf3, 0x1c, 0x0a, 0x04, 0x47, 0x6f, 0x6f, 0x64, 0x12, 0x0e, 0x0a,
 	0x02, 0x49, 0x44, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x49, 0x44, 0x12, 0x14, 0x0a,
 	0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x45, 0x6e,
 	0x74, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01,
@@ -2355,8 +2363,13 @@ var file_npool_good_gw_v1_app_good_good_proto_rawDesc = []byte{
 	0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x6f, 0x6f, 0x64, 0x55, 0x6e, 0x69,
 	0x74, 0x43, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x54, 0x79, 0x70, 0x65, 0x52, 0x15,
 	0x44, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74,
-	0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x33, 0x0a, 0x14, 0x50, 0x61, 0x63, 0x6b, 0x61, 0x67, 0x65,
-	0x57, 0x69, 0x74, 0x68, 0x52, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x73, 0x18, 0xfc, 0x07,
+	0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x4e, 0x0a, 0x0e, 0x53, 0x65, 0x74, 0x74, 0x6c, 0x65, 0x6d,
+	0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x18, 0xfc, 0x07, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x25,
+	0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e,
+	0x76, 0x31, 0x2e, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x65, 0x74, 0x74, 0x6c, 0x65, 0x6d, 0x65, 0x6e,
+	0x74, 0x54, 0x79, 0x70, 0x65, 0x52, 0x0e, 0x53, 0x65, 0x74, 0x74, 0x6c, 0x65, 0x6d, 0x65, 0x6e,
+	0x74, 0x54, 0x79, 0x70, 0x65, 0x12, 0x33, 0x0a, 0x14, 0x50, 0x61, 0x63, 0x6b, 0x61, 0x67, 0x65,
+	0x57, 0x69, 0x74, 0x68, 0x52, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x73, 0x18, 0x86, 0x08,
 	0x20, 0x01, 0x28, 0x08, 0x52, 0x14, 0x50, 0x61, 0x63, 0x6b, 0x61, 0x67, 0x65, 0x57, 0x69, 0x74,
 	0x68, 0x52, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x73, 0x22, 0xeb, 0x0d, 0x0a, 0x11, 0x43,
 	0x72, 0x65, 0x61, 0x74, 0x65, 0x47, 0x6f, 0x6f, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
@@ -2840,6 +2853,7 @@ var file_npool_good_gw_v1_app_good_good_proto_goTypes = []interface{}{
 	(v1.GoodUnitType)(0),          // 18: basetypes.good.v1.GoodUnitType
 	(v1.GoodUnitCalculateType)(0), // 19: basetypes.good.v1.GoodUnitCalculateType
 	(v1.GoodDurationType)(0),      // 20: basetypes.good.v1.GoodDurationType
+	(v1.GoodSettlementType)(0),    // 21: basetypes.good.v1.GoodSettlementType
 }
 var file_npool_good_gw_v1_app_good_good_proto_depIdxs = []int32{
 	13, // 0: good.gateway.app.good1.v1.Good.GoodType:type_name -> basetypes.good.v1.GoodType
@@ -2852,32 +2866,33 @@ var file_npool_good_gw_v1_app_good_good_proto_depIdxs = []int32{
 	19, // 7: good.gateway.app.good1.v1.Good.QuantityCalculateType:type_name -> basetypes.good.v1.GoodUnitCalculateType
 	20, // 8: good.gateway.app.good1.v1.Good.DurationType:type_name -> basetypes.good.v1.GoodDurationType
 	19, // 9: good.gateway.app.good1.v1.Good.DurationCalculateType:type_name -> basetypes.good.v1.GoodUnitCalculateType
-	17, // 10: good.gateway.app.good1.v1.CreateGoodRequest.CancelMode:type_name -> basetypes.good.v1.CancelMode
-	0,  // 11: good.gateway.app.good1.v1.CreateGoodResponse.Info:type_name -> good.gateway.app.good1.v1.Good
-	0,  // 12: good.gateway.app.good1.v1.GetGoodsResponse.Infos:type_name -> good.gateway.app.good1.v1.Good
-	0,  // 13: good.gateway.app.good1.v1.GetGoodResponse.Info:type_name -> good.gateway.app.good1.v1.Good
-	0,  // 14: good.gateway.app.good1.v1.GetNGoodsResponse.Infos:type_name -> good.gateway.app.good1.v1.Good
-	17, // 15: good.gateway.app.good1.v1.UpdateGoodRequest.CancelMode:type_name -> basetypes.good.v1.CancelMode
-	0,  // 16: good.gateway.app.good1.v1.UpdateGoodResponse.Info:type_name -> good.gateway.app.good1.v1.Good
-	17, // 17: good.gateway.app.good1.v1.UpdateNGoodRequest.CancelMode:type_name -> basetypes.good.v1.CancelMode
-	0,  // 18: good.gateway.app.good1.v1.UpdateNGoodResponse.Info:type_name -> good.gateway.app.good1.v1.Good
-	1,  // 19: good.gateway.app.good1.v1.Gateway.CreateGood:input_type -> good.gateway.app.good1.v1.CreateGoodRequest
-	3,  // 20: good.gateway.app.good1.v1.Gateway.GetGoods:input_type -> good.gateway.app.good1.v1.GetGoodsRequest
-	5,  // 21: good.gateway.app.good1.v1.Gateway.GetGood:input_type -> good.gateway.app.good1.v1.GetGoodRequest
-	7,  // 22: good.gateway.app.good1.v1.Gateway.GetNGoods:input_type -> good.gateway.app.good1.v1.GetNGoodsRequest
-	9,  // 23: good.gateway.app.good1.v1.Gateway.UpdateGood:input_type -> good.gateway.app.good1.v1.UpdateGoodRequest
-	11, // 24: good.gateway.app.good1.v1.Gateway.UpdateNGood:input_type -> good.gateway.app.good1.v1.UpdateNGoodRequest
-	2,  // 25: good.gateway.app.good1.v1.Gateway.CreateGood:output_type -> good.gateway.app.good1.v1.CreateGoodResponse
-	4,  // 26: good.gateway.app.good1.v1.Gateway.GetGoods:output_type -> good.gateway.app.good1.v1.GetGoodsResponse
-	6,  // 27: good.gateway.app.good1.v1.Gateway.GetGood:output_type -> good.gateway.app.good1.v1.GetGoodResponse
-	8,  // 28: good.gateway.app.good1.v1.Gateway.GetNGoods:output_type -> good.gateway.app.good1.v1.GetNGoodsResponse
-	10, // 29: good.gateway.app.good1.v1.Gateway.UpdateGood:output_type -> good.gateway.app.good1.v1.UpdateGoodResponse
-	12, // 30: good.gateway.app.good1.v1.Gateway.UpdateNGood:output_type -> good.gateway.app.good1.v1.UpdateNGoodResponse
-	25, // [25:31] is the sub-list for method output_type
-	19, // [19:25] is the sub-list for method input_type
-	19, // [19:19] is the sub-list for extension type_name
-	19, // [19:19] is the sub-list for extension extendee
-	0,  // [0:19] is the sub-list for field type_name
+	21, // 10: good.gateway.app.good1.v1.Good.SettlementType:type_name -> basetypes.good.v1.GoodSettlementType
+	17, // 11: good.gateway.app.good1.v1.CreateGoodRequest.CancelMode:type_name -> basetypes.good.v1.CancelMode
+	0,  // 12: good.gateway.app.good1.v1.CreateGoodResponse.Info:type_name -> good.gateway.app.good1.v1.Good
+	0,  // 13: good.gateway.app.good1.v1.GetGoodsResponse.Infos:type_name -> good.gateway.app.good1.v1.Good
+	0,  // 14: good.gateway.app.good1.v1.GetGoodResponse.Info:type_name -> good.gateway.app.good1.v1.Good
+	0,  // 15: good.gateway.app.good1.v1.GetNGoodsResponse.Infos:type_name -> good.gateway.app.good1.v1.Good
+	17, // 16: good.gateway.app.good1.v1.UpdateGoodRequest.CancelMode:type_name -> basetypes.good.v1.CancelMode
+	0,  // 17: good.gateway.app.good1.v1.UpdateGoodResponse.Info:type_name -> good.gateway.app.good1.v1.Good
+	17, // 18: good.gateway.app.good1.v1.UpdateNGoodRequest.CancelMode:type_name -> basetypes.good.v1.CancelMode
+	0,  // 19: good.gateway.app.good1.v1.UpdateNGoodResponse.Info:type_name -> good.gateway.app.good1.v1.Good
+	1,  // 20: good.gateway.app.good1.v1.Gateway.CreateGood:input_type -> good.gateway.app.good1.v1.CreateGoodRequest
+	3,  // 21: good.gateway.app.good1.v1.Gateway.GetGoods:input_type -> good.gateway.app.good1.v1.GetGoodsRequest
+	5,  // 22: good.gateway.app.good1.v1.Gateway.GetGood:input_type -> good.gateway.app.good1.v1.GetGoodRequest
+	7,  // 23: good.gateway.app.good1.v1.Gateway.GetNGoods:input_type -> good.gateway.app.good1.v1.GetNGoodsRequest
+	9,  // 24: good.gateway.app.good1.v1.Gateway.UpdateGood:input_type -> good.gateway.app.good1.v1.UpdateGoodRequest
+	11, // 25: good.gateway.app.good1.v1.Gateway.UpdateNGood:input_type -> good.gateway.app.good1.v1.UpdateNGoodRequest
+	2,  // 26: good.gateway.app.good1.v1.Gateway.CreateGood:output_type -> good.gateway.app.good1.v1.CreateGoodResponse
+	4,  // 27: good.gateway.app.good1.v1.Gateway.GetGoods:output_type -> good.gateway.app.good1.v1.GetGoodsResponse
+	6,  // 28: good.gateway.app.good1.v1.Gateway.GetGood:output_type -> good.gateway.app.good1.v1.GetGoodResponse
+	8,  // 29: good.gateway.app.good1.v1.Gateway.GetNGoods:output_type -> good.gateway.app.good1.v1.GetNGoodsResponse
+	10, // 30: good.gateway.app.good1.v1.Gateway.UpdateGood:output_type -> good.gateway.app.good1.v1.UpdateGoodResponse
+	12, // 31: good.gateway.app.good1.v1.Gateway.UpdateNGood:output_type -> good.gateway.app.good1.v1.UpdateNGoodResponse
+	26, // [26:32] is the sub-list for method output_type
+	20, // [20:26] is the sub-list for method input_type
+	20, // [20:20] is the sub-list for extension type_name
+	20, // [20:20] is the sub-list for extension extendee
+	0,  // [0:20] is the sub-list for field type_name
 }
 
 func init() { file_npool_good_gw_v1_app_good_good_proto_init() }

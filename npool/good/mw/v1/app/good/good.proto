@@ -249,14 +249,17 @@ message Good {
     // @inject_tag: sql:"duration_calculate_type"
     string           DurationCalculateTypeStr = 970;
     basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 980;
+    // @inject_tag: sql:"settlement_type"
+    string           SettlementTypeStr = 990;
+    basetypes.good.v1.GoodSettlementType SettlementType = 1000;
 
     // @inject_tag: sql:"package_with_requireds"
-    bool             PackageWithRequireds = 990;
+    bool             PackageWithRequireds = 1010;
 
     // @inject_tag: sql:"created_at"
-    uint32           CreatedAt          = 1000;
+    uint32           CreatedAt          = 2000;
     // @inject_tag: sql:"updated_at"
-    uint32           UpdatedAt          = 1100;
+    uint32           UpdatedAt          = 2100;
 }
 
 message Conds {
