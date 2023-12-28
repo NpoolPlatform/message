@@ -86,15 +86,3 @@ message GetAppCouponWithdrawsResponse {
     repeated CouponWithdraw Infos = 10;
     uint32            Total = 20;
 }
-
-message GetNAppCouponWithdrawsRequest {
-    string TargetAppID   = 10;
-    int32  Offset        = 20;
-    int32  Limit         = 30;
-}
-
-message GetNAppCouponWithdrawsResponse {
-    repeated CouponWithdraw Infos = 10;
-    uint32            Total = 20;
-}
-
