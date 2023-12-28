@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+package cms.middleware.media.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/cms/mw/v1/media";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateMedia     (CreateMediaRequest)     returns (CreateMediaResponse)     {}
+    rpc GetMedia        (GetMediaRequest)        returns (GetMediaResponse)        {}
+    rpc GetMedias       (GetMediasRequest)       returns (GetMediasResponse)       {}
+    rpc ExistMedia      (ExistMediaRequest)      returns (ExistMediaResponse)      {}
+    rpc ExistMediaConds (ExistMediaCondsRequest) returns (ExistMediaCondsResponse) {}
+    rpc DeleteMedia     (DeleteMediaRequest)     returns (DeleteMediaResponse)     {}
+}
+
+message MediaReq {
+    optional uint32 ID          = 10;
+    optional string EntID       = 20;
+    optional string AppID       = 30;
+    optional string Name        = 40;
+    optional string Ext         = 50;
+    optional string MediaURL    = 60;
+}
+
+message Media {
+    // @inject_tag: sql:"id"
+    uint32 ID        = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID     = 20;
+    // @inject_tag: sql:"app_id"
+    string AppID     = 30;
+    // @inject_tag: sql:"name"
+    string Name      = 40;
+    // @inject_tag: sql:"ext"
+    string Ext       = 50;
+    // MediaURL: {AppID}/{EntID}{Ext}
+    // @inject_tag: sql:"media_url"
+    string MediaURL  = 60;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 1010;
+}
+
+message Conds {
+    basetypes.v1.Uint32Val      ID       = 10;
+    basetypes.v1.StringVal      EntID    = 20;
+    basetypes.v1.StringVal      AppID    = 30;
+    basetypes.v1.StringVal      Name     = 40;
+    basetypes.v1.StringVal      MediaURL = 50;
+    basetypes.v1.Uint32SliceVal IDs      = 60;
+    basetypes.v1.StringSliceVal EntIDs   = 70;
+}
+
+
+message CreateMediaRequest {
+    MediaReq Info = 10;
+}
+
+message CreateMediaResponse {
+    Media Info = 10;
+}
+
+message GetMediaRequest {
+    string EntID = 10;
+}
+
+message GetMediaResponse {
+    Media Info = 10;
+}
+
+message GetMediasRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetMediasResponse {
+    repeated Media    Infos = 10;
+    uint32            Total = 20;
+}
+
+message ExistMediaRequest {
+    string EntID = 10;
+}
+
+message ExistMediaResponse {
+    bool Info = 10;
+}
+
+message ExistMediaCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistMediaCondsResponse {
+    bool Info = 10;
+}
+
+message DeleteMediaRequest {
+    MediaReq Info = 10;
+}
+
+message DeleteMediaResponse {
+    Media Info = 10;
+}
+

@@ -1,0 +1,159 @@
+syntax = "proto3";
+
+package cms.gateway.article.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/cms/gw/v1/article";
+
+import "npool/cms/mw/v1/article/article.proto";
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc GetContents(GetContentsRequest) returns (GetContentsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/contents"
+            body: "*"
+        };
+    }
+
+    // URL: https://{Host}/api/cms/v1/c/{ContentURL}
+    // Host ex: api.site.top
+    // ContentURL: {Category1.Slug}/{Category2.Slug}/.../{ISO}/{PageName}
+    // ex: news/markets/en-US/test-page.html
+    // ISO: {LANG}
+    // ex: en-US
+    // PageName: {Title}.html -> ToLower({Title}) -> ReplaceAll({Title}, " ", "-")
+    // ex: test-page.html
+    rpc GetContent(GetContentRequest) returns (GetContentResponse) {
+        option (google.api.http) = {
+            get: "/v1/c/{ContentURL}"
+        };
+    }
+
+    rpc CreateArticle(CreateArticleRequest) returns (CreateArticleResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/article"
+            body: "*"
+        };
+    }
+    rpc UpdateArticle(UpdateArticleRequest) returns (UpdateArticleResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/article"
+            body: "*"
+        };
+    }
+    rpc GetAppArticles(GetAppArticlesRequest) returns (GetAppArticlesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/articles"
+            body: "*"
+        };
+    }
+    rpc GetAppArticleContent(GetAppArticleContentRequest) returns (GetAppArticleContentResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/articlecontent"
+            body: "*"
+        };
+    }
+    rpc PublishArticle(PublishArticleRequest) returns (PublishArticleResponse) {
+        option (google.api.http) = {
+            post: "/v1/publish/article"
+            body: "*"
+        };
+    }
+    rpc DeleteArticle(DeleteArticleRequest) returns (DeleteArticleResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/article"
+            body: "*"
+        };
+    }
+}
+
+message GetContentsRequest {
+    string AppID               = 10;
+    optional string CategoryID = 20;
+}
+
+message GetContentsResponse {
+    middleware.article.v1.Article Info = 10;
+}
+
+message GetContentRequest {
+    string ContentURL = 10;
+}
+
+message GetContentResponse {
+    string Info = 10;
+}
+
+message CreateArticleRequest {
+    string AppID        = 10;
+    string TargetLangID = 20;
+    string CategoryID   = 30;
+    string UserID       = 40;
+    string Title        = 50;
+    string Subtitle     = 60;
+    string Digest       = 70;
+    string Content      = 80;
+}
+
+message CreateArticleResponse {
+    middleware.article.v1.Article Info = 10;
+}
+
+message UpdateArticleRequest {
+    uint32          ID            = 10;
+    string          EntID         = 20;
+    string          AppID         = 30;
+    optional string CategoryID    = 40;
+    optional string UserID        = 50;
+    optional string Title         = 60;
+    optional string Subtitle      = 70;
+    optional string Digest        = 80;
+    optional string Content       = 90;
+    optional bool   UpdateContent = 100;
+}
+
+message UpdateArticleResponse {
+    middleware.article.v1.Article Info = 10;
+}
+
+message GetAppArticlesRequest {
+    int32 Offset  = 10;
+    int32 Limit   = 20;
+}
+
+message GetAppArticlesResponse {
+    repeated middleware.article.v1.Article Infos = 10;
+    uint32                                 Total = 20;
+}
+
+message GetAppArticleContentRequest {
+    uint32 ID    = 10;
+    string EntID = 20;
+    string AppID = 30;
+}
+
+message GetAppArticleContentResponse {
+    string Info = 10;
+}
+
+message PublishArticleRequest {
+    uint32 ID             = 10;
+    string EntID          = 20;
+    string AppID          = 30;
+    bool   Published      = 40;
+    repeated string Roles = 50;
+}
+
+message PublishArticleResponse {
+    middleware.article.v1.Article Info = 10;
+}
+
+message DeleteArticleRequest {
+    uint32 ID    = 10;
+    string EntID = 20;
+}
+
+message DeleteArticleResponse {
+    middleware.article.v1.Article Info = 10;
+}

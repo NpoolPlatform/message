@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+package cms.gateway.category.lang.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/cms/gw/v1/category/lang";
+
+import "npool/cms/mw/v1/category/category.proto";
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc GetCategoryLangs(GetCategoryLangsRequest) returns (GetCategoryLangsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/category/langs"
+            body: "*"
+        };
+    }
+
+    rpc CreateCategoryLang(CreateCategoryLangRequest) returns (CreateCategoryLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/category/lang"
+            body: "*"
+        };
+    }
+    rpc UpdateCategoryLang(UpdateCategoryLangRequest) returns (UpdateCategoryLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/category/lang"
+            body: "*"
+        };
+    }
+    rpc GetAppCategoryLangs(GetAppCategoryLangsRequest) returns (GetAppCategoryLangsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/category/lang"
+            body: "*"
+        };
+    }
+    rpc DeleteCategoryLang(DeleteCategoryLangRequest) returns (DeleteCategoryLangResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/category/lang"
+            body: "*"
+        };
+    }
+}
+
+message GetCategoryLangsRequest {
+    string AppID   = 10;
+    string LangID  = 20;
+}
+
+message GetCategoryLangsResponse {
+    middleware.category.v1.Category Info = 10;
+}
+
+message CreateCategoryLangRequest {
+    string AppID         = 10;
+    string TargetLangID  = 20;
+    string CategoryID    = 30;
+    string Display       = 40;
+}
+
+message CreateCategoryLangResponse {
+    middleware.category.v1.Category Info = 10;
+}
+
+message UpdateCategoryLangRequest {
+    uint32          ID            = 10;
+    string          EntID         = 20;
+    optional string Display       = 40;
+}
+
+message UpdateCategoryLangResponse {
+    middleware.category.v1.Category Info = 10;
+}
+
+message GetAppCategoryLangsRequest {
+    string AppID   = 10;
+    int32  Offset  = 20;
+    int32  Limit   = 30;
+}
+
+message GetAppCategoryLangsResponse {
+    repeated middleware.category.v1.Category Infos = 10;
+    uint32                                   Total = 20;
+}
+
+message DeleteCategoryLangRequest {
+    uint32 ID    = 10;
+    string EntID = 20;
+}
+
+message DeleteCategoryLangResponse {
+    middleware.category.v1.Category Info = 10;
+}

@@ -1,0 +1,124 @@
+syntax = "proto3";
+
+package cms.middleware.category.lang.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/cms/mw/v1/category/lang";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateCategoryLang     (CreateCategoryLangRequest)     returns (CreateCategoryLangResponse)     {}
+    rpc UpdateCategoryLang     (UpdateCategoryLangRequest)     returns (UpdateCategoryLangResponse)     {}
+    rpc GetCategoryLang        (GetCategoryLangRequest)        returns (GetCategoryLangResponse)        {}
+    rpc GetCategoryLangs       (GetCategoryLangsRequest)       returns (GetCategoryLangsResponse)       {}
+    rpc ExistCategoryLang      (ExistCategoryLangRequest)      returns (ExistCategoryLangResponse)      {}
+    rpc ExistCategoryLangConds (ExistCategoryLangCondsRequest) returns (ExistCategoryLangCondsResponse) {}
+    rpc DeleteCategoryLang     (DeleteCategoryLangRequest)     returns (DeleteCategoryLangResponse)     {}
+}
+
+message CategoryLangReq {
+    optional uint32 ID          = 10;
+    optional string EntID       = 20;
+    optional string AppID       = 30;
+    optional string LangID      = 40;
+    optional string CategoryID  = 50;
+    optional string Display     = 60;
+}
+
+message CategoryLang {
+    // @inject_tag: sql:"id"
+    uint32 ID          = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID       = 20;
+    // @inject_tag: sql:"app_id"
+    string AppID       = 30;
+    // @inject_tag: sql:"lang_id"
+    string LangID      = 40;
+    // @inject_tag: sql:"category_id"
+    string CategoryID  = 50;
+    // @inject_tag: sql:"name"
+    string Name        = 60;
+    // @inject_tag: sql:"slug"
+    string Slug        = 70;
+    // @inject_tag: sql:"enabled"
+    bool   Enabled     = 80;
+    // @inject_tag: sql:"display"
+    string Display     = 90;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt   = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt   = 1010;
+}
+
+message Conds {
+    basetypes.v1.Uint32Val      ID          = 10;
+    basetypes.v1.StringVal      EntID       = 20;
+    basetypes.v1.StringVal      AppID       = 30;
+    basetypes.v1.StringVal      LangID      = 40;
+    basetypes.v1.StringVal      CategoryID  = 50;
+    basetypes.v1.StringVal      Name        = 60;
+    basetypes.v1.BoolVal        Enabled     = 70;
+    basetypes.v1.Uint32SliceVal IDs         = 80;
+    basetypes.v1.StringSliceVal EntIDs      = 90;
+    basetypes.v1.StringVal      Display     = 100;
+}
+
+message CreateCategoryLangRequest {
+    CategoryLangReq Info = 10;
+}
+
+message CreateCategoryLangResponse {
+    CategoryLang Info = 10;
+}
+
+message UpdateCategoryLangRequest {
+    CategoryLangReq Info = 10;
+}
+
+message UpdateCategoryLangResponse {
+    CategoryLang Info = 10;
+}
+
+message GetCategoryLangRequest {
+    string EntID = 10;
+}
+
+message GetCategoryLangResponse {
+    CategoryLang Info = 10;
+}
+
+message GetCategoryLangsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetCategoryLangsResponse {
+    repeated CategoryLang Infos = 10;
+    uint32                Total = 20;
+}
+
+message ExistCategoryLangRequest {
+    string EntID = 10;
+}
+
+message ExistCategoryLangResponse {
+    bool Info = 10;
+}
+
+message ExistCategoryLangCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistCategoryLangCondsResponse {
+    bool Info = 10;
+}
+
+message DeleteCategoryLangRequest {
+    CategoryLangReq Info = 10;
+}
+
+message DeleteCategoryLangResponse {
+    CategoryLang Info = 10;
+}

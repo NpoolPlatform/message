@@ -1,0 +1,121 @@
+syntax = "proto3";
+
+package cms.middleware.category.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/cms/mw/v1/category";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateCategory     (CreateCategoryRequest)     returns (CreateCategoryResponse)     {}
+    rpc UpdateCategory     (UpdateCategoryRequest)     returns (UpdateCategoryResponse)     {}
+    rpc GetCategory        (GetCategoryRequest)        returns (GetCategoryResponse)        {}
+    rpc GetCategories      (GetCategoriesRequest)      returns (GetCategoriesResponse)      {}
+    rpc ExistCategory      (ExistCategoryRequest)      returns (ExistCategoryResponse)      {}
+    rpc ExistCategoryConds (ExistCategoryCondsRequest) returns (ExistCategoryCondsResponse) {}
+    rpc DeleteCategory     (DeleteCategoryRequest)     returns (DeleteCategoryResponse)     {}
+}
+
+message CategoryReq {
+    optional uint32 ID          = 10;
+    optional string EntID       = 20;
+    optional string AppID       = 30;
+    optional string ParentID    = 40;
+    optional string Name        = 50;
+    optional string Slug        = 60;
+    optional bool   Enabled     = 70;
+}
+
+message Category {
+    // @inject_tag: sql:"id"
+    uint32 ID        = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID     = 20;
+    // @inject_tag: sql:"app_id"
+    string AppID     = 30;
+    // @inject_tag: sql:"parent_id"
+    string ParentID  = 40;
+    // @inject_tag: sql:"name"
+    string Name      = 50;
+    // @inject_tag: sql:"slug"
+    string Slug      = 60;
+    // @inject_tag: sql:"enabled"
+    bool   Enabled   = 70;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 1010;
+}
+
+message Conds {
+    basetypes.v1.Uint32Val      ID       = 10;
+    basetypes.v1.StringVal      EntID    = 20;
+    basetypes.v1.StringVal      AppID    = 30;
+    basetypes.v1.StringVal      ParentID = 40;
+    basetypes.v1.StringVal      Name     = 50;
+    basetypes.v1.StringVal      Slug     = 60;
+    basetypes.v1.BoolVal        Enabled  = 70;
+    basetypes.v1.Uint32SliceVal IDs      = 80;
+    basetypes.v1.StringSliceVal EntIDs   = 90;
+}
+
+message CreateCategoryRequest {
+    CategoryReq Info = 10;
+}
+
+message CreateCategoryResponse {
+    Category Info = 10;
+}
+
+message UpdateCategoryRequest {
+    CategoryReq Info = 10;
+}
+
+message UpdateCategoryResponse {
+    Category Info = 10;
+}
+
+message GetCategoryRequest {
+    string EntID = 10;
+}
+
+message GetCategoryResponse {
+    Category Info = 10;
+}
+
+message GetCategoriesRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetCategoriesResponse {
+    repeated Category Infos = 10;
+    uint32            Total = 20;
+}
+
+message ExistCategoryRequest {
+    string EntID = 10;
+}
+
+message ExistCategoryResponse {
+    bool Info = 10;
+}
+
+message ExistCategoryCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistCategoryCondsResponse {
+    bool Info = 10;
+}
+
+message DeleteCategoryRequest {
+    CategoryReq Info = 10;
+}
+
+message DeleteCategoryResponse {
+    Category Info = 10;
+}
+
