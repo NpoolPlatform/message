@@ -19,10 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateCouponWithdraw_FullMethodName   = "/ledger.gateway.withdraw.coupon.v1.Gateway/CreateCouponWithdraw"
-	Gateway_GetCouponWithdraws_FullMethodName     = "/ledger.gateway.withdraw.coupon.v1.Gateway/GetCouponWithdraws"
-	Gateway_GetAppCouponWithdraws_FullMethodName  = "/ledger.gateway.withdraw.coupon.v1.Gateway/GetAppCouponWithdraws"
-	Gateway_GetNAppCouponWithdraws_FullMethodName = "/ledger.gateway.withdraw.coupon.v1.Gateway/GetNAppCouponWithdraws"
+	Gateway_CreateCouponWithdraw_FullMethodName  = "/ledger.gateway.withdraw.coupon.v1.Gateway/CreateCouponWithdraw"
+	Gateway_GetCouponWithdraws_FullMethodName    = "/ledger.gateway.withdraw.coupon.v1.Gateway/GetCouponWithdraws"
+	Gateway_GetAppCouponWithdraws_FullMethodName = "/ledger.gateway.withdraw.coupon.v1.Gateway/GetAppCouponWithdraws"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -32,7 +31,6 @@ type GatewayClient interface {
 	CreateCouponWithdraw(ctx context.Context, in *CreateCouponWithdrawRequest, opts ...grpc.CallOption) (*CreateCouponWithdrawResponse, error)
 	GetCouponWithdraws(ctx context.Context, in *GetCouponWithdrawsRequest, opts ...grpc.CallOption) (*GetCouponWithdrawsResponse, error)
 	GetAppCouponWithdraws(ctx context.Context, in *GetAppCouponWithdrawsRequest, opts ...grpc.CallOption) (*GetAppCouponWithdrawsResponse, error)
-	GetNAppCouponWithdraws(ctx context.Context, in *GetNAppCouponWithdrawsRequest, opts ...grpc.CallOption) (*GetNAppCouponWithdrawsResponse, error)
 }
 
 type gatewayClient struct {
@@ -70,15 +68,6 @@ func (c *gatewayClient) GetAppCouponWithdraws(ctx context.Context, in *GetAppCou
 	return out, nil
 }
 
-func (c *gatewayClient) GetNAppCouponWithdraws(ctx context.Context, in *GetNAppCouponWithdrawsRequest, opts ...grpc.CallOption) (*GetNAppCouponWithdrawsResponse, error) {
-	out := new(GetNAppCouponWithdrawsResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetNAppCouponWithdraws_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -86,7 +75,6 @@ type GatewayServer interface {
 	CreateCouponWithdraw(context.Context, *CreateCouponWithdrawRequest) (*CreateCouponWithdrawResponse, error)
 	GetCouponWithdraws(context.Context, *GetCouponWithdrawsRequest) (*GetCouponWithdrawsResponse, error)
 	GetAppCouponWithdraws(context.Context, *GetAppCouponWithdrawsRequest) (*GetAppCouponWithdrawsResponse, error)
-	GetNAppCouponWithdraws(context.Context, *GetNAppCouponWithdrawsRequest) (*GetNAppCouponWithdrawsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -102,9 +90,6 @@ func (UnimplementedGatewayServer) GetCouponWithdraws(context.Context, *GetCoupon
 }
 func (UnimplementedGatewayServer) GetAppCouponWithdraws(context.Context, *GetAppCouponWithdrawsRequest) (*GetAppCouponWithdrawsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppCouponWithdraws not implemented")
-}
-func (UnimplementedGatewayServer) GetNAppCouponWithdraws(context.Context, *GetNAppCouponWithdrawsRequest) (*GetNAppCouponWithdrawsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNAppCouponWithdraws not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -173,24 +158,6 @@ func _Gateway_GetAppCouponWithdraws_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetNAppCouponWithdraws_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNAppCouponWithdrawsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetNAppCouponWithdraws(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetNAppCouponWithdraws_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNAppCouponWithdraws(ctx, req.(*GetNAppCouponWithdrawsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -209,10 +176,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppCouponWithdraws",
 			Handler:    _Gateway_GetAppCouponWithdraws_Handler,
-		},
-		{
-			MethodName: "GetNAppCouponWithdraws",
-			Handler:    _Gateway_GetNAppCouponWithdraws_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
