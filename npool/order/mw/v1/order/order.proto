@@ -45,6 +45,7 @@ message OrderReq {
     optional string AppGoodID                 = 50;
     optional string ParentOrderID             = 60;
     optional string Units                     = 70;
+    optional uint32 Duration                  = 71;
     optional string GoodValue                 = 80;
     optional string GoodValueUSD              = 81;
     optional string PaymentAmount             = 90;
@@ -108,6 +109,8 @@ message Order {
     string ParentOrderID                             = 70;
     // @inject_tag: sql:"units_v1"
     string Units                                     = 80;
+    // @inject_tag: sql:"duration"
+    uint32 Duration                                  = 81;
     // @inject_tag: sql:"good_value"
     string GoodValue                                 = 90;
     // @inject_tag: sql:"good_value_usd"

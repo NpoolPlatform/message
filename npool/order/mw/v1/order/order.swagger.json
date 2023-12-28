@@ -368,6 +368,11 @@
           "type": "string",
           "title": "@inject_tag: sql:\"units_v1\""
         },
+        "Duration": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"duration\""
+        },
         "GoodValue": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_value\""
@@ -597,6 +602,10 @@
         },
         "Units": {
           "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
         },
         "GoodValue": {
           "type": "string"
