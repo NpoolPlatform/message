@@ -724,7 +724,10 @@
       "enum": [
         "DefaultOrderStartMode",
         "OrderStartTBD",
-        "OrderStartConfirmed"
+        "OrderStartConfirmed",
+        "OrderStartInstantly",
+        "OrderStartNextDay",
+        "OrderStartPreset"
       ],
       "default": "DefaultOrderStartMode"
     },

@@ -214,6 +214,9 @@ enum OrderStartMode {
 
     OrderStartTBD        = 10;
     OrderStartConfirmed  = 20;
+    OrderStartInstantly  = 30; // Start when order paid
+    OrderStartNextDay    = 40; // Start at next 00:00 UTC
+    OrderStartPreset     = 50; // Start at a preset time
 }
 
 enum OrderLockType {
