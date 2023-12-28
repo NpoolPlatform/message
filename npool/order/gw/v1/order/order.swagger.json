@@ -443,6 +443,10 @@
         "Units": {
           "type": "string"
         },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
         "Parent": {
           "type": "boolean"
         }
@@ -515,6 +519,10 @@
         },
         "Units": {
           "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
         },
         "ParentOrderID": {
           "type": "string"
@@ -639,6 +647,10 @@
         },
         "Units": {
           "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
         },
         "ParentOrderID": {
           "type": "string"

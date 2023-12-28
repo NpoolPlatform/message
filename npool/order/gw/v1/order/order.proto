@@ -203,10 +203,11 @@ message CreateOrdersRequest {
     basetypes.order.v1.InvestmentType InvestmentType = 70;
     message OrderReq {
         string AppGoodID = 10;
-        string Units     = 20;
+        optional string Units = 20;
+        optional uint32 Duration = 21;
         bool   Parent    = 30;
     }
-    repeated OrderReq Orders = 90;
+    repeated OrderReq Orders = 80;
 }
 
 message CreateOrdersResponse {
@@ -287,10 +288,11 @@ message CreateUserOrderRequest {
     string          AppID                = 10;
     string          TargetUserID         = 20;
     string          AppGoodID            = 30;
-    string          Units                = 40;
+    optional string Units                = 40;
+    optional uint32 Duration             = 50;
     optional string ParentOrderID        = 60;
-    basetypes.order.v1.OrderType OrderType = 110;
-    basetypes.order.v1.InvestmentType InvestmentType = 120;
+    basetypes.order.v1.OrderType OrderType = 70;
+    basetypes.order.v1.InvestmentType InvestmentType = 80;
 }
 
 message CreateUserOrderResponse {
@@ -301,10 +303,11 @@ message CreateAppUserOrderRequest {
     string          TargetAppID          = 10;
     string          TargetUserID         = 20;
     string          AppGoodID            = 30;
-    string          Units                = 40;
+    optional string Units                = 40;
+    optional uint32 Duration             = 50;
     optional string ParentOrderID        = 60;
-    basetypes.order.v1.OrderType OrderType     = 110;
-    basetypes.order.v1.InvestmentType InvestmentType = 120;
+    basetypes.order.v1.OrderType OrderType     = 70;
+    basetypes.order.v1.InvestmentType InvestmentType = 80;
 }
 
 message CreateAppUserOrderResponse {
