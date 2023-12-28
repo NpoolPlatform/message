@@ -225,68 +225,9 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         "CashableProbabilityPerMillion": {
           "type": "string",
           "title": "@inject_tag: sql:\"cashable_probability_per_million\""
-=======
-        "Condition": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"condition\""
-        },
-        "IssueTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"issue_type\""
-        },
-        "IssueType": {
-          "$ref": "#/definitions/v1IssueType"
-        },
-        "PromotionTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"promotion_type\""
-        },
-        "PromotionType": {
-          "$ref": "#/definitions/v1PromotionType"
-        },
-        "LimitRule": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"limit_rule\""
-        },
-        "TimelinessStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"timeliness\""
-        },
-        "Timeliness": {
-          "$ref": "#/definitions/v1Timeliness"
-        },
-        "Cashable": {
-          "type": "boolean"
-        },
-        "CashRate": {
-          "type": "integer",
-          "format": "int64"
->>>>>>> a30bd6312 (add full discount coupons design)
-=======
-        "CashRatio": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"cash_ratio\""
->>>>>>> d088163df (generate proto)
-=======
-        "Probability": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"probability\""
->>>>>>> 24502801b (generate proto)
-=======
-        "CashableProbabilityPerMillion": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"cashable_probability_per_million\""
->>>>>>> d8c9cd488 (generate proto)
         },
         "CreatedAt": {
           "type": "integer",
@@ -324,17 +265,7 @@
       "enum": [
         "DefaultCouponType",
         "FixAmount",
-<<<<<<< HEAD
-<<<<<<< HEAD
         "Discount"
-=======
-        "Discount",
-        "SpecialOffer",
-        "FullReduction"
->>>>>>> 3c2cae7d0 (update coupon)
-=======
-        "Discount"
->>>>>>> d088163df (generate proto)
       ],
       "default": "DefaultCouponType"
     },

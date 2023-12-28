@@ -155,30 +155,13 @@
           "type": "string"
         },
         "UserID": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0b45c3311 (update coupon gw)
           "type": "string"
         },
         "EmailAddress": {
           "type": "string"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
         "PhoneNO": {
           "type": "string"
-=======
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
->>>>>>> fa3deef6c (update allocatedcoupon)
-=======
-        "PhoneNo": {
-=======
-        "PhoneNO": {
->>>>>>> 04c9f4377 (fix wrong word)
-          "type": "string"
->>>>>>> 0b45c3311 (update coupon gw)
         },
         "Denomination": {
           "type": "string"
@@ -225,100 +208,13 @@
         },
         "Threshold": {
           "type": "string"
-<<<<<<< HEAD
-=======
         },
-<<<<<<< HEAD
-        "Allocated": {
-          "type": "string"
->>>>>>> 0b45c3311 (update coupon gw)
-        },
-=======
->>>>>>> f6a28ea87 (delete allocated)
         "CouponTypeStr": {
           "type": "string"
         },
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
-        },
-        "Denomination": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"denomination\""
-        },
-        "Circulation": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"circulation\""
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"start_at\""
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"duration_days\""
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"end_at\""
-        },
-        "CouponID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_id\""
-        },
-        "CouponName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_name\""
-        },
-        "Message": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_message\""
-        },
-        "Expired": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"expired\""
-        },
-        "Valid": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"valid\""
-        },
-        "Used": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"used\""
-        },
-        "UsedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"used_at\""
-        },
-        "UsedByOrderID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"used_by_order_id\""
-        },
-        "Threshold": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"threshold\""
-        },
-        "Allocated": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"allocated\""
-        },
->>>>>>> 23e7e37d8 (update allocatedcoupon)
-=======
->>>>>>> 0b45c3311 (update coupon gw)
         "CouponConstraintStr": {
           "type": "string"
         },
@@ -335,16 +231,7 @@
           "$ref": "#/definitions/v1CouponScope"
         },
         "Cashable": {
-<<<<<<< HEAD
-<<<<<<< HEAD
           "type": "boolean"
-=======
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"cashable\""
->>>>>>> f2a2b2483 (add Cashable in allocatedcoupon)
-=======
-          "type": "boolean"
->>>>>>> 0b45c3311 (update coupon gw)
         },
         "CreatedAt": {
           "type": "integer",
@@ -380,17 +267,7 @@
       "enum": [
         "DefaultCouponType",
         "FixAmount",
-<<<<<<< HEAD
-<<<<<<< HEAD
         "Discount"
-=======
-        "Discount",
-        "SpecialOffer",
-        "FullReduction"
->>>>>>> 3c2cae7d0 (update coupon)
-=======
-        "Discount"
->>>>>>> d088163df (generate proto)
       ],
       "default": "DefaultCouponType"
     },
