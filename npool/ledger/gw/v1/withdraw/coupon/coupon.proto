@@ -51,6 +51,7 @@ message CouponWithdraw {
     string          Message        = 160;
     basetypes.ledger.v1.WithdrawState State = 170;
     string          ReviewID       = 180;
+    uint32          ReviewUintID   = 190; // only for smoketest
     uint32          CreatedAt      = 1000;
     uint32          UpdatedAt      = 1010;
 }
