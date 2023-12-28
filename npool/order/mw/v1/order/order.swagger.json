@@ -368,11 +368,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"units_v1\""
         },
-        "Duration": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"duration\""
-        },
         "GoodValue": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_value\""
@@ -393,10 +388,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"promotion_id\""
         },
-        "DurationDays": {
+        "Duration": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"duration_days\""
+          "title": "@inject_tag: sql:\"duration\""
         },
         "OrderTypeStr": {
           "type": "string",
@@ -603,10 +598,6 @@
         "Units": {
           "type": "string"
         },
-        "Duration": {
-          "type": "integer",
-          "format": "int64"
-        },
         "GoodValue": {
           "type": "string"
         },
@@ -622,7 +613,7 @@
         "PromotionID": {
           "type": "string"
         },
-        "DurationDays": {
+        "Duration": {
           "type": "integer",
           "format": "int64"
         },
