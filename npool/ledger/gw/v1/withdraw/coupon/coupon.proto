@@ -29,13 +29,6 @@ service Gateway {
             body: "*"
         };
     }
-
-    rpc GetNAppCouponWithdraws (GetNAppCouponWithdrawsRequest) returns (GetNAppCouponWithdrawsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/n/app/couponwithdraws"
-            body: "*"
-        };
-    }
 }
 
 message CouponWithdraw {
