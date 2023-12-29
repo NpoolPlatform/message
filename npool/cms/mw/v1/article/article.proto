@@ -34,7 +34,6 @@ message ArticleReq {
     optional uint32 Version                        = 130;
     optional string ContentURL                     = 140;
     optional bool   Latest                         = 150;
-    repeated string ACLRoleIDs                     = 160;
 }
 
 message Article {

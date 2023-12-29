@@ -188,12 +188,6 @@
         },
         "Latest": {
           "type": "boolean"
-        },
-        "ACLRoleIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       }
     },

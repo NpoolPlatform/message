@@ -267,6 +267,10 @@
           "type": "string",
           "title": "MediaURL: {AppID}/{EntID}{Ext}\n@inject_tag: sql:\"media_url\""
         },
+        "CreatedBy": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"created_by\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
