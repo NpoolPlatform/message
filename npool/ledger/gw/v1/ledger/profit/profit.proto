@@ -116,8 +116,9 @@ message GoodProfit {
     string AppGoodID  = 10;
     string GoodName   = 20;
     string GoodUnit   = 30;
-    uint32 Duration   = 31;
-    basetypes.good.v1.GoodDurationType DurationType = 32;
+    uint32 MinOrderDuration = 31;
+    uint32 MaxOrderDuration = 32;
+    basetypes.good.v1.GoodDurationType DurationType = 33;
     string Units      = 40;
     string CoinTypeID = 50;
     string CoinName   = 60;

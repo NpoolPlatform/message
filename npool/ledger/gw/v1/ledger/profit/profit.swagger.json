@@ -362,7 +362,11 @@
         "GoodUnit": {
           "type": "string"
         },
-        "Duration": {
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxOrderDuration": {
           "type": "integer",
           "format": "int64"
         },
