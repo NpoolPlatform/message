@@ -858,6 +858,17 @@
         }
       }
     },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
+    },
     "v1InvestmentType": {
       "type": "string",
       "enum": [
@@ -943,6 +954,9 @@
         "Duration": {
           "type": "integer",
           "format": "int64"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
         },
         "PaymentID": {
           "type": "string"

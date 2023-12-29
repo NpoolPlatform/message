@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/order/gw/v1/order";
 import "google/api/annotations.proto";
 import "npool/basetypes/inspire/v1/enums.proto";
 import "npool/basetypes/order/v1/enums.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Gateway {
@@ -140,6 +141,7 @@ message Order {
     string GoodValueUSD           = 135;
     string Units                  = 140;
     uint32 Duration               = 141;
+    basetypes.good.v1.GoodDurationType DurationType = 142;
 
     string PaymentID              = 150;
     string PaymentCoinTypeID      = 160;
