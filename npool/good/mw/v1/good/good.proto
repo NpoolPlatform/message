@@ -44,7 +44,6 @@ message GoodReq {
     optional string        RewardAmount       = 300;
     optional string        UnitRewardAmount   = 310;
     optional basetypes.good.v1.GoodStartMode StartMode = 320;
-    optional uint32        UnitDuration       = 330;
     optional basetypes.good.v1.GoodUnitType UnitType = 340;
     optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 350;
     optional basetypes.good.v1.GoodDurationType DurationType = 360;
