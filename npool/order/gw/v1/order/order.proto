@@ -135,7 +135,6 @@ message Order {
     string AppGoodID              = 121;
     string GoodName               = 130;
     string GoodUnit               = 131;
-    uint32 GoodServicePeriodDays  = 132;
     string GoodUnitPrice          = 133;
     string GoodValue              = 134;
     string GoodValueUSD           = 135;
