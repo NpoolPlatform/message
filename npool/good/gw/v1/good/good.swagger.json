@@ -190,10 +190,6 @@
         "DeviceInfoID": {
           "type": "string"
         },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
-        },
         "CoinTypeID": {
           "type": "string"
         },
@@ -355,10 +351,6 @@
           "items": {
             "type": "string"
           }
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
         },
         "CoinTypeID": {
           "type": "string"
@@ -615,10 +607,6 @@
         },
         "DeviceInfoID": {
           "type": "string"
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
         },
         "CoinTypeID": {
           "type": "string"

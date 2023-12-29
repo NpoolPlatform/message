@@ -63,7 +63,6 @@ message Good {
     string           UnitPrice                   = 60;
     string           PackagePrice                = 61;
     int32            DisplayIndex                = 70;
-    int32            PurchaseLimit               = 80;
 
     string           DeviceType                  = 240;
     string           DeviceManufacturer          = 250;
@@ -116,7 +115,6 @@ message Good {
     bool             EnablePurchase    = 670;
     bool             EnableProductPage = 680;
     basetypes.good.v1.CancelMode CancelMode = 690;
-    string           UserPurchaseLimit = 700;
     repeated string  DisplayColors          = 710;
     uint32           CancellableBeforeStart = 720;
     string           ProductPage            = 730;
@@ -165,7 +163,6 @@ message CreateGoodRequest {
     string UnitPrice           = 60;
     optional string PackagePrice = 61;
     int32  DisplayIndex        = 70;
-    int32  PurchaseLimit       = 80;
     optional uint32 SaleStartAt    = 100;
     optional uint32 SaleEndAt      = 110;
     optional uint32 ServiceStartAt = 120;
@@ -174,7 +171,6 @@ message CreateGoodRequest {
     optional bool   EnablePurchase         = 160;
     optional bool   EnableProductPage      = 170;
     optional basetypes.good.v1.CancelMode CancelMode = 180;
-    optional string UserPurchaseLimit      = 190;
     repeated string DisplayColors          = 200;
     optional uint32 CancellableBeforeStart = 210;
     optional string ProductPage            = 220;
@@ -236,7 +232,6 @@ message UpdateGoodRequest {
     optional string UnitPrice           = 60;
     optional string PackagePrice        = 61;
     optional int32  DisplayIndex        = 70;
-    optional int32  PurchaseLimit       = 80;
     optional uint32 SaleStartAt         = 100;
     optional uint32 SaleEndAt           = 110;
     optional uint32 ServiceStartAt      = 120;
@@ -248,7 +243,6 @@ message UpdateGoodRequest {
     optional bool   EnablePurchase      = 200;
     optional bool   EnableProductPage   = 210;
     optional basetypes.good.v1.CancelMode CancelMode = 220;
-    optional string UserPurchaseLimit = 230;
     repeated string DisplayColors          = 240;
     optional uint32 CancellableBeforeStart = 250;
     optional string ProductPage            = 260;
@@ -276,7 +270,6 @@ message UpdateNGoodRequest {
     optional string UnitPrice           = 60;
     optional string PackagePrice        = 61;
     optional int32  DisplayIndex        = 70;
-    optional int32  PurchaseLimit       = 80;
     optional uint32 ServiceStartAt      = 100;
     optional string TechnicalFeeRatio   = 110;
     optional string ElectricityFeeRatio = 120;
@@ -286,7 +279,6 @@ message UpdateNGoodRequest {
     optional bool   EnablePurchase    = 190;
     optional bool   EnableProductPage = 200;
     optional basetypes.good.v1.CancelMode CancelMode = 210;
-    optional string UserPurchaseLimit = 220;
     repeated string DisplayColors          = 230;
     optional uint32 CancellableBeforeStart = 240;
     optional string ProductPage            = 250;

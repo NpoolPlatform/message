@@ -49,8 +49,6 @@ message Good {
     uint32           DeviceShipmentAt            = 60;
     repeated string  DevicePosters               = 70;
 
-    int32            DurationDays                = 80;
-
     string           CoinTypeID                  = 90;
     string           CoinLogo                    = 100;
     string           CoinName                    = 110;
@@ -112,7 +110,6 @@ message Good {
 
 message CreateGoodRequest {
     string          DeviceInfoID       = 20;
-    int32           DurationDays       = 30;
     string          CoinTypeID         = 40;
     string          VendorLocationID   = 60;
     string          UnitPrice          = 70;
@@ -163,7 +160,6 @@ message UpdateGoodRequest {
     uint32          ID                 = 9;
     string          EntID              = 10;
     optional string DeviceInfoID       = 20;
-    optional int32  DurationDays       = 30;
     optional string CoinTypeID         = 40;
     optional string VendorLocationID   = 60;
     optional string UnitPrice          = 70;

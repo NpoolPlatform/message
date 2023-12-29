@@ -190,11 +190,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"device_posters\""
         },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"duration_days\""
-        },
         "CoinTypeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
@@ -481,10 +476,6 @@
         },
         "DeviceInfoID": {
           "type": "string"
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
         },
         "CoinTypeID": {
           "type": "string"
