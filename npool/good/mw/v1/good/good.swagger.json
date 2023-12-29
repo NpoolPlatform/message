@@ -559,10 +559,6 @@
         "StartMode": {
           "$ref": "#/definitions/v1GoodStartMode"
         },
-        "UnitDuration": {
-          "type": "integer",
-          "format": "int64"
-        },
         "UnitType": {
           "$ref": "#/definitions/v1GoodUnitType"
         },
