@@ -190,11 +190,6 @@
           "format": "int32",
           "title": "@inject_tag: sql:\"display_index\""
         },
-        "PurchaseLimit": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"purchase_limit\""
-        },
         "DeviceInfoID": {
           "type": "string",
           "title": "@inject_tag: sql:\"device_info_id\""
@@ -226,11 +221,6 @@
         "DevicePostersStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"device_posters\""
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"duration_days\""
         },
         "CoinTypeID": {
           "type": "string",
@@ -396,10 +386,6 @@
         },
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
-        },
-        "UserPurchaseLimit": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_purchase_limit\""
         },
         "DisplayColorsStr": {
           "type": "string",
@@ -638,10 +624,6 @@
           "type": "integer",
           "format": "int32"
         },
-        "PurchaseLimit": {
-          "type": "integer",
-          "format": "int32"
-        },
         "SaleStartAt": {
           "type": "integer",
           "format": "int64"
@@ -683,9 +665,6 @@
         },
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
-        },
-        "UserPurchaseLimit": {
-          "type": "string"
         },
         "DisplayColors": {
           "type": "array",

@@ -20,7 +20,6 @@ message GoodReq {
     optional uint32        ID                 = 9;
     optional string        EntID              = 10;
     optional string        DeviceInfoID       = 20;
-    optional int32         DurationDays       = 30;
     optional string        CoinTypeID         = 40;
     optional string        VendorLocationID   = 60;
     optional string        UnitPrice          = 70;
@@ -73,8 +72,6 @@ message Good {
     // @inject_tag: sql:"device_posters"
     string           DevicePostersStr            = 71;
 
-    // @inject_tag: sql:"duration_days"
-    int32            DurationDays                = 80;
     // @inject_tag: sql:"coin_type_id"
     string           CoinTypeID                  = 90;
 

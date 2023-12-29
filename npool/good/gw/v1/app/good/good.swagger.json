@@ -286,10 +286,6 @@
           "type": "integer",
           "format": "int32"
         },
-        "PurchaseLimit": {
-          "type": "integer",
-          "format": "int32"
-        },
         "SaleStartAt": {
           "type": "integer",
           "format": "int64"
@@ -316,9 +312,6 @@
         },
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
-        },
-        "UserPurchaseLimit": {
-          "type": "string"
         },
         "DisplayColors": {
           "type": "array",
@@ -503,10 +496,6 @@
           "type": "integer",
           "format": "int32"
         },
-        "PurchaseLimit": {
-          "type": "integer",
-          "format": "int32"
-        },
         "DeviceType": {
           "type": "string"
         },
@@ -662,9 +651,6 @@
         },
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
-        },
-        "UserPurchaseLimit": {
-          "type": "string"
         },
         "DisplayColors": {
           "type": "array",
@@ -888,10 +874,6 @@
           "type": "integer",
           "format": "int32"
         },
-        "PurchaseLimit": {
-          "type": "integer",
-          "format": "int32"
-        },
         "SaleStartAt": {
           "type": "integer",
           "format": "int64"
@@ -933,9 +915,6 @@
         },
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
-        },
-        "UserPurchaseLimit": {
-          "type": "string"
         },
         "DisplayColors": {
           "type": "array",
@@ -1021,10 +1000,6 @@
           "type": "integer",
           "format": "int32"
         },
-        "PurchaseLimit": {
-          "type": "integer",
-          "format": "int32"
-        },
         "ServiceStartAt": {
           "type": "integer",
           "format": "int64"
@@ -1058,9 +1033,6 @@
         },
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
-        },
-        "UserPurchaseLimit": {
-          "type": "string"
         },
         "DisplayColors": {
           "type": "array",

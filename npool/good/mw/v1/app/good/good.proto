@@ -29,7 +29,6 @@ message GoodReq {
     optional string UnitPrice           = 70;
     optional string PackagePrice        = 71;
     optional int32  DisplayIndex        = 80;
-    optional int32  PurchaseLimit       = 90;
     optional uint32 SaleStartAt         = 110;
     optional uint32 SaleEndAt           = 120;
     optional uint32 ServiceStartAt      = 130;
@@ -41,7 +40,6 @@ message GoodReq {
     optional bool   EnablePurchase      = 210;
     optional bool   EnableProductPage   = 220;
     optional basetypes.good.v1.CancelMode CancelMode = 230;
-    optional string UserPurchaseLimit   = 240;
     repeated string DisplayColors       = 250;
     optional uint32 CancellableBeforeStart = 260;
     optional string ProductPage         = 270;
@@ -74,8 +72,6 @@ message Good {
     string           PackagePrice                = 61;
     // @inject_tag: sql:"display_index"
     int32            DisplayIndex                = 70;
-    // @inject_tag: sql:"purchase_limit"
-    int32            PurchaseLimit               = 80;
 
     // @inject_tag: sql:"device_info_id"
     string           DeviceInfoID                = 170;
@@ -91,8 +87,6 @@ message Good {
     // @inject_tag: sql:"device_posters"
     string           DevicePostersStr            = 221;
 
-    // @inject_tag: sql:"duration_days"
-    int32            DurationDays                = 230;
     // @inject_tag: sql:"coin_type_id"
     string           CoinTypeID                  = 240;
 
@@ -173,8 +167,6 @@ message Good {
     // @inject_tag: sql:"cancel_mode"
     string           CancelModeStr          = 580;
     basetypes.good.v1.CancelMode CancelMode = 590;
-    // @inject_tag: sql:"user_purchase_limit"
-    string           UserPurchaseLimit      = 600;
     // @inject_tag: sql:"display_colors"
     string           DisplayColorsStr       = 610;
     repeated string  DisplayColors          = 620;
