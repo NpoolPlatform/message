@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/cms/mw/v1/category/lang/lang.proto",
+    "title": "npool/cms/mw/v1/acl/acl.proto",
     "version": "version not set"
   },
   "tags": [
@@ -45,18 +45,7 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1CategoryLang": {
+    "v1ACL": {
       "type": "object",
       "properties": {
         "ID": {
@@ -72,29 +61,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
-        "LangID": {
+        "RoleID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"lang_id\""
+          "title": "@inject_tag: sql:\"role_id\""
         },
-        "CategoryID": {
+        "ArticleKey": {
           "type": "string",
-          "title": "@inject_tag: sql:\"category_id\""
-        },
-        "Name": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"name\""
-        },
-        "Slug": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"slug\""
-        },
-        "Enabled": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"enabled\""
-        },
-        "Display": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"display\""
+          "title": "@inject_tag: sql:\"article_key\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -108,7 +81,7 @@
         }
       }
     },
-    "v1CategoryLangReq": {
+    "v1ACLReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -121,13 +94,10 @@
         "AppID": {
           "type": "string"
         },
-        "LangID": {
+        "RoleID": {
           "type": "string"
         },
-        "CategoryID": {
-          "type": "string"
-        },
-        "Display": {
+        "ArticleKey": {
           "type": "string"
         }
       }
@@ -144,54 +114,37 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "LangID": {
+        "RoleID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "CategoryID": {
+        "ArticleKey": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "Name": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Enabled": {
-          "$ref": "#/definitions/v1BoolVal"
         },
         "IDs": {
           "$ref": "#/definitions/v1Uint32SliceVal"
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "Display": {
-          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "v1CreateCategoryLangResponse": {
+    "v1CreateACLResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CategoryLang"
+          "$ref": "#/definitions/v1ACL"
         }
       }
     },
-    "v1DeleteCategoryLangResponse": {
+    "v1DeleteACLResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CategoryLang"
+          "$ref": "#/definitions/v1ACL"
         }
       }
     },
-    "v1ExistCategoryLangCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistCategoryLangResponse": {
+    "v1ExistACLCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -199,22 +152,30 @@
         }
       }
     },
-    "v1GetCategoryLangResponse": {
+    "v1ExistACLResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CategoryLang"
+          "type": "boolean"
         }
       }
     },
-    "v1GetCategoryLangsResponse": {
+    "v1GetACLResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ACL"
+        }
+      }
+    },
+    "v1GetACLsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1CategoryLang"
+            "$ref": "#/definitions/v1ACL"
           }
         },
         "Total": {
@@ -272,14 +233,6 @@
         "Value": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1UpdateCategoryLangResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CategoryLang"
         }
       }
     }
