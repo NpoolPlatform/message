@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/ledger/gw/v1/ledger/
 
 import "google/api/annotations.proto";
 import "npool/basetypes/ledger/v1/enums.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Gateway {
@@ -115,7 +116,8 @@ message GoodProfit {
     string AppGoodID  = 10;
     string GoodName   = 20;
     string GoodUnit   = 30;
-    uint32 GoodServicePeriodDays = 31;
+    uint32 Duration   = 31;
+    basetypes.good.v1.GoodDurationType DurationType = 32;
     string Units      = 40;
     string CoinTypeID = 50;
     string CoinName   = 60;
