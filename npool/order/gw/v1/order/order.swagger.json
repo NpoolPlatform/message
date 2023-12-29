@@ -927,10 +927,6 @@
         "GoodUnit": {
           "type": "string"
         },
-        "GoodServicePeriodDays": {
-          "type": "integer",
-          "format": "int64"
-        },
         "GoodUnitPrice": {
           "type": "string"
         },
