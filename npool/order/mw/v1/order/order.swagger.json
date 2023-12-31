@@ -222,6 +222,9 @@
         },
         "UserSetCanceled": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "ParentOrderIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
