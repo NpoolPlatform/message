@@ -239,6 +239,7 @@ message Conds {
     optional basetypes.v1.Uint32Val      UpdatedAt             = 250;
     optional basetypes.v1.BoolVal        AdminSetCanceled      = 260;
     optional basetypes.v1.BoolVal        UserSetCanceled       = 270;
+    optional basetypes.v1.StringSliceVal ParentOrderIDs        = 280;
 }
 
 message CreateOrderRequest {
