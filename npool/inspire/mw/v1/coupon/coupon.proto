@@ -138,4 +138,3 @@ message DeleteCouponRequest {
 message DeleteCouponResponse {
     Coupon Info = 10;
 }
-

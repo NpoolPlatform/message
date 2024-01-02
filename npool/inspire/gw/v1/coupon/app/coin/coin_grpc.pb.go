@@ -19,9 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetCouponCoins_FullMethodName   = "/inspire.gateway.coupon.app.coin.v1.Gateway/GetCouponCoins"
-	Gateway_CreateCouponCoin_FullMethodName = "/inspire.gateway.coupon.app.coin.v1.Gateway/CreateCouponCoin"
-	Gateway_DeleteCouponCoin_FullMethodName = "/inspire.gateway.coupon.app.coin.v1.Gateway/DeleteCouponCoin"
+	Gateway_GetCouponCoins_FullMethodName    = "/inspire.gateway.coupon.app.coin.v1.Gateway/GetCouponCoins"
+	Gateway_CreateCouponCoin_FullMethodName  = "/inspire.gateway.coupon.app.coin.v1.Gateway/CreateCouponCoin"
+	Gateway_DeleteCouponCoin_FullMethodName  = "/inspire.gateway.coupon.app.coin.v1.Gateway/DeleteCouponCoin"
+	Gateway_GetAppCouponCoins_FullMethodName = "/inspire.gateway.coupon.app.coin.v1.Gateway/GetAppCouponCoins"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -31,6 +32,7 @@ type GatewayClient interface {
 	GetCouponCoins(ctx context.Context, in *GetCouponCoinsRequest, opts ...grpc.CallOption) (*GetCouponCoinsResponse, error)
 	CreateCouponCoin(ctx context.Context, in *CreateCouponCoinRequest, opts ...grpc.CallOption) (*CreateCouponCoinResponse, error)
 	DeleteCouponCoin(ctx context.Context, in *DeleteCouponCoinRequest, opts ...grpc.CallOption) (*DeleteCouponCoinResponse, error)
+	GetAppCouponCoins(ctx context.Context, in *GetAppCouponCoinsRequest, opts ...grpc.CallOption) (*GetAppCouponCoinsResponse, error)
 }
 
 type gatewayClient struct {
@@ -68,6 +70,15 @@ func (c *gatewayClient) DeleteCouponCoin(ctx context.Context, in *DeleteCouponCo
 	return out, nil
 }
 
+func (c *gatewayClient) GetAppCouponCoins(ctx context.Context, in *GetAppCouponCoinsRequest, opts ...grpc.CallOption) (*GetAppCouponCoinsResponse, error) {
+	out := new(GetAppCouponCoinsResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetAppCouponCoins_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -75,6 +86,7 @@ type GatewayServer interface {
 	GetCouponCoins(context.Context, *GetCouponCoinsRequest) (*GetCouponCoinsResponse, error)
 	CreateCouponCoin(context.Context, *CreateCouponCoinRequest) (*CreateCouponCoinResponse, error)
 	DeleteCouponCoin(context.Context, *DeleteCouponCoinRequest) (*DeleteCouponCoinResponse, error)
+	GetAppCouponCoins(context.Context, *GetAppCouponCoinsRequest) (*GetAppCouponCoinsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -90,6 +102,9 @@ func (UnimplementedGatewayServer) CreateCouponCoin(context.Context, *CreateCoupo
 }
 func (UnimplementedGatewayServer) DeleteCouponCoin(context.Context, *DeleteCouponCoinRequest) (*DeleteCouponCoinResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCouponCoin not implemented")
+}
+func (UnimplementedGatewayServer) GetAppCouponCoins(context.Context, *GetAppCouponCoinsRequest) (*GetAppCouponCoinsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppCouponCoins not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -158,6 +173,24 @@ func _Gateway_DeleteCouponCoin_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetAppCouponCoins_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppCouponCoinsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppCouponCoins(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_GetAppCouponCoins_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppCouponCoins(ctx, req.(*GetAppCouponCoinsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -176,6 +209,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteCouponCoin",
 			Handler:    _Gateway_DeleteCouponCoin_Handler,
+		},
+		{
+			MethodName: "GetAppCouponCoins",
+			Handler:    _Gateway_GetAppCouponCoins_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
