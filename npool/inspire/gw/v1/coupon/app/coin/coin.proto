@@ -65,9 +65,9 @@ message CreateCouponCoinResponse {
 }
 
 message DeleteCouponCoinRequest {
-    uint32 ID        = 10;
-    string EntID     = 20;
-    string AppID     = 30;
+    uint32 ID              = 10;
+    string EntID           = 20;
+    string TargetAppID     = 30;
 }
 
 message DeleteCouponCoinResponse {
@@ -76,8 +76,8 @@ message DeleteCouponCoinResponse {
 
 message GetAppCouponCoinsRequest {
     string TargetAppID     = 10;
-    int32  Offset    = 20;
-    int32  Limit     = 30;
+    int32  Offset          = 20;
+    int32  Limit           = 30;
 }
 
 message GetAppCouponCoinsResponse {
