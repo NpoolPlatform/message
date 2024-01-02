@@ -253,7 +253,7 @@
     "v1GetAppCouponCoinsRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
+        "AppID": {
           "type": "string"
         },
         "Offset": {
@@ -284,9 +284,6 @@
     "v1GetCouponCoinsRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string"
-        },
         "Offset": {
           "type": "integer",
           "format": "int32"

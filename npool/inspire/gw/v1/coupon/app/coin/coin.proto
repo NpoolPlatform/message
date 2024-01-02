@@ -45,7 +45,6 @@ message CouponCoin {
 }
 
 message GetCouponCoinsRequest {
-    string AppID     = 10;
     int32  Offset    = 20;
     int32  Limit     = 30;
 }
@@ -75,7 +74,7 @@ message DeleteCouponCoinResponse {
 }
 
 message GetAppCouponCoinsRequest {
-    string TargetAppID     = 10;
+    string AppID           = 10;
     int32  Offset          = 20;
     int32  Limit           = 30;
 }
