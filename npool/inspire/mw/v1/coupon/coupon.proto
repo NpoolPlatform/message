@@ -40,7 +40,7 @@ message CouponReq {
     optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 150;
     optional bool   Random       = 160;
     optional basetypes.inspire.v1.CouponScope CouponScope           = 170;
-    optional string CashableProbabilityPerMillion = 180;
+    optional string CashableProbability = 180;
 }
 
 message Coupon {
@@ -81,8 +81,8 @@ message Coupon {
     // @inject_tag: sql:"coupon_scope"
     string          CouponScopeStr  = 190;
     basetypes.inspire.v1.CouponScope      CouponScope = 200;
-    // @inject_tag: sql:"cashable_probability_per_million"
-    string          CashableProbabilityPerMillion     = 210;
+    // @inject_tag: sql:"cashable_probability"
+    string          CashableProbability = 210;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"

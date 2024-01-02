@@ -55,12 +55,6 @@
         },
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "CouponID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CouponIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -83,18 +77,6 @@
         "CoinTypeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
-        },
-        "CouponID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_id\""
-        },
-        "CouponName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_name\""
-        },
-        "CouponDenomination": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_denomination\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -122,9 +104,6 @@
           "type": "string"
         },
         "CoinTypeID": {
-          "type": "string"
-        },
-        "CouponID": {
           "type": "string"
         }
       }
@@ -173,20 +152,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       }
     },

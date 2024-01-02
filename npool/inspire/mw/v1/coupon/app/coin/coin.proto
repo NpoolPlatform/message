@@ -20,7 +20,6 @@ message CouponCoinReq {
     optional string EntID      = 10;
     optional string AppID      = 20;
     optional string CoinTypeID = 30;
-    optional string CouponID   = 40;
 }
 
 message CouponCoin {
@@ -32,12 +31,6 @@ message CouponCoin {
     string     AppID           = 30;
     // @inject_tag: sql:"coin_type_id"
     string     CoinTypeID      = 40;
-    // @inject_tag: sql:"coupon_id"
-    string     CouponID        = 50;
-    // @inject_tag: sql:"coupon_name"
-    string     CouponName      = 60;
-    // @inject_tag: sql:"coupon_denomination"
-    string     CouponDenomination  = 110;
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
@@ -48,8 +41,6 @@ message Conds {
     optional basetypes.v1.StringVal EntID       = 10;
     optional basetypes.v1.StringVal AppID       = 20;
     optional basetypes.v1.StringVal CoinTypeID  = 40;
-    optional basetypes.v1.StringVal CouponID    = 50;
-    optional basetypes.v1.StringSliceVal CouponIDs   = 60;
 }
 
 message CreateCouponCoinRequest {
