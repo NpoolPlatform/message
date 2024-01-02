@@ -154,13 +154,7 @@
         "AppID": {
           "type": "string"
         },
-        "CouponID": {
-          "type": "string"
-        },
-        "CouponName": {
-          "type": "string"
-        },
-        "CouponDenomination": {
+        "AppName": {
           "type": "string"
         },
         "CoinTypeID": {
@@ -186,9 +180,6 @@
       "type": "object",
       "properties": {
         "AppID": {
-          "type": "string"
-        },
-        "CouponID": {
           "type": "string"
         },
         "CoinTypeID": {
