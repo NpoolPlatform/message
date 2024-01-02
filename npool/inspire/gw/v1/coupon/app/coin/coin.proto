@@ -56,7 +56,7 @@ message GetCouponCoinsResponse {
 }
 
 message CreateCouponCoinRequest {
-    string AppID          = 10;
+    string TargetAppID    = 10;
     string CoinTypeID     = 30;
 }
 

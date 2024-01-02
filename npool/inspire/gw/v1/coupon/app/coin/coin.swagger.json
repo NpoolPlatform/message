@@ -211,7 +211,7 @@
     "v1CreateCouponCoinRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
         "CoinTypeID": {
