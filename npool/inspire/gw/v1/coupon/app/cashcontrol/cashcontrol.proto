@@ -30,7 +30,7 @@ service Gateway {
     }
     rpc GetAppCashControls (GetAppCashControlsRequest) returns (GetAppCashControlsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/appcashcontrols"
+            post: "/v1/get/app/cashcontrols"
             body: "*"
         };
     }

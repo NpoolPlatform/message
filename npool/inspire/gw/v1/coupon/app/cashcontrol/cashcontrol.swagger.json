@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/get/appcashcontrols": {
+    "/v1/get/app/cashcontrols": {
       "post": {
         "operationId": "Gateway_GetAppCashControls",
         "responses": {
