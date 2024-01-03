@@ -21,7 +21,7 @@ message CashControlReq {
     optional string AppID     = 11;
     optional string EntID     = 20;
     optional string CouponID  = 30;
-    optional basetypes.inspire.v1.CashControlType  CashControlType  = 40;
+    optional basetypes.inspire.v1.ControlType  ControlType  = 40;
     optional string Value    = 50;
 }
 
@@ -42,8 +42,8 @@ message CashControl {
     // @inject_tag: sql:"coupon_denomination"
     string     CouponDenomination  = 70;
     // @inject_tag: sql:"control_type"
-    string     CashControlTypeStr  = 80;
-    basetypes.inspire.v1.CashControlType CashControlType  = 90;
+    string     ControlTypeStr  = 80;
+    basetypes.inspire.v1.ControlType ControlType  = 90;
     // @inject_tag: sql:"value"
     string     Value          = 100;
     // @inject_tag: sql:"created_at"
@@ -57,7 +57,7 @@ message Conds {
     optional basetypes.v1.StringVal EntID       = 10;
     optional basetypes.v1.StringVal CouponID    = 20;
     optional basetypes.v1.StringSliceVal CouponIDs   = 30;
-    optional basetypes.v1.Uint32Val CashControlType = 40;
+    optional basetypes.v1.Uint32Val ControlType = 40;
 }
 
 message CreateCashControlRequest {

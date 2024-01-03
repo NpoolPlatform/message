@@ -152,8 +152,8 @@
         "CouponID": {
           "type": "string"
         },
-        "CashControlType": {
-          "$ref": "#/definitions/v1CashControlType"
+        "ControlType": {
+          "$ref": "#/definitions/v1ControlType"
         },
         "Amount": {
           "type": "string"
@@ -284,12 +284,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
         },
-        "CashControlTypeStr": {
+        "ControlTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"control_type\""
         },
-        "CashControlType": {
-          "$ref": "#/definitions/v1CashControlType"
+        "ControlType": {
+          "$ref": "#/definitions/v1ControlType"
         },
         "Value": {
           "type": "string",
@@ -307,16 +307,16 @@
         }
       }
     },
-    "v1CashControlType": {
+    "v1ControlType": {
       "type": "string",
       "enum": [
-        "DefaultCashControlType",
+        "DefaultControlType",
         "KycApproved",
         "CreditsThreshold",
         "OrderThreshold",
         "PaymentAmountThreshold"
       ],
-      "default": "DefaultCashControlType"
+      "default": "DefaultControlType"
     },
     "v1CouponType": {
       "type": "string",

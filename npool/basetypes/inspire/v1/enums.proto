@@ -58,8 +58,8 @@ enum CouponScope {
     Blacklist          = 30;
 }
 
-enum CashControlType {
-    DefaultCashControlType = 0;
+enum ControlType {
+    DefaultControlType = 0;
 
     KycApproved        = 10;
     CreditsThreshold   = 20; // 积分达到一定数量

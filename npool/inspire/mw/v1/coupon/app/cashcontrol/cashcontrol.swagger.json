@@ -79,12 +79,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
         },
-        "CashControlTypeStr": {
+        "ControlTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"control_type\""
         },
-        "CashControlType": {
-          "$ref": "#/definitions/v1CashControlType"
+        "ControlType": {
+          "$ref": "#/definitions/v1ControlType"
         },
         "Value": {
           "type": "string",
@@ -118,24 +118,13 @@
         "CouponID": {
           "type": "string"
         },
-        "CashControlType": {
-          "$ref": "#/definitions/v1CashControlType"
+        "ControlType": {
+          "$ref": "#/definitions/v1ControlType"
         },
         "Value": {
           "type": "string"
         }
       }
-    },
-    "v1CashControlType": {
-      "type": "string",
-      "enum": [
-        "DefaultCashControlType",
-        "KycApproved",
-        "CreditsThreshold",
-        "OrderThreshold",
-        "PaymentAmountThreshold"
-      ],
-      "default": "DefaultCashControlType"
     },
     "v1Conds": {
       "type": "object",
@@ -152,10 +141,21 @@
         "CouponIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
-        "CashControlType": {
+        "ControlType": {
           "$ref": "#/definitions/v1Uint32Val"
         }
       }
+    },
+    "v1ControlType": {
+      "type": "string",
+      "enum": [
+        "DefaultControlType",
+        "KycApproved",
+        "CreditsThreshold",
+        "OrderThreshold",
+        "PaymentAmountThreshold"
+      ],
+      "default": "DefaultControlType"
     },
     "v1CouponType": {
       "type": "string",
