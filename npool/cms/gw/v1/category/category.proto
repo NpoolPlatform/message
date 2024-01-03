@@ -42,21 +42,29 @@ service Gateway {
     }
 }
 
+message Category {
+    uint32 ID                  = 10;
+    string EntID               = 20;
+    string ParentID            = 30;
+    string Name                = 40;
+    string Slug                = 50;
+    repeated Category Children = 60;
+}
+
 message GetCategoriesRequest {
     string AppID = 10;
 }
 
 message GetCategoriesResponse {
-    middleware.category.v1.Category Info = 10;
+    repeated Category Infos = 10;
 }
 
 message CreateCategoryRequest {
     string AppID             = 10;
-    string TargetLangID      = 20;
-    optional string ParentID = 30;
-    string Name              = 40;
-    string Slug              = 50;
-    string Enabled           = 60;
+    optional string ParentID = 20;
+    string Name              = 30;
+    string Slug              = 40;
+    bool   Enabled           = 50;
 }
 
 message CreateCategoryResponse {
@@ -90,6 +98,7 @@ message GetAppCategoriesResponse {
 message DeleteCategoryRequest {
     uint32 ID    = 10;
     string EntID = 20;
+    string AppID = 30;
 }
 
 message DeleteCategoryResponse {

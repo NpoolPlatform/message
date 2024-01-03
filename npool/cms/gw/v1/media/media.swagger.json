@@ -48,9 +48,41 @@
         ]
       }
     },
-    "/v1/get/m/{AppID}/{FileName}": {
+    "/v1/get/medias": {
+      "post": {
+        "operationId": "Gateway_GetMedias",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/cmsgatewaymediav1GetMediasResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/cmsgatewaymediav1GetMediasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/m/{AppID}/{FileName}": {
       "get": {
-        "summary": "URL: https://api.site.top/api/cms/v1/get/m/{AppID}/{FileName}\nFileName: {EntID}{Ext}",
+        "summary": "URL: https://api.site.top/api/cms/v1/m/{AppID}/{FileName}\nFileName: {EntID}{Ext}",
         "operationId": "Gateway_GetMedia",
         "responses": {
           "200": {
@@ -78,38 +110,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/medias": {
-      "post": {
-        "operationId": "Gateway_GetMedias",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetMediasponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/cmsgatewaymediav1GetMediasRequest"
-            }
           }
         ],
         "tags": [
@@ -160,6 +160,9 @@
         },
         "EntID": {
           "type": "string"
+        },
+        "AppID": {
+          "type": "string"
         }
       }
     },
@@ -195,6 +198,22 @@
         }
       }
     },
+    "cmsgatewaymediav1GetMediasResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Media"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -220,22 +239,6 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1GetMediasponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Media"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -290,6 +293,9 @@
           "type": "string"
         },
         "UserID": {
+          "type": "string"
+        },
+        "Name": {
           "type": "string"
         },
         "MediaData": {

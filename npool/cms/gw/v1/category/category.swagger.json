@@ -178,13 +178,38 @@
     }
   },
   "definitions": {
+    "cmsgatewaycategoryv1Category": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "ParentID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Slug": {
+          "type": "string"
+        },
+        "Children": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/cmsgatewaycategoryv1Category"
+          }
+        }
+      }
+    },
     "cmsgatewaycategoryv1CreateCategoryRequest": {
       "type": "object",
       "properties": {
         "AppID": {
-          "type": "string"
-        },
-        "TargetLangID": {
           "type": "string"
         },
         "ParentID": {
@@ -197,7 +222,7 @@
           "type": "string"
         },
         "Enabled": {
-          "type": "string"
+          "type": "boolean"
         }
       }
     },
@@ -205,7 +230,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Category"
+          "$ref": "#/definitions/cmsmiddlewarecategoryv1Category"
         }
       }
     },
@@ -218,6 +243,9 @@
         },
         "EntID": {
           "type": "string"
+        },
+        "AppID": {
+          "type": "string"
         }
       }
     },
@@ -225,7 +253,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Category"
+          "$ref": "#/definitions/cmsmiddlewarecategoryv1Category"
         }
       }
     },
@@ -240,8 +268,12 @@
     "cmsgatewaycategoryv1GetCategoriesResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Category"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/cmsgatewaycategoryv1Category"
+          }
         }
       }
     },
@@ -273,39 +305,11 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Category"
+          "$ref": "#/definitions/cmsmiddlewarecategoryv1Category"
         }
       }
     },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1Category": {
+    "cmsmiddlewarecategoryv1Category": {
       "type": "object",
       "properties": {
         "ID": {
@@ -349,6 +353,34 @@
         }
       }
     },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
     "v1GetAppCategoriesRequest": {
       "type": "object",
       "properties": {
@@ -372,7 +404,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1Category"
+            "$ref": "#/definitions/cmsmiddlewarecategoryv1Category"
           }
         },
         "Total": {

@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetACLsponse"
+              "$ref": "#/definitions/cmsgatewayaclv1GetACLsResponse"
             }
           },
           "default": {
@@ -145,6 +145,9 @@
         },
         "EntID": {
           "type": "string"
+        },
+        "AppID": {
+          "type": "string"
         }
       }
     },
@@ -172,6 +175,22 @@
         "Limit": {
           "type": "integer",
           "format": "int32"
+        }
+      }
+    },
+    "cmsgatewayaclv1GetACLsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ACL"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -236,22 +255,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v1GetACLsponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1ACL"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     }

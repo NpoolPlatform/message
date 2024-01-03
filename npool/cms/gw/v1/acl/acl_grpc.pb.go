@@ -29,7 +29,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateACL(ctx context.Context, in *CreateACLRequest, opts ...grpc.CallOption) (*CreateACLResponse, error)
-	GetACLs(ctx context.Context, in *GetACLsRequest, opts ...grpc.CallOption) (*GetACLsponse, error)
+	GetACLs(ctx context.Context, in *GetACLsRequest, opts ...grpc.CallOption) (*GetACLsResponse, error)
 	DeleteACL(ctx context.Context, in *DeleteACLRequest, opts ...grpc.CallOption) (*DeleteACLResponse, error)
 }
 
@@ -50,8 +50,8 @@ func (c *gatewayClient) CreateACL(ctx context.Context, in *CreateACLRequest, opt
 	return out, nil
 }
 
-func (c *gatewayClient) GetACLs(ctx context.Context, in *GetACLsRequest, opts ...grpc.CallOption) (*GetACLsponse, error) {
-	out := new(GetACLsponse)
+func (c *gatewayClient) GetACLs(ctx context.Context, in *GetACLsRequest, opts ...grpc.CallOption) (*GetACLsResponse, error) {
+	out := new(GetACLsResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetACLs_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -73,7 +73,7 @@ func (c *gatewayClient) DeleteACL(ctx context.Context, in *DeleteACLRequest, opt
 // for forward compatibility
 type GatewayServer interface {
 	CreateACL(context.Context, *CreateACLRequest) (*CreateACLResponse, error)
-	GetACLs(context.Context, *GetACLsRequest) (*GetACLsponse, error)
+	GetACLs(context.Context, *GetACLsRequest) (*GetACLsResponse, error)
 	DeleteACL(context.Context, *DeleteACLRequest) (*DeleteACLResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -85,7 +85,7 @@ type UnimplementedGatewayServer struct {
 func (UnimplementedGatewayServer) CreateACL(context.Context, *CreateACLRequest) (*CreateACLResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateACL not implemented")
 }
-func (UnimplementedGatewayServer) GetACLs(context.Context, *GetACLsRequest) (*GetACLsponse, error) {
+func (UnimplementedGatewayServer) GetACLs(context.Context, *GetACLsRequest) (*GetACLsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetACLs not implemented")
 }
 func (UnimplementedGatewayServer) DeleteACL(context.Context, *DeleteACLRequest) (*DeleteACLResponse, error) {

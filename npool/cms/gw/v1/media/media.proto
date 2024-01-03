@@ -9,11 +9,11 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    // URL: https://api.site.top/api/cms/v1/get/m/{AppID}/{FileName}
+    // URL: https://api.site.top/api/cms/v1/m/{AppID}/{FileName}
     // FileName: {EntID}{Ext}
     rpc GetMedia(GetMediaRequest) returns (GetMediaResponse) {
         option (google.api.http) = {
-            get: "/v1/get/m/{AppID}/{FileName}"
+            get: "/v1/m/{AppID}/{FileName}"
         };
     }
 
@@ -23,7 +23,7 @@ service Gateway {
             body: "*"
         };
     }
-    rpc GetMedias(GetMediasRequest) returns (GetMediasponse) {
+    rpc GetMedias(GetMediasRequest) returns (GetMediasResponse) {
         option (google.api.http) = {
             post: "/v1/get/medias"
             body: "*"
@@ -49,7 +49,8 @@ message GetMediaResponse {
 message UploadMediaRequest {
     string AppID     = 10;
     string UserID    = 20;
-    string MediaData = 30;
+    string Name      = 30;
+    string MediaData = 40;
 }
 
 message UploadMediaResponse {
@@ -62,7 +63,7 @@ message GetMediasRequest {
     int32  Limit   = 30;
 }
 
-message GetMediasponse {
+message GetMediasResponse {
     repeated middleware.media.v1.Media Infos = 10;
     uint32                             Total = 20;
 }
@@ -70,6 +71,7 @@ message GetMediasponse {
 message DeleteMediaRequest {
     uint32 ID    = 10;
     string EntID = 20;
+    string AppID = 30;
 }
 
 message DeleteMediaResponse {

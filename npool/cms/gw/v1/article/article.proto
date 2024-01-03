@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/cms/gw/v1/article";
 
 import "npool/cms/mw/v1/article/article.proto";
 import "google/api/annotations.proto";
+import "npool/basetypes/cms/v1/enums.proto";
 
 // Service Name
 service Gateway {
@@ -54,12 +55,6 @@ service Gateway {
             body: "*"
         };
     }
-    rpc PublishArticle(PublishArticleRequest) returns (PublishArticleResponse) {
-        option (google.api.http) = {
-            post: "/v1/publish/article"
-            body: "*"
-        };
-    }
     rpc DeleteArticle(DeleteArticleRequest) returns (DeleteArticleResponse) {
         option (google.api.http) = {
             post: "/v1/delete/article"
@@ -71,10 +66,13 @@ service Gateway {
 message GetContentsRequest {
     string AppID               = 10;
     optional string CategoryID = 20;
+    int32  Offset              = 30;
+    int32  Limit               = 40;
 }
 
 message GetContentsResponse {
-    middleware.article.v1.Article Info = 10;
+    repeated middleware.article.v1.Article Infos = 10;
+    uint32                                 Total = 20;
 }
 
 message GetContentRequest {
@@ -111,6 +109,7 @@ message UpdateArticleRequest {
     optional string Digest        = 80;
     optional string Content       = 90;
     optional bool   UpdateContent = 100;
+    optional basetypes.cms.v1.ArticleStatus Status = 110;
 }
 
 message UpdateArticleResponse {
@@ -118,8 +117,9 @@ message UpdateArticleResponse {
 }
 
 message GetAppArticlesRequest {
-    int32 Offset  = 10;
-    int32 Limit   = 20;
+    string TargetAppID  = 10;
+    int32  Offset       = 20;
+    int32  Limit        = 30;
 }
 
 message GetAppArticlesResponse {
@@ -137,21 +137,10 @@ message GetAppArticleContentResponse {
     string Info = 10;
 }
 
-message PublishArticleRequest {
-    uint32 ID             = 10;
-    string EntID          = 20;
-    string AppID          = 30;
-    bool   Published      = 40;
-    repeated string Roles = 50;
-}
-
-message PublishArticleResponse {
-    middleware.article.v1.Article Info = 10;
-}
-
 message DeleteArticleRequest {
     uint32 ID    = 10;
     string EntID = 20;
+    string AppID = 30;
 }
 
 message DeleteArticleResponse {

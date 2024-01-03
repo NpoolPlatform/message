@@ -29,11 +29,11 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	// URL: https://api.site.top/api/cms/v1/get/m/{AppID}/{FileName}
+	// URL: https://api.site.top/api/cms/v1/m/{AppID}/{FileName}
 	// FileName: {EntID}{Ext}
 	GetMedia(ctx context.Context, in *GetMediaRequest, opts ...grpc.CallOption) (*GetMediaResponse, error)
 	UploadMedia(ctx context.Context, in *UploadMediaRequest, opts ...grpc.CallOption) (*UploadMediaResponse, error)
-	GetMedias(ctx context.Context, in *GetMediasRequest, opts ...grpc.CallOption) (*GetMediasponse, error)
+	GetMedias(ctx context.Context, in *GetMediasRequest, opts ...grpc.CallOption) (*GetMediasResponse, error)
 	DeleteMedia(ctx context.Context, in *DeleteMediaRequest, opts ...grpc.CallOption) (*DeleteMediaResponse, error)
 }
 
@@ -63,8 +63,8 @@ func (c *gatewayClient) UploadMedia(ctx context.Context, in *UploadMediaRequest,
 	return out, nil
 }
 
-func (c *gatewayClient) GetMedias(ctx context.Context, in *GetMediasRequest, opts ...grpc.CallOption) (*GetMediasponse, error) {
-	out := new(GetMediasponse)
+func (c *gatewayClient) GetMedias(ctx context.Context, in *GetMediasRequest, opts ...grpc.CallOption) (*GetMediasResponse, error) {
+	out := new(GetMediasResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetMedias_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -85,11 +85,11 @@ func (c *gatewayClient) DeleteMedia(ctx context.Context, in *DeleteMediaRequest,
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	// URL: https://api.site.top/api/cms/v1/get/m/{AppID}/{FileName}
+	// URL: https://api.site.top/api/cms/v1/m/{AppID}/{FileName}
 	// FileName: {EntID}{Ext}
 	GetMedia(context.Context, *GetMediaRequest) (*GetMediaResponse, error)
 	UploadMedia(context.Context, *UploadMediaRequest) (*UploadMediaResponse, error)
-	GetMedias(context.Context, *GetMediasRequest) (*GetMediasponse, error)
+	GetMedias(context.Context, *GetMediasRequest) (*GetMediasResponse, error)
 	DeleteMedia(context.Context, *DeleteMediaRequest) (*DeleteMediaResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -104,7 +104,7 @@ func (UnimplementedGatewayServer) GetMedia(context.Context, *GetMediaRequest) (*
 func (UnimplementedGatewayServer) UploadMedia(context.Context, *UploadMediaRequest) (*UploadMediaResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadMedia not implemented")
 }
-func (UnimplementedGatewayServer) GetMedias(context.Context, *GetMediasRequest) (*GetMediasponse, error) {
+func (UnimplementedGatewayServer) GetMedias(context.Context, *GetMediasRequest) (*GetMediasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMedias not implemented")
 }
 func (UnimplementedGatewayServer) DeleteMedia(context.Context, *DeleteMediaRequest) (*DeleteMediaResponse, error) {
