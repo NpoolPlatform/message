@@ -27,6 +27,12 @@ service Gateway {
             body: "*"
         };
     }
+    rpc GetAppControls (GetControlsRequest) returns (GetControlsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/appcontrols"
+            body: "*"
+        };
+    }
 }
 
 message GetControlsRequest {

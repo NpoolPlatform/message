@@ -80,6 +80,38 @@
         ]
       }
     },
+    "/v1/get/appcontrols": {
+      "post": {
+        "operationId": "Gateway_GetAppControls",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/couponappcontrolv1GetControlsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/couponappcontrolv1GetControlsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/controls": {
       "post": {
         "operationId": "Gateway_GetControls",

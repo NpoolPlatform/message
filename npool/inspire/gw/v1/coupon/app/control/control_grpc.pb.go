@@ -19,9 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetControls_FullMethodName   = "/inspire.gateway.coupon.app.control.v1.Gateway/GetControls"
-	Gateway_CreateControl_FullMethodName = "/inspire.gateway.coupon.app.control.v1.Gateway/CreateControl"
-	Gateway_DeleteControl_FullMethodName = "/inspire.gateway.coupon.app.control.v1.Gateway/DeleteControl"
+	Gateway_GetControls_FullMethodName    = "/inspire.gateway.coupon.app.control.v1.Gateway/GetControls"
+	Gateway_CreateControl_FullMethodName  = "/inspire.gateway.coupon.app.control.v1.Gateway/CreateControl"
+	Gateway_DeleteControl_FullMethodName  = "/inspire.gateway.coupon.app.control.v1.Gateway/DeleteControl"
+	Gateway_GetAppControls_FullMethodName = "/inspire.gateway.coupon.app.control.v1.Gateway/GetAppControls"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -31,6 +32,7 @@ type GatewayClient interface {
 	GetControls(ctx context.Context, in *GetControlsRequest, opts ...grpc.CallOption) (*GetControlsResponse, error)
 	CreateControl(ctx context.Context, in *CreateControlRequest, opts ...grpc.CallOption) (*CreateControlResponse, error)
 	DeleteControl(ctx context.Context, in *DeleteControlRequest, opts ...grpc.CallOption) (*DeleteControlResponse, error)
+	GetAppControls(ctx context.Context, in *GetControlsRequest, opts ...grpc.CallOption) (*GetControlsResponse, error)
 }
 
 type gatewayClient struct {
@@ -68,6 +70,15 @@ func (c *gatewayClient) DeleteControl(ctx context.Context, in *DeleteControlRequ
 	return out, nil
 }
 
+func (c *gatewayClient) GetAppControls(ctx context.Context, in *GetControlsRequest, opts ...grpc.CallOption) (*GetControlsResponse, error) {
+	out := new(GetControlsResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetAppControls_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -75,6 +86,7 @@ type GatewayServer interface {
 	GetControls(context.Context, *GetControlsRequest) (*GetControlsResponse, error)
 	CreateControl(context.Context, *CreateControlRequest) (*CreateControlResponse, error)
 	DeleteControl(context.Context, *DeleteControlRequest) (*DeleteControlResponse, error)
+	GetAppControls(context.Context, *GetControlsRequest) (*GetControlsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -90,6 +102,9 @@ func (UnimplementedGatewayServer) CreateControl(context.Context, *CreateControlR
 }
 func (UnimplementedGatewayServer) DeleteControl(context.Context, *DeleteControlRequest) (*DeleteControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteControl not implemented")
+}
+func (UnimplementedGatewayServer) GetAppControls(context.Context, *GetControlsRequest) (*GetControlsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppControls not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -158,6 +173,24 @@ func _Gateway_DeleteControl_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetAppControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetControlsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetAppControls(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_GetAppControls_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetAppControls(ctx, req.(*GetControlsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -176,6 +209,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteControl",
 			Handler:    _Gateway_DeleteControl_Handler,
+		},
+		{
+			MethodName: "GetAppControls",
+			Handler:    _Gateway_GetAppControls_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
