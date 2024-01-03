@@ -232,3 +232,11 @@ enum OrderLockType {
     LockStock      = 20;
     LockCommission = 30;
 }
+
+enum OrderRenewState {
+    DefaultOrderRenewState = 0;
+
+    OrderRenewIdle    = 10;
+    OrderRenewCheck   = 20;
+    OrderRenewExecute = 30;
+}
