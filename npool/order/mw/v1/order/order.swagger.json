@@ -579,6 +579,7 @@
           "title": "@inject_tag: sql:\"ledger_lock_id\""
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "RenewStateStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"renew_state\""
@@ -588,8 +589,15 @@
 =======
         "RenewState": {
           "$ref": "#/definitions/v1OrderRenewState",
+=======
+        "RenewStateStr": {
+          "type": "string",
+>>>>>>> Add renew state
           "title": "@inject_tag: sql:\"renew_state\""
 >>>>>>> Add order renew state
+        },
+        "RenewState": {
+          "$ref": "#/definitions/v1OrderRenewState"
         },
         "CreatedAt": {
           "type": "integer",
