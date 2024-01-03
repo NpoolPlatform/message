@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package inspire.middleware.coupon.cashcontrol.v1;
+package inspire.middleware.coupon.app.cashcontrol.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/coupon/cashcontrol";
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/coupon/app/cashcontrol";
 
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/inspire/v1/enums.proto";

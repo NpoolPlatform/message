@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/couponappcashcontrolv1CreateCashControlResponse"
+              "$ref": "#/definitions/inspiregatewaycouponappcashcontrolv1CreateCashControlResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/couponappcashcontrolv1CreateCashControlRequest"
+              "$ref": "#/definitions/inspiregatewaycouponappcashcontrolv1CreateCashControlRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/couponappcashcontrolv1DeleteCashControlResponse"
+              "$ref": "#/definitions/inspiregatewaycouponappcashcontrolv1DeleteCashControlResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/couponappcashcontrolv1DeleteCashControlRequest"
+              "$ref": "#/definitions/inspiregatewaycouponappcashcontrolv1DeleteCashControlRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/couponappcashcontrolv1GetCashControlsResponse"
+              "$ref": "#/definitions/inspiregatewaycouponappcashcontrolv1GetCashControlsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/couponappcashcontrolv1GetCashControlsRequest"
+              "$ref": "#/definitions/inspiregatewaycouponappcashcontrolv1GetCashControlsRequest"
             }
           }
         ],
@@ -146,7 +146,7 @@
     }
   },
   "definitions": {
-    "couponappcashcontrolv1CreateCashControlRequest": {
+    "inspiregatewaycouponappcashcontrolv1CreateCashControlRequest": {
       "type": "object",
       "properties": {
         "CouponID": {
@@ -160,7 +160,7 @@
         }
       }
     },
-    "couponappcashcontrolv1CreateCashControlResponse": {
+    "inspiregatewaycouponappcashcontrolv1CreateCashControlResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -168,7 +168,7 @@
         }
       }
     },
-    "couponappcashcontrolv1DeleteCashControlRequest": {
+    "inspiregatewaycouponappcashcontrolv1DeleteCashControlRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -183,7 +183,7 @@
         }
       }
     },
-    "couponappcashcontrolv1DeleteCashControlResponse": {
+    "inspiregatewaycouponappcashcontrolv1DeleteCashControlResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -191,7 +191,7 @@
         }
       }
     },
-    "couponappcashcontrolv1GetCashControlsRequest": {
+    "inspiregatewaycouponappcashcontrolv1GetCashControlsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -207,7 +207,7 @@
         }
       }
     },
-    "couponappcashcontrolv1GetCashControlsResponse": {
+    "inspiregatewaycouponappcashcontrolv1GetCashControlsResponse": {
       "type": "object",
       "properties": {
         "Infos": {

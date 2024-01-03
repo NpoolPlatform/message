@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateCashControl_FullMethodName     = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/CreateCashControl"
-	Middleware_ExistCashControlConds_FullMethodName = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/ExistCashControlConds"
-	Middleware_GetCashControl_FullMethodName        = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/GetCashControl"
-	Middleware_GetCashControls_FullMethodName       = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/GetCashControls"
-	Middleware_DeleteCashControl_FullMethodName     = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/DeleteCashControl"
+	Middleware_CreateCashControl_FullMethodName     = "/inspire.middleware.coupon.app.cashcontrol.v1.Middleware/CreateCashControl"
+	Middleware_ExistCashControlConds_FullMethodName = "/inspire.middleware.coupon.app.cashcontrol.v1.Middleware/ExistCashControlConds"
+	Middleware_GetCashControl_FullMethodName        = "/inspire.middleware.coupon.app.cashcontrol.v1.Middleware/GetCashControl"
+	Middleware_GetCashControls_FullMethodName       = "/inspire.middleware.coupon.app.cashcontrol.v1.Middleware/GetCashControls"
+	Middleware_DeleteCashControl_FullMethodName     = "/inspire.middleware.coupon.app.cashcontrol.v1.Middleware/DeleteCashControl"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -228,7 +228,7 @@ func _Middleware_DeleteCashControl_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.middleware.coupon.cashcontrol.v1.Middleware",
+	ServiceName: "inspire.middleware.coupon.app.cashcontrol.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

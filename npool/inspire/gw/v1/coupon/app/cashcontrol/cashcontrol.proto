@@ -43,7 +43,7 @@ message GetCashControlsRequest {
 }
 
 message GetCashControlsResponse {
-    repeated inspire.middleware.coupon.cashcontrol.v1.CashControl  Infos = 10;
+    repeated inspire.middleware.coupon.app.cashcontrol.v1.CashControl  Infos = 10;
     uint32 Total     = 20;
 }
 
@@ -54,7 +54,7 @@ message CreateCashControlRequest {
 }
 
 message CreateCashControlResponse {
-    inspire.middleware.coupon.cashcontrol.v1.CashControl Info   = 10;
+    inspire.middleware.coupon.app.cashcontrol.v1.CashControl Info   = 10;
 }
 
 message DeleteCashControlRequest {
@@ -64,7 +64,7 @@ message DeleteCashControlRequest {
 }
 
 message DeleteCashControlResponse {
-    inspire.middleware.coupon.cashcontrol.v1.CashControl Info       = 10;
+    inspire.middleware.coupon.app.cashcontrol.v1.CashControl Info       = 10;
 }
 
 message GetAppCashControlsRequest {
@@ -74,6 +74,6 @@ message GetAppCashControlsRequest {
 }
 
 message GetAppCashControlsResponse {
-    repeated inspire.middleware.coupon.cashcontrol.v1.CashControl  Infos = 10;
+    repeated inspire.middleware.coupon.app.cashcontrol.v1.CashControl  Infos = 10;
     uint32 Total     = 20;
 }
