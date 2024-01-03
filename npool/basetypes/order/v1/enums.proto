@@ -236,7 +236,8 @@ enum OrderLockType {
 enum OrderRenewState {
     DefaultOrderRenewState = 0;
 
-    OrderRenewIdle    = 10;
+    OrderRenewWait    = 10;
     OrderRenewCheck   = 20;
     OrderRenewExecute = 30;
+    OrderRenewFail    = 40;
 }
