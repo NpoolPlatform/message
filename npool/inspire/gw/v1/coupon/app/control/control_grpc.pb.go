@@ -32,7 +32,7 @@ type GatewayClient interface {
 	GetControls(ctx context.Context, in *GetControlsRequest, opts ...grpc.CallOption) (*GetControlsResponse, error)
 	CreateControl(ctx context.Context, in *CreateControlRequest, opts ...grpc.CallOption) (*CreateControlResponse, error)
 	DeleteControl(ctx context.Context, in *DeleteControlRequest, opts ...grpc.CallOption) (*DeleteControlResponse, error)
-	GetAppControls(ctx context.Context, in *GetControlsRequest, opts ...grpc.CallOption) (*GetControlsResponse, error)
+	GetAppControls(ctx context.Context, in *GetAppControlsRequest, opts ...grpc.CallOption) (*GetAppControlsResponse, error)
 }
 
 type gatewayClient struct {
@@ -70,8 +70,8 @@ func (c *gatewayClient) DeleteControl(ctx context.Context, in *DeleteControlRequ
 	return out, nil
 }
 
-func (c *gatewayClient) GetAppControls(ctx context.Context, in *GetControlsRequest, opts ...grpc.CallOption) (*GetControlsResponse, error) {
-	out := new(GetControlsResponse)
+func (c *gatewayClient) GetAppControls(ctx context.Context, in *GetAppControlsRequest, opts ...grpc.CallOption) (*GetAppControlsResponse, error) {
+	out := new(GetAppControlsResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetAppControls_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -86,7 +86,7 @@ type GatewayServer interface {
 	GetControls(context.Context, *GetControlsRequest) (*GetControlsResponse, error)
 	CreateControl(context.Context, *CreateControlRequest) (*CreateControlResponse, error)
 	DeleteControl(context.Context, *DeleteControlRequest) (*DeleteControlResponse, error)
-	GetAppControls(context.Context, *GetControlsRequest) (*GetControlsResponse, error)
+	GetAppControls(context.Context, *GetAppControlsRequest) (*GetAppControlsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -103,7 +103,7 @@ func (UnimplementedGatewayServer) CreateControl(context.Context, *CreateControlR
 func (UnimplementedGatewayServer) DeleteControl(context.Context, *DeleteControlRequest) (*DeleteControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteControl not implemented")
 }
-func (UnimplementedGatewayServer) GetAppControls(context.Context, *GetControlsRequest) (*GetControlsResponse, error) {
+func (UnimplementedGatewayServer) GetAppControls(context.Context, *GetAppControlsRequest) (*GetAppControlsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppControls not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
@@ -174,7 +174,7 @@ func _Gateway_DeleteControl_Handler(srv interface{}, ctx context.Context, dec fu
 }
 
 func _Gateway_GetAppControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetControlsRequest)
+	in := new(GetAppControlsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -186,7 +186,7 @@ func _Gateway_GetAppControls_Handler(srv interface{}, ctx context.Context, dec f
 		FullMethod: Gateway_GetAppControls_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppControls(ctx, req.(*GetControlsRequest))
+		return srv.(GatewayServer).GetAppControls(ctx, req.(*GetAppControlsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

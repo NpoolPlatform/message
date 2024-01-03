@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/couponappcontrolv1GetControlsResponse"
+              "$ref": "#/definitions/v1GetAppControlsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/couponappcontrolv1GetControlsRequest"
+              "$ref": "#/definitions/v1GetAppControlsRequest"
             }
           }
         ],
@@ -149,13 +149,13 @@
     "couponappcontrolv1CreateControlRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string"
-        },
         "CouponID": {
           "type": "string"
         },
-        "AppGoodID": {
+        "ControlType": {
+          "$ref": "#/definitions/v1ControlType"
+        },
+        "Amount": {
           "type": "string"
         }
       }
@@ -178,7 +178,7 @@
         "EntID": {
           "type": "string"
         },
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         }
       }
@@ -194,7 +194,7 @@
     "couponappcontrolv1GetControlsRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
         "Offset": {
@@ -325,6 +325,37 @@
         "Discount"
       ],
       "default": "DefaultCouponType"
+    },
+    "v1GetAppControlsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppControlsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Control"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     }
   }
 }
