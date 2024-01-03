@@ -228,12 +228,15 @@
         },
         "RenewState": {
           "$ref": "#/definitions/v1Uint32Val"
+<<<<<<< HEAD
         },
         "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
         "AppGoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+=======
+>>>>>>> Add order renew state
         }
       }
     },
@@ -569,12 +572,18 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ledger_lock_id\""
         },
+<<<<<<< HEAD
         "RenewStateStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"renew_state\""
         },
         "RenewState": {
           "$ref": "#/definitions/v1OrderRenewState"
+=======
+        "RenewState": {
+          "$ref": "#/definitions/v1OrderRenewState",
+          "title": "@inject_tag: sql:\"renew_state\""
+>>>>>>> Add order renew state
         },
         "CreatedAt": {
           "type": "integer",
@@ -592,10 +601,16 @@
       "type": "string",
       "enum": [
         "DefaultOrderRenewState",
+<<<<<<< HEAD
         "OrderRenewWait",
         "OrderRenewCheck",
         "OrderRenewExecute",
         "OrderRenewFail"
+=======
+        "OrderRenewIdle",
+        "OrderRenewCheck",
+        "OrderRenewExecute"
+>>>>>>> Add order renew state
       ],
       "default": "DefaultOrderRenewState"
     },
