@@ -87,6 +87,7 @@ message OrderReq {
     optional bool   Rollback                              = 380;
     optional string AppGoodStockLockID                    = 400;
     optional string LedgerLockID                          = 410;
+    optional basetypes.order.v1.OrderRenewState RenewState = 420;
 }
 
 message Order {
@@ -199,6 +200,9 @@ message Order {
     // @inject_tag: sql:"ledger_lock_id"
     string LedgerLockID                          = 520;
 
+    // @inject_tag: sql:"renew_state"
+    basetypes.order.v1.OrderRenewState RenewState = 530;
+
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt                             = 1000;
     // @inject_tag: sql:"updated_at"
@@ -241,6 +245,7 @@ message Conds {
     optional basetypes.v1.BoolVal        AdminSetCanceled      = 260;
     optional basetypes.v1.BoolVal        UserSetCanceled       = 270;
     optional basetypes.v1.StringSliceVal ParentOrderIDs        = 280;
+    optional basetypes.v1.Uint32Val      RenewState            = 290;
 }
 
 message CreateOrderRequest {
