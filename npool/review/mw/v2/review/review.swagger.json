@@ -243,7 +243,7 @@
         "DefaultObjectType",
         "ObjectKyc",
         "ObjectWithdrawal",
-        "ObjectCouponRandomCash"
+        "ObjectRandomCouponCash"
       ],
       "default": "DefaultObjectType"
     },

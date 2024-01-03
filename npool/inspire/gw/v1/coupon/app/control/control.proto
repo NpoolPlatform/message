@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package inspire.gateway.coupon.app.control.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/coupon/app/control";
+
+import "google/api/annotations.proto";
+import "npool/inspire/mw/v1/coupon/app/control/control.proto";
+
+// Service Name
+service Gateway {
+    rpc GetControls (GetControlsRequest) returns (GetControlsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/controls"
+            body: "*"
+        };
+    }
+    rpc CreateControl (CreateControlRequest) returns (CreateControlResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/control"
+            body: "*"
+        };
+    }
+    rpc DeleteControl (DeleteControlRequest) returns (DeleteControlResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/control"
+            body: "*"
+        };
+    }
+}
+
+message GetControlsRequest {
+    string AppID     = 10;
+    int32  Offset    = 20;
+    int32  Limit     = 30;
+}
+
+message GetControlsResponse {
+    repeated inspire.middleware.coupon.control.v1.Control  Infos = 10;
+    uint32 Total     = 20;
+}
+
+message CreateControlRequest {
+    string AppID     = 10;
+    string CouponID  = 20;
+    string AppGoodID = 30;
+}
+
+message CreateControlResponse {
+    inspire.middleware.coupon.control.v1.Control Info       = 10;
+}
+
+message DeleteControlRequest {
+    uint32 ID        = 10;
+    string EntID     = 20;
+    string AppID     = 30;
+}
+
+message DeleteControlResponse {
+    inspire.middleware.coupon.control.v1.Control Info       = 10;
+}

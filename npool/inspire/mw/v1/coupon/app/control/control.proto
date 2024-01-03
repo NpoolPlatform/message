@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+package inspire.middleware.coupon.control.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/coupon/control";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateControl     (CreateControlRequest)    returns (CreateControlResponse)   {}
+    rpc ExistControlConds (ExistControlCondsRequest)returns (ExistControlCondsResponse)    {}
+    rpc GetControl        (GetControlRequest)       returns (GetControlResponse)      {}
+    rpc GetControls       (GetControlsRequest)      returns (GetControlsResponse)     {}
+    rpc DeleteControl     (DeleteControlRequest)    returns (DeleteControlResponse)   {}
+}
+
+message ControlReq {
+    optional uint32 ID        = 10;
+    optional string AppID     = 11;
+    optional string EntID     = 20;
+    optional string CouponID  = 30;
+    optional basetypes.inspire.v1.ControlType  ControlType  = 40;
+    optional string Amount    = 50;
+}
+
+message Control {
+    // @inject_tag: sql:"id"
+    uint32     ID              = 10;
+    // @inject_tag: sql:"ent_id"
+    string     EntID           = 20;
+    // @inject_tag: sql:"app_id"
+    string     AppID           = 21;
+    // @inject_tag: sql:"coupon_id"
+    string     CouponID        = 30;
+    // @inject_tag: sql:"coupon_name"
+    string     CouponName      = 40;
+    // @inject_tag: sql:"coupon_type"
+    string     CouponTypeStr   = 50;
+    basetypes.inspire.v1.CouponType CouponType    = 60;
+    // @inject_tag: sql:"coupon_denomination"
+    string     CouponDenomination  = 70;
+    // @inject_tag: sql:"control_type"
+    string     ControlTypeStr  = 80;
+    basetypes.inspire.v1.ControlType ControlType  = 90;
+    // @inject_tag: sql:"amount"
+    string     Amount          = 100;
+    // @inject_tag: sql:"created_at"
+    uint32     CreatedAt       = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32     UpdatedAt       = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal EntID       = 10;
+    optional basetypes.v1.StringVal CouponID    = 20;
+    optional basetypes.v1.StringSliceVal CouponIDs   = 30;
+    optional basetypes.v1.Uint32Val ControlType = 40;
+}
+
+message CreateControlRequest {
+    ControlReq Info = 10;
+}
+
+message CreateControlResponse {
+    Control Info = 10;
+}
+
+message GetControlRequest {
+    string EntID = 10;
+}
+
+message GetControlResponse {
+    Control Info = 10;
+}
+
+message GetControlsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetControlsResponse {
+    repeated Control Infos = 10;
+    uint32           Total = 20;
+}
+
+message ExistControlCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistControlCondsResponse {
+    bool Info   = 10;
+}
+
+message DeleteControlRequest {
+    ControlReq Info = 10;
+}
+
+message DeleteControlResponse {
+    Control    Info = 10;
+}
+

@@ -57,3 +57,11 @@ enum CouponScope {
     Whitelist          = 20;
     Blacklist          = 30;
 }
+
+enum ControlType {
+    DefaultControlType = 0;
+
+    KycApproved        = 10;
+    PointReached       = 20; // 积分达到一定数量
+    OrderReached       = 30; // 成单数达到一定数量
+}
