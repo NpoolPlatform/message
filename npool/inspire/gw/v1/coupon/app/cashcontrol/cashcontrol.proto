@@ -50,7 +50,7 @@ message GetCashControlsResponse {
 message CreateCashControlRequest {
     string   CouponID    = 10;
     basetypes.inspire.v1.ControlType  ControlType = 20;
-    optional string  Amount  = 30;
+    optional string  Value  = 30;
 }
 
 message CreateCashControlResponse {

@@ -155,7 +155,7 @@
         "ControlType": {
           "$ref": "#/definitions/v1ControlType"
         },
-        "Amount": {
+        "Value": {
           "type": "string"
         }
       }
