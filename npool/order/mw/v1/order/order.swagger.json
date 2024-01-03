@@ -569,9 +569,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ledger_lock_id\""
         },
-        "RenewState": {
-          "$ref": "#/definitions/v1OrderRenewState",
+        "RenewStateStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"renew_state\""
+        },
+        "RenewState": {
+          "$ref": "#/definitions/v1OrderRenewState"
         },
         "CreatedAt": {
           "type": "integer",
