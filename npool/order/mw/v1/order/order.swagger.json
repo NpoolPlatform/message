@@ -225,6 +225,9 @@
         },
         "ParentOrderIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "RenewState": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -560,6 +563,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ledger_lock_id\""
         },
+        "RenewState": {
+          "$ref": "#/definitions/v1OrderRenewState",
+          "title": "@inject_tag: sql:\"renew_state\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -571,6 +578,16 @@
           "title": "@inject_tag: sql:\"updated_at\""
         }
       }
+    },
+    "v1OrderRenewState": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderRenewState",
+        "OrderRenewIdle",
+        "OrderRenewCheck",
+        "OrderRenewExecute"
+      ],
+      "default": "DefaultOrderRenewState"
     },
     "v1OrderReq": {
       "type": "object",
@@ -719,6 +736,9 @@
         },
         "LedgerLockID": {
           "type": "string"
+        },
+        "RenewState": {
+          "$ref": "#/definitions/v1OrderRenewState"
         }
       }
     },
