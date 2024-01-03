@@ -27,7 +27,7 @@ service Gateway {
     // ex: test-page.html
     rpc GetContent(GetContentRequest) returns (GetContentResponse) {
         option (google.api.http) = {
-            get: "/v1/c/{ContentURL}"
+            get: "/v1/c/{ContentURL=**}"
         };
     }
 

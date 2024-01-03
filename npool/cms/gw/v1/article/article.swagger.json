@@ -39,7 +39,8 @@
             "name": "ContentURL",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "pattern": ".+"
           }
         ],
         "tags": [

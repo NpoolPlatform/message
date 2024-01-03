@@ -326,7 +326,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cms.gateway.article.v1.Gateway/GetContent", runtime.WithHTTPPathPattern("/v1/c/{ContentURL}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cms.gateway.article.v1.Gateway/GetContent", runtime.WithHTTPPathPattern("/v1/c/{ContentURL=**}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -537,7 +537,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/cms.gateway.article.v1.Gateway/GetContent", runtime.WithHTTPPathPattern("/v1/c/{ContentURL}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/cms.gateway.article.v1.Gateway/GetContent", runtime.WithHTTPPathPattern("/v1/c/{ContentURL=**}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -669,7 +669,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 var (
 	pattern_Gateway_GetContents_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "contents"}, ""))
 
-	pattern_Gateway_GetContent_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "c", "ContentURL"}, ""))
+	pattern_Gateway_GetContent_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 3, 0, 4, 1, 5, 2}, []string{"v1", "c", "ContentURL"}, ""))
 
 	pattern_Gateway_CreateArticle_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "article"}, ""))
 
