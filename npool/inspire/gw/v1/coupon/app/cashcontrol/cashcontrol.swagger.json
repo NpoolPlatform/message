@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/gw/v1/coupon/app/control/control.proto",
+    "title": "npool/inspire/gw/v1/coupon/app/cashcontrol/cashcontrol.proto",
     "version": "version not set"
   },
   "tags": [
@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/couponappcontrolv1CreateControlResponse"
+              "$ref": "#/definitions/couponappcashcontrolv1CreateControlResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/couponappcontrolv1CreateControlRequest"
+              "$ref": "#/definitions/couponappcashcontrolv1CreateControlRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/couponappcontrolv1DeleteControlResponse"
+              "$ref": "#/definitions/couponappcashcontrolv1DeleteControlResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/couponappcontrolv1DeleteControlRequest"
+              "$ref": "#/definitions/couponappcashcontrolv1DeleteControlRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/couponappcontrolv1GetControlsResponse"
+              "$ref": "#/definitions/couponappcashcontrolv1GetControlsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/couponappcontrolv1GetControlsRequest"
+              "$ref": "#/definitions/couponappcashcontrolv1GetControlsRequest"
             }
           }
         ],
@@ -146,7 +146,7 @@
     }
   },
   "definitions": {
-    "couponappcontrolv1CreateControlRequest": {
+    "couponappcashcontrolv1CreateControlRequest": {
       "type": "object",
       "properties": {
         "CouponID": {
@@ -160,7 +160,7 @@
         }
       }
     },
-    "couponappcontrolv1CreateControlResponse": {
+    "couponappcashcontrolv1CreateControlResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -168,7 +168,7 @@
         }
       }
     },
-    "couponappcontrolv1DeleteControlRequest": {
+    "couponappcashcontrolv1DeleteControlRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -183,7 +183,7 @@
         }
       }
     },
-    "couponappcontrolv1DeleteControlResponse": {
+    "couponappcashcontrolv1DeleteControlResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -191,7 +191,7 @@
         }
       }
     },
-    "couponappcontrolv1GetControlsRequest": {
+    "couponappcashcontrolv1GetControlsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -207,7 +207,7 @@
         }
       }
     },
-    "couponappcontrolv1GetControlsResponse": {
+    "couponappcashcontrolv1GetControlsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -291,9 +291,9 @@
         "ControlType": {
           "$ref": "#/definitions/v1ControlType"
         },
-        "Amount": {
+        "Value": {
           "type": "string",
-          "title": "@inject_tag: sql:\"amount\""
+          "title": "@inject_tag: sql:\"value\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -312,8 +312,9 @@
       "enum": [
         "DefaultControlType",
         "KycApproved",
-        "PointReached",
-        "OrderReached"
+        "CreditsThreshold",
+        "OrderThreshold",
+        "PaymentAmountThreshold"
       ],
       "default": "DefaultControlType"
     },

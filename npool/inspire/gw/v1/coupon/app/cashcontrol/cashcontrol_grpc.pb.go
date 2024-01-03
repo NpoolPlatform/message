@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/inspire/gw/v1/coupon/app/control/control.proto
+// source: npool/inspire/gw/v1/coupon/app/cashcontrol/cashcontrol.proto
 
-package control
+package cashcontrol
 
 import (
 	context "context"
@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetControls_FullMethodName    = "/inspire.gateway.coupon.app.control.v1.Gateway/GetControls"
-	Gateway_CreateControl_FullMethodName  = "/inspire.gateway.coupon.app.control.v1.Gateway/CreateControl"
-	Gateway_DeleteControl_FullMethodName  = "/inspire.gateway.coupon.app.control.v1.Gateway/DeleteControl"
-	Gateway_GetAppControls_FullMethodName = "/inspire.gateway.coupon.app.control.v1.Gateway/GetAppControls"
+	Gateway_GetControls_FullMethodName    = "/inspire.gateway.coupon.app.cashcontrol.v1.Gateway/GetControls"
+	Gateway_CreateControl_FullMethodName  = "/inspire.gateway.coupon.app.cashcontrol.v1.Gateway/CreateControl"
+	Gateway_DeleteControl_FullMethodName  = "/inspire.gateway.coupon.app.cashcontrol.v1.Gateway/DeleteControl"
+	Gateway_GetAppControls_FullMethodName = "/inspire.gateway.coupon.app.cashcontrol.v1.Gateway/GetAppControls"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -195,7 +195,7 @@ func _Gateway_GetAppControls_Handler(srv interface{}, ctx context.Context, dec f
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.gateway.coupon.app.control.v1.Gateway",
+	ServiceName: "inspire.gateway.coupon.app.cashcontrol.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -216,5 +216,5 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/inspire/gw/v1/coupon/app/control/control.proto",
+	Metadata: "npool/inspire/gw/v1/coupon/app/cashcontrol/cashcontrol.proto",
 }

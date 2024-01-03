@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package inspire.middleware.coupon.control.v1;
+package inspire.middleware.coupon.cashcontrol.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/coupon/control";
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/coupon/cashcontrol";
 
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/inspire/v1/enums.proto";
@@ -22,7 +22,7 @@ message ControlReq {
     optional string EntID     = 20;
     optional string CouponID  = 30;
     optional basetypes.inspire.v1.ControlType  ControlType  = 40;
-    optional string Amount    = 50;
+    optional string Value    = 50;
 }
 
 message Control {
@@ -44,8 +44,8 @@ message Control {
     // @inject_tag: sql:"control_type"
     string     ControlTypeStr  = 80;
     basetypes.inspire.v1.ControlType ControlType  = 90;
-    // @inject_tag: sql:"amount"
-    string     Amount          = 100;
+    // @inject_tag: sql:"value"
+    string     Value          = 100;
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"

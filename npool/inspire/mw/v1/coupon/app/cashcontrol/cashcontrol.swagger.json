@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mw/v1/coupon/app/control/control.proto",
+    "title": "npool/inspire/mw/v1/coupon/app/cashcontrol/cashcontrol.proto",
     "version": "version not set"
   },
   "tags": [
@@ -103,9 +103,9 @@
         "ControlType": {
           "$ref": "#/definitions/v1ControlType"
         },
-        "Amount": {
+        "Value": {
           "type": "string",
-          "title": "@inject_tag: sql:\"amount\""
+          "title": "@inject_tag: sql:\"value\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -138,7 +138,7 @@
         "ControlType": {
           "$ref": "#/definitions/v1ControlType"
         },
-        "Amount": {
+        "Value": {
           "type": "string"
         }
       }
@@ -148,8 +148,9 @@
       "enum": [
         "DefaultControlType",
         "KycApproved",
-        "PointReached",
-        "OrderReached"
+        "CreditsThreshold",
+        "OrderThreshold",
+        "PaymentAmountThreshold"
       ],
       "default": "DefaultControlType"
     },

@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/inspire/mw/v1/coupon/control/control.proto
+// source: npool/inspire/mw/v1/coupon/app/cashcontrol/cashcontrol.proto
 
-package control
+package cashcontrol
 
 import (
 	context "context"
@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateControl_FullMethodName     = "/inspire.middleware.coupon.control.v1.Middleware/CreateControl"
-	Middleware_ExistControlConds_FullMethodName = "/inspire.middleware.coupon.control.v1.Middleware/ExistControlConds"
-	Middleware_GetControl_FullMethodName        = "/inspire.middleware.coupon.control.v1.Middleware/GetControl"
-	Middleware_GetControls_FullMethodName       = "/inspire.middleware.coupon.control.v1.Middleware/GetControls"
-	Middleware_DeleteControl_FullMethodName     = "/inspire.middleware.coupon.control.v1.Middleware/DeleteControl"
+	Middleware_CreateControl_FullMethodName     = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/CreateControl"
+	Middleware_ExistControlConds_FullMethodName = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/ExistControlConds"
+	Middleware_GetControl_FullMethodName        = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/GetControl"
+	Middleware_GetControls_FullMethodName       = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/GetControls"
+	Middleware_DeleteControl_FullMethodName     = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/DeleteControl"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -228,7 +228,7 @@ func _Middleware_DeleteControl_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "inspire.middleware.coupon.control.v1.Middleware",
+	ServiceName: "inspire.middleware.coupon.cashcontrol.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -253,5 +253,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/inspire/mw/v1/coupon/control/control.proto",
+	Metadata: "npool/inspire/mw/v1/coupon/app/cashcontrol/cashcontrol.proto",
 }

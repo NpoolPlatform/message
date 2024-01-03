@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-package inspire.gateway.coupon.app.control.v1;
+package inspire.gateway.coupon.app.cashcontrol.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/coupon/app/control";
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/coupon/app/cashcontrol";
 
 import "google/api/annotations.proto";
 import "npool/basetypes/inspire/v1/enums.proto";
-import "npool/inspire/mw/v1/coupon/app/control/control.proto";
+import "npool/inspire/mw/v1/coupon/app/cashcontrol/cashcontrol.proto";
 
 // Service Name
 service Gateway {
@@ -43,7 +43,7 @@ message GetControlsRequest {
 }
 
 message GetControlsResponse {
-    repeated inspire.middleware.coupon.control.v1.Control  Infos = 10;
+    repeated inspire.middleware.coupon.cashcontrol.v1.Control  Infos = 10;
     uint32 Total     = 20;
 }
 
@@ -54,7 +54,7 @@ message CreateControlRequest {
 }
 
 message CreateControlResponse {
-    inspire.middleware.coupon.control.v1.Control Info   = 10;
+    inspire.middleware.coupon.cashcontrol.v1.Control Info   = 10;
 }
 
 message DeleteControlRequest {
@@ -64,7 +64,7 @@ message DeleteControlRequest {
 }
 
 message DeleteControlResponse {
-    inspire.middleware.coupon.control.v1.Control Info       = 10;
+    inspire.middleware.coupon.cashcontrol.v1.Control Info       = 10;
 }
 
 message GetAppControlsRequest {
@@ -74,6 +74,6 @@ message GetAppControlsRequest {
 }
 
 message GetAppControlsResponse {
-    repeated inspire.middleware.coupon.control.v1.Control  Infos = 10;
+    repeated inspire.middleware.coupon.cashcontrol.v1.Control  Infos = 10;
     uint32 Total     = 20;
 }
