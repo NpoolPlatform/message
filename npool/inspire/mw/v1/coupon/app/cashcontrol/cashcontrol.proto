@@ -53,6 +53,7 @@ message Control {
 }
 
 message Conds {
+    optional basetypes.v1.StringVal AppID       = 9;
     optional basetypes.v1.StringVal EntID       = 10;
     optional basetypes.v1.StringVal CouponID    = 20;
     optional basetypes.v1.StringSliceVal CouponIDs   = 30;

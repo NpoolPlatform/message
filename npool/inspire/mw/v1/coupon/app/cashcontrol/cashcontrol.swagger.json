@@ -47,6 +47,9 @@
     "v1Conds": {
       "type": "object",
       "properties": {
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
