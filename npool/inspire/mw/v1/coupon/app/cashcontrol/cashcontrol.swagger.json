@@ -44,27 +44,7 @@
         }
       }
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "EntID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CouponID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CouponIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "ControlType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        }
-      }
-    },
-    "v1Control": {
+    "v1CashControl": {
       "type": "object",
       "properties": {
         "ID": {
@@ -99,12 +79,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_denomination\""
         },
-        "ControlTypeStr": {
+        "CashControlTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"control_type\""
         },
-        "ControlType": {
-          "$ref": "#/definitions/v1ControlType"
+        "CashControlType": {
+          "$ref": "#/definitions/v1CashControlType"
         },
         "Value": {
           "type": "string",
@@ -122,7 +102,7 @@
         }
       }
     },
-    "v1ControlReq": {
+    "v1CashControlReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -138,24 +118,44 @@
         "CouponID": {
           "type": "string"
         },
-        "ControlType": {
-          "$ref": "#/definitions/v1ControlType"
+        "CashControlType": {
+          "$ref": "#/definitions/v1CashControlType"
         },
         "Value": {
           "type": "string"
         }
       }
     },
-    "v1ControlType": {
+    "v1CashControlType": {
       "type": "string",
       "enum": [
-        "DefaultControlType",
+        "DefaultCashControlType",
         "KycApproved",
         "CreditsThreshold",
         "OrderThreshold",
         "PaymentAmountThreshold"
       ],
-      "default": "DefaultControlType"
+      "default": "DefaultCashControlType"
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CouponIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "CashControlType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
     },
     "v1CouponType": {
       "type": "string",
@@ -166,23 +166,23 @@
       ],
       "default": "DefaultCouponType"
     },
-    "v1CreateControlResponse": {
+    "v1CreateCashControlResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Control"
+          "$ref": "#/definitions/v1CashControl"
         }
       }
     },
-    "v1DeleteControlResponse": {
+    "v1DeleteCashControlResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Control"
+          "$ref": "#/definitions/v1CashControl"
         }
       }
     },
-    "v1ExistControlCondsResponse": {
+    "v1ExistCashControlCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -190,21 +190,21 @@
         }
       }
     },
-    "v1GetControlResponse": {
+    "v1GetCashControlResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Control"
+          "$ref": "#/definitions/v1CashControl"
         }
       }
     },
-    "v1GetControlsResponse": {
+    "v1GetCashControlsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Control"
+            "$ref": "#/definitions/v1CashControl"
           }
         },
         "Total": {

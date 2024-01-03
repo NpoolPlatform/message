@@ -9,23 +9,23 @@ import "npool/basetypes/inspire/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateControl     (CreateControlRequest)    returns (CreateControlResponse)   {}
-    rpc ExistControlConds (ExistControlCondsRequest)returns (ExistControlCondsResponse)    {}
-    rpc GetControl        (GetControlRequest)       returns (GetControlResponse)      {}
-    rpc GetControls       (GetControlsRequest)      returns (GetControlsResponse)     {}
-    rpc DeleteControl     (DeleteControlRequest)    returns (DeleteControlResponse)   {}
+    rpc CreateCashControl     (CreateCashControlRequest)    returns (CreateCashControlResponse)   {}
+    rpc ExistCashControlConds (ExistCashControlCondsRequest)returns (ExistCashControlCondsResponse)    {}
+    rpc GetCashControl        (GetCashControlRequest)       returns (GetCashControlResponse)      {}
+    rpc GetCashControls       (GetCashControlsRequest)      returns (GetCashControlsResponse)     {}
+    rpc DeleteCashControl     (DeleteCashControlRequest)    returns (DeleteCashControlResponse)   {}
 }
 
-message ControlReq {
+message CashControlReq {
     optional uint32 ID        = 10;
     optional string AppID     = 11;
     optional string EntID     = 20;
     optional string CouponID  = 30;
-    optional basetypes.inspire.v1.ControlType  ControlType  = 40;
+    optional basetypes.inspire.v1.CashControlType  CashControlType  = 40;
     optional string Value    = 50;
 }
 
-message Control {
+message CashControl {
     // @inject_tag: sql:"id"
     uint32     ID              = 10;
     // @inject_tag: sql:"ent_id"
@@ -42,8 +42,8 @@ message Control {
     // @inject_tag: sql:"coupon_denomination"
     string     CouponDenomination  = 70;
     // @inject_tag: sql:"control_type"
-    string     ControlTypeStr  = 80;
-    basetypes.inspire.v1.ControlType ControlType  = 90;
+    string     CashControlTypeStr  = 80;
+    basetypes.inspire.v1.CashControlType CashControlType  = 90;
     // @inject_tag: sql:"value"
     string     Value          = 100;
     // @inject_tag: sql:"created_at"
@@ -57,49 +57,49 @@ message Conds {
     optional basetypes.v1.StringVal EntID       = 10;
     optional basetypes.v1.StringVal CouponID    = 20;
     optional basetypes.v1.StringSliceVal CouponIDs   = 30;
-    optional basetypes.v1.Uint32Val ControlType = 40;
+    optional basetypes.v1.Uint32Val CashControlType = 40;
 }
 
-message CreateControlRequest {
-    ControlReq Info = 10;
+message CreateCashControlRequest {
+    CashControlReq Info = 10;
 }
 
-message CreateControlResponse {
-    Control Info = 10;
+message CreateCashControlResponse {
+    CashControl Info = 10;
 }
 
-message GetControlRequest {
+message GetCashControlRequest {
     string EntID = 10;
 }
 
-message GetControlResponse {
-    Control Info = 10;
+message GetCashControlResponse {
+    CashControl Info = 10;
 }
 
-message GetControlsRequest {
+message GetCashControlsRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
-message GetControlsResponse {
-    repeated Control Infos = 10;
+message GetCashControlsResponse {
+    repeated CashControl Infos = 10;
     uint32           Total = 20;
 }
 
-message ExistControlCondsRequest {
+message ExistCashControlCondsRequest {
     Conds Conds  = 10;
 }
 
-message ExistControlCondsResponse {
+message ExistCashControlCondsResponse {
     bool Info   = 10;
 }
 
-message DeleteControlRequest {
-    ControlReq Info = 10;
+message DeleteCashControlRequest {
+    CashControlReq Info = 10;
 }
 
-message DeleteControlResponse {
-    Control    Info = 10;
+message DeleteCashControlResponse {
+    CashControl    Info = 10;
 }
 

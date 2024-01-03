@@ -19,22 +19,22 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateControl_FullMethodName     = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/CreateControl"
-	Middleware_ExistControlConds_FullMethodName = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/ExistControlConds"
-	Middleware_GetControl_FullMethodName        = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/GetControl"
-	Middleware_GetControls_FullMethodName       = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/GetControls"
-	Middleware_DeleteControl_FullMethodName     = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/DeleteControl"
+	Middleware_CreateCashControl_FullMethodName     = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/CreateCashControl"
+	Middleware_ExistCashControlConds_FullMethodName = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/ExistCashControlConds"
+	Middleware_GetCashControl_FullMethodName        = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/GetCashControl"
+	Middleware_GetCashControls_FullMethodName       = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/GetCashControls"
+	Middleware_DeleteCashControl_FullMethodName     = "/inspire.middleware.coupon.cashcontrol.v1.Middleware/DeleteCashControl"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	CreateControl(ctx context.Context, in *CreateControlRequest, opts ...grpc.CallOption) (*CreateControlResponse, error)
-	ExistControlConds(ctx context.Context, in *ExistControlCondsRequest, opts ...grpc.CallOption) (*ExistControlCondsResponse, error)
-	GetControl(ctx context.Context, in *GetControlRequest, opts ...grpc.CallOption) (*GetControlResponse, error)
-	GetControls(ctx context.Context, in *GetControlsRequest, opts ...grpc.CallOption) (*GetControlsResponse, error)
-	DeleteControl(ctx context.Context, in *DeleteControlRequest, opts ...grpc.CallOption) (*DeleteControlResponse, error)
+	CreateCashControl(ctx context.Context, in *CreateCashControlRequest, opts ...grpc.CallOption) (*CreateCashControlResponse, error)
+	ExistCashControlConds(ctx context.Context, in *ExistCashControlCondsRequest, opts ...grpc.CallOption) (*ExistCashControlCondsResponse, error)
+	GetCashControl(ctx context.Context, in *GetCashControlRequest, opts ...grpc.CallOption) (*GetCashControlResponse, error)
+	GetCashControls(ctx context.Context, in *GetCashControlsRequest, opts ...grpc.CallOption) (*GetCashControlsResponse, error)
+	DeleteCashControl(ctx context.Context, in *DeleteCashControlRequest, opts ...grpc.CallOption) (*DeleteCashControlResponse, error)
 }
 
 type middlewareClient struct {
@@ -45,45 +45,45 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) CreateControl(ctx context.Context, in *CreateControlRequest, opts ...grpc.CallOption) (*CreateControlResponse, error) {
-	out := new(CreateControlResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateControl_FullMethodName, in, out, opts...)
+func (c *middlewareClient) CreateCashControl(ctx context.Context, in *CreateCashControlRequest, opts ...grpc.CallOption) (*CreateCashControlResponse, error) {
+	out := new(CreateCashControlResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateCashControl_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) ExistControlConds(ctx context.Context, in *ExistControlCondsRequest, opts ...grpc.CallOption) (*ExistControlCondsResponse, error) {
-	out := new(ExistControlCondsResponse)
-	err := c.cc.Invoke(ctx, Middleware_ExistControlConds_FullMethodName, in, out, opts...)
+func (c *middlewareClient) ExistCashControlConds(ctx context.Context, in *ExistCashControlCondsRequest, opts ...grpc.CallOption) (*ExistCashControlCondsResponse, error) {
+	out := new(ExistCashControlCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistCashControlConds_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) GetControl(ctx context.Context, in *GetControlRequest, opts ...grpc.CallOption) (*GetControlResponse, error) {
-	out := new(GetControlResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetControl_FullMethodName, in, out, opts...)
+func (c *middlewareClient) GetCashControl(ctx context.Context, in *GetCashControlRequest, opts ...grpc.CallOption) (*GetCashControlResponse, error) {
+	out := new(GetCashControlResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetCashControl_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) GetControls(ctx context.Context, in *GetControlsRequest, opts ...grpc.CallOption) (*GetControlsResponse, error) {
-	out := new(GetControlsResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetControls_FullMethodName, in, out, opts...)
+func (c *middlewareClient) GetCashControls(ctx context.Context, in *GetCashControlsRequest, opts ...grpc.CallOption) (*GetCashControlsResponse, error) {
+	out := new(GetCashControlsResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetCashControls_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) DeleteControl(ctx context.Context, in *DeleteControlRequest, opts ...grpc.CallOption) (*DeleteControlResponse, error) {
-	out := new(DeleteControlResponse)
-	err := c.cc.Invoke(ctx, Middleware_DeleteControl_FullMethodName, in, out, opts...)
+func (c *middlewareClient) DeleteCashControl(ctx context.Context, in *DeleteCashControlRequest, opts ...grpc.CallOption) (*DeleteCashControlResponse, error) {
+	out := new(DeleteCashControlResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteCashControl_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,11 +94,11 @@ func (c *middlewareClient) DeleteControl(ctx context.Context, in *DeleteControlR
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	CreateControl(context.Context, *CreateControlRequest) (*CreateControlResponse, error)
-	ExistControlConds(context.Context, *ExistControlCondsRequest) (*ExistControlCondsResponse, error)
-	GetControl(context.Context, *GetControlRequest) (*GetControlResponse, error)
-	GetControls(context.Context, *GetControlsRequest) (*GetControlsResponse, error)
-	DeleteControl(context.Context, *DeleteControlRequest) (*DeleteControlResponse, error)
+	CreateCashControl(context.Context, *CreateCashControlRequest) (*CreateCashControlResponse, error)
+	ExistCashControlConds(context.Context, *ExistCashControlCondsRequest) (*ExistCashControlCondsResponse, error)
+	GetCashControl(context.Context, *GetCashControlRequest) (*GetCashControlResponse, error)
+	GetCashControls(context.Context, *GetCashControlsRequest) (*GetCashControlsResponse, error)
+	DeleteCashControl(context.Context, *DeleteCashControlRequest) (*DeleteCashControlResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -106,20 +106,20 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateControl(context.Context, *CreateControlRequest) (*CreateControlResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateControl not implemented")
+func (UnimplementedMiddlewareServer) CreateCashControl(context.Context, *CreateCashControlRequest) (*CreateCashControlResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCashControl not implemented")
 }
-func (UnimplementedMiddlewareServer) ExistControlConds(context.Context, *ExistControlCondsRequest) (*ExistControlCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistControlConds not implemented")
+func (UnimplementedMiddlewareServer) ExistCashControlConds(context.Context, *ExistCashControlCondsRequest) (*ExistCashControlCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistCashControlConds not implemented")
 }
-func (UnimplementedMiddlewareServer) GetControl(context.Context, *GetControlRequest) (*GetControlResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetControl not implemented")
+func (UnimplementedMiddlewareServer) GetCashControl(context.Context, *GetCashControlRequest) (*GetCashControlResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCashControl not implemented")
 }
-func (UnimplementedMiddlewareServer) GetControls(context.Context, *GetControlsRequest) (*GetControlsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetControls not implemented")
+func (UnimplementedMiddlewareServer) GetCashControls(context.Context, *GetCashControlsRequest) (*GetCashControlsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCashControls not implemented")
 }
-func (UnimplementedMiddlewareServer) DeleteControl(context.Context, *DeleteControlRequest) (*DeleteControlResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteControl not implemented")
+func (UnimplementedMiddlewareServer) DeleteCashControl(context.Context, *DeleteCashControlRequest) (*DeleteCashControlResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCashControl not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -134,92 +134,92 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_CreateControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateControlRequest)
+func _Middleware_CreateCashControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCashControlRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateControl(ctx, in)
+		return srv.(MiddlewareServer).CreateCashControl(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_CreateControl_FullMethodName,
+		FullMethod: Middleware_CreateCashControl_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateControl(ctx, req.(*CreateControlRequest))
+		return srv.(MiddlewareServer).CreateCashControl(ctx, req.(*CreateCashControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_ExistControlConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistControlCondsRequest)
+func _Middleware_ExistCashControlConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistCashControlCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistControlConds(ctx, in)
+		return srv.(MiddlewareServer).ExistCashControlConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_ExistControlConds_FullMethodName,
+		FullMethod: Middleware_ExistCashControlConds_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ExistControlConds(ctx, req.(*ExistControlCondsRequest))
+		return srv.(MiddlewareServer).ExistCashControlConds(ctx, req.(*ExistCashControlCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetControlRequest)
+func _Middleware_GetCashControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCashControlRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetControl(ctx, in)
+		return srv.(MiddlewareServer).GetCashControl(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetControl_FullMethodName,
+		FullMethod: Middleware_GetCashControl_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetControl(ctx, req.(*GetControlRequest))
+		return srv.(MiddlewareServer).GetCashControl(ctx, req.(*GetCashControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetControlsRequest)
+func _Middleware_GetCashControls_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCashControlsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetControls(ctx, in)
+		return srv.(MiddlewareServer).GetCashControls(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetControls_FullMethodName,
+		FullMethod: Middleware_GetCashControls_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetControls(ctx, req.(*GetControlsRequest))
+		return srv.(MiddlewareServer).GetCashControls(ctx, req.(*GetCashControlsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_DeleteControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteControlRequest)
+func _Middleware_DeleteCashControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCashControlRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).DeleteControl(ctx, in)
+		return srv.(MiddlewareServer).DeleteCashControl(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_DeleteControl_FullMethodName,
+		FullMethod: Middleware_DeleteCashControl_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteControl(ctx, req.(*DeleteControlRequest))
+		return srv.(MiddlewareServer).DeleteCashControl(ctx, req.(*DeleteCashControlRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -232,24 +232,24 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateControl",
-			Handler:    _Middleware_CreateControl_Handler,
+			MethodName: "CreateCashControl",
+			Handler:    _Middleware_CreateCashControl_Handler,
 		},
 		{
-			MethodName: "ExistControlConds",
-			Handler:    _Middleware_ExistControlConds_Handler,
+			MethodName: "ExistCashControlConds",
+			Handler:    _Middleware_ExistCashControlConds_Handler,
 		},
 		{
-			MethodName: "GetControl",
-			Handler:    _Middleware_GetControl_Handler,
+			MethodName: "GetCashControl",
+			Handler:    _Middleware_GetCashControl_Handler,
 		},
 		{
-			MethodName: "GetControls",
-			Handler:    _Middleware_GetControls_Handler,
+			MethodName: "GetCashControls",
+			Handler:    _Middleware_GetCashControls_Handler,
 		},
 		{
-			MethodName: "DeleteControl",
-			Handler:    _Middleware_DeleteControl_Handler,
+			MethodName: "DeleteCashControl",
+			Handler:    _Middleware_DeleteCashControl_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

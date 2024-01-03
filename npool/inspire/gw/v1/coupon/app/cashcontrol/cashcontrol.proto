@@ -10,70 +10,70 @@ import "npool/inspire/mw/v1/coupon/app/cashcontrol/cashcontrol.proto";
 
 // Service Name
 service Gateway {
-    rpc GetControls (GetControlsRequest) returns (GetControlsResponse) {
+    rpc GetCashControls (GetCashControlsRequest) returns (GetCashControlsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/controls"
+            post: "/v1/get/cashcontrols"
             body: "*"
         };
     }
-    rpc CreateControl (CreateControlRequest) returns (CreateControlResponse) {
+    rpc CreateCashControl (CreateCashControlRequest) returns (CreateCashControlResponse) {
         option (google.api.http) = {
-            post: "/v1/create/control"
+            post: "/v1/create/cashcontrol"
             body: "*"
         };
     }
-    rpc DeleteControl (DeleteControlRequest) returns (DeleteControlResponse) {
+    rpc DeleteCashControl (DeleteCashControlRequest) returns (DeleteCashControlResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/control"
+            post: "/v1/delete/cashcontrol"
             body: "*"
         };
     }
-    rpc GetAppControls (GetAppControlsRequest) returns (GetAppControlsResponse) {
+    rpc GetAppCashControls (GetAppCashControlsRequest) returns (GetAppCashControlsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/appcontrols"
+            post: "/v1/get/appcashcontrols"
             body: "*"
         };
     }
 }
 
-message GetControlsRequest {
+message GetCashControlsRequest {
     string TargetAppID = 10;
     int32  Offset      = 20;
     int32  Limit       = 30;
 }
 
-message GetControlsResponse {
-    repeated inspire.middleware.coupon.cashcontrol.v1.Control  Infos = 10;
+message GetCashControlsResponse {
+    repeated inspire.middleware.coupon.cashcontrol.v1.CashControl  Infos = 10;
     uint32 Total     = 20;
 }
 
-message CreateControlRequest {
+message CreateCashControlRequest {
     string   CouponID    = 10;
-    basetypes.inspire.v1.ControlType  ControlType = 20;
+    basetypes.inspire.v1.CashControlType  CashControlType = 20;
     optional string  Amount  = 30;
 }
 
-message CreateControlResponse {
-    inspire.middleware.coupon.cashcontrol.v1.Control Info   = 10;
+message CreateCashControlResponse {
+    inspire.middleware.coupon.cashcontrol.v1.CashControl Info   = 10;
 }
 
-message DeleteControlRequest {
+message DeleteCashControlRequest {
     uint32 ID              = 10;
     string EntID           = 20;
     string TargetAppID     = 30;
 }
 
-message DeleteControlResponse {
-    inspire.middleware.coupon.cashcontrol.v1.Control Info       = 10;
+message DeleteCashControlResponse {
+    inspire.middleware.coupon.cashcontrol.v1.CashControl Info       = 10;
 }
 
-message GetAppControlsRequest {
+message GetAppCashControlsRequest {
     string AppID    = 10;
     int32  Offset   = 20;
     int32  Limit    = 30;
 }
 
-message GetAppControlsResponse {
-    repeated inspire.middleware.coupon.cashcontrol.v1.Control  Infos = 10;
+message GetAppCashControlsResponse {
+    repeated inspire.middleware.coupon.cashcontrol.v1.CashControl  Infos = 10;
     uint32 Total     = 20;
 }
