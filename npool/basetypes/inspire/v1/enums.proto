@@ -62,7 +62,7 @@ enum ControlType {
     DefaultControlType = 0;
 
     KycApproved        = 10;
-    CreditsThreshold   = 20; // 积分达到一定数量
+    CreditThreshold   = 20; // 积分达到一定数量
     OrderThreshold     = 30; // 成单数达到一定数量
     PaymentAmountThreshold    = 40; // 已花费的美金达到一定数量
 }
