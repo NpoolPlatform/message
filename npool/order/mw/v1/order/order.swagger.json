@@ -229,14 +229,20 @@
         "RenewState": {
           "$ref": "#/definitions/v1Uint32Val"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Support to query order with good and app good
         },
         "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
         "AppGoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+<<<<<<< HEAD
 =======
 >>>>>>> Add order renew state
+=======
+>>>>>>> Support to query order with good and app good
         }
       }
     },
