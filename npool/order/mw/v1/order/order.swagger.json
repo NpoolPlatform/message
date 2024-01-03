@@ -592,9 +592,10 @@
       "type": "string",
       "enum": [
         "DefaultOrderRenewState",
-        "OrderRenewIdle",
+        "OrderRenewWait",
         "OrderRenewCheck",
-        "OrderRenewExecute"
+        "OrderRenewExecute",
+        "OrderRenewFail"
       ],
       "default": "DefaultOrderRenewState"
     },
