@@ -228,6 +228,12 @@
         },
         "RenewState": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AppGoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },

@@ -246,6 +246,8 @@ message Conds {
     optional basetypes.v1.BoolVal        UserSetCanceled       = 270;
     optional basetypes.v1.StringSliceVal ParentOrderIDs        = 280;
     optional basetypes.v1.Uint32Val      RenewState            = 290;
+    optional basetypes.v1.StringSliceVal GoodIDs               = 300;
+    optional basetypes.v1.StringSliceVal AppGoodIDs            = 310;
 }
 
 message CreateOrderRequest {
