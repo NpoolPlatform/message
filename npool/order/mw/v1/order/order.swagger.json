@@ -616,6 +616,7 @@
       "enum": [
         "DefaultOrderRenewState",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "OrderRenewWait",
         "OrderRenewCheck",
         "OrderRenewExecute",
@@ -625,6 +626,12 @@
         "OrderRenewCheck",
         "OrderRenewExecute"
 >>>>>>> Add order renew state
+=======
+        "OrderRenewWait",
+        "OrderRenewCheck",
+        "OrderRenewExecute",
+        "OrderRenewFail"
+>>>>>>> Support order renew fail
       ],
       "default": "DefaultOrderRenewState"
     },
