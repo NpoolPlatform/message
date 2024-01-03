@@ -200,7 +200,8 @@ message Order {
     string LedgerLockID                          = 520;
 
     // @inject_tag: sql:"renew_state"
-    basetypes.order.v1.OrderRenewState RenewState = 530;
+    string RenewStateStr                         = 530;
+    basetypes.order.v1.OrderRenewState RenewState = 540;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt                             = 1000;
