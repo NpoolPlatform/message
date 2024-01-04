@@ -33,6 +33,7 @@ service Gateway {
 message CreateCoinUsedForRequest {
     string CoinTypeID = 10;
     basetypes.chain.v1.CoinUsedFor UsedFor = 20;
+    optional uint32 Priority = 30;
 }
 
 message CreateCoinUsedForResponse {
