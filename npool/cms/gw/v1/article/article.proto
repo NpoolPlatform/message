@@ -117,7 +117,7 @@ message UpdateArticleResponse {
 }
 
 message GetAppArticlesRequest {
-    string TargetAppID  = 10;
+    string AppID        = 10;
     int32  Offset       = 20;
     int32  Limit        = 30;
 }

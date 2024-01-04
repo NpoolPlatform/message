@@ -506,7 +506,7 @@
     "v1GetAppArticlesRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
+        "AppID": {
           "type": "string"
         },
         "Offset": {

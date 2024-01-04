@@ -165,9 +165,6 @@
         "AppID": {
           "type": "string"
         },
-        "ArticleKey": {
-          "type": "string"
-        },
         "Offset": {
           "type": "integer",
           "format": "int32"
