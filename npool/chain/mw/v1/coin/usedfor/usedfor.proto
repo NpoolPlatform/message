@@ -19,6 +19,7 @@ message CoinUsedForReq {
     optional string    EntID           = 11;
     optional string    CoinTypeID      = 20;
     optional basetypes.chain.v1.CoinUsedFor UsedFor = 30;
+    optional uint32    Priority        = 40;
 }
 
 message CoinUsedFor {
@@ -39,6 +40,8 @@ message CoinUsedFor {
     // @inject_tag: sql:"used_for"
     string UsedForStr   = 70;
     basetypes.chain.v1.CoinUsedFor UsedFor = 80;
+    // @inject_tag: sql:"priority"
+    uint32 Priority     = 90;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt    = 1000;
     // @inject_tag: sql:"updated_at"
