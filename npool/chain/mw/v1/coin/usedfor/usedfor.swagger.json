@@ -66,13 +66,19 @@
           "$ref": "#/definitions/basetypeschainv1CoinUsedFor"
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add priority to coin used for
         "Priority": {
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"priority\""
         },
+<<<<<<< HEAD
 =======
 >>>>>>> Add coin used for
+=======
+>>>>>>> Add priority to coin used for
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -128,12 +134,18 @@
         "UsedFor": {
           "$ref": "#/definitions/basetypeschainv1CoinUsedFor"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add priority to coin used for
         },
         "Priority": {
           "type": "integer",
           "format": "int64"
+<<<<<<< HEAD
 =======
 >>>>>>> Add coin used for
+=======
+>>>>>>> Add priority to coin used for
         }
       }
     },
