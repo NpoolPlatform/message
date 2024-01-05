@@ -765,10 +765,11 @@
         "OrderStateCancelUnlockPaymentAccount",
         "OrderStateUpdateCanceledChilds",
         "OrderStateCanceled",
-        "OrderStateExpired"
+        "OrderStateExpired",
+        "OrderStateChildPaidByParent"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state"
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state\n - OrderStateChildPaidByParent: Child paid"
     },
     "v1OrderType": {
       "type": "string",
