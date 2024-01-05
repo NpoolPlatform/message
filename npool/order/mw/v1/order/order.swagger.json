@@ -766,7 +766,10 @@
         "OrderStateUpdateCanceledChilds",
         "OrderStateCanceled",
         "OrderStateExpired",
-        "OrderStateChildPaidByParent"
+        "OrderStateChildPaidByParent",
+        "OrderStateChildInServiceByParent",
+        "OrderStateChildExpiredByParent",
+        "OrderStateChildCanceledByParent"
       ],
       "default": "DefaultOrderState",
       "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state\n - OrderStateChildPaidByParent: Child paid"
