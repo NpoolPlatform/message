@@ -265,6 +265,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "CouponWithdrawEnable": {
+          "type": "boolean"
         }
       }
     },
