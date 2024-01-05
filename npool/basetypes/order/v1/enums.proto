@@ -160,6 +160,9 @@ enum OrderState {
     OrderStateCanceled          = 270;
     OrderStateExpired           = 280;
 
+    // Child paid
+    OrderStateChildPaidByParent = 290; // -> OrderStatePaid, can be rollback
+
     // Delivery order state
 }
 
