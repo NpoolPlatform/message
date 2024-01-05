@@ -46,6 +46,7 @@ message AppReq {
     optional uint32          MaxTypedCouponsPerOrder = 150;
     optional bool            Maintaining        = 160;
     repeated string          CommitButtonTargets           = 170;
+    optional bool            CouponWithdrawEnable = 180;
 }
 
 message App {
@@ -103,6 +104,8 @@ message App {
     // @inject_tag: sql:"commit_button_targets"
     string          CommitButtonTargetsStr        = 250;
     repeated string CommitButtonTargets           = 260;
+    // @inject_tag: sql:"coupon_withdraw_enable"
+    bool            CouponWithdrawEnable          = 270;
 }
 
 message Conds {

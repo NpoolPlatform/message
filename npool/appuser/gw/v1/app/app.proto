@@ -93,6 +93,7 @@ message UpdateAppRequest {
     optional uint32 MaxTypedCouponsPerOrder = 120;
     optional bool   Maintaining             = 160;
     repeated string CommitButtonTargets     = 170;
+    optional bool   CouponWithdrawEnable    = 180;
 }
 
 message UpdateAppResponse {
