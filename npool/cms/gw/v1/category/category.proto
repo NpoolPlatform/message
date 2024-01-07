@@ -48,7 +48,8 @@ message Category {
     string ParentID            = 30;
     string Name                = 40;
     string Slug                = 50;
-    repeated Category Children = 60;
+    string FullSlug            = 60;
+    repeated Category Children = 70;
 }
 
 message GetCategoriesRequest {

@@ -197,6 +197,9 @@
         "Slug": {
           "type": "string"
         },
+        "FullSlug": {
+          "type": "string"
+        },
         "Children": {
           "type": "array",
           "items": {
