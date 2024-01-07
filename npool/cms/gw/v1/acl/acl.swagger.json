@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/cmsgatewayaclv1CreateACLResponse"
+              "$ref": "#/definitions/v1CreateACLResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/cmsgatewayaclv1CreateACLRequest"
+              "$ref": "#/definitions/v1CreateACLRequest"
             }
           }
         ],
@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/cmsgatewayaclv1DeleteACLResponse"
+              "$ref": "#/definitions/v1DeleteACLResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/cmsgatewayaclv1DeleteACLRequest"
+              "$ref": "#/definitions/v1DeleteACLRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/cmsgatewayaclv1GetACLsResponse"
+              "$ref": "#/definitions/v1GetACLsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/cmsgatewayaclv1GetACLsRequest"
+              "$ref": "#/definitions/v1GetACLsRequest"
             }
           }
         ],
@@ -114,122 +114,6 @@
     }
   },
   "definitions": {
-    "cmsgatewayaclv1CreateACLRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "RoleID": {
-          "type": "string"
-        },
-        "ArticleKey": {
-          "type": "string"
-        }
-      }
-    },
-    "cmsgatewayaclv1CreateACLResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/cmsmiddlewareaclv1ACL"
-        }
-      }
-    },
-    "cmsgatewayaclv1DeleteACLRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "cmsgatewayaclv1DeleteACLResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/cmsmiddlewareaclv1ACL"
-        }
-      }
-    },
-    "cmsgatewayaclv1GetACLsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "ArticleKey": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "cmsgatewayaclv1GetACLsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/cmsmiddlewareaclv1ACL"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "cmsmiddlewareaclv1ACL": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "RoleID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"role_id\""
-        },
-        "ArticleKey": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"article_key\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -255,6 +139,118 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1ACL": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "ArticleKey": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateACLRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "RoleID": {
+          "type": "string"
+        },
+        "ArticleKey": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateACLResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ACL"
+        }
+      }
+    },
+    "v1DeleteACLRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteACLResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1ACL"
+        }
+      }
+    },
+    "v1GetACLsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "ArticleKey": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetACLsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ACL"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }
