@@ -29,6 +29,17 @@ service Gateway {
     }
 }
 
+message ACL {
+    uint32 ID         = 10;
+    string EntID      = 20;
+    string AppID      = 30;
+    string RoleID     = 40;
+    string RoleName   = 50;
+    string ArticleKey = 60;
+    uint32 CreatedAt  = 1000;
+    uint32 UpdatedAt  = 1010;
+}
+
 message CreateACLRequest {
     string AppID      = 10;
     string RoleID     = 20;
@@ -41,8 +52,9 @@ message CreateACLResponse {
 
 message GetACLsRequest {
     string AppID      = 10;
-    int32  Offset     = 20;
-    int32  Limit      = 30;
+    string ArticleKey = 20;
+    int32  Offset     = 30;
+    int32  Limit      = 40;
 }
 
 message GetACLsResponse {
