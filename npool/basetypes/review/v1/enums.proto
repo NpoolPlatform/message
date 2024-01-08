@@ -8,6 +8,7 @@ enum ReviewObjectType {
     DefaultObjectType     = 0;
     ObjectKyc             = 10;
     ObjectWithdrawal      = 20;
+    ObjectRandomCouponCash    = 30;
 }
 
 enum ReviewState {

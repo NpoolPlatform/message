@@ -41,7 +41,6 @@ enum CouponType {
 
     FixAmount         = 10;
     Discount          = 20;
-    SpecialOffer      = 30;
 }
 
 enum CouponConstraint {
@@ -49,8 +48,6 @@ enum CouponConstraint {
 
     Normal           = 10;
     PaymentThreshold = 20;
-    GoodOnly         = 30;
-    GoodThreshold    = 40;
 }
 
 enum CouponScope {

@@ -242,7 +242,8 @@
       "enum": [
         "DefaultObjectType",
         "ObjectKyc",
-        "ObjectWithdrawal"
+        "ObjectWithdrawal",
+        "ObjectRandomCouponCash"
       ],
       "default": "DefaultObjectType"
     },

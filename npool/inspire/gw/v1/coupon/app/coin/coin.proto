@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package inspire.gateway.coupon.app.coin.v1;
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/coupon/app/coin";
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc GetCouponCoins (GetCouponCoinsRequest) returns (GetCouponCoinsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/couponcoins"
+            body: "*"
+        };
+    }
+    rpc CreateCouponCoin (CreateCouponCoinRequest) returns (CreateCouponCoinResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/couponcoin"
+            body: "*"
+        };
+    }
+    rpc DeleteCouponCoin (DeleteCouponCoinRequest) returns (DeleteCouponCoinResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/couponcoin"
+            body: "*"
+        };
+    }
+    rpc GetAppCouponCoins (GetAppCouponCoinsRequest) returns (GetAppCouponCoinsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/couponcoins"
+            body: "*"
+        };
+    }
+}
+
+message CouponCoin {
+    uint32     ID              = 10;
+    string     EntID           = 20;
+    string     AppID           = 30;
+    string     AppName         = 31;
+    string     CoinTypeID      = 70;
+    string     CoinName        = 80;
+    string     CoinENV         = 90;
+    uint32     CreatedAt       = 1000;
+    uint32     UpdatedAt       = 1010;
+}
+
+message GetCouponCoinsRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetCouponCoinsResponse {
+    repeated CouponCoin  Infos = 10;
+    uint32               Total = 20;
+}
+
+message CreateCouponCoinRequest {
+    string TargetAppID    = 10;
+    string CoinTypeID     = 30;
+}
+
+message CreateCouponCoinResponse {
+    CouponCoin Info       = 10;
+}
+
+message DeleteCouponCoinRequest {
+    uint32 ID              = 10;
+    string EntID           = 20;
+    string TargetAppID     = 30;
+}
+
+message DeleteCouponCoinResponse {
+    CouponCoin Info       = 10;
+}
+
+message GetAppCouponCoinsRequest {
+    string AppID           = 10;
+    int32  Offset          = 20;
+    int32  Limit           = 30;
+}
+
+message GetAppCouponCoinsResponse {
+    repeated CouponCoin  Infos = 10;
+    uint32               Total = 20;
+}
