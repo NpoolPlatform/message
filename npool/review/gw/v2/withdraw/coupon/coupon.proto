@@ -43,6 +43,7 @@ service Gateway {
 message CouponWithdrawReview {
     uint32 ID                                   = 10;
     string EntID                                = 20;
+    string AppID                                = 30;
     string UserID                               = 40;
     basetypes.v1.KycState KycState              = 50;
     string EmailAddress                         = 60;
