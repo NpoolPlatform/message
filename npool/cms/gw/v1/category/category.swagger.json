@@ -80,38 +80,6 @@
         ]
       }
     },
-    "/v1/get/app/categories": {
-      "post": {
-        "operationId": "Gateway_GetAppCategories",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppCategoriesResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppCategoriesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/categories": {
       "post": {
         "operationId": "Gateway_GetCategories",
@@ -136,6 +104,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/cmsgatewaycategoryv1GetCategoriesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/categorylist": {
+      "post": {
+        "operationId": "Gateway_GetCategoryList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCategoryListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCategoryListRequest"
             }
           }
         ],
@@ -188,6 +188,9 @@
         "EntID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
         "ParentID": {
           "type": "string"
         },
@@ -199,6 +202,9 @@
         },
         "FullSlug": {
           "type": "string"
+        },
+        "Enabled": {
+          "type": "boolean"
         },
         "Children": {
           "type": "array",
@@ -233,7 +239,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/cmsmiddlewarecategoryv1Category"
+          "$ref": "#/definitions/cmsgatewaycategoryv1Category"
         }
       }
     },
@@ -265,6 +271,14 @@
       "properties": {
         "AppID": {
           "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -277,6 +291,10 @@
             "type": "object",
             "$ref": "#/definitions/cmsgatewaycategoryv1Category"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -308,7 +326,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/cmsmiddlewarecategoryv1Category"
+          "$ref": "#/definitions/cmsgatewaycategoryv1Category"
         }
       }
     },
@@ -384,35 +402,23 @@
         }
       }
     },
-    "v1GetAppCategoriesRequest": {
+    "v1GetCategoryListRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
         }
       }
     },
-    "v1GetAppCategoriesResponse": {
+    "v1GetCategoryListResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/cmsmiddlewarecategoryv1Category"
+            "$ref": "#/definitions/cmsgatewaycategoryv1Category"
           }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     }

@@ -121,6 +121,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"published_at\""
         },
+        "ACLEnabled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"acl_enabled\""
+        },
         "ACLRoleIDs": {
           "type": "array",
           "items": {
@@ -187,6 +191,9 @@
           "type": "string"
         },
         "Latest": {
+          "type": "boolean"
+        },
+        "ACLEnabled": {
           "type": "boolean"
         }
       }
@@ -264,6 +271,9 @@
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "ACLEnabled": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },

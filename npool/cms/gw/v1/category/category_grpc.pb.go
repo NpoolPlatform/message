@@ -19,21 +19,21 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetCategories_FullMethodName    = "/cms.gateway.category.v1.Gateway/GetCategories"
-	Gateway_CreateCategory_FullMethodName   = "/cms.gateway.category.v1.Gateway/CreateCategory"
-	Gateway_UpdateCategory_FullMethodName   = "/cms.gateway.category.v1.Gateway/UpdateCategory"
-	Gateway_GetAppCategories_FullMethodName = "/cms.gateway.category.v1.Gateway/GetAppCategories"
-	Gateway_DeleteCategory_FullMethodName   = "/cms.gateway.category.v1.Gateway/DeleteCategory"
+	Gateway_GetCategoryList_FullMethodName = "/cms.gateway.category.v1.Gateway/GetCategoryList"
+	Gateway_CreateCategory_FullMethodName  = "/cms.gateway.category.v1.Gateway/CreateCategory"
+	Gateway_UpdateCategory_FullMethodName  = "/cms.gateway.category.v1.Gateway/UpdateCategory"
+	Gateway_GetCategories_FullMethodName   = "/cms.gateway.category.v1.Gateway/GetCategories"
+	Gateway_DeleteCategory_FullMethodName  = "/cms.gateway.category.v1.Gateway/DeleteCategory"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GetCategories(ctx context.Context, in *GetCategoriesRequest, opts ...grpc.CallOption) (*GetCategoriesResponse, error)
+	GetCategoryList(ctx context.Context, in *GetCategoryListRequest, opts ...grpc.CallOption) (*GetCategoryListResponse, error)
 	CreateCategory(ctx context.Context, in *CreateCategoryRequest, opts ...grpc.CallOption) (*CreateCategoryResponse, error)
 	UpdateCategory(ctx context.Context, in *UpdateCategoryRequest, opts ...grpc.CallOption) (*UpdateCategoryResponse, error)
-	GetAppCategories(ctx context.Context, in *GetAppCategoriesRequest, opts ...grpc.CallOption) (*GetAppCategoriesResponse, error)
+	GetCategories(ctx context.Context, in *GetCategoriesRequest, opts ...grpc.CallOption) (*GetCategoriesResponse, error)
 	DeleteCategory(ctx context.Context, in *DeleteCategoryRequest, opts ...grpc.CallOption) (*DeleteCategoryResponse, error)
 }
 
@@ -45,9 +45,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) GetCategories(ctx context.Context, in *GetCategoriesRequest, opts ...grpc.CallOption) (*GetCategoriesResponse, error) {
-	out := new(GetCategoriesResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetCategories_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetCategoryList(ctx context.Context, in *GetCategoryListRequest, opts ...grpc.CallOption) (*GetCategoryListResponse, error) {
+	out := new(GetCategoryListResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetCategoryList_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,9 +72,9 @@ func (c *gatewayClient) UpdateCategory(ctx context.Context, in *UpdateCategoryRe
 	return out, nil
 }
 
-func (c *gatewayClient) GetAppCategories(ctx context.Context, in *GetAppCategoriesRequest, opts ...grpc.CallOption) (*GetAppCategoriesResponse, error) {
-	out := new(GetAppCategoriesResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetAppCategories_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetCategories(ctx context.Context, in *GetCategoriesRequest, opts ...grpc.CallOption) (*GetCategoriesResponse, error) {
+	out := new(GetCategoriesResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetCategories_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,10 +94,10 @@ func (c *gatewayClient) DeleteCategory(ctx context.Context, in *DeleteCategoryRe
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GetCategories(context.Context, *GetCategoriesRequest) (*GetCategoriesResponse, error)
+	GetCategoryList(context.Context, *GetCategoryListRequest) (*GetCategoryListResponse, error)
 	CreateCategory(context.Context, *CreateCategoryRequest) (*CreateCategoryResponse, error)
 	UpdateCategory(context.Context, *UpdateCategoryRequest) (*UpdateCategoryResponse, error)
-	GetAppCategories(context.Context, *GetAppCategoriesRequest) (*GetAppCategoriesResponse, error)
+	GetCategories(context.Context, *GetCategoriesRequest) (*GetCategoriesResponse, error)
 	DeleteCategory(context.Context, *DeleteCategoryRequest) (*DeleteCategoryResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -106,8 +106,8 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetCategories(context.Context, *GetCategoriesRequest) (*GetCategoriesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCategories not implemented")
+func (UnimplementedGatewayServer) GetCategoryList(context.Context, *GetCategoryListRequest) (*GetCategoryListResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCategoryList not implemented")
 }
 func (UnimplementedGatewayServer) CreateCategory(context.Context, *CreateCategoryRequest) (*CreateCategoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCategory not implemented")
@@ -115,8 +115,8 @@ func (UnimplementedGatewayServer) CreateCategory(context.Context, *CreateCategor
 func (UnimplementedGatewayServer) UpdateCategory(context.Context, *UpdateCategoryRequest) (*UpdateCategoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCategory not implemented")
 }
-func (UnimplementedGatewayServer) GetAppCategories(context.Context, *GetAppCategoriesRequest) (*GetAppCategoriesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppCategories not implemented")
+func (UnimplementedGatewayServer) GetCategories(context.Context, *GetCategoriesRequest) (*GetCategoriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCategories not implemented")
 }
 func (UnimplementedGatewayServer) DeleteCategory(context.Context, *DeleteCategoryRequest) (*DeleteCategoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCategory not implemented")
@@ -134,20 +134,20 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_GetCategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCategoriesRequest)
+func _Gateway_GetCategoryList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCategoryListRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetCategories(ctx, in)
+		return srv.(GatewayServer).GetCategoryList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetCategories_FullMethodName,
+		FullMethod: Gateway_GetCategoryList_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetCategories(ctx, req.(*GetCategoriesRequest))
+		return srv.(GatewayServer).GetCategoryList(ctx, req.(*GetCategoryListRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -188,20 +188,20 @@ func _Gateway_UpdateCategory_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetAppCategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppCategoriesRequest)
+func _Gateway_GetCategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCategoriesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetAppCategories(ctx, in)
+		return srv.(GatewayServer).GetCategories(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetAppCategories_FullMethodName,
+		FullMethod: Gateway_GetCategories_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppCategories(ctx, req.(*GetAppCategoriesRequest))
+		return srv.(GatewayServer).GetCategories(ctx, req.(*GetCategoriesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -232,8 +232,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetCategories",
-			Handler:    _Gateway_GetCategories_Handler,
+			MethodName: "GetCategoryList",
+			Handler:    _Gateway_GetCategoryList_Handler,
 		},
 		{
 			MethodName: "CreateCategory",
@@ -244,8 +244,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_UpdateCategory_Handler,
 		},
 		{
-			MethodName: "GetAppCategories",
-			Handler:    _Gateway_GetAppCategories_Handler,
+			MethodName: "GetCategories",
+			Handler:    _Gateway_GetCategories_Handler,
 		},
 		{
 			MethodName: "DeleteCategory",

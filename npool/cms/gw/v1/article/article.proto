@@ -10,13 +10,6 @@ import "npool/basetypes/cms/v1/enums.proto";
 
 // Service Name
 service Gateway {
-    rpc GetContents(GetContentsRequest) returns (GetContentsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/contents"
-            body: "*"
-        };
-    }
-
     // URL: https://{Host}/api/cms/v1/c/{ContentURL}
     // Host ex: api.site.top
     // ContentURL: {Category1.Slug}/{Category2.Slug}/.../{ISO}/{PageName}
@@ -28,6 +21,13 @@ service Gateway {
     rpc GetContent(GetContentRequest) returns (GetContentResponse) {
         option (google.api.http) = {
             get: "/v1/c/{ContentURL=**}"
+        };
+    }
+
+    rpc GetContentList(GetContentListRequest) returns (GetContentListResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/contentlist"
+            body: "*"
         };
     }
 
@@ -43,34 +43,34 @@ service Gateway {
             body: "*"
         };
     }
-    rpc GetAppArticles(GetAppArticlesRequest) returns (GetAppArticlesResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/articles"
-            body: "*"
-        };
-    }
-    rpc GetAppArticleContent(GetAppArticleContentRequest) returns (GetAppArticleContentResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/articlecontent"
-            body: "*"
-        };
-    }
     rpc DeleteArticle(DeleteArticleRequest) returns (DeleteArticleResponse) {
         option (google.api.http) = {
             post: "/v1/delete/article"
             body: "*"
         };
     }
+    rpc GetArticles(GetArticlesRequest) returns (GetArticlesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/articles"
+            body: "*"
+        };
+    }
+    rpc GetArticleContent(GetArticleContentRequest) returns (GetArticleContentResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/articlecontent"
+            body: "*"
+        };
+    }
 }
 
-message GetContentsRequest {
+message GetContentListRequest {
     string AppID               = 10;
     optional string CategoryID = 20;
     int32  Offset              = 30;
     int32  Limit               = 40;
 }
 
-message GetContentsResponse {
+message GetContentListResponse {
     repeated middleware.article.v1.Article Infos = 10;
     uint32                                 Total = 20;
 }
@@ -84,14 +84,15 @@ message GetContentResponse {
 }
 
 message CreateArticleRequest {
-    string AppID        = 10;
-    string TargetLangID = 20;
-    string CategoryID   = 30;
-    string UserID       = 40;
-    string Title        = 50;
-    string Subtitle     = 60;
-    string Digest       = 70;
-    string Content      = 80;
+    string AppID              = 10;
+    string TargetLangID       = 20;
+    string CategoryID         = 30;
+    string UserID             = 40;
+    string Title              = 50;
+    string Subtitle           = 60;
+    string Digest             = 70;
+    string Content            = 80;
+    optional bool ACLEnabled  = 90;
 }
 
 message CreateArticleResponse {
@@ -109,31 +110,32 @@ message UpdateArticleRequest {
     optional string Digest        = 80;
     optional string Content       = 90;
     optional bool   UpdateContent = 100;
-    optional basetypes.cms.v1.ArticleStatus Status = 110;
+    optional bool   ACLEnabled    = 110;
+    optional basetypes.cms.v1.ArticleStatus Status = 120;
 }
 
 message UpdateArticleResponse {
     middleware.article.v1.Article Info = 10;
 }
 
-message GetAppArticlesRequest {
+message GetArticlesRequest {
     string AppID        = 10;
     int32  Offset       = 20;
     int32  Limit        = 30;
 }
 
-message GetAppArticlesResponse {
+message GetArticlesResponse {
     repeated middleware.article.v1.Article Infos = 10;
     uint32                                 Total = 20;
 }
 
-message GetAppArticleContentRequest {
+message GetArticleContentRequest {
     uint32 ID    = 10;
     string EntID = 20;
     string AppID = 30;
 }
 
-message GetAppArticleContentResponse {
+message GetArticleContentResponse {
     string Info = 10;
 }
 

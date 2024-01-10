@@ -9,9 +9,9 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    rpc GetCategories(GetCategoriesRequest) returns (GetCategoriesResponse) {
+    rpc GetCategoryList(GetCategoryListRequest) returns (GetCategoryListResponse) {
         option (google.api.http) = {
-            post: "/v1/get/categories"
+            post: "/v1/get/categorylist"
             body: "*"
         };
     }
@@ -28,9 +28,9 @@ service Gateway {
             body: "*"
         };
     }
-    rpc GetAppCategories(GetAppCategoriesRequest) returns (GetAppCategoriesResponse) {
+    rpc GetCategories(GetCategoriesRequest) returns (GetCategoriesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/categories"
+            post: "/v1/get/categories"
             body: "*"
         };
     }
@@ -45,18 +45,20 @@ service Gateway {
 message Category {
     uint32 ID                  = 10;
     string EntID               = 20;
-    string ParentID            = 30;
-    string Name                = 40;
-    string Slug                = 50;
-    string FullSlug            = 60;
-    repeated Category Children = 70;
+    string AppID               = 30;
+    string ParentID            = 40;
+    string Name                = 50;
+    string Slug                = 60;
+    string FullSlug            = 70;
+    bool   Enabled             = 80;
+    repeated Category Children = 90;
 }
 
-message GetCategoriesRequest {
+message GetCategoryListRequest {
     string AppID = 10;
 }
 
-message GetCategoriesResponse {
+message GetCategoryListResponse {
     repeated Category Infos = 10;
 }
 
@@ -69,7 +71,7 @@ message CreateCategoryRequest {
 }
 
 message CreateCategoryResponse {
-    middleware.category.v1.Category Info = 10;
+    Category Info = 10;
 }
 
 message UpdateCategoryRequest {
@@ -82,18 +84,18 @@ message UpdateCategoryRequest {
 }
 
 message UpdateCategoryResponse {
-    middleware.category.v1.Category Info = 10;
+    Category Info = 10;
 }
 
-message GetAppCategoriesRequest {
+message GetCategoriesRequest {
     string AppID   = 10;
     int32  Offset  = 20;
     int32  Limit   = 30;
 }
 
-message GetAppCategoriesResponse {
-    repeated middleware.category.v1.Category Infos = 10;
-    uint32                                   Total = 20;
+message GetCategoriesResponse {
+    repeated Category Infos = 10;
+    uint32            Total = 20;
 }
 
 message DeleteCategoryRequest {

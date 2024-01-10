@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/get/app/articlecontent": {
+    "/v1/get/articlecontent": {
       "post": {
-        "operationId": "Gateway_GetAppArticleContent",
+        "operationId": "Gateway_GetArticleContent",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppArticleContentResponse"
+              "$ref": "#/definitions/v1GetArticleContentResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppArticleContentRequest"
+              "$ref": "#/definitions/v1GetArticleContentRequest"
             }
           }
         ],
@@ -144,14 +144,14 @@
         ]
       }
     },
-    "/v1/get/app/articles": {
+    "/v1/get/articles": {
       "post": {
-        "operationId": "Gateway_GetAppArticles",
+        "operationId": "Gateway_GetArticles",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppArticlesResponse"
+              "$ref": "#/definitions/cmsgatewayarticlev1GetArticlesResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppArticlesRequest"
+              "$ref": "#/definitions/cmsgatewayarticlev1GetArticlesRequest"
             }
           }
         ],
@@ -176,14 +176,14 @@
         ]
       }
     },
-    "/v1/get/contents": {
+    "/v1/get/contentlist": {
       "post": {
-        "operationId": "Gateway_GetContents",
+        "operationId": "Gateway_GetContentList",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetContentsResponse"
+              "$ref": "#/definitions/v1GetContentListResponse"
             }
           },
           "default": {
@@ -199,7 +199,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetContentsRequest"
+              "$ref": "#/definitions/v1GetContentListRequest"
             }
           }
         ],
@@ -268,6 +268,9 @@
         },
         "Content": {
           "type": "string"
+        },
+        "ACLEnabled": {
+          "type": "boolean"
         }
       }
     },
@@ -299,6 +302,38 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Article"
+        }
+      }
+    },
+    "cmsgatewayarticlev1GetArticlesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "cmsgatewayarticlev1GetArticlesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Article"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -334,6 +369,9 @@
           "type": "string"
         },
         "UpdateContent": {
+          "type": "boolean"
+        },
+        "ACLEnabled": {
           "type": "boolean"
         },
         "Status": {
@@ -453,6 +491,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"published_at\""
         },
+        "ACLEnabled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"acl_enabled\""
+        },
         "ACLRoleIDs": {
           "type": "array",
           "items": {
@@ -480,7 +522,7 @@
       ],
       "default": "DefaultArticleStatus"
     },
-    "v1GetAppArticleContentRequest": {
+    "v1GetArticleContentRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -495,7 +537,7 @@
         }
       }
     },
-    "v1GetAppArticleContentResponse": {
+    "v1GetArticleContentResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -503,10 +545,13 @@
         }
       }
     },
-    "v1GetAppArticlesRequest": {
+    "v1GetContentListRequest": {
       "type": "object",
       "properties": {
         "AppID": {
+          "type": "string"
+        },
+        "CategoryID": {
           "type": "string"
         },
         "Offset": {
@@ -519,7 +564,7 @@
         }
       }
     },
-    "v1GetAppArticlesResponse": {
+    "v1GetContentListResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -540,41 +585,6 @@
       "properties": {
         "Info": {
           "type": "string"
-        }
-      }
-    },
-    "v1GetContentsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "CategoryID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetContentsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Article"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     }
