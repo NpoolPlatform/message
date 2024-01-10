@@ -593,12 +593,6 @@
         "GoodSpotQuantity": {
           "type": "string"
         },
-        "RequiredGoods": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Good"
-          }
-        },
         "StartAt": {
           "type": "integer",
           "format": "int64"
