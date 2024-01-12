@@ -10,20 +10,6 @@ import "npool/basetypes/cms/v1/enums.proto";
 
 // Service Name
 service Gateway {
-    // URL: https://{Host}/api/cms/v1/c/{ContentURL}
-    // Host ex: api.site.top
-    // ContentURL: {Category1.Slug}/{Category2.Slug}/.../{ISO}/{PageName}
-    // ex: news/markets/en-US/test-page.html
-    // ISO: {LANG}
-    // ex: en-US
-    // PageName: {Title}.html -> ToLower({Title}) -> ReplaceAll({Title}, " ", "-")
-    // ex: test-page.html
-    rpc GetContent(GetContentRequest) returns (GetContentResponse) {
-        option (google.api.http) = {
-            get: "/v1/c/{ContentURL=**}"
-        };
-    }
-
     rpc GetContentList(GetContentListRequest) returns (GetContentListResponse) {
         option (google.api.http) = {
             post: "/v1/get/contentlist"
@@ -75,14 +61,6 @@ message GetContentListResponse {
     uint32                                 Total = 20;
 }
 
-message GetContentRequest {
-    string ContentURL = 10;
-}
-
-message GetContentResponse {
-    string Info = 10;
-}
-
 message CreateArticleRequest {
     string AppID              = 10;
     string TargetLangID       = 20;
@@ -92,7 +70,6 @@ message CreateArticleRequest {
     string Subtitle           = 60;
     string Digest             = 70;
     string Content            = 80;
-    optional bool ACLEnabled  = 90;
 }
 
 message CreateArticleResponse {

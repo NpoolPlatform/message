@@ -19,7 +19,6 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetContent_FullMethodName        = "/cms.gateway.article.v1.Gateway/GetContent"
 	Gateway_GetContentList_FullMethodName    = "/cms.gateway.article.v1.Gateway/GetContentList"
 	Gateway_CreateArticle_FullMethodName     = "/cms.gateway.article.v1.Gateway/CreateArticle"
 	Gateway_UpdateArticle_FullMethodName     = "/cms.gateway.article.v1.Gateway/UpdateArticle"
@@ -32,15 +31,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	// URL: https://{Host}/api/cms/v1/c/{ContentURL}
-	// Host ex: api.site.top
-	// ContentURL: {Category1.Slug}/{Category2.Slug}/.../{ISO}/{PageName}
-	// ex: news/markets/en-US/test-page.html
-	// ISO: {LANG}
-	// ex: en-US
-	// PageName: {Title}.html -> ToLower({Title}) -> ReplaceAll({Title}, " ", "-")
-	// ex: test-page.html
-	GetContent(ctx context.Context, in *GetContentRequest, opts ...grpc.CallOption) (*GetContentResponse, error)
 	GetContentList(ctx context.Context, in *GetContentListRequest, opts ...grpc.CallOption) (*GetContentListResponse, error)
 	CreateArticle(ctx context.Context, in *CreateArticleRequest, opts ...grpc.CallOption) (*CreateArticleResponse, error)
 	UpdateArticle(ctx context.Context, in *UpdateArticleRequest, opts ...grpc.CallOption) (*UpdateArticleResponse, error)
@@ -55,15 +45,6 @@ type gatewayClient struct {
 
 func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
-}
-
-func (c *gatewayClient) GetContent(ctx context.Context, in *GetContentRequest, opts ...grpc.CallOption) (*GetContentResponse, error) {
-	out := new(GetContentResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetContent_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *gatewayClient) GetContentList(ctx context.Context, in *GetContentListRequest, opts ...grpc.CallOption) (*GetContentListResponse, error) {
@@ -124,15 +105,6 @@ func (c *gatewayClient) GetArticleContent(ctx context.Context, in *GetArticleCon
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	// URL: https://{Host}/api/cms/v1/c/{ContentURL}
-	// Host ex: api.site.top
-	// ContentURL: {Category1.Slug}/{Category2.Slug}/.../{ISO}/{PageName}
-	// ex: news/markets/en-US/test-page.html
-	// ISO: {LANG}
-	// ex: en-US
-	// PageName: {Title}.html -> ToLower({Title}) -> ReplaceAll({Title}, " ", "-")
-	// ex: test-page.html
-	GetContent(context.Context, *GetContentRequest) (*GetContentResponse, error)
 	GetContentList(context.Context, *GetContentListRequest) (*GetContentListResponse, error)
 	CreateArticle(context.Context, *CreateArticleRequest) (*CreateArticleResponse, error)
 	UpdateArticle(context.Context, *UpdateArticleRequest) (*UpdateArticleResponse, error)
@@ -146,9 +118,6 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetContent(context.Context, *GetContentRequest) (*GetContentResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetContent not implemented")
-}
 func (UnimplementedGatewayServer) GetContentList(context.Context, *GetContentListRequest) (*GetContentListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetContentList not implemented")
 }
@@ -178,24 +147,6 @@ type UnsafeGatewayServer interface {
 
 func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
-}
-
-func _Gateway_GetContent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetContentRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetContent(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetContent_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetContent(ctx, req.(*GetContentRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Gateway_GetContentList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -313,10 +264,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "cms.gateway.article.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetContent",
-			Handler:    _Gateway_GetContent_Handler,
-		},
 		{
 			MethodName: "GetContentList",
 			Handler:    _Gateway_GetContentList_Handler,

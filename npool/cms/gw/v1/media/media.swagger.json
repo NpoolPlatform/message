@@ -80,43 +80,6 @@
         ]
       }
     },
-    "/v1/m/{AppID}/{FileName}": {
-      "get": {
-        "summary": "URL: https://api.site.top/api/cms/v1/m/{AppID}/{FileName}\nFileName: {EntID}{Ext}",
-        "operationId": "Gateway_GetMedia",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/cmsgatewaymediav1GetMediaResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "AppID",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "FileName",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/upload/media": {
       "post": {
         "operationId": "Gateway_UploadMedia",
@@ -171,14 +134,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Media"
-        }
-      }
-    },
-    "cmsgatewaymediav1GetMediaResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string"
         }
       }
     },

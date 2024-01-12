@@ -19,7 +19,6 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetMedia_FullMethodName    = "/cms.gateway.media.v1.Gateway/GetMedia"
 	Gateway_UploadMedia_FullMethodName = "/cms.gateway.media.v1.Gateway/UploadMedia"
 	Gateway_GetMedias_FullMethodName   = "/cms.gateway.media.v1.Gateway/GetMedias"
 	Gateway_DeleteMedia_FullMethodName = "/cms.gateway.media.v1.Gateway/DeleteMedia"
@@ -29,9 +28,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	// URL: https://api.site.top/api/cms/v1/m/{AppID}/{FileName}
-	// FileName: {EntID}{Ext}
-	GetMedia(ctx context.Context, in *GetMediaRequest, opts ...grpc.CallOption) (*GetMediaResponse, error)
 	UploadMedia(ctx context.Context, in *UploadMediaRequest, opts ...grpc.CallOption) (*UploadMediaResponse, error)
 	GetMedias(ctx context.Context, in *GetMediasRequest, opts ...grpc.CallOption) (*GetMediasResponse, error)
 	DeleteMedia(ctx context.Context, in *DeleteMediaRequest, opts ...grpc.CallOption) (*DeleteMediaResponse, error)
@@ -43,15 +39,6 @@ type gatewayClient struct {
 
 func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
-}
-
-func (c *gatewayClient) GetMedia(ctx context.Context, in *GetMediaRequest, opts ...grpc.CallOption) (*GetMediaResponse, error) {
-	out := new(GetMediaResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetMedia_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *gatewayClient) UploadMedia(ctx context.Context, in *UploadMediaRequest, opts ...grpc.CallOption) (*UploadMediaResponse, error) {
@@ -85,9 +72,6 @@ func (c *gatewayClient) DeleteMedia(ctx context.Context, in *DeleteMediaRequest,
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	// URL: https://api.site.top/api/cms/v1/m/{AppID}/{FileName}
-	// FileName: {EntID}{Ext}
-	GetMedia(context.Context, *GetMediaRequest) (*GetMediaResponse, error)
 	UploadMedia(context.Context, *UploadMediaRequest) (*UploadMediaResponse, error)
 	GetMedias(context.Context, *GetMediasRequest) (*GetMediasResponse, error)
 	DeleteMedia(context.Context, *DeleteMediaRequest) (*DeleteMediaResponse, error)
@@ -98,9 +82,6 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GetMedia(context.Context, *GetMediaRequest) (*GetMediaResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetMedia not implemented")
-}
 func (UnimplementedGatewayServer) UploadMedia(context.Context, *UploadMediaRequest) (*UploadMediaResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadMedia not implemented")
 }
@@ -121,24 +102,6 @@ type UnsafeGatewayServer interface {
 
 func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
-}
-
-func _Gateway_GetMedia_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetMediaRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetMedia(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetMedia_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetMedia(ctx, req.(*GetMediaRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Gateway_UploadMedia_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -202,10 +165,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "cms.gateway.media.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetMedia",
-			Handler:    _Gateway_GetMedia_Handler,
-		},
 		{
 			MethodName: "UploadMedia",
 			Handler:    _Gateway_UploadMedia_Handler,

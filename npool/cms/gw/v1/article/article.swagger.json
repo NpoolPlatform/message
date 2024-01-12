@@ -16,38 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/c/{ContentURL}": {
-      "get": {
-        "summary": "URL: https://{Host}/api/cms/v1/c/{ContentURL}\nHost ex: api.site.top\nContentURL: {Category1.Slug}/{Category2.Slug}/.../{ISO}/{PageName}\nex: news/markets/en-US/test-page.html\nISO: {LANG}\nex: en-US\nPageName: {Title}.html -\u003e ToLower({Title}) -\u003e ReplaceAll({Title}, \" \", \"-\")\nex: test-page.html",
-        "operationId": "Gateway_GetContent",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetContentResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "ContentURL",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": ".+"
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/create/article": {
       "post": {
         "operationId": "Gateway_CreateArticle",
@@ -268,9 +236,6 @@
         },
         "Content": {
           "type": "string"
-        },
-        "ACLEnabled": {
-          "type": "boolean"
         }
       }
     },
@@ -577,14 +542,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1GetContentResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string"
         }
       }
     }

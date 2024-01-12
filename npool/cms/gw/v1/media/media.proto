@@ -9,14 +9,6 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    // URL: https://api.site.top/api/cms/v1/m/{AppID}/{FileName}
-    // FileName: {EntID}{Ext}
-    rpc GetMedia(GetMediaRequest) returns (GetMediaResponse) {
-        option (google.api.http) = {
-            get: "/v1/m/{AppID}/{FileName}"
-        };
-    }
-
     rpc UploadMedia(UploadMediaRequest) returns (UploadMediaResponse) {
         option (google.api.http) = {
             post: "/v1/upload/media"
@@ -35,15 +27,6 @@ service Gateway {
             body: "*"
         };
     }
-}
-
-message GetMediaRequest {
-    string AppID    = 10;
-    string FileName = 20;
-}
-
-message GetMediaResponse {
-    string Info = 10;
 }
 
 message UploadMediaRequest {
