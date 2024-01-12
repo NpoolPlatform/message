@@ -27,8 +27,8 @@ message GoodReq {
     optional basetypes.good.v1.BenefitType BenefitType = 80;
     optional basetypes.good.v1.GoodType    GoodType    = 90;
     optional string        Title              = 100;
-    optional string        Unit               = 110;
-    optional int32         UnitAmount         = 120;
+    optional string        QuantityUnit       = 110;
+    optional string        QuantityUnitAmount = 120;
     optional uint32        DeliveryAt         = 140;
     optional uint32        StartAt            = 150;
     optional bool          TestOnly           = 160;
@@ -46,9 +46,10 @@ message GoodReq {
     optional string        UnitRewardAmount   = 310;
     optional basetypes.good.v1.GoodStartMode StartMode = 320;
     optional uint32        UnitDuration       = 330;
-    optional basetypes.good.v1.GoodUnitType GoodUnitType = 340;
-    optional basetypes.good.v1.GoodUnitCalculateType GoodUnitCalculateType = 350;
-    optional basetypes.good.v1.GoodUnitDurationType GoodUnitDurationType = 360;
+    optional basetypes.good.v1.GoodUnitType UnitType = 340;
+    optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 350;
+    optional basetypes.good.v1.GoodDurationType DurationType = 360;
+    optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 370;
 }
 
 message Good {
@@ -91,11 +92,11 @@ message Good {
     // @inject_tag: sql:"vendor_brand_logo"
     string           VendorBrandLogo             = 182;
 
-    basetypes.good.v1.GoodType    GoodType    = 190;
+    basetypes.good.v1.GoodType GoodType          = 190;
     // @inject_tag: sql:"good_type"
     string           GoodTypeStr                 = 191;
 
-    basetypes.good.v1.BenefitType BenefitType = 200;
+    basetypes.good.v1.BenefitType BenefitType    = 200;
     // @inject_tag: sql:"benefit_type"
     string           BenefitTypeStr              = 201;
 
@@ -103,10 +104,10 @@ message Good {
     string           Price              = 210;
     // @inject_tag: sql:"title"
     string           Title              = 220;
-    // @inject_tag: sql:"unit"
+    // @inject_tag: sql:"quantity_unit"
     string           Unit               = 230;
-    // @inject_tag: sql:"unit_amount"
-    int32            UnitAmount         = 240;
+    // @inject_tag: sql:"quantity_unit_amount"
+    string           UnitAmount         = 240;
 
     // @inject_tag: sql:"test_only"
     bool             TestOnly           = 260;
@@ -177,15 +178,18 @@ message Good {
     // @inject_tag: sql:"total_reward_amount"
     string           TotalRewardAmount    = 500;
 
-    // @inject_tag: sql:"good_unit_type"
-    string           GoodUnitTypeStr      = 510;
-    basetypes.good.v1.GoodUnitType GoodUnitType = 520;
-    // @inject_tag: sql:"good_unit_calculate_type"
-    string           GoodUnitCalculateTypeStr = 530;
-    basetypes.good.v1.GoodUnitCalculateType GoodUnitCalculateType = 540;
-    // @inject_tag: sql:"unit_duration"
-    string           GoodUnitDurationTypeStr = 550;
-    basetypes.good.v1.GoodUnitDurationType GoodUnitDurationType = 560;
+    // @inject_tag: sql:"unit_type"
+    string           UnitTypeStr      = 510;
+    basetypes.good.v1.GoodUnitType UnitType = 520;
+    // @inject_tag: sql:"quantity_calculate_type"
+    string           QuantityCalculateTypeStr = 530;
+    basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 540;
+    // @inject_tag: sql:"duration_type"
+    string           DurationTypeStr = 550;
+    basetypes.good.v1.GoodDurationType DurationType = 560;
+    // @inject_tag: sql:"duration_calculate_type"
+    string           DurationCalculateTypeStr = 570;
+    basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 580;
 
     // @inject_tag: sql:"created_at"
     uint32           CreatedAt          = 1000;
