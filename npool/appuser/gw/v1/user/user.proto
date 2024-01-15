@@ -144,9 +144,16 @@ service Gateway {
         };
     }
 
-    rpc GenerateRecoveryCode (GenerateRecoveryCodeRequest) returns (GenerateRecoveryCodeResponse) {
+    rpc GenerateRecoveryCode (GenerateRecoveryCodesRequest) returns (GenerateRecoveryCodesResponse) {
         option (google.api.http) = {
-            post: "/v1/generate/recoverycode"
+            post: "/v1/generate/recoverycodes"
+            body: "*"
+        };
+    }
+
+    rpc GetRecoveryCodes (GetRecoveryCodesRequest) returns (GetRecoveryCodesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/recoverycodes"
             body: "*"
         };
     }
@@ -421,18 +428,29 @@ message UnbindOAuthRequest {
     string          AppID              = 10;
     string          UserID             = 20;
 
-    string Account                     = 30;
+    string          Account            = 30;
     basetypes.v1.SignMethod AccountType    = 40;
 }
 
 message UnbindOAuthResponse {
 }
 
-message GenerateRecoveryCodeRequest {
+message GenerateRecoveryCodesRequest {
     string AppID   = 10;
     string UserID  = 20;
 }
 
-message GenerateRecoveryCodeResponse {
-    appuser.middleware.user.recoverycode.v1.RecoveryCode Info = 10;
+message GenerateRecoveryCodesResponse {
+    repeated appuser.middleware.user.recoverycode.v1.RecoveryCode Infos = 10;
+}
+
+message GetRecoveryCodesRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40; 
+}
+
+message GetRecoveryCodesResponse {
+    repeated appuser.middleware.user.recoverycode.v1.RecoveryCode Infos = 10;
 }

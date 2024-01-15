@@ -208,14 +208,14 @@
         ]
       }
     },
-    "/v1/generate/recoverycode": {
+    "/v1/generate/recoverycodes": {
       "post": {
         "operationId": "Gateway_GenerateRecoveryCode",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewayuserv1GenerateRecoveryCodeResponse"
+              "$ref": "#/definitions/v1GenerateRecoveryCodesResponse"
             }
           },
           "default": {
@@ -231,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewayuserv1GenerateRecoveryCodeRequest"
+              "$ref": "#/definitions/v1GenerateRecoveryCodesRequest"
             }
           }
         ],
@@ -296,6 +296,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetLoginHistoriesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/recoverycodes": {
+      "post": {
+        "operationId": "Gateway_GetRecoveryCodes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/gatewayuserv1GetRecoveryCodesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/gatewayuserv1GetRecoveryCodesRequest"
             }
           }
         ],
@@ -879,7 +911,7 @@
         }
       }
     },
-    "gatewayuserv1GenerateRecoveryCodeRequest": {
+    "gatewayuserv1GetRecoveryCodesRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -887,14 +919,25 @@
         },
         "UserID": {
           "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
-    "gatewayuserv1GenerateRecoveryCodeResponse": {
+    "gatewayuserv1GetRecoveryCodesResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1RecoveryCode"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RecoveryCode"
+          }
         }
       }
     },
@@ -1032,6 +1075,28 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1GenerateRecoveryCodesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GenerateRecoveryCodesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RecoveryCode"
+          }
         }
       }
     },
