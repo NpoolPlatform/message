@@ -78,7 +78,7 @@
         }
       }
     },
-    "v1ExistRecoveryCodeResponse": {
+    "v1ExistRecoveryCodeCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
