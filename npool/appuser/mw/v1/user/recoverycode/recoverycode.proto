@@ -18,7 +18,7 @@ message RecoveryCodeReq {
     optional string EntID              = 20;
     optional string UserID             = 30;
     optional string AppID              = 40;
-    optional string Used               = 50;
+    optional bool   Used               = 50;
     optional string Code               = 60;
 }
 
