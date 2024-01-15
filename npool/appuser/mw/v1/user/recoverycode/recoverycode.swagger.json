@@ -86,7 +86,7 @@
         }
       }
     },
-    "v1GenerateRecoveryCodeResponse": {
+    "v1GenerateRecoveryCodesResponse": {
       "type": "object",
       "properties": {
         "Infos": {

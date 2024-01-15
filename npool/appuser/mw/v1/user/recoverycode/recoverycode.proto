@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user/r
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc GenerateRecoveryCode        (GenerateRecoveryCodeRequest)       returns (GenerateRecoveryCodeResponse)       {}
+    rpc GenerateRecoveryCodes        (GenerateRecoveryCodesRequest)       returns (GenerateRecoveryCodesResponse)       {}
     rpc GetRecoveryCodes            (GetRecoveryCodesRequest)           returns (GetRecoveryCodesResponse)         {}
     rpc ExistRecoveryCode           (ExistRecoveryCodeRequest)          returns (ExistRecoveryCodeResponse)         {}
 }
@@ -47,11 +47,11 @@ message Conds {
     optional basetypes.v1.BoolVal        Used          = 60;
 }
 
-message GenerateRecoveryCodeRequest {
+message GenerateRecoveryCodesRequest {
     RecoveryCodeReq Info = 10;
 }
 
-message GenerateRecoveryCodeResponse {
+message GenerateRecoveryCodesResponse {
     repeated RecoveryCode Infos = 10;
 }
 
