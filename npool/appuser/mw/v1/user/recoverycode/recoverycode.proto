@@ -7,9 +7,9 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/user/r
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc GenerateRecoveryCodes        (GenerateRecoveryCodesRequest)       returns (GenerateRecoveryCodesResponse)       {}
-    rpc GetRecoveryCodes            (GetRecoveryCodesRequest)           returns (GetRecoveryCodesResponse)         {}
-    rpc ExistRecoveryCode           (ExistRecoveryCodeRequest)          returns (ExistRecoveryCodeResponse)         {}
+    rpc GenerateRecoveryCodes        (GenerateRecoveryCodesRequest)       returns (GenerateRecoveryCodesResponse)    {}
+    rpc GetRecoveryCodes            (GetRecoveryCodesRequest)             returns (GetRecoveryCodesResponse)         {}
+    rpc ExistRecoveryCodeConds      (ExistRecoveryCodeCondsRequest)       returns (ExistRecoveryCodeCondsResponse)   {}
 }
 
 message RecoveryCodeReq {
@@ -64,14 +64,6 @@ message GetRecoveryCodesRequest {
 message GetRecoveryCodesResponse {
     repeated RecoveryCode Infos = 10;
     uint32                Total = 20;
-}
-
-message ExistRecoveryCodeRequest {
-    Conds Conds = 10;
-}
-
-message ExistRecoveryCodeResponse {
-    bool Info = 10;
 }
 
 message ExistRecoveryCodeCondsRequest {
