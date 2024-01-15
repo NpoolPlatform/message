@@ -143,6 +143,14 @@
         "EmailAddress": {
           "type": "string",
           "title": "@inject_tag: sql:\"email_address\""
+        },
+        "CreatedAt": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },

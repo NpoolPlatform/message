@@ -36,6 +36,10 @@ message RecoveryCode {
     string          UserID                      = 60;
     // @inject_tag: sql:"email_address"
     string          EmailAddress                = 70;
+    // @inject_tag: sql:"created_at"
+    string          CreatedAt                   = 80;
+    // @inject_tag: sql:"updated_at"
+    string          UpdatedAt                   = 90;
 }
 
 message Conds {
