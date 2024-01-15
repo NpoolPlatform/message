@@ -19,25 +19,26 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_Signup_FullMethodName            = "/appuser.gateway.user.v1.Gateway/Signup"
-	Gateway_CreateUser_FullMethodName        = "/appuser.gateway.user.v1.Gateway/CreateUser"
-	Gateway_DeleteUser_FullMethodName        = "/appuser.gateway.user.v1.Gateway/DeleteUser"
-	Gateway_CreateAppUser_FullMethodName     = "/appuser.gateway.user.v1.Gateway/CreateAppUser"
-	Gateway_UpdateUser_FullMethodName        = "/appuser.gateway.user.v1.Gateway/UpdateUser"
-	Gateway_UpdateUserKol_FullMethodName     = "/appuser.gateway.user.v1.Gateway/UpdateUserKol"
-	Gateway_UpdateAppUser_FullMethodName     = "/appuser.gateway.user.v1.Gateway/UpdateAppUser"
-	Gateway_ResetUser_FullMethodName         = "/appuser.gateway.user.v1.Gateway/ResetUser"
-	Gateway_GetUsers_FullMethodName          = "/appuser.gateway.user.v1.Gateway/GetUsers"
-	Gateway_GetAppUsers_FullMethodName       = "/appuser.gateway.user.v1.Gateway/GetAppUsers"
-	Gateway_Login_FullMethodName             = "/appuser.gateway.user.v1.Gateway/Login"
-	Gateway_LoginVerify_FullMethodName       = "/appuser.gateway.user.v1.Gateway/LoginVerify"
-	Gateway_Logined_FullMethodName           = "/appuser.gateway.user.v1.Gateway/Logined"
-	Gateway_Logout_FullMethodName            = "/appuser.gateway.user.v1.Gateway/Logout"
-	Gateway_GetLoginHistories_FullMethodName = "/appuser.gateway.user.v1.Gateway/GetLoginHistories"
-	Gateway_BanUser_FullMethodName           = "/appuser.gateway.user.v1.Gateway/BanUser"
-	Gateway_BanAppUser_FullMethodName        = "/appuser.gateway.user.v1.Gateway/BanAppUser"
-	Gateway_BindUser_FullMethodName          = "/appuser.gateway.user.v1.Gateway/BindUser"
-	Gateway_UnbindOAuth_FullMethodName       = "/appuser.gateway.user.v1.Gateway/UnbindOAuth"
+	Gateway_Signup_FullMethodName               = "/appuser.gateway.user.v1.Gateway/Signup"
+	Gateway_CreateUser_FullMethodName           = "/appuser.gateway.user.v1.Gateway/CreateUser"
+	Gateway_DeleteUser_FullMethodName           = "/appuser.gateway.user.v1.Gateway/DeleteUser"
+	Gateway_CreateAppUser_FullMethodName        = "/appuser.gateway.user.v1.Gateway/CreateAppUser"
+	Gateway_UpdateUser_FullMethodName           = "/appuser.gateway.user.v1.Gateway/UpdateUser"
+	Gateway_UpdateUserKol_FullMethodName        = "/appuser.gateway.user.v1.Gateway/UpdateUserKol"
+	Gateway_UpdateAppUser_FullMethodName        = "/appuser.gateway.user.v1.Gateway/UpdateAppUser"
+	Gateway_ResetUser_FullMethodName            = "/appuser.gateway.user.v1.Gateway/ResetUser"
+	Gateway_GetUsers_FullMethodName             = "/appuser.gateway.user.v1.Gateway/GetUsers"
+	Gateway_GetAppUsers_FullMethodName          = "/appuser.gateway.user.v1.Gateway/GetAppUsers"
+	Gateway_Login_FullMethodName                = "/appuser.gateway.user.v1.Gateway/Login"
+	Gateway_LoginVerify_FullMethodName          = "/appuser.gateway.user.v1.Gateway/LoginVerify"
+	Gateway_Logined_FullMethodName              = "/appuser.gateway.user.v1.Gateway/Logined"
+	Gateway_Logout_FullMethodName               = "/appuser.gateway.user.v1.Gateway/Logout"
+	Gateway_GetLoginHistories_FullMethodName    = "/appuser.gateway.user.v1.Gateway/GetLoginHistories"
+	Gateway_BanUser_FullMethodName              = "/appuser.gateway.user.v1.Gateway/BanUser"
+	Gateway_BanAppUser_FullMethodName           = "/appuser.gateway.user.v1.Gateway/BanAppUser"
+	Gateway_BindUser_FullMethodName             = "/appuser.gateway.user.v1.Gateway/BindUser"
+	Gateway_UnbindOAuth_FullMethodName          = "/appuser.gateway.user.v1.Gateway/UnbindOAuth"
+	Gateway_GenerateRecoveryCode_FullMethodName = "/appuser.gateway.user.v1.Gateway/GenerateRecoveryCode"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -63,6 +64,7 @@ type GatewayClient interface {
 	BanAppUser(ctx context.Context, in *BanAppUserRequest, opts ...grpc.CallOption) (*BanAppUserResponse, error)
 	BindUser(ctx context.Context, in *BindUserRequest, opts ...grpc.CallOption) (*BindUserResponse, error)
 	UnbindOAuth(ctx context.Context, in *UnbindOAuthRequest, opts ...grpc.CallOption) (*UnbindOAuthResponse, error)
+	GenerateRecoveryCode(ctx context.Context, in *GenerateRecoveryCodeRequest, opts ...grpc.CallOption) (*GenerateRecoveryCodeResponse, error)
 }
 
 type gatewayClient struct {
@@ -244,6 +246,15 @@ func (c *gatewayClient) UnbindOAuth(ctx context.Context, in *UnbindOAuthRequest,
 	return out, nil
 }
 
+func (c *gatewayClient) GenerateRecoveryCode(ctx context.Context, in *GenerateRecoveryCodeRequest, opts ...grpc.CallOption) (*GenerateRecoveryCodeResponse, error) {
+	out := new(GenerateRecoveryCodeResponse)
+	err := c.cc.Invoke(ctx, Gateway_GenerateRecoveryCode_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -267,6 +278,7 @@ type GatewayServer interface {
 	BanAppUser(context.Context, *BanAppUserRequest) (*BanAppUserResponse, error)
 	BindUser(context.Context, *BindUserRequest) (*BindUserResponse, error)
 	UnbindOAuth(context.Context, *UnbindOAuthRequest) (*UnbindOAuthResponse, error)
+	GenerateRecoveryCode(context.Context, *GenerateRecoveryCodeRequest) (*GenerateRecoveryCodeResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -330,6 +342,9 @@ func (UnimplementedGatewayServer) BindUser(context.Context, *BindUserRequest) (*
 }
 func (UnimplementedGatewayServer) UnbindOAuth(context.Context, *UnbindOAuthRequest) (*UnbindOAuthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnbindOAuth not implemented")
+}
+func (UnimplementedGatewayServer) GenerateRecoveryCode(context.Context, *GenerateRecoveryCodeRequest) (*GenerateRecoveryCodeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateRecoveryCode not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -686,6 +701,24 @@ func _Gateway_UnbindOAuth_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GenerateRecoveryCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateRecoveryCodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GenerateRecoveryCode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_GenerateRecoveryCode_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GenerateRecoveryCode(ctx, req.(*GenerateRecoveryCodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -768,6 +801,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UnbindOAuth",
 			Handler:    _Gateway_UnbindOAuth_Handler,
+		},
+		{
+			MethodName: "GenerateRecoveryCode",
+			Handler:    _Gateway_GenerateRecoveryCode_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

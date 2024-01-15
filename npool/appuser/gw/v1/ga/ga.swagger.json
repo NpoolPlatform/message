@@ -176,7 +176,8 @@
         "Linkedin",
         "Wechat",
         "Google",
-        "Username"
+        "Username",
+        "Reset"
       ],
       "default": "DefaultSignMethod"
     },

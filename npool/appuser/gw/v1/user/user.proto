@@ -8,6 +8,7 @@ import "google/api/annotations.proto";
 import "npool/appuser/mw/v1/user/login/history/history.proto";
 import "npool/appuser/mw/v1/user/user.proto";
 import "npool/basetypes/v1/signmethod.proto";
+import "npool/appuser/mw/v1/user/recoverycode/recoverycode.proto";
 
 service Gateway {
     rpc Signup (SignupRequest) returns (SignupResponse) {
@@ -142,6 +143,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc GenerateRecoveryCode (GenerateRecoveryCodeRequest) returns (GenerateRecoveryCodeResponse) {
+        option (google.api.http) = {
+            post: "/v1/generate/recoverycode"
+            body: "*"
+        };
+    }
 }
 
 message SignupRequest {
@@ -268,6 +276,7 @@ message UpdateAppUserRequest {
     string          TargetUserID = 20;
     optional bool   Kol          = 30;
     optional string EmailAddress = 40;
+    optional basetypes.v1.SignMethod SigninVerifyType = 50;
 }
 
 message UpdateAppUserResponse {
@@ -417,4 +426,13 @@ message UnbindOAuthRequest {
 }
 
 message UnbindOAuthResponse {
+}
+
+message GenerateRecoveryCodeRequest {
+    string AppID   = 10;
+    string UserID  = 20;
+}
+
+message GenerateRecoveryCodeResponse {
+    appuser.middleware.user.recoverycode.v1.RecoveryCode Info = 10;
 }
