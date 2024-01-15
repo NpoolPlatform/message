@@ -8,6 +8,7 @@ import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
     rpc GenerateRecoveryCodes        (GenerateRecoveryCodesRequest)       returns (GenerateRecoveryCodesResponse)    {}
+    rpc UpdateRecoveryCode           (UpdateRecoveryCodeRequest)       returns (UpdateRecoveryCodeResponse)    {}
     rpc GetRecoveryCodes            (GetRecoveryCodesRequest)             returns (GetRecoveryCodesResponse)         {}
     rpc ExistRecoveryCodeConds      (ExistRecoveryCodeCondsRequest)       returns (ExistRecoveryCodeCondsResponse)   {}
 }
@@ -57,6 +58,14 @@ message GenerateRecoveryCodesRequest {
 
 message GenerateRecoveryCodesResponse {
     repeated RecoveryCode Infos = 10;
+}
+
+message UpdateRecoveryCodeRequest {
+    RecoveryCodeReq Info = 10;
+}
+
+message UpdateRecoveryCodeResponse {
+    RecoveryCode Info = 10;
 }
 
 message GetRecoveryCodesRequest {

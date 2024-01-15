@@ -200,6 +200,14 @@
           "format": "int64"
         }
       }
+    },
+    "v1UpdateRecoveryCodeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RecoveryCode"
+        }
+      }
     }
   }
 }
