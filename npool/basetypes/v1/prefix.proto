@@ -52,6 +52,7 @@ enum Prefix {
     PrefixOAuthLogin           = 420;
     PrefixCreateAppEvent       = 430;
     PrefixCreateInvitationCode = 440;
+    PrefixCreateRecoveryCode   = 441;
     PrefixCreateRegistration   = 450;
     PrefixCreateCommission     = 460;
     PrefixCloneCommission      = 470;
@@ -78,6 +79,7 @@ enum Prefix {
     PrefixCreateGoodLedger      = 730;
     PrefixCreateGoodLedgerStatement = 740;
     PrefixCreateGoodLedgerUnsoldStatement = 750;
+
 
     PrefixMigrate              = 10000;
 
