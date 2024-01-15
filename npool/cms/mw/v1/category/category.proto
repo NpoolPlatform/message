@@ -25,6 +25,7 @@ message CategoryReq {
     optional string Name        = 50;
     optional string Slug        = 60;
     optional bool   Enabled     = 70;
+    optional uint32 Index       = 80;
 }
 
 message Category {
@@ -42,6 +43,8 @@ message Category {
     string Slug      = 60;
     // @inject_tag: sql:"enabled"
     bool   Enabled   = 70;
+    // @inject_tag: sql:"index"
+    uint32 Index     = 80;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
@@ -58,6 +61,7 @@ message Conds {
     basetypes.v1.BoolVal        Enabled  = 70;
     basetypes.v1.Uint32SliceVal IDs      = 80;
     basetypes.v1.StringSliceVal EntIDs   = 90;
+    basetypes.v1.Uint32Val      Index    = 100;
 }
 
 message CreateCategoryRequest {

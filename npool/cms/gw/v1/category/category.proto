@@ -51,7 +51,8 @@ message Category {
     string Slug                = 60;
     string FullSlug            = 70;
     bool   Enabled             = 80;
-    repeated Category Children = 90;
+    uint32 Index               = 90;
+    repeated Category Children = 100;
 }
 
 message GetCategoryListRequest {
@@ -68,6 +69,7 @@ message CreateCategoryRequest {
     string Name              = 30;
     string Slug              = 40;
     bool   Enabled           = 50;
+    uint32 Index             = 60;
 }
 
 message CreateCategoryResponse {
@@ -81,6 +83,7 @@ message UpdateCategoryRequest {
     optional string ParentID      = 40;
     optional string Name          = 50;
     optional bool   Enabled       = 60;
+    optional uint32 Index         = 70;
 }
 
 message UpdateCategoryResponse {
