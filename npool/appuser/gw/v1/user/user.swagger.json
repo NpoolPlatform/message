@@ -215,7 +215,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GenerateRecoveryCodesResponse"
+              "$ref": "#/definitions/gatewayuserv1GenerateRecoveryCodesResponse"
             }
           },
           "default": {
@@ -231,7 +231,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GenerateRecoveryCodesRequest"
+              "$ref": "#/definitions/gatewayuserv1GenerateRecoveryCodesRequest"
             }
           }
         ],
@@ -911,6 +911,28 @@
         }
       }
     },
+    "gatewayuserv1GenerateRecoveryCodesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      }
+    },
+    "gatewayuserv1GenerateRecoveryCodesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RecoveryCode"
+          }
+        }
+      }
+    },
     "gatewayuserv1GetRecoveryCodesRequest": {
       "type": "object",
       "properties": {
@@ -1075,28 +1097,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1User"
-        }
-      }
-    },
-    "v1GenerateRecoveryCodesRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GenerateRecoveryCodesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1RecoveryCode"
-          }
         }
       }
     },

@@ -19,16 +19,16 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GenerateRecoveryCode_FullMethodName = "/appuser.middleware.user.recoverycode.v1.Middleware/GenerateRecoveryCode"
-	Middleware_GetRecoveryCodes_FullMethodName     = "/appuser.middleware.user.recoverycode.v1.Middleware/GetRecoveryCodes"
-	Middleware_ExistRecoveryCode_FullMethodName    = "/appuser.middleware.user.recoverycode.v1.Middleware/ExistRecoveryCode"
+	Middleware_GenerateRecoveryCodes_FullMethodName = "/appuser.middleware.user.recoverycode.v1.Middleware/GenerateRecoveryCodes"
+	Middleware_GetRecoveryCodes_FullMethodName      = "/appuser.middleware.user.recoverycode.v1.Middleware/GetRecoveryCodes"
+	Middleware_ExistRecoveryCode_FullMethodName     = "/appuser.middleware.user.recoverycode.v1.Middleware/ExistRecoveryCode"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	GenerateRecoveryCode(ctx context.Context, in *GenerateRecoveryCodeRequest, opts ...grpc.CallOption) (*GenerateRecoveryCodeResponse, error)
+	GenerateRecoveryCodes(ctx context.Context, in *GenerateRecoveryCodesRequest, opts ...grpc.CallOption) (*GenerateRecoveryCodesResponse, error)
 	GetRecoveryCodes(ctx context.Context, in *GetRecoveryCodesRequest, opts ...grpc.CallOption) (*GetRecoveryCodesResponse, error)
 	ExistRecoveryCode(ctx context.Context, in *ExistRecoveryCodeRequest, opts ...grpc.CallOption) (*ExistRecoveryCodeResponse, error)
 }
@@ -41,9 +41,9 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
 }
 
-func (c *middlewareClient) GenerateRecoveryCode(ctx context.Context, in *GenerateRecoveryCodeRequest, opts ...grpc.CallOption) (*GenerateRecoveryCodeResponse, error) {
-	out := new(GenerateRecoveryCodeResponse)
-	err := c.cc.Invoke(ctx, Middleware_GenerateRecoveryCode_FullMethodName, in, out, opts...)
+func (c *middlewareClient) GenerateRecoveryCodes(ctx context.Context, in *GenerateRecoveryCodesRequest, opts ...grpc.CallOption) (*GenerateRecoveryCodesResponse, error) {
+	out := new(GenerateRecoveryCodesResponse)
+	err := c.cc.Invoke(ctx, Middleware_GenerateRecoveryCodes_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,7 +72,7 @@ func (c *middlewareClient) ExistRecoveryCode(ctx context.Context, in *ExistRecov
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	GenerateRecoveryCode(context.Context, *GenerateRecoveryCodeRequest) (*GenerateRecoveryCodeResponse, error)
+	GenerateRecoveryCodes(context.Context, *GenerateRecoveryCodesRequest) (*GenerateRecoveryCodesResponse, error)
 	GetRecoveryCodes(context.Context, *GetRecoveryCodesRequest) (*GetRecoveryCodesResponse, error)
 	ExistRecoveryCode(context.Context, *ExistRecoveryCodeRequest) (*ExistRecoveryCodeResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -82,8 +82,8 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) GenerateRecoveryCode(context.Context, *GenerateRecoveryCodeRequest) (*GenerateRecoveryCodeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GenerateRecoveryCode not implemented")
+func (UnimplementedMiddlewareServer) GenerateRecoveryCodes(context.Context, *GenerateRecoveryCodesRequest) (*GenerateRecoveryCodesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateRecoveryCodes not implemented")
 }
 func (UnimplementedMiddlewareServer) GetRecoveryCodes(context.Context, *GetRecoveryCodesRequest) (*GetRecoveryCodesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRecoveryCodes not implemented")
@@ -104,20 +104,20 @@ func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
 }
 
-func _Middleware_GenerateRecoveryCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GenerateRecoveryCodeRequest)
+func _Middleware_GenerateRecoveryCodes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateRecoveryCodesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GenerateRecoveryCode(ctx, in)
+		return srv.(MiddlewareServer).GenerateRecoveryCodes(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GenerateRecoveryCode_FullMethodName,
+		FullMethod: Middleware_GenerateRecoveryCodes_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GenerateRecoveryCode(ctx, req.(*GenerateRecoveryCodeRequest))
+		return srv.(MiddlewareServer).GenerateRecoveryCodes(ctx, req.(*GenerateRecoveryCodesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -166,8 +166,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GenerateRecoveryCode",
-			Handler:    _Middleware_GenerateRecoveryCode_Handler,
+			MethodName: "GenerateRecoveryCodes",
+			Handler:    _Middleware_GenerateRecoveryCodes_Handler,
 		},
 		{
 			MethodName: "GetRecoveryCodes",
