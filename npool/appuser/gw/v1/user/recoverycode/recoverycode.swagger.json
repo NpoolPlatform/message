@@ -131,6 +131,10 @@
           "items": {
             "$ref": "#/definitions/v1RecoveryCode"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
