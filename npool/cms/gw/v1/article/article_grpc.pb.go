@@ -23,6 +23,7 @@ const (
 	Gateway_CreateArticle_FullMethodName     = "/cms.gateway.article.v1.Gateway/CreateArticle"
 	Gateway_UpdateArticle_FullMethodName     = "/cms.gateway.article.v1.Gateway/UpdateArticle"
 	Gateway_DeleteArticle_FullMethodName     = "/cms.gateway.article.v1.Gateway/DeleteArticle"
+	Gateway_GetArticle_FullMethodName        = "/cms.gateway.article.v1.Gateway/GetArticle"
 	Gateway_GetArticles_FullMethodName       = "/cms.gateway.article.v1.Gateway/GetArticles"
 	Gateway_GetArticleContent_FullMethodName = "/cms.gateway.article.v1.Gateway/GetArticleContent"
 )
@@ -35,6 +36,7 @@ type GatewayClient interface {
 	CreateArticle(ctx context.Context, in *CreateArticleRequest, opts ...grpc.CallOption) (*CreateArticleResponse, error)
 	UpdateArticle(ctx context.Context, in *UpdateArticleRequest, opts ...grpc.CallOption) (*UpdateArticleResponse, error)
 	DeleteArticle(ctx context.Context, in *DeleteArticleRequest, opts ...grpc.CallOption) (*DeleteArticleResponse, error)
+	GetArticle(ctx context.Context, in *GetArticleRequest, opts ...grpc.CallOption) (*GetArticleResponse, error)
 	GetArticles(ctx context.Context, in *GetArticlesRequest, opts ...grpc.CallOption) (*GetArticlesResponse, error)
 	GetArticleContent(ctx context.Context, in *GetArticleContentRequest, opts ...grpc.CallOption) (*GetArticleContentResponse, error)
 }
@@ -83,6 +85,15 @@ func (c *gatewayClient) DeleteArticle(ctx context.Context, in *DeleteArticleRequ
 	return out, nil
 }
 
+func (c *gatewayClient) GetArticle(ctx context.Context, in *GetArticleRequest, opts ...grpc.CallOption) (*GetArticleResponse, error) {
+	out := new(GetArticleResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetArticle_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) GetArticles(ctx context.Context, in *GetArticlesRequest, opts ...grpc.CallOption) (*GetArticlesResponse, error) {
 	out := new(GetArticlesResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetArticles_FullMethodName, in, out, opts...)
@@ -109,6 +120,7 @@ type GatewayServer interface {
 	CreateArticle(context.Context, *CreateArticleRequest) (*CreateArticleResponse, error)
 	UpdateArticle(context.Context, *UpdateArticleRequest) (*UpdateArticleResponse, error)
 	DeleteArticle(context.Context, *DeleteArticleRequest) (*DeleteArticleResponse, error)
+	GetArticle(context.Context, *GetArticleRequest) (*GetArticleResponse, error)
 	GetArticles(context.Context, *GetArticlesRequest) (*GetArticlesResponse, error)
 	GetArticleContent(context.Context, *GetArticleContentRequest) (*GetArticleContentResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -129,6 +141,9 @@ func (UnimplementedGatewayServer) UpdateArticle(context.Context, *UpdateArticleR
 }
 func (UnimplementedGatewayServer) DeleteArticle(context.Context, *DeleteArticleRequest) (*DeleteArticleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteArticle not implemented")
+}
+func (UnimplementedGatewayServer) GetArticle(context.Context, *GetArticleRequest) (*GetArticleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetArticle not implemented")
 }
 func (UnimplementedGatewayServer) GetArticles(context.Context, *GetArticlesRequest) (*GetArticlesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetArticles not implemented")
@@ -221,6 +236,24 @@ func _Gateway_DeleteArticle_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetArticle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetArticleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetArticle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_GetArticle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetArticle(ctx, req.(*GetArticleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_GetArticles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetArticlesRequest)
 	if err := dec(in); err != nil {
@@ -279,6 +312,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteArticle",
 			Handler:    _Gateway_DeleteArticle_Handler,
+		},
+		{
+			MethodName: "GetArticle",
+			Handler:    _Gateway_GetArticle_Handler,
 		},
 		{
 			MethodName: "GetArticles",

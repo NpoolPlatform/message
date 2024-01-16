@@ -80,6 +80,38 @@
         ]
       }
     },
+    "/v1/get/article": {
+      "post": {
+        "operationId": "Gateway_GetArticle",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/cmsgatewayarticlev1GetArticleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/cmsgatewayarticlev1GetArticleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/articlecontent": {
       "post": {
         "operationId": "Gateway_GetArticleContent",
@@ -263,6 +295,25 @@
       }
     },
     "cmsgatewayarticlev1DeleteArticleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Article"
+        }
+      }
+    },
+    "cmsgatewayarticlev1GetArticleRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "cmsgatewayarticlev1GetArticleResponse": {
       "type": "object",
       "properties": {
         "Info": {

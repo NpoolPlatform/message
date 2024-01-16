@@ -35,6 +35,12 @@ service Gateway {
             body: "*"
         };
     }
+    rpc GetArticle(GetArticleRequest) returns (GetArticleResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/article"
+            body: "*"
+        };
+    }
     rpc GetArticles(GetArticlesRequest) returns (GetArticlesResponse) {
         option (google.api.http) = {
             post: "/v1/get/articles"
@@ -92,6 +98,15 @@ message UpdateArticleRequest {
 }
 
 message UpdateArticleResponse {
+    middleware.article.v1.Article Info = 10;
+}
+
+message GetArticleRequest {
+    string EntID = 10;
+    string AppID = 20;
+}
+
+message GetArticleResponse {
     middleware.article.v1.Article Info = 10;
 }
 
