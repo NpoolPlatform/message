@@ -1333,6 +1333,9 @@
         },
         "RecoveryCode": {
           "type": "string"
+        },
+        "ResetToken": {
+          "type": "string"
         }
       }
     },

@@ -292,6 +292,7 @@ message ResetUserRequest {
 
     optional string PasswordHash       = 60;
     optional string RecoveryCode       = 70;
+    string          ResetToken         = 80;
 }
 
 message ResetUserResponse {}
