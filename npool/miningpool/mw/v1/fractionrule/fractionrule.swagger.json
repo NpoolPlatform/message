@@ -44,17 +44,25 @@
         }
       }
     },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "DefaultCoinType",
+        "BitCoin"
+      ],
+      "default": "DefaultCoinType"
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "MiningpoolName": {
-          "$ref": "#/definitions/v1StringVal"
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1Uint32Val"
         },
-        "CoinNmae": {
-          "$ref": "#/definitions/v1StringVal"
+        "CoinType": {
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "WithdrawInterval": {
           "$ref": "#/definitions/v1Uint32Val"
@@ -103,15 +111,21 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "MiningpoolName": {
+        "MiningpoolTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_name\""
+          "title": "@inject_tag: sql:\"miningpool_type\""
         },
-        "CoinNmae": {
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "CoinTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coin_nmae\""
+          "title": "@inject_tag: sql:\"coin_type\""
         },
-        "WithdrawInterval": {
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "WithdrawInterva": {
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"withdraw_interval\""
@@ -148,11 +162,11 @@
         "EntID": {
           "type": "string"
         },
-        "MiningpoolName": {
-          "type": "string"
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
         },
-        "CoinNmae": {
-          "type": "string"
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
         },
         "WithdrawInterval": {
           "type": "integer",
@@ -190,6 +204,15 @@
           "format": "int64"
         }
       }
+    },
+    "v1MiningpoolType": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningpoolType",
+        "F2Pool",
+        "AntPool"
+      ],
+      "default": "DefaultMiningpoolType"
     },
     "v1StringSliceVal": {
       "type": "object",

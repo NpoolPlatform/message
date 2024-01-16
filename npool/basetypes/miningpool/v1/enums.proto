@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package basetypes.miningpool.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/miningpool/v1";
+
+enum MiningpoolType {
+    DefaultMiningpoolType = 0;
+    F2Pool                = 10;
+    AntPool               = 20;
+}
+
+enum CoinType {
+    DefaultCoinType = 0;
+    BitCoin         = 10;
+}
+
+enum RevenueType {
+    FPPS  = 0;
+    PPLNS = 10;
+}
+
+enum WithdrawState {
+    DefaultWithdrawState      = 0;
+
+    WithdrawStateWait         = 10;
+    WithdrawStateProccessing  = 20;
+    WithdrawStateSuccess      = 30;
+    WithdrawStateFailed       = 40;
+}
+
+enum InvestmentType {
+    DefaultInvestmentType = 0;
+
+    UnionMining = 10;
+    FullPayment = 20;
+}
+
+enum PaymentType {
+    DefaultPaymentType = 0;
+
+    PayWithBalanceOnly        = 10;
+    PayWithTransferOnly       = 20;
+    PayWithTransferAndBalance = 30;
+    PayWithParentOrder        = 40;
+
+    PayWithOffline            = 1000;
+    PayWithNoPayment          = 1010;
+}
+
+enum CompensateType {
+    DefaultCompensateType = 0;
+
+    CompensateMalfunction  = 10;
+    CompensateWalfare      = 20;
+    CompensateStarterDelay = 30;
+}
+
+enum BenefitState {
+    DefaultBenefitState = 0;
+
+    BenefitWait       = 10;
+    BenefitCalculated = 20;
+    BenefitBookKept   = 30;
+}
+
+enum OrderStartMode {
+    DefaultOrderStartMode = 0;
+
+    OrderStartTBD        = 10;
+    OrderStartConfirmed  = 20;
+}
+
+enum OrderLockType {
+    DefaultOrderLockType = 0;
+
+    LockBalance    = 10;
+    LockStock      = 20;
+    LockCommission = 30;
+}

@@ -23,7 +23,7 @@ message GoodUserReq {
     optional string    CoinID         = 40;
     optional string    Name           = 50;
     optional string    AuthToken      = 60;
-    optional string    AuthState      = 70;
+    optional bool      Authed         = 70;
     optional uint32    Start          = 80;
     optional uint32    End            = 90;
     optional double    HashRate       = 100;
@@ -41,8 +41,8 @@ message GoodUser {
     string               Name            = 30;
     // @inject_tag: sql:"auth_token"
     string               AuthToken       = 40;
-    // @inject_tag: sql:"auth_state"
-    string               AuthState       = 50;
+    // @inject_tag: sql:"authed"
+    string               Authed          = 50;
     // @inject_tag: sql:"start" 
     string               Start           = 60;
     // @inject_tag: sql:"end"
@@ -61,7 +61,7 @@ message Conds {
     optional basetypes.v1.StringVal      EntID       = 10;
     optional basetypes.v1.StringVal      GoodID      = 20;
     optional basetypes.v1.StringVal      Name        = 30;
-    optional basetypes.v1.Uint32Val      AuthState   = 40;
+    optional basetypes.v1.BoolVal        Authed      = 40;
     optional basetypes.v1.StringSliceVal EntIDs      = 50;
 }
 
