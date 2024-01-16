@@ -1,0 +1,108 @@
+syntax = "proto3";
+
+package miningpool.middleware.fraction.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/fraction";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateFraction     (CreateFractionRequest)   returns (CreateFractionResponse)    {}
+    rpc CreateFractions    (CreateFractionsRequest)  returns (CreateFractionsResponse)   {}
+    rpc GetFraction        (GetFractionRequest)      returns (GetFractionResponse)       {}
+    rpc GetFractions       (GetFractionsRequest)     returns (GetFractionsResponse)      {}
+    rpc ExistFractionConds (ExistFractionCondsRequest) returns (ExistFractionCondsResponse) {}
+    rpc UpdateFraction     (UpdateFractionRequest)   returns (UpdateFractionResponse)    {}
+}
+
+message FractionReq {
+    optional uint32    ID                 = 10;
+    optional string    EntID              = 20;
+    optional string    MiningpoolName     = 30;
+    optional string    CoinNmae           = 40;
+    optional uint32    WithdrawInterval   = 50;
+    optional float     MinAmount          = 60;
+    optional float     WithdrawRate       = 70;
+}
+
+message Fraction {
+    // @inject_tag: sql:"id"
+    uint32               ID                 = 10;
+    // @inject_tag: sql:"ent_id"
+    string               EntID              = 20;
+    // @inject_tag: sql:"miningpool_name"
+    string               MiningpoolName     = 30;
+    // @inject_tag: sql:"coin_nmae"
+    string               CoinNmae           = 40;
+    // @inject_tag: sql:"withdraw_interval"
+    uint32               WithdrawInterval   = 50;
+    // @inject_tag: sql:"min_amount"
+    float                MinAmount          = 60;
+    // @inject_tag: sql:"withdraw_rate"
+    float                WithdrawRate       = 70;
+    // @inject_tag: sql:"created_at"
+    uint32               CreatedAt          = 170;
+    // @inject_tag: sql:"updated_at"
+    uint32               UpdatedAt          = 180;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal      EntID              = 10;
+    optional basetypes.v1.StringVal      MiningpoolName     = 20;
+    optional basetypes.v1.StringVal      CoinNmae           = 30;
+    optional basetypes.v1.Uint32Val      WithdrawInterval   = 40;
+    optional basetypes.v1.StringSliceVal EntIDs             = 70;
+}
+
+message CreateFractionRequest {
+    FractionReq Info = 10;
+}
+
+message CreateFractionResponse {
+    Fraction Info = 10;
+}
+
+message CreateFractionsRequest {
+   repeated FractionReq Infos = 10;
+}
+
+message CreateFractionsResponse {
+    repeated Fraction Infos = 10;
+}
+
+message GetFractionRequest {
+    string EntID = 10;
+}
+
+message GetFractionResponse {
+    Fraction Info = 10;
+}
+
+message GetFractionsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetFractionsResponse {
+    repeated Fraction Infos = 10;
+    uint32      Total = 20;
+}
+
+message ExistFractionCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistFractionCondsResponse {
+    bool Info = 10;
+}
+
+
+message UpdateFractionRequest {
+    FractionReq Info = 10;
+}
+
+message UpdateFractionResponse {
+    Fraction Info = 10;
+}

@@ -1,0 +1,132 @@
+syntax = "proto3";
+
+package miningpool.middleware.orderuser.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/orderuser";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateOrderUser     (CreateOrderUserRequest)   returns (CreateOrderUserResponse)    {}
+    rpc CreateOrderUsers    (CreateOrderUsersRequest)  returns (CreateOrderUsersResponse)   {}
+    rpc GetOrderUser        (GetOrderUserRequest)      returns (GetOrderUserResponse)       {}
+    rpc GetOrderUsers       (GetOrderUsersRequest)     returns (GetOrderUsersResponse)      {}
+    rpc ExistOrderUserConds (ExistOrderUserCondsRequest) returns (ExistOrderUserCondsResponse) {}
+    rpc UpdateOrderUser     (UpdateOrderUserRequest)   returns (UpdateOrderUserResponse)    {}
+}
+
+message OrderUserReq {
+    optional uint32    ID                  = 10;
+    optional string    EntID               = 20;
+    optional string    OrderID             = 30;
+    optional string    GoodUserID          = 40;
+    optional string    Name                = 50;
+    optional float     Proportion          = 60;
+    optional uint32    Start               = 70;
+    optional uint32    End                 = 80;
+    optional uint32    CompensationTime    = 90;
+    optional string    RevenueAddress      = 100;
+    optional float     Threshold           = 110;
+    optional string    ReadPageLink        = 120;
+    optional bool      AutoPay             = 130;
+    optional string    State               = 140;
+}
+
+message OrderUser {
+    // @inject_tag: sql:"id"
+    uint32               ID                = 10;
+    // @inject_tag: sql:"ent_id"
+    string               EntID             = 20;
+    // @inject_tag: sql:"order_id"
+    string               OrderID           = 30;
+    // @inject_tag: sql:"good_user_id"
+    string               GoodUserID        = 40;
+    // @inject_tag: sql:"name"
+    string               Name              = 50;
+    // @inject_tag: sql:"proportion"
+    float                Proportion        = 60;
+    // @inject_tag: sql:"start"
+    uint32               Start             = 70;
+    // @inject_tag: sql:"end"
+    uint32               End               = 80;
+    // @inject_tag: sql:"compensation_time"
+    uint32               CompensationTime  = 90;
+    // @inject_tag: sql:"revenue_address"
+    string               RevenueAddress    = 100;
+    // @inject_tag: sql:"threshold"
+    float                Threshold         = 110;
+    // @inject_tag: sql:"read_page_link"
+    string               ReadPageLink      = 120;
+    // @inject_tag: sql:"auto_pay"
+    bool                 AutoPay           = 130;
+    // @inject_tag: sql:"state"
+    string               State             = 140;
+    // @inject_tag: sql:"created_at"
+    uint32               CreatedAt         = 150;
+    // @inject_tag: sql:"updated_at"
+    uint32               UpdatedAt         = 160;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal      EntID           = 10;
+    optional basetypes.v1.StringVal      OrderID         = 20;
+    optional basetypes.v1.StringVal      GoodUserID      = 30;
+    optional basetypes.v1.StringVal      Name            = 40;
+    optional basetypes.v1.StringVal      RevenueAddress  = 50;
+    optional basetypes.v1.BoolVal        AutoPay         = 60;
+    optional basetypes.v1.StringVal      State           = 70;
+    optional basetypes.v1.StringSliceVal EntIDs          = 80;
+}
+
+message CreateOrderUserRequest {
+    OrderUserReq Info = 10;
+}
+
+message CreateOrderUserResponse {
+    OrderUser Info = 10;
+}
+
+message CreateOrderUsersRequest {
+   repeated OrderUserReq Infos = 10;
+}
+
+message CreateOrderUsersResponse {
+    repeated OrderUser Infos = 10;
+}
+
+message GetOrderUserRequest {
+    string EntID = 10;
+}
+
+message GetOrderUserResponse {
+    OrderUser Info = 10;
+}
+
+message GetOrderUsersRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetOrderUsersResponse {
+    repeated OrderUser Infos = 10;
+    uint32      Total = 20;
+}
+
+message ExistOrderUserCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistOrderUserCondsResponse {
+    bool Info = 10;
+}
+
+
+message UpdateOrderUserRequest {
+    OrderUserReq Info = 10;
+}
+
+message UpdateOrderUserResponse {
+    OrderUser Info = 10;
+}
