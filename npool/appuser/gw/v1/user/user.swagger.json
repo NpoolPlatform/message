@@ -1319,12 +1319,6 @@
         "UserID": {
           "type": "string"
         },
-        "Account": {
-          "type": "string"
-        },
-        "AccountType": {
-          "$ref": "#/definitions/v1SignMethod"
-        },
         "VerificationCode": {
           "type": "string"
         },
