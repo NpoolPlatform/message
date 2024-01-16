@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+package miningpool.middleware.fraction.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/fraction";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateFraction     (CreateFractionRequest)   returns (CreateFractionResponse)    {}
+    rpc CreateFractions    (CreateFractionsRequest)  returns (CreateFractionsResponse)   {}
+    rpc GetFraction        (GetFractionRequest)      returns (GetFractionResponse)       {}
+    rpc GetFractions       (GetFractionsRequest)     returns (GetFractionsResponse)      {}
+    rpc ExistFractionConds (ExistFractionCondsRequest) returns (ExistFractionCondsResponse) {}
+    rpc UpdateFraction     (UpdateFractionRequest)   returns (UpdateFractionResponse)    {}
+}
+
+message FractionReq {
+    optional uint32    ID                 = 10;
+    optional string    EntID              = 20;
+    optional string    OrderMininguserID  = 30;
+    optional string    WithdrawState      = 40;
+    optional uint32    WithdrawTime       = 50;
+    optional uint32    PayTime            = 60;
+}
+
+message Fraction {
+    // @inject_tag: sql:"id"
+    uint32               ID             = 10;
+    // @inject_tag: sql:"ent_id"
+    string               EntID          = 11;
+    // @inject_tag: sql:"order_mininguser_id"
+    string               OrderMininguserID     = 20;
+    // @inject_tag: sql:"withdraw_state"
+    string               WithdrawState       = 30;
+    // @inject_tag: sql:"withdraw_time"
+    uint32               WithdrawTime       = 40;
+    // @inject_tag: sql:"pay_time"
+    uint32               PayTime       = 50;
+    // @inject_tag: sql:"created_at"
+    uint32               CreatedAt      = 170;
+    // @inject_tag: sql:"updated_at"
+    uint32               UpdatedAt      = 180;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal      EntID              = 10;
+    optional basetypes.v1.StringVal      OrderMininguserID  = 20;
+    optional basetypes.v1.StringVal      WithdrawState      = 30;
+    optional basetypes.v1.StringSliceVal EntIDs             = 40;
+}
+
+message CreateFractionRequest {
+    FractionReq Info = 10;
+}
+
+message CreateFractionResponse {
+    Fraction Info = 10;
+}
+
+message CreateFractionsRequest {
+   repeated FractionReq Infos = 10;
+}
+
+message CreateFractionsResponse {
+    repeated Fraction Infos = 10;
+}
+
+message GetFractionRequest {
+    string EntID = 10;
+}
+
+message GetFractionResponse {
+    Fraction Info = 10;
+}
+
+message GetFractionsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetFractionsResponse {
+    repeated Fraction Infos = 10;
+    uint32      Total = 20;
+}
+
+message ExistFractionCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistFractionCondsResponse {
+    bool Info = 10;
+}
+
+
+message UpdateFractionRequest {
+    FractionReq Info = 10;
+}
+
+message UpdateFractionResponse {
+    Fraction Info = 10;
+}

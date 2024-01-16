@@ -1,0 +1,301 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/miningpool/mw/v1/orderuser/orderuser.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodUserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Name": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "RevenueAddress": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AutoPay": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "State": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CreateOrderUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderUser"
+        }
+      }
+    },
+    "v1CreateOrderUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderUser"
+          }
+        }
+      }
+    },
+    "v1ExistOrderUserCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetOrderUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderUser"
+        }
+      }
+    },
+    "v1GetOrderUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1OrderUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "OrderID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"order_id\""
+        },
+        "GoodUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_user_id\""
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "Proportion": {
+          "type": "number",
+          "format": "float",
+          "title": "@inject_tag: sql:\"proportion\""
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start\""
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end\""
+        },
+        "CompensationTime": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"compensation_time\""
+        },
+        "RevenueAddress": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"revenue_address\""
+        },
+        "Threshold": {
+          "type": "number",
+          "format": "float",
+          "title": "@inject_tag: sql:\"threshold\""
+        },
+        "ReadPageLink": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"read_page_link\""
+        },
+        "AutoPay": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"auto_pay\""
+        },
+        "State": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1OrderUserReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "GoodUserID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Proportion": {
+          "type": "number",
+          "format": "float"
+        },
+        "Start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "End": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CompensationTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "RevenueAddress": {
+          "type": "string"
+        },
+        "Threshold": {
+          "type": "number",
+          "format": "float"
+        },
+        "ReadPageLink": {
+          "type": "string"
+        },
+        "AutoPay": {
+          "type": "boolean"
+        },
+        "State": {
+          "type": "string"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateOrderUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderUser"
+        }
+      }
+    }
+  }
+}
