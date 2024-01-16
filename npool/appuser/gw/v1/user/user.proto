@@ -286,10 +286,7 @@ message ResetUserRequest {
     string          AppID              = 10;
     optional string UserID             = 20;
 
-    string          Account            = 30;
-    basetypes.v1.SignMethod AccountType    = 40;
-    string          VerificationCode   = 50;
-
+    optional string VerificationCode   = 50;
     optional string PasswordHash       = 60;
     optional string RecoveryCode       = 70;
     string          ResetToken         = 80;
