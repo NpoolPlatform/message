@@ -8,7 +8,6 @@ import "google/api/annotations.proto";
 import "npool/appuser/mw/v1/user/login/history/history.proto";
 import "npool/appuser/mw/v1/user/user.proto";
 import "npool/basetypes/v1/signmethod.proto";
-import "npool/appuser/mw/v1/user/recoverycode/recoverycode.proto";
 
 service Gateway {
     rpc Signup (SignupRequest) returns (SignupResponse) {
@@ -56,6 +55,13 @@ service Gateway {
     rpc UpdateAppUser (UpdateAppUserRequest) returns (UpdateAppUserResponse) {
         option (google.api.http) = {
             post: "/v1/update/app/user"
+            body: "*"
+        };
+    }
+
+    rpc PreResetUser (PreResetUserRequest) returns (PreResetUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/prereset/user"
             body: "*"
         };
     }
@@ -140,20 +146,6 @@ service Gateway {
     rpc UnbindOAuth (UnbindOAuthRequest) returns (UnbindOAuthResponse) {
         option (google.api.http) = {
             post: "/v1/unbind/oauth"
-            body: "*"
-        };
-    }
-
-    rpc GenerateRecoveryCode (GenerateRecoveryCodesRequest) returns (GenerateRecoveryCodesResponse) {
-        option (google.api.http) = {
-            post: "/v1/generate/recoverycodes"
-            body: "*"
-        };
-    }
-
-    rpc GetRecoveryCodes (GetRecoveryCodesRequest) returns (GetRecoveryCodesResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/recoverycodes"
             body: "*"
         };
     }
@@ -302,8 +294,15 @@ message ResetUserRequest {
     optional string RecoveryCode       = 70;
 }
 
-message ResetUserResponse {
+message ResetUserResponse {}
+
+message PreResetUserRequest {
+    string          AppID              = 10;
+    string          Account            = 20;
+    basetypes.v1.SignMethod AccountType    = 30;
 }
+
+message PreResetUserResponse {}
 
 message GetUsersRequest {
     string AppID  = 10;
@@ -433,24 +432,4 @@ message UnbindOAuthRequest {
 }
 
 message UnbindOAuthResponse {
-}
-
-message GenerateRecoveryCodesRequest {
-    string AppID   = 10;
-    string UserID  = 20;
-}
-
-message GenerateRecoveryCodesResponse {
-    repeated appuser.middleware.user.recoverycode.v1.RecoveryCode Infos = 10;
-}
-
-message GetRecoveryCodesRequest {
-    string AppID   = 10;
-    string UserID  = 20;
-    int32  Offset  = 30;
-    int32  Limit   = 40; 
-}
-
-message GetRecoveryCodesResponse {
-    repeated appuser.middleware.user.recoverycode.v1.RecoveryCode Infos = 10;
 }
