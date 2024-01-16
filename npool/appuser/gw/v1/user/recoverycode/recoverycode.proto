@@ -41,4 +41,5 @@ message GetRecoveryCodesRequest {
 
 message GetRecoveryCodesResponse {
     repeated appuser.middleware.user.recoverycode.v1.RecoveryCode Infos = 10;
+    uint32 Total = 20;
 }
