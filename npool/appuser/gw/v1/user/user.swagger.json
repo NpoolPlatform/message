@@ -208,38 +208,6 @@
         ]
       }
     },
-    "/v1/generate/recoverycodes": {
-      "post": {
-        "operationId": "Gateway_GenerateRecoveryCode",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/gatewayuserv1GenerateRecoveryCodesResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/gatewayuserv1GenerateRecoveryCodesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/app/users": {
       "post": {
         "operationId": "Gateway_GetAppUsers",
@@ -296,38 +264,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetLoginHistoriesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/recoverycodes": {
-      "post": {
-        "operationId": "Gateway_GetRecoveryCodes",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/gatewayuserv1GetRecoveryCodesResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/gatewayuserv1GetRecoveryCodesRequest"
             }
           }
         ],
@@ -488,6 +424,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1LogoutRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/prereset/user": {
+      "post": {
+        "operationId": "Gateway_PreResetUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1PreResetUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1PreResetUserRequest"
             }
           }
         ],
@@ -911,58 +879,6 @@
         }
       }
     },
-    "gatewayuserv1GenerateRecoveryCodesRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        }
-      }
-    },
-    "gatewayuserv1GenerateRecoveryCodesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1RecoveryCode"
-          }
-        }
-      }
-    },
-    "gatewayuserv1GetRecoveryCodesRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "gatewayuserv1GetRecoveryCodesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1RecoveryCode"
-          }
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -1377,47 +1293,22 @@
         }
       }
     },
-    "v1RecoveryCode": {
+    "v1PreResetUserRequest": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
-        },
         "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
+          "type": "string"
         },
-        "Code": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"code\""
+        "Account": {
+          "type": "string"
         },
-        "Used": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"used\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
-        },
-        "EmailAddress": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"email_address\""
-        },
-        "CreatedAt": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"updated_at\""
+        "AccountType": {
+          "$ref": "#/definitions/v1SignMethod"
         }
       }
+    },
+    "v1PreResetUserResponse": {
+      "type": "object"
     },
     "v1ResetUserRequest": {
       "type": "object",
