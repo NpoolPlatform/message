@@ -44,6 +44,17 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -56,8 +67,8 @@
         "Name": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AuthState": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "Authed": {
+          "$ref": "#/definitions/v1BoolVal"
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
@@ -138,9 +149,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"auth_token\""
         },
-        "AuthState": {
+        "Authed": {
           "type": "string",
-          "title": "@inject_tag: sql:\"auth_state\""
+          "title": "@inject_tag: sql:\"authed\""
         },
         "Start": {
           "type": "string",
@@ -192,8 +203,8 @@
         "AuthToken": {
           "type": "string"
         },
-        "AuthState": {
-          "type": "string"
+        "Authed": {
+          "type": "boolean"
         },
         "Start": {
           "type": "integer",
@@ -234,18 +245,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

@@ -44,6 +44,17 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Coin": {
       "type": "object",
       "properties": {
@@ -56,38 +67,45 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "MiningpoolName": {
+        "MiningpoolTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"MiningpoolName\""
+          "title": "@inject_tag: sql:\"miningpool_type\""
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
         },
         "Site": {
           "type": "string",
-          "title": "@inject_tag: sql:\"Site\""
+          "title": "@inject_tag: sql:\"site\""
         },
-        "CoinName": {
+        "CoinTypeStr": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"CoinName\""
+          "title": "@inject_tag: sql:\"coin_type\""
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "RevenueTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"revenue_type\""
         },
         "RevenueType": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"RevenueType\""
+          "$ref": "#/definitions/v1RevenueType"
         },
         "FeeRate": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"FeeRate\""
+          "title": "@inject_tag: sql:\"fee_rate\""
         },
-        "FixedRevenueAable": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"FixedRevenueAable\""
+        "FixedRevenueAble": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"fixed_revenue_able\""
         },
         "Remark": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"Remark\""
+          "title": "@inject_tag: sql:\"remark\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -111,24 +129,23 @@
         "EntID": {
           "type": "string"
         },
-        "MiningpoolName": {
-          "type": "string"
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
         },
         "Site": {
           "type": "string"
         },
-        "CoinName": {
-          "type": "integer",
-          "format": "int64"
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
         },
         "RevenueType": {
-          "type": "string"
+          "$ref": "#/definitions/v1RevenueType"
         },
         "FeeRate": {
           "type": "number",
           "format": "float"
         },
-        "FixedRevenueAable": {
+        "FixedRevenueAble": {
           "type": "boolean"
         },
         "Remark": {
@@ -137,17 +154,31 @@
         }
       }
     },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "DefaultCoinType",
+        "BitCoin"
+      ],
+      "default": "DefaultCoinType"
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "OrderMininguserID": {
-          "$ref": "#/definitions/v1StringVal"
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1Uint32Val"
         },
-        "WithdrawState": {
-          "$ref": "#/definitions/v1StringVal"
+        "CoinType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "RevenueType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "FixedRevenueAble": {
+          "$ref": "#/definitions/v1BoolVal"
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
@@ -204,6 +235,23 @@
         }
       }
     },
+    "v1MiningpoolType": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningpoolType",
+        "F2Pool",
+        "AntPool"
+      ],
+      "default": "DefaultMiningpoolType"
+    },
+    "v1RevenueType": {
+      "type": "string",
+      "enum": [
+        "FPPS",
+        "PPLNS"
+      ],
+      "default": "FPPS"
+    },
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -226,6 +274,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

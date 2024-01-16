@@ -67,6 +67,9 @@
         "GoodUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "CoinID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "Name": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -75,9 +78,6 @@
         },
         "AutoPay": {
           "$ref": "#/definitions/v1BoolVal"
-        },
-        "State": {
-          "$ref": "#/definitions/v1StringVal"
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
@@ -154,6 +154,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_user_id\""
         },
+        "CoinID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_id\""
+        },
         "Name": {
           "type": "string",
           "title": "@inject_tag: sql:\"name\""
@@ -195,10 +199,6 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"auto_pay\""
         },
-        "State": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"state\""
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -225,6 +225,9 @@
           "type": "string"
         },
         "GoodUserID": {
+          "type": "string"
+        },
+        "CoinID": {
           "type": "string"
         },
         "Name": {
@@ -258,9 +261,6 @@
         },
         "AutoPay": {
           "type": "boolean"
-        },
-        "State": {
-          "type": "string"
         }
       }
     },
