@@ -441,6 +441,7 @@
         "UpdateMobile",
         "UpdateGoogleAuth",
         "OrderCompleted",
+        "ResetPassword",
         "Announcement",
         "ProductPage"
       ],
