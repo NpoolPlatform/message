@@ -80,6 +80,7 @@ enum Prefix {
     PrefixCreateGoodLedgerStatement = 740;
     PrefixCreateGoodLedgerUnsoldStatement = 750;
 
+    PrefixCreateResetUserLink  = 800;
 
     PrefixMigrate              = 10000;
 
