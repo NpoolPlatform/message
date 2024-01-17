@@ -1299,6 +1299,9 @@
         "AppID": {
           "type": "string"
         },
+        "LangID": {
+          "type": "string"
+        },
         "Account": {
           "type": "string"
         },
@@ -1318,6 +1321,12 @@
         },
         "UserID": {
           "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v1SignMethod"
         },
         "VerificationCode": {
           "type": "string"

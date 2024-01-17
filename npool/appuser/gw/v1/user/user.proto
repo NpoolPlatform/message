@@ -285,19 +285,21 @@ message UpdateAppUserResponse {
 message ResetUserRequest {
     string          AppID              = 10;
     optional string UserID             = 20;
-
+    string          Account            = 30;
+    basetypes.v1.SignMethod AccountType    = 40;
     optional string VerificationCode   = 50;
-    optional string PasswordHash       = 60;
+    string          PasswordHash       = 60;
     optional string RecoveryCode       = 70;
-    string          ResetToken         = 80;
+    optional string ResetToken         = 80;
 }
 
 message ResetUserResponse {}
 
 message PreResetUserRequest {
     string          AppID              = 10;
-    string          Account            = 20;
-    basetypes.v1.SignMethod AccountType    = 30;
+    string          LangID             = 20;
+    string          Account            = 30;
+    basetypes.v1.SignMethod AccountType    = 40;
 }
 
 message PreResetUserResponse {}
