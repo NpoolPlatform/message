@@ -381,12 +381,12 @@
             "type": "string"
           }
         },
-        "ResetMethodStr": {
+        "ResetUserMethodStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"reset_method\""
         },
-        "ResetMethod": {
-          "$ref": "#/definitions/v1ResetMethod"
+        "ResetUserMethod": {
+          "$ref": "#/definitions/v1ResetUserMethod"
         }
       }
     },
@@ -621,14 +621,14 @@
       ],
       "default": "DefaultRecaptchaMethod"
     },
-    "v1ResetMethod": {
+    "v1ResetUserMethod": {
       "type": "string",
       "enum": [
-        "DefaultResetMethod",
+        "DefaultUserResetMethod",
         "Normal",
         "Link"
       ],
-      "default": "DefaultResetMethod"
+      "default": "DefaultUserResetMethod"
     },
     "v1Role": {
       "type": "object",
