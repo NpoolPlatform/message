@@ -270,8 +270,8 @@ type App struct {
 	// @inject_tag: sql:"commit_button_targets"
 	CommitButtonTargetsStr string   `protobuf:"bytes,250,opt,name=CommitButtonTargetsStr,proto3" json:"CommitButtonTargetsStr,omitempty" sql:"commit_button_targets"`
 	CommitButtonTargets    []string `protobuf:"bytes,260,rep,name=CommitButtonTargets,proto3" json:"CommitButtonTargets,omitempty"`
-	// @inject_tag: sql:"reset_method"
-	ResetUserMethodStr string              `protobuf:"bytes,300,opt,name=ResetUserMethodStr,proto3" json:"ResetUserMethodStr,omitempty" sql:"reset_method"`
+	// @inject_tag: sql:"reset_user_method"
+	ResetUserMethodStr string              `protobuf:"bytes,300,opt,name=ResetUserMethodStr,proto3" json:"ResetUserMethodStr,omitempty" sql:"reset_user_method"`
 	ResetUserMethod    v11.ResetUserMethod `protobuf:"varint,310,opt,name=ResetUserMethod,proto3,enum=basetypes.appuser.v1.ResetUserMethod" json:"ResetUserMethod,omitempty"`
 }
 

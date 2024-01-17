@@ -556,7 +556,7 @@
         },
         "ResetUserMethodStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"reset_method\""
+          "title": "@inject_tag: sql:\"reset_user_method\""
         },
         "ResetUserMethod": {
           "$ref": "#/definitions/v1ResetUserMethod"

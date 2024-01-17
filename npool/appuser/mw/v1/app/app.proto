@@ -105,7 +105,7 @@ message App {
     // @inject_tag: sql:"commit_button_targets"
     string          CommitButtonTargetsStr        = 250;
     repeated string CommitButtonTargets           = 260;
-    // @inject_tag: sql:"reset_method"
+    // @inject_tag: sql:"reset_user_method"
     string          ResetUserMethodStr                = 300;
     basetypes.appuser.v1.ResetUserMethod ResetUserMethod  = 310;
 }
