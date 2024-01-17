@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app";
 import "npool/basetypes/v1/signmethod.proto";
 import "npool/basetypes/v1/createinvitationcodewhen.proto";
 import "npool/basetypes/v1/recaptcha.proto";
+import "npool/basetypes/appuser/v1/enums.proto";
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
@@ -46,6 +47,7 @@ message AppReq {
     optional uint32          MaxTypedCouponsPerOrder = 150;
     optional bool            Maintaining        = 160;
     repeated string          CommitButtonTargets           = 170;
+    optional basetypes.appuser.v1.ResetMethod   ResetChannel        = 200;
 }
 
 message App {
@@ -103,6 +105,9 @@ message App {
     // @inject_tag: sql:"commit_button_targets"
     string          CommitButtonTargetsStr        = 250;
     repeated string CommitButtonTargets           = 260;
+    // @inject_tag: sql:"reset_method"
+    string          ResetMethodStr                = 300;
+    basetypes.appuser.v1.ResetMethod ResetMethod  = 310;
 }
 
 message Conds {

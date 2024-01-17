@@ -547,6 +547,13 @@
           "items": {
             "type": "string"
           }
+        },
+        "ResetMethodStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reset_method\""
+        },
+        "ResetMethod": {
+          "$ref": "#/definitions/v1ResetMethod"
         }
       }
     },
@@ -594,6 +601,15 @@
         "NoRecaptcha"
       ],
       "default": "DefaultRecaptchaMethod"
+    },
+    "v1ResetMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultResetMethod",
+        "Normal",
+        "Link"
+      ],
+      "default": "DefaultResetMethod"
     },
     "v1SignMethod": {
       "type": "string",
