@@ -18,7 +18,7 @@
   "paths": {
     "/v1/generate/recoverycodes": {
       "post": {
-        "operationId": "Gateway_GenerateRecoveryCode",
+        "operationId": "Gateway_GenerateRecoveryCodes",
         "responses": {
           "200": {
             "description": "A successful response.",

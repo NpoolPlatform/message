@@ -19,15 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GenerateRecoveryCode_FullMethodName = "/appuser.gateway.user.recoverycode.v1.Gateway/GenerateRecoveryCode"
-	Gateway_GetRecoveryCodes_FullMethodName     = "/appuser.gateway.user.recoverycode.v1.Gateway/GetRecoveryCodes"
+	Gateway_GenerateRecoveryCodes_FullMethodName = "/appuser.gateway.user.recoverycode.v1.Gateway/GenerateRecoveryCodes"
+	Gateway_GetRecoveryCodes_FullMethodName      = "/appuser.gateway.user.recoverycode.v1.Gateway/GetRecoveryCodes"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	GenerateRecoveryCode(ctx context.Context, in *GenerateRecoveryCodesRequest, opts ...grpc.CallOption) (*GenerateRecoveryCodesResponse, error)
+	GenerateRecoveryCodes(ctx context.Context, in *GenerateRecoveryCodesRequest, opts ...grpc.CallOption) (*GenerateRecoveryCodesResponse, error)
 	GetRecoveryCodes(ctx context.Context, in *GetRecoveryCodesRequest, opts ...grpc.CallOption) (*GetRecoveryCodesResponse, error)
 }
 
@@ -39,9 +39,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) GenerateRecoveryCode(ctx context.Context, in *GenerateRecoveryCodesRequest, opts ...grpc.CallOption) (*GenerateRecoveryCodesResponse, error) {
+func (c *gatewayClient) GenerateRecoveryCodes(ctx context.Context, in *GenerateRecoveryCodesRequest, opts ...grpc.CallOption) (*GenerateRecoveryCodesResponse, error) {
 	out := new(GenerateRecoveryCodesResponse)
-	err := c.cc.Invoke(ctx, Gateway_GenerateRecoveryCode_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Gateway_GenerateRecoveryCodes_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -61,7 +61,7 @@ func (c *gatewayClient) GetRecoveryCodes(ctx context.Context, in *GetRecoveryCod
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	GenerateRecoveryCode(context.Context, *GenerateRecoveryCodesRequest) (*GenerateRecoveryCodesResponse, error)
+	GenerateRecoveryCodes(context.Context, *GenerateRecoveryCodesRequest) (*GenerateRecoveryCodesResponse, error)
 	GetRecoveryCodes(context.Context, *GetRecoveryCodesRequest) (*GetRecoveryCodesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -70,8 +70,8 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) GenerateRecoveryCode(context.Context, *GenerateRecoveryCodesRequest) (*GenerateRecoveryCodesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GenerateRecoveryCode not implemented")
+func (UnimplementedGatewayServer) GenerateRecoveryCodes(context.Context, *GenerateRecoveryCodesRequest) (*GenerateRecoveryCodesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateRecoveryCodes not implemented")
 }
 func (UnimplementedGatewayServer) GetRecoveryCodes(context.Context, *GetRecoveryCodesRequest) (*GetRecoveryCodesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRecoveryCodes not implemented")
@@ -89,20 +89,20 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_GenerateRecoveryCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GenerateRecoveryCodes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GenerateRecoveryCodesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GenerateRecoveryCode(ctx, in)
+		return srv.(GatewayServer).GenerateRecoveryCodes(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GenerateRecoveryCode_FullMethodName,
+		FullMethod: Gateway_GenerateRecoveryCodes_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GenerateRecoveryCode(ctx, req.(*GenerateRecoveryCodesRequest))
+		return srv.(GatewayServer).GenerateRecoveryCodes(ctx, req.(*GenerateRecoveryCodesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -133,8 +133,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GenerateRecoveryCode",
-			Handler:    _Gateway_GenerateRecoveryCode_Handler,
+			MethodName: "GenerateRecoveryCodes",
+			Handler:    _Gateway_GenerateRecoveryCodes_Handler,
 		},
 		{
 			MethodName: "GetRecoveryCodes",
