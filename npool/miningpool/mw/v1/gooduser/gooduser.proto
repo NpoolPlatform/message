@@ -48,7 +48,7 @@ message GoodUser {
     // @inject_tag: sql:"end"
     string               End             = 70;
     // @inject_tag: sql:"hash_rate"
-    string               HashRate        = 80;
+    double               HashRate        = 80;
     // @inject_tag: sql:"read_page_link"
     string               ReadPageLink    = 90;
     // @inject_tag: sql:"created_at"
