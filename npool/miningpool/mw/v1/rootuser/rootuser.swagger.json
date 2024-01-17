@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/miningpool/mw/v1/gooduser/gooduser.proto",
+    "title": "npool/miningpool/mw/v1/rootuser/rootuser.proto",
     "version": "version not set"
   },
   "tags": [
@@ -44,13 +44,16 @@
         }
       }
     },
-    "v1CoinType": {
-      "type": "string",
-      "enum": [
-        "DefaultCoinType",
-        "BitCoin"
-      ],
-      "default": "DefaultCoinType"
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
     },
     "v1Conds": {
       "type": "object",
@@ -61,46 +64,37 @@
         "Name": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "RootUserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "MiningpoolType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "CoinType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "RevenueType": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "Authed": {
+          "$ref": "#/definitions/v1BoolVal"
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v1CreateGoodUserResponse": {
+    "v1CreateRootUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1GoodUser"
+          "$ref": "#/definitions/v1RootUser"
         }
       }
     },
-    "v1CreateGoodUsersResponse": {
+    "v1CreateRootUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1GoodUser"
+            "$ref": "#/definitions/v1RootUser"
           }
         }
       }
     },
-    "v1ExistGoodUserCondsResponse": {
+    "v1ExistRootUserCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -108,21 +102,21 @@
         }
       }
     },
-    "v1GetGoodUserResponse": {
+    "v1GetRootUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1GoodUser"
+          "$ref": "#/definitions/v1RootUser"
         }
       }
     },
-    "v1GetGoodUsersResponse": {
+    "v1GetRootUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1GoodUser"
+            "$ref": "#/definitions/v1RootUser"
           }
         },
         "Total": {
@@ -131,7 +125,16 @@
         }
       }
     },
-    "v1GoodUser": {
+    "v1MiningpoolType": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningpoolType",
+        "F2Pool",
+        "AntPool"
+      ],
+      "default": "DefaultMiningpoolType"
+    },
+    "v1RootUser": {
       "type": "object",
       "properties": {
         "ID": {
@@ -147,14 +150,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"name\""
         },
-        "RootUserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"root_user_id\""
-        },
-        "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
-        },
         "MiningpoolTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"miningpool_type\""
@@ -162,28 +157,21 @@
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
-        "CoinTypeStr": {
+        "Email": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coin_type\""
+          "title": "@inject_tag: sql:\"email\""
         },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
-        },
-        "HashRate": {
-          "type": "number",
-          "format": "float",
-          "title": "@inject_tag: sql:\"hash_rate\""
-        },
-        "ReadPageLink": {
+        "AuthToken": {
           "type": "string",
-          "title": "@inject_tag: sql:\"read_page_link\""
+          "title": "@inject_tag: sql:\"auth_token\""
         },
-        "RevenueTypeStr": {
+        "Authed": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"authed\""
+        },
+        "Remark": {
           "type": "string",
-          "title": "@inject_tag: sql:\"revenue_type\""
-        },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
+          "title": "@inject_tag: sql:\"remark\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -197,7 +185,7 @@
         }
       }
     },
-    "v1GoodUserReq": {
+    "v1RootUserReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -210,46 +198,22 @@
         "Name": {
           "type": "string"
         },
-        "RootUserID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
-        },
-        "HashRate": {
-          "type": "number",
-          "format": "float"
-        },
-        "ReadPageLink": {
+        "Email": {
           "type": "string"
         },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
+        "AuthToken": {
+          "type": "string"
+        },
+        "Authed": {
+          "type": "boolean"
+        },
+        "Remark": {
+          "type": "string"
         }
       }
-    },
-    "v1MiningpoolType": {
-      "type": "string",
-      "enum": [
-        "DefaultMiningpoolType",
-        "F2Pool",
-        "AntPool"
-      ],
-      "default": "DefaultMiningpoolType"
-    },
-    "v1RevenueType": {
-      "type": "string",
-      "enum": [
-        "FPPS",
-        "PPLNS"
-      ],
-      "default": "FPPS"
     },
     "v1StringSliceVal": {
       "type": "object",
@@ -288,11 +252,11 @@
         }
       }
     },
-    "v1UpdateGoodUserResponse": {
+    "v1UpdateRootUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1GoodUser"
+          "$ref": "#/definitions/v1RootUser"
         }
       }
     }

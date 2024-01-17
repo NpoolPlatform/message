@@ -52,124 +52,17 @@
       ],
       "default": "DefaultCoinType"
     },
-    "v1Conds": {
+    "v1FractionRule": {
       "type": "object",
       "properties": {
-        "EntID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "WithdrawInterval": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EntIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
-    "v1CreateFractionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Fraction"
-        }
-      }
-    },
-    "v1CreateFractionsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Fraction"
-          }
-        }
-      }
-    },
-    "v1ExistFractionCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1Fraction": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
-        },
-        "MiningpoolTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_type\""
-        },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CoinTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type\""
         },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
         "WithdrawInterva": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"withdraw_interval\""
-        },
-        "MinAmount": {
-          "type": "number",
-          "format": "float",
-          "title": "@inject_tag: sql:\"min_amount\""
-        },
-        "WithdrawRate": {
-          "type": "number",
-          "format": "float",
-          "title": "@inject_tag: sql:\"withdraw_rate\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v1FractionReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
-        },
-        "WithdrawInterval": {
-          "type": "integer",
           "format": "int64"
         },
         "MinAmount": {
@@ -182,26 +75,14 @@
         }
       }
     },
-    "v1GetFractionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Fraction"
-        }
-      }
-    },
-    "v1GetFractionsResponse": {
+    "v1GetFractionRulesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Fraction"
+            "$ref": "#/definitions/v1FractionRule"
           }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -213,51 +94,6 @@
         "AntPool"
       ],
       "default": "DefaultMiningpoolType"
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateFractionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Fraction"
-        }
-      }
     }
   }
 }

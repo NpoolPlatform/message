@@ -30,20 +30,20 @@ message Fraction {
     // @inject_tag: sql:"id"
     uint32                                ID                = 10;
     // @inject_tag: sql:"ent_id"
-    string                                EntID             = 11;
+    string                                EntID             = 20;
     // @inject_tag: sql:"order_mininguser_id"
-    string                                OrderMininguserID = 20;
+    string                                OrderMininguserID = 30;
     // @inject_tag: sql:"withdraw_state"
-    string                                WithdrawStateStr  = 30;
-    basetypes.miningpool.v1.WithdrawState WithdrawState     = 31;
+    string                                WithdrawStateStr  = 40;
+    basetypes.miningpool.v1.WithdrawState WithdrawState     = 41;
     // @inject_tag: sql:"withdraw_time"
-    uint32                                WithdrawTime      = 40;
+    uint32                                WithdrawTime      = 50;
     // @inject_tag: sql:"pay_time"
-    uint32                                PayTime           = 50;
+    uint32                                PayTime           = 60;
     // @inject_tag: sql:"created_at"
-    uint32                                CreatedAt         = 170;
+    uint32                                CreatedAt         = 70;
     // @inject_tag: sql:"updated_at"
-    uint32                                UpdatedAt         = 180;
+    uint32                                UpdatedAt         = 80;
 }
 
 message Conds {

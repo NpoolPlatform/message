@@ -5,6 +5,7 @@ package miningpool.middleware.orderuser.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/orderuser";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Middleware {
@@ -19,18 +20,16 @@ service Middleware {
 message OrderUserReq {
     optional uint32    ID                  = 10;
     optional string    EntID               = 20;
-    optional string    OrderID             = 30;
-    optional string    GoodUserID          = 40;
-    optional string    CoinID              = 50;
-    optional string    Name                = 60;
-    optional float     Proportion          = 70;
-    optional uint32    Start               = 80;
-    optional uint32    End                 = 90;
-    optional uint32    CompensationTime    = 100;
-    optional string    RevenueAddress      = 110;
-    optional float     Threshold           = 120;
-    optional string    ReadPageLink        = 130;
-    optional bool      AutoPay             = 140;
+    optional string    Name                = 30;
+    optional string    RootUserID          = 40;
+    optional string    GoodUserID          = 50;
+    optional string    OrderID             = 60;
+    optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 70;
+    optional basetypes.miningpool.v1.CoinType CoinType = 80;
+    optional float     Proportion          = 90;
+    optional string    RevenueAddress      = 100;
+    optional string    ReadPageLink        = 110;
+    optional bool      AutoPay             = 120;
 }
 
 message OrderUser {
@@ -38,45 +37,45 @@ message OrderUser {
     uint32               ID                = 10;
     // @inject_tag: sql:"ent_id"
     string               EntID             = 20;
-    // @inject_tag: sql:"order_id"
-    string               OrderID           = 30;
-    // @inject_tag: sql:"good_user_id"
-    string               GoodUserID        = 40;
-    // @inject_tag: sql:"coin_id"
-    string               CoinID            = 50;
     // @inject_tag: sql:"name"
-    string               Name              = 60;
+    string               Name              = 30;
+    // @inject_tag: sql:"root_user_id"
+    string               RootUserID        = 40;
+    // @inject_tag: sql:"good_user_id"
+    string               GoodUserID        = 50;
+    // @inject_tag: sql:"order_id"
+    string               OrderID           = 60;
+    // @inject_tag: sql:"miningpool_type"
+    string               MiningpoolTypeStr = 70;
+    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 71;
+    // @inject_tag: sql:"Coin_Type"
+    string               CoinTypeStr       = 80;
+    basetypes.miningpool.v1.CoinType CoinType = 81;
     // @inject_tag: sql:"proportion"
-    float                Proportion        = 70;
-    // @inject_tag: sql:"start"
-    uint32               Start             = 80;
-    // @inject_tag: sql:"end"
-    uint32               End               = 90;
-    // @inject_tag: sql:"compensation_time"
-    uint32               CompensationTime  = 100;
+    float                Proportion        = 90;
     // @inject_tag: sql:"revenue_address"
-    string               RevenueAddress    = 110;
-    // @inject_tag: sql:"threshold"
-    float                Threshold         = 120;
+    string               RevenueAddress    = 100;
     // @inject_tag: sql:"read_page_link"
-    string               ReadPageLink      = 130;
+    string               ReadPageLink      = 110;
     // @inject_tag: sql:"auto_pay"
-    bool                 AutoPay           = 140;
+    bool                 AutoPay           = 120;
     // @inject_tag: sql:"created_at"
-    uint32               CreatedAt         = 160;
+    uint32               CreatedAt         = 130;
     // @inject_tag: sql:"updated_at"
-    uint32               UpdatedAt         = 170;
+    uint32               UpdatedAt         = 140;
 }
 
 message Conds {
     optional basetypes.v1.StringVal      EntID           = 10;
-    optional basetypes.v1.StringVal      OrderID         = 20;
-    optional basetypes.v1.StringVal      GoodUserID      = 30;
-    optional basetypes.v1.StringVal      CoinID          = 40;
-    optional basetypes.v1.StringVal      Name            = 50;
-    optional basetypes.v1.StringVal      RevenueAddress  = 60;
-    optional basetypes.v1.BoolVal        AutoPay         = 70;
-    optional basetypes.v1.StringSliceVal EntIDs          = 90;
+    optional basetypes.v1.StringVal      Name            = 20;
+    optional basetypes.v1.StringVal      RootUserID      = 30;
+    optional basetypes.v1.StringVal      GoodUserID      = 40;
+    optional basetypes.v1.StringVal      OrderID         = 50;
+    optional basetypes.v1.Uint32Val      MiningpoolType  = 60;
+    optional basetypes.v1.Uint32Val      CoinType        = 70;
+    optional basetypes.v1.StringVal      RevenueAddress  = 80;
+    optional basetypes.v1.BoolVal        AutoPay         = 90;
+    optional basetypes.v1.StringSliceVal EntIDs          = 100;
 }
 
 message CreateOrderUserRequest {

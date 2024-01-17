@@ -44,102 +44,23 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1Coin": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
-        },
-        "MiningpoolTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_type\""
-        },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "Site": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"site\""
-        },
-        "CoinTypeStr": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"coin_type\""
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
-        },
-        "RevenueTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"revenue_type\""
-        },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
-        },
-        "FeeRate": {
-          "type": "number",
-          "format": "float",
-          "title": "@inject_tag: sql:\"fee_rate\""
-        },
-        "FixedRevenueAble": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"fixed_revenue_able\""
-        },
-        "Remark": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"remark\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v1CoinReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "Site": {
-          "type": "string"
         },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
         "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RevenueType"
+          }
+        },
+        "Site": {
+          "type": "string"
         },
         "FeeRate": {
           "type": "number",
@@ -148,9 +69,9 @@
         "FixedRevenueAble": {
           "type": "boolean"
         },
-        "Remark": {
-          "type": "integer",
-          "format": "int64"
+        "Threshold": {
+          "type": "number",
+          "format": "float"
         }
       }
     },
@@ -162,64 +83,6 @@
       ],
       "default": "DefaultCoinType"
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "RevenueType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "FixedRevenueAble": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "EntIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
-    "v1CreateCoinResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Coin"
-        }
-      }
-    },
-    "v1CreateCoinsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Coin"
-          }
-        }
-      }
-    },
-    "v1ExistCoinCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetCoinResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Coin"
-        }
-      }
-    },
     "v1GetCoinsResponse": {
       "type": "object",
       "properties": {
@@ -228,10 +91,6 @@
           "items": {
             "$ref": "#/definitions/v1Coin"
           }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -251,51 +110,6 @@
         "PPLNS"
       ],
       "default": "FPPS"
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateCoinResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Coin"
-        }
-      }
     }
   }
 }

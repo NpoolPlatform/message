@@ -5,6 +5,7 @@ package miningpool.middleware.gooduser.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/gooduser";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Middleware {
@@ -19,50 +20,55 @@ service Middleware {
 message GoodUserReq {
     optional uint32    ID             = 10;
     optional string    EntID          = 20;
-    optional string    GoodID         = 30;
-    optional string    CoinID         = 40;
-    optional string    Name           = 50;
-    optional string    AuthToken      = 60;
-    optional bool      Authed         = 70;
-    optional uint32    Start          = 80;
-    optional uint32    End            = 90;
-    optional double    HashRate       = 100;
-    optional string    ReadPageLink   = 110;
+    optional string    Name           = 30;
+    optional string    RootUserID     = 40;
+    optional string    GoodID         = 50;
+    optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 60;
+    optional basetypes.miningpool.v1.CoinType CoinType = 70;
+    optional float     HashRate       = 80;
+    optional string    ReadPageLink   = 90;
+    optional basetypes.miningpool.v1.RevenueType RevenueType    = 100;
 }
 
 message GoodUser {
     // @inject_tag: sql:"id"
-    uint32               ID              = 10;
+    uint32               ID                = 10;
     // @inject_tag: sql:"ent_id"
-    string               EntID           = 11;
-    // @inject_tag: sql:"good_id"
-    string               GoodID          = 20;
+    string               EntID             = 20;
     // @inject_tag: sql:"name"
-    string               Name            = 30;
-    // @inject_tag: sql:"auth_token"
-    string               AuthToken       = 40;
-    // @inject_tag: sql:"authed"
-    string               Authed          = 50;
-    // @inject_tag: sql:"start" 
-    string               Start           = 60;
-    // @inject_tag: sql:"end"
-    string               End             = 70;
+    string               Name              = 30;
+    // @inject_tag: sql:"root_user_id"
+    string               RootUserID        = 40;
+    // @inject_tag: sql:"good_id"
+    string               GoodID            = 50;
+    // @inject_tag: sql:"miningpool_type"
+    string               MiningpoolTypeStr = 60;
+    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 61;
+    // @inject_tag: sql:"coin_type" 
+    string               CoinTypeStr       = 70;
+    basetypes.miningpool.v1.CoinType CoinType = 71;
     // @inject_tag: sql:"hash_rate"
-    double               HashRate        = 80;
+    float                HashRate          = 80;
     // @inject_tag: sql:"read_page_link"
     string               ReadPageLink    = 90;
+    // @inject_tag: sql:"revenue_type"
+    string               RevenueTypeStr       = 100;
+    basetypes.miningpool.v1.RevenueType RevenueType = 101;
     // @inject_tag: sql:"created_at"
-    uint32               CreatedAt       = 170;
+    uint32               CreatedAt         = 110;
     // @inject_tag: sql:"updated_at"
-    uint32               UpdatedAt       = 180;
+    uint32               UpdatedAt         = 120;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      EntID       = 10;
-    optional basetypes.v1.StringVal      GoodID      = 20;
-    optional basetypes.v1.StringVal      Name        = 30;
-    optional basetypes.v1.BoolVal        Authed      = 40;
-    optional basetypes.v1.StringSliceVal EntIDs      = 50;
+    optional basetypes.v1.StringVal      EntID          = 10;
+    optional basetypes.v1.StringVal      Name           = 20;
+    optional basetypes.v1.StringVal      RootUserID     = 30;
+    optional basetypes.v1.StringVal      GoodID         = 40;
+    optional basetypes.v1.Uint32Val      MiningpoolType = 50;
+    optional basetypes.v1.Uint32Val      CoinType       = 60;
+    optional basetypes.v1.Uint32Val      RevenueType    = 70;
+    optional basetypes.v1.StringSliceVal EntIDs         = 80;
 }
 
 message CreateGoodUserRequest {
