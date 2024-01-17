@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/app";
 import "npool/basetypes/v1/signmethod.proto";
 import "npool/basetypes/v1/createinvitationcodewhen.proto";
 import "npool/basetypes/v1/recaptcha.proto";
+import "npool/basetypes/appuser/v1/enums.proto";
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
@@ -46,7 +47,11 @@ message AppReq {
     optional uint32          MaxTypedCouponsPerOrder = 150;
     optional bool            Maintaining        = 160;
     repeated string          CommitButtonTargets           = 170;
+<<<<<<< HEAD
     optional bool            CouponWithdrawEnable = 180;
+=======
+    optional basetypes.appuser.v1.ResetMethod   ResetChannel        = 200;
+>>>>>>> 76ab4dc30 (add ResetMethod)
 }
 
 message App {
@@ -106,6 +111,9 @@ message App {
     repeated string CommitButtonTargets           = 260;
     // @inject_tag: sql:"coupon_withdraw_enable"
     bool            CouponWithdrawEnable          = 270;
+    // @inject_tag: sql:"reset_method"
+    string          ResetMethodStr                = 300;
+    basetypes.appuser.v1.ResetMethod ResetMethod  = 310;
 }
 
 message Conds {
