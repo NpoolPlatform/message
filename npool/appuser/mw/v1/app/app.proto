@@ -47,11 +47,8 @@ message AppReq {
     optional uint32          MaxTypedCouponsPerOrder = 150;
     optional bool            Maintaining        = 160;
     repeated string          CommitButtonTargets           = 170;
-<<<<<<< HEAD
     optional bool            CouponWithdrawEnable = 180;
-=======
-    optional basetypes.appuser.v1.ResetMethod   ResetChannel        = 200;
->>>>>>> 76ab4dc30 (add ResetMethod)
+    optional basetypes.appuser.v1.ResetUserMethod   ResetUserMethod        = 200;
 }
 
 message App {
@@ -112,8 +109,8 @@ message App {
     // @inject_tag: sql:"coupon_withdraw_enable"
     bool            CouponWithdrawEnable          = 270;
     // @inject_tag: sql:"reset_method"
-    string          ResetMethodStr                = 300;
-    basetypes.appuser.v1.ResetMethod ResetMethod  = 310;
+    string          ResetUserMethodStr                = 300;
+    basetypes.appuser.v1.ResetUserMethod ResetUserMethod  = 310;
 }
 
 message Conds {

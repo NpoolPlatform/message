@@ -154,6 +154,7 @@
           }
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CouponWithdrawEnable": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"coupon_withdraw_enable\""
@@ -165,6 +166,14 @@
         "ResetMethod": {
           "$ref": "#/definitions/v1ResetMethod"
 >>>>>>> 76ab4dc30 (add ResetMethod)
+=======
+        "ResetUserMethodStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reset_method\""
+        },
+        "ResetUserMethod": {
+          "$ref": "#/definitions/v1ResetUserMethod"
+>>>>>>> 4001724c3 (add ResetUserMethod)
         }
       }
     },
@@ -241,12 +250,17 @@
           }
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "CouponWithdrawEnable": {
           "type": "boolean"
 =======
         "ResetChannel": {
           "$ref": "#/definitions/v1ResetMethod"
 >>>>>>> 76ab4dc30 (add ResetMethod)
+=======
+        "ResetUserMethod": {
+          "$ref": "#/definitions/v1ResetUserMethod"
+>>>>>>> 4001724c3 (add ResetUserMethod)
         }
       }
     },
@@ -355,14 +369,14 @@
       ],
       "default": "DefaultRecaptchaMethod"
     },
-    "v1ResetMethod": {
+    "v1ResetUserMethod": {
       "type": "string",
       "enum": [
-        "DefaultResetMethod",
+        "DefaultUserResetMethod",
         "Normal",
         "Link"
       ],
-      "default": "DefaultResetMethod"
+      "default": "DefaultUserResetMethod"
     },
     "v1SignMethod": {
       "type": "string",
