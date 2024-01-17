@@ -8,7 +8,7 @@ import "google/api/annotations.proto";
 import "npool/appuser/mw/v1/user/recoverycode/recoverycode.proto";
 
 service Gateway {
-    rpc GenerateRecoveryCode (GenerateRecoveryCodesRequest) returns (GenerateRecoveryCodesResponse) {
+    rpc GenerateRecoveryCodes (GenerateRecoveryCodesRequest) returns (GenerateRecoveryCodesResponse) {
         option (google.api.http) = {
             post: "/v1/generate/recoverycodes"
             body: "*"
