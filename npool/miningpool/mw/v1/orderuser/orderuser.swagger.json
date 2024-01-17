@@ -55,23 +55,37 @@
         }
       }
     },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "DefaultCoinType",
+        "BitCoin"
+      ],
+      "default": "DefaultCoinType"
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "OrderID": {
+        "Name": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "RootUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "GoodUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "CoinID": {
+        "OrderID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Name": {
-          "$ref": "#/definitions/v1StringVal"
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "RevenueAddress": {
           "$ref": "#/definitions/v1StringVal"
@@ -134,6 +148,15 @@
         }
       }
     },
+    "v1MiningpoolType": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningpoolType",
+        "F2Pool",
+        "AntPool"
+      ],
+      "default": "DefaultMiningpoolType"
+    },
     "v1OrderUser": {
       "type": "object",
       "properties": {
@@ -146,50 +169,44 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "OrderID": {
+        "Name": {
           "type": "string",
-          "title": "@inject_tag: sql:\"order_id\""
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "RootUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"root_user_id\""
         },
         "GoodUserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_user_id\""
         },
-        "CoinID": {
+        "OrderID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coin_id\""
+          "title": "@inject_tag: sql:\"order_id\""
         },
-        "Name": {
+        "MiningpoolTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"name\""
+          "title": "@inject_tag: sql:\"miningpool_type\""
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "CoinTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"Coin_Type\""
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
         },
         "Proportion": {
           "type": "number",
           "format": "float",
           "title": "@inject_tag: sql:\"proportion\""
         },
-        "Start": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"start\""
-        },
-        "End": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"end\""
-        },
-        "CompensationTime": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"compensation_time\""
-        },
         "RevenueAddress": {
           "type": "string",
           "title": "@inject_tag: sql:\"revenue_address\""
-        },
-        "Threshold": {
-          "type": "number",
-          "format": "float",
-          "title": "@inject_tag: sql:\"threshold\""
         },
         "ReadPageLink": {
           "type": "string",
@@ -221,40 +238,30 @@
         "EntID": {
           "type": "string"
         },
-        "OrderID": {
+        "Name": {
+          "type": "string"
+        },
+        "RootUserID": {
           "type": "string"
         },
         "GoodUserID": {
           "type": "string"
         },
-        "CoinID": {
+        "OrderID": {
           "type": "string"
         },
-        "Name": {
-          "type": "string"
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
         },
         "Proportion": {
           "type": "number",
           "format": "float"
         },
-        "Start": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "End": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CompensationTime": {
-          "type": "integer",
-          "format": "int64"
-        },
         "RevenueAddress": {
           "type": "string"
-        },
-        "Threshold": {
-          "type": "number",
-          "format": "float"
         },
         "ReadPageLink": {
           "type": "string"
@@ -286,6 +293,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
