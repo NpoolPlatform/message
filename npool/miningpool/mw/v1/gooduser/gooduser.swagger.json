@@ -162,7 +162,8 @@
           "title": "@inject_tag: sql:\"end\""
         },
         "HashRate": {
-          "type": "string",
+          "type": "number",
+          "format": "double",
           "title": "@inject_tag: sql:\"hash_rate\""
         },
         "ReadPageLink": {

@@ -46,7 +46,7 @@ message Coin {
     string                                  RevenueTypeStr     = 60;
     basetypes.miningpool.v1.RevenueType     RevenueType        = 61;
     // @inject_tag: sql:"fee_rate"
-    uint32                                  FeeRate            = 70;
+    float                                  FeeRate            = 70;
     // @inject_tag: sql:"fixed_revenue_able"
     bool                                    FixedRevenueAble   = 80;
     // @inject_tag: sql:"remark"

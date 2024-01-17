@@ -94,8 +94,8 @@
           "$ref": "#/definitions/v1RevenueType"
         },
         "FeeRate": {
-          "type": "integer",
-          "format": "int64",
+          "type": "number",
+          "format": "float",
           "title": "@inject_tag: sql:\"fee_rate\""
         },
         "FixedRevenueAble": {
