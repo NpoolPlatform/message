@@ -108,7 +108,7 @@ message App {
     repeated string CommitButtonTargets           = 260;
     // @inject_tag: sql:"coupon_withdraw_enable"
     bool            CouponWithdrawEnable          = 270;
-    // @inject_tag: sql:"reset_method"
+    // @inject_tag: sql:"reset_user_method"
     string          ResetUserMethodStr                = 300;
     basetypes.appuser.v1.ResetUserMethod ResetUserMethod  = 310;
 }
