@@ -21,6 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Gateway_GetCashControls_FullMethodName    = "/inspire.gateway.coupon.app.cashcontrol.v1.Gateway/GetCashControls"
 	Gateway_CreateCashControl_FullMethodName  = "/inspire.gateway.coupon.app.cashcontrol.v1.Gateway/CreateCashControl"
+	Gateway_UpdateCashControl_FullMethodName  = "/inspire.gateway.coupon.app.cashcontrol.v1.Gateway/UpdateCashControl"
 	Gateway_DeleteCashControl_FullMethodName  = "/inspire.gateway.coupon.app.cashcontrol.v1.Gateway/DeleteCashControl"
 	Gateway_GetAppCashControls_FullMethodName = "/inspire.gateway.coupon.app.cashcontrol.v1.Gateway/GetAppCashControls"
 )
@@ -31,6 +32,7 @@ const (
 type GatewayClient interface {
 	GetCashControls(ctx context.Context, in *GetCashControlsRequest, opts ...grpc.CallOption) (*GetCashControlsResponse, error)
 	CreateCashControl(ctx context.Context, in *CreateCashControlRequest, opts ...grpc.CallOption) (*CreateCashControlResponse, error)
+	UpdateCashControl(ctx context.Context, in *UpdateCashControlRequest, opts ...grpc.CallOption) (*UpdateCashControlResponse, error)
 	DeleteCashControl(ctx context.Context, in *DeleteCashControlRequest, opts ...grpc.CallOption) (*DeleteCashControlResponse, error)
 	GetAppCashControls(ctx context.Context, in *GetAppCashControlsRequest, opts ...grpc.CallOption) (*GetAppCashControlsResponse, error)
 }
@@ -61,6 +63,15 @@ func (c *gatewayClient) CreateCashControl(ctx context.Context, in *CreateCashCon
 	return out, nil
 }
 
+func (c *gatewayClient) UpdateCashControl(ctx context.Context, in *UpdateCashControlRequest, opts ...grpc.CallOption) (*UpdateCashControlResponse, error) {
+	out := new(UpdateCashControlResponse)
+	err := c.cc.Invoke(ctx, Gateway_UpdateCashControl_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) DeleteCashControl(ctx context.Context, in *DeleteCashControlRequest, opts ...grpc.CallOption) (*DeleteCashControlResponse, error) {
 	out := new(DeleteCashControlResponse)
 	err := c.cc.Invoke(ctx, Gateway_DeleteCashControl_FullMethodName, in, out, opts...)
@@ -85,6 +96,7 @@ func (c *gatewayClient) GetAppCashControls(ctx context.Context, in *GetAppCashCo
 type GatewayServer interface {
 	GetCashControls(context.Context, *GetCashControlsRequest) (*GetCashControlsResponse, error)
 	CreateCashControl(context.Context, *CreateCashControlRequest) (*CreateCashControlResponse, error)
+	UpdateCashControl(context.Context, *UpdateCashControlRequest) (*UpdateCashControlResponse, error)
 	DeleteCashControl(context.Context, *DeleteCashControlRequest) (*DeleteCashControlResponse, error)
 	GetAppCashControls(context.Context, *GetAppCashControlsRequest) (*GetAppCashControlsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -99,6 +111,9 @@ func (UnimplementedGatewayServer) GetCashControls(context.Context, *GetCashContr
 }
 func (UnimplementedGatewayServer) CreateCashControl(context.Context, *CreateCashControlRequest) (*CreateCashControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCashControl not implemented")
+}
+func (UnimplementedGatewayServer) UpdateCashControl(context.Context, *UpdateCashControlRequest) (*UpdateCashControlResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCashControl not implemented")
 }
 func (UnimplementedGatewayServer) DeleteCashControl(context.Context, *DeleteCashControlRequest) (*DeleteCashControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCashControl not implemented")
@@ -155,6 +170,24 @@ func _Gateway_CreateCashControl_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_UpdateCashControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCashControlRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateCashControl(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_UpdateCashControl_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateCashControl(ctx, req.(*UpdateCashControlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_DeleteCashControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteCashControlRequest)
 	if err := dec(in); err != nil {
@@ -205,6 +238,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCashControl",
 			Handler:    _Gateway_CreateCashControl_Handler,
+		},
+		{
+			MethodName: "UpdateCashControl",
+			Handler:    _Gateway_UpdateCashControl_Handler,
 		},
 		{
 			MethodName: "DeleteCashControl",

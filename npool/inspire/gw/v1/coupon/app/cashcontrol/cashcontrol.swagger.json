@@ -143,6 +143,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/update/cashcontrol": {
+      "post": {
+        "operationId": "Gateway_UpdateCashControl",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inspiregatewaycouponappcashcontrolv1UpdateCashControlResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/inspiregatewaycouponappcashcontrolv1UpdateCashControlRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -219,6 +251,32 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "inspiregatewaycouponappcashcontrolv1UpdateCashControlRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "inspiregatewaycouponappcashcontrolv1UpdateCashControlResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CashControl"
         }
       }
     },

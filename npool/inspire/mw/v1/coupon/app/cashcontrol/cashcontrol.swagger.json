@@ -249,6 +249,14 @@
           "format": "int64"
         }
       }
+    },
+    "v1UpdateCashControlResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CashControl"
+        }
+      }
     }
   }
 }

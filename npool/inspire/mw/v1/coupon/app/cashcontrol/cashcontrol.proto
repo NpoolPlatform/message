@@ -14,6 +14,7 @@ service Middleware {
     rpc GetCashControl        (GetCashControlRequest)       returns (GetCashControlResponse)      {}
     rpc GetCashControls       (GetCashControlsRequest)      returns (GetCashControlsResponse)     {}
     rpc DeleteCashControl     (DeleteCashControlRequest)    returns (DeleteCashControlResponse)   {}
+    rpc UpdateCashControl     (UpdateCashControlRequest)    returns (UpdateCashControlResponse)   {}
 }
 
 message CashControlReq {
@@ -103,3 +104,10 @@ message DeleteCashControlResponse {
     CashControl    Info = 10;
 }
 
+message UpdateCashControlRequest {
+    CashControlReq Info = 10;
+}
+
+message UpdateCashControlResponse {
+    CashControl Info = 10;
+}

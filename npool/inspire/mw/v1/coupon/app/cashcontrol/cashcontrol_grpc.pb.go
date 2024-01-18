@@ -24,6 +24,7 @@ const (
 	Middleware_GetCashControl_FullMethodName        = "/inspire.middleware.coupon.app.cashcontrol.v1.Middleware/GetCashControl"
 	Middleware_GetCashControls_FullMethodName       = "/inspire.middleware.coupon.app.cashcontrol.v1.Middleware/GetCashControls"
 	Middleware_DeleteCashControl_FullMethodName     = "/inspire.middleware.coupon.app.cashcontrol.v1.Middleware/DeleteCashControl"
+	Middleware_UpdateCashControl_FullMethodName     = "/inspire.middleware.coupon.app.cashcontrol.v1.Middleware/UpdateCashControl"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -35,6 +36,7 @@ type MiddlewareClient interface {
 	GetCashControl(ctx context.Context, in *GetCashControlRequest, opts ...grpc.CallOption) (*GetCashControlResponse, error)
 	GetCashControls(ctx context.Context, in *GetCashControlsRequest, opts ...grpc.CallOption) (*GetCashControlsResponse, error)
 	DeleteCashControl(ctx context.Context, in *DeleteCashControlRequest, opts ...grpc.CallOption) (*DeleteCashControlResponse, error)
+	UpdateCashControl(ctx context.Context, in *UpdateCashControlRequest, opts ...grpc.CallOption) (*UpdateCashControlResponse, error)
 }
 
 type middlewareClient struct {
@@ -90,6 +92,15 @@ func (c *middlewareClient) DeleteCashControl(ctx context.Context, in *DeleteCash
 	return out, nil
 }
 
+func (c *middlewareClient) UpdateCashControl(ctx context.Context, in *UpdateCashControlRequest, opts ...grpc.CallOption) (*UpdateCashControlResponse, error) {
+	out := new(UpdateCashControlResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateCashControl_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -99,6 +110,7 @@ type MiddlewareServer interface {
 	GetCashControl(context.Context, *GetCashControlRequest) (*GetCashControlResponse, error)
 	GetCashControls(context.Context, *GetCashControlsRequest) (*GetCashControlsResponse, error)
 	DeleteCashControl(context.Context, *DeleteCashControlRequest) (*DeleteCashControlResponse, error)
+	UpdateCashControl(context.Context, *UpdateCashControlRequest) (*UpdateCashControlResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -120,6 +132,9 @@ func (UnimplementedMiddlewareServer) GetCashControls(context.Context, *GetCashCo
 }
 func (UnimplementedMiddlewareServer) DeleteCashControl(context.Context, *DeleteCashControlRequest) (*DeleteCashControlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCashControl not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateCashControl(context.Context, *UpdateCashControlRequest) (*UpdateCashControlResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCashControl not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -224,6 +239,24 @@ func _Middleware_DeleteCashControl_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_UpdateCashControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCashControlRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateCashControl(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateCashControl_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateCashControl(ctx, req.(*UpdateCashControlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -250,6 +283,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteCashControl",
 			Handler:    _Middleware_DeleteCashControl_Handler,
+		},
+		{
+			MethodName: "UpdateCashControl",
+			Handler:    _Middleware_UpdateCashControl_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
