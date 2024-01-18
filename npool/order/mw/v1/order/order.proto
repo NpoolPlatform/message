@@ -221,6 +221,7 @@ message Conds {
     optional basetypes.v1.Uint32Val      PaymentType           = 110;
     optional basetypes.v1.StringVal      CoinTypeID            = 120;
     optional basetypes.v1.StringVal      PaymentCoinTypeID     = 130;
+    optional basetypes.v1.BoolVal        PayWithParent         = 131;
 
     // orderstate
     optional basetypes.v1.Uint32Val      OrderState            = 140;

@@ -176,6 +176,9 @@
         "PaymentCoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "PayWithParent": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
         "OrderState": {
           "$ref": "#/definitions/v1Uint32Val",
           "title": "orderstate"
