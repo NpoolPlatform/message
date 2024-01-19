@@ -824,6 +824,14 @@
         }
       }
     },
+    "v1SumOrderPaymentAmountsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
     "v1SumOrderUnitsResponse": {
       "type": "object",
       "properties": {

@@ -265,6 +265,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "CouponWithdrawEnable": {
+          "type": "boolean"
         }
       }
     },
@@ -401,6 +404,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "CouponWithdrawEnable": {
+          "type": "boolean"
         }
       }
     },
@@ -547,6 +553,10 @@
           "items": {
             "type": "string"
           }
+        },
+        "CouponWithdrawEnable": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"coupon_withdraw_enable\""
         }
       }
     },
