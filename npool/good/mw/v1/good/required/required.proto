@@ -52,6 +52,7 @@ message Conds {
     optional basetypes.v1.StringSliceVal GoodIDs         = 30;
     optional basetypes.v1.StringVal      MainGoodID      = 40;
     optional basetypes.v1.StringVal      RequiredGoodID  = 50;
+    optional basetypes.v1.BoolVal        Must            = 60;
 }
 
 message CreateRequiredRequest {

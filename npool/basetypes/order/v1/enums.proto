@@ -160,6 +160,12 @@ enum OrderState {
     OrderStateCanceled          = 270;
     OrderStateExpired           = 280;
 
+    // Child paid
+    OrderStateChildPaidByParent      = 290; // -> OrderStatePaid, can be rollback
+    OrderStateChildInServiceByParent = 300; // -> OrderStateInService
+    OrderStateChildExpiredByParent   = 310; // -> OrderStateExpired
+    OrderStateChildCanceledByParent  = 320; // -> OrderStateCanceled
+
     // Delivery order state
 }
 
@@ -214,6 +220,9 @@ enum OrderStartMode {
 
     OrderStartTBD        = 10;
     OrderStartConfirmed  = 20;
+    OrderStartInstantly  = 30; // Start when order paid
+    OrderStartNextDay    = 40; // Start at next 00:00 UTC
+    OrderStartPreset     = 50; // Start at a preset time
 }
 
 enum OrderLockType {

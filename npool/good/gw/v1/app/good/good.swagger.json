@@ -210,35 +210,6 @@
     }
   },
   "definitions": {
-    "GoodCoinInfo": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "CoinPreSale": {
-          "type": "boolean"
-        },
-        "CoinEnv": {
-          "type": "string"
-        },
-        "CoinHomePage": {
-          "type": "string"
-        },
-        "CoinSpecs": {
-          "type": "string"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -305,14 +276,13 @@
         "GoodName": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         },
         "DisplayIndex": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "PurchaseLimit": {
           "type": "integer",
           "format": "int32"
         },
@@ -342,9 +312,6 @@
         },
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
-        },
-        "UserPurchaseLimit": {
-          "type": "string"
         },
         "DisplayColors": {
           "type": "array",
@@ -382,6 +349,26 @@
           "items": {
             "type": "string"
           }
+        },
+        "MinOrderAmount": {
+          "type": "string"
+        },
+        "MaxOrderAmount": {
+          "type": "string"
+        },
+        "MaxUserAmount": {
+          "type": "string"
+        },
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PackageWithRequireds": {
+          "type": "boolean"
         }
       }
     },
@@ -499,14 +486,13 @@
         "Visible": {
           "type": "boolean"
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         },
         "DisplayIndex": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "PurchaseLimit": {
           "type": "integer",
           "format": "int32"
         },
@@ -576,12 +562,11 @@
         "GoodName": {
           "type": "string"
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string"
         },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32"
+        "QuantityUnitAmount": {
+          "type": "string"
         },
         "BenefitIntervalHours": {
           "type": "integer",
@@ -602,23 +587,11 @@
             "$ref": "#/definitions/v1GoodLabel"
           }
         },
-        "SupportCoins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/GoodCoinInfo"
-          }
-        },
         "GoodTotal": {
           "type": "string"
         },
         "GoodSpotQuantity": {
           "type": "string"
-        },
-        "RequiredGoods": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Good"
-          }
         },
         "StartAt": {
           "type": "integer",
@@ -672,9 +645,6 @@
         },
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
-        },
-        "UserPurchaseLimit": {
-          "type": "string"
         },
         "DisplayColors": {
           "type": "array",
@@ -754,8 +724,54 @@
           "items": {
             "type": "string"
           }
+        },
+        "MinOrderAmount": {
+          "type": "string"
+        },
+        "MaxOrderAmount": {
+          "type": "string"
+        },
+        "MaxUserAmount": {
+          "type": "string"
+        },
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UnitType": {
+          "$ref": "#/definitions/v1GoodUnitType"
+        },
+        "QuantityCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "SettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
+        },
+        "PackageWithRequireds": {
+          "type": "boolean"
         }
       }
+    },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
     },
     "v1GoodLabel": {
       "type": "string",
@@ -768,12 +784,24 @@
       ],
       "default": "DefaultGoodLabel"
     },
+    "v1GoodSettlementType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodSettlementType",
+        "GoodSettledByCash",
+        "GoodSettledByProfit"
+      ],
+      "default": "DefaultGoodSettlementType"
+    },
     "v1GoodStartMode": {
       "type": "string",
       "enum": [
         "DefaultGoodStartMode",
         "GoodStartModeTBD",
-        "GoodStartModeConfirmed"
+        "GoodStartModeConfirmed",
+        "GoodStartModeInstantly",
+        "GoodStartModeNextDay",
+        "GoodStartModePreset"
       ],
       "default": "DefaultGoodStartMode"
     },
@@ -788,6 +816,25 @@
         "ElectricityFee"
       ],
       "default": "DefaultGoodType"
+    },
+    "v1GoodUnitCalculateType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitCalculateType",
+        "GoodUnitCalculateBySelf",
+        "GoodUnitCalculateByParent"
+      ],
+      "default": "DefaultGoodUnitCalculateType"
+    },
+    "v1GoodUnitType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitType",
+        "GoodUnitByDuration",
+        "GoodUnitByQuantity",
+        "GoodUnitByDurationAndQuantity"
+      ],
+      "default": "DefaultGoodUnitType"
     },
     "v1UpdateGoodRequest": {
       "type": "object",
@@ -811,14 +858,13 @@
         "GoodName": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         },
         "DisplayIndex": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "PurchaseLimit": {
           "type": "integer",
           "format": "int32"
         },
@@ -864,9 +910,6 @@
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
         },
-        "UserPurchaseLimit": {
-          "type": "string"
-        },
         "DisplayColors": {
           "type": "array",
           "items": {
@@ -888,6 +931,26 @@
           "items": {
             "type": "string"
           }
+        },
+        "MinOrderAmount": {
+          "type": "string"
+        },
+        "MaxOrderAmount": {
+          "type": "string"
+        },
+        "MaxUserAmount": {
+          "type": "string"
+        },
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PackageWithRequireds": {
+          "type": "boolean"
         }
       }
     },
@@ -921,14 +984,13 @@
         "GoodName": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         },
         "DisplayIndex": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "PurchaseLimit": {
           "type": "integer",
           "format": "int32"
         },
@@ -966,9 +1028,6 @@
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
         },
-        "UserPurchaseLimit": {
-          "type": "string"
-        },
         "DisplayColors": {
           "type": "array",
           "items": {
@@ -990,6 +1049,26 @@
           "items": {
             "type": "string"
           }
+        },
+        "MinOrderAmount": {
+          "type": "string"
+        },
+        "MaxOrderAmount": {
+          "type": "string"
+        },
+        "MaxUserAmount": {
+          "type": "string"
+        },
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PackageWithRequireds": {
+          "type": "boolean"
         }
       }
     },

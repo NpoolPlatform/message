@@ -44,6 +44,17 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -64,6 +75,9 @@
         },
         "RequiredGoodID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "Must": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },

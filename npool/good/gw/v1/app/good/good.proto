@@ -60,9 +60,9 @@ message Good {
     string           GoodID                      = 30;
     bool             Online                      = 40;
     bool             Visible                     = 50;
-    string           Price                       = 60;
+    string           UnitPrice                   = 60;
+    string           PackagePrice                = 61;
     int32            DisplayIndex                = 70;
-    int32            PurchaseLimit               = 80;
 
     string           DeviceType                  = 240;
     string           DeviceManufacturer          = 250;
@@ -87,30 +87,17 @@ message Good {
     basetypes.good.v1.GoodType    GoodType    = 360;
     basetypes.good.v1.BenefitType BenefitType = 370;
     string           GoodName           = 380;
-    string           Unit               = 390;
-    int32            UnitAmount         = 400;
+    string           QuantityUnit       = 390;
+    string           QuantityUnitAmount = 400;
     uint32           BenefitIntervalHours = 401;
 
     bool             TestOnly           = 410;
     repeated string  Posters            = 420;
     repeated basetypes.good.v1.GoodLabel Labels = 430;
 
-    message CoinInfo {
-        string CoinTypeID    = 10;
-        string CoinLogo      = 20;
-        string CoinName      = 30;
-        string CoinUnit      = 40;
-        bool   CoinPreSale   = 50;
-        string CoinEnv       = 60;
-        string CoinHomePage  = 70;
-        string CoinSpecs     = 80;
-    }
-    repeated CoinInfo SupportCoins  = 460;
-
     string           GoodTotal          = 470;
     string           GoodSpotQuantity   = 480;
 
-    repeated Good    RequiredGoods      = 520;
     uint32           StartAt            = 550;
     basetypes.good.v1.GoodStartMode StartMode = 551;
     uint32           CreatedAt          = 560;
@@ -127,7 +114,6 @@ message Good {
     bool             EnablePurchase    = 670;
     bool             EnableProductPage = 680;
     basetypes.good.v1.CancelMode CancelMode = 690;
-    string           UserPurchaseLimit = 700;
     repeated string  DisplayColors          = 710;
     uint32           CancellableBeforeStart = 720;
     string           ProductPage            = 730;
@@ -153,6 +139,18 @@ message Good {
     string           LastUnitRewardAmount = 900;
     string           TotalRewardAmount  = 910;
     repeated string  AppGoodPosters     = 920;
+    string           MinOrderAmount  = 930;
+    string           MaxOrderAmount  = 940;
+    string           MaxUserAmount   = 950;
+    uint32           MinOrderDuration = 960;
+    uint32           MaxOrderDuration = 970;
+
+    basetypes.good.v1.GoodUnitType UnitType = 980;
+    basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 990;
+    basetypes.good.v1.GoodDurationType DurationType = 1000;
+    basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 1010;
+    basetypes.good.v1.GoodSettlementType SettlementType = 1020;
+    bool             PackageWithRequireds = 1030;
 }
 
 message CreateGoodRequest {
@@ -161,9 +159,9 @@ message CreateGoodRequest {
     bool   Online              = 30;
     bool   Visible             = 40;
     string GoodName            = 50;
-    string Price               = 60;
+    string UnitPrice           = 60;
+    optional string PackagePrice = 61;
     int32  DisplayIndex        = 70;
-    int32  PurchaseLimit       = 80;
     optional uint32 SaleStartAt    = 100;
     optional uint32 SaleEndAt      = 110;
     optional uint32 ServiceStartAt = 120;
@@ -172,7 +170,6 @@ message CreateGoodRequest {
     optional bool   EnablePurchase         = 160;
     optional bool   EnableProductPage      = 170;
     optional basetypes.good.v1.CancelMode CancelMode = 180;
-    optional string UserPurchaseLimit      = 190;
     repeated string DisplayColors          = 200;
     optional uint32 CancellableBeforeStart = 210;
     optional string ProductPage            = 220;
@@ -181,6 +178,12 @@ message CreateGoodRequest {
     repeated string Descriptions = 250;
     optional string GoodBanner   = 260;
     repeated string DisplayNames = 270;
+    optional string MinOrderAmount  = 280;
+    optional string MaxOrderAmount  = 290;
+    optional string MaxUserAmount   = 300;
+    optional uint32 MinOrderDuration = 310;
+    optional uint32 MaxOrderDuration = 320;
+    optional bool   PackageWithRequireds = 330;
 }
 
 message CreateGoodResponse {
@@ -225,9 +228,9 @@ message UpdateGoodRequest {
     optional bool   Online              = 30;
     optional bool   Visible             = 40;
     optional string GoodName            = 50;
-    optional string Price               = 60;
+    optional string UnitPrice           = 60;
+    optional string PackagePrice        = 61;
     optional int32  DisplayIndex        = 70;
-    optional int32  PurchaseLimit       = 80;
     optional uint32 SaleStartAt         = 100;
     optional uint32 SaleEndAt           = 110;
     optional uint32 ServiceStartAt      = 120;
@@ -239,12 +242,17 @@ message UpdateGoodRequest {
     optional bool   EnablePurchase      = 200;
     optional bool   EnableProductPage   = 210;
     optional basetypes.good.v1.CancelMode CancelMode = 220;
-    optional string UserPurchaseLimit = 230;
     repeated string DisplayColors          = 240;
     optional uint32 CancellableBeforeStart = 250;
     optional string ProductPage            = 260;
     optional bool   EnableSetCommission    = 270;
     repeated string Posters    = 280;
+    optional string MinOrderAmount  = 290;
+    optional string MaxOrderAmount  = 300;
+    optional string MaxUserAmount   = 310;
+    optional uint32 MinOrderDuration = 320;
+    optional uint32 MaxOrderDuration = 330;
+    optional bool   PackageWithRequireds = 340;
 }
 
 message UpdateGoodResponse {
@@ -258,9 +266,9 @@ message UpdateNGoodRequest {
     optional bool   Online              = 30;
     optional bool   Visible             = 40;
     optional string GoodName            = 50;
-    optional string Price               = 60;
+    optional string UnitPrice           = 60;
+    optional string PackagePrice        = 61;
     optional int32  DisplayIndex        = 70;
-    optional int32  PurchaseLimit       = 80;
     optional uint32 ServiceStartAt      = 100;
     optional string TechnicalFeeRatio   = 110;
     optional string ElectricityFeeRatio = 120;
@@ -270,12 +278,17 @@ message UpdateNGoodRequest {
     optional bool   EnablePurchase    = 190;
     optional bool   EnableProductPage = 200;
     optional basetypes.good.v1.CancelMode CancelMode = 210;
-    optional string UserPurchaseLimit = 220;
     repeated string DisplayColors          = 230;
     optional uint32 CancellableBeforeStart = 240;
     optional string ProductPage            = 250;
     optional bool   EnableSetCommission    = 270;
     repeated string Posters    = 280;
+    optional string MinOrderAmount  = 290;
+    optional string MaxOrderAmount  = 300;
+    optional string MaxUserAmount   = 310;
+    optional uint32 MinOrderDuration = 320;
+    optional uint32 MaxOrderDuration = 330;
+    optional bool   PackageWithRequireds = 340;
 }
 
 message UpdateNGoodResponse {

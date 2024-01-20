@@ -333,6 +333,17 @@
         }
       }
     },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
+    },
     "v1GoodProfit": {
       "type": "object",
       "properties": {
@@ -351,9 +362,16 @@
         "GoodUnit": {
           "type": "string"
         },
-        "GoodServicePeriodDays": {
+        "MinOrderDuration": {
           "type": "integer",
           "format": "int64"
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
         },
         "Units": {
           "type": "string"

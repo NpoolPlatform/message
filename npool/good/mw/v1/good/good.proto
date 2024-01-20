@@ -20,16 +20,14 @@ message GoodReq {
     optional uint32        ID                 = 9;
     optional string        EntID              = 10;
     optional string        DeviceInfoID       = 20;
-    optional int32         DurationDays       = 30;
     optional string        CoinTypeID         = 40;
     optional string        VendorLocationID   = 60;
-    optional string        Price              = 70;
+    optional string        UnitPrice          = 70;
     optional basetypes.good.v1.BenefitType BenefitType = 80;
     optional basetypes.good.v1.GoodType    GoodType    = 90;
     optional string        Title              = 100;
-    optional string        Unit               = 110;
-    optional int32         UnitAmount         = 120;
-    repeated string        SupportCoinTypeIDs = 130;
+    optional string        QuantityUnit       = 110;
+    optional string        QuantityUnitAmount = 120;
     optional uint32        DeliveryAt         = 140;
     optional uint32        StartAt            = 150;
     optional bool          TestOnly           = 160;
@@ -46,6 +44,11 @@ message GoodReq {
     optional string        RewardAmount       = 300;
     optional string        UnitRewardAmount   = 310;
     optional basetypes.good.v1.GoodStartMode StartMode = 320;
+    optional basetypes.good.v1.GoodUnitType UnitType = 340;
+    optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 350;
+    optional basetypes.good.v1.GoodDurationType DurationType = 360;
+    optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 370;
+    optional basetypes.good.v1.GoodSettlementType SettlementType = 380;
 }
 
 message Good {
@@ -68,8 +71,6 @@ message Good {
     // @inject_tag: sql:"device_posters"
     string           DevicePostersStr            = 71;
 
-    // @inject_tag: sql:"duration_days"
-    int32            DurationDays                = 80;
     // @inject_tag: sql:"coin_type_id"
     string           CoinTypeID                  = 90;
 
@@ -88,26 +89,22 @@ message Good {
     // @inject_tag: sql:"vendor_brand_logo"
     string           VendorBrandLogo             = 182;
 
-    basetypes.good.v1.GoodType    GoodType    = 190;
+    basetypes.good.v1.GoodType GoodType          = 190;
     // @inject_tag: sql:"good_type"
     string           GoodTypeStr                 = 191;
 
-    basetypes.good.v1.BenefitType BenefitType = 200;
+    basetypes.good.v1.BenefitType BenefitType    = 200;
     // @inject_tag: sql:"benefit_type"
     string           BenefitTypeStr              = 201;
 
-    // @inject_tag: sql:"price"
-    string           Price              = 210;
+    // @inject_tag: sql:"unit_price"
+    string           UnitPrice          = 210;
     // @inject_tag: sql:"title"
     string           Title              = 220;
-    // @inject_tag: sql:"unit"
-    string           Unit               = 230;
-    // @inject_tag: sql:"unit_amount"
-    int32            UnitAmount         = 240;
-
-    repeated string  SupportCoinTypeIDs = 250;
-    // @inject_tag: sql:"support_coin_type_ids"
-    string           SupportCoinTypeIDsStr = 251;
+    // @inject_tag: sql:"quantity_unit"
+    string           QuantityUnit       = 230;
+    // @inject_tag: sql:"quantity_unit_amount"
+    string           QuantityUnitAmount = 240;
 
     // @inject_tag: sql:"test_only"
     bool             TestOnly           = 260;
@@ -154,10 +151,6 @@ message Good {
     // @inject_tag: sql:"start_mode"
     string           StartModeStr       = 371;
     basetypes.good.v1.GoodStartMode StartMode = 372;
-    // @inject_tag: sql:"created_at"
-    uint32           CreatedAt          = 380;
-    // @inject_tag: sql:"updated_at"
-    uint32           UpdatedAt          = 390;
 
     // @inject_tag: sql:"benefit_interval_hours"
     uint32           BenefitIntervalHours = 400;
@@ -181,6 +174,27 @@ message Good {
     string           LastUnitRewardAmount = 490;
     // @inject_tag: sql:"total_reward_amount"
     string           TotalRewardAmount    = 500;
+
+    // @inject_tag: sql:"unit_type"
+    string           UnitTypeStr      = 510;
+    basetypes.good.v1.GoodUnitType UnitType = 520;
+    // @inject_tag: sql:"quantity_calculate_type"
+    string           QuantityCalculateTypeStr = 530;
+    basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 540;
+    // @inject_tag: sql:"duration_type"
+    string           DurationTypeStr = 550;
+    basetypes.good.v1.GoodDurationType DurationType = 560;
+    // @inject_tag: sql:"duration_calculate_type"
+    string           DurationCalculateTypeStr = 570;
+    basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 580;
+    // @inject_tag: sql:"settlement_type"
+    string           SettlementTypeStr = 590;
+    basetypes.good.v1.GoodSettlementType SettlementType = 600;
+
+    // @inject_tag: sql:"created_at"
+    uint32           CreatedAt          = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32           UpdatedAt          = 1100;
 }
 
 message Conds {
