@@ -190,11 +190,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"device_posters\""
         },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"duration_days\""
-        },
         "CoinTypeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
@@ -241,32 +236,21 @@
           "type": "string",
           "title": "@inject_tag: sql:\"benefit_type\""
         },
-        "Price": {
+        "UnitPrice": {
           "type": "string",
-          "title": "@inject_tag: sql:\"price\""
+          "title": "@inject_tag: sql:\"unit_price\""
         },
         "Title": {
           "type": "string",
           "title": "@inject_tag: sql:\"title\""
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string",
-          "title": "@inject_tag: sql:\"unit\""
+          "title": "@inject_tag: sql:\"quantity_unit\""
         },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"unit_amount\""
-        },
-        "SupportCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "SupportCoinTypeIDsStr": {
+        "QuantityUnitAmount": {
           "type": "string",
-          "title": "@inject_tag: sql:\"support_coin_type_ids\""
+          "title": "@inject_tag: sql:\"quantity_unit_amount\""
         },
         "TestOnly": {
           "type": "boolean",
@@ -366,16 +350,6 @@
         "StartMode": {
           "$ref": "#/definitions/v1GoodStartMode"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        },
         "BenefitIntervalHours": {
           "type": "integer",
           "format": "int64",
@@ -420,8 +394,64 @@
         "TotalRewardAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"total_reward_amount\""
+        },
+        "UnitTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit_type\""
+        },
+        "UnitType": {
+          "$ref": "#/definitions/v1GoodUnitType"
+        },
+        "QuantityCalculateTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"quantity_calculate_type\""
+        },
+        "QuantityCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "DurationTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"duration_type\""
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationCalculateTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"duration_calculate_type\""
+        },
+        "DurationCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "SettlementTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settlement_type\""
+        },
+        "SettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
+    },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
     },
     "v1GoodLabel": {
       "type": "string",
@@ -447,17 +477,13 @@
         "DeviceInfoID": {
           "type": "string"
         },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
-        },
         "CoinTypeID": {
           "type": "string"
         },
         "VendorLocationID": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
           "type": "string"
         },
         "BenefitType": {
@@ -469,18 +495,11 @@
         "Title": {
           "type": "string"
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string"
         },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "SupportCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "QuantityUnitAmount": {
+          "type": "string"
         },
         "DeliveryAt": {
           "type": "integer",
@@ -539,15 +558,42 @@
         },
         "StartMode": {
           "$ref": "#/definitions/v1GoodStartMode"
+        },
+        "UnitType": {
+          "$ref": "#/definitions/v1GoodUnitType"
+        },
+        "QuantityCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "SettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
         }
       }
+    },
+    "v1GoodSettlementType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodSettlementType",
+        "GoodSettledByCash",
+        "GoodSettledByProfit"
+      ],
+      "default": "DefaultGoodSettlementType"
     },
     "v1GoodStartMode": {
       "type": "string",
       "enum": [
         "DefaultGoodStartMode",
         "GoodStartModeTBD",
-        "GoodStartModeConfirmed"
+        "GoodStartModeConfirmed",
+        "GoodStartModeInstantly",
+        "GoodStartModeNextDay",
+        "GoodStartModePreset"
       ],
       "default": "DefaultGoodStartMode"
     },
@@ -562,6 +608,25 @@
         "ElectricityFee"
       ],
       "default": "DefaultGoodType"
+    },
+    "v1GoodUnitCalculateType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitCalculateType",
+        "GoodUnitCalculateBySelf",
+        "GoodUnitCalculateByParent"
+      ],
+      "default": "DefaultGoodUnitCalculateType"
+    },
+    "v1GoodUnitType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitType",
+        "GoodUnitByDuration",
+        "GoodUnitByQuantity",
+        "GoodUnitByDurationAndQuantity"
+      ],
+      "default": "DefaultGoodUnitType"
     },
     "v1StringSliceVal": {
       "type": "object",
