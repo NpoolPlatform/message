@@ -89,8 +89,8 @@ message CreateTopMostGoodRequest {
     string TopMostID  = 20;
     string AppGoodID  = 30;
     repeated string Posters = 40;
-    string UnitPrice    = 50;
-    string PackagePrice = 60;
+    optional string UnitPrice    = 50;
+    optional string PackagePrice = 60;
 }
 
 message CreateTopMostGoodResponse {
@@ -102,8 +102,8 @@ message CreateNTopMostGoodRequest {
     string TopMostID   = 20;
     string AppGoodID   = 30;
     repeated string Posters = 40;
-    string UnitPrice    = 50;
-    string PackagePrice = 60;
+    optional string UnitPrice    = 50;
+    optional string PackagePrice = 60;
 }
 
 message CreateNTopMostGoodResponse {
