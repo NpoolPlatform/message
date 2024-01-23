@@ -86,7 +86,6 @@ message UpdateArticleRequest {
     uint32          ID            = 10;
     string          EntID         = 20;
     string          AppID         = 30;
-    optional string CategoryID    = 40;
     optional string UserID        = 50;
     optional string Title         = 60;
     optional string Subtitle      = 70;

@@ -366,9 +366,6 @@
         "AppID": {
           "type": "string"
         },
-        "CategoryID": {
-          "type": "string"
-        },
         "UserID": {
           "type": "string"
         },
