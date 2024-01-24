@@ -238,6 +238,7 @@ enum OrderRenewState {
 
     OrderRenewWait    = 10;
     OrderRenewCheck   = 20;
-    OrderRenewExecute = 30;
-    OrderRenewFail    = 40;
+    OrderRenewNotify  = 30;
+    OrderRenewExecute = 40;
+    OrderRenewFail    = 50;
 }
