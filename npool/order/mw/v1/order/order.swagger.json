@@ -239,10 +239,16 @@
         "AppGoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Add order renew state
 =======
 >>>>>>> Support to query order with good and app good
+=======
+        },
+        "RenewNotifyAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+>>>>>>> Add renew notify at
         }
       }
     },
@@ -599,6 +605,11 @@
         "RenewState": {
           "$ref": "#/definitions/v1OrderRenewState"
         },
+        "RenewNotifyAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"renew_notify_at\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -629,6 +640,7 @@
 =======
         "OrderRenewWait",
         "OrderRenewCheck",
+        "OrderRenewNotify",
         "OrderRenewExecute",
         "OrderRenewFail"
 >>>>>>> Support order renew fail
@@ -785,6 +797,10 @@
         },
         "RenewState": {
           "$ref": "#/definitions/v1OrderRenewState"
+        },
+        "RenewNotifyAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
