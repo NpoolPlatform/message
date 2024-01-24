@@ -32,7 +32,7 @@ message RecoveryCode {
     // @inject_tag: sql:"code"
     string          Code                        = 40;
     // @inject_tag: sql:"used"
-    string          Used                        = 50;
+    bool            Used                        = 50;
     // @inject_tag: sql:"user_id"
     string          UserID                      = 60;
     // @inject_tag: sql:"email_address"

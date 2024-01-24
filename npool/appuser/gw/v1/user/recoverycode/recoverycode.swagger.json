@@ -186,7 +186,7 @@
           "title": "@inject_tag: sql:\"code\""
         },
         "Used": {
-          "type": "string",
+          "type": "boolean",
           "title": "@inject_tag: sql:\"used\""
         },
         "UserID": {
