@@ -83,8 +83,6 @@ enum Prefix {
 
     PrefixCreateResetUserLink  = 800;
 
-    PrefixCreateCoinUsedFor     = 760;
-
     PrefixMigrate              = 10000;
 
     PrefixScheduler            = 20000;

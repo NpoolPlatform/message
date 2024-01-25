@@ -256,12 +256,9 @@
         "UpdateMobile",
         "UpdateGoogleAuth",
         "OrderCompleted",
-<<<<<<< HEAD
         "ResetPassword",
-=======
         "OrderChildsRenewNotify",
         "OrderChildsRenew",
->>>>>>> Add order renew notify
         "Announcement",
         "ProductPage"
       ],
