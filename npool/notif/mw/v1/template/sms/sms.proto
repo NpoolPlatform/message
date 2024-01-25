@@ -61,7 +61,7 @@ message Conds {
     basetypes.v1.StringVal EntID   = 10;
     basetypes.v1.StringVal AppID   = 30;
     basetypes.v1.StringVal LangID  = 40;
-    basetypes.v1.Int32Val  UsedFor = 50;
+    basetypes.v1.Uint32Val UsedFor = 50;
 }
 
 message GetSMSTemplateRequest {
