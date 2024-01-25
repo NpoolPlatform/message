@@ -19,15 +19,16 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateNotif_FullMethodName     = "/notif.middleware.notif.v1.Middleware/CreateNotif"
-	Middleware_CreateNotifs_FullMethodName    = "/notif.middleware.notif.v1.Middleware/CreateNotifs"
-	Middleware_UpdateNotif_FullMethodName     = "/notif.middleware.notif.v1.Middleware/UpdateNotif"
-	Middleware_UpdateNotifs_FullMethodName    = "/notif.middleware.notif.v1.Middleware/UpdateNotifs"
-	Middleware_GetNotif_FullMethodName        = "/notif.middleware.notif.v1.Middleware/GetNotif"
-	Middleware_GetNotifs_FullMethodName       = "/notif.middleware.notif.v1.Middleware/GetNotifs"
-	Middleware_GenerateNotifs_FullMethodName  = "/notif.middleware.notif.v1.Middleware/GenerateNotifs"
-	Middleware_ExistNotifConds_FullMethodName = "/notif.middleware.notif.v1.Middleware/ExistNotifConds"
-	Middleware_DeleteNotif_FullMethodName     = "/notif.middleware.notif.v1.Middleware/DeleteNotif"
+	Middleware_CreateNotif_FullMethodName         = "/notif.middleware.notif.v1.Middleware/CreateNotif"
+	Middleware_CreateNotifs_FullMethodName        = "/notif.middleware.notif.v1.Middleware/CreateNotifs"
+	Middleware_UpdateNotif_FullMethodName         = "/notif.middleware.notif.v1.Middleware/UpdateNotif"
+	Middleware_UpdateNotifs_FullMethodName        = "/notif.middleware.notif.v1.Middleware/UpdateNotifs"
+	Middleware_GetNotif_FullMethodName            = "/notif.middleware.notif.v1.Middleware/GetNotif"
+	Middleware_GetNotifs_FullMethodName           = "/notif.middleware.notif.v1.Middleware/GetNotifs"
+	Middleware_GenerateNotifs_FullMethodName      = "/notif.middleware.notif.v1.Middleware/GenerateNotifs"
+	Middleware_GenerateMultiNotifs_FullMethodName = "/notif.middleware.notif.v1.Middleware/GenerateMultiNotifs"
+	Middleware_ExistNotifConds_FullMethodName     = "/notif.middleware.notif.v1.Middleware/ExistNotifConds"
+	Middleware_DeleteNotif_FullMethodName         = "/notif.middleware.notif.v1.Middleware/DeleteNotif"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -41,6 +42,7 @@ type MiddlewareClient interface {
 	GetNotif(ctx context.Context, in *GetNotifRequest, opts ...grpc.CallOption) (*GetNotifResponse, error)
 	GetNotifs(ctx context.Context, in *GetNotifsRequest, opts ...grpc.CallOption) (*GetNotifsResponse, error)
 	GenerateNotifs(ctx context.Context, in *GenerateNotifsRequest, opts ...grpc.CallOption) (*GenerateNotifsResponse, error)
+	GenerateMultiNotifs(ctx context.Context, in *GenerateMultiNotifsRequest, opts ...grpc.CallOption) (*GenerateMultiNotifsResponse, error)
 	ExistNotifConds(ctx context.Context, in *ExistNotifCondsRequest, opts ...grpc.CallOption) (*ExistNotifCondsResponse, error)
 	DeleteNotif(ctx context.Context, in *DeleteNotifRequest, opts ...grpc.CallOption) (*DeleteNotifResponse, error)
 }
@@ -116,6 +118,15 @@ func (c *middlewareClient) GenerateNotifs(ctx context.Context, in *GenerateNotif
 	return out, nil
 }
 
+func (c *middlewareClient) GenerateMultiNotifs(ctx context.Context, in *GenerateMultiNotifsRequest, opts ...grpc.CallOption) (*GenerateMultiNotifsResponse, error) {
+	out := new(GenerateMultiNotifsResponse)
+	err := c.cc.Invoke(ctx, Middleware_GenerateMultiNotifs_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) ExistNotifConds(ctx context.Context, in *ExistNotifCondsRequest, opts ...grpc.CallOption) (*ExistNotifCondsResponse, error) {
 	out := new(ExistNotifCondsResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistNotifConds_FullMethodName, in, out, opts...)
@@ -145,6 +156,7 @@ type MiddlewareServer interface {
 	GetNotif(context.Context, *GetNotifRequest) (*GetNotifResponse, error)
 	GetNotifs(context.Context, *GetNotifsRequest) (*GetNotifsResponse, error)
 	GenerateNotifs(context.Context, *GenerateNotifsRequest) (*GenerateNotifsResponse, error)
+	GenerateMultiNotifs(context.Context, *GenerateMultiNotifsRequest) (*GenerateMultiNotifsResponse, error)
 	ExistNotifConds(context.Context, *ExistNotifCondsRequest) (*ExistNotifCondsResponse, error)
 	DeleteNotif(context.Context, *DeleteNotifRequest) (*DeleteNotifResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -174,6 +186,9 @@ func (UnimplementedMiddlewareServer) GetNotifs(context.Context, *GetNotifsReques
 }
 func (UnimplementedMiddlewareServer) GenerateNotifs(context.Context, *GenerateNotifsRequest) (*GenerateNotifsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateNotifs not implemented")
+}
+func (UnimplementedMiddlewareServer) GenerateMultiNotifs(context.Context, *GenerateMultiNotifsRequest) (*GenerateMultiNotifsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateMultiNotifs not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistNotifConds(context.Context, *ExistNotifCondsRequest) (*ExistNotifCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistNotifConds not implemented")
@@ -320,6 +335,24 @@ func _Middleware_GenerateNotifs_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GenerateMultiNotifs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateMultiNotifsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GenerateMultiNotifs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GenerateMultiNotifs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GenerateMultiNotifs(ctx, req.(*GenerateMultiNotifsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_ExistNotifConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistNotifCondsRequest)
 	if err := dec(in); err != nil {
@@ -390,6 +423,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GenerateNotifs",
 			Handler:    _Middleware_GenerateNotifs_Handler,
+		},
+		{
+			MethodName: "GenerateMultiNotifs",
+			Handler:    _Middleware_GenerateMultiNotifs_Handler,
 		},
 		{
 			MethodName: "ExistNotifConds",
