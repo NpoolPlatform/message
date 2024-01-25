@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package basetypes.appuser.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/appuser/v1";
+
+
+enum ResetUserMethod {
+    DefaultUserResetMethod = 0;
+
+    Normal            = 10;
+    Link              = 20; // send email or mobile link
+}

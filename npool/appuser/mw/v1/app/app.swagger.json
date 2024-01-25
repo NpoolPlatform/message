@@ -156,6 +156,13 @@
         "CouponWithdrawEnable": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"coupon_withdraw_enable\""
+        },
+        "ResetUserMethodStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reset_user_method\""
+        },
+        "ResetUserMethod": {
+          "$ref": "#/definitions/v1ResetUserMethod"
         }
       }
     },
@@ -233,6 +240,9 @@
         },
         "CouponWithdrawEnable": {
           "type": "boolean"
+        },
+        "ResetUserMethod": {
+          "$ref": "#/definitions/v1ResetUserMethod"
         }
       }
     },
@@ -341,6 +351,15 @@
       ],
       "default": "DefaultRecaptchaMethod"
     },
+    "v1ResetUserMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultUserResetMethod",
+        "Normal",
+        "Link"
+      ],
+      "default": "DefaultUserResetMethod"
+    },
     "v1SignMethod": {
       "type": "string",
       "enum": [
@@ -353,7 +372,8 @@
         "Linkedin",
         "Wechat",
         "Google",
-        "Username"
+        "Username",
+        "Reset"
       ],
       "default": "DefaultSignMethod"
     },

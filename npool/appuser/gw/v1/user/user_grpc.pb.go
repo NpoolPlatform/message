@@ -26,6 +26,7 @@ const (
 	Gateway_UpdateUser_FullMethodName        = "/appuser.gateway.user.v1.Gateway/UpdateUser"
 	Gateway_UpdateUserKol_FullMethodName     = "/appuser.gateway.user.v1.Gateway/UpdateUserKol"
 	Gateway_UpdateAppUser_FullMethodName     = "/appuser.gateway.user.v1.Gateway/UpdateAppUser"
+	Gateway_PreResetUser_FullMethodName      = "/appuser.gateway.user.v1.Gateway/PreResetUser"
 	Gateway_ResetUser_FullMethodName         = "/appuser.gateway.user.v1.Gateway/ResetUser"
 	Gateway_GetUsers_FullMethodName          = "/appuser.gateway.user.v1.Gateway/GetUsers"
 	Gateway_GetAppUsers_FullMethodName       = "/appuser.gateway.user.v1.Gateway/GetAppUsers"
@@ -51,6 +52,7 @@ type GatewayClient interface {
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
 	UpdateUserKol(ctx context.Context, in *UpdateUserKolRequest, opts ...grpc.CallOption) (*UpdateUserKolResponse, error)
 	UpdateAppUser(ctx context.Context, in *UpdateAppUserRequest, opts ...grpc.CallOption) (*UpdateAppUserResponse, error)
+	PreResetUser(ctx context.Context, in *PreResetUserRequest, opts ...grpc.CallOption) (*PreResetUserResponse, error)
 	ResetUser(ctx context.Context, in *ResetUserRequest, opts ...grpc.CallOption) (*ResetUserResponse, error)
 	GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error)
 	GetAppUsers(ctx context.Context, in *GetAppUsersRequest, opts ...grpc.CallOption) (*GetAppUsersResponse, error)
@@ -130,6 +132,15 @@ func (c *gatewayClient) UpdateUserKol(ctx context.Context, in *UpdateUserKolRequ
 func (c *gatewayClient) UpdateAppUser(ctx context.Context, in *UpdateAppUserRequest, opts ...grpc.CallOption) (*UpdateAppUserResponse, error) {
 	out := new(UpdateAppUserResponse)
 	err := c.cc.Invoke(ctx, Gateway_UpdateAppUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) PreResetUser(ctx context.Context, in *PreResetUserRequest, opts ...grpc.CallOption) (*PreResetUserResponse, error) {
+	out := new(PreResetUserResponse)
+	err := c.cc.Invoke(ctx, Gateway_PreResetUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -255,6 +266,7 @@ type GatewayServer interface {
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
 	UpdateUserKol(context.Context, *UpdateUserKolRequest) (*UpdateUserKolResponse, error)
 	UpdateAppUser(context.Context, *UpdateAppUserRequest) (*UpdateAppUserResponse, error)
+	PreResetUser(context.Context, *PreResetUserRequest) (*PreResetUserResponse, error)
 	ResetUser(context.Context, *ResetUserRequest) (*ResetUserResponse, error)
 	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
 	GetAppUsers(context.Context, *GetAppUsersRequest) (*GetAppUsersResponse, error)
@@ -294,6 +306,9 @@ func (UnimplementedGatewayServer) UpdateUserKol(context.Context, *UpdateUserKolR
 }
 func (UnimplementedGatewayServer) UpdateAppUser(context.Context, *UpdateAppUserRequest) (*UpdateAppUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppUser not implemented")
+}
+func (UnimplementedGatewayServer) PreResetUser(context.Context, *PreResetUserRequest) (*PreResetUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PreResetUser not implemented")
 }
 func (UnimplementedGatewayServer) ResetUser(context.Context, *ResetUserRequest) (*ResetUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResetUser not implemented")
@@ -466,6 +481,24 @@ func _Gateway_UpdateAppUser_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateAppUser(ctx, req.(*UpdateAppUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_PreResetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PreResetUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).PreResetUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_PreResetUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).PreResetUser(ctx, req.(*PreResetUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -720,6 +753,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAppUser",
 			Handler:    _Gateway_UpdateAppUser_Handler,
+		},
+		{
+			MethodName: "PreResetUser",
+			Handler:    _Gateway_PreResetUser_Handler,
 		},
 		{
 			MethodName: "ResetUser",
