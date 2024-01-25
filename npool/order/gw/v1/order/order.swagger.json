@@ -55,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateOrderResponse"
+              "$ref": "#/definitions/ordergatewayorder1v1CreateOrderResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateOrderRequest"
+              "$ref": "#/definitions/ordergatewayorder1v1CreateOrderRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateOrdersResponse"
+              "$ref": "#/definitions/ordergatewayorder1v1CreateOrdersResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateOrdersRequest"
+              "$ref": "#/definitions/ordergatewayorder1v1CreateOrdersRequest"
             }
           }
         ],
@@ -247,7 +247,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetOrderResponse"
+              "$ref": "#/definitions/ordergatewayorder1v1GetOrderResponse"
             }
           },
           "default": {
@@ -263,7 +263,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetOrderRequest"
+              "$ref": "#/definitions/ordergatewayorder1v1GetOrderRequest"
             }
           }
         ],
@@ -279,7 +279,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetOrdersResponse"
+              "$ref": "#/definitions/ordergatewayorder1v1GetOrdersResponse"
             }
           },
           "default": {
@@ -295,7 +295,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetOrdersRequest"
+              "$ref": "#/definitions/ordergatewayorder1v1GetOrdersRequest"
             }
           }
         ],
@@ -375,7 +375,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateOrderResponse"
+              "$ref": "#/definitions/ordergatewayorder1v1UpdateOrderResponse"
             }
           },
           "default": {
@@ -391,7 +391,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateOrderRequest"
+              "$ref": "#/definitions/ordergatewayorder1v1UpdateOrderRequest"
             }
           }
         ],
@@ -434,116 +434,7 @@
     }
   },
   "definitions": {
-    "CreateOrdersRequestOrderReq": {
-      "type": "object",
-      "properties": {
-        "AppGoodID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "string"
-        },
-        "Duration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Parent": {
-          "type": "boolean"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1Coupon": {
-      "type": "object",
-      "properties": {
-        "CouponID": {
-          "type": "string"
-        },
-        "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
-        },
-        "CouponName": {
-          "type": "string"
-        },
-        "CouponValue": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount"
-      ],
-      "default": "DefaultCouponType"
-    },
-    "v1CreateAppUserOrderRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "AppGoodID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "string"
-        },
-        "Duration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ParentOrderID": {
-          "type": "string"
-        },
-        "OrderType": {
-          "$ref": "#/definitions/v1OrderType"
-        },
-        "InvestmentType": {
-          "$ref": "#/definitions/v1InvestmentType"
-        }
-      }
-    },
-    "v1CreateAppUserOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Order"
-        }
-      }
-    },
-    "v1CreateOrderRequest": {
+    "ordergatewayorder1v1CreateOrderRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -582,15 +473,15 @@
         }
       }
     },
-    "v1CreateOrderResponse": {
+    "ordergatewayorder1v1CreateOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
         }
       }
     },
-    "v1CreateOrdersRequest": {
+    "ordergatewayorder1v1CreateOrdersRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -617,157 +508,23 @@
         "Orders": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/CreateOrdersRequestOrderReq"
+            "$ref": "#/definitions/v1CreateOrdersRequestOrderReq"
           }
         }
       }
     },
-    "v1CreateOrdersResponse": {
+    "ordergatewayorder1v1CreateOrdersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Order"
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
           }
         }
       }
     },
-    "v1CreateUserOrderRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "AppGoodID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "string"
-        },
-        "Duration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ParentOrderID": {
-          "type": "string"
-        },
-        "OrderType": {
-          "$ref": "#/definitions/v1OrderType"
-        },
-        "InvestmentType": {
-          "$ref": "#/definitions/v1InvestmentType"
-        }
-      }
-    },
-    "v1CreateUserOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Order"
-        }
-      }
-    },
-    "v1GetAppOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Order"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetAppUserOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppUserOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Order"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetNAppOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetNAppOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Order"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetOrderRequest": {
+    "ordergatewayorder1v1GetOrderRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -781,15 +538,15 @@
         }
       }
     },
-    "v1GetOrderResponse": {
+    "ordergatewayorder1v1GetOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
         }
       }
     },
-    "v1GetOrdersRequest": {
+    "ordergatewayorder1v1GetOrdersRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -808,13 +565,13 @@
         }
       }
     },
-    "v1GetOrdersResponse": {
+    "ordergatewayorder1v1GetOrdersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Order"
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
           }
         },
         "Total": {
@@ -823,61 +580,7 @@
         }
       }
     },
-    "v1GetUserOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetUserOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Order"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GoodDurationType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodDurationType",
-        "GoodDurationByHour",
-        "GoodDurationByDay",
-        "GoodDurationByMonth",
-        "GoodDurationByYear"
-      ],
-      "default": "DefaultGoodDurationType"
-    },
-    "v1InvestmentType": {
-      "type": "string",
-      "enum": [
-        "DefaultInvestmentType",
-        "UnionMining",
-        "FullPayment"
-      ],
-      "default": "DefaultInvestmentType"
-    },
-    "v1Order": {
+    "ordergatewayorder1v1Order": {
       "type": "object",
       "properties": {
         "ID": {
@@ -1002,6 +705,18 @@
         "PayWithParent": {
           "type": "boolean"
         },
+        "CreateMethod": {
+          "$ref": "#/definitions/v1OrderCreateMethod"
+        },
+        "MultiPaymentCoins": {
+          "type": "boolean"
+        },
+        "PaymentAmounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PaymentAmount"
+          }
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -1054,6 +769,342 @@
         }
       }
     },
+    "ordergatewayorder1v1UpdateOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Canceled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ordergatewayorder1v1UpdateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Coupon": {
+      "type": "object",
+      "properties": {
+        "CouponID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "CouponName": {
+          "type": "string"
+        },
+        "CouponValue": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "v1CreateAppUserOrderRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ParentOrderID": {
+          "type": "string"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        }
+      }
+    },
+    "v1CreateAppUserOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
+        }
+      }
+    },
+    "v1CreateOrdersRequestOrderReq": {
+      "type": "object",
+      "properties": {
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Parent": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CreateUserOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ParentOrderID": {
+          "type": "string"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        }
+      }
+    },
+    "v1CreateUserOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
+        }
+      }
+    },
+    "v1GetAppOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppUserOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppUserOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNAppOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetNAppOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetUserOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetUserOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
+    },
+    "v1InvestmentType": {
+      "type": "string",
+      "enum": [
+        "DefaultInvestmentType",
+        "UnionMining",
+        "FullPayment"
+      ],
+      "default": "DefaultInvestmentType"
+    },
+    "v1OrderCreateMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderCreateMethod",
+        "OrderCreatedByPurchase",
+        "OrderCreatedByAdmin",
+        "OrderCreatedByRenew"
+      ],
+      "default": "DefaultOrderCreateMethod"
+    },
     "v1OrderState": {
       "type": "string",
       "enum": [
@@ -1103,6 +1154,20 @@
         "Airdrop"
       ],
       "default": "DefaultOrderType"
+    },
+    "v1PaymentAmount": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "USDCurrency": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        }
+      }
     },
     "v1PaymentState": {
       "type": "string",
@@ -1154,36 +1219,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
-        }
-      }
-    },
-    "v1UpdateOrderRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "Canceled": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1UpdateOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
         }
       }
     },
@@ -1212,7 +1248,7 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
         }
       }
     }

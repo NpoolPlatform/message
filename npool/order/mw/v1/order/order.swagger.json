@@ -467,6 +467,27 @@
           "type": "string",
           "title": "@inject_tag: sql:\"live_coin_usd_currency\""
         },
+        "CreateMethodStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"create_method\""
+        },
+        "CreateMethod": {
+          "$ref": "#/definitions/v1OrderCreateMethod"
+        },
+        "MultiPaymentCoins": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"multi_payment_coins\""
+        },
+        "PaymentAmountsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_amounts\""
+        },
+        "PaymentAmounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PaymentAmount"
+          }
+        },
         "PaymentAccountID": {
           "type": "string",
           "title": "payment\n@inject_tag: sql:\"payment_account_id\""
@@ -596,6 +617,16 @@
         }
       }
     },
+    "v1OrderCreateMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderCreateMethod",
+        "OrderCreatedByPurchase",
+        "OrderCreatedByAdmin",
+        "OrderCreatedByRenew"
+      ],
+      "default": "DefaultOrderCreateMethod"
+    },
     "v1OrderRenewState": {
       "type": "string",
       "enum": [
@@ -691,6 +722,19 @@
         },
         "LiveCoinUSDCurrency": {
           "type": "string"
+        },
+        "CreateMethod": {
+          "$ref": "#/definitions/v1OrderCreateMethod",
+          "title": "Support multiple payment coins from user balances"
+        },
+        "MultiPaymentCoins": {
+          "type": "boolean"
+        },
+        "PaymentAmounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PaymentAmount"
+          }
         },
         "PaymentAccountID": {
           "type": "string",
@@ -826,6 +870,20 @@
         "Airdrop"
       ],
       "default": "DefaultOrderType"
+    },
+    "v1PaymentAmount": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "USDCurrency": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        }
+      }
     },
     "v1PaymentState": {
       "type": "string",

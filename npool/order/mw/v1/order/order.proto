@@ -36,6 +36,12 @@ service Middleware {
     rpc DeleteOrders    (DeleteOrdersRequest)    returns (DeleteOrdersResponse)    {}
 }
 
+message PaymentAmount {
+    string CoinTypeID  = 10;
+    string USDCurrency = 20;
+    string Amount      = 30;
+}
+
 message OrderReq {
     // order
     optional uint32 ID                        = 9;
@@ -63,6 +69,11 @@ message OrderReq {
     optional string CoinUSDCurrency        = 200;
     optional string LocalCoinUSDCurrency   = 210;
     optional string LiveCoinUSDCurrency    = 220;
+
+    // Support multiple payment coins from user balances
+    optional basetypes.order.v1.OrderCreateMethod CreateMethod = 221;
+    optional bool   MultiPaymentCoins      = 222;
+    repeated PaymentAmount PaymentAmounts  = 223;
 
     // payment
     optional string PaymentAccountID              = 230;
@@ -149,6 +160,15 @@ message Order {
     string LocalCoinUSDCurrency                      = 260;
     // @inject_tag: sql:"live_coin_usd_currency"
     string LiveCoinUSDCurrency                       = 270;
+
+    // @inject_tag: sql:"create_method"
+    string CreateMethodStr                           = 271;
+    basetypes.order.v1.OrderCreateMethod CreateMethod = 272;
+    // @inject_tag: sql:"multi_payment_coins"
+    bool   MultiPaymentCoins                         = 273;
+    // @inject_tag: sql:"payment_amounts"
+    string PaymentAmountsStr                         = 274;
+    repeated PaymentAmount PaymentAmounts            = 275;
 
     // payment
     // @inject_tag: sql:"payment_account_id"

@@ -242,3 +242,11 @@ enum OrderRenewState {
     OrderRenewExecute = 40;
     OrderRenewFail    = 50;
 }
+
+enum OrderCreateMethod {
+    DefaultOrderCreateMethod = 0;
+
+    OrderCreatedByPurchase = 10;
+    OrderCreatedByAdmin    = 20;
+    OrderCreatedByRenew    = 30;
+}

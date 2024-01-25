@@ -8,6 +8,7 @@ import "google/api/annotations.proto";
 import "npool/basetypes/inspire/v1/enums.proto";
 import "npool/basetypes/order/v1/enums.proto";
 import "npool/basetypes/good/v1/enums.proto";
+import "npool/order/mw/v1/order/order.proto";
 
 // Service Name
 service Gateway {
@@ -158,6 +159,10 @@ message Order {
     string PayWithBalanceAmount   = 250;
     string TransferAmount         = 260;
     bool   PayWithParent          = 270;
+
+    basetypes.order.v1.OrderCreateMethod CreateMethod = 280;
+    bool   MultiPaymentCoins                          = 290;
+    repeated order.middleware.order1.v1.PaymentAmount PaymentAmounts = 300;
 
     uint32 CreatedAt              = 350;
     uint32 PaidAt                 = 360;
