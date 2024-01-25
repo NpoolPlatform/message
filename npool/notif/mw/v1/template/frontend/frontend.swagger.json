@@ -343,6 +343,8 @@
         "UpdateMobile",
         "UpdateGoogleAuth",
         "OrderCompleted",
+        "OrderChildsRenewNotify",
+        "OrderChildsRenew",
         "Announcement",
         "ProductPage"
       ],
