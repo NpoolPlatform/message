@@ -40,31 +40,49 @@ service Middleware {
             body: "*"
         };
     }
+    rpc LockBalances  (LockBalancesRequest)  returns (LockBalancesResponse)  {
+        option (google.api.http) = {
+            post: "/v1/ledger_LockBalances"
+            body: "*"
+        };
+    }
+    rpc UnlockBalances (UnlockBalancesRequest) returns (UnlockBalancesResponse) {
+        option (google.api.http) = {
+            post: "/v1/ledger_UnlockBalances"
+            body: "*"
+        };
+    }
+    rpc SettleBalances (SettleBalancesRequest) returns (SettleBalancesResponse) {
+        option (google.api.http) = {
+            post: "/v1/ledger_SettleBalances"
+            body: "*"
+        };
+    }
 }
 
 message Ledger {
     // @inject_tag: sql:"id"
-    uint32      ID                             = 9;
+    uint32 ID         = 9;
     // @inject_tag: sql:"ent_id"
-    string      EntID                          = 10;
+    string EntID      = 10;
     // @inject_tag: sql:"app_id"
-    string      AppID                          = 20;
+    string AppID      = 20;
     // @inject_tag: sql:"user_id"
-    string      UserID                         = 30;
+    string UserID     = 30;
     // @inject_tag: sql:"coin_type_id"
-    string      CoinTypeID                     = 40;
+    string CoinTypeID = 40;
     // @inject_tag: sql:"incoming"
-    string      Incoming                       = 50;
+    string Incoming   = 50;
     // @inject_tag: sql:"outcoming"
-    string      Outcoming                      = 60;
+    string Outcoming  = 60;
     // @inject_tag: sql:"locked"
-    string      Locked                         = 70;
+    string Locked     = 70;
     // @inject_tag: sql:"spendable"
-    string      Spendable                      = 80;
+    string Spendable  = 80;
     // @inject_tag: sql:"created_at"
-    uint32      CreatedAt                      = 90;
+    uint32 CreatedAt  = 90;
     // @inject_tag: sql:"updated_at"
-    uint32      UpdatedAt                      = 100;
+    uint32 UpdatedAt  = 100;
 }
 
 message Conds {
@@ -129,3 +147,42 @@ message SettleBalanceRequest {
 message SettleBalanceResponse {
     Ledger Info = 10;
 }
+
+message LockBalancesRequest {
+    string AppID    = 10;
+    string UserID   = 20;
+    string LockID   = 30;
+    bool   Rollback = 40;
+
+    message _Balance {
+        string CoinTypeID = 10;
+        string Amount     = 20;
+    }
+    repeated _Balance Balances = 50;
+}
+
+message LockBalancesResponse {
+    repeated Ledger Infos = 10;
+}
+
+message UnlockBalancesRequest {
+    string LockID   = 10;
+    bool   Rollback = 20;
+}
+
+message UnlockBalancesResponse {
+    repeated Ledger Infos = 10;
+}
+
+message SettleBalancesRequest {
+    string LockID = 10;
+    basetypes.ledger.v1.IOSubType IOSubType = 20;
+    string IOExtra     = 30;
+    // Same count statement ids as balances
+    repeated string StatementIDs = 40;
+}
+
+message SettleBalancesResponse {
+    repeated Ledger Infos = 10;
+}
+
