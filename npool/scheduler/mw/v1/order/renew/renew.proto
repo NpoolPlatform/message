@@ -9,9 +9,11 @@ import "npool/good/mw/v1/app/good/good.proto";
 import "npool/chain/mw/v1/app/coin/coin.proto";
 
 message Deduction {
-    chain.middleware.app.coin.v1.Coin AppCoin     = 10;
-    string                            USDCurrency = 20;
-    string                            Amount      = 30;
+    // If the deduction will be used to create order, then it has app good
+    optional good.middleware.app.good1.v1.Good AppGood     = 10;
+    chain.middleware.app.coin.v1.Coin          AppCoin     = 20;
+    string                                     USDCurrency = 30;
+    string                                     Amount      = 40;
 }
 
 message RenewInfo {
