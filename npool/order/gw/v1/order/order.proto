@@ -103,6 +103,20 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc CreateSimulateOrder (CreateSimulateOrderRequest) returns (CreateSimulateOrderResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/simulateorder"
+            body: "*"
+        };
+    }
+
+    rpc CreateSimulateOrders (CreateSimulateOrdersRequest) returns (CreateSimulateOrdersResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/simulateorders"
+            body: "*"
+        };
+    }
 }
 
 message Coupon {
@@ -347,4 +361,27 @@ message GetNAppOrdersRequest {
 message GetNAppOrdersResponse {
     repeated Order Infos = 10;
     uint32         Total = 20;
+}
+
+message CreateSimulateOrderRequest {
+    string          AppID                = 10;
+    string          UserID               = 20;
+    string          AppGoodID            = 30;
+    optional string Units                = 40;
+    optional uint32 Duration             = 50;
+    optional string ParentOrderID        = 60;
+}
+
+message CreateSimulateOrderResponse {
+    Order Info = 10;
+}
+
+message CreateSimulateOrdersRequest {
+    string          AppID   = 10;
+    string          UserID  = 20;
+    repeated CreateOrdersRequest.OrderReq Orders = 30;
+}
+
+message CreateSimulateOrdersResponse {
+    repeated Order Infos = 10;
 }

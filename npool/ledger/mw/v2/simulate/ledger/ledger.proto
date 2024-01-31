@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package ledger.middleware.simulate.ledger.v2;
+
+option go_package = "github.com/NpoolPlatform/message/npool/ledger/mw/v2/simulate/ledger";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc GetLedger     (GetLedgerRequest)     returns (GetLedgerResponse)     {
+        option (google.api.http) = {
+            post: "/v1/simulate/ledger_GetLedger"
+            body: "*"
+        };
+    }
+    rpc GetLedgers    (GetLedgersRequest)    returns (GetLedgersResponse)    {
+        option (google.api.http) = {
+            post: "/v1/simulate/ledger_GetLedgers"
+            body: "*"
+        };
+    }
+}
+
+message Ledger {
+    // @inject_tag: sql:"id"
+    uint32      ID                             = 9;
+    // @inject_tag: sql:"ent_id"
+    string      EntID                          = 10;
+    // @inject_tag: sql:"app_id"
+    string      AppID                          = 20;
+    // @inject_tag: sql:"user_id"
+    string      UserID                         = 30;
+    // @inject_tag: sql:"coin_type_id"
+    string      CoinTypeID                     = 40;
+    // @inject_tag: sql:"incoming"
+    string      Incoming                       = 50;
+    // @inject_tag: sql:"outcoming"
+    string      Outcoming                      = 60;
+    // @inject_tag: sql:"created_at"
+    uint32      CreatedAt                      = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32      UpdatedAt                      = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal EntID       = 10;
+    optional basetypes.v1.StringVal AppID       = 20;
+    optional basetypes.v1.StringVal UserID      = 30;
+    optional basetypes.v1.StringVal CoinTypeID  = 40;
+    optional basetypes.v1.StringSliceVal CoinTypeIDs = 90;
+}
+
+message GetLedgerRequest {
+    string EntID = 10;
+}
+
+message GetLedgerResponse {
+    Ledger Info = 10;
+}
+
+message GetLedgersRequest {
+    Conds Conds     = 10;
+    int32 Offset    = 20;
+    int32 Limit     = 30;
+}
+
+message GetLedgersResponse {
+    repeated Ledger Infos = 10;
+    uint32          Total = 20;
+}

@@ -39,6 +39,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -54,6 +55,17 @@
       ],
       "default": "DefaultBenefitType",
       "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward"
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
     },
     "v1CancelMode": {
       "type": "string",
@@ -91,6 +103,9 @@
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "EnableSimulate": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
@@ -140,6 +155,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Good"
           }
         },
@@ -555,6 +571,10 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"package_with_requireds\""
         },
+        "EnableSimulate": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enable_simulate\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -587,7 +607,8 @@
         "GoodLabelInnovationStarter",
         "GoodLabelLoyaltyExclusive"
       ],
-      "default": "DefaultGoodLabel"
+      "default": "DefaultGoodLabel",
+      "title": "- GoodLabelNoviceExclusive: Newbie\n - GoodLabelInnovationStarter: First batch mining\n - GoodLabelLoyaltyExclusive: User with action credis pass threshold"
     },
     "v1GoodReq": {
       "type": "object",
@@ -707,6 +728,9 @@
         },
         "PackageWithRequireds": {
           "type": "boolean"
+        },
+        "EnableSimulate": {
+          "type": "boolean"
         }
       }
     },
@@ -717,7 +741,8 @@
         "GoodSettledByCash",
         "GoodSettledByProfit"
       ],
-      "default": "DefaultGoodSettlementType"
+      "default": "DefaultGoodSettlementType",
+      "title": "- GoodSettledByProfit: Percent in default"
     },
     "v1GoodStartMode": {
       "type": "string",
@@ -729,7 +754,8 @@
         "GoodStartModeNextDay",
         "GoodStartModePreset"
       ],
-      "default": "DefaultGoodStartMode"
+      "default": "DefaultGoodStartMode",
+      "title": "- GoodStartModeTBD: Start time will be adjusted in future\n - GoodStartModeConfirmed: Deprecated\n - GoodStartModeInstantly: Start when order paid\n - GoodStartModeNextDay: Start at next 00:00 UTC\n - GoodStartModePreset: Start at a preset time"
     },
     "v1GoodType": {
       "type": "string",

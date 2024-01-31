@@ -1,0 +1,552 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/order/gw/v1/simulate/config/config.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/app/simulate/config": {
+      "post": {
+        "summary": "Admin apis",
+        "operationId": "Gateway_CreateAppSimulateConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppSimulateConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppSimulateConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/simulate/config": {
+      "post": {
+        "operationId": "Gateway_CreateSimulateConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ordergatewaysimulateconfigv1CreateSimulateConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ordergatewaysimulateconfigv1CreateSimulateConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/simulate/configs": {
+      "post": {
+        "operationId": "Gateway_GetAppSimulateConfigs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppSimulateConfigsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppSimulateConfigsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/simulate/config": {
+      "post": {
+        "operationId": "Gateway_GetSimulateConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ordergatewaysimulateconfigv1GetSimulateConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ordergatewaysimulateconfigv1GetSimulateConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/simulate/configs": {
+      "post": {
+        "operationId": "Gateway_GetSimulateConfigs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ordergatewaysimulateconfigv1GetSimulateConfigsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ordergatewaysimulateconfigv1GetSimulateConfigsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/app/simulate/config": {
+      "post": {
+        "operationId": "Gateway_UpdateAppSimulateConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppSimulateConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppSimulateConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/simulate/config": {
+      "post": {
+        "operationId": "Gateway_UpdateSimulateConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ordergatewaysimulateconfigv1UpdateSimulateConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ordergatewaysimulateconfigv1UpdateSimulateConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "ordergatewaysimulateconfigv1CreateSimulateConfigRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SendCouponMode": {
+          "$ref": "#/definitions/v1SendCouponMode"
+        },
+        "SendCouponProbability": {
+          "type": "string"
+        },
+        "Enabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ordergatewaysimulateconfigv1CreateSimulateConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SimulateConfig"
+        }
+      }
+    },
+    "ordergatewaysimulateconfigv1GetSimulateConfigRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "ordergatewaysimulateconfigv1GetSimulateConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SimulateConfig"
+        }
+      }
+    },
+    "ordergatewaysimulateconfigv1GetSimulateConfigsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "ordergatewaysimulateconfigv1GetSimulateConfigsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1SimulateConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "ordergatewaysimulateconfigv1UpdateSimulateConfigRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SendCouponMode": {
+          "$ref": "#/definitions/v1SendCouponMode"
+        },
+        "SendCouponProbability": {
+          "type": "string"
+        },
+        "Enabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ordergatewaysimulateconfigv1UpdateSimulateConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SimulateConfig"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateAppSimulateConfigRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "SendCouponMode": {
+          "$ref": "#/definitions/v1SendCouponMode"
+        },
+        "SendCouponProbability": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateAppSimulateConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SimulateConfig"
+        }
+      }
+    },
+    "v1GetAppSimulateConfigsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppSimulateConfigsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1SimulateConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1SendCouponMode": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponMode",
+        "WithoutCoupon",
+        "FirstBenifit",
+        "RandomBenifit",
+        "FirstAndRandomBenifit"
+      ],
+      "default": "DefaultCouponMode"
+    },
+    "v1SimulateConfig": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "Units": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"units\""
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"duration\""
+        },
+        "SendCouponModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"send_coupon_mode\""
+        },
+        "SendCouponMode": {
+          "$ref": "#/definitions/v1SendCouponMode"
+        },
+        "SendCouponProbability": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"send_coupon_probability\""
+        },
+        "Enabled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enabled\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1UpdateAppSimulateConfigRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "SendCouponMode": {
+          "$ref": "#/definitions/v1SendCouponMode"
+        },
+        "SendCouponProbability": {
+          "type": "string"
+        },
+        "Enabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateAppSimulateConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SimulateConfig"
+        }
+      }
+    }
+  }
+}

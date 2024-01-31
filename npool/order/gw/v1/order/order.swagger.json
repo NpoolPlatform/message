@@ -112,6 +112,70 @@
         ]
       }
     },
+    "/v1/create/simulateorder": {
+      "post": {
+        "operationId": "Gateway_CreateSimulateOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateSimulateOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateSimulateOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/simulateorders": {
+      "post": {
+        "operationId": "Gateway_CreateSimulateOrders",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateSimulateOrdersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateSimulateOrdersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/create/user/order": {
       "post": {
         "operationId": "Gateway_CreateUserOrder",
@@ -474,6 +538,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -617,6 +682,7 @@
         "Orders": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/CreateOrdersRequestOrderReq"
           }
         }
@@ -628,6 +694,69 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Order"
+          }
+        }
+      }
+    },
+    "v1CreateSimulateOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ParentOrderID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateSimulateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Order"
+        }
+      }
+    },
+    "v1CreateSimulateOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Orders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/CreateOrdersRequestOrderReq"
+          }
+        }
+      }
+    },
+    "v1CreateSimulateOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         }
@@ -693,6 +822,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         },
@@ -727,6 +857,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         },
@@ -758,6 +889,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         },
@@ -814,6 +946,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         },
@@ -848,6 +981,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         },
@@ -1039,6 +1173,7 @@
         "Coupons": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Coupon"
           }
         },
@@ -1092,7 +1227,8 @@
         "OrderStateChildCanceledByParent"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state\n - OrderStateChildPaidByParent: Child paid"
+      "description": "-\u003e OrderStatePaymentTimeout || OrderStatePaymentTransferReceived || OrderStatePreCancel\n - OrderStatePaymentTransferReceived: Payment process\n\n-\u003e OrderStatePaymentTransferBookKeeping\n - OrderStatePaymentTransferBookKeeping: -\u003e OrderStatePaymentSpendBalance\n - OrderStatePaymentSpendBalance: -\u003e OrderStateTransferGoodStockLocked\n - OrderStateTransferGoodStockLocked: -\u003e OrderStateAddCommission\n - OrderStateAddCommission: -\u003e OrderStateAchievementBookKeeping\n - OrderStateAchievementBookKeeping: -\u003e OrderStatePaymentUnlockAccount\n - OrderStatePaymentUnlockAccount: -\u003e OrderStateUpdatePaidChilds\n - OrderStateUpdatePaidChilds: -\u003e OrderStatePaid\n - OrderStatePaid: Paid\n\n-\u003e OrderStatePreCancel || OrderStateTransferGoodStockWaitStart\n - OrderStateTransferGoodStockWaitStart: -\u003e OrderStateUpdateInServiceChilds\n - OrderStateUpdateInServiceChilds: -\u003e OrderStateInService\n - OrderStateInService: -\u003e OrderStatePreCancel || OrderStatePreExpired\n - OrderStatePaymentTimeout: Timeout of order\n\n-\u003e OrderStatePreCancel\n - OrderStatePreCancel: End or order\n\n-\u003e OrderStateRestoreCanceledStock\n - OrderStatePreExpired: -\u003e OrderStateRestoreExpiredStock\n - OrderStateRestoreExpiredStock: Calculation\n\n-\u003e OrderStateUpdateExpiredChilds\n - OrderStateUpdateExpiredChilds: -\u003e OrderStateExpired\n - OrderStateRestoreCanceledStock: -\u003e OrderStateDeductLockedCommission\n - OrderStateDeductLockedCommission: -\u003e OrderStateCancelAchievement\n - OrderStateCancelAchievement: -\u003e OrderStateReturnCanceledBalance\n - OrderStateReturnCanceledBalance: -\u003e OrderStateCanceledTransferBookKeeping\n - OrderStateCanceledTransferBookKeeping: -\u003e OrderStateCancelUnlockPaymentAccount\n - OrderStateCancelUnlockPaymentAccount: -\u003e OrderStateUpdateCanceledChilds\n - OrderStateUpdateCanceledChilds: -\u003e OrderStateCanceled\n - OrderStateCanceled: End state\n - OrderStateChildPaidByParent: Child paid\n\n-\u003e OrderStatePaid, can be rollback\n - OrderStateChildInServiceByParent: -\u003e OrderStateInService\n - OrderStateChildExpiredByParent: -\u003e OrderStateExpired\n - OrderStateChildCanceledByParent: -\u003e OrderStateCanceled",
+      "title": "- OrderStateCreated: -\u003e OrderStateWaitPayment\n - OrderStateWaitPayment: Common state"
     },
     "v1OrderType": {
       "type": "string",

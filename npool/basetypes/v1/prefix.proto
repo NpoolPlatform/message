@@ -87,4 +87,6 @@ enum Prefix {
 
     PrefixCreateOrder          = 40000;
     PrefixCreateWithdraw       = 40010;
+
+    PrefixSimulateConfig       = 50000;
 }

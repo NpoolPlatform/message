@@ -51,6 +51,7 @@ message GoodReq {
     optional uint32 MinOrderDuration    = 360;
     optional uint32 MaxOrderDuration    = 370;
     optional bool   PackageWithRequireds = 380;
+    optional bool   EnableSimulate       = 390;
 }
 
 message Good {
@@ -248,6 +249,9 @@ message Good {
     // @inject_tag: sql:"package_with_requireds"
     bool             PackageWithRequireds = 1010;
 
+    // @inject_tag: sql:"enable_simulate"
+    bool             EnableSimulate       = 1020;
+
     // @inject_tag: sql:"created_at"
     uint32           CreatedAt          = 2000;
     // @inject_tag: sql:"updated_at"
@@ -263,6 +267,7 @@ message Conds {
     optional basetypes.v1.StringSliceVal AppIDs = 50;
     optional basetypes.v1.Uint32SliceVal IDs    = 60;
     optional basetypes.v1.StringSliceVal EntIDs = 70;
+    optional basetypes.v1.BoolVal        EnableSimulate = 80;
 }
 
 message CreateGoodRequest {

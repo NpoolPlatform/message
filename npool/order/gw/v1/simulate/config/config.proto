@@ -1,0 +1,146 @@
+syntax = "proto3";
+
+package order.gateway.simulate.config.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/order/gw/v1/simulate/config";
+
+import "google/api/annotations.proto";
+import "npool/order/mw/v1/simulate/config/config.proto";
+import "npool/basetypes/order/v1/enums.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateSimulateConfig (CreateSimulateConfigRequest) returns (CreateSimulateConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/simulate/config"
+            body: "*"
+        };
+    }
+
+    rpc UpdateSimulateConfig (UpdateSimulateConfigRequest) returns (UpdateSimulateConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/simulate/config"
+            body: "*"
+        };
+    }
+
+    rpc GetSimulateConfig (GetSimulateConfigRequest) returns (GetSimulateConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/simulate/config"
+            body: "*"
+        };
+    }
+
+    rpc GetSimulateConfigs (GetSimulateConfigsRequest) returns (GetSimulateConfigsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/simulate/configs"
+            body: "*"
+        };
+    }
+
+    // Admin apis
+    rpc CreateAppSimulateConfig (CreateAppSimulateConfigRequest) returns (CreateAppSimulateConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/simulate/config"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppSimulateConfig (UpdateAppSimulateConfigRequest) returns (UpdateAppSimulateConfigResponse) {
+      option (google.api.http) = {
+          post: "/v1/update/app/simulate/config"
+          body: "*"
+      };
+    }
+
+    rpc GetAppSimulateConfigs (GetAppSimulateConfigsRequest) returns (GetAppSimulateConfigsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/simulate/configs"
+            body: "*"
+        };
+    }
+}
+
+message CreateSimulateConfigRequest {
+    string                        AppID                 = 10;
+    string                        Units                 = 20;
+    uint32                        Duration              = 30;
+    basetypes.order.v1.SendCouponMode SendCouponMode    = 40;
+    string                        SendCouponProbability = 50;
+    bool                          Enabled               = 60;
+}
+
+message CreateSimulateConfigResponse {
+    order.middleware.simulate.config.v1.SimulateConfig Info = 10;
+}
+
+message UpdateSimulateConfigRequest {
+    uint32                                 ID                    = 10;
+    string                                 EntID                 = 20;
+    string                                 AppID                 = 30;
+    optional string                        Units                 = 40;
+    optional uint32                        Duration              = 50;
+    optional basetypes.order.v1.SendCouponMode SendCouponMode    = 60;
+    optional string                        SendCouponProbability = 70;
+    optional bool                          Enabled               = 80;
+}
+
+message UpdateSimulateConfigResponse {
+    order.middleware.simulate.config.v1.SimulateConfig Info = 10;
+}
+
+message GetSimulateConfigRequest {
+    string AppID = 10;
+    string EntID = 20;
+}
+
+message GetSimulateConfigResponse {
+    order.middleware.simulate.config.v1.SimulateConfig Info = 10;
+}
+
+message GetSimulateConfigsRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetSimulateConfigsResponse {
+    repeated order.middleware.simulate.config.v1.SimulateConfig Infos = 10;
+    uint32                  Total = 20;
+}
+
+message CreateAppSimulateConfigRequest {
+    string                        TargetAppID           = 10;
+    string                        Units                 = 20;
+    basetypes.order.v1.SendCouponMode SendCouponMode    = 30;
+    string                        SendCouponProbability = 40;
+}
+
+message CreateAppSimulateConfigResponse {
+    order.middleware.simulate.config.v1.SimulateConfig Info = 10;
+}
+
+message UpdateAppSimulateConfigRequest {
+  uint32                                 ID                    = 10;
+  string                                 EntID                 = 20;
+  string                                 TargetAppID           = 30;
+  optional string                        Units                 = 40;
+  optional basetypes.order.v1.SendCouponMode SendCouponMode    = 50;
+  optional string                        SendCouponProbability = 60;
+  optional bool                          Enabled               = 70;
+}
+
+message UpdateAppSimulateConfigResponse {
+    order.middleware.simulate.config.v1.SimulateConfig Info = 10;
+}
+
+message GetAppSimulateConfigsRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetAppSimulateConfigsResponse {
+    repeated order.middleware.simulate.config.v1.SimulateConfig Infos = 10;
+    uint32                  Total = 20;
+}
