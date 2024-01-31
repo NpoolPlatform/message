@@ -31,18 +31,16 @@ message CouponReq {
     optional string Circulation  = 50;
     optional string IssuedBy     = 60;
     optional uint32 StartAt      = 70;
+    optional uint32 EndAt        = 71;
     optional uint32 DurationDays = 80;
     optional string Message      = 90;
     optional string Name         = 100;
-    // For special offer
-    optional string UserID       = 110;
     // For threshold coupon
     optional string Threshold    = 130;
-    // We may have random amount coupon
-    optional string Allocated    = 140;
     optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 150;
     optional bool   Random       = 160;
     optional basetypes.inspire.v1.CouponScope CouponScope           = 170;
+    optional string CashableProbability = 180;
 }
 
 message Coupon {
@@ -63,18 +61,18 @@ message Coupon {
     string          IssuedBy        = 70;
     // @inject_tag: sql:"start_at"
     uint32          StartAt         = 80;
+    // @inject_tag: sql:"end_at"
+    uint32          EndAt           = 81;
     // @inject_tag: sql:"duration_days"
     uint32          DurationDays    = 90;
     // @inject_tag: sql:"message"
     string          Message         = 100;
     // @inject_tag: sql:"name"
     string          Name            = 110;
-    // @inject_tag: sql:"user_id"
-    optional string UserID          = 120;
-    // @inject_tag: sql:"threshold"
-    optional string Threshold       = 140;
     // @inject_tag: sql:"allocated"
     string          Allocated       = 150;
+    // @inject_tag: sql:"threshold"
+    string          Threshold       = 140;
     // @inject_tag: sql:"coupon_constraint"
     string          CouponConstraintStr = 160;
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 170;
@@ -82,7 +80,9 @@ message Coupon {
     bool            Random          = 180;
     // @inject_tag: sql:"coupon_scope"
     string          CouponScopeStr  = 190;
-    basetypes.inspire.v1.CouponScope      CouponScope      = 200;
+    basetypes.inspire.v1.CouponScope      CouponScope = 200;
+    // @inject_tag: sql:"cashable_probability"
+    string          CashableProbability = 210;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
@@ -138,4 +138,3 @@ message DeleteCouponRequest {
 message DeleteCouponResponse {
     Coupon Info = 10;
 }
-

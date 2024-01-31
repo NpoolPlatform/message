@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/order/gw/v1/order";
 import "google/api/annotations.proto";
 import "npool/basetypes/inspire/v1/enums.proto";
 import "npool/basetypes/order/v1/enums.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Gateway {
@@ -135,11 +136,12 @@ message Order {
     string AppGoodID              = 121;
     string GoodName               = 130;
     string GoodUnit               = 131;
-    uint32 GoodServicePeriodDays  = 132;
     string GoodUnitPrice          = 133;
     string GoodValue              = 134;
     string GoodValueUSD           = 135;
     string Units                  = 140;
+    uint32 Duration               = 141;
+    basetypes.good.v1.GoodDurationType DurationType = 142;
 
     string PaymentID              = 150;
     string PaymentCoinTypeID      = 160;
@@ -180,7 +182,8 @@ message CreateOrderRequest {
     string          AppID                = 10;
     string          UserID               = 20;
     string          AppGoodID            = 30;
-    string          Units                = 40;
+    optional string Units                = 40;
+    optional uint32 Duration             = 41;
     string          PaymentCoinID        = 50;
     optional string ParentOrderID        = 60;
     optional string PayWithBalanceAmount = 70;
@@ -201,10 +204,11 @@ message CreateOrdersRequest {
     basetypes.order.v1.InvestmentType InvestmentType = 70;
     message OrderReq {
         string AppGoodID = 10;
-        string Units     = 20;
+        optional string Units = 20;
+        optional uint32 Duration = 21;
         bool   Parent    = 30;
     }
-    repeated OrderReq Orders = 90;
+    repeated OrderReq Orders = 80;
 }
 
 message CreateOrdersResponse {
@@ -285,10 +289,11 @@ message CreateUserOrderRequest {
     string          AppID                = 10;
     string          TargetUserID         = 20;
     string          AppGoodID            = 30;
-    string          Units                = 40;
+    optional string Units                = 40;
+    optional uint32 Duration             = 50;
     optional string ParentOrderID        = 60;
-    basetypes.order.v1.OrderType OrderType = 110;
-    basetypes.order.v1.InvestmentType InvestmentType = 120;
+    basetypes.order.v1.OrderType OrderType = 70;
+    basetypes.order.v1.InvestmentType InvestmentType = 80;
 }
 
 message CreateUserOrderResponse {
@@ -299,10 +304,11 @@ message CreateAppUserOrderRequest {
     string          TargetAppID          = 10;
     string          TargetUserID         = 20;
     string          AppGoodID            = 30;
-    string          Units                = 40;
+    optional string Units                = 40;
+    optional uint32 Duration             = 50;
     optional string ParentOrderID        = 60;
-    basetypes.order.v1.OrderType OrderType     = 110;
-    basetypes.order.v1.InvestmentType InvestmentType = 120;
+    basetypes.order.v1.OrderType OrderType     = 70;
+    basetypes.order.v1.InvestmentType InvestmentType = 80;
 }
 
 message CreateAppUserOrderResponse {

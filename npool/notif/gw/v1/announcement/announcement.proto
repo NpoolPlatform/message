@@ -115,7 +115,7 @@ message DeleteAnnouncementResponse {
 
 message GetAnnouncementsRequest {
     string AppID  = 10;
-    string UserID = 20;
+    optional string UserID = 20;
     string LangID = 30;
     int32  Offset = 40;
     int32  Limit  = 50;

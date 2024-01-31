@@ -264,7 +264,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -288,7 +287,10 @@
             "type": "string"
           }
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         }
       }
@@ -319,7 +321,10 @@
             "type": "string"
           }
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         }
       }
@@ -377,7 +382,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1TopMostGood"
           }
         },
@@ -409,7 +413,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1TopMostGood"
           }
         },
@@ -492,7 +495,10 @@
             "type": "string"
           }
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         },
         "CreatedAt": {
@@ -524,7 +530,10 @@
             "type": "string"
           }
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         }
       }
@@ -556,7 +565,10 @@
             "type": "string"
           }
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         }
       }

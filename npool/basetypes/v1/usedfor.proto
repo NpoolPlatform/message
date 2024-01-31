@@ -34,6 +34,7 @@ enum UsedFor {
     UpdateMobile          = 230;
     UpdateGoogleAuth      = 240;
     OrderCompleted        = 250;
+    ResetPassword         = 260;
 
     Announcement          = 100000;
     ProductPage           = 200000;

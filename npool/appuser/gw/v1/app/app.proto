@@ -9,6 +9,7 @@ import "npool/appuser/mw/v1/app/app.proto";
 import "npool/basetypes/v1/signmethod.proto";
 import "npool/basetypes/v1/createinvitationcodewhen.proto";
 import "npool/basetypes/v1/recaptcha.proto";
+import "npool/basetypes/appuser/v1/enums.proto";
 
 service Gateway {
     rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {
@@ -70,6 +71,8 @@ message CreateAppRequest {
     optional uint32          MaxTypedCouponsPerOrder = 120;
     optional bool            Maintaining        = 160;
     repeated string CommitButtonTargets           = 170;
+    optional bool            CouponWithdrawEnable        = 180;
+    optional basetypes.appuser.v1.ResetUserMethod ResetUserMethod = 200;
 }
 
 message CreateAppResponse {
@@ -93,6 +96,8 @@ message UpdateAppRequest {
     optional uint32 MaxTypedCouponsPerOrder = 120;
     optional bool   Maintaining             = 160;
     repeated string CommitButtonTargets     = 170;
+    optional bool   CouponWithdrawEnable    = 180;
+    optional basetypes.appuser.v1.ResetUserMethod ResetUserMethod = 200;
 }
 
 message UpdateAppResponse {

@@ -333,6 +333,17 @@
         }
       }
     },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
+    },
     "v1GoodProfit": {
       "type": "object",
       "properties": {
@@ -351,9 +362,16 @@
         "GoodUnit": {
           "type": "string"
         },
-        "GoodServicePeriodDays": {
+        "MinOrderDuration": {
           "type": "integer",
           "format": "int64"
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
         },
         "Units": {
           "type": "string"
@@ -393,7 +411,8 @@
         "Transfer",
         "Withdrawal",
         "OrderRevoke",
-        "CommissionRevoke"
+        "CommissionRevoke",
+        "RandomCouponCash"
       ],
       "default": "DefaultSubType",
       "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"

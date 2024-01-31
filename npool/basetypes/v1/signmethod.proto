@@ -15,4 +15,5 @@ enum SignMethod {
     Wechat            = 70; // For signin
     Google            = 80; // For signin, verify
     Username          = 90; // For signup, signin
+    Reset             = 100; // For Reset Password in all auth factors are lost
 }

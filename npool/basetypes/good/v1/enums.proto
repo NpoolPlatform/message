@@ -67,8 +67,11 @@ enum GoodTopMostType {
 enum GoodStartMode {
     DefaultGoodStartMode = 0;
 
-    GoodStartModeTBD       = 10;
-    GoodStartModeConfirmed = 20;
+    GoodStartModeTBD       = 10; // Start time will be adjusted in future
+    GoodStartModeConfirmed = 20; // Deprecated
+    GoodStartModeInstantly = 30; // Start when order paid
+    GoodStartModeNextDay   = 40; // Start at next 00:00 UTC
+    GoodStartModePreset    = 50; // Start at a preset time
 }
 
 enum AppStockLockState {
@@ -81,4 +84,35 @@ enum AppStockLockState {
     AppStockChargeBack = 50;
     AppStockRollback   = 60;
     AppStockCanceled   = 70;
+}
+
+enum GoodUnitType {
+    DefaultGoodUnitType = 0;
+
+    GoodUnitByDuration            = 10;
+    GoodUnitByQuantity            = 20;
+    GoodUnitByDurationAndQuantity = 30;
+}
+
+enum GoodUnitCalculateType {
+    DefaultGoodUnitCalculateType = 0;
+
+    GoodUnitCalculateBySelf   = 10;
+    GoodUnitCalculateByParent = 20;
+}
+
+enum GoodDurationType {
+    DefaultGoodDurationType = 0;
+
+    GoodDurationByHour  = 10;
+    GoodDurationByDay   = 20;
+    GoodDurationByMonth = 30;
+    GoodDurationByYear  = 40;
+}
+
+enum GoodSettlementType {
+    DefaultGoodSettlementType = 0;
+
+    GoodSettledByCash   = 10;
+    GoodSettledByProfit = 20; // Percent in default
 }

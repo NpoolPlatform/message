@@ -138,10 +138,9 @@ message RewardEventRequest {
     optional string      GoodID      = 40;
     optional string      AppGoodID   = 41;
     uint32               Consecutive = 50;
-    string               Amount      = 60;
+    optional string      Amount      = 60;
 }
 
 message RewardEventResponse {
     repeated Credit Infos = 10;
 }
-

@@ -55,7 +55,6 @@ message CouponReq {
     optional string CouponID = 40;
     optional string UserID   = 50;
     optional bool   Used     = 60;
-    optional uint32 UsedAt   = 61;
     optional string UsedByOrderID = 70;
 }
 
@@ -71,9 +70,6 @@ message Coupon {
     string     AppID           = 40;
     // @inject_tag: sql:"user_id"
    string      UserID          = 50;
-   string      Username        = 51;
-   string      EmailAddress    = 52;
-   string      PhoneNO         = 53;
     // @inject_tag: sql:"denomination"
     string     Denomination    = 60;
     // @inject_tag: sql:"circulation"
@@ -99,13 +95,9 @@ message Coupon {
     // @inject_tag: sql:"used_at"
     uint32     UsedAt          = 170;
     // @inject_tag: sql:"used_by_order_id"
-    optional string UsedByOrderID = 180;
-    // @inject_tag: sql:"good_id"
-    optional string GoodID     = 190;
-    // @inject_tag: sql:"app_good_id"
-    optional string AppGoodID  = 191;
+    string     UsedByOrderID   = 180;
     // @inject_tag: sql:"threshold"
-    optional string Threshold  = 200;
+    string     Threshold       = 200;
     // @inject_tag: sql:"allocated"
     string     Allocated       = 210;
     // @inject_tag: sql:"coupon_constraint"
@@ -116,6 +108,8 @@ message Coupon {
     // @inject_tag: sql:"coupon_scope"
     string     CouponScopeStr  = 250;
     basetypes.inspire.v1.CouponScope CouponScope = 260;
+    // @inject_tag: sql:"cashable"
+    bool       Cashable        = 270;
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"

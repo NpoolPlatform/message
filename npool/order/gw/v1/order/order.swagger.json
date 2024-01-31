@@ -443,6 +443,10 @@
         "Units": {
           "type": "string"
         },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
         "Parent": {
           "type": "boolean"
         }
@@ -497,8 +501,7 @@
       "enum": [
         "DefaultCouponType",
         "FixAmount",
-        "Discount",
-        "SpecialOffer"
+        "Discount"
       ],
       "default": "DefaultCouponType"
     },
@@ -516,6 +519,10 @@
         },
         "Units": {
           "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
         },
         "ParentOrderID": {
           "type": "string"
@@ -550,6 +557,10 @@
         },
         "Units": {
           "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
         },
         "PaymentCoinID": {
           "type": "string"
@@ -636,6 +647,10 @@
         },
         "Units": {
           "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
         },
         "ParentOrderID": {
           "type": "string"
@@ -842,6 +857,17 @@
         }
       }
     },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
+    },
     "v1InvestmentType": {
       "type": "string",
       "enum": [
@@ -912,10 +938,6 @@
         "GoodUnit": {
           "type": "string"
         },
-        "GoodServicePeriodDays": {
-          "type": "integer",
-          "format": "int64"
-        },
         "GoodUnitPrice": {
           "type": "string"
         },
@@ -927,6 +949,13 @@
         },
         "Units": {
           "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
         },
         "PaymentID": {
           "type": "string"
@@ -1056,10 +1085,14 @@
         "OrderStateCancelUnlockPaymentAccount",
         "OrderStateUpdateCanceledChilds",
         "OrderStateCanceled",
-        "OrderStateExpired"
+        "OrderStateExpired",
+        "OrderStateChildPaidByParent",
+        "OrderStateChildInServiceByParent",
+        "OrderStateChildExpiredByParent",
+        "OrderStateChildCanceledByParent"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state"
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state\n - OrderStateChildPaidByParent: Child paid"
     },
     "v1OrderType": {
       "type": "string",

@@ -146,26 +146,6 @@
     }
   },
   "definitions": {
-    "GoodCoinInfo": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "CoinPreSale": {
-          "type": "boolean"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -188,7 +168,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -211,17 +190,13 @@
         "DeviceInfoID": {
           "type": "string"
         },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
-        },
         "CoinTypeID": {
           "type": "string"
         },
         "VendorLocationID": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
           "type": "string"
         },
         "BenefitType": {
@@ -233,18 +208,11 @@
         "Title": {
           "type": "string"
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string"
         },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "SupportCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "QuantityUnitAmount": {
+          "type": "string"
         },
         "DeliveryAt": {
           "type": "integer",
@@ -281,6 +249,21 @@
         },
         "UnitLockDeposit": {
           "type": "string"
+        },
+        "UnitType": {
+          "$ref": "#/definitions/v1GoodUnitType"
+        },
+        "QuantityCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "SettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
         }
       }
     },
@@ -327,7 +310,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Good"
           }
         },
@@ -369,10 +351,6 @@
           "items": {
             "type": "string"
           }
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
         },
         "CoinTypeID": {
           "type": "string"
@@ -416,18 +394,17 @@
         "BenefitType": {
           "$ref": "#/definitions/v1BenefitType"
         },
-        "Price": {
+        "UnitPrice": {
           "type": "string"
         },
         "Title": {
           "type": "string"
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string"
         },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32"
+        "QuantityUnitAmount": {
+          "type": "string"
         },
         "TestOnly": {
           "type": "boolean"
@@ -442,13 +419,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1GoodLabel"
-          }
-        },
-        "SupportCoins": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/GoodCoinInfo"
           }
         },
         "StockID": {
@@ -533,8 +503,34 @@
         },
         "UnitLockDeposit": {
           "type": "string"
+        },
+        "UnitType": {
+          "$ref": "#/definitions/v1GoodUnitType"
+        },
+        "QuantityCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "SettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
         }
       }
+    },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
     },
     "v1GoodLabel": {
       "type": "string",
@@ -545,15 +541,26 @@
         "GoodLabelInnovationStarter",
         "GoodLabelLoyaltyExclusive"
       ],
-      "default": "DefaultGoodLabel",
-      "title": "- GoodLabelNoviceExclusive: Newbie\n - GoodLabelInnovationStarter: First batch mining\n - GoodLabelLoyaltyExclusive: User with action credis pass threshold"
+      "default": "DefaultGoodLabel"
+    },
+    "v1GoodSettlementType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodSettlementType",
+        "GoodSettledByCash",
+        "GoodSettledByProfit"
+      ],
+      "default": "DefaultGoodSettlementType"
     },
     "v1GoodStartMode": {
       "type": "string",
       "enum": [
         "DefaultGoodStartMode",
         "GoodStartModeTBD",
-        "GoodStartModeConfirmed"
+        "GoodStartModeConfirmed",
+        "GoodStartModeInstantly",
+        "GoodStartModeNextDay",
+        "GoodStartModePreset"
       ],
       "default": "DefaultGoodStartMode"
     },
@@ -569,6 +576,25 @@
       ],
       "default": "DefaultGoodType"
     },
+    "v1GoodUnitCalculateType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitCalculateType",
+        "GoodUnitCalculateBySelf",
+        "GoodUnitCalculateByParent"
+      ],
+      "default": "DefaultGoodUnitCalculateType"
+    },
+    "v1GoodUnitType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitType",
+        "GoodUnitByDuration",
+        "GoodUnitByQuantity",
+        "GoodUnitByDurationAndQuantity"
+      ],
+      "default": "DefaultGoodUnitType"
+    },
     "v1UpdateGoodRequest": {
       "type": "object",
       "properties": {
@@ -582,17 +608,13 @@
         "DeviceInfoID": {
           "type": "string"
         },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
-        },
         "CoinTypeID": {
           "type": "string"
         },
         "VendorLocationID": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
           "type": "string"
         },
         "BenefitType": {
@@ -604,18 +626,11 @@
         "Title": {
           "type": "string"
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string"
         },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "SupportCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "QuantityUnitAmount": {
+          "type": "string"
         },
         "DeliveryAt": {
           "type": "integer",
@@ -652,6 +667,21 @@
         },
         "UnitLockDeposit": {
           "type": "string"
+        },
+        "UnitType": {
+          "$ref": "#/definitions/v1GoodUnitType"
+        },
+        "QuantityCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "SettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
         }
       }
     },

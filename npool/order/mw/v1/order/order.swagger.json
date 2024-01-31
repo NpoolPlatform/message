@@ -222,6 +222,9 @@
         },
         "UserSetCanceled": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "ParentOrderIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -388,10 +391,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"promotion_id\""
         },
-        "DurationDays": {
+        "Duration": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"duration_days\""
+          "title": "@inject_tag: sql:\"duration\""
         },
         "OrderTypeStr": {
           "type": "string",
@@ -613,7 +616,7 @@
         "PromotionID": {
           "type": "string"
         },
-        "DurationDays": {
+        "Duration": {
           "type": "integer",
           "format": "int64"
         },
@@ -724,7 +727,10 @@
       "enum": [
         "DefaultOrderStartMode",
         "OrderStartTBD",
-        "OrderStartConfirmed"
+        "OrderStartConfirmed",
+        "OrderStartInstantly",
+        "OrderStartNextDay",
+        "OrderStartPreset"
       ],
       "default": "DefaultOrderStartMode"
     },
@@ -759,10 +765,14 @@
         "OrderStateCancelUnlockPaymentAccount",
         "OrderStateUpdateCanceledChilds",
         "OrderStateCanceled",
-        "OrderStateExpired"
+        "OrderStateExpired",
+        "OrderStateChildPaidByParent",
+        "OrderStateChildInServiceByParent",
+        "OrderStateChildExpiredByParent",
+        "OrderStateChildCanceledByParent"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state"
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state\n - OrderStateChildPaidByParent: Child paid"
     },
     "v1OrderType": {
       "type": "string",
@@ -820,6 +830,14 @@
           "type": "string"
         },
         "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SumOrderPaymentAmountsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
           "type": "string"
         }
       }

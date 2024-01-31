@@ -47,14 +47,15 @@ message CreateCouponRequest {
     string Denomination = 50;
     string Circulation  = 60;
     uint32 StartAt      = 70;
+    uint32 EndAt        = 71;
     uint32 DurationDays = 80;
     string Message      = 90;
     string Name         = 100;
-    optional string TargetUserID = 110; // only for special offer
     optional string Threshold    = 130;
     basetypes.inspire.v1.CouponConstraint CouponConstraint = 140;
     bool   Random       = 150;
     basetypes.inspire.v1.CouponScope CouponScope = 160;
+    optional string CashableProbability = 170;
 }
 
 message CreateCouponResponse {
@@ -68,14 +69,15 @@ message UpdateCouponRequest {
     optional string Denomination = 40;
     optional string Circulation  = 50;
     optional uint32 StartAt      = 60;
+    optional uint32 EndAt        = 61;
     optional uint32 DurationDays = 70;
     optional string Message      = 80;
     optional string Name         = 90;
-    optional string TargetUserID = 100;
     optional string Threshold    = 120;
     optional basetypes.inspire.v1.CouponConstraint CouponConstraint = 130;
     optional bool   Random       = 140;
     optional basetypes.inspire.v1.CouponScope CouponScope = 150;
+    optional string CashableProbability         = 160;
 }
 
 message UpdateCouponResponse {
@@ -106,4 +108,3 @@ message GetAppCouponsResponse {
     repeated inspire.middleware.coupon.v1.Coupon Infos = 10;
     uint32                                       Total = 20;
 }
-

@@ -49,8 +49,6 @@ message Good {
     uint32           DeviceShipmentAt            = 60;
     repeated string  DevicePosters               = 70;
 
-    int32            DurationDays                = 80;
-
     string           CoinTypeID                  = 90;
     string           CoinLogo                    = 100;
     string           CoinName                    = 110;
@@ -68,22 +66,13 @@ message Good {
     basetypes.good.v1.GoodType    GoodType    = 230;
     basetypes.good.v1.BenefitType BenefitType = 240;
 
-    string           Price              = 250;
+    string           UnitPrice          = 250;
     string           Title              = 260;
-    string           Unit               = 270;
-    int32            UnitAmount         = 280;
+    string           QuantityUnit       = 270;
+    string           QuantityUnitAmount = 280;
     bool             TestOnly           = 290;
     repeated string  Posters            = 300;
     repeated basetypes.good.v1.GoodLabel Labels = 310;
-
-    message CoinInfo {
-        string CoinTypeID  = 10;
-        string CoinLogo    = 20;
-        string CoinName    = 30;
-        string CoinUnit    = 40;
-        bool   CoinPreSale = 50;
-    }
-    repeated CoinInfo SupportCoins      = 340;
 
     string           StockID        = 350;
     string           Total          = 360;
@@ -112,20 +101,23 @@ message Good {
     uint32           RecommendCount = 530;
     uint32           CommentCount = 540;
     string           UnitLockDeposit = 550;
+    basetypes.good.v1.GoodUnitType UnitType = 560;
+    basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 570;
+    basetypes.good.v1.GoodDurationType DurationType = 580;
+    basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 590;
+    basetypes.good.v1.GoodSettlementType SettlementType = 600;
 }
 
 message CreateGoodRequest {
     string          DeviceInfoID       = 20;
-    int32           DurationDays       = 30;
     string          CoinTypeID         = 40;
     string          VendorLocationID   = 60;
-    string          Price              = 70;
+    string          UnitPrice          = 70;
     basetypes.good.v1.BenefitType BenefitType = 80;
     basetypes.good.v1.GoodType    GoodType    = 90;
     string          Title              = 100;
-    string          Unit               = 110;
-    int32           UnitAmount         = 120;
-    repeated string SupportCoinTypeIDs = 130;
+    string          QuantityUnit       = 110;
+    string          QuantityUnitAmount = 120;
     uint32          DeliveryAt         = 140;
     uint32          StartAt            = 150;
     basetypes.good.v1.GoodStartMode StartMode = 151;
@@ -135,6 +127,11 @@ message CreateGoodRequest {
     repeated basetypes.good.v1.GoodLabel Labels = 220;
     optional uint32 BenefitIntervalHours = 230;
     optional string UnitLockDeposit    = 240;
+    optional basetypes.good.v1.GoodUnitType UnitType = 250;
+    optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 260;
+    optional basetypes.good.v1.GoodDurationType DurationType = 270;
+    optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 280;
+    optional basetypes.good.v1.GoodSettlementType SettlementType = 290;
 }
 
 message CreateGoodResponse {
@@ -163,16 +160,14 @@ message UpdateGoodRequest {
     uint32          ID                 = 9;
     string          EntID              = 10;
     optional string DeviceInfoID       = 20;
-    optional int32  DurationDays       = 30;
     optional string CoinTypeID         = 40;
     optional string VendorLocationID   = 60;
-    optional string Price              = 70;
+    optional string UnitPrice          = 70;
     optional basetypes.good.v1.BenefitType BenefitType = 80;
     optional basetypes.good.v1.GoodType    GoodType    = 90;
     optional string Title              = 100;
-    optional string Unit               = 110;
-    optional int32  UnitAmount         = 120;
-    repeated string SupportCoinTypeIDs = 130;
+    optional string QuantityUnit       = 110;
+    optional string QuantityUnitAmount = 120;
     optional uint32 DeliveryAt         = 140;
     optional uint32 StartAt            = 150;
     optional basetypes.good.v1.GoodStartMode StartMode = 151;
@@ -182,6 +177,11 @@ message UpdateGoodRequest {
     repeated basetypes.good.v1.GoodLabel Labels = 220;
     optional uint32 BenefitIntervalHours = 230;
     optional string UnitLockDeposit    = 240;
+    optional basetypes.good.v1.GoodUnitType UnitType = 250;
+    optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 260;
+    optional basetypes.good.v1.GoodDurationType DurationType = 270;
+    optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 280;
+    optional basetypes.good.v1.GoodSettlementType SettlementType = 290;
 }
 
 message UpdateGoodResponse {

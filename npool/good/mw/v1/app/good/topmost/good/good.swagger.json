@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -104,7 +103,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1TopMostGood"
           }
         },
@@ -221,9 +219,13 @@
             "type": "string"
           }
         },
-        "Price": {
+        "UnitPrice": {
           "type": "string",
-          "title": "@inject_tag: sql:\"price\""
+          "title": "@inject_tag: sql:\"unit_price\""
+        },
+        "PackagePrice": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"package_price\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -263,7 +265,10 @@
             "type": "string"
           }
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         }
       }

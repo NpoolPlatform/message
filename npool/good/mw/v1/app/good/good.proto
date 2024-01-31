@@ -26,9 +26,9 @@ message GoodReq {
     optional bool   Online              = 40;
     optional bool   Visible             = 50;
     optional string GoodName            = 60;
-    optional string Price               = 70;
+    optional string UnitPrice           = 70;
+    optional string PackagePrice        = 71;
     optional int32  DisplayIndex        = 80;
-    optional int32  PurchaseLimit       = 90;
     optional uint32 SaleStartAt         = 110;
     optional uint32 SaleEndAt           = 120;
     optional uint32 ServiceStartAt      = 130;
@@ -40,12 +40,17 @@ message GoodReq {
     optional bool   EnablePurchase      = 210;
     optional bool   EnableProductPage   = 220;
     optional basetypes.good.v1.CancelMode CancelMode = 230;
-    optional string UserPurchaseLimit   = 240;
     repeated string DisplayColors       = 250;
     optional uint32 CancellableBeforeStart = 260;
     optional string ProductPage         = 270;
     optional bool   EnableSetCommission = 310;
     repeated string Posters             = 320;
+    optional string MinOrderAmount      = 330;
+    optional string MaxOrderAmount      = 340;
+    optional string MaxUserAmount       = 350;
+    optional uint32 MinOrderDuration    = 360;
+    optional uint32 MaxOrderDuration    = 370;
+    optional bool   PackageWithRequireds = 380;
 }
 
 message Good {
@@ -61,12 +66,12 @@ message Good {
     bool             Online                      = 40;
     // @inject_tag: sql:"visible"
     bool             Visible                     = 50;
-    // @inject_tag: sql:"price"
-    string           Price                       = 60;
+    // @inject_tag: sql:"unit_price"
+    string           UnitPrice                   = 60;
+    // @inject_tag: sql:"package_price"
+    string           PackagePrice                = 61;
     // @inject_tag: sql:"display_index"
     int32            DisplayIndex                = 70;
-    // @inject_tag: sql:"purchase_limit"
-    int32            PurchaseLimit               = 80;
 
     // @inject_tag: sql:"device_info_id"
     string           DeviceInfoID                = 170;
@@ -82,8 +87,6 @@ message Good {
     // @inject_tag: sql:"device_posters"
     string           DevicePostersStr            = 221;
 
-    // @inject_tag: sql:"duration_days"
-    int32            DurationDays                = 230;
     // @inject_tag: sql:"coin_type_id"
     string           CoinTypeID                  = 240;
 
@@ -106,13 +109,10 @@ message Good {
 
     // @inject_tag: sql:"good_name"
     string           GoodName           = 280;
-    // @inject_tag: sql:"unit"
-    string           Unit               = 290;
-    // @inject_tag: sql:"unit_amount"
-    int32            UnitAmount         = 300;
-    repeated string  SupportCoinTypeIDs = 310;
-    // @inject_tag: sql:"support_coin_type_ids"
-    string           SupportCoinTypeIDsStr = 311;
+    // @inject_tag: sql:"quantity_unit"
+    string           QuantityUnit       = 290;
+    // @inject_tag: sql:"quantity_unit_amount"
+    string           QuantityUnitAmount = 300;
     // @inject_tag: sql:"test_only"
     bool             TestOnly           = 320;
     repeated string  Posters            = 330;
@@ -138,10 +138,6 @@ message Good {
     // @inject_tag: sql:"start_mode"
     string           StartModeStr       = 411;
     basetypes.good.v1.GoodStartMode StartMode = 412;
-    // @inject_tag: sql:"created_at"
-    uint32           CreatedAt          = 420;
-    // @inject_tag: sql:"updated_at"
-    uint32           UpdatedAt          = 421;
 
     // @inject_tag: sql:"sale_start_at"
     uint32           SaleStartAt         = 430;
@@ -171,8 +167,6 @@ message Good {
     // @inject_tag: sql:"cancel_mode"
     string           CancelModeStr          = 580;
     basetypes.good.v1.CancelMode CancelMode = 590;
-    // @inject_tag: sql:"user_purchase_limit"
-    string           UserPurchaseLimit      = 600;
     // @inject_tag: sql:"display_colors"
     string           DisplayColorsStr       = 610;
     repeated string  DisplayColors          = 620;
@@ -223,6 +217,41 @@ message Good {
     // @inject_tag: sql:"app_good_posters"
     string           AppGoodPostersStr  = 840;
     repeated string  AppGoodPosters     = 850;
+
+    // @inject_tag: sql:"min_order_amount"
+    string           MinOrderAmount     = 860;
+    // @inject_tag: sql:"max_order_amount"
+    string           MaxOrderAmount     = 870;
+    // @inject_tag: sql:"max_user_amount"
+    string           MaxUserAmount      = 880;
+    // @inject_tag: sql:"min_order_duration"
+    uint32           MinOrderDuration   = 890;
+    // @inject_tag: sql:"max_order_duration"
+    uint32           MaxOrderDuration   = 900;
+
+    // @inject_tag: sql:"unit_type"
+    string           UnitTypeStr        = 910;
+    basetypes.good.v1.GoodUnitType UnitType = 920;
+    // @inject_tag: sql:"quantity_calculate_type"
+    string           QuantityCalculateTypeStr = 930;
+    basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 940;
+    // @inject_tag: sql:"duration_type"
+    string           DurationTypeStr = 950;
+    basetypes.good.v1.GoodDurationType DurationType = 960;
+    // @inject_tag: sql:"duration_calculate_type"
+    string           DurationCalculateTypeStr = 970;
+    basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 980;
+    // @inject_tag: sql:"settlement_type"
+    string           SettlementTypeStr = 990;
+    basetypes.good.v1.GoodSettlementType SettlementType = 1000;
+
+    // @inject_tag: sql:"package_with_requireds"
+    bool             PackageWithRequireds = 1010;
+
+    // @inject_tag: sql:"created_at"
+    uint32           CreatedAt          = 2000;
+    // @inject_tag: sql:"updated_at"
+    uint32           UpdatedAt          = 2100;
 }
 
 message Conds {

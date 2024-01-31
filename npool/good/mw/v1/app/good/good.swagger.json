@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -141,7 +140,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Good"
           }
         },
@@ -179,19 +177,18 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"visible\""
         },
-        "Price": {
+        "UnitPrice": {
           "type": "string",
-          "title": "@inject_tag: sql:\"price\""
+          "title": "@inject_tag: sql:\"unit_price\""
+        },
+        "PackagePrice": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"package_price\""
         },
         "DisplayIndex": {
           "type": "integer",
           "format": "int32",
           "title": "@inject_tag: sql:\"display_index\""
-        },
-        "PurchaseLimit": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"purchase_limit\""
         },
         "DeviceInfoID": {
           "type": "string",
@@ -224,11 +221,6 @@
         "DevicePostersStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"device_posters\""
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"duration_days\""
         },
         "CoinTypeID": {
           "type": "string",
@@ -268,24 +260,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_name\""
         },
-        "Unit": {
+        "QuantityUnit": {
           "type": "string",
-          "title": "@inject_tag: sql:\"unit\""
+          "title": "@inject_tag: sql:\"quantity_unit\""
         },
-        "UnitAmount": {
-          "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"unit_amount\""
-        },
-        "SupportCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "SupportCoinTypeIDsStr": {
+        "QuantityUnitAmount": {
           "type": "string",
-          "title": "@inject_tag: sql:\"support_coin_type_ids\""
+          "title": "@inject_tag: sql:\"quantity_unit_amount\""
         },
         "TestOnly": {
           "type": "boolean",
@@ -343,16 +324,6 @@
         },
         "StartMode": {
           "$ref": "#/definitions/v1GoodStartMode"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
         },
         "SaleStartAt": {
           "type": "integer",
@@ -415,10 +386,6 @@
         },
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
-        },
-        "UserPurchaseLimit": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_purchase_limit\""
         },
         "DisplayColorsStr": {
           "type": "string",
@@ -526,8 +493,90 @@
           "items": {
             "type": "string"
           }
+        },
+        "MinOrderAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"min_order_amount\""
+        },
+        "MaxOrderAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"max_order_amount\""
+        },
+        "MaxUserAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"max_user_amount\""
+        },
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"min_order_duration\""
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"max_order_duration\""
+        },
+        "UnitTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit_type\""
+        },
+        "UnitType": {
+          "$ref": "#/definitions/v1GoodUnitType"
+        },
+        "QuantityCalculateTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"quantity_calculate_type\""
+        },
+        "QuantityCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "DurationTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"duration_type\""
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationCalculateTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"duration_calculate_type\""
+        },
+        "DurationCalculateType": {
+          "$ref": "#/definitions/v1GoodUnitCalculateType"
+        },
+        "SettlementTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settlement_type\""
+        },
+        "SettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
+        },
+        "PackageWithRequireds": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"package_with_requireds\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
+    },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
     },
     "v1GoodLabel": {
       "type": "string",
@@ -538,8 +587,7 @@
         "GoodLabelInnovationStarter",
         "GoodLabelLoyaltyExclusive"
       ],
-      "default": "DefaultGoodLabel",
-      "title": "- GoodLabelNoviceExclusive: Newbie\n - GoodLabelInnovationStarter: First batch mining\n - GoodLabelLoyaltyExclusive: User with action credis pass threshold"
+      "default": "DefaultGoodLabel"
     },
     "v1GoodReq": {
       "type": "object",
@@ -566,14 +614,13 @@
         "GoodName": {
           "type": "string"
         },
-        "Price": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "PackagePrice": {
           "type": "string"
         },
         "DisplayIndex": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "PurchaseLimit": {
           "type": "integer",
           "format": "int32"
         },
@@ -619,9 +666,6 @@
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
         },
-        "UserPurchaseLimit": {
-          "type": "string"
-        },
         "DisplayColors": {
           "type": "array",
           "items": {
@@ -643,15 +687,47 @@
           "items": {
             "type": "string"
           }
+        },
+        "MinOrderAmount": {
+          "type": "string"
+        },
+        "MaxOrderAmount": {
+          "type": "string"
+        },
+        "MaxUserAmount": {
+          "type": "string"
+        },
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PackageWithRequireds": {
+          "type": "boolean"
         }
       }
+    },
+    "v1GoodSettlementType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodSettlementType",
+        "GoodSettledByCash",
+        "GoodSettledByProfit"
+      ],
+      "default": "DefaultGoodSettlementType"
     },
     "v1GoodStartMode": {
       "type": "string",
       "enum": [
         "DefaultGoodStartMode",
         "GoodStartModeTBD",
-        "GoodStartModeConfirmed"
+        "GoodStartModeConfirmed",
+        "GoodStartModeInstantly",
+        "GoodStartModeNextDay",
+        "GoodStartModePreset"
       ],
       "default": "DefaultGoodStartMode"
     },
@@ -666,6 +742,25 @@
         "ElectricityFee"
       ],
       "default": "DefaultGoodType"
+    },
+    "v1GoodUnitCalculateType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitCalculateType",
+        "GoodUnitCalculateBySelf",
+        "GoodUnitCalculateByParent"
+      ],
+      "default": "DefaultGoodUnitCalculateType"
+    },
+    "v1GoodUnitType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodUnitType",
+        "GoodUnitByDuration",
+        "GoodUnitByQuantity",
+        "GoodUnitByDurationAndQuantity"
+      ],
+      "default": "DefaultGoodUnitType"
     },
     "v1StringSliceVal": {
       "type": "object",

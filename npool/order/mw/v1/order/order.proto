@@ -23,6 +23,7 @@ service Middleware {
     rpc GetOrder        (GetOrderRequest)       returns (GetOrderResponse)       {}
     rpc GetOrders       (GetOrdersRequest)      returns (GetOrdersResponse)      {}
     rpc SumOrderUnits   (SumOrderUnitsRequest)  returns (SumOrderUnitsResponse)  {}
+    rpc SumOrderPaymentAmounts   (SumOrderPaymentAmountsRequest)  returns (SumOrderPaymentAmountsResponse)  {}
     rpc CountOrders     (CountOrdersRequest)    returns (CountOrdersResponse)    {}
     rpc ExistOrder      (ExistOrderRequest)      returns (ExistOrderResponse)      {}
     rpc ExistOrderConds (ExistOrderCondsRequest) returns (ExistOrderCondsResponse) {}
@@ -50,7 +51,7 @@ message OrderReq {
     optional string PaymentAmount             = 90;
     optional string DiscountAmount            = 100;
     optional string PromotionID               = 110;
-    optional uint32 DurationDays                              = 120;
+    optional uint32 Duration                  = 120;
     optional basetypes.order.v1.OrderType OrderType           = 130;
     optional basetypes.order.v1.InvestmentType InvestmentType = 140;
     repeated string CouponIDs                                 = 150;
@@ -118,8 +119,8 @@ message Order {
     string DiscountAmount                            = 110;
     // @inject_tag: sql:"promotion_id"
     string PromotionID                               = 120;
-    // @inject_tag: sql:"duration_days"
-    uint32 DurationDays                              = 130;
+    // @inject_tag: sql:"duration"
+    uint32 Duration                                  = 130;
     // @inject_tag: sql:"order_type"
     string OrderTypeStr                              = 140;
     basetypes.order.v1.OrderType OrderType           = 150;
@@ -239,6 +240,7 @@ message Conds {
     optional basetypes.v1.Uint32Val      UpdatedAt             = 250;
     optional basetypes.v1.BoolVal        AdminSetCanceled      = 260;
     optional basetypes.v1.BoolVal        UserSetCanceled       = 270;
+    optional basetypes.v1.StringSliceVal ParentOrderIDs        = 280;
 }
 
 message CreateOrderRequest {
@@ -297,6 +299,14 @@ message SumOrderUnitsRequest {
 }
 
 message SumOrderUnitsResponse {
+    string Info = 10;
+}
+
+message SumOrderPaymentAmountsRequest {
+    Conds Conds  = 10;
+}
+
+message SumOrderPaymentAmountsResponse {
     string Info = 10;
 }
 

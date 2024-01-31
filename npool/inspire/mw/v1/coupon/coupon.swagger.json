@@ -134,6 +134,11 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"start_at\""
         },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end_at\""
+        },
         "DurationDays": {
           "type": "integer",
           "format": "int64",
@@ -147,17 +152,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"name\""
         },
-        "UserID": {
+        "Allocated": {
           "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
+          "title": "@inject_tag: sql:\"allocated\""
         },
         "Threshold": {
           "type": "string",
           "title": "@inject_tag: sql:\"threshold\""
-        },
-        "Allocated": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"allocated\""
         },
         "CouponConstraintStr": {
           "type": "string",
@@ -177,6 +178,10 @@
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
         },
+        "CashableProbability": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"cashable_probability\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -194,9 +199,7 @@
       "enum": [
         "DefaultCouponConstraint",
         "Normal",
-        "PaymentThreshold",
-        "GoodOnly",
-        "GoodThreshold"
+        "PaymentThreshold"
       ],
       "default": "DefaultCouponConstraint"
     },
@@ -229,6 +232,10 @@
           "type": "integer",
           "format": "int64"
         },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "DurationDays": {
           "type": "integer",
           "format": "int64"
@@ -239,17 +246,9 @@
         "Name": {
           "type": "string"
         },
-        "UserID": {
-          "type": "string",
-          "title": "For special offer"
-        },
         "Threshold": {
           "type": "string",
           "title": "For threshold coupon"
-        },
-        "Allocated": {
-          "type": "string",
-          "title": "We may have random amount coupon"
         },
         "CouponConstraint": {
           "$ref": "#/definitions/v1CouponConstraint"
@@ -259,6 +258,9 @@
         },
         "CouponScope": {
           "$ref": "#/definitions/v1CouponScope"
+        },
+        "CashableProbability": {
+          "type": "string"
         }
       }
     },
@@ -277,8 +279,7 @@
       "enum": [
         "DefaultCouponType",
         "FixAmount",
-        "Discount",
-        "SpecialOffer"
+        "Discount"
       ],
       "default": "DefaultCouponType"
     },
