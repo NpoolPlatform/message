@@ -1,0 +1,597 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/cms/gw/v1/article/article.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/article": {
+      "post": {
+        "operationId": "Gateway_CreateArticle",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/cmsgatewayarticlev1CreateArticleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/cmsgatewayarticlev1CreateArticleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/delete/article": {
+      "post": {
+        "operationId": "Gateway_DeleteArticle",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/cmsgatewayarticlev1DeleteArticleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/cmsgatewayarticlev1DeleteArticleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/article": {
+      "post": {
+        "operationId": "Gateway_GetArticle",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/cmsgatewayarticlev1GetArticleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/cmsgatewayarticlev1GetArticleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/articlecontent": {
+      "post": {
+        "operationId": "Gateway_GetArticleContent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetArticleContentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetArticleContentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/articles": {
+      "post": {
+        "operationId": "Gateway_GetArticles",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/cmsgatewayarticlev1GetArticlesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/cmsgatewayarticlev1GetArticlesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/contentlist": {
+      "post": {
+        "operationId": "Gateway_GetContentList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetContentListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetContentListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/article": {
+      "post": {
+        "operationId": "Gateway_UpdateArticle",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/cmsgatewayarticlev1UpdateArticleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/cmsgatewayarticlev1UpdateArticleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "cmsgatewayarticlev1CreateArticleRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
+        },
+        "CategoryID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Subtitle": {
+          "type": "string"
+        },
+        "Digest": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        }
+      }
+    },
+    "cmsgatewayarticlev1CreateArticleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Article"
+        }
+      }
+    },
+    "cmsgatewayarticlev1DeleteArticleRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "cmsgatewayarticlev1DeleteArticleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Article"
+        }
+      }
+    },
+    "cmsgatewayarticlev1GetArticleRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "cmsgatewayarticlev1GetArticleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Article"
+        }
+      }
+    },
+    "cmsgatewayarticlev1GetArticlesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "cmsgatewayarticlev1GetArticlesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Article"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "cmsgatewayarticlev1UpdateArticleRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Subtitle": {
+          "type": "string"
+        },
+        "Digest": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "UpdateContent": {
+          "type": "boolean"
+        },
+        "ACLEnabled": {
+          "type": "boolean"
+        },
+        "Status": {
+          "$ref": "#/definitions/v1ArticleStatus"
+        }
+      }
+    },
+    "cmsgatewayarticlev1UpdateArticleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Article"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Article": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "ISO": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"iso\""
+        },
+        "CategoryID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"category_id\""
+        },
+        "CategoryName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"category_name\""
+        },
+        "AuthorID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"author_id\""
+        },
+        "ArticleKey": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"article_key\""
+        },
+        "Title": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"title\""
+        },
+        "Subtitle": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"subtitle\""
+        },
+        "Digest": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"digest\""
+        },
+        "StatusStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"status\""
+        },
+        "Status": {
+          "$ref": "#/definitions/v1ArticleStatus"
+        },
+        "Host": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"host\""
+        },
+        "Version": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"version\""
+        },
+        "ContentURL": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"content_url\""
+        },
+        "Latest": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"latest\""
+        },
+        "PublishedAt": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"published_at\""
+        },
+        "ACLEnabled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"acl_enabled\""
+        },
+        "ACLRoleIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1ArticleStatus": {
+      "type": "string",
+      "enum": [
+        "DefaultArticleStatus",
+        "Draft",
+        "Published"
+      ],
+      "default": "DefaultArticleStatus"
+    },
+    "v1GetArticleContentRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetArticleContentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetContentListRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "CategoryID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetContentListResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Article"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}

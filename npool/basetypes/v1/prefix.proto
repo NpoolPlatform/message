@@ -82,6 +82,10 @@ enum Prefix {
 
     PrefixCreateResetUserLink  = 800;
 
+    PrefixCreateACL            = 900;
+    PrefixCreateArticle        = 910;
+    PrefixCreateCategory       = 920;
+
     PrefixMigrate              = 10000;
 
     PrefixScheduler            = 20000;

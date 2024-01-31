@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/basetypes/v1/prefix.proto",
+    "title": "npool/basetypes/cms/v1/enums.proto",
     "version": "version not set"
   },
   "consumes": [

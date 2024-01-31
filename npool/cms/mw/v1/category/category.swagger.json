@@ -1,0 +1,291 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/cms/mw/v1/category/category.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Category": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "ParentID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"parent_id\""
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "Slug": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"slug\""
+        },
+        "Enabled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enabled\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1CategoryReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ParentID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Slug": {
+          "type": "string"
+        },
+        "Enabled": {
+          "type": "boolean"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ParentID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Name": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Slug": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Enabled": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "Index": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CreateCategoryResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Category"
+        }
+      }
+    },
+    "v1DeleteCategoryResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Category"
+        }
+      }
+    },
+    "v1ExistCategoryCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistCategoryResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetCategoriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Category"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetCategoryResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Category"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateCategoryResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Category"
+        }
+      }
+    }
+  }
+}
