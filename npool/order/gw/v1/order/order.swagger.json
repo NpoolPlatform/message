@@ -721,6 +721,9 @@
         },
         "ParentOrderID": {
           "type": "string"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
         }
       }
     },
@@ -747,6 +750,9 @@
             "type": "object",
             "$ref": "#/definitions/CreateOrdersRequestOrderReq"
           }
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
         }
       }
     },

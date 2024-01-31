@@ -370,6 +370,7 @@ message CreateSimulateOrderRequest {
     optional string Units                = 40;
     optional uint32 Duration             = 50;
     optional string ParentOrderID        = 60;
+    basetypes.order.v1.InvestmentType InvestmentType = 70;
 }
 
 message CreateSimulateOrderResponse {
@@ -380,6 +381,7 @@ message CreateSimulateOrdersRequest {
     string          AppID   = 10;
     string          UserID  = 20;
     repeated CreateOrdersRequest.OrderReq Orders = 30;
+    basetypes.order.v1.InvestmentType InvestmentType = 40;
 }
 
 message CreateSimulateOrdersResponse {
