@@ -190,6 +190,7 @@ message Order {
 
     bool   UserSetCanceled        = 520;
     bool   AdminSetCanceled       = 530;
+    bool   Simulate               = 540;
 }
 
 message CreateOrderRequest {
