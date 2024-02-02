@@ -35,6 +35,8 @@ enum UsedFor {
     UpdateGoogleAuth      = 240;
     OrderCompleted        = 250;
 
+    SimulateOrderProfit   = 260;
+
     Announcement          = 100000;
     ProductPage           = 200000;
 }

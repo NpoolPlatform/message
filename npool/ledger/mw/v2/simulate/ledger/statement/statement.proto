@@ -55,16 +55,17 @@ service Middleware {
 }
 
 message StatementReq {
-    optional uint32     ID               = 9;
-    optional string     EntID            = 10;
-    optional string     AppID            = 20;
-    optional string     UserID           = 30;
-    optional string     CoinTypeID       = 40;
-    optional basetypes.ledger.v1.IOType     IOType           = 50;
-    optional basetypes.ledger.v1.IOSubType  IOSubType        = 60;
-    optional string     Amount           = 70;
-    optional string     IOExtra          = 100;
-    optional uint32     CreatedAt        = 110;
+    optional uint32     ID               = 10;
+    optional string     EntID            = 20;
+    optional string     AppID            = 30;
+    optional string     UserID           = 40;
+    optional string     CoinTypeID       = 50;
+    optional basetypes.ledger.v1.IOType     IOType           = 60;
+    optional basetypes.ledger.v1.IOSubType  IOSubType        = 70;
+    optional string     Amount           = 80;
+    optional string     IOExtra          = 90;
+    optional uint32     CreatedAt        = 100;
+    optional bool       SendCoupon       = 110;
     optional bool       Rollback         = 1000;
 }
 

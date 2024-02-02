@@ -627,6 +627,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "SendCoupon": {
+          "type": "boolean"
+        },
         "Rollback": {
           "type": "boolean"
         }
