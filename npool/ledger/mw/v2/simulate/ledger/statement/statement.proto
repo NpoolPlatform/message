@@ -82,18 +82,20 @@ message Statement {
     string      CoinTypeID                     = 40;
     // @inject_tag: sql:"io_type"
     string      IOTypeStr                      = 41;
-    basetypes.ledger.v1.IOType      IOType                         = 50;
+    basetypes.ledger.v1.IOType      IOType     = 50;
     // @inject_tag: sql:"io_sub_type"
     string      IOSubTypeStr                   = 51;
-    basetypes.ledger.v1.IOSubType   IOSubType                      = 60;
+    basetypes.ledger.v1.IOSubType   IOSubType  = 60;
     // @inject_tag: sql:"amount"
     string      Amount                         = 70;
     // @inject_tag: sql:"io_extra"
     string      IOExtra                        = 100;
+    // @inject_tag: sql:"send_coupon"
+    bool        SendCoupon                     = 110;
     // @inject_tag: sql:"created_at"
-    uint32      CreatedAt                      = 110;
+    uint32      CreatedAt                      = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32      UpdatedAt                      = 120;
+    uint32      UpdatedAt                      = 1010;
 }
 
 message Conds {
@@ -109,6 +111,8 @@ message Conds {
     optional basetypes.v1.Uint32SliceVal IOSubTypes  = 130;
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 140;
     optional basetypes.v1.StringSliceVal UserIDs     = 150;
+    optional basetypes.v1.BoolVal        SendCoupon  = 160;
+
 }
 
 message GetStatementsRequest {

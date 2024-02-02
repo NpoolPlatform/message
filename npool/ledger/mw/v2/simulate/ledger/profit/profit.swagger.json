@@ -110,17 +110,6 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -149,9 +138,6 @@
         },
         "Incoming": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "SendCoupon": {
-          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
@@ -230,10 +216,6 @@
         "Incoming": {
           "type": "string",
           "title": "@inject_tag: sql:\"incoming\""
-        },
-        "SendCoupon": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"send_coupon\""
         },
         "CreatedAt": {
           "type": "integer",

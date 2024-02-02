@@ -270,6 +270,17 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1IOSubType": {
       "type": "string",
       "enum": [
@@ -387,6 +398,9 @@
         },
         "UserIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "SendCoupon": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
@@ -579,6 +593,10 @@
         "IOExtra": {
           "type": "string",
           "title": "@inject_tag: sql:\"io_extra\""
+        },
+        "SendCoupon": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"send_coupon\""
         },
         "CreatedAt": {
           "type": "integer",
