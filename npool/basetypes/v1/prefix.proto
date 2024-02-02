@@ -78,6 +78,9 @@ enum Prefix {
     PrefixCreateGoodLedger      = 730;
     PrefixCreateGoodLedgerStatement = 740;
     PrefixCreateGoodLedgerUnsoldStatement = 750;
+    PrefixCreateSimulateLedger            = 760;
+    PrefixCreateSimulateLedgerStatement   = 770;
+    PrefixCreateSimulateLedgerProfit      = 780;
 
     PrefixMigrate              = 10000;
 
