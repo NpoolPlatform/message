@@ -17,6 +17,26 @@
   ],
   "paths": {},
   "definitions": {
+    "LocksRequest_Stock": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "AppSpotUnits": {
+          "type": "string"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -73,6 +93,17 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Stock"
+        }
+      }
+    },
+    "v1LocksResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Stock"
+          }
         }
       }
     },
