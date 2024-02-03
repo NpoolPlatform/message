@@ -27,4 +27,5 @@ message MsgOrderChildsRenewReq {
     bool                             InsufficientBalance = 30;
     bool                             WillCreateOrder     = 40;
     repeated RenewInfo               RenewInfos          = 50;
+    optional string                  Error               = 60;
 }
