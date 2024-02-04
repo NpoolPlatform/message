@@ -19,8 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetProfit_FullMethodName  = "/ledger.middleware.simulate.ledger.profit.v2.Middleware/GetProfit"
-	Middleware_GetProfits_FullMethodName = "/ledger.middleware.simulate.ledger.profit.v2.Middleware/GetProfits"
+	Middleware_GetProfit_FullMethodName        = "/ledger.middleware.simulate.ledger.profit.v2.Middleware/GetProfit"
+	Middleware_GetProfits_FullMethodName       = "/ledger.middleware.simulate.ledger.profit.v2.Middleware/GetProfits"
+	Middleware_ExistProfitConds_FullMethodName = "/ledger.middleware.simulate.ledger.profit.v2.Middleware/ExistProfitConds"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -29,6 +30,7 @@ const (
 type MiddlewareClient interface {
 	GetProfit(ctx context.Context, in *GetProfitRequest, opts ...grpc.CallOption) (*GetProfitResponse, error)
 	GetProfits(ctx context.Context, in *GetProfitsRequest, opts ...grpc.CallOption) (*GetProfitsResponse, error)
+	ExistProfitConds(ctx context.Context, in *ExistProfitCondsRequest, opts ...grpc.CallOption) (*ExistProfitCondsResponse, error)
 }
 
 type middlewareClient struct {
@@ -57,12 +59,22 @@ func (c *middlewareClient) GetProfits(ctx context.Context, in *GetProfitsRequest
 	return out, nil
 }
 
+func (c *middlewareClient) ExistProfitConds(ctx context.Context, in *ExistProfitCondsRequest, opts ...grpc.CallOption) (*ExistProfitCondsResponse, error) {
+	out := new(ExistProfitCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistProfitConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	GetProfit(context.Context, *GetProfitRequest) (*GetProfitResponse, error)
 	GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error)
+	ExistProfitConds(context.Context, *ExistProfitCondsRequest) (*ExistProfitCondsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -75,6 +87,9 @@ func (UnimplementedMiddlewareServer) GetProfit(context.Context, *GetProfitReques
 }
 func (UnimplementedMiddlewareServer) GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProfits not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistProfitConds(context.Context, *ExistProfitCondsRequest) (*ExistProfitCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistProfitConds not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -125,6 +140,24 @@ func _Middleware_GetProfits_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistProfitConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistProfitCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistProfitConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistProfitConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistProfitConds(ctx, req.(*ExistProfitCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -139,6 +172,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetProfits",
 			Handler:    _Middleware_GetProfits_Handler,
+		},
+		{
+			MethodName: "ExistProfitConds",
+			Handler:    _Middleware_ExistProfitConds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

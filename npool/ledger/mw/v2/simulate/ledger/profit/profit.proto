@@ -21,6 +21,12 @@ service Middleware {
             body: "*"
         };
     }
+    rpc ExistProfitConds (ExistProfitCondsRequest) returns (ExistProfitCondsResponse) {
+        option (google.api.http) = {
+            post: "/v1/simulate/profit_ExistProfitConds"
+            body: "*"
+        };
+    }
 }
 
 message ProfitReq {
@@ -76,4 +82,12 @@ message GetProfitsRequest {
 message GetProfitsResponse {
     repeated Profit Infos = 10;
     uint32          Total = 20;
+}
+
+message ExistProfitCondsRequest {
+    Conds  Conds  = 10;
+}
+
+message ExistProfitCondsResponse {
+    bool   Info = 10;
 }

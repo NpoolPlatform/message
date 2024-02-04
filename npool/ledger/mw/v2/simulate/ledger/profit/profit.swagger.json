@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/simulate/profit_ExistProfitConds": {
+      "post": {
+        "operationId": "Middleware_ExistProfitConds",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2ExistProfitCondsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2ExistProfitCondsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
     "/v1/simulate/profit_GetProfit": {
       "post": {
         "operationId": "Middleware_GetProfit",
@@ -138,6 +170,22 @@
         },
         "Incoming": {
           "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v2ExistProfitCondsRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "$ref": "#/definitions/v2Conds"
+        }
+      }
+    },
+    "v2ExistProfitCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
         }
       }
     },
