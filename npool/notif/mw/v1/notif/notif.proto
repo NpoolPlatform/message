@@ -30,6 +30,7 @@ service Middleware {
     rpc GetNotif       (GetNotifRequest)       returns (GetNotifResponse)       {}
     rpc GetNotifs      (GetNotifsRequest)      returns (GetNotifsResponse)      {}
     rpc GenerateNotifs (GenerateNotifsRequest) returns (GenerateNotifsResponse) {}
+    rpc GenerateMultiNotifs (GenerateMultiNotifsRequest) returns (GenerateMultiNotifsResponse) {}
     rpc ExistNotifConds (ExistNotifCondsRequest) returns (ExistNotifCondsResponse) {}
     rpc DeleteNotif     (DeleteNotifRequest)     returns (DeleteNotifResponse)     {
         option (google.api.http) = {
@@ -176,6 +177,22 @@ message GenerateNotifsRequest {
 }
 
 message GenerateNotifsResponse {
+    repeated Notif Infos = 10;
+}
+
+message GenerateMultiNotifsRequest {
+    string AppID = 10;
+    message _NotifReq {
+        optional string                                     UserID    = 10;
+        basetypes.v1.UsedFor                                EventType = 20;
+        optional .notif.middleware.template.v1.TemplateVars Vars      = 30;
+        optional string                                     Extra     = 40;
+        basetypes.v1.NotifType                              NotifType = 50;
+    }
+    repeated _NotifReq Reqs = 20;
+}
+
+message GenerateMultiNotifsResponse {
     repeated Notif Infos = 10;
 }
 

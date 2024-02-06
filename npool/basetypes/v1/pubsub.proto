@@ -27,6 +27,7 @@ enum MsgID {
     CreateGoodBenefitReq         = 3000;
 
     OrderPaidReq                 = 4000;
+    OrderChildsRenewReq          = 4010;
 
     CreateSampleMsgReq           = 100000000;
 }
@@ -42,3 +43,4 @@ message MsgError {
     string Value = 10;
     string Error = 20;
 }
+
