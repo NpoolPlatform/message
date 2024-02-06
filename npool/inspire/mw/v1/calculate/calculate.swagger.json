@@ -1,0 +1,247 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/mw/v1/calculate/calculate.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/calculate_Calculate": {
+      "post": {
+        "operationId": "Middleware_Calculate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CalculateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CalculateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CalculateRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "PaymentCoinTypeID": {
+          "type": "string"
+        },
+        "PaymentCoinUSDCurrency": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "PaymentAmount": {
+          "type": "string",
+          "title": "Payment amount in payment coin amount"
+        },
+        "GoodValue": {
+          "type": "string",
+          "title": "Good value in payment coin amount"
+        },
+        "GoodValueUSD": {
+          "type": "string"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+        "HasCommission": {
+          "type": "boolean"
+        },
+        "OrderCreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CalculateResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Statement"
+          }
+        }
+      }
+    },
+    "v1SettleType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleType",
+        "GoodOrderPayment",
+        "TechniqueServiceFee"
+      ],
+      "default": "DefaultSettleType",
+      "title": "- GoodOrderPayment: Divide commission according to order payment amount or good value\n - TechniqueServiceFee: Divice commission according to order technique fee"
+    },
+    "v1Statement": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "DirectContributorID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"direct_contributor_id\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "AppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_id\""
+        },
+        "OrderID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"order_id\""
+        },
+        "SelfOrder": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"self_order\""
+        },
+        "PaymentID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "PaymentCoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_coin_type_id\""
+        },
+        "PaymentCoinUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_coin_usd_currency\""
+        },
+        "Units": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"units_v1\""
+        },
+        "Amount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"amount\""
+        },
+        "USDAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"usd_amount\""
+        },
+        "Commission": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"commission\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"deleted_at\""
+        }
+      }
+    }
+  }
+}

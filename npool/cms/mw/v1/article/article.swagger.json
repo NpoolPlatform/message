@@ -1,0 +1,395 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/cms/mw/v1/article/article.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Article": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "ISO": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"iso\""
+        },
+        "CategoryID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"category_id\""
+        },
+        "CategoryName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"category_name\""
+        },
+        "AuthorID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"author_id\""
+        },
+        "ArticleKey": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"article_key\""
+        },
+        "Title": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"title\""
+        },
+        "Subtitle": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"subtitle\""
+        },
+        "Digest": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"digest\""
+        },
+        "StatusStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"status\""
+        },
+        "Status": {
+          "$ref": "#/definitions/v1ArticleStatus"
+        },
+        "Host": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"host\""
+        },
+        "Version": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"version\""
+        },
+        "ContentURL": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"content_url\""
+        },
+        "Latest": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"latest\""
+        },
+        "PublishedAt": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"published_at\""
+        },
+        "ACLEnabled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"acl_enabled\""
+        },
+        "ACLRoleIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1ArticleReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ISO": {
+          "type": "string"
+        },
+        "CategoryID": {
+          "type": "string"
+        },
+        "AuthorID": {
+          "type": "string"
+        },
+        "ArticleKey": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Subtitle": {
+          "type": "string"
+        },
+        "Digest": {
+          "type": "string"
+        },
+        "Status": {
+          "$ref": "#/definitions/v1ArticleStatus"
+        },
+        "Host": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ContentURL": {
+          "type": "string"
+        },
+        "Latest": {
+          "type": "boolean"
+        },
+        "ACLEnabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ArticleStatus": {
+      "type": "string",
+      "enum": [
+        "DefaultArticleStatus",
+        "Draft",
+        "Published"
+      ],
+      "default": "DefaultArticleStatus"
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ISO": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CategoryID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AuthorID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ArticleKey": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Title": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Subtitle": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Digest": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Status": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Version": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Latest": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Host": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ContentURL": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "ACLEnabled": {
+          "$ref": "#/definitions/v1BoolVal"
+        }
+      }
+    },
+    "v1CreateArticleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Article"
+        }
+      }
+    },
+    "v1DeleteArticleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Article"
+        }
+      }
+    },
+    "v1ExistArticleCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistArticleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetArticleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Article"
+        }
+      }
+    },
+    "v1GetArticlesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Article"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateArticleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Article"
+        }
+      }
+    }
+  }
+}

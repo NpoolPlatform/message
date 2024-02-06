@@ -1,0 +1,327 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/basal/mw/v1/api/api.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1API": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "ProtocolStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"protocol\""
+        },
+        "Protocol": {
+          "$ref": "#/definitions/v1Protocol"
+        },
+        "ServiceName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"service_name\""
+        },
+        "MethodStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"method\""
+        },
+        "Method": {
+          "$ref": "#/definitions/v1Method"
+        },
+        "MethodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"method_name\""
+        },
+        "Path": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"path\""
+        },
+        "Exported": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"exported\""
+        },
+        "PathPrefix": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"path_prefix\""
+        },
+        "DomainsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"domains\""
+        },
+        "Domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Deprecated": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"deprecated\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1APIReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Protocol": {
+          "$ref": "#/definitions/v1Protocol"
+        },
+        "ServiceName": {
+          "type": "string"
+        },
+        "Method": {
+          "$ref": "#/definitions/v1Method"
+        },
+        "MethodName": {
+          "type": "string"
+        },
+        "Path": {
+          "type": "string"
+        },
+        "Exported": {
+          "type": "boolean"
+        },
+        "PathPrefix": {
+          "type": "string"
+        },
+        "Domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Deprecated": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Protocol": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "ServiceName": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Method": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Path": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Exported": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Deprecated": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CreateAPIResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1API"
+        }
+      }
+    },
+    "v1CreateAPIsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1API"
+          }
+        }
+      }
+    },
+    "v1DeleteAPIResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1API"
+        }
+      }
+    },
+    "v1ExistAPIResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetAPIsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1API"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetDomainsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1Method": {
+      "type": "string",
+      "enum": [
+        "DefaultMethod",
+        "GET",
+        "POST",
+        "STREAM"
+      ],
+      "default": "DefaultMethod"
+    },
+    "v1Protocol": {
+      "type": "string",
+      "enum": [
+        "DefaultProtocol",
+        "GRPC",
+        "HTTP"
+      ],
+      "default": "DefaultProtocol"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAPIResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1API"
+        }
+      }
+    }
+  }
+}

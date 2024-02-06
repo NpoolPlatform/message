@@ -1,0 +1,1256 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/order/gw/v1/order/order.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/app/user/order": {
+      "post": {
+        "operationId": "Gateway_CreateAppUserOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppUserOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/order": {
+      "post": {
+        "operationId": "Gateway_CreateOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ordergatewayorder1v1CreateOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ordergatewayorder1v1CreateOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/orders": {
+      "post": {
+        "operationId": "Gateway_CreateOrders",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ordergatewayorder1v1CreateOrdersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ordergatewayorder1v1CreateOrdersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/user/order": {
+      "post": {
+        "operationId": "Gateway_CreateUserOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateUserOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/orders": {
+      "post": {
+        "operationId": "Gateway_GetAppOrders",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppOrdersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppOrdersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/user/orders": {
+      "post": {
+        "operationId": "Gateway_GetAppUserOrders",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserOrdersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppUserOrdersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/n/app/orders": {
+      "post": {
+        "operationId": "Gateway_GetNAppOrders",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppOrdersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppOrdersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/order": {
+      "post": {
+        "operationId": "Gateway_GetOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ordergatewayorder1v1GetOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ordergatewayorder1v1GetOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/orders": {
+      "post": {
+        "operationId": "Gateway_GetOrders",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ordergatewayorder1v1GetOrdersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ordergatewayorder1v1GetOrdersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/user/orders": {
+      "post": {
+        "operationId": "Gateway_GetUserOrders",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUserOrdersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetUserOrdersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/app/user/order": {
+      "post": {
+        "operationId": "Gateway_UpdateAppUserOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppUserOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/order": {
+      "post": {
+        "operationId": "Gateway_UpdateOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ordergatewayorder1v1UpdateOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ordergatewayorder1v1UpdateOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/user/order": {
+      "post": {
+        "operationId": "Gateway_UpdateUserOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "ordergatewayorder1v1CreateOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PaymentCoinID": {
+          "type": "string"
+        },
+        "ParentOrderID": {
+          "type": "string"
+        },
+        "PayWithBalanceAmount": {
+          "type": "string"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        }
+      }
+    },
+    "ordergatewayorder1v1CreateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
+        }
+      }
+    },
+    "ordergatewayorder1v1CreateOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PaymentCoinID": {
+          "type": "string"
+        },
+        "PayWithBalanceAmount": {
+          "type": "string"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        },
+        "Orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CreateOrdersRequestOrderReq"
+          }
+        }
+      }
+    },
+    "ordergatewayorder1v1CreateOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
+          }
+        }
+      }
+    },
+    "ordergatewayorder1v1GetOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "ordergatewayorder1v1GetOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
+        }
+      }
+    },
+    "ordergatewayorder1v1GetOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "ordergatewayorder1v1GetOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "ordergatewayorder1v1Order": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "ParentOrderID": {
+          "type": "string"
+        },
+        "ParentOrderGoodID": {
+          "type": "string"
+        },
+        "ParentOrderGoodName": {
+          "type": "string"
+        },
+        "ParentOrderAppGoodID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinPresale": {
+          "type": "boolean"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "GoodUnit": {
+          "type": "string"
+        },
+        "GoodUnitPrice": {
+          "type": "string"
+        },
+        "GoodValue": {
+          "type": "string"
+        },
+        "GoodValueUSD": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
+        "PaymentCoinTypeID": {
+          "type": "string"
+        },
+        "PaymentCoinName": {
+          "type": "string"
+        },
+        "PaymentCoinLogo": {
+          "type": "string"
+        },
+        "PaymentCoinUnit": {
+          "type": "string"
+        },
+        "PaymentCoinUSDCurrency": {
+          "type": "string"
+        },
+        "PaymentLiveUSDCurrency": {
+          "type": "string"
+        },
+        "PaymentLocalUSDCurrency": {
+          "type": "string"
+        },
+        "PaymentAddress": {
+          "type": "string"
+        },
+        "PaymentAmount": {
+          "type": "string"
+        },
+        "PaymentStartAmount": {
+          "type": "string"
+        },
+        "PaymentFinishAmount": {
+          "type": "string"
+        },
+        "PayWithBalanceAmount": {
+          "type": "string"
+        },
+        "TransferAmount": {
+          "type": "string"
+        },
+        "PayWithParent": {
+          "type": "boolean"
+        },
+        "CreateMethod": {
+          "$ref": "#/definitions/v1OrderCreateMethod"
+        },
+        "MultiPaymentCoins": {
+          "type": "boolean"
+        },
+        "PaymentAmounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PaymentAmount"
+          }
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PaidAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "OrderState": {
+          "$ref": "#/definitions/v1OrderState"
+        },
+        "CancelState": {
+          "$ref": "#/definitions/v1OrderState"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
+        },
+        "PaymentType": {
+          "$ref": "#/definitions/v1PaymentType"
+        },
+        "PaymentState": {
+          "$ref": "#/definitions/v1PaymentState"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        },
+        "Coupons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coupon"
+          }
+        },
+        "LastBenefitAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UserSetCanceled": {
+          "type": "boolean"
+        },
+        "AdminSetCanceled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ordergatewayorder1v1UpdateOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Canceled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ordergatewayorder1v1UpdateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Coupon": {
+      "type": "object",
+      "properties": {
+        "CouponID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "CouponName": {
+          "type": "string"
+        },
+        "CouponValue": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "v1CreateAppUserOrderRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ParentOrderID": {
+          "type": "string"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        }
+      }
+    },
+    "v1CreateAppUserOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
+        }
+      }
+    },
+    "v1CreateOrdersRequestOrderReq": {
+      "type": "object",
+      "properties": {
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Parent": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CreateUserOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ParentOrderID": {
+          "type": "string"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        }
+      }
+    },
+    "v1CreateUserOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
+        }
+      }
+    },
+    "v1GetAppOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetAppUserOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppUserOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNAppOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetNAppOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetUserOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetUserOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
+    },
+    "v1InvestmentType": {
+      "type": "string",
+      "enum": [
+        "DefaultInvestmentType",
+        "UnionMining",
+        "FullPayment"
+      ],
+      "default": "DefaultInvestmentType"
+    },
+    "v1OrderCreateMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderCreateMethod",
+        "OrderCreatedByPurchase",
+        "OrderCreatedByAdmin",
+        "OrderCreatedByRenew"
+      ],
+      "default": "DefaultOrderCreateMethod"
+    },
+    "v1OrderState": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderState",
+        "OrderStateCreated",
+        "OrderStateWaitPayment",
+        "OrderStatePaymentTransferReceived",
+        "OrderStatePaymentTransferBookKeeping",
+        "OrderStatePaymentSpendBalance",
+        "OrderStateTransferGoodStockLocked",
+        "OrderStateAddCommission",
+        "OrderStateAchievementBookKeeping",
+        "OrderStatePaymentUnlockAccount",
+        "OrderStateUpdatePaidChilds",
+        "OrderStatePaid",
+        "OrderStateTransferGoodStockWaitStart",
+        "OrderStateUpdateInServiceChilds",
+        "OrderStateInService",
+        "OrderStatePaymentTimeout",
+        "OrderStatePreCancel",
+        "OrderStatePreExpired",
+        "OrderStateRestoreExpiredStock",
+        "OrderStateUpdateExpiredChilds",
+        "OrderStateRestoreCanceledStock",
+        "OrderStateDeductLockedCommission",
+        "OrderStateCancelAchievement",
+        "OrderStateReturnCanceledBalance",
+        "OrderStateCanceledTransferBookKeeping",
+        "OrderStateCancelUnlockPaymentAccount",
+        "OrderStateUpdateCanceledChilds",
+        "OrderStateCanceled",
+        "OrderStateExpired",
+        "OrderStateChildPaidByParent",
+        "OrderStateChildInServiceByParent",
+        "OrderStateChildExpiredByParent",
+        "OrderStateChildCanceledByParent"
+      ],
+      "default": "DefaultOrderState",
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state\n - OrderStateChildPaidByParent: Child paid"
+    },
+    "v1OrderType": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderType",
+        "Normal",
+        "Offline",
+        "Airdrop"
+      ],
+      "default": "DefaultOrderType"
+    },
+    "v1PaymentAmount": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "USDCurrency": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PaymentState": {
+      "type": "string",
+      "enum": [
+        "DefaultPaymentState",
+        "PaymentStateWait",
+        "PaymentStateDone",
+        "PaymentStateCanceled",
+        "PaymentStateTimeout",
+        "PaymentStateNoPayment"
+      ],
+      "default": "DefaultPaymentState"
+    },
+    "v1PaymentType": {
+      "type": "string",
+      "enum": [
+        "DefaultPaymentType",
+        "PayWithBalanceOnly",
+        "PayWithTransferOnly",
+        "PayWithTransferAndBalance",
+        "PayWithParentOrder",
+        "PayWithOffline",
+        "PayWithNoPayment"
+      ],
+      "default": "DefaultPaymentType"
+    },
+    "v1UpdateAppUserOrderRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Canceled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateAppUserOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
+        }
+      }
+    },
+    "v1UpdateUserOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Canceled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateUserOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
+        }
+      }
+    }
+  }
+}

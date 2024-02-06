@@ -1,0 +1,455 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/chain/mw/v1/coin/coin.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Coin": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "Logo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"logo\""
+        },
+        "Presale": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"presale\""
+        },
+        "ReservedAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reserved_amount\""
+        },
+        "Unit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit\""
+        },
+        "ENV": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"env\""
+        },
+        "ForPay": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"for_pay\""
+        },
+        "HomePage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"home_page\""
+        },
+        "Specs": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"specs\""
+        },
+        "StableUSD": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"stable_usd\""
+        },
+        "FeeCoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_type_id\""
+        },
+        "FeeCoinName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_name\""
+        },
+        "FeeCoinLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_logo\""
+        },
+        "FeeCoinUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_unit\""
+        },
+        "FeeCoinENV": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_coin_env\""
+        },
+        "WithdrawFeeByStableUSD": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"withdraw_fee_by_stable_usd\""
+        },
+        "WithdrawFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"withdraw_fee_amount\""
+        },
+        "CollectFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"collect_fee_amount\""
+        },
+        "HotWalletFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"hot_wallet_fee_amount\""
+        },
+        "LowFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"low_fee_amount\""
+        },
+        "HotLowFeeAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"hot_low_fee_amount\""
+        },
+        "HotWalletAccountAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"hot_wallet_account_amount\""
+        },
+        "PaymentAccountCollectAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_account_collect_amount\""
+        },
+        "LeastTransferAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"least_transfer_amount\""
+        },
+        "Disabled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"disabled\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "NeedMemo": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"need_memo\""
+        },
+        "RefreshCurrency": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"refresh_currency\""
+        },
+        "CheckNewAddressBalance": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"check_new_address_balance\""
+        },
+        "ChainType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"chain_name\""
+        },
+        "ChainNativeUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"native_unit\""
+        },
+        "ChainAtomicUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"atomic_unit\""
+        },
+        "ChainUnitExp": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"unit_dec_exp\""
+        },
+        "ChainID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"chain_id\""
+        },
+        "ChainNickname": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"nickname\""
+        },
+        "GasTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"gas_type\""
+        },
+        "GasType": {
+          "$ref": "#/definitions/v1GasType"
+        }
+      }
+    },
+    "v1CoinReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Presale": {
+          "type": "boolean"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "ENV": {
+          "type": "string"
+        },
+        "ReservedAmount": {
+          "type": "string"
+        },
+        "ForPay": {
+          "type": "boolean"
+        },
+        "HomePage": {
+          "type": "string"
+        },
+        "Specs": {
+          "type": "string"
+        },
+        "FeeCoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawFeeByStableUSD": {
+          "type": "boolean"
+        },
+        "WithdrawFeeAmount": {
+          "type": "string"
+        },
+        "CollectFeeAmount": {
+          "type": "string"
+        },
+        "HotWalletFeeAmount": {
+          "type": "string"
+        },
+        "LowFeeAmount": {
+          "type": "string"
+        },
+        "HotLowFeeAmount": {
+          "type": "string"
+        },
+        "HotWalletAccountAmount": {
+          "type": "string"
+        },
+        "PaymentAccountCollectAmount": {
+          "type": "string"
+        },
+        "Disabled": {
+          "type": "boolean"
+        },
+        "StableUSD": {
+          "type": "boolean"
+        },
+        "LeastTransferAmount": {
+          "type": "string"
+        },
+        "NeedMemo": {
+          "type": "boolean"
+        },
+        "RefreshCurrency": {
+          "type": "boolean"
+        },
+        "ChainType": {
+          "type": "string"
+        },
+        "ChainNativeUnit": {
+          "type": "string"
+        },
+        "ChainAtomicUnit": {
+          "type": "string"
+        },
+        "ChainUnitExp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GasType": {
+          "$ref": "#/definitions/v1GasType"
+        },
+        "ChainID": {
+          "type": "string"
+        },
+        "ChainNickname": {
+          "type": "string"
+        },
+        "ChainNativeCoinName": {
+          "type": "string"
+        },
+        "CheckNewAddressBalance": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Presale": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "ENV": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ForPay": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "Disabled": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Name": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Names": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CreateCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coin"
+        }
+      }
+    },
+    "v1ExistCoinCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GasType": {
+      "type": "string",
+      "enum": [
+        "DefaultGasType",
+        "FixedGas",
+        "DynamicGas",
+        "GasUnsupported"
+      ],
+      "default": "DefaultGasType"
+    },
+    "v1GetCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coin"
+        }
+      }
+    },
+    "v1GetCoinsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coin"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coin"
+        }
+      }
+    }
+  }
+}

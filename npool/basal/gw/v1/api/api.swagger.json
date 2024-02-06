@@ -1,0 +1,307 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/basal/gw/v1/api/api.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/get/apis": {
+      "post": {
+        "operationId": "Gateway_GetAPIs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/basalgatewayapiv1GetAPIsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/basalgatewayapiv1GetAPIsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/domains": {
+      "post": {
+        "operationId": "Gateway_GetDomains",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/basalgatewayapiv1GetDomainsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/basalgatewayapiv1GetDomainsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/api": {
+      "post": {
+        "operationId": "Gateway_UpdateAPI",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/basalgatewayapiv1UpdateAPIResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/basalgatewayapiv1UpdateAPIRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "basalgatewayapiv1GetAPIsRequest": {
+      "type": "object",
+      "properties": {
+        "ServiceName": {
+          "type": "string"
+        },
+        "Exported": {
+          "type": "boolean"
+        },
+        "Depracated": {
+          "type": "boolean"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "basalgatewayapiv1GetAPIsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1API"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "basalgatewayapiv1GetDomainsRequest": {
+      "type": "object"
+    },
+    "basalgatewayapiv1GetDomainsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "basalgatewayapiv1UpdateAPIRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Depracated": {
+          "type": "boolean"
+        }
+      }
+    },
+    "basalgatewayapiv1UpdateAPIResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1API"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1API": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "ProtocolStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"protocol\""
+        },
+        "Protocol": {
+          "$ref": "#/definitions/v1Protocol"
+        },
+        "ServiceName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"service_name\""
+        },
+        "MethodStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"method\""
+        },
+        "Method": {
+          "$ref": "#/definitions/v1Method"
+        },
+        "MethodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"method_name\""
+        },
+        "Path": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"path\""
+        },
+        "Exported": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"exported\""
+        },
+        "PathPrefix": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"path_prefix\""
+        },
+        "DomainsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"domains\""
+        },
+        "Domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Deprecated": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"deprecated\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1Method": {
+      "type": "string",
+      "enum": [
+        "DefaultMethod",
+        "GET",
+        "POST",
+        "STREAM"
+      ],
+      "default": "DefaultMethod"
+    },
+    "v1Protocol": {
+      "type": "string",
+      "enum": [
+        "DefaultProtocol",
+        "GRPC",
+        "HTTP"
+      ],
+      "default": "DefaultProtocol"
+    }
+  }
+}

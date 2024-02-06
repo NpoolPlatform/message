@@ -1,0 +1,440 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/review/gw/v2/withdraw/withdraw.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v2/get/app/withdrawreviews": {
+      "post": {
+        "operationId": "Gateway_GetAppWithdrawReviews",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GetAppWithdrawReviewsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2GetAppWithdrawReviewsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v2/get/withdrawreviews": {
+      "post": {
+        "operationId": "Gateway_GetWithdrawReviews",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GetWithdrawReviewsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2GetWithdrawReviewsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v2/update/app/withdrawreview": {
+      "post": {
+        "operationId": "Gateway_UpdateAppWithdrawReview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UpdateAppWithdrawReviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UpdateAppWithdrawReviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v2/update/withdrawreview": {
+      "post": {
+        "operationId": "Gateway_UpdateWithdrawReview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UpdateWithdrawReviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UpdateWithdrawReviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1KycState": {
+      "type": "string",
+      "enum": [
+        "DefaultState",
+        "Approved",
+        "Reviewing",
+        "Rejected"
+      ],
+      "default": "DefaultState"
+    },
+    "v1ReviewObjectType": {
+      "type": "string",
+      "enum": [
+        "DefaultObjectType",
+        "ObjectKyc",
+        "ObjectWithdrawal",
+        "ObjectRandomCouponCash"
+      ],
+      "default": "DefaultObjectType"
+    },
+    "v1ReviewState": {
+      "type": "string",
+      "enum": [
+        "DefaultReviewState",
+        "Approved",
+        "Wait",
+        "Rejected"
+      ],
+      "default": "DefaultReviewState"
+    },
+    "v1ReviewTriggerType": {
+      "type": "string",
+      "enum": [
+        "DefaultTriggerType",
+        "AutoReviewed",
+        "LargeAmount",
+        "InsufficientFunds",
+        "InsufficientGas",
+        "InsufficientFundsGas"
+      ],
+      "default": "DefaultTriggerType",
+      "title": "- AutoReviewed: Withdrawal triggers"
+    },
+    "v1WithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultWithdrawState",
+        "Created",
+        "Reviewing",
+        "Approved",
+        "Transferring",
+        "PreRejected",
+        "ReturnRejectedBalance",
+        "Rejected",
+        "PreFail",
+        "ReturnFailBalance",
+        "TransactionFail",
+        "PreSuccessful",
+        "SpendSuccessfulBalance",
+        "Successful"
+      ],
+      "default": "DefaultWithdrawState"
+    },
+    "v2GetAppWithdrawReviewsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v2GetAppWithdrawReviewsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2WithdrawReview"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2GetWithdrawReviewsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v2GetWithdrawReviewsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2WithdrawReview"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v2UpdateAppWithdrawReviewRequest": {
+      "type": "object",
+      "properties": {
+        "ReviewID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1ReviewState"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v2UpdateAppWithdrawReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2WithdrawReview"
+        }
+      }
+    },
+    "v2UpdateWithdrawReviewRequest": {
+      "type": "object",
+      "properties": {
+        "ReviewID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1ReviewState"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "v2UpdateWithdrawReviewResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2WithdrawReview"
+        }
+      }
+    },
+    "v2WithdrawReview": {
+      "type": "object",
+      "properties": {
+        "WithdrawID": {
+          "type": "string"
+        },
+        "WithdrawState": {
+          "$ref": "#/definitions/v1WithdrawState"
+        },
+        "ReviewID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "KycState": {
+          "$ref": "#/definitions/v1KycState"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "Reviewer": {
+          "type": "string"
+        },
+        "ObjectType": {
+          "$ref": "#/definitions/v1ReviewObjectType"
+        },
+        "Domain": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1ReviewState"
+        },
+        "Trigger": {
+          "$ref": "#/definitions/v1ReviewTriggerType"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "FeeAmount": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "PlatformTransactionID": {
+          "type": "string"
+        },
+        "ChainTransactionID": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

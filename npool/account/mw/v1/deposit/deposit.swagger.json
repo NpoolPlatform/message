@@ -1,0 +1,327 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/account/mw/v1/deposit/deposit.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Account": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "AccountID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"account_id\""
+        },
+        "Address": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"address\""
+        },
+        "Active": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"active\""
+        },
+        "Locked": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"locked\""
+        },
+        "LockedByStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"locked_by\""
+        },
+        "LockedBy": {
+          "$ref": "#/definitions/v1AccountLockedBy"
+        },
+        "Blocked": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"blocked\""
+        },
+        "CollectingTID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"collecting_tid\""
+        },
+        "Incoming": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"incoming\""
+        },
+        "Outcoming": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"outcoming\""
+        },
+        "ScannableAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"scannable_at\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1AccountLockedBy": {
+      "type": "string",
+      "enum": [
+        "DefaultLockedBy",
+        "Payment",
+        "Collecting"
+      ],
+      "default": "DefaultLockedBy"
+    },
+    "v1AccountReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "Locked": {
+          "type": "boolean"
+        },
+        "LockedBy": {
+          "$ref": "#/definitions/v1AccountLockedBy"
+        },
+        "Blocked": {
+          "type": "boolean"
+        },
+        "CollectingTID": {
+          "type": "string"
+        },
+        "Incoming": {
+          "type": "string"
+        },
+        "Outcoming": {
+          "type": "string"
+        },
+        "ScannableAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AddBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AccountID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Address": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Active": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Locked": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "LockedBy": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Blocked": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "ScannableAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CreateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1DeleteAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1GetAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1GetAccountsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Account"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SubBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,442 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/build-chain/v1/buildchain.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "BuildChain"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/tokeninfo": {
+      "post": {
+        "operationId": "BuildChain_CreateTokenInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateTokenInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateTokenInfoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "BuildChain"
+        ]
+      }
+    },
+    "/v1/faucet": {
+      "post": {
+        "operationId": "BuildChain_Faucet",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1FaucetResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1FaucetRequst"
+            }
+          }
+        ],
+        "tags": [
+          "BuildChain"
+        ]
+      }
+    },
+    "/v1/get/tokeninfos": {
+      "post": {
+        "operationId": "BuildChain_GetTokenInfos",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetTokenInfosResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetTokenInfosRequest"
+            }
+          }
+        ],
+        "tags": [
+          "BuildChain"
+        ]
+      }
+    },
+    "/v1/version": {
+      "post": {
+        "operationId": "BuildChain_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "BuildChain"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ChainType": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "TokenType": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OfficialContract": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Name": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Unit": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Decimal": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "PrivateContract": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Remark": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CreateTokenInfoRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TokenInfoReq"
+        },
+        "Force": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CreateTokenInfoResponse": {
+      "type": "object",
+      "properties": {
+        "info": {
+          "$ref": "#/definitions/v1TokenInfo"
+        },
+        "Success": {
+          "type": "boolean"
+        },
+        "Msg": {
+          "type": "string"
+        }
+      }
+    },
+    "v1FaucetRequst": {
+      "type": "object",
+      "properties": {
+        "To": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "OfficialContract": {
+          "type": "string"
+        }
+      }
+    },
+    "v1FaucetResponse": {
+      "type": "object",
+      "properties": {
+        "Success": {
+          "type": "boolean"
+        },
+        "Msg": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetTokenInfosRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "$ref": "#/definitions/v1Conds"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetTokenInfosResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TokenInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1TokenInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "Unit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"unit\""
+        },
+        "Decimal": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"decimal\""
+        },
+        "ChainType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"chain_type\""
+        },
+        "TokenType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"token_type\""
+        },
+        "OfficialContract": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"official_contract\""
+        },
+        "PrivateContract": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"private_contract\""
+        },
+        "Remark": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"remark\""
+        },
+        "Data": {
+          "type": "string",
+          "format": "byte",
+          "title": "@inject_tag: sql:\"data\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1TokenInfoReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "Decimal": {
+          "type": "string"
+        },
+        "ChainType": {
+          "type": "string"
+        },
+        "TokenType": {
+          "type": "string"
+        },
+        "OfficialContract": {
+          "type": "string"
+        },
+        "PrivateContract": {
+          "type": "string"
+        },
+        "Remark": {
+          "type": "string"
+        },
+        "Data": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
