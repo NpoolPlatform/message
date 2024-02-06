@@ -1,0 +1,449 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appuser/gw/v1/oauth/appoauththirdparty/appoauththirdparty.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/appoauththirdparty": {
+      "post": {
+        "operationId": "Gateway_CreateOAuthThirdParty",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayoauthappoauththirdpartyv1CreateOAuthThirdPartyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayoauthappoauththirdpartyv1CreateOAuthThirdPartyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/delete/appoauththirdparty": {
+      "post": {
+        "operationId": "Gateway_DeleteOAuthThirdParty",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayoauthappoauththirdpartyv1DeleteOAuthThirdPartyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayoauthappoauththirdpartyv1DeleteOAuthThirdPartyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/appoauththirdparties": {
+      "post": {
+        "operationId": "Gateway_GetAppOAuthThirdParties",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppOAuthThirdPartiesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppOAuthThirdPartiesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/appoauththirdparties": {
+      "post": {
+        "operationId": "Gateway_GetOAuthThirdParties",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayoauthappoauththirdpartyv1GetOAuthThirdPartiesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayoauthappoauththirdpartyv1GetOAuthThirdPartiesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/appoauththirdparty": {
+      "post": {
+        "operationId": "Gateway_UpdateOAuthThirdParty",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/appusergatewayoauthappoauththirdpartyv1UpdateOAuthThirdPartyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appusergatewayoauthappoauththirdpartyv1UpdateOAuthThirdPartyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "appusergatewayoauthappoauththirdpartyv1CreateOAuthThirdPartyRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "ThirdPartyID": {
+          "type": "string"
+        },
+        "ClientID": {
+          "type": "string"
+        },
+        "ClientSecret": {
+          "type": "string"
+        },
+        "CallbackURL": {
+          "type": "string"
+        }
+      }
+    },
+    "appusergatewayoauthappoauththirdpartyv1CreateOAuthThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OAuthThirdParty"
+        }
+      }
+    },
+    "appusergatewayoauthappoauththirdpartyv1DeleteOAuthThirdPartyRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "appusergatewayoauthappoauththirdpartyv1DeleteOAuthThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OAuthThirdParty"
+        }
+      }
+    },
+    "appusergatewayoauthappoauththirdpartyv1GetOAuthThirdPartiesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "appusergatewayoauthappoauththirdpartyv1GetOAuthThirdPartiesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OAuthThirdParty"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "appusergatewayoauthappoauththirdpartyv1UpdateOAuthThirdPartyRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "ThirdPartyID": {
+          "type": "string"
+        },
+        "ClientID": {
+          "type": "string"
+        },
+        "ClientSecret": {
+          "type": "string"
+        },
+        "CallbackURL": {
+          "type": "string"
+        }
+      }
+    },
+    "appusergatewayoauthappoauththirdpartyv1UpdateOAuthThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OAuthThirdParty"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1GetAppOAuthThirdPartiesRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppOAuthThirdPartiesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OAuthThirdParty"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1OAuthThirdParty": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "ThirdPartyID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"third_party_id\""
+        },
+        "ClientID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_id\""
+        },
+        "ClientSecret": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_secret\""
+        },
+        "CallbackURL": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"callback_url\""
+        },
+        "ClientNameStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_name\""
+        },
+        "ClientName": {
+          "$ref": "#/definitions/v1SignMethod"
+        },
+        "ClientTag": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_tag\""
+        },
+        "ClientLogoURL": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_logo_url\""
+        },
+        "ClientOAuthURL": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_oauth_url\""
+        },
+        "ResponseType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"response_type\""
+        },
+        "Scope": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"scope\""
+        },
+        "Salt": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"salt\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username",
+        "Reset"
+      ],
+      "default": "DefaultSignMethod"
+    }
+  }
+}

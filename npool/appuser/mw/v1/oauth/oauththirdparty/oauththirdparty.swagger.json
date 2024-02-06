@@ -1,0 +1,278 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appuser/mw/v1/oauth/oauththirdparty/oauththirdparty.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ClientName": {
+          "$ref": "#/definitions/v1Int32Val"
+        },
+        "ClientTag": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CreateOAuthThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OAuthThirdParty"
+        }
+      }
+    },
+    "v1DeleteOAuthThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OAuthThirdParty"
+        }
+      }
+    },
+    "v1ExistOAuthThirdPartyCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistOAuthThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetOAuthThirdPartiesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OAuthThirdParty"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetOAuthThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OAuthThirdParty"
+        }
+      }
+    },
+    "v1Int32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1OAuthThirdParty": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "ClientNameStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_name\""
+        },
+        "ClientName": {
+          "$ref": "#/definitions/v1SignMethod"
+        },
+        "ClientTag": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_tag\""
+        },
+        "ClientLogoURL": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_logo_url\""
+        },
+        "ClientOAuthURL": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_oauth_url\""
+        },
+        "ResponseType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"response_type\""
+        },
+        "Scope": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"scope\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1OAuthThirdPartyReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "ClientName": {
+          "$ref": "#/definitions/v1SignMethod"
+        },
+        "ClientTag": {
+          "type": "string"
+        },
+        "ClientLogoURL": {
+          "type": "string"
+        },
+        "ClientOAuthURL": {
+          "type": "string"
+        },
+        "ResponseType": {
+          "type": "string"
+        },
+        "Scope": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username",
+        "Reset"
+      ],
+      "default": "DefaultSignMethod"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateOAuthThirdPartyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OAuthThirdParty"
+        }
+      }
+    }
+  }
+}

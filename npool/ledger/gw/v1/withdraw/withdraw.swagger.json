@@ -1,0 +1,402 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/ledger/gw/v1/withdraw/withdraw.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/withdraw": {
+      "post": {
+        "operationId": "Gateway_CreateWithdraw",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateWithdrawResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateWithdrawRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/withdraws": {
+      "post": {
+        "operationId": "Gateway_GetAppWithdraws",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppWithdrawsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppWithdrawsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/n/app/withdraws": {
+      "post": {
+        "operationId": "Gateway_GetNAppWithdraws",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppWithdrawsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppWithdrawsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/withdraws": {
+      "post": {
+        "operationId": "Gateway_GetWithdraws",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetWithdrawsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetWithdrawsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateWithdrawRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v1SignMethod"
+        },
+        "VerificationCode": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateWithdrawResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Withdraw"
+        }
+      }
+    },
+    "v1GetAppWithdrawsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppWithdrawsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Withdraw"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNAppWithdrawsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetNAppWithdrawsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Withdraw"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetWithdrawsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetWithdrawsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Withdraw"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username",
+        "Reset"
+      ],
+      "default": "DefaultSignMethod"
+    },
+    "v1Withdraw": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "AddressLabels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "State": {
+          "$ref": "#/definitions/v1WithdrawState"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1WithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultWithdrawState",
+        "Created",
+        "Reviewing",
+        "Approved",
+        "Transferring",
+        "PreRejected",
+        "ReturnRejectedBalance",
+        "Rejected",
+        "PreFail",
+        "ReturnFailBalance",
+        "TransactionFail",
+        "PreSuccessful",
+        "SpendSuccessfulBalance",
+        "Successful"
+      ],
+      "default": "DefaultWithdrawState"
+    }
+  }
+}

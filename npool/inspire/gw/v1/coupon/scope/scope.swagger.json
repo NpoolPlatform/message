@@ -1,0 +1,278 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/gw/v1/coupon/scope/scope.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/scope": {
+      "post": {
+        "operationId": "Gateway_CreateScope",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateScopeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateScopeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/delete/scope": {
+      "post": {
+        "operationId": "Gateway_DeleteScope",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteScopeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteScopeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/scopes": {
+      "post": {
+        "operationId": "Gateway_GetScopes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetScopesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetScopesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CouponScope": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponScope",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponScope"
+    },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "v1CreateScopeRequest": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+        }
+      }
+    },
+    "v1CreateScopeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Scope"
+        }
+      }
+    },
+    "v1DeleteScopeRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteScopeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Scope"
+        }
+      }
+    },
+    "v1GetScopesRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetScopesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Scope"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1Scope": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "GoodTitle": {
+          "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
+        },
+        "CouponName": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+        },
+        "CouponCirculation": {
+          "type": "string"
+        },
+        "CouponDenomination": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}

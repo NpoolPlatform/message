@@ -1,0 +1,228 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/smoketest/mw/v1/testcase/cond/cond.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Cond": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "CondTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"cond_type\""
+        },
+        "CondType": {
+          "$ref": "#/definitions/v1CondType"
+        },
+        "TestCaseID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"test_case_id\""
+        },
+        "CondTestCaseID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"cond_test_case_id\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
+        },
+        "ArgumentMap": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"argument_map\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        },
+        "DeletedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"deleted_at\""
+        }
+      }
+    },
+    "v1CondReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "CondType": {
+          "$ref": "#/definitions/v1CondType"
+        },
+        "TestCaseID": {
+          "type": "string"
+        },
+        "CondTestCaseID": {
+          "type": "string"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ArgumentMap": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CondType": {
+      "type": "string",
+      "enum": [
+        "DefaultCondType",
+        "PreCondition",
+        "Cleaner"
+      ],
+      "default": "DefaultCondType"
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CondType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "TestCaseID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CondTestCaseID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v1CreateCondResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Cond"
+        }
+      }
+    },
+    "v1DeleteCondResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Cond"
+        }
+      }
+    },
+    "v1GetCondResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Cond"
+        }
+      }
+    },
+    "v1GetCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Cond"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateCondResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Cond"
+        }
+      }
+    }
+  }
+}

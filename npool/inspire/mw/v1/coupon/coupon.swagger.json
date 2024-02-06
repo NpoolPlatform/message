@@ -1,0 +1,379 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/mw/v1/coupon/coupon.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/coupon_DeleteCoupon": {
+      "post": {
+        "operationId": "Middleware_DeleteCoupon",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteCouponResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteCouponRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1Coupon": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "CouponTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_type\""
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "Denomination": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"denomination\""
+        },
+        "Circulation": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"circulation\""
+        },
+        "IssuedBy": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"issued_by\""
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end_at\""
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"duration_days\""
+        },
+        "Message": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"message\""
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "Allocated": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"allocated\""
+        },
+        "Threshold": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"threshold\""
+        },
+        "CouponConstraintStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_constraint\""
+        },
+        "CouponConstraint": {
+          "$ref": "#/definitions/v1CouponConstraint"
+        },
+        "Random": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"random\""
+        },
+        "CouponScopeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_scope\""
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+        },
+        "CashableProbability": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"cashable_probability\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1CouponConstraint": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponConstraint",
+        "Normal",
+        "PaymentThreshold"
+      ],
+      "default": "DefaultCouponConstraint"
+    },
+    "v1CouponReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Denomination": {
+          "type": "string"
+        },
+        "Circulation": {
+          "type": "string"
+        },
+        "IssuedBy": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Threshold": {
+          "type": "string",
+          "title": "For threshold coupon"
+        },
+        "CouponConstraint": {
+          "$ref": "#/definitions/v1CouponConstraint"
+        },
+        "Random": {
+          "type": "boolean"
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+        },
+        "CashableProbability": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CouponScope": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponScope",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponScope"
+    },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "v1CreateCouponResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coupon"
+        }
+      }
+    },
+    "v1DeleteCouponRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CouponReq"
+        }
+      }
+    },
+    "v1DeleteCouponResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coupon"
+        }
+      }
+    },
+    "v1GetCouponResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coupon"
+        }
+      }
+    },
+    "v1GetCouponsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coupon"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateCouponResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coupon"
+        }
+      }
+    }
+  }
+}

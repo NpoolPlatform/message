@@ -1,0 +1,229 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/appuser/mw/v1/user/login/history/history.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "LoginType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "ClientIP": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Location": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserAgent": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v1CreateHistoryResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1History"
+        }
+      }
+    },
+    "v1GetHistoriesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1History"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetHistoryResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1History"
+        }
+      }
+    },
+    "v1History": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "AppName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_name\""
+        },
+        "AppLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_logo\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "EmailAddress": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"email_address\""
+        },
+        "PhoneNO": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"phone_no\""
+        },
+        "ClientIP": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"client_ip\""
+        },
+        "UserAgent": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_agent\""
+        },
+        "Location": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"location\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "LoginTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"login_type\""
+        },
+        "LoginType": {
+          "$ref": "#/definitions/v1LoginType"
+        }
+      }
+    },
+    "v1HistoryReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "ClientIP": {
+          "type": "string"
+        },
+        "UserAgent": {
+          "type": "string"
+        },
+        "Location": {
+          "type": "string"
+        },
+        "LoginType": {
+          "$ref": "#/definitions/v1LoginType"
+        }
+      }
+    },
+    "v1LoginType": {
+      "type": "string",
+      "enum": [
+        "DefaultLoginType",
+        "FreshLogin",
+        "RefreshLogin"
+      ],
+      "default": "DefaultLoginType"
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}

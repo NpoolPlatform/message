@@ -1,0 +1,348 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/g11n/gw/v1/lang/lang.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/lang": {
+      "post": {
+        "operationId": "Gateway_CreateLang",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/g11ngatewaylangv1CreateLangResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/g11ngatewaylangv1CreateLangRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/langs": {
+      "post": {
+        "operationId": "Gateway_CreateLangs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/g11ngatewaylangv1CreateLangsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/g11ngatewaylangv1CreateLangsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/langs": {
+      "post": {
+        "operationId": "Gateway_GetLangs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/g11ngatewaylangv1GetLangsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/g11ngatewaylangv1GetLangsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/lang": {
+      "post": {
+        "operationId": "Gateway_UpdateLang",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/g11ngatewaylangv1UpdateLangResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/g11ngatewaylangv1UpdateLangRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "g11ngatewaylangv1CreateLangRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "Lang": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Short": {
+          "type": "string"
+        }
+      }
+    },
+    "g11ngatewaylangv1CreateLangResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Lang"
+        }
+      }
+    },
+    "g11ngatewaylangv1CreateLangsRequest": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1LangReq"
+          }
+        }
+      }
+    },
+    "g11ngatewaylangv1CreateLangsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Lang"
+          }
+        }
+      }
+    },
+    "g11ngatewaylangv1GetLangsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "g11ngatewaylangv1GetLangsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Lang"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "g11ngatewaylangv1UpdateLangRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Lang": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Short": {
+          "type": "string"
+        }
+      }
+    },
+    "g11ngatewaylangv1UpdateLangResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Lang"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Lang": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "Lang": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"lang\""
+        },
+        "Logo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"logo\""
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "Short": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"short\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1LangReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Lang": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Short": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

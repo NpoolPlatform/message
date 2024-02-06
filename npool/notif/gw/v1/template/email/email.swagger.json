@@ -1,0 +1,649 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/notif/gw/v1/template/email/email.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/app/emailtemplate": {
+      "post": {
+        "operationId": "Gateway_CreateAppEmailTemplate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppEmailTemplateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppEmailTemplateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/emailtemplate": {
+      "post": {
+        "operationId": "Gateway_CreateEmailTemplate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/notifgatewaytemplateemailv1CreateEmailTemplateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/notifgatewaytemplateemailv1CreateEmailTemplateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/emailtemplates": {
+      "post": {
+        "operationId": "Gateway_GetAppEmailTemplates",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppEmailTemplatesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppEmailTemplatesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/emailtemplate": {
+      "post": {
+        "operationId": "Gateway_GetEmailTemplate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/notifgatewaytemplateemailv1GetEmailTemplateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/notifgatewaytemplateemailv1GetEmailTemplateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/emailtemplates": {
+      "post": {
+        "operationId": "Gateway_GetEmailTemplates",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/notifgatewaytemplateemailv1GetEmailTemplatesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/notifgatewaytemplateemailv1GetEmailTemplatesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/app/emailtemplate": {
+      "post": {
+        "operationId": "Gateway_UpdateAppEmailTemplate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppEmailTemplateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppEmailTemplateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/emailtemplate": {
+      "post": {
+        "operationId": "Gateway_UpdateEmailTemplate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/notifgatewaytemplateemailv1UpdateEmailTemplateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/notifgatewaytemplateemailv1UpdateEmailTemplateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "notifgatewaytemplateemailv1CreateEmailTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Sender": {
+          "type": "string"
+        },
+        "ReplyTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CCTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Body": {
+          "type": "string"
+        },
+        "DefaultToUsername": {
+          "type": "string"
+        }
+      }
+    },
+    "notifgatewaytemplateemailv1CreateEmailTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailTemplate"
+        }
+      }
+    },
+    "notifgatewaytemplateemailv1GetEmailTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "notifgatewaytemplateemailv1GetEmailTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailTemplate"
+        }
+      }
+    },
+    "notifgatewaytemplateemailv1GetEmailTemplatesRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "notifgatewaytemplateemailv1GetEmailTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EmailTemplate"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "notifgatewaytemplateemailv1UpdateEmailTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Sender": {
+          "type": "string"
+        },
+        "ReplyTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CCTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Body": {
+          "type": "string"
+        },
+        "DefaultToUsername": {
+          "type": "string"
+        }
+      }
+    },
+    "notifgatewaytemplateemailv1UpdateEmailTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailTemplate"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateAppEmailTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetLangID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Sender": {
+          "type": "string"
+        },
+        "ReplyTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CCTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Body": {
+          "type": "string"
+        },
+        "DefaultToUsername": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateAppEmailTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailTemplate"
+        }
+      }
+    },
+    "v1EmailTemplate": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "LangID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"lang_id\""
+        },
+        "UsedForStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"used_for\""
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Sender": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"sender\""
+        },
+        "ReplyTosStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reply_tos\""
+        },
+        "ReplyTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CCTosStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"cc_tos\""
+        },
+        "CCTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Subject": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"subject\""
+        },
+        "Body": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"body\""
+        },
+        "DefaultToUsername": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"default_to_username\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1GetAppEmailTemplatesRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppEmailTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EmailTemplate"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAppEmailTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Sender": {
+          "type": "string"
+        },
+        "ReplyTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CCTos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Body": {
+          "type": "string"
+        },
+        "DefaultToUsername": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateAppEmailTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1EmailTemplate"
+        }
+      }
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Purchase",
+        "AffiliatePurchase",
+        "AffiliateSignup",
+        "GoodBenefit1",
+        "NewLogin",
+        "UpdatePassword",
+        "UpdateEmail",
+        "UpdateMobile",
+        "UpdateGoogleAuth",
+        "OrderCompleted",
+        "ResetPassword",
+        "OrderChildsRenewNotify",
+        "OrderChildsRenew",
+        "Announcement",
+        "ProductPage"
+      ],
+      "default": "DefaultUsedFor"
+    }
+  }
+}

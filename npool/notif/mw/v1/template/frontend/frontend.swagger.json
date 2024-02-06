@@ -1,0 +1,355 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/notif/mw/v1/template/frontend/frontend.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/template_DeleteFrontendTemplate": {
+      "post": {
+        "operationId": "Middleware_DeleteFrontendTemplate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteFrontendTemplateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteFrontendTemplateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "LangID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "LangIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "UsedFors": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        }
+      }
+    },
+    "v1CreateFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplate"
+        }
+      }
+    },
+    "v1CreateFrontendTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FrontendTemplate"
+          }
+        }
+      }
+    },
+    "v1DeleteFrontendTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplateReq"
+        }
+      }
+    },
+    "v1DeleteFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplate"
+        }
+      }
+    },
+    "v1ExistFrontendTemplateCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1FrontendTemplate": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "LangID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"lang_id\""
+        },
+        "UsedForStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"used_for\""
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Title": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"title\""
+        },
+        "Content": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"content\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1FrontendTemplateReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplate"
+        }
+      }
+    },
+    "v1GetFrontendTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FrontendTemplate"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateFrontendTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FrontendTemplate"
+        }
+      }
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Purchase",
+        "AffiliatePurchase",
+        "AffiliateSignup",
+        "GoodBenefit1",
+        "NewLogin",
+        "UpdatePassword",
+        "UpdateEmail",
+        "UpdateMobile",
+        "UpdateGoogleAuth",
+        "OrderCompleted",
+        "ResetPassword",
+        "OrderChildsRenewNotify",
+        "OrderChildsRenew",
+        "Announcement",
+        "ProductPage"
+      ],
+      "default": "DefaultUsedFor"
+    }
+  }
+}

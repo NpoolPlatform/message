@@ -1,0 +1,250 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/mw/v1/coupon/scope/scope.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CouponID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CouponIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CouponScope": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponScope",
+        "AllGood",
+        "Whitelist",
+        "Blacklist"
+      ],
+      "default": "DefaultCouponScope"
+    },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "v1CreateScopeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Scope"
+        }
+      }
+    },
+    "v1DeleteScopeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Scope"
+        }
+      }
+    },
+    "v1ExistScopeCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetScopeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Scope"
+        }
+      }
+    },
+    "v1GetScopesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Scope"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1Scope": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "CouponID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_id\""
+        },
+        "CouponName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_name\""
+        },
+        "CouponTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_type\""
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "CouponScopeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_scope\""
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+        },
+        "CouponDenomination": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_denomination\""
+        },
+        "CouponCirculation": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coupon_circulation\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1ScopeReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CouponScope": {
+          "$ref": "#/definitions/v1CouponScope"
+        },
+        "CouponID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}

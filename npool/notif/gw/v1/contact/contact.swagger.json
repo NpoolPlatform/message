@@ -1,0 +1,636 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/notif/gw/v1/contact/contact.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/contact/viaemail": {
+      "post": {
+        "operationId": "Gateway_ContactViaEmail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ContactViaEmailResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ContactViaEmailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/app/contact": {
+      "post": {
+        "operationId": "Gateway_CreateAppContact",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppContactResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppContactRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/contact": {
+      "post": {
+        "operationId": "Gateway_CreateContact",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/notifgatewaycontactv1CreateContactResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/notifgatewaycontactv1CreateContactRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/contacts": {
+      "post": {
+        "operationId": "Gateway_GetAppContacts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppContactsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppContactsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/contact": {
+      "post": {
+        "operationId": "Gateway_GetContact",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/notifgatewaycontactv1GetContactResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/notifgatewaycontactv1GetContactRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/contacts": {
+      "post": {
+        "operationId": "Gateway_GetContacts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/notifgatewaycontactv1GetContactsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/notifgatewaycontactv1GetContactsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/app/contact": {
+      "post": {
+        "operationId": "Gateway_UpdateAppContact",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppContactResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppContactRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/contact": {
+      "post": {
+        "operationId": "Gateway_UpdateContact",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/notifgatewaycontactv1UpdateContactResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/notifgatewaycontactv1UpdateContactRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "notifgatewaycontactv1CreateContactRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v1SignMethod"
+        },
+        "Sender": {
+          "type": "string"
+        }
+      }
+    },
+    "notifgatewaycontactv1CreateContactResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Contact"
+        }
+      }
+    },
+    "notifgatewaycontactv1GetContactRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "notifgatewaycontactv1GetContactResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Contact"
+        }
+      }
+    },
+    "notifgatewaycontactv1GetContactsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "notifgatewaycontactv1GetContactsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Contact"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "notifgatewaycontactv1UpdateContactRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v1SignMethod"
+        },
+        "Sender": {
+          "type": "string"
+        }
+      }
+    },
+    "notifgatewaycontactv1UpdateContactResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Contact"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Contact": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "Account": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"account\""
+        },
+        "AccountTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"account_type\""
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v1SignMethod"
+        },
+        "UsedForStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"used_for\""
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Sender": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"sender\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1ContactViaEmailRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Sender": {
+          "type": "string"
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "Body": {
+          "type": "string"
+        },
+        "SenderName": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ContactViaEmailResponse": {
+      "type": "object"
+    },
+    "v1CreateAppContactRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v1SignMethod"
+        },
+        "Sender": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateAppContactResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Contact"
+        }
+      }
+    },
+    "v1GetAppContactsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppContactsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Contact"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1SignMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultSignMethod",
+        "Mobile",
+        "Email",
+        "Twitter",
+        "Github",
+        "Facebook",
+        "Linkedin",
+        "Wechat",
+        "Google",
+        "Username",
+        "Reset"
+      ],
+      "default": "DefaultSignMethod"
+    },
+    "v1UpdateAppContactRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v1SignMethod"
+        },
+        "Sender": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateAppContactResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Contact"
+        }
+      }
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Purchase",
+        "AffiliatePurchase",
+        "AffiliateSignup",
+        "GoodBenefit1",
+        "NewLogin",
+        "UpdatePassword",
+        "UpdateEmail",
+        "UpdateMobile",
+        "UpdateGoogleAuth",
+        "OrderCompleted",
+        "ResetPassword",
+        "OrderChildsRenewNotify",
+        "OrderChildsRenew",
+        "Announcement",
+        "ProductPage"
+      ],
+      "default": "DefaultUsedFor"
+    }
+  }
+}

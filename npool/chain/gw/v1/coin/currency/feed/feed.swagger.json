@@ -1,0 +1,287 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/chain/gw/v1/coin/currency/feed/feed.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/coincurrencyfeed": {
+      "post": {
+        "operationId": "Gateway_CreateFeed",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/coincurrencyfeedv1CreateFeedResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/coincurrencyfeedv1CreateFeedRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/coincurrencyfeeds": {
+      "post": {
+        "operationId": "Gateway_GetFeeds",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/coincurrencyfeedv1GetFeedsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/coincurrencyfeedv1GetFeedsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/coincurrencyfeed": {
+      "post": {
+        "operationId": "Gateway_UpdateFeed",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/coincurrencyfeedv1UpdateFeedResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/coincurrencyfeedv1UpdateFeedRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "coincurrencyfeedv1CreateFeedRequest": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "FeedType": {
+          "$ref": "#/definitions/v1CurrencyFeedType"
+        },
+        "FeedCoinName": {
+          "type": "string"
+        }
+      }
+    },
+    "coincurrencyfeedv1CreateFeedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Feed"
+        }
+      }
+    },
+    "coincurrencyfeedv1GetFeedsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "coincurrencyfeedv1GetFeedsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Feed"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "coincurrencyfeedv1UpdateFeedRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "FeedCoinName": {
+          "type": "string"
+        },
+        "Disabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "coincurrencyfeedv1UpdateFeedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Feed"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CurrencyFeedType": {
+      "type": "string",
+      "enum": [
+        "DefaultFeedType",
+        "CoinGecko",
+        "CoinBase",
+        "StableUSDHardCode"
+      ],
+      "default": "DefaultFeedType"
+    },
+    "v1Feed": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "CoinName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_name\""
+        },
+        "CoinUnit": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_unit\""
+        },
+        "CoinLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_logo\""
+        },
+        "CoinENV": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_env\""
+        },
+        "FeedTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"feed_type\""
+        },
+        "FeedType": {
+          "$ref": "#/definitions/v1CurrencyFeedType"
+        },
+        "FeedCoinName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"feed_coin_name\""
+        },
+        "Disabled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"disabled\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    }
+  }
+}

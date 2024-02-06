@@ -1,0 +1,342 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/account/mw/v1/goodbenefit/goodbenefit.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/goodbenefit_DeleteAccount": {
+      "post": {
+        "operationId": "Middleware_DeleteAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Account": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "AccountID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"account_id\""
+        },
+        "Backup": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"backup\""
+        },
+        "Address": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"address\""
+        },
+        "Active": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"active\""
+        },
+        "Locked": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"locked\""
+        },
+        "LockedByStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"locked_by\""
+        },
+        "LockedBy": {
+          "$ref": "#/definitions/v1AccountLockedBy"
+        },
+        "Blocked": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"blocked\""
+        },
+        "TransactionID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"transaction_id\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1AccountLockedBy": {
+      "type": "string",
+      "enum": [
+        "DefaultLockedBy",
+        "Payment",
+        "Collecting"
+      ],
+      "default": "DefaultLockedBy"
+    },
+    "v1AccountReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "Backup": {
+          "type": "boolean"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "Locked": {
+          "type": "boolean"
+        },
+        "LockedBy": {
+          "$ref": "#/definitions/v1AccountLockedBy"
+        },
+        "Blocked": {
+          "type": "boolean"
+        },
+        "TransactionID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AccountID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Backup": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Address": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Active": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Locked": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "LockedBy": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Blocked": {
+          "$ref": "#/definitions/v1BoolVal"
+        }
+      }
+    },
+    "v1CreateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1DeleteAccountRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AccountReq"
+        }
+      }
+    },
+    "v1DeleteAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1ExistAccountCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1GetAccountsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Account"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    }
+  }
+}
