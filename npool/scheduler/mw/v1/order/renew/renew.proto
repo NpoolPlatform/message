@@ -19,6 +19,7 @@ message Deduction {
 message RenewInfo {
     good.middleware.app.good1.v1.Good  AppGood = 10;
     uint32                             EndAt   = 20;
+    uint32                             RenewDuration = 30;
 }
 
 message MsgOrderChildsRenewReq {
