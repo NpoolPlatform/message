@@ -31,8 +31,9 @@ enum BenefitState {
     BenefitWait         = 10;
     BenefitTransferring = 20;
     // Good bookkeeping
-    BenefitBookKeeping  = 30;
-    BenefitUserBookKeeping = 31;
+    BenefitBookKeeping         = 30;
+    BenefitUserBookKeeping     = 31;
+    BenefitSimulateBookKeeping = 32;
     BenefitDone         = 40;
     BenefitFail         = 50;
 }
