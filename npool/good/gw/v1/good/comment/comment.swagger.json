@@ -289,6 +289,9 @@
         "PurchasedUser": {
           "type": "boolean"
         },
+        "TrialUser": {
+          "type": "boolean"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
