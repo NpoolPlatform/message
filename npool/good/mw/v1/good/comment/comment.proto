@@ -25,6 +25,8 @@ message CommentReq {
     optional string OrderID   = 50;
     optional string Content   = 60;
     optional string ReplyToID = 70;
+    optional bool   Anonymous = 80;
+    optional bool   PurchaseUser = 90;
 }
 
 message Comment {
@@ -48,6 +50,10 @@ message Comment {
     string ReplyToID = 80;
     // @inject_tag: sql:"good_id"
     string GoodID    = 90;
+    // @inject_tag: sql:"anonymous"
+    bool   Anonymous = 100;
+    // @inject_tag: sql:"purchased_user"
+    bool   PurchasedUser = 110;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"

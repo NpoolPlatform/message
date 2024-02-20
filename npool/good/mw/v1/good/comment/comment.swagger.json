@@ -88,6 +88,14 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
         },
+        "Anonymous": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"anonymous\""
+        },
+        "PurchasedUser": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"purchased_user\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -127,6 +135,12 @@
         },
         "ReplyToID": {
           "type": "string"
+        },
+        "Anonymous": {
+          "type": "boolean"
+        },
+        "PurchaseUser": {
+          "type": "boolean"
         }
       }
     },

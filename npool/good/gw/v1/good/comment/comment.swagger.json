@@ -283,6 +283,12 @@
         "GoodID": {
           "type": "string"
         },
+        "Anonymous": {
+          "type": "boolean"
+        },
+        "PurchasedUser": {
+          "type": "boolean"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -313,6 +319,9 @@
         },
         "ReplyToID": {
           "type": "string"
+        },
+        "Anonymous": {
+          "type": "boolean"
         }
       }
     },

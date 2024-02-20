@@ -65,6 +65,8 @@ message Comment {
     string Content    = 110;
     optional string ReplyToID = 120;
     string GoodID     = 130;
+    bool   Anonymous  = 140;
+    bool   PurchasedUser = 150;
     uint32 CreatedAt  = 1000;
     uint32 UpdatedAt  = 1010;
 }
@@ -76,6 +78,7 @@ message CreateCommentRequest {
     optional string OrderID = 40;
     string Content  = 50;
     optional string ReplyToID = 60;
+    optional bool   Anonymous = 70;
 }
 
 message CreateCommentResponse {
