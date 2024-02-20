@@ -69,6 +69,7 @@ message Comment {
     bool   PurchasedUser = 150;
     bool   TrialUser  = 160;
     bool   OrderFirstComment = 170;
+    string Score      = 180;
     uint32 CreatedAt  = 1000;
     uint32 UpdatedAt  = 1010;
 }
@@ -81,6 +82,7 @@ message CreateCommentRequest {
     string Content  = 50;
     optional string ReplyToID = 60;
     optional bool   Anonymous = 70;
+    optional string Score     = 80;
 }
 
 message CreateCommentResponse {

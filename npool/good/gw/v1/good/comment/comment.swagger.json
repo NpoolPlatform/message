@@ -295,6 +295,9 @@
         "OrderFirstComment": {
           "type": "boolean"
         },
+        "Score": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -328,6 +331,9 @@
         },
         "Anonymous": {
           "type": "boolean"
+        },
+        "Score": {
+          "type": "string"
         }
       }
     },

@@ -29,6 +29,7 @@ message CommentReq {
     optional bool   PurchasedUser = 90;
     optional bool   TrialUser     = 100;
     optional bool   OrderFirstComment = 110;
+    optional string Score     = 120;
 }
 
 message Comment {
@@ -60,6 +61,8 @@ message Comment {
     bool   TrialUser = 120;
     // @inject_tag: sql:"order_first_comment"
     bool   OrderFirstComment = 130;
+    // @inject_tag: sql:"score"
+    string Score      = 140;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"

@@ -104,6 +104,10 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"order_first_comment\""
         },
+        "Score": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"score\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -155,6 +159,9 @@
         },
         "OrderFirstComment": {
           "type": "boolean"
+        },
+        "Score": {
+          "type": "string"
         }
       }
     },
