@@ -26,7 +26,7 @@ message CommentReq {
     optional string Content   = 60;
     optional string ReplyToID = 70;
     optional bool   Anonymous = 80;
-    optional bool   PurchaseUser = 90;
+    optional bool   PurchasedUser = 90;
 }
 
 message Comment {

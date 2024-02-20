@@ -139,7 +139,7 @@
         "Anonymous": {
           "type": "boolean"
         },
-        "PurchaseUser": {
+        "PurchasedUser": {
           "type": "boolean"
         }
       }
