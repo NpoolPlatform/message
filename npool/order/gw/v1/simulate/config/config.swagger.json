@@ -529,6 +529,10 @@
         "Units": {
           "type": "string"
         },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
         "SendCouponMode": {
           "$ref": "#/definitions/v1SendCouponMode"
         },

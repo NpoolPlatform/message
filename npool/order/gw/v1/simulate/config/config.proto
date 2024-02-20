@@ -125,9 +125,10 @@ message UpdateAppSimulateConfigRequest {
   string                                 EntID                 = 20;
   string                                 TargetAppID           = 30;
   optional string                        Units                 = 40;
-  optional basetypes.order.v1.SendCouponMode SendCouponMode    = 50;
-  optional string                        SendCouponProbability = 60;
-  optional bool                          Enabled               = 70;
+  optional uint32                        Duration              = 50;
+  optional basetypes.order.v1.SendCouponMode SendCouponMode    = 60;
+  optional string                        SendCouponProbability = 70;
+  optional bool                          Enabled               = 80;
 }
 
 message UpdateAppSimulateConfigResponse {
