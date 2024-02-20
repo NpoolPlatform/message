@@ -28,8 +28,7 @@ message CommentReq {
     optional bool   Anonymous = 80;
     optional bool   PurchasedUser = 90;
     optional bool   TrialUser     = 100;
-    optional bool   OrderFirstComment = 110;
-    optional string Score     = 120;
+    optional string Score     = 110;
 }
 
 message Comment {

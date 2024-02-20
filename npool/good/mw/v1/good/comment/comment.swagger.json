@@ -157,9 +157,6 @@
         "TrialUser": {
           "type": "boolean"
         },
-        "OrderFirstComment": {
-          "type": "boolean"
-        },
         "Score": {
           "type": "string"
         }
