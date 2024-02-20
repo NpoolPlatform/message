@@ -292,6 +292,9 @@
         "TrialUser": {
           "type": "boolean"
         },
+        "OrderFirstComment": {
+          "type": "boolean"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
