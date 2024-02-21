@@ -20,7 +20,6 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateSimulate_FullMethodName = "/good.middleware.app.good1.simulate.v1.Middleware/CreateSimulate"
-	Middleware_UpdateSimulate_FullMethodName = "/good.middleware.app.good1.simulate.v1.Middleware/UpdateSimulate"
 	Middleware_GetSimulate_FullMethodName    = "/good.middleware.app.good1.simulate.v1.Middleware/GetSimulate"
 	Middleware_GetSimulates_FullMethodName   = "/good.middleware.app.good1.simulate.v1.Middleware/GetSimulates"
 	Middleware_DeleteSimulate_FullMethodName = "/good.middleware.app.good1.simulate.v1.Middleware/DeleteSimulate"
@@ -31,7 +30,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateSimulate(ctx context.Context, in *CreateSimulateRequest, opts ...grpc.CallOption) (*CreateSimulateResponse, error)
-	UpdateSimulate(ctx context.Context, in *UpdateSimulateRequest, opts ...grpc.CallOption) (*UpdateSimulateResponse, error)
 	GetSimulate(ctx context.Context, in *GetSimulateRequest, opts ...grpc.CallOption) (*GetSimulateResponse, error)
 	GetSimulates(ctx context.Context, in *GetSimulatesRequest, opts ...grpc.CallOption) (*GetSimulatesResponse, error)
 	DeleteSimulate(ctx context.Context, in *DeleteSimulateRequest, opts ...grpc.CallOption) (*DeleteSimulateResponse, error)
@@ -48,15 +46,6 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateSimulate(ctx context.Context, in *CreateSimulateRequest, opts ...grpc.CallOption) (*CreateSimulateResponse, error) {
 	out := new(CreateSimulateResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateSimulate_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) UpdateSimulate(ctx context.Context, in *UpdateSimulateRequest, opts ...grpc.CallOption) (*UpdateSimulateResponse, error) {
-	out := new(UpdateSimulateResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdateSimulate_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -95,7 +84,6 @@ func (c *middlewareClient) DeleteSimulate(ctx context.Context, in *DeleteSimulat
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateSimulate(context.Context, *CreateSimulateRequest) (*CreateSimulateResponse, error)
-	UpdateSimulate(context.Context, *UpdateSimulateRequest) (*UpdateSimulateResponse, error)
 	GetSimulate(context.Context, *GetSimulateRequest) (*GetSimulateResponse, error)
 	GetSimulates(context.Context, *GetSimulatesRequest) (*GetSimulatesResponse, error)
 	DeleteSimulate(context.Context, *DeleteSimulateRequest) (*DeleteSimulateResponse, error)
@@ -108,9 +96,6 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateSimulate(context.Context, *CreateSimulateRequest) (*CreateSimulateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateSimulate not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateSimulate(context.Context, *UpdateSimulateRequest) (*UpdateSimulateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateSimulate not implemented")
 }
 func (UnimplementedMiddlewareServer) GetSimulate(context.Context, *GetSimulateRequest) (*GetSimulateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSimulate not implemented")
@@ -148,24 +133,6 @@ func _Middleware_CreateSimulate_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateSimulate(ctx, req.(*CreateSimulateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_UpdateSimulate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateSimulateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateSimulate(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdateSimulate_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateSimulate(ctx, req.(*UpdateSimulateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -234,10 +201,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateSimulate",
 			Handler:    _Middleware_CreateSimulate_Handler,
-		},
-		{
-			MethodName: "UpdateSimulate",
-			Handler:    _Middleware_UpdateSimulate_Handler,
 		},
 		{
 			MethodName: "GetSimulate",

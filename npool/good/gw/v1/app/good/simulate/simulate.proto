@@ -42,20 +42,6 @@ service Gateway {
             body: "*"
         };
     }
-
-    rpc UpdateSimulate (UpdateSimulateRequest) returns (UpdateSimulateResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/simulategood"
-            body: "*"
-        };
-    }
-
-    rpc UpdateNSimulate (UpdateNSimulateRequest) returns (UpdateNSimulateResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/n/simulategood"
-            body: "*"
-        };
-    }
 }
 
 message Simulate {
@@ -123,27 +109,5 @@ message DeleteSimulateRequest {
 }
 
 message DeleteSimulateResponse {
-    Simulate Info = 10;
-}
-
-message UpdateSimulateRequest {
-    uint32          ID        = 9;
-    string          EntID     = 10;
-    string          AppID     = 20;
-    optional string AppGoodID = 30;
-}
-
-message UpdateSimulateResponse {
-    Simulate Info = 10;
-}
-
-message UpdateNSimulateRequest {
-    uint32          ID          = 9;
-    string          EntID       = 10;
-    string          TargetAppID = 20;
-    optional string AppGoodID   = 30;
-}
-
-message UpdateNSimulateResponse {
     Simulate Info = 10;
 }

@@ -213,14 +213,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1UpdateSimulateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Simulate"
-        }
-      }
     }
   }
 }

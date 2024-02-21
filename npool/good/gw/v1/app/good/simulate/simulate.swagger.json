@@ -175,70 +175,6 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/update/n/simulategood": {
-      "post": {
-        "operationId": "Gateway_UpdateNSimulate",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateNSimulateResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateNSimulateRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/update/simulategood": {
-      "post": {
-        "operationId": "Gateway_UpdateSimulate",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateSimulateResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateSimulateRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
@@ -445,58 +381,6 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1UpdateNSimulateRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
-        },
-        "AppGoodID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateNSimulateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Simulate"
-        }
-      }
-    },
-    "v1UpdateSimulateRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "AppGoodID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateSimulateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Simulate"
         }
       }
     }
