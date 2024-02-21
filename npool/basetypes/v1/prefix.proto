@@ -71,6 +71,7 @@ enum Prefix {
     PrefixCreateAppDefaultGood = 600;
     PrefixCreateTopMost        = 610;
     PrefixCreateTopMostGood    = 620;
+    PrefixCreateAppSimulateGood = 630;
 
     PrefixCreateLedger          = 700;
     PrefixCreateLedgerStatement = 710;
