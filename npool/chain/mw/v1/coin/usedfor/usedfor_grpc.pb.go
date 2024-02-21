@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateCoinUsedFor_FullMethodName = "/chain.middleware.coin.usedfor.v1.Middleware/CreateCoinUsedFor"
+	Middleware_GetCoinUsedFor_FullMethodName    = "/chain.middleware.coin.usedfor.v1.Middleware/GetCoinUsedFor"
 	Middleware_GetCoinUsedFors_FullMethodName   = "/chain.middleware.coin.usedfor.v1.Middleware/GetCoinUsedFors"
 	Middleware_DeleteCoinUsedFor_FullMethodName = "/chain.middleware.coin.usedfor.v1.Middleware/DeleteCoinUsedFor"
 )
@@ -29,6 +30,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateCoinUsedFor(ctx context.Context, in *CreateCoinUsedForRequest, opts ...grpc.CallOption) (*CreateCoinUsedForResponse, error)
+	GetCoinUsedFor(ctx context.Context, in *GetCoinUsedForRequest, opts ...grpc.CallOption) (*GetCoinUsedForResponse, error)
 	GetCoinUsedFors(ctx context.Context, in *GetCoinUsedForsRequest, opts ...grpc.CallOption) (*GetCoinUsedForsResponse, error)
 	DeleteCoinUsedFor(ctx context.Context, in *DeleteCoinUsedForRequest, opts ...grpc.CallOption) (*DeleteCoinUsedForResponse, error)
 }
@@ -44,6 +46,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateCoinUsedFor(ctx context.Context, in *CreateCoinUsedForRequest, opts ...grpc.CallOption) (*CreateCoinUsedForResponse, error) {
 	out := new(CreateCoinUsedForResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateCoinUsedFor_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetCoinUsedFor(ctx context.Context, in *GetCoinUsedForRequest, opts ...grpc.CallOption) (*GetCoinUsedForResponse, error) {
+	out := new(GetCoinUsedForResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetCoinUsedFor_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -73,6 +84,7 @@ func (c *middlewareClient) DeleteCoinUsedFor(ctx context.Context, in *DeleteCoin
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateCoinUsedFor(context.Context, *CreateCoinUsedForRequest) (*CreateCoinUsedForResponse, error)
+	GetCoinUsedFor(context.Context, *GetCoinUsedForRequest) (*GetCoinUsedForResponse, error)
 	GetCoinUsedFors(context.Context, *GetCoinUsedForsRequest) (*GetCoinUsedForsResponse, error)
 	DeleteCoinUsedFor(context.Context, *DeleteCoinUsedForRequest) (*DeleteCoinUsedForResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
@@ -84,6 +96,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateCoinUsedFor(context.Context, *CreateCoinUsedForRequest) (*CreateCoinUsedForResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinUsedFor not implemented")
+}
+func (UnimplementedMiddlewareServer) GetCoinUsedFor(context.Context, *GetCoinUsedForRequest) (*GetCoinUsedForResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoinUsedFor not implemented")
 }
 func (UnimplementedMiddlewareServer) GetCoinUsedFors(context.Context, *GetCoinUsedForsRequest) (*GetCoinUsedForsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinUsedFors not implemented")
@@ -118,6 +133,24 @@ func _Middleware_CreateCoinUsedFor_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateCoinUsedFor(ctx, req.(*CreateCoinUsedForRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetCoinUsedFor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinUsedForRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetCoinUsedFor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetCoinUsedFor_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetCoinUsedFor(ctx, req.(*GetCoinUsedForRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -168,6 +201,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCoinUsedFor",
 			Handler:    _Middleware_CreateCoinUsedFor_Handler,
+		},
+		{
+			MethodName: "GetCoinUsedFor",
+			Handler:    _Middleware_GetCoinUsedFor_Handler,
 		},
 		{
 			MethodName: "GetCoinUsedFors",

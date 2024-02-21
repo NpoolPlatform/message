@@ -167,6 +167,14 @@
         }
       }
     },
+    "v1GetCoinUsedForResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/coinusedforv1CoinUsedFor"
+        }
+      }
+    },
     "v1GetCoinUsedForsResponse": {
       "type": "object",
       "properties": {
