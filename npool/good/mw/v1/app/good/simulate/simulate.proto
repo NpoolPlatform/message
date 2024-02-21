@@ -8,10 +8,11 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateSimulate    (CreateSimulateRequest)    returns (CreateSimulateResponse)    {}
-    rpc GetSimulate       (GetSimulateRequest)       returns (GetSimulateResponse)       {}
-    rpc GetSimulates      (GetSimulatesRequest)      returns (GetSimulatesResponse)      {}
-    rpc DeleteSimulate    (DeleteSimulateRequest)    returns (DeleteSimulateResponse)    {}
+    rpc CreateSimulate     (CreateSimulateRequest)     returns (CreateSimulateResponse)     {}
+    rpc GetSimulate        (GetSimulateRequest)        returns (GetSimulateResponse)        {}
+    rpc ExistSimulateConds (ExistSimulateCondsRequest) returns (ExistSimulateCondsResponse) {}
+    rpc GetSimulates       (GetSimulatesRequest)       returns (GetSimulatesResponse)       {}
+    rpc DeleteSimulate     (DeleteSimulateRequest)     returns (DeleteSimulateResponse)     {}
 }
 
 message SimulateReq {
@@ -87,4 +88,12 @@ message DeleteSimulateRequest {
 
 message DeleteSimulateResponse {
     Simulate Info = 10;
+}
+
+message ExistSimulateCondsRequest {
+  Conds Conds = 10;
+}
+
+message ExistSimulateCondsResponse {
+  bool Info = 10;
 }
