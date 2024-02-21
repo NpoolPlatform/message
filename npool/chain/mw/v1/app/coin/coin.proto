@@ -37,7 +37,6 @@ message CoinReq {
     optional uint32 DisplayIndex             = 150;
     optional string MaxAmountPerWithdraw     = 160;
     optional bool   CheckNewAddressBalance   = 170;
-    optional bool   EnableSimulate           = 180;
 }
 
 message Coin {
@@ -141,8 +140,6 @@ message Coin {
     bool   RefreshCurrency              = 400;
     // @inject_tag: sql:"check_new_address_balance"
     bool   CheckNewAddressBalance       = 410;
-    // @inject_tag: sql:"enable_simulate"
-    bool   EnableSimulate               = 420;
 }
 
 message Conds {
@@ -153,7 +150,6 @@ message Conds {
     optional basetypes.v1.BoolVal    Disabled     = 50;
     optional basetypes.v1.StringSliceVal EntIDs   = 60;
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 70;
-    optional basetypes.v1.BoolVal    EnableSimulate  = 80;
 }
 
 message CreateCoinRequest {

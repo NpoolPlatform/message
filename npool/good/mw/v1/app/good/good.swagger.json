@@ -56,17 +56,6 @@
       "default": "DefaultBenefitType",
       "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward"
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1CancelMode": {
       "type": "string",
       "enum": [
@@ -103,9 +92,6 @@
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "EnableSimulate": {
-          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
@@ -571,10 +557,6 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"package_with_requireds\""
         },
-        "EnableSimulate": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"enable_simulate\""
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -727,9 +709,6 @@
           "format": "int64"
         },
         "PackageWithRequireds": {
-          "type": "boolean"
-        },
-        "EnableSimulate": {
           "type": "boolean"
         }
       }

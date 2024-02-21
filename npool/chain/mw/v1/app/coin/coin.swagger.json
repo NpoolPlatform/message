@@ -271,10 +271,6 @@
         "CheckNewAddressBalance": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"check_new_address_balance\""
-        },
-        "EnableSimulate": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"enable_simulate\""
         }
       }
     },
@@ -349,9 +345,6 @@
         },
         "CheckNewAddressBalance": {
           "type": "boolean"
-        },
-        "EnableSimulate": {
-          "type": "boolean"
         }
       }
     },
@@ -378,9 +371,6 @@
         },
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "EnableSimulate": {
-          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
