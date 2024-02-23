@@ -239,6 +239,38 @@
           "Middleware"
         ]
       }
+    },
+    "/v1/simulate/ledgerstatement_UpdateStatement": {
+      "post": {
+        "operationId": "Middleware_UpdateStatement",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UpdateStatementResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UpdateStatementRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
     }
   },
   "definitions": {
@@ -400,6 +432,12 @@
           "$ref": "#/definitions/v1StringSliceVal"
         },
         "SendCoupon": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Cashable": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "CashUsed": {
           "$ref": "#/definitions/v1BoolVal"
         }
       }
@@ -598,6 +636,14 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"send_coupon\""
         },
+        "Cashable": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"cashable\""
+        },
+        "CashUsed": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"cash_used\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -648,8 +694,30 @@
         "SendCoupon": {
           "type": "boolean"
         },
+        "Cashable": {
+          "type": "boolean"
+        },
+        "CashUsed": {
+          "type": "boolean"
+        },
         "Rollback": {
           "type": "boolean"
+        }
+      }
+    },
+    "v2UpdateStatementRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2StatementReq"
+        }
+      }
+    },
+    "v2UpdateStatementResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v2Statement"
         }
       }
     }

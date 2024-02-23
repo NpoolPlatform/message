@@ -41,6 +41,8 @@ message Statement {
     string AppID      = 130;
     uint32 ID         = 140;
     string EntID      = 150;
+    bool   Cashable   = 160;
+    bool   CashUsed   = 170;
 }
 
 message GetStatementsRequest {

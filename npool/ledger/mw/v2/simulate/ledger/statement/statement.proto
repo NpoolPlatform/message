@@ -52,6 +52,12 @@ service Middleware {
             body: "*"
         };
     }
+    rpc UpdateStatement     (UpdateStatementRequest)     returns (UpdateStatementResponse)   {
+        option (google.api.http) = {
+            post: "/v1/simulate/ledgerstatement_UpdateStatement"
+            body: "*"
+        };
+    }
 }
 
 message StatementReq {
@@ -66,6 +72,8 @@ message StatementReq {
     optional string     IOExtra          = 90;
     optional uint32     CreatedAt        = 100;
     optional bool       SendCoupon       = 110;
+    optional bool       Cashable         = 120;
+    optional bool       CashUsed         = 130;
     optional bool       Rollback         = 1000;
 }
 
@@ -92,6 +100,10 @@ message Statement {
     string      IOExtra                        = 100;
     // @inject_tag: sql:"send_coupon"
     bool        SendCoupon                     = 110;
+    // @inject_tag: sql:"cashable"
+    bool        Cashable                       = 120;
+    // @inject_tag: sql:"cash_used"
+    bool        CashUsed                       = 130;
     // @inject_tag: sql:"created_at"
     uint32      CreatedAt                      = 1000;
     // @inject_tag: sql:"updated_at"
@@ -112,6 +124,8 @@ message Conds {
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 140;
     optional basetypes.v1.StringSliceVal UserIDs     = 150;
     optional basetypes.v1.BoolVal        SendCoupon  = 160;
+    optional basetypes.v1.BoolVal        Cashable    = 170;
+    optional basetypes.v1.BoolVal        CashUsed    = 180;
 
 }
 
@@ -163,6 +177,14 @@ message CreateStatementRequest {
 }
 
 message CreateStatementResponse {
+    Statement Info = 10;
+}
+
+message UpdateStatementRequest {
+    StatementReq Info = 10;
+}
+
+message UpdateStatementResponse {
     Statement Info = 10;
 }
 
