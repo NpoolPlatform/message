@@ -10,6 +10,7 @@ import "npool/basetypes/chain/v1/enums.proto";
 // Service Name
 service Middleware {
     rpc CreateCoinUsedFor (CreateCoinUsedForRequest) returns (CreateCoinUsedForResponse) {}
+    rpc GetCoinUsedFor    (GetCoinUsedForRequest)    returns (GetCoinUsedForResponse)    {}
     rpc GetCoinUsedFors   (GetCoinUsedForsRequest)   returns (GetCoinUsedForsResponse)   {}
     rpc DeleteCoinUsedFor (DeleteCoinUsedForRequest) returns (DeleteCoinUsedForResponse) {}
 }
@@ -61,6 +62,14 @@ message CreateCoinUsedForRequest {
 }
 
 message CreateCoinUsedForResponse {
+    CoinUsedFor Info = 10;
+}
+
+message GetCoinUsedForRequest {
+    string EntID = 10;
+}
+
+message GetCoinUsedForResponse {
     CoinUsedFor Info = 10;
 }
 
