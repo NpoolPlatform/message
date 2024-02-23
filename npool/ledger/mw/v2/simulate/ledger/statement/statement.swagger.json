@@ -644,6 +644,11 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"cash_used\""
         },
+        "CashUsedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"cash_used_at\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",

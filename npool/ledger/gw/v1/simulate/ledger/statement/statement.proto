@@ -43,6 +43,7 @@ message Statement {
     string EntID      = 150;
     bool   Cashable   = 160;
     bool   CashUsed   = 170;
+    uint32 CashUsedAt = 180;
 }
 
 message GetStatementsRequest {

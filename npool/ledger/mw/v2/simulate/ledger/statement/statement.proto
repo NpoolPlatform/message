@@ -104,6 +104,8 @@ message Statement {
     bool        Cashable                       = 120;
     // @inject_tag: sql:"cash_used"
     bool        CashUsed                       = 130;
+    // @inject_tag: sql:"cash_used_at"
+    uint32      CashUsedAt                     = 140;
     // @inject_tag: sql:"created_at"
     uint32      CreatedAt                      = 1000;
     // @inject_tag: sql:"updated_at"
@@ -126,7 +128,6 @@ message Conds {
     optional basetypes.v1.BoolVal        SendCoupon  = 160;
     optional basetypes.v1.BoolVal        Cashable    = 170;
     optional basetypes.v1.BoolVal        CashUsed    = 180;
-
 }
 
 message GetStatementsRequest {

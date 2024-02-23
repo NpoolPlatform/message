@@ -273,6 +273,10 @@
         },
         "CashUsed": {
           "type": "boolean"
+        },
+        "CashUsedAt": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }
