@@ -71,6 +71,9 @@
         "SendCouponMode": {
           "$ref": "#/definitions/v1Uint32Val"
         },
+        "EnabledProfitTx": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
         "Enabled": {
           "$ref": "#/definitions/v1BoolVal"
         }
@@ -159,15 +162,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
-        "Units": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"units\""
-        },
-        "Duration": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"duration\""
-        },
         "SendCouponModeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"send_coupon_mode\""
@@ -178,6 +172,14 @@
         "SendCouponProbability": {
           "type": "string",
           "title": "@inject_tag: sql:\"send_coupon_probability\""
+        },
+        "EnabledProfitTx": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enabled_profit_tx\""
+        },
+        "ProfitTxProbability": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"profit_tx_probability\""
         },
         "Enabled": {
           "type": "boolean",
@@ -208,17 +210,16 @@
         "AppID": {
           "type": "string"
         },
-        "Units": {
-          "type": "string"
-        },
-        "Duration": {
-          "type": "integer",
-          "format": "int64"
-        },
         "SendCouponMode": {
           "$ref": "#/definitions/v1SendCouponMode"
         },
         "SendCouponProbability": {
+          "type": "string"
+        },
+        "EnabledProfitTx": {
+          "type": "boolean"
+        },
+        "ProfitTxProbability": {
           "type": "string"
         },
         "Enabled": {

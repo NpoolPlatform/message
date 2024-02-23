@@ -10,34 +10,41 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc CreateSimulate     (CreateSimulateRequest)     returns (CreateSimulateResponse)     {}
     rpc GetSimulate        (GetSimulateRequest)        returns (GetSimulateResponse)        {}
+    rpc UpdateSimulate    (UpdateSimulateRequest)    returns (UpdateSimulateResponse)    {}
     rpc ExistSimulateConds (ExistSimulateCondsRequest) returns (ExistSimulateCondsResponse) {}
     rpc GetSimulates       (GetSimulatesRequest)       returns (GetSimulatesResponse)       {}
     rpc DeleteSimulate     (DeleteSimulateRequest)     returns (DeleteSimulateResponse)     {}
 }
 
 message SimulateReq {
-    optional uint32 ID        = 10;
-    optional string EntID     = 20;
-    optional string AppGoodID = 30;
+    optional uint32 ID                  = 10;
+    optional string EntID               = 20;
+    optional string AppGoodID           = 30;
+    optional string FixedOrderUnits     = 40;
+    optional uint32 FixedOrderDuration  = 50;
 }
 
 message Simulate {
     // @inject_tag: sql:"id"
-    uint32 ID         = 9;
+    uint32 ID                 = 9;
     // @inject_tag: sql:"ent_id"
-    string EntID      = 10;
+    string EntID              = 10;
     // @inject_tag: sql:"app_id"
-    string AppID      = 20;
+    string AppID              = 20;
     // @inject_tag: sql:"good_id"
-    string GoodID     = 30;
+    string GoodID             = 30;
     // @inject_tag: sql:"good_name"
-    string GoodName   = 40;
+    string GoodName           = 40;
     // @inject_tag: sql:"app_good_id"
-    string AppGoodID  = 50;
+    string AppGoodID          = 50;
     // @inject_tag: sql:"app_good_name"
-    string AppGoodName = 60;
+    string AppGoodName        = 60;
     // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID = 70;
+    string CoinTypeID         = 70;
+    // @inject_tag: sql:"fixed_order_units"
+    string FixedOrderUnits    = 80;
+    // @inject_tag: sql:"fixed_order_duration"
+    uint32 FixedOrderDuration = 90;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
@@ -61,6 +68,14 @@ message CreateSimulateRequest {
 
 message CreateSimulateResponse {
     Simulate Info = 10;
+}
+
+message UpdateSimulateRequest {
+  SimulateReq Info = 10;
+}
+
+message UpdateSimulateResponse {
+  Simulate Info = 10;
 }
 
 message GetSimulateRequest {

@@ -158,6 +158,15 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
         },
+        "FixedOrderUnits": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fixed_order_units\""
+        },
+        "FixedOrderDuration": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"fixed_order_duration\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -182,6 +191,13 @@
         },
         "AppGoodID": {
           "type": "string"
+        },
+        "FixedOrderUnits": {
+          "type": "string"
+        },
+        "FixedOrderDuration": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -219,6 +235,14 @@
         "Value": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateSimulateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Simulate"
         }
       }
     }

@@ -19,14 +19,14 @@ service Middleware {
 }
 
 message SimulateConfigReq {
-    optional uint32     ID           = 10;
-    optional string     EntID        = 20;
-    optional string     AppID        = 30;
-    optional string     Units        = 40;
-    optional uint32     Duration     = 50;
-    optional basetypes.order.v1.SendCouponMode SendCouponMode = 60;
-    optional string     SendCouponProbability = 70;
-    optional bool       Enabled               = 80;
+    optional uint32                            ID                    = 10;
+    optional string                            EntID                 = 20;
+    optional string                            AppID                 = 30;
+    optional basetypes.order.v1.SendCouponMode SendCouponMode        = 40;
+    optional string                            SendCouponProbability = 50;
+    optional bool                              EnabledProfitTx       = 60;
+    optional string                            ProfitTxProbability   = 70;
+    optional bool                              Enabled               = 80;
 }
 
 message SimulateConfig {
@@ -36,15 +36,15 @@ message SimulateConfig {
     string     EntID        = 20;
     // @inject_tag: sql:"app_id"
     string     AppID        = 30;
-    // @inject_tag: sql:"units"
-    string     Units        = 40;
-    // @inject_tag: sql:"duration"
-    uint32     Duration     = 50;
     // @inject_tag: sql:"send_coupon_mode"
-    string     SendCouponModeStr                     = 60;
-    basetypes.order.v1.SendCouponMode SendCouponMode = 70;
+    string     SendCouponModeStr                     = 40;
+    basetypes.order.v1.SendCouponMode SendCouponMode = 50;
     // @inject_tag: sql:"send_coupon_probability"
-    string     SendCouponProbability = 80;
+    string     SendCouponProbability = 60;
+    // @inject_tag: sql:"enabled_profit_tx"
+    bool       EnabledProfitTx       = 70;
+    // @inject_tag: sql:"profit_tx_probability"
+    string     ProfitTxProbability   = 80;
     // @inject_tag: sql:"enabled"
     bool       Enabled               = 90;
 
@@ -55,11 +55,12 @@ message SimulateConfig {
 }
 
 message Conds {
-    basetypes.v1.Uint32Val ID             = 10;
-    basetypes.v1.StringVal EntID          = 20;
-    basetypes.v1.StringVal AppID          = 30;
-    basetypes.v1.Uint32Val SendCouponMode = 40;
-    basetypes.v1.BoolVal   Enabled        = 50;
+    basetypes.v1.Uint32Val ID              = 10;
+    basetypes.v1.StringVal EntID           = 20;
+    basetypes.v1.StringVal AppID           = 30;
+    basetypes.v1.Uint32Val SendCouponMode  = 40;
+    basetypes.v1.BoolVal   EnabledProfitTx = 50;
+    basetypes.v1.BoolVal   Enabled         = 60;
 }
 
 message CreateSimulateConfigRequest {

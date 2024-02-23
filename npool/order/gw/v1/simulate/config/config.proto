@@ -63,10 +63,10 @@ service Gateway {
 
 message CreateSimulateConfigRequest {
     string                        AppID                 = 10;
-    string                        Units                 = 20;
-    uint32                        Duration              = 30;
-    basetypes.order.v1.SendCouponMode SendCouponMode    = 40;
-    string                        SendCouponProbability = 50;
+    basetypes.order.v1.SendCouponMode SendCouponMode    = 20;
+    string                        SendCouponProbability = 30;
+    bool                          EnabledProfitTx       = 40;
+    string                        ProfitTxProbability   = 50;
     bool                          Enabled               = 60;
 }
 
@@ -78,10 +78,10 @@ message UpdateSimulateConfigRequest {
     uint32                                 ID                    = 10;
     string                                 EntID                 = 20;
     string                                 AppID                 = 30;
-    optional string                        Units                 = 40;
-    optional uint32                        Duration              = 50;
-    optional basetypes.order.v1.SendCouponMode SendCouponMode    = 60;
-    optional string                        SendCouponProbability = 70;
+    optional basetypes.order.v1.SendCouponMode SendCouponMode    = 40;
+    optional string                        SendCouponProbability = 50;
+    optional bool                          EnabledProfitTx       = 60;
+    optional string                        ProfitTxProbability   = 70;
     optional bool                          Enabled               = 80;
 }
 
@@ -111,9 +111,11 @@ message GetSimulateConfigsResponse {
 
 message CreateAppSimulateConfigRequest {
     string                        TargetAppID           = 10;
-    string                        Units                 = 20;
-    basetypes.order.v1.SendCouponMode SendCouponMode    = 30;
-    string                        SendCouponProbability = 40;
+    basetypes.order.v1.SendCouponMode SendCouponMode    = 20;
+    string                        SendCouponProbability = 30;
+    bool                          EnabledProfitTx       = 40;
+    string                        ProfitTxProbability   = 50;
+    bool                          Enabled               = 60;
 }
 
 message CreateAppSimulateConfigResponse {
@@ -124,10 +126,10 @@ message UpdateAppSimulateConfigRequest {
   uint32                                 ID                    = 10;
   string                                 EntID                 = 20;
   string                                 TargetAppID           = 30;
-  optional string                        Units                 = 40;
-  optional uint32                        Duration              = 50;
-  optional basetypes.order.v1.SendCouponMode SendCouponMode    = 60;
-  optional string                        SendCouponProbability = 70;
+  optional basetypes.order.v1.SendCouponMode SendCouponMode    = 40;
+  optional string                        SendCouponProbability = 50;
+  optional bool                          EnabledProfitTx       = 60;
+  optional string                        ProfitTxProbability   = 70;
   optional bool                          Enabled               = 80;
 }
 
