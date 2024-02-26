@@ -71,7 +71,7 @@
         "SendCouponMode": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "EnabledProfitTx": {
+        "EnabledCashableProfit": {
           "$ref": "#/definitions/v1BoolVal"
         },
         "Enabled": {
@@ -173,13 +173,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"send_coupon_probability\""
         },
-        "EnabledProfitTx": {
+        "EnabledCashableProfit": {
           "type": "boolean",
-          "title": "@inject_tag: sql:\"enabled_profit_tx\""
+          "title": "@inject_tag: sql:\"enabled_cashable_profit\""
         },
-        "ProfitTxProbability": {
+        "CashableProfitProbability": {
           "type": "string",
-          "title": "@inject_tag: sql:\"profit_tx_probability\""
+          "title": "@inject_tag: sql:\"cashable_profit_probability\""
         },
         "Enabled": {
           "type": "boolean",
@@ -216,10 +216,10 @@
         "SendCouponProbability": {
           "type": "string"
         },
-        "EnabledProfitTx": {
+        "EnabledCashableProfit": {
           "type": "boolean"
         },
-        "ProfitTxProbability": {
+        "CashableProfitProbability": {
           "type": "string"
         },
         "Enabled": {
