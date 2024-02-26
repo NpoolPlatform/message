@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/get/cashablesimulateprofitrewards": {
+      "post": {
+        "operationId": "Gateway_GetCashableSimulateProfitRewards",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCashableSimulateProfitRewardsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCashableSimulateProfitRewardsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/goodprofits": {
       "post": {
         "operationId": "Gateway_GetGoodProfits",
@@ -168,8 +200,52 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1GetCashableSimulateProfitRewardsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetCashableSimulateProfitRewardsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1MiningReward"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -206,6 +282,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1GoodProfit"
           }
         },
@@ -248,6 +325,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Profit"
           }
         },
@@ -290,6 +368,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1MiningReward"
           }
         },
@@ -324,6 +403,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Profit"
           }
         },
@@ -412,7 +492,8 @@
         "Withdrawal",
         "OrderRevoke",
         "CommissionRevoke",
-        "RandomCouponCash"
+        "RandomCouponCash",
+        "RandomCashableSimulateProfit"
       ],
       "default": "DefaultSubType",
       "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
