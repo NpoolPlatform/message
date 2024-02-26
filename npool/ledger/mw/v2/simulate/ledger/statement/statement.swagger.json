@@ -239,38 +239,6 @@
           "Middleware"
         ]
       }
-    },
-    "/v1/simulate/ledgerstatement_UpdateStatement": {
-      "post": {
-        "operationId": "Middleware_UpdateStatement",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v2UpdateStatementResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v2UpdateStatementRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
     }
   },
   "definitions": {
@@ -326,7 +294,8 @@
         "Withdrawal",
         "OrderRevoke",
         "CommissionRevoke",
-        "RandomCouponCash"
+        "RandomCouponCash",
+        "RandomSimulateProfit"
       ],
       "default": "DefaultSubType",
       "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
@@ -435,9 +404,6 @@
           "$ref": "#/definitions/v1BoolVal"
         },
         "Cashable": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "CashUsed": {
           "$ref": "#/definitions/v1BoolVal"
         }
       }
@@ -640,15 +606,6 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"cashable\""
         },
-        "CashUsed": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"cash_used\""
-        },
-        "CashUsedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"cash_used_at\""
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -702,27 +659,8 @@
         "Cashable": {
           "type": "boolean"
         },
-        "CashUsed": {
-          "type": "boolean"
-        },
         "Rollback": {
           "type": "boolean"
-        }
-      }
-    },
-    "v2UpdateStatementRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2StatementReq"
-        }
-      }
-    },
-    "v2UpdateStatementResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v2Statement"
         }
       }
     }

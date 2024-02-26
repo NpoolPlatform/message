@@ -26,7 +26,6 @@ const (
 	Middleware_DeleteStatements_FullMethodName    = "/ledger.middleware.simulate.ledger.statement.v2.Middleware/DeleteStatements"
 	Middleware_CreateStatement_FullMethodName     = "/ledger.middleware.simulate.ledger.statement.v2.Middleware/CreateStatement"
 	Middleware_DeleteStatement_FullMethodName     = "/ledger.middleware.simulate.ledger.statement.v2.Middleware/DeleteStatement"
-	Middleware_UpdateStatement_FullMethodName     = "/ledger.middleware.simulate.ledger.statement.v2.Middleware/UpdateStatement"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -40,7 +39,6 @@ type MiddlewareClient interface {
 	DeleteStatements(ctx context.Context, in *DeleteStatementsRequest, opts ...grpc.CallOption) (*DeleteStatementsResponse, error)
 	CreateStatement(ctx context.Context, in *CreateStatementRequest, opts ...grpc.CallOption) (*CreateStatementResponse, error)
 	DeleteStatement(ctx context.Context, in *DeleteStatementRequest, opts ...grpc.CallOption) (*DeleteStatementResponse, error)
-	UpdateStatement(ctx context.Context, in *UpdateStatementRequest, opts ...grpc.CallOption) (*UpdateStatementResponse, error)
 }
 
 type middlewareClient struct {
@@ -114,15 +112,6 @@ func (c *middlewareClient) DeleteStatement(ctx context.Context, in *DeleteStatem
 	return out, nil
 }
 
-func (c *middlewareClient) UpdateStatement(ctx context.Context, in *UpdateStatementRequest, opts ...grpc.CallOption) (*UpdateStatementResponse, error) {
-	out := new(UpdateStatementResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdateStatement_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -134,7 +123,6 @@ type MiddlewareServer interface {
 	DeleteStatements(context.Context, *DeleteStatementsRequest) (*DeleteStatementsResponse, error)
 	CreateStatement(context.Context, *CreateStatementRequest) (*CreateStatementResponse, error)
 	DeleteStatement(context.Context, *DeleteStatementRequest) (*DeleteStatementResponse, error)
-	UpdateStatement(context.Context, *UpdateStatementRequest) (*UpdateStatementResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -162,9 +150,6 @@ func (UnimplementedMiddlewareServer) CreateStatement(context.Context, *CreateSta
 }
 func (UnimplementedMiddlewareServer) DeleteStatement(context.Context, *DeleteStatementRequest) (*DeleteStatementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteStatement not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateStatement(context.Context, *UpdateStatementRequest) (*UpdateStatementResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateStatement not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -305,24 +290,6 @@ func _Middleware_DeleteStatement_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_UpdateStatement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateStatementRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateStatement(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdateStatement_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateStatement(ctx, req.(*UpdateStatementRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -357,10 +324,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteStatement",
 			Handler:    _Middleware_DeleteStatement_Handler,
-		},
-		{
-			MethodName: "UpdateStatement",
-			Handler:    _Middleware_UpdateStatement_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
