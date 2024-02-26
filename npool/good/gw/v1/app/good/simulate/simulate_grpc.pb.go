@@ -24,6 +24,7 @@ const (
 	Gateway_GetSimulates_FullMethodName    = "/good.gateway.app.good1.simulate.v1.Gateway/GetSimulates"
 	Gateway_GetNSimulates_FullMethodName   = "/good.gateway.app.good1.simulate.v1.Gateway/GetNSimulates"
 	Gateway_DeleteSimulate_FullMethodName  = "/good.gateway.app.good1.simulate.v1.Gateway/DeleteSimulate"
+	Gateway_DeleteNSimulate_FullMethodName = "/good.gateway.app.good1.simulate.v1.Gateway/DeleteNSimulate"
 	Gateway_UpdateSimulate_FullMethodName  = "/good.gateway.app.good1.simulate.v1.Gateway/UpdateSimulate"
 	Gateway_UpdateNSimulate_FullMethodName = "/good.gateway.app.good1.simulate.v1.Gateway/UpdateNSimulate"
 )
@@ -37,6 +38,7 @@ type GatewayClient interface {
 	GetSimulates(ctx context.Context, in *GetSimulatesRequest, opts ...grpc.CallOption) (*GetSimulatesResponse, error)
 	GetNSimulates(ctx context.Context, in *GetNSimulatesRequest, opts ...grpc.CallOption) (*GetNSimulatesResponse, error)
 	DeleteSimulate(ctx context.Context, in *DeleteSimulateRequest, opts ...grpc.CallOption) (*DeleteSimulateResponse, error)
+	DeleteNSimulate(ctx context.Context, in *DeleteNSimulateRequest, opts ...grpc.CallOption) (*DeleteNSimulateResponse, error)
 	UpdateSimulate(ctx context.Context, in *UpdateSimulateRequest, opts ...grpc.CallOption) (*UpdateSimulateResponse, error)
 	UpdateNSimulate(ctx context.Context, in *UpdateNSimulateRequest, opts ...grpc.CallOption) (*UpdateNSimulateResponse, error)
 }
@@ -94,6 +96,15 @@ func (c *gatewayClient) DeleteSimulate(ctx context.Context, in *DeleteSimulateRe
 	return out, nil
 }
 
+func (c *gatewayClient) DeleteNSimulate(ctx context.Context, in *DeleteNSimulateRequest, opts ...grpc.CallOption) (*DeleteNSimulateResponse, error) {
+	out := new(DeleteNSimulateResponse)
+	err := c.cc.Invoke(ctx, Gateway_DeleteNSimulate_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) UpdateSimulate(ctx context.Context, in *UpdateSimulateRequest, opts ...grpc.CallOption) (*UpdateSimulateResponse, error) {
 	out := new(UpdateSimulateResponse)
 	err := c.cc.Invoke(ctx, Gateway_UpdateSimulate_FullMethodName, in, out, opts...)
@@ -121,6 +132,7 @@ type GatewayServer interface {
 	GetSimulates(context.Context, *GetSimulatesRequest) (*GetSimulatesResponse, error)
 	GetNSimulates(context.Context, *GetNSimulatesRequest) (*GetNSimulatesResponse, error)
 	DeleteSimulate(context.Context, *DeleteSimulateRequest) (*DeleteSimulateResponse, error)
+	DeleteNSimulate(context.Context, *DeleteNSimulateRequest) (*DeleteNSimulateResponse, error)
 	UpdateSimulate(context.Context, *UpdateSimulateRequest) (*UpdateSimulateResponse, error)
 	UpdateNSimulate(context.Context, *UpdateNSimulateRequest) (*UpdateNSimulateResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -144,6 +156,9 @@ func (UnimplementedGatewayServer) GetNSimulates(context.Context, *GetNSimulatesR
 }
 func (UnimplementedGatewayServer) DeleteSimulate(context.Context, *DeleteSimulateRequest) (*DeleteSimulateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteSimulate not implemented")
+}
+func (UnimplementedGatewayServer) DeleteNSimulate(context.Context, *DeleteNSimulateRequest) (*DeleteNSimulateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteNSimulate not implemented")
 }
 func (UnimplementedGatewayServer) UpdateSimulate(context.Context, *UpdateSimulateRequest) (*UpdateSimulateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateSimulate not implemented")
@@ -254,6 +269,24 @@ func _Gateway_DeleteSimulate_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_DeleteNSimulate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteNSimulateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeleteNSimulate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_DeleteNSimulate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeleteNSimulate(ctx, req.(*DeleteNSimulateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_UpdateSimulate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateSimulateRequest)
 	if err := dec(in); err != nil {
@@ -316,6 +349,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteSimulate",
 			Handler:    _Gateway_DeleteSimulate_Handler,
+		},
+		{
+			MethodName: "DeleteNSimulate",
+			Handler:    _Gateway_DeleteNSimulate_Handler,
 		},
 		{
 			MethodName: "UpdateSimulate",

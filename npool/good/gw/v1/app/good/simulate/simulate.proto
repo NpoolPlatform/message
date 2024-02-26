@@ -43,6 +43,13 @@ service Gateway {
         };
     }
 
+    rpc DeleteNSimulate (DeleteNSimulateRequest) returns (DeleteNSimulateResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/n/simulategood"
+            body: "*"
+        };
+    }
+
     rpc UpdateSimulate (UpdateSimulateRequest) returns (UpdateSimulateResponse) {
         option (google.api.http) = {
             post: "/v1/update/simulategood"
@@ -129,6 +136,16 @@ message DeleteSimulateRequest {
 }
 
 message DeleteSimulateResponse {
+    Simulate Info = 10;
+}
+
+message DeleteNSimulateRequest {
+    uint32 ID          = 9;
+    string EntID       = 10;
+    string TargetAppID = 20;
+}
+
+message DeleteNSimulateResponse {
     Simulate Info = 10;
 }
 

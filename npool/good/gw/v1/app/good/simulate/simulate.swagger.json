@@ -80,6 +80,38 @@
         ]
       }
     },
+    "/v1/delete/n/simulategood": {
+      "post": {
+        "operationId": "Gateway_DeleteNSimulate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteNSimulateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteNSimulateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/delete/simulategood": {
       "post": {
         "operationId": "Gateway_DeleteSimulate",
@@ -315,6 +347,29 @@
       }
     },
     "v1CreateSimulateResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Simulate"
+        }
+      }
+    },
+    "v1DeleteNSimulateRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteNSimulateResponse": {
       "type": "object",
       "properties": {
         "Info": {
