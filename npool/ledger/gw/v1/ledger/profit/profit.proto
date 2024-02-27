@@ -37,13 +37,6 @@ service Gateway {
             body: "*"
         };
     }
-
-    rpc GetCashableSimulateProfitRewards (GetCashableSimulateProfitRewardsRequest) returns (GetCashableSimulateProfitRewardsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/cashablesimulateprofitrewards"
-            body: "*"
-        };
-    }
 }
 
 message MiningReward {
@@ -67,12 +60,13 @@ message MiningReward {
 }
 
 message GetMiningRewardsRequest {
-    string AppID    = 10;
-    string UserID   = 20;
-    uint32 StartAt  = 30;
-    uint32 EndAt    = 40;
-    int32  Offset   = 50;
-    int32  Limit    = 60;
+    string AppID                 = 10;
+    string UserID                = 20;
+    uint32 StartAt               = 30;
+    uint32 EndAt                 = 40;
+    optional bool CashableSimulateReward = 50;
+    int32  Offset                = 60;
+    int32  Limit                 = 70;
 }
 
 message GetMiningRewardsResponse {
@@ -147,18 +141,4 @@ message GetGoodProfitsRequest {
 message GetGoodProfitsResponse {
     repeated GoodProfit Infos = 10;
     uint32              Total = 20;
-}
-
-message GetCashableSimulateProfitRewardsRequest {
-    string AppID    = 10;
-    string UserID   = 20;
-    uint32 StartAt  = 30;
-    uint32 EndAt    = 40;
-    int32  Offset   = 50;
-    int32  Limit    = 60;
-}
-
-message GetCashableSimulateProfitRewardsResponse {
-    repeated MiningReward Infos = 10;
-    uint32  Total = 20;
 }

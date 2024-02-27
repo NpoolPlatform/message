@@ -19,11 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetMiningRewards_FullMethodName                 = "/ledger.gateway.ledger.profit.v1.Gateway/GetMiningRewards"
-	Gateway_GetProfits_FullMethodName                       = "/ledger.gateway.ledger.profit.v1.Gateway/GetProfits"
-	Gateway_GetIntervalProfits_FullMethodName               = "/ledger.gateway.ledger.profit.v1.Gateway/GetIntervalProfits"
-	Gateway_GetGoodProfits_FullMethodName                   = "/ledger.gateway.ledger.profit.v1.Gateway/GetGoodProfits"
-	Gateway_GetCashableSimulateProfitRewards_FullMethodName = "/ledger.gateway.ledger.profit.v1.Gateway/GetCashableSimulateProfitRewards"
+	Gateway_GetMiningRewards_FullMethodName   = "/ledger.gateway.ledger.profit.v1.Gateway/GetMiningRewards"
+	Gateway_GetProfits_FullMethodName         = "/ledger.gateway.ledger.profit.v1.Gateway/GetProfits"
+	Gateway_GetIntervalProfits_FullMethodName = "/ledger.gateway.ledger.profit.v1.Gateway/GetIntervalProfits"
+	Gateway_GetGoodProfits_FullMethodName     = "/ledger.gateway.ledger.profit.v1.Gateway/GetGoodProfits"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -34,7 +33,6 @@ type GatewayClient interface {
 	GetProfits(ctx context.Context, in *GetProfitsRequest, opts ...grpc.CallOption) (*GetProfitsResponse, error)
 	GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error)
 	GetGoodProfits(ctx context.Context, in *GetGoodProfitsRequest, opts ...grpc.CallOption) (*GetGoodProfitsResponse, error)
-	GetCashableSimulateProfitRewards(ctx context.Context, in *GetCashableSimulateProfitRewardsRequest, opts ...grpc.CallOption) (*GetCashableSimulateProfitRewardsResponse, error)
 }
 
 type gatewayClient struct {
@@ -81,15 +79,6 @@ func (c *gatewayClient) GetGoodProfits(ctx context.Context, in *GetGoodProfitsRe
 	return out, nil
 }
 
-func (c *gatewayClient) GetCashableSimulateProfitRewards(ctx context.Context, in *GetCashableSimulateProfitRewardsRequest, opts ...grpc.CallOption) (*GetCashableSimulateProfitRewardsResponse, error) {
-	out := new(GetCashableSimulateProfitRewardsResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetCashableSimulateProfitRewards_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -98,7 +87,6 @@ type GatewayServer interface {
 	GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error)
 	GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error)
 	GetGoodProfits(context.Context, *GetGoodProfitsRequest) (*GetGoodProfitsResponse, error)
-	GetCashableSimulateProfitRewards(context.Context, *GetCashableSimulateProfitRewardsRequest) (*GetCashableSimulateProfitRewardsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -117,9 +105,6 @@ func (UnimplementedGatewayServer) GetIntervalProfits(context.Context, *GetInterv
 }
 func (UnimplementedGatewayServer) GetGoodProfits(context.Context, *GetGoodProfitsRequest) (*GetGoodProfitsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodProfits not implemented")
-}
-func (UnimplementedGatewayServer) GetCashableSimulateProfitRewards(context.Context, *GetCashableSimulateProfitRewardsRequest) (*GetCashableSimulateProfitRewardsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCashableSimulateProfitRewards not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -206,24 +191,6 @@ func _Gateway_GetGoodProfits_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetCashableSimulateProfitRewards_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCashableSimulateProfitRewardsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetCashableSimulateProfitRewards(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetCashableSimulateProfitRewards_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetCashableSimulateProfitRewards(ctx, req.(*GetCashableSimulateProfitRewardsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -246,10 +213,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetGoodProfits",
 			Handler:    _Gateway_GetGoodProfits_Handler,
-		},
-		{
-			MethodName: "GetCashableSimulateProfitRewards",
-			Handler:    _Gateway_GetCashableSimulateProfitRewards_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

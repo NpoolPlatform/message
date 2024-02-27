@@ -16,38 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/cashablesimulateprofitrewards": {
-      "post": {
-        "operationId": "Gateway_GetCashableSimulateProfitRewards",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetCashableSimulateProfitRewardsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetCashableSimulateProfitRewardsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/goodprofits": {
       "post": {
         "operationId": "Gateway_GetGoodProfits",
@@ -206,49 +174,6 @@
         }
       }
     },
-    "v1GetCashableSimulateProfitRewardsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetCashableSimulateProfitRewardsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1MiningReward"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1GetGoodProfitsRequest": {
       "type": "object",
       "properties": {
@@ -351,6 +276,9 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "CashableSimulateReward": {
+          "type": "boolean"
         },
         "Offset": {
           "type": "integer",
