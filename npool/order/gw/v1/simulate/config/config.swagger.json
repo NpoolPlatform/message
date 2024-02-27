@@ -81,6 +81,38 @@
         ]
       }
     },
+    "/v1/delete/app/simulate/configs": {
+      "post": {
+        "operationId": "Gateway_DeleteAppSimulateConfigs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppSimulateConfigsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppSimulateConfigsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/app/simulate/configs": {
       "post": {
         "operationId": "Gateway_GetAppSimulateConfigs",
@@ -415,6 +447,29 @@
       }
     },
     "v1CreateAppSimulateConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1SimulateConfig"
+        }
+      }
+    },
+    "v1DeleteAppSimulateConfigsRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteAppSimulateConfigsResponse": {
       "type": "object",
       "properties": {
         "Info": {
