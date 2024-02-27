@@ -62,12 +62,12 @@ service Gateway {
 }
 
 message CreateSimulateConfigRequest {
-    string                        AppID                     = 10;
-    basetypes.order.v1.SendCouponMode SendCouponMode        = 20;
-    string                        SendCouponProbability     = 30;
-    bool                          EnabledCashableProfit     = 40;
-    string                        CashableProfitProbability = 50;
-    bool                          Enabled                   = 60;
+    string                                 AppID                     = 10;
+    basetypes.order.v1.SendCouponMode      SendCouponMode            = 20;
+    optional string                        SendCouponProbability     = 30;
+    optional bool                          EnabledCashableProfit     = 40;
+    optional string                        CashableProfitProbability = 50;
+    optional bool                          Enabled                   = 60;
 }
 
 message CreateSimulateConfigResponse {
