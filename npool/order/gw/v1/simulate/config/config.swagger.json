@@ -83,12 +83,12 @@
     },
     "/v1/delete/app/simulate/configs": {
       "post": {
-        "operationId": "Gateway_DeleteAppSimulateConfigs",
+        "operationId": "Gateway_DeleteAppSimulateConfig",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteAppSimulateConfigsResponse"
+              "$ref": "#/definitions/v1DeleteAppSimulateConfigResponse"
             }
           },
           "default": {
@@ -104,7 +104,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteAppSimulateConfigsRequest"
+              "$ref": "#/definitions/v1DeleteAppSimulateConfigRequest"
             }
           }
         ],
@@ -454,7 +454,7 @@
         }
       }
     },
-    "v1DeleteAppSimulateConfigsRequest": {
+    "v1DeleteAppSimulateConfigRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -469,7 +469,7 @@
         }
       }
     },
-    "v1DeleteAppSimulateConfigsResponse": {
+    "v1DeleteAppSimulateConfigResponse": {
       "type": "object",
       "properties": {
         "Info": {

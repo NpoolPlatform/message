@@ -60,7 +60,7 @@ service Gateway {
         };
     }
 
-    rpc DeleteAppSimulateConfigs (DeleteAppSimulateConfigsRequest) returns (DeleteAppSimulateConfigsResponse) {
+    rpc DeleteAppSimulateConfig (DeleteAppSimulateConfigRequest) returns (DeleteAppSimulateConfigResponse) {
         option (google.api.http) = {
             post: "/v1/delete/app/simulate/configs"
             body: "*"
@@ -155,12 +155,12 @@ message GetAppSimulateConfigsResponse {
     uint32                  Total = 20;
 }
 
-message DeleteAppSimulateConfigsRequest {
+message DeleteAppSimulateConfigRequest {
     uint32 ID          = 10;
     string EntID       = 20;
     string TargetAppID = 30;
 }
 
-message DeleteAppSimulateConfigsResponse {
+message DeleteAppSimulateConfigResponse {
     order.middleware.simulate.config.v1.SimulateConfig Info = 10;
 }

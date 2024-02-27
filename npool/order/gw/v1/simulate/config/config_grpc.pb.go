@@ -19,14 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateSimulateConfig_FullMethodName     = "/order.gateway.simulate.config.v1.Gateway/CreateSimulateConfig"
-	Gateway_UpdateSimulateConfig_FullMethodName     = "/order.gateway.simulate.config.v1.Gateway/UpdateSimulateConfig"
-	Gateway_GetSimulateConfig_FullMethodName        = "/order.gateway.simulate.config.v1.Gateway/GetSimulateConfig"
-	Gateway_GetSimulateConfigs_FullMethodName       = "/order.gateway.simulate.config.v1.Gateway/GetSimulateConfigs"
-	Gateway_CreateAppSimulateConfig_FullMethodName  = "/order.gateway.simulate.config.v1.Gateway/CreateAppSimulateConfig"
-	Gateway_UpdateAppSimulateConfig_FullMethodName  = "/order.gateway.simulate.config.v1.Gateway/UpdateAppSimulateConfig"
-	Gateway_GetAppSimulateConfigs_FullMethodName    = "/order.gateway.simulate.config.v1.Gateway/GetAppSimulateConfigs"
-	Gateway_DeleteAppSimulateConfigs_FullMethodName = "/order.gateway.simulate.config.v1.Gateway/DeleteAppSimulateConfigs"
+	Gateway_CreateSimulateConfig_FullMethodName    = "/order.gateway.simulate.config.v1.Gateway/CreateSimulateConfig"
+	Gateway_UpdateSimulateConfig_FullMethodName    = "/order.gateway.simulate.config.v1.Gateway/UpdateSimulateConfig"
+	Gateway_GetSimulateConfig_FullMethodName       = "/order.gateway.simulate.config.v1.Gateway/GetSimulateConfig"
+	Gateway_GetSimulateConfigs_FullMethodName      = "/order.gateway.simulate.config.v1.Gateway/GetSimulateConfigs"
+	Gateway_CreateAppSimulateConfig_FullMethodName = "/order.gateway.simulate.config.v1.Gateway/CreateAppSimulateConfig"
+	Gateway_UpdateAppSimulateConfig_FullMethodName = "/order.gateway.simulate.config.v1.Gateway/UpdateAppSimulateConfig"
+	Gateway_GetAppSimulateConfigs_FullMethodName   = "/order.gateway.simulate.config.v1.Gateway/GetAppSimulateConfigs"
+	Gateway_DeleteAppSimulateConfig_FullMethodName = "/order.gateway.simulate.config.v1.Gateway/DeleteAppSimulateConfig"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -41,7 +41,7 @@ type GatewayClient interface {
 	CreateAppSimulateConfig(ctx context.Context, in *CreateAppSimulateConfigRequest, opts ...grpc.CallOption) (*CreateAppSimulateConfigResponse, error)
 	UpdateAppSimulateConfig(ctx context.Context, in *UpdateAppSimulateConfigRequest, opts ...grpc.CallOption) (*UpdateAppSimulateConfigResponse, error)
 	GetAppSimulateConfigs(ctx context.Context, in *GetAppSimulateConfigsRequest, opts ...grpc.CallOption) (*GetAppSimulateConfigsResponse, error)
-	DeleteAppSimulateConfigs(ctx context.Context, in *DeleteAppSimulateConfigsRequest, opts ...grpc.CallOption) (*DeleteAppSimulateConfigsResponse, error)
+	DeleteAppSimulateConfig(ctx context.Context, in *DeleteAppSimulateConfigRequest, opts ...grpc.CallOption) (*DeleteAppSimulateConfigResponse, error)
 }
 
 type gatewayClient struct {
@@ -115,9 +115,9 @@ func (c *gatewayClient) GetAppSimulateConfigs(ctx context.Context, in *GetAppSim
 	return out, nil
 }
 
-func (c *gatewayClient) DeleteAppSimulateConfigs(ctx context.Context, in *DeleteAppSimulateConfigsRequest, opts ...grpc.CallOption) (*DeleteAppSimulateConfigsResponse, error) {
-	out := new(DeleteAppSimulateConfigsResponse)
-	err := c.cc.Invoke(ctx, Gateway_DeleteAppSimulateConfigs_FullMethodName, in, out, opts...)
+func (c *gatewayClient) DeleteAppSimulateConfig(ctx context.Context, in *DeleteAppSimulateConfigRequest, opts ...grpc.CallOption) (*DeleteAppSimulateConfigResponse, error) {
+	out := new(DeleteAppSimulateConfigResponse)
+	err := c.cc.Invoke(ctx, Gateway_DeleteAppSimulateConfig_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -136,7 +136,7 @@ type GatewayServer interface {
 	CreateAppSimulateConfig(context.Context, *CreateAppSimulateConfigRequest) (*CreateAppSimulateConfigResponse, error)
 	UpdateAppSimulateConfig(context.Context, *UpdateAppSimulateConfigRequest) (*UpdateAppSimulateConfigResponse, error)
 	GetAppSimulateConfigs(context.Context, *GetAppSimulateConfigsRequest) (*GetAppSimulateConfigsResponse, error)
-	DeleteAppSimulateConfigs(context.Context, *DeleteAppSimulateConfigsRequest) (*DeleteAppSimulateConfigsResponse, error)
+	DeleteAppSimulateConfig(context.Context, *DeleteAppSimulateConfigRequest) (*DeleteAppSimulateConfigResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -165,8 +165,8 @@ func (UnimplementedGatewayServer) UpdateAppSimulateConfig(context.Context, *Upda
 func (UnimplementedGatewayServer) GetAppSimulateConfigs(context.Context, *GetAppSimulateConfigsRequest) (*GetAppSimulateConfigsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppSimulateConfigs not implemented")
 }
-func (UnimplementedGatewayServer) DeleteAppSimulateConfigs(context.Context, *DeleteAppSimulateConfigsRequest) (*DeleteAppSimulateConfigsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppSimulateConfigs not implemented")
+func (UnimplementedGatewayServer) DeleteAppSimulateConfig(context.Context, *DeleteAppSimulateConfigRequest) (*DeleteAppSimulateConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppSimulateConfig not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -307,20 +307,20 @@ func _Gateway_GetAppSimulateConfigs_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_DeleteAppSimulateConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteAppSimulateConfigsRequest)
+func _Gateway_DeleteAppSimulateConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppSimulateConfigRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).DeleteAppSimulateConfigs(ctx, in)
+		return srv.(GatewayServer).DeleteAppSimulateConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_DeleteAppSimulateConfigs_FullMethodName,
+		FullMethod: Gateway_DeleteAppSimulateConfig_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeleteAppSimulateConfigs(ctx, req.(*DeleteAppSimulateConfigsRequest))
+		return srv.(GatewayServer).DeleteAppSimulateConfig(ctx, req.(*DeleteAppSimulateConfigRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -361,8 +361,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetAppSimulateConfigs_Handler,
 		},
 		{
-			MethodName: "DeleteAppSimulateConfigs",
-			Handler:    _Gateway_DeleteAppSimulateConfigs_Handler,
+			MethodName: "DeleteAppSimulateConfig",
+			Handler:    _Gateway_DeleteAppSimulateConfig_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
