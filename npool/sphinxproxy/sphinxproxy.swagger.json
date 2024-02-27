@@ -733,10 +733,10 @@
         "TransactionStateDone",
         "TransactionStateFail",
         "TransactionStateBroadcast",
-        "TransactionStateRetrievePrivateInfo"
+        "TransactionStatePrepare"
       ],
       "default": "TransactionStateUnKnow",
-      "description": "- TransactionStateRetrievePrivateInfo: some coin such as aleo 30 -\u003e 1",
+      "description": "- TransactionStatePrepare: some coin such as aleo 30 -\u003e 1",
       "title": "state step by 10"
     },
     "v1TransactionType": {
