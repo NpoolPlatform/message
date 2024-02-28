@@ -33,7 +33,6 @@ message Ledger {
     bool   CoinDisplay    = 42;
     string Incoming       = 50;
     string Outcoming      = 70;
-    string Spendable      = 80;
     string UserID         = 90;
     string PhoneNO        = 100;
     string EmailAddress   = 110;
