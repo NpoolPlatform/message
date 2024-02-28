@@ -264,7 +264,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -283,7 +282,8 @@
         "Withdrawal",
         "OrderRevoke",
         "CommissionRevoke",
-        "RandomCouponCash"
+        "RandomCouponCash",
+        "RandomCashableSimulateProfit"
       ],
       "default": "DefaultSubType",
       "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
@@ -412,7 +412,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2StatementReq"
           }
         }
@@ -424,7 +423,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
         }
@@ -452,7 +450,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2StatementReq"
           }
         }
@@ -464,7 +461,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
         }
@@ -524,7 +520,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Statement"
           }
         },

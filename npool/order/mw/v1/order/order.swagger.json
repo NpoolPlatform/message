@@ -104,7 +104,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -227,10 +226,6 @@
         "ParentOrderIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
-<<<<<<< HEAD
-        "Simulate": {
-          "$ref": "#/definitions/v1BoolVal"
-=======
         "RenewState": {
           "$ref": "#/definitions/v1Uint32Val"
         },
@@ -242,7 +237,9 @@
         },
         "RenewNotifyAt": {
           "$ref": "#/definitions/v1Uint32Val"
->>>>>>> 70e9dd96927d056d5e8a41e65435b572dfc9d400
+        },
+        "Simulate": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
@@ -269,7 +266,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         }
@@ -297,7 +293,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         }
@@ -333,7 +328,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         },
@@ -602,11 +596,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ledger_lock_id\""
         },
-<<<<<<< HEAD
-        "Simulate": {
-          "type": "boolean",
-          "title": "simulate\n@inject_tag: sql:\"simulate\""
-=======
         "RenewStateStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"renew_state\""
@@ -618,7 +607,10 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"renew_notify_at\""
->>>>>>> 70e9dd96927d056d5e8a41e65435b572dfc9d400
+        },
+        "Simulate": {
+          "type": "boolean",
+          "title": "simulate\n@inject_tag: sql:\"simulate\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -815,17 +807,15 @@
         "LedgerLockID": {
           "type": "string"
         },
-<<<<<<< HEAD
-        "Simulate": {
-          "type": "boolean"
-=======
         "RenewState": {
           "$ref": "#/definitions/v1OrderRenewState"
         },
         "RenewNotifyAt": {
           "type": "integer",
           "format": "int64"
->>>>>>> 70e9dd96927d056d5e8a41e65435b572dfc9d400
+        },
+        "Simulate": {
+          "type": "boolean"
         }
       }
     },
@@ -839,8 +829,7 @@
         "OrderStartNextDay",
         "OrderStartPreset"
       ],
-      "default": "DefaultOrderStartMode",
-      "title": "- OrderStartInstantly: Start when order paid\n - OrderStartNextDay: Start at next 00:00 UTC\n - OrderStartPreset: Start at a preset time"
+      "default": "DefaultOrderStartMode"
     },
     "v1OrderState": {
       "type": "string",
@@ -880,8 +869,7 @@
         "OrderStateChildCanceledByParent"
       ],
       "default": "DefaultOrderState",
-      "description": "-\u003e OrderStatePaymentTimeout || OrderStatePaymentTransferReceived || OrderStatePreCancel\n - OrderStatePaymentTransferReceived: Payment process\n\n-\u003e OrderStatePaymentTransferBookKeeping\n - OrderStatePaymentTransferBookKeeping: -\u003e OrderStatePaymentSpendBalance\n - OrderStatePaymentSpendBalance: -\u003e OrderStateTransferGoodStockLocked\n - OrderStateTransferGoodStockLocked: -\u003e OrderStateAddCommission\n - OrderStateAddCommission: -\u003e OrderStateAchievementBookKeeping\n - OrderStateAchievementBookKeeping: -\u003e OrderStatePaymentUnlockAccount\n - OrderStatePaymentUnlockAccount: -\u003e OrderStateUpdatePaidChilds\n - OrderStateUpdatePaidChilds: -\u003e OrderStatePaid\n - OrderStatePaid: Paid\n\n-\u003e OrderStatePreCancel || OrderStateTransferGoodStockWaitStart\n - OrderStateTransferGoodStockWaitStart: -\u003e OrderStateUpdateInServiceChilds\n - OrderStateUpdateInServiceChilds: -\u003e OrderStateInService\n - OrderStateInService: -\u003e OrderStatePreCancel || OrderStatePreExpired\n - OrderStatePaymentTimeout: Timeout of order\n\n-\u003e OrderStatePreCancel\n - OrderStatePreCancel: End or order\n\n-\u003e OrderStateRestoreCanceledStock\n - OrderStatePreExpired: -\u003e OrderStateRestoreExpiredStock\n - OrderStateRestoreExpiredStock: Calculation\n\n-\u003e OrderStateUpdateExpiredChilds\n - OrderStateUpdateExpiredChilds: -\u003e OrderStateExpired\n - OrderStateRestoreCanceledStock: -\u003e OrderStateDeductLockedCommission\n - OrderStateDeductLockedCommission: -\u003e OrderStateCancelAchievement\n - OrderStateCancelAchievement: -\u003e OrderStateReturnCanceledBalance\n - OrderStateReturnCanceledBalance: -\u003e OrderStateCanceledTransferBookKeeping\n - OrderStateCanceledTransferBookKeeping: -\u003e OrderStateCancelUnlockPaymentAccount\n - OrderStateCancelUnlockPaymentAccount: -\u003e OrderStateUpdateCanceledChilds\n - OrderStateUpdateCanceledChilds: -\u003e OrderStateCanceled\n - OrderStateCanceled: End state\n - OrderStateChildPaidByParent: Child paid\n\n-\u003e OrderStatePaid, can be rollback\n - OrderStateChildInServiceByParent: -\u003e OrderStateInService\n - OrderStateChildExpiredByParent: -\u003e OrderStateExpired\n - OrderStateChildCanceledByParent: -\u003e OrderStateCanceled",
-      "title": "- OrderStateCreated: -\u003e OrderStateWaitPayment\n - OrderStateWaitPayment: Common state"
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state\n - OrderStateChildPaidByParent: Child paid"
     },
     "v1OrderType": {
       "type": "string",
@@ -1022,7 +1010,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Order"
           }
         }

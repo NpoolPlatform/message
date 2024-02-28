@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -141,7 +140,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Good"
           }
         },
@@ -589,8 +587,7 @@
         "GoodLabelInnovationStarter",
         "GoodLabelLoyaltyExclusive"
       ],
-      "default": "DefaultGoodLabel",
-      "title": "- GoodLabelNoviceExclusive: Newbie\n - GoodLabelInnovationStarter: First batch mining\n - GoodLabelLoyaltyExclusive: User with action credis pass threshold"
+      "default": "DefaultGoodLabel"
     },
     "v1GoodReq": {
       "type": "object",
@@ -720,8 +717,7 @@
         "GoodSettledByCash",
         "GoodSettledByProfit"
       ],
-      "default": "DefaultGoodSettlementType",
-      "title": "- GoodSettledByProfit: Percent in default"
+      "default": "DefaultGoodSettlementType"
     },
     "v1GoodStartMode": {
       "type": "string",
@@ -733,8 +729,7 @@
         "GoodStartModeNextDay",
         "GoodStartModePreset"
       ],
-      "default": "DefaultGoodStartMode",
-      "title": "- GoodStartModeTBD: Start time will be adjusted in future\n - GoodStartModeConfirmed: Deprecated\n - GoodStartModeInstantly: Start when order paid\n - GoodStartModeNextDay: Start at next 00:00 UTC\n - GoodStartModePreset: Start at a preset time"
+      "default": "DefaultGoodStartMode"
     },
     "v1GoodType": {
       "type": "string",

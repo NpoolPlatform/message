@@ -498,121 +498,7 @@
     }
   },
   "definitions": {
-<<<<<<< HEAD
-    "CreateOrdersRequestOrderReq": {
-      "type": "object",
-      "properties": {
-        "AppGoodID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "string"
-        },
-        "Duration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Parent": {
-          "type": "boolean"
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "v1Coupon": {
-      "type": "object",
-      "properties": {
-        "CouponID": {
-          "type": "string"
-        },
-        "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
-        },
-        "CouponName": {
-          "type": "string"
-        },
-        "CouponValue": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount"
-      ],
-      "default": "DefaultCouponType"
-    },
-    "v1CreateAppUserOrderRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "AppGoodID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "string"
-        },
-        "Duration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ParentOrderID": {
-          "type": "string"
-        },
-        "OrderType": {
-          "$ref": "#/definitions/v1OrderType"
-        },
-        "InvestmentType": {
-          "$ref": "#/definitions/v1InvestmentType"
-        }
-      }
-    },
-    "v1CreateAppUserOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Order"
-        }
-      }
-    },
-    "v1CreateOrderRequest": {
-=======
     "ordergatewayorder1v1CreateOrderRequest": {
->>>>>>> 70e9dd96927d056d5e8a41e65435b572dfc9d400
       "type": "object",
       "properties": {
         "AppID": {
@@ -686,12 +572,7 @@
         "Orders": {
           "type": "array",
           "items": {
-<<<<<<< HEAD
-            "type": "object",
-            "$ref": "#/definitions/CreateOrdersRequestOrderReq"
-=======
             "$ref": "#/definitions/v1CreateOrdersRequestOrderReq"
->>>>>>> 70e9dd96927d056d5e8a41e65435b572dfc9d400
           }
         }
       }
@@ -702,226 +583,12 @@
         "Infos": {
           "type": "array",
           "items": {
-<<<<<<< HEAD
-            "type": "object",
-            "$ref": "#/definitions/v1Order"
-          }
-        }
-      }
-    },
-    "v1CreateSimulateOrderRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AppGoodID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "string"
-        },
-        "Duration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ParentOrderID": {
-          "type": "string"
-        },
-        "InvestmentType": {
-          "$ref": "#/definitions/v1InvestmentType"
-        }
-      }
-    },
-    "v1CreateSimulateOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Order"
-        }
-      }
-    },
-    "v1CreateSimulateOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Orders": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/CreateOrdersRequestOrderReq"
-          }
-        },
-        "InvestmentType": {
-          "$ref": "#/definitions/v1InvestmentType"
-        }
-      }
-    },
-    "v1CreateSimulateOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Order"
-=======
             "$ref": "#/definitions/ordergatewayorder1v1Order"
->>>>>>> 70e9dd96927d056d5e8a41e65435b572dfc9d400
           }
         }
       }
     },
-<<<<<<< HEAD
-    "v1CreateUserOrderRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "AppGoodID": {
-          "type": "string"
-        },
-        "Units": {
-          "type": "string"
-        },
-        "Duration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ParentOrderID": {
-          "type": "string"
-        },
-        "OrderType": {
-          "$ref": "#/definitions/v1OrderType"
-        },
-        "InvestmentType": {
-          "$ref": "#/definitions/v1InvestmentType"
-        }
-      }
-    },
-    "v1CreateUserOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Order"
-        }
-      }
-    },
-    "v1GetAppOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Order"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetAppUserOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppUserOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Order"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetNAppOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetNAppOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Order"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetOrderRequest": {
-=======
     "ordergatewayorder1v1GetOrderRequest": {
->>>>>>> 70e9dd96927d056d5e8a41e65435b572dfc9d400
       "type": "object",
       "properties": {
         "AppID": {
@@ -968,12 +635,7 @@
         "Infos": {
           "type": "array",
           "items": {
-<<<<<<< HEAD
-            "type": "object",
-            "$ref": "#/definitions/v1Order"
-=======
             "$ref": "#/definitions/ordergatewayorder1v1Order"
->>>>>>> 70e9dd96927d056d5e8a41e65435b572dfc9d400
           }
         },
         "Total": {
@@ -982,66 +644,7 @@
         }
       }
     },
-<<<<<<< HEAD
-    "v1GetUserOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetUserOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1Order"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GoodDurationType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodDurationType",
-        "GoodDurationByHour",
-        "GoodDurationByDay",
-        "GoodDurationByMonth",
-        "GoodDurationByYear"
-      ],
-      "default": "DefaultGoodDurationType"
-    },
-    "v1InvestmentType": {
-      "type": "string",
-      "enum": [
-        "DefaultInvestmentType",
-        "UnionMining",
-        "FullPayment"
-      ],
-      "default": "DefaultInvestmentType"
-    },
-    "v1Order": {
-=======
     "ordergatewayorder1v1Order": {
->>>>>>> 70e9dd96927d056d5e8a41e65435b572dfc9d400
       "type": "object",
       "properties": {
         "ID": {
@@ -1215,7 +818,6 @@
         "Coupons": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Coupon"
           }
         },
@@ -1369,6 +971,72 @@
         },
         "Parent": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1CreateSimulateOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ParentOrderID": {
+          "type": "string"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        }
+      }
+    },
+    "v1CreateSimulateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
+        }
+      }
+    },
+    "v1CreateSimulateOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CreateOrdersRequestOrderReq"
+          }
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        }
+      }
+    },
+    "v1CreateSimulateOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
+          }
         }
       }
     },
@@ -1608,8 +1276,7 @@
         "OrderStateChildCanceledByParent"
       ],
       "default": "DefaultOrderState",
-      "description": "-\u003e OrderStatePaymentTimeout || OrderStatePaymentTransferReceived || OrderStatePreCancel\n - OrderStatePaymentTransferReceived: Payment process\n\n-\u003e OrderStatePaymentTransferBookKeeping\n - OrderStatePaymentTransferBookKeeping: -\u003e OrderStatePaymentSpendBalance\n - OrderStatePaymentSpendBalance: -\u003e OrderStateTransferGoodStockLocked\n - OrderStateTransferGoodStockLocked: -\u003e OrderStateAddCommission\n - OrderStateAddCommission: -\u003e OrderStateAchievementBookKeeping\n - OrderStateAchievementBookKeeping: -\u003e OrderStatePaymentUnlockAccount\n - OrderStatePaymentUnlockAccount: -\u003e OrderStateUpdatePaidChilds\n - OrderStateUpdatePaidChilds: -\u003e OrderStatePaid\n - OrderStatePaid: Paid\n\n-\u003e OrderStatePreCancel || OrderStateTransferGoodStockWaitStart\n - OrderStateTransferGoodStockWaitStart: -\u003e OrderStateUpdateInServiceChilds\n - OrderStateUpdateInServiceChilds: -\u003e OrderStateInService\n - OrderStateInService: -\u003e OrderStatePreCancel || OrderStatePreExpired\n - OrderStatePaymentTimeout: Timeout of order\n\n-\u003e OrderStatePreCancel\n - OrderStatePreCancel: End or order\n\n-\u003e OrderStateRestoreCanceledStock\n - OrderStatePreExpired: -\u003e OrderStateRestoreExpiredStock\n - OrderStateRestoreExpiredStock: Calculation\n\n-\u003e OrderStateUpdateExpiredChilds\n - OrderStateUpdateExpiredChilds: -\u003e OrderStateExpired\n - OrderStateRestoreCanceledStock: -\u003e OrderStateDeductLockedCommission\n - OrderStateDeductLockedCommission: -\u003e OrderStateCancelAchievement\n - OrderStateCancelAchievement: -\u003e OrderStateReturnCanceledBalance\n - OrderStateReturnCanceledBalance: -\u003e OrderStateCanceledTransferBookKeeping\n - OrderStateCanceledTransferBookKeeping: -\u003e OrderStateCancelUnlockPaymentAccount\n - OrderStateCancelUnlockPaymentAccount: -\u003e OrderStateUpdateCanceledChilds\n - OrderStateUpdateCanceledChilds: -\u003e OrderStateCanceled\n - OrderStateCanceled: End state\n - OrderStateChildPaidByParent: Child paid\n\n-\u003e OrderStatePaid, can be rollback\n - OrderStateChildInServiceByParent: -\u003e OrderStateInService\n - OrderStateChildExpiredByParent: -\u003e OrderStateExpired\n - OrderStateChildCanceledByParent: -\u003e OrderStateCanceled",
-      "title": "- OrderStateCreated: -\u003e OrderStateWaitPayment\n - OrderStateWaitPayment: Common state"
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state\n - OrderStateChildPaidByParent: Child paid"
     },
     "v1OrderType": {
       "type": "string",
