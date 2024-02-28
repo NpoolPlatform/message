@@ -20,6 +20,7 @@ enum GoodType {
     PowerRenting      = 10;
     MachineRenting    = 20;
     MachineHosting    = 30;
+    DelegatedStaking  = 40;
 
     TechniqueServiceFee = 1000;
     ElectricityFee      = 2000;

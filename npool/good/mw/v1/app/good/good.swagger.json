@@ -738,6 +738,7 @@
         "PowerRenting",
         "MachineRenting",
         "MachineHosting",
+        "DelegatedStaking",
         "TechniqueServiceFee",
         "ElectricityFee"
       ],
