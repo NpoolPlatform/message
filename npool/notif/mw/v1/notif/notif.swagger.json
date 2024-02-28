@@ -114,6 +114,26 @@
     }
   },
   "definitions": {
+    "GenerateMultiNotifsRequest_NotifReq": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Vars": {
+          "$ref": "#/definitions/v1TemplateVars"
+        },
+        "Extra": {
+          "type": "string"
+        },
+        "NotifType": {
+          "$ref": "#/definitions/v1NotifType"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -267,6 +287,17 @@
       "properties": {
         "Info": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1GenerateMultiNotifsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Notif"
+          }
         }
       }
     },
@@ -589,6 +620,9 @@
         "UpdateMobile",
         "UpdateGoogleAuth",
         "OrderCompleted",
+        "ResetPassword",
+        "OrderChildsRenewNotify",
+        "OrderChildsRenew",
         "Announcement",
         "ProductPage"
       ],

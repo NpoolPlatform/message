@@ -59,6 +59,13 @@ service Gateway {
         };
     }
 
+    rpc PreResetUser (PreResetUserRequest) returns (PreResetUserResponse) {
+        option (google.api.http) = {
+            post: "/v1/prereset/user"
+            body: "*"
+        };
+    }
+
     rpc ResetUser (ResetUserRequest) returns (ResetUserResponse) {
         option (google.api.http) = {
             post: "/v1/reset/user"
@@ -268,6 +275,7 @@ message UpdateAppUserRequest {
     string          TargetUserID = 20;
     optional bool   Kol          = 30;
     optional string EmailAddress = 40;
+    optional basetypes.v1.SignMethod SigninVerifyType = 50;
 }
 
 message UpdateAppUserResponse {
@@ -277,17 +285,24 @@ message UpdateAppUserResponse {
 message ResetUserRequest {
     string          AppID              = 10;
     optional string UserID             = 20;
-
     string          Account            = 30;
     basetypes.v1.SignMethod AccountType    = 40;
-    string          VerificationCode   = 50;
-
-    optional string PasswordHash       = 60;
+    optional string VerificationCode   = 50;
+    string          PasswordHash       = 60;
     optional string RecoveryCode       = 70;
+    optional string ResetToken         = 80;
 }
 
-message ResetUserResponse {
+message ResetUserResponse {}
+
+message PreResetUserRequest {
+    string          AppID              = 10;
+    string          LangID             = 20;
+    string          Account            = 30;
+    basetypes.v1.SignMethod AccountType    = 40;
 }
+
+message PreResetUserResponse {}
 
 message GetUsersRequest {
     string AppID  = 10;
@@ -412,7 +427,7 @@ message UnbindOAuthRequest {
     string          AppID              = 10;
     string          UserID             = 20;
 
-    string Account                     = 30;
+    string          Account            = 30;
     basetypes.v1.SignMethod AccountType    = 40;
 }
 

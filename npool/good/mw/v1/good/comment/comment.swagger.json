@@ -88,6 +88,26 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
         },
+        "Anonymous": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"anonymous\""
+        },
+        "PurchasedUser": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"purchased_user\""
+        },
+        "TrialUser": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"trial_user\""
+        },
+        "OrderFirstComment": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"order_first_comment\""
+        },
+        "Score": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"score\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -126,6 +146,18 @@
           "type": "string"
         },
         "ReplyToID": {
+          "type": "string"
+        },
+        "Anonymous": {
+          "type": "boolean"
+        },
+        "PurchasedUser": {
+          "type": "boolean"
+        },
+        "TrialUser": {
+          "type": "boolean"
+        },
+        "Score": {
           "type": "string"
         }
       }

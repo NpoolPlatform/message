@@ -10,6 +10,7 @@ import "npool/basetypes/good/v1/enums.proto";
 // Service Name
 service Middleware {
     rpc Lock       (LockRequest)       returns (LockResponse)       {}
+    rpc Locks      (LocksRequest)      returns (LocksResponse)      {}
     rpc Unlock     (UnlockRequest)     returns (UnlockResponse)     {}
     rpc WaitStart  (WaitStartRequest)  returns (WaitStartResponse)  {}
     rpc InService  (InServiceRequest)  returns (InServiceResponse)  {}
@@ -65,6 +66,24 @@ message LockRequest {
 
 message LockResponse {
     Stock Info = 10;
+}
+
+message LocksRequest {
+    message _Stock {
+        string EntID      = 10;
+        string GoodID     = 20;
+        string AppGoodID  = 30;
+        string Units      = 40;
+        string AppSpotUnits = 50;  // Locked from app spot quantity
+    }
+    string AppID           = 10;
+    repeated _Stock Stocks = 20;
+    string LockID          = 1000;
+    bool   Rollback        = 1010;
+}
+
+message LocksResponse {
+    repeated Stock Infos = 10;
 }
 
 message UnlockRequest {

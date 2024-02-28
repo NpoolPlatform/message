@@ -93,7 +93,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "UsedFor": {
-          "$ref": "#/definitions/v1Int32Val"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "Sender": {
           "$ref": "#/definitions/v1StringVal"
@@ -303,18 +303,6 @@
         }
       }
     },
-    "v1Int32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -404,6 +392,9 @@
         "UpdateMobile",
         "UpdateGoogleAuth",
         "OrderCompleted",
+        "ResetPassword",
+        "OrderChildsRenewNotify",
+        "OrderChildsRenew",
         "Announcement",
         "ProductPage"
       ],

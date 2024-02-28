@@ -479,6 +479,9 @@
         "UpdateMobile",
         "UpdateGoogleAuth",
         "OrderCompleted",
+        "ResetPassword",
+        "OrderChildsRenewNotify",
+        "OrderChildsRenew",
         "Announcement",
         "ProductPage"
       ],

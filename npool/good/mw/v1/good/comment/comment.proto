@@ -25,6 +25,10 @@ message CommentReq {
     optional string OrderID   = 50;
     optional string Content   = 60;
     optional string ReplyToID = 70;
+    optional bool   Anonymous = 80;
+    optional bool   PurchasedUser = 90;
+    optional bool   TrialUser     = 100;
+    optional string Score     = 110;
 }
 
 message Comment {
@@ -48,6 +52,16 @@ message Comment {
     string ReplyToID = 80;
     // @inject_tag: sql:"good_id"
     string GoodID    = 90;
+    // @inject_tag: sql:"anonymous"
+    bool   Anonymous = 100;
+    // @inject_tag: sql:"purchased_user"
+    bool   PurchasedUser = 110;
+    // @inject_tag: sql:"trial_user"
+    bool   TrialUser = 120;
+    // @inject_tag: sql:"order_first_comment"
+    bool   OrderFirstComment = 130;
+    // @inject_tag: sql:"score"
+    string Score      = 140;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"

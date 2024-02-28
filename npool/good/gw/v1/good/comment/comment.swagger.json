@@ -283,6 +283,21 @@
         "GoodID": {
           "type": "string"
         },
+        "Anonymous": {
+          "type": "boolean"
+        },
+        "PurchasedUser": {
+          "type": "boolean"
+        },
+        "TrialUser": {
+          "type": "boolean"
+        },
+        "OrderFirstComment": {
+          "type": "boolean"
+        },
+        "Score": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -312,6 +327,12 @@
           "type": "string"
         },
         "ReplyToID": {
+          "type": "string"
+        },
+        "Anonymous": {
+          "type": "boolean"
+        },
+        "Score": {
           "type": "string"
         }
       }

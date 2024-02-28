@@ -249,7 +249,8 @@
         "Linkedin",
         "Wechat",
         "Google",
-        "Username"
+        "Username",
+        "Reset"
       ],
       "default": "DefaultSignMethod"
     },
@@ -342,6 +343,9 @@
         "UpdateMobile",
         "UpdateGoogleAuth",
         "OrderCompleted",
+        "ResetPassword",
+        "OrderChildsRenewNotify",
+        "OrderChildsRenew",
         "Announcement",
         "ProductPage"
       ],

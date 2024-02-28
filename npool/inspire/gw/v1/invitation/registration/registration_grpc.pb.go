@@ -19,9 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_UpdateRegistration_FullMethodName  = "/inspire.gateway.invitation.registration.v1.Gateway/UpdateRegistration"
-	Gateway_GetRegistrations_FullMethodName    = "/inspire.gateway.invitation.registration.v1.Gateway/GetRegistrations"
-	Gateway_GetAppRegistrations_FullMethodName = "/inspire.gateway.invitation.registration.v1.Gateway/GetAppRegistrations"
+	Gateway_UpdateRegistration_FullMethodName   = "/inspire.gateway.invitation.registration.v1.Gateway/UpdateRegistration"
+	Gateway_GetUserRegistrations_FullMethodName = "/inspire.gateway.invitation.registration.v1.Gateway/GetUserRegistrations"
+	Gateway_GetRegistrations_FullMethodName     = "/inspire.gateway.invitation.registration.v1.Gateway/GetRegistrations"
+	Gateway_GetAppRegistrations_FullMethodName  = "/inspire.gateway.invitation.registration.v1.Gateway/GetAppRegistrations"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -29,6 +30,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	UpdateRegistration(ctx context.Context, in *UpdateRegistrationRequest, opts ...grpc.CallOption) (*UpdateRegistrationResponse, error)
+	GetUserRegistrations(ctx context.Context, in *GetUserRegistrationsRequest, opts ...grpc.CallOption) (*GetUserRegistrationsResponse, error)
 	GetRegistrations(ctx context.Context, in *GetRegistrationsRequest, opts ...grpc.CallOption) (*GetRegistrationsResponse, error)
 	GetAppRegistrations(ctx context.Context, in *GetAppRegistrationsRequest, opts ...grpc.CallOption) (*GetAppRegistrationsResponse, error)
 }
@@ -44,6 +46,15 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) UpdateRegistration(ctx context.Context, in *UpdateRegistrationRequest, opts ...grpc.CallOption) (*UpdateRegistrationResponse, error) {
 	out := new(UpdateRegistrationResponse)
 	err := c.cc.Invoke(ctx, Gateway_UpdateRegistration_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetUserRegistrations(ctx context.Context, in *GetUserRegistrationsRequest, opts ...grpc.CallOption) (*GetUserRegistrationsResponse, error) {
+	out := new(GetUserRegistrationsResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetUserRegistrations_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -73,6 +84,7 @@ func (c *gatewayClient) GetAppRegistrations(ctx context.Context, in *GetAppRegis
 // for forward compatibility
 type GatewayServer interface {
 	UpdateRegistration(context.Context, *UpdateRegistrationRequest) (*UpdateRegistrationResponse, error)
+	GetUserRegistrations(context.Context, *GetUserRegistrationsRequest) (*GetUserRegistrationsResponse, error)
 	GetRegistrations(context.Context, *GetRegistrationsRequest) (*GetRegistrationsResponse, error)
 	GetAppRegistrations(context.Context, *GetAppRegistrationsRequest) (*GetAppRegistrationsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -84,6 +96,9 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) UpdateRegistration(context.Context, *UpdateRegistrationRequest) (*UpdateRegistrationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateRegistration not implemented")
+}
+func (UnimplementedGatewayServer) GetUserRegistrations(context.Context, *GetUserRegistrationsRequest) (*GetUserRegistrationsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserRegistrations not implemented")
 }
 func (UnimplementedGatewayServer) GetRegistrations(context.Context, *GetRegistrationsRequest) (*GetRegistrationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRegistrations not implemented")
@@ -118,6 +133,24 @@ func _Gateway_UpdateRegistration_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateRegistration(ctx, req.(*UpdateRegistrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetUserRegistrations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserRegistrationsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetUserRegistrations(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_GetUserRegistrations_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetUserRegistrations(ctx, req.(*GetUserRegistrationsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -168,6 +201,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateRegistration",
 			Handler:    _Gateway_UpdateRegistration_Handler,
+		},
+		{
+			MethodName: "GetUserRegistrations",
+			Handler:    _Gateway_GetUserRegistrations_Handler,
 		},
 		{
 			MethodName: "GetRegistrations",

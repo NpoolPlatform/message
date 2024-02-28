@@ -432,6 +432,38 @@
         ]
       }
     },
+    "/v1/prereset/user": {
+      "post": {
+        "operationId": "Gateway_PreResetUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1PreResetUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1PreResetUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/reset/user": {
       "post": {
         "operationId": "Gateway_ResetUser",
@@ -1261,6 +1293,26 @@
         }
       }
     },
+    "v1PreResetUserRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "LangID": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "AccountType": {
+          "$ref": "#/definitions/v1SignMethod"
+        }
+      }
+    },
+    "v1PreResetUserResponse": {
+      "type": "object"
+    },
     "v1ResetUserRequest": {
       "type": "object",
       "properties": {
@@ -1284,6 +1336,9 @@
         },
         "RecoveryCode": {
           "type": "string"
+        },
+        "ResetToken": {
+          "type": "string"
         }
       }
     },
@@ -1302,7 +1357,8 @@
         "Linkedin",
         "Wechat",
         "Google",
-        "Username"
+        "Username",
+        "Reset"
       ],
       "default": "DefaultSignMethod"
     },
@@ -1375,6 +1431,9 @@
         },
         "EmailAddress": {
           "type": "string"
+        },
+        "SigninVerifyType": {
+          "$ref": "#/definitions/v1SignMethod"
         }
       }
     },

@@ -33,7 +33,11 @@ enum UsedFor {
     UpdateEmail           = 220;
     UpdateMobile          = 230;
     UpdateGoogleAuth      = 240;
+
     OrderCompleted        = 250;
+    ResetPassword         = 260;
+    OrderChildsRenewNotify = 270;
+    OrderChildsRenew      = 280;
 
     SimulateOrderProfit   = 260;
 

@@ -36,6 +36,12 @@ service Middleware {
     rpc DeleteOrders    (DeleteOrdersRequest)    returns (DeleteOrdersResponse)    {}
 }
 
+message PaymentAmount {
+    string CoinTypeID  = 10;
+    string USDCurrency = 20;
+    string Amount      = 30;
+}
+
 message OrderReq {
     // order
     optional uint32 ID                        = 9;
@@ -64,6 +70,11 @@ message OrderReq {
     optional string LocalCoinUSDCurrency   = 210;
     optional string LiveCoinUSDCurrency    = 220;
 
+    // Support multiple payment coins from user balances
+    optional basetypes.order.v1.OrderCreateMethod CreateMethod = 221;
+    optional bool   MultiPaymentCoins      = 222;
+    repeated PaymentAmount PaymentAmounts  = 223;
+
     // payment
     optional string PaymentAccountID              = 230;
     optional string PaymentStartAmount            = 240;
@@ -87,7 +98,9 @@ message OrderReq {
     optional bool   Rollback                              = 380;
     optional string AppGoodStockLockID                    = 400;
     optional string LedgerLockID                          = 410;
-    optional bool   Simulate                              = 420;
+    optional basetypes.order.v1.OrderRenewState RenewState = 420;
+    optional uint32 RenewNotifyAt                         = 430;
+    optional bool   Simulate                              = 440;
 }
 
 message Order {
@@ -149,6 +162,15 @@ message Order {
     // @inject_tag: sql:"live_coin_usd_currency"
     string LiveCoinUSDCurrency                       = 270;
 
+    // @inject_tag: sql:"create_method"
+    string CreateMethodStr                           = 271;
+    basetypes.order.v1.OrderCreateMethod CreateMethod = 272;
+    // @inject_tag: sql:"multi_payment_coins"
+    bool   MultiPaymentCoins                         = 273;
+    // @inject_tag: sql:"payment_amounts"
+    string PaymentAmountsStr                         = 274;
+    repeated PaymentAmount PaymentAmounts            = 275;
+
     // payment
     // @inject_tag: sql:"payment_account_id"
     string PaymentAccountID                      = 280;
@@ -200,9 +222,15 @@ message Order {
     // @inject_tag: sql:"ledger_lock_id"
     string LedgerLockID                          = 520;
 
+    // @inject_tag: sql:"renew_state"
+    string RenewStateStr                         = 530;
+    basetypes.order.v1.OrderRenewState RenewState = 540;
+    // @inject_tag: sql:"renew_notify_at"
+    uint32 RenewNotifyAt                         = 550;
+
     // simulate
     // @inject_tag: sql:"simulate"
-    bool Simulate                                = 530;
+    bool Simulate                                = 560;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt                             = 1000;
@@ -246,7 +274,11 @@ message Conds {
     optional basetypes.v1.BoolVal        AdminSetCanceled      = 260;
     optional basetypes.v1.BoolVal        UserSetCanceled       = 270;
     optional basetypes.v1.StringSliceVal ParentOrderIDs        = 280;
-    optional basetypes.v1.BoolVal        Simulate              = 290;
+    optional basetypes.v1.Uint32Val      RenewState            = 290;
+    optional basetypes.v1.StringSliceVal GoodIDs               = 300;
+    optional basetypes.v1.StringSliceVal AppGoodIDs            = 310;
+    optional basetypes.v1.Uint32Val      RenewNotifyAt         = 320;
+    optional basetypes.v1.BoolVal        Simulate              = 330;
 }
 
 message CreateOrderRequest {

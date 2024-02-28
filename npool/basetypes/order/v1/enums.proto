@@ -242,3 +242,21 @@ enum SendCouponMode {
     RandomBenifit         = 30;
     FirstAndRandomBenifit = 40;
 }
+
+enum OrderRenewState {
+    DefaultOrderRenewState = 0;
+
+    OrderRenewWait    = 10;
+    OrderRenewCheck   = 20;
+    OrderRenewNotify  = 30;
+    OrderRenewExecute = 40;
+    OrderRenewFail    = 50;
+}
+
+enum OrderCreateMethod {
+    DefaultOrderCreateMethod = 0;
+
+    OrderCreatedByPurchase = 10;
+    OrderCreatedByAdmin    = 20;
+    OrderCreatedByRenew    = 30;
+}

@@ -227,8 +227,22 @@
         "ParentOrderIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
+<<<<<<< HEAD
         "Simulate": {
           "$ref": "#/definitions/v1BoolVal"
+=======
+        "RenewState": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AppGoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "RenewNotifyAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+>>>>>>> 70e9dd96927d056d5e8a41e65435b572dfc9d400
         }
       }
     },
@@ -462,6 +476,27 @@
           "type": "string",
           "title": "@inject_tag: sql:\"live_coin_usd_currency\""
         },
+        "CreateMethodStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"create_method\""
+        },
+        "CreateMethod": {
+          "$ref": "#/definitions/v1OrderCreateMethod"
+        },
+        "MultiPaymentCoins": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"multi_payment_coins\""
+        },
+        "PaymentAmountsStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_amounts\""
+        },
+        "PaymentAmounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PaymentAmount"
+          }
+        },
         "PaymentAccountID": {
           "type": "string",
           "title": "payment\n@inject_tag: sql:\"payment_account_id\""
@@ -567,9 +602,23 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ledger_lock_id\""
         },
+<<<<<<< HEAD
         "Simulate": {
           "type": "boolean",
           "title": "simulate\n@inject_tag: sql:\"simulate\""
+=======
+        "RenewStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"renew_state\""
+        },
+        "RenewState": {
+          "$ref": "#/definitions/v1OrderRenewState"
+        },
+        "RenewNotifyAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"renew_notify_at\""
+>>>>>>> 70e9dd96927d056d5e8a41e65435b572dfc9d400
         },
         "CreatedAt": {
           "type": "integer",
@@ -582,6 +631,28 @@
           "title": "@inject_tag: sql:\"updated_at\""
         }
       }
+    },
+    "v1OrderCreateMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderCreateMethod",
+        "OrderCreatedByPurchase",
+        "OrderCreatedByAdmin",
+        "OrderCreatedByRenew"
+      ],
+      "default": "DefaultOrderCreateMethod"
+    },
+    "v1OrderRenewState": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderRenewState",
+        "OrderRenewWait",
+        "OrderRenewCheck",
+        "OrderRenewNotify",
+        "OrderRenewExecute",
+        "OrderRenewFail"
+      ],
+      "default": "DefaultOrderRenewState"
     },
     "v1OrderReq": {
       "type": "object",
@@ -667,6 +738,19 @@
         "LiveCoinUSDCurrency": {
           "type": "string"
         },
+        "CreateMethod": {
+          "$ref": "#/definitions/v1OrderCreateMethod",
+          "title": "Support multiple payment coins from user balances"
+        },
+        "MultiPaymentCoins": {
+          "type": "boolean"
+        },
+        "PaymentAmounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PaymentAmount"
+          }
+        },
         "PaymentAccountID": {
           "type": "string",
           "title": "payment"
@@ -731,8 +815,17 @@
         "LedgerLockID": {
           "type": "string"
         },
+<<<<<<< HEAD
         "Simulate": {
           "type": "boolean"
+=======
+        "RenewState": {
+          "$ref": "#/definitions/v1OrderRenewState"
+        },
+        "RenewNotifyAt": {
+          "type": "integer",
+          "format": "int64"
+>>>>>>> 70e9dd96927d056d5e8a41e65435b572dfc9d400
         }
       }
     },
@@ -799,6 +892,20 @@
         "Airdrop"
       ],
       "default": "DefaultOrderType"
+    },
+    "v1PaymentAmount": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "USDCurrency": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        }
+      }
     },
     "v1PaymentState": {
       "type": "string",

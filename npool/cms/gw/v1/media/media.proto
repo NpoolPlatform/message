@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package cms.gateway.media.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/cms/gw/v1/media";
+
+import "npool/cms/mw/v1/media/media.proto";
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc UploadMedia(UploadMediaRequest) returns (UploadMediaResponse) {
+        option (google.api.http) = {
+            post: "/v1/upload/media"
+            body: "*"
+        };
+    }
+    rpc GetMedias(GetMediasRequest) returns (GetMediasResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/medias"
+            body: "*"
+        };
+    }
+    rpc DeleteMedia(DeleteMediaRequest) returns (DeleteMediaResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/media"
+            body: "*"
+        };
+    }
+}
+
+message UploadMediaRequest {
+    string AppID     = 10;
+    string UserID    = 20;
+    string Name      = 30;
+    string MediaData = 40;
+}
+
+message UploadMediaResponse {
+    middleware.media.v1.Media Info = 10;
+}
+
+message GetMediasRequest {
+    string AppID   = 10;
+    int32  Offset  = 20;
+    int32  Limit   = 30;
+}
+
+message GetMediasResponse {
+    repeated middleware.media.v1.Media Infos = 10;
+    uint32                             Total = 20;
+}
+
+message DeleteMediaRequest {
+    uint32 ID    = 10;
+    string EntID = 20;
+    string AppID = 30;
+}
+
+message DeleteMediaResponse {
+    middleware.media.v1.Media Info = 10;
+}
