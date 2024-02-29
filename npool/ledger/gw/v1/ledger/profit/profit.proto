@@ -64,7 +64,7 @@ message GetMiningRewardsRequest {
     string UserID                = 20;
     uint32 StartAt               = 30;
     uint32 EndAt                 = 40;
-    optional bool CashableSimulateReward = 50;
+    optional bool SimulateOnly   = 50;
     int32  Offset                = 60;
     int32  Limit                 = 70;
 }
