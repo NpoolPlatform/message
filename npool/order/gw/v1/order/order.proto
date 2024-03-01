@@ -373,8 +373,6 @@ message CreateSimulateOrderRequest {
     string          AppID                = 10;
     string          UserID               = 20;
     string          AppGoodID            = 30;
-    optional string Units                = 40;
-    optional uint32 Duration             = 50;
     optional string ParentOrderID        = 60;
     basetypes.order.v1.InvestmentType InvestmentType = 70;
 }

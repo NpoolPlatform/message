@@ -72,9 +72,8 @@ message CreateSimulateConfigRequest {
     string                                 AppID                     = 10;
     basetypes.order.v1.SendCouponMode      SendCouponMode            = 20;
     optional string                        SendCouponProbability     = 30;
-    optional bool                          EnabledCashableProfit     = 40;
-    optional string                        CashableProfitProbability = 50;
-    optional bool                          Enabled                   = 60;
+    optional string                        CashableProfitProbability = 40;
+    optional bool                          Enabled                   = 50;
 }
 
 message CreateSimulateConfigResponse {
@@ -87,9 +86,8 @@ message UpdateSimulateConfigRequest {
     string                                 AppID                 = 30;
     optional basetypes.order.v1.SendCouponMode SendCouponMode    = 40;
     optional string                        SendCouponProbability = 50;
-    optional bool                          EnabledCashableProfit     = 60;
-    optional string                        CashableProfitProbability = 70;
-    optional bool                          Enabled               = 80;
+    optional string                        CashableProfitProbability = 60;
+    optional bool                          Enabled               = 70;
 }
 
 message UpdateSimulateConfigResponse {
@@ -120,9 +118,8 @@ message CreateAppSimulateConfigRequest {
     string                            TargetAppID               = 10;
     basetypes.order.v1.SendCouponMode SendCouponMode            = 20;
     optional string                   SendCouponProbability     = 30;
-    optional bool                     EnabledCashableProfit     = 40;
-    optional string                   CashableProfitProbability = 50;
-    optional bool                     Enabled                   = 60;
+    optional string                   CashableProfitProbability = 40;
+    optional bool                     Enabled                   = 50;
 }
 
 message CreateAppSimulateConfigResponse {
@@ -135,9 +132,8 @@ message UpdateAppSimulateConfigRequest {
   string                                 TargetAppID           = 30;
   optional basetypes.order.v1.SendCouponMode SendCouponMode    = 40;
   optional string                        SendCouponProbability = 50;
-  optional bool                          EnabledCashableProfit     = 60;
-  optional string                        CashableProfitProbability = 70;
-  optional bool                          Enabled               = 80;
+  optional string                        CashableProfitProbability = 60;
+  optional bool                          Enabled               = 70;
 }
 
 message UpdateAppSimulateConfigResponse {

@@ -24,9 +24,8 @@ message SimulateConfigReq {
     optional string                            AppID                     = 30;
     optional basetypes.order.v1.SendCouponMode SendCouponMode            = 40;
     optional string                            SendCouponProbability     = 50;
-    optional bool                              EnabledCashableProfit     = 60;
-    optional string                            CashableProfitProbability = 70;
-    optional bool                              Enabled                   = 80;
+    optional string                            CashableProfitProbability = 60;
+    optional bool                              Enabled                   = 70;
 }
 
 message SimulateConfig {
@@ -41,12 +40,10 @@ message SimulateConfig {
     basetypes.order.v1.SendCouponMode SendCouponMode = 50;
     // @inject_tag: sql:"send_coupon_probability"
     string     SendCouponProbability     = 60;
-    // @inject_tag: sql:"enabled_cashable_profit"
-    bool       EnabledCashableProfit     = 70;
     // @inject_tag: sql:"cashable_profit_probability"
-    string     CashableProfitProbability = 80;
+    string     CashableProfitProbability = 70;
     // @inject_tag: sql:"enabled"
-    bool       Enabled               = 90;
+    bool       Enabled               = 80;
 
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt = 1000;
@@ -59,8 +56,7 @@ message Conds {
     basetypes.v1.StringVal EntID           = 20;
     basetypes.v1.StringVal AppID           = 30;
     basetypes.v1.Uint32Val SendCouponMode  = 40;
-    basetypes.v1.BoolVal   EnabledCashableProfit = 50;
-    basetypes.v1.BoolVal   Enabled         = 60;
+    basetypes.v1.BoolVal   Enabled         = 50;
 }
 
 message CreateSimulateConfigRequest {
