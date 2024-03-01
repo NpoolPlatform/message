@@ -62,7 +62,7 @@ service Gateway {
 
     rpc DeleteAppSimulateConfig (DeleteAppSimulateConfigRequest) returns (DeleteAppSimulateConfigResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/app/simulate/configs"
+            post: "/v1/delete/app/simulate/config"
             body: "*"
         };
     }

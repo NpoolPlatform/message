@@ -81,7 +81,7 @@
         ]
       }
     },
-    "/v1/delete/app/simulate/configs": {
+    "/v1/delete/app/simulate/config": {
       "post": {
         "operationId": "Gateway_DeleteAppSimulateConfig",
         "responses": {

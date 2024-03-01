@@ -476,7 +476,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/order.gateway.simulate.config.v1.Gateway/DeleteAppSimulateConfig", runtime.WithHTTPPathPattern("/v1/delete/app/simulate/configs"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/order.gateway.simulate.config.v1.Gateway/DeleteAppSimulateConfig", runtime.WithHTTPPathPattern("/v1/delete/app/simulate/config"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -678,7 +678,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/order.gateway.simulate.config.v1.Gateway/DeleteAppSimulateConfig", runtime.WithHTTPPathPattern("/v1/delete/app/simulate/configs"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/order.gateway.simulate.config.v1.Gateway/DeleteAppSimulateConfig", runtime.WithHTTPPathPattern("/v1/delete/app/simulate/config"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -712,7 +712,7 @@ var (
 
 	pattern_Gateway_GetAppSimulateConfigs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "app", "simulate", "configs"}, ""))
 
-	pattern_Gateway_DeleteAppSimulateConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "delete", "app", "simulate", "configs"}, ""))
+	pattern_Gateway_DeleteAppSimulateConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "delete", "app", "simulate", "config"}, ""))
 )
 
 var (
