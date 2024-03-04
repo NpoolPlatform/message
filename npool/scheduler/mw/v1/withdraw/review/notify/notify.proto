@@ -17,9 +17,9 @@ message WithdrawInfo {
 }
 
 message AppWithdrawInfos {
-    string AppID                     = 10;
-    string AppName                   = 20;
-    repeated WithdrawInfo Withdrawes = 30;
+    string AppID                    = 10;
+    string AppName                  = 20;
+    repeated WithdrawInfo Withdraws = 30;
 }
 
 message MsgWithdrawReviewNotifyReq {
