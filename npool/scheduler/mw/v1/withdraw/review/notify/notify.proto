@@ -16,6 +16,12 @@ message WithdrawInfo {
     chain.middleware.coin.v1.Coin          Coin     = 40;
 }
 
+message AppWithdrawInfos {
+    string AppID                     = 10;
+    string AppName                   = 20;
+    repeated WithdrawInfo Withdrawes = 30;
+}
+
 message MsgWithdrawReviewNotifyReq {
-    repeated WithdrawInfo Withdrawes = 10;
+    repeated AppWithdrawInfos AppWithdraws = 10;
 }
