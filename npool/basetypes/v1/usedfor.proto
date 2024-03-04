@@ -41,6 +41,8 @@ enum UsedFor {
 
     SimulateOrderProfit   = 290;
 
+    WithdrawReviewNotify  = 300;
+
     Announcement          = 100000;
     ProductPage           = 200000;
 }
