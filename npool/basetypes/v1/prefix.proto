@@ -72,6 +72,7 @@ enum Prefix {
     PrefixCreateAppDefaultGood = 600;
     PrefixCreateTopMost        = 610;
     PrefixCreateTopMostGood    = 620;
+    PrefixCreateAppSimulateGood = 630;
 
     PrefixCreateLedger          = 700;
     PrefixCreateLedgerStatement = 710;
@@ -80,6 +81,9 @@ enum Prefix {
     PrefixCreateGoodLedgerStatement = 740;
     PrefixCreateGoodLedgerUnsoldStatement = 750;
     PrefixCreateCoinUsedFor     = 760;
+    PrefixCreateSimulateLedger            = 770;
+    PrefixCreateSimulateLedgerStatement   = 780;
+    PrefixCreateSimulateLedgerProfit      = 790;
 
     PrefixCreateResetUserLink  = 800;
 
@@ -95,4 +99,6 @@ enum Prefix {
 
     PrefixCreateOrder          = 40000;
     PrefixCreateWithdraw       = 40010;
+
+    PrefixSimulateConfig       = 50000;
 }

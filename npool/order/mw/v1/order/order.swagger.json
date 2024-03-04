@@ -237,6 +237,9 @@
         },
         "RenewNotifyAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Simulate": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
@@ -605,6 +608,10 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"renew_notify_at\""
         },
+        "Simulate": {
+          "type": "boolean",
+          "title": "simulate\n@inject_tag: sql:\"simulate\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -806,6 +813,9 @@
         "RenewNotifyAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Simulate": {
+          "type": "boolean"
         }
       }
     },

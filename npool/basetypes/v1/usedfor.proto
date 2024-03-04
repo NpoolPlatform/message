@@ -39,6 +39,8 @@ enum UsedFor {
     OrderChildsRenewNotify = 270;
     OrderChildsRenew      = 280;
 
+    SimulateOrderProfit   = 290;
+
     Announcement          = 100000;
     ProductPage           = 200000;
 }

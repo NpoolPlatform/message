@@ -19,19 +19,21 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateOrder_FullMethodName        = "/order.gateway.order1.v1.Gateway/CreateOrder"
-	Gateway_CreateOrders_FullMethodName       = "/order.gateway.order1.v1.Gateway/CreateOrders"
-	Gateway_UpdateOrder_FullMethodName        = "/order.gateway.order1.v1.Gateway/UpdateOrder"
-	Gateway_UpdateUserOrder_FullMethodName    = "/order.gateway.order1.v1.Gateway/UpdateUserOrder"
-	Gateway_UpdateAppUserOrder_FullMethodName = "/order.gateway.order1.v1.Gateway/UpdateAppUserOrder"
-	Gateway_GetOrder_FullMethodName           = "/order.gateway.order1.v1.Gateway/GetOrder"
-	Gateway_GetOrders_FullMethodName          = "/order.gateway.order1.v1.Gateway/GetOrders"
-	Gateway_CreateUserOrder_FullMethodName    = "/order.gateway.order1.v1.Gateway/CreateUserOrder"
-	Gateway_CreateAppUserOrder_FullMethodName = "/order.gateway.order1.v1.Gateway/CreateAppUserOrder"
-	Gateway_GetUserOrders_FullMethodName      = "/order.gateway.order1.v1.Gateway/GetUserOrders"
-	Gateway_GetAppUserOrders_FullMethodName   = "/order.gateway.order1.v1.Gateway/GetAppUserOrders"
-	Gateway_GetAppOrders_FullMethodName       = "/order.gateway.order1.v1.Gateway/GetAppOrders"
-	Gateway_GetNAppOrders_FullMethodName      = "/order.gateway.order1.v1.Gateway/GetNAppOrders"
+	Gateway_CreateOrder_FullMethodName          = "/order.gateway.order1.v1.Gateway/CreateOrder"
+	Gateway_CreateOrders_FullMethodName         = "/order.gateway.order1.v1.Gateway/CreateOrders"
+	Gateway_UpdateOrder_FullMethodName          = "/order.gateway.order1.v1.Gateway/UpdateOrder"
+	Gateway_UpdateUserOrder_FullMethodName      = "/order.gateway.order1.v1.Gateway/UpdateUserOrder"
+	Gateway_UpdateAppUserOrder_FullMethodName   = "/order.gateway.order1.v1.Gateway/UpdateAppUserOrder"
+	Gateway_GetOrder_FullMethodName             = "/order.gateway.order1.v1.Gateway/GetOrder"
+	Gateway_GetOrders_FullMethodName            = "/order.gateway.order1.v1.Gateway/GetOrders"
+	Gateway_CreateUserOrder_FullMethodName      = "/order.gateway.order1.v1.Gateway/CreateUserOrder"
+	Gateway_CreateAppUserOrder_FullMethodName   = "/order.gateway.order1.v1.Gateway/CreateAppUserOrder"
+	Gateway_GetUserOrders_FullMethodName        = "/order.gateway.order1.v1.Gateway/GetUserOrders"
+	Gateway_GetAppUserOrders_FullMethodName     = "/order.gateway.order1.v1.Gateway/GetAppUserOrders"
+	Gateway_GetAppOrders_FullMethodName         = "/order.gateway.order1.v1.Gateway/GetAppOrders"
+	Gateway_GetNAppOrders_FullMethodName        = "/order.gateway.order1.v1.Gateway/GetNAppOrders"
+	Gateway_CreateSimulateOrder_FullMethodName  = "/order.gateway.order1.v1.Gateway/CreateSimulateOrder"
+	Gateway_CreateSimulateOrders_FullMethodName = "/order.gateway.order1.v1.Gateway/CreateSimulateOrders"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -51,6 +53,8 @@ type GatewayClient interface {
 	GetAppUserOrders(ctx context.Context, in *GetAppUserOrdersRequest, opts ...grpc.CallOption) (*GetAppUserOrdersResponse, error)
 	GetAppOrders(ctx context.Context, in *GetAppOrdersRequest, opts ...grpc.CallOption) (*GetAppOrdersResponse, error)
 	GetNAppOrders(ctx context.Context, in *GetNAppOrdersRequest, opts ...grpc.CallOption) (*GetNAppOrdersResponse, error)
+	CreateSimulateOrder(ctx context.Context, in *CreateSimulateOrderRequest, opts ...grpc.CallOption) (*CreateSimulateOrderResponse, error)
+	CreateSimulateOrders(ctx context.Context, in *CreateSimulateOrdersRequest, opts ...grpc.CallOption) (*CreateSimulateOrdersResponse, error)
 }
 
 type gatewayClient struct {
@@ -178,6 +182,24 @@ func (c *gatewayClient) GetNAppOrders(ctx context.Context, in *GetNAppOrdersRequ
 	return out, nil
 }
 
+func (c *gatewayClient) CreateSimulateOrder(ctx context.Context, in *CreateSimulateOrderRequest, opts ...grpc.CallOption) (*CreateSimulateOrderResponse, error) {
+	out := new(CreateSimulateOrderResponse)
+	err := c.cc.Invoke(ctx, Gateway_CreateSimulateOrder_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) CreateSimulateOrders(ctx context.Context, in *CreateSimulateOrdersRequest, opts ...grpc.CallOption) (*CreateSimulateOrdersResponse, error) {
+	out := new(CreateSimulateOrdersResponse)
+	err := c.cc.Invoke(ctx, Gateway_CreateSimulateOrders_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -195,6 +217,8 @@ type GatewayServer interface {
 	GetAppUserOrders(context.Context, *GetAppUserOrdersRequest) (*GetAppUserOrdersResponse, error)
 	GetAppOrders(context.Context, *GetAppOrdersRequest) (*GetAppOrdersResponse, error)
 	GetNAppOrders(context.Context, *GetNAppOrdersRequest) (*GetNAppOrdersResponse, error)
+	CreateSimulateOrder(context.Context, *CreateSimulateOrderRequest) (*CreateSimulateOrderResponse, error)
+	CreateSimulateOrders(context.Context, *CreateSimulateOrdersRequest) (*CreateSimulateOrdersResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -240,6 +264,12 @@ func (UnimplementedGatewayServer) GetAppOrders(context.Context, *GetAppOrdersReq
 }
 func (UnimplementedGatewayServer) GetNAppOrders(context.Context, *GetNAppOrdersRequest) (*GetNAppOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNAppOrders not implemented")
+}
+func (UnimplementedGatewayServer) CreateSimulateOrder(context.Context, *CreateSimulateOrderRequest) (*CreateSimulateOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSimulateOrder not implemented")
+}
+func (UnimplementedGatewayServer) CreateSimulateOrders(context.Context, *CreateSimulateOrdersRequest) (*CreateSimulateOrdersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSimulateOrders not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -488,6 +518,42 @@ func _Gateway_GetNAppOrders_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_CreateSimulateOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSimulateOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateSimulateOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_CreateSimulateOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateSimulateOrder(ctx, req.(*CreateSimulateOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_CreateSimulateOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSimulateOrdersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).CreateSimulateOrders(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_CreateSimulateOrders_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).CreateSimulateOrders(ctx, req.(*CreateSimulateOrdersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -546,6 +612,14 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetNAppOrders",
 			Handler:    _Gateway_GetNAppOrders_Handler,
+		},
+		{
+			MethodName: "CreateSimulateOrder",
+			Handler:    _Gateway_CreateSimulateOrder_Handler,
+		},
+		{
+			MethodName: "CreateSimulateOrders",
+			Handler:    _Gateway_CreateSimulateOrders_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

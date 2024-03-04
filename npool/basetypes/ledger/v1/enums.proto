@@ -34,6 +34,7 @@ enum IOSubType {
     // I: record user id,order id, archivement details id in extra
     CommissionRevoke          = 180;
     RandomCouponCash          = 190;
+    SimulateMiningBenefit     = 200;
 }
 
 enum WithdrawState {

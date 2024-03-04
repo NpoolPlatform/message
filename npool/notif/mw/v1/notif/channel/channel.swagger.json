@@ -239,6 +239,7 @@
         "ResetPassword",
         "OrderChildsRenewNotify",
         "OrderChildsRenew",
+        "SimulateOrderProfit",
         "Announcement",
         "ProductPage"
       ],

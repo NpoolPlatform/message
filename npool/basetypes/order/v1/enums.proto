@@ -233,6 +233,16 @@ enum OrderLockType {
     LockCommission = 30;
 }
 
+
+enum SendCouponMode {
+    DefaultCouponMode = 0;
+
+    WithoutCoupon         = 10;
+    FirstBenifit          = 20;
+    RandomBenifit         = 30;
+    FirstAndRandomBenifit = 40;
+}
+
 enum OrderRenewState {
     DefaultOrderRenewState = 0;
 

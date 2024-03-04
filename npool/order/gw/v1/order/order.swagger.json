@@ -112,6 +112,70 @@
         ]
       }
     },
+    "/v1/create/simulateorder": {
+      "post": {
+        "operationId": "Gateway_CreateSimulateOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateSimulateOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateSimulateOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/simulateorders": {
+      "post": {
+        "operationId": "Gateway_CreateSimulateOrders",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateSimulateOrdersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateSimulateOrdersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/create/user/order": {
       "post": {
         "operationId": "Gateway_CreateUserOrder",
@@ -766,6 +830,9 @@
         },
         "AdminSetCanceled": {
           "type": "boolean"
+        },
+        "Simulate": {
+          "type": "boolean"
         }
       }
     },
@@ -904,6 +971,65 @@
         },
         "Parent": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1CreateSimulateOrderRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "ParentOrderID": {
+          "type": "string"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        }
+      }
+    },
+    "v1CreateSimulateOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/ordergatewayorder1v1Order"
+        }
+      }
+    },
+    "v1CreateSimulateOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CreateOrdersRequestOrderReq"
+          }
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        }
+      }
+    },
+    "v1CreateSimulateOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ordergatewayorder1v1Order"
+          }
         }
       }
     },

@@ -60,12 +60,13 @@ message MiningReward {
 }
 
 message GetMiningRewardsRequest {
-    string AppID    = 10;
-    string UserID   = 20;
-    uint32 StartAt  = 30;
-    uint32 EndAt    = 40;
-    int32  Offset   = 50;
-    int32  Limit    = 60;
+    string AppID                 = 10;
+    string UserID                = 20;
+    uint32 StartAt               = 30;
+    uint32 EndAt                 = 40;
+    optional bool SimulateOnly   = 50;
+    int32  Offset                = 60;
+    int32  Limit                 = 70;
 }
 
 message GetMiningRewardsResponse {
@@ -141,4 +142,3 @@ message GetGoodProfitsResponse {
     repeated GoodProfit Infos = 10;
     uint32              Total = 20;
 }
-

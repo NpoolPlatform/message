@@ -100,6 +100,7 @@ message OrderReq {
     optional string LedgerLockID                          = 410;
     optional basetypes.order.v1.OrderRenewState RenewState = 420;
     optional uint32 RenewNotifyAt                         = 430;
+    optional bool   Simulate                              = 440;
 }
 
 message Order {
@@ -227,6 +228,10 @@ message Order {
     // @inject_tag: sql:"renew_notify_at"
     uint32 RenewNotifyAt                         = 550;
 
+    // simulate
+    // @inject_tag: sql:"simulate"
+    bool Simulate                                = 560;
+
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt                             = 1000;
     // @inject_tag: sql:"updated_at"
@@ -273,6 +278,7 @@ message Conds {
     optional basetypes.v1.StringSliceVal GoodIDs               = 300;
     optional basetypes.v1.StringSliceVal AppGoodIDs            = 310;
     optional basetypes.v1.Uint32Val      RenewNotifyAt         = 320;
+    optional basetypes.v1.BoolVal        Simulate              = 330;
 }
 
 message CreateOrderRequest {

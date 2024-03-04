@@ -1,0 +1,174 @@
+syntax = "proto3";
+
+package good.gateway.app.good1.simulate.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/app/good/simulate";
+
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateSimulate (CreateSimulateRequest) returns (CreateSimulateResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/simulategood"
+            body: "*"
+        };
+    }
+
+    rpc CreateNSimulate (CreateNSimulateRequest) returns (CreateNSimulateResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/n/simulategood"
+            body: "*"
+        };
+    }
+
+    rpc GetSimulates (GetSimulatesRequest) returns (GetSimulatesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/simulategoods"
+            body: "*"
+        };
+    }
+
+    rpc GetNSimulates (GetNSimulatesRequest) returns (GetNSimulatesResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/n/simulategoods"
+            body: "*"
+        };
+    }
+
+    rpc DeleteSimulate (DeleteSimulateRequest) returns (DeleteSimulateResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/simulategood"
+            body: "*"
+        };
+    }
+
+    rpc DeleteNSimulate (DeleteNSimulateRequest) returns (DeleteNSimulateResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/n/simulategood"
+            body: "*"
+        };
+    }
+
+    rpc UpdateSimulate (UpdateSimulateRequest) returns (UpdateSimulateResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/simulategood"
+            body: "*"
+        };
+    }
+
+    rpc UpdateNSimulate (UpdateNSimulateRequest) returns (UpdateNSimulateResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/n/simulategood"
+            body: "*"
+        };
+    }
+}
+
+message Simulate {
+    uint32 ID         = 9;
+    string EntID      = 10;
+    string AppID      = 20;
+    string AppName    = 30;
+    string GoodID     = 40;
+    string GoodName   = 50;
+    string AppGoodID  = 60;
+    string AppGoodName = 70;
+    string CoinTypeID = 80;
+    string CoinName   = 90;
+    string CoinLogo   = 100;
+    string CoinEnv    = 110;
+    string CoinUnit   = 120;
+    string FixedOrderUnits    = 130;
+    uint32 FixedOrderDuration = 140;
+    uint32 CreatedAt  = 1000;
+    uint32 UpdatedAt  = 1010;
+}
+
+message CreateSimulateRequest {
+    string AppID               = 10;
+    string AppGoodID           = 20;
+    string FixedOrderUnits     = 30;
+    uint32 FixedOrderDuration  = 40;
+}
+
+message CreateSimulateResponse {
+    Simulate Info = 10;
+}
+
+message CreateNSimulateRequest {
+    string TargetAppID        = 10;
+    string AppGoodID          = 20;
+    string FixedOrderUnits    = 30;
+    uint32 FixedOrderDuration = 40;
+}
+
+message CreateNSimulateResponse {
+    Simulate Info = 10;
+}
+
+message GetSimulatesRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetSimulatesResponse {
+    repeated Simulate Infos = 10;
+    uint32           Total = 20;
+}
+
+message GetNSimulatesRequest {
+    string TargetAppID  = 10;
+    int32  Offset       = 20;
+    int32  Limit        = 30;
+}
+
+message GetNSimulatesResponse {
+    repeated Simulate Infos = 10;
+    uint32           Total = 20;
+}
+
+message DeleteSimulateRequest {
+    uint32 ID    = 9;
+    string EntID = 10;
+    string AppID = 20;
+}
+
+message DeleteSimulateResponse {
+    Simulate Info = 10;
+}
+
+message DeleteNSimulateRequest {
+    uint32 ID          = 9;
+    string EntID       = 10;
+    string TargetAppID = 20;
+}
+
+message DeleteNSimulateResponse {
+    Simulate Info = 10;
+}
+
+message UpdateSimulateRequest {
+    uint32          ID        = 9;
+    string          EntID     = 10;
+    string          AppID     = 20;
+    optional string FixedOrderUnits    = 30;
+    optional uint32 FixedOrderDuration = 40;
+}
+
+message UpdateSimulateResponse {
+    Simulate Info = 10;
+}
+
+message UpdateNSimulateRequest {
+    uint32          ID          = 9;
+    string          EntID       = 10;
+    string          TargetAppID = 20;
+    optional string FixedOrderUnits    = 30;
+    optional uint32 FixedOrderDuration = 40;
+}
+
+message UpdateNSimulateResponse {
+    Simulate Info = 10;
+}
