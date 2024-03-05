@@ -29,7 +29,7 @@ enum MsgID {
     OrderPaidReq                 = 4000;
     OrderChildsRenewReq          = 4010;
 
-    WithdrawReviewNotify         = 5000;
+    WithdrawReviewNotifyReq      = 5000;
 
     CreateSampleMsgReq           = 100000000;
 }
