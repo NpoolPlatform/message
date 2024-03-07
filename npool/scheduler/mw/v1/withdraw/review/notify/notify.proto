@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package scheduler.middleware.withdraw.review.notify.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/scheduler/mw/v1/withdraw/review/notify";
+
+import "npool/ledger/mw/v2/withdraw/withdraw.proto";
+import "npool/appuser/mw/v1/user/user.proto";
+import "npool/account/mw/v1/account/account.proto";
+import "npool/chain/mw/v1/coin/coin.proto";
+
+message WithdrawInfo {
+    ledger.middleware.withdraw.v2.Withdraw Withdraw = 10;
+    appuser.middleware.user.v1.User        User     = 20;
+    account.middleware.account1.v1.Account Account  = 30;
+    chain.middleware.coin.v1.Coin          Coin     = 40;
+}
+
+message AppWithdrawInfos {
+    string AppID                    = 10;
+    string AppName                  = 20;
+    repeated WithdrawInfo Withdraws = 30;
+}
+
+message MsgWithdrawReviewNotifyReq {
+    repeated AppWithdrawInfos AppWithdraws = 10;
+}
