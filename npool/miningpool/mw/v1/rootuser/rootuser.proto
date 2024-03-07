@@ -57,8 +57,9 @@ message Conds {
     optional basetypes.v1.StringVal      EntID          = 10;
     optional basetypes.v1.StringVal      Name           = 20;
     optional basetypes.v1.Uint32Val      MiningpoolType = 30;
-    optional basetypes.v1.BoolVal        Authed         = 40;
-    optional basetypes.v1.StringSliceVal EntIDs         = 50;
+    optional basetypes.v1.StringVal      Email          = 40;
+    optional basetypes.v1.BoolVal        Authed         = 50;
+    optional basetypes.v1.StringSliceVal EntIDs         = 60;
 }
 
 message CreateRootUserRequest {

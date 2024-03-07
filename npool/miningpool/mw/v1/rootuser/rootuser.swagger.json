@@ -67,6 +67,9 @@
         "MiningpoolType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
+        "Email": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "Authed": {
           "$ref": "#/definitions/v1BoolVal"
         },

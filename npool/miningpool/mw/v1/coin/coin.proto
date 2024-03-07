@@ -23,9 +23,24 @@ message Coin {
     float                                        Threshold         = 70;
 }
 
+message Conds {
+    optional basetypes.v1.StringVal      EntID             = 10;
+    optional basetypes.v1.Uint32Val      CoinType          = 20;
+    optional basetypes.v1.Uint32Val      RevenueType       = 30;
+    optional basetypes.v1.StringVal      Site              = 40;
+    optional basetypes.v1.BoolVal        FeeRate           = 50;
+    optional basetypes.v1.BoolVal        FixedRevenueAble  = 60;
+    optional basetypes.v1.BoolVal        Threshold         = 70;
+    optional basetypes.v1.StringSliceVal EntIDs            = 580;
+}
+
 message GetCoinsRequest {
+    Conds Conds=10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
 message GetCoinsResponse {
     repeated Coin Infos = 10;
+    uint32 Total = 20;
 }
