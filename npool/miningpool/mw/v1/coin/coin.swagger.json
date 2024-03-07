@@ -44,6 +44,17 @@
         }
       }
     },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Coin": {
       "type": "object",
       "properties": {
@@ -83,6 +94,35 @@
       ],
       "default": "DefaultCoinType"
     },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "RevenueType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "Site": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "FeeRate": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "FixedRevenueAble": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Threshold": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
     "v1GetCoinsResponse": {
       "type": "object",
       "properties": {
@@ -91,6 +131,10 @@
           "items": {
             "$ref": "#/definitions/v1Coin"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -110,6 +154,43 @@
         "PPLNS"
       ],
       "default": "FPPS"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     }
   }
 }
