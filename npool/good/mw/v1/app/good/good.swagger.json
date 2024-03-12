@@ -739,6 +739,7 @@
         "PowerRenting",
         "MachineRenting",
         "MachineHosting",
+        "LegacyPowerReting",
         "TechniqueServiceFee",
         "ElectricityFee"
       ],
