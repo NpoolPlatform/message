@@ -12,6 +12,8 @@ enum BenefitType {
   BenefitTypePool = 20;
   // User do not receive any online reward
   BenefitTypeOffline = 30;
+  // User receive reward from smart contract
+  BenefitTypeContract = 40;
 }
 
 enum GoodType {
@@ -116,4 +118,13 @@ enum GoodSettlementType {
 
   GoodSettledByCash = 10;
   GoodSettledByProfit = 20; // Percent in default
+}
+
+enum GoodSaleMode {
+    DefaultGoodSaleMode = 0;
+
+    GoodSaleModeMainnetSpot           = 10;
+    GoodSaleModeMainnetPresaleSpot    = 20;
+    GoodSaleModeMainnetPresaleScratch = 30;
+    GoodSaleModeTestnetPresale        = 40;
 }
