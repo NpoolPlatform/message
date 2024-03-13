@@ -810,10 +810,10 @@
       "type": "string",
       "enum": [
         "DefaultGoodType",
-        "PowerRenting",
-        "MachineRenting",
+        "PowerRental",
+        "MachineRental",
         "MachineHosting",
-        "LegacyPowerReting",
+        "LegacyPowerRental",
         "TechniqueServiceFee",
         "ElectricityFee"
       ],
