@@ -129,10 +129,3 @@ enum GoodSaleMode {
     GoodSaleModeMainnetPresaleScratch = 30;
     GoodSaleModeTestnetPresale        = 40;
 }
-
-enum GoodPackageMode {
-    DefaultGoodPackageMode = 0;
-
-    GoodPackageUnitDuration  = 10;
-    GoodPackageFixedDuration = 20;
-}
