@@ -93,7 +93,8 @@
           "title": "@inject_tag: sql:\"site\""
         },
         "FeeRate": {
-          "type": "string",
+          "type": "number",
+          "format": "float",
           "title": "@inject_tag: sql:\"fee_rate\""
         },
         "FixedRevenueAble": {
@@ -101,8 +102,14 @@
           "title": "@inject_tag: sql:\"fixed_revenue_able\""
         },
         "Threshold": {
-          "type": "string",
+          "type": "number",
+          "format": "float",
           "title": "@inject_tag: sql:\"threshold\""
+        },
+        "Remark": {
+          "type": "number",
+          "format": "float",
+          "title": "@inject_tag: sql:\"remark\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -177,13 +184,7 @@
         "Site": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "FeeRate": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
         "FixedRevenueAble": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "Threshold": {
           "$ref": "#/definitions/v1BoolVal"
         },
         "EntIDs": {

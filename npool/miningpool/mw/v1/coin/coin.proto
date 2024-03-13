@@ -47,15 +47,17 @@ message Coin {
     // @inject_tag: sql:"site"
     string               Site              = 60;
     // @inject_tag: sql:"fee_rate"
-    string               FeeRate           = 70;
+    float                FeeRate           = 70;
     // @inject_tag: sql:"fixed_revenue_able" 
     bool                 FixedRevenueAble  = 80;
     // @inject_tag: sql:"threshold"
-    string               Threshold         = 90;
+    float                Threshold         = 90;
+    // @inject_tag: sql:"remark"
+    float                Remark            = 100;
     // @inject_tag: sql:"created_at"
-    uint32               CreatedAt         = 100;
+    uint32               CreatedAt         = 110;
     // @inject_tag: sql:"updated_at"
-    uint32               UpdatedAt         = 110;
+    uint32               UpdatedAt         = 120;
 }
 
 message Conds {
@@ -63,9 +65,7 @@ message Conds {
     optional basetypes.v1.Uint32Val      CoinType          = 20;
     optional basetypes.v1.Uint32Val      RevenueType       = 30;
     optional basetypes.v1.StringVal      Site              = 40;
-    optional basetypes.v1.BoolVal        FeeRate           = 50;
     optional basetypes.v1.BoolVal        FixedRevenueAble  = 60;
-    optional basetypes.v1.BoolVal        Threshold         = 70;
     optional basetypes.v1.StringSliceVal EntIDs            = 580;
 }
 
