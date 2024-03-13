@@ -158,6 +158,9 @@
         "Threshold": {
           "type": "number",
           "format": "float"
+        },
+        "Remark": {
+          "type": "string"
         }
       }
     },

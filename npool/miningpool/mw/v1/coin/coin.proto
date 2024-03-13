@@ -28,6 +28,7 @@ message CoinReq {
     optional float                                        FeeRate           = 60;
     optional bool                                         FixedRevenueAble  = 70;
     optional float                                        Threshold         = 80;
+    optional string                                       Remark            = 90;
 }
 
 message Coin {
