@@ -63,11 +63,12 @@ message Coin {
 
 message Conds {
     optional basetypes.v1.StringVal      EntID             = 10;
-    optional basetypes.v1.Uint32Val      CoinType          = 20;
-    optional basetypes.v1.Uint32Val      RevenueType       = 30;
-    optional basetypes.v1.StringVal      Site              = 40;
+    optional basetypes.v1.Uint32Val      MiningpoolType    = 20;
+    optional basetypes.v1.Uint32Val      CoinType          = 30;
+    optional basetypes.v1.Uint32Val      RevenueType       = 40;
+    optional basetypes.v1.StringVal      Site              = 50;
     optional basetypes.v1.BoolVal        FixedRevenueAble  = 60;
-    optional basetypes.v1.StringSliceVal EntIDs            = 580;
+    optional basetypes.v1.StringSliceVal EntIDs            = 70;
 }
 
 message CreateCoinRequest {
