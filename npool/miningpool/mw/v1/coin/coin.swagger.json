@@ -178,6 +178,9 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
         "CoinType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
