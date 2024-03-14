@@ -43,7 +43,7 @@ message Coin {
     string               CoinTypeStr       = 40;
     basetypes.miningpool.v1.CoinType       CoinType = 41;
     // @inject_tag: sql:"revenue_types"
-    repeated string      RevenueTypesStr   = 50;
+    string               RevenueTypesStr   = 50;
     repeated basetypes.miningpool.v1.RevenueType    RevenueTypes = 51;
     // @inject_tag: sql:"site"
     string               Site              = 60;
@@ -54,7 +54,7 @@ message Coin {
     // @inject_tag: sql:"threshold"
     float                Threshold         = 90;
     // @inject_tag: sql:"remark"
-    string                Remark            = 100;
+    string               Remark            = 100;
     // @inject_tag: sql:"created_at"
     uint32               CreatedAt         = 110;
     // @inject_tag: sql:"updated_at"
