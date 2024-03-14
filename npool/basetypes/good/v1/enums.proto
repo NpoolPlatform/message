@@ -117,8 +117,9 @@ enum GoodDurationType {
 enum GoodSettlementType {
   DefaultGoodSettlementType = 0;
 
-  GoodSettledByCash = 10;
-  GoodSettledByProfit = 20; // Percent in default
+  GoodSettledByPaymentPercent = 10;
+  GoodSettledByPaymentAmount  = 20;
+  GoodSettledByProfitPercent  = 30; // Percent in default
 }
 
 enum GoodSaleMode {

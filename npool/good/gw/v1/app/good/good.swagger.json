@@ -789,8 +789,9 @@
       "type": "string",
       "enum": [
         "DefaultGoodSettlementType",
-        "GoodSettledByCash",
-        "GoodSettledByProfit"
+        "GoodSettledByPaymentPercent",
+        "GoodSettledByPaymentAmount",
+        "GoodSettledByProfitPercent"
       ],
       "default": "DefaultGoodSettlementType"
     },
