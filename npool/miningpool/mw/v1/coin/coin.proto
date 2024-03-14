@@ -54,7 +54,7 @@ message Coin {
     // @inject_tag: sql:"threshold"
     float                Threshold         = 90;
     // @inject_tag: sql:"remark"
-    float                Remark            = 100;
+    string                Remark            = 100;
     // @inject_tag: sql:"created_at"
     uint32               CreatedAt         = 110;
     // @inject_tag: sql:"updated_at"
