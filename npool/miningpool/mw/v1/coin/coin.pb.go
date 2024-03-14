@@ -987,6 +987,100 @@ func (x *UpdateCoinResponse) GetInfo() *Coin {
 	return nil
 }
 
+type DeleteCoinRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *CoinReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *DeleteCoinRequest) Reset() {
+	*x = DeleteCoinRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_miningpool_mw_v1_coin_coin_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteCoinRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteCoinRequest) ProtoMessage() {}
+
+func (x *DeleteCoinRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_miningpool_mw_v1_coin_coin_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteCoinRequest.ProtoReflect.Descriptor instead.
+func (*DeleteCoinRequest) Descriptor() ([]byte, []int) {
+	return file_npool_miningpool_mw_v1_coin_coin_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *DeleteCoinRequest) GetInfo() *CoinReq {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type DeleteCoinResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *Coin `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *DeleteCoinResponse) Reset() {
+	*x = DeleteCoinResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_miningpool_mw_v1_coin_coin_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteCoinResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteCoinResponse) ProtoMessage() {}
+
+func (x *DeleteCoinResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_miningpool_mw_v1_coin_coin_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteCoinResponse.ProtoReflect.Descriptor instead.
+func (*DeleteCoinResponse) Descriptor() ([]byte, []int) {
+	return file_npool_miningpool_mw_v1_coin_coin_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *DeleteCoinResponse) GetInfo() *Coin {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 var File_npool_miningpool_mw_v1_coin_coin_proto protoreflect.FileDescriptor
 
 var file_npool_miningpool_mw_v1_coin_coin_proto_rawDesc = []byte{
@@ -1155,7 +1249,17 @@ var file_npool_miningpool_mw_v1_coin_coin_proto_rawDesc = []byte{
 	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f,
 	0x6f, 0x6c, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
 	0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
-	0x32, 0xc4, 0x05, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12,
+	0x22, 0x4f, 0x0a, 0x11, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3a, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f, 0x6f, 0x6c,
+	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e,
+	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66,
+	0x6f, 0x22, 0x4d, 0x0a, 0x12, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f, 0x69, 0x6e, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
+	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f,
+	0x6f, 0x6c, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
+	0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x32, 0xb9, 0x06, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12,
 	0x73, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x69, 0x6e, 0x12, 0x30, 0x2e,
 	0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
 	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72,
@@ -1199,11 +1303,19 @@ var file_npool_miningpool_mw_v1_coin_coin_proto_rawDesc = []byte{
 	0x73, 0x74, 0x1a, 0x31, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f, 0x6f, 0x6c, 0x2e,
 	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f, 0x69, 0x6e, 0x2e,
 	0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3e, 0x5a, 0x3c, 0x67, 0x69, 0x74, 0x68, 0x75,
-	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66,
-	0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f,
-	0x6c, 0x2f, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6d, 0x77, 0x2f,
-	0x76, 0x31, 0x2f, 0x63, 0x6f, 0x69, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x65, 0x43, 0x6f, 0x69, 0x6e, 0x12, 0x30, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f,
+	0x6f, 0x6c, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x6f,
+	0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f, 0x69, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67,
+	0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
+	0x63, 0x6f, 0x69, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f,
+	0x69, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x3e, 0x5a, 0x3c,
+	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c,
+	0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
+	0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f, 0x6f,
+	0x6c, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x69, 0x6e, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1218,7 +1330,7 @@ func file_npool_miningpool_mw_v1_coin_coin_proto_rawDescGZIP() []byte {
 	return file_npool_miningpool_mw_v1_coin_coin_proto_rawDescData
 }
 
-var file_npool_miningpool_mw_v1_coin_coin_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_npool_miningpool_mw_v1_coin_coin_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 var file_npool_miningpool_mw_v1_coin_coin_proto_goTypes = []interface{}{
 	(*CoinReq)(nil),                // 0: miningpool.middleware.coin.v1.CoinReq
 	(*Coin)(nil),                   // 1: miningpool.middleware.coin.v1.Coin
@@ -1235,27 +1347,29 @@ var file_npool_miningpool_mw_v1_coin_coin_proto_goTypes = []interface{}{
 	(*ExistCoinCondsResponse)(nil), // 12: miningpool.middleware.coin.v1.ExistCoinCondsResponse
 	(*UpdateCoinRequest)(nil),      // 13: miningpool.middleware.coin.v1.UpdateCoinRequest
 	(*UpdateCoinResponse)(nil),     // 14: miningpool.middleware.coin.v1.UpdateCoinResponse
-	(v1.MiningpoolType)(0),         // 15: basetypes.miningpool.v1.MiningpoolType
-	(v1.CoinType)(0),               // 16: basetypes.miningpool.v1.CoinType
-	(v1.RevenueType)(0),            // 17: basetypes.miningpool.v1.RevenueType
-	(*v11.StringVal)(nil),          // 18: basetypes.v1.StringVal
-	(*v11.Uint32Val)(nil),          // 19: basetypes.v1.Uint32Val
-	(*v11.BoolVal)(nil),            // 20: basetypes.v1.BoolVal
-	(*v11.StringSliceVal)(nil),     // 21: basetypes.v1.StringSliceVal
+	(*DeleteCoinRequest)(nil),      // 15: miningpool.middleware.coin.v1.DeleteCoinRequest
+	(*DeleteCoinResponse)(nil),     // 16: miningpool.middleware.coin.v1.DeleteCoinResponse
+	(v1.MiningpoolType)(0),         // 17: basetypes.miningpool.v1.MiningpoolType
+	(v1.CoinType)(0),               // 18: basetypes.miningpool.v1.CoinType
+	(v1.RevenueType)(0),            // 19: basetypes.miningpool.v1.RevenueType
+	(*v11.StringVal)(nil),          // 20: basetypes.v1.StringVal
+	(*v11.Uint32Val)(nil),          // 21: basetypes.v1.Uint32Val
+	(*v11.BoolVal)(nil),            // 22: basetypes.v1.BoolVal
+	(*v11.StringSliceVal)(nil),     // 23: basetypes.v1.StringSliceVal
 }
 var file_npool_miningpool_mw_v1_coin_coin_proto_depIdxs = []int32{
-	15, // 0: miningpool.middleware.coin.v1.CoinReq.MiningpoolType:type_name -> basetypes.miningpool.v1.MiningpoolType
-	16, // 1: miningpool.middleware.coin.v1.CoinReq.CoinType:type_name -> basetypes.miningpool.v1.CoinType
-	17, // 2: miningpool.middleware.coin.v1.CoinReq.RevenueTypes:type_name -> basetypes.miningpool.v1.RevenueType
-	15, // 3: miningpool.middleware.coin.v1.Coin.MiningpoolType:type_name -> basetypes.miningpool.v1.MiningpoolType
-	16, // 4: miningpool.middleware.coin.v1.Coin.CoinType:type_name -> basetypes.miningpool.v1.CoinType
-	17, // 5: miningpool.middleware.coin.v1.Coin.RevenueTypes:type_name -> basetypes.miningpool.v1.RevenueType
-	18, // 6: miningpool.middleware.coin.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	19, // 7: miningpool.middleware.coin.v1.Conds.MiningpoolType:type_name -> basetypes.v1.Uint32Val
-	19, // 8: miningpool.middleware.coin.v1.Conds.CoinType:type_name -> basetypes.v1.Uint32Val
-	18, // 9: miningpool.middleware.coin.v1.Conds.Site:type_name -> basetypes.v1.StringVal
-	20, // 10: miningpool.middleware.coin.v1.Conds.FixedRevenueAble:type_name -> basetypes.v1.BoolVal
-	21, // 11: miningpool.middleware.coin.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
+	17, // 0: miningpool.middleware.coin.v1.CoinReq.MiningpoolType:type_name -> basetypes.miningpool.v1.MiningpoolType
+	18, // 1: miningpool.middleware.coin.v1.CoinReq.CoinType:type_name -> basetypes.miningpool.v1.CoinType
+	19, // 2: miningpool.middleware.coin.v1.CoinReq.RevenueTypes:type_name -> basetypes.miningpool.v1.RevenueType
+	17, // 3: miningpool.middleware.coin.v1.Coin.MiningpoolType:type_name -> basetypes.miningpool.v1.MiningpoolType
+	18, // 4: miningpool.middleware.coin.v1.Coin.CoinType:type_name -> basetypes.miningpool.v1.CoinType
+	19, // 5: miningpool.middleware.coin.v1.Coin.RevenueTypes:type_name -> basetypes.miningpool.v1.RevenueType
+	20, // 6: miningpool.middleware.coin.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	21, // 7: miningpool.middleware.coin.v1.Conds.MiningpoolType:type_name -> basetypes.v1.Uint32Val
+	21, // 8: miningpool.middleware.coin.v1.Conds.CoinType:type_name -> basetypes.v1.Uint32Val
+	20, // 9: miningpool.middleware.coin.v1.Conds.Site:type_name -> basetypes.v1.StringVal
+	22, // 10: miningpool.middleware.coin.v1.Conds.FixedRevenueAble:type_name -> basetypes.v1.BoolVal
+	23, // 11: miningpool.middleware.coin.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
 	0,  // 12: miningpool.middleware.coin.v1.CreateCoinRequest.Info:type_name -> miningpool.middleware.coin.v1.CoinReq
 	1,  // 13: miningpool.middleware.coin.v1.CreateCoinResponse.Info:type_name -> miningpool.middleware.coin.v1.Coin
 	1,  // 14: miningpool.middleware.coin.v1.GetCoinResponse.Info:type_name -> miningpool.middleware.coin.v1.Coin
@@ -1264,23 +1378,27 @@ var file_npool_miningpool_mw_v1_coin_coin_proto_depIdxs = []int32{
 	2,  // 17: miningpool.middleware.coin.v1.ExistCoinCondsRequest.Conds:type_name -> miningpool.middleware.coin.v1.Conds
 	0,  // 18: miningpool.middleware.coin.v1.UpdateCoinRequest.Info:type_name -> miningpool.middleware.coin.v1.CoinReq
 	1,  // 19: miningpool.middleware.coin.v1.UpdateCoinResponse.Info:type_name -> miningpool.middleware.coin.v1.Coin
-	3,  // 20: miningpool.middleware.coin.v1.Middleware.CreateCoin:input_type -> miningpool.middleware.coin.v1.CreateCoinRequest
-	5,  // 21: miningpool.middleware.coin.v1.Middleware.GetCoin:input_type -> miningpool.middleware.coin.v1.GetCoinRequest
-	7,  // 22: miningpool.middleware.coin.v1.Middleware.ExistCoin:input_type -> miningpool.middleware.coin.v1.ExistCoinRequest
-	9,  // 23: miningpool.middleware.coin.v1.Middleware.GetCoins:input_type -> miningpool.middleware.coin.v1.GetCoinsRequest
-	11, // 24: miningpool.middleware.coin.v1.Middleware.ExistCoinConds:input_type -> miningpool.middleware.coin.v1.ExistCoinCondsRequest
-	13, // 25: miningpool.middleware.coin.v1.Middleware.UpdateCoin:input_type -> miningpool.middleware.coin.v1.UpdateCoinRequest
-	4,  // 26: miningpool.middleware.coin.v1.Middleware.CreateCoin:output_type -> miningpool.middleware.coin.v1.CreateCoinResponse
-	6,  // 27: miningpool.middleware.coin.v1.Middleware.GetCoin:output_type -> miningpool.middleware.coin.v1.GetCoinResponse
-	8,  // 28: miningpool.middleware.coin.v1.Middleware.ExistCoin:output_type -> miningpool.middleware.coin.v1.ExistCoinResponse
-	10, // 29: miningpool.middleware.coin.v1.Middleware.GetCoins:output_type -> miningpool.middleware.coin.v1.GetCoinsResponse
-	12, // 30: miningpool.middleware.coin.v1.Middleware.ExistCoinConds:output_type -> miningpool.middleware.coin.v1.ExistCoinCondsResponse
-	14, // 31: miningpool.middleware.coin.v1.Middleware.UpdateCoin:output_type -> miningpool.middleware.coin.v1.UpdateCoinResponse
-	26, // [26:32] is the sub-list for method output_type
-	20, // [20:26] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	0,  // 20: miningpool.middleware.coin.v1.DeleteCoinRequest.Info:type_name -> miningpool.middleware.coin.v1.CoinReq
+	1,  // 21: miningpool.middleware.coin.v1.DeleteCoinResponse.Info:type_name -> miningpool.middleware.coin.v1.Coin
+	3,  // 22: miningpool.middleware.coin.v1.Middleware.CreateCoin:input_type -> miningpool.middleware.coin.v1.CreateCoinRequest
+	5,  // 23: miningpool.middleware.coin.v1.Middleware.GetCoin:input_type -> miningpool.middleware.coin.v1.GetCoinRequest
+	7,  // 24: miningpool.middleware.coin.v1.Middleware.ExistCoin:input_type -> miningpool.middleware.coin.v1.ExistCoinRequest
+	9,  // 25: miningpool.middleware.coin.v1.Middleware.GetCoins:input_type -> miningpool.middleware.coin.v1.GetCoinsRequest
+	11, // 26: miningpool.middleware.coin.v1.Middleware.ExistCoinConds:input_type -> miningpool.middleware.coin.v1.ExistCoinCondsRequest
+	13, // 27: miningpool.middleware.coin.v1.Middleware.UpdateCoin:input_type -> miningpool.middleware.coin.v1.UpdateCoinRequest
+	15, // 28: miningpool.middleware.coin.v1.Middleware.DeleteCoin:input_type -> miningpool.middleware.coin.v1.DeleteCoinRequest
+	4,  // 29: miningpool.middleware.coin.v1.Middleware.CreateCoin:output_type -> miningpool.middleware.coin.v1.CreateCoinResponse
+	6,  // 30: miningpool.middleware.coin.v1.Middleware.GetCoin:output_type -> miningpool.middleware.coin.v1.GetCoinResponse
+	8,  // 31: miningpool.middleware.coin.v1.Middleware.ExistCoin:output_type -> miningpool.middleware.coin.v1.ExistCoinResponse
+	10, // 32: miningpool.middleware.coin.v1.Middleware.GetCoins:output_type -> miningpool.middleware.coin.v1.GetCoinsResponse
+	12, // 33: miningpool.middleware.coin.v1.Middleware.ExistCoinConds:output_type -> miningpool.middleware.coin.v1.ExistCoinCondsResponse
+	14, // 34: miningpool.middleware.coin.v1.Middleware.UpdateCoin:output_type -> miningpool.middleware.coin.v1.UpdateCoinResponse
+	16, // 35: miningpool.middleware.coin.v1.Middleware.DeleteCoin:output_type -> miningpool.middleware.coin.v1.DeleteCoinResponse
+	29, // [29:36] is the sub-list for method output_type
+	22, // [22:29] is the sub-list for method input_type
+	22, // [22:22] is the sub-list for extension type_name
+	22, // [22:22] is the sub-list for extension extendee
+	0,  // [0:22] is the sub-list for field type_name
 }
 
 func init() { file_npool_miningpool_mw_v1_coin_coin_proto_init() }
@@ -1469,6 +1587,30 @@ func file_npool_miningpool_mw_v1_coin_coin_proto_init() {
 				return nil
 			}
 		}
+		file_npool_miningpool_mw_v1_coin_coin_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteCoinRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_miningpool_mw_v1_coin_coin_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteCoinResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	file_npool_miningpool_mw_v1_coin_coin_proto_msgTypes[0].OneofWrappers = []interface{}{}
 	file_npool_miningpool_mw_v1_coin_coin_proto_msgTypes[2].OneofWrappers = []interface{}{}
@@ -1478,7 +1620,7 @@ func file_npool_miningpool_mw_v1_coin_coin_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_miningpool_mw_v1_coin_coin_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   15,
+			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

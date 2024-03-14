@@ -25,6 +25,7 @@ const (
 	Middleware_GetRootUsers_FullMethodName       = "/miningpool.middleware.gooduser.v1.Middleware/GetRootUsers"
 	Middleware_ExistRootUserConds_FullMethodName = "/miningpool.middleware.gooduser.v1.Middleware/ExistRootUserConds"
 	Middleware_UpdateRootUser_FullMethodName     = "/miningpool.middleware.gooduser.v1.Middleware/UpdateRootUser"
+	Middleware_DeleteRootUser_FullMethodName     = "/miningpool.middleware.gooduser.v1.Middleware/DeleteRootUser"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -37,6 +38,7 @@ type MiddlewareClient interface {
 	GetRootUsers(ctx context.Context, in *GetRootUsersRequest, opts ...grpc.CallOption) (*GetRootUsersResponse, error)
 	ExistRootUserConds(ctx context.Context, in *ExistRootUserCondsRequest, opts ...grpc.CallOption) (*ExistRootUserCondsResponse, error)
 	UpdateRootUser(ctx context.Context, in *UpdateRootUserRequest, opts ...grpc.CallOption) (*UpdateRootUserResponse, error)
+	DeleteRootUser(ctx context.Context, in *DeleteRootUserRequest, opts ...grpc.CallOption) (*DeleteRootUserResponse, error)
 }
 
 type middlewareClient struct {
@@ -101,6 +103,15 @@ func (c *middlewareClient) UpdateRootUser(ctx context.Context, in *UpdateRootUse
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteRootUser(ctx context.Context, in *DeleteRootUserRequest, opts ...grpc.CallOption) (*DeleteRootUserResponse, error) {
+	out := new(DeleteRootUserResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteRootUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -111,6 +122,7 @@ type MiddlewareServer interface {
 	GetRootUsers(context.Context, *GetRootUsersRequest) (*GetRootUsersResponse, error)
 	ExistRootUserConds(context.Context, *ExistRootUserCondsRequest) (*ExistRootUserCondsResponse, error)
 	UpdateRootUser(context.Context, *UpdateRootUserRequest) (*UpdateRootUserResponse, error)
+	DeleteRootUser(context.Context, *DeleteRootUserRequest) (*DeleteRootUserResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -135,6 +147,9 @@ func (UnimplementedMiddlewareServer) ExistRootUserConds(context.Context, *ExistR
 }
 func (UnimplementedMiddlewareServer) UpdateRootUser(context.Context, *UpdateRootUserRequest) (*UpdateRootUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateRootUser not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteRootUser(context.Context, *DeleteRootUserRequest) (*DeleteRootUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteRootUser not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -257,6 +272,24 @@ func _Middleware_UpdateRootUser_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteRootUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRootUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteRootUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteRootUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteRootUser(ctx, req.(*DeleteRootUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -287,6 +320,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateRootUser",
 			Handler:    _Middleware_UpdateRootUser_Handler,
+		},
+		{
+			MethodName: "DeleteRootUser",
+			Handler:    _Middleware_DeleteRootUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

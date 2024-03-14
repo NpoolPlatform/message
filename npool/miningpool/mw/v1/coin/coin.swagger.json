@@ -205,6 +205,14 @@
         }
       }
     },
+    "v1DeleteCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coin"
+        }
+      }
+    },
     "v1ExistCoinCondsResponse": {
       "type": "object",
       "properties": {
