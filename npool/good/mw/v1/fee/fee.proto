@@ -67,7 +67,7 @@ message UpdateFeeResponse {
 }
 
 message GetFeeRequest {
-    string EntID = 10;
+    string GoodID = 10;
 }
 
 message GetFeeResponse {
