@@ -189,9 +189,6 @@
         "CoinType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "RevenueTypes": {
-          "$ref": "#/definitions/v1Uint32SliceVal"
-        },
         "Site": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -289,21 +286,6 @@
         },
         "Value": {
           "type": "string"
-        }
-      }
-    },
-    "v1Uint32SliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "int64"
-          }
         }
       }
     },
