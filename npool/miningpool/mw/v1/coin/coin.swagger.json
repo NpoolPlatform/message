@@ -81,12 +81,18 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "RevenueTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"eevenue_type\""
+        "RevenueTypesStr": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "@inject_tag: sql:\"revenue_types\""
         },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
+        "RevenueTypes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RevenueType"
+          }
         },
         "Site": {
           "type": "string",
@@ -139,7 +145,7 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "RevenueType": {
+        "RevenueTypes": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1RevenueType"
@@ -184,8 +190,8 @@
         "CoinType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "RevenueType": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "RevenueTypes": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
         },
         "Site": {
           "$ref": "#/definitions/v1StringVal"
@@ -284,6 +290,21 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
         }
       }
     },
