@@ -15,6 +15,7 @@ service Middleware {
     rpc GetFractions       (GetFractionsRequest)     returns (GetFractionsResponse)      {}
     rpc ExistFractionConds (ExistFractionCondsRequest) returns (ExistFractionCondsResponse) {}
     rpc UpdateFraction     (UpdateFractionRequest)   returns (UpdateFractionResponse)    {}
+    rpc DeleteFraction     (DeleteFractionRequest)   returns (DeleteFractionResponse)    {}
 }
 
 message FractionReq {
@@ -102,5 +103,13 @@ message UpdateFractionRequest {
 }
 
 message UpdateFractionResponse {
+    Fraction Info = 10;
+}
+
+message DeleteFractionRequest {
+    FractionReq Info = 10;
+}
+
+message DeleteFractionResponse {
     Fraction Info = 10;
 }

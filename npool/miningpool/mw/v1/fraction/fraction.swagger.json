@@ -80,6 +80,14 @@
         }
       }
     },
+    "v1DeleteFractionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Fraction"
+        }
+      }
+    },
     "v1ExistFractionCondsResponse": {
       "type": "object",
       "properties": {

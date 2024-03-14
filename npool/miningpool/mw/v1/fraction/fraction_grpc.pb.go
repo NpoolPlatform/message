@@ -25,6 +25,7 @@ const (
 	Middleware_GetFractions_FullMethodName       = "/miningpool.middleware.fraction.v1.Middleware/GetFractions"
 	Middleware_ExistFractionConds_FullMethodName = "/miningpool.middleware.fraction.v1.Middleware/ExistFractionConds"
 	Middleware_UpdateFraction_FullMethodName     = "/miningpool.middleware.fraction.v1.Middleware/UpdateFraction"
+	Middleware_DeleteFraction_FullMethodName     = "/miningpool.middleware.fraction.v1.Middleware/DeleteFraction"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -37,6 +38,7 @@ type MiddlewareClient interface {
 	GetFractions(ctx context.Context, in *GetFractionsRequest, opts ...grpc.CallOption) (*GetFractionsResponse, error)
 	ExistFractionConds(ctx context.Context, in *ExistFractionCondsRequest, opts ...grpc.CallOption) (*ExistFractionCondsResponse, error)
 	UpdateFraction(ctx context.Context, in *UpdateFractionRequest, opts ...grpc.CallOption) (*UpdateFractionResponse, error)
+	DeleteFraction(ctx context.Context, in *DeleteFractionRequest, opts ...grpc.CallOption) (*DeleteFractionResponse, error)
 }
 
 type middlewareClient struct {
@@ -101,6 +103,15 @@ func (c *middlewareClient) UpdateFraction(ctx context.Context, in *UpdateFractio
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteFraction(ctx context.Context, in *DeleteFractionRequest, opts ...grpc.CallOption) (*DeleteFractionResponse, error) {
+	out := new(DeleteFractionResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteFraction_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -111,6 +122,7 @@ type MiddlewareServer interface {
 	GetFractions(context.Context, *GetFractionsRequest) (*GetFractionsResponse, error)
 	ExistFractionConds(context.Context, *ExistFractionCondsRequest) (*ExistFractionCondsResponse, error)
 	UpdateFraction(context.Context, *UpdateFractionRequest) (*UpdateFractionResponse, error)
+	DeleteFraction(context.Context, *DeleteFractionRequest) (*DeleteFractionResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -135,6 +147,9 @@ func (UnimplementedMiddlewareServer) ExistFractionConds(context.Context, *ExistF
 }
 func (UnimplementedMiddlewareServer) UpdateFraction(context.Context, *UpdateFractionRequest) (*UpdateFractionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateFraction not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteFraction(context.Context, *DeleteFractionRequest) (*DeleteFractionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteFraction not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -257,6 +272,24 @@ func _Middleware_UpdateFraction_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteFraction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteFractionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteFraction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteFraction_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteFraction(ctx, req.(*DeleteFractionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -287,6 +320,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateFraction",
 			Handler:    _Middleware_UpdateFraction_Handler,
+		},
+		{
+			MethodName: "DeleteFraction",
+			Handler:    _Middleware_DeleteFraction_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
