@@ -97,6 +97,14 @@
         }
       }
     },
+    "v1DeleteRootUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RootUser"
+        }
+      }
+    },
     "v1ExistRootUserCondsResponse": {
       "type": "object",
       "properties": {

@@ -25,6 +25,7 @@ const (
 	Middleware_GetCoins_FullMethodName       = "/miningpool.middleware.coin.v1.Middleware/GetCoins"
 	Middleware_ExistCoinConds_FullMethodName = "/miningpool.middleware.coin.v1.Middleware/ExistCoinConds"
 	Middleware_UpdateCoin_FullMethodName     = "/miningpool.middleware.coin.v1.Middleware/UpdateCoin"
+	Middleware_DeleteCoin_FullMethodName     = "/miningpool.middleware.coin.v1.Middleware/DeleteCoin"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -37,6 +38,7 @@ type MiddlewareClient interface {
 	GetCoins(ctx context.Context, in *GetCoinsRequest, opts ...grpc.CallOption) (*GetCoinsResponse, error)
 	ExistCoinConds(ctx context.Context, in *ExistCoinCondsRequest, opts ...grpc.CallOption) (*ExistCoinCondsResponse, error)
 	UpdateCoin(ctx context.Context, in *UpdateCoinRequest, opts ...grpc.CallOption) (*UpdateCoinResponse, error)
+	DeleteCoin(ctx context.Context, in *DeleteCoinRequest, opts ...grpc.CallOption) (*DeleteCoinResponse, error)
 }
 
 type middlewareClient struct {
@@ -101,6 +103,15 @@ func (c *middlewareClient) UpdateCoin(ctx context.Context, in *UpdateCoinRequest
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteCoin(ctx context.Context, in *DeleteCoinRequest, opts ...grpc.CallOption) (*DeleteCoinResponse, error) {
+	out := new(DeleteCoinResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteCoin_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -111,6 +122,7 @@ type MiddlewareServer interface {
 	GetCoins(context.Context, *GetCoinsRequest) (*GetCoinsResponse, error)
 	ExistCoinConds(context.Context, *ExistCoinCondsRequest) (*ExistCoinCondsResponse, error)
 	UpdateCoin(context.Context, *UpdateCoinRequest) (*UpdateCoinResponse, error)
+	DeleteCoin(context.Context, *DeleteCoinRequest) (*DeleteCoinResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -135,6 +147,9 @@ func (UnimplementedMiddlewareServer) ExistCoinConds(context.Context, *ExistCoinC
 }
 func (UnimplementedMiddlewareServer) UpdateCoin(context.Context, *UpdateCoinRequest) (*UpdateCoinResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoin not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteCoin(context.Context, *DeleteCoinRequest) (*DeleteCoinResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCoin not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -257,6 +272,24 @@ func _Middleware_UpdateCoin_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteCoin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCoinRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteCoin(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteCoin_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteCoin(ctx, req.(*DeleteCoinRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -287,6 +320,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateCoin",
 			Handler:    _Middleware_UpdateCoin_Handler,
+		},
+		{
+			MethodName: "DeleteCoin",
+			Handler:    _Middleware_DeleteCoin_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

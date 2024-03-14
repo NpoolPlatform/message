@@ -16,6 +16,7 @@ service Middleware {
     rpc GetRootUsers       (GetRootUsersRequest)     returns (GetRootUsersResponse)      {}
     rpc ExistRootUserConds (ExistRootUserCondsRequest) returns (ExistRootUserCondsResponse) {}
     rpc UpdateRootUser     (UpdateRootUserRequest)   returns (UpdateRootUserResponse)    {}
+    rpc DeleteRootUser     (DeleteRootUserRequest)   returns (DeleteRootUserResponse)    {}
 }
 
 message RootUserReq {
@@ -111,5 +112,13 @@ message UpdateRootUserRequest {
 }
 
 message UpdateRootUserResponse {
+    RootUser Info = 10;
+}
+
+message DeleteRootUserRequest {
+    RootUserReq Info = 10;
+}
+
+message DeleteRootUserResponse {
     RootUser Info = 10;
 }

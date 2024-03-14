@@ -15,6 +15,7 @@ service Middleware {
     rpc GetCoins       (GetCoinsRequest)     returns (GetCoinsResponse)      {}
     rpc ExistCoinConds (ExistCoinCondsRequest) returns (ExistCoinCondsResponse) {}
     rpc UpdateCoin     (UpdateCoinRequest)   returns (UpdateCoinResponse)    {}
+    rpc DeleteCoin     (DeleteCoinRequest)   returns (DeleteCoinResponse)    {}
 }
 
 
@@ -118,5 +119,13 @@ message UpdateCoinRequest {
 }
 
 message UpdateCoinResponse {
+    Coin Info = 10;
+}
+
+message DeleteCoinRequest {
+    CoinReq Info = 10;
+}
+
+message DeleteCoinResponse {
     Coin Info = 10;
 }
