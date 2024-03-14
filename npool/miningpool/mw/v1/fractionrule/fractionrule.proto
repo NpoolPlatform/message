@@ -20,11 +20,13 @@ service Middleware {
 }
 
 message FractionRuleReq {
-    optional basetypes.miningpool.v1.MiningpoolType MiningpoolType    = 10;
-    optional basetypes.miningpool.v1.CoinType       CoinType          = 20;
-    optional uint32                                 WithdrawInterval   = 30;
-    optional float                                  MinAmount         = 40;
-    optional float                                  WithdrawRate      = 50;
+    optional uint32                                 ID                = 10;
+    optional string                                 EntID             = 20;
+    optional basetypes.miningpool.v1.MiningpoolType MiningpoolType    = 30;
+    optional basetypes.miningpool.v1.CoinType       CoinType          = 40;
+    optional uint32                                 WithdrawInterval  = 50;
+    optional float                                  MinAmount         = 60;
+    optional float                                  WithdrawRate      = 70;
 }
 
 message FractionRule {
