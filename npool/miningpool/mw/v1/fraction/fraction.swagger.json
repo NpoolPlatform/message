@@ -50,7 +50,7 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "OrderMininguserID": {
+        "OrderUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "WithdrawState": {
@@ -108,9 +108,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "OrderMininguserID": {
+        "OrderUserID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"order_mininguser_id\""
+          "title": "@inject_tag: sql:\"order_user_id\""
         },
         "WithdrawStateStr": {
           "type": "string",
@@ -151,7 +151,7 @@
         "EntID": {
           "type": "string"
         },
-        "OrderMininguserID": {
+        "OrderUserID": {
           "type": "string"
         },
         "WithdrawState": {
