@@ -64,7 +64,7 @@
         "CoinType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "WithdrawInterva": {
+        "WithdrawInterval": {
           "$ref": "#/definitions/v1Uint32Val"
         },
         "EntIDs": {
@@ -128,25 +128,25 @@
         },
         "CoinTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"CoinType\""
+          "title": "@inject_tag: sql:\"coin_type\""
         },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "WithdrawInterva": {
+        "WithdrawInterval": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"WithdrawInterva\""
+          "title": "@inject_tag: sql:\"withdraw_interval\""
         },
         "MinAmount": {
           "type": "number",
           "format": "float",
-          "title": "@inject_tag: sql:\"MinAmount\""
+          "title": "@inject_tag: sql:\"min_amount\""
         },
         "WithdrawRate": {
           "type": "number",
           "format": "float",
-          "title": "@inject_tag: sql:\"WithdrawRate\""
+          "title": "@inject_tag: sql:\"withdraw_rate\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -169,7 +169,7 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "WithdrawInterva": {
+        "WithdrawInterval": {
           "type": "integer",
           "format": "int64"
         },

@@ -22,7 +22,7 @@ service Middleware {
 message FractionRuleReq {
     optional basetypes.miningpool.v1.MiningpoolType MiningpoolType    = 10;
     optional basetypes.miningpool.v1.CoinType       CoinType          = 20;
-    optional uint32                                 WithdrawInterva   = 30;
+    optional uint32                                 WithdrawInterval   = 30;
     optional float                                  MinAmount         = 40;
     optional float                                  WithdrawRate      = 50;
 }
@@ -35,14 +35,14 @@ message FractionRule {
     // @inject_tag: sql:"miningpool_type"
     string               MiningpoolTypeStr = 30;
     basetypes.miningpool.v1.MiningpoolType MiningpoolType = 31;
-    // @inject_tag: sql:"CoinType"
+    // @inject_tag: sql:"coin_type"
     string               CoinTypeStr       = 40;
     basetypes.miningpool.v1.CoinType CoinType = 41;
-    // @inject_tag: sql:"WithdrawInterva"
-    uint32               WithdrawInterva   = 50;
-    // @inject_tag: sql:"MinAmount"
+    // @inject_tag: sql:"withdraw_interval"
+    uint32               WithdrawInterval   = 50;
+    // @inject_tag: sql:"min_amount"
     float               MinAmount          = 60;
-    // @inject_tag: sql:"WithdrawRate" 
+    // @inject_tag: sql:"withdraw_rate" 
     float                 WithdrawRate     = 70;
     // @inject_tag: sql:"created_at"
     uint32               CreatedAt         = 90;
@@ -54,7 +54,7 @@ message Conds {
     optional basetypes.v1.StringVal      EntID           = 10;
     optional basetypes.v1.Uint32Val      MiningpoolType  = 20;
     optional basetypes.v1.Uint32Val      CoinType        = 30;
-    optional basetypes.v1.Uint32Val      WithdrawInterva = 40;
+    optional basetypes.v1.Uint32Val      WithdrawInterval = 40;
     optional basetypes.v1.StringSliceVal EntIDs          = 50;
 }
 
