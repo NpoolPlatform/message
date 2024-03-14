@@ -82,10 +82,7 @@
           "$ref": "#/definitions/v1CoinType"
         },
         "RevenueTypesStr": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
+          "type": "string",
           "title": "@inject_tag: sql:\"revenue_types\""
         },
         "RevenueTypes": {
