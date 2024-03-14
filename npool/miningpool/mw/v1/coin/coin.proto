@@ -23,7 +23,7 @@ message CoinReq {
     optional string                                       EntID             = 10;
     optional basetypes.miningpool.v1.MiningpoolType       MiningpoolType    = 20;
     optional basetypes.miningpool.v1.CoinType             CoinType          = 30;
-    repeated basetypes.miningpool.v1.RevenueType          RevenueType       = 40;
+    repeated basetypes.miningpool.v1.RevenueType          RevenueTypes      = 40;
     optional string                                       Site              = 50;
     optional float                                        FeeRate           = 60;
     optional bool                                         FixedRevenueAble  = 70;
@@ -42,9 +42,9 @@ message Coin {
     // @inject_tag: sql:"coin_type"
     string               CoinTypeStr       = 40;
     basetypes.miningpool.v1.CoinType       CoinType = 41;
-    // @inject_tag: sql:"eevenue_type"
-    string               RevenueTypeStr    = 50;
-    basetypes.miningpool.v1.RevenueType    RevenueType = 51;
+    // @inject_tag: sql:"revenue_types"
+    repeated string      RevenueTypesStr   = 50;
+    repeated basetypes.miningpool.v1.RevenueType    RevenueTypes = 51;
     // @inject_tag: sql:"site"
     string               Site              = 60;
     // @inject_tag: sql:"fee_rate"
@@ -65,7 +65,7 @@ message Conds {
     optional basetypes.v1.StringVal      EntID             = 10;
     optional basetypes.v1.Uint32Val      MiningpoolType    = 20;
     optional basetypes.v1.Uint32Val      CoinType          = 30;
-    optional basetypes.v1.Uint32Val      RevenueType       = 40;
+    optional basetypes.v1.Uint32SliceVal RevenueTypes      = 40;
     optional basetypes.v1.StringVal      Site              = 50;
     optional basetypes.v1.BoolVal        FixedRevenueAble  = 60;
     optional basetypes.v1.StringSliceVal EntIDs            = 70;
