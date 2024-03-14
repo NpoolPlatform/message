@@ -102,25 +102,34 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
         },
-        "GoodType": {
-          "$ref": "#/definitions/v1GoodType",
+        "GoodTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"good_type\""
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
         },
         "Name": {
           "type": "string",
           "title": "@inject_tag: sql:\"name\""
         },
-        "SettlementType": {
-          "$ref": "#/definitions/v1GoodSettlementType",
+        "SettlementTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"settlement_type\""
+        },
+        "SettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
         },
         "UnitValue": {
           "type": "string",
           "title": "@inject_tag: sql:\"unit_value\""
         },
-        "DurationType": {
-          "$ref": "#/definitions/v1GoodDurationType",
+        "DurationTypeStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"duration_type\""
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
         },
         "CreatedAt": {
           "type": "integer",
