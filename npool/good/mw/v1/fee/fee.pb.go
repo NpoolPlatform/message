@@ -123,16 +123,26 @@ type Fee struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID             uint32                `protobuf:"varint,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	EntID          string                `protobuf:"bytes,20,opt,name=EntID,proto3" json:"EntID,omitempty"`
-	GoodID         string                `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
-	GoodType       v1.GoodType           `protobuf:"varint,40,opt,name=GoodType,proto3,enum=basetypes.good.v1.GoodType" json:"GoodType,omitempty"`
-	Name           string                `protobuf:"bytes,50,opt,name=Name,proto3" json:"Name,omitempty"`
-	SettlementType v1.GoodSettlementType `protobuf:"varint,60,opt,name=SettlementType,proto3,enum=basetypes.good.v1.GoodSettlementType" json:"SettlementType,omitempty"`
-	UnitValue      string                `protobuf:"bytes,70,opt,name=UnitValue,proto3" json:"UnitValue,omitempty"`
-	DurationType   v1.GoodDurationType   `protobuf:"varint,80,opt,name=DurationType,proto3,enum=basetypes.good.v1.GoodDurationType" json:"DurationType,omitempty"`
-	CreatedAt      uint32                `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
-	UpdatedAt      uint32                `protobuf:"varint,2000,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
+	// @inject_tag: sql:"id"
+	ID uint32 `protobuf:"varint,10,opt,name=ID,proto3" json:"ID,omitempty" sql:"id"`
+	// @inject_tag: sql:"ent_id"
+	EntID string `protobuf:"bytes,20,opt,name=EntID,proto3" json:"EntID,omitempty" sql:"ent_id"`
+	// @inject_tag: sql:"good_id"
+	GoodID string `protobuf:"bytes,30,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id"`
+	// @inject_tag: sql:"good_type"
+	GoodType v1.GoodType `protobuf:"varint,40,opt,name=GoodType,proto3,enum=basetypes.good.v1.GoodType" json:"GoodType,omitempty" sql:"good_type"`
+	// @inject_tag: sql:"name"
+	Name string `protobuf:"bytes,50,opt,name=Name,proto3" json:"Name,omitempty" sql:"name"`
+	// @inject_tag: sql:"settlement_type"
+	SettlementType v1.GoodSettlementType `protobuf:"varint,60,opt,name=SettlementType,proto3,enum=basetypes.good.v1.GoodSettlementType" json:"SettlementType,omitempty" sql:"settlement_type"`
+	// @inject_tag: sql:"unit_value"
+	UnitValue string `protobuf:"bytes,70,opt,name=UnitValue,proto3" json:"UnitValue,omitempty" sql:"unit_value"`
+	// @inject_tag: sql:"duration_type"
+	DurationType v1.GoodDurationType `protobuf:"varint,80,opt,name=DurationType,proto3,enum=basetypes.good.v1.GoodDurationType" json:"DurationType,omitempty" sql:"duration_type"`
+	// @inject_tag: sql:"created_at"
+	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
+	// @inject_tag: sql:"updated_at"
+	UpdatedAt uint32 `protobuf:"varint,2000,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty" sql:"updated_at"`
 }
 
 func (x *Fee) Reset() {
