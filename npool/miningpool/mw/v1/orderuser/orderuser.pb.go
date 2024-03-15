@@ -177,8 +177,8 @@ type OrderUser struct {
 	// @inject_tag: sql:"miningpool_type"
 	MiningpoolTypeStr string            `protobuf:"bytes,70,opt,name=MiningpoolTypeStr,proto3" json:"MiningpoolTypeStr,omitempty" sql:"miningpool_type"`
 	MiningpoolType    v1.MiningpoolType `protobuf:"varint,71,opt,name=MiningpoolType,proto3,enum=basetypes.miningpool.v1.MiningpoolType" json:"MiningpoolType,omitempty"`
-	// @inject_tag: sql:"Coin_Type"
-	CoinTypeStr string      `protobuf:"bytes,80,opt,name=CoinTypeStr,proto3" json:"CoinTypeStr,omitempty" sql:"Coin_Type"`
+	// @inject_tag: sql:"coin_type"
+	CoinTypeStr string      `protobuf:"bytes,80,opt,name=CoinTypeStr,proto3" json:"CoinTypeStr,omitempty" sql:"coin_type"`
 	CoinType    v1.CoinType `protobuf:"varint,81,opt,name=CoinType,proto3,enum=basetypes.miningpool.v1.CoinType" json:"CoinType,omitempty"`
 	// @inject_tag: sql:"proportion"
 	Proportion float32 `protobuf:"fixed32,90,opt,name=Proportion,proto3" json:"Proportion,omitempty" sql:"proportion"`

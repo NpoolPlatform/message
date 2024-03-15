@@ -194,7 +194,7 @@
         },
         "CoinTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"Coin_Type\""
+          "title": "@inject_tag: sql:\"coin_type\""
         },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
