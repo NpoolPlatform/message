@@ -739,7 +739,7 @@
         "DefaultGoodType",
         "PowerRental",
         "MachineRental",
-        "MachineHosting",
+        "MachineCustody",
         "LegacyPowerRental",
         "TechniqueServiceFee",
         "ElectricityFee"
