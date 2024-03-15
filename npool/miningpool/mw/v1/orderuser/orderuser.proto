@@ -48,7 +48,7 @@ message OrderUser {
     // @inject_tag: sql:"miningpool_type"
     string               MiningpoolTypeStr = 70;
     basetypes.miningpool.v1.MiningpoolType MiningpoolType = 71;
-    // @inject_tag: sql:"Coin_Type"
+    // @inject_tag: sql:"coin_type"
     string               CoinTypeStr       = 80;
     basetypes.miningpool.v1.CoinType CoinType = 81;
     // @inject_tag: sql:"proportion"
