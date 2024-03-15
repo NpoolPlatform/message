@@ -21,7 +21,7 @@ enum GoodType {
 
     PowerRental       = 10;
     MachineRental     = 20;
-    MachineHosting    = 30;
+    MachineCustody    = 30;
     LegacyPowerRental = 40;
 
     TechniqueServiceFee = 1000;
