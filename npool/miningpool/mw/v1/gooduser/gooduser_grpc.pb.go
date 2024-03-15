@@ -25,6 +25,7 @@ const (
 	Middleware_GetGoodUsers_FullMethodName       = "/miningpool.middleware.gooduser.v1.Middleware/GetGoodUsers"
 	Middleware_ExistGoodUserConds_FullMethodName = "/miningpool.middleware.gooduser.v1.Middleware/ExistGoodUserConds"
 	Middleware_UpdateGoodUser_FullMethodName     = "/miningpool.middleware.gooduser.v1.Middleware/UpdateGoodUser"
+	Middleware_DeleteGoodUser_FullMethodName     = "/miningpool.middleware.gooduser.v1.Middleware/DeleteGoodUser"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -37,6 +38,7 @@ type MiddlewareClient interface {
 	GetGoodUsers(ctx context.Context, in *GetGoodUsersRequest, opts ...grpc.CallOption) (*GetGoodUsersResponse, error)
 	ExistGoodUserConds(ctx context.Context, in *ExistGoodUserCondsRequest, opts ...grpc.CallOption) (*ExistGoodUserCondsResponse, error)
 	UpdateGoodUser(ctx context.Context, in *UpdateGoodUserRequest, opts ...grpc.CallOption) (*UpdateGoodUserResponse, error)
+	DeleteGoodUser(ctx context.Context, in *DeleteGoodUserRequest, opts ...grpc.CallOption) (*DeleteGoodUserResponse, error)
 }
 
 type middlewareClient struct {
@@ -101,6 +103,15 @@ func (c *middlewareClient) UpdateGoodUser(ctx context.Context, in *UpdateGoodUse
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteGoodUser(ctx context.Context, in *DeleteGoodUserRequest, opts ...grpc.CallOption) (*DeleteGoodUserResponse, error) {
+	out := new(DeleteGoodUserResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteGoodUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -111,6 +122,7 @@ type MiddlewareServer interface {
 	GetGoodUsers(context.Context, *GetGoodUsersRequest) (*GetGoodUsersResponse, error)
 	ExistGoodUserConds(context.Context, *ExistGoodUserCondsRequest) (*ExistGoodUserCondsResponse, error)
 	UpdateGoodUser(context.Context, *UpdateGoodUserRequest) (*UpdateGoodUserResponse, error)
+	DeleteGoodUser(context.Context, *DeleteGoodUserRequest) (*DeleteGoodUserResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -135,6 +147,9 @@ func (UnimplementedMiddlewareServer) ExistGoodUserConds(context.Context, *ExistG
 }
 func (UnimplementedMiddlewareServer) UpdateGoodUser(context.Context, *UpdateGoodUserRequest) (*UpdateGoodUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateGoodUser not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteGoodUser(context.Context, *DeleteGoodUserRequest) (*DeleteGoodUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteGoodUser not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -257,6 +272,24 @@ func _Middleware_UpdateGoodUser_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteGoodUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteGoodUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteGoodUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteGoodUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteGoodUser(ctx, req.(*DeleteGoodUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -287,6 +320,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateGoodUser",
 			Handler:    _Middleware_UpdateGoodUser_Handler,
+		},
+		{
+			MethodName: "DeleteGoodUser",
+			Handler:    _Middleware_DeleteGoodUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

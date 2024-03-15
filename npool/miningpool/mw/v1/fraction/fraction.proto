@@ -7,7 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/fra
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
-// Service Name
+// Service Name  
 service Middleware {
     rpc CreateFraction     (CreateFractionRequest)   returns (CreateFractionResponse)    {}
     rpc CreateFractions    (CreateFractionsRequest)  returns (CreateFractionsResponse)   {}

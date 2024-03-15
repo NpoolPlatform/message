@@ -100,6 +100,14 @@
         }
       }
     },
+    "v1DeleteGoodUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodUser"
+        }
+      }
+    },
     "v1ExistGoodUserCondsResponse": {
       "type": "object",
       "properties": {

@@ -15,19 +15,20 @@ service Middleware {
     rpc GetGoodUsers       (GetGoodUsersRequest)     returns (GetGoodUsersResponse)      {}
     rpc ExistGoodUserConds (ExistGoodUserCondsRequest) returns (ExistGoodUserCondsResponse) {}
     rpc UpdateGoodUser     (UpdateGoodUserRequest)   returns (UpdateGoodUserResponse)    {}
+    rpc DeleteGoodUser     (DeleteGoodUserRequest)   returns (DeleteGoodUserResponse)    {}
 }
 
 message GoodUserReq {
-    optional uint32    ID             = 10;
-    optional string    EntID          = 20;
-    optional string    Name           = 30;
-    optional string    RootUserID     = 40;
-    optional string    GoodID         = 50;
+    optional uint32                                 ID             = 10;
+    optional string                                 EntID          = 20;
+    optional string                                 Name           = 30;
+    optional string                                 RootUserID     = 40;
+    optional string                                 GoodID         = 50;
     optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 60;
-    optional basetypes.miningpool.v1.CoinType CoinType = 70;
-    optional float     HashRate       = 80;
-    optional string    ReadPageLink   = 90;
-    optional basetypes.miningpool.v1.RevenueType RevenueType    = 100;
+    optional basetypes.miningpool.v1.CoinType       CoinType       = 70;
+    optional float                                  HashRate       = 80;
+    optional string                                 ReadPageLink   = 90;
+    optional basetypes.miningpool.v1.RevenueType    RevenueType    = 100;
 }
 
 message GoodUser {
@@ -120,5 +121,13 @@ message UpdateGoodUserRequest {
 }
 
 message UpdateGoodUserResponse {
+    GoodUser Info = 10;
+}
+
+message DeleteGoodUserRequest {
+    GoodUserReq Info = 10;
+}
+
+message DeleteGoodUserResponse {
     GoodUser Info = 10;
 }
