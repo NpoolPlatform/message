@@ -5,6 +5,7 @@ package good.middleware.app.good1.default1.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/default";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Middleware {
@@ -16,43 +17,47 @@ service Middleware {
 }
 
 message DefaultReq {
-  optional uint32 ID = 9;
-  optional string EntID = 10;
+  optional uint32 ID        = 9;
+  optional string EntID     = 10;
   optional string AppGoodID = 20;
+  optional basetypes.good.v1.GoodType GoodType = 30;
 }
 
 message Default {
   // @inject_tag: sql:"id"
-  uint32 ID = 9;
+  uint32 ID         = 9;
   // @inject_tag: sql:"ent_id"
-  string EntID = 10;
+  string EntID      = 10;
   // @inject_tag: sql:"app_id"
-  string AppID = 20;
+  string AppID      = 20;
   // @inject_tag: sql:"good_id"
-  string GoodID = 30;
+  string GoodID     = 30;
   // @inject_tag: sql:"good_name"
-  string GoodName = 40;
+  string GoodName   = 40;
   // @inject_tag: sql:"app_good_id"
-  string AppGoodID = 50;
+  string AppGoodID  = 50;
   // @inject_tag: sql:"app_good_name"
   string AppGoodName = 60;
   // @inject_tag: sql:"coin_type_id"
   string CoinTypeID = 70;
+  // @inject_tag: sql:"good_type"
+  string GoodType   = 80;
   // @inject_tag: sql:"created_at"
-  uint32 CreatedAt = 1000;
+  uint32 CreatedAt  = 1000;
   // @inject_tag: sql:"updated_at"
-  uint32 UpdatedAt = 1010;
+  uint32 UpdatedAt  = 1010;
 }
 
 message Conds {
-  optional basetypes.v1.Uint32Val ID = 9;
-  optional basetypes.v1.StringVal EntID = 10;
-  optional basetypes.v1.StringVal AppID = 20;
-  optional basetypes.v1.StringVal GoodID = 30;
-  optional basetypes.v1.StringVal AppGoodID = 40;
-  optional basetypes.v1.StringVal CoinTypeID = 50;
-  optional basetypes.v1.StringSliceVal GoodIDs = 60;
+  optional basetypes.v1.Uint32Val      ID          = 9;
+  optional basetypes.v1.StringVal      EntID       = 10;
+  optional basetypes.v1.StringVal      AppID       = 20;
+  optional basetypes.v1.StringVal      GoodID      = 30;
+  optional basetypes.v1.StringVal      AppGoodID   = 40;
+  optional basetypes.v1.StringVal      CoinTypeID  = 50;
+  optional basetypes.v1.StringSliceVal GoodIDs     = 60;
   optional basetypes.v1.StringSliceVal CoinTypeIDs = 70;
+  optional basetypes.v1.Uint32Val      GoodType    = 80;
 }
 
 message CreateDefaultRequest { DefaultReq Info = 10; }
