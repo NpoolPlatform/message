@@ -15,6 +15,7 @@ service Middleware {
     rpc GetOrderUsers       (GetOrderUsersRequest)     returns (GetOrderUsersResponse)      {}
     rpc ExistOrderUserConds (ExistOrderUserCondsRequest) returns (ExistOrderUserCondsResponse) {}
     rpc UpdateOrderUser     (UpdateOrderUserRequest)   returns (UpdateOrderUserResponse)    {}
+    rpc DeleteOrderUser     (DeleteOrderUserRequest)   returns (DeleteOrderUserResponse)    {}
 }
 
 message OrderUserReq {
@@ -127,5 +128,13 @@ message UpdateOrderUserRequest {
 }
 
 message UpdateOrderUserResponse {
+    OrderUser Info = 10;
+}
+
+message DeleteOrderUserRequest {
+    OrderUserReq Info = 10;
+}
+
+message DeleteOrderUserResponse {
     OrderUser Info = 10;
 }

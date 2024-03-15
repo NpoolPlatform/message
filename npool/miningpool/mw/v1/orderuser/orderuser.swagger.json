@@ -117,6 +117,14 @@
         }
       }
     },
+    "v1DeleteOrderUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderUser"
+        }
+      }
+    },
     "v1ExistOrderUserCondsResponse": {
       "type": "object",
       "properties": {
