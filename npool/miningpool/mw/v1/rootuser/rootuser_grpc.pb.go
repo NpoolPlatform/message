@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/miningpool/mw/v1/rootuser/rootuser.proto
 
-package gooduser
+package rootuser
 
 import (
 	context "context"
@@ -19,13 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateRootUser_FullMethodName     = "/miningpool.middleware.gooduser.v1.Middleware/CreateRootUser"
-	Middleware_CreateRootUsers_FullMethodName    = "/miningpool.middleware.gooduser.v1.Middleware/CreateRootUsers"
-	Middleware_GetRootUser_FullMethodName        = "/miningpool.middleware.gooduser.v1.Middleware/GetRootUser"
-	Middleware_GetRootUsers_FullMethodName       = "/miningpool.middleware.gooduser.v1.Middleware/GetRootUsers"
-	Middleware_ExistRootUserConds_FullMethodName = "/miningpool.middleware.gooduser.v1.Middleware/ExistRootUserConds"
-	Middleware_UpdateRootUser_FullMethodName     = "/miningpool.middleware.gooduser.v1.Middleware/UpdateRootUser"
-	Middleware_DeleteRootUser_FullMethodName     = "/miningpool.middleware.gooduser.v1.Middleware/DeleteRootUser"
+	Middleware_CreateRootUser_FullMethodName     = "/miningpool.middleware.rootuser.v1.Middleware/CreateRootUser"
+	Middleware_CreateRootUsers_FullMethodName    = "/miningpool.middleware.rootuser.v1.Middleware/CreateRootUsers"
+	Middleware_GetRootUser_FullMethodName        = "/miningpool.middleware.rootuser.v1.Middleware/GetRootUser"
+	Middleware_GetRootUsers_FullMethodName       = "/miningpool.middleware.rootuser.v1.Middleware/GetRootUsers"
+	Middleware_ExistRootUserConds_FullMethodName = "/miningpool.middleware.rootuser.v1.Middleware/ExistRootUserConds"
+	Middleware_UpdateRootUser_FullMethodName     = "/miningpool.middleware.rootuser.v1.Middleware/UpdateRootUser"
+	Middleware_DeleteRootUser_FullMethodName     = "/miningpool.middleware.rootuser.v1.Middleware/DeleteRootUser"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -294,7 +294,7 @@ func _Middleware_DeleteRootUser_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "miningpool.middleware.gooduser.v1.Middleware",
+	ServiceName: "miningpool.middleware.rootuser.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
