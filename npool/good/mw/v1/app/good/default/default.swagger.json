@@ -70,6 +70,9 @@
         },
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -117,6 +120,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
         },
+        "GoodType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -141,6 +148,9 @@
         },
         "AppGoodID": {
           "type": "string"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
         }
       }
     },
@@ -174,6 +184,19 @@
           "format": "int64"
         }
       }
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineHosting",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
     },
     "v1StringSliceVal": {
       "type": "object",
