@@ -25,6 +25,7 @@ const (
 	Middleware_GetOrderUsers_FullMethodName       = "/miningpool.middleware.orderuser.v1.Middleware/GetOrderUsers"
 	Middleware_ExistOrderUserConds_FullMethodName = "/miningpool.middleware.orderuser.v1.Middleware/ExistOrderUserConds"
 	Middleware_UpdateOrderUser_FullMethodName     = "/miningpool.middleware.orderuser.v1.Middleware/UpdateOrderUser"
+	Middleware_DeleteOrderUser_FullMethodName     = "/miningpool.middleware.orderuser.v1.Middleware/DeleteOrderUser"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -37,6 +38,7 @@ type MiddlewareClient interface {
 	GetOrderUsers(ctx context.Context, in *GetOrderUsersRequest, opts ...grpc.CallOption) (*GetOrderUsersResponse, error)
 	ExistOrderUserConds(ctx context.Context, in *ExistOrderUserCondsRequest, opts ...grpc.CallOption) (*ExistOrderUserCondsResponse, error)
 	UpdateOrderUser(ctx context.Context, in *UpdateOrderUserRequest, opts ...grpc.CallOption) (*UpdateOrderUserResponse, error)
+	DeleteOrderUser(ctx context.Context, in *DeleteOrderUserRequest, opts ...grpc.CallOption) (*DeleteOrderUserResponse, error)
 }
 
 type middlewareClient struct {
@@ -101,6 +103,15 @@ func (c *middlewareClient) UpdateOrderUser(ctx context.Context, in *UpdateOrderU
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteOrderUser(ctx context.Context, in *DeleteOrderUserRequest, opts ...grpc.CallOption) (*DeleteOrderUserResponse, error) {
+	out := new(DeleteOrderUserResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteOrderUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -111,6 +122,7 @@ type MiddlewareServer interface {
 	GetOrderUsers(context.Context, *GetOrderUsersRequest) (*GetOrderUsersResponse, error)
 	ExistOrderUserConds(context.Context, *ExistOrderUserCondsRequest) (*ExistOrderUserCondsResponse, error)
 	UpdateOrderUser(context.Context, *UpdateOrderUserRequest) (*UpdateOrderUserResponse, error)
+	DeleteOrderUser(context.Context, *DeleteOrderUserRequest) (*DeleteOrderUserResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -135,6 +147,9 @@ func (UnimplementedMiddlewareServer) ExistOrderUserConds(context.Context, *Exist
 }
 func (UnimplementedMiddlewareServer) UpdateOrderUser(context.Context, *UpdateOrderUserRequest) (*UpdateOrderUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrderUser not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteOrderUser(context.Context, *DeleteOrderUserRequest) (*DeleteOrderUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteOrderUser not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -257,6 +272,24 @@ func _Middleware_UpdateOrderUser_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteOrderUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteOrderUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteOrderUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteOrderUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteOrderUser(ctx, req.(*DeleteOrderUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -287,6 +320,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateOrderUser",
 			Handler:    _Middleware_UpdateOrderUser_Handler,
+		},
+		{
+			MethodName: "DeleteOrderUser",
+			Handler:    _Middleware_DeleteOrderUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
