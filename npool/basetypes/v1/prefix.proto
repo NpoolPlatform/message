@@ -91,6 +91,11 @@ enum Prefix {
     PrefixCreateArticle        = 910;
     PrefixCreateCategory       = 920;
 
+    PrefixCreateAppConfig               = 1000;
+    PrefixCreateAppCommissionConfig     = 1010;
+    PrefixCreateAppGoodCommissionConfig = 1020;
+
+
     PrefixMigrate              = 10000;
 
     PrefixScheduler            = 20000;
