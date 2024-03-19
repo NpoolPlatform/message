@@ -9,13 +9,16 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateOrderUser     (CreateOrderUserRequest)   returns (CreateOrderUserResponse)    {}
-    rpc CreateOrderUsers    (CreateOrderUsersRequest)  returns (CreateOrderUsersResponse)   {}
-    rpc GetOrderUser        (GetOrderUserRequest)      returns (GetOrderUserResponse)       {}
-    rpc GetOrderUsers       (GetOrderUsersRequest)     returns (GetOrderUsersResponse)      {}
-    rpc ExistOrderUserConds (ExistOrderUserCondsRequest) returns (ExistOrderUserCondsResponse) {}
-    rpc UpdateOrderUser     (UpdateOrderUserRequest)   returns (UpdateOrderUserResponse)    {}
-    rpc DeleteOrderUser     (DeleteOrderUserRequest)   returns (DeleteOrderUserResponse)    {}
+    rpc CreateOrderUser     (CreateOrderUserRequest)       returns (CreateOrderUserResponse)      {}
+    rpc CreateOrderUsers    (CreateOrderUsersRequest)      returns (CreateOrderUsersResponse)     {}
+    rpc GetOrderUser        (GetOrderUserRequest)          returns (GetOrderUserResponse)         {}
+    rpc GetOrderUsers       (GetOrderUsersRequest)         returns (GetOrderUsersResponse)        {}
+    rpc ExistOrderUserConds (ExistOrderUserCondsRequest)   returns (ExistOrderUserCondsResponse)  {}
+    rpc UpdateOrderUser     (UpdateOrderUserRequest)       returns (UpdateOrderUserResponse)      {}
+    rpc DeleteOrderUser     (DeleteOrderUserRequest)       returns (DeleteOrderUserResponse)      {}
+    rpc SetupProportion     (SetupProportionRequest)       returns (SetupProportionResponse)      {}
+    rpc SetupRevenueAddress (SetupRevenueAddressRequest)   returns (SetupRevenueAddressResponse)  {}
+    rpc SetupAutoPay        (SetupAutoPayRequest)          returns (SetupAutoPayResponse)         {}
 }
 
 message OrderUserReq {
@@ -136,5 +139,32 @@ message DeleteOrderUserRequest {
 }
 
 message DeleteOrderUserResponse {
+    OrderUser Info = 10;
+}
+
+message SetupProportionRequest{
+    string EntID      = 10;
+    float  Proportion = 20;
+}
+
+message SetupProportionResponse{
+    OrderUser Info = 10;
+}
+
+message SetupRevenueAddressRequest{
+    string EntID          = 10;
+    string RevenueAddress = 20;
+}
+
+message SetupRevenueAddressResponse{
+    OrderUser Info = 10;
+}
+
+message SetupAutoPayRequest{
+    string EntID      = 10;
+    bool   AutoPay = 20;
+}
+
+message SetupAutoPayResponse{
     OrderUser Info = 10;
 }
