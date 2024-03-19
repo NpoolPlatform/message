@@ -20,12 +20,13 @@ message FeeReq {
     optional string EntID = 10;
     optional string AppID = 20;
     optional string GoodID = 30;
-    optional string ProductPage = 40;
-    optional string Name = 50;
-    optional string Banner = 60;
+    optional string AppGoodID = 40;
+    optional string ProductPage = 50;
+    optional string Name = 60;
+    optional string Banner = 70;
     // It could be amount or percent.
-    optional string UnitValue = 70;
-    optional uint32 MinOrderDuration = 80;
+    optional string UnitValue = 80;
+    optional uint32 MinOrderDuration = 90;
 }
 
 message Fee {
@@ -37,25 +38,27 @@ message Fee {
     string AppID = 30;
     // @inject_tag: sql:"good_id"
     string GoodID = 40;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID = 50;
     // @inject_tag: sql:"product_page"
-    string ProductPage = 50;
+    string ProductPage = 60;
     // @inject_tag: sql:"good_type"
-    string GoodTypeStr = 60;
-    basetypes.good.v1.GoodType GoodType = 70;
+    string GoodTypeStr = 70;
+    basetypes.good.v1.GoodType GoodType = 80;
     // @inject_tag: sql:"name"
-    string Name = 80;
+    string Name = 90;
     // @inject_tag: sql:"settlement_type"
-    string SettlementTypeStr = 90;
-    basetypes.good.v1.GoodSettlementType SettlementType = 100;
+    string SettlementTypeStr = 100;
+    basetypes.good.v1.GoodSettlementType SettlementType = 110;
     // @inject_tag: sql:"unit_value"
-    string UnitValue = 110;
+    string UnitValue = 120;
     // @inject_tag: sql:"duration_type"
-    string DurationTypeStr = 120;
-    basetypes.good.v1.GoodDurationType DurationType = 130;
+    string DurationTypeStr = 130;
+    basetypes.good.v1.GoodDurationType DurationType = 140;
     // @inject_tag: sql:"banner"
-    string Banner = 140;
+    string Banner = 150;
     // @inject_tag: sql:"min_order_duration"
-    uint32 MinOrderDuration = 150;
+    uint32 MinOrderDuration = 160;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
