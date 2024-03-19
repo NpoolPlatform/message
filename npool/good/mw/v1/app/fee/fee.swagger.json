@@ -112,6 +112,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
         },
+        "AppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_id\""
+        },
         "ProductPage": {
           "type": "string",
           "title": "@inject_tag: sql:\"product_page\""
@@ -176,6 +180,9 @@
           "type": "string"
         },
         "GoodID": {
+          "type": "string"
+        },
+        "AppGoodID": {
           "type": "string"
         },
         "ProductPage": {
