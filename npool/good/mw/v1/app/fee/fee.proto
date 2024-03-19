@@ -1,0 +1,118 @@
+syntax = "proto3";
+
+package good.middleware.app.fee.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/fee";
+
+import "npool/basetypes/good/v1/enums.proto";
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateFee (CreateFeeRequest) returns (CreateFeeResponse) {}
+    rpc UpdateFee (UpdateFeeRequest) returns (UpdateFeeResponse) {}
+    rpc GetFee (GetFeeRequest) returns (GetFeeResponse) {}
+    rpc GetFees (GetFeesRequest) returns (GetFeesResponse) {}
+    rpc DeleteFee (DeleteFeeRequest) returns (DeleteFeeResponse) {}
+}
+
+message FeeReq {
+    optional string EntID = 10;
+    optional string AppID = 20;
+    optional string GoodID = 30;
+    optional string ProductPage = 40;
+    optional string Name = 50;
+    optional string Banner = 60;
+    // It could be amount or percent.
+    optional string UnitValue = 70;
+    optional uint32 MinOrderDuration = 80;
+}
+
+message Fee {
+    // @inject_tag: sql:"id"
+    uint32 ID = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID = 20;
+    // @inject_tag: sql:"app_id"
+    string AppID = 30;
+    // @inject_tag: sql:"good_id"
+    string GoodID = 40;
+    // @inject_tag: sql:"product_page"
+    string ProductPage = 50;
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 60;
+    basetypes.good.v1.GoodType GoodType = 70;
+    // @inject_tag: sql:"name"
+    string Name = 80;
+    // @inject_tag: sql:"settlement_type"
+    string SettlementTypeStr = 90;
+    basetypes.good.v1.GoodSettlementType SettlementType = 100;
+    // @inject_tag: sql:"unit_value"
+    string UnitValue = 110;
+    // @inject_tag: sql:"duration_type"
+    string DurationTypeStr = 120;
+    basetypes.good.v1.GoodDurationType DurationType = 130;
+    // @inject_tag: sql:"banner"
+    string Banner = 140;
+    // @inject_tag: sql:"min_order_duration"
+    uint32 MinOrderDuration = 150;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 2000;
+}
+
+message Conds {
+    optional basetypes.v1.Uint32Val ID = 10;
+    optional basetypes.v1.Uint32SliceVal IDs = 20;
+    optional basetypes.v1.StringVal AppID = 30;
+    optional basetypes.v1.StringSliceVal AppIDs = 40;
+    optional basetypes.v1.StringVal EntID = 50;
+    optional basetypes.v1.StringSliceVal EntIDs = 60;
+    optional basetypes.v1.StringVal GoodID = 70;
+    optional basetypes.v1.StringSliceVal GoodIDs = 80;
+    optional basetypes.v1.Uint32Val SettlementType = 90;
+}
+
+message CreateFeeRequest {
+    FeeReq Info = 10;
+}
+
+message CreateFeeResponse {
+    Fee Info = 10;
+}
+
+message UpdateFeeRequest {
+    FeeReq Info = 10;
+}
+
+message UpdateFeeResponse {
+    Fee Info = 10;
+}
+
+message GetFeeRequest {
+    string GoodID = 10;
+}
+
+message GetFeeResponse {
+    Fee Info = 10;
+}
+
+message GetFeesRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetFeesResponse {
+    repeated Fee Infos = 10;
+}
+
+message DeleteFeeRequest {
+    FeeReq Info = 10;
+}
+
+message DeleteFeeResponse {
+    Fee Info = 10;
+}
+
