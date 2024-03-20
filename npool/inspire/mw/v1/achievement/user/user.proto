@@ -26,14 +26,6 @@ service Middleware {
 message AchievementUserReq {
     optional uint32 ID              = 10;
     optional string EntID           = 11;
-    optional string AppID           = 20;
-    optional string UserID          = 30;
-    optional string TotalAmount     = 60;
-    optional string SelfAmount      = 70;
-    optional string TotalUnits      = 80;
-    optional string SelfUnits       = 90;
-    optional string TotalCommission = 100;
-    optional string SelfCommission  = 110;
 }
 
 message AchievementUser {

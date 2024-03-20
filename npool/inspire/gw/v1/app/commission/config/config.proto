@@ -1,0 +1,120 @@
+syntax = "proto3";
+
+package inspire.gateway.app.commission.config.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/app/commission/config";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateAppCommissionConfig (CreateAppCommissionConfigRequest) returns (CreateAppCommissionConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/commission/config"
+            body: "*"
+        };
+    }
+
+    rpc CreateNAppCommissionConfig (CreateNAppCommissionConfigRequest) returns (CreateNAppCommissionConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/n/app/commission/config"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppCommissionConfig (UpdateAppCommissionConfigRequest) returns (UpdateAppCommissionConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/commission/config"
+            body: "*"
+        };
+    }
+    rpc GetAppCommissionConfigs (GetAppCommissionConfigsRequest) returns (GetAppCommissionConfigsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/commission/confighistories"
+            body: "*"
+        };
+    }
+    rpc GetNAppCommissionConfigs (GetNAppCommissionConfigsRequest) returns (GetNAppCommissionConfigsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/n/app/commission/configs"
+            body: "*"
+        };
+    }
+}
+
+message AppCommissionConfig {
+    uint32 ID            = 10;
+    string EntID         = 20;
+    string AppID         = 30;
+    basetypes.inspire.v1.SettleType SettleType = 40;
+    string AmountOrPercent = 100;
+    string ThresholdAmount = 110;
+    uint32 Invites       = 120;
+    uint32 StartAt       = 130;
+    uint32 EndAt         = 140;
+    uint32 CreatedAt     = 150;
+    uint32 UpdatedAt     = 160;
+}
+
+message CreateAppCommissionConfigRequest {
+    string                          AppID           = 10;
+    string                          ThresholdAmount = 20;
+    string                          AmountOrPercent = 30;
+    uint32                          StartAt         = 40;
+    uint32                          Invites         = 50;
+    basetypes.inspire.v1.SettleType SettleType      = 60;
+}
+
+message CreateAppCommissionConfigResponse {
+    AppCommissionConfig Info = 10;
+}
+
+message CreateNAppCommissionConfigRequest {
+    string                          TargetAppID     = 10;
+    string                          ThresholdAmount = 20;
+    string                          AmountOrPercent = 30;
+    uint32                          StartAt         = 40;
+    uint32                          Invites         = 50;
+    basetypes.inspire.v1.SettleType SettleType      = 60;
+}
+
+message CreateNAppCommissionConfigResponse {
+    AppCommissionConfig Info = 10;
+}
+
+message UpdateAppCommissionConfigRequest {
+    uint32          ID      = 10;
+    string          EntID   = 20;
+    string          AppID   = 30;
+    optional uint32 StartAt = 40;
+    optional string ThresholdAmount = 50;
+    optional uint32 Invites = 60;
+}
+
+message UpdateAppCommissionConfigResponse {
+    AppCommissionConfig Info = 10;
+}
+
+message GetAppCommissionConfigsRequest {
+    string AppID   = 10;
+    int32  Offset  = 40;
+    int32  Limit   = 50;
+}
+
+message GetAppCommissionConfigsResponse {
+    repeated AppCommissionConfig Infos = 10;
+    uint32              Total = 20;
+}
+
+message GetNAppCommissionConfigsRequest {
+    string TargetAppID    = 10;
+    optional uint32 EndAt = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
+}
+
+message GetNAppCommissionConfigsResponse {
+    repeated AppCommissionConfig Infos = 10;
+    uint32              Total = 20;
+}

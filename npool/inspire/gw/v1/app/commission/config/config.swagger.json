@@ -1,0 +1,429 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/gw/v1/app/commission/config/config.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/app/commission/config": {
+      "post": {
+        "operationId": "Gateway_CreateAppCommissionConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppCommissionConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppCommissionConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/n/app/commission/config": {
+      "post": {
+        "operationId": "Gateway_CreateNAppCommissionConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateNAppCommissionConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateNAppCommissionConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/commission/confighistories": {
+      "post": {
+        "operationId": "Gateway_GetAppCommissionConfigs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCommissionConfigsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppCommissionConfigsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/n/app/commission/configs": {
+      "post": {
+        "operationId": "Gateway_GetNAppCommissionConfigs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppCommissionConfigsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppCommissionConfigsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/app/commission/config": {
+      "post": {
+        "operationId": "Gateway_UpdateAppCommissionConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppCommissionConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppCommissionConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AppCommissionConfig": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+        "AmountOrPercent": {
+          "type": "string"
+        },
+        "ThresholdAmount": {
+          "type": "string"
+        },
+        "Invites": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateAppCommissionConfigRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "ThresholdAmount": {
+          "type": "string"
+        },
+        "AmountOrPercent": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Invites": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        }
+      }
+    },
+    "v1CreateAppCommissionConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppCommissionConfig"
+        }
+      }
+    },
+    "v1CreateNAppCommissionConfigRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "ThresholdAmount": {
+          "type": "string"
+        },
+        "AmountOrPercent": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Invites": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        }
+      }
+    },
+    "v1CreateNAppCommissionConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppCommissionConfig"
+        }
+      }
+    },
+    "v1GetAppCommissionConfigsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppCommissionConfigsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppCommissionConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNAppCommissionConfigsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetNAppCommissionConfigsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppCommissionConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1SettleType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleType",
+        "GoodOrderPayment",
+        "TechniqueServiceFee"
+      ],
+      "default": "DefaultSettleType",
+      "title": "- GoodOrderPayment: Divide commission according to order payment amount or good value\n - TechniqueServiceFee: Divice commission according to order technique fee"
+    },
+    "v1UpdateAppCommissionConfigRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdAmount": {
+          "type": "string"
+        },
+        "Invites": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAppCommissionConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppCommissionConfig"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,457 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/gw/v1/app/config/config.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/create/app/config": {
+      "post": {
+        "operationId": "Gateway_CreateAppConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateAppConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/n/app/config": {
+      "post": {
+        "operationId": "Gateway_CreateNAppConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateNAppConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateNAppConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/app/confighistories": {
+      "post": {
+        "operationId": "Gateway_GetAppConfigs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAppConfigsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAppConfigsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/n/app/configs": {
+      "post": {
+        "operationId": "Gateway_GetNAppConfigs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppConfigsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetNAppConfigsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/app/config": {
+      "post": {
+        "operationId": "Gateway_UpdateAppConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateAppConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AppConfig": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
+        },
+        "CommissionType": {
+          "$ref": "#/definitions/v1CommissionType"
+        },
+        "SettleBenefit": {
+          "type": "boolean"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CommissionType": {
+      "type": "string",
+      "enum": [
+        "DefaultCommissionType",
+        "LayeredCommission",
+        "DirectCommission",
+        "LegacyCommission"
+      ],
+      "default": "DefaultCommissionType"
+    },
+    "v1CreateAppConfigRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
+        },
+        "CommissionType": {
+          "$ref": "#/definitions/v1CommissionType"
+        },
+        "SettleBenefit": {
+          "type": "boolean"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
+        }
+      }
+    },
+    "v1CreateNAppConfigRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
+        },
+        "CommissionType": {
+          "$ref": "#/definitions/v1CommissionType"
+        },
+        "SettleBenefit": {
+          "type": "boolean"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateNAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
+        }
+      }
+    },
+    "v1GetAppConfigsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppConfigsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetNAppConfigsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetNAppConfigsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1SettleAmountType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleAmountType",
+        "SettleByPercent",
+        "SettleByAmount"
+      ],
+      "default": "DefaultSettleAmountType"
+    },
+    "v1SettleInterval": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleInterval",
+        "SettleAggregate",
+        "SettleMonthly",
+        "SettleYearly",
+        "SettleEveryOrder"
+      ],
+      "default": "DefaultSettleInterval"
+    },
+    "v1SettleMode": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleMode",
+        "SettleWithGoodValue",
+        "SettleWithPaymentAmount"
+      ],
+      "default": "DefaultSettleMode"
+    },
+    "v1UpdateAppConfigRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
+        }
+      }
+    }
+  }
+}

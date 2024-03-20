@@ -1,0 +1,161 @@
+syntax = "proto3";
+
+package inspire.gateway.app.good.commission.config.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/app/good/commission/config";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateAppGoodCommissionConfig (CreateAppGoodCommissionConfigRequest) returns (CreateAppGoodCommissionConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/good/commission/config"
+            body: "*"
+        };
+    }
+
+    rpc CreateNAppGoodCommissionConfig (CreateNAppGoodCommissionConfigRequest) returns (CreateNAppGoodCommissionConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/n/app/good/commission/config"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppGoodCommissionConfig (UpdateAppGoodCommissionConfigRequest) returns (UpdateAppGoodCommissionConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/app/good/commission/config"
+            body: "*"
+        };
+    }
+    rpc GetAppGoodCommissionConfigs (GetAppGoodCommissionConfigsRequest) returns (GetAppGoodCommissionConfigsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/good/commission/confighistories"
+            body: "*"
+        };
+    }
+    rpc GetNAppGoodCommissionConfigs (GetNAppGoodCommissionConfigsRequest) returns (GetNAppGoodCommissionConfigsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/n/app/good/commission/configs"
+            body: "*"
+        };
+    }
+    rpc CloneAppGoodCommissionConfigs (CloneAppGoodCommissionConfigsRequest) returns (CloneAppGoodCommissionConfigsResponse) {
+        option (google.api.http) = {
+            post: "/v1/clone/app/good/commission/configs"
+            body: "*"
+        };
+    }
+    rpc CloneNAppGoodCommissionConfigs (CloneNAppGoodCommissionConfigsRequest) returns (CloneNAppGoodCommissionConfigsResponse) {
+        option (google.api.http) = {
+            post: "/v1/clone/n/app/good/commission/configs"
+            body: "*"
+        };
+    }
+}
+
+message AppGoodCommissionConfig {
+    uint32 ID            = 10;
+    string EntID         = 20;
+    string AppID         = 30;
+    basetypes.inspire.v1.SettleType SettleType = 40;
+    string GoodID        = 50;
+    string GoodTitle     = 60;
+    string CoinTypeID    = 70;
+    string CoinName      = 80;
+    string CoinLogo      = 90;
+    string AmountOrPercent = 100;
+    string ThresholdAmount = 110;
+    uint32 Invites       = 120;
+    uint32 StartAt       = 130;
+    uint32 EndAt         = 140;
+    uint32 CreatedAt     = 150;
+    uint32 UpdatedAt     = 160;
+    string AppGoodID     = 170;
+    string GoodName      = 180;
+}
+
+message CreateAppGoodCommissionConfigRequest {
+    string          AppID           = 10;
+    string          AppGoodID       = 20;
+    string          ThresholdAmount = 30;
+    string          AmountOrPercent = 40;
+    uint32          StartAt         = 50;
+    uint32          Invites         = 60;
+    basetypes.inspire.v1.SettleType SettleType = 70;
+}
+
+message CreateAppGoodCommissionConfigResponse {
+    AppGoodCommissionConfig Info = 10;
+}
+
+message CreateNAppGoodCommissionConfigRequest {
+  string          TargetAppID     = 10;
+  string          AppGoodID       = 20;
+  string          ThresholdAmount = 30;
+  string          AmountOrPercent = 40;
+  uint32          StartAt         = 50;
+  uint32          Invites         = 60;
+  basetypes.inspire.v1.SettleType SettleType = 70;
+}
+
+message CreateNAppGoodCommissionConfigResponse {
+    AppGoodCommissionConfig Info = 10;
+}
+
+message UpdateAppGoodCommissionConfigRequest {
+    uint32          ID      = 10;
+    string          EntID   = 20;
+    string          AppID   = 30;
+    optional uint32 StartAt = 40;
+    optional string ThresholdAmount = 50;
+    optional uint32 Invites = 60;
+}
+
+message UpdateAppGoodCommissionConfigResponse {
+    AppGoodCommissionConfig Info = 10;
+}
+
+message GetAppGoodCommissionConfigsRequest {
+    string AppID   = 10;
+    int32  Offset  = 20;
+    int32  Limit   = 30;
+}
+
+message GetAppGoodCommissionConfigsResponse {
+    repeated AppGoodCommissionConfig Infos = 10;
+    uint32              Total = 20;
+}
+
+message GetNAppGoodCommissionConfigsRequest {
+    string TargetAppID    = 10;
+    optional uint32 EndAt = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
+}
+
+message GetNAppGoodCommissionConfigsResponse {
+    repeated AppGoodCommissionConfig Infos = 10;
+    uint32              Total = 20;
+}
+
+message CloneAppGoodCommissionConfigsRequest {
+    string AppID         = 10;
+    string FromAppGoodID = 20;
+    string ToAppGoodID   = 30;
+    string ScalePercent  = 40;
+}
+
+message CloneAppGoodCommissionConfigsResponse {
+}
+
+message CloneNAppGoodCommissionConfigsRequest {
+    string TargetAppID    = 10;
+    string FromAppGoodID  = 20;
+    string ToAppGoodID    = 30;
+    string ScalePercent   = 40;
+}
+
+message CloneNAppGoodCommissionConfigsResponse {
+}

@@ -179,30 +179,6 @@
         },
         "EntID": {
           "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "TotalAmount": {
-          "type": "string"
-        },
-        "SelfAmount": {
-          "type": "string"
-        },
-        "TotalUnits": {
-          "type": "string"
-        },
-        "SelfUnits": {
-          "type": "string"
-        },
-        "TotalCommission": {
-          "type": "string"
-        },
-        "SelfCommission": {
-          "type": "string"
         }
       }
     },

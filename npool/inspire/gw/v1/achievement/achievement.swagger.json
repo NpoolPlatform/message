@@ -146,6 +146,9 @@
             "$ref": "#/definitions/v1GoodAchievement"
           }
         },
+        "UserAchievement": {
+          "$ref": "#/definitions/v1UserAchievement"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -334,6 +337,29 @@
       ],
       "default": "DefaultSettleType",
       "title": "- GoodOrderPayment: Divide commission according to order payment amount or good value\n - TechniqueServiceFee: Divice commission according to order technique fee"
+    },
+    "v1UserAchievement": {
+      "type": "object",
+      "properties": {
+        "TotalCommission": {
+          "type": "string"
+        },
+        "SelfCommission": {
+          "type": "string"
+        },
+        "DirectInvites": {
+          "type": "string"
+        },
+        "IndirectInvites": {
+          "type": "string"
+        },
+        "DirectConsumeAmount": {
+          "type": "string"
+        },
+        "InviteeConsumeAmount": {
+          "type": "string"
+        }
+      }
     }
   }
 }
