@@ -96,7 +96,7 @@ message UpdateFeeResponse {
 }
 
 message GetFeeRequest {
-    string GoodID = 10;
+    string AppGoodID = 10;
 }
 
 message GetFeeResponse {
