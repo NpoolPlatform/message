@@ -5,6 +5,7 @@ package good.middleware.good1.coin.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/coin";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Middleware {
@@ -34,10 +35,13 @@ message GoodCoin {
     string GoodID = 30;
     // @inject_tag: sql:"good_name"
     string GoodName = 40;
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 50;
+    basetypes.good.v1.GoodType GoodType = 60;
     // @inject_tag: sql:"main"
-    bool Main = 50;
+    bool Main = 70;
     // @inject_tag: sql:"index"
-    int32 Index = 60;
+    int32 Index = 80;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
