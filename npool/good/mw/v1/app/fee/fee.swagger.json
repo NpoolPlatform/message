@@ -71,6 +71,12 @@
         "GoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppGoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "SettlementType": {
           "$ref": "#/definitions/v1Uint32Val"
         }
