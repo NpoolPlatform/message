@@ -74,7 +74,9 @@ message Conds {
     optional basetypes.v1.StringSliceVal EntIDs = 60;
     optional basetypes.v1.StringVal GoodID = 70;
     optional basetypes.v1.StringSliceVal GoodIDs = 80;
-    optional basetypes.v1.Uint32Val SettlementType = 90;
+    optional basetypes.v1.StringVal AppGoodID = 90;
+    optional basetypes.v1.StringSliceVal AppGoodIDs = 100;
+    optional basetypes.v1.Uint32Val SettlementType = 110;
 }
 
 message CreateFeeRequest {
