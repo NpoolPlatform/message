@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package miningpool.gateway.gooduser.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/gooduser";
+
+import "npool/basetypes/miningpool/v1/enums.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateGoodUser     (CreateGoodUserRequest)   returns (CreateGoodUserResponse)    {}
+    rpc GetGoodUser        (GetGoodUserRequest)      returns (GetGoodUserResponse)       {}
+    rpc GetGoodUsers       (GetGoodUsersRequest)     returns (GetGoodUsersResponse)      {}
+    rpc UpdateGoodUser     (UpdateGoodUserRequest)   returns (UpdateGoodUserResponse)    {}
+    rpc DeleteGoodUser     (DeleteGoodUserRequest)   returns (DeleteGoodUserResponse)    {}
+}
+
+message GoodUser {
+    uint32               ID                = 10;
+    string               EntID             = 20;
+    string               Name              = 30;
+    string               RootUserID        = 40;
+    string               GoodID            = 50;
+    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 61;
+    basetypes.miningpool.v1.CoinType CoinType = 71;
+    float                HashRate          = 80;
+    string               ReadPageLink    = 90;
+    basetypes.miningpool.v1.RevenueType RevenueType = 101;
+    uint32               CreatedAt         = 110;
+    uint32               UpdatedAt         = 120;
+}
+
+message CreateGoodUserRequest {
+    string                                 RootUserID     = 10;
+    string                                 GoodID         = 20;
+    basetypes.miningpool.v1.CoinType       CoinType       = 30;
+    float                                  HashRate       = 40;
+    basetypes.miningpool.v1.RevenueType    RevenueType    = 50;
+}
+
+message CreateGoodUserResponse {
+    GoodUser Info = 10;
+}
+
+message GetGoodUserRequest {
+    string EntID = 10;
+}
+
+message GetGoodUserResponse {
+    GoodUser Info = 10;
+}
+
+message GetGoodUsersRequest {
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetGoodUsersResponse {
+    repeated GoodUser Infos = 10;
+    uint32      Total = 20;
+}
+
+
+message UpdateGoodUserRequest {
+    uint32               ID                = 10;
+    string               RootUserID        = 40;
+    string               GoodID            = 50;
+    float                HashRate          = 80;
+    basetypes.miningpool.v1.RevenueType RevenueType = 101;
+}
+
+message UpdateGoodUserResponse {
+    GoodUser Info = 10;
+}
+
+message DeleteGoodUserRequest {
+    uint32   ID   = 10;
+}
+
+message DeleteGoodUserResponse {
+    GoodUser Info = 10;
+}

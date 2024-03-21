@@ -1,0 +1,127 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/miningpool/gw/v1/fraction/fraction.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateFractionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Fraction"
+        }
+      }
+    },
+    "v1Fraction": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "OrderUserID": {
+          "type": "string"
+        },
+        "WithdrawStateStr": {
+          "type": "string"
+        },
+        "WithdrawState": {
+          "$ref": "#/definitions/v1WithdrawState"
+        },
+        "WithdrawTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "PayTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetFractionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Fraction"
+        }
+      }
+    },
+    "v1GetOrderFractionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Fraction"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1WithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultWithdrawState",
+        "WithdrawStateWait",
+        "WithdrawStateProccessing",
+        "WithdrawStateSuccess",
+        "WithdrawStateFailed"
+      ],
+      "default": "DefaultWithdrawState"
+    }
+  }
+}

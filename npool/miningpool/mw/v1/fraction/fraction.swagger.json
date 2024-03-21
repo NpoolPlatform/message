@@ -50,6 +50,12 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "OrderUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -108,6 +114,14 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
         "OrderUserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"order_user_id\""
@@ -128,6 +142,11 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"pay_time\""
+        },
+        "Msg": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"msg\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -151,6 +170,12 @@
         "EntID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "OrderUserID": {
           "type": "string"
         },
@@ -164,6 +189,9 @@
         "PayTime": {
           "type": "integer",
           "format": "int64"
+        },
+        "Msg": {
+          "type": "string"
         }
       }
     },

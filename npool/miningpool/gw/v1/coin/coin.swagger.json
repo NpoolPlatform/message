@@ -1,0 +1,158 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/miningpool/gw/v1/coin/coin.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "miningpoolgatewaycoinv1GetCoinsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coin"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Coin": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "MiningpoolTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"miningpool_type\""
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "CoinTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type\""
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "RevenueTypesStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"revenue_types\""
+        },
+        "RevenueTypes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RevenueType"
+          }
+        },
+        "Site": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"site\""
+        },
+        "FeeRate": {
+          "type": "number",
+          "format": "float",
+          "title": "@inject_tag: sql:\"fee_rate\""
+        },
+        "FixedRevenueAble": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"fixed_revenue_able\""
+        },
+        "Threshold": {
+          "type": "number",
+          "format": "float",
+          "title": "@inject_tag: sql:\"threshold\""
+        },
+        "Remark": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"remark\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "DefaultCoinType",
+        "BitCoin"
+      ],
+      "default": "DefaultCoinType"
+    },
+    "v1MiningpoolType": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningpoolType",
+        "F2Pool",
+        "AntPool"
+      ],
+      "default": "DefaultMiningpoolType"
+    },
+    "v1RevenueType": {
+      "type": "string",
+      "enum": [
+        "FPPS",
+        "PPLNS"
+      ],
+      "default": "FPPS"
+    }
+  }
+}

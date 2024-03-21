@@ -1,0 +1,165 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/miningpool/gw/v1/gooduser/gooduser.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "DefaultCoinType",
+        "BitCoin"
+      ],
+      "default": "DefaultCoinType"
+    },
+    "v1CreateGoodUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodUser"
+        }
+      }
+    },
+    "v1DeleteGoodUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodUser"
+        }
+      }
+    },
+    "v1GetGoodUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodUser"
+        }
+      }
+    },
+    "v1GetGoodUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GoodUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "RootUserID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "HashRate": {
+          "type": "number",
+          "format": "float"
+        },
+        "ReadPageLink": {
+          "type": "string"
+        },
+        "RevenueType": {
+          "$ref": "#/definitions/v1RevenueType"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1MiningpoolType": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningpoolType",
+        "F2Pool",
+        "AntPool"
+      ],
+      "default": "DefaultMiningpoolType"
+    },
+    "v1RevenueType": {
+      "type": "string",
+      "enum": [
+        "FPPS",
+        "PPLNS"
+      ],
+      "default": "FPPS"
+    },
+    "v1UpdateGoodUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodUser"
+        }
+      }
+    }
+  }
+}
