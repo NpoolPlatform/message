@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package miningpool.middleware.fraction.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/fraction";
+
+import "npool/basetypes/miningpool/v1/enums.proto";
+
+// Service Name  
+service Middleware {
+    rpc CreateFraction     (CreateFractionRequest)   returns (CreateFractionResponse)    {}
+    rpc GetFraction        (GetFractionRequest)      returns (GetFractionResponse)       {}
+    rpc GetFractions       (GetOrderFractionsRequest)     returns (GetOrderFractionsResponse)      {}
+}
+
+message Fraction {
+    uint32                                ID                = 10;
+    string                                EntID             = 20;
+    string                                OrderUserID       = 30;
+    string                                WithdrawStateStr  = 40;
+    basetypes.miningpool.v1.WithdrawState WithdrawState     = 41;
+    uint32                                WithdrawTime      = 50;
+    uint32                                PayTime           = 60;
+    uint32                                CreatedAt         = 70;
+    uint32                                UpdatedAt         = 80;
+}
+
+message CreateFractionRequest {
+    optional string  OrderUserID = 30;
+}
+
+message CreateFractionResponse {
+    Fraction Info = 10;
+}
+
+message GetFractionRequest {
+    string EntID = 10;
+}
+
+message GetFractionResponse {
+    Fraction Info = 10;
+}
+
+message GetOrderFractionsRequest {
+    string OrderUserID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetOrderFractionsResponse {
+    repeated Fraction Infos = 10;
+    uint32      Total = 20;
+}
