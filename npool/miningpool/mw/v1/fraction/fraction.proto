@@ -49,7 +49,7 @@ message Fraction {
     // @inject_tag: sql:"pay_time"
     uint32                                PayTime           = 80;
     // @inject_tag: sql:"msg"
-    uint32                                Msg               = 90;
+    string                                Msg               = 90;
     // @inject_tag: sql:"created_at"
     uint32                                CreatedAt         = 100;
     // @inject_tag: sql:"updated_at"

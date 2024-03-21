@@ -144,8 +144,7 @@
           "title": "@inject_tag: sql:\"pay_time\""
         },
         "Msg": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"msg\""
         },
         "CreatedAt": {
