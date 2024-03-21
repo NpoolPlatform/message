@@ -10,7 +10,6 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 // Service Name  
 service Middleware {
     rpc CreateFraction     (CreateFractionRequest)   returns (CreateFractionResponse)    {}
-    rpc CreateFractions    (CreateFractionsRequest)  returns (CreateFractionsResponse)   {}
     rpc GetFraction        (GetFractionRequest)      returns (GetFractionResponse)       {}
     rpc GetFractions       (GetFractionsRequest)     returns (GetFractionsResponse)      {}
     rpc ExistFractionConds (ExistFractionCondsRequest) returns (ExistFractionCondsResponse) {}
@@ -71,14 +70,6 @@ message CreateFractionRequest {
 
 message CreateFractionResponse {
     Fraction Info = 10;
-}
-
-message CreateFractionsRequest {
-   repeated FractionReq Infos = 10;
-}
-
-message CreateFractionsResponse {
-    repeated Fraction Infos = 10;
 }
 
 message GetFractionRequest {
