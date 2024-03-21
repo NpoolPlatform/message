@@ -75,17 +75,6 @@
         }
       }
     },
-    "v1CreateFractionsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Fraction"
-          }
-        }
-      }
-    },
     "v1DeleteFractionResponse": {
       "type": "object",
       "properties": {
