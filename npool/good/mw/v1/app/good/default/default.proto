@@ -20,7 +20,7 @@ message DefaultReq {
     optional uint32 ID        = 9;
     optional string EntID     = 10;
     optional string AppGoodID = 20;
-    optional basetypes.good.v1.GoodType GoodType = 30;
+    optional string CoinTypeID = 30;
 }
 
 message Default {
