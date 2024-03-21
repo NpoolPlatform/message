@@ -1,30 +1,30 @@
 syntax = "proto3";
 
-package good.middleware.app.good1.description.v1;
+package good.middleware.app.good1.display.color.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/description";
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/display/color";
 
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateDescription    (CreateDescriptionRequest)    returns (CreateDescriptionResponse)    {}
-    rpc UpdateDescription    (UpdateDescriptionRequest)    returns (UpdateDescriptionResponse)    {}
-    rpc GetDescription       (GetDescriptionRequest)       returns (GetDescriptionResponse)       {}
-    rpc GetDescriptions      (GetDescriptionsRequest)      returns (GetDescriptionsResponse)      {}
-    rpc DeleteDescription    (DeleteDescriptionRequest)    returns (DeleteDescriptionResponse)    {}
+    rpc CreateDisplayColor    (CreateDisplayColorRequest)    returns (CreateDisplayColorResponse)    {}
+    rpc UpdateDisplayColor    (UpdateDisplayColorRequest)    returns (UpdateDisplayColorResponse)    {}
+    rpc GetDisplayColor       (GetDisplayColorRequest)       returns (GetDisplayColorResponse)       {}
+    rpc GetDisplayColors      (GetDisplayColorsRequest)      returns (GetDisplayColorsResponse)      {}
+    rpc DeleteDisplayColor    (DeleteDisplayColorRequest)    returns (DeleteDisplayColorResponse)    {}
 }
 
-message DescriptionReq {
+message DisplayColorReq {
     optional uint32 ID        = 9;
     optional string EntID     = 10;
     optional string AppGoodID = 20;
-    optional string Description = 30;
+    optional string Color     = 30;
     optional uint32 Index     = 40;
 }
 
-message Description {
+message DisplayColor {
     // @inject_tag: sql:"id"
     uint32 ID         = 9;
     // @inject_tag: sql:"ent_id"
@@ -39,8 +39,8 @@ message Description {
     string AppGoodID  = 50;
     // @inject_tag: sql:"app_good_name"
     string AppGoodName = 60;
-    // @inject_tag: sql:"description"
-    string Description = 70;
+    // @inject_tag: sql:"color"
+    string Color      = 70;
     // @inject_tag: sql:"good_type"
     string GoodType   = 80;
     // @inject_tag: sql:"index"
@@ -61,45 +61,45 @@ message Conds {
     optional basetypes.v1.StringSliceVal AppGoodIDs  = 60;
 }
 
-message CreateDescriptionRequest {
-    DescriptionReq Info = 10;
+message CreateDisplayColorRequest {
+    DisplayColorReq Info = 10;
 }
 
-message CreateDescriptionResponse {
-    Description Info = 10;
+message CreateDisplayColorResponse {
+    DisplayColor Info = 10;
 }
 
-message UpdateDescriptionRequest {
-    DescriptionReq Info = 10;
+message UpdateDisplayColorRequest {
+    DisplayColorReq Info = 10;
 }
 
-message UpdateDescriptionResponse {
-    Description Info = 10;
+message UpdateDisplayColorResponse {
+    DisplayColor Info = 10;
 }
 
-message GetDescriptionRequest {
+message GetDisplayColorRequest {
     string EntID = 10;
 }
 
-message GetDescriptionResponse {
-    Description Info = 10;
+message GetDisplayColorResponse {
+    DisplayColor Info = 10;
 }
 
-message GetDescriptionsRequest {
+message GetDisplayColorsRequest {
     Conds Conds  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
-message GetDescriptionsResponse {
-    repeated Description Infos = 10;
-    uint32           Total = 20;
+message GetDisplayColorsResponse {
+    repeated DisplayColor Infos = 10;
+    uint32                Total = 20;
 }
 
-message DeleteDescriptionRequest {
-    DescriptionReq Info = 10;
+message DeleteDisplayColorRequest {
+    DisplayColorReq Info = 10;
 }
 
-message DeleteDescriptionResponse {
-    Description Info = 10;
+message DeleteDisplayColorResponse {
+    DisplayColor Info = 10;
 }

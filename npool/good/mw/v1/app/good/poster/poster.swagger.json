@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/mw/v1/app/good/description/description.proto",
+    "title": "npool/good/mw/v1/app/good/poster/poster.proto",
     "version": "version not set"
   },
   "tags": [
@@ -70,23 +70,46 @@
         }
       }
     },
-    "v1CreateDescriptionResponse": {
+    "v1CreatePosterResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Description"
+          "$ref": "#/definitions/v1Poster"
         }
       }
     },
-    "v1DeleteDescriptionResponse": {
+    "v1DeletePosterResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Description"
+          "$ref": "#/definitions/v1Poster"
         }
       }
     },
-    "v1Description": {
+    "v1GetPosterResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Poster"
+        }
+      }
+    },
+    "v1GetPostersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Poster"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1Poster": {
       "type": "object",
       "properties": {
         "ID": {
@@ -118,9 +141,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_name\""
         },
-        "Description": {
+        "Poster": {
           "type": "string",
-          "title": "@inject_tag: sql:\"description\""
+          "title": "@inject_tag: sql:\"poster\""
         },
         "GoodType": {
           "type": "string",
@@ -143,7 +166,7 @@
         }
       }
     },
-    "v1DescriptionReq": {
+    "v1PosterReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -156,33 +179,10 @@
         "AppGoodID": {
           "type": "string"
         },
-        "Description": {
+        "Poster": {
           "type": "string"
         },
         "Index": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetDescriptionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Description"
-        }
-      }
-    },
-    "v1GetDescriptionsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Description"
-          }
-        },
-        "Total": {
           "type": "integer",
           "format": "int64"
         }
@@ -225,11 +225,11 @@
         }
       }
     },
-    "v1UpdateDescriptionResponse": {
+    "v1UpdatePosterResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Description"
+          "$ref": "#/definitions/v1Poster"
         }
       }
     }
