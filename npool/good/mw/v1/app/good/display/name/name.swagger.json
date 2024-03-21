@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/mw/v1/app/good/description/description.proto",
+    "title": "npool/good/mw/v1/app/good/display/name/name.proto",
     "version": "version not set"
   },
   "tags": [
@@ -70,23 +70,23 @@
         }
       }
     },
-    "v1CreateDescriptionResponse": {
+    "v1CreateDisplayNameResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Description"
+          "$ref": "#/definitions/v1DisplayName"
         }
       }
     },
-    "v1DeleteDescriptionResponse": {
+    "v1DeleteDisplayNameResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Description"
+          "$ref": "#/definitions/v1DisplayName"
         }
       }
     },
-    "v1Description": {
+    "v1DisplayName": {
       "type": "object",
       "properties": {
         "ID": {
@@ -118,9 +118,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_name\""
         },
-        "Description": {
+        "Name": {
           "type": "string",
-          "title": "@inject_tag: sql:\"description\""
+          "title": "@inject_tag: sql:\"name\""
         },
         "GoodType": {
           "type": "string",
@@ -143,7 +143,7 @@
         }
       }
     },
-    "v1DescriptionReq": {
+    "v1DisplayNameReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -156,7 +156,7 @@
         "AppGoodID": {
           "type": "string"
         },
-        "Description": {
+        "Name": {
           "type": "string"
         },
         "Index": {
@@ -165,21 +165,21 @@
         }
       }
     },
-    "v1GetDescriptionResponse": {
+    "v1GetDisplayNameResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Description"
+          "$ref": "#/definitions/v1DisplayName"
         }
       }
     },
-    "v1GetDescriptionsResponse": {
+    "v1GetDisplayNamesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Description"
+            "$ref": "#/definitions/v1DisplayName"
           }
         },
         "Total": {
@@ -225,11 +225,11 @@
         }
       }
     },
-    "v1UpdateDescriptionResponse": {
+    "v1UpdateDisplayNameResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Description"
+          "$ref": "#/definitions/v1DisplayName"
         }
       }
     }
