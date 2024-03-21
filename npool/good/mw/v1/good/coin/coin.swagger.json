@@ -135,6 +135,10 @@
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
         },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
         "Main": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"main\""
