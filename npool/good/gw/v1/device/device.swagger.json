@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/gw/v1/deviceinfo/deviceinfo.proto",
+    "title": "npool/good/gw/v1/device/device.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/deviceinfo": {
+    "/v1/create/device": {
       "post": {
-        "operationId": "Gateway_CreateDeviceInfo",
+        "operationId": "Gateway_CreateDeviceType",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewaydeviceinfov1CreateDeviceInfoResponse"
+              "$ref": "#/definitions/goodgatewaydevicev1CreateDeviceTypeResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewaydeviceinfov1CreateDeviceInfoRequest"
+              "$ref": "#/definitions/goodgatewaydevicev1CreateDeviceTypeRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/delete/deviceinfo": {
+    "/v1/delete/device": {
       "post": {
-        "operationId": "Gateway_DeleteDeviceInfo",
+        "operationId": "Gateway_DeleteDeviceType",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewaydeviceinfov1DeleteDeviceInfoResponse"
+              "$ref": "#/definitions/goodgatewaydevicev1DeleteDeviceTypeResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewaydeviceinfov1DeleteDeviceInfoRequest"
+              "$ref": "#/definitions/goodgatewaydevicev1DeleteDeviceTypeRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/deviceinfos": {
+    "/v1/get/devices": {
       "post": {
-        "operationId": "Gateway_GetDeviceInfos",
+        "operationId": "Gateway_GetDeviceTypes",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewaydeviceinfov1GetDeviceInfosResponse"
+              "$ref": "#/definitions/goodgatewaydevicev1GetDeviceTypesResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewaydeviceinfov1GetDeviceInfosRequest"
+              "$ref": "#/definitions/goodgatewaydevicev1GetDeviceTypesRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/update/deviceinfo": {
+    "/v1/update/device": {
       "post": {
-        "operationId": "Gateway_UpdateDeviceInfo",
+        "operationId": "Gateway_UpdateDeviceType",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewaydeviceinfov1UpdateDeviceInfoResponse"
+              "$ref": "#/definitions/goodgatewaydevicev1UpdateDeviceTypeResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewaydeviceinfov1UpdateDeviceInfoRequest"
+              "$ref": "#/definitions/goodgatewaydevicev1UpdateDeviceTypeRequest"
             }
           }
         ],
@@ -146,7 +146,7 @@
     }
   },
   "definitions": {
-    "goodgatewaydeviceinfov1CreateDeviceInfoRequest": {
+    "goodgatewaydevicev1CreateDeviceTypeRequest": {
       "type": "object",
       "properties": {
         "Type": {
@@ -162,24 +162,18 @@
         "ShipmentAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       }
     },
-    "goodgatewaydeviceinfov1CreateDeviceInfoResponse": {
+    "goodgatewaydevicev1CreateDeviceTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1DeviceInfo"
+          "$ref": "#/definitions/v1DeviceType"
         }
       }
     },
-    "goodgatewaydeviceinfov1DeleteDeviceInfoRequest": {
+    "goodgatewaydevicev1DeleteDeviceTypeRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -191,15 +185,15 @@
         }
       }
     },
-    "goodgatewaydeviceinfov1DeleteDeviceInfoResponse": {
+    "goodgatewaydevicev1DeleteDeviceTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1DeviceInfo"
+          "$ref": "#/definitions/v1DeviceType"
         }
       }
     },
-    "goodgatewaydeviceinfov1GetDeviceInfosRequest": {
+    "goodgatewaydevicev1GetDeviceTypesRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -212,13 +206,13 @@
         }
       }
     },
-    "goodgatewaydeviceinfov1GetDeviceInfosResponse": {
+    "goodgatewaydevicev1GetDeviceTypesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1DeviceInfo"
+            "$ref": "#/definitions/v1DeviceType"
           }
         },
         "Total": {
@@ -227,7 +221,7 @@
         }
       }
     },
-    "goodgatewaydeviceinfov1UpdateDeviceInfoRequest": {
+    "goodgatewaydevicev1UpdateDeviceTypeRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -250,20 +244,14 @@
         "ShipmentAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       }
     },
-    "goodgatewaydeviceinfov1UpdateDeviceInfoResponse": {
+    "goodgatewaydevicev1UpdateDeviceTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1DeviceInfo"
+          "$ref": "#/definitions/v1DeviceType"
         }
       }
     },
@@ -294,7 +282,7 @@
         }
       }
     },
-    "v1DeviceInfo": {
+    "v1DeviceType": {
       "type": "object",
       "properties": {
         "ID": {
@@ -323,16 +311,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"shipment_at\""
-        },
-        "PostersStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"posters\""
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         },
         "CreatedAt": {
           "type": "integer",

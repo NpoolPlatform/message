@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/mw/v1/deviceinfo/deviceinfo.proto",
+    "title": "npool/good/mw/v1/device/device.proto",
     "version": "version not set"
   },
   "tags": [
@@ -61,23 +61,23 @@
         }
       }
     },
-    "v1CreateDeviceInfoResponse": {
+    "v1CreateDeviceTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1DeviceInfo"
+          "$ref": "#/definitions/v1DeviceType"
         }
       }
     },
-    "v1DeleteDeviceInfoResponse": {
+    "v1DeleteDeviceTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1DeviceInfo"
+          "$ref": "#/definitions/v1DeviceType"
         }
       }
     },
-    "v1DeviceInfo": {
+    "v1DeviceType": {
       "type": "object",
       "properties": {
         "ID": {
@@ -107,16 +107,6 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"shipment_at\""
         },
-        "PostersStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"posters\""
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -134,7 +124,7 @@
         }
       }
     },
-    "v1DeviceInfoReq": {
+    "v1DeviceTypeReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -157,30 +147,24 @@
         "ShipmentAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       }
     },
-    "v1GetDeviceInfoResponse": {
+    "v1GetDeviceTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1DeviceInfo"
+          "$ref": "#/definitions/v1DeviceType"
         }
       }
     },
-    "v1GetDeviceInfosResponse": {
+    "v1GetDeviceTypesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1DeviceInfo"
+            "$ref": "#/definitions/v1DeviceType"
           }
         },
         "Total": {
@@ -212,11 +196,11 @@
         }
       }
     },
-    "v1UpdateDeviceInfoResponse": {
+    "v1UpdateDeviceTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1DeviceInfo"
+          "$ref": "#/definitions/v1DeviceType"
         }
       }
     }
