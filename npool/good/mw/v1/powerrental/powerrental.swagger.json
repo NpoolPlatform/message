@@ -26,9 +26,6 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
