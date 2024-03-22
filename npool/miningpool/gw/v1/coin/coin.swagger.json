@@ -95,10 +95,6 @@
             "$ref": "#/definitions/v1RevenueType"
           }
         },
-        "Site": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"site\""
-        },
         "FeeRate": {
           "type": "number",
           "format": "float",

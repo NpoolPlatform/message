@@ -25,11 +25,10 @@ message CoinReq {
     optional basetypes.miningpool.v1.MiningpoolType       MiningpoolType    = 20;
     optional basetypes.miningpool.v1.CoinType             CoinType          = 30;
     repeated basetypes.miningpool.v1.RevenueType          RevenueTypes      = 40;
-    optional string                                       Site              = 50;
-    optional float                                        FeeRate           = 60;
-    optional bool                                         FixedRevenueAble  = 70;
-    optional float                                        Threshold         = 80;
-    optional string                                       Remark            = 90;
+    optional float                                        FeeRate           = 50;
+    optional bool                                         FixedRevenueAble  = 60;
+    optional float                                        Threshold         = 70;
+    optional string                                       Remark            = 80;
 }
 
 message Coin {
@@ -46,29 +45,27 @@ message Coin {
     // @inject_tag: sql:"revenue_types"
     string               RevenueTypesStr   = 50;
     repeated basetypes.miningpool.v1.RevenueType    RevenueTypes = 51;
-    // @inject_tag: sql:"site"
-    string               Site              = 60;
     // @inject_tag: sql:"fee_rate"
-    float                FeeRate           = 70;
+    float                FeeRate           = 60;
     // @inject_tag: sql:"fixed_revenue_able" 
-    bool                 FixedRevenueAble  = 80;
+    bool                 FixedRevenueAble  = 70;
     // @inject_tag: sql:"threshold"
-    float                Threshold         = 90;
+    float                Threshold         = 80;
     // @inject_tag: sql:"remark"
-    string               Remark            = 100;
+    string               Remark            = 90;
     // @inject_tag: sql:"created_at"
-    uint32               CreatedAt         = 110;
+    uint32               CreatedAt         = 100;
     // @inject_tag: sql:"updated_at"
-    uint32               UpdatedAt         = 120;
+    uint32               UpdatedAt         = 110;
 }
 
 message Conds {
+    optional basetypes.v1.Uint32Val      ID                = 9;
     optional basetypes.v1.StringVal      EntID             = 10;
     optional basetypes.v1.Uint32Val      MiningpoolType    = 20;
     optional basetypes.v1.Uint32Val      CoinType          = 30;
-    optional basetypes.v1.StringVal      Site              = 50;
-    optional basetypes.v1.BoolVal        FixedRevenueAble  = 60;
-    optional basetypes.v1.StringSliceVal EntIDs            = 70;
+    optional basetypes.v1.BoolVal        FixedRevenueAble  = 40;
+    optional basetypes.v1.StringSliceVal EntIDs            = 50;
 }
 
 message CreateCoinRequest {
