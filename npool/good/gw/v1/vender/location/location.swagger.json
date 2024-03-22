@@ -292,6 +292,14 @@
           "type": "string",
           "title": "@inject_tag: sql:\"brand_id\""
         },
+        "BrandName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"brand_name\""
+        },
+        "BrandLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"brand_logo\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
