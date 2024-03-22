@@ -222,7 +222,8 @@
         "DefaultCommissionConfigType",
         "AppCommissionConfig",
         "AppGoodCommissionConfig",
-        "LegacyCommissionConfig"
+        "LegacyCommissionConfig",
+        "WithoutCommission"
       ],
       "default": "DefaultCommissionConfigType"
     },

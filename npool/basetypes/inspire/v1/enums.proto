@@ -76,9 +76,10 @@ enum CommissionType {
 }
 
 enum CommissionConfigType {
-    DefaultCommissionConfigType =0;
+    DefaultCommissionConfigType = 0;
 
     AppCommissionConfig     = 10;
     AppGoodCommissionConfig = 20;
     LegacyCommissionConfig  = 30;
+    WithoutCommission       = 40;
 }
