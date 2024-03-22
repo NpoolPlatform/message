@@ -298,9 +298,17 @@
           "type": "string",
           "title": "@inject_tag: sql:\"type\""
         },
-        "Manufacturer": {
+        "ManufacturerID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"manufacturer\""
+          "title": "@inject_tag: sql:\"manufacturer_id\""
+        },
+        "ManufacturerName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"manufacturer_name\""
+        },
+        "ManufacturerLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"manufacturer_logo\""
         },
         "PowerConsumption": {
           "type": "integer",

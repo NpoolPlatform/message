@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+package good.middleware.device.manufacturer.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/device/manufacturer";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateManufacturer (CreateManufacturerRequest) returns (CreateManufacturerResponse) {}
+    rpc UpdateManufacturer (UpdateManufacturerRequest) returns (UpdateManufacturerResponse) {}
+    rpc GetManufacturer    (GetManufacturerRequest)    returns (GetManufacturerResponse)    {}
+    rpc GetManufacturers   (GetManufacturersRequest)   returns (GetManufacturersResponse)   {}
+    rpc DeleteManufacturer (DeleteManufacturerRequest) returns (DeleteManufacturerResponse) {}
+}
+
+message ManufacturerReq {
+    optional uint32 ID    = 9;
+    optional string EntID = 10;
+    optional string Name  = 20;
+    optional string Logo  = 30;
+}
+
+message Manufacturer {
+    // @inject_tag: sql:"id"
+    uint32 ID        = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID     = 10;
+    // @inject_tag: sql:"name"
+    string Name      = 20;
+    // @inject_tag: sql:"logo"
+    string Logo      = 30;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.Uint32Val ID    = 9;
+    optional basetypes.v1.StringVal EntID = 10;
+    optional basetypes.v1.StringVal Name  = 20;
+}
+
+
+message CreateManufacturerRequest {
+    ManufacturerReq Info = 10;
+}
+
+message CreateManufacturerResponse {
+    Manufacturer Info = 10;
+}
+
+message UpdateManufacturerRequest {
+    ManufacturerReq Info = 10;
+}
+
+message UpdateManufacturerResponse {
+    Manufacturer Info = 10;
+}
+
+message GetManufacturerRequest {
+    string EntID = 10;
+}
+
+message GetManufacturerResponse {
+    Manufacturer Info = 10;
+}
+
+message GetManufacturersRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetManufacturersResponse {
+    repeated Manufacturer Infos = 10;
+    uint32                Total = 20;
+}
+
+message DeleteManufacturerRequest {
+    ManufacturerReq Info = 10;
+}
+
+message DeleteManufacturerResponse {
+    Manufacturer Info = 10;
+}

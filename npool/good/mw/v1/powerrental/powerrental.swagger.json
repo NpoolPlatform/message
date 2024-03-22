@@ -198,9 +198,46 @@
           "type": "string",
           "title": "@inject_tag: sql:\"device_type_id\""
         },
+        "DeviceType": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_type\""
+        },
+        "DeviceManufacturerName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_manufacturer_name\""
+        },
+        "DeviceManufacturerLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_manufacturer_logo\""
+        },
+        "DevicePowerConsumption": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"device_power_consumption\""
+        },
+        "DeviceShipmentAt": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"device_shipment_at\""
+        },
         "VendorLocationID": {
           "type": "string",
           "title": "@inject_tag: sql:\"vendor_location_id\""
+        },
+        "VendorBrand": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_brand\""
+        },
+        "VendorLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_logo\""
+        },
+        "VendorCountry": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_country\""
+        },
+        "VendorProvince": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"vendor_province\""
         },
         "UnitPrice": {
           "type": "string",

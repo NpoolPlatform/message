@@ -32,14 +32,20 @@ message DeviceType {
     string          EntID           = 10;
     // @inject_tag: sql:"type"
     string          Type            = 20;
-    // @inject_tag: sql:"manufacturer"
-    string          Manufacturer    = 30;
-    // @inject_tag: sql:"power_consumption"
-    uint32          PowerConsumption = 40;
-    // @inject_tag: sql:"shipment_at"
-    uint32          ShipmentAt      = 50;
 
-    repeated good.middleware.device.poster.v1.PosterInfo Posters = 60;
+    // @inject_tag: sql:"manufacturer_id"
+    string          ManufacturerID  = 30;
+    // @inject_tag: sql:"manufacturer_name"
+    string          ManufacturerName = 40;
+    // @inject_tag: sql:"manufacturer_logo"
+    string          ManufacturerLogo = 50;
+
+    // @inject_tag: sql:"power_consumption"
+    uint32          PowerConsumption = 60;
+    // @inject_tag: sql:"shipment_at"
+    uint32          ShipmentAt      = 70;
+
+    repeated good.middleware.device.poster.v1.PosterInfo Posters = 80;
 
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 1000;
