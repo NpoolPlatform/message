@@ -50,6 +50,17 @@ message GoodCoin {
     uint32 UpdatedAt = 1010;
 }
 
+message GoodCoinInfo {
+    // @inject_tag: sql:"good_id"
+    string GoodID = 30;
+    // @inject_tag: sql:"coin_type_id"
+    string CoinTypeID = 70;
+    // @inject_tag: sql:"main"
+    bool Main = 80;
+    // @inject_tag: sql:"index"
+    int32 Index = 90;
+}
+
 message Conds {
     optional basetypes.v1.Uint32Val      ID      = 10;
     optional basetypes.v1.StringVal      EntID   = 30;
