@@ -19,9 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateFraction_FullMethodName = "/miningpool.middleware.fraction.v1.Middleware/CreateFraction"
-	Middleware_GetFraction_FullMethodName    = "/miningpool.middleware.fraction.v1.Middleware/GetFraction"
-	Middleware_GetFractions_FullMethodName   = "/miningpool.middleware.fraction.v1.Middleware/GetFractions"
+	Middleware_CreateFraction_FullMethodName = "/miningpool.gateway.fraction.v1.Middleware/CreateFraction"
+	Middleware_GetFraction_FullMethodName    = "/miningpool.gateway.fraction.v1.Middleware/GetFraction"
+	Middleware_GetFractions_FullMethodName   = "/miningpool.gateway.fraction.v1.Middleware/GetFractions"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -162,7 +162,7 @@ func _Middleware_GetFractions_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "miningpool.middleware.fraction.v1.Middleware",
+	ServiceName: "miningpool.gateway.fraction.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
