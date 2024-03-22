@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/miningpool/gw/v1/coin/coin.proto",
+    "title": "npool/miningpool/gw/v1/app/pool/pool.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,21 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "miningpoolgatewaycoinv1GetCoinsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Coin"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -62,32 +47,8 @@
     "v1Coin": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
-        },
-        "MiningpoolTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_type\""
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CoinTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type\""
-        },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
-        },
-        "RevenueTypesStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"revenue_types\""
         },
         "RevenueTypes": {
           "type": "array",
@@ -97,31 +58,17 @@
         },
         "FeeRate": {
           "type": "number",
-          "format": "float",
-          "title": "@inject_tag: sql:\"fee_rate\""
+          "format": "float"
         },
         "FixedRevenueAble": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"fixed_revenue_able\""
+          "type": "boolean"
         },
         "Threshold": {
           "type": "number",
-          "format": "float",
-          "title": "@inject_tag: sql:\"threshold\""
+          "format": "float"
         },
         "Remark": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"remark\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
+          "type": "string"
         }
       }
     },
@@ -133,6 +80,49 @@
       ],
       "default": "DefaultCoinType"
     },
+    "v1FractionRule": {
+      "type": "object",
+      "properties": {
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "WithdrawInterval": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MinAmount": {
+          "type": "number",
+          "format": "float"
+        },
+        "WithdrawRate": {
+          "type": "number",
+          "format": "float"
+        }
+      }
+    },
+    "v1GetPoolResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Pool"
+        }
+      }
+    },
+    "v1GetPoolsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Pool"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1MiningpoolType": {
       "type": "string",
       "enum": [
@@ -141,6 +131,35 @@
         "AntPool"
       ],
       "default": "DefaultMiningpoolType"
+    },
+    "v1Pool": {
+      "type": "object",
+      "properties": {
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Site": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coin"
+          }
+        },
+        "FractionRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FractionRule"
+          }
+        }
+      }
     },
     "v1RevenueType": {
       "type": "string",

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package miningpool.gateway.gooduser.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/gooduser";
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/gooduser";
 
 import "npool/basetypes/miningpool/v1/enums.proto";
 

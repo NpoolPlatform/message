@@ -17,6 +17,30 @@
   ],
   "paths": {},
   "definitions": {
+    "miningpoolgatewayorderuserv1GetOrderUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderUser"
+        }
+      }
+    },
+    "miningpoolgatewayorderuserv1SetupAutoPayResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderUser"
+        }
+      }
+    },
+    "miningpoolgatewayorderuserv1SetupRevenueAddressResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderUser"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -44,17 +68,6 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1CoinType": {
       "type": "string",
       "enum": [
@@ -63,85 +76,7 @@
       ],
       "default": "DefaultCoinType"
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Name": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "RootUserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "GoodUserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "OrderID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "RevenueAddress": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AutoPay": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "EntIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
-    "v1CreateOrderUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
-    "v1CreateOrderUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1OrderUser"
-          }
-        }
-      }
-    },
-    "v1DeleteOrderUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
-    "v1ExistOrderUserCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1GetOrderUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
-    "v1GetOrderUsersResponse": {
+    "v1GetOrderUsersByOrderResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -233,118 +168,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v1OrderUserReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "RootUserID": {
-          "type": "string"
-        },
-        "GoodUserID": {
-          "type": "string"
-        },
-        "OrderID": {
-          "type": "string"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
-        },
-        "Proportion": {
-          "type": "number",
-          "format": "float"
-        },
-        "RevenueAddress": {
-          "type": "string"
-        },
-        "ReadPageLink": {
-          "type": "string"
-        },
-        "AutoPay": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1SetupAutoPayResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
-    "v1SetupProportionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
-    "v1SetupRevenueAddressResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1StringVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Uint32Val": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateOrderUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
         }
       }
     }

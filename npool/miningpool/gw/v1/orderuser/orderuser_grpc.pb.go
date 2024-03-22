@@ -19,30 +19,18 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateOrderUser_FullMethodName     = "/miningpool.gateway.orderuser.v1.Gateway/CreateOrderUser"
-	Gateway_CreateOrderUsers_FullMethodName    = "/miningpool.gateway.orderuser.v1.Gateway/CreateOrderUsers"
-	Gateway_GetOrderUser_FullMethodName        = "/miningpool.gateway.orderuser.v1.Gateway/GetOrderUser"
-	Gateway_GetOrderUsers_FullMethodName       = "/miningpool.gateway.orderuser.v1.Gateway/GetOrderUsers"
-	Gateway_ExistOrderUserConds_FullMethodName = "/miningpool.gateway.orderuser.v1.Gateway/ExistOrderUserConds"
-	Gateway_UpdateOrderUser_FullMethodName     = "/miningpool.gateway.orderuser.v1.Gateway/UpdateOrderUser"
-	Gateway_DeleteOrderUser_FullMethodName     = "/miningpool.gateway.orderuser.v1.Gateway/DeleteOrderUser"
-	Gateway_SetupProportion_FullMethodName     = "/miningpool.gateway.orderuser.v1.Gateway/SetupProportion"
-	Gateway_SetupRevenueAddress_FullMethodName = "/miningpool.gateway.orderuser.v1.Gateway/SetupRevenueAddress"
-	Gateway_SetupAutoPay_FullMethodName        = "/miningpool.gateway.orderuser.v1.Gateway/SetupAutoPay"
+	Gateway_GetOrderUser_FullMethodName         = "/miningpool.gateway.orderuser.v1.Gateway/GetOrderUser"
+	Gateway_GetOrderUsersByOrder_FullMethodName = "/miningpool.gateway.orderuser.v1.Gateway/GetOrderUsersByOrder"
+	Gateway_SetupRevenueAddress_FullMethodName  = "/miningpool.gateway.orderuser.v1.Gateway/SetupRevenueAddress"
+	Gateway_SetupAutoPay_FullMethodName         = "/miningpool.gateway.orderuser.v1.Gateway/SetupAutoPay"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateOrderUser(ctx context.Context, in *CreateOrderUserRequest, opts ...grpc.CallOption) (*CreateOrderUserResponse, error)
-	CreateOrderUsers(ctx context.Context, in *CreateOrderUsersRequest, opts ...grpc.CallOption) (*CreateOrderUsersResponse, error)
 	GetOrderUser(ctx context.Context, in *GetOrderUserRequest, opts ...grpc.CallOption) (*GetOrderUserResponse, error)
-	GetOrderUsers(ctx context.Context, in *GetOrderUsersRequest, opts ...grpc.CallOption) (*GetOrderUsersResponse, error)
-	ExistOrderUserConds(ctx context.Context, in *ExistOrderUserCondsRequest, opts ...grpc.CallOption) (*ExistOrderUserCondsResponse, error)
-	UpdateOrderUser(ctx context.Context, in *UpdateOrderUserRequest, opts ...grpc.CallOption) (*UpdateOrderUserResponse, error)
-	DeleteOrderUser(ctx context.Context, in *DeleteOrderUserRequest, opts ...grpc.CallOption) (*DeleteOrderUserResponse, error)
-	SetupProportion(ctx context.Context, in *SetupProportionRequest, opts ...grpc.CallOption) (*SetupProportionResponse, error)
+	GetOrderUsersByOrder(ctx context.Context, in *GetOrderUsersByOrderRequest, opts ...grpc.CallOption) (*GetOrderUsersByOrderResponse, error)
 	SetupRevenueAddress(ctx context.Context, in *SetupRevenueAddressRequest, opts ...grpc.CallOption) (*SetupRevenueAddressResponse, error)
 	SetupAutoPay(ctx context.Context, in *SetupAutoPayRequest, opts ...grpc.CallOption) (*SetupAutoPayResponse, error)
 }
@@ -55,24 +43,6 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) CreateOrderUser(ctx context.Context, in *CreateOrderUserRequest, opts ...grpc.CallOption) (*CreateOrderUserResponse, error) {
-	out := new(CreateOrderUserResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateOrderUser_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) CreateOrderUsers(ctx context.Context, in *CreateOrderUsersRequest, opts ...grpc.CallOption) (*CreateOrderUsersResponse, error) {
-	out := new(CreateOrderUsersResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateOrderUsers_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) GetOrderUser(ctx context.Context, in *GetOrderUserRequest, opts ...grpc.CallOption) (*GetOrderUserResponse, error) {
 	out := new(GetOrderUserResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetOrderUser_FullMethodName, in, out, opts...)
@@ -82,45 +52,9 @@ func (c *gatewayClient) GetOrderUser(ctx context.Context, in *GetOrderUserReques
 	return out, nil
 }
 
-func (c *gatewayClient) GetOrderUsers(ctx context.Context, in *GetOrderUsersRequest, opts ...grpc.CallOption) (*GetOrderUsersResponse, error) {
-	out := new(GetOrderUsersResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetOrderUsers_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) ExistOrderUserConds(ctx context.Context, in *ExistOrderUserCondsRequest, opts ...grpc.CallOption) (*ExistOrderUserCondsResponse, error) {
-	out := new(ExistOrderUserCondsResponse)
-	err := c.cc.Invoke(ctx, Gateway_ExistOrderUserConds_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) UpdateOrderUser(ctx context.Context, in *UpdateOrderUserRequest, opts ...grpc.CallOption) (*UpdateOrderUserResponse, error) {
-	out := new(UpdateOrderUserResponse)
-	err := c.cc.Invoke(ctx, Gateway_UpdateOrderUser_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) DeleteOrderUser(ctx context.Context, in *DeleteOrderUserRequest, opts ...grpc.CallOption) (*DeleteOrderUserResponse, error) {
-	out := new(DeleteOrderUserResponse)
-	err := c.cc.Invoke(ctx, Gateway_DeleteOrderUser_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) SetupProportion(ctx context.Context, in *SetupProportionRequest, opts ...grpc.CallOption) (*SetupProportionResponse, error) {
-	out := new(SetupProportionResponse)
-	err := c.cc.Invoke(ctx, Gateway_SetupProportion_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetOrderUsersByOrder(ctx context.Context, in *GetOrderUsersByOrderRequest, opts ...grpc.CallOption) (*GetOrderUsersByOrderResponse, error) {
+	out := new(GetOrderUsersByOrderResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetOrderUsersByOrder_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -149,14 +83,8 @@ func (c *gatewayClient) SetupAutoPay(ctx context.Context, in *SetupAutoPayReques
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateOrderUser(context.Context, *CreateOrderUserRequest) (*CreateOrderUserResponse, error)
-	CreateOrderUsers(context.Context, *CreateOrderUsersRequest) (*CreateOrderUsersResponse, error)
 	GetOrderUser(context.Context, *GetOrderUserRequest) (*GetOrderUserResponse, error)
-	GetOrderUsers(context.Context, *GetOrderUsersRequest) (*GetOrderUsersResponse, error)
-	ExistOrderUserConds(context.Context, *ExistOrderUserCondsRequest) (*ExistOrderUserCondsResponse, error)
-	UpdateOrderUser(context.Context, *UpdateOrderUserRequest) (*UpdateOrderUserResponse, error)
-	DeleteOrderUser(context.Context, *DeleteOrderUserRequest) (*DeleteOrderUserResponse, error)
-	SetupProportion(context.Context, *SetupProportionRequest) (*SetupProportionResponse, error)
+	GetOrderUsersByOrder(context.Context, *GetOrderUsersByOrderRequest) (*GetOrderUsersByOrderResponse, error)
 	SetupRevenueAddress(context.Context, *SetupRevenueAddressRequest) (*SetupRevenueAddressResponse, error)
 	SetupAutoPay(context.Context, *SetupAutoPayRequest) (*SetupAutoPayResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -166,29 +94,11 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateOrderUser(context.Context, *CreateOrderUserRequest) (*CreateOrderUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateOrderUser not implemented")
-}
-func (UnimplementedGatewayServer) CreateOrderUsers(context.Context, *CreateOrderUsersRequest) (*CreateOrderUsersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateOrderUsers not implemented")
-}
 func (UnimplementedGatewayServer) GetOrderUser(context.Context, *GetOrderUserRequest) (*GetOrderUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrderUser not implemented")
 }
-func (UnimplementedGatewayServer) GetOrderUsers(context.Context, *GetOrderUsersRequest) (*GetOrderUsersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetOrderUsers not implemented")
-}
-func (UnimplementedGatewayServer) ExistOrderUserConds(context.Context, *ExistOrderUserCondsRequest) (*ExistOrderUserCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistOrderUserConds not implemented")
-}
-func (UnimplementedGatewayServer) UpdateOrderUser(context.Context, *UpdateOrderUserRequest) (*UpdateOrderUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrderUser not implemented")
-}
-func (UnimplementedGatewayServer) DeleteOrderUser(context.Context, *DeleteOrderUserRequest) (*DeleteOrderUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteOrderUser not implemented")
-}
-func (UnimplementedGatewayServer) SetupProportion(context.Context, *SetupProportionRequest) (*SetupProportionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetupProportion not implemented")
+func (UnimplementedGatewayServer) GetOrderUsersByOrder(context.Context, *GetOrderUsersByOrderRequest) (*GetOrderUsersByOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrderUsersByOrder not implemented")
 }
 func (UnimplementedGatewayServer) SetupRevenueAddress(context.Context, *SetupRevenueAddressRequest) (*SetupRevenueAddressResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetupRevenueAddress not implemented")
@@ -209,42 +119,6 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_CreateOrderUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateOrderUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CreateOrderUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_CreateOrderUser_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateOrderUser(ctx, req.(*CreateOrderUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_CreateOrderUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateOrderUsersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CreateOrderUsers(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_CreateOrderUsers_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateOrderUsers(ctx, req.(*CreateOrderUsersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_GetOrderUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetOrderUserRequest)
 	if err := dec(in); err != nil {
@@ -263,92 +137,20 @@ func _Gateway_GetOrderUser_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetOrderUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetOrderUsersRequest)
+func _Gateway_GetOrderUsersByOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrderUsersByOrderRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetOrderUsers(ctx, in)
+		return srv.(GatewayServer).GetOrderUsersByOrder(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetOrderUsers_FullMethodName,
+		FullMethod: Gateway_GetOrderUsersByOrder_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetOrderUsers(ctx, req.(*GetOrderUsersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_ExistOrderUserConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistOrderUserCondsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).ExistOrderUserConds(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_ExistOrderUserConds_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).ExistOrderUserConds(ctx, req.(*ExistOrderUserCondsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_UpdateOrderUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateOrderUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).UpdateOrderUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_UpdateOrderUser_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateOrderUser(ctx, req.(*UpdateOrderUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_DeleteOrderUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteOrderUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).DeleteOrderUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_DeleteOrderUser_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeleteOrderUser(ctx, req.(*DeleteOrderUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_SetupProportion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetupProportionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).SetupProportion(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_SetupProportion_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).SetupProportion(ctx, req.(*SetupProportionRequest))
+		return srv.(GatewayServer).GetOrderUsersByOrder(ctx, req.(*GetOrderUsersByOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -397,36 +199,12 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateOrderUser",
-			Handler:    _Gateway_CreateOrderUser_Handler,
-		},
-		{
-			MethodName: "CreateOrderUsers",
-			Handler:    _Gateway_CreateOrderUsers_Handler,
-		},
-		{
 			MethodName: "GetOrderUser",
 			Handler:    _Gateway_GetOrderUser_Handler,
 		},
 		{
-			MethodName: "GetOrderUsers",
-			Handler:    _Gateway_GetOrderUsers_Handler,
-		},
-		{
-			MethodName: "ExistOrderUserConds",
-			Handler:    _Gateway_ExistOrderUserConds_Handler,
-		},
-		{
-			MethodName: "UpdateOrderUser",
-			Handler:    _Gateway_UpdateOrderUser_Handler,
-		},
-		{
-			MethodName: "DeleteOrderUser",
-			Handler:    _Gateway_DeleteOrderUser_Handler,
-		},
-		{
-			MethodName: "SetupProportion",
-			Handler:    _Gateway_SetupProportion_Handler,
+			MethodName: "GetOrderUsersByOrder",
+			Handler:    _Gateway_GetOrderUsersByOrder_Handler,
 		},
 		{
 			MethodName: "SetupRevenueAddress",

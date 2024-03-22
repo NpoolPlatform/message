@@ -1,0 +1,173 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/miningpool/gw/v1/pool/pool.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Coin": {
+      "type": "object",
+      "properties": {
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "RevenueTypes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RevenueType"
+          }
+        },
+        "FeeRate": {
+          "type": "number",
+          "format": "float"
+        },
+        "FixedRevenueAble": {
+          "type": "boolean"
+        },
+        "Threshold": {
+          "type": "number",
+          "format": "float"
+        },
+        "Remark": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "DefaultCoinType",
+        "BitCoin"
+      ],
+      "default": "DefaultCoinType"
+    },
+    "v1FractionRule": {
+      "type": "object",
+      "properties": {
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "WithdrawInterval": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MinAmount": {
+          "type": "number",
+          "format": "float"
+        },
+        "WithdrawRate": {
+          "type": "number",
+          "format": "float"
+        }
+      }
+    },
+    "v1GetPoolResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Pool"
+        }
+      }
+    },
+    "v1GetPoolsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Pool"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1MiningpoolType": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningpoolType",
+        "F2Pool",
+        "AntPool"
+      ],
+      "default": "DefaultMiningpoolType"
+    },
+    "v1Pool": {
+      "type": "object",
+      "properties": {
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Site": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coin"
+          }
+        },
+        "FractionRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FractionRule"
+          }
+        }
+      }
+    },
+    "v1RevenueType": {
+      "type": "string",
+      "enum": [
+        "FPPS",
+        "PPLNS"
+      ],
+      "default": "FPPS"
+    }
+  }
+}

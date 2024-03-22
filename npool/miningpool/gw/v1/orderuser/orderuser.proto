@@ -2,100 +2,16 @@ syntax = "proto3";
 
 package miningpool.gateway.orderuser.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/orderuser";
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/orderuser";
 
-import "npool/basetypes/v1/conds.proto";
-import "npool/basetypes/miningpool/v1/enums.proto";
+import "npool/miningpool/mw/v1/orderuser/orderuser.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateOrderUser     (CreateOrderUserRequest)       returns (CreateOrderUserResponse)      {}
-    rpc CreateOrderUsers    (CreateOrderUsersRequest)      returns (CreateOrderUsersResponse)     {}
     rpc GetOrderUser        (GetOrderUserRequest)          returns (GetOrderUserResponse)         {}
-    rpc GetOrderUsers       (GetOrderUsersRequest)         returns (GetOrderUsersResponse)        {}
-    rpc ExistOrderUserConds (ExistOrderUserCondsRequest)   returns (ExistOrderUserCondsResponse)  {}
-    rpc UpdateOrderUser     (UpdateOrderUserRequest)       returns (UpdateOrderUserResponse)      {}
-    rpc DeleteOrderUser     (DeleteOrderUserRequest)       returns (DeleteOrderUserResponse)      {}
-    rpc SetupProportion     (SetupProportionRequest)       returns (SetupProportionResponse)      {}
+    rpc GetOrderUsersByOrder  (GetOrderUsersByOrderRequest) returns (GetOrderUsersByOrderResponse) {}
     rpc SetupRevenueAddress (SetupRevenueAddressRequest)   returns (SetupRevenueAddressResponse)  {}
     rpc SetupAutoPay        (SetupAutoPayRequest)          returns (SetupAutoPayResponse)         {}
-}
-
-message OrderUserReq {
-    optional uint32    ID                  = 10;
-    optional string    EntID               = 20;
-    optional string    Name                = 30;
-    optional string    RootUserID          = 40;
-    optional string    GoodUserID          = 50;
-    optional string    OrderID             = 60;
-    optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 70;
-    optional basetypes.miningpool.v1.CoinType CoinType = 80;
-    optional float     Proportion          = 90;
-    optional string    RevenueAddress      = 100;
-    optional string    ReadPageLink        = 110;
-    optional bool      AutoPay             = 120;
-}
-
-message OrderUser {
-    // @inject_tag: sql:"id"
-    uint32               ID                = 10;
-    // @inject_tag: sql:"ent_id"
-    string               EntID             = 20;
-    // @inject_tag: sql:"name"
-    string               Name              = 30;
-    // @inject_tag: sql:"root_user_id"
-    string               RootUserID        = 40;
-    // @inject_tag: sql:"good_user_id"
-    string               GoodUserID        = 50;
-    // @inject_tag: sql:"order_id"
-    string               OrderID           = 60;
-    // @inject_tag: sql:"miningpool_type"
-    string               MiningpoolTypeStr = 70;
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 71;
-    // @inject_tag: sql:"coin_type"
-    string               CoinTypeStr       = 80;
-    basetypes.miningpool.v1.CoinType CoinType = 81;
-    // @inject_tag: sql:"proportion"
-    float                Proportion        = 90;
-    // @inject_tag: sql:"revenue_address"
-    string               RevenueAddress    = 100;
-    // @inject_tag: sql:"read_page_link"
-    string               ReadPageLink      = 110;
-    // @inject_tag: sql:"auto_pay"
-    bool                 AutoPay           = 120;
-    // @inject_tag: sql:"created_at"
-    uint32               CreatedAt         = 130;
-    // @inject_tag: sql:"updated_at"
-    uint32               UpdatedAt         = 140;
-}
-
-message Conds {
-    optional basetypes.v1.StringVal      EntID           = 10;
-    optional basetypes.v1.StringVal      Name            = 20;
-    optional basetypes.v1.StringVal      RootUserID      = 30;
-    optional basetypes.v1.StringVal      GoodUserID      = 40;
-    optional basetypes.v1.StringVal      OrderID         = 50;
-    optional basetypes.v1.Uint32Val      MiningpoolType  = 60;
-    optional basetypes.v1.Uint32Val      CoinType        = 70;
-    optional basetypes.v1.StringVal      RevenueAddress  = 80;
-    optional basetypes.v1.BoolVal        AutoPay         = 90;
-    optional basetypes.v1.StringSliceVal EntIDs          = 100;
-}
-
-message CreateOrderUserRequest {
-    OrderUserReq Info = 10;
-}
-
-message CreateOrderUserResponse {
-    OrderUser Info = 10;
-}
-
-message CreateOrderUsersRequest {
-   repeated OrderUserReq Infos = 10;
-}
-
-message CreateOrderUsersResponse {
-    repeated OrderUser Infos = 10;
 }
 
 message GetOrderUserRequest {
@@ -103,52 +19,18 @@ message GetOrderUserRequest {
 }
 
 message GetOrderUserResponse {
-    OrderUser Info = 10;
+    miningpool.middleware.orderuser.v1.OrderUser Info = 10;
 }
 
-message GetOrderUsersRequest {
-    Conds Conds  = 10;
+message GetOrderUsersByOrderRequest {
+    string OrderID  = 10;
     int32 Offset = 20;
     int32 Limit  = 30;
 }
 
-message GetOrderUsersResponse {
-    repeated OrderUser Infos = 10;
+message GetOrderUsersByOrderResponse {
+    repeated miningpool.middleware.orderuser.v1.OrderUser Infos = 10;
     uint32      Total = 20;
-}
-
-message ExistOrderUserCondsRequest {
-    Conds Conds  = 10;
-}
-
-message ExistOrderUserCondsResponse {
-    bool Info = 10;
-}
-
-
-message UpdateOrderUserRequest {
-    OrderUserReq Info = 10;
-}
-
-message UpdateOrderUserResponse {
-    OrderUser Info = 10;
-}
-
-message DeleteOrderUserRequest {
-    OrderUserReq Info = 10;
-}
-
-message DeleteOrderUserResponse {
-    OrderUser Info = 10;
-}
-
-message SetupProportionRequest{
-    string EntID      = 10;
-    float  Proportion = 20;
-}
-
-message SetupProportionResponse{
-    OrderUser Info = 10;
 }
 
 message SetupRevenueAddressRequest{
@@ -157,7 +39,7 @@ message SetupRevenueAddressRequest{
 }
 
 message SetupRevenueAddressResponse{
-    OrderUser Info = 10;
+    miningpool.middleware.orderuser.v1.OrderUser Info = 10;
 }
 
 message SetupAutoPayRequest{
@@ -166,5 +48,5 @@ message SetupAutoPayRequest{
 }
 
 message SetupAutoPayResponse{
-    OrderUser Info = 10;
+    miningpool.middleware.orderuser.v1.OrderUser Info = 10;
 }

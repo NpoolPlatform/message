@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package miningpool.gateway.pool.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/pool";
+
+import "npool/basetypes/miningpool/v1/enums.proto";
+
+// Service Name
+service Gateway {
+    rpc GetPools       (GetPoolsRequest)     returns (GetPoolsResponse)      {}
+    rpc GetPool        (GetPoolRequest)     returns (GetPoolResponse)      {}
+}
+message Pool {
+    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 10;
+    string                Name              = 20;
+    string                Site              = 30;
+    string                Description       = 40;
+    repeated Coin         Coins             = 50;
+    repeated FractionRule FractionRules     = 60;
+}
+
+message Coin {
+    basetypes.miningpool.v1.CoinType                CoinType     = 10;
+    repeated basetypes.miningpool.v1.RevenueType    RevenueTypes = 20;
+    float                FeeRate           = 30;
+    bool                 FixedRevenueAble  = 40;
+    float                Threshold         = 50;
+    string               Remark            = 60;
+}
+
+message FractionRule {
+    basetypes.miningpool.v1.CoinType CoinType = 10;
+    uint32               WithdrawInterval     = 20;
+    float                MinAmount            = 30;
+    float                WithdrawRate         = 40;
+}
+
+message GetPoolsRequest {
+    int32 Offset = 10;
+    int32 Limit  = 20;
+}
+
+message GetPoolsResponse {
+    repeated Pool Infos = 10;
+    uint32        Total = 20;
+}
+
+message GetPoolRequest {
+    string EntID = 10;
+}
+
+message GetPoolResponse {
+    Pool Info = 10;
+}

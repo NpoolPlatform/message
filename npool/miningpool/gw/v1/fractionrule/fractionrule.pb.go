@@ -7,6 +7,7 @@
 package fractionrule
 
 import (
+	fractionrule "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/fractionrule"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -80,8 +81,8 @@ type GetFractionRulesResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Infos []*FractionRule `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
-	Total uint32          `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
+	Infos []*fractionrule.FractionRule `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Total uint32                       `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
 }
 
 func (x *GetFractionRulesResponse) Reset() {
@@ -116,7 +117,7 @@ func (*GetFractionRulesResponse) Descriptor() ([]byte, []int) {
 	return file_npool_miningpool_gw_v1_fractionrule_fractionrule_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *GetFractionRulesResponse) GetInfos() []*FractionRule {
+func (x *GetFractionRulesResponse) GetInfos() []*fractionrule.FractionRule {
 	if x != nil {
 		return x.Infos
 	}
@@ -167,7 +168,7 @@ var file_npool_miningpool_gw_v1_fractionrule_fractionrule_proto_rawDesc = []byte
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x46, 0x5a, 0x44, 0x67, 0x69, 0x74, 0x68,
 	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74,
 	0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f,
-	0x6f, 0x6c, 0x2f, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6d, 0x77,
+	0x6f, 0x6c, 0x2f, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x67, 0x77,
 	0x2f, 0x76, 0x31, 0x2f, 0x66, 0x72, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x72, 0x75, 0x6c, 0x65,
 	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
@@ -186,9 +187,9 @@ func file_npool_miningpool_gw_v1_fractionrule_fractionrule_proto_rawDescGZIP() [
 
 var file_npool_miningpool_gw_v1_fractionrule_fractionrule_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_npool_miningpool_gw_v1_fractionrule_fractionrule_proto_goTypes = []interface{}{
-	(*GetFractionRulesRequest)(nil),  // 0: miningpool.gateway.fractionrule.v1.GetFractionRulesRequest
-	(*GetFractionRulesResponse)(nil), // 1: miningpool.gateway.fractionrule.v1.GetFractionRulesResponse
-	(*FractionRule)(nil),             // 2: miningpool.middleware.fractionrule.v1.FractionRule
+	(*GetFractionRulesRequest)(nil),   // 0: miningpool.gateway.fractionrule.v1.GetFractionRulesRequest
+	(*GetFractionRulesResponse)(nil),  // 1: miningpool.gateway.fractionrule.v1.GetFractionRulesResponse
+	(*fractionrule.FractionRule)(nil), // 2: miningpool.middleware.fractionrule.v1.FractionRule
 }
 var file_npool_miningpool_gw_v1_fractionrule_fractionrule_proto_depIdxs = []int32{
 	2, // 0: miningpool.gateway.fractionrule.v1.GetFractionRulesResponse.Infos:type_name -> miningpool.middleware.fractionrule.v1.FractionRule
@@ -206,7 +207,6 @@ func file_npool_miningpool_gw_v1_fractionrule_fractionrule_proto_init() {
 	if File_npool_miningpool_gw_v1_fractionrule_fractionrule_proto != nil {
 		return
 	}
-	file_npool_miningpool_mw_v1_fractionrule_fractionrule_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_npool_miningpool_gw_v1_fractionrule_fractionrule_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFractionRulesRequest); i {

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package miningpool.gateway.fractionrule.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/fractionrule";
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/fractionrule";
 
 import "npool/miningpool/mw/v1/fractionrule/fractionrule.proto";
 
