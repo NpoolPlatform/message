@@ -59,7 +59,6 @@ enum Prefix {
     PrefixCreateInspireAchievementStatement = 480;
     PrefixCreateInspireAchievement = 490;
 
-    PrefixCreateDeviceInfo     = 500;
     PrefixCreateVendorBrand    = 510;
     PrefixCreateVendorLocation = 520;
     PrefixCreateGood           = 530;
