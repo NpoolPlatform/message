@@ -20,7 +20,7 @@ message DeviceTypeReq {
     optional uint32 ID              = 9;
     optional string EntID           = 10;
     optional string Type            = 20;
-    optional string Manufacturer    = 30;
+    optional string ManufacturerID = 30;
     optional uint32 PowerConsumption = 40;
     optional uint32 ShipmentAt      = 50;
 }
@@ -54,10 +54,10 @@ message DeviceType {
 }
 
 message Conds {
-  optional basetypes.v1.Uint32Val ID = 9;
-  optional basetypes.v1.StringVal EntID = 10;
-  optional basetypes.v1.StringVal Type = 20;
-  optional basetypes.v1.StringVal Manufacturer = 30;
+    optional basetypes.v1.Uint32Val ID           = 9;
+    optional basetypes.v1.StringVal EntID        = 10;
+    optional basetypes.v1.StringVal Type         = 20;
+    optional basetypes.v1.StringVal ManufacturerID = 30;
 }
 
 message CreateDeviceInfoRequest { DeviceInfoReq Info = 10; }

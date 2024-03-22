@@ -29,7 +29,7 @@
         "Type": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Manufacturer": {
+        "ManufacturerID": {
           "$ref": "#/definitions/v1StringVal"
         }
       }
@@ -146,7 +146,7 @@
         "Type": {
           "type": "string"
         },
-        "Manufacturer": {
+        "ManufacturerID": {
           "type": "string"
         },
         "PowerConsumption": {
