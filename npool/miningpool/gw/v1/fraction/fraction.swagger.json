@@ -15,7 +15,104 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/create/fraction": {
+      "post": {
+        "operationId": "Middleware_CreateFraction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateFractionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateFractionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/get/fraction": {
+      "post": {
+        "operationId": "Middleware_GetFraction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetFractionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetFractionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/get/fractions": {
+      "post": {
+        "operationId": "Middleware_GetFractions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetOrderFractionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetOrderFractionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -41,6 +138,14 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1CreateFractionRequest": {
+      "type": "object",
+      "properties": {
+        "OrderUserID": {
+          "type": "string"
         }
       }
     },
@@ -89,11 +194,35 @@
         }
       }
     },
+    "v1GetFractionRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
     "v1GetFractionResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Fraction"
+        }
+      }
+    },
+    "v1GetOrderFractionsRequest": {
+      "type": "object",
+      "properties": {
+        "OrderUserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },

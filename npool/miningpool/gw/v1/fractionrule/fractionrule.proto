@@ -4,12 +4,18 @@ package miningpool.gateway.fractionrule.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/fractionrule";
 
+import "google/api/annotations.proto";;
 import "npool/miningpool/mw/v1/fractionrule/fractionrule.proto";
 
 
 // Service Name
 service Gateway {
-    rpc GetFractionRules       (GetFractionRulesRequest)       returns (GetFractionRulesResponse)       {}
+    rpc GetFractionRules       (GetFractionRulesRequest)       returns (GetFractionRulesResponse)       {
+        option (google.api.http) = {
+            post: "/v1/get/fractionrules"
+            body: "*"
+        };
+    }
 }
 
 message GetFractionRulesRequest {

@@ -4,13 +4,29 @@ package miningpool.gateway.fraction.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/fraction";
 
+import "google/api/annotations.proto";;
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name  
 service Middleware {
-    rpc CreateFraction     (CreateFractionRequest)   returns (CreateFractionResponse)    {}
-    rpc GetFraction        (GetFractionRequest)      returns (GetFractionResponse)       {}
-    rpc GetFractions       (GetOrderFractionsRequest)     returns (GetOrderFractionsResponse)      {}
+    rpc CreateFraction     (CreateFractionRequest)   returns (CreateFractionResponse)    {
+        option (google.api.http) = {
+            post: "/v1/create/fraction"
+            body: "*"
+        };
+    }
+    rpc GetFraction        (GetFractionRequest)      returns (GetFractionResponse)       {
+        option (google.api.http) = {
+            post: "/v1/get/fraction"
+            body: "*"
+        };
+    }
+    rpc GetFractions       (GetOrderFractionsRequest)     returns (GetOrderFractionsResponse)      {
+        option (google.api.http) = {
+            post: "/v1/get/fractions"
+            body: "*"
+        };
+    }
 }
 
 message Fraction {

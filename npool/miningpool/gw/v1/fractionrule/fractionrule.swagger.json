@@ -15,8 +15,54 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/get/fractionrules": {
+      "post": {
+        "operationId": "Gateway_GetFractionRules",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/miningpoolgatewayfractionrulev1GetFractionRulesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/miningpoolgatewayfractionrulev1GetFractionRulesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
   "definitions": {
+    "miningpoolgatewayfractionrulev1GetFractionRulesRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "miningpoolgatewayfractionrulev1GetFractionRulesResponse": {
       "type": "object",
       "properties": {
