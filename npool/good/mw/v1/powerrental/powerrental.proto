@@ -61,7 +61,7 @@ message PowerRental {
     // @inject_tag: sql:"device_power_consumption"
     uint32 DevicePowerConsumption = 80;
     // @inject_tag: sql:"device_shipment_at"
-    string DeviceShipmentAt = 90;
+    uint32 DeviceShipmentAt = 90;
 
     // @inject_tag: sql:"vendor_location_id"
     string VendorLocationID = 100;
