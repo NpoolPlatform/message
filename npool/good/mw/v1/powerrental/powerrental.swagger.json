@@ -127,10 +127,6 @@
     "v1GoodCoinInfo": {
       "type": "object",
       "properties": {
-        "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
-        },
         "CoinTypeID": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
