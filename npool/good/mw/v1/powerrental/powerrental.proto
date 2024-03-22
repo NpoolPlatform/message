@@ -49,47 +49,68 @@ message PowerRental {
     string EntID = 20;
     // @inject_tag: sql:"good_id"
     string GoodID = 30;
+
     // @inject_tag: sql:"device_type_id"
     string DeviceTypeID = 40;
+    // @inject_tag: sql:"device_type"
+    string DeviceType = 50;
+    // @inject_tag: sql:"device_manufacturer_name"
+    string DeviceManufacturerName = 60;
+    // @inject_tag: sql:"device_manufacturer_logo"
+    string DeviceManufacturerLogo = 70;
+    // @inject_tag: sql:"device_power_consumption"
+    uint32 DevicePowerConsumption = 80;
+    // @inject_tag: sql:"device_shipment_at"
+    string DeviceShipmentAt = 90;
+
     // @inject_tag: sql:"vendor_location_id"
-    string VendorLocationID = 50;
+    string VendorLocationID = 100;
+    // @inject_tag: sql:"vendor_brand"
+    string VendorBrand = 110;
+    // @inject_tag: sql:"vendor_logo"
+    string VendorLogo = 120;
+    // @inject_tag: sql:"vendor_country"
+    string VendorCountry = 130;
+    // @inject_tag: sql:"vendor_province"
+    string VendorProvince = 140;
+
     // @inject_tag: sql:"unit_price"
-    string UnitPrice = 60;
+    string UnitPrice = 150;
     // @inject_tag: sql:"quantity_unit"
-    string QuantityUnit = 70;
+    string QuantityUnit = 160;
     // @inject_tag: sql:"quantity_unit_amount"
-    string QuantityUnitAmount = 80;
+    string QuantityUnitAmount = 170;
     // @inject_tag: sql:"delivery_at"
-    uint32 DeliveryAt = 90;
+    uint32 DeliveryAt = 180;
     // @inject_tag: sql:"unit_lock_deposit"
-    string UnitLockDeposit = 100;
+    string UnitLockDeposit = 190;
     // @inject_tag: sql:"duration_type"
-    string DurationTypeStr = 110;
-    basetypes.good.v1.GoodDurationType DurationType = 120;
+    string DurationTypeStr = 200;
+    basetypes.good.v1.GoodDurationType DurationType = 210;
 
     // @inject_tag: sql:"good_type"
-    string GoodTypeStr = 130;
-    basetypes.good.v1.GoodType GoodType = 140;
+    string GoodTypeStr = 220;
+    basetypes.good.v1.GoodType GoodType = 230;
     // @inject_tag: sql:"benefit_type"
-    string BenefitTypeStr = 150;
-    basetypes.good.v1.BenefitType BenefitType = 160;
+    string BenefitTypeStr = 240;
+    basetypes.good.v1.BenefitType BenefitType = 250;
     // @inject_tag: sql:"name"
-    string Name = 180;
+    string Name = 260;
     // @inject_tag: sql:"service_start_at"
-    uint32 ServiceStartAt = 190;
+    uint32 ServiceStartAt = 270;
     // @inject_tag: sql:"start_mode"
-    string StartModeStr = 200;
-    basetypes.good.v1.GoodStartMode StartMode = 210;
+    string StartModeStr = 280;
+    basetypes.good.v1.GoodStartMode StartMode = 290;
     // @inject_tag: sql:"test_only"
-    bool TestOnly = 220;
+    bool TestOnly = 300;
     // @inject_tag: sql:"benefit_interval_hours"
-    uint32 BenefitIntervalHours = 230;
+    uint32 BenefitIntervalHours = 310;
     // @inject_tag: sql:"purchasable"
-    bool Purchasable = 240;
+    bool Purchasable = 320;
     // @inject_tag: sql:"online"
-    bool Online = 250;
+    bool Online = 330;
 
-    repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 260;
+    repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 500;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
