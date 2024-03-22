@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package miningpool.middleware.pool.v1;
+package miningpool.middleware.app.pool.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/pool";
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/app/pool";
 
 import "npool/basetypes/v1/conds.proto";
 
