@@ -1,0 +1,153 @@
+syntax = "proto3";
+
+package good.middleware.powerrental.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/powerrental";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/good/v1/enums.proto";
+import "npool/good/mw/v1/good/coin/coin.proto";
+
+service Middleware {
+    rpc CreatePowerRental (CreatePowerRentalRequest) returns (CreatePowerRentalResponse) {}
+    rpc UpdatePowerRental (UpdatePowerRentalRequest) returns (UpdatePowerRentalResponse) {}
+    rpc GetPowerRental (GetPowerRentalRequest) returns (GetPowerRentalResponse) {}
+    rpc GetPowerRentals (GetPowerRentalsRequest) returns (GetPowerRentalsResponse) {}
+    rpc DeletePowerRental (DeletePowerRentalRequest) returns (DeletePowerRentalResponse) {}
+}
+
+message PowerRentalReq {
+    // Base of power rental
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string GoodID = 30;
+    optional string DeviceTypeID = 40;
+    optional string VendorLocationID = 50;
+    optional string UnitPrice = 60;
+    optional string QuantityUnit = 70;
+    optional string QuantityUnitAmount = 80;
+    optional uint32 DeliveryAt = 90;
+    optional string UnitLockDeposit = 100;
+    optional basetypes.good.v1.GoodDurationType DurationType = 110;
+
+    // Good information
+    optional basetypes.good.v1.GoodType GoodType = 120;
+    optional basetypes.good.v1.BenefitType BenefitType = 130;
+    optional string Name = 140;
+    optional uint32 ServiceStartAt = 150;
+    optional basetypes.good.v1.GoodStartMode StartMode = 160;
+    optional bool TestOnly = 170;
+    optional uint32 BenefitIntervalHours = 180;
+    optional bool Purchasable = 190;
+    optional bool Online = 200;
+}
+
+message PowerRental {
+    // @inject_tag: sql:"id"
+    uint32 ID = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID = 20;
+    // @inject_tag: sql:"good_id"
+    string GoodID = 30;
+    // @inject_tag: sql:"device_type_id"
+    string DeviceTypeID = 40;
+    // @inject_tag: sql:"vendor_location_id"
+    string VendorLocationID = 50;
+    // @inject_tag: sql:"unit_price"
+    string UnitPrice = 60;
+    // @inject_tag: sql:"quantity_unit"
+    string QuantityUnit = 70;
+    // @inject_tag: sql:"quantity_unit_amount"
+    string QuantityUnitAmount = 80;
+    // @inject_tag: sql:"delivery_at"
+    uint32 DeliveryAt = 90;
+    // @inject_tag: sql:"unit_lock_deposit"
+    string UnitLockDeposit = 100;
+    // @inject_tag: sql:"duration_type"
+    string DurationTypeStr = 110;
+    basetypes.good.v1.GoodDurationType DurationType = 120;
+
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 130;
+    basetypes.good.v1.GoodType GoodType = 140;
+    // @inject_tag: sql:"benefit_type"
+    string BenefitTypeStr = 150;
+    basetypes.good.v1.BenefitType BenefitType = 160;
+    // @inject_tag: sql:"name"
+    string Name = 180;
+    // @inject_tag: sql:"service_start_at"
+    uint32 ServiceStartAt = 190;
+    // @inject_tag: sql:"start_mode"
+    string StartModeStr = 200;
+    basetypes.good.v1.GoodStartMode StartMode = 210;
+    // @inject_tag: sql:"test_only"
+    bool TestOnly = 220;
+    // @inject_tag: sql:"benefit_interval_hours"
+    uint32 BenefitIntervalHours = 230;
+    // @inject_tag: sql:"purchasable"
+    bool Purchasable = 240;
+    // @inject_tag: sql:"online"
+    bool Online = 250;
+
+    repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 260;
+
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.Uint32Val      ID        = 10;
+    optional basetypes.v1.StringVal      EntID     = 20;
+    optional basetypes.v1.StringVal      AppID     = 30;
+    optional basetypes.v1.StringVal      GoodID    = 40;
+    optional basetypes.v1.StringSliceVal GoodIDs   = 50;
+    optional basetypes.v1.Uint32Val      GoodType  = 60;
+    optional basetypes.v1.Uint32SliceVal GoodTypes = 70;
+    optional basetypes.v1.StringVal      CoinTypeID = 80;
+    optional basetypes.v1.StringSliceVal CoinTypeIDs = 90;
+}
+
+message CreatePowerRentalRequest {
+    PowerRentalReq Info = 10;
+}
+
+message CreatePowerRentalResponse {
+    PowerRental Info = 10;
+}
+
+message UpdatePowerRentalRequest {
+    PowerRentalReq Info = 10;
+}
+
+message UpdatePowerRentalResponse {
+    PowerRental Info = 10;
+}
+
+message GetPowerRentalRequest {
+    string GoodID = 10;
+}
+
+message GetPowerRentalResponse {
+    PowerRental Info = 10;
+}
+
+message GetPowerRentalsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetPowerRentalsResponse {
+    repeated PowerRental Infos = 10;
+    uint32               Total = 20;
+}
+
+message DeletePowerRentalRequest {
+    PowerRentalReq Info = 10;
+}
+
+message DeletePowerRentalResponse {
+    PowerRental Info = 10;
+}
