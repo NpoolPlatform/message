@@ -5,6 +5,7 @@ package good.middleware.device.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/device";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/good/mw/v1/device/poster/poster.proto";
 
 // Service Name
 service Middleware {
@@ -37,12 +38,13 @@ message DeviceType {
     uint32          PowerConsumption = 40;
     // @inject_tag: sql:"shipment_at"
     uint32          ShipmentAt      = 50;
+
+    repeated good.middleware.device.poster.v1.PosterInfo Posters = 60;
+
     // @inject_tag: sql:"created_at"
-    uint32          CreatedAt       = 70;
+    uint32          CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32          UpdatedAt       = 80;
-    // @inject_tag: sql:"deleted_at"
-    uint32          DeletedAt       = 90;
+    uint32          UpdatedAt       = 1010;
 }
 
 message Conds {
