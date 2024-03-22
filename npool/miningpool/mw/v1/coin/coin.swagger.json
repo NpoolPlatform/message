@@ -91,10 +91,6 @@
             "$ref": "#/definitions/v1RevenueType"
           }
         },
-        "Site": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"site\""
-        },
         "FeeRate": {
           "type": "number",
           "format": "float",
@@ -147,9 +143,6 @@
             "$ref": "#/definitions/v1RevenueType"
           }
         },
-        "Site": {
-          "type": "string"
-        },
         "FeeRate": {
           "type": "number",
           "format": "float"
@@ -177,6 +170,9 @@
     "v1Conds": {
       "type": "object",
       "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -185,9 +181,6 @@
         },
         "CoinType": {
           "$ref": "#/definitions/v1Uint32Val"
-        },
-        "Site": {
-          "$ref": "#/definitions/v1StringVal"
         },
         "FixedRevenueAble": {
           "$ref": "#/definitions/v1BoolVal"

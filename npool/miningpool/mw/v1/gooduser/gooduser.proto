@@ -62,6 +62,7 @@ message GoodUser {
 }
 
 message Conds {
+    optional basetypes.v1.Uint32Val      ID             = 9;
     optional basetypes.v1.StringVal      EntID          = 10;
     optional basetypes.v1.StringVal      Name           = 20;
     optional basetypes.v1.StringVal      RootUserID     = 30;
