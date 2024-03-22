@@ -4,14 +4,35 @@ package miningpool.gateway.orderuser.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/orderuser";
 
+import "google/api/annotations.proto";;
 import "npool/miningpool/mw/v1/orderuser/orderuser.proto";
 
 // Service Name
 service Gateway {
-    rpc GetOrderUser        (GetOrderUserRequest)          returns (GetOrderUserResponse)         {}
-    rpc GetOrderUsersByOrder  (GetOrderUsersByOrderRequest) returns (GetOrderUsersByOrderResponse) {}
-    rpc SetupRevenueAddress (SetupRevenueAddressRequest)   returns (SetupRevenueAddressResponse)  {}
-    rpc SetupAutoPay        (SetupAutoPayRequest)          returns (SetupAutoPayResponse)         {}
+    rpc GetOrderUser        (GetOrderUserRequest)          returns (GetOrderUserResponse)         {
+        option (google.api.http) = {
+            post: "/v1/get/orderuser"
+            body: "*"
+        };
+    }
+    rpc GetOrderUsersByOrder  (GetOrderUsersByOrderRequest) returns (GetOrderUsersByOrderResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/orderusers/by/order"
+            body: "*"
+        };
+    }
+    rpc SetupRevenueAddress (SetupRevenueAddressRequest)   returns (SetupRevenueAddressResponse)  {
+        option (google.api.http) = {
+            post: "/v1/setup/revenueaddress"
+            body: "*"
+        };
+    }
+    rpc SetupAutoPay        (SetupAutoPayRequest)          returns (SetupAutoPayResponse)         {
+        option (google.api.http) = {
+            post: "/v1/setup/autopay"
+            body: "*"
+        };
+    }
 }
 
 message GetOrderUserRequest {

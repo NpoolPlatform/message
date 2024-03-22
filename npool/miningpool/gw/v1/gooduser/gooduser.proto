@@ -4,15 +4,41 @@ package miningpool.gateway.gooduser.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/gooduser";
 
+import "google/api/annotations.proto";;
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateGoodUser     (CreateGoodUserRequest)   returns (CreateGoodUserResponse)    {}
-    rpc GetGoodUser        (GetGoodUserRequest)      returns (GetGoodUserResponse)       {}
-    rpc GetGoodUsers       (GetGoodUsersRequest)     returns (GetGoodUsersResponse)      {}
-    rpc UpdateGoodUser     (UpdateGoodUserRequest)   returns (UpdateGoodUserResponse)    {}
-    rpc DeleteGoodUser     (DeleteGoodUserRequest)   returns (DeleteGoodUserResponse)    {}
+    rpc CreateGoodUser     (CreateGoodUserRequest)   returns (CreateGoodUserResponse)    {
+        option (google.api.http) = {
+            post: "/v1/create/gooduser"
+            body: "*"
+        };
+    }
+    rpc GetGoodUser        (GetGoodUserRequest)      returns (GetGoodUserResponse)       {
+        option (google.api.http) = {
+            post: "/v1/get/gooduser"
+            body: "*"
+        };
+    }
+    rpc GetGoodUsers       (GetGoodUsersRequest)     returns (GetGoodUsersResponse)      {
+        option (google.api.http) = {
+            post: "/v1/get/goodusers"
+            body: "*"
+        };
+    }
+    rpc UpdateGoodUser     (UpdateGoodUserRequest)   returns (UpdateGoodUserResponse)    {
+        option (google.api.http) = {
+            post: "/v1/update/gooduser"
+            body: "*"
+        };
+    }
+    rpc DeleteGoodUser     (DeleteGoodUserRequest)   returns (DeleteGoodUserResponse)    {
+        option (google.api.http) = {
+            post: "/v1/delete/gooduser"
+            body: "*"
+        };
+    }
 }
 
 message GoodUser {

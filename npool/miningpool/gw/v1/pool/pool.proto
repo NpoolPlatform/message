@@ -4,12 +4,23 @@ package miningpool.gateway.pool.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/pool";
 
+import "google/api/annotations.proto";;
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
-    rpc GetPools       (GetPoolsRequest)     returns (GetPoolsResponse)      {}
-    rpc GetPool        (GetPoolRequest)     returns (GetPoolResponse)      {}
+    rpc GetPools       (GetPoolsRequest)     returns (GetPoolsResponse)      {
+        option (google.api.http) = {
+            post: "/v1/get/pools"
+            body: "*"
+        };
+    }
+    rpc GetPool        (GetPoolRequest)     returns (GetPoolResponse)      {
+        option (google.api.http) = {
+            post: "/v1/get/pool"
+            body: "*"
+        };
+    }
 }
 message Pool {
     basetypes.miningpool.v1.MiningpoolType MiningpoolType = 10;

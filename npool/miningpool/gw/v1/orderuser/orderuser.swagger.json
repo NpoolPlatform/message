@@ -15,8 +15,145 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/get/orderuser": {
+      "post": {
+        "operationId": "Gateway_GetOrderUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/miningpoolgatewayorderuserv1GetOrderUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/miningpoolgatewayorderuserv1GetOrderUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/orderusers/by/order": {
+      "post": {
+        "operationId": "Gateway_GetOrderUsersByOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetOrderUsersByOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetOrderUsersByOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/setup/autopay": {
+      "post": {
+        "operationId": "Gateway_SetupAutoPay",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/miningpoolgatewayorderuserv1SetupAutoPayResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/miningpoolgatewayorderuserv1SetupAutoPayRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/setup/revenueaddress": {
+      "post": {
+        "operationId": "Gateway_SetupRevenueAddress",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/miningpoolgatewayorderuserv1SetupRevenueAddressResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/miningpoolgatewayorderuserv1SetupRevenueAddressRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
   "definitions": {
+    "miningpoolgatewayorderuserv1GetOrderUserRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
     "miningpoolgatewayorderuserv1GetOrderUserResponse": {
       "type": "object",
       "properties": {
@@ -25,11 +162,33 @@
         }
       }
     },
+    "miningpoolgatewayorderuserv1SetupAutoPayRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "AutoPay": {
+          "type": "boolean"
+        }
+      }
+    },
     "miningpoolgatewayorderuserv1SetupAutoPayResponse": {
       "type": "object",
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1OrderUser"
+        }
+      }
+    },
+    "miningpoolgatewayorderuserv1SetupRevenueAddressRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "RevenueAddress": {
+          "type": "string"
         }
       }
     },
@@ -75,6 +234,22 @@
         "BitCoin"
       ],
       "default": "DefaultCoinType"
+    },
+    "v1GetOrderUsersByOrderRequest": {
+      "type": "object",
+      "properties": {
+        "OrderID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
     },
     "v1GetOrderUsersByOrderResponse": {
       "type": "object",

@@ -4,15 +4,41 @@ package miningpool.gateway.rootuser.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/rootuser";
 
+import "google/api/annotations.proto";;
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateRootUser     (CreateRootUserRequest)   returns (CreateRootUserResponse)    {}
-    rpc GetRootUser        (GetRootUserRequest)      returns (GetRootUserResponse)       {}
-    rpc GetRootUsers       (GetRootUsersRequest)     returns (GetRootUsersResponse)      {}
-    rpc UpdateRootUser     (UpdateRootUserRequest)   returns (UpdateRootUserResponse)    {}
-    rpc DeleteRootUser     (DeleteRootUserRequest)   returns (DeleteRootUserResponse)    {}
+    rpc CreateRootUser     (CreateRootUserRequest)   returns (CreateRootUserResponse)    {
+        option (google.api.http) = {
+            post: "/v1/create/rootuser"
+            body: "*"
+        };
+    }
+    rpc GetRootUser        (GetRootUserRequest)      returns (GetRootUserResponse)       {
+        option (google.api.http) = {
+            post: "/v1/get/rootuser"
+            body: "*"
+        };
+    }
+    rpc GetRootUsers       (GetRootUsersRequest)     returns (GetRootUsersResponse)      {
+        option (google.api.http) = {
+            post: "/v1/get/rootusers"
+            body: "*"
+        };
+    }
+    rpc UpdateRootUser     (UpdateRootUserRequest)   returns (UpdateRootUserResponse)    {
+        option (google.api.http) = {
+            post: "/v1/update/rootuser"
+            body: "*"
+        };
+    }
+    rpc DeleteRootUser     (DeleteRootUserRequest)   returns (DeleteRootUserResponse)    {
+        option (google.api.http) = {
+            post: "/v1/delete/rootuser"
+            body: "*"
+        };
+    }
 }
 
 message RootUser {
