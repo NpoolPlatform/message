@@ -19,13 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreatePool_FullMethodName     = "/miningpool.middleware.pool.v1.Middleware/CreatePool"
-	Middleware_GetPool_FullMethodName        = "/miningpool.middleware.pool.v1.Middleware/GetPool"
-	Middleware_ExistPool_FullMethodName      = "/miningpool.middleware.pool.v1.Middleware/ExistPool"
-	Middleware_GetPools_FullMethodName       = "/miningpool.middleware.pool.v1.Middleware/GetPools"
-	Middleware_ExistPoolConds_FullMethodName = "/miningpool.middleware.pool.v1.Middleware/ExistPoolConds"
-	Middleware_UpdatePool_FullMethodName     = "/miningpool.middleware.pool.v1.Middleware/UpdatePool"
-	Middleware_DeletePool_FullMethodName     = "/miningpool.middleware.pool.v1.Middleware/DeletePool"
+	Middleware_CreatePool_FullMethodName     = "/miningpool.middleware.app.pool.v1.Middleware/CreatePool"
+	Middleware_GetPool_FullMethodName        = "/miningpool.middleware.app.pool.v1.Middleware/GetPool"
+	Middleware_ExistPool_FullMethodName      = "/miningpool.middleware.app.pool.v1.Middleware/ExistPool"
+	Middleware_GetPools_FullMethodName       = "/miningpool.middleware.app.pool.v1.Middleware/GetPools"
+	Middleware_ExistPoolConds_FullMethodName = "/miningpool.middleware.app.pool.v1.Middleware/ExistPoolConds"
+	Middleware_UpdatePool_FullMethodName     = "/miningpool.middleware.app.pool.v1.Middleware/UpdatePool"
+	Middleware_DeletePool_FullMethodName     = "/miningpool.middleware.app.pool.v1.Middleware/DeletePool"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -294,7 +294,7 @@ func _Middleware_DeletePool_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "miningpool.middleware.pool.v1.Middleware",
+	ServiceName: "miningpool.middleware.app.pool.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
