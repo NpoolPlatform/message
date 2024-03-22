@@ -116,9 +116,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"device_type_id\""
         },
-        "DeviceName": {
+        "DeviceType": {
           "type": "string",
-          "title": "@inject_tag: sql:\"device_name\""
+          "title": "@inject_tag: sql:\"device_type\""
         },
         "Manufacturer": {
           "type": "string",

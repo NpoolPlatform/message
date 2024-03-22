@@ -30,8 +30,8 @@ message Poster {
     string EntID      = 20;
     // @inject_tag: sql:"device_type_id"
     string DeviceTypeID  = 30;
-    // @inject_tag: sql:"device_name"
-    string DeviceName = 40;
+    // @inject_tag: sql:"device_type"
+    string DeviceType = 40;
     // @inject_tag: sql:"manufacturer"
     string Manufacturer = 50;
     // @inject_tag: sql:"poster"
