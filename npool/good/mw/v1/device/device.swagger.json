@@ -17,6 +17,23 @@
   ],
   "paths": {},
   "definitions": {
+    "middlewaredevicev1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Type": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Manufacturer": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -41,23 +58,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EntID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Type": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Manufacturer": {
-          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -107,6 +107,12 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"shipment_at\""
         },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PosterInfo"
+          }
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -116,11 +122,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
-        },
-        "DeletedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"deleted_at\""
         }
       }
     },
@@ -170,6 +171,20 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1PosterInfo": {
+      "type": "object",
+      "properties": {
+        "Poster": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"poster\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
         }
       }
     },
