@@ -44,6 +44,13 @@ message Poster {
     uint32 UpdatedAt  = 1010;
 }
 
+message PosterInfo {
+    // @inject_tag: sql:"poster"
+    string Poster     = 70;
+    // @inject_tag: sql:"index"
+    uint32 Index      = 90;
+}
+
 message Conds {
     optional basetypes.v1.Uint32Val      ID          = 9;
     optional basetypes.v1.StringVal      EntID       = 10;
