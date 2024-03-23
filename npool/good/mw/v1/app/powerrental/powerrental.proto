@@ -24,8 +24,8 @@ message PowerRentalReq {
     // Base of power rental
     optional uint32 ID = 10;
     optional string EntID = 20;
-    optional string AppID = 30;
-    optional string GoodID = 40;
+    optional string GoodID = 30;
+    optional string AppGoodID = 40;
 
     // Good information
     optional uint32 ServiceStartAt = 50;
@@ -54,6 +54,8 @@ message PowerRental {
     string AppID = 30;
     // @inject_tag: sql:"good_id"
     string GoodID = 40;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID = 41;
 
     // @inject_tag: sql:"device_type_id"
     string DeviceTypeID = 50;
