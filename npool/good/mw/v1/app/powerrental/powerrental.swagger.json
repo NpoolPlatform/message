@@ -496,6 +496,9 @@
         "EntID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
         "GoodID": {
           "type": "string"
         },
