@@ -248,6 +248,63 @@ func (x *DisplayColor) GetUpdatedAt() uint32 {
 	return 0
 }
 
+type DisplayColorInfo struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// @inject_tag: sql:"color"
+	Color string `protobuf:"bytes,10,opt,name=Color,proto3" json:"Color,omitempty" sql:"color"`
+	// @inject_tag: sql:"index"
+	Index uint32 `protobuf:"varint,20,opt,name=Index,proto3" json:"Index,omitempty" sql:"index"`
+}
+
+func (x *DisplayColorInfo) Reset() {
+	*x = DisplayColorInfo{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DisplayColorInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DisplayColorInfo) ProtoMessage() {}
+
+func (x *DisplayColorInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DisplayColorInfo.ProtoReflect.Descriptor instead.
+func (*DisplayColorInfo) Descriptor() ([]byte, []int) {
+	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *DisplayColorInfo) GetColor() string {
+	if x != nil {
+		return x.Color
+	}
+	return ""
+}
+
+func (x *DisplayColorInfo) GetIndex() uint32 {
+	if x != nil {
+		return x.Index
+	}
+	return 0
+}
+
 type Conds struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -265,7 +322,7 @@ type Conds struct {
 func (x *Conds) Reset() {
 	*x = Conds{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[2]
+		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -278,7 +335,7 @@ func (x *Conds) String() string {
 func (*Conds) ProtoMessage() {}
 
 func (x *Conds) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[2]
+	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -291,7 +348,7 @@ func (x *Conds) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Conds.ProtoReflect.Descriptor instead.
 func (*Conds) Descriptor() ([]byte, []int) {
-	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{2}
+	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Conds) GetID() *v1.Uint32Val {
@@ -354,7 +411,7 @@ type CreateDisplayColorRequest struct {
 func (x *CreateDisplayColorRequest) Reset() {
 	*x = CreateDisplayColorRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[3]
+		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -367,7 +424,7 @@ func (x *CreateDisplayColorRequest) String() string {
 func (*CreateDisplayColorRequest) ProtoMessage() {}
 
 func (x *CreateDisplayColorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[3]
+	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -380,7 +437,7 @@ func (x *CreateDisplayColorRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDisplayColorRequest.ProtoReflect.Descriptor instead.
 func (*CreateDisplayColorRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{3}
+	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateDisplayColorRequest) GetInfo() *DisplayColorReq {
@@ -401,7 +458,7 @@ type CreateDisplayColorResponse struct {
 func (x *CreateDisplayColorResponse) Reset() {
 	*x = CreateDisplayColorResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[4]
+		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -414,7 +471,7 @@ func (x *CreateDisplayColorResponse) String() string {
 func (*CreateDisplayColorResponse) ProtoMessage() {}
 
 func (x *CreateDisplayColorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[4]
+	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -427,7 +484,7 @@ func (x *CreateDisplayColorResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDisplayColorResponse.ProtoReflect.Descriptor instead.
 func (*CreateDisplayColorResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{4}
+	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CreateDisplayColorResponse) GetInfo() *DisplayColor {
@@ -448,7 +505,7 @@ type UpdateDisplayColorRequest struct {
 func (x *UpdateDisplayColorRequest) Reset() {
 	*x = UpdateDisplayColorRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[5]
+		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -461,7 +518,7 @@ func (x *UpdateDisplayColorRequest) String() string {
 func (*UpdateDisplayColorRequest) ProtoMessage() {}
 
 func (x *UpdateDisplayColorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[5]
+	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -474,7 +531,7 @@ func (x *UpdateDisplayColorRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDisplayColorRequest.ProtoReflect.Descriptor instead.
 func (*UpdateDisplayColorRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{5}
+	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *UpdateDisplayColorRequest) GetInfo() *DisplayColorReq {
@@ -495,7 +552,7 @@ type UpdateDisplayColorResponse struct {
 func (x *UpdateDisplayColorResponse) Reset() {
 	*x = UpdateDisplayColorResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[6]
+		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -508,7 +565,7 @@ func (x *UpdateDisplayColorResponse) String() string {
 func (*UpdateDisplayColorResponse) ProtoMessage() {}
 
 func (x *UpdateDisplayColorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[6]
+	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -521,7 +578,7 @@ func (x *UpdateDisplayColorResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDisplayColorResponse.ProtoReflect.Descriptor instead.
 func (*UpdateDisplayColorResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{6}
+	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *UpdateDisplayColorResponse) GetInfo() *DisplayColor {
@@ -542,7 +599,7 @@ type GetDisplayColorRequest struct {
 func (x *GetDisplayColorRequest) Reset() {
 	*x = GetDisplayColorRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[7]
+		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -555,7 +612,7 @@ func (x *GetDisplayColorRequest) String() string {
 func (*GetDisplayColorRequest) ProtoMessage() {}
 
 func (x *GetDisplayColorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[7]
+	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -568,7 +625,7 @@ func (x *GetDisplayColorRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDisplayColorRequest.ProtoReflect.Descriptor instead.
 func (*GetDisplayColorRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{7}
+	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetDisplayColorRequest) GetEntID() string {
@@ -589,7 +646,7 @@ type GetDisplayColorResponse struct {
 func (x *GetDisplayColorResponse) Reset() {
 	*x = GetDisplayColorResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[8]
+		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -602,7 +659,7 @@ func (x *GetDisplayColorResponse) String() string {
 func (*GetDisplayColorResponse) ProtoMessage() {}
 
 func (x *GetDisplayColorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[8]
+	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -615,7 +672,7 @@ func (x *GetDisplayColorResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDisplayColorResponse.ProtoReflect.Descriptor instead.
 func (*GetDisplayColorResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{8}
+	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetDisplayColorResponse) GetInfo() *DisplayColor {
@@ -638,7 +695,7 @@ type GetDisplayColorsRequest struct {
 func (x *GetDisplayColorsRequest) Reset() {
 	*x = GetDisplayColorsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[9]
+		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -651,7 +708,7 @@ func (x *GetDisplayColorsRequest) String() string {
 func (*GetDisplayColorsRequest) ProtoMessage() {}
 
 func (x *GetDisplayColorsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[9]
+	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -664,7 +721,7 @@ func (x *GetDisplayColorsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDisplayColorsRequest.ProtoReflect.Descriptor instead.
 func (*GetDisplayColorsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{9}
+	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetDisplayColorsRequest) GetConds() *Conds {
@@ -700,7 +757,7 @@ type GetDisplayColorsResponse struct {
 func (x *GetDisplayColorsResponse) Reset() {
 	*x = GetDisplayColorsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[10]
+		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -713,7 +770,7 @@ func (x *GetDisplayColorsResponse) String() string {
 func (*GetDisplayColorsResponse) ProtoMessage() {}
 
 func (x *GetDisplayColorsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[10]
+	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -726,7 +783,7 @@ func (x *GetDisplayColorsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDisplayColorsResponse.ProtoReflect.Descriptor instead.
 func (*GetDisplayColorsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{10}
+	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetDisplayColorsResponse) GetInfos() []*DisplayColor {
@@ -754,7 +811,7 @@ type DeleteDisplayColorRequest struct {
 func (x *DeleteDisplayColorRequest) Reset() {
 	*x = DeleteDisplayColorRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[11]
+		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -767,7 +824,7 @@ func (x *DeleteDisplayColorRequest) String() string {
 func (*DeleteDisplayColorRequest) ProtoMessage() {}
 
 func (x *DeleteDisplayColorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[11]
+	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -780,7 +837,7 @@ func (x *DeleteDisplayColorRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteDisplayColorRequest.ProtoReflect.Descriptor instead.
 func (*DeleteDisplayColorRequest) Descriptor() ([]byte, []int) {
-	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{11}
+	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *DeleteDisplayColorRequest) GetInfo() *DisplayColorReq {
@@ -801,7 +858,7 @@ type DeleteDisplayColorResponse struct {
 func (x *DeleteDisplayColorResponse) Reset() {
 	*x = DeleteDisplayColorResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[12]
+		mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -814,7 +871,7 @@ func (x *DeleteDisplayColorResponse) String() string {
 func (*DeleteDisplayColorResponse) ProtoMessage() {}
 
 func (x *DeleteDisplayColorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[12]
+	mi := &file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -827,7 +884,7 @@ func (x *DeleteDisplayColorResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteDisplayColorResponse.ProtoReflect.Descriptor instead.
 func (*DeleteDisplayColorResponse) Descriptor() ([]byte, []int) {
-	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{12}
+	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *DeleteDisplayColorResponse) GetInfo() *DisplayColor {
@@ -883,7 +940,11 @@ var file_npool_good_mw_v1_app_good_display_color_color_proto_rawDesc = []byte{
 	0x1d, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xe8, 0x07, 0x20,
 	0x01, 0x28, 0x0d, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x1d,
 	0x0a, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xf2, 0x07, 0x20, 0x01,
-	0x28, 0x0d, 0x52, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x22, 0xde, 0x03,
+	0x28, 0x0d, 0x52, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x22, 0x3e, 0x0a,
+	0x10, 0x44, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x49, 0x6e, 0x66,
+	0x6f, 0x12, 0x14, 0x0a, 0x05, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x12, 0x14, 0x0a, 0x05, 0x49, 0x6e, 0x64, 0x65, 0x78,
+	0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x22, 0xde, 0x03,
 	0x0a, 0x05, 0x43, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x2c, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x09, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e,
 	0x76, 0x31, 0x2e, 0x55, 0x69, 0x6e, 0x74, 0x33, 0x32, 0x56, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x02,
@@ -1054,52 +1115,53 @@ func file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescGZIP() []by
 	return file_npool_good_mw_v1_app_good_display_color_color_proto_rawDescData
 }
 
-var file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_npool_good_mw_v1_app_good_display_color_color_proto_goTypes = []interface{}{
 	(*DisplayColorReq)(nil),            // 0: good.middleware.app.good1.display.color.v1.DisplayColorReq
 	(*DisplayColor)(nil),               // 1: good.middleware.app.good1.display.color.v1.DisplayColor
-	(*Conds)(nil),                      // 2: good.middleware.app.good1.display.color.v1.Conds
-	(*CreateDisplayColorRequest)(nil),  // 3: good.middleware.app.good1.display.color.v1.CreateDisplayColorRequest
-	(*CreateDisplayColorResponse)(nil), // 4: good.middleware.app.good1.display.color.v1.CreateDisplayColorResponse
-	(*UpdateDisplayColorRequest)(nil),  // 5: good.middleware.app.good1.display.color.v1.UpdateDisplayColorRequest
-	(*UpdateDisplayColorResponse)(nil), // 6: good.middleware.app.good1.display.color.v1.UpdateDisplayColorResponse
-	(*GetDisplayColorRequest)(nil),     // 7: good.middleware.app.good1.display.color.v1.GetDisplayColorRequest
-	(*GetDisplayColorResponse)(nil),    // 8: good.middleware.app.good1.display.color.v1.GetDisplayColorResponse
-	(*GetDisplayColorsRequest)(nil),    // 9: good.middleware.app.good1.display.color.v1.GetDisplayColorsRequest
-	(*GetDisplayColorsResponse)(nil),   // 10: good.middleware.app.good1.display.color.v1.GetDisplayColorsResponse
-	(*DeleteDisplayColorRequest)(nil),  // 11: good.middleware.app.good1.display.color.v1.DeleteDisplayColorRequest
-	(*DeleteDisplayColorResponse)(nil), // 12: good.middleware.app.good1.display.color.v1.DeleteDisplayColorResponse
-	(*v1.Uint32Val)(nil),               // 13: basetypes.v1.Uint32Val
-	(*v1.StringVal)(nil),               // 14: basetypes.v1.StringVal
-	(*v1.StringSliceVal)(nil),          // 15: basetypes.v1.StringSliceVal
+	(*DisplayColorInfo)(nil),           // 2: good.middleware.app.good1.display.color.v1.DisplayColorInfo
+	(*Conds)(nil),                      // 3: good.middleware.app.good1.display.color.v1.Conds
+	(*CreateDisplayColorRequest)(nil),  // 4: good.middleware.app.good1.display.color.v1.CreateDisplayColorRequest
+	(*CreateDisplayColorResponse)(nil), // 5: good.middleware.app.good1.display.color.v1.CreateDisplayColorResponse
+	(*UpdateDisplayColorRequest)(nil),  // 6: good.middleware.app.good1.display.color.v1.UpdateDisplayColorRequest
+	(*UpdateDisplayColorResponse)(nil), // 7: good.middleware.app.good1.display.color.v1.UpdateDisplayColorResponse
+	(*GetDisplayColorRequest)(nil),     // 8: good.middleware.app.good1.display.color.v1.GetDisplayColorRequest
+	(*GetDisplayColorResponse)(nil),    // 9: good.middleware.app.good1.display.color.v1.GetDisplayColorResponse
+	(*GetDisplayColorsRequest)(nil),    // 10: good.middleware.app.good1.display.color.v1.GetDisplayColorsRequest
+	(*GetDisplayColorsResponse)(nil),   // 11: good.middleware.app.good1.display.color.v1.GetDisplayColorsResponse
+	(*DeleteDisplayColorRequest)(nil),  // 12: good.middleware.app.good1.display.color.v1.DeleteDisplayColorRequest
+	(*DeleteDisplayColorResponse)(nil), // 13: good.middleware.app.good1.display.color.v1.DeleteDisplayColorResponse
+	(*v1.Uint32Val)(nil),               // 14: basetypes.v1.Uint32Val
+	(*v1.StringVal)(nil),               // 15: basetypes.v1.StringVal
+	(*v1.StringSliceVal)(nil),          // 16: basetypes.v1.StringSliceVal
 }
 var file_npool_good_mw_v1_app_good_display_color_color_proto_depIdxs = []int32{
-	13, // 0: good.middleware.app.good1.display.color.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
-	14, // 1: good.middleware.app.good1.display.color.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	14, // 2: good.middleware.app.good1.display.color.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	14, // 3: good.middleware.app.good1.display.color.v1.Conds.GoodID:type_name -> basetypes.v1.StringVal
-	15, // 4: good.middleware.app.good1.display.color.v1.Conds.GoodIDs:type_name -> basetypes.v1.StringSliceVal
-	14, // 5: good.middleware.app.good1.display.color.v1.Conds.AppGoodID:type_name -> basetypes.v1.StringVal
-	15, // 6: good.middleware.app.good1.display.color.v1.Conds.AppGoodIDs:type_name -> basetypes.v1.StringSliceVal
+	14, // 0: good.middleware.app.good1.display.color.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
+	15, // 1: good.middleware.app.good1.display.color.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	15, // 2: good.middleware.app.good1.display.color.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	15, // 3: good.middleware.app.good1.display.color.v1.Conds.GoodID:type_name -> basetypes.v1.StringVal
+	16, // 4: good.middleware.app.good1.display.color.v1.Conds.GoodIDs:type_name -> basetypes.v1.StringSliceVal
+	15, // 5: good.middleware.app.good1.display.color.v1.Conds.AppGoodID:type_name -> basetypes.v1.StringVal
+	16, // 6: good.middleware.app.good1.display.color.v1.Conds.AppGoodIDs:type_name -> basetypes.v1.StringSliceVal
 	0,  // 7: good.middleware.app.good1.display.color.v1.CreateDisplayColorRequest.Info:type_name -> good.middleware.app.good1.display.color.v1.DisplayColorReq
 	1,  // 8: good.middleware.app.good1.display.color.v1.CreateDisplayColorResponse.Info:type_name -> good.middleware.app.good1.display.color.v1.DisplayColor
 	0,  // 9: good.middleware.app.good1.display.color.v1.UpdateDisplayColorRequest.Info:type_name -> good.middleware.app.good1.display.color.v1.DisplayColorReq
 	1,  // 10: good.middleware.app.good1.display.color.v1.UpdateDisplayColorResponse.Info:type_name -> good.middleware.app.good1.display.color.v1.DisplayColor
 	1,  // 11: good.middleware.app.good1.display.color.v1.GetDisplayColorResponse.Info:type_name -> good.middleware.app.good1.display.color.v1.DisplayColor
-	2,  // 12: good.middleware.app.good1.display.color.v1.GetDisplayColorsRequest.Conds:type_name -> good.middleware.app.good1.display.color.v1.Conds
+	3,  // 12: good.middleware.app.good1.display.color.v1.GetDisplayColorsRequest.Conds:type_name -> good.middleware.app.good1.display.color.v1.Conds
 	1,  // 13: good.middleware.app.good1.display.color.v1.GetDisplayColorsResponse.Infos:type_name -> good.middleware.app.good1.display.color.v1.DisplayColor
 	0,  // 14: good.middleware.app.good1.display.color.v1.DeleteDisplayColorRequest.Info:type_name -> good.middleware.app.good1.display.color.v1.DisplayColorReq
 	1,  // 15: good.middleware.app.good1.display.color.v1.DeleteDisplayColorResponse.Info:type_name -> good.middleware.app.good1.display.color.v1.DisplayColor
-	3,  // 16: good.middleware.app.good1.display.color.v1.Middleware.CreateDisplayColor:input_type -> good.middleware.app.good1.display.color.v1.CreateDisplayColorRequest
-	5,  // 17: good.middleware.app.good1.display.color.v1.Middleware.UpdateDisplayColor:input_type -> good.middleware.app.good1.display.color.v1.UpdateDisplayColorRequest
-	7,  // 18: good.middleware.app.good1.display.color.v1.Middleware.GetDisplayColor:input_type -> good.middleware.app.good1.display.color.v1.GetDisplayColorRequest
-	9,  // 19: good.middleware.app.good1.display.color.v1.Middleware.GetDisplayColors:input_type -> good.middleware.app.good1.display.color.v1.GetDisplayColorsRequest
-	11, // 20: good.middleware.app.good1.display.color.v1.Middleware.DeleteDisplayColor:input_type -> good.middleware.app.good1.display.color.v1.DeleteDisplayColorRequest
-	4,  // 21: good.middleware.app.good1.display.color.v1.Middleware.CreateDisplayColor:output_type -> good.middleware.app.good1.display.color.v1.CreateDisplayColorResponse
-	6,  // 22: good.middleware.app.good1.display.color.v1.Middleware.UpdateDisplayColor:output_type -> good.middleware.app.good1.display.color.v1.UpdateDisplayColorResponse
-	8,  // 23: good.middleware.app.good1.display.color.v1.Middleware.GetDisplayColor:output_type -> good.middleware.app.good1.display.color.v1.GetDisplayColorResponse
-	10, // 24: good.middleware.app.good1.display.color.v1.Middleware.GetDisplayColors:output_type -> good.middleware.app.good1.display.color.v1.GetDisplayColorsResponse
-	12, // 25: good.middleware.app.good1.display.color.v1.Middleware.DeleteDisplayColor:output_type -> good.middleware.app.good1.display.color.v1.DeleteDisplayColorResponse
+	4,  // 16: good.middleware.app.good1.display.color.v1.Middleware.CreateDisplayColor:input_type -> good.middleware.app.good1.display.color.v1.CreateDisplayColorRequest
+	6,  // 17: good.middleware.app.good1.display.color.v1.Middleware.UpdateDisplayColor:input_type -> good.middleware.app.good1.display.color.v1.UpdateDisplayColorRequest
+	8,  // 18: good.middleware.app.good1.display.color.v1.Middleware.GetDisplayColor:input_type -> good.middleware.app.good1.display.color.v1.GetDisplayColorRequest
+	10, // 19: good.middleware.app.good1.display.color.v1.Middleware.GetDisplayColors:input_type -> good.middleware.app.good1.display.color.v1.GetDisplayColorsRequest
+	12, // 20: good.middleware.app.good1.display.color.v1.Middleware.DeleteDisplayColor:input_type -> good.middleware.app.good1.display.color.v1.DeleteDisplayColorRequest
+	5,  // 21: good.middleware.app.good1.display.color.v1.Middleware.CreateDisplayColor:output_type -> good.middleware.app.good1.display.color.v1.CreateDisplayColorResponse
+	7,  // 22: good.middleware.app.good1.display.color.v1.Middleware.UpdateDisplayColor:output_type -> good.middleware.app.good1.display.color.v1.UpdateDisplayColorResponse
+	9,  // 23: good.middleware.app.good1.display.color.v1.Middleware.GetDisplayColor:output_type -> good.middleware.app.good1.display.color.v1.GetDisplayColorResponse
+	11, // 24: good.middleware.app.good1.display.color.v1.Middleware.GetDisplayColors:output_type -> good.middleware.app.good1.display.color.v1.GetDisplayColorsResponse
+	13, // 25: good.middleware.app.good1.display.color.v1.Middleware.DeleteDisplayColor:output_type -> good.middleware.app.good1.display.color.v1.DeleteDisplayColorResponse
 	21, // [21:26] is the sub-list for method output_type
 	16, // [16:21] is the sub-list for method input_type
 	16, // [16:16] is the sub-list for extension type_name
@@ -1138,7 +1200,7 @@ func file_npool_good_mw_v1_app_good_display_color_color_proto_init() {
 			}
 		}
 		file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Conds); i {
+			switch v := v.(*DisplayColorInfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1150,7 +1212,7 @@ func file_npool_good_mw_v1_app_good_display_color_color_proto_init() {
 			}
 		}
 		file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateDisplayColorRequest); i {
+			switch v := v.(*Conds); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1162,7 +1224,7 @@ func file_npool_good_mw_v1_app_good_display_color_color_proto_init() {
 			}
 		}
 		file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateDisplayColorResponse); i {
+			switch v := v.(*CreateDisplayColorRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1174,7 +1236,7 @@ func file_npool_good_mw_v1_app_good_display_color_color_proto_init() {
 			}
 		}
 		file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateDisplayColorRequest); i {
+			switch v := v.(*CreateDisplayColorResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1186,7 +1248,7 @@ func file_npool_good_mw_v1_app_good_display_color_color_proto_init() {
 			}
 		}
 		file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateDisplayColorResponse); i {
+			switch v := v.(*UpdateDisplayColorRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1198,7 +1260,7 @@ func file_npool_good_mw_v1_app_good_display_color_color_proto_init() {
 			}
 		}
 		file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetDisplayColorRequest); i {
+			switch v := v.(*UpdateDisplayColorResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1210,7 +1272,7 @@ func file_npool_good_mw_v1_app_good_display_color_color_proto_init() {
 			}
 		}
 		file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetDisplayColorResponse); i {
+			switch v := v.(*GetDisplayColorRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1222,7 +1284,7 @@ func file_npool_good_mw_v1_app_good_display_color_color_proto_init() {
 			}
 		}
 		file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetDisplayColorsRequest); i {
+			switch v := v.(*GetDisplayColorResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1234,7 +1296,7 @@ func file_npool_good_mw_v1_app_good_display_color_color_proto_init() {
 			}
 		}
 		file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetDisplayColorsResponse); i {
+			switch v := v.(*GetDisplayColorsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1246,7 +1308,7 @@ func file_npool_good_mw_v1_app_good_display_color_color_proto_init() {
 			}
 		}
 		file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteDisplayColorRequest); i {
+			switch v := v.(*GetDisplayColorsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1258,6 +1320,18 @@ func file_npool_good_mw_v1_app_good_display_color_color_proto_init() {
 			}
 		}
 		file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteDisplayColorRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteDisplayColorResponse); i {
 			case 0:
 				return &v.state
@@ -1271,14 +1345,14 @@ func file_npool_good_mw_v1_app_good_display_color_color_proto_init() {
 		}
 	}
 	file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[0].OneofWrappers = []interface{}{}
-	file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[2].OneofWrappers = []interface{}{}
+	file_npool_good_mw_v1_app_good_display_color_color_proto_msgTypes[3].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_good_mw_v1_app_good_display_color_color_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   13,
+			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
