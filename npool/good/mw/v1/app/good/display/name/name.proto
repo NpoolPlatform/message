@@ -51,6 +51,13 @@ message DisplayName {
     uint32 UpdatedAt  = 1010;
 }
 
+message DisplayNameInfo {
+    // @inject_tag: sql:"name"
+    string Name = 10;
+    // @inject_tag: sql:"index"
+    uint32 Index = 20;
+}
+
 message Conds {
     optional basetypes.v1.Uint32Val      ID          = 9;
     optional basetypes.v1.StringVal      EntID       = 10;
