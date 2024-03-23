@@ -24,6 +24,7 @@ message PowerRentalReq {
     // Base of power rental
     optional uint32 ID = 10;
     optional string EntID = 20;
+    optional string AppID = 29;
     optional string GoodID = 30;
     optional string AppGoodID = 40;
 
