@@ -439,6 +439,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"banner\""
         },
+        "CancelModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"cancel_mode\""
+        },
+        "CancelMOde": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
         "TechniqueFeeRatio": {
           "type": "string",
           "title": "Only for legacy good\n@inject_tag: sql:\"technique_fee_ratio\""
