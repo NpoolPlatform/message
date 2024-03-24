@@ -505,6 +505,31 @@
         "AppGoodID": {
           "type": "string"
         },
+        "Purchasable": {
+          "type": "boolean"
+        },
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "Online": {
+          "type": "boolean"
+        },
+        "Visible": {
+          "type": "boolean"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Banner": {
+          "type": "string"
+        },
         "ServiceStartAt": {
           "type": "integer",
           "format": "int64",

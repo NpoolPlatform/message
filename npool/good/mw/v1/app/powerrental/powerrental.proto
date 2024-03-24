@@ -24,26 +24,34 @@ message PowerRentalReq {
     // Base of power rental
     optional uint32 ID = 10;
     optional string EntID = 20;
-    optional string AppID = 29;
-    optional string GoodID = 30;
-    optional string AppGoodID = 40;
+    optional string AppID = 30;
+    optional string GoodID = 40;
+    optional string AppGoodID = 50;
+    optional bool Purchasable = 60;
+    optional bool EnableProductPage = 70;
+    optional string ProductPage = 80;
+    optional bool Online = 90;
+    optional bool Visible = 100;
+    optional string Name = 110;
+    optional int32 DisplayIndex = 120;
+    optional string Banner = 130;
 
     // Good information
-    optional uint32 ServiceStartAt = 50;
-    optional basetypes.good.v1.CancelMode CancelMode = 60;
-    optional uint32 CancelableBeforeStartSeconds = 70;
-    optional bool EnableSetCommission =80;
-    optional string MinOrderAmount = 90;
-    optional string MaxOrderAmount = 100;
-    optional string MaxUserAmount = 110;
-    optional uint32 MinOrderDuration = 120;
-    optional uint32 MaxOrderDuration = 130;
-    optional string UnitPrice = 140;
-    optional uint32 SaleStartAt = 150;
-    optional uint32 SaleEndAt = 160;
-    optional basetypes.good.v1.GoodSaleMode SaleMode = 170;
-    optional bool FixedDuration = 180;
-    optional bool PackageWithRequireds = 190;
+    optional uint32 ServiceStartAt = 140;
+    optional basetypes.good.v1.CancelMode CancelMode = 150;
+    optional uint32 CancelableBeforeStartSeconds = 160;
+    optional bool EnableSetCommission =170;
+    optional string MinOrderAmount = 180;
+    optional string MaxOrderAmount = 190;
+    optional string MaxUserAmount = 200;
+    optional uint32 MinOrderDuration = 210;
+    optional uint32 MaxOrderDuration = 220;
+    optional string UnitPrice = 230;
+    optional uint32 SaleStartAt = 240;
+    optional uint32 SaleEndAt = 250;
+    optional basetypes.good.v1.GoodSaleMode SaleMode = 260;
+    optional bool FixedDuration = 270;
+    optional bool PackageWithRequireds = 280;
 }
 
 message PowerRental {
