@@ -142,10 +142,13 @@ message PowerRental {
     int32 DisplayIndex = 410;
     // @inject_tag: sql:"banner"
     string Banner = 420;
+    // @inject_tag: sql:"cancel_mode"
+    string CancelModeStr = 430;
+    basetypes.good.v1.CancelMode CancelMOde = 440;
 
     // Only for legacy good
     // @inject_tag: sql:"technique_fee_ratio"
-    string TechniqueFeeRatio = 430;
+    string TechniqueFeeRatio = 450;
 
     repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 500;
     repeated good.middleware.app.good1.description.v1.DescriptionInfo Descriptions = 510;
