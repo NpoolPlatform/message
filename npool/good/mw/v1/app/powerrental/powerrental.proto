@@ -141,7 +141,7 @@ message PowerRental {
     // @inject_tag: sql:"display_index"
     int32 DisplayIndex = 410;
     // @inject_tag: sql:"banner"
-    string banner = 420;
+    string Banner = 420;
 
     // Only for legacy good
     // @inject_tag: sql:"technique_fee_ratio"

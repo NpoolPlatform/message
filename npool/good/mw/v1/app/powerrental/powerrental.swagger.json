@@ -435,7 +435,7 @@
           "format": "int32",
           "title": "@inject_tag: sql:\"display_index\""
         },
-        "banner": {
+        "Banner": {
           "type": "string",
           "title": "@inject_tag: sql:\"banner\""
         },
