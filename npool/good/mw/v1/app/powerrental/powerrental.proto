@@ -144,7 +144,7 @@ message PowerRental {
     string Banner = 420;
     // @inject_tag: sql:"cancel_mode"
     string CancelModeStr = 430;
-    basetypes.good.v1.CancelMode CancelMOde = 440;
+    basetypes.good.v1.CancelMode CancelMode = 440;
 
     // Only for legacy good
     // @inject_tag: sql:"technique_fee_ratio"

@@ -443,7 +443,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"cancel_mode\""
         },
-        "CancelMOde": {
+        "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
         },
         "TechniqueFeeRatio": {
