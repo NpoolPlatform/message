@@ -446,6 +446,62 @@
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
         },
+        "CancelableBeforeStartSeconds": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"cancelable_before_start_seconds\""
+        },
+        "EnableSetCommission": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enable_set_commission\""
+        },
+        "MinOrderAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"min_order_amount\""
+        },
+        "MaxOrderAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"max_order_amount\""
+        },
+        "MaxUserAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"max_user_amount\""
+        },
+        "MinOrderDuration": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"min_order_duration\""
+        },
+        "MaxOrderDuration": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"max_order_duration\""
+        },
+        "SaleStartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"sale_start_at\""
+        },
+        "SaleEndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"sale_end_at\""
+        },
+        "SaleModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"sale_mode\""
+        },
+        "SaleMode": {
+          "$ref": "#/definitions/v1GoodSaleMode"
+        },
+        "FixedDuration": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"fixed_duration\""
+        },
+        "PackageWithRequireds": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"package_with_requireds\""
+        },
         "TechniqueFeeRatio": {
           "type": "string",
           "title": "Only for legacy good\n@inject_tag: sql:\"technique_fee_ratio\""

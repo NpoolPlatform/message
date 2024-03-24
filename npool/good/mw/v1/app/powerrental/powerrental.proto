@@ -145,16 +145,41 @@ message PowerRental {
     // @inject_tag: sql:"cancel_mode"
     string CancelModeStr = 430;
     basetypes.good.v1.CancelMode CancelMode = 440;
+    // @inject_tag: sql:"cancelable_before_start_seconds"
+    uint32 CancelableBeforeStartSeconds = 450;
+    // @inject_tag: sql:"enable_set_commission"
+    bool EnableSetCommission = 460;
+    // @inject_tag: sql:"min_order_amount"
+    string MinOrderAmount = 470;
+    // @inject_tag: sql:"max_order_amount"
+    string MaxOrderAmount = 480;
+    // @inject_tag: sql:"max_user_amount"
+    string MaxUserAmount = 490;
+    // @inject_tag: sql:"min_order_duration"
+    uint32 MinOrderDuration = 500;
+    // @inject_tag: sql:"max_order_duration"
+    uint32 MaxOrderDuration = 510;
+    // @inject_tag: sql:"sale_start_at"
+    uint32 SaleStartAt = 520;
+    // @inject_tag: sql:"sale_end_at"
+    uint32 SaleEndAt = 530;
+    // @inject_tag: sql:"sale_mode"
+    string SaleModeStr = 540;
+    basetypes.good.v1.GoodSaleMode SaleMode  = 550;
+    // @inject_tag: sql:"fixed_duration"
+    bool FixedDuration = 560;
+    // @inject_tag: sql:"package_with_requireds"
+    bool PackageWithRequireds = 570;
 
     // Only for legacy good
     // @inject_tag: sql:"technique_fee_ratio"
-    string TechniqueFeeRatio = 450;
+    string TechniqueFeeRatio = 580;
 
-    repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 500;
-    repeated good.middleware.app.good1.description.v1.DescriptionInfo Descriptions = 510;
-    repeated good.middleware.app.good1.poster.v1.PosterInfo Posters = 520;
-    repeated good.middleware.app.good1.display.name.v1.DisplayNameInfo DisplayNames = 530;
-    repeated good.middleware.app.good1.display.color.v1.DisplayColorInfo DisplayColors = 540;
+    repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 700;
+    repeated good.middleware.app.good1.description.v1.DescriptionInfo Descriptions = 710;
+    repeated good.middleware.app.good1.poster.v1.PosterInfo Posters = 720;
+    repeated good.middleware.app.good1.display.name.v1.DisplayNameInfo DisplayNames = 730;
+    repeated good.middleware.app.good1.display.color.v1.DisplayColorInfo DisplayColors = 740;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
