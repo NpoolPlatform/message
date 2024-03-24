@@ -419,7 +419,7 @@
           "title": "@inject_tag: sql:\"enable_product_page\""
         },
         "ProductPage": {
-          "type": "boolean",
+          "type": "string",
           "title": "@inject_tag: sql:\"product_page\""
         },
         "Visible": {

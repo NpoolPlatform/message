@@ -133,7 +133,7 @@ message PowerRental {
     // @inject_tag: sql:"enable_product_page"
     bool EnableProductPage = 370;
     // @inject_tag: sql:"product_page"
-    bool ProductPage = 380;
+    string ProductPage = 380;
     // @inject_tag: sql:"visible"
     bool Visible = 390;
     // @inject_tag: sql:"app_good_name"
