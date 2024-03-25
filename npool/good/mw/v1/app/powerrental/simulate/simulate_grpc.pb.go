@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/good/mw/v1/app/good/simulate/simulate.proto
+// source: npool/good/mw/v1/app/powerrental/simulate/simulate.proto
 
 package simulate
 
@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateSimulate_FullMethodName     = "/good.middleware.app.good1.simulate.v1.Middleware/CreateSimulate"
-	Middleware_GetSimulate_FullMethodName        = "/good.middleware.app.good1.simulate.v1.Middleware/GetSimulate"
-	Middleware_UpdateSimulate_FullMethodName     = "/good.middleware.app.good1.simulate.v1.Middleware/UpdateSimulate"
-	Middleware_ExistSimulateConds_FullMethodName = "/good.middleware.app.good1.simulate.v1.Middleware/ExistSimulateConds"
-	Middleware_GetSimulates_FullMethodName       = "/good.middleware.app.good1.simulate.v1.Middleware/GetSimulates"
-	Middleware_DeleteSimulate_FullMethodName     = "/good.middleware.app.good1.simulate.v1.Middleware/DeleteSimulate"
+	Middleware_CreateSimulate_FullMethodName     = "/good.middleware.app.powerrental.simulate.v1.Middleware/CreateSimulate"
+	Middleware_GetSimulate_FullMethodName        = "/good.middleware.app.powerrental.simulate.v1.Middleware/GetSimulate"
+	Middleware_UpdateSimulate_FullMethodName     = "/good.middleware.app.powerrental.simulate.v1.Middleware/UpdateSimulate"
+	Middleware_ExistSimulateConds_FullMethodName = "/good.middleware.app.powerrental.simulate.v1.Middleware/ExistSimulateConds"
+	Middleware_GetSimulates_FullMethodName       = "/good.middleware.app.powerrental.simulate.v1.Middleware/GetSimulates"
+	Middleware_DeleteSimulate_FullMethodName     = "/good.middleware.app.powerrental.simulate.v1.Middleware/DeleteSimulate"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -261,7 +261,7 @@ func _Middleware_DeleteSimulate_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.app.good1.simulate.v1.Middleware",
+	ServiceName: "good.middleware.app.powerrental.simulate.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -290,5 +290,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/good/mw/v1/app/good/simulate/simulate.proto",
+	Metadata: "npool/good/mw/v1/app/powerrental/simulate/simulate.proto",
 }

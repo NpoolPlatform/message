@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/mw/v1/app/good/simulate/simulate.proto",
+    "title": "npool/good/mw/v1/app/powerrental/simulate/simulate.proto",
     "version": "version not set"
   },
   "tags": [
@@ -53,23 +53,8 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "AppGoodID": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "GoodIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "CoinTypeIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -156,14 +141,14 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type_id\""
         },
-        "FixedOrderUnits": {
+        "OrderUnits": {
           "type": "string",
-          "title": "@inject_tag: sql:\"fixed_order_units\""
+          "title": "@inject_tag: sql:\"order_units\""
         },
-        "FixedOrderDuration": {
+        "OrderDuration": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"fixed_order_duration\""
+          "title": "@inject_tag: sql:\"order_duration\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -190,26 +175,12 @@
         "AppGoodID": {
           "type": "string"
         },
-        "FixedOrderUnits": {
+        "OrderUnits": {
           "type": "string"
         },
-        "FixedOrderDuration": {
+        "OrderDuration": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1StringSliceVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       }
     },
