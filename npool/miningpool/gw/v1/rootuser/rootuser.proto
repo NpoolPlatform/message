@@ -86,10 +86,11 @@ message GetRootUsersResponse {
 
 message UpdateRootUserRequest {
     uint32               ID                = 10;
-    optional string      Name              = 20;
-    optional string      Email             = 30;
-    optional string      AuthToken         = 40;
-    optional string      Remark            = 50;
+    string               EntID             = 20;
+    optional string      Name              = 30;
+    optional string      Email             = 40;
+    optional string      AuthToken         = 50;
+    optional string      Remark            = 60;
 }
 
 message UpdateRootUserResponse {
