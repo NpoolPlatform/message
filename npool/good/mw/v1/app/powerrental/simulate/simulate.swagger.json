@@ -17,6 +17,20 @@
   ],
   "paths": {},
   "definitions": {
+    "powerrentalsimulatev1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -41,20 +55,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EntID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppGoodID": {
-          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -105,6 +105,24 @@
         }
       }
     },
+    "v1GoodCoinInfo": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "Main": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"main\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"index\""
+        }
+      }
+    },
     "v1Simulate": {
       "type": "object",
       "properties": {
@@ -137,10 +155,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_name\""
         },
-        "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
-        },
         "OrderUnits": {
           "type": "string",
           "title": "@inject_tag: sql:\"order_units\""
@@ -149,6 +163,12 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"order_duration\""
+        },
+        "GoodCoins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodCoinInfo"
+          }
         },
         "CreatedAt": {
           "type": "integer",
