@@ -78,6 +78,14 @@ enum GoodStartMode {
     GoodStartModePreset    = 50; // Start at a preset time
 }
 
+enum StockLockState {
+    DefaultStockLockState = 0;
+
+    StockLocked     = 10;
+    StockChargeBack = 20;
+    StockCanceled   = 30;
+}
+
 enum AppStockLockState {
     DefaultAppStockLockState = 0;
 
