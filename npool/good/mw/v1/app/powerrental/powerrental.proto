@@ -11,6 +11,7 @@ import "npool/good/mw/v1/app/good/description/description.proto";
 import "npool/good/mw/v1/app/good/poster/poster.proto";
 import "npool/good/mw/v1/app/good/display/name/name.proto";
 import "npool/good/mw/v1/app/good/display/color/color.proto";
+import "npool/good/mw/v1/app/good/stock/mining/mining.proto";
 
 service Middleware {
     rpc CreatePowerRental (CreatePowerRentalRequest) returns (CreatePowerRentalResponse) {}
@@ -52,6 +53,10 @@ message PowerRentalReq {
     optional basetypes.good.v1.GoodSaleMode SaleMode = 260;
     optional bool FixedDuration = 270;
     optional bool PackageWithRequireds = 280;
+
+    // Good stock
+    optional string Reserved = 290;
+    repeated good.middleware.app.good1.stock.mining.v1.MiningGoodStockReq Stocks = 300;
 }
 
 message PowerRental {

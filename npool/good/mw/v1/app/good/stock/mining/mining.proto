@@ -1,0 +1,129 @@
+syntax = "proto3";
+
+package good.middleware.app.good1.stock.mining.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/stock/mining";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/good/v1/enums.proto";
+
+// Service Name
+service Middleware {
+    rpc Lock       (LockRequest)       returns (LockResponse)       {}
+    rpc Locks      (LocksRequest)      returns (LocksResponse)      {}
+    rpc Unlock     (UnlockRequest)     returns (UnlockResponse)     {}
+    rpc WaitStart  (WaitStartRequest)  returns (WaitStartResponse)  {}
+    rpc InService  (InServiceRequest)  returns (InServiceResponse)  {}
+    rpc ChargeBack (ChargeBackRequest) returns (ChargeBackResponse) {}
+    rpc Expire     (ExpireRequest)     returns (ExpireResponse)     {}
+}
+
+message MiningGoodStockReq {
+    optional string MiningGoodStockID = 10;
+    optional string Reserved = 20;
+}
+
+message Stock {
+    // @inject_tag: sql:"id"
+    uint32 ID         = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID      = 10;
+    // @inject_tag: sql:"app_id"
+    string AppID      = 20;
+    // @inject_tag: sql:"good_id"
+    string GoodID     = 30;
+    // @inject_tag: sql:"good_name"
+    string GoodName   = 40;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID  = 50;
+    // @inject_tag: sql:"app_good_name"
+    string AppGoodName = 60;
+    // @inject_tag: sql:"reserved"
+    string Reserved   = 70;
+    // @inject_tag: sql:"spot_quantity"
+    string SpotQuantity = 80;
+    // @inject_tag: sql:"locked"
+    string Locked     = 90;
+    // @inject_tag: sql:"wait_start"
+    string WaitStart  = 100;
+    // @inject_tag: sql:"in_service"
+    string InService  = 110;
+    // @inject_tag: sql:"sold"
+    string Sold       = 120;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt  = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt  = 1010;
+}
+
+message LockRequest {
+    string EntID      = 10;
+    string Units      = 20;
+    string AppSpotUnits = 30;  // Locked from app spot quantity
+
+    // Must same as unlock request
+    string LockID     = 1000;
+    bool   Rollback   = 1010;
+}
+
+message LockResponse {
+    Stock Info = 10;
+}
+
+message LocksRequest {
+    message _Stock {
+        string EntID      = 10;
+        string Units      = 20;
+        string AppSpotUnits = 30;  // Locked from app spot quantity
+    }
+    repeated _Stock Stocks = 10;
+    string LockID          = 1000;
+    bool   Rollback        = 1010;
+}
+
+message LocksResponse {
+    repeated Stock Infos = 10;
+}
+
+message UnlockRequest {
+    // Must same as lock request
+    string LockID   = 1000;
+    bool   Rollback = 1010;
+}
+
+message UnlockResponse {
+    Stock Info = 10;
+}
+
+message WaitStartRequest {
+    string LockID = 10;
+}
+
+message WaitStartResponse {
+    Stock Info = 10;
+}
+
+message InServiceRequest {
+    string LockID = 10;
+}
+
+message InServiceResponse {
+    Stock Info = 10;
+}
+
+message ChargeBackRequest {
+    string LockID = 10;
+}
+
+message ChargeBackResponse {
+    Stock Info = 10;
+}
+
+message ExpireRequest {
+    string LockID = 10;
+}
+
+message ExpireResponse {
+    Stock Info = 10;
+}
+

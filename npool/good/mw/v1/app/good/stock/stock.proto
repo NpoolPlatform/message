@@ -7,6 +7,9 @@ option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/good/v1/enums.proto";
 
+// If it's mining good, then we update mining pool good stock, then update stock
+// Otherwise we update stock directly
+
 // Service Name
 service Middleware {
   rpc Lock(LockRequest) returns (LockResponse) {}
@@ -52,12 +55,14 @@ message Stock {
 }
 
 message LockRequest {
-  string EntID = 10;
-  string AppID = 20;
-  string GoodID = 30;
-  string AppGoodID = 40;
-  string Units = 50;
-  string AppSpotUnits = 60; // Locked from app spot quantity
+    string EntID      = 10;
+    string Units      = 20;
+    string AppSpotUnits = 30;  // Locked from app spot quantity
+
+    // Must same as unlock request
+    string LockID     = 1000;
+    bool   Rollback   = 1010;
+}
 
   // Must same as unlock request
   string LockID = 1000;
@@ -67,17 +72,14 @@ message LockRequest {
 message LockResponse { Stock Info = 10; }
 
 message LocksRequest {
-  message _Stock {
-    string EntID = 10;
-    string GoodID = 20;
-    string AppGoodID = 30;
-    string Units = 40;
-    string AppSpotUnits = 50; // Locked from app spot quantity
-  }
-  string AppID = 10;
-  repeated _Stock Stocks = 20;
-  string LockID = 1000;
-  bool Rollback = 1010;
+    message _Stock {
+        string EntID      = 10;
+        string Units      = 20;
+        string AppSpotUnits = 30;  // Locked from app spot quantity
+    }
+    repeated _Stock Stocks = 10;
+    string LockID          = 1000;
+    bool   Rollback        = 1010;
 }
 
 message LocksResponse { repeated Stock Infos = 10; }

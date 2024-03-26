@@ -247,6 +247,17 @@
       ],
       "default": "DefaultGoodType"
     },
+    "v1MiningGoodStockReq": {
+      "type": "object",
+      "properties": {
+        "MiningGoodStockID": {
+          "type": "string"
+        },
+        "Reserved": {
+          "type": "string"
+        }
+      }
+    },
     "v1PosterInfo": {
       "type": "object",
       "properties": {
@@ -644,6 +655,16 @@
         },
         "PackageWithRequireds": {
           "type": "boolean"
+        },
+        "Reserved": {
+          "type": "string",
+          "title": "Good stock"
+        },
+        "Stocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1MiningGoodStockReq"
+          }
         }
       }
     },

@@ -178,6 +178,20 @@
       ],
       "default": "DefaultGoodType"
     },
+    "v1MiningGoodStockReq": {
+      "type": "object",
+      "properties": {
+        "MiningPoolID": {
+          "type": "string"
+        },
+        "PoolGoodUserID": {
+          "type": "string"
+        },
+        "Total": {
+          "type": "string"
+        }
+      }
+    },
     "v1PowerRental": {
       "type": "object",
       "properties": {
@@ -401,6 +415,16 @@
         },
         "Online": {
           "type": "boolean"
+        },
+        "Total": {
+          "type": "string",
+          "title": "Good stock"
+        },
+        "Stocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1MiningGoodStockReq"
+          }
         }
       }
     },
