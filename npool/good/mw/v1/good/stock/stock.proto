@@ -9,3 +9,8 @@ message MiningGoodStockReq {
     optional string PoolGoodUserID = 20;
     optional string Total = 30;
 }
+
+message MiningGoodStock {
+    // @inject_tag: sql:"good_stock_id"
+    string GoodStockID = 20;
+}
