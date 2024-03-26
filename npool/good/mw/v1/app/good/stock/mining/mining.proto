@@ -1,14 +1,11 @@
 syntax = "proto3";
 
-package good.middleware.app.good1.stock.v1;
+package good.middleware.app.good1.stock.mining.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/stock";
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/stock/mining";
 
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/good/v1/enums.proto";
-
-// If it's mining good, then we update mining pool good stock, then update stock
-// Otherwise we update stock directly
 
 // Service Name
 service Middleware {
@@ -19,6 +16,11 @@ service Middleware {
     rpc InService  (InServiceRequest)  returns (InServiceResponse)  {}
     rpc ChargeBack (ChargeBackRequest) returns (ChargeBackResponse) {}
     rpc Expire     (ExpireRequest)     returns (ExpireResponse)     {}
+}
+
+message MiningGoodStockReq {
+    optional string MiningGoodStockID = 10;
+    optional string Reserved = 20;
 }
 
 message Stock {

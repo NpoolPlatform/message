@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/mw/v1/app/good/stock/stock.proto",
+    "title": "npool/good/mw/v1/app/good/stock/mining/mining.proto",
     "version": "version not set"
   },
   "tags": [
