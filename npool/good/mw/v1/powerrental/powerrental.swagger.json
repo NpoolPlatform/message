@@ -178,6 +178,15 @@
       ],
       "default": "DefaultGoodType"
     },
+    "v1MiningGoodStock": {
+      "type": "object",
+      "properties": {
+        "GoodStockID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_stock_id\""
+        }
+      }
+    },
     "v1MiningGoodStockReq": {
       "type": "object",
       "properties": {
@@ -329,10 +338,48 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"online\""
         },
+        "GoodStockID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_stock_id\""
+        },
+        "GoodTotal": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_total\""
+        },
+        "GoodSpotQuantity": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_spot_quantity\""
+        },
+        "GoodLocked": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_locked\""
+        },
+        "GoodInService": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_in_service\""
+        },
+        "GoodWaitStart": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_wait_start\""
+        },
+        "GoodSold": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_sold\""
+        },
+        "GoodAppReserved": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_app_reserved\""
+        },
         "GoodCoins": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1GoodCoinInfo"
+          }
+        },
+        "MiningPoolStocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1MiningGoodStock"
           }
         },
         "CreatedAt": {
@@ -420,7 +467,7 @@
           "type": "string",
           "title": "Good stock"
         },
-        "Stocks": {
+        "MiningPoolStocks": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1MiningGoodStockReq"

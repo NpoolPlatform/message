@@ -44,7 +44,7 @@ message PowerRentalReq {
 
     // Good stock
     optional string Total = 210;
-    repeated good.middleware.good1.stock.v1.MiningGoodStockReq Stocks = 220;
+    repeated good.middleware.good1.stock.v1.MiningGoodStockReq MiningPoolStocks = 220;
 }
 
 message PowerRental {
@@ -115,7 +115,25 @@ message PowerRental {
     // @inject_tag: sql:"online"
     bool Online = 330;
 
-    repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 500;
+    // @inject_tag: sql:"good_stock_id"
+    string GoodStockID = 340;
+    // @inject_tag: sql:"good_total"
+    string GoodTotal = 350;
+    // @inject_tag: sql:"good_spot_quantity"
+    string GoodSpotQuantity = 360;
+    // @inject_tag: sql:"good_locked"
+    string GoodLocked = 370;
+    // @inject_tag: sql:"good_in_service"
+    string GoodInService = 380;
+    // @inject_tag: sql:"good_wait_start"
+    string GoodWaitStart = 390;
+    // @inject_tag: sql:"good_sold"
+    string GoodSold = 400;
+    // @inject_tag: sql:"good_app_reserved"
+    string GoodAppReserved = 410;
+
+    repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 800;
+    repeated good.middleware.good1.stock.v1.MiningGoodStock MiningPoolStocks = 810;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
