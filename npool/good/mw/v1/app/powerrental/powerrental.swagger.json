@@ -247,17 +247,6 @@
       ],
       "default": "DefaultGoodType"
     },
-    "v1MiningGoodStockReq": {
-      "type": "object",
-      "properties": {
-        "MiningGoodStockID": {
-          "type": "string"
-        },
-        "Reserved": {
-          "type": "string"
-        }
-      }
-    },
     "v1PosterInfo": {
       "type": "object",
       "properties": {
@@ -517,6 +506,46 @@
           "type": "string",
           "title": "Only for legacy good\n@inject_tag: sql:\"technique_fee_ratio\""
         },
+        "GoodStockID": {
+          "type": "string",
+          "title": "Good information\n@inject_tag: sql:\"good_stock_id\""
+        },
+        "GoodTotal": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_total\""
+        },
+        "GoodSpotQuantity": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_spot_quantity\""
+        },
+        "AppGoodStockID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_stock_id\""
+        },
+        "AppGoodTotal": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_reserved\""
+        },
+        "AppGoodSpotQuantity": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_spot_quantity\""
+        },
+        "AppGoodLocked": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_locked\""
+        },
+        "AppGoodInService": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_in_service\""
+        },
+        "AppGoodWaitStart": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_wait_start\""
+        },
+        "AppGoodSold": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_sold\""
+        },
         "GoodCoins": {
           "type": "array",
           "items": {
@@ -545,6 +574,12 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1DisplayColorInfo"
+          }
+        },
+        "MiningGoodStocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1StockInfo"
           }
         },
         "CreatedAt": {
@@ -656,15 +691,61 @@
         "PackageWithRequireds": {
           "type": "boolean"
         },
-        "Reserved": {
+        "AppGoodStockID": {
           "type": "string",
           "title": "Good stock"
         },
-        "Stocks": {
+        "Reserved": {
+          "type": "string"
+        },
+        "MiningGoodStocks": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1MiningGoodStockReq"
+            "$ref": "#/definitions/v1StockReq"
           }
+        }
+      }
+    },
+    "v1StockInfo": {
+      "type": "object",
+      "properties": {
+        "Reserved": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reserved\""
+        },
+        "SpotQuantity": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"spot_quantity\""
+        },
+        "Locked": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"locked\""
+        },
+        "WaitStart": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"wait_start\""
+        },
+        "InService": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"in_service\""
+        },
+        "Sold": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"sold\""
+        }
+      }
+    },
+    "v1StockReq": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "MiningGoodStockID": {
+          "type": "string"
+        },
+        "Reserved": {
+          "type": "string"
         }
       }
     },

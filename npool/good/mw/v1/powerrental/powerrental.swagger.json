@@ -466,9 +466,12 @@
         "Online": {
           "type": "boolean"
         },
-        "Total": {
+        "StockID": {
           "type": "string",
           "title": "Good stock"
+        },
+        "Total": {
+          "type": "string"
         },
         "MiningPoolStocks": {
           "type": "array",

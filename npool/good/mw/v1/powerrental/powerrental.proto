@@ -43,8 +43,9 @@ message PowerRentalReq {
     optional bool Online = 200;
 
     // Good stock
-    optional string Total = 210;
-    repeated good.middleware.good1.stock.v1.MiningGoodStockReq MiningPoolStocks = 220;
+    optional string StockID = 210;
+    optional string Total = 220;
+    repeated good.middleware.good1.stock.v1.MiningGoodStockReq MiningPoolStocks = 230;
 }
 
 message PowerRental {
