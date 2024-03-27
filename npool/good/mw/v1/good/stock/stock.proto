@@ -5,9 +5,10 @@ package good.middleware.good1.stock.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/stock";
 
 message MiningGoodStockReq {
-    optional string MiningPoolID = 10;
-    optional string PoolGoodUserID = 20;
-    optional string Total = 30;
+    optional string EntID = 10;
+    optional string MiningPoolID = 20;
+    optional string PoolGoodUserID = 30;
+    optional string Total = 40;
 }
 
 message MiningGoodStock {
