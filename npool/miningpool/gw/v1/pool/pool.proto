@@ -23,8 +23,8 @@ service Gateway {
     }
 }
 message Pool {
-    optional uint32       ID                = 9;
-    optional string       EntID             = 10;
+    uint32                ID                = 9;
+    string                EntID             = 10;
     basetypes.miningpool.v1.MiningpoolType MiningpoolType = 20;
     string                Name              = 30;
     string                Site              = 40;
