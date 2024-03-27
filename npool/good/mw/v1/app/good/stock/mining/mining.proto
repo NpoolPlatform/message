@@ -18,9 +18,10 @@ service Middleware {
     rpc Expire     (ExpireRequest)     returns (ExpireResponse)     {}
 }
 
-message MiningGoodStockReq {
-    optional string MiningGoodStockID = 10;
-    optional string Reserved = 20;
+message StockReq {
+    optional string EntID = 10;
+    optional string MiningGoodStockID = 20;
+    optional string Reserved = 30;
 }
 
 message Stock {
@@ -54,6 +55,21 @@ message Stock {
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt  = 1010;
+}
+
+message StockInfo {
+    // @inject_tag: sql:"reserved"
+    string Reserved   = 10;
+    // @inject_tag: sql:"spot_quantity"
+    string SpotQuantity = 20;
+    // @inject_tag: sql:"locked"
+    string Locked     = 30;
+    // @inject_tag: sql:"wait_start"
+    string WaitStart  = 40;
+    // @inject_tag: sql:"in_service"
+    string InService  = 50;
+    // @inject_tag: sql:"sold"
+    string Sold       = 60;
 }
 
 message LockRequest {
