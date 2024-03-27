@@ -73,6 +73,7 @@ enum CommissionType {
     LayeredCommission     = 10;
     DirectCommission      = 20;
     LegacyCommission      = 30;
+    WithoutCommission     = 40;
 }
 
 enum CommissionConfigType {
@@ -81,5 +82,5 @@ enum CommissionConfigType {
     AppCommissionConfig     = 10;
     AppGoodCommissionConfig = 20;
     LegacyCommissionConfig  = 30;
-    WithoutCommission       = 40;
+    WithoutCommissionConfig = 40;
 }

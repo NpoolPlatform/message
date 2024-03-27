@@ -165,7 +165,8 @@
         "DefaultCommissionType",
         "LayeredCommission",
         "DirectCommission",
-        "LegacyCommission"
+        "LegacyCommission",
+        "WithoutCommission"
       ],
       "default": "DefaultCommissionType"
     },
