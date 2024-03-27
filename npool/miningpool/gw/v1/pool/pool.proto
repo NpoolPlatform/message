@@ -23,12 +23,14 @@ service Gateway {
     }
 }
 message Pool {
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 10;
-    string                Name              = 20;
-    string                Site              = 30;
-    string                Description       = 40;
-    repeated Coin         Coins             = 50;
-    repeated FractionRule FractionRules     = 60;
+    optional uint32       ID                = 9;
+    optional string       EntID             = 10;
+    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 20;
+    string                Name              = 30;
+    string                Site              = 40;
+    string                Description       = 50;
+    repeated Coin         Coins             = 60;
+    repeated FractionRule FractionRules     = 70;
 }
 
 message Coin {
