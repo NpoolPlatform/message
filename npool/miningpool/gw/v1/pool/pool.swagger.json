@@ -221,6 +221,13 @@
     "v1Pool": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
