@@ -8,7 +8,7 @@ import "google/api/annotations.proto";;
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name  
-service Middleware {
+service Gateway {
     rpc CreateFraction     (CreateFractionRequest)   returns (CreateFractionResponse)    {
         option (google.api.http) = {
             post: "/v1/create/fraction"
