@@ -30,17 +30,17 @@ service Middleware {
 }
 
 message Fraction {
-    optional uint32                                   ID                 = 10;
-    optional string                                   EntID              = 20;
-    optional string                                   AppID              = 30;
-    optional string                                   UserID             = 40;
-    optional string                                   OrderUserID        = 50;
-    optional basetypes.miningpool.v1.WithdrawState    WithdrawState      = 60;
-    optional uint32                                   WithdrawTime       = 70;
-    optional uint32                                   PayTime            = 80;
-    optional string                                   Msg                = 90;
-    uint32                                            CreatedAt          = 100;
-    uint32                                            UpdatedAt          = 110;
+    uint32                                   ID                 = 10;
+    string                                   EntID              = 20;
+    string                                   AppID              = 30;
+    string                                   UserID             = 40;
+    string                                   OrderUserID        = 50;
+    basetypes.miningpool.v1.WithdrawState    WithdrawState      = 60;
+    uint32                                   WithdrawTime       = 70;
+    uint32                                   PayTime            = 80;
+    string                                   Msg                = 90;
+    uint32                                   CreatedAt          = 100;
+    uint32                                   UpdatedAt          = 110;
 }
 
 message CreateFractionRequest {
