@@ -212,7 +212,7 @@
     "v1CreatePoolRequest": {
       "type": "object",
       "properties": {
-        "EntID": {
+        "PoolID": {
           "type": "string"
         },
         "TargetAppID": {
@@ -341,6 +341,18 @@
     "v1Pool": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "PoolID": {
+          "type": "string"
+        },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },

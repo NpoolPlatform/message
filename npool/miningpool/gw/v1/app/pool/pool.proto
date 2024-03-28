@@ -35,12 +35,16 @@ service Gateway {
     }
 }
 message Pool {
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 10;
-    string                Name              = 20;
-    string                Site              = 30;
-    string                Description       = 40;
-    repeated Coin         Coins             = 50;
-    repeated FractionRule FractionRules     = 60;
+    string                ID                = 10;
+    string                EntID             = 20;
+    string                AppID             = 30;
+    string                PoolID            = 40;
+    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 50;
+    string                Name              = 60;
+    string                Site              = 70;
+    string                Description       = 80;
+    repeated Coin         Coins             = 90;
+    repeated FractionRule FractionRules     = 100;
 }
 
 message Coin {
@@ -60,7 +64,7 @@ message FractionRule {
 }
 
 message CreatePoolRequest {
-    string EntID = 10;
+    string PoolID = 10;
     string TargetAppID = 20;
 }
 
