@@ -23,7 +23,7 @@ service Gateway {
     }
     rpc GetUserFractions       (GetUserFractionsRequest)     returns (GetUserFractionsResponse)      {
         option (google.api.http) = {
-            post: "/v1/get/fractions"
+            post: "/v1/get/user/fractions"
             body: "*"
         };
     }

@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/get/fractions": {
+    "/v1/get/user/fractions": {
       "post": {
         "operationId": "Gateway_GetUserFractions",
         "responses": {
