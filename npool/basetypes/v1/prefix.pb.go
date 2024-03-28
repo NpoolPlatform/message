@@ -96,6 +96,7 @@ const (
 	Prefix_PrefixCreateGoodLedgerStatement         Prefix = 740
 	Prefix_PrefixCreateGoodLedgerUnsoldStatement   Prefix = 750
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Prefix_PrefixCreateCoinUsedFor                 Prefix = 760
 	Prefix_PrefixCreateSimulateLedger              Prefix = 770
 	Prefix_PrefixCreateSimulateLedgerStatement     Prefix = 780
@@ -108,6 +109,10 @@ const (
 	Prefix_PrefixCreateMiningpoolCoin              Prefix = 1000
 	Prefix_PrefixCreateMiningpoolFractionRule      Prefix = 1010
 >>>>>>> d0c42ae03 (add create prefix)
+=======
+	Prefix_PrefixCreateMiningpoolCoin              Prefix = 1000
+	Prefix_PrefixCreateMiningpoolFractionRule      Prefix = 1010
+>>>>>>> c7a74c415a170b2338f55a9cd817930cd48ce61e
 	Prefix_PrefixMigrate                           Prefix = 10000
 	Prefix_PrefixScheduler                         Prefix = 20000
 	Prefix_PrefixAccountLock                       Prefix = 30000
@@ -192,6 +197,7 @@ var (
 		740:   "PrefixCreateGoodLedgerStatement",
 		750:   "PrefixCreateGoodLedgerUnsoldStatement",
 <<<<<<< HEAD
+<<<<<<< HEAD
 		760:   "PrefixCreateCoinUsedFor",
 		770:   "PrefixCreateSimulateLedger",
 		780:   "PrefixCreateSimulateLedgerStatement",
@@ -204,6 +210,10 @@ var (
 		1000:  "PrefixCreateMiningpoolCoin",
 		1010:  "PrefixCreateMiningpoolFractionRule",
 >>>>>>> d0c42ae03 (add create prefix)
+=======
+		1000:  "PrefixCreateMiningpoolCoin",
+		1010:  "PrefixCreateMiningpoolFractionRule",
+>>>>>>> c7a74c415a170b2338f55a9cd817930cd48ce61e
 		10000: "PrefixMigrate",
 		20000: "PrefixScheduler",
 		30000: "PrefixAccountLock",
@@ -285,6 +295,7 @@ var (
 		"PrefixCreateGoodLedgerStatement":         740,
 		"PrefixCreateGoodLedgerUnsoldStatement":   750,
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"PrefixCreateCoinUsedFor":                 760,
 		"PrefixCreateSimulateLedger":              770,
 		"PrefixCreateSimulateLedgerStatement":     780,
@@ -297,6 +308,10 @@ var (
 		"PrefixCreateMiningpoolCoin":              1000,
 		"PrefixCreateMiningpoolFractionRule":      1010,
 >>>>>>> d0c42ae03 (add create prefix)
+=======
+		"PrefixCreateMiningpoolCoin":              1000,
+		"PrefixCreateMiningpoolFractionRule":      1010,
+>>>>>>> c7a74c415a170b2338f55a9cd817930cd48ce61e
 		"PrefixMigrate":                           10000,
 		"PrefixScheduler":                         20000,
 		"PrefixAccountLock":                       30000,
@@ -340,10 +355,14 @@ var file_npool_basetypes_v1_prefix_proto_rawDesc = []byte{
 	0x73, 0x2f, 0x76, 0x31, 0x2f, 0x70, 0x72, 0x65, 0x66, 0x69, 0x78, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x12, 0x0c, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2a,
 <<<<<<< HEAD
+<<<<<<< HEAD
 	0xb9, 0x13, 0x0a, 0x06, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x12, 0x11, 0x0a, 0x0d, 0x44, 0x65,
 =======
 	0xab, 0x11, 0x0a, 0x06, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x12, 0x11, 0x0a, 0x0d, 0x44, 0x65,
 >>>>>>> d0c42ae03 (add create prefix)
+=======
+	0xab, 0x11, 0x0a, 0x06, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x12, 0x11, 0x0a, 0x0d, 0x44, 0x65,
+>>>>>>> c7a74c415a170b2338f55a9cd817930cd48ce61e
 	0x66, 0x61, 0x75, 0x6c, 0x74, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x10, 0x00, 0x12, 0x12, 0x0a,
 	0x0e, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x64, 0x65, 0x10,
 	0x0a, 0x12, 0x15, 0x0a, 0x11, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x55, 0x73, 0x65, 0x72, 0x41,
@@ -566,7 +585,10 @@ var file_npool_basetypes_v1_prefix_proto_rawDesc = []byte{
 	0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
 	0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65,
 	0x73, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+<<<<<<< HEAD
 >>>>>>> d0c42ae03 (add create prefix)
+=======
+>>>>>>> c7a74c415a170b2338f55a9cd817930cd48ce61e
 }
 
 var (
