@@ -82,12 +82,12 @@
     },
     "/v1/get/fractions": {
       "post": {
-        "operationId": "Middleware_GetFractions",
+        "operationId": "Middleware_GetUserFractions",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetOrderFractionsResponse"
+              "$ref": "#/definitions/v1GetUserFractionsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetOrderFractionsRequest"
+              "$ref": "#/definitions/v1GetUserFractionsRequest"
             }
           }
         ],
@@ -231,19 +231,13 @@
         }
       }
     },
-    "v1GetOrderFractionsRequest": {
+    "v1GetUserFractionsRequest": {
       "type": "object",
       "properties": {
-        "EntID": {
-          "type": "string"
-        },
         "AppID": {
           "type": "string"
         },
         "UserID": {
-          "type": "string"
-        },
-        "OrderUserID": {
           "type": "string"
         },
         "Offset": {
@@ -256,7 +250,7 @@
         }
       }
     },
-    "v1GetOrderFractionsResponse": {
+    "v1GetUserFractionsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
