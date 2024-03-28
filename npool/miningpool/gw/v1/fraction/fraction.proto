@@ -30,19 +30,24 @@ service Middleware {
 }
 
 message Fraction {
-    uint32                                ID                = 10;
-    string                                EntID             = 20;
-    string                                OrderUserID       = 30;
-    string                                WithdrawStateStr  = 40;
-    basetypes.miningpool.v1.WithdrawState WithdrawState     = 41;
-    uint32                                WithdrawTime      = 50;
-    uint32                                PayTime           = 60;
-    uint32                                CreatedAt         = 70;
-    uint32                                UpdatedAt         = 80;
+    optional uint32                                   ID                 = 10;
+    optional string                                   EntID              = 20;
+    optional string                                   AppID              = 30;
+    optional string                                   UserID             = 40;
+    optional string                                   OrderUserID        = 50;
+    optional basetypes.miningpool.v1.WithdrawState    WithdrawState      = 60;
+    optional uint32                                   WithdrawTime       = 70;
+    optional uint32                                   PayTime            = 80;
+    optional string                                   Msg                = 90;
+    uint32                                            CreatedAt          = 100;
+    uint32                                            UpdatedAt          = 110;
 }
 
 message CreateFractionRequest {
-    optional string  OrderUserID = 30;
+    string   EntID         = 10;
+    string   AppID         = 20;
+    string   UserID        = 30;
+    string   OrderUserID   = 40;
 }
 
 message CreateFractionResponse {
@@ -50,7 +55,9 @@ message CreateFractionResponse {
 }
 
 message GetFractionRequest {
-    string EntID = 10;
+    string   EntID         = 10;
+    string   AppID         = 20;
+    string   UserID        = 30;
 }
 
 message GetFractionResponse {
@@ -58,9 +65,12 @@ message GetFractionResponse {
 }
 
 message GetOrderFractionsRequest {
-    string OrderUserID  = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+    string   EntID         = 10;
+    string   AppID         = 20;
+    string   UserID        = 30;
+    string   OrderUserID   = 40;
+    int32    Offset        = 50;
+    int32    Limit         = 60;
 }
 
 message GetOrderFractionsResponse {
