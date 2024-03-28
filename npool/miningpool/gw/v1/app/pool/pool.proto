@@ -9,15 +9,27 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
-    rpc GetPools       (GetPoolsRequest)     returns (GetPoolsResponse)      {
+    rpc CreatePool(CreatePoolRequest)returns (CreatePoolResponse)      {
+        option (google.api.http) = {
+            post: "/v1/create/pool"
+            body: "*"
+        };
+    }
+    rpc GetPool(GetPoolRequest)returns (GetPoolResponse)      {
+        option (google.api.http) = {
+            post: "/v1/get/pool"
+            body: "*"
+        };
+    }
+    rpc GetPools(GetPoolsRequest)returns (GetPoolsResponse)      {
         option (google.api.http) = {
             post: "/v1/get/pools"
             body: "*"
         };
     }
-    rpc GetPool        (GetPoolRequest)     returns (GetPoolResponse)      {
+    rpc GetNPools(GetNPoolsRequest)returns (GetNPoolsResponse)      {
         option (google.api.http) = {
-            post: "/v1/get/pool"
+            post: "/v1/get/n/pools"
             body: "*"
         };
     }
@@ -47,6 +59,24 @@ message FractionRule {
     float                WithdrawRate         = 40;
 }
 
+message CreatePoolRequest {
+    string EntID = 10;
+    string TargetAppID = 20;
+}
+
+message CreatePoolResponse {
+    Pool Info = 10;
+}
+
+message GetPoolRequest {
+    string EntID = 10;
+    string AppID = 20;
+}
+
+message GetPoolResponse {
+    Pool Info = 10;
+}
+
 message GetPoolsRequest {
     string AppID = 10;
     int32 Offset = 20;
@@ -58,11 +88,13 @@ message GetPoolsResponse {
     uint32        Total = 20;
 }
 
-message GetPoolRequest {
-    string EntID = 10;
-    string AppID = 20;
+message GetNPoolsRequest {
+    string TargetAppID = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
-message GetPoolResponse {
-    Pool Info = 10;
+message GetNPoolsResponse {
+    repeated Pool Infos = 10;
+    uint32        Total = 20;
 }
