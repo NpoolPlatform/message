@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/create/fraction": {
       "post": {
-        "operationId": "Middleware_CreateFraction",
+        "operationId": "Gateway_CreateFraction",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     },
     "/v1/get/fraction": {
       "post": {
-        "operationId": "Middleware_GetFraction",
+        "operationId": "Gateway_GetFraction",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     },
     "/v1/get/fractions": {
       "post": {
-        "operationId": "Middleware_GetUserFractions",
+        "operationId": "Gateway_GetUserFractions",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -108,7 +108,7 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     }
