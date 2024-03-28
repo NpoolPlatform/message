@@ -45,7 +45,7 @@ message PowerRentalReq {
     // Good stock
     optional string StockID = 210;
     optional string Total = 220;
-    repeated good.middleware.good1.stock.v1.MiningGoodStockReq MiningPoolStocks = 230;
+    repeated good.middleware.good1.stock.v1.MiningGoodStockReq MiningGoodStocks = 230;
 }
 
 message PowerRental {
@@ -134,7 +134,7 @@ message PowerRental {
     string GoodAppReserved = 410;
 
     repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 800;
-    repeated good.middleware.good1.stock.v1.MiningGoodStock MiningPoolStocks = 810;
+    repeated good.middleware.good1.stock.v1.MiningGoodStock MiningGoodStocks = 810;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
