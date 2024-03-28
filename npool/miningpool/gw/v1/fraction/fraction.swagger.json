@@ -144,6 +144,15 @@
     "v1CreateFractionRequest": {
       "type": "object",
       "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "OrderUserID": {
           "type": "string"
         }
@@ -167,10 +176,13 @@
         "EntID": {
           "type": "string"
         },
-        "OrderUserID": {
+        "AppID": {
           "type": "string"
         },
-        "WithdrawStateStr": {
+        "UserID": {
+          "type": "string"
+        },
+        "OrderUserID": {
           "type": "string"
         },
         "WithdrawState": {
@@ -183,6 +195,9 @@
         "PayTime": {
           "type": "integer",
           "format": "int64"
+        },
+        "Msg": {
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
@@ -199,6 +214,12 @@
       "properties": {
         "EntID": {
           "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
         }
       }
     },
@@ -213,6 +234,15 @@
     "v1GetOrderFractionsRequest": {
       "type": "object",
       "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "OrderUserID": {
           "type": "string"
         },
