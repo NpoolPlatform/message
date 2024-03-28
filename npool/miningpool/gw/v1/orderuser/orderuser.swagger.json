@@ -154,6 +154,12 @@
       "properties": {
         "EntID": {
           "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
         }
       }
     },
@@ -234,6 +240,12 @@
         "EntID": {
           "type": "string"
         },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "AutoPay": {
           "type": "boolean"
         }
@@ -251,6 +263,12 @@
       "type": "object",
       "properties": {
         "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         },
         "RevenueAddress": {

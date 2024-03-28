@@ -49,7 +49,9 @@ message OrderUser {
 
 
 message GetOrderUserRequest {
-    string EntID = 10;
+    string EntID  = 10;
+    string AppID  = 20;
+    string UserID = 30;
 }
 
 message GetOrderUserResponse {
@@ -58,7 +60,9 @@ message GetOrderUserResponse {
 
 message SetupRevenueAddressRequest{
     string EntID          = 10;
-    string RevenueAddress = 20;
+    string AppID          = 20;
+    string UserID         = 30;
+    string RevenueAddress = 40;
 }
 
 message SetupRevenueAddressResponse{
@@ -67,7 +71,9 @@ message SetupRevenueAddressResponse{
 
 message SetupAutoPayRequest{
     string EntID      = 10;
-    bool   AutoPay = 20;
+    string AppID      = 20;
+    string UserID     = 30;
+    bool   AutoPay    = 40;
 }
 
 message SetupAutoPayResponse{
