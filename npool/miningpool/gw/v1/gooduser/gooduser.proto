@@ -46,22 +46,20 @@ message GoodUser {
     string               EntID             = 20;
     string               Name              = 30;
     string               RootUserID        = 40;
-    string               GoodID            = 50;
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 61;
-    basetypes.miningpool.v1.CoinType CoinType = 71;
-    float                HashRate          = 80;
-    string               ReadPageLink    = 90;
-    basetypes.miningpool.v1.RevenueType RevenueType = 101;
-    uint32               CreatedAt         = 110;
-    uint32               UpdatedAt         = 120;
+    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 50;
+    basetypes.miningpool.v1.CoinType CoinType = 60;
+    float                HashRate          = 70;
+    string               ReadPageLink    = 80;
+    basetypes.miningpool.v1.RevenueType RevenueType = 90;
+    uint32               CreatedAt         = 100;
+    uint32               UpdatedAt         = 110;
 }
 
 message CreateGoodUserRequest {
     string                                 RootUserID     = 10;
-    string                                 GoodID         = 20;
-    basetypes.miningpool.v1.CoinType       CoinType       = 30;
-    float                                  HashRate       = 40;
-    basetypes.miningpool.v1.RevenueType    RevenueType    = 50;
+    basetypes.miningpool.v1.CoinType       CoinType       = 20;
+    float                                  HashRate       = 30;
+    basetypes.miningpool.v1.RevenueType    RevenueType    = 40;
 }
 
 message CreateGoodUserResponse {
@@ -89,10 +87,9 @@ message GetGoodUsersResponse {
 
 message UpdateGoodUserRequest {
     uint32               ID                = 10;
-    optional string               RootUserID        = 40;
-    optional string               GoodID            = 50;
-    optional float                HashRate          = 80;
-    optional basetypes.miningpool.v1.RevenueType RevenueType = 101;
+    optional string               RootUserID        = 20;
+    optional float                HashRate          = 30;
+    optional basetypes.miningpool.v1.RevenueType RevenueType = 40;
 }
 
 message UpdateGoodUserResponse {

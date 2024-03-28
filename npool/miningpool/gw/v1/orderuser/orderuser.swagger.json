@@ -193,7 +193,10 @@
         "GoodUserID": {
           "type": "string"
         },
-        "OrderID": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         },
         "MiningpoolType": {

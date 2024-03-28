@@ -219,9 +219,6 @@
         "RootUserID": {
           "type": "string"
         },
-        "GoodID": {
-          "type": "string"
-        },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
@@ -319,9 +316,6 @@
         "RootUserID": {
           "type": "string"
         },
-        "GoodID": {
-          "type": "string"
-        },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
@@ -373,9 +367,6 @@
           "format": "int64"
         },
         "RootUserID": {
-          "type": "string"
-        },
-        "GoodID": {
           "type": "string"
         },
         "HashRate": {

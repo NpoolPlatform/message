@@ -35,15 +35,16 @@ message OrderUser {
     string               Name              = 30;
     string               RootUserID        = 40;
     string               GoodUserID        = 50;
-    string               OrderID           = 60;
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 70;
-    basetypes.miningpool.v1.CoinType CoinType = 80;
-    float                Proportion        = 90;
-    string               RevenueAddress    = 100;
-    string               ReadPageLink      = 110;
-    bool                 AutoPay           = 120;
-    uint32               CreatedAt         = 130;
-    uint32               UpdatedAt         = 140;
+    string               AppID             = 60;
+    string               UserID            = 70;
+    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
+    basetypes.miningpool.v1.CoinType CoinType = 90;
+    float                Proportion        = 100;
+    string               RevenueAddress    = 110;
+    string               ReadPageLink      = 120;
+    bool                 AutoPay           = 130;
+    uint32               CreatedAt         = 140;
+    uint32               UpdatedAt         = 150;
 }
 
 
