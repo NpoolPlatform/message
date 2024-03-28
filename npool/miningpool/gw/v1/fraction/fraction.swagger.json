@@ -144,9 +144,6 @@
     "v1CreateFractionRequest": {
       "type": "object",
       "properties": {
-        "EntID": {
-          "type": "string"
-        },
         "AppID": {
           "type": "string"
         },

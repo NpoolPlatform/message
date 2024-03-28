@@ -44,10 +44,9 @@ message Fraction {
 }
 
 message CreateFractionRequest {
-    string   EntID         = 10;
-    string   AppID         = 20;
-    string   UserID        = 30;
-    string   OrderUserID   = 40;
+    string   AppID         = 10;
+    string   UserID        = 20;
+    string   OrderUserID   = 30;
 }
 
 message CreateFractionResponse {
