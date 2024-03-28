@@ -48,38 +48,6 @@
         ]
       }
     },
-    "/v1/get/orderusers/by/order": {
-      "post": {
-        "operationId": "Gateway_GetOrderUsersByOrder",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetOrderUsersByOrderResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetOrderUsersByOrderRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/setup/autopay": {
       "post": {
         "operationId": "Gateway_SetupAutoPay",
@@ -194,37 +162,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
-    "v1GetOrderUsersByOrderRequest": {
-      "type": "object",
-      "properties": {
-        "OrderID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetOrderUsersByOrderResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1OrderUser"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

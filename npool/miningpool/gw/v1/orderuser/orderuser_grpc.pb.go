@@ -19,10 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetOrderUser_FullMethodName         = "/miningpool.gateway.orderuser.v1.Gateway/GetOrderUser"
-	Gateway_GetOrderUsersByOrder_FullMethodName = "/miningpool.gateway.orderuser.v1.Gateway/GetOrderUsersByOrder"
-	Gateway_SetupRevenueAddress_FullMethodName  = "/miningpool.gateway.orderuser.v1.Gateway/SetupRevenueAddress"
-	Gateway_SetupAutoPay_FullMethodName         = "/miningpool.gateway.orderuser.v1.Gateway/SetupAutoPay"
+	Gateway_GetOrderUser_FullMethodName        = "/miningpool.gateway.orderuser.v1.Gateway/GetOrderUser"
+	Gateway_SetupRevenueAddress_FullMethodName = "/miningpool.gateway.orderuser.v1.Gateway/SetupRevenueAddress"
+	Gateway_SetupAutoPay_FullMethodName        = "/miningpool.gateway.orderuser.v1.Gateway/SetupAutoPay"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -30,7 +29,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	GetOrderUser(ctx context.Context, in *GetOrderUserRequest, opts ...grpc.CallOption) (*GetOrderUserResponse, error)
-	GetOrderUsersByOrder(ctx context.Context, in *GetOrderUsersByOrderRequest, opts ...grpc.CallOption) (*GetOrderUsersByOrderResponse, error)
 	SetupRevenueAddress(ctx context.Context, in *SetupRevenueAddressRequest, opts ...grpc.CallOption) (*SetupRevenueAddressResponse, error)
 	SetupAutoPay(ctx context.Context, in *SetupAutoPayRequest, opts ...grpc.CallOption) (*SetupAutoPayResponse, error)
 }
@@ -46,15 +44,6 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) GetOrderUser(ctx context.Context, in *GetOrderUserRequest, opts ...grpc.CallOption) (*GetOrderUserResponse, error) {
 	out := new(GetOrderUserResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetOrderUser_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetOrderUsersByOrder(ctx context.Context, in *GetOrderUsersByOrderRequest, opts ...grpc.CallOption) (*GetOrderUsersByOrderResponse, error) {
-	out := new(GetOrderUsersByOrderResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetOrderUsersByOrder_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -84,7 +73,6 @@ func (c *gatewayClient) SetupAutoPay(ctx context.Context, in *SetupAutoPayReques
 // for forward compatibility
 type GatewayServer interface {
 	GetOrderUser(context.Context, *GetOrderUserRequest) (*GetOrderUserResponse, error)
-	GetOrderUsersByOrder(context.Context, *GetOrderUsersByOrderRequest) (*GetOrderUsersByOrderResponse, error)
 	SetupRevenueAddress(context.Context, *SetupRevenueAddressRequest) (*SetupRevenueAddressResponse, error)
 	SetupAutoPay(context.Context, *SetupAutoPayRequest) (*SetupAutoPayResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -96,9 +84,6 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) GetOrderUser(context.Context, *GetOrderUserRequest) (*GetOrderUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrderUser not implemented")
-}
-func (UnimplementedGatewayServer) GetOrderUsersByOrder(context.Context, *GetOrderUsersByOrderRequest) (*GetOrderUsersByOrderResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetOrderUsersByOrder not implemented")
 }
 func (UnimplementedGatewayServer) SetupRevenueAddress(context.Context, *SetupRevenueAddressRequest) (*SetupRevenueAddressResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetupRevenueAddress not implemented")
@@ -133,24 +118,6 @@ func _Gateway_GetOrderUser_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetOrderUser(ctx, req.(*GetOrderUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetOrderUsersByOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetOrderUsersByOrderRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetOrderUsersByOrder(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetOrderUsersByOrder_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetOrderUsersByOrder(ctx, req.(*GetOrderUsersByOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -201,10 +168,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetOrderUser",
 			Handler:    _Gateway_GetOrderUser_Handler,
-		},
-		{
-			MethodName: "GetOrderUsersByOrder",
-			Handler:    _Gateway_GetOrderUsersByOrder_Handler,
 		},
 		{
 			MethodName: "SetupRevenueAddress",
