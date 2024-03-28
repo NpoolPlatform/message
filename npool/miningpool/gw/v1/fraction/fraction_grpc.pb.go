@@ -19,163 +19,163 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateFraction_FullMethodName   = "/miningpool.gateway.fraction.v1.Middleware/CreateFraction"
-	Middleware_GetFraction_FullMethodName      = "/miningpool.gateway.fraction.v1.Middleware/GetFraction"
-	Middleware_GetUserFractions_FullMethodName = "/miningpool.gateway.fraction.v1.Middleware/GetUserFractions"
+	Gateway_CreateFraction_FullMethodName   = "/miningpool.gateway.fraction.v1.Gateway/CreateFraction"
+	Gateway_GetFraction_FullMethodName      = "/miningpool.gateway.fraction.v1.Gateway/GetFraction"
+	Gateway_GetUserFractions_FullMethodName = "/miningpool.gateway.fraction.v1.Gateway/GetUserFractions"
 )
 
-// MiddlewareClient is the client API for Middleware service.
+// GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type MiddlewareClient interface {
+type GatewayClient interface {
 	CreateFraction(ctx context.Context, in *CreateFractionRequest, opts ...grpc.CallOption) (*CreateFractionResponse, error)
 	GetFraction(ctx context.Context, in *GetFractionRequest, opts ...grpc.CallOption) (*GetFractionResponse, error)
 	GetUserFractions(ctx context.Context, in *GetUserFractionsRequest, opts ...grpc.CallOption) (*GetUserFractionsResponse, error)
 }
 
-type middlewareClient struct {
+type gatewayClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
-	return &middlewareClient{cc}
+func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
+	return &gatewayClient{cc}
 }
 
-func (c *middlewareClient) CreateFraction(ctx context.Context, in *CreateFractionRequest, opts ...grpc.CallOption) (*CreateFractionResponse, error) {
+func (c *gatewayClient) CreateFraction(ctx context.Context, in *CreateFractionRequest, opts ...grpc.CallOption) (*CreateFractionResponse, error) {
 	out := new(CreateFractionResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateFraction_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Gateway_CreateFraction_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) GetFraction(ctx context.Context, in *GetFractionRequest, opts ...grpc.CallOption) (*GetFractionResponse, error) {
+func (c *gatewayClient) GetFraction(ctx context.Context, in *GetFractionRequest, opts ...grpc.CallOption) (*GetFractionResponse, error) {
 	out := new(GetFractionResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetFraction_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Gateway_GetFraction_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) GetUserFractions(ctx context.Context, in *GetUserFractionsRequest, opts ...grpc.CallOption) (*GetUserFractionsResponse, error) {
+func (c *gatewayClient) GetUserFractions(ctx context.Context, in *GetUserFractionsRequest, opts ...grpc.CallOption) (*GetUserFractionsResponse, error) {
 	out := new(GetUserFractionsResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetUserFractions_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Gateway_GetUserFractions_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// MiddlewareServer is the server API for Middleware service.
-// All implementations must embed UnimplementedMiddlewareServer
+// GatewayServer is the server API for Gateway service.
+// All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
-type MiddlewareServer interface {
+type GatewayServer interface {
 	CreateFraction(context.Context, *CreateFractionRequest) (*CreateFractionResponse, error)
 	GetFraction(context.Context, *GetFractionRequest) (*GetFractionResponse, error)
 	GetUserFractions(context.Context, *GetUserFractionsRequest) (*GetUserFractionsResponse, error)
-	mustEmbedUnimplementedMiddlewareServer()
+	mustEmbedUnimplementedGatewayServer()
 }
 
-// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
-type UnimplementedMiddlewareServer struct {
+// UnimplementedGatewayServer must be embedded to have forward compatible implementations.
+type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateFraction(context.Context, *CreateFractionRequest) (*CreateFractionResponse, error) {
+func (UnimplementedGatewayServer) CreateFraction(context.Context, *CreateFractionRequest) (*CreateFractionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateFraction not implemented")
 }
-func (UnimplementedMiddlewareServer) GetFraction(context.Context, *GetFractionRequest) (*GetFractionResponse, error) {
+func (UnimplementedGatewayServer) GetFraction(context.Context, *GetFractionRequest) (*GetFractionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFraction not implemented")
 }
-func (UnimplementedMiddlewareServer) GetUserFractions(context.Context, *GetUserFractionsRequest) (*GetUserFractionsResponse, error) {
+func (UnimplementedGatewayServer) GetUserFractions(context.Context, *GetUserFractionsRequest) (*GetUserFractionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserFractions not implemented")
 }
-func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
+func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
-// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to MiddlewareServer will
+// UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to GatewayServer will
 // result in compilation errors.
-type UnsafeMiddlewareServer interface {
-	mustEmbedUnimplementedMiddlewareServer()
+type UnsafeGatewayServer interface {
+	mustEmbedUnimplementedGatewayServer()
 }
 
-func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
-	s.RegisterService(&Middleware_ServiceDesc, srv)
+func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
+	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Middleware_CreateFraction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_CreateFraction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateFractionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateFraction(ctx, in)
+		return srv.(GatewayServer).CreateFraction(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_CreateFraction_FullMethodName,
+		FullMethod: Gateway_CreateFraction_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateFraction(ctx, req.(*CreateFractionRequest))
+		return srv.(GatewayServer).CreateFraction(ctx, req.(*CreateFractionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetFraction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetFraction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetFractionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetFraction(ctx, in)
+		return srv.(GatewayServer).GetFraction(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetFraction_FullMethodName,
+		FullMethod: Gateway_GetFraction_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetFraction(ctx, req.(*GetFractionRequest))
+		return srv.(GatewayServer).GetFraction(ctx, req.(*GetFractionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetUserFractions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetUserFractions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserFractionsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetUserFractions(ctx, in)
+		return srv.(GatewayServer).GetUserFractions(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetUserFractions_FullMethodName,
+		FullMethod: Gateway_GetUserFractions_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetUserFractions(ctx, req.(*GetUserFractionsRequest))
+		return srv.(GatewayServer).GetUserFractions(ctx, req.(*GetUserFractionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
+// Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "miningpool.gateway.fraction.v1.Middleware",
-	HandlerType: (*MiddlewareServer)(nil),
+var Gateway_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "miningpool.gateway.fraction.v1.Gateway",
+	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateFraction",
-			Handler:    _Middleware_CreateFraction_Handler,
+			Handler:    _Gateway_CreateFraction_Handler,
 		},
 		{
 			MethodName: "GetFraction",
-			Handler:    _Middleware_GetFraction_Handler,
+			Handler:    _Gateway_GetFraction_Handler,
 		},
 		{
 			MethodName: "GetUserFractions",
-			Handler:    _Middleware_GetUserFractions_Handler,
+			Handler:    _Gateway_GetUserFractions_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
