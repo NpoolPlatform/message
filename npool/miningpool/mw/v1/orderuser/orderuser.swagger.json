@@ -72,7 +72,10 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Name": {
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "RootUserID": {
@@ -81,7 +84,7 @@
         "GoodUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "OrderID": {
+        "Name": {
           "$ref": "#/definitions/v1StringVal"
         },
         "MiningpoolType": {
@@ -180,9 +183,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "Name": {
+        "AppID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"name\""
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
         },
         "RootUserID": {
           "type": "string",
@@ -192,9 +199,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_user_id\""
         },
-        "OrderID": {
+        "Name": {
           "type": "string",
-          "title": "@inject_tag: sql:\"order_id\""
+          "title": "@inject_tag: sql:\"name\""
         },
         "MiningpoolTypeStr": {
           "type": "string",
@@ -249,7 +256,10 @@
         "EntID": {
           "type": "string"
         },
-        "Name": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         },
         "RootUserID": {
@@ -258,7 +268,7 @@
         "GoodUserID": {
           "type": "string"
         },
-        "OrderID": {
+        "Name": {
           "type": "string"
         },
         "MiningpoolType": {

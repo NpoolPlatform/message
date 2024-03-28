@@ -15,12 +15,6 @@ service Gateway {
             body: "*"
         };
     }
-    rpc GetOrderUsersByOrder  (GetOrderUsersByOrderRequest) returns (GetOrderUsersByOrderResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/orderusers/by/order"
-            body: "*"
-        };
-    }
     rpc SetupRevenueAddress (SetupRevenueAddressRequest)   returns (SetupRevenueAddressResponse)  {
         option (google.api.http) = {
             post: "/v1/setup/revenueaddress"
@@ -59,17 +53,6 @@ message GetOrderUserRequest {
 
 message GetOrderUserResponse {
     OrderUser Info = 10;
-}
-
-message GetOrderUsersByOrderRequest {
-    string OrderID  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
-}
-
-message GetOrderUsersByOrderResponse {
-    repeated OrderUser Infos = 10;
-    uint32      Total = 20;
 }
 
 message SetupRevenueAddressRequest{

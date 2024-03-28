@@ -23,12 +23,11 @@ message GoodUserReq {
     optional string                                 EntID          = 20;
     optional string                                 Name           = 30;
     optional string                                 RootUserID     = 40;
-    optional string                                 GoodID         = 50;
-    optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 60;
-    optional basetypes.miningpool.v1.CoinType       CoinType       = 70;
-    optional float                                  HashRate       = 80;
-    optional string                                 ReadPageLink   = 90;
-    optional basetypes.miningpool.v1.RevenueType    RevenueType    = 100;
+    optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 50;
+    optional basetypes.miningpool.v1.CoinType       CoinType       = 60;
+    optional float                                  HashRate       = 70;
+    optional string                                 ReadPageLink   = 80;
+    optional basetypes.miningpool.v1.RevenueType    RevenueType    = 90;
 }
 
 message GoodUser {
@@ -40,25 +39,23 @@ message GoodUser {
     string               Name              = 30;
     // @inject_tag: sql:"root_user_id"
     string               RootUserID        = 40;
-    // @inject_tag: sql:"good_id"
-    string               GoodID            = 50;
     // @inject_tag: sql:"miningpool_type"
-    string               MiningpoolTypeStr = 60;
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 61;
+    string               MiningpoolTypeStr = 50;
+    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 51;
     // @inject_tag: sql:"coin_type" 
-    string               CoinTypeStr       = 70;
-    basetypes.miningpool.v1.CoinType CoinType = 71;
+    string               CoinTypeStr       = 60;
+    basetypes.miningpool.v1.CoinType CoinType = 61;
     // @inject_tag: sql:"hash_rate"
-    float                HashRate          = 80;
+    float                HashRate          = 70;
     // @inject_tag: sql:"read_page_link"
-    string               ReadPageLink    = 90;
+    string               ReadPageLink    = 80;
     // @inject_tag: sql:"revenue_type"
-    string               RevenueTypeStr       = 100;
-    basetypes.miningpool.v1.RevenueType RevenueType = 101;
+    string               RevenueTypeStr       = 90;
+    basetypes.miningpool.v1.RevenueType RevenueType = 91;
     // @inject_tag: sql:"created_at"
-    uint32               CreatedAt         = 110;
+    uint32               CreatedAt         = 100;
     // @inject_tag: sql:"updated_at"
-    uint32               UpdatedAt         = 120;
+    uint32               UpdatedAt         = 110;
 }
 
 message Conds {
@@ -66,11 +63,10 @@ message Conds {
     optional basetypes.v1.StringVal      EntID          = 10;
     optional basetypes.v1.StringVal      Name           = 20;
     optional basetypes.v1.StringVal      RootUserID     = 30;
-    optional basetypes.v1.StringVal      GoodID         = 40;
-    optional basetypes.v1.Uint32Val      MiningpoolType = 50;
-    optional basetypes.v1.Uint32Val      CoinType       = 60;
-    optional basetypes.v1.Uint32Val      RevenueType    = 70;
-    optional basetypes.v1.StringSliceVal EntIDs         = 80;
+    optional basetypes.v1.Uint32Val      MiningpoolType = 40;
+    optional basetypes.v1.Uint32Val      CoinType       = 50;
+    optional basetypes.v1.Uint32Val      RevenueType    = 60;
+    optional basetypes.v1.StringSliceVal EntIDs         = 70;
 }
 
 message CreateGoodUserRequest {
