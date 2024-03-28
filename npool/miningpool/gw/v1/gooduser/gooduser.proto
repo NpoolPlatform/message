@@ -89,10 +89,10 @@ message GetGoodUsersResponse {
 
 message UpdateGoodUserRequest {
     uint32               ID                = 10;
-    string               RootUserID        = 40;
-    string               GoodID            = 50;
-    float                HashRate          = 80;
-    basetypes.miningpool.v1.RevenueType RevenueType = 101;
+    optional string               RootUserID        = 40;
+    optional string               GoodID            = 50;
+    optional float                HashRate          = 80;
+    optional basetypes.miningpool.v1.RevenueType RevenueType = 101;
 }
 
 message UpdateGoodUserResponse {
