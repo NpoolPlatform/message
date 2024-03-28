@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/miningpoolgatewayorderuserv1GetOrderUserResponse"
+              "$ref": "#/definitions/v1GetOrderUserResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/miningpoolgatewayorderuserv1GetOrderUserRequest"
+              "$ref": "#/definitions/v1GetOrderUserRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/miningpoolgatewayorderuserv1SetupAutoPayResponse"
+              "$ref": "#/definitions/v1SetupAutoPayResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/miningpoolgatewayorderuserv1SetupAutoPayRequest"
+              "$ref": "#/definitions/v1SetupAutoPayRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/miningpoolgatewayorderuserv1SetupRevenueAddressResponse"
+              "$ref": "#/definitions/v1SetupRevenueAddressResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/miningpoolgatewayorderuserv1SetupRevenueAddressRequest"
+              "$ref": "#/definitions/v1SetupRevenueAddressRequest"
             }
           }
         ],
@@ -146,60 +146,6 @@
     }
   },
   "definitions": {
-    "miningpoolgatewayorderuserv1GetOrderUserRequest": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        }
-      }
-    },
-    "miningpoolgatewayorderuserv1GetOrderUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
-    "miningpoolgatewayorderuserv1SetupAutoPayRequest": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        },
-        "AutoPay": {
-          "type": "boolean"
-        }
-      }
-    },
-    "miningpoolgatewayorderuserv1SetupAutoPayResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
-    "miningpoolgatewayorderuserv1SetupRevenueAddressRequest": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        },
-        "RevenueAddress": {
-          "type": "string"
-        }
-      }
-    },
-    "miningpoolgatewayorderuserv1SetupRevenueAddressResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -234,6 +180,22 @@
         "BitCoin"
       ],
       "default": "DefaultCoinType"
+    },
+    "v1GetOrderUserRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetOrderUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderUser"
+        }
+      }
     },
     "v1GetOrderUsersByOrderRequest": {
       "type": "object",
@@ -280,69 +242,87 @@
       "properties": {
         "ID": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
+          "format": "int64"
         },
         "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
+          "type": "string"
         },
         "Name": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"name\""
+          "type": "string"
         },
         "RootUserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"root_user_id\""
+          "type": "string"
         },
         "GoodUserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_user_id\""
+          "type": "string"
         },
         "OrderID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"order_id\""
-        },
-        "MiningpoolTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_type\""
+          "type": "string"
         },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CoinTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type\""
         },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
         "Proportion": {
           "type": "number",
-          "format": "float",
-          "title": "@inject_tag: sql:\"proportion\""
+          "format": "float"
         },
         "RevenueAddress": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"revenue_address\""
+          "type": "string"
         },
         "ReadPageLink": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"read_page_link\""
+          "type": "string"
         },
         "AutoPay": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"auto_pay\""
+          "type": "boolean"
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
+          "format": "int64"
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
+          "format": "int64"
+        }
+      }
+    },
+    "v1SetupAutoPayRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "AutoPay": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SetupAutoPayResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderUser"
+        }
+      }
+    },
+    "v1SetupRevenueAddressRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "RevenueAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SetupRevenueAddressResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderUser"
         }
       }
     }
