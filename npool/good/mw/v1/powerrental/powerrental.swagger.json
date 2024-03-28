@@ -379,7 +379,7 @@
             "$ref": "#/definitions/v1GoodCoinInfo"
           }
         },
-        "MiningPoolStocks": {
+        "MiningGoodStocks": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1MiningGoodStock"
@@ -473,7 +473,7 @@
         "Total": {
           "type": "string"
         },
-        "MiningPoolStocks": {
+        "MiningGoodStocks": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1MiningGoodStockReq"
