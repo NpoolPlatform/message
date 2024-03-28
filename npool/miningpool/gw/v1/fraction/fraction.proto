@@ -21,7 +21,7 @@ service Middleware {
             body: "*"
         };
     }
-    rpc GetFractions       (GetOrderFractionsRequest)     returns (GetOrderFractionsResponse)      {
+    rpc GetUserFractions       (GetUserFractionsRequest)     returns (GetUserFractionsResponse)      {
         option (google.api.http) = {
             post: "/v1/get/fractions"
             body: "*"
@@ -64,16 +64,14 @@ message GetFractionResponse {
     Fraction Info = 10;
 }
 
-message GetOrderFractionsRequest {
-    string   EntID         = 10;
-    string   AppID         = 20;
-    string   UserID        = 30;
-    string   OrderUserID   = 40;
-    int32    Offset        = 50;
-    int32    Limit         = 60;
+message GetUserFractionsRequest {
+    string   AppID         = 10;
+    string   UserID        = 20;
+    int32    Offset        = 30;
+    int32    Limit         = 40;
 }
 
-message GetOrderFractionsResponse {
+message GetUserFractionsResponse {
     repeated Fraction Infos = 10;
     uint32      Total = 20;
 }
