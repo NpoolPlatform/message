@@ -757,6 +757,10 @@
     "v1StockInfo": {
       "type": "object",
       "properties": {
+        "AppGoodStockID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_stock_id\""
+        },
         "Reserved": {
           "type": "string",
           "title": "@inject_tag: sql:\"reserved\""
