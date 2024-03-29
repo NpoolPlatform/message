@@ -165,6 +165,15 @@
       ],
       "default": "DefaultGoodStartMode"
     },
+    "v1GoodStockMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStockMode",
+        "GoodStockByMiningPool",
+        "GoodStockByUnique"
+      ],
+      "default": "DefaultGoodStockMode"
+    },
     "v1GoodType": {
       "type": "string",
       "enum": [
@@ -341,6 +350,13 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"online\""
         },
+        "StockModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"stock_mode\""
+        },
+        "StockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
+        },
         "GoodStockID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_stock_id\""
@@ -465,6 +481,9 @@
         },
         "Online": {
           "type": "boolean"
+        },
+        "StockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
         },
         "StockID": {
           "type": "string",

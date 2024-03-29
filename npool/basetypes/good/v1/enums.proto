@@ -138,3 +138,10 @@ enum GoodSaleMode {
     GoodSaleModeMainnetPresaleScratch = 30;
     GoodSaleModeTestnetPresale        = 40;
 }
+
+enum GoodStockMode {
+    DefaultGoodStockMode = 0;
+
+    GoodStockByMiningPool = 10;
+    GoodStockByUnique     = 20;
+}
