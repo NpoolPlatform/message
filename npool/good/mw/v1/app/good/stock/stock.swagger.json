@@ -23,6 +23,9 @@
         "EntID": {
           "type": "string"
         },
+        "AppGoodID": {
+          "type": "string"
+        },
         "Units": {
           "type": "string"
         },

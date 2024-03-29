@@ -56,8 +56,9 @@ message Stock {
 
 message LockRequest {
     string EntID      = 10;
-    string Units      = 20;
-    string AppSpotUnits = 30;  // Locked from app spot quantity
+    string AppGoodID  = 20;    // We need app good id to know if ent id is from unique stock or mining stock
+    string Units      = 30;
+    string AppSpotUnits = 40;  // Locked from app spot quantity
 
     // Must same as unlock request
     string LockID     = 1000;
@@ -74,8 +75,9 @@ message LockResponse { Stock Info = 10; }
 message LocksRequest {
     message _Stock {
         string EntID      = 10;
-        string Units      = 20;
-        string AppSpotUnits = 30;  // Locked from app spot quantity
+        string AppGoodID  = 20;
+        string Units      = 30;
+        string AppSpotUnits = 40;  // Locked from app spot quantity
     }
     repeated _Stock Stocks = 10;
     string LockID          = 1000;
