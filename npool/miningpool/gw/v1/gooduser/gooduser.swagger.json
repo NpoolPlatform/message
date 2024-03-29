@@ -48,38 +48,6 @@
         ]
       }
     },
-    "/v1/delete/gooduser": {
-      "post": {
-        "operationId": "Gateway_DeleteGoodUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1DeleteGoodUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1DeleteGoodUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/gooduser": {
       "post": {
         "operationId": "Gateway_GetGoodUser",
@@ -232,23 +200,6 @@
       }
     },
     "v1CreateGoodUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodUser"
-        }
-      }
-    },
-    "v1DeleteGoodUserRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1DeleteGoodUserResponse": {
       "type": "object",
       "properties": {
         "Info": {

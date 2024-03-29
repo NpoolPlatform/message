@@ -33,12 +33,6 @@ service Gateway {
             body: "*"
         };
     }
-    rpc DeleteRootUser     (DeleteRootUserRequest)   returns (DeleteRootUserResponse)    {
-        option (google.api.http) = {
-            post: "/v1/delete/rootuser"
-            body: "*"
-        };
-    }
 }
 
 message RootUser {
@@ -94,13 +88,5 @@ message UpdateRootUserRequest {
 }
 
 message UpdateRootUserResponse {
-    RootUser Info = 10;
-}
-
-message DeleteRootUserRequest {
-    uint32 ID = 10;
-}
-
-message DeleteRootUserResponse {
     RootUser Info = 10;
 }
