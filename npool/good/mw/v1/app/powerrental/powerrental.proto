@@ -132,78 +132,81 @@ message PowerRental {
     bool GoodPurchasable = 330;
     // @inject_tag: sql:"good_online"
     bool GoodOnline = 340;
+    // @inject_tag: sql:"stock_mode"
+    string StockModeStr = 350;
+    basetypes.good.v1.GoodStockMode StockMode = 360;
 
     // @inject_tag: sql:"app_good_purchasable"
-    bool AppGoodPurchasable = 350;
+    bool AppGoodPurchasable = 370;
     // @inject_tag: sql:"app_good_online"
-    bool AppGoodOnline = 360;
+    bool AppGoodOnline = 380;
     // @inject_tag: sql:"enable_product_page"
-    bool EnableProductPage = 370;
+    bool EnableProductPage = 390;
     // @inject_tag: sql:"product_page"
-    string ProductPage = 380;
+    string ProductPage = 400;
     // @inject_tag: sql:"visible"
-    bool Visible = 390;
+    bool Visible = 410;
     // @inject_tag: sql:"app_good_name"
-    string AppGoodName = 400;
+    string AppGoodName = 420;
     // @inject_tag: sql:"display_index"
-    int32 DisplayIndex = 410;
+    int32 DisplayIndex = 430;
     // @inject_tag: sql:"banner"
-    string Banner = 420;
+    string Banner = 440;
     // @inject_tag: sql:"cancel_mode"
-    string CancelModeStr = 430;
-    basetypes.good.v1.CancelMode CancelMode = 440;
+    string CancelModeStr = 450;
+    basetypes.good.v1.CancelMode CancelMode = 460;
     // @inject_tag: sql:"cancelable_before_start_seconds"
-    uint32 CancelableBeforeStartSeconds = 450;
+    uint32 CancelableBeforeStartSeconds = 470;
     // @inject_tag: sql:"enable_set_commission"
-    bool EnableSetCommission = 460;
+    bool EnableSetCommission = 480;
     // @inject_tag: sql:"min_order_amount"
-    string MinOrderAmount = 470;
+    string MinOrderAmount = 490;
     // @inject_tag: sql:"max_order_amount"
-    string MaxOrderAmount = 480;
+    string MaxOrderAmount = 500;
     // @inject_tag: sql:"max_user_amount"
-    string MaxUserAmount = 490;
+    string MaxUserAmount = 510;
     // @inject_tag: sql:"min_order_duration"
-    uint32 MinOrderDuration = 500;
+    uint32 MinOrderDuration = 520;
     // @inject_tag: sql:"max_order_duration"
-    uint32 MaxOrderDuration = 510;
+    uint32 MaxOrderDuration = 530;
     // @inject_tag: sql:"sale_start_at"
-    uint32 SaleStartAt = 520;
+    uint32 SaleStartAt = 540;
     // @inject_tag: sql:"sale_end_at"
-    uint32 SaleEndAt = 530;
+    uint32 SaleEndAt = 550;
     // @inject_tag: sql:"sale_mode"
-    string SaleModeStr = 540;
-    basetypes.good.v1.GoodSaleMode SaleMode  = 550;
+    string SaleModeStr = 560;
+    basetypes.good.v1.GoodSaleMode SaleMode  = 570;
     // @inject_tag: sql:"fixed_duration"
-    bool FixedDuration = 560;
+    bool FixedDuration = 580;
     // @inject_tag: sql:"package_with_requireds"
-    bool PackageWithRequireds = 570;
+    bool PackageWithRequireds = 590;
 
     // Only for legacy good
     // @inject_tag: sql:"technique_fee_ratio"
-    string TechniqueFeeRatio = 580;
+    string TechniqueFeeRatio = 600;
 
     // Good information
     // @inject_tag: sql:"good_stock_id"
-    string GoodStockID = 590;
+    string GoodStockID = 610;
     // @inject_tag: sql:"good_total"
-    string GoodTotal = 600;
+    string GoodTotal = 620;
     // @inject_tag: sql:"good_spot_quantity"
-    string GoodSpotQuantity = 610;
+    string GoodSpotQuantity = 630;
 
     // @inject_tag: sql:"app_good_stock_id"
-    string AppGoodStockID = 620;
+    string AppGoodStockID = 640;
     // @inject_tag: sql:"app_good_reserved"
-    string AppGoodTotal = 630;
+    string AppGoodTotal = 650;
     // @inject_tag: sql:"app_good_spot_quantity"
-    string AppGoodSpotQuantity = 640;
+    string AppGoodSpotQuantity = 660;
     // @inject_tag: sql:"app_good_locked"
-    string AppGoodLocked = 650;
+    string AppGoodLocked = 670;
     // @inject_tag: sql:"app_good_in_service"
-    string AppGoodInService = 660;
+    string AppGoodInService = 680;
     // @inject_tag: sql:"app_good_wait_start"
-    string AppGoodWaitStart = 670;
+    string AppGoodWaitStart = 690;
     // @inject_tag: sql:"app_good_sold"
-    string AppGoodSold = 680;
+    string AppGoodSold = 700;
 
     repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 900;
     repeated good.middleware.app.good1.description.v1.DescriptionInfo Descriptions = 910;
