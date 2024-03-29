@@ -11,25 +11,25 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 service Gateway {
     rpc CreatePool(CreatePoolRequest)returns (CreatePoolResponse)      {
         option (google.api.http) = {
-            post: "/v1/create/app/pool"
+            post: "/v1/create/apppool"
             body: "*"
         };
     }
     rpc GetPool(GetPoolRequest)returns (GetPoolResponse)      {
         option (google.api.http) = {
-            post: "/v1/get/app/pool"
+            post: "/v1/get/apppool"
             body: "*"
         };
     }
     rpc GetPools(GetPoolsRequest)returns (GetPoolsResponse)      {
         option (google.api.http) = {
-            post: "/v1/get/app/pools"
+            post: "/v1/get/apppools"
             body: "*"
         };
     }
     rpc GetNPools(GetNPoolsRequest)returns (GetNPoolsResponse)      {
         option (google.api.http) = {
-            post: "/v1/get/n/pools"
+            post: "/v1/get/n/apppools"
             body: "*"
         };
     }

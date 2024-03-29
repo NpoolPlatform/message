@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/app/pool": {
+    "/v1/create/apppool": {
       "post": {
         "operationId": "Gateway_CreatePool",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/get/app/pool": {
+    "/v1/get/apppool": {
       "post": {
         "operationId": "Gateway_GetPool",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/get/app/pools": {
+    "/v1/get/apppools": {
       "post": {
         "operationId": "Gateway_GetPools",
         "responses": {
@@ -112,7 +112,7 @@
         ]
       }
     },
-    "/v1/get/n/pools": {
+    "/v1/get/n/apppools": {
       "post": {
         "operationId": "Gateway_GetNPools",
         "responses": {
