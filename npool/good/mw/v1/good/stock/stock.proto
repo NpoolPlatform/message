@@ -13,5 +13,17 @@ message MiningGoodStockReq {
 
 message MiningGoodStock {
     // @inject_tag: sql:"good_stock_id"
-    string GoodStockID = 20;
+    string GoodStockID = 10;
+    // @inject_tag: sql:"total"
+    string Total      = 20;
+    // @inject_tag: sql:"spot_quantity"
+    string SpotQuantity = 30;
+    // @inject_tag: sql:"locked"
+    string Locked     = 40;
+    // @inject_tag: sql:"wait_start"
+    string WaitStart  = 50;
+    // @inject_tag: sql:"in_service"
+    string InService  = 60;
+    // @inject_tag: sql:"sold"
+    string Sold       = 70;
 }

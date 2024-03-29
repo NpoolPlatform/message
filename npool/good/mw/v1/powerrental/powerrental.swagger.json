@@ -193,6 +193,30 @@
         "GoodStockID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_stock_id\""
+        },
+        "Total": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"total\""
+        },
+        "SpotQuantity": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"spot_quantity\""
+        },
+        "Locked": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"locked\""
+        },
+        "WaitStart": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"wait_start\""
+        },
+        "InService": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"in_service\""
+        },
+        "Sold": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"sold\""
         }
       }
     },
