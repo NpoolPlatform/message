@@ -282,6 +282,31 @@
         }
       }
     },
+    "v1MiningGoodStockInfo": {
+      "type": "object",
+      "properties": {
+        "GoodStockID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_stock_id\""
+        },
+        "MiningPoolID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"mining_pool_id\""
+        },
+        "PoolGoodUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"pool_good_user_id\""
+        },
+        "Total": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"total\""
+        },
+        "SpotQuantity": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"spot_quantity\""
+        }
+      }
+    },
     "v1PosterInfo": {
       "type": "object",
       "properties": {
@@ -618,10 +643,16 @@
             "$ref": "#/definitions/v1DisplayColorInfo"
           }
         },
-        "MiningGoodStocks": {
+        "AppMiningGoodStocks": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1StockInfo"
+          }
+        },
+        "MiningGoodStocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1MiningGoodStockInfo"
           }
         },
         "Labels": {

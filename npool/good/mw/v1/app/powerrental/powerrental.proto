@@ -13,6 +13,7 @@ import "npool/good/mw/v1/app/good/label/label.proto";
 import "npool/good/mw/v1/app/good/display/name/name.proto";
 import "npool/good/mw/v1/app/good/display/color/color.proto";
 import "npool/good/mw/v1/app/good/stock/mining/mining.proto";
+import "npool/good/mw/v1/good/stock/stock.proto";
 
 service Middleware {
     rpc CreatePowerRental (CreatePowerRentalRequest) returns (CreatePowerRentalResponse) {}
@@ -213,8 +214,9 @@ message PowerRental {
     repeated good.middleware.app.good1.poster.v1.PosterInfo Posters = 920;
     repeated good.middleware.app.good1.display.name.v1.DisplayNameInfo DisplayNames = 930;
     repeated good.middleware.app.good1.display.color.v1.DisplayColorInfo DisplayColors = 940;
-    repeated good.middleware.app.good1.stock.mining.v1.StockInfo MiningGoodStocks = 950;
-    repeated good.middleware.app.good1.label.v1.LabelInfo Labels = 960;
+    repeated good.middleware.app.good1.stock.mining.v1.StockInfo AppMiningGoodStocks = 950;
+    repeated good.middleware.good1.stock.v1.MiningGoodStockInfo MiningGoodStocks = 960;
+    repeated good.middleware.app.good1.label.v1.LabelInfo Labels = 970;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
