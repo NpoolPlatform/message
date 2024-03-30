@@ -77,6 +77,15 @@
         }
       }
     },
+    "v1GoodStockMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStockMode",
+        "GoodStockByMiningPool",
+        "GoodStockByUnique"
+      ],
+      "default": "DefaultGoodStockMode"
+    },
     "v1InServiceResponse": {
       "type": "object",
       "properties": {
@@ -101,6 +110,31 @@
           "items": {
             "$ref": "#/definitions/v1Stock"
           }
+        }
+      }
+    },
+    "v1MiningGoodStockInfo": {
+      "type": "object",
+      "properties": {
+        "GoodStockID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_stock_id\""
+        },
+        "MiningPoolID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"mining_pool_id\""
+        },
+        "PoolGoodUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"pool_good_user_id\""
+        },
+        "Total": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"total\""
+        },
+        "SpotQuantity": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"spot_quantity\""
         }
       }
     },
@@ -159,6 +193,19 @@
         "Sold": {
           "type": "string",
           "title": "@inject_tag: sql:\"sold\""
+        },
+        "StockModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"stock_mode\""
+        },
+        "StockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
+        },
+        "MiningGoodStocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1MiningGoodStockInfo"
+          }
         },
         "CreatedAt": {
           "type": "integer",
