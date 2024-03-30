@@ -13,17 +13,19 @@ message StockReq {
 message StockInfo {
     // @inject_tag: sql:"app_good_stock_id"
     string AppGoodStockID = 10;
+    // @inject_tag: sql:"mining_good_stock_id"
+    string MiningGoodStockID = 20;
     // @inject_tag: sql:"reserved"
-    string Reserved   = 20;
+    string Reserved   = 30;
     // @inject_tag: sql:"spot_quantity"
-    string SpotQuantity = 30;
+    string SpotQuantity = 40;
     // @inject_tag: sql:"locked"
-    string Locked     = 40;
+    string Locked     = 50;
     // @inject_tag: sql:"wait_start"
-    string WaitStart  = 50;
+    string WaitStart  = 60;
     // @inject_tag: sql:"in_service"
-    string InService  = 60;
+    string InService  = 70;
     // @inject_tag: sql:"sold"
-    string Sold       = 70;
+    string Sold       = 80;
 }
 
