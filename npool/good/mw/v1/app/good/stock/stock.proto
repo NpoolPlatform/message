@@ -13,13 +13,14 @@ import "npool/good/mw/v1/good/stock/stock.proto";
 
 // Service Name
 service Middleware {
-  rpc Lock(LockRequest) returns (LockResponse) {}
-  rpc Locks(LocksRequest) returns (LocksResponse) {}
-  rpc Unlock(UnlockRequest) returns (UnlockResponse) {}
-  rpc WaitStart(WaitStartRequest) returns (WaitStartResponse) {}
-  rpc InService(InServiceRequest) returns (InServiceResponse) {}
-  rpc ChargeBack(ChargeBackRequest) returns (ChargeBackResponse) {}
-  rpc Expire(ExpireRequest) returns (ExpireResponse) {}
+    rpc Reserve    (ReserveRequest)    returns (ReserveResponse)    {}
+    rpc Lock       (LockRequest)       returns (LockResponse)       {}
+    rpc Locks      (LocksRequest)      returns (LocksResponse)      {}
+    rpc Unlock     (UnlockRequest)     returns (UnlockResponse)     {}
+    rpc WaitStart  (WaitStartRequest)  returns (WaitStartResponse)  {}
+    rpc InService  (InServiceRequest)  returns (InServiceResponse)  {}
+    rpc ChargeBack (ChargeBackRequest) returns (ChargeBackResponse) {}
+    rpc Expire     (ExpireRequest)     returns (ExpireResponse)     {}
 }
 
 message Stock {
@@ -60,6 +61,17 @@ message Stock {
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt  = 1010;
+}
+
+message ReserveRequest {
+    string EntID = 10;
+    string AppGoodID = 20;
+    string Units = 30;
+    repeated good.middleware.good1.stock.v1.MiningGoodStockReq MiningGoodStocks = 40;
+}
+
+message ReserveResponse {
+    Stock Info = 10;
 }
 
 message LockRequest {
