@@ -194,6 +194,14 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_stock_id\""
         },
+        "MiningPoolID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"mining_pool_id\""
+        },
+        "PoolGoodUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"pool_good_user_id\""
+        },
         "Total": {
           "type": "string",
           "title": "@inject_tag: sql:\"total\""
