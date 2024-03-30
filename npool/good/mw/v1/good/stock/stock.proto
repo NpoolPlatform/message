@@ -12,24 +12,28 @@ message MiningGoodStockReq {
 }
 
 message MiningGoodStock {
+    // @inject_tag: sql:"id"
+    uint32 ID = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID = 20;
     // @inject_tag: sql:"good_stock_id"
-    string GoodStockID = 10;
+    string GoodStockID = 30;
     // @inject_tag: sql:"mining_pool_id"
-    string MiningPoolID = 20;
+    string MiningPoolID = 40;
     // @inject_tag: sql:"pool_good_user_id"
-    string PoolGoodUserID = 30;
+    string PoolGoodUserID = 50;
     // @inject_tag: sql:"total"
-    string Total      = 40;
+    string Total      = 60;
     // @inject_tag: sql:"spot_quantity"
-    string SpotQuantity = 50;
+    string SpotQuantity = 70;
     // @inject_tag: sql:"locked"
-    string Locked     = 60;
+    string Locked     = 80;
     // @inject_tag: sql:"wait_start"
-    string WaitStart  = 70;
+    string WaitStart  = 90;
     // @inject_tag: sql:"in_service"
-    string InService  = 80;
+    string InService  = 100;
     // @inject_tag: sql:"sold"
-    string Sold       = 90;
+    string Sold       = 110;
 }
 
 message MiningGoodStockInfo {
