@@ -211,6 +211,90 @@ func (x *MiningGoodStock) GetSold() string {
 	return ""
 }
 
+type MiningGoodStockInfo struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// @inject_tag: sql:"good_stock_id"
+	GoodStockID string `protobuf:"bytes,10,opt,name=GoodStockID,proto3" json:"GoodStockID,omitempty" sql:"good_stock_id"`
+	// @inject_tag: sql:"mining_pool_id"
+	MiningPoolID string `protobuf:"bytes,20,opt,name=MiningPoolID,proto3" json:"MiningPoolID,omitempty" sql:"mining_pool_id"`
+	// @inject_tag: sql:"pool_good_user_id"
+	PoolGoodUserID string `protobuf:"bytes,30,opt,name=PoolGoodUserID,proto3" json:"PoolGoodUserID,omitempty" sql:"pool_good_user_id"`
+	// @inject_tag: sql:"total"
+	Total string `protobuf:"bytes,40,opt,name=Total,proto3" json:"Total,omitempty" sql:"total"`
+	// @inject_tag: sql:"spot_quantity"
+	SpotQuantity string `protobuf:"bytes,50,opt,name=SpotQuantity,proto3" json:"SpotQuantity,omitempty" sql:"spot_quantity"`
+}
+
+func (x *MiningGoodStockInfo) Reset() {
+	*x = MiningGoodStockInfo{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_good_mw_v1_good_stock_stock_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MiningGoodStockInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MiningGoodStockInfo) ProtoMessage() {}
+
+func (x *MiningGoodStockInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_good_mw_v1_good_stock_stock_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MiningGoodStockInfo.ProtoReflect.Descriptor instead.
+func (*MiningGoodStockInfo) Descriptor() ([]byte, []int) {
+	return file_npool_good_mw_v1_good_stock_stock_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *MiningGoodStockInfo) GetGoodStockID() string {
+	if x != nil {
+		return x.GoodStockID
+	}
+	return ""
+}
+
+func (x *MiningGoodStockInfo) GetMiningPoolID() string {
+	if x != nil {
+		return x.MiningPoolID
+	}
+	return ""
+}
+
+func (x *MiningGoodStockInfo) GetPoolGoodUserID() string {
+	if x != nil {
+		return x.PoolGoodUserID
+	}
+	return ""
+}
+
+func (x *MiningGoodStockInfo) GetTotal() string {
+	if x != nil {
+		return x.Total
+	}
+	return ""
+}
+
+func (x *MiningGoodStockInfo) GetSpotQuantity() string {
+	if x != nil {
+		return x.SpotQuantity
+	}
+	return ""
+}
+
 var File_npool_good_mw_v1_good_stock_stock_proto protoreflect.FileDescriptor
 
 var file_npool_good_mw_v1_good_stock_stock_proto_rawDesc = []byte{
@@ -250,7 +334,19 @@ var file_npool_good_mw_v1_good_stock_stock_proto_rawDesc = []byte{
 	0x74, 0x53, 0x74, 0x61, 0x72, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x49, 0x6e, 0x53, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x18, 0x50, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x49, 0x6e, 0x53, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x53, 0x6f, 0x6c, 0x64, 0x18, 0x5a, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x04, 0x53, 0x6f, 0x6c, 0x64, 0x42, 0x3e, 0x5a, 0x3c, 0x67, 0x69, 0x74, 0x68,
+	0x28, 0x09, 0x52, 0x04, 0x53, 0x6f, 0x6c, 0x64, 0x22, 0xbd, 0x01, 0x0a, 0x13, 0x4d, 0x69, 0x6e,
+	0x69, 0x6e, 0x67, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x74, 0x6f, 0x63, 0x6b, 0x49, 0x6e, 0x66, 0x6f,
+	0x12, 0x20, 0x0a, 0x0b, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x74, 0x6f, 0x63, 0x6b, 0x49, 0x44, 0x18,
+	0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x47, 0x6f, 0x6f, 0x64, 0x53, 0x74, 0x6f, 0x63, 0x6b,
+	0x49, 0x44, 0x12, 0x22, 0x0a, 0x0c, 0x4d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x50, 0x6f, 0x6f, 0x6c,
+	0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x4d, 0x69, 0x6e, 0x69, 0x6e, 0x67,
+	0x50, 0x6f, 0x6f, 0x6c, 0x49, 0x44, 0x12, 0x26, 0x0a, 0x0e, 0x50, 0x6f, 0x6f, 0x6c, 0x47, 0x6f,
+	0x6f, 0x64, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e,
+	0x50, 0x6f, 0x6f, 0x6c, 0x47, 0x6f, 0x6f, 0x64, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x14,
+	0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x54,
+	0x6f, 0x74, 0x61, 0x6c, 0x12, 0x22, 0x0a, 0x0c, 0x53, 0x70, 0x6f, 0x74, 0x51, 0x75, 0x61, 0x6e,
+	0x74, 0x69, 0x74, 0x79, 0x18, 0x32, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x53, 0x70, 0x6f, 0x74,
+	0x51, 0x75, 0x61, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x42, 0x3e, 0x5a, 0x3c, 0x67, 0x69, 0x74, 0x68,
 	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74,
 	0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f,
 	0x6f, 0x6c, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x6f,
@@ -269,10 +365,11 @@ func file_npool_good_mw_v1_good_stock_stock_proto_rawDescGZIP() []byte {
 	return file_npool_good_mw_v1_good_stock_stock_proto_rawDescData
 }
 
-var file_npool_good_mw_v1_good_stock_stock_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_npool_good_mw_v1_good_stock_stock_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_npool_good_mw_v1_good_stock_stock_proto_goTypes = []interface{}{
-	(*MiningGoodStockReq)(nil), // 0: good.middleware.good1.stock.v1.MiningGoodStockReq
-	(*MiningGoodStock)(nil),    // 1: good.middleware.good1.stock.v1.MiningGoodStock
+	(*MiningGoodStockReq)(nil),  // 0: good.middleware.good1.stock.v1.MiningGoodStockReq
+	(*MiningGoodStock)(nil),     // 1: good.middleware.good1.stock.v1.MiningGoodStock
+	(*MiningGoodStockInfo)(nil), // 2: good.middleware.good1.stock.v1.MiningGoodStockInfo
 }
 var file_npool_good_mw_v1_good_stock_stock_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -312,6 +409,18 @@ func file_npool_good_mw_v1_good_stock_stock_proto_init() {
 				return nil
 			}
 		}
+		file_npool_good_mw_v1_good_stock_stock_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MiningGoodStockInfo); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	file_npool_good_mw_v1_good_stock_stock_proto_msgTypes[0].OneofWrappers = []interface{}{}
 	type x struct{}
@@ -320,7 +429,7 @@ func file_npool_good_mw_v1_good_stock_stock_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_good_mw_v1_good_stock_stock_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
