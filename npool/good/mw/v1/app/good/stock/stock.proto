@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/good/v1/enums.proto";
 import "npool/good/mw/v1/good/stock/stock.proto";
+import "npool/good/mw/v1/app/good/stock/mining/mining.proto";
 
 // If it's mining good, then we update mining pool good stock, then update stock
 // Otherwise we update stock directly
@@ -56,6 +57,7 @@ message Stock {
     basetypes.good.v1.GoodStockMode StockMode = 140;
 
     repeated good.middleware.good1.stock.v1.MiningGoodStockInfo MiningGoodStocks = 500;
+    repeated good.middleware.app.good1.stock.mining.v1.StockInfo AppMiningGoodStocks = 510;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 1000;
@@ -67,7 +69,7 @@ message ReserveRequest {
     string EntID = 10;
     string AppGoodID = 20;
     string Units = 30;
-    repeated good.middleware.good1.stock.v1.MiningGoodStockReq MiningGoodStocks = 40;
+    repeated good.middleware.app.good1.stock.mining.v1.StockInfo AppMiningGoodStocks = 40;
 }
 
 message ReserveResponse {
