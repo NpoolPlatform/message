@@ -58,8 +58,6 @@ message PowerRentalReq {
 
     // Good stock
     optional string AppGoodStockID = 290;
-    optional string Reserved = 300;
-    repeated good.middleware.app.good1.stock.mining.v1.StockReq MiningGoodStocks = 310;
 }
 
 message PowerRental {
@@ -197,7 +195,7 @@ message PowerRental {
     // @inject_tag: sql:"app_good_stock_id"
     string AppGoodStockID = 640;
     // @inject_tag: sql:"app_good_reserved"
-    string AppGoodTotal = 650;
+    string AppGoodReserved = 650;
     // @inject_tag: sql:"app_good_spot_quantity"
     string AppGoodSpotQuantity = 660;
     // @inject_tag: sql:"app_good_locked"
