@@ -4,6 +4,7 @@ package miningpool.middleware.rootuser.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/rootuser";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
@@ -16,7 +17,12 @@ service Middleware {
     rpc GetRootUsers       (GetRootUsersRequest)     returns (GetRootUsersResponse)      {}
     rpc ExistRootUserConds (ExistRootUserCondsRequest) returns (ExistRootUserCondsResponse) {}
     rpc UpdateRootUser     (UpdateRootUserRequest)   returns (UpdateRootUserResponse)    {}
-    rpc DeleteRootUser     (DeleteRootUserRequest)   returns (DeleteRootUserResponse)    {}
+    rpc DeleteRootUser     (DeleteRootUserRequest)   returns (DeleteRootUserResponse)    {
+        option (google.api.http) = {
+            post: "/v1/miningpool_DeleteRootUser"
+            body: "*"
+        };
+    }
 }
 
 message RootUserReq {

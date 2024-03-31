@@ -4,6 +4,7 @@ package miningpool.middleware.gooduser.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/gooduser";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
@@ -15,7 +16,12 @@ service Middleware {
     rpc GetGoodUsers       (GetGoodUsersRequest)     returns (GetGoodUsersResponse)      {}
     rpc ExistGoodUserConds (ExistGoodUserCondsRequest) returns (ExistGoodUserCondsResponse) {}
     rpc UpdateGoodUser     (UpdateGoodUserRequest)   returns (UpdateGoodUserResponse)    {}
-    rpc DeleteGoodUser     (DeleteGoodUserRequest)   returns (DeleteGoodUserResponse)    {}
+    rpc DeleteGoodUser     (DeleteGoodUserRequest)   returns (DeleteGoodUserResponse)    {
+        option (google.api.http) = {
+            post: "/v1/miningpool_DeleteGoodUser"
+            body: "*"
+        };
+    }
 }
 
 message GoodUserReq {

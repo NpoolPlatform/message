@@ -4,18 +4,29 @@ package miningpool.middleware.orderuser.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/orderuser";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateOrderUser     (CreateOrderUserRequest)       returns (CreateOrderUserResponse)      {}
+    rpc CreateOrderUser     (CreateOrderUserRequest)       returns (CreateOrderUserResponse)      {
+        option (google.api.http) = {
+            post: "/v1/miningpool_CreateOrderUser"
+            body: "*"
+        };
+    }
     rpc CreateOrderUsers    (CreateOrderUsersRequest)      returns (CreateOrderUsersResponse)     {}
     rpc GetOrderUser        (GetOrderUserRequest)          returns (GetOrderUserResponse)         {}
     rpc GetOrderUsers       (GetOrderUsersRequest)         returns (GetOrderUsersResponse)        {}
     rpc ExistOrderUserConds (ExistOrderUserCondsRequest)   returns (ExistOrderUserCondsResponse)  {}
     rpc UpdateOrderUser     (UpdateOrderUserRequest)       returns (UpdateOrderUserResponse)      {}
-    rpc DeleteOrderUser     (DeleteOrderUserRequest)       returns (DeleteOrderUserResponse)      {}
+    rpc DeleteOrderUser     (DeleteOrderUserRequest)       returns (DeleteOrderUserResponse)      {
+        option (google.api.http) = {
+            post: "/v1/miningpool_DeleteOrderUser"
+            body: "*"
+        };
+    }
     rpc SetupProportion     (SetupProportionRequest)       returns (SetupProportionResponse)      {}
     rpc SetupRevenueAddress (SetupRevenueAddressRequest)   returns (SetupRevenueAddressResponse)  {}
     rpc SetupAutoPay        (SetupAutoPayRequest)          returns (SetupAutoPayResponse)         {}
