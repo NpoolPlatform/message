@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/get/app/commission/confighistories": {
+    "/v1/get/app/commission/configs": {
       "post": {
         "operationId": "Gateway_GetAppCommissionConfigs",
         "responses": {
@@ -320,6 +320,10 @@
       "properties": {
         "AppID": {
           "type": "string"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
         },
         "Offset": {
           "type": "integer",

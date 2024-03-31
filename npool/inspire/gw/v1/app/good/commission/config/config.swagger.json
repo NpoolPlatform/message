@@ -144,7 +144,7 @@
         ]
       }
     },
-    "/v1/get/app/good/commission/confighistories": {
+    "/v1/get/app/good/commission/configs": {
       "post": {
         "operationId": "Gateway_GetAppGoodCommissionConfigs",
         "responses": {
@@ -451,6 +451,10 @@
       "properties": {
         "AppID": {
           "type": "string"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
         },
         "Offset": {
           "type": "integer",

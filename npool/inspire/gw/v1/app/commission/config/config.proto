@@ -31,7 +31,7 @@ service Gateway {
     }
     rpc GetAppCommissionConfigs (GetAppCommissionConfigsRequest) returns (GetAppCommissionConfigsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/commission/confighistories"
+            post: "/v1/get/app/commission/configs"
             body: "*"
         };
     }
@@ -98,8 +98,9 @@ message UpdateAppCommissionConfigResponse {
 
 message GetAppCommissionConfigsRequest {
     string AppID   = 10;
-    int32  Offset  = 40;
-    int32  Limit   = 50;
+    optional uint32 EndAt = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
 }
 
 message GetAppCommissionConfigsResponse {

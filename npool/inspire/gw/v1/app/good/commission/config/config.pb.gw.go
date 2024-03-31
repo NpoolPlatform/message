@@ -350,7 +350,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/GetAppGoodCommissionConfigs", runtime.WithHTTPPathPattern("/v1/get/app/good/commission/confighistories"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/GetAppGoodCommissionConfigs", runtime.WithHTTPPathPattern("/v1/get/app/good/commission/configs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -541,7 +541,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/GetAppGoodCommissionConfigs", runtime.WithHTTPPathPattern("/v1/get/app/good/commission/confighistories"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/GetAppGoodCommissionConfigs", runtime.WithHTTPPathPattern("/v1/get/app/good/commission/configs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -627,7 +627,7 @@ var (
 
 	pattern_Gateway_UpdateAppGoodCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "update", "app", "good", "commission", "config"}, ""))
 
-	pattern_Gateway_GetAppGoodCommissionConfigs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "app", "good", "commission", "confighistories"}, ""))
+	pattern_Gateway_GetAppGoodCommissionConfigs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "app", "good", "commission", "configs"}, ""))
 
 	pattern_Gateway_GetNAppGoodCommissionConfigs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "get", "n", "app", "good", "commission", "configs"}, ""))
 

@@ -31,7 +31,7 @@ service Gateway {
     }
     rpc GetAppGoodCommissionConfigs (GetAppGoodCommissionConfigsRequest) returns (GetAppGoodCommissionConfigsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/good/commission/confighistories"
+            post: "/v1/get/app/good/commission/configs"
             body: "*"
         };
     }
@@ -119,8 +119,9 @@ message UpdateAppGoodCommissionConfigResponse {
 
 message GetAppGoodCommissionConfigsRequest {
     string AppID   = 10;
-    int32  Offset  = 20;
-    int32  Limit   = 30;
+    optional uint32 EndAt = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
 }
 
 message GetAppGoodCommissionConfigsResponse {
