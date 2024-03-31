@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/miningpool_DeletePool": {
+    "/v1/miningpool_DeleteAppPool": {
       "post": {
         "operationId": "Middleware_DeletePool",
         "responses": {

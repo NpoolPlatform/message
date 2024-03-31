@@ -77,7 +77,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.middleware.app.pool.v1.Middleware/DeletePool", runtime.WithHTTPPathPattern("/v1/miningpool_DeletePool"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.middleware.app.pool.v1.Middleware/DeletePool", runtime.WithHTTPPathPattern("/v1/miningpool_DeleteAppPool"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -139,7 +139,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.middleware.app.pool.v1.Middleware/DeletePool", runtime.WithHTTPPathPattern("/v1/miningpool_DeletePool"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.middleware.app.pool.v1.Middleware/DeletePool", runtime.WithHTTPPathPattern("/v1/miningpool_DeleteAppPool"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -159,7 +159,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 }
 
 var (
-	pattern_Middleware_DeletePool_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "miningpool_DeletePool"}, ""))
+	pattern_Middleware_DeletePool_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "miningpool_DeleteAppPool"}, ""))
 )
 
 var (

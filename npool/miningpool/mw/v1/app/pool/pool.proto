@@ -17,7 +17,7 @@ service Middleware {
     rpc UpdatePool     (UpdatePoolRequest)   returns (UpdatePoolResponse)    {}
     rpc DeletePool     (DeletePoolRequest)   returns (DeletePoolResponse)    {
         option (google.api.http) = {
-            post: "/v1/miningpool_DeletePool"
+            post: "/v1/miningpool_DeleteAppPool"
             body: "*"
         };
     }
