@@ -68,6 +68,16 @@ enum GoodTopMostType {
     TopMostLoyaltyExclusive  = 50;
 }
 
+enum GoodTopMostConstraint {
+    DefaultGoodTopMostConstraint = 0;
+
+    TopMostCreditThreshold = 10;
+    TopMostRegisterBefore = 20;
+    TopMostOrderThreshold = 30;
+    TopMostPaymentAmount = 40;
+    TopMostKycMust = 50;
+}
+
 enum GoodStartMode {
     DefaultGoodStartMode = 0;
 
@@ -145,3 +155,4 @@ enum GoodStockMode {
     GoodStockByMiningPool = 10;
     GoodStockByUnique     = 20;
 }
+
