@@ -40,8 +40,6 @@ message TopMostGood {
     string GoodID     = 30;
     // @inject_tag: sql:"good_name"
     string GoodName   = 40;
-    // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID = 50;
     // @inject_tag: sql:"top_most_id"
     string TopMostID  = 60;
     // @inject_tag: sql:"top_most_type"
