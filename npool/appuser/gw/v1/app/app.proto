@@ -78,8 +78,8 @@ message CreateAppRequest {
     basetypes.inspire.v1.SettleAmountType SettleAmountType = 220;
     basetypes.inspire.v1.SettleInterval SettleInterval     = 230;
     basetypes.inspire.v1.CommissionType CommissionType     = 240;
-    bool            SettleBenefit                          = 250;
-    uint32          StartAt                                = 260;
+    optional bool                       SettleBenefit      = 250;
+    optional uint32                     StartAt            = 260;
 }
 
 message CreateAppResponse {
