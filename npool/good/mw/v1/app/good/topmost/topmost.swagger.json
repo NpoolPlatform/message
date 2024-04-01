@@ -157,16 +157,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"message\""
         },
-        "PostersStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"posters\""
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "StartAt": {
           "type": "integer",
           "format": "int64",
@@ -176,28 +166,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"end_at\""
-        },
-        "ThresholdCredits": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"threshold_credits\""
-        },
-        "RegisterElapsedSeconds": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"register_elapsed_seconds\""
-        },
-        "ThresholdPurchases": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"threshold_purchases\""
-        },
-        "ThresholdPaymentAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"threshold_payment_amount\""
-        },
-        "KycMust": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"kyc_must\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -233,12 +201,6 @@
         "Message": {
           "type": "string"
         },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "StartAt": {
           "type": "integer",
           "format": "int64",
@@ -247,24 +209,6 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "ThresholdCredits": {
-          "type": "string",
-          "title": "For user specific threshold"
-        },
-        "RegisterElapsedSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ThresholdPurchases": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ThresholdPaymentAmount": {
-          "type": "string"
-        },
-        "KycMust": {
-          "type": "boolean"
         }
       }
     },
