@@ -21,55 +21,48 @@ service Middleware {
 }
 
 message TopMostGoodReq {
-  optional uint32 ID = 9;
-  optional string EntID = 10;
-  optional string AppGoodID = 20;
-  optional string TopMostID = 30;
-  optional uint32 DisplayIndex = 40;
-  repeated string Posters = 50;
-  optional string UnitPrice = 60;
-  optional string PackagePrice = 70;
+    optional uint32 ID         = 9;
+    optional string EntID      = 10;
+    optional string AppGoodID  = 20;
+    optional string TopMostID  = 30;
+    optional uint32 DisplayIndex = 40;
+    optional string UnitPrice  = 60;
 }
 
 message TopMostGood {
-  // @inject_tag: sql:"id"
-  uint32 ID = 9;
-  // @inject_tag: sql:"ent_id"
-  string EntID = 10;
-  // @inject_tag: sql:"app_id"
-  string AppID = 20;
-  // @inject_tag: sql:"good_id"
-  string GoodID = 30;
-  // @inject_tag: sql:"good_name"
-  string GoodName = 40;
-  // @inject_tag: sql:"coin_type_id"
-  string CoinTypeID = 50;
-  // @inject_tag: sql:"top_most_id"
-  string TopMostID = 60;
-  // @inject_tag: sql:"top_most_type"
-  string TopMostTypeStr = 70;
-  basetypes.good.v1.GoodTopMostType TopMostType = 80;
-  // @inject_tag: sql:"top_most_title"
-  string TopMostTitle = 90;
-  // @inject_tag: sql:"top_most_message"
-  string TopMostMessage = 100;
-  // @inject_tag: sql:"app_good_id"
-  string AppGoodID = 110;
-  // @inject_tag: sql:"app_good_name"
-  string AppGoodName = 120;
-  // @inject_tag: sql:"display_index"
-  uint32 DisplayIndex = 130;
-  // @inject_tag: sql:"posters"
-  string PostersStr = 140;
-  repeated string Posters = 150;
-  // @inject_tag: sql:"unit_price"
-  string UnitPrice = 160;
-  // @inject_tag: sql:"package_price"
-  string PackagePrice = 161;
-  // @inject_tag: sql:"created_at"
-  uint32 CreatedAt = 1000;
-  // @inject_tag: sql:"updated_at"
-  uint32 UpdatedAt = 1010;
+    // @inject_tag: sql:"id"
+    uint32 ID         = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID      = 10;
+    // @inject_tag: sql:"app_id"
+    string AppID      = 20;
+    // @inject_tag: sql:"good_id"
+    string GoodID     = 30;
+    // @inject_tag: sql:"good_name"
+    string GoodName   = 40;
+    // @inject_tag: sql:"coin_type_id"
+    string CoinTypeID = 50;
+    // @inject_tag: sql:"top_most_id"
+    string TopMostID  = 60;
+    // @inject_tag: sql:"top_most_type"
+    string TopMostTypeStr = 70;
+    basetypes.good.v1.GoodTopMostType TopMostType = 80;
+    // @inject_tag: sql:"top_most_title"
+    string TopMostTitle = 90;
+    // @inject_tag: sql:"top_most_message"
+    string TopMostMessage = 100;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID  = 110;
+    // @inject_tag: sql:"app_good_name"
+    string AppGoodName = 120;
+    // @inject_tag: sql:"display_index"
+    uint32 DisplayIndex = 130;
+    // @inject_tag: sql:"unit_price"
+    string UnitPrice  = 160;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt  = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt  = 1010;
 }
 
 message Conds {

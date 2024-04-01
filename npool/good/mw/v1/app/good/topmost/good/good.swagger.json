@@ -209,23 +209,9 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"display_index\""
         },
-        "PostersStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"posters\""
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "UnitPrice": {
           "type": "string",
           "title": "@inject_tag: sql:\"unit_price\""
-        },
-        "PackagePrice": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"package_price\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -259,16 +245,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "UnitPrice": {
-          "type": "string"
-        },
-        "PackagePrice": {
           "type": "string"
         }
       }
