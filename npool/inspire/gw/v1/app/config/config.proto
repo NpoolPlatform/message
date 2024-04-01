@@ -62,8 +62,8 @@ message CreateAppConfigRequest {
     basetypes.inspire.v1.SettleAmountType SettleAmountType = 30;
     basetypes.inspire.v1.SettleInterval SettleInterval     = 40;
     basetypes.inspire.v1.CommissionType CommissionType     = 50;
-    bool            SettleBenefit                          = 60;
-    uint32          StartAt                                = 70;
+    optional bool                       SettleBenefit      = 60;
+    optional uint32                     StartAt            = 70;
 }
 
 message CreateAppConfigResponse {
@@ -76,8 +76,8 @@ message CreateNAppConfigRequest {
     basetypes.inspire.v1.SettleAmountType SettleAmountType = 30;
     basetypes.inspire.v1.SettleInterval SettleInterval     = 40;
     basetypes.inspire.v1.CommissionType CommissionType     = 50;
-    bool            SettleBenefit                          = 60;
-    uint32          StartAt                                = 70;
+    optional bool                       SettleBenefit      = 60;
+    optional uint32                     StartAt            = 70;
 }
 
 message CreateNAppConfigResponse {
