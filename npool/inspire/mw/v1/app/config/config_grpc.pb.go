@@ -24,6 +24,7 @@ const (
 	Middleware_GetAppConfig_FullMethodName        = "/inspire.middleware.app.config.v1.Middleware/GetAppConfig"
 	Middleware_GetAppConfigs_FullMethodName       = "/inspire.middleware.app.config.v1.Middleware/GetAppConfigs"
 	Middleware_ExistAppConfigConds_FullMethodName = "/inspire.middleware.app.config.v1.Middleware/ExistAppConfigConds"
+	Middleware_DeleteAppConfig_FullMethodName     = "/inspire.middleware.app.config.v1.Middleware/DeleteAppConfig"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -35,6 +36,7 @@ type MiddlewareClient interface {
 	GetAppConfig(ctx context.Context, in *GetAppConfigRequest, opts ...grpc.CallOption) (*GetAppConfigResponse, error)
 	GetAppConfigs(ctx context.Context, in *GetAppConfigsRequest, opts ...grpc.CallOption) (*GetAppConfigsResponse, error)
 	ExistAppConfigConds(ctx context.Context, in *ExistAppConfigCondsRequest, opts ...grpc.CallOption) (*ExistAppConfigCondsResponse, error)
+	DeleteAppConfig(ctx context.Context, in *DeleteAppConfigRequest, opts ...grpc.CallOption) (*DeleteAppConfigResponse, error)
 }
 
 type middlewareClient struct {
@@ -90,6 +92,15 @@ func (c *middlewareClient) ExistAppConfigConds(ctx context.Context, in *ExistApp
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteAppConfig(ctx context.Context, in *DeleteAppConfigRequest, opts ...grpc.CallOption) (*DeleteAppConfigResponse, error) {
+	out := new(DeleteAppConfigResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteAppConfig_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -99,6 +110,7 @@ type MiddlewareServer interface {
 	GetAppConfig(context.Context, *GetAppConfigRequest) (*GetAppConfigResponse, error)
 	GetAppConfigs(context.Context, *GetAppConfigsRequest) (*GetAppConfigsResponse, error)
 	ExistAppConfigConds(context.Context, *ExistAppConfigCondsRequest) (*ExistAppConfigCondsResponse, error)
+	DeleteAppConfig(context.Context, *DeleteAppConfigRequest) (*DeleteAppConfigResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -120,6 +132,9 @@ func (UnimplementedMiddlewareServer) GetAppConfigs(context.Context, *GetAppConfi
 }
 func (UnimplementedMiddlewareServer) ExistAppConfigConds(context.Context, *ExistAppConfigCondsRequest) (*ExistAppConfigCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAppConfigConds not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteAppConfig(context.Context, *DeleteAppConfigRequest) (*DeleteAppConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppConfig not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -224,6 +239,24 @@ func _Middleware_ExistAppConfigConds_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteAppConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppConfigRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteAppConfig(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteAppConfig_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteAppConfig(ctx, req.(*DeleteAppConfigRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -250,6 +283,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistAppConfigConds",
 			Handler:    _Middleware_ExistAppConfigConds_Handler,
+		},
+		{
+			MethodName: "DeleteAppConfig",
+			Handler:    _Middleware_DeleteAppConfig_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

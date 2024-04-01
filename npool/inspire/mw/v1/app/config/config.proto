@@ -14,6 +14,7 @@ service Middleware {
     rpc GetAppConfig        (GetAppConfigRequest)        returns (GetAppConfigResponse)        {}
     rpc GetAppConfigs       (GetAppConfigsRequest)       returns (GetAppConfigsResponse)       {}
     rpc ExistAppConfigConds (ExistAppConfigCondsRequest) returns (ExistAppConfigCondsResponse) {}
+    rpc DeleteAppConfig     (DeleteAppConfigRequest)     returns (DeleteAppConfigResponse)     {}
 }
 
 message AppConfigReq {
@@ -114,4 +115,12 @@ message ExistAppConfigCondsRequest {
 
 message ExistAppConfigCondsResponse {
   bool   Info = 10;
+}
+
+message DeleteAppConfigRequest {
+    AppConfigReq Info = 10;
+}
+
+message DeleteAppConfigResponse {
+    AppConfig Info = 10;
 }

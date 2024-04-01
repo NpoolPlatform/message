@@ -213,6 +213,14 @@
         }
       }
     },
+    "v1DeleteAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
+        }
+      }
+    },
     "v1ExistAppConfigCondsResponse": {
       "type": "object",
       "properties": {
