@@ -49,6 +49,8 @@ message TopMostGood {
     string TopMostTitle = 90;
     // @inject_tag: sql:"top_most_message"
     string TopMostMessage = 100;
+    // @inject_tag: sql:"top_most_target_url"
+    string TopMostTargetUrl = 101;
     // @inject_tag: sql:"app_good_id"
     string AppGoodID  = 110;
     // @inject_tag: sql:"app_good_name"
