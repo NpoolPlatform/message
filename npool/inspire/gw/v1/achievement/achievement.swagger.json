@@ -348,10 +348,12 @@
           "type": "string"
         },
         "DirectInvites": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "IndirectInvites": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "DirectConsumeAmount": {
           "type": "string"

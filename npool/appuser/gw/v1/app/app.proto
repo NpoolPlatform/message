@@ -10,6 +10,7 @@ import "npool/basetypes/v1/signmethod.proto";
 import "npool/basetypes/v1/createinvitationcodewhen.proto";
 import "npool/basetypes/v1/recaptcha.proto";
 import "npool/basetypes/appuser/v1/enums.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
 
 service Gateway {
     rpc CreateApp (CreateAppRequest) returns (CreateAppResponse) {
@@ -73,6 +74,12 @@ message CreateAppRequest {
     repeated string CommitButtonTargets           = 170;
     optional bool            CouponWithdrawEnable        = 180;
     optional basetypes.appuser.v1.ResetUserMethod ResetUserMethod = 200;
+    basetypes.inspire.v1.SettleMode SettleMode             = 210;
+    basetypes.inspire.v1.SettleAmountType SettleAmountType = 220;
+    basetypes.inspire.v1.SettleInterval SettleInterval     = 230;
+    basetypes.inspire.v1.CommissionType CommissionType     = 240;
+    bool            SettleBenefit                          = 250;
+    uint32          StartAt                                = 260;
 }
 
 message CreateAppResponse {

@@ -27,8 +27,8 @@ service Gateway {
 message UserAchievement {
     string TotalCommission      = 10;
     string SelfCommission       = 20;
-    string DirectInvites        = 30;
-    string IndirectInvites      = 40;
+    uint32 DirectInvites        = 30;
+    uint32 IndirectInvites      = 40;
     string DirectConsumeAmount  = 50;
     string InviteeConsumeAmount = 60;
 }
