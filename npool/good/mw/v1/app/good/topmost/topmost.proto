@@ -23,6 +23,7 @@ message TopMostReq {
     optional basetypes.good.v1.GoodTopMostType TopMostType = 30;
     optional string Title      = 40;
     optional string Message    = 50;
+    optional string TargetUrl  = 60;
     // For promotion
     optional uint32 StartAt    = 70;
     optional uint32 EndAt      = 80;
@@ -42,6 +43,8 @@ message TopMost {
     string Title      = 50;
     // @inject_tag: sql:"message"
     string Message    = 60;
+    // @inject_tag: sql:"target_url"
+    string TargetUrl  = 70;
     // @inject_tag: sql:"start_at"
     uint32 StartAt    = 90;
     // @inject_tag: sql:"end_at"

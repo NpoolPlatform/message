@@ -157,6 +157,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"message\""
         },
+        "TargetUrl": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"target_url\""
+        },
         "StartAt": {
           "type": "integer",
           "format": "int64",
@@ -199,6 +203,9 @@
           "type": "string"
         },
         "Message": {
+          "type": "string"
+        },
+        "TargetUrl": {
           "type": "string"
         },
         "StartAt": {
