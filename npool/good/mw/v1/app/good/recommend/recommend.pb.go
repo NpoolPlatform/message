@@ -121,8 +121,8 @@ type Recommend struct {
 	AppID string `protobuf:"bytes,20,opt,name=AppID,proto3" json:"AppID,omitempty" sql:"app_id"`
 	// @inject_tag: sql:"recommender_id"
 	RecommenderID string `protobuf:"bytes,30,opt,name=RecommenderID,proto3" json:"RecommenderID,omitempty" sql:"recommender_id"`
-	// @inject_tag: sql:"good_id"
-	AppGoodID string `protobuf:"bytes,40,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty" sql:"good_id"`
+	// @inject_tag: sql:"app_good_id"
+	AppGoodID string `protobuf:"bytes,40,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty" sql:"app_good_id"`
 	// @inject_tag: sql:"good_name"
 	GoodName string `protobuf:"bytes,50,opt,name=GoodName,proto3" json:"GoodName,omitempty" sql:"good_name"`
 	// @inject_tag: sql:"recommend_index"
