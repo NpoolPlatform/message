@@ -220,6 +220,15 @@ message PowerRental {
     // @inject_tag: sql:"comment_count"
     uint32 CommentCount = 760;
 
+    // @inject_tag: sql:"last_reward_at"
+    uint32 LastRewardAt = 770;
+    // @inject_tag: sql:"last_reward_amount"
+    string LastRewardAmount = 780;
+    // @inject_tag: sql:"total_reward_amount"
+    string TotalRewardAmount  = 790;
+    // @inject_tag: sql:"last_unit_reward_amount"
+    string LastUnitRewardAmount = 800;
+
     repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 900;
     repeated good.middleware.app.good1.description.v1.DescriptionInfo Descriptions = 910;
     repeated good.middleware.app.good1.poster.v1.PosterInfo Posters = 920;
