@@ -59,10 +59,10 @@
         "RecommenderID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "GoodID": {
+        "AppGoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "GoodIDs": {
+        "AppGoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
       }
@@ -134,7 +134,7 @@
           "type": "string",
           "title": "@inject_tag: sql:\"recommender_id\""
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
         },
@@ -172,13 +172,10 @@
         "EntID": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
         "RecommenderID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "RecommendIndex": {
