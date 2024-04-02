@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/mw/v1/good/recommend/recommend.proto",
+    "title": "npool/good/mw/v1/app/good/score/score.proto",
     "version": "version not set"
   },
   "tags": [
@@ -56,34 +56,37 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "RecommenderID": {
+        "UserID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppGoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         },
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "GoodIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v1CreateRecommendResponse": {
+    "v1CreateScoreResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Recommend"
+          "$ref": "#/definitions/v1Score"
         }
       }
     },
-    "v1DeleteRecommendResponse": {
+    "v1DeleteScoreResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Recommend"
+          "$ref": "#/definitions/v1Score"
         }
       }
     },
-    "v1ExistRecommendCondsResponse": {
+    "v1ExistScoreCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -91,21 +94,21 @@
         }
       }
     },
-    "v1GetRecommendResponse": {
+    "v1GetScoreResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Recommend"
+          "$ref": "#/definitions/v1Score"
         }
       }
     },
-    "v1GetRecommendsResponse": {
+    "v1GetScoresResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Recommend"
+            "$ref": "#/definitions/v1Score"
           }
         },
         "Total": {
@@ -114,7 +117,7 @@
         }
       }
     },
-    "v1Recommend": {
+    "v1Score": {
       "type": "object",
       "properties": {
         "ID": {
@@ -130,25 +133,25 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
-        "RecommenderID": {
+        "UserID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"recommender_id\""
+          "title": "@inject_tag: sql:\"user_id\""
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
+          "title": "@inject_tag: sql:\"app_good_id\""
         },
         "GoodName": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_name\""
         },
-        "RecommendIndex": {
+        "Score": {
           "type": "string",
-          "title": "@inject_tag: sql:\"recommend_index\""
+          "title": "@inject_tag: sql:\"score\""
         },
-        "Message": {
+        "GoodID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"message\""
+          "title": "@inject_tag: sql:\"good_id\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -162,7 +165,7 @@
         }
       }
     },
-    "v1RecommendReq": {
+    "v1ScoreReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -175,16 +178,13 @@
         "AppID": {
           "type": "string"
         },
-        "RecommenderID": {
+        "UserID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
-        "RecommendIndex": {
-          "type": "string"
-        },
-        "Message": {
+        "Score": {
           "type": "string"
         }
       }
@@ -226,11 +226,11 @@
         }
       }
     },
-    "v1UpdateRecommendResponse": {
+    "v1UpdateScoreResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Recommend"
+          "$ref": "#/definitions/v1Score"
         }
       }
     }

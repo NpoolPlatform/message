@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/good/mw/v1/good/like/like.proto
+// source: npool/good/mw/v1/app/good/like/like.proto
 
 package like
 
@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateLike_FullMethodName     = "/good.middleware.good1.like.v1.Middleware/CreateLike"
-	Middleware_UpdateLike_FullMethodName     = "/good.middleware.good1.like.v1.Middleware/UpdateLike"
-	Middleware_GetLike_FullMethodName        = "/good.middleware.good1.like.v1.Middleware/GetLike"
-	Middleware_GetLikes_FullMethodName       = "/good.middleware.good1.like.v1.Middleware/GetLikes"
-	Middleware_ExistLikeConds_FullMethodName = "/good.middleware.good1.like.v1.Middleware/ExistLikeConds"
-	Middleware_DeleteLike_FullMethodName     = "/good.middleware.good1.like.v1.Middleware/DeleteLike"
+	Middleware_CreateLike_FullMethodName     = "/good.middleware.app.good1.like.v1.Middleware/CreateLike"
+	Middleware_UpdateLike_FullMethodName     = "/good.middleware.app.good1.like.v1.Middleware/UpdateLike"
+	Middleware_GetLike_FullMethodName        = "/good.middleware.app.good1.like.v1.Middleware/GetLike"
+	Middleware_GetLikes_FullMethodName       = "/good.middleware.app.good1.like.v1.Middleware/GetLikes"
+	Middleware_ExistLikeConds_FullMethodName = "/good.middleware.app.good1.like.v1.Middleware/ExistLikeConds"
+	Middleware_DeleteLike_FullMethodName     = "/good.middleware.app.good1.like.v1.Middleware/DeleteLike"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -261,7 +261,7 @@ func _Middleware_DeleteLike_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.good1.like.v1.Middleware",
+	ServiceName: "good.middleware.app.good1.like.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -290,5 +290,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/good/mw/v1/good/like/like.proto",
+	Metadata: "npool/good/mw/v1/app/good/like/like.proto",
 }

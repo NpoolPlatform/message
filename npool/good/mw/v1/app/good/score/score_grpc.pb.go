@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/good/mw/v1/good/score/score.proto
+// source: npool/good/mw/v1/app/good/score/score.proto
 
 package score
 
@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateScore_FullMethodName     = "/good.middleware.good1.score.v1.Middleware/CreateScore"
-	Middleware_UpdateScore_FullMethodName     = "/good.middleware.good1.score.v1.Middleware/UpdateScore"
-	Middleware_GetScore_FullMethodName        = "/good.middleware.good1.score.v1.Middleware/GetScore"
-	Middleware_GetScores_FullMethodName       = "/good.middleware.good1.score.v1.Middleware/GetScores"
-	Middleware_ExistScoreConds_FullMethodName = "/good.middleware.good1.score.v1.Middleware/ExistScoreConds"
-	Middleware_DeleteScore_FullMethodName     = "/good.middleware.good1.score.v1.Middleware/DeleteScore"
+	Middleware_CreateScore_FullMethodName     = "/good.middleware.app.good1.score.v1.Middleware/CreateScore"
+	Middleware_UpdateScore_FullMethodName     = "/good.middleware.app.good1.score.v1.Middleware/UpdateScore"
+	Middleware_GetScore_FullMethodName        = "/good.middleware.app.good1.score.v1.Middleware/GetScore"
+	Middleware_GetScores_FullMethodName       = "/good.middleware.app.good1.score.v1.Middleware/GetScores"
+	Middleware_ExistScoreConds_FullMethodName = "/good.middleware.app.good1.score.v1.Middleware/ExistScoreConds"
+	Middleware_DeleteScore_FullMethodName     = "/good.middleware.app.good1.score.v1.Middleware/DeleteScore"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -261,7 +261,7 @@ func _Middleware_DeleteScore_Handler(srv interface{}, ctx context.Context, dec f
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.good1.score.v1.Middleware",
+	ServiceName: "good.middleware.app.good1.score.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -290,5 +290,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/good/mw/v1/good/score/score.proto",
+	Metadata: "npool/good/mw/v1/app/good/score/score.proto",
 }

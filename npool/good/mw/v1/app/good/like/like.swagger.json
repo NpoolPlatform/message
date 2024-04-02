@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/mw/v1/good/score/score.proto",
+    "title": "npool/good/mw/v1/app/good/like/like.proto",
     "version": "version not set"
   },
   "tags": [
@@ -70,23 +70,23 @@
         }
       }
     },
-    "v1CreateScoreResponse": {
+    "v1CreateLikeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Score"
+          "$ref": "#/definitions/v1Like"
         }
       }
     },
-    "v1DeleteScoreResponse": {
+    "v1DeleteLikeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Score"
+          "$ref": "#/definitions/v1Like"
         }
       }
     },
-    "v1ExistScoreCondsResponse": {
+    "v1ExistLikeCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -94,21 +94,21 @@
         }
       }
     },
-    "v1GetScoreResponse": {
+    "v1GetLikeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Score"
+          "$ref": "#/definitions/v1Like"
         }
       }
     },
-    "v1GetScoresResponse": {
+    "v1GetLikesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Score"
+            "$ref": "#/definitions/v1Like"
           }
         },
         "Total": {
@@ -117,7 +117,7 @@
         }
       }
     },
-    "v1Score": {
+    "v1Like": {
       "type": "object",
       "properties": {
         "ID": {
@@ -145,9 +145,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_name\""
         },
-        "Score": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"score\""
+        "Like": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"like\""
         },
         "GoodID": {
           "type": "string",
@@ -165,7 +165,7 @@
         }
       }
     },
-    "v1ScoreReq": {
+    "v1LikeReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -184,8 +184,8 @@
         "AppGoodID": {
           "type": "string"
         },
-        "Score": {
-          "type": "string"
+        "Like": {
+          "type": "boolean"
         }
       }
     },
@@ -226,11 +226,11 @@
         }
       }
     },
-    "v1UpdateScoreResponse": {
+    "v1UpdateLikeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Score"
+          "$ref": "#/definitions/v1Like"
         }
       }
     }

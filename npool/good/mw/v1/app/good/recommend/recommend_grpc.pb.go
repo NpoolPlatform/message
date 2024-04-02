@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/good/mw/v1/good/recommend/recommend.proto
+// source: npool/good/mw/v1/app/good/recommend/recommend.proto
 
 package recommend
 
@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateRecommend_FullMethodName     = "/good.middleware.good1.recommend.v1.Middleware/CreateRecommend"
-	Middleware_UpdateRecommend_FullMethodName     = "/good.middleware.good1.recommend.v1.Middleware/UpdateRecommend"
-	Middleware_GetRecommend_FullMethodName        = "/good.middleware.good1.recommend.v1.Middleware/GetRecommend"
-	Middleware_GetRecommends_FullMethodName       = "/good.middleware.good1.recommend.v1.Middleware/GetRecommends"
-	Middleware_ExistRecommendConds_FullMethodName = "/good.middleware.good1.recommend.v1.Middleware/ExistRecommendConds"
-	Middleware_DeleteRecommend_FullMethodName     = "/good.middleware.good1.recommend.v1.Middleware/DeleteRecommend"
+	Middleware_CreateRecommend_FullMethodName     = "/good.middleware.app.good1.recommend.v1.Middleware/CreateRecommend"
+	Middleware_UpdateRecommend_FullMethodName     = "/good.middleware.app.good1.recommend.v1.Middleware/UpdateRecommend"
+	Middleware_GetRecommend_FullMethodName        = "/good.middleware.app.good1.recommend.v1.Middleware/GetRecommend"
+	Middleware_GetRecommends_FullMethodName       = "/good.middleware.app.good1.recommend.v1.Middleware/GetRecommends"
+	Middleware_ExistRecommendConds_FullMethodName = "/good.middleware.app.good1.recommend.v1.Middleware/ExistRecommendConds"
+	Middleware_DeleteRecommend_FullMethodName     = "/good.middleware.app.good1.recommend.v1.Middleware/DeleteRecommend"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -261,7 +261,7 @@ func _Middleware_DeleteRecommend_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.good1.recommend.v1.Middleware",
+	ServiceName: "good.middleware.app.good1.recommend.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -290,5 +290,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/good/mw/v1/good/recommend/recommend.proto",
+	Metadata: "npool/good/mw/v1/app/good/recommend/recommend.proto",
 }

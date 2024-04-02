@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package good.middleware.good1.score.v1;
+package good.middleware.app.good1.score.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/score";
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/score";
 
 import "npool/basetypes/v1/conds.proto";
 
