@@ -643,6 +643,23 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"comment_count\""
         },
+        "LastRewardAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"last_reward_at\""
+        },
+        "LastRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_reward_amount\""
+        },
+        "TotalRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"total_reward_amount\""
+        },
+        "LastUnitRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_unit_reward_amount\""
+        },
         "GoodCoins": {
           "type": "array",
           "items": {

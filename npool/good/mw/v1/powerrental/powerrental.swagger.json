@@ -73,6 +73,21 @@
         }
       }
     },
+    "v1BenefitState": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitState",
+        "BenefitWait",
+        "BenefitTransferring",
+        "BenefitBookKeeping",
+        "BenefitUserBookKeeping",
+        "BenefitSimulateBookKeeping",
+        "BenefitDone",
+        "BenefitFail"
+      ],
+      "default": "DefaultBenefitState",
+      "title": "- BenefitBookKeeping: Good bookkeeping"
+    },
     "v1BenefitType": {
       "type": "string",
       "enum": [
@@ -431,6 +446,38 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_app_reserved\""
         },
+        "RewardStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reward_state\""
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1BenefitState"
+        },
+        "LastRewardAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"last_reward_at\""
+        },
+        "RewardTID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reward_tid\""
+        },
+        "NextRewardStartAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"next_reward_start_amount\""
+        },
+        "LastRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_reward_amount\""
+        },
+        "LastUnitRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_unit_reward_amount\""
+        },
+        "TotalRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"total_reward_amount\""
+        },
         "GoodCoins": {
           "type": "array",
           "items": {
@@ -539,6 +586,23 @@
           "items": {
             "$ref": "#/definitions/v1MiningGoodStockReq"
           }
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1BenefitState",
+          "title": "Reward information"
+        },
+        "RewardAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "RewardTID": {
+          "type": "string"
+        },
+        "NextRewardStartAmount": {
+          "type": "string"
+        },
+        "RewardAmount": {
+          "type": "string"
         }
       }
     },
