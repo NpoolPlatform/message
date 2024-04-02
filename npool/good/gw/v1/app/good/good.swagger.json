@@ -244,10 +244,11 @@
         "BenefitTypePlatform",
         "BenefitTypePool",
         "BenefitTypeOffline",
-        "BenefitTypeContract"
+        "BenefitTypeContract",
+        "BenefitTypeNone"
       ],
       "default": "DefaultBenefitType",
-      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward\n - BenefitTypeContract: User receive reward from smart contract"
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward\n - BenefitTypeContract: User receive reward from smart contract\n - BenefitTypeNone: Such as technique fee"
     },
     "v1CancelMode": {
       "type": "string",
