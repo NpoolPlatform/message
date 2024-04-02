@@ -15,15 +15,9 @@ service Gateway {
             body: "*"
         };
     }
-    rpc SetupRevenueAddress (SetupRevenueAddressRequest)   returns (SetupRevenueAddressResponse)  {
+    rpc UpdateOrderUser      (UpdateOrderUserRequest)          returns (UpdateOrderUserResponse)         {
         option (google.api.http) = {
-            post: "/v1/setup/revenueaddress"
-            body: "*"
-        };
-    }
-    rpc SetupAutoPay        (SetupAutoPayRequest)          returns (SetupAutoPayResponse)         {
-        option (google.api.http) = {
-            post: "/v1/setup/autopay"
+            post: "/v1/update/orderuser"
             body: "*"
         };
     }
@@ -58,24 +52,14 @@ message GetOrderUserResponse {
     OrderUser Info = 10;
 }
 
-message SetupRevenueAddressRequest{
+message UpdateOrderUserRequest{
     string EntID          = 10;
     string AppID          = 20;
     string UserID         = 30;
-    string RevenueAddress = 40;
+    optional string RevenueAddress = 40;
+    optional bool   AutoPay    = 50;
 }
 
-message SetupRevenueAddressResponse{
-    OrderUser Info = 10;
-}
-
-message SetupAutoPayRequest{
-    string EntID      = 10;
-    string AppID      = 20;
-    string UserID     = 30;
-    bool   AutoPay    = 40;
-}
-
-message SetupAutoPayResponse{
+message UpdateOrderUserResponse{
     OrderUser Info = 10;
 }

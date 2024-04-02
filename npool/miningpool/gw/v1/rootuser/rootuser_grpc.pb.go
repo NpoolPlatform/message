@@ -23,6 +23,7 @@ const (
 	Gateway_GetRootUser_FullMethodName    = "/miningpool.gateway.rootuser.v1.Gateway/GetRootUser"
 	Gateway_GetRootUsers_FullMethodName   = "/miningpool.gateway.rootuser.v1.Gateway/GetRootUsers"
 	Gateway_UpdateRootUser_FullMethodName = "/miningpool.gateway.rootuser.v1.Gateway/UpdateRootUser"
+	Gateway_DeleteRootUser_FullMethodName = "/miningpool.gateway.rootuser.v1.Gateway/DeleteRootUser"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -33,6 +34,7 @@ type GatewayClient interface {
 	GetRootUser(ctx context.Context, in *GetRootUserRequest, opts ...grpc.CallOption) (*GetRootUserResponse, error)
 	GetRootUsers(ctx context.Context, in *GetRootUsersRequest, opts ...grpc.CallOption) (*GetRootUsersResponse, error)
 	UpdateRootUser(ctx context.Context, in *UpdateRootUserRequest, opts ...grpc.CallOption) (*UpdateRootUserResponse, error)
+	DeleteRootUser(ctx context.Context, in *DeleteRootUserRequest, opts ...grpc.CallOption) (*DeleteRootUserResponse, error)
 }
 
 type gatewayClient struct {
@@ -79,6 +81,15 @@ func (c *gatewayClient) UpdateRootUser(ctx context.Context, in *UpdateRootUserRe
 	return out, nil
 }
 
+func (c *gatewayClient) DeleteRootUser(ctx context.Context, in *DeleteRootUserRequest, opts ...grpc.CallOption) (*DeleteRootUserResponse, error) {
+	out := new(DeleteRootUserResponse)
+	err := c.cc.Invoke(ctx, Gateway_DeleteRootUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -87,6 +98,7 @@ type GatewayServer interface {
 	GetRootUser(context.Context, *GetRootUserRequest) (*GetRootUserResponse, error)
 	GetRootUsers(context.Context, *GetRootUsersRequest) (*GetRootUsersResponse, error)
 	UpdateRootUser(context.Context, *UpdateRootUserRequest) (*UpdateRootUserResponse, error)
+	DeleteRootUser(context.Context, *DeleteRootUserRequest) (*DeleteRootUserResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -105,6 +117,9 @@ func (UnimplementedGatewayServer) GetRootUsers(context.Context, *GetRootUsersReq
 }
 func (UnimplementedGatewayServer) UpdateRootUser(context.Context, *UpdateRootUserRequest) (*UpdateRootUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateRootUser not implemented")
+}
+func (UnimplementedGatewayServer) DeleteRootUser(context.Context, *DeleteRootUserRequest) (*DeleteRootUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteRootUser not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -191,6 +206,24 @@ func _Gateway_UpdateRootUser_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_DeleteRootUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRootUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeleteRootUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_DeleteRootUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeleteRootUser(ctx, req.(*DeleteRootUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -213,6 +246,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateRootUser",
 			Handler:    _Gateway_UpdateRootUser_Handler,
+		},
+		{
+			MethodName: "DeleteRootUser",
+			Handler:    _Gateway_DeleteRootUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

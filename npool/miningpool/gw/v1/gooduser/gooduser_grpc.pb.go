@@ -23,6 +23,7 @@ const (
 	Gateway_GetGoodUser_FullMethodName    = "/miningpool.gateway.gooduser.v1.Gateway/GetGoodUser"
 	Gateway_GetGoodUsers_FullMethodName   = "/miningpool.gateway.gooduser.v1.Gateway/GetGoodUsers"
 	Gateway_UpdateGoodUser_FullMethodName = "/miningpool.gateway.gooduser.v1.Gateway/UpdateGoodUser"
+	Gateway_DeleteGoodUser_FullMethodName = "/miningpool.gateway.gooduser.v1.Gateway/DeleteGoodUser"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -33,6 +34,7 @@ type GatewayClient interface {
 	GetGoodUser(ctx context.Context, in *GetGoodUserRequest, opts ...grpc.CallOption) (*GetGoodUserResponse, error)
 	GetGoodUsers(ctx context.Context, in *GetGoodUsersRequest, opts ...grpc.CallOption) (*GetGoodUsersResponse, error)
 	UpdateGoodUser(ctx context.Context, in *UpdateGoodUserRequest, opts ...grpc.CallOption) (*UpdateGoodUserResponse, error)
+	DeleteGoodUser(ctx context.Context, in *DeleteGoodUserRequest, opts ...grpc.CallOption) (*DeleteGoodUserResponse, error)
 }
 
 type gatewayClient struct {
@@ -79,6 +81,15 @@ func (c *gatewayClient) UpdateGoodUser(ctx context.Context, in *UpdateGoodUserRe
 	return out, nil
 }
 
+func (c *gatewayClient) DeleteGoodUser(ctx context.Context, in *DeleteGoodUserRequest, opts ...grpc.CallOption) (*DeleteGoodUserResponse, error) {
+	out := new(DeleteGoodUserResponse)
+	err := c.cc.Invoke(ctx, Gateway_DeleteGoodUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -87,6 +98,7 @@ type GatewayServer interface {
 	GetGoodUser(context.Context, *GetGoodUserRequest) (*GetGoodUserResponse, error)
 	GetGoodUsers(context.Context, *GetGoodUsersRequest) (*GetGoodUsersResponse, error)
 	UpdateGoodUser(context.Context, *UpdateGoodUserRequest) (*UpdateGoodUserResponse, error)
+	DeleteGoodUser(context.Context, *DeleteGoodUserRequest) (*DeleteGoodUserResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -105,6 +117,9 @@ func (UnimplementedGatewayServer) GetGoodUsers(context.Context, *GetGoodUsersReq
 }
 func (UnimplementedGatewayServer) UpdateGoodUser(context.Context, *UpdateGoodUserRequest) (*UpdateGoodUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateGoodUser not implemented")
+}
+func (UnimplementedGatewayServer) DeleteGoodUser(context.Context, *DeleteGoodUserRequest) (*DeleteGoodUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteGoodUser not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -191,6 +206,24 @@ func _Gateway_UpdateGoodUser_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_DeleteGoodUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteGoodUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeleteGoodUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_DeleteGoodUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeleteGoodUser(ctx, req.(*DeleteGoodUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -213,6 +246,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateGoodUser",
 			Handler:    _Gateway_UpdateGoodUser_Handler,
+		},
+		{
+			MethodName: "DeleteGoodUser",
+			Handler:    _Gateway_DeleteGoodUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

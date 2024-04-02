@@ -33,6 +33,12 @@ service Gateway {
             body: "*"
         };
     }
+    rpc DeletePool(DeletePoolRequest)returns (DeletePoolResponse)      {
+        option (google.api.http) = {
+            post: "/v1/delete/apppool"
+            body: "*"
+        };
+    }
 }
 message Pool {
     uint32                ID                = 10;
@@ -101,4 +107,13 @@ message GetNPoolsRequest {
 message GetNPoolsResponse {
     repeated Pool Infos = 10;
     uint32        Total = 20;
+}
+
+message DeletePoolRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+}
+
+message DeletePoolResponse {
+    Pool Info = 10;
 }

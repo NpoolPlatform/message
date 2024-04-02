@@ -27,9 +27,6 @@ service Middleware {
             body: "*"
         };
     }
-    rpc SetupProportion     (SetupProportionRequest)       returns (SetupProportionResponse)      {}
-    rpc SetupRevenueAddress (SetupRevenueAddressRequest)   returns (SetupRevenueAddressResponse)  {}
-    rpc SetupAutoPay        (SetupAutoPayRequest)          returns (SetupAutoPayResponse)         {}
 }
 
 message OrderUserReq {
@@ -155,32 +152,5 @@ message DeleteOrderUserRequest {
 }
 
 message DeleteOrderUserResponse {
-    OrderUser Info = 10;
-}
-
-message SetupProportionRequest{
-    string EntID      = 10;
-    float  Proportion = 20;
-}
-
-message SetupProportionResponse{
-    OrderUser Info = 10;
-}
-
-message SetupRevenueAddressRequest{
-    string EntID          = 10;
-    string RevenueAddress = 20;
-}
-
-message SetupRevenueAddressResponse{
-    OrderUser Info = 10;
-}
-
-message SetupAutoPayRequest{
-    string EntID      = 10;
-    bool   AutoPay = 20;
-}
-
-message SetupAutoPayResponse{
     OrderUser Info = 10;
 }

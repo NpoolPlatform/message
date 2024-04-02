@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/setup/autopay": {
+    "/v1/update/orderuser": {
       "post": {
-        "operationId": "Gateway_SetupAutoPay",
+        "operationId": "Gateway_UpdateOrderUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1SetupAutoPayResponse"
+              "$ref": "#/definitions/v1UpdateOrderUserResponse"
             }
           },
           "default": {
@@ -71,39 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1SetupAutoPayRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/setup/revenueaddress": {
-      "post": {
-        "operationId": "Gateway_SetupRevenueAddress",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1SetupRevenueAddressResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1SetupRevenueAddressRequest"
+              "$ref": "#/definitions/v1UpdateOrderUserRequest"
             }
           }
         ],
@@ -234,32 +202,7 @@
         }
       }
     },
-    "v1SetupAutoPayRequest": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AutoPay": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1SetupAutoPayResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
-    "v1SetupRevenueAddressRequest": {
+    "v1UpdateOrderUserRequest": {
       "type": "object",
       "properties": {
         "EntID": {
@@ -273,10 +216,13 @@
         },
         "RevenueAddress": {
           "type": "string"
+        },
+        "AutoPay": {
+          "type": "boolean"
         }
       }
     },
-    "v1SetupRevenueAddressResponse": {
+    "v1UpdateOrderUserResponse": {
       "type": "object",
       "properties": {
         "Info": {

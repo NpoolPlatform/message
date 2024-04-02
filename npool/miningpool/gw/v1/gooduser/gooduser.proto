@@ -33,6 +33,12 @@ service Gateway {
             body: "*"
         };
     }
+    rpc DeleteGoodUser     (DeleteGoodUserRequest)   returns (DeleteGoodUserResponse)    {
+        option (google.api.http) = {
+            post: "/v1/delete/gooduser"
+            body: "*"
+        };
+    }
 }
 
 message GoodUser {
@@ -88,5 +94,14 @@ message UpdateGoodUserRequest {
 }
 
 message UpdateGoodUserResponse {
+    GoodUser Info = 10;
+}
+
+message DeleteGoodUserRequest {
+    uint32                        ID                = 10;
+    string                        EntID             = 20;
+}
+
+message DeleteGoodUserResponse {
     GoodUser Info = 10;
 }

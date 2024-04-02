@@ -4,7 +4,6 @@ package miningpool.middleware.app.pool.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/app/pool";
 
-import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
@@ -15,12 +14,7 @@ service Middleware {
     rpc GetPools       (GetPoolsRequest)     returns (GetPoolsResponse)      {}
     rpc ExistPoolConds (ExistPoolCondsRequest) returns (ExistPoolCondsResponse) {}
     rpc UpdatePool     (UpdatePoolRequest)   returns (UpdatePoolResponse)    {}
-    rpc DeletePool     (DeletePoolRequest)   returns (DeletePoolResponse)    {
-        option (google.api.http) = {
-            post: "/v1/miningpool_DeleteAppPool"
-            body: "*"
-        };
-    }
+    rpc DeletePool     (DeletePoolRequest)   returns (DeletePoolResponse)    {}
 }
 
 

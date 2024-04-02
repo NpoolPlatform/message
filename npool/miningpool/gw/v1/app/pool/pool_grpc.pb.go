@@ -23,6 +23,7 @@ const (
 	Gateway_GetPool_FullMethodName    = "/miningpool.gateway.app.pool.v1.Gateway/GetPool"
 	Gateway_GetPools_FullMethodName   = "/miningpool.gateway.app.pool.v1.Gateway/GetPools"
 	Gateway_GetNPools_FullMethodName  = "/miningpool.gateway.app.pool.v1.Gateway/GetNPools"
+	Gateway_DeletePool_FullMethodName = "/miningpool.gateway.app.pool.v1.Gateway/DeletePool"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -33,6 +34,7 @@ type GatewayClient interface {
 	GetPool(ctx context.Context, in *GetPoolRequest, opts ...grpc.CallOption) (*GetPoolResponse, error)
 	GetPools(ctx context.Context, in *GetPoolsRequest, opts ...grpc.CallOption) (*GetPoolsResponse, error)
 	GetNPools(ctx context.Context, in *GetNPoolsRequest, opts ...grpc.CallOption) (*GetNPoolsResponse, error)
+	DeletePool(ctx context.Context, in *DeletePoolRequest, opts ...grpc.CallOption) (*DeletePoolResponse, error)
 }
 
 type gatewayClient struct {
@@ -79,6 +81,15 @@ func (c *gatewayClient) GetNPools(ctx context.Context, in *GetNPoolsRequest, opt
 	return out, nil
 }
 
+func (c *gatewayClient) DeletePool(ctx context.Context, in *DeletePoolRequest, opts ...grpc.CallOption) (*DeletePoolResponse, error) {
+	out := new(DeletePoolResponse)
+	err := c.cc.Invoke(ctx, Gateway_DeletePool_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -87,6 +98,7 @@ type GatewayServer interface {
 	GetPool(context.Context, *GetPoolRequest) (*GetPoolResponse, error)
 	GetPools(context.Context, *GetPoolsRequest) (*GetPoolsResponse, error)
 	GetNPools(context.Context, *GetNPoolsRequest) (*GetNPoolsResponse, error)
+	DeletePool(context.Context, *DeletePoolRequest) (*DeletePoolResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -105,6 +117,9 @@ func (UnimplementedGatewayServer) GetPools(context.Context, *GetPoolsRequest) (*
 }
 func (UnimplementedGatewayServer) GetNPools(context.Context, *GetNPoolsRequest) (*GetNPoolsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNPools not implemented")
+}
+func (UnimplementedGatewayServer) DeletePool(context.Context, *DeletePoolRequest) (*DeletePoolResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeletePool not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -191,6 +206,24 @@ func _Gateway_GetNPools_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_DeletePool_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeletePoolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).DeletePool(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_DeletePool_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).DeletePool(ctx, req.(*DeletePoolRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -213,6 +246,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetNPools",
 			Handler:    _Gateway_GetNPools_Handler,
+		},
+		{
+			MethodName: "DeletePool",
+			Handler:    _Gateway_DeletePool_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

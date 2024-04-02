@@ -15,40 +15,7 @@
   "produces": [
     "application/json"
   ],
-  "paths": {
-    "/v1/miningpool_DeleteAppPool": {
-      "post": {
-        "operationId": "Middleware_DeletePool",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1DeletePoolResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1DeletePoolRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    }
-  },
+  "paths": {},
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -102,14 +69,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Pool"
-        }
-      }
-    },
-    "v1DeletePoolRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1PoolReq"
         }
       }
     },

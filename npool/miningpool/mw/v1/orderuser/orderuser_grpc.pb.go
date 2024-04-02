@@ -26,9 +26,6 @@ const (
 	Middleware_ExistOrderUserConds_FullMethodName = "/miningpool.middleware.orderuser.v1.Middleware/ExistOrderUserConds"
 	Middleware_UpdateOrderUser_FullMethodName     = "/miningpool.middleware.orderuser.v1.Middleware/UpdateOrderUser"
 	Middleware_DeleteOrderUser_FullMethodName     = "/miningpool.middleware.orderuser.v1.Middleware/DeleteOrderUser"
-	Middleware_SetupProportion_FullMethodName     = "/miningpool.middleware.orderuser.v1.Middleware/SetupProportion"
-	Middleware_SetupRevenueAddress_FullMethodName = "/miningpool.middleware.orderuser.v1.Middleware/SetupRevenueAddress"
-	Middleware_SetupAutoPay_FullMethodName        = "/miningpool.middleware.orderuser.v1.Middleware/SetupAutoPay"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -42,9 +39,6 @@ type MiddlewareClient interface {
 	ExistOrderUserConds(ctx context.Context, in *ExistOrderUserCondsRequest, opts ...grpc.CallOption) (*ExistOrderUserCondsResponse, error)
 	UpdateOrderUser(ctx context.Context, in *UpdateOrderUserRequest, opts ...grpc.CallOption) (*UpdateOrderUserResponse, error)
 	DeleteOrderUser(ctx context.Context, in *DeleteOrderUserRequest, opts ...grpc.CallOption) (*DeleteOrderUserResponse, error)
-	SetupProportion(ctx context.Context, in *SetupProportionRequest, opts ...grpc.CallOption) (*SetupProportionResponse, error)
-	SetupRevenueAddress(ctx context.Context, in *SetupRevenueAddressRequest, opts ...grpc.CallOption) (*SetupRevenueAddressResponse, error)
-	SetupAutoPay(ctx context.Context, in *SetupAutoPayRequest, opts ...grpc.CallOption) (*SetupAutoPayResponse, error)
 }
 
 type middlewareClient struct {
@@ -118,33 +112,6 @@ func (c *middlewareClient) DeleteOrderUser(ctx context.Context, in *DeleteOrderU
 	return out, nil
 }
 
-func (c *middlewareClient) SetupProportion(ctx context.Context, in *SetupProportionRequest, opts ...grpc.CallOption) (*SetupProportionResponse, error) {
-	out := new(SetupProportionResponse)
-	err := c.cc.Invoke(ctx, Middleware_SetupProportion_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) SetupRevenueAddress(ctx context.Context, in *SetupRevenueAddressRequest, opts ...grpc.CallOption) (*SetupRevenueAddressResponse, error) {
-	out := new(SetupRevenueAddressResponse)
-	err := c.cc.Invoke(ctx, Middleware_SetupRevenueAddress_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) SetupAutoPay(ctx context.Context, in *SetupAutoPayRequest, opts ...grpc.CallOption) (*SetupAutoPayResponse, error) {
-	out := new(SetupAutoPayResponse)
-	err := c.cc.Invoke(ctx, Middleware_SetupAutoPay_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -156,9 +123,6 @@ type MiddlewareServer interface {
 	ExistOrderUserConds(context.Context, *ExistOrderUserCondsRequest) (*ExistOrderUserCondsResponse, error)
 	UpdateOrderUser(context.Context, *UpdateOrderUserRequest) (*UpdateOrderUserResponse, error)
 	DeleteOrderUser(context.Context, *DeleteOrderUserRequest) (*DeleteOrderUserResponse, error)
-	SetupProportion(context.Context, *SetupProportionRequest) (*SetupProportionResponse, error)
-	SetupRevenueAddress(context.Context, *SetupRevenueAddressRequest) (*SetupRevenueAddressResponse, error)
-	SetupAutoPay(context.Context, *SetupAutoPayRequest) (*SetupAutoPayResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -186,15 +150,6 @@ func (UnimplementedMiddlewareServer) UpdateOrderUser(context.Context, *UpdateOrd
 }
 func (UnimplementedMiddlewareServer) DeleteOrderUser(context.Context, *DeleteOrderUserRequest) (*DeleteOrderUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteOrderUser not implemented")
-}
-func (UnimplementedMiddlewareServer) SetupProportion(context.Context, *SetupProportionRequest) (*SetupProportionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetupProportion not implemented")
-}
-func (UnimplementedMiddlewareServer) SetupRevenueAddress(context.Context, *SetupRevenueAddressRequest) (*SetupRevenueAddressResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetupRevenueAddress not implemented")
-}
-func (UnimplementedMiddlewareServer) SetupAutoPay(context.Context, *SetupAutoPayRequest) (*SetupAutoPayResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetupAutoPay not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -335,60 +290,6 @@ func _Middleware_DeleteOrderUser_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_SetupProportion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetupProportionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).SetupProportion(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_SetupProportion_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).SetupProportion(ctx, req.(*SetupProportionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_SetupRevenueAddress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetupRevenueAddressRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).SetupRevenueAddress(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_SetupRevenueAddress_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).SetupRevenueAddress(ctx, req.(*SetupRevenueAddressRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_SetupAutoPay_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetupAutoPayRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).SetupAutoPay(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_SetupAutoPay_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).SetupAutoPay(ctx, req.(*SetupAutoPayRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -423,18 +324,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteOrderUser",
 			Handler:    _Middleware_DeleteOrderUser_Handler,
-		},
-		{
-			MethodName: "SetupProportion",
-			Handler:    _Middleware_SetupProportion_Handler,
-		},
-		{
-			MethodName: "SetupRevenueAddress",
-			Handler:    _Middleware_SetupRevenueAddress_Handler,
-		},
-		{
-			MethodName: "SetupAutoPay",
-			Handler:    _Middleware_SetupAutoPay_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

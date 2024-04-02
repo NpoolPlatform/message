@@ -373,30 +373,6 @@
         }
       }
     },
-    "v1SetupAutoPayResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
-    "v1SetupProportionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
-    "v1SetupRevenueAddressResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
-    },
     "v1StringSliceVal": {
       "type": "object",
       "properties": {

@@ -19,9 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetOrderUser_FullMethodName        = "/miningpool.gateway.orderuser.v1.Gateway/GetOrderUser"
-	Gateway_SetupRevenueAddress_FullMethodName = "/miningpool.gateway.orderuser.v1.Gateway/SetupRevenueAddress"
-	Gateway_SetupAutoPay_FullMethodName        = "/miningpool.gateway.orderuser.v1.Gateway/SetupAutoPay"
+	Gateway_GetOrderUser_FullMethodName    = "/miningpool.gateway.orderuser.v1.Gateway/GetOrderUser"
+	Gateway_UpdateOrderUser_FullMethodName = "/miningpool.gateway.orderuser.v1.Gateway/UpdateOrderUser"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -29,8 +28,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	GetOrderUser(ctx context.Context, in *GetOrderUserRequest, opts ...grpc.CallOption) (*GetOrderUserResponse, error)
-	SetupRevenueAddress(ctx context.Context, in *SetupRevenueAddressRequest, opts ...grpc.CallOption) (*SetupRevenueAddressResponse, error)
-	SetupAutoPay(ctx context.Context, in *SetupAutoPayRequest, opts ...grpc.CallOption) (*SetupAutoPayResponse, error)
+	UpdateOrderUser(ctx context.Context, in *UpdateOrderUserRequest, opts ...grpc.CallOption) (*UpdateOrderUserResponse, error)
 }
 
 type gatewayClient struct {
@@ -50,18 +48,9 @@ func (c *gatewayClient) GetOrderUser(ctx context.Context, in *GetOrderUserReques
 	return out, nil
 }
 
-func (c *gatewayClient) SetupRevenueAddress(ctx context.Context, in *SetupRevenueAddressRequest, opts ...grpc.CallOption) (*SetupRevenueAddressResponse, error) {
-	out := new(SetupRevenueAddressResponse)
-	err := c.cc.Invoke(ctx, Gateway_SetupRevenueAddress_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) SetupAutoPay(ctx context.Context, in *SetupAutoPayRequest, opts ...grpc.CallOption) (*SetupAutoPayResponse, error) {
-	out := new(SetupAutoPayResponse)
-	err := c.cc.Invoke(ctx, Gateway_SetupAutoPay_FullMethodName, in, out, opts...)
+func (c *gatewayClient) UpdateOrderUser(ctx context.Context, in *UpdateOrderUserRequest, opts ...grpc.CallOption) (*UpdateOrderUserResponse, error) {
+	out := new(UpdateOrderUserResponse)
+	err := c.cc.Invoke(ctx, Gateway_UpdateOrderUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -73,8 +62,7 @@ func (c *gatewayClient) SetupAutoPay(ctx context.Context, in *SetupAutoPayReques
 // for forward compatibility
 type GatewayServer interface {
 	GetOrderUser(context.Context, *GetOrderUserRequest) (*GetOrderUserResponse, error)
-	SetupRevenueAddress(context.Context, *SetupRevenueAddressRequest) (*SetupRevenueAddressResponse, error)
-	SetupAutoPay(context.Context, *SetupAutoPayRequest) (*SetupAutoPayResponse, error)
+	UpdateOrderUser(context.Context, *UpdateOrderUserRequest) (*UpdateOrderUserResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -85,11 +73,8 @@ type UnimplementedGatewayServer struct {
 func (UnimplementedGatewayServer) GetOrderUser(context.Context, *GetOrderUserRequest) (*GetOrderUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrderUser not implemented")
 }
-func (UnimplementedGatewayServer) SetupRevenueAddress(context.Context, *SetupRevenueAddressRequest) (*SetupRevenueAddressResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetupRevenueAddress not implemented")
-}
-func (UnimplementedGatewayServer) SetupAutoPay(context.Context, *SetupAutoPayRequest) (*SetupAutoPayResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetupAutoPay not implemented")
+func (UnimplementedGatewayServer) UpdateOrderUser(context.Context, *UpdateOrderUserRequest) (*UpdateOrderUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrderUser not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -122,38 +107,20 @@ func _Gateway_GetOrderUser_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_SetupRevenueAddress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetupRevenueAddressRequest)
+func _Gateway_UpdateOrderUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOrderUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).SetupRevenueAddress(ctx, in)
+		return srv.(GatewayServer).UpdateOrderUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_SetupRevenueAddress_FullMethodName,
+		FullMethod: Gateway_UpdateOrderUser_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).SetupRevenueAddress(ctx, req.(*SetupRevenueAddressRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_SetupAutoPay_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetupAutoPayRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).SetupAutoPay(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_SetupAutoPay_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).SetupAutoPay(ctx, req.(*SetupAutoPayRequest))
+		return srv.(GatewayServer).UpdateOrderUser(ctx, req.(*UpdateOrderUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -170,12 +137,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetOrderUser_Handler,
 		},
 		{
-			MethodName: "SetupRevenueAddress",
-			Handler:    _Gateway_SetupRevenueAddress_Handler,
-		},
-		{
-			MethodName: "SetupAutoPay",
-			Handler:    _Gateway_SetupAutoPay_Handler,
+			MethodName: "UpdateOrderUser",
+			Handler:    _Gateway_UpdateOrderUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
