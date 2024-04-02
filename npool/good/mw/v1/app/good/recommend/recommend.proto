@@ -38,7 +38,7 @@ message Recommend {
     string AppID     = 20;
     // @inject_tag: sql:"recommender_id"
     string RecommenderID = 30;
-    // @inject_tag: sql:"good_id"
+    // @inject_tag: sql:"app_good_id"
     string AppGoodID = 40;
     // @inject_tag: sql:"good_name"
     string GoodName  = 50;
