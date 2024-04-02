@@ -41,6 +41,8 @@ message Score {
     string Score     = 60;
     // @inject_tag: sql:"good_id"
     string GoodID    = 70;
+    // @inject_tag: sql:"comment_id"
+    string CommentID = 80;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
