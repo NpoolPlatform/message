@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/mw/v1/good/comment/comment.proto",
+    "title": "npool/good/mw/v1/app/good/comment/comment.proto",
     "version": "version not set"
   },
   "tags": [
@@ -128,9 +128,6 @@
           "format": "int64"
         },
         "EntID": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         },
         "UserID": {

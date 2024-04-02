@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/good/mw/v1/good/comment/comment.proto
+// source: npool/good/mw/v1/app/good/comment/comment.proto
 
 package comment
 
@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateComment_FullMethodName     = "/good.middleware.good1.comment.v1.Middleware/CreateComment"
-	Middleware_UpdateComment_FullMethodName     = "/good.middleware.good1.comment.v1.Middleware/UpdateComment"
-	Middleware_GetComment_FullMethodName        = "/good.middleware.good1.comment.v1.Middleware/GetComment"
-	Middleware_GetComments_FullMethodName       = "/good.middleware.good1.comment.v1.Middleware/GetComments"
-	Middleware_ExistCommentConds_FullMethodName = "/good.middleware.good1.comment.v1.Middleware/ExistCommentConds"
-	Middleware_DeleteComment_FullMethodName     = "/good.middleware.good1.comment.v1.Middleware/DeleteComment"
+	Middleware_CreateComment_FullMethodName     = "/good.middleware.app.good1.comment.v1.Middleware/CreateComment"
+	Middleware_UpdateComment_FullMethodName     = "/good.middleware.app.good1.comment.v1.Middleware/UpdateComment"
+	Middleware_GetComment_FullMethodName        = "/good.middleware.app.good1.comment.v1.Middleware/GetComment"
+	Middleware_GetComments_FullMethodName       = "/good.middleware.app.good1.comment.v1.Middleware/GetComments"
+	Middleware_ExistCommentConds_FullMethodName = "/good.middleware.app.good1.comment.v1.Middleware/ExistCommentConds"
+	Middleware_DeleteComment_FullMethodName     = "/good.middleware.app.good1.comment.v1.Middleware/DeleteComment"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -261,7 +261,7 @@ func _Middleware_DeleteComment_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.good1.comment.v1.Middleware",
+	ServiceName: "good.middleware.app.good1.comment.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -290,5 +290,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/good/mw/v1/good/comment/comment.proto",
+	Metadata: "npool/good/mw/v1/app/good/comment/comment.proto",
 }
