@@ -178,6 +178,8 @@ message Conds {
     optional basetypes.v1.Uint32SliceVal GoodTypes = 60;
     optional basetypes.v1.StringVal      CoinTypeID = 70;
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 80;
+    optional basetypes.v1.Uint32Val      RewardState = 90;
+    optional basetypes.v1.Uint32Val      RewardAt = 100;
 }
 
 message CreatePowerRentalRequest {

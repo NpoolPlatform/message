@@ -43,6 +43,12 @@
         },
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "RewardAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
