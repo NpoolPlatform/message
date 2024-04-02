@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/mw/v1/good/like/like.proto",
+    "title": "npool/good/mw/v1/app/good/recommend/recommend.proto",
     "version": "version not set"
   },
   "tags": [
@@ -56,37 +56,34 @@
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "UserID": {
+        "RecommenderID": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "AppGoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppGoodIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
         },
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v1CreateLikeResponse": {
+    "v1CreateRecommendResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Like"
+          "$ref": "#/definitions/v1Recommend"
         }
       }
     },
-    "v1DeleteLikeResponse": {
+    "v1DeleteRecommendResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Like"
+          "$ref": "#/definitions/v1Recommend"
         }
       }
     },
-    "v1ExistLikeCondsResponse": {
+    "v1ExistRecommendCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -94,21 +91,21 @@
         }
       }
     },
-    "v1GetLikeResponse": {
+    "v1GetRecommendResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Like"
+          "$ref": "#/definitions/v1Recommend"
         }
       }
     },
-    "v1GetLikesResponse": {
+    "v1GetRecommendsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Like"
+            "$ref": "#/definitions/v1Recommend"
           }
         },
         "Total": {
@@ -117,7 +114,7 @@
         }
       }
     },
-    "v1Like": {
+    "v1Recommend": {
       "type": "object",
       "properties": {
         "ID": {
@@ -133,25 +130,25 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
-        "UserID": {
+        "RecommenderID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
+          "title": "@inject_tag: sql:\"recommender_id\""
         },
-        "AppGoodID": {
+        "GoodID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"app_good_id\""
+          "title": "@inject_tag: sql:\"good_id\""
         },
         "GoodName": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_name\""
         },
-        "Like": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"like\""
-        },
-        "GoodID": {
+        "RecommendIndex": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
+          "title": "@inject_tag: sql:\"recommend_index\""
+        },
+        "Message": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"message\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -165,7 +162,7 @@
         }
       }
     },
-    "v1LikeReq": {
+    "v1RecommendReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -178,14 +175,17 @@
         "AppID": {
           "type": "string"
         },
-        "UserID": {
+        "RecommenderID": {
           "type": "string"
         },
-        "AppGoodID": {
+        "GoodID": {
           "type": "string"
         },
-        "Like": {
-          "type": "boolean"
+        "RecommendIndex": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
         }
       }
     },
@@ -226,11 +226,11 @@
         }
       }
     },
-    "v1UpdateLikeResponse": {
+    "v1UpdateRecommendResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Like"
+          "$ref": "#/definitions/v1Recommend"
         }
       }
     }
