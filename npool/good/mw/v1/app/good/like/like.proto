@@ -17,12 +17,11 @@ service Middleware {
 }
 
 message LikeReq {
-  optional uint32 ID = 9;
-  optional string EntID = 10;
-  optional string AppID = 20;
-  optional string UserID = 30;
-  optional string AppGoodID = 41;
-  optional bool Like = 50;
+    optional uint32 ID         = 9;
+    optional string EntID      = 10;
+    optional string UserID     = 30;
+    optional string AppGoodID  = 41;
+    optional bool   Like       = 50;
 }
 
 message Like {

@@ -18,12 +18,11 @@ service Middleware {
 }
 
 message ScoreReq {
-  optional uint32 ID = 9;
-  optional string EntID = 10;
-  optional string AppID = 20;
-  optional string UserID = 30;
-  optional string AppGoodID = 40;
-  optional string Score = 50;
+    optional uint32 ID         = 9;
+    optional string EntID      = 10;
+    optional string UserID     = 30;
+    optional string AppGoodID  = 40;
+    optional string Score      = 50;
 }
 
 message Score {
