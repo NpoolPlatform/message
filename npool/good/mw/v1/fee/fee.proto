@@ -17,14 +17,15 @@ service Middleware {
 }
 
 message FeeReq {
-    optional string EntID = 10;
-    optional string GoodID = 20;
-    optional basetypes.good.v1.GoodType GoodType = 30;
-    optional string Name = 40;
-    optional basetypes.good.v1.GoodSettlementType SettlementType = 50;
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string GoodID = 30;
+    optional basetypes.good.v1.GoodType GoodType = 40;
+    optional string Name = 50;
+    optional basetypes.good.v1.GoodSettlementType SettlementType = 60;
     // It could be amount or percent.
-    optional string UnitValue = 60;
-    optional basetypes.good.v1.GoodDurationType DurationType = 70;
+    optional string UnitValue = 70;
+    optional basetypes.good.v1.GoodDurationType DurationType = 80;
 }
 
 message Fee {
