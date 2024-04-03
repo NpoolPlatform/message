@@ -13,6 +13,8 @@ service Middleware {
     rpc UpdateFee (UpdateFeeRequest) returns (UpdateFeeResponse) {}
     rpc GetFee (GetFeeRequest) returns (GetFeeResponse) {}
     rpc GetFees (GetFeesRequest) returns (GetFeesResponse) {}
+    rpc ExistFee (ExistFeeRequest) returns (ExistFeeResponse) {}
+    rpc ExistFeeConds (ExistFeeCondsRequest) returns (ExistFeeCondsResponse) {}
     rpc DeleteFee (DeleteFeeRequest) returns (DeleteFeeResponse) {}
 }
 
@@ -112,6 +114,22 @@ message GetFeesRequest {
 
 message GetFeesResponse {
     repeated Fee Infos = 10;
+}
+
+message ExistFeeRequest {
+    string AppGoodID = 10;
+}
+
+message ExistFeeResponse {
+    bool Info = 10;
+}
+
+message ExistFeeCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistFeeCondsResponse {
+    bool Info = 10;
 }
 
 message DeleteFeeRequest {
