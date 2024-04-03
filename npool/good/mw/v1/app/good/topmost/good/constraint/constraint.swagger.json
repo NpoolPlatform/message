@@ -187,6 +187,10 @@
         "Constraint": {
           "$ref": "#/definitions/v1GoodTopMostConstraint"
         },
+        "TopMostGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"top_most_good_id\""
+        },
         "AppGoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_id\""
@@ -226,7 +230,7 @@
         "EntID": {
           "type": "string"
         },
-        "TopMostID": {
+        "TopMostGoodID": {
           "type": "string"
         },
         "Constraint": {
