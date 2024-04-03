@@ -19,7 +19,7 @@ service Middleware {
 message TopMostGoodConstraintReq {
     optional uint32 ID         = 9;
     optional string EntID      = 10;
-    optional string TopMostID  = 20;
+    optional string TopMostGoodID = 20;
     optional basetypes.good.v1.GoodTopMostConstraint Constraint  = 30;
     optional string TargetValue = 40;
     optional uint32 Index = 50;
@@ -46,14 +46,16 @@ message TopMostGoodConstraint {
     // @inject_tag: sql:"constraint"
     string ConstraintStr = 100;
     basetypes.good.v1.GoodTopMostConstraint Constraint = 110;
+    // @inject_tag: sql:"top_most_good_id"
+    string TopMostGoodID = 120;
     // @inject_tag: sql:"app_good_id"
-    string AppGoodID  = 120;
+    string AppGoodID  = 130;
     // @inject_tag: sql:"app_good_name"
-    string AppGoodName = 130;
+    string AppGoodName = 140;
     // @inject_tag: sql:"target_value"
-    string TargetValue = 140;
+    string TargetValue = 150;
     // @inject_tag: sql:"index"
-    uint32 Index = 150;
+    uint32 Index = 160;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
