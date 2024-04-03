@@ -246,6 +246,10 @@
           "items": {
             "$ref": "#/definitions/v1Fee"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
