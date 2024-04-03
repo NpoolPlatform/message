@@ -98,6 +98,22 @@
         }
       }
     },
+    "v1ExistFeeCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistFeeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1Fee": {
       "type": "object",
       "properties": {
