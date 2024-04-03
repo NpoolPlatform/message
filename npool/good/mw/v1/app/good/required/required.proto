@@ -1,0 +1,115 @@
+syntax = "proto3";
+
+package good.middleware.app.good1.required1.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/app/required";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateRequired      (CreateRequiredRequest)      returns (CreateRequiredResponse)      {}
+    rpc GetRequired         (GetRequiredRequest)         returns (GetRequiredResponse)         {}
+    rpc ExistRequiredConds  (ExistRequiredCondsRequest)  returns (ExistRequiredCondsResponse)  {}
+    rpc GetRequireds        (GetRequiredsRequest)        returns (GetRequiredsResponse)        {}
+    rpc UpdateRequired      (UpdateRequiredRequest)      returns (UpdateRequiredResponse)      {}
+    rpc DeleteRequired      (DeleteRequiredRequest)      returns (DeleteRequiredResponse)      {}
+}
+
+message RequiredReq {
+    optional uint32 ID             = 9;
+    optional string EntID          = 10;
+    optional string MainAppGoodID  = 20;
+    optional string RequiredAppGoodID = 30;
+    optional bool   Must           = 40;
+}
+
+message Required {
+    // @inject_tag: sql:"id"
+    uint32 ID             = 9;
+    // @inject_tag: sql:"ent_id"
+    string EntID          = 10;
+    // @inject_tag: sql:"main_good_id"
+    string MainGoodID     = 20;
+    // @inject_tag: sql:"main_good_name"
+    string MainGoodName   = 30;
+    // @inject_tag: sql:"main_app_good_id"
+    string MainAppGoodID  = 40;
+    // @inject_tag: sql:"main_app_good_name"
+    string MainAppGoodName = 50;
+    // @inject_tag: sql:"required_good_id"
+    string RequiredGoodID = 60;
+    // @inject_tag: sql:"required_good_name"
+    string RequiredGoodName = 70;
+    // @inject_tag: sql:"required_app_good_id"
+    string RequiredAppGoodID = 80;
+    // @inject_tag: sql:"required_app_good_name"
+    string RequiredAppGoodName = 90;
+    // @inject_tag: sql:"must"
+    bool   Must           = 100;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt      = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt      = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.Uint32Val      ID              = 9;
+    optional basetypes.v1.StringVal      EntID           = 10;
+    optional basetypes.v1.StringVal      AppGoodID       = 20;
+    optional basetypes.v1.StringSliceVal AppGoodIDs      = 30;
+    optional basetypes.v1.StringVal      MainAppGoodID   = 40;
+    optional basetypes.v1.StringVal      RequiredAppGoodID  = 50;
+    optional basetypes.v1.BoolVal        Must            = 60;
+}
+
+message CreateRequiredRequest {
+    RequiredReq Info = 10;
+}
+
+message CreateRequiredResponse {
+    Required Info = 10;
+}
+
+message GetRequiredRequest {
+    string EntID = 10;
+}
+
+message GetRequiredResponse {
+    Required Info = 10;
+}
+
+message ExistRequiredCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistRequiredCondsResponse {
+    bool Info = 10;
+}
+
+message GetRequiredsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetRequiredsResponse {
+    repeated Required Infos = 10;
+    uint32            Total = 20;
+}
+
+message UpdateRequiredRequest {
+    RequiredReq Info = 10;
+}
+
+message UpdateRequiredResponse {
+    Required Info = 10;
+}
+
+message DeleteRequiredRequest {
+    RequiredReq Info = 10;
+}
+
+message DeleteRequiredResponse {
+    Required Info = 10;
+}
