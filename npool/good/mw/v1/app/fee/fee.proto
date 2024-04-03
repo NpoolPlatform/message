@@ -17,16 +17,17 @@ service Middleware {
 }
 
 message FeeReq {
-    optional string EntID = 10;
-    optional string AppID = 20;
-    optional string GoodID = 30;
-    optional string AppGoodID = 40;
-    optional string ProductPage = 50;
-    optional string Name = 60;
-    optional string Banner = 70;
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string AppID = 30;
+    optional string GoodID = 40;
+    optional string AppGoodID = 50;
+    optional string ProductPage = 60;
+    optional string Name = 70;
+    optional string Banner = 80;
     // It could be amount or percent.
-    optional string UnitValue = 80;
-    optional uint32 MinOrderDuration = 90;
+    optional string UnitValue = 90;
+    optional uint32 MinOrderDuration = 100;
 }
 
 message Fee {
