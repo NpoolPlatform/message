@@ -17,43 +17,43 @@ service Middleware {
 }
 
 message LabelReq {
-    optional uint32 ID        = 9;
-    optional string EntID     = 10;
-    optional string AppGoodID = 20;
-    optional string Icon      = 30;
-    optional string IconBgColor = 40;
-    optional string Label     = 50;
-    optional string LabelBgColor = 60;
-    optional uint32 Index     = 70;
+    optional uint32 ID        = 10;
+    optional string EntID     = 20;
+    optional string AppGoodID = 30;
+    optional string Icon      = 40;
+    optional string IconBgColor = 50;
+    optional string Label     = 60;
+    optional string LabelBgColor = 70;
+    optional uint32 Index     = 80;
 }
 
 message Label {
     // @inject_tag: sql:"id"
-    uint32 ID         = 9;
+    uint32 ID         = 10;
     // @inject_tag: sql:"ent_id"
-    string EntID      = 10;
+    string EntID      = 20;
     // @inject_tag: sql:"app_id"
-    string AppID      = 20;
+    string AppID      = 30;
     // @inject_tag: sql:"good_id"
-    string GoodID     = 30;
+    string GoodID     = 40;
     // @inject_tag: sql:"good_name"
-    string GoodName   = 40;
+    string GoodName   = 50;
     // @inject_tag: sql:"app_good_id"
-    string AppGoodID  = 50;
+    string AppGoodID  = 60;
     // @inject_tag: sql:"app_good_name"
-    string AppGoodName = 60;
+    string AppGoodName = 70;
     // @inject_tag: sql:"icon"
-    string Icon     = 70;
+    string Icon     = 80;
     // @inject_tag: sql:"icon_bg_color"
-    string IconBgColor = 80;
+    string IconBgColor = 90;
     // @inject_tag: sql:"label"
-    string Label     = 90;
+    string Label     = 100;
     // @inject_tag: sql:"label_bg_color"
-    string LabelBgColor = 100;
+    string LabelBgColor = 110;
     // @inject_tag: sql:"good_type"
-    string GoodType   = 110;
+    string GoodType   = 120;
     // @inject_tag: sql:"index"
-    uint32 Index      = 120;
+    uint32 Index      = 130;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
@@ -61,16 +61,18 @@ message Label {
 }
 
 message LabelInfo {
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID = 10;
     // @inject_tag: sql:"icon"
-    string Icon     = 70;
+    string Icon     = 20;
     // @inject_tag: sql:"icon_bg_color"
-    string IconBgColor = 80;
+    string IconBgColor = 30;
     // @inject_tag: sql:"label"
-    string Label     = 90;
+    string Label     = 40;
     // @inject_tag: sql:"label_bg_color"
-    string LabelBgColor = 100;
+    string LabelBgColor = 50;
     // @inject_tag: sql:"index"
-    uint32 Index = 20;
+    uint32 Index = 60;
 }
 
 message Conds {

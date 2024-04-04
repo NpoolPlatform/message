@@ -17,34 +17,34 @@ service Middleware {
 }
 
 message DisplayNameReq {
-    optional uint32 ID        = 9;
-    optional string EntID     = 10;
-    optional string AppGoodID = 20;
-    optional string Name      = 30;
-    optional uint32 Index     = 40;
+    optional uint32 ID        = 10;
+    optional string EntID     = 20;
+    optional string AppGoodID = 30;
+    optional string Name      = 40;
+    optional uint32 Index     = 50;
 }
 
 message DisplayName {
     // @inject_tag: sql:"id"
-    uint32 ID         = 9;
+    uint32 ID         = 10;
     // @inject_tag: sql:"ent_id"
-    string EntID      = 10;
+    string EntID      = 20;
     // @inject_tag: sql:"app_id"
-    string AppID      = 20;
+    string AppID      = 30;
     // @inject_tag: sql:"good_id"
-    string GoodID     = 30;
+    string GoodID     = 40;
     // @inject_tag: sql:"good_name"
-    string GoodName   = 40;
+    string GoodName   = 50;
     // @inject_tag: sql:"app_good_id"
-    string AppGoodID  = 50;
+    string AppGoodID  = 60;
     // @inject_tag: sql:"app_good_name"
-    string AppGoodName = 60;
+    string AppGoodName = 70;
     // @inject_tag: sql:"name"
-    string Name       = 70;
+    string Name       = 80;
     // @inject_tag: sql:"good_type"
-    string GoodType   = 80;
+    string GoodType   = 90;
     // @inject_tag: sql:"index"
-    uint32 Index      = 90;
+    uint32 Index      = 100;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
@@ -52,10 +52,12 @@ message DisplayName {
 }
 
 message DisplayNameInfo {
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID = 10;
     // @inject_tag: sql:"name"
-    string Name = 10;
+    string Name = 20;
     // @inject_tag: sql:"index"
-    uint32 Index = 20;
+    uint32 Index = 30;
 }
 
 message Conds {
