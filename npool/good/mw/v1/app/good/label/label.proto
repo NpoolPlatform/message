@@ -22,7 +22,7 @@ message LabelReq {
     optional string AppGoodID = 30;
     optional string Icon      = 40;
     optional string IconBgColor = 50;
-    optional string Label     = 60;
+    optional basetypes.good.v1.GoodLabel Label = 60;
     optional string LabelBgColor = 70;
     optional uint32 Index     = 80;
 }
@@ -47,13 +47,14 @@ message Label {
     // @inject_tag: sql:"icon_bg_color"
     string IconBgColor = 90;
     // @inject_tag: sql:"label"
-    string Label     = 100;
+    string LabelStr = 100;
+    basetypes.good.v1.GoodLabel Label = 110;
     // @inject_tag: sql:"label_bg_color"
-    string LabelBgColor = 110;
+    string LabelBgColor = 120;
     // @inject_tag: sql:"good_type"
-    string GoodType   = 120;
+    string GoodType   = 130;
     // @inject_tag: sql:"index"
-    uint32 Index      = 130;
+    uint32 Index      = 140;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
@@ -68,11 +69,12 @@ message LabelInfo {
     // @inject_tag: sql:"icon_bg_color"
     string IconBgColor = 30;
     // @inject_tag: sql:"label"
-    string Label     = 40;
+    string LabelStr = 40;
+    basetypes.good.v1.GoodLabel Label = 50;
     // @inject_tag: sql:"label_bg_color"
-    string LabelBgColor = 50;
+    string LabelBgColor = 60;
     // @inject_tag: sql:"index"
-    uint32 Index = 60;
+    uint32 Index = 70;
 }
 
 message Conds {
@@ -117,7 +119,7 @@ message GetLabelsRequest {
 
 message GetLabelsResponse {
     repeated Label Infos = 10;
-    uint32          Total = 20;
+    uint32         Total = 20;
 }
 
 message DeleteLabelRequest {

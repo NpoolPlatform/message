@@ -228,6 +228,17 @@
       ],
       "default": "DefaultGoodDurationType"
     },
+    "v1GoodLabel": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodLabel",
+        "GoodLabelPromotion",
+        "GoodLabelNoviceExclusive",
+        "GoodLabelInnovationStarter",
+        "GoodLabelLoyaltyExclusive"
+      ],
+      "default": "DefaultGoodLabel"
+    },
     "v1GoodSaleMode": {
       "type": "string",
       "enum": [
@@ -288,9 +299,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"icon_bg_color\""
         },
-        "Label": {
+        "LabelStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"label\""
+        },
+        "Label": {
+          "$ref": "#/definitions/v1GoodLabel"
         },
         "LabelBgColor": {
           "type": "string",
