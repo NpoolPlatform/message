@@ -197,7 +197,7 @@
         "EntID": {
           "type": "string"
         },
-        "TopMostID": {
+        "TopMostGoodID": {
           "type": "string"
         },
         "Poster": {

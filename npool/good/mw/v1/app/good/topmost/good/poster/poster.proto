@@ -19,7 +19,7 @@ service Middleware {
 message PosterReq {
     optional uint32 ID        = 9;
     optional string EntID     = 10;
-    optional string TopMostID = 20;
+    optional string TopMostGoodID = 20;
     optional string Poster    = 30;
     optional uint32 Index     = 40;
 }
