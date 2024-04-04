@@ -51,12 +51,14 @@ message GoodCoin {
 }
 
 message GoodCoinInfo {
+    // @inject_tag: sql:"good_id"
+    string GoodID = 10;
     // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID = 10;
+    string CoinTypeID = 20;
     // @inject_tag: sql:"main"
-    bool Main = 20;
+    bool Main = 30;
     // @inject_tag: sql:"index"
-    int32 Index = 30;
+    int32 Index = 40;
 }
 
 message Conds {
