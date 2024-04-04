@@ -37,14 +37,16 @@ message MiningGoodStock {
 }
 
 message MiningGoodStockInfo {
+    // @inject_tag: sql:"ent_id"
+    string EntID = 10;
     // @inject_tag: sql:"good_stock_id"
-    string GoodStockID = 10;
+    string GoodStockID = 20;
     // @inject_tag: sql:"mining_pool_id"
-    string MiningPoolID = 20;
+    string MiningPoolID = 30;
     // @inject_tag: sql:"pool_good_user_id"
-    string PoolGoodUserID = 30;
+    string PoolGoodUserID = 40;
     // @inject_tag: sql:"total"
-    string Total      = 40;
+    string Total      = 50;
     // @inject_tag: sql:"spot_quantity"
-    string SpotQuantity = 50;
+    string SpotQuantity = 60;
 }
