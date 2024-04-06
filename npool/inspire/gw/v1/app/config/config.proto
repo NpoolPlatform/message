@@ -97,8 +97,9 @@ message UpdateAppConfigResponse {
 
 message GetAppConfigsRequest {
     string AppID   = 10;
-    int32  Offset  = 20;
-    int32  Limit   = 30;
+    optional uint32 EndAt = 20;
+    int32  Offset  = 30;
+    int32  Limit   = 40;
 }
 
 message GetAppConfigsResponse {

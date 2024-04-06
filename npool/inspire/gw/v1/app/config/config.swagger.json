@@ -338,6 +338,10 @@
         "AppID": {
           "type": "string"
         },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "Offset": {
           "type": "integer",
           "format": "int32"
