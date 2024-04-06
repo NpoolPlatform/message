@@ -29,6 +29,12 @@ service Gateway {
             body: "*"
         };
     }
+    rpc UpdateNAppCommissionConfig (UpdateNAppCommissionConfigRequest) returns (UpdateNAppCommissionConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/n/app/commission/config"
+            body: "*"
+        };
+    }
     rpc GetAppCommissionConfigs (GetAppCommissionConfigsRequest) returns (GetAppCommissionConfigsResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/commission/configs"
@@ -93,6 +99,19 @@ message UpdateAppCommissionConfigRequest {
 }
 
 message UpdateAppCommissionConfigResponse {
+    AppCommissionConfig Info = 10;
+}
+
+message UpdateNAppCommissionConfigRequest {
+    uint32          ID      = 10;
+    string          EntID   = 20;
+    string          TargetAppID   = 30;
+    optional uint32 StartAt = 40;
+    optional string ThresholdAmount = 50;
+    optional uint32 Invites = 60;
+}
+
+message UpdateNAppCommissionConfigResponse {
     AppCommissionConfig Info = 10;
 }
 

@@ -239,6 +239,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/update/n/app/good/commission/config": {
+      "post": {
+        "operationId": "Gateway_UpdateNAppGoodCommissionConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateNAppGoodCommissionConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateNAppGoodCommissionConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -553,6 +585,40 @@
       }
     },
     "v1UpdateAppGoodCommissionConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodCommissionConfig"
+        }
+      }
+    },
+    "v1UpdateNAppGoodCommissionConfigRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdAmount": {
+          "type": "string"
+        },
+        "Invites": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateNAppGoodCommissionConfigResponse": {
       "type": "object",
       "properties": {
         "Info": {

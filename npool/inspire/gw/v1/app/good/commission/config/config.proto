@@ -29,6 +29,12 @@ service Gateway {
             body: "*"
         };
     }
+    rpc UpdateNAppGoodCommissionConfig (UpdateNAppGoodCommissionConfigRequest) returns (UpdateNAppGoodCommissionConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/n/app/good/commission/config"
+            body: "*"
+        };
+    }
     rpc GetAppGoodCommissionConfigs (GetAppGoodCommissionConfigsRequest) returns (GetAppGoodCommissionConfigsResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/good/commission/configs"
@@ -114,6 +120,19 @@ message UpdateAppGoodCommissionConfigRequest {
 }
 
 message UpdateAppGoodCommissionConfigResponse {
+    AppGoodCommissionConfig Info = 10;
+}
+
+message UpdateNAppGoodCommissionConfigRequest {
+    uint32          ID      = 10;
+    string          EntID   = 20;
+    string          TargetAppID = 30;
+    optional uint32 StartAt = 40;
+    optional string ThresholdAmount = 50;
+    optional uint32 Invites = 60;
+}
+
+message UpdateNAppGoodCommissionConfigResponse {
     AppGoodCommissionConfig Info = 10;
 }
 

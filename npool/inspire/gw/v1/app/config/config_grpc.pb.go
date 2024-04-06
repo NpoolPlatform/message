@@ -22,6 +22,7 @@ const (
 	Gateway_CreateAppConfig_FullMethodName  = "/inspire.gateway.app.config.v1.Gateway/CreateAppConfig"
 	Gateway_CreateNAppConfig_FullMethodName = "/inspire.gateway.app.config.v1.Gateway/CreateNAppConfig"
 	Gateway_UpdateAppConfig_FullMethodName  = "/inspire.gateway.app.config.v1.Gateway/UpdateAppConfig"
+	Gateway_UpdateNAppConfig_FullMethodName = "/inspire.gateway.app.config.v1.Gateway/UpdateNAppConfig"
 	Gateway_GetAppConfigs_FullMethodName    = "/inspire.gateway.app.config.v1.Gateway/GetAppConfigs"
 	Gateway_GetNAppConfigs_FullMethodName   = "/inspire.gateway.app.config.v1.Gateway/GetNAppConfigs"
 )
@@ -33,6 +34,7 @@ type GatewayClient interface {
 	CreateAppConfig(ctx context.Context, in *CreateAppConfigRequest, opts ...grpc.CallOption) (*CreateAppConfigResponse, error)
 	CreateNAppConfig(ctx context.Context, in *CreateNAppConfigRequest, opts ...grpc.CallOption) (*CreateNAppConfigResponse, error)
 	UpdateAppConfig(ctx context.Context, in *UpdateAppConfigRequest, opts ...grpc.CallOption) (*UpdateAppConfigResponse, error)
+	UpdateNAppConfig(ctx context.Context, in *UpdateNAppConfigRequest, opts ...grpc.CallOption) (*UpdateNAppConfigResponse, error)
 	GetAppConfigs(ctx context.Context, in *GetAppConfigsRequest, opts ...grpc.CallOption) (*GetAppConfigsResponse, error)
 	GetNAppConfigs(ctx context.Context, in *GetNAppConfigsRequest, opts ...grpc.CallOption) (*GetNAppConfigsResponse, error)
 }
@@ -72,6 +74,15 @@ func (c *gatewayClient) UpdateAppConfig(ctx context.Context, in *UpdateAppConfig
 	return out, nil
 }
 
+func (c *gatewayClient) UpdateNAppConfig(ctx context.Context, in *UpdateNAppConfigRequest, opts ...grpc.CallOption) (*UpdateNAppConfigResponse, error) {
+	out := new(UpdateNAppConfigResponse)
+	err := c.cc.Invoke(ctx, Gateway_UpdateNAppConfig_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) GetAppConfigs(ctx context.Context, in *GetAppConfigsRequest, opts ...grpc.CallOption) (*GetAppConfigsResponse, error) {
 	out := new(GetAppConfigsResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetAppConfigs_FullMethodName, in, out, opts...)
@@ -97,6 +108,7 @@ type GatewayServer interface {
 	CreateAppConfig(context.Context, *CreateAppConfigRequest) (*CreateAppConfigResponse, error)
 	CreateNAppConfig(context.Context, *CreateNAppConfigRequest) (*CreateNAppConfigResponse, error)
 	UpdateAppConfig(context.Context, *UpdateAppConfigRequest) (*UpdateAppConfigResponse, error)
+	UpdateNAppConfig(context.Context, *UpdateNAppConfigRequest) (*UpdateNAppConfigResponse, error)
 	GetAppConfigs(context.Context, *GetAppConfigsRequest) (*GetAppConfigsResponse, error)
 	GetNAppConfigs(context.Context, *GetNAppConfigsRequest) (*GetNAppConfigsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -114,6 +126,9 @@ func (UnimplementedGatewayServer) CreateNAppConfig(context.Context, *CreateNAppC
 }
 func (UnimplementedGatewayServer) UpdateAppConfig(context.Context, *UpdateAppConfigRequest) (*UpdateAppConfigResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppConfig not implemented")
+}
+func (UnimplementedGatewayServer) UpdateNAppConfig(context.Context, *UpdateNAppConfigRequest) (*UpdateNAppConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateNAppConfig not implemented")
 }
 func (UnimplementedGatewayServer) GetAppConfigs(context.Context, *GetAppConfigsRequest) (*GetAppConfigsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppConfigs not implemented")
@@ -188,6 +203,24 @@ func _Gateway_UpdateAppConfig_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_UpdateNAppConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateNAppConfigRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateNAppConfig(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_UpdateNAppConfig_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateNAppConfig(ctx, req.(*UpdateNAppConfigRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_GetAppConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppConfigsRequest)
 	if err := dec(in); err != nil {
@@ -242,6 +275,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAppConfig",
 			Handler:    _Gateway_UpdateAppConfig_Handler,
+		},
+		{
+			MethodName: "UpdateNAppConfig",
+			Handler:    _Gateway_UpdateNAppConfig_Handler,
 		},
 		{
 			MethodName: "GetAppConfigs",

@@ -27,6 +27,12 @@ service Gateway {
             body: "*"
         };
     }
+    rpc UpdateNAppConfig (UpdateNAppConfigRequest) returns (UpdateNAppConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/n/app/config"
+            body: "*"
+        };
+    }
     rpc GetAppConfigs (GetAppConfigsRequest) returns (GetAppConfigsResponse) {
         option (google.api.http) = {
             post: "/v1/get/app/confighistories"
@@ -94,6 +100,18 @@ message UpdateAppConfigRequest {
 message UpdateAppConfigResponse {
     AppConfig Info = 10;
 }
+
+message UpdateNAppConfigRequest {
+    uint32          ID      = 10;
+    string          EntID   = 20;
+    string          TargetAppID   = 30;
+    optional uint32 StartAt = 40;
+}
+
+message UpdateNAppConfigResponse {
+    AppConfig Info = 10;
+}
+
 
 message GetAppConfigsRequest {
     string AppID   = 10;

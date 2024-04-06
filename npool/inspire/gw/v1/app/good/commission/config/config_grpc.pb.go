@@ -22,6 +22,7 @@ const (
 	Gateway_CreateAppGoodCommissionConfig_FullMethodName  = "/inspire.gateway.app.good.commission.config.v1.Gateway/CreateAppGoodCommissionConfig"
 	Gateway_CreateNAppGoodCommissionConfig_FullMethodName = "/inspire.gateway.app.good.commission.config.v1.Gateway/CreateNAppGoodCommissionConfig"
 	Gateway_UpdateAppGoodCommissionConfig_FullMethodName  = "/inspire.gateway.app.good.commission.config.v1.Gateway/UpdateAppGoodCommissionConfig"
+	Gateway_UpdateNAppGoodCommissionConfig_FullMethodName = "/inspire.gateway.app.good.commission.config.v1.Gateway/UpdateNAppGoodCommissionConfig"
 	Gateway_GetAppGoodCommissionConfigs_FullMethodName    = "/inspire.gateway.app.good.commission.config.v1.Gateway/GetAppGoodCommissionConfigs"
 	Gateway_GetNAppGoodCommissionConfigs_FullMethodName   = "/inspire.gateway.app.good.commission.config.v1.Gateway/GetNAppGoodCommissionConfigs"
 	Gateway_CloneAppGoodCommissionConfigs_FullMethodName  = "/inspire.gateway.app.good.commission.config.v1.Gateway/CloneAppGoodCommissionConfigs"
@@ -35,6 +36,7 @@ type GatewayClient interface {
 	CreateAppGoodCommissionConfig(ctx context.Context, in *CreateAppGoodCommissionConfigRequest, opts ...grpc.CallOption) (*CreateAppGoodCommissionConfigResponse, error)
 	CreateNAppGoodCommissionConfig(ctx context.Context, in *CreateNAppGoodCommissionConfigRequest, opts ...grpc.CallOption) (*CreateNAppGoodCommissionConfigResponse, error)
 	UpdateAppGoodCommissionConfig(ctx context.Context, in *UpdateAppGoodCommissionConfigRequest, opts ...grpc.CallOption) (*UpdateAppGoodCommissionConfigResponse, error)
+	UpdateNAppGoodCommissionConfig(ctx context.Context, in *UpdateNAppGoodCommissionConfigRequest, opts ...grpc.CallOption) (*UpdateNAppGoodCommissionConfigResponse, error)
 	GetAppGoodCommissionConfigs(ctx context.Context, in *GetAppGoodCommissionConfigsRequest, opts ...grpc.CallOption) (*GetAppGoodCommissionConfigsResponse, error)
 	GetNAppGoodCommissionConfigs(ctx context.Context, in *GetNAppGoodCommissionConfigsRequest, opts ...grpc.CallOption) (*GetNAppGoodCommissionConfigsResponse, error)
 	CloneAppGoodCommissionConfigs(ctx context.Context, in *CloneAppGoodCommissionConfigsRequest, opts ...grpc.CallOption) (*CloneAppGoodCommissionConfigsResponse, error)
@@ -70,6 +72,15 @@ func (c *gatewayClient) CreateNAppGoodCommissionConfig(ctx context.Context, in *
 func (c *gatewayClient) UpdateAppGoodCommissionConfig(ctx context.Context, in *UpdateAppGoodCommissionConfigRequest, opts ...grpc.CallOption) (*UpdateAppGoodCommissionConfigResponse, error) {
 	out := new(UpdateAppGoodCommissionConfigResponse)
 	err := c.cc.Invoke(ctx, Gateway_UpdateAppGoodCommissionConfig_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) UpdateNAppGoodCommissionConfig(ctx context.Context, in *UpdateNAppGoodCommissionConfigRequest, opts ...grpc.CallOption) (*UpdateNAppGoodCommissionConfigResponse, error) {
+	out := new(UpdateNAppGoodCommissionConfigResponse)
+	err := c.cc.Invoke(ctx, Gateway_UpdateNAppGoodCommissionConfig_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -119,6 +130,7 @@ type GatewayServer interface {
 	CreateAppGoodCommissionConfig(context.Context, *CreateAppGoodCommissionConfigRequest) (*CreateAppGoodCommissionConfigResponse, error)
 	CreateNAppGoodCommissionConfig(context.Context, *CreateNAppGoodCommissionConfigRequest) (*CreateNAppGoodCommissionConfigResponse, error)
 	UpdateAppGoodCommissionConfig(context.Context, *UpdateAppGoodCommissionConfigRequest) (*UpdateAppGoodCommissionConfigResponse, error)
+	UpdateNAppGoodCommissionConfig(context.Context, *UpdateNAppGoodCommissionConfigRequest) (*UpdateNAppGoodCommissionConfigResponse, error)
 	GetAppGoodCommissionConfigs(context.Context, *GetAppGoodCommissionConfigsRequest) (*GetAppGoodCommissionConfigsResponse, error)
 	GetNAppGoodCommissionConfigs(context.Context, *GetNAppGoodCommissionConfigsRequest) (*GetNAppGoodCommissionConfigsResponse, error)
 	CloneAppGoodCommissionConfigs(context.Context, *CloneAppGoodCommissionConfigsRequest) (*CloneAppGoodCommissionConfigsResponse, error)
@@ -138,6 +150,9 @@ func (UnimplementedGatewayServer) CreateNAppGoodCommissionConfig(context.Context
 }
 func (UnimplementedGatewayServer) UpdateAppGoodCommissionConfig(context.Context, *UpdateAppGoodCommissionConfigRequest) (*UpdateAppGoodCommissionConfigResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppGoodCommissionConfig not implemented")
+}
+func (UnimplementedGatewayServer) UpdateNAppGoodCommissionConfig(context.Context, *UpdateNAppGoodCommissionConfigRequest) (*UpdateNAppGoodCommissionConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateNAppGoodCommissionConfig not implemented")
 }
 func (UnimplementedGatewayServer) GetAppGoodCommissionConfigs(context.Context, *GetAppGoodCommissionConfigsRequest) (*GetAppGoodCommissionConfigsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppGoodCommissionConfigs not implemented")
@@ -214,6 +229,24 @@ func _Gateway_UpdateAppGoodCommissionConfig_Handler(srv interface{}, ctx context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateAppGoodCommissionConfig(ctx, req.(*UpdateAppGoodCommissionConfigRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_UpdateNAppGoodCommissionConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateNAppGoodCommissionConfigRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).UpdateNAppGoodCommissionConfig(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_UpdateNAppGoodCommissionConfig_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).UpdateNAppGoodCommissionConfig(ctx, req.(*UpdateNAppGoodCommissionConfigRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -308,6 +341,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateAppGoodCommissionConfig",
 			Handler:    _Gateway_UpdateAppGoodCommissionConfig_Handler,
+		},
+		{
+			MethodName: "UpdateNAppGoodCommissionConfig",
+			Handler:    _Gateway_UpdateNAppGoodCommissionConfig_Handler,
 		},
 		{
 			MethodName: "GetAppGoodCommissionConfigs",
