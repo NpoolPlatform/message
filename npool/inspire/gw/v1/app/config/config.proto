@@ -35,7 +35,7 @@ service Gateway {
     }
     rpc GetAppConfigs (GetAppConfigsRequest) returns (GetAppConfigsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/confighistories"
+            post: "/v1/get/app/configs"
             body: "*"
         };
     }

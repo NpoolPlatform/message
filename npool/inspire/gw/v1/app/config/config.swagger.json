@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/get/app/confighistories": {
+    "/v1/get/app/configs": {
       "post": {
         "operationId": "Gateway_GetAppConfigs",
         "responses": {
