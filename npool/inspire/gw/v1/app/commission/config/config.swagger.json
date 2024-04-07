@@ -271,6 +271,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "Disabled": {
+          "type": "boolean"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -303,6 +306,9 @@
         },
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
+        },
+        "Disabled": {
+          "type": "boolean"
         }
       }
     },
@@ -336,6 +342,9 @@
         },
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
+        },
+        "Disabled": {
+          "type": "boolean"
         }
       }
     },
@@ -450,6 +459,9 @@
         "Invites": {
           "type": "integer",
           "format": "int64"
+        },
+        "Disabled": {
+          "type": "boolean"
         }
       }
     },
@@ -484,6 +496,9 @@
         "Invites": {
           "type": "integer",
           "format": "int64"
+        },
+        "Disabled": {
+          "type": "boolean"
         }
       }
     },

@@ -163,6 +163,10 @@
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
         },
+        "Disabled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"disabled\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -210,6 +214,20 @@
         },
         "SettleType": {
           "$ref": "#/definitions/v1SettleType"
+        },
+        "Disabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
         }
       }
     },
@@ -271,6 +289,9 @@
         },
         "AppGoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "Disabled": {
+          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },
