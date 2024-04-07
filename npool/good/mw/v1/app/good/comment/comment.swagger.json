@@ -100,10 +100,6 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"trial_user\""
         },
-        "OrderFirstComment": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"order_first_comment\""
-        },
         "Score": {
           "type": "string",
           "title": "@inject_tag: sql:\"score\""
