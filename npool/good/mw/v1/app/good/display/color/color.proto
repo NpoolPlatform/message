@@ -42,9 +42,10 @@ message DisplayColor {
     // @inject_tag: sql:"color"
     string Color      = 80;
     // @inject_tag: sql:"good_type"
-    string GoodType   = 90;
+    string GoodTypeStr = 90;
+    basetypes.good.v1.GoodType GoodType = 100;
     // @inject_tag: sql:"index"
-    uint32 Index      = 100;
+    uint32 Index      = 110;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt  = 1000;
     // @inject_tag: sql:"updated_at"
