@@ -154,9 +154,10 @@ type Label struct {
 	// @inject_tag: sql:"label_bg_color"
 	LabelBgColor string `protobuf:"bytes,120,opt,name=LabelBgColor,proto3" json:"LabelBgColor,omitempty" sql:"label_bg_color"`
 	// @inject_tag: sql:"good_type"
-	GoodType string `protobuf:"bytes,130,opt,name=GoodType,proto3" json:"GoodType,omitempty" sql:"good_type"`
+	GoodTypeStr string      `protobuf:"bytes,130,opt,name=GoodTypeStr,proto3" json:"GoodTypeStr,omitempty" sql:"good_type"`
+	GoodType    v1.GoodType `protobuf:"varint,140,opt,name=GoodType,proto3,enum=basetypes.good.v1.GoodType" json:"GoodType,omitempty"`
 	// @inject_tag: sql:"index"
-	Index uint32 `protobuf:"varint,140,opt,name=Index,proto3" json:"Index,omitempty" sql:"index"`
+	Index uint32 `protobuf:"varint,150,opt,name=Index,proto3" json:"Index,omitempty" sql:"index"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
@@ -279,11 +280,18 @@ func (x *Label) GetLabelBgColor() string {
 	return ""
 }
 
-func (x *Label) GetGoodType() string {
+func (x *Label) GetGoodTypeStr() string {
+	if x != nil {
+		return x.GoodTypeStr
+	}
+	return ""
+}
+
+func (x *Label) GetGoodType() v1.GoodType {
 	if x != nil {
 		return x.GoodType
 	}
-	return ""
+	return v1.GoodType(0)
 }
 
 func (x *Label) GetIndex() uint32 {
@@ -1033,7 +1041,7 @@ var file_npool_good_mw_v1_app_good_label_label_proto_rawDesc = []byte{
 	0x49, 0x63, 0x6f, 0x6e, 0x42, 0x67, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x42, 0x08, 0x0a, 0x06, 0x5f,
 	0x4c, 0x61, 0x62, 0x65, 0x6c, 0x42, 0x0f, 0x0a, 0x0d, 0x5f, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x42,
 	0x67, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x42, 0x08, 0x0a, 0x06, 0x5f, 0x49, 0x6e, 0x64, 0x65, 0x78,
-	0x22, 0xd3, 0x03, 0x0a, 0x05, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44,
+	0x22, 0x93, 0x04, 0x0a, 0x05, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44,
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x45, 0x6e,
 	0x74, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44,
 	0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52,
@@ -1055,9 +1063,13 @@ var file_npool_good_mw_v1_app_good_label_label_proto_rawDesc = []byte{
 	0x47, 0x6f, 0x6f, 0x64, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x52, 0x05, 0x4c, 0x61, 0x62, 0x65, 0x6c,
 	0x12, 0x22, 0x0a, 0x0c, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x42, 0x67, 0x43, 0x6f, 0x6c, 0x6f, 0x72,
 	0x18, 0x78, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x42, 0x67, 0x43,
-	0x6f, 0x6c, 0x6f, 0x72, 0x12, 0x1b, 0x0a, 0x08, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70, 0x65,
-	0x18, 0x82, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70,
-	0x65, 0x12, 0x15, 0x0a, 0x05, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x8c, 0x01, 0x20, 0x01, 0x28,
+	0x6f, 0x6c, 0x6f, 0x72, 0x12, 0x21, 0x0a, 0x0b, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70, 0x65,
+	0x53, 0x74, 0x72, 0x18, 0x82, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x47, 0x6f, 0x6f, 0x64,
+	0x54, 0x79, 0x70, 0x65, 0x53, 0x74, 0x72, 0x12, 0x38, 0x0a, 0x08, 0x47, 0x6f, 0x6f, 0x64, 0x54,
+	0x79, 0x70, 0x65, 0x18, 0x8c, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1b, 0x2e, 0x62, 0x61, 0x73,
+	0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47,
+	0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70, 0x65, 0x52, 0x08, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70,
+	0x65, 0x12, 0x15, 0x0a, 0x05, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x96, 0x01, 0x20, 0x01, 0x28,
 	0x0d, 0x52, 0x05, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x12, 0x1d, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61,
 	0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xe8, 0x07, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x43, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x1d, 0x0a, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74,
@@ -1240,45 +1252,47 @@ var file_npool_good_mw_v1_app_good_label_label_proto_goTypes = []interface{}{
 	(*DeleteLabelRequest)(nil),  // 12: good.middleware.app.good1.label.v1.DeleteLabelRequest
 	(*DeleteLabelResponse)(nil), // 13: good.middleware.app.good1.label.v1.DeleteLabelResponse
 	(v1.GoodLabel)(0),           // 14: basetypes.good.v1.GoodLabel
-	(*v11.Uint32Val)(nil),       // 15: basetypes.v1.Uint32Val
-	(*v11.StringVal)(nil),       // 16: basetypes.v1.StringVal
-	(*v11.StringSliceVal)(nil),  // 17: basetypes.v1.StringSliceVal
+	(v1.GoodType)(0),            // 15: basetypes.good.v1.GoodType
+	(*v11.Uint32Val)(nil),       // 16: basetypes.v1.Uint32Val
+	(*v11.StringVal)(nil),       // 17: basetypes.v1.StringVal
+	(*v11.StringSliceVal)(nil),  // 18: basetypes.v1.StringSliceVal
 }
 var file_npool_good_mw_v1_app_good_label_label_proto_depIdxs = []int32{
 	14, // 0: good.middleware.app.good1.label.v1.LabelReq.Label:type_name -> basetypes.good.v1.GoodLabel
 	14, // 1: good.middleware.app.good1.label.v1.Label.Label:type_name -> basetypes.good.v1.GoodLabel
-	14, // 2: good.middleware.app.good1.label.v1.LabelInfo.Label:type_name -> basetypes.good.v1.GoodLabel
-	15, // 3: good.middleware.app.good1.label.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
-	16, // 4: good.middleware.app.good1.label.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	16, // 5: good.middleware.app.good1.label.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	16, // 6: good.middleware.app.good1.label.v1.Conds.GoodID:type_name -> basetypes.v1.StringVal
-	17, // 7: good.middleware.app.good1.label.v1.Conds.GoodIDs:type_name -> basetypes.v1.StringSliceVal
-	16, // 8: good.middleware.app.good1.label.v1.Conds.AppGoodID:type_name -> basetypes.v1.StringVal
-	17, // 9: good.middleware.app.good1.label.v1.Conds.AppGoodIDs:type_name -> basetypes.v1.StringSliceVal
-	0,  // 10: good.middleware.app.good1.label.v1.CreateLabelRequest.Info:type_name -> good.middleware.app.good1.label.v1.LabelReq
-	1,  // 11: good.middleware.app.good1.label.v1.CreateLabelResponse.Info:type_name -> good.middleware.app.good1.label.v1.Label
-	0,  // 12: good.middleware.app.good1.label.v1.UpdateLabelRequest.Info:type_name -> good.middleware.app.good1.label.v1.LabelReq
-	1,  // 13: good.middleware.app.good1.label.v1.UpdateLabelResponse.Info:type_name -> good.middleware.app.good1.label.v1.Label
-	1,  // 14: good.middleware.app.good1.label.v1.GetLabelResponse.Info:type_name -> good.middleware.app.good1.label.v1.Label
-	3,  // 15: good.middleware.app.good1.label.v1.GetLabelsRequest.Conds:type_name -> good.middleware.app.good1.label.v1.Conds
-	1,  // 16: good.middleware.app.good1.label.v1.GetLabelsResponse.Infos:type_name -> good.middleware.app.good1.label.v1.Label
-	0,  // 17: good.middleware.app.good1.label.v1.DeleteLabelRequest.Info:type_name -> good.middleware.app.good1.label.v1.LabelReq
-	1,  // 18: good.middleware.app.good1.label.v1.DeleteLabelResponse.Info:type_name -> good.middleware.app.good1.label.v1.Label
-	4,  // 19: good.middleware.app.good1.label.v1.Middleware.CreateLabel:input_type -> good.middleware.app.good1.label.v1.CreateLabelRequest
-	6,  // 20: good.middleware.app.good1.label.v1.Middleware.UpdateLabel:input_type -> good.middleware.app.good1.label.v1.UpdateLabelRequest
-	8,  // 21: good.middleware.app.good1.label.v1.Middleware.GetLabel:input_type -> good.middleware.app.good1.label.v1.GetLabelRequest
-	10, // 22: good.middleware.app.good1.label.v1.Middleware.GetLabels:input_type -> good.middleware.app.good1.label.v1.GetLabelsRequest
-	12, // 23: good.middleware.app.good1.label.v1.Middleware.DeleteLabel:input_type -> good.middleware.app.good1.label.v1.DeleteLabelRequest
-	5,  // 24: good.middleware.app.good1.label.v1.Middleware.CreateLabel:output_type -> good.middleware.app.good1.label.v1.CreateLabelResponse
-	7,  // 25: good.middleware.app.good1.label.v1.Middleware.UpdateLabel:output_type -> good.middleware.app.good1.label.v1.UpdateLabelResponse
-	9,  // 26: good.middleware.app.good1.label.v1.Middleware.GetLabel:output_type -> good.middleware.app.good1.label.v1.GetLabelResponse
-	11, // 27: good.middleware.app.good1.label.v1.Middleware.GetLabels:output_type -> good.middleware.app.good1.label.v1.GetLabelsResponse
-	13, // 28: good.middleware.app.good1.label.v1.Middleware.DeleteLabel:output_type -> good.middleware.app.good1.label.v1.DeleteLabelResponse
-	24, // [24:29] is the sub-list for method output_type
-	19, // [19:24] is the sub-list for method input_type
-	19, // [19:19] is the sub-list for extension type_name
-	19, // [19:19] is the sub-list for extension extendee
-	0,  // [0:19] is the sub-list for field type_name
+	15, // 2: good.middleware.app.good1.label.v1.Label.GoodType:type_name -> basetypes.good.v1.GoodType
+	14, // 3: good.middleware.app.good1.label.v1.LabelInfo.Label:type_name -> basetypes.good.v1.GoodLabel
+	16, // 4: good.middleware.app.good1.label.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
+	17, // 5: good.middleware.app.good1.label.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	17, // 6: good.middleware.app.good1.label.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	17, // 7: good.middleware.app.good1.label.v1.Conds.GoodID:type_name -> basetypes.v1.StringVal
+	18, // 8: good.middleware.app.good1.label.v1.Conds.GoodIDs:type_name -> basetypes.v1.StringSliceVal
+	17, // 9: good.middleware.app.good1.label.v1.Conds.AppGoodID:type_name -> basetypes.v1.StringVal
+	18, // 10: good.middleware.app.good1.label.v1.Conds.AppGoodIDs:type_name -> basetypes.v1.StringSliceVal
+	0,  // 11: good.middleware.app.good1.label.v1.CreateLabelRequest.Info:type_name -> good.middleware.app.good1.label.v1.LabelReq
+	1,  // 12: good.middleware.app.good1.label.v1.CreateLabelResponse.Info:type_name -> good.middleware.app.good1.label.v1.Label
+	0,  // 13: good.middleware.app.good1.label.v1.UpdateLabelRequest.Info:type_name -> good.middleware.app.good1.label.v1.LabelReq
+	1,  // 14: good.middleware.app.good1.label.v1.UpdateLabelResponse.Info:type_name -> good.middleware.app.good1.label.v1.Label
+	1,  // 15: good.middleware.app.good1.label.v1.GetLabelResponse.Info:type_name -> good.middleware.app.good1.label.v1.Label
+	3,  // 16: good.middleware.app.good1.label.v1.GetLabelsRequest.Conds:type_name -> good.middleware.app.good1.label.v1.Conds
+	1,  // 17: good.middleware.app.good1.label.v1.GetLabelsResponse.Infos:type_name -> good.middleware.app.good1.label.v1.Label
+	0,  // 18: good.middleware.app.good1.label.v1.DeleteLabelRequest.Info:type_name -> good.middleware.app.good1.label.v1.LabelReq
+	1,  // 19: good.middleware.app.good1.label.v1.DeleteLabelResponse.Info:type_name -> good.middleware.app.good1.label.v1.Label
+	4,  // 20: good.middleware.app.good1.label.v1.Middleware.CreateLabel:input_type -> good.middleware.app.good1.label.v1.CreateLabelRequest
+	6,  // 21: good.middleware.app.good1.label.v1.Middleware.UpdateLabel:input_type -> good.middleware.app.good1.label.v1.UpdateLabelRequest
+	8,  // 22: good.middleware.app.good1.label.v1.Middleware.GetLabel:input_type -> good.middleware.app.good1.label.v1.GetLabelRequest
+	10, // 23: good.middleware.app.good1.label.v1.Middleware.GetLabels:input_type -> good.middleware.app.good1.label.v1.GetLabelsRequest
+	12, // 24: good.middleware.app.good1.label.v1.Middleware.DeleteLabel:input_type -> good.middleware.app.good1.label.v1.DeleteLabelRequest
+	5,  // 25: good.middleware.app.good1.label.v1.Middleware.CreateLabel:output_type -> good.middleware.app.good1.label.v1.CreateLabelResponse
+	7,  // 26: good.middleware.app.good1.label.v1.Middleware.UpdateLabel:output_type -> good.middleware.app.good1.label.v1.UpdateLabelResponse
+	9,  // 27: good.middleware.app.good1.label.v1.Middleware.GetLabel:output_type -> good.middleware.app.good1.label.v1.GetLabelResponse
+	11, // 28: good.middleware.app.good1.label.v1.Middleware.GetLabels:output_type -> good.middleware.app.good1.label.v1.GetLabelsResponse
+	13, // 29: good.middleware.app.good1.label.v1.Middleware.DeleteLabel:output_type -> good.middleware.app.good1.label.v1.DeleteLabelResponse
+	25, // [25:30] is the sub-list for method output_type
+	20, // [20:25] is the sub-list for method input_type
+	20, // [20:20] is the sub-list for extension type_name
+	20, // [20:20] is the sub-list for extension extendee
+	0,  // [0:20] is the sub-list for field type_name
 }
 
 func init() { file_npool_good_mw_v1_app_good_label_label_proto_init() }
