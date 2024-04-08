@@ -68,10 +68,10 @@ message CreateAppCommissionConfigRequest {
     string                          AppID           = 10;
     string                          ThresholdAmount = 20;
     string                          AmountOrPercent = 30;
-    uint32                          StartAt         = 40;
+    optional uint32                 StartAt         = 40;
     uint32                          Invites         = 50;
     basetypes.inspire.v1.SettleType SettleType      = 60;
-    bool                            Disabled        = 70;
+    optional bool                   Disabled        = 70;
 }
 
 message CreateAppCommissionConfigResponse {
@@ -82,10 +82,10 @@ message CreateNAppCommissionConfigRequest {
     string                          TargetAppID     = 10;
     string                          ThresholdAmount = 20;
     string                          AmountOrPercent = 30;
-    uint32                          StartAt         = 40;
+    optional uint32                 StartAt         = 40;
     uint32                          Invites         = 50;
     basetypes.inspire.v1.SettleType SettleType      = 60;
-    bool                            Disabled        = 70;
+    optional bool                   Disabled        = 70;
 }
 
 message CreateNAppCommissionConfigResponse {

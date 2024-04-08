@@ -88,10 +88,10 @@ message CreateAppGoodCommissionConfigRequest {
     string          AppGoodID       = 20;
     string          ThresholdAmount = 30;
     string          AmountOrPercent = 40;
-    uint32          StartAt         = 50;
+    optional uint32 StartAt         = 50;
     uint32          Invites         = 60;
     basetypes.inspire.v1.SettleType SettleType = 70;
-    bool                            Disabled   = 80;
+    optional bool                   Disabled   = 80;
 }
 
 message CreateAppGoodCommissionConfigResponse {
@@ -103,10 +103,10 @@ message CreateNAppGoodCommissionConfigRequest {
   string          AppGoodID       = 20;
   string          ThresholdAmount = 30;
   string          AmountOrPercent = 40;
-  uint32          StartAt         = 50;
+  optional uint32 StartAt         = 50;
   uint32          Invites         = 60;
   basetypes.inspire.v1.SettleType SettleType = 70;
-  bool                            Disabled   = 80;
+  optional bool                   Disabled   = 80;
 }
 
 message CreateNAppGoodCommissionConfigResponse {
