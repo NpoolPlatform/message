@@ -53,7 +53,10 @@ message Account {
   uint32 UpdatedAt = 180;
 }
 
-message CreateAccountRequest { string GoodID = 10; }
+message CreateAccountRequest {
+    string GoodID     = 10;
+    string CoinTypeID = 20;
+}
 
 message CreateAccountResponse { Account Info = 10; }
 
