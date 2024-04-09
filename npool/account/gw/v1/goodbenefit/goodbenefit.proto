@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/account/gw/v1/goodbe
 
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/accountlockedby.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Gateway {
@@ -36,6 +37,7 @@ message Account {
     string EntID         = 10;
     string GoodID        = 20;
     string GoodName      = 30;
+    basetypes.good.v1.GoodType GoodType = 31;
     string GoodUnit      = 40;
     string CoinTypeID    = 50;
     string CoinName      = 60;
