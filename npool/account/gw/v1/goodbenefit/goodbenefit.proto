@@ -54,7 +54,8 @@ message Account {
 }
 
 message CreateAccountRequest {
-    string GoodID    = 10;
+    string GoodID     = 10;
+    string CoinTypeID = 20;
 }
 
 message CreateAccountResponse {
