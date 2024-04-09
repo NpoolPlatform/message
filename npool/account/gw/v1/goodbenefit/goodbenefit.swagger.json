@@ -157,6 +157,9 @@
         "GoodName": {
           "type": "string"
         },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "GoodUnit": {
           "type": "string"
         },
@@ -261,6 +264,19 @@
           "format": "int64"
         }
       }
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
     },
     "v1UpdateAccountRequest": {
       "type": "object",

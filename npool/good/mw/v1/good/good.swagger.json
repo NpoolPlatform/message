@@ -1,0 +1,267 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/good/mw/v1/good/good.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "middlewaregood1v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodTypes": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BenefitType": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitType",
+        "BenefitTypePlatform",
+        "BenefitTypePool",
+        "BenefitTypeOffline",
+        "BenefitTypeContract",
+        "BenefitTypeNone"
+      ],
+      "default": "DefaultBenefitType",
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward\n - BenefitTypeContract: User receive reward from smart contract\n - BenefitTypeNone: Such as technique fee"
+    },
+    "v1ExistGoodCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Good"
+        }
+      }
+    },
+    "v1GetGoodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Good"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1Good": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "BenefitTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"benefit_type\""
+        },
+        "BenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"service_start_at\""
+        },
+        "StartModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"start_mode\""
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
+        },
+        "TestOnly": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"test_only\""
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"benefit_interval_hours\""
+        },
+        "Purchasable": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"purchasable\""
+        },
+        "Online": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"online\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1GoodStartMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStartMode",
+        "GoodStartModeTBD",
+        "GoodStartModeConfirmed",
+        "GoodStartModeInstantly",
+        "GoodStartModeNextDay",
+        "GoodStartModePreset"
+      ],
+      "default": "DefaultGoodStartMode"
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}
