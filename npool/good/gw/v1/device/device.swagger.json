@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/device": {
+    "/v1/admin/create/device": {
       "post": {
-        "operationId": "Gateway_CreateDeviceType",
+        "operationId": "Gateway_AdminCreateDeviceType",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewaydevicev1CreateDeviceTypeResponse"
+              "$ref": "#/definitions/v1AdminCreateDeviceTypeResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewaydevicev1CreateDeviceTypeRequest"
+              "$ref": "#/definitions/v1AdminCreateDeviceTypeRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/delete/device": {
+    "/v1/admin/delete/device": {
       "post": {
-        "operationId": "Gateway_DeleteDeviceType",
+        "operationId": "Gateway_AdminDeleteDeviceType",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewaydevicev1DeleteDeviceTypeResponse"
+              "$ref": "#/definitions/v1AdminDeleteDeviceTypeResponse"
             }
           },
           "default": {
@@ -71,7 +71,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewaydevicev1DeleteDeviceTypeRequest"
+              "$ref": "#/definitions/v1AdminDeleteDeviceTypeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/device": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateDeviceType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateDeviceTypeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateDeviceTypeRequest"
             }
           }
         ],
@@ -111,88 +143,9 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/update/device": {
-      "post": {
-        "operationId": "Gateway_UpdateDeviceType",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/goodgatewaydevicev1UpdateDeviceTypeResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/goodgatewaydevicev1UpdateDeviceTypeRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
-    "goodgatewaydevicev1CreateDeviceTypeRequest": {
-      "type": "object",
-      "properties": {
-        "Type": {
-          "type": "string"
-        },
-        "Manufacturer": {
-          "type": "string"
-        },
-        "PowerConsumption": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ShipmentAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "goodgatewaydevicev1CreateDeviceTypeResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1DeviceType"
-        }
-      }
-    },
-    "goodgatewaydevicev1DeleteDeviceTypeRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        }
-      }
-    },
-    "goodgatewaydevicev1DeleteDeviceTypeResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1DeviceType"
-        }
-      }
-    },
     "goodgatewaydevicev1GetDeviceTypesRequest": {
       "type": "object",
       "properties": {
@@ -221,40 +174,6 @@
         }
       }
     },
-    "goodgatewaydevicev1UpdateDeviceTypeRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "Type": {
-          "type": "string"
-        },
-        "Manufacturer": {
-          "type": "string"
-        },
-        "PowerConsumption": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ShipmentAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "goodgatewaydevicev1UpdateDeviceTypeResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1DeviceType"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -279,6 +198,87 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AdminCreateDeviceTypeRequest": {
+      "type": "object",
+      "properties": {
+        "DeviceType": {
+          "type": "string"
+        },
+        "ManufacturerID": {
+          "type": "string"
+        },
+        "PowerConsumption": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ShipmentAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminCreateDeviceTypeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1DeviceType"
+        }
+      }
+    },
+    "v1AdminDeleteDeviceTypeRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteDeviceTypeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1DeviceType"
+        }
+      }
+    },
+    "v1AdminUpdateDeviceTypeRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "DeviceType": {
+          "type": "string"
+        },
+        "ManufacturerID": {
+          "type": "string"
+        },
+        "PowerConsumption": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ShipmentAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdateDeviceTypeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1DeviceType"
         }
       }
     },
