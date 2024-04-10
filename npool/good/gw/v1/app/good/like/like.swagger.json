@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/gw/v1/good/like/like.proto",
+    "title": "npool/good/gw/v1/app/good/like/like.proto",
     "version": "version not set"
   },
   "tags": [
@@ -111,38 +111,6 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/get/mygoodlikes": {
-      "post": {
-        "operationId": "Gateway_GetMyLikes",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetMyLikesResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetMyLikesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
@@ -236,37 +204,6 @@
         "GoodID": {
           "type": "string"
         },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetLikesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Like"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetMyLikesRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
         "UserID": {
           "type": "string"
         },
@@ -280,7 +217,7 @@
         }
       }
     },
-    "v1GetMyLikesResponse": {
+    "v1GetLikesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
