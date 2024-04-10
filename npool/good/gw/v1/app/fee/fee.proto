@@ -4,18 +4,11 @@ package fee.gateway.app.fee.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/fee/gw/v1/app/fee";
 
-import "npool/basetypes/fee/v1/enums.proto";
+import "npool/basetypes/good/v1/enums.proto";
 import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateAppFee (CreateAppFeeRequest) returns (CreateAppFeeResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/appfee"
-            body: "*"
-        };
-    }
-
     rpc GetAppFees (GetAppFeesRequest) returns (GetAppFeesResponse) {
         option (google.api.http) = {
             post: "/v1/get/appfees"
@@ -33,6 +26,13 @@ service Gateway {
     rpc UpdateAppFee (UpdateAppFeeRequest) returns (UpdateAppFeeResponse) {
         option (google.api.http) = {
             post: "/v1/update/appfee"
+            body: "*"
+        };
+    }
+
+    rpc AdminCreateAppFee (AdminCreateAppFeeRequest) returns (AdminCreateAppFeeResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/create/appfee"
             body: "*"
         };
     }
@@ -71,3 +71,81 @@ message AppFee {
     uint32 UpdatedAt = 1010;
 }
 
+message GetAppFeesRequest {
+    string AppID = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetAppFeesResponse {
+    repeated AppFee Infos = 10;
+    uint32 Total = 20;
+}
+
+message GetAppFeeRequest {
+    string AppID = 10;
+    string AppGoodID = 20;
+}
+
+message GetAppFeeResponse {
+    AppFee Info = 10;
+}
+
+message UpdateAppFeeRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+    string AppID = 30;
+    string AppGoodID = 40;
+
+    optional string ProductPage = 50;
+    optional string Name = 60;
+    optional string Banner = 70;
+    optional string UnitValue = 80;
+    optional uint32 MinOrderDuration = 90;
+}
+
+message UpdateAppFeeResponse {
+    AppFee Info = 10;
+}
+
+message AdminCreateAppFeeRequest {
+    string TargetAppID = 10;
+    string GoodID = 20;
+    optional string ProductPage = 30;
+    string Name = 40;
+    optional string Banner = 50;
+    string UnitValue = 60;
+    uint32 MinOrderDuration = 70;
+}
+
+message AdminCreateAppFeeResponse {
+    AppFee Info = 10;
+}
+
+message AdminGetAppFeesRequest {
+    string TargetAppID = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message AdminGetAppFeesResponse {
+    repeated AppFee Infos = 10;
+    uint32 Total = 20;
+}
+
+message AdminUpdateAppFeeRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+    string AppID = 30;
+    string AppGoodID = 40;
+
+    optional string ProductPage = 50;
+    optional string Name = 60;
+    optional string Banner = 70;
+    optional string UnitValue = 80;
+    optional uint32 MinOrderDuration = 90;
+}
+
+message AdminUpdateAppFeeResponse {
+    AppFee Info = 10;
+}
