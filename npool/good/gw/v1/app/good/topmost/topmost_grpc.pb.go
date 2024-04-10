@@ -19,13 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateTopMost_FullMethodName  = "/good.gateway.app.good1.topmost.v1.Gateway/CreateTopMost"
-	Gateway_CreateNTopMost_FullMethodName = "/good.gateway.app.good1.topmost.v1.Gateway/CreateNTopMost"
-	Gateway_GetTopMosts_FullMethodName    = "/good.gateway.app.good1.topmost.v1.Gateway/GetTopMosts"
-	Gateway_GetNTopMosts_FullMethodName   = "/good.gateway.app.good1.topmost.v1.Gateway/GetNTopMosts"
-	Gateway_DeleteTopMost_FullMethodName  = "/good.gateway.app.good1.topmost.v1.Gateway/DeleteTopMost"
-	Gateway_UpdateTopMost_FullMethodName  = "/good.gateway.app.good1.topmost.v1.Gateway/UpdateTopMost"
-	Gateway_UpdateNTopMost_FullMethodName = "/good.gateway.app.good1.topmost.v1.Gateway/UpdateNTopMost"
+	Gateway_CreateTopMost_FullMethodName      = "/good.gateway.app.good1.topmost.v1.Gateway/CreateTopMost"
+	Gateway_GetTopMosts_FullMethodName        = "/good.gateway.app.good1.topmost.v1.Gateway/GetTopMosts"
+	Gateway_DeleteTopMost_FullMethodName      = "/good.gateway.app.good1.topmost.v1.Gateway/DeleteTopMost"
+	Gateway_UpdateTopMost_FullMethodName      = "/good.gateway.app.good1.topmost.v1.Gateway/UpdateTopMost"
+	Gateway_AdminCreateTopMost_FullMethodName = "/good.gateway.app.good1.topmost.v1.Gateway/AdminCreateTopMost"
+	Gateway_AdminGetTopMosts_FullMethodName   = "/good.gateway.app.good1.topmost.v1.Gateway/AdminGetTopMosts"
+	Gateway_AdminUpdateTopMost_FullMethodName = "/good.gateway.app.good1.topmost.v1.Gateway/AdminUpdateTopMost"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -33,12 +33,12 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateTopMost(ctx context.Context, in *CreateTopMostRequest, opts ...grpc.CallOption) (*CreateTopMostResponse, error)
-	CreateNTopMost(ctx context.Context, in *CreateNTopMostRequest, opts ...grpc.CallOption) (*CreateNTopMostResponse, error)
 	GetTopMosts(ctx context.Context, in *GetTopMostsRequest, opts ...grpc.CallOption) (*GetTopMostsResponse, error)
-	GetNTopMosts(ctx context.Context, in *GetNTopMostsRequest, opts ...grpc.CallOption) (*GetNTopMostsResponse, error)
 	DeleteTopMost(ctx context.Context, in *DeleteTopMostRequest, opts ...grpc.CallOption) (*DeleteTopMostResponse, error)
 	UpdateTopMost(ctx context.Context, in *UpdateTopMostRequest, opts ...grpc.CallOption) (*UpdateTopMostResponse, error)
-	UpdateNTopMost(ctx context.Context, in *UpdateNTopMostRequest, opts ...grpc.CallOption) (*UpdateNTopMostResponse, error)
+	AdminCreateTopMost(ctx context.Context, in *AdminCreateTopMostRequest, opts ...grpc.CallOption) (*AdminCreateTopMostResponse, error)
+	AdminGetTopMosts(ctx context.Context, in *AdminGetTopMostsRequest, opts ...grpc.CallOption) (*AdminGetTopMostsResponse, error)
+	AdminUpdateTopMost(ctx context.Context, in *AdminUpdateTopMostRequest, opts ...grpc.CallOption) (*AdminUpdateTopMostResponse, error)
 }
 
 type gatewayClient struct {
@@ -58,27 +58,9 @@ func (c *gatewayClient) CreateTopMost(ctx context.Context, in *CreateTopMostRequ
 	return out, nil
 }
 
-func (c *gatewayClient) CreateNTopMost(ctx context.Context, in *CreateNTopMostRequest, opts ...grpc.CallOption) (*CreateNTopMostResponse, error) {
-	out := new(CreateNTopMostResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateNTopMost_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) GetTopMosts(ctx context.Context, in *GetTopMostsRequest, opts ...grpc.CallOption) (*GetTopMostsResponse, error) {
 	out := new(GetTopMostsResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetTopMosts_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetNTopMosts(ctx context.Context, in *GetNTopMostsRequest, opts ...grpc.CallOption) (*GetNTopMostsResponse, error) {
-	out := new(GetNTopMostsResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetNTopMosts_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -103,9 +85,27 @@ func (c *gatewayClient) UpdateTopMost(ctx context.Context, in *UpdateTopMostRequ
 	return out, nil
 }
 
-func (c *gatewayClient) UpdateNTopMost(ctx context.Context, in *UpdateNTopMostRequest, opts ...grpc.CallOption) (*UpdateNTopMostResponse, error) {
-	out := new(UpdateNTopMostResponse)
-	err := c.cc.Invoke(ctx, Gateway_UpdateNTopMost_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminCreateTopMost(ctx context.Context, in *AdminCreateTopMostRequest, opts ...grpc.CallOption) (*AdminCreateTopMostResponse, error) {
+	out := new(AdminCreateTopMostResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminCreateTopMost_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) AdminGetTopMosts(ctx context.Context, in *AdminGetTopMostsRequest, opts ...grpc.CallOption) (*AdminGetTopMostsResponse, error) {
+	out := new(AdminGetTopMostsResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminGetTopMosts_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) AdminUpdateTopMost(ctx context.Context, in *AdminUpdateTopMostRequest, opts ...grpc.CallOption) (*AdminUpdateTopMostResponse, error) {
+	out := new(AdminUpdateTopMostResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminUpdateTopMost_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -117,12 +117,12 @@ func (c *gatewayClient) UpdateNTopMost(ctx context.Context, in *UpdateNTopMostRe
 // for forward compatibility
 type GatewayServer interface {
 	CreateTopMost(context.Context, *CreateTopMostRequest) (*CreateTopMostResponse, error)
-	CreateNTopMost(context.Context, *CreateNTopMostRequest) (*CreateNTopMostResponse, error)
 	GetTopMosts(context.Context, *GetTopMostsRequest) (*GetTopMostsResponse, error)
-	GetNTopMosts(context.Context, *GetNTopMostsRequest) (*GetNTopMostsResponse, error)
 	DeleteTopMost(context.Context, *DeleteTopMostRequest) (*DeleteTopMostResponse, error)
 	UpdateTopMost(context.Context, *UpdateTopMostRequest) (*UpdateTopMostResponse, error)
-	UpdateNTopMost(context.Context, *UpdateNTopMostRequest) (*UpdateNTopMostResponse, error)
+	AdminCreateTopMost(context.Context, *AdminCreateTopMostRequest) (*AdminCreateTopMostResponse, error)
+	AdminGetTopMosts(context.Context, *AdminGetTopMostsRequest) (*AdminGetTopMostsResponse, error)
+	AdminUpdateTopMost(context.Context, *AdminUpdateTopMostRequest) (*AdminUpdateTopMostResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -133,14 +133,8 @@ type UnimplementedGatewayServer struct {
 func (UnimplementedGatewayServer) CreateTopMost(context.Context, *CreateTopMostRequest) (*CreateTopMostResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTopMost not implemented")
 }
-func (UnimplementedGatewayServer) CreateNTopMost(context.Context, *CreateNTopMostRequest) (*CreateNTopMostResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateNTopMost not implemented")
-}
 func (UnimplementedGatewayServer) GetTopMosts(context.Context, *GetTopMostsRequest) (*GetTopMostsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTopMosts not implemented")
-}
-func (UnimplementedGatewayServer) GetNTopMosts(context.Context, *GetNTopMostsRequest) (*GetNTopMostsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNTopMosts not implemented")
 }
 func (UnimplementedGatewayServer) DeleteTopMost(context.Context, *DeleteTopMostRequest) (*DeleteTopMostResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTopMost not implemented")
@@ -148,8 +142,14 @@ func (UnimplementedGatewayServer) DeleteTopMost(context.Context, *DeleteTopMostR
 func (UnimplementedGatewayServer) UpdateTopMost(context.Context, *UpdateTopMostRequest) (*UpdateTopMostResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateTopMost not implemented")
 }
-func (UnimplementedGatewayServer) UpdateNTopMost(context.Context, *UpdateNTopMostRequest) (*UpdateNTopMostResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateNTopMost not implemented")
+func (UnimplementedGatewayServer) AdminCreateTopMost(context.Context, *AdminCreateTopMostRequest) (*AdminCreateTopMostResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateTopMost not implemented")
+}
+func (UnimplementedGatewayServer) AdminGetTopMosts(context.Context, *AdminGetTopMostsRequest) (*AdminGetTopMostsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminGetTopMosts not implemented")
+}
+func (UnimplementedGatewayServer) AdminUpdateTopMost(context.Context, *AdminUpdateTopMostRequest) (*AdminUpdateTopMostResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateTopMost not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -182,24 +182,6 @@ func _Gateway_CreateTopMost_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_CreateNTopMost_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateNTopMostRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CreateNTopMost(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_CreateNTopMost_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateNTopMost(ctx, req.(*CreateNTopMostRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_GetTopMosts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetTopMostsRequest)
 	if err := dec(in); err != nil {
@@ -214,24 +196,6 @@ func _Gateway_GetTopMosts_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetTopMosts(ctx, req.(*GetTopMostsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetNTopMosts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNTopMostsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetNTopMosts(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetNTopMosts_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNTopMosts(ctx, req.(*GetNTopMostsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -272,20 +236,56 @@ func _Gateway_UpdateTopMost_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_UpdateNTopMost_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateNTopMostRequest)
+func _Gateway_AdminCreateTopMost_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCreateTopMostRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).UpdateNTopMost(ctx, in)
+		return srv.(GatewayServer).AdminCreateTopMost(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_UpdateNTopMost_FullMethodName,
+		FullMethod: Gateway_AdminCreateTopMost_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateNTopMost(ctx, req.(*UpdateNTopMostRequest))
+		return srv.(GatewayServer).AdminCreateTopMost(ctx, req.(*AdminCreateTopMostRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_AdminGetTopMosts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminGetTopMostsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminGetTopMosts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminGetTopMosts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminGetTopMosts(ctx, req.(*AdminGetTopMostsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_AdminUpdateTopMost_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminUpdateTopMostRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminUpdateTopMost(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminUpdateTopMost_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminUpdateTopMost(ctx, req.(*AdminUpdateTopMostRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -302,16 +302,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_CreateTopMost_Handler,
 		},
 		{
-			MethodName: "CreateNTopMost",
-			Handler:    _Gateway_CreateNTopMost_Handler,
-		},
-		{
 			MethodName: "GetTopMosts",
 			Handler:    _Gateway_GetTopMosts_Handler,
-		},
-		{
-			MethodName: "GetNTopMosts",
-			Handler:    _Gateway_GetNTopMosts_Handler,
 		},
 		{
 			MethodName: "DeleteTopMost",
@@ -322,8 +314,16 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_UpdateTopMost_Handler,
 		},
 		{
-			MethodName: "UpdateNTopMost",
-			Handler:    _Gateway_UpdateNTopMost_Handler,
+			MethodName: "AdminCreateTopMost",
+			Handler:    _Gateway_AdminCreateTopMost_Handler,
+		},
+		{
+			MethodName: "AdminGetTopMosts",
+			Handler:    _Gateway_AdminGetTopMosts_Handler,
+		},
+		{
+			MethodName: "AdminUpdateTopMost",
+			Handler:    _Gateway_AdminUpdateTopMost_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
