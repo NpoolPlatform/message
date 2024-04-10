@@ -15,23 +15,9 @@ service Gateway {
         };
     }
 
-    rpc CreateNDefault (CreateNDefaultRequest) returns (CreateNDefaultResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/n/defaultgood"
-            body: "*"
-        };
-    }
-
     rpc GetDefaults (GetDefaultsRequest) returns (GetDefaultsResponse) {
         option (google.api.http) = {
             post: "/v1/get/defaultgoods"
-            body: "*"
-        };
-    }
-
-    rpc GetNDefaults (GetNDefaultsRequest) returns (GetNDefaultsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/n/defaultgoods"
             body: "*"
         };
     }
@@ -50,28 +36,51 @@ service Gateway {
         };
     }
 
-    rpc UpdateNDefault (UpdateNDefaultRequest) returns (UpdateNDefaultResponse) {
+    // Run by church admin
+    rpc AdminCreateDefault (AdminCreateDefaultRequest) returns (AdminCreateDefaultResponse) {
         option (google.api.http) = {
-            post: "/v1/update/n/defaultgood"
+            post: "/v1/admin/create/defaultgood"
+            body: "*"
+        };
+    }
+
+    rpc AdminGetDefaults (AdminGetDefaultsRequest) returns (AdminGetDefaultsResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/get/defaultgoods"
+            body: "*"
+        };
+    }
+
+    rpc AdminDeleteDefault (AdminDeleteDefaultRequest) returns (AdminDeleteDefaultResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/delete/defaultgood"
+            body: "*"
+        };
+    }
+
+    rpc AdminUpdateDefault (AdminUpdateDefaultRequest) returns (AdminUpdateDefaultResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/update/defaultgood"
             body: "*"
         };
     }
 }
 
 message Default {
-    uint32 ID         = 9;
-    string EntID      = 10;
-    string AppID      = 20;
-    string AppName    = 30;
-    string GoodID     = 40;
-    string GoodName   = 50;
-    string AppGoodID  = 60;
-    string AppGoodName = 70;
-    string CoinTypeID = 80;
-    string CoinName   = 90;
-    string CoinLogo   = 100;
-    string CoinEnv    = 110;
-    string CoinUnit   = 120;
+    uint32 ID         = 10;
+    string EntID      = 20;
+    string AppID      = 30;
+    string AppName    = 40;
+    string GoodID     = 50;
+    string GoodName   = 60;
+    string AppGoodID  = 70;
+    string AppGoodName = 80;
+    string CoinTypeID = 90;
+    string CoinName   = 100;
+    string CoinLogo   = 110;
+    string CoinEnv    = 120;
+    string CoinUnit   = 130;
+
     uint32 CreatedAt  = 1000;
     uint32 UpdatedAt  = 1010;
 }
