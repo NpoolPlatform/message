@@ -160,9 +160,6 @@
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
         },
-        "GoodUnit": {
-          "type": "string"
-        },
         "CoinTypeID": {
           "type": "string"
         },
