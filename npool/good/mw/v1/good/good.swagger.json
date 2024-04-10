@@ -123,10 +123,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
-        },
         "GoodTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_type\""
