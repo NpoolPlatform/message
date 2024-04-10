@@ -51,15 +51,15 @@ message Good {
 
 message Conds {
     optional basetypes.v1.Uint32Val      ID        = 10;
-    optional basetypes.v1.StringVal      EntID     = 20;
-    optional basetypes.v1.StringVal      GoodID    = 30;
-    optional basetypes.v1.StringSliceVal GoodIDs   = 40;
+    optional basetypes.v1.Uint32SliceVal IDs       = 20;
+    optional basetypes.v1.StringVal      EntID     = 30;
+    optional basetypes.v1.StringSliceVal EntIDs    = 40;
     optional basetypes.v1.Uint32Val      GoodType  = 50;
     optional basetypes.v1.Uint32SliceVal GoodTypes = 60;
 }
 
 message GetGoodRequest {
-    string GoodID = 10;
+    string EntID = 10;
 }
 
 message GetGoodResponse {
