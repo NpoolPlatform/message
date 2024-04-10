@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/gw/v1/good/recommend/recommend.proto",
+    "title": "npool/good/gw/v1/app/good/recommend/recommend.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/admin/update/goodrecommend": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateRecommend",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateRecommendResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateRecommendRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/create/goodrecommend": {
       "post": {
         "operationId": "Gateway_CreateRecommend",
@@ -112,38 +144,6 @@
         ]
       }
     },
-    "/v1/get/mygoodrecommends": {
-      "post": {
-        "operationId": "Gateway_GetMyRecommends",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetMyRecommendsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetMyRecommendsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/update/goodrecommend": {
       "post": {
         "operationId": "Gateway_UpdateRecommend",
@@ -168,6 +168,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1UpdateRecommendRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/user/goodrecommend": {
+      "post": {
+        "operationId": "Gateway_UpdateUserRecommend",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserRecommendResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserRecommendRequest"
             }
           }
         ],
@@ -205,6 +237,38 @@
         }
       }
     },
+    "v1AdminUpdateRecommendRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Hide": {
+          "type": "boolean"
+        },
+        "HideReason": {
+          "$ref": "#/definitions/v1GoodCommentHideReason"
+        }
+      }
+    },
+    "v1AdminUpdateRecommendResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Recommend"
+        }
+      }
+    },
     "v1CreateRecommendRequest": {
       "type": "object",
       "properties": {
@@ -214,7 +278,7 @@
         "UserID": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "RecommendIndex": {
@@ -259,44 +323,16 @@
         }
       }
     },
-    "v1GetMyRecommendsRequest": {
+    "v1GetRecommendsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
-        "UserID": {
+        "AppGoodID": {
           "type": "string"
         },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetMyRecommendsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Recommend"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetRecommendsRequest": {
-      "type": "object",
-      "properties": {
-        "GoodID": {
+        "UserID": {
           "type": "string"
         },
         "Offset": {
@@ -323,6 +359,16 @@
           "format": "int64"
         }
       }
+    },
+    "v1GoodCommentHideReason": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodCommentHideReason",
+        "GoodCommentHideBySpam",
+        "GoodCommentHideByNotThisGood",
+        "GoodCommentHideByFalseDescription"
+      ],
+      "default": "DefaultGoodCommentHideReason"
     },
     "v1Recommend": {
       "type": "object",
@@ -352,7 +398,7 @@
         "PhoneNO": {
           "type": "string"
         },
-        "GoodID": {
+        "AppGoodID": {
           "type": "string"
         },
         "GoodName": {
@@ -363,6 +409,12 @@
         },
         "Message": {
           "type": "string"
+        },
+        "Hide": {
+          "type": "boolean"
+        },
+        "HideReason": {
+          "$ref": "#/definitions/v1GoodCommentHideReason"
         },
         "CreatedAt": {
           "type": "integer",
@@ -399,6 +451,38 @@
       }
     },
     "v1UpdateRecommendResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Recommend"
+        }
+      }
+    },
+    "v1UpdateUserRecommendRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Hide": {
+          "type": "boolean"
+        },
+        "HideReason": {
+          "$ref": "#/definitions/v1GoodCommentHideReason"
+        }
+      }
+    },
+    "v1UpdateUserRecommendResponse": {
       "type": "object",
       "properties": {
         "Info": {
