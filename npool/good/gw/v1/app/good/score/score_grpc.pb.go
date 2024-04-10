@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/good/gw/v1/good/score/score.proto
+// source: npool/good/gw/v1/app/good/score/score.proto
 
 package score
 
@@ -19,10 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateScore_FullMethodName = "/good.gateway.good1.score.v1.Gateway/CreateScore"
-	Gateway_GetScores_FullMethodName   = "/good.gateway.good1.score.v1.Gateway/GetScores"
-	Gateway_GetMyScores_FullMethodName = "/good.gateway.good1.score.v1.Gateway/GetMyScores"
-	Gateway_DeleteScore_FullMethodName = "/good.gateway.good1.score.v1.Gateway/DeleteScore"
+	Gateway_CreateScore_FullMethodName = "/good.gateway.app.good1.score.v1.Gateway/CreateScore"
+	Gateway_GetScores_FullMethodName   = "/good.gateway.app.good1.score.v1.Gateway/GetScores"
+	Gateway_DeleteScore_FullMethodName = "/good.gateway.app.good1.score.v1.Gateway/DeleteScore"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -31,7 +30,6 @@ const (
 type GatewayClient interface {
 	CreateScore(ctx context.Context, in *CreateScoreRequest, opts ...grpc.CallOption) (*CreateScoreResponse, error)
 	GetScores(ctx context.Context, in *GetScoresRequest, opts ...grpc.CallOption) (*GetScoresResponse, error)
-	GetMyScores(ctx context.Context, in *GetMyScoresRequest, opts ...grpc.CallOption) (*GetMyScoresResponse, error)
 	DeleteScore(ctx context.Context, in *DeleteScoreRequest, opts ...grpc.CallOption) (*DeleteScoreResponse, error)
 }
 
@@ -61,15 +59,6 @@ func (c *gatewayClient) GetScores(ctx context.Context, in *GetScoresRequest, opt
 	return out, nil
 }
 
-func (c *gatewayClient) GetMyScores(ctx context.Context, in *GetMyScoresRequest, opts ...grpc.CallOption) (*GetMyScoresResponse, error) {
-	out := new(GetMyScoresResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetMyScores_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) DeleteScore(ctx context.Context, in *DeleteScoreRequest, opts ...grpc.CallOption) (*DeleteScoreResponse, error) {
 	out := new(DeleteScoreResponse)
 	err := c.cc.Invoke(ctx, Gateway_DeleteScore_FullMethodName, in, out, opts...)
@@ -85,7 +74,6 @@ func (c *gatewayClient) DeleteScore(ctx context.Context, in *DeleteScoreRequest,
 type GatewayServer interface {
 	CreateScore(context.Context, *CreateScoreRequest) (*CreateScoreResponse, error)
 	GetScores(context.Context, *GetScoresRequest) (*GetScoresResponse, error)
-	GetMyScores(context.Context, *GetMyScoresRequest) (*GetMyScoresResponse, error)
 	DeleteScore(context.Context, *DeleteScoreRequest) (*DeleteScoreResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -99,9 +87,6 @@ func (UnimplementedGatewayServer) CreateScore(context.Context, *CreateScoreReque
 }
 func (UnimplementedGatewayServer) GetScores(context.Context, *GetScoresRequest) (*GetScoresResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetScores not implemented")
-}
-func (UnimplementedGatewayServer) GetMyScores(context.Context, *GetMyScoresRequest) (*GetMyScoresResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetMyScores not implemented")
 }
 func (UnimplementedGatewayServer) DeleteScore(context.Context, *DeleteScoreRequest) (*DeleteScoreResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteScore not implemented")
@@ -155,24 +140,6 @@ func _Gateway_GetScores_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetMyScores_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetMyScoresRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetMyScores(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetMyScores_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetMyScores(ctx, req.(*GetMyScoresRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_DeleteScore_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteScoreRequest)
 	if err := dec(in); err != nil {
@@ -195,7 +162,7 @@ func _Gateway_DeleteScore_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.gateway.good1.score.v1.Gateway",
+	ServiceName: "good.gateway.app.good1.score.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -207,14 +174,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetScores_Handler,
 		},
 		{
-			MethodName: "GetMyScores",
-			Handler:    _Gateway_GetMyScores_Handler,
-		},
-		{
 			MethodName: "DeleteScore",
 			Handler:    _Gateway_DeleteScore_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/good/gw/v1/good/score/score.proto",
+	Metadata: "npool/good/gw/v1/app/good/score/score.proto",
 }
