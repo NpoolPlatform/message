@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/n/topmostgood": {
+    "/v1/admin/create/topmostgood": {
       "post": {
-        "operationId": "Gateway_CreateNTopMostGood",
+        "operationId": "Gateway_AdminCreateTopMostGood",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateNTopMostGoodResponse"
+              "$ref": "#/definitions/v1AdminCreateTopMostGoodResponse"
             }
           },
           "default": {
@@ -39,7 +39,71 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateNTopMostGoodRequest"
+              "$ref": "#/definitions/v1AdminCreateTopMostGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/get/topmostgoods": {
+      "post": {
+        "operationId": "Gateway_AdminGetTopMostGoods",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetTopMostGoodsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetTopMostGoodsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/topmostgood": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateTopMostGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateTopMostGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateTopMostGoodRequest"
             }
           }
         ],
@@ -112,38 +176,6 @@
         ]
       }
     },
-    "/v1/get/n/topmostgoods": {
-      "post": {
-        "operationId": "Gateway_GetNTopMostGoods",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetNTopMostGoodsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetNTopMostGoodsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/topmostgoods": {
       "post": {
         "operationId": "Gateway_GetTopMostGoods",
@@ -168,38 +200,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetTopMostGoodsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/update/n/topmostgood": {
-      "post": {
-        "operationId": "Gateway_UpdateNTopMostGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateNTopMostGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateNTopMostGoodRequest"
             }
           }
         ],
@@ -269,7 +269,7 @@
         }
       }
     },
-    "v1CreateNTopMostGoodRequest": {
+    "v1AdminCreateTopMostGoodRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -281,21 +281,77 @@
         "AppGoodID": {
           "type": "string"
         },
-        "Posters": {
+        "UnitPrice": {
+          "type": "string"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminCreateTopMostGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TopMostGood"
+        }
+      }
+    },
+    "v1AdminGetTopMostGoodsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AdminGetTopMostGoodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1TopMostGood"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdateTopMostGoodRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
         },
         "UnitPrice": {
           "type": "string"
         },
-        "PackagePrice": {
-          "type": "string"
+        "Index": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
-    "v1CreateNTopMostGoodResponse": {
+    "v1AdminUpdateTopMostGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -315,17 +371,12 @@
         "AppGoodID": {
           "type": "string"
         },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "UnitPrice": {
           "type": "string"
         },
-        "PackagePrice": {
-          "type": "string"
+        "Index": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -357,37 +408,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1TopMostGood"
-        }
-      }
-    },
-    "v1GetNTopMostGoodsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetNTopMostGoodsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1TopMostGood"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -434,6 +454,20 @@
       ],
       "default": "DefaultGoodTopMostType"
     },
+    "v1PosterInfo": {
+      "type": "object",
+      "properties": {
+        "Poster": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"poster\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
+        }
+      }
+    },
     "v1TopMostGood": {
       "type": "object",
       "properties": {
@@ -462,21 +496,6 @@
         "AppGoodName": {
           "type": "string"
         },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinEnv": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
         "TopMostID": {
           "type": "string"
         },
@@ -489,17 +508,21 @@
         "TopMostMessage": {
           "type": "string"
         },
+        "TopMostTargetUrl": {
+          "type": "string"
+        },
         "Posters": {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/v1PosterInfo"
           }
         },
         "UnitPrice": {
           "type": "string"
         },
-        "PackagePrice": {
-          "type": "string"
+        "Index": {
+          "type": "integer",
+          "format": "int64"
         },
         "CreatedAt": {
           "type": "integer",
@@ -508,41 +531,6 @@
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1UpdateNTopMostGoodRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "UnitPrice": {
-          "type": "string"
-        },
-        "PackagePrice": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateNTopMostGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1TopMostGood"
         }
       }
     },
@@ -559,17 +547,12 @@
         "AppID": {
           "type": "string"
         },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "UnitPrice": {
           "type": "string"
         },
-        "PackagePrice": {
-          "type": "string"
+        "Index": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

@@ -19,13 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateTopMostGood_FullMethodName  = "/good.gateway.app.good1.topmost.good2.v1.Gateway/CreateTopMostGood"
-	Gateway_CreateNTopMostGood_FullMethodName = "/good.gateway.app.good1.topmost.good2.v1.Gateway/CreateNTopMostGood"
-	Gateway_GetTopMostGoods_FullMethodName    = "/good.gateway.app.good1.topmost.good2.v1.Gateway/GetTopMostGoods"
-	Gateway_GetNTopMostGoods_FullMethodName   = "/good.gateway.app.good1.topmost.good2.v1.Gateway/GetNTopMostGoods"
-	Gateway_DeleteTopMostGood_FullMethodName  = "/good.gateway.app.good1.topmost.good2.v1.Gateway/DeleteTopMostGood"
-	Gateway_UpdateTopMostGood_FullMethodName  = "/good.gateway.app.good1.topmost.good2.v1.Gateway/UpdateTopMostGood"
-	Gateway_UpdateNTopMostGood_FullMethodName = "/good.gateway.app.good1.topmost.good2.v1.Gateway/UpdateNTopMostGood"
+	Gateway_CreateTopMostGood_FullMethodName      = "/good.gateway.app.good1.topmost.good2.v1.Gateway/CreateTopMostGood"
+	Gateway_GetTopMostGoods_FullMethodName        = "/good.gateway.app.good1.topmost.good2.v1.Gateway/GetTopMostGoods"
+	Gateway_DeleteTopMostGood_FullMethodName      = "/good.gateway.app.good1.topmost.good2.v1.Gateway/DeleteTopMostGood"
+	Gateway_UpdateTopMostGood_FullMethodName      = "/good.gateway.app.good1.topmost.good2.v1.Gateway/UpdateTopMostGood"
+	Gateway_AdminCreateTopMostGood_FullMethodName = "/good.gateway.app.good1.topmost.good2.v1.Gateway/AdminCreateTopMostGood"
+	Gateway_AdminGetTopMostGoods_FullMethodName   = "/good.gateway.app.good1.topmost.good2.v1.Gateway/AdminGetTopMostGoods"
+	Gateway_AdminUpdateTopMostGood_FullMethodName = "/good.gateway.app.good1.topmost.good2.v1.Gateway/AdminUpdateTopMostGood"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -33,12 +33,12 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateTopMostGood(ctx context.Context, in *CreateTopMostGoodRequest, opts ...grpc.CallOption) (*CreateTopMostGoodResponse, error)
-	CreateNTopMostGood(ctx context.Context, in *CreateNTopMostGoodRequest, opts ...grpc.CallOption) (*CreateNTopMostGoodResponse, error)
 	GetTopMostGoods(ctx context.Context, in *GetTopMostGoodsRequest, opts ...grpc.CallOption) (*GetTopMostGoodsResponse, error)
-	GetNTopMostGoods(ctx context.Context, in *GetNTopMostGoodsRequest, opts ...grpc.CallOption) (*GetNTopMostGoodsResponse, error)
 	DeleteTopMostGood(ctx context.Context, in *DeleteTopMostGoodRequest, opts ...grpc.CallOption) (*DeleteTopMostGoodResponse, error)
 	UpdateTopMostGood(ctx context.Context, in *UpdateTopMostGoodRequest, opts ...grpc.CallOption) (*UpdateTopMostGoodResponse, error)
-	UpdateNTopMostGood(ctx context.Context, in *UpdateNTopMostGoodRequest, opts ...grpc.CallOption) (*UpdateNTopMostGoodResponse, error)
+	AdminCreateTopMostGood(ctx context.Context, in *AdminCreateTopMostGoodRequest, opts ...grpc.CallOption) (*AdminCreateTopMostGoodResponse, error)
+	AdminGetTopMostGoods(ctx context.Context, in *AdminGetTopMostGoodsRequest, opts ...grpc.CallOption) (*AdminGetTopMostGoodsResponse, error)
+	AdminUpdateTopMostGood(ctx context.Context, in *AdminUpdateTopMostGoodRequest, opts ...grpc.CallOption) (*AdminUpdateTopMostGoodResponse, error)
 }
 
 type gatewayClient struct {
@@ -58,27 +58,9 @@ func (c *gatewayClient) CreateTopMostGood(ctx context.Context, in *CreateTopMost
 	return out, nil
 }
 
-func (c *gatewayClient) CreateNTopMostGood(ctx context.Context, in *CreateNTopMostGoodRequest, opts ...grpc.CallOption) (*CreateNTopMostGoodResponse, error) {
-	out := new(CreateNTopMostGoodResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateNTopMostGood_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) GetTopMostGoods(ctx context.Context, in *GetTopMostGoodsRequest, opts ...grpc.CallOption) (*GetTopMostGoodsResponse, error) {
 	out := new(GetTopMostGoodsResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetTopMostGoods_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetNTopMostGoods(ctx context.Context, in *GetNTopMostGoodsRequest, opts ...grpc.CallOption) (*GetNTopMostGoodsResponse, error) {
-	out := new(GetNTopMostGoodsResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetNTopMostGoods_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -103,9 +85,27 @@ func (c *gatewayClient) UpdateTopMostGood(ctx context.Context, in *UpdateTopMost
 	return out, nil
 }
 
-func (c *gatewayClient) UpdateNTopMostGood(ctx context.Context, in *UpdateNTopMostGoodRequest, opts ...grpc.CallOption) (*UpdateNTopMostGoodResponse, error) {
-	out := new(UpdateNTopMostGoodResponse)
-	err := c.cc.Invoke(ctx, Gateway_UpdateNTopMostGood_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminCreateTopMostGood(ctx context.Context, in *AdminCreateTopMostGoodRequest, opts ...grpc.CallOption) (*AdminCreateTopMostGoodResponse, error) {
+	out := new(AdminCreateTopMostGoodResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminCreateTopMostGood_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) AdminGetTopMostGoods(ctx context.Context, in *AdminGetTopMostGoodsRequest, opts ...grpc.CallOption) (*AdminGetTopMostGoodsResponse, error) {
+	out := new(AdminGetTopMostGoodsResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminGetTopMostGoods_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) AdminUpdateTopMostGood(ctx context.Context, in *AdminUpdateTopMostGoodRequest, opts ...grpc.CallOption) (*AdminUpdateTopMostGoodResponse, error) {
+	out := new(AdminUpdateTopMostGoodResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminUpdateTopMostGood_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -117,12 +117,12 @@ func (c *gatewayClient) UpdateNTopMostGood(ctx context.Context, in *UpdateNTopMo
 // for forward compatibility
 type GatewayServer interface {
 	CreateTopMostGood(context.Context, *CreateTopMostGoodRequest) (*CreateTopMostGoodResponse, error)
-	CreateNTopMostGood(context.Context, *CreateNTopMostGoodRequest) (*CreateNTopMostGoodResponse, error)
 	GetTopMostGoods(context.Context, *GetTopMostGoodsRequest) (*GetTopMostGoodsResponse, error)
-	GetNTopMostGoods(context.Context, *GetNTopMostGoodsRequest) (*GetNTopMostGoodsResponse, error)
 	DeleteTopMostGood(context.Context, *DeleteTopMostGoodRequest) (*DeleteTopMostGoodResponse, error)
 	UpdateTopMostGood(context.Context, *UpdateTopMostGoodRequest) (*UpdateTopMostGoodResponse, error)
-	UpdateNTopMostGood(context.Context, *UpdateNTopMostGoodRequest) (*UpdateNTopMostGoodResponse, error)
+	AdminCreateTopMostGood(context.Context, *AdminCreateTopMostGoodRequest) (*AdminCreateTopMostGoodResponse, error)
+	AdminGetTopMostGoods(context.Context, *AdminGetTopMostGoodsRequest) (*AdminGetTopMostGoodsResponse, error)
+	AdminUpdateTopMostGood(context.Context, *AdminUpdateTopMostGoodRequest) (*AdminUpdateTopMostGoodResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -133,14 +133,8 @@ type UnimplementedGatewayServer struct {
 func (UnimplementedGatewayServer) CreateTopMostGood(context.Context, *CreateTopMostGoodRequest) (*CreateTopMostGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTopMostGood not implemented")
 }
-func (UnimplementedGatewayServer) CreateNTopMostGood(context.Context, *CreateNTopMostGoodRequest) (*CreateNTopMostGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateNTopMostGood not implemented")
-}
 func (UnimplementedGatewayServer) GetTopMostGoods(context.Context, *GetTopMostGoodsRequest) (*GetTopMostGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTopMostGoods not implemented")
-}
-func (UnimplementedGatewayServer) GetNTopMostGoods(context.Context, *GetNTopMostGoodsRequest) (*GetNTopMostGoodsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNTopMostGoods not implemented")
 }
 func (UnimplementedGatewayServer) DeleteTopMostGood(context.Context, *DeleteTopMostGoodRequest) (*DeleteTopMostGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTopMostGood not implemented")
@@ -148,8 +142,14 @@ func (UnimplementedGatewayServer) DeleteTopMostGood(context.Context, *DeleteTopM
 func (UnimplementedGatewayServer) UpdateTopMostGood(context.Context, *UpdateTopMostGoodRequest) (*UpdateTopMostGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateTopMostGood not implemented")
 }
-func (UnimplementedGatewayServer) UpdateNTopMostGood(context.Context, *UpdateNTopMostGoodRequest) (*UpdateNTopMostGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateNTopMostGood not implemented")
+func (UnimplementedGatewayServer) AdminCreateTopMostGood(context.Context, *AdminCreateTopMostGoodRequest) (*AdminCreateTopMostGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateTopMostGood not implemented")
+}
+func (UnimplementedGatewayServer) AdminGetTopMostGoods(context.Context, *AdminGetTopMostGoodsRequest) (*AdminGetTopMostGoodsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminGetTopMostGoods not implemented")
+}
+func (UnimplementedGatewayServer) AdminUpdateTopMostGood(context.Context, *AdminUpdateTopMostGoodRequest) (*AdminUpdateTopMostGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateTopMostGood not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -182,24 +182,6 @@ func _Gateway_CreateTopMostGood_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_CreateNTopMostGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateNTopMostGoodRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CreateNTopMostGood(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_CreateNTopMostGood_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateNTopMostGood(ctx, req.(*CreateNTopMostGoodRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_GetTopMostGoods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetTopMostGoodsRequest)
 	if err := dec(in); err != nil {
@@ -214,24 +196,6 @@ func _Gateway_GetTopMostGoods_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetTopMostGoods(ctx, req.(*GetTopMostGoodsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetNTopMostGoods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNTopMostGoodsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetNTopMostGoods(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetNTopMostGoods_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNTopMostGoods(ctx, req.(*GetNTopMostGoodsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -272,20 +236,56 @@ func _Gateway_UpdateTopMostGood_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_UpdateNTopMostGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateNTopMostGoodRequest)
+func _Gateway_AdminCreateTopMostGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCreateTopMostGoodRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).UpdateNTopMostGood(ctx, in)
+		return srv.(GatewayServer).AdminCreateTopMostGood(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_UpdateNTopMostGood_FullMethodName,
+		FullMethod: Gateway_AdminCreateTopMostGood_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateNTopMostGood(ctx, req.(*UpdateNTopMostGoodRequest))
+		return srv.(GatewayServer).AdminCreateTopMostGood(ctx, req.(*AdminCreateTopMostGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_AdminGetTopMostGoods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminGetTopMostGoodsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminGetTopMostGoods(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminGetTopMostGoods_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminGetTopMostGoods(ctx, req.(*AdminGetTopMostGoodsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_AdminUpdateTopMostGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminUpdateTopMostGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminUpdateTopMostGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminUpdateTopMostGood_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminUpdateTopMostGood(ctx, req.(*AdminUpdateTopMostGoodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -302,16 +302,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_CreateTopMostGood_Handler,
 		},
 		{
-			MethodName: "CreateNTopMostGood",
-			Handler:    _Gateway_CreateNTopMostGood_Handler,
-		},
-		{
 			MethodName: "GetTopMostGoods",
 			Handler:    _Gateway_GetTopMostGoods_Handler,
-		},
-		{
-			MethodName: "GetNTopMostGoods",
-			Handler:    _Gateway_GetNTopMostGoods_Handler,
 		},
 		{
 			MethodName: "DeleteTopMostGood",
@@ -322,8 +314,16 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_UpdateTopMostGood_Handler,
 		},
 		{
-			MethodName: "UpdateNTopMostGood",
-			Handler:    _Gateway_UpdateNTopMostGood_Handler,
+			MethodName: "AdminCreateTopMostGood",
+			Handler:    _Gateway_AdminCreateTopMostGood_Handler,
+		},
+		{
+			MethodName: "AdminGetTopMostGoods",
+			Handler:    _Gateway_AdminGetTopMostGoods_Handler,
+		},
+		{
+			MethodName: "AdminUpdateTopMostGood",
+			Handler:    _Gateway_AdminUpdateTopMostGood_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
