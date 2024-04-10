@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/gw/v1/good/comment/comment.proto",
+    "title": "npool/good/gw/v1/app/good/comment/comment.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,6 +16,71 @@
     "application/json"
   ],
   "paths": {
+    "/v1/admin/delete/goodcomment": {
+      "post": {
+        "operationId": "Gateway_AdminDeleteComment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteCommentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteCommentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/goodcomment": {
+      "post": {
+        "summary": "Run by admin",
+        "operationId": "Gateway_AdminUpdateComment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateCommentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateCommentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/create/goodcomment": {
       "post": {
         "operationId": "Gateway_CreateComment",
@@ -40,38 +105,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateCommentRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/delete/app/goodcomment": {
-      "post": {
-        "operationId": "Gateway_DeleteAppComment",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1DeleteAppCommentResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1DeleteAppCommentRequest"
             }
           }
         ],
@@ -112,6 +145,38 @@
         ]
       }
     },
+    "/v1/delete/user/goodcomment": {
+      "post": {
+        "operationId": "Gateway_DeleteUserComment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteUserCommentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteUserCommentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/goodcomments": {
       "post": {
         "operationId": "Gateway_GetComments",
@@ -136,38 +201,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetCommentsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/mygoodcomments": {
-      "post": {
-        "operationId": "Gateway_GetMyComments",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetMyCommentsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetMyCommentsRequest"
             }
           }
         ],
@@ -207,6 +240,39 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/update/user/goodcomment": {
+      "post": {
+        "summary": "Run by app admin to set other user's comment",
+        "operationId": "Gateway_UpdateUserComment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserCommentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateUserCommentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -234,6 +300,64 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AdminDeleteCommentRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+        }
+      }
+    },
+    "v1AdminUpdateCommentRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Hide": {
+          "type": "boolean"
+        },
+        "HideReason": {
+          "$ref": "#/definitions/v1GoodCommentHideReason"
+        }
+      }
+    },
+    "v1AdminUpdateCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
         }
       }
     },
@@ -292,11 +416,14 @@
         "TrialUser": {
           "type": "boolean"
         },
-        "OrderFirstComment": {
-          "type": "boolean"
-        },
         "Score": {
           "type": "string"
+        },
+        "Hide": {
+          "type": "boolean"
+        },
+        "HideReason": {
+          "$ref": "#/definitions/v1GoodCommentHideReason"
         },
         "CreatedAt": {
           "type": "integer",
@@ -345,35 +472,6 @@
         }
       }
     },
-    "v1DeleteAppCommentRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteAppCommentResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Comment"
-        }
-      }
-    },
     "v1DeleteCommentRequest": {
       "type": "object",
       "properties": {
@@ -400,6 +498,32 @@
         }
       }
     },
+    "v1DeleteUserCommentRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteUserCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+        }
+      }
+    },
     "v1GetCommentsRequest": {
       "type": "object",
       "properties": {
@@ -409,7 +533,7 @@
         "AppGoodID": {
           "type": "string"
         },
-        "GoodID": {
+        "UserID": {
           "type": "string"
         },
         "Offset": {
@@ -437,39 +561,15 @@
         }
       }
     },
-    "v1GetMyCommentsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetMyCommentsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Comment"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
+    "v1GoodCommentHideReason": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodCommentHideReason",
+        "GoodCommentHideBySpam",
+        "GoodCommentHideByNotThisGood",
+        "GoodCommentHideByFalseDescription"
+      ],
+      "default": "DefaultGoodCommentHideReason"
     },
     "v1UpdateCommentRequest": {
       "type": "object",
@@ -489,10 +589,45 @@
         },
         "Content": {
           "type": "string"
+        },
+        "Anonymous": {
+          "type": "boolean"
         }
       }
     },
     "v1UpdateCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Comment"
+        }
+      }
+    },
+    "v1UpdateUserCommentRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Hide": {
+          "type": "boolean"
+        },
+        "HideReason": {
+          "$ref": "#/definitions/v1GoodCommentHideReason"
+        }
+      }
+    },
+    "v1UpdateUserCommentResponse": {
       "type": "object",
       "properties": {
         "Info": {
