@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/good/gw/v1/good/like/like.proto
+// source: npool/good/gw/v1/app/good/like/like.proto
 
 package like
 
@@ -19,10 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateLike_FullMethodName = "/good.gateway.good1.like.v1.Gateway/CreateLike"
-	Gateway_GetLikes_FullMethodName   = "/good.gateway.good1.like.v1.Gateway/GetLikes"
-	Gateway_GetMyLikes_FullMethodName = "/good.gateway.good1.like.v1.Gateway/GetMyLikes"
-	Gateway_DeleteLike_FullMethodName = "/good.gateway.good1.like.v1.Gateway/DeleteLike"
+	Gateway_CreateLike_FullMethodName = "/good.gateway.app.good1.like.v1.Gateway/CreateLike"
+	Gateway_GetLikes_FullMethodName   = "/good.gateway.app.good1.like.v1.Gateway/GetLikes"
+	Gateway_DeleteLike_FullMethodName = "/good.gateway.app.good1.like.v1.Gateway/DeleteLike"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -31,7 +30,6 @@ const (
 type GatewayClient interface {
 	CreateLike(ctx context.Context, in *CreateLikeRequest, opts ...grpc.CallOption) (*CreateLikeResponse, error)
 	GetLikes(ctx context.Context, in *GetLikesRequest, opts ...grpc.CallOption) (*GetLikesResponse, error)
-	GetMyLikes(ctx context.Context, in *GetMyLikesRequest, opts ...grpc.CallOption) (*GetMyLikesResponse, error)
 	DeleteLike(ctx context.Context, in *DeleteLikeRequest, opts ...grpc.CallOption) (*DeleteLikeResponse, error)
 }
 
@@ -61,15 +59,6 @@ func (c *gatewayClient) GetLikes(ctx context.Context, in *GetLikesRequest, opts 
 	return out, nil
 }
 
-func (c *gatewayClient) GetMyLikes(ctx context.Context, in *GetMyLikesRequest, opts ...grpc.CallOption) (*GetMyLikesResponse, error) {
-	out := new(GetMyLikesResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetMyLikes_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) DeleteLike(ctx context.Context, in *DeleteLikeRequest, opts ...grpc.CallOption) (*DeleteLikeResponse, error) {
 	out := new(DeleteLikeResponse)
 	err := c.cc.Invoke(ctx, Gateway_DeleteLike_FullMethodName, in, out, opts...)
@@ -85,7 +74,6 @@ func (c *gatewayClient) DeleteLike(ctx context.Context, in *DeleteLikeRequest, o
 type GatewayServer interface {
 	CreateLike(context.Context, *CreateLikeRequest) (*CreateLikeResponse, error)
 	GetLikes(context.Context, *GetLikesRequest) (*GetLikesResponse, error)
-	GetMyLikes(context.Context, *GetMyLikesRequest) (*GetMyLikesResponse, error)
 	DeleteLike(context.Context, *DeleteLikeRequest) (*DeleteLikeResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -99,9 +87,6 @@ func (UnimplementedGatewayServer) CreateLike(context.Context, *CreateLikeRequest
 }
 func (UnimplementedGatewayServer) GetLikes(context.Context, *GetLikesRequest) (*GetLikesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLikes not implemented")
-}
-func (UnimplementedGatewayServer) GetMyLikes(context.Context, *GetMyLikesRequest) (*GetMyLikesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetMyLikes not implemented")
 }
 func (UnimplementedGatewayServer) DeleteLike(context.Context, *DeleteLikeRequest) (*DeleteLikeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteLike not implemented")
@@ -155,24 +140,6 @@ func _Gateway_GetLikes_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetMyLikes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetMyLikesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetMyLikes(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetMyLikes_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetMyLikes(ctx, req.(*GetMyLikesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_DeleteLike_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteLikeRequest)
 	if err := dec(in); err != nil {
@@ -195,7 +162,7 @@ func _Gateway_DeleteLike_Handler(srv interface{}, ctx context.Context, dec func(
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.gateway.good1.like.v1.Gateway",
+	ServiceName: "good.gateway.app.good1.like.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -207,14 +174,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetLikes_Handler,
 		},
 		{
-			MethodName: "GetMyLikes",
-			Handler:    _Gateway_GetMyLikes_Handler,
-		},
-		{
 			MethodName: "DeleteLike",
 			Handler:    _Gateway_DeleteLike_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/good/gw/v1/good/like/like.proto",
+	Metadata: "npool/good/gw/v1/app/good/like/like.proto",
 }
