@@ -19,20 +19,20 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateDeviceType_FullMethodName = "/good.gateway.device.v1.Gateway/CreateDeviceType"
-	Gateway_UpdateDeviceType_FullMethodName = "/good.gateway.device.v1.Gateway/UpdateDeviceType"
-	Gateway_GetDeviceTypes_FullMethodName   = "/good.gateway.device.v1.Gateway/GetDeviceTypes"
-	Gateway_DeleteDeviceType_FullMethodName = "/good.gateway.device.v1.Gateway/DeleteDeviceType"
+	Gateway_AdminCreateDeviceType_FullMethodName = "/good.gateway.device.v1.Gateway/AdminCreateDeviceType"
+	Gateway_AdminUpdateDeviceType_FullMethodName = "/good.gateway.device.v1.Gateway/AdminUpdateDeviceType"
+	Gateway_GetDeviceTypes_FullMethodName        = "/good.gateway.device.v1.Gateway/GetDeviceTypes"
+	Gateway_AdminDeleteDeviceType_FullMethodName = "/good.gateway.device.v1.Gateway/AdminDeleteDeviceType"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateDeviceType(ctx context.Context, in *CreateDeviceTypeRequest, opts ...grpc.CallOption) (*CreateDeviceTypeResponse, error)
-	UpdateDeviceType(ctx context.Context, in *UpdateDeviceTypeRequest, opts ...grpc.CallOption) (*UpdateDeviceTypeResponse, error)
+	AdminCreateDeviceType(ctx context.Context, in *AdminCreateDeviceTypeRequest, opts ...grpc.CallOption) (*AdminCreateDeviceTypeResponse, error)
+	AdminUpdateDeviceType(ctx context.Context, in *AdminUpdateDeviceTypeRequest, opts ...grpc.CallOption) (*AdminUpdateDeviceTypeResponse, error)
 	GetDeviceTypes(ctx context.Context, in *GetDeviceTypesRequest, opts ...grpc.CallOption) (*GetDeviceTypesResponse, error)
-	DeleteDeviceType(ctx context.Context, in *DeleteDeviceTypeRequest, opts ...grpc.CallOption) (*DeleteDeviceTypeResponse, error)
+	AdminDeleteDeviceType(ctx context.Context, in *AdminDeleteDeviceTypeRequest, opts ...grpc.CallOption) (*AdminDeleteDeviceTypeResponse, error)
 }
 
 type gatewayClient struct {
@@ -43,18 +43,18 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) CreateDeviceType(ctx context.Context, in *CreateDeviceTypeRequest, opts ...grpc.CallOption) (*CreateDeviceTypeResponse, error) {
-	out := new(CreateDeviceTypeResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateDeviceType_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminCreateDeviceType(ctx context.Context, in *AdminCreateDeviceTypeRequest, opts ...grpc.CallOption) (*AdminCreateDeviceTypeResponse, error) {
+	out := new(AdminCreateDeviceTypeResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminCreateDeviceType_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) UpdateDeviceType(ctx context.Context, in *UpdateDeviceTypeRequest, opts ...grpc.CallOption) (*UpdateDeviceTypeResponse, error) {
-	out := new(UpdateDeviceTypeResponse)
-	err := c.cc.Invoke(ctx, Gateway_UpdateDeviceType_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminUpdateDeviceType(ctx context.Context, in *AdminUpdateDeviceTypeRequest, opts ...grpc.CallOption) (*AdminUpdateDeviceTypeResponse, error) {
+	out := new(AdminUpdateDeviceTypeResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminUpdateDeviceType_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -70,9 +70,9 @@ func (c *gatewayClient) GetDeviceTypes(ctx context.Context, in *GetDeviceTypesRe
 	return out, nil
 }
 
-func (c *gatewayClient) DeleteDeviceType(ctx context.Context, in *DeleteDeviceTypeRequest, opts ...grpc.CallOption) (*DeleteDeviceTypeResponse, error) {
-	out := new(DeleteDeviceTypeResponse)
-	err := c.cc.Invoke(ctx, Gateway_DeleteDeviceType_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminDeleteDeviceType(ctx context.Context, in *AdminDeleteDeviceTypeRequest, opts ...grpc.CallOption) (*AdminDeleteDeviceTypeResponse, error) {
+	out := new(AdminDeleteDeviceTypeResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminDeleteDeviceType_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -83,10 +83,10 @@ func (c *gatewayClient) DeleteDeviceType(ctx context.Context, in *DeleteDeviceTy
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateDeviceType(context.Context, *CreateDeviceTypeRequest) (*CreateDeviceTypeResponse, error)
-	UpdateDeviceType(context.Context, *UpdateDeviceTypeRequest) (*UpdateDeviceTypeResponse, error)
+	AdminCreateDeviceType(context.Context, *AdminCreateDeviceTypeRequest) (*AdminCreateDeviceTypeResponse, error)
+	AdminUpdateDeviceType(context.Context, *AdminUpdateDeviceTypeRequest) (*AdminUpdateDeviceTypeResponse, error)
 	GetDeviceTypes(context.Context, *GetDeviceTypesRequest) (*GetDeviceTypesResponse, error)
-	DeleteDeviceType(context.Context, *DeleteDeviceTypeRequest) (*DeleteDeviceTypeResponse, error)
+	AdminDeleteDeviceType(context.Context, *AdminDeleteDeviceTypeRequest) (*AdminDeleteDeviceTypeResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -94,17 +94,17 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateDeviceType(context.Context, *CreateDeviceTypeRequest) (*CreateDeviceTypeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateDeviceType not implemented")
+func (UnimplementedGatewayServer) AdminCreateDeviceType(context.Context, *AdminCreateDeviceTypeRequest) (*AdminCreateDeviceTypeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateDeviceType not implemented")
 }
-func (UnimplementedGatewayServer) UpdateDeviceType(context.Context, *UpdateDeviceTypeRequest) (*UpdateDeviceTypeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateDeviceType not implemented")
+func (UnimplementedGatewayServer) AdminUpdateDeviceType(context.Context, *AdminUpdateDeviceTypeRequest) (*AdminUpdateDeviceTypeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateDeviceType not implemented")
 }
 func (UnimplementedGatewayServer) GetDeviceTypes(context.Context, *GetDeviceTypesRequest) (*GetDeviceTypesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDeviceTypes not implemented")
 }
-func (UnimplementedGatewayServer) DeleteDeviceType(context.Context, *DeleteDeviceTypeRequest) (*DeleteDeviceTypeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteDeviceType not implemented")
+func (UnimplementedGatewayServer) AdminDeleteDeviceType(context.Context, *AdminDeleteDeviceTypeRequest) (*AdminDeleteDeviceTypeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminDeleteDeviceType not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -119,38 +119,38 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_CreateDeviceType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateDeviceTypeRequest)
+func _Gateway_AdminCreateDeviceType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCreateDeviceTypeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).CreateDeviceType(ctx, in)
+		return srv.(GatewayServer).AdminCreateDeviceType(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_CreateDeviceType_FullMethodName,
+		FullMethod: Gateway_AdminCreateDeviceType_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateDeviceType(ctx, req.(*CreateDeviceTypeRequest))
+		return srv.(GatewayServer).AdminCreateDeviceType(ctx, req.(*AdminCreateDeviceTypeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_UpdateDeviceType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateDeviceTypeRequest)
+func _Gateway_AdminUpdateDeviceType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminUpdateDeviceTypeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).UpdateDeviceType(ctx, in)
+		return srv.(GatewayServer).AdminUpdateDeviceType(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_UpdateDeviceType_FullMethodName,
+		FullMethod: Gateway_AdminUpdateDeviceType_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateDeviceType(ctx, req.(*UpdateDeviceTypeRequest))
+		return srv.(GatewayServer).AdminUpdateDeviceType(ctx, req.(*AdminUpdateDeviceTypeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -173,20 +173,20 @@ func _Gateway_GetDeviceTypes_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_DeleteDeviceType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteDeviceTypeRequest)
+func _Gateway_AdminDeleteDeviceType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminDeleteDeviceTypeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).DeleteDeviceType(ctx, in)
+		return srv.(GatewayServer).AdminDeleteDeviceType(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_DeleteDeviceType_FullMethodName,
+		FullMethod: Gateway_AdminDeleteDeviceType_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeleteDeviceType(ctx, req.(*DeleteDeviceTypeRequest))
+		return srv.(GatewayServer).AdminDeleteDeviceType(ctx, req.(*AdminDeleteDeviceTypeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -199,20 +199,20 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateDeviceType",
-			Handler:    _Gateway_CreateDeviceType_Handler,
+			MethodName: "AdminCreateDeviceType",
+			Handler:    _Gateway_AdminCreateDeviceType_Handler,
 		},
 		{
-			MethodName: "UpdateDeviceType",
-			Handler:    _Gateway_UpdateDeviceType_Handler,
+			MethodName: "AdminUpdateDeviceType",
+			Handler:    _Gateway_AdminUpdateDeviceType_Handler,
 		},
 		{
 			MethodName: "GetDeviceTypes",
 			Handler:    _Gateway_GetDeviceTypes_Handler,
 		},
 		{
-			MethodName: "DeleteDeviceType",
-			Handler:    _Gateway_DeleteDeviceType_Handler,
+			MethodName: "AdminDeleteDeviceType",
+			Handler:    _Gateway_AdminDeleteDeviceType_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
