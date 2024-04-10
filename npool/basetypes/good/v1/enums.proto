@@ -159,3 +159,11 @@ enum GoodStockMode {
     GoodStockByUnique     = 20;
 }
 
+enum GoodCommentHideReason {
+    DefaultGoodCommentHideReason = 0;
+
+    GoodCommentHideBySpam = 10;
+    GoodCommentHideByNotThisGood = 20;
+    GoodCommentHideByFalseDescription = 30;
+}
+
