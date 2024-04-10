@@ -271,25 +271,6 @@
         },
         "ResetUserMethod": {
           "$ref": "#/definitions/v1ResetUserMethod"
-        },
-        "SettleMode": {
-          "$ref": "#/definitions/v1SettleMode"
-        },
-        "SettleAmountType": {
-          "$ref": "#/definitions/v1SettleAmountType"
-        },
-        "SettleInterval": {
-          "$ref": "#/definitions/v1SettleInterval"
-        },
-        "CommissionType": {
-          "$ref": "#/definitions/v1CommissionType"
-        },
-        "SettleBenefit": {
-          "type": "boolean"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -618,17 +599,6 @@
         }
       }
     },
-    "v1CommissionType": {
-      "type": "string",
-      "enum": [
-        "DefaultCommissionType",
-        "LayeredCommission",
-        "DirectCommission",
-        "LegacyCommission",
-        "WithoutCommission"
-      ],
-      "default": "DefaultCommissionType"
-    },
     "v1CreateInvitationCodeWhen": {
       "type": "string",
       "enum": [
@@ -656,35 +626,6 @@
         "Link"
       ],
       "default": "DefaultUserResetMethod"
-    },
-    "v1SettleAmountType": {
-      "type": "string",
-      "enum": [
-        "DefaultSettleAmountType",
-        "SettleByPercent",
-        "SettleByAmount"
-      ],
-      "default": "DefaultSettleAmountType"
-    },
-    "v1SettleInterval": {
-      "type": "string",
-      "enum": [
-        "DefaultSettleInterval",
-        "SettleAggregate",
-        "SettleMonthly",
-        "SettleYearly",
-        "SettleEveryOrder"
-      ],
-      "default": "DefaultSettleInterval"
-    },
-    "v1SettleMode": {
-      "type": "string",
-      "enum": [
-        "DefaultSettleMode",
-        "SettleWithGoodValue",
-        "SettleWithPaymentAmount"
-      ],
-      "default": "DefaultSettleMode"
     },
     "v1SignMethod": {
       "type": "string",
