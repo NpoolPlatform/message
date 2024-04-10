@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package good.gateway.good1.comment.v1;
+package good.gateway.app.good1.comment.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/good/comment";
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/app/good/comment";
 
 import "google/api/annotations.proto";
 
@@ -28,13 +28,6 @@ service Gateway {
         };
     }
 
-    rpc GetMyComments (GetMyCommentsRequest) returns (GetMyCommentsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/mygoodcomments"
-            body: "*"
-        };
-    }
-
     rpc DeleteComment (DeleteCommentRequest) returns (DeleteCommentResponse) {
         option (google.api.http) = {
             post: "/v1/delete/goodcomment"
@@ -42,9 +35,32 @@ service Gateway {
         };
     }
 
-    rpc DeleteAppComment (DeleteAppCommentRequest) returns (DeleteAppCommentResponse) {
+    // Run by app admin to set other user's comment
+    rpc UpdateUserComment (UpdateUserCommentRequest) returns (UpdateUserCommentResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/app/goodcomment"
+            post: "/v1/update/user/goodcomment"
+            body: "*"
+        };
+    }
+
+    rpc DeleteUserComment (DeleteUserCommentRequest) returns (DeleteUserCommentResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/user/goodcomment"
+            body: "*"
+        };
+    }
+
+    // Run by admin
+    rpc AdminUpdateComment (AdminUpdateCommentRequest) returns (AdminUpdateCommentResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/update/goodcomment"
+            body: "*"
+        };
+    }
+
+    rpc AdminDeleteComment (AdminDeleteCommentRequest) returns (AdminDeleteCommentResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/delete/goodcomment"
             body: "*"
         };
     }
@@ -70,6 +86,7 @@ message Comment {
     bool   TrialUser  = 160;
     bool   OrderFirstComment = 170;
     string Score      = 180;
+
     uint32 CreatedAt  = 1000;
     uint32 UpdatedAt  = 1010;
 }
