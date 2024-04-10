@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/app/good/
 
 import "google/api/annotations.proto";
 import "npool/basetypes/good/v1/enums.proto";
+import "npool/good/mw/v1/app/good/topmost/poster/poster.proto";
 
 // Service Name
 service Gateway {
@@ -70,6 +71,7 @@ message TopMost {
     string TargetUrl = 80;
     uint32 StartAt = 90;
     uint32 EndAt = 100;
+    repeated good.middleware.app.good1.topmost.poster.v1.PosterInfo Posters = 110;
     uint32 CreatedAt = 1000;
     uint32 UpdatedAt = 1010;
 }

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/gw/v1/app/good/topmost/topmost.proto",
+    "title": "npool/good/gw/v1/app/good/topmost/good/poster/poster.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,15 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/topmost": {
+    "/v1/admin/create/topmostgoodposter": {
       "post": {
-        "operationId": "Gateway_AdminCreateTopMost",
+        "summary": "Run by admin",
+        "operationId": "Gateway_AdminCreatePoster",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminCreateTopMostResponse"
+              "$ref": "#/definitions/v1AdminCreatePosterResponse"
             }
           },
           "default": {
@@ -39,7 +40,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminCreateTopMostRequest"
+              "$ref": "#/definitions/v1AdminCreatePosterRequest"
             }
           }
         ],
@@ -48,14 +49,14 @@
         ]
       }
     },
-    "/v1/admin/get/topmosts": {
+    "/v1/admin/delete/topmostgoodposter": {
       "post": {
-        "operationId": "Gateway_AdminGetTopMosts",
+        "operationId": "Gateway_AdminDeletePoster",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminGetTopMostsResponse"
+              "$ref": "#/definitions/v1AdminDeletePosterResponse"
             }
           },
           "default": {
@@ -71,7 +72,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminGetTopMostsRequest"
+              "$ref": "#/definitions/v1AdminDeletePosterRequest"
             }
           }
         ],
@@ -80,14 +81,14 @@
         ]
       }
     },
-    "/v1/admin/update/topmost": {
+    "/v1/admin/get/topmostgoodposters": {
       "post": {
-        "operationId": "Gateway_AdminUpdateTopMost",
+        "operationId": "Gateway_AdminGetPosters",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminUpdateTopMostResponse"
+              "$ref": "#/definitions/v1AdminGetPostersResponse"
             }
           },
           "default": {
@@ -103,7 +104,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminUpdateTopMostRequest"
+              "$ref": "#/definitions/v1AdminGetPostersRequest"
             }
           }
         ],
@@ -112,14 +113,14 @@
         ]
       }
     },
-    "/v1/create/topmost": {
+    "/v1/admin/update/topmostgoodposter": {
       "post": {
-        "operationId": "Gateway_CreateTopMost",
+        "operationId": "Gateway_AdminUpdatePoster",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateTopMostResponse"
+              "$ref": "#/definitions/v1AdminUpdatePosterResponse"
             }
           },
           "default": {
@@ -135,7 +136,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateTopMostRequest"
+              "$ref": "#/definitions/v1AdminUpdatePosterRequest"
             }
           }
         ],
@@ -144,14 +145,14 @@
         ]
       }
     },
-    "/v1/delete/topmost": {
+    "/v1/create/topmostgoodposter": {
       "post": {
-        "operationId": "Gateway_DeleteTopMost",
+        "operationId": "Gateway_CreatePoster",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteTopMostResponse"
+              "$ref": "#/definitions/v1CreatePosterResponse"
             }
           },
           "default": {
@@ -167,7 +168,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteTopMostRequest"
+              "$ref": "#/definitions/v1CreatePosterRequest"
             }
           }
         ],
@@ -176,14 +177,14 @@
         ]
       }
     },
-    "/v1/get/topmosts": {
+    "/v1/delete/topmostgoodposter": {
       "post": {
-        "operationId": "Gateway_GetTopMosts",
+        "operationId": "Gateway_DeletePoster",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetTopMostsResponse"
+              "$ref": "#/definitions/v1DeletePosterResponse"
             }
           },
           "default": {
@@ -199,7 +200,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetTopMostsRequest"
+              "$ref": "#/definitions/v1DeletePosterRequest"
             }
           }
         ],
@@ -208,14 +209,14 @@
         ]
       }
     },
-    "/v1/update/topmost": {
+    "/v1/get/topmostgoodposters": {
       "post": {
-        "operationId": "Gateway_UpdateTopMost",
+        "operationId": "Gateway_GetPosters",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateTopMostResponse"
+              "$ref": "#/definitions/v1GetPostersResponse"
             }
           },
           "default": {
@@ -231,7 +232,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateTopMostRequest"
+              "$ref": "#/definitions/v1GetPostersRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/update/topmostgoodposter": {
+      "post": {
+        "operationId": "Gateway_UpdatePoster",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdatePosterResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdatePosterRequest"
             }
           }
         ],
@@ -269,43 +302,56 @@
         }
       }
     },
-    "v1AdminCreateTopMostRequest": {
+    "v1AdminCreatePosterRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
           "type": "string"
         },
-        "TopMostType": {
-          "$ref": "#/definitions/v1GoodTopMostType"
-        },
-        "Title": {
+        "TopMostGoodID": {
           "type": "string"
         },
-        "Message": {
+        "Poster": {
           "type": "string"
         },
-        "TargetUrl": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
+        "Index": {
           "type": "integer",
           "format": "int64"
         }
       }
     },
-    "v1AdminCreateTopMostResponse": {
+    "v1AdminCreatePosterResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TopMost"
+          "$ref": "#/definitions/v1Poster"
         }
       }
     },
-    "v1AdminGetTopMostsRequest": {
+    "v1AdminDeletePosterRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeletePosterResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Poster"
+        }
+      }
+    },
+    "v1AdminGetPostersRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -321,13 +367,13 @@
         }
       }
     },
-    "v1AdminGetTopMostsResponse": {
+    "v1AdminGetPostersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1TopMost"
+            "$ref": "#/definitions/v1Poster"
           }
         },
         "Total": {
@@ -336,7 +382,7 @@
         }
       }
     },
-    "v1AdminUpdateTopMostRequest": {
+    "v1AdminUpdatePosterRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -349,70 +395,50 @@
         "TargetAppID": {
           "type": "string"
         },
-        "Title": {
+        "Poster": {
           "type": "string"
         },
-        "Message": {
-          "type": "string"
-        },
-        "TargetUrl": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
+        "Index": {
           "type": "integer",
           "format": "int64"
         }
       }
     },
-    "v1AdminUpdateTopMostResponse": {
+    "v1AdminUpdatePosterResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TopMost"
+          "$ref": "#/definitions/v1Poster"
         }
       }
     },
-    "v1CreateTopMostRequest": {
+    "v1CreatePosterRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
-        "TopMostType": {
-          "$ref": "#/definitions/v1GoodTopMostType"
-        },
-        "Title": {
+        "TopMostGoodID": {
           "type": "string"
         },
-        "Message": {
+        "Poster": {
           "type": "string"
         },
-        "TargetUrl": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
+        "Index": {
           "type": "integer",
           "format": "int64"
         }
       }
     },
-    "v1CreateTopMostResponse": {
+    "v1CreatePosterResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TopMost"
+          "$ref": "#/definitions/v1Poster"
         }
       }
     },
-    "v1DeleteTopMostRequest": {
+    "v1DeletePosterRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -427,18 +453,21 @@
         }
       }
     },
-    "v1DeleteTopMostResponse": {
+    "v1DeletePosterResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TopMost"
+          "$ref": "#/definitions/v1Poster"
         }
       }
     },
-    "v1GetTopMostsRequest": {
+    "v1GetPostersRequest": {
       "type": "object",
       "properties": {
         "AppID": {
+          "type": "string"
+        },
+        "TopMostGoodID": {
           "type": "string"
         },
         "Offset": {
@@ -451,13 +480,13 @@
         }
       }
     },
-    "v1GetTopMostsResponse": {
+    "v1GetPostersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1TopMost"
+            "$ref": "#/definitions/v1Poster"
           }
         },
         "Total": {
@@ -478,21 +507,7 @@
       ],
       "default": "DefaultGoodTopMostType"
     },
-    "v1PosterInfo": {
-      "type": "object",
-      "properties": {
-        "Poster": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"poster\""
-        },
-        "Index": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"index\""
-        }
-      }
-    },
-    "v1TopMost": {
+    "v1Poster": {
       "type": "object",
       "properties": {
         "ID": {
@@ -508,31 +523,36 @@
         "AppName": {
           "type": "string"
         },
+        "TopMostID": {
+          "type": "string"
+        },
         "TopMostType": {
           "$ref": "#/definitions/v1GoodTopMostType"
         },
-        "Title": {
+        "TopMostTitle": {
           "type": "string"
         },
-        "Message": {
+        "TopMostMessage": {
           "type": "string"
         },
-        "TargetUrl": {
+        "TopMostTargetUrl": {
           "type": "string"
         },
-        "StartAt": {
+        "TopMostGoodID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "AppGoodName": {
+          "type": "string"
+        },
+        "Poster": {
+          "type": "string"
+        },
+        "Index": {
           "type": "integer",
           "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1PosterInfo"
-          }
         },
         "CreatedAt": {
           "type": "integer",
@@ -544,7 +564,7 @@
         }
       }
     },
-    "v1UpdateTopMostRequest": {
+    "v1UpdatePosterRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -557,30 +577,20 @@
         "AppID": {
           "type": "string"
         },
-        "Title": {
+        "Poster": {
           "type": "string"
         },
-        "Message": {
-          "type": "string"
-        },
-        "TargetUrl": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
+        "Index": {
           "type": "integer",
           "format": "int64"
         }
       }
     },
-    "v1UpdateTopMostResponse": {
+    "v1UpdatePosterResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TopMost"
+          "$ref": "#/definitions/v1Poster"
         }
       }
     }
