@@ -23,13 +23,13 @@
         "ID": {
           "$ref": "#/definitions/v1Uint32Val"
         },
+        "IDs": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        },
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "GoodIDs": {
+        "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
         "GoodType": {
