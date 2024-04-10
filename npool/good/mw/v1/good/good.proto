@@ -20,30 +20,28 @@ message Good {
     uint32 ID = 10;
     // @inject_tag: sql:"ent_id"
     string EntID = 20;
-    // @inject_tag: sql:"good_id"
-    string GoodID = 30;
 
     // @inject_tag: sql:"good_type"
-    string GoodTypeStr = 40;
-    basetypes.good.v1.GoodType GoodType = 50;
+    string GoodTypeStr = 30;
+    basetypes.good.v1.GoodType GoodType = 40;
     // @inject_tag: sql:"benefit_type"
-    string BenefitTypeStr = 60;
-    basetypes.good.v1.BenefitType BenefitType = 70;
+    string BenefitTypeStr = 50;
+    basetypes.good.v1.BenefitType BenefitType = 60;
     // @inject_tag: sql:"name"
-    string Name = 80;
+    string Name = 70;
     // @inject_tag: sql:"service_start_at"
-    uint32 ServiceStartAt = 90;
+    uint32 ServiceStartAt = 80;
     // @inject_tag: sql:"start_mode"
-    string StartModeStr = 100;
-    basetypes.good.v1.GoodStartMode StartMode = 110;
+    string StartModeStr = 90;
+    basetypes.good.v1.GoodStartMode StartMode = 100;
     // @inject_tag: sql:"test_only"
-    bool TestOnly = 120;
+    bool TestOnly = 110;
     // @inject_tag: sql:"benefit_interval_hours"
-    uint32 BenefitIntervalHours = 130;
+    uint32 BenefitIntervalHours = 120;
     // @inject_tag: sql:"purchasable"
-    bool Purchasable = 140;
+    bool Purchasable = 130;
     // @inject_tag: sql:"online"
-    bool Online = 150;
+    bool Online = 140;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
