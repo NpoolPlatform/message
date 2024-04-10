@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/gw/v1/good/score/score.proto",
+    "title": "npool/good/gw/v1/app/good/score/score.proto",
     "version": "version not set"
   },
   "tags": [
@@ -111,38 +111,6 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/get/mygoodscores": {
-      "post": {
-        "operationId": "Gateway_GetMyScores",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetMyScoresResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetMyScoresRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
@@ -224,40 +192,6 @@
         }
       }
     },
-    "v1GetMyScoresRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetMyScoresResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Score"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1GetScoresRequest": {
       "type": "object",
       "properties": {
@@ -268,6 +202,9 @@
           "type": "string"
         },
         "GoodID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         },
         "Offset": {
