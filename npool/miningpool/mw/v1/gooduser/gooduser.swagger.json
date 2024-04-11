@@ -89,17 +89,6 @@
         }
       }
     },
-    "v1CreateGoodUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1GoodUser"
-          }
-        }
-      }
-    },
     "v1DeleteGoodUserResponse": {
       "type": "object",
       "properties": {

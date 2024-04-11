@@ -20,7 +20,6 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateGoodUser_FullMethodName     = "/miningpool.middleware.gooduser.v1.Middleware/CreateGoodUser"
-	Middleware_CreateGoodUsers_FullMethodName    = "/miningpool.middleware.gooduser.v1.Middleware/CreateGoodUsers"
 	Middleware_GetGoodUser_FullMethodName        = "/miningpool.middleware.gooduser.v1.Middleware/GetGoodUser"
 	Middleware_GetGoodUsers_FullMethodName       = "/miningpool.middleware.gooduser.v1.Middleware/GetGoodUsers"
 	Middleware_ExistGoodUserConds_FullMethodName = "/miningpool.middleware.gooduser.v1.Middleware/ExistGoodUserConds"
@@ -33,7 +32,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateGoodUser(ctx context.Context, in *CreateGoodUserRequest, opts ...grpc.CallOption) (*CreateGoodUserResponse, error)
-	CreateGoodUsers(ctx context.Context, in *CreateGoodUsersRequest, opts ...grpc.CallOption) (*CreateGoodUsersResponse, error)
 	GetGoodUser(ctx context.Context, in *GetGoodUserRequest, opts ...grpc.CallOption) (*GetGoodUserResponse, error)
 	GetGoodUsers(ctx context.Context, in *GetGoodUsersRequest, opts ...grpc.CallOption) (*GetGoodUsersResponse, error)
 	ExistGoodUserConds(ctx context.Context, in *ExistGoodUserCondsRequest, opts ...grpc.CallOption) (*ExistGoodUserCondsResponse, error)
@@ -52,15 +50,6 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateGoodUser(ctx context.Context, in *CreateGoodUserRequest, opts ...grpc.CallOption) (*CreateGoodUserResponse, error) {
 	out := new(CreateGoodUserResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateGoodUser_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) CreateGoodUsers(ctx context.Context, in *CreateGoodUsersRequest, opts ...grpc.CallOption) (*CreateGoodUsersResponse, error) {
-	out := new(CreateGoodUsersResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateGoodUsers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -117,7 +106,6 @@ func (c *middlewareClient) DeleteGoodUser(ctx context.Context, in *DeleteGoodUse
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateGoodUser(context.Context, *CreateGoodUserRequest) (*CreateGoodUserResponse, error)
-	CreateGoodUsers(context.Context, *CreateGoodUsersRequest) (*CreateGoodUsersResponse, error)
 	GetGoodUser(context.Context, *GetGoodUserRequest) (*GetGoodUserResponse, error)
 	GetGoodUsers(context.Context, *GetGoodUsersRequest) (*GetGoodUsersResponse, error)
 	ExistGoodUserConds(context.Context, *ExistGoodUserCondsRequest) (*ExistGoodUserCondsResponse, error)
@@ -132,9 +120,6 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateGoodUser(context.Context, *CreateGoodUserRequest) (*CreateGoodUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateGoodUser not implemented")
-}
-func (UnimplementedMiddlewareServer) CreateGoodUsers(context.Context, *CreateGoodUsersRequest) (*CreateGoodUsersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateGoodUsers not implemented")
 }
 func (UnimplementedMiddlewareServer) GetGoodUser(context.Context, *GetGoodUserRequest) (*GetGoodUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodUser not implemented")
@@ -178,24 +163,6 @@ func _Middleware_CreateGoodUser_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateGoodUser(ctx, req.(*CreateGoodUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_CreateGoodUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateGoodUsersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateGoodUsers(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateGoodUsers_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateGoodUsers(ctx, req.(*CreateGoodUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -300,10 +267,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateGoodUser",
 			Handler:    _Middleware_CreateGoodUser_Handler,
-		},
-		{
-			MethodName: "CreateGoodUsers",
-			Handler:    _Middleware_CreateGoodUsers_Handler,
 		},
 		{
 			MethodName: "GetGoodUser",

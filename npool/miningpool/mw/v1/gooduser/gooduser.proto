@@ -10,7 +10,6 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 // Service Name
 service Middleware {
     rpc CreateGoodUser     (CreateGoodUserRequest)   returns (CreateGoodUserResponse)    {}
-    rpc CreateGoodUsers    (CreateGoodUsersRequest)  returns (CreateGoodUsersResponse)   {}
     rpc GetGoodUser        (GetGoodUserRequest)      returns (GetGoodUserResponse)       {}
     rpc GetGoodUsers       (GetGoodUsersRequest)     returns (GetGoodUsersResponse)      {}
     rpc ExistGoodUserConds (ExistGoodUserCondsRequest) returns (ExistGoodUserCondsResponse) {}
@@ -75,14 +74,6 @@ message CreateGoodUserRequest {
 
 message CreateGoodUserResponse {
     GoodUser Info = 10;
-}
-
-message CreateGoodUsersRequest {
-   repeated GoodUserReq Infos = 10;
-}
-
-message CreateGoodUsersResponse {
-    repeated GoodUser Infos = 10;
 }
 
 message GetGoodUserRequest {

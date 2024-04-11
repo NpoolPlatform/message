@@ -11,7 +11,6 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 // Service Name
 service Middleware {
     rpc CreateRootUser     (CreateRootUserRequest)   returns (CreateRootUserResponse)    {}
-    rpc CreateRootUsers    (CreateRootUsersRequest)  returns (CreateRootUsersResponse)   {}
     rpc GetRootUser        (GetRootUserRequest)      returns (GetRootUserResponse)       {}
     rpc GetRootUsers       (GetRootUsersRequest)     returns (GetRootUsersResponse)      {}
     rpc ExistRootUserConds (ExistRootUserCondsRequest) returns (ExistRootUserCondsResponse) {}
@@ -70,14 +69,6 @@ message CreateRootUserRequest {
 
 message CreateRootUserResponse {
     RootUser Info = 10;
-}
-
-message CreateRootUsersRequest {
-   repeated RootUserReq Infos = 10;
-}
-
-message CreateRootUsersResponse {
-    repeated RootUser Infos = 10;
 }
 
 message GetRootUserRequest {

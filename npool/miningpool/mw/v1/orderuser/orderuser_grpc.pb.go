@@ -20,7 +20,6 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateOrderUser_FullMethodName     = "/miningpool.middleware.orderuser.v1.Middleware/CreateOrderUser"
-	Middleware_CreateOrderUsers_FullMethodName    = "/miningpool.middleware.orderuser.v1.Middleware/CreateOrderUsers"
 	Middleware_GetOrderUser_FullMethodName        = "/miningpool.middleware.orderuser.v1.Middleware/GetOrderUser"
 	Middleware_GetOrderUsers_FullMethodName       = "/miningpool.middleware.orderuser.v1.Middleware/GetOrderUsers"
 	Middleware_ExistOrderUserConds_FullMethodName = "/miningpool.middleware.orderuser.v1.Middleware/ExistOrderUserConds"
@@ -33,7 +32,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateOrderUser(ctx context.Context, in *CreateOrderUserRequest, opts ...grpc.CallOption) (*CreateOrderUserResponse, error)
-	CreateOrderUsers(ctx context.Context, in *CreateOrderUsersRequest, opts ...grpc.CallOption) (*CreateOrderUsersResponse, error)
 	GetOrderUser(ctx context.Context, in *GetOrderUserRequest, opts ...grpc.CallOption) (*GetOrderUserResponse, error)
 	GetOrderUsers(ctx context.Context, in *GetOrderUsersRequest, opts ...grpc.CallOption) (*GetOrderUsersResponse, error)
 	ExistOrderUserConds(ctx context.Context, in *ExistOrderUserCondsRequest, opts ...grpc.CallOption) (*ExistOrderUserCondsResponse, error)
@@ -52,15 +50,6 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateOrderUser(ctx context.Context, in *CreateOrderUserRequest, opts ...grpc.CallOption) (*CreateOrderUserResponse, error) {
 	out := new(CreateOrderUserResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateOrderUser_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) CreateOrderUsers(ctx context.Context, in *CreateOrderUsersRequest, opts ...grpc.CallOption) (*CreateOrderUsersResponse, error) {
-	out := new(CreateOrderUsersResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateOrderUsers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -117,7 +106,6 @@ func (c *middlewareClient) DeleteOrderUser(ctx context.Context, in *DeleteOrderU
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateOrderUser(context.Context, *CreateOrderUserRequest) (*CreateOrderUserResponse, error)
-	CreateOrderUsers(context.Context, *CreateOrderUsersRequest) (*CreateOrderUsersResponse, error)
 	GetOrderUser(context.Context, *GetOrderUserRequest) (*GetOrderUserResponse, error)
 	GetOrderUsers(context.Context, *GetOrderUsersRequest) (*GetOrderUsersResponse, error)
 	ExistOrderUserConds(context.Context, *ExistOrderUserCondsRequest) (*ExistOrderUserCondsResponse, error)
@@ -132,9 +120,6 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateOrderUser(context.Context, *CreateOrderUserRequest) (*CreateOrderUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOrderUser not implemented")
-}
-func (UnimplementedMiddlewareServer) CreateOrderUsers(context.Context, *CreateOrderUsersRequest) (*CreateOrderUsersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateOrderUsers not implemented")
 }
 func (UnimplementedMiddlewareServer) GetOrderUser(context.Context, *GetOrderUserRequest) (*GetOrderUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrderUser not implemented")
@@ -178,24 +163,6 @@ func _Middleware_CreateOrderUser_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateOrderUser(ctx, req.(*CreateOrderUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_CreateOrderUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateOrderUsersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateOrderUsers(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateOrderUsers_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateOrderUsers(ctx, req.(*CreateOrderUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -300,10 +267,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateOrderUser",
 			Handler:    _Middleware_CreateOrderUser_Handler,
-		},
-		{
-			MethodName: "CreateOrderUsers",
-			Handler:    _Middleware_CreateOrderUsers_Handler,
 		},
 		{
 			MethodName: "GetOrderUser",

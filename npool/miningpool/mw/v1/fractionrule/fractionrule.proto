@@ -11,7 +11,6 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 // Service Name
 service Middleware {
     rpc CreateFractionRule     (CreateFractionRuleRequest)     returns (CreateFractionRuleResponse)     {}
-    rpc CreateFractionRules    (CreateFractionRulesRequest)    returns (CreateFractionRulesResponse)    {}
     rpc GetFractionRule        (GetFractionRuleRequest)        returns (GetFractionRuleResponse)        {}
     rpc GetFractionRules       (GetFractionRulesRequest)       returns (GetFractionRulesResponse)       {}
     rpc ExistFractionRuleConds (ExistFractionRuleCondsRequest) returns (ExistFractionRuleCondsResponse) {}
@@ -67,14 +66,6 @@ message CreateFractionRuleRequest {
 
 message CreateFractionRuleResponse {
     FractionRule Info = 10;
-}
-
-message CreateFractionRulesRequest {
-   repeated FractionRuleReq Infos = 10;
-}
-
-message CreateFractionRulesResponse {
-    repeated FractionRule Infos = 10;
 }
 
 message GetFractionRuleRequest {

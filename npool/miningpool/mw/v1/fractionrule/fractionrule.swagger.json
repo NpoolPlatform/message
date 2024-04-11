@@ -83,17 +83,6 @@
         }
       }
     },
-    "v1CreateFractionRulesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1FractionRule"
-          }
-        }
-      }
-    },
     "v1DeleteFractionRuleResponse": {
       "type": "object",
       "properties": {

@@ -185,17 +185,6 @@
         }
       }
     },
-    "v1CreateOrderUsersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1OrderUser"
-          }
-        }
-      }
-    },
     "v1DeleteOrderUserRequest": {
       "type": "object",
       "properties": {

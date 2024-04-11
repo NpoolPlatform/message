@@ -16,7 +16,6 @@ service Middleware {
             body: "*"
         };
     }
-    rpc CreateOrderUsers    (CreateOrderUsersRequest)      returns (CreateOrderUsersResponse)     {}
     rpc GetOrderUser        (GetOrderUserRequest)          returns (GetOrderUserResponse)         {}
     rpc GetOrderUsers       (GetOrderUsersRequest)         returns (GetOrderUsersResponse)        {}
     rpc ExistOrderUserConds (ExistOrderUserCondsRequest)   returns (ExistOrderUserCondsResponse)  {}
@@ -101,14 +100,6 @@ message CreateOrderUserRequest {
 
 message CreateOrderUserResponse {
     OrderUser Info = 10;
-}
-
-message CreateOrderUsersRequest {
-   repeated OrderUserReq Infos = 10;
-}
-
-message CreateOrderUsersResponse {
-    repeated OrderUser Infos = 10;
 }
 
 message GetOrderUserRequest {
