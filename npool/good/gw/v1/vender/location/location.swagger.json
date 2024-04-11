@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/vendorlocation": {
+    "/v1/admin/create/vendorlocation": {
       "post": {
-        "operationId": "Gateway_CreateLocation",
+        "operationId": "Gateway_AdminCreateLocation",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewayvendorlocationv1CreateLocationResponse"
+              "$ref": "#/definitions/v1AdminCreateLocationResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewayvendorlocationv1CreateLocationRequest"
+              "$ref": "#/definitions/v1AdminCreateLocationRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/delete/vendorlocation": {
+    "/v1/admin/delete/vendorlocation": {
       "post": {
-        "operationId": "Gateway_DeleteLocation",
+        "operationId": "Gateway_AdminDeleteLocation",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewayvendorlocationv1DeleteLocationResponse"
+              "$ref": "#/definitions/v1AdminDeleteLocationResponse"
             }
           },
           "default": {
@@ -71,7 +71,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewayvendorlocationv1DeleteLocationRequest"
+              "$ref": "#/definitions/v1AdminDeleteLocationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/vendorlocation": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateLocationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateLocationRequest"
             }
           }
         ],
@@ -111,89 +143,9 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/update/vendorlocation": {
-      "post": {
-        "operationId": "Gateway_UpdateLocation",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/goodgatewayvendorlocationv1UpdateLocationResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/goodgatewayvendorlocationv1UpdateLocationRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
-    "goodgatewayvendorlocationv1CreateLocationRequest": {
-      "type": "object",
-      "properties": {
-        "Country": {
-          "type": "string"
-        },
-        "Province": {
-          "type": "string"
-        },
-        "City": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        },
-        "BrandID": {
-          "type": "string"
-        }
-      }
-    },
-    "goodgatewayvendorlocationv1CreateLocationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/locationv1Location"
-        }
-      }
-    },
-    "goodgatewayvendorlocationv1DeleteLocationRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        }
-      }
-    },
-    "goodgatewayvendorlocationv1DeleteLocationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/locationv1Location"
-        }
-      }
-    },
     "goodgatewayvendorlocationv1GetLocationsRequest": {
       "type": "object",
       "properties": {
@@ -222,41 +174,6 @@
         "Total": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "goodgatewayvendorlocationv1UpdateLocationRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "Country": {
-          "type": "string"
-        },
-        "Province": {
-          "type": "string"
-        },
-        "City": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        },
-        "BrandID": {
-          "type": "string"
-        }
-      }
-    },
-    "goodgatewayvendorlocationv1UpdateLocationResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/locationv1Location"
         }
       }
     },
@@ -336,6 +253,89 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AdminCreateLocationRequest": {
+      "type": "object",
+      "properties": {
+        "Country": {
+          "type": "string"
+        },
+        "Province": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "BrandID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminCreateLocationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/locationv1Location"
+        }
+      }
+    },
+    "v1AdminDeleteLocationRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteLocationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/locationv1Location"
+        }
+      }
+    },
+    "v1AdminUpdateLocationRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Country": {
+          "type": "string"
+        },
+        "Province": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "BrandID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminUpdateLocationResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/locationv1Location"
         }
       }
     }

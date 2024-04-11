@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/vendorbrand": {
+    "/v1/admin/create/vendorbrand": {
       "post": {
-        "operationId": "Gateway_CreateBrand",
+        "operationId": "Gateway_AdminCreateBrand",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewayvendorbrandv1CreateBrandResponse"
+              "$ref": "#/definitions/v1AdminCreateBrandResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewayvendorbrandv1CreateBrandRequest"
+              "$ref": "#/definitions/v1AdminCreateBrandRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/delete/vendorbrand": {
+    "/v1/admin/delete/vendorbrand": {
       "post": {
-        "operationId": "Gateway_DeleteBrand",
+        "operationId": "Gateway_AdminDeleteBrand",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewayvendorbrandv1DeleteBrandResponse"
+              "$ref": "#/definitions/v1AdminDeleteBrandResponse"
             }
           },
           "default": {
@@ -71,7 +71,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewayvendorbrandv1DeleteBrandRequest"
+              "$ref": "#/definitions/v1AdminDeleteBrandRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/vendorbrand": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateBrand",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateBrandResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateBrandRequest"
             }
           }
         ],
@@ -111,80 +143,9 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/update/vendorbrand": {
-      "post": {
-        "operationId": "Gateway_UpdateBrand",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/goodgatewayvendorbrandv1UpdateBrandResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/goodgatewayvendorbrandv1UpdateBrandRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
-    "goodgatewayvendorbrandv1CreateBrandRequest": {
-      "type": "object",
-      "properties": {
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        }
-      }
-    },
-    "goodgatewayvendorbrandv1CreateBrandResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Brand"
-        }
-      }
-    },
-    "goodgatewayvendorbrandv1DeleteBrandRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        }
-      }
-    },
-    "goodgatewayvendorbrandv1DeleteBrandResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Brand"
-        }
-      }
-    },
     "goodgatewayvendorbrandv1GetBrandsRequest": {
       "type": "object",
       "properties": {
@@ -213,32 +174,6 @@
         }
       }
     },
-    "goodgatewayvendorbrandv1UpdateBrandRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        }
-      }
-    },
-    "goodgatewayvendorbrandv1UpdateBrandResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Brand"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -263,6 +198,71 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AdminCreateBrandRequest": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminCreateBrandResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Brand"
+        }
+      }
+    },
+    "v1AdminDeleteBrandRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteBrandResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Brand"
+        }
+      }
+    },
+    "v1AdminUpdateBrandRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminUpdateBrandResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Brand"
         }
       }
     },

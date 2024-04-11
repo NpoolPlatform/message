@@ -19,20 +19,20 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateBrand_FullMethodName = "/good.gateway.vendor.brand.v1.Gateway/CreateBrand"
-	Gateway_UpdateBrand_FullMethodName = "/good.gateway.vendor.brand.v1.Gateway/UpdateBrand"
-	Gateway_GetBrands_FullMethodName   = "/good.gateway.vendor.brand.v1.Gateway/GetBrands"
-	Gateway_DeleteBrand_FullMethodName = "/good.gateway.vendor.brand.v1.Gateway/DeleteBrand"
+	Gateway_AdminCreateBrand_FullMethodName = "/good.gateway.vendor.brand.v1.Gateway/AdminCreateBrand"
+	Gateway_AdminUpdateBrand_FullMethodName = "/good.gateway.vendor.brand.v1.Gateway/AdminUpdateBrand"
+	Gateway_GetBrands_FullMethodName        = "/good.gateway.vendor.brand.v1.Gateway/GetBrands"
+	Gateway_AdminDeleteBrand_FullMethodName = "/good.gateway.vendor.brand.v1.Gateway/AdminDeleteBrand"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateBrand(ctx context.Context, in *CreateBrandRequest, opts ...grpc.CallOption) (*CreateBrandResponse, error)
-	UpdateBrand(ctx context.Context, in *UpdateBrandRequest, opts ...grpc.CallOption) (*UpdateBrandResponse, error)
+	AdminCreateBrand(ctx context.Context, in *AdminCreateBrandRequest, opts ...grpc.CallOption) (*AdminCreateBrandResponse, error)
+	AdminUpdateBrand(ctx context.Context, in *AdminUpdateBrandRequest, opts ...grpc.CallOption) (*AdminUpdateBrandResponse, error)
 	GetBrands(ctx context.Context, in *GetBrandsRequest, opts ...grpc.CallOption) (*GetBrandsResponse, error)
-	DeleteBrand(ctx context.Context, in *DeleteBrandRequest, opts ...grpc.CallOption) (*DeleteBrandResponse, error)
+	AdminDeleteBrand(ctx context.Context, in *AdminDeleteBrandRequest, opts ...grpc.CallOption) (*AdminDeleteBrandResponse, error)
 }
 
 type gatewayClient struct {
@@ -43,18 +43,18 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) CreateBrand(ctx context.Context, in *CreateBrandRequest, opts ...grpc.CallOption) (*CreateBrandResponse, error) {
-	out := new(CreateBrandResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateBrand_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminCreateBrand(ctx context.Context, in *AdminCreateBrandRequest, opts ...grpc.CallOption) (*AdminCreateBrandResponse, error) {
+	out := new(AdminCreateBrandResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminCreateBrand_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) UpdateBrand(ctx context.Context, in *UpdateBrandRequest, opts ...grpc.CallOption) (*UpdateBrandResponse, error) {
-	out := new(UpdateBrandResponse)
-	err := c.cc.Invoke(ctx, Gateway_UpdateBrand_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminUpdateBrand(ctx context.Context, in *AdminUpdateBrandRequest, opts ...grpc.CallOption) (*AdminUpdateBrandResponse, error) {
+	out := new(AdminUpdateBrandResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminUpdateBrand_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -70,9 +70,9 @@ func (c *gatewayClient) GetBrands(ctx context.Context, in *GetBrandsRequest, opt
 	return out, nil
 }
 
-func (c *gatewayClient) DeleteBrand(ctx context.Context, in *DeleteBrandRequest, opts ...grpc.CallOption) (*DeleteBrandResponse, error) {
-	out := new(DeleteBrandResponse)
-	err := c.cc.Invoke(ctx, Gateway_DeleteBrand_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminDeleteBrand(ctx context.Context, in *AdminDeleteBrandRequest, opts ...grpc.CallOption) (*AdminDeleteBrandResponse, error) {
+	out := new(AdminDeleteBrandResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminDeleteBrand_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -83,10 +83,10 @@ func (c *gatewayClient) DeleteBrand(ctx context.Context, in *DeleteBrandRequest,
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateBrand(context.Context, *CreateBrandRequest) (*CreateBrandResponse, error)
-	UpdateBrand(context.Context, *UpdateBrandRequest) (*UpdateBrandResponse, error)
+	AdminCreateBrand(context.Context, *AdminCreateBrandRequest) (*AdminCreateBrandResponse, error)
+	AdminUpdateBrand(context.Context, *AdminUpdateBrandRequest) (*AdminUpdateBrandResponse, error)
 	GetBrands(context.Context, *GetBrandsRequest) (*GetBrandsResponse, error)
-	DeleteBrand(context.Context, *DeleteBrandRequest) (*DeleteBrandResponse, error)
+	AdminDeleteBrand(context.Context, *AdminDeleteBrandRequest) (*AdminDeleteBrandResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -94,17 +94,17 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateBrand(context.Context, *CreateBrandRequest) (*CreateBrandResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateBrand not implemented")
+func (UnimplementedGatewayServer) AdminCreateBrand(context.Context, *AdminCreateBrandRequest) (*AdminCreateBrandResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateBrand not implemented")
 }
-func (UnimplementedGatewayServer) UpdateBrand(context.Context, *UpdateBrandRequest) (*UpdateBrandResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateBrand not implemented")
+func (UnimplementedGatewayServer) AdminUpdateBrand(context.Context, *AdminUpdateBrandRequest) (*AdminUpdateBrandResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateBrand not implemented")
 }
 func (UnimplementedGatewayServer) GetBrands(context.Context, *GetBrandsRequest) (*GetBrandsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBrands not implemented")
 }
-func (UnimplementedGatewayServer) DeleteBrand(context.Context, *DeleteBrandRequest) (*DeleteBrandResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteBrand not implemented")
+func (UnimplementedGatewayServer) AdminDeleteBrand(context.Context, *AdminDeleteBrandRequest) (*AdminDeleteBrandResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminDeleteBrand not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -119,38 +119,38 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_CreateBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateBrandRequest)
+func _Gateway_AdminCreateBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCreateBrandRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).CreateBrand(ctx, in)
+		return srv.(GatewayServer).AdminCreateBrand(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_CreateBrand_FullMethodName,
+		FullMethod: Gateway_AdminCreateBrand_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateBrand(ctx, req.(*CreateBrandRequest))
+		return srv.(GatewayServer).AdminCreateBrand(ctx, req.(*AdminCreateBrandRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_UpdateBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateBrandRequest)
+func _Gateway_AdminUpdateBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminUpdateBrandRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).UpdateBrand(ctx, in)
+		return srv.(GatewayServer).AdminUpdateBrand(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_UpdateBrand_FullMethodName,
+		FullMethod: Gateway_AdminUpdateBrand_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateBrand(ctx, req.(*UpdateBrandRequest))
+		return srv.(GatewayServer).AdminUpdateBrand(ctx, req.(*AdminUpdateBrandRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -173,20 +173,20 @@ func _Gateway_GetBrands_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_DeleteBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteBrandRequest)
+func _Gateway_AdminDeleteBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminDeleteBrandRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).DeleteBrand(ctx, in)
+		return srv.(GatewayServer).AdminDeleteBrand(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_DeleteBrand_FullMethodName,
+		FullMethod: Gateway_AdminDeleteBrand_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeleteBrand(ctx, req.(*DeleteBrandRequest))
+		return srv.(GatewayServer).AdminDeleteBrand(ctx, req.(*AdminDeleteBrandRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -199,20 +199,20 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateBrand",
-			Handler:    _Gateway_CreateBrand_Handler,
+			MethodName: "AdminCreateBrand",
+			Handler:    _Gateway_AdminCreateBrand_Handler,
 		},
 		{
-			MethodName: "UpdateBrand",
-			Handler:    _Gateway_UpdateBrand_Handler,
+			MethodName: "AdminUpdateBrand",
+			Handler:    _Gateway_AdminUpdateBrand_Handler,
 		},
 		{
 			MethodName: "GetBrands",
 			Handler:    _Gateway_GetBrands_Handler,
 		},
 		{
-			MethodName: "DeleteBrand",
-			Handler:    _Gateway_DeleteBrand_Handler,
+			MethodName: "AdminDeleteBrand",
+			Handler:    _Gateway_AdminDeleteBrand_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
