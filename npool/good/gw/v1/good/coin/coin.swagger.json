@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/gw/v1/fee/fee.proto",
+    "title": "npool/good/gw/v1/good/coin/coin.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/fee": {
+    "/v1/admin/create/goodcoin": {
       "post": {
-        "operationId": "Gateway_AdminCreateFee",
+        "operationId": "Gateway_AdminCreateGoodCoin",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminCreateFeeResponse"
+              "$ref": "#/definitions/v1AdminCreateGoodCoinResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminCreateFeeRequest"
+              "$ref": "#/definitions/v1AdminCreateGoodCoinRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/admin/delete/fee": {
+    "/v1/admin/delete/goodcoin": {
       "post": {
-        "operationId": "Gateway_AdminDeleteFee",
+        "operationId": "Gateway_AdminDeleteGoodCoin",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminDeleteFeeResponse"
+              "$ref": "#/definitions/v1AdminDeleteGoodCoinResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminDeleteFeeRequest"
+              "$ref": "#/definitions/v1AdminDeleteGoodCoinRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/admin/update/fee": {
+    "/v1/admin/update/goodcoin": {
       "post": {
-        "operationId": "Gateway_AdminUpdateFee",
+        "operationId": "Gateway_AdminUpdateGoodCoin",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminUpdateFeeResponse"
+              "$ref": "#/definitions/v1AdminUpdateGoodCoinResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminUpdateFeeRequest"
+              "$ref": "#/definitions/v1AdminUpdateGoodCoinRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/get/fees": {
+    "/v1/get/goodcoins": {
       "post": {
-        "operationId": "Gateway_GetFees",
+        "operationId": "Gateway_GetGoodCoins",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewayfeev1GetFeesResponse"
+              "$ref": "#/definitions/goodgatewaygood1coinv1GetGoodCoinsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewayfeev1GetFeesRequest"
+              "$ref": "#/definitions/goodgatewaygood1coinv1GetGoodCoinsRequest"
             }
           }
         ],
@@ -146,7 +146,7 @@
     }
   },
   "definitions": {
-    "goodgatewayfeev1GetFeesRequest": {
+    "goodgatewaygood1coinv1GetGoodCoinsRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -159,13 +159,13 @@
         }
       }
     },
-    "goodgatewayfeev1GetFeesResponse": {
+    "goodgatewaygood1coinv1GetGoodCoinsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Fee"
+            "$ref": "#/definitions/v1GoodCoin"
           }
         },
         "Total": {
@@ -201,35 +201,52 @@
         }
       }
     },
-    "v1AdminCreateFeeRequest": {
+    "v1AdminCreateGoodCoinRequest": {
       "type": "object",
       "properties": {
-        "GoodType": {
-          "$ref": "#/definitions/v1GoodType"
-        },
-        "Name": {
+        "GoodID": {
           "type": "string"
         },
-        "SettlementType": {
-          "$ref": "#/definitions/v1GoodSettlementType"
-        },
-        "UnitValue": {
+        "CoinTypeID": {
           "type": "string"
         },
-        "DurationType": {
-          "$ref": "#/definitions/v1GoodDurationType"
+        "Main": {
+          "type": "boolean"
+        },
+        "Index": {
+          "type": "boolean"
         }
       }
     },
-    "v1AdminCreateFeeResponse": {
+    "v1AdminCreateGoodCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Fee"
+          "$ref": "#/definitions/v1GoodCoin"
         }
       }
     },
-    "v1AdminDeleteFeeRequest": {
+    "v1AdminDeleteGoodCoinRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteGoodCoinResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodCoin"
+        }
+      }
+    },
+    "v1AdminUpdateGoodCoinRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -239,58 +256,23 @@
         "EntID": {
           "type": "string"
         },
-        "GoodID": {
-          "type": "string"
+        "Main": {
+          "type": "boolean"
+        },
+        "Index": {
+          "type": "boolean"
         }
       }
     },
-    "v1AdminDeleteFeeResponse": {
+    "v1AdminUpdateGoodCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Fee"
+          "$ref": "#/definitions/v1GoodCoin"
         }
       }
     },
-    "v1AdminUpdateFeeRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "GoodType": {
-          "$ref": "#/definitions/v1GoodType"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "SettlementType": {
-          "$ref": "#/definitions/v1GoodSettlementType"
-        },
-        "UnitValue": {
-          "type": "string"
-        },
-        "DurationType": {
-          "$ref": "#/definitions/v1GoodDurationType"
-        }
-      }
-    },
-    "v1AdminUpdateFeeResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Fee"
-        }
-      }
-    },
-    "v1Fee": {
+    "v1GoodCoin": {
       "type": "object",
       "properties": {
         "ID": {
@@ -306,6 +288,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
         },
+        "GoodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_name\""
+        },
         "GoodTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_type\""
@@ -313,27 +299,18 @@
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
         },
-        "Name": {
+        "CoinTypeID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"name\""
+          "title": "@inject_tag: sql:\"coin_type_id\""
         },
-        "SettlementTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"settlement_type\""
+        "Main": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"main\""
         },
-        "SettlementType": {
-          "$ref": "#/definitions/v1GoodSettlementType"
-        },
-        "UnitValue": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"unit_value\""
-        },
-        "DurationTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"duration_type\""
-        },
-        "DurationType": {
-          "$ref": "#/definitions/v1GoodDurationType"
+        "Index": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"index\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -346,27 +323,6 @@
           "title": "@inject_tag: sql:\"updated_at\""
         }
       }
-    },
-    "v1GoodDurationType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodDurationType",
-        "GoodDurationByHour",
-        "GoodDurationByDay",
-        "GoodDurationByMonth",
-        "GoodDurationByYear"
-      ],
-      "default": "DefaultGoodDurationType"
-    },
-    "v1GoodSettlementType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodSettlementType",
-        "GoodSettledByPaymentPercent",
-        "GoodSettledByPaymentAmount",
-        "GoodSettledByProfitPercent"
-      ],
-      "default": "DefaultGoodSettlementType"
     },
     "v1GoodType": {
       "type": "string",
