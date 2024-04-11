@@ -18,15 +18,15 @@ service Gateway {
 
 
 message GetHistoriesRequest {
-    optional string GoodID  = 10;
+    optional string GoodID = 10;
     optional uint32 StartAt = 20;
-    optional uint32 EndAt   = 30;
-    int32           Offset  = 40;
-    int32           Limit   = 50;
+    optional uint32 EndAt  = 30;
+    int32 Offset = 40;
+    int32 Limit = 50;
 }
 
 message GetHistoriesResponse {
     repeated middleware.good1.reward.history.v1.History Infos = 10;
-    uint32                                             Total = 20;
+    uint32 Total = 20;
 }
 

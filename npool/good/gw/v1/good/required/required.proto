@@ -8,16 +8,16 @@ import "google/api/annotations.proto";
 import "npool/good/mw/v1/good/required/required.proto";
 
 service Gateway {
-    rpc CreateRequired (CreateRequiredRequest) returns (CreateRequiredResponse) {
+    rpc AdminCreateRequired (AdminCreateRequiredRequest) returns (AdminCreateRequiredResponse) {
         option (google.api.http) = {
-            post: "/v1/create/requiredgood"
+            post: "/v1/admin/create/requiredgood"
             body: "*"
         };
     }
 
-    rpc UpdateRequired (UpdateRequiredRequest) returns (UpdateRequiredResponse) {
+    rpc AdminUpdateRequired (AdminUpdateRequiredRequest) returns (AdminUpdateRequiredResponse) {
         option (google.api.http) = {
-            post: "/v1/update/requiredgood"
+            post: "/v1/admin/update/requiredgood"
             body: "*"
         };
     }
@@ -29,50 +29,50 @@ service Gateway {
         };
     }
 
-    rpc DeleteRequired (DeleteRequiredRequest) returns (DeleteRequiredResponse) {
+    rpc AdminDeleteRequired (AdminDeleteRequiredRequest) returns (AdminDeleteRequiredResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/requiredgood"
+            post: "/v1/admin/delete/requiredgood"
             body: "*"
         };
     }
 }
 
-message CreateRequiredRequest {
-    string MainGoodID     = 10;
+message AdminCreateRequiredRequest {
+    string MainGoodID = 10;
     string RequiredGoodID = 20;
-    bool   Must           = 30;
+    bool   Must = 30;
 }
 
-message CreateRequiredResponse {
+message AdminCreateRequiredResponse {
     middleware.good1.required1.v1.Required Info = 10;
 }
 
-message UpdateRequiredRequest {
-    uint32 ID    = 9;
-    string EntID = 10;
-    bool   Must  = 20;
+message AdminUpdateRequiredRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+    bool   Must = 30;
 }
 
-message UpdateRequiredResponse {
+message AdminUpdateRequiredResponse {
     middleware.good1.required1.v1.Required Info = 10;
 }
 
 message GetRequiredsRequest {
     optional string GoodID = 10;
-    int32           Offset = 20;
-    int32           Limit  = 30;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
 message GetRequiredsResponse {
     repeated middleware.good1.required1.v1.Required Infos = 10;
-    uint32                                          Total = 20;
+    uint32 Total = 20;
 }
 
-message DeleteRequiredRequest {
-    uint32 ID    = 9;
-    string EntID = 10;
+message AdminDeleteRequiredRequest {
+    uint32 ID = 10;
+    string EntID = 20;
 }
 
-message DeleteRequiredResponse {
+message AdminDeleteRequiredResponse {
     middleware.good1.required1.v1.Required Info = 10;
 }
