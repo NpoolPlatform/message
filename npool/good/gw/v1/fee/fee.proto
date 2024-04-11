@@ -51,11 +51,12 @@ message AdminCreateFeeResponse {
 message AdminUpdateFeeRequest {
     uint32 ID = 10;
     string EntID = 20;
-    optional basetypes.good.v1.GoodType GoodType = 30;
-    optional string Name = 40;
-    optional basetypes.good.v1.GoodSettlementType SettlementType = 50;
-    optional string UnitValue = 60;
-    optional basetypes.good.v1.GoodDurationType DurationType = 70;
+    string GoodID = 30;
+    optional basetypes.good.v1.GoodType GoodType = 40;
+    optional string Name = 50;
+    optional basetypes.good.v1.GoodSettlementType SettlementType = 60;
+    optional string UnitValue = 70;
+    optional basetypes.good.v1.GoodDurationType DurationType = 80;
 }
 
 message AdminUpdateFeeResponse {
@@ -75,6 +76,7 @@ message GetFeesResponse {
 message AdminDeleteFeeRequest {
     uint32 ID = 10;
     string EntID = 20;
+    string GoodID = 30;
 }
 
 message AdminDeleteFeeResponse {

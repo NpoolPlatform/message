@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package good.gateway.good1.coin.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/good/coin";
+
+import "npool/good/mw/v1/good/coin/coin.proto";
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc AdminCreateGoodCoin(AdminCreateGoodCoinRequest) returns (AdminCreateGoodCoinResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/create/goodcoin"
+            body: "*"
+        };
+    }
+    rpc AdminUpdateGoodCoin(AdminUpdateGoodCoinRequest) returns (AdminUpdateGoodCoinResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/update/goodcoin"
+            body: "*"
+        };
+    }
+    rpc GetGoodCoins(GetGoodCoinsRequest) returns (GetGoodCoinsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/goodcoins"
+            body: "*"
+        };
+    }
+    rpc AdminDeleteGoodCoin(AdminDeleteGoodCoinRequest) returns (AdminDeleteGoodCoinResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/delete/goodcoin"
+            body: "*"
+        };
+    }
+}
+
+message AdminCreateGoodCoinRequest {
+    string GoodID = 10;
+    string CoinTypeID = 20;
+    optional bool Main = 30;
+    optional bool Index = 40;
+}
+
+message AdminCreateGoodCoinResponse {
+    middleware.good1.coin.v1.GoodCoin Info = 10;
+}
+
+message AdminUpdateGoodCoinRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+    optional bool Main = 30;
+    optional bool Index = 40;
+}
+
+message AdminUpdateGoodCoinResponse {
+    middleware.good1.coin.v1.GoodCoin Info = 10;
+}
+
+message GetGoodCoinsRequest {
+    int32 Offset = 10;
+    int32 Limit = 20;
+}
+
+message GetGoodCoinsResponse {
+    repeated middleware.good1.coin.v1.GoodCoin Infos = 10;
+    uint32 Total = 20;
+}
+
+message AdminDeleteGoodCoinRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+}
+
+message AdminDeleteGoodCoinResponse {
+    middleware.good1.coin.v1.GoodCoin Info = 10;
+}
