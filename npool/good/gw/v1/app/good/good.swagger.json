@@ -222,10 +222,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_name\""
         },
-        "GoodServiceStartAt": {
+        "ServiceStartAt": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"good_service_start_at\""
+          "title": "@inject_tag: sql:\"service_start_at\""
         },
         "StartModeStr": {
           "type": "string",
