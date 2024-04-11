@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/requiredgood": {
+    "/v1/admin/create/requiredgood": {
       "post": {
-        "operationId": "Gateway_CreateRequired",
+        "operationId": "Gateway_AdminCreateRequired",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1required1v1CreateRequiredResponse"
+              "$ref": "#/definitions/v1AdminCreateRequiredResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1required1v1CreateRequiredRequest"
+              "$ref": "#/definitions/v1AdminCreateRequiredRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/delete/requiredgood": {
+    "/v1/admin/delete/requiredgood": {
       "post": {
-        "operationId": "Gateway_DeleteRequired",
+        "operationId": "Gateway_AdminDeleteRequired",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1required1v1DeleteRequiredResponse"
+              "$ref": "#/definitions/v1AdminDeleteRequiredResponse"
             }
           },
           "default": {
@@ -71,7 +71,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1required1v1DeleteRequiredRequest"
+              "$ref": "#/definitions/v1AdminDeleteRequiredRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/requiredgood": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateRequired",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateRequiredResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateRequiredRequest"
             }
           }
         ],
@@ -111,83 +143,9 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/update/requiredgood": {
-      "post": {
-        "operationId": "Gateway_UpdateRequired",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/goodgatewaygood1required1v1UpdateRequiredResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/goodgatewaygood1required1v1UpdateRequiredRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
-    "goodgatewaygood1required1v1CreateRequiredRequest": {
-      "type": "object",
-      "properties": {
-        "MainGoodID": {
-          "type": "string"
-        },
-        "RequiredGoodID": {
-          "type": "string"
-        },
-        "Must": {
-          "type": "boolean"
-        }
-      }
-    },
-    "goodgatewaygood1required1v1CreateRequiredResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Required"
-        }
-      }
-    },
-    "goodgatewaygood1required1v1DeleteRequiredRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        }
-      }
-    },
-    "goodgatewaygood1required1v1DeleteRequiredResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Required"
-        }
-      }
-    },
     "goodgatewaygood1required1v1GetRequiredsRequest": {
       "type": "object",
       "properties": {
@@ -219,29 +177,6 @@
         }
       }
     },
-    "goodgatewaygood1required1v1UpdateRequiredRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "Must": {
-          "type": "boolean"
-        }
-      }
-    },
-    "goodgatewaygood1required1v1UpdateRequiredResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Required"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -266,6 +201,71 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AdminCreateRequiredRequest": {
+      "type": "object",
+      "properties": {
+        "MainGoodID": {
+          "type": "string"
+        },
+        "RequiredGoodID": {
+          "type": "string"
+        },
+        "Must": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1AdminCreateRequiredResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Required"
+        }
+      }
+    },
+    "v1AdminDeleteRequiredRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteRequiredResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Required"
+        }
+      }
+    },
+    "v1AdminUpdateRequiredRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Must": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1AdminUpdateRequiredResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Required"
         }
       }
     },
