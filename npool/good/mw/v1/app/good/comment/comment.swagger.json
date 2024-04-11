@@ -163,6 +163,12 @@
         },
         "Score": {
           "type": "string"
+        },
+        "Hide": {
+          "type": "boolean"
+        },
+        "HideReason": {
+          "$ref": "#/definitions/v1GoodCommentHideReason"
         }
       }
     },

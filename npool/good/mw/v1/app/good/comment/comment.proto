@@ -30,6 +30,8 @@ message CommentReq {
     optional bool PurchasedUser = 90;
     optional bool TrialUser = 100;
     optional string Score = 110;
+    optional bool Hide = 120;
+    optional basetypes.good.v1.GoodCommentHideReason HideReason = 130;
 }
 
 message Comment {
