@@ -104,6 +104,17 @@
           "type": "string",
           "title": "@inject_tag: sql:\"score\""
         },
+        "Hide": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"hide\""
+        },
+        "HideReasonStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"hide_reason\""
+        },
+        "HideReason": {
+          "$ref": "#/definitions/v1GoodCommentHideReason"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -233,6 +244,16 @@
           "format": "int64"
         }
       }
+    },
+    "v1GoodCommentHideReason": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodCommentHideReason",
+        "GoodCommentHideBySpam",
+        "GoodCommentHideByNotThisGood",
+        "GoodCommentHideByFalseDescription"
+      ],
+      "default": "DefaultGoodCommentHideReason"
     },
     "v1StringSliceVal": {
       "type": "object",
