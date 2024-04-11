@@ -273,6 +273,10 @@
           "type": "integer",
           "format": "int64"
         },
+        "MaxLevelCount": {
+          "type": "integer",
+          "format": "int64"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -318,6 +322,10 @@
         "StartAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "MaxLevelCount": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -351,6 +359,10 @@
           "type": "boolean"
         },
         "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxLevelCount": {
           "type": "integer",
           "format": "int64"
         }
@@ -479,6 +491,10 @@
         "StartAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "MaxLevelCount": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -504,6 +520,10 @@
           "type": "string"
         },
         "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxLevelCount": {
           "type": "integer",
           "format": "int64"
         }

@@ -26,6 +26,7 @@ message AppCommissionConfigReq {
     optional uint32               Invites                            = 70;
     optional basetypes.inspire.v1.SettleType SettleType              = 80;
     optional bool                 Disabled                           = 90;
+    optional uint32               Level                              = 100;
 }
 
 message AppCommissionConfig {
@@ -50,6 +51,8 @@ message AppCommissionConfig {
     basetypes.inspire.v1.SettleType SettleType = 100;
     // @inject_tag: sql:"disabled"
     bool       Disabled                        = 110;
+    // @inject_tag: sql:"level"
+    uint32     Level                           = 120;
     
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt                       = 1000;
@@ -65,6 +68,7 @@ message Conds {
     optional basetypes.v1.Uint32Val EndAt            = 50;
     optional basetypes.v1.StringSliceVal EntIDs      = 60;
     optional basetypes.v1.BoolVal   Disabled         = 70;
+    optional basetypes.v1.Uint32Val Level            = 80;
 }
 
 message CreateAppCommissionConfigRequest {

@@ -359,6 +359,10 @@
         "Disabled": {
           "type": "boolean"
         },
+        "Level": {
+          "type": "integer",
+          "format": "int64"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -437,6 +441,10 @@
         },
         "Disabled": {
           "type": "boolean"
+        },
+        "Level": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -476,6 +484,10 @@
         },
         "Disabled": {
           "type": "boolean"
+        },
+        "Level": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -593,6 +605,10 @@
         },
         "Disabled": {
           "type": "boolean"
+        },
+        "Level": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -630,6 +646,10 @@
         },
         "Disabled": {
           "type": "boolean"
+        },
+        "Level": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

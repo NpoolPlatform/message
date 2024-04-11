@@ -94,6 +94,11 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"disabled\""
         },
+        "Level": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"level\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -138,6 +143,10 @@
         },
         "Disabled": {
           "type": "boolean"
+        },
+        "Level": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -175,6 +184,9 @@
         },
         "Disabled": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "Level": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },

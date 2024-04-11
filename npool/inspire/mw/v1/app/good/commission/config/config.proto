@@ -41,6 +41,7 @@ message AppGoodCommissionConfigReq {
     optional uint32               Invites                            = 90;
     optional basetypes.inspire.v1.SettleType SettleType              = 100;
     optional bool                 Disabled                           = 110;
+    optional uint32               Level                              = 120;
 }
 
 message AppGoodCommissionConfig {
@@ -69,6 +70,8 @@ message AppGoodCommissionConfig {
     basetypes.inspire.v1.SettleType SettleType = 120;
     // @inject_tag: sql:"disabled"
     bool       Disabled                        = 130;
+    // @inject_tag: sql:"level"
+    uint32     Level                           = 140;
     
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt                       = 1000;
@@ -88,6 +91,7 @@ message Conds {
     optional basetypes.v1.StringSliceVal GoodIDs     = 90;
     optional basetypes.v1.StringSliceVal AppGoodIDs  = 100;
     optional basetypes.v1.BoolVal        Disabled    = 110;
+    optional basetypes.v1.Uint32Val      Level       = 120;
 }
 
 message CreateAppGoodCommissionConfigRequest {

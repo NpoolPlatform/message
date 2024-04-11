@@ -60,6 +60,7 @@ message AppCommissionConfig {
     uint32 StartAt       = 130;
     uint32 EndAt         = 140;
     bool   Disabled      = 150;
+    uint32 Level         = 160;
     uint32 CreatedAt     = 1000;
     uint32 UpdatedAt     = 1010;
 }
@@ -71,7 +72,8 @@ message CreateAppCommissionConfigRequest {
     optional uint32                 StartAt         = 40;
     uint32                          Invites         = 50;
     basetypes.inspire.v1.SettleType SettleType      = 60;
-    optional bool                   Disabled        = 70;
+    bool                            Disabled        = 70;
+    uint32                          Level           = 80;
 }
 
 message CreateAppCommissionConfigResponse {
@@ -85,7 +87,8 @@ message CreateNAppCommissionConfigRequest {
     optional uint32                 StartAt         = 40;
     uint32                          Invites         = 50;
     basetypes.inspire.v1.SettleType SettleType      = 60;
-    optional bool                   Disabled        = 70;
+    bool                            Disabled        = 70;
+    uint32                          Level           = 80;
 }
 
 message CreateNAppCommissionConfigResponse {
@@ -100,6 +103,7 @@ message UpdateAppCommissionConfigRequest {
     optional string ThresholdAmount = 50;
     optional uint32 Invites  = 60;
     optional bool   Disabled = 70;
+    optional uint32 Level    = 80;
 }
 
 message UpdateAppCommissionConfigResponse {
@@ -114,6 +118,7 @@ message UpdateNAppCommissionConfigRequest {
     optional string ThresholdAmount = 50;
     optional uint32 Invites  = 60;
     optional bool   Disabled = 70;
+    optional uint32 Level    = 80;
 }
 
 message UpdateNAppCommissionConfigResponse {

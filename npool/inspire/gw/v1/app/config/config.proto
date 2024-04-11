@@ -58,8 +58,9 @@ message AppConfig {
     bool   SettleBenefit = 80;
     uint32 StartAt       = 90;
     uint32 EndAt         = 100;
-    uint32 CreatedAt     = 110;
-    uint32 UpdatedAt     = 120;
+    uint32 MaxLevelCount = 110;
+    uint32 CreatedAt     = 1000;
+    uint32 UpdatedAt     = 1010;
 }
 
 message CreateAppConfigRequest {
@@ -68,8 +69,9 @@ message CreateAppConfigRequest {
     basetypes.inspire.v1.SettleAmountType SettleAmountType = 30;
     basetypes.inspire.v1.SettleInterval SettleInterval     = 40;
     basetypes.inspire.v1.CommissionType CommissionType     = 50;
-    optional bool                       SettleBenefit      = 60;
+    bool                                SettleBenefit      = 60;
     optional uint32                     StartAt            = 70;
+    uint32                              MaxLevelCount      = 80;
 }
 
 message CreateAppConfigResponse {
@@ -82,8 +84,9 @@ message CreateNAppConfigRequest {
     basetypes.inspire.v1.SettleAmountType SettleAmountType = 30;
     basetypes.inspire.v1.SettleInterval SettleInterval     = 40;
     basetypes.inspire.v1.CommissionType CommissionType     = 50;
-    optional bool                       SettleBenefit      = 60;
+    bool                                SettleBenefit      = 60;
     optional uint32                     StartAt            = 70;
+    uint32                              MaxLevelCount      = 80;
 }
 
 message CreateNAppConfigResponse {
@@ -95,6 +98,7 @@ message UpdateAppConfigRequest {
     string          EntID   = 20;
     string          AppID   = 30;
     optional uint32 StartAt = 40;
+    uint32          MaxLevelCount = 50;
 }
 
 message UpdateAppConfigResponse {
@@ -106,6 +110,7 @@ message UpdateNAppConfigRequest {
     string          EntID   = 20;
     string          TargetAppID   = 30;
     optional uint32 StartAt = 40;
+    uint32          MaxLevelCount = 50;
 }
 
 message UpdateNAppConfigResponse {
@@ -122,7 +127,7 @@ message GetAppConfigsRequest {
 
 message GetAppConfigsResponse {
     repeated AppConfig Infos = 10;
-    uint32              Total = 20;
+    uint32             Total = 20;
 }
 
 message GetNAppConfigsRequest {
@@ -134,5 +139,5 @@ message GetNAppConfigsRequest {
 
 message GetNAppConfigsResponse {
     repeated AppConfig Infos = 10;
-    uint32              Total = 20;
+    uint32             Total = 20;
 }

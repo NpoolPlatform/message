@@ -79,6 +79,7 @@ message AppGoodCommissionConfig {
     string AppGoodID     = 150;
     string GoodName      = 160;
     bool   Disabled      = 170;
+    uint32 Level         = 180;
     uint32 CreatedAt     = 1000;
     uint32 UpdatedAt     = 1010;
 }
@@ -91,7 +92,8 @@ message CreateAppGoodCommissionConfigRequest {
     optional uint32 StartAt         = 50;
     uint32          Invites         = 60;
     basetypes.inspire.v1.SettleType SettleType = 70;
-    optional bool                   Disabled   = 80;
+    bool                            Disabled   = 80;
+    uint32                          Level      = 90;
 }
 
 message CreateAppGoodCommissionConfigResponse {
@@ -106,7 +108,8 @@ message CreateNAppGoodCommissionConfigRequest {
   optional uint32 StartAt         = 50;
   uint32          Invites         = 60;
   basetypes.inspire.v1.SettleType SettleType = 70;
-  optional bool                   Disabled   = 80;
+  bool                            Disabled   = 80;
+  uint32                          Level      = 90;
 }
 
 message CreateNAppGoodCommissionConfigResponse {
@@ -121,6 +124,7 @@ message UpdateAppGoodCommissionConfigRequest {
     optional string ThresholdAmount = 50;
     optional uint32 Invites  = 60;
     optional bool   Disabled = 70;
+    optional uint32 Level    = 80;
 }
 
 message UpdateAppGoodCommissionConfigResponse {
@@ -135,6 +139,7 @@ message UpdateNAppGoodCommissionConfigRequest {
     optional string ThresholdAmount = 50;
     optional uint32 Invites  = 60;
     optional bool   Disabled = 70;
+    optional uint32 Level    = 80;
 }
 
 message UpdateNAppGoodCommissionConfigResponse {
