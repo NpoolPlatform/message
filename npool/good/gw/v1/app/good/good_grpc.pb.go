@@ -19,24 +19,16 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateGood_FullMethodName  = "/good.gateway.app.good1.v1.Gateway/CreateGood"
-	Gateway_GetGoods_FullMethodName    = "/good.gateway.app.good1.v1.Gateway/GetGoods"
-	Gateway_GetGood_FullMethodName     = "/good.gateway.app.good1.v1.Gateway/GetGood"
-	Gateway_GetNGoods_FullMethodName   = "/good.gateway.app.good1.v1.Gateway/GetNGoods"
-	Gateway_UpdateGood_FullMethodName  = "/good.gateway.app.good1.v1.Gateway/UpdateGood"
-	Gateway_UpdateNGood_FullMethodName = "/good.gateway.app.good1.v1.Gateway/UpdateNGood"
+	Gateway_GetGoods_FullMethodName      = "/good.gateway.app.good1.v1.Gateway/GetGoods"
+	Gateway_AdminGetGoods_FullMethodName = "/good.gateway.app.good1.v1.Gateway/AdminGetGoods"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateGood(ctx context.Context, in *CreateGoodRequest, opts ...grpc.CallOption) (*CreateGoodResponse, error)
 	GetGoods(ctx context.Context, in *GetGoodsRequest, opts ...grpc.CallOption) (*GetGoodsResponse, error)
-	GetGood(ctx context.Context, in *GetGoodRequest, opts ...grpc.CallOption) (*GetGoodResponse, error)
-	GetNGoods(ctx context.Context, in *GetNGoodsRequest, opts ...grpc.CallOption) (*GetNGoodsResponse, error)
-	UpdateGood(ctx context.Context, in *UpdateGoodRequest, opts ...grpc.CallOption) (*UpdateGoodResponse, error)
-	UpdateNGood(ctx context.Context, in *UpdateNGoodRequest, opts ...grpc.CallOption) (*UpdateNGoodResponse, error)
+	AdminGetGoods(ctx context.Context, in *AdminGetGoodsRequest, opts ...grpc.CallOption) (*AdminGetGoodsResponse, error)
 }
 
 type gatewayClient struct {
@@ -45,15 +37,6 @@ type gatewayClient struct {
 
 func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
-}
-
-func (c *gatewayClient) CreateGood(ctx context.Context, in *CreateGoodRequest, opts ...grpc.CallOption) (*CreateGoodResponse, error) {
-	out := new(CreateGoodResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateGood_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *gatewayClient) GetGoods(ctx context.Context, in *GetGoodsRequest, opts ...grpc.CallOption) (*GetGoodsResponse, error) {
@@ -65,36 +48,9 @@ func (c *gatewayClient) GetGoods(ctx context.Context, in *GetGoodsRequest, opts 
 	return out, nil
 }
 
-func (c *gatewayClient) GetGood(ctx context.Context, in *GetGoodRequest, opts ...grpc.CallOption) (*GetGoodResponse, error) {
-	out := new(GetGoodResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetGood_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetNGoods(ctx context.Context, in *GetNGoodsRequest, opts ...grpc.CallOption) (*GetNGoodsResponse, error) {
-	out := new(GetNGoodsResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetNGoods_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) UpdateGood(ctx context.Context, in *UpdateGoodRequest, opts ...grpc.CallOption) (*UpdateGoodResponse, error) {
-	out := new(UpdateGoodResponse)
-	err := c.cc.Invoke(ctx, Gateway_UpdateGood_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) UpdateNGood(ctx context.Context, in *UpdateNGoodRequest, opts ...grpc.CallOption) (*UpdateNGoodResponse, error) {
-	out := new(UpdateNGoodResponse)
-	err := c.cc.Invoke(ctx, Gateway_UpdateNGood_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminGetGoods(ctx context.Context, in *AdminGetGoodsRequest, opts ...grpc.CallOption) (*AdminGetGoodsResponse, error) {
+	out := new(AdminGetGoodsResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminGetGoods_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -105,12 +61,8 @@ func (c *gatewayClient) UpdateNGood(ctx context.Context, in *UpdateNGoodRequest,
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateGood(context.Context, *CreateGoodRequest) (*CreateGoodResponse, error)
 	GetGoods(context.Context, *GetGoodsRequest) (*GetGoodsResponse, error)
-	GetGood(context.Context, *GetGoodRequest) (*GetGoodResponse, error)
-	GetNGoods(context.Context, *GetNGoodsRequest) (*GetNGoodsResponse, error)
-	UpdateGood(context.Context, *UpdateGoodRequest) (*UpdateGoodResponse, error)
-	UpdateNGood(context.Context, *UpdateNGoodRequest) (*UpdateNGoodResponse, error)
+	AdminGetGoods(context.Context, *AdminGetGoodsRequest) (*AdminGetGoodsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -118,23 +70,11 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateGood(context.Context, *CreateGoodRequest) (*CreateGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateGood not implemented")
-}
 func (UnimplementedGatewayServer) GetGoods(context.Context, *GetGoodsRequest) (*GetGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoods not implemented")
 }
-func (UnimplementedGatewayServer) GetGood(context.Context, *GetGoodRequest) (*GetGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetGood not implemented")
-}
-func (UnimplementedGatewayServer) GetNGoods(context.Context, *GetNGoodsRequest) (*GetNGoodsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNGoods not implemented")
-}
-func (UnimplementedGatewayServer) UpdateGood(context.Context, *UpdateGoodRequest) (*UpdateGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateGood not implemented")
-}
-func (UnimplementedGatewayServer) UpdateNGood(context.Context, *UpdateNGoodRequest) (*UpdateNGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateNGood not implemented")
+func (UnimplementedGatewayServer) AdminGetGoods(context.Context, *AdminGetGoodsRequest) (*AdminGetGoodsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminGetGoods not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -147,24 +87,6 @@ type UnsafeGatewayServer interface {
 
 func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
-}
-
-func _Gateway_CreateGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateGoodRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CreateGood(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_CreateGood_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateGood(ctx, req.(*CreateGoodRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Gateway_GetGoods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -185,74 +107,20 @@ func _Gateway_GetGoods_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetGoodRequest)
+func _Gateway_AdminGetGoods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminGetGoodsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetGood(ctx, in)
+		return srv.(GatewayServer).AdminGetGoods(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetGood_FullMethodName,
+		FullMethod: Gateway_AdminGetGoods_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetGood(ctx, req.(*GetGoodRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetNGoods_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNGoodsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetNGoods(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetNGoods_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNGoods(ctx, req.(*GetNGoodsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_UpdateGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateGoodRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).UpdateGood(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_UpdateGood_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateGood(ctx, req.(*UpdateGoodRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_UpdateNGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateNGoodRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).UpdateNGood(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_UpdateNGood_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateNGood(ctx, req.(*UpdateNGoodRequest))
+		return srv.(GatewayServer).AdminGetGoods(ctx, req.(*AdminGetGoodsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -265,28 +133,12 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateGood",
-			Handler:    _Gateway_CreateGood_Handler,
-		},
-		{
 			MethodName: "GetGoods",
 			Handler:    _Gateway_GetGoods_Handler,
 		},
 		{
-			MethodName: "GetGood",
-			Handler:    _Gateway_GetGood_Handler,
-		},
-		{
-			MethodName: "GetNGoods",
-			Handler:    _Gateway_GetNGoods_Handler,
-		},
-		{
-			MethodName: "UpdateGood",
-			Handler:    _Gateway_UpdateGood_Handler,
-		},
-		{
-			MethodName: "UpdateNGood",
-			Handler:    _Gateway_UpdateNGood_Handler,
+			MethodName: "AdminGetGoods",
+			Handler:    _Gateway_AdminGetGoods_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
