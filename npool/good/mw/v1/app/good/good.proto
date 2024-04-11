@@ -31,8 +31,8 @@ message Good {
     basetypes.good.v1.BenefitType BenefitType = 80;
     // @inject_tag: sql:"good_name"
     string GoodName = 90;
-    // @inject_tag: sql:"good_service_start_at"
-    uint32 GoodServiceStartAt = 100;
+    // @inject_tag: sql:"service_start_at"
+    uint32 ServiceStartAt = 100;
     // @inject_tag: sql:"start_mode"
     string StartModeStr = 110;
     basetypes.good.v1.GoodStartMode StartMode = 120;
