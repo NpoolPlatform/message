@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/gw/v1/app/good/good.proto",
+    "title": "npool/good/mw/v1/app/good/good.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Gateway"
+      "name": "Middleware"
     }
   ],
   "consumes": [
@@ -15,104 +15,8 @@
   "produces": [
     "application/json"
   ],
-  "paths": {
-    "/v1/admin/get/appgoods": {
-      "post": {
-        "operationId": "Gateway_AdminGetGoods",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1AdminGetGoodsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1AdminGetGoodsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/appgoods": {
-      "post": {
-        "operationId": "Gateway_GetGoods",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/goodgatewayappgood1v1GetGoodsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/goodgatewayappgood1v1GetGoodsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    }
-  },
+  "paths": {},
   "definitions": {
-    "goodgatewayappgood1v1GetGoodsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "goodgatewayappgood1v1GetGoodsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Good"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -140,23 +44,59 @@
         }
       }
     },
-    "v1AdminGetGoodsRequest": {
+    "v1BenefitType": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitType",
+        "BenefitTypePlatform",
+        "BenefitTypePool",
+        "BenefitTypeOffline",
+        "BenefitTypeContract",
+        "BenefitTypeNone"
+      ],
+      "default": "DefaultBenefitType",
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward\n - BenefitTypeContract: User receive reward from smart contract\n - BenefitTypeNone: Such as technique fee"
+    },
+    "v1Conds": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
-          "type": "string"
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
         },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
+        "IDs": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
         },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v1AdminGetGoodsResponse": {
+    "v1ExistGoodCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Good"
+        }
+      }
+    },
+    "v1GetGoodsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -170,19 +110,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1BenefitType": {
-      "type": "string",
-      "enum": [
-        "DefaultBenefitType",
-        "BenefitTypePlatform",
-        "BenefitTypePool",
-        "BenefitTypeOffline",
-        "BenefitTypeContract",
-        "BenefitTypeNone"
-      ],
-      "default": "DefaultBenefitType",
-      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward\n - BenefitTypeContract: User receive reward from smart contract\n - BenefitTypeNone: Such as technique fee"
     },
     "v1Good": {
       "type": "object",
@@ -320,6 +247,58 @@
         "ElectricityFee"
       ],
       "default": "DefaultGoodType"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     }
   }
 }
