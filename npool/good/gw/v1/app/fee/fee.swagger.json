@@ -373,9 +373,6 @@
         "AppGoodName": {
           "type": "string"
         },
-        "AppGoodBase": {
-          "type": "string"
-        },
         "ProductPage": {
           "type": "string"
         },
