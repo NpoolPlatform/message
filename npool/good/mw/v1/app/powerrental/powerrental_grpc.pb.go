@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreatePowerRental_FullMethodName = "/good.middleware.app.powerrental.v1.Middleware/CreatePowerRental"
-	Middleware_UpdatePowerRental_FullMethodName = "/good.middleware.app.powerrental.v1.Middleware/UpdatePowerRental"
-	Middleware_GetPowerRental_FullMethodName    = "/good.middleware.app.powerrental.v1.Middleware/GetPowerRental"
-	Middleware_GetPowerRentals_FullMethodName   = "/good.middleware.app.powerrental.v1.Middleware/GetPowerRentals"
-	Middleware_DeletePowerRental_FullMethodName = "/good.middleware.app.powerrental.v1.Middleware/DeletePowerRental"
+	Middleware_CreatePowerRental_FullMethodName     = "/good.middleware.app.powerrental.v1.Middleware/CreatePowerRental"
+	Middleware_UpdatePowerRental_FullMethodName     = "/good.middleware.app.powerrental.v1.Middleware/UpdatePowerRental"
+	Middleware_GetPowerRental_FullMethodName        = "/good.middleware.app.powerrental.v1.Middleware/GetPowerRental"
+	Middleware_GetPowerRentals_FullMethodName       = "/good.middleware.app.powerrental.v1.Middleware/GetPowerRentals"
+	Middleware_ExistPowerRentalConds_FullMethodName = "/good.middleware.app.powerrental.v1.Middleware/ExistPowerRentalConds"
+	Middleware_DeletePowerRental_FullMethodName     = "/good.middleware.app.powerrental.v1.Middleware/DeletePowerRental"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdatePowerRental(ctx context.Context, in *UpdatePowerRentalRequest, opts ...grpc.CallOption) (*UpdatePowerRentalResponse, error)
 	GetPowerRental(ctx context.Context, in *GetPowerRentalRequest, opts ...grpc.CallOption) (*GetPowerRentalResponse, error)
 	GetPowerRentals(ctx context.Context, in *GetPowerRentalsRequest, opts ...grpc.CallOption) (*GetPowerRentalsResponse, error)
+	ExistPowerRentalConds(ctx context.Context, in *ExistPowerRentalCondsRequest, opts ...grpc.CallOption) (*ExistPowerRentalCondsResponse, error)
 	DeletePowerRental(ctx context.Context, in *DeletePowerRentalRequest, opts ...grpc.CallOption) (*DeletePowerRentalResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetPowerRentals(ctx context.Context, in *GetPowerRent
 	return out, nil
 }
 
+func (c *middlewareClient) ExistPowerRentalConds(ctx context.Context, in *ExistPowerRentalCondsRequest, opts ...grpc.CallOption) (*ExistPowerRentalCondsResponse, error) {
+	out := new(ExistPowerRentalCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistPowerRentalConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeletePowerRental(ctx context.Context, in *DeletePowerRentalRequest, opts ...grpc.CallOption) (*DeletePowerRentalResponse, error) {
 	out := new(DeletePowerRentalResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeletePowerRental_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdatePowerRental(context.Context, *UpdatePowerRentalRequest) (*UpdatePowerRentalResponse, error)
 	GetPowerRental(context.Context, *GetPowerRentalRequest) (*GetPowerRentalResponse, error)
 	GetPowerRentals(context.Context, *GetPowerRentalsRequest) (*GetPowerRentalsResponse, error)
+	ExistPowerRentalConds(context.Context, *ExistPowerRentalCondsRequest) (*ExistPowerRentalCondsResponse, error)
 	DeletePowerRental(context.Context, *DeletePowerRentalRequest) (*DeletePowerRentalResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetPowerRental(context.Context, *GetPowerRe
 }
 func (UnimplementedMiddlewareServer) GetPowerRentals(context.Context, *GetPowerRentalsRequest) (*GetPowerRentalsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPowerRentals not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistPowerRentalConds(context.Context, *ExistPowerRentalCondsRequest) (*ExistPowerRentalCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistPowerRentalConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeletePowerRental(context.Context, *DeletePowerRentalRequest) (*DeletePowerRentalResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePowerRental not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetPowerRentals_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistPowerRentalConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistPowerRentalCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistPowerRentalConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistPowerRentalConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistPowerRentalConds(ctx, req.(*ExistPowerRentalCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeletePowerRental_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeletePowerRentalRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetPowerRentals",
 			Handler:    _Middleware_GetPowerRentals_Handler,
+		},
+		{
+			MethodName: "ExistPowerRentalConds",
+			Handler:    _Middleware_ExistPowerRentalConds_Handler,
 		},
 		{
 			MethodName: "DeletePowerRental",
