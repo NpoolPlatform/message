@@ -47,18 +47,6 @@ service Gateway {
             body: "*"
         };
     }
-    rpc CloneAppGoodCommissionConfigs (CloneAppGoodCommissionConfigsRequest) returns (CloneAppGoodCommissionConfigsResponse) {
-        option (google.api.http) = {
-            post: "/v1/clone/app/good/commission/configs"
-            body: "*"
-        };
-    }
-    rpc CloneNAppGoodCommissionConfigs (CloneNAppGoodCommissionConfigsRequest) returns (CloneNAppGoodCommissionConfigsResponse) {
-        option (google.api.http) = {
-            post: "/v1/clone/n/app/good/commission/configs"
-            body: "*"
-        };
-    }
 }
 
 message AppGoodCommissionConfig {
@@ -168,24 +156,4 @@ message GetNAppGoodCommissionConfigsRequest {
 message GetNAppGoodCommissionConfigsResponse {
     repeated AppGoodCommissionConfig Infos = 10;
     uint32              Total = 20;
-}
-
-message CloneAppGoodCommissionConfigsRequest {
-    string AppID         = 10;
-    string FromAppGoodID = 20;
-    string ToAppGoodID   = 30;
-    string ScalePercent  = 40;
-}
-
-message CloneAppGoodCommissionConfigsResponse {
-}
-
-message CloneNAppGoodCommissionConfigsRequest {
-    string TargetAppID    = 10;
-    string FromAppGoodID  = 20;
-    string ToAppGoodID    = 30;
-    string ScalePercent   = 40;
-}
-
-message CloneNAppGoodCommissionConfigsResponse {
 }

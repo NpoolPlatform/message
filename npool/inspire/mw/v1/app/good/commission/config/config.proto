@@ -21,12 +21,6 @@ service Middleware {
             body: "*"
         };
     }
-    rpc CloneAppGoodCommissionConfigs   (CloneAppGoodCommissionConfigsRequest)   returns (CloneAppGoodCommissionConfigsResponse)   {
-      option (google.api.http) = {
-          post: "/v1/appgoodcommissionconfig_CloneAppGoodCommissionConfigs"
-          body: "*"
-      };
-    }
 }
 
 message AppGoodCommissionConfigReq {
@@ -143,16 +137,4 @@ message ExistAppGoodCommissionConfigCondsRequest {
 
 message ExistAppGoodCommissionConfigCondsResponse {
   bool   Info = 10;
-}
-
-message CloneAppGoodCommissionConfigsRequest {
-  string AppID         = 10;
-  string FromGoodID    = 20;
-  string ToGoodID      = 30;
-  string FromAppGoodID = 40;
-  string ToAppGoodID   = 50;
-  string ScalePercent  = 60;
-}
-
-message CloneAppGoodCommissionConfigsResponse {
 }

@@ -25,8 +25,6 @@ const (
 	Gateway_UpdateNAppGoodCommissionConfig_FullMethodName = "/inspire.gateway.app.good.commission.config.v1.Gateway/UpdateNAppGoodCommissionConfig"
 	Gateway_GetAppGoodCommissionConfigs_FullMethodName    = "/inspire.gateway.app.good.commission.config.v1.Gateway/GetAppGoodCommissionConfigs"
 	Gateway_GetNAppGoodCommissionConfigs_FullMethodName   = "/inspire.gateway.app.good.commission.config.v1.Gateway/GetNAppGoodCommissionConfigs"
-	Gateway_CloneAppGoodCommissionConfigs_FullMethodName  = "/inspire.gateway.app.good.commission.config.v1.Gateway/CloneAppGoodCommissionConfigs"
-	Gateway_CloneNAppGoodCommissionConfigs_FullMethodName = "/inspire.gateway.app.good.commission.config.v1.Gateway/CloneNAppGoodCommissionConfigs"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -39,8 +37,6 @@ type GatewayClient interface {
 	UpdateNAppGoodCommissionConfig(ctx context.Context, in *UpdateNAppGoodCommissionConfigRequest, opts ...grpc.CallOption) (*UpdateNAppGoodCommissionConfigResponse, error)
 	GetAppGoodCommissionConfigs(ctx context.Context, in *GetAppGoodCommissionConfigsRequest, opts ...grpc.CallOption) (*GetAppGoodCommissionConfigsResponse, error)
 	GetNAppGoodCommissionConfigs(ctx context.Context, in *GetNAppGoodCommissionConfigsRequest, opts ...grpc.CallOption) (*GetNAppGoodCommissionConfigsResponse, error)
-	CloneAppGoodCommissionConfigs(ctx context.Context, in *CloneAppGoodCommissionConfigsRequest, opts ...grpc.CallOption) (*CloneAppGoodCommissionConfigsResponse, error)
-	CloneNAppGoodCommissionConfigs(ctx context.Context, in *CloneNAppGoodCommissionConfigsRequest, opts ...grpc.CallOption) (*CloneNAppGoodCommissionConfigsResponse, error)
 }
 
 type gatewayClient struct {
@@ -105,24 +101,6 @@ func (c *gatewayClient) GetNAppGoodCommissionConfigs(ctx context.Context, in *Ge
 	return out, nil
 }
 
-func (c *gatewayClient) CloneAppGoodCommissionConfigs(ctx context.Context, in *CloneAppGoodCommissionConfigsRequest, opts ...grpc.CallOption) (*CloneAppGoodCommissionConfigsResponse, error) {
-	out := new(CloneAppGoodCommissionConfigsResponse)
-	err := c.cc.Invoke(ctx, Gateway_CloneAppGoodCommissionConfigs_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) CloneNAppGoodCommissionConfigs(ctx context.Context, in *CloneNAppGoodCommissionConfigsRequest, opts ...grpc.CallOption) (*CloneNAppGoodCommissionConfigsResponse, error) {
-	out := new(CloneNAppGoodCommissionConfigsResponse)
-	err := c.cc.Invoke(ctx, Gateway_CloneNAppGoodCommissionConfigs_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -133,8 +111,6 @@ type GatewayServer interface {
 	UpdateNAppGoodCommissionConfig(context.Context, *UpdateNAppGoodCommissionConfigRequest) (*UpdateNAppGoodCommissionConfigResponse, error)
 	GetAppGoodCommissionConfigs(context.Context, *GetAppGoodCommissionConfigsRequest) (*GetAppGoodCommissionConfigsResponse, error)
 	GetNAppGoodCommissionConfigs(context.Context, *GetNAppGoodCommissionConfigsRequest) (*GetNAppGoodCommissionConfigsResponse, error)
-	CloneAppGoodCommissionConfigs(context.Context, *CloneAppGoodCommissionConfigsRequest) (*CloneAppGoodCommissionConfigsResponse, error)
-	CloneNAppGoodCommissionConfigs(context.Context, *CloneNAppGoodCommissionConfigsRequest) (*CloneNAppGoodCommissionConfigsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -159,12 +135,6 @@ func (UnimplementedGatewayServer) GetAppGoodCommissionConfigs(context.Context, *
 }
 func (UnimplementedGatewayServer) GetNAppGoodCommissionConfigs(context.Context, *GetNAppGoodCommissionConfigsRequest) (*GetNAppGoodCommissionConfigsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNAppGoodCommissionConfigs not implemented")
-}
-func (UnimplementedGatewayServer) CloneAppGoodCommissionConfigs(context.Context, *CloneAppGoodCommissionConfigsRequest) (*CloneAppGoodCommissionConfigsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CloneAppGoodCommissionConfigs not implemented")
-}
-func (UnimplementedGatewayServer) CloneNAppGoodCommissionConfigs(context.Context, *CloneNAppGoodCommissionConfigsRequest) (*CloneNAppGoodCommissionConfigsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CloneNAppGoodCommissionConfigs not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -287,42 +257,6 @@ func _Gateway_GetNAppGoodCommissionConfigs_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_CloneAppGoodCommissionConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CloneAppGoodCommissionConfigsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CloneAppGoodCommissionConfigs(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_CloneAppGoodCommissionConfigs_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CloneAppGoodCommissionConfigs(ctx, req.(*CloneAppGoodCommissionConfigsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_CloneNAppGoodCommissionConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CloneNAppGoodCommissionConfigsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CloneNAppGoodCommissionConfigs(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_CloneNAppGoodCommissionConfigs_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CloneNAppGoodCommissionConfigs(ctx, req.(*CloneNAppGoodCommissionConfigsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -353,14 +287,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetNAppGoodCommissionConfigs",
 			Handler:    _Gateway_GetNAppGoodCommissionConfigs_Handler,
-		},
-		{
-			MethodName: "CloneAppGoodCommissionConfigs",
-			Handler:    _Gateway_CloneAppGoodCommissionConfigs_Handler,
-		},
-		{
-			MethodName: "CloneNAppGoodCommissionConfigs",
-			Handler:    _Gateway_CloneNAppGoodCommissionConfigs_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

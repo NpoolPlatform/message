@@ -16,70 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/clone/app/good/commission/configs": {
-      "post": {
-        "operationId": "Gateway_CloneAppGoodCommissionConfigs",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CloneAppGoodCommissionConfigsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CloneAppGoodCommissionConfigsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/clone/n/app/good/commission/configs": {
-      "post": {
-        "operationId": "Gateway_CloneNAppGoodCommissionConfigs",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CloneNAppGoodCommissionConfigsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CloneNAppGoodCommissionConfigsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/create/app/good/commission/config": {
       "post": {
         "operationId": "Gateway_CreateAppGoodCommissionConfig",
@@ -372,46 +308,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1CloneAppGoodCommissionConfigsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "FromAppGoodID": {
-          "type": "string"
-        },
-        "ToAppGoodID": {
-          "type": "string"
-        },
-        "ScalePercent": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CloneAppGoodCommissionConfigsResponse": {
-      "type": "object"
-    },
-    "v1CloneNAppGoodCommissionConfigsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "FromAppGoodID": {
-          "type": "string"
-        },
-        "ToAppGoodID": {
-          "type": "string"
-        },
-        "ScalePercent": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CloneNAppGoodCommissionConfigsResponse": {
-      "type": "object"
     },
     "v1CreateAppGoodCommissionConfigRequest": {
       "type": "object",

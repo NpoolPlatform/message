@@ -1063,131 +1063,6 @@ func (x *ExistAppGoodCommissionConfigCondsResponse) GetInfo() bool {
 	return false
 }
 
-type CloneAppGoodCommissionConfigsRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	AppID         string `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	FromGoodID    string `protobuf:"bytes,20,opt,name=FromGoodID,proto3" json:"FromGoodID,omitempty"`
-	ToGoodID      string `protobuf:"bytes,30,opt,name=ToGoodID,proto3" json:"ToGoodID,omitempty"`
-	FromAppGoodID string `protobuf:"bytes,40,opt,name=FromAppGoodID,proto3" json:"FromAppGoodID,omitempty"`
-	ToAppGoodID   string `protobuf:"bytes,50,opt,name=ToAppGoodID,proto3" json:"ToAppGoodID,omitempty"`
-	ScalePercent  string `protobuf:"bytes,60,opt,name=ScalePercent,proto3" json:"ScalePercent,omitempty"`
-}
-
-func (x *CloneAppGoodCommissionConfigsRequest) Reset() {
-	*x = CloneAppGoodCommissionConfigsRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_app_good_commission_config_config_proto_msgTypes[15]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CloneAppGoodCommissionConfigsRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CloneAppGoodCommissionConfigsRequest) ProtoMessage() {}
-
-func (x *CloneAppGoodCommissionConfigsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_app_good_commission_config_config_proto_msgTypes[15]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CloneAppGoodCommissionConfigsRequest.ProtoReflect.Descriptor instead.
-func (*CloneAppGoodCommissionConfigsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_app_good_commission_config_config_proto_rawDescGZIP(), []int{15}
-}
-
-func (x *CloneAppGoodCommissionConfigsRequest) GetAppID() string {
-	if x != nil {
-		return x.AppID
-	}
-	return ""
-}
-
-func (x *CloneAppGoodCommissionConfigsRequest) GetFromGoodID() string {
-	if x != nil {
-		return x.FromGoodID
-	}
-	return ""
-}
-
-func (x *CloneAppGoodCommissionConfigsRequest) GetToGoodID() string {
-	if x != nil {
-		return x.ToGoodID
-	}
-	return ""
-}
-
-func (x *CloneAppGoodCommissionConfigsRequest) GetFromAppGoodID() string {
-	if x != nil {
-		return x.FromAppGoodID
-	}
-	return ""
-}
-
-func (x *CloneAppGoodCommissionConfigsRequest) GetToAppGoodID() string {
-	if x != nil {
-		return x.ToAppGoodID
-	}
-	return ""
-}
-
-func (x *CloneAppGoodCommissionConfigsRequest) GetScalePercent() string {
-	if x != nil {
-		return x.ScalePercent
-	}
-	return ""
-}
-
-type CloneAppGoodCommissionConfigsResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-}
-
-func (x *CloneAppGoodCommissionConfigsResponse) Reset() {
-	*x = CloneAppGoodCommissionConfigsResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_app_good_commission_config_config_proto_msgTypes[16]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CloneAppGoodCommissionConfigsResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CloneAppGoodCommissionConfigsResponse) ProtoMessage() {}
-
-func (x *CloneAppGoodCommissionConfigsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_app_good_commission_config_config_proto_msgTypes[16]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CloneAppGoodCommissionConfigsResponse.ProtoReflect.Descriptor instead.
-func (*CloneAppGoodCommissionConfigsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_app_good_commission_config_config_proto_rawDescGZIP(), []int{16}
-}
-
 var File_npool_inspire_mw_v1_app_good_commission_config_config_proto protoreflect.FileDescriptor
 
 var file_npool_inspire_mw_v1_app_good_commission_config_config_proto_rawDesc = []byte{
@@ -1422,25 +1297,8 @@ var file_npool_inspire_mw_v1_app_good_commission_config_config_proto_rawDesc = [
 	0x29, 0x45, 0x78, 0x69, 0x73, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6d,
 	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x43, 0x6f, 0x6e,
 	0x64, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x49, 0x6e,
-	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0xe4,
-	0x01, 0x0a, 0x24, 0x43, 0x6c, 0x6f, 0x6e, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x43,
-	0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x73,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44,
-	0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x1e, 0x0a,
-	0x0a, 0x46, 0x72, 0x6f, 0x6d, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x0a, 0x46, 0x72, 0x6f, 0x6d, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x12, 0x1a, 0x0a,
-	0x08, 0x54, 0x6f, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x08, 0x54, 0x6f, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x12, 0x24, 0x0a, 0x0d, 0x46, 0x72, 0x6f,
-	0x6d, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x0d, 0x46, 0x72, 0x6f, 0x6d, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x12,
-	0x20, 0x0a, 0x0b, 0x54, 0x6f, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x32,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x54, 0x6f, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49,
-	0x44, 0x12, 0x22, 0x0a, 0x0c, 0x53, 0x63, 0x61, 0x6c, 0x65, 0x50, 0x65, 0x72, 0x63, 0x65, 0x6e,
-	0x74, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x53, 0x63, 0x61, 0x6c, 0x65, 0x50, 0x65,
-	0x72, 0x63, 0x65, 0x6e, 0x74, 0x22, 0x27, 0x0a, 0x25, 0x43, 0x6c, 0x6f, 0x6e, 0x65, 0x41, 0x70,
-	0x70, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x43,
-	0x6f, 0x6e, 0x66, 0x69, 0x67, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0xe4,
-	0x0c, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0xd2, 0x01,
+	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xcb,
+	0x0a, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0xd2, 0x01,
 	0x0a, 0x1d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x43,
 	0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x12,
 	0x56, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
@@ -1524,30 +1382,13 @@ var file_npool_inspire_mw_v1_app_good_commission_config_config_proto_rawDesc = [
 	0x2f, 0x76, 0x31, 0x2f, 0x61, 0x70, 0x70, 0x67, 0x6f, 0x6f, 0x64, 0x63, 0x6f, 0x6d, 0x6d, 0x69,
 	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x5f, 0x44, 0x65, 0x6c, 0x65,
 	0x74, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73,
-	0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x3a, 0x01, 0x2a, 0x12, 0x96, 0x02, 0x0a,
-	0x1d, 0x43, 0x6c, 0x6f, 0x6e, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6d,
-	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x73, 0x12, 0x56,
-	0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
-	0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x63, 0x6f, 0x6d,
-	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x2e, 0x76,
-	0x31, 0x2e, 0x43, 0x6c, 0x6f, 0x6e, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f,
-	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x73, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x57, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65,
-	0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x61, 0x70, 0x70, 0x2e,
-	0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e,
-	0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6c, 0x6f, 0x6e, 0x65, 0x41,
-	0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e,
-	0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x44, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3e, 0x22, 0x39, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x70, 0x70,
-	0x67, 0x6f, 0x6f, 0x64, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x63, 0x6f,
-	0x6e, 0x66, 0x69, 0x67, 0x5f, 0x43, 0x6c, 0x6f, 0x6e, 0x65, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f,
-	0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69,
-	0x67, 0x73, 0x3a, 0x01, 0x2a, 0x42, 0x51, 0x5a, 0x4f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72,
-	0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f,
-	0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x70,
-	0x70, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f,
-	0x6e, 0x2f, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x3a, 0x01, 0x2a, 0x42, 0x51, 0x5a, 0x4f,
+	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c,
+	0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
+	0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x6d,
+	0x77, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x63, 0x6f,
+	0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2f, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1562,7 +1403,7 @@ func file_npool_inspire_mw_v1_app_good_commission_config_config_proto_rawDescGZI
 	return file_npool_inspire_mw_v1_app_good_commission_config_config_proto_rawDescData
 }
 
-var file_npool_inspire_mw_v1_app_good_commission_config_config_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_npool_inspire_mw_v1_app_good_commission_config_config_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_npool_inspire_mw_v1_app_good_commission_config_config_proto_goTypes = []interface{}{
 	(*AppGoodCommissionConfigReq)(nil),                // 0: inspire.middleware.app.good.commission.config.v1.AppGoodCommissionConfigReq
 	(*AppGoodCommissionConfig)(nil),                   // 1: inspire.middleware.app.good.commission.config.v1.AppGoodCommissionConfig
@@ -1579,29 +1420,27 @@ var file_npool_inspire_mw_v1_app_good_commission_config_config_proto_goTypes = [
 	(*DeleteAppGoodCommissionConfigResponse)(nil),     // 12: inspire.middleware.app.good.commission.config.v1.DeleteAppGoodCommissionConfigResponse
 	(*ExistAppGoodCommissionConfigCondsRequest)(nil),  // 13: inspire.middleware.app.good.commission.config.v1.ExistAppGoodCommissionConfigCondsRequest
 	(*ExistAppGoodCommissionConfigCondsResponse)(nil), // 14: inspire.middleware.app.good.commission.config.v1.ExistAppGoodCommissionConfigCondsResponse
-	(*CloneAppGoodCommissionConfigsRequest)(nil),      // 15: inspire.middleware.app.good.commission.config.v1.CloneAppGoodCommissionConfigsRequest
-	(*CloneAppGoodCommissionConfigsResponse)(nil),     // 16: inspire.middleware.app.good.commission.config.v1.CloneAppGoodCommissionConfigsResponse
-	(v1.SettleType)(0),                                // 17: basetypes.inspire.v1.SettleType
-	(*v11.StringVal)(nil),                             // 18: basetypes.v1.StringVal
-	(*v11.Uint32Val)(nil),                             // 19: basetypes.v1.Uint32Val
-	(*v11.StringSliceVal)(nil),                        // 20: basetypes.v1.StringSliceVal
-	(*v11.BoolVal)(nil),                               // 21: basetypes.v1.BoolVal
+	(v1.SettleType)(0),                                // 15: basetypes.inspire.v1.SettleType
+	(*v11.StringVal)(nil),                             // 16: basetypes.v1.StringVal
+	(*v11.Uint32Val)(nil),                             // 17: basetypes.v1.Uint32Val
+	(*v11.StringSliceVal)(nil),                        // 18: basetypes.v1.StringSliceVal
+	(*v11.BoolVal)(nil),                               // 19: basetypes.v1.BoolVal
 }
 var file_npool_inspire_mw_v1_app_good_commission_config_config_proto_depIdxs = []int32{
-	17, // 0: inspire.middleware.app.good.commission.config.v1.AppGoodCommissionConfigReq.SettleType:type_name -> basetypes.inspire.v1.SettleType
-	17, // 1: inspire.middleware.app.good.commission.config.v1.AppGoodCommissionConfig.SettleType:type_name -> basetypes.inspire.v1.SettleType
-	18, // 2: inspire.middleware.app.good.commission.config.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	18, // 3: inspire.middleware.app.good.commission.config.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	18, // 4: inspire.middleware.app.good.commission.config.v1.Conds.GoodID:type_name -> basetypes.v1.StringVal
-	18, // 5: inspire.middleware.app.good.commission.config.v1.Conds.AppGoodID:type_name -> basetypes.v1.StringVal
-	19, // 6: inspire.middleware.app.good.commission.config.v1.Conds.SettleType:type_name -> basetypes.v1.Uint32Val
-	19, // 7: inspire.middleware.app.good.commission.config.v1.Conds.StartAt:type_name -> basetypes.v1.Uint32Val
-	19, // 8: inspire.middleware.app.good.commission.config.v1.Conds.EndAt:type_name -> basetypes.v1.Uint32Val
-	20, // 9: inspire.middleware.app.good.commission.config.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
-	20, // 10: inspire.middleware.app.good.commission.config.v1.Conds.GoodIDs:type_name -> basetypes.v1.StringSliceVal
-	20, // 11: inspire.middleware.app.good.commission.config.v1.Conds.AppGoodIDs:type_name -> basetypes.v1.StringSliceVal
-	21, // 12: inspire.middleware.app.good.commission.config.v1.Conds.Disabled:type_name -> basetypes.v1.BoolVal
-	19, // 13: inspire.middleware.app.good.commission.config.v1.Conds.Level:type_name -> basetypes.v1.Uint32Val
+	15, // 0: inspire.middleware.app.good.commission.config.v1.AppGoodCommissionConfigReq.SettleType:type_name -> basetypes.inspire.v1.SettleType
+	15, // 1: inspire.middleware.app.good.commission.config.v1.AppGoodCommissionConfig.SettleType:type_name -> basetypes.inspire.v1.SettleType
+	16, // 2: inspire.middleware.app.good.commission.config.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	16, // 3: inspire.middleware.app.good.commission.config.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	16, // 4: inspire.middleware.app.good.commission.config.v1.Conds.GoodID:type_name -> basetypes.v1.StringVal
+	16, // 5: inspire.middleware.app.good.commission.config.v1.Conds.AppGoodID:type_name -> basetypes.v1.StringVal
+	17, // 6: inspire.middleware.app.good.commission.config.v1.Conds.SettleType:type_name -> basetypes.v1.Uint32Val
+	17, // 7: inspire.middleware.app.good.commission.config.v1.Conds.StartAt:type_name -> basetypes.v1.Uint32Val
+	17, // 8: inspire.middleware.app.good.commission.config.v1.Conds.EndAt:type_name -> basetypes.v1.Uint32Val
+	18, // 9: inspire.middleware.app.good.commission.config.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
+	18, // 10: inspire.middleware.app.good.commission.config.v1.Conds.GoodIDs:type_name -> basetypes.v1.StringSliceVal
+	18, // 11: inspire.middleware.app.good.commission.config.v1.Conds.AppGoodIDs:type_name -> basetypes.v1.StringSliceVal
+	19, // 12: inspire.middleware.app.good.commission.config.v1.Conds.Disabled:type_name -> basetypes.v1.BoolVal
+	17, // 13: inspire.middleware.app.good.commission.config.v1.Conds.Level:type_name -> basetypes.v1.Uint32Val
 	0,  // 14: inspire.middleware.app.good.commission.config.v1.CreateAppGoodCommissionConfigRequest.Info:type_name -> inspire.middleware.app.good.commission.config.v1.AppGoodCommissionConfigReq
 	1,  // 15: inspire.middleware.app.good.commission.config.v1.CreateAppGoodCommissionConfigResponse.Info:type_name -> inspire.middleware.app.good.commission.config.v1.AppGoodCommissionConfig
 	0,  // 16: inspire.middleware.app.good.commission.config.v1.UpdateAppGoodCommissionConfigRequest.Info:type_name -> inspire.middleware.app.good.commission.config.v1.AppGoodCommissionConfigReq
@@ -1618,16 +1457,14 @@ var file_npool_inspire_mw_v1_app_good_commission_config_config_proto_depIdxs = [
 	9,  // 27: inspire.middleware.app.good.commission.config.v1.Middleware.GetAppGoodCommissionConfigs:input_type -> inspire.middleware.app.good.commission.config.v1.GetAppGoodCommissionConfigsRequest
 	13, // 28: inspire.middleware.app.good.commission.config.v1.Middleware.ExistAppGoodCommissionConfigConds:input_type -> inspire.middleware.app.good.commission.config.v1.ExistAppGoodCommissionConfigCondsRequest
 	11, // 29: inspire.middleware.app.good.commission.config.v1.Middleware.DeleteAppGoodCommissionConfig:input_type -> inspire.middleware.app.good.commission.config.v1.DeleteAppGoodCommissionConfigRequest
-	15, // 30: inspire.middleware.app.good.commission.config.v1.Middleware.CloneAppGoodCommissionConfigs:input_type -> inspire.middleware.app.good.commission.config.v1.CloneAppGoodCommissionConfigsRequest
-	4,  // 31: inspire.middleware.app.good.commission.config.v1.Middleware.CreateAppGoodCommissionConfig:output_type -> inspire.middleware.app.good.commission.config.v1.CreateAppGoodCommissionConfigResponse
-	6,  // 32: inspire.middleware.app.good.commission.config.v1.Middleware.UpdateAppGoodCommissionConfig:output_type -> inspire.middleware.app.good.commission.config.v1.UpdateAppGoodCommissionConfigResponse
-	8,  // 33: inspire.middleware.app.good.commission.config.v1.Middleware.GetAppGoodCommissionConfig:output_type -> inspire.middleware.app.good.commission.config.v1.GetAppGoodCommissionConfigResponse
-	10, // 34: inspire.middleware.app.good.commission.config.v1.Middleware.GetAppGoodCommissionConfigs:output_type -> inspire.middleware.app.good.commission.config.v1.GetAppGoodCommissionConfigsResponse
-	14, // 35: inspire.middleware.app.good.commission.config.v1.Middleware.ExistAppGoodCommissionConfigConds:output_type -> inspire.middleware.app.good.commission.config.v1.ExistAppGoodCommissionConfigCondsResponse
-	12, // 36: inspire.middleware.app.good.commission.config.v1.Middleware.DeleteAppGoodCommissionConfig:output_type -> inspire.middleware.app.good.commission.config.v1.DeleteAppGoodCommissionConfigResponse
-	16, // 37: inspire.middleware.app.good.commission.config.v1.Middleware.CloneAppGoodCommissionConfigs:output_type -> inspire.middleware.app.good.commission.config.v1.CloneAppGoodCommissionConfigsResponse
-	31, // [31:38] is the sub-list for method output_type
-	24, // [24:31] is the sub-list for method input_type
+	4,  // 30: inspire.middleware.app.good.commission.config.v1.Middleware.CreateAppGoodCommissionConfig:output_type -> inspire.middleware.app.good.commission.config.v1.CreateAppGoodCommissionConfigResponse
+	6,  // 31: inspire.middleware.app.good.commission.config.v1.Middleware.UpdateAppGoodCommissionConfig:output_type -> inspire.middleware.app.good.commission.config.v1.UpdateAppGoodCommissionConfigResponse
+	8,  // 32: inspire.middleware.app.good.commission.config.v1.Middleware.GetAppGoodCommissionConfig:output_type -> inspire.middleware.app.good.commission.config.v1.GetAppGoodCommissionConfigResponse
+	10, // 33: inspire.middleware.app.good.commission.config.v1.Middleware.GetAppGoodCommissionConfigs:output_type -> inspire.middleware.app.good.commission.config.v1.GetAppGoodCommissionConfigsResponse
+	14, // 34: inspire.middleware.app.good.commission.config.v1.Middleware.ExistAppGoodCommissionConfigConds:output_type -> inspire.middleware.app.good.commission.config.v1.ExistAppGoodCommissionConfigCondsResponse
+	12, // 35: inspire.middleware.app.good.commission.config.v1.Middleware.DeleteAppGoodCommissionConfig:output_type -> inspire.middleware.app.good.commission.config.v1.DeleteAppGoodCommissionConfigResponse
+	30, // [30:36] is the sub-list for method output_type
+	24, // [24:30] is the sub-list for method input_type
 	24, // [24:24] is the sub-list for extension type_name
 	24, // [24:24] is the sub-list for extension extendee
 	0,  // [0:24] is the sub-list for field type_name
@@ -1819,30 +1656,6 @@ func file_npool_inspire_mw_v1_app_good_commission_config_config_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_app_good_commission_config_config_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CloneAppGoodCommissionConfigsRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_inspire_mw_v1_app_good_commission_config_config_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CloneAppGoodCommissionConfigsResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	file_npool_inspire_mw_v1_app_good_commission_config_config_proto_msgTypes[0].OneofWrappers = []interface{}{}
 	file_npool_inspire_mw_v1_app_good_commission_config_config_proto_msgTypes[2].OneofWrappers = []interface{}{}
@@ -1852,7 +1665,7 @@ func file_npool_inspire_mw_v1_app_good_commission_config_config_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_inspire_mw_v1_app_good_commission_config_config_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   17,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

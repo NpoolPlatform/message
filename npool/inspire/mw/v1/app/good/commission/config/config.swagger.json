@@ -16,38 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/appgoodcommissionconfig_CloneAppGoodCommissionConfigs": {
-      "post": {
-        "operationId": "Middleware_CloneAppGoodCommissionConfigs",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CloneAppGoodCommissionConfigsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CloneAppGoodCommissionConfigsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
     "/v1/appgoodcommissionconfig_DeleteAppGoodCommissionConfig": {
       "post": {
         "operationId": "Middleware_DeleteAppGoodCommissionConfig",
@@ -239,32 +207,6 @@
           "type": "boolean"
         }
       }
-    },
-    "v1CloneAppGoodCommissionConfigsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "FromGoodID": {
-          "type": "string"
-        },
-        "ToGoodID": {
-          "type": "string"
-        },
-        "FromAppGoodID": {
-          "type": "string"
-        },
-        "ToAppGoodID": {
-          "type": "string"
-        },
-        "ScalePercent": {
-          "type": "string"
-        }
-      }
-    },
-    "v1CloneAppGoodCommissionConfigsResponse": {
-      "type": "object"
     },
     "v1Conds": {
       "type": "object",

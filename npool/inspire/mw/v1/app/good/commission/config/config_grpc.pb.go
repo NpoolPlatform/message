@@ -25,7 +25,6 @@ const (
 	Middleware_GetAppGoodCommissionConfigs_FullMethodName       = "/inspire.middleware.app.good.commission.config.v1.Middleware/GetAppGoodCommissionConfigs"
 	Middleware_ExistAppGoodCommissionConfigConds_FullMethodName = "/inspire.middleware.app.good.commission.config.v1.Middleware/ExistAppGoodCommissionConfigConds"
 	Middleware_DeleteAppGoodCommissionConfig_FullMethodName     = "/inspire.middleware.app.good.commission.config.v1.Middleware/DeleteAppGoodCommissionConfig"
-	Middleware_CloneAppGoodCommissionConfigs_FullMethodName     = "/inspire.middleware.app.good.commission.config.v1.Middleware/CloneAppGoodCommissionConfigs"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -38,7 +37,6 @@ type MiddlewareClient interface {
 	GetAppGoodCommissionConfigs(ctx context.Context, in *GetAppGoodCommissionConfigsRequest, opts ...grpc.CallOption) (*GetAppGoodCommissionConfigsResponse, error)
 	ExistAppGoodCommissionConfigConds(ctx context.Context, in *ExistAppGoodCommissionConfigCondsRequest, opts ...grpc.CallOption) (*ExistAppGoodCommissionConfigCondsResponse, error)
 	DeleteAppGoodCommissionConfig(ctx context.Context, in *DeleteAppGoodCommissionConfigRequest, opts ...grpc.CallOption) (*DeleteAppGoodCommissionConfigResponse, error)
-	CloneAppGoodCommissionConfigs(ctx context.Context, in *CloneAppGoodCommissionConfigsRequest, opts ...grpc.CallOption) (*CloneAppGoodCommissionConfigsResponse, error)
 }
 
 type middlewareClient struct {
@@ -103,15 +101,6 @@ func (c *middlewareClient) DeleteAppGoodCommissionConfig(ctx context.Context, in
 	return out, nil
 }
 
-func (c *middlewareClient) CloneAppGoodCommissionConfigs(ctx context.Context, in *CloneAppGoodCommissionConfigsRequest, opts ...grpc.CallOption) (*CloneAppGoodCommissionConfigsResponse, error) {
-	out := new(CloneAppGoodCommissionConfigsResponse)
-	err := c.cc.Invoke(ctx, Middleware_CloneAppGoodCommissionConfigs_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -122,7 +111,6 @@ type MiddlewareServer interface {
 	GetAppGoodCommissionConfigs(context.Context, *GetAppGoodCommissionConfigsRequest) (*GetAppGoodCommissionConfigsResponse, error)
 	ExistAppGoodCommissionConfigConds(context.Context, *ExistAppGoodCommissionConfigCondsRequest) (*ExistAppGoodCommissionConfigCondsResponse, error)
 	DeleteAppGoodCommissionConfig(context.Context, *DeleteAppGoodCommissionConfigRequest) (*DeleteAppGoodCommissionConfigResponse, error)
-	CloneAppGoodCommissionConfigs(context.Context, *CloneAppGoodCommissionConfigsRequest) (*CloneAppGoodCommissionConfigsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -147,9 +135,6 @@ func (UnimplementedMiddlewareServer) ExistAppGoodCommissionConfigConds(context.C
 }
 func (UnimplementedMiddlewareServer) DeleteAppGoodCommissionConfig(context.Context, *DeleteAppGoodCommissionConfigRequest) (*DeleteAppGoodCommissionConfigResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppGoodCommissionConfig not implemented")
-}
-func (UnimplementedMiddlewareServer) CloneAppGoodCommissionConfigs(context.Context, *CloneAppGoodCommissionConfigsRequest) (*CloneAppGoodCommissionConfigsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CloneAppGoodCommissionConfigs not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -272,24 +257,6 @@ func _Middleware_DeleteAppGoodCommissionConfig_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CloneAppGoodCommissionConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CloneAppGoodCommissionConfigsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CloneAppGoodCommissionConfigs(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CloneAppGoodCommissionConfigs_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CloneAppGoodCommissionConfigs(ctx, req.(*CloneAppGoodCommissionConfigsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -320,10 +287,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteAppGoodCommissionConfig",
 			Handler:    _Middleware_DeleteAppGoodCommissionConfig_Handler,
-		},
-		{
-			MethodName: "CloneAppGoodCommissionConfigs",
-			Handler:    _Middleware_CloneAppGoodCommissionConfigs_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
