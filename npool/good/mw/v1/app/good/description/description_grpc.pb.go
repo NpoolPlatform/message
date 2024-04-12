@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateDescription_FullMethodName = "/good.middleware.app.good1.description.v1.Middleware/CreateDescription"
-	Middleware_UpdateDescription_FullMethodName = "/good.middleware.app.good1.description.v1.Middleware/UpdateDescription"
-	Middleware_GetDescription_FullMethodName    = "/good.middleware.app.good1.description.v1.Middleware/GetDescription"
-	Middleware_GetDescriptions_FullMethodName   = "/good.middleware.app.good1.description.v1.Middleware/GetDescriptions"
-	Middleware_DeleteDescription_FullMethodName = "/good.middleware.app.good1.description.v1.Middleware/DeleteDescription"
+	Middleware_CreateDescription_FullMethodName     = "/good.middleware.app.good1.description.v1.Middleware/CreateDescription"
+	Middleware_UpdateDescription_FullMethodName     = "/good.middleware.app.good1.description.v1.Middleware/UpdateDescription"
+	Middleware_GetDescription_FullMethodName        = "/good.middleware.app.good1.description.v1.Middleware/GetDescription"
+	Middleware_GetDescriptions_FullMethodName       = "/good.middleware.app.good1.description.v1.Middleware/GetDescriptions"
+	Middleware_ExistDescriptionConds_FullMethodName = "/good.middleware.app.good1.description.v1.Middleware/ExistDescriptionConds"
+	Middleware_DeleteDescription_FullMethodName     = "/good.middleware.app.good1.description.v1.Middleware/DeleteDescription"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateDescription(ctx context.Context, in *UpdateDescriptionRequest, opts ...grpc.CallOption) (*UpdateDescriptionResponse, error)
 	GetDescription(ctx context.Context, in *GetDescriptionRequest, opts ...grpc.CallOption) (*GetDescriptionResponse, error)
 	GetDescriptions(ctx context.Context, in *GetDescriptionsRequest, opts ...grpc.CallOption) (*GetDescriptionsResponse, error)
+	ExistDescriptionConds(ctx context.Context, in *ExistDescriptionCondsRequest, opts ...grpc.CallOption) (*ExistDescriptionCondsResponse, error)
 	DeleteDescription(ctx context.Context, in *DeleteDescriptionRequest, opts ...grpc.CallOption) (*DeleteDescriptionResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetDescriptions(ctx context.Context, in *GetDescripti
 	return out, nil
 }
 
+func (c *middlewareClient) ExistDescriptionConds(ctx context.Context, in *ExistDescriptionCondsRequest, opts ...grpc.CallOption) (*ExistDescriptionCondsResponse, error) {
+	out := new(ExistDescriptionCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistDescriptionConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteDescription(ctx context.Context, in *DeleteDescriptionRequest, opts ...grpc.CallOption) (*DeleteDescriptionResponse, error) {
 	out := new(DeleteDescriptionResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteDescription_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateDescription(context.Context, *UpdateDescriptionRequest) (*UpdateDescriptionResponse, error)
 	GetDescription(context.Context, *GetDescriptionRequest) (*GetDescriptionResponse, error)
 	GetDescriptions(context.Context, *GetDescriptionsRequest) (*GetDescriptionsResponse, error)
+	ExistDescriptionConds(context.Context, *ExistDescriptionCondsRequest) (*ExistDescriptionCondsResponse, error)
 	DeleteDescription(context.Context, *DeleteDescriptionRequest) (*DeleteDescriptionResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetDescription(context.Context, *GetDescrip
 }
 func (UnimplementedMiddlewareServer) GetDescriptions(context.Context, *GetDescriptionsRequest) (*GetDescriptionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDescriptions not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistDescriptionConds(context.Context, *ExistDescriptionCondsRequest) (*ExistDescriptionCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistDescriptionConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteDescription(context.Context, *DeleteDescriptionRequest) (*DeleteDescriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteDescription not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetDescriptions_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistDescriptionConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistDescriptionCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistDescriptionConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistDescriptionConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistDescriptionConds(ctx, req.(*ExistDescriptionCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteDescription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteDescriptionRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDescriptions",
 			Handler:    _Middleware_GetDescriptions_Handler,
+		},
+		{
+			MethodName: "ExistDescriptionConds",
+			Handler:    _Middleware_ExistDescriptionConds_Handler,
 		},
 		{
 			MethodName: "DeleteDescription",

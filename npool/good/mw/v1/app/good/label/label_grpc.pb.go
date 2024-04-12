@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateLabel_FullMethodName = "/good.middleware.app.good1.label.v1.Middleware/CreateLabel"
-	Middleware_UpdateLabel_FullMethodName = "/good.middleware.app.good1.label.v1.Middleware/UpdateLabel"
-	Middleware_GetLabel_FullMethodName    = "/good.middleware.app.good1.label.v1.Middleware/GetLabel"
-	Middleware_GetLabels_FullMethodName   = "/good.middleware.app.good1.label.v1.Middleware/GetLabels"
-	Middleware_DeleteLabel_FullMethodName = "/good.middleware.app.good1.label.v1.Middleware/DeleteLabel"
+	Middleware_CreateLabel_FullMethodName     = "/good.middleware.app.good1.label.v1.Middleware/CreateLabel"
+	Middleware_UpdateLabel_FullMethodName     = "/good.middleware.app.good1.label.v1.Middleware/UpdateLabel"
+	Middleware_GetLabel_FullMethodName        = "/good.middleware.app.good1.label.v1.Middleware/GetLabel"
+	Middleware_GetLabels_FullMethodName       = "/good.middleware.app.good1.label.v1.Middleware/GetLabels"
+	Middleware_ExistLabelConds_FullMethodName = "/good.middleware.app.good1.label.v1.Middleware/ExistLabelConds"
+	Middleware_DeleteLabel_FullMethodName     = "/good.middleware.app.good1.label.v1.Middleware/DeleteLabel"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateLabel(ctx context.Context, in *UpdateLabelRequest, opts ...grpc.CallOption) (*UpdateLabelResponse, error)
 	GetLabel(ctx context.Context, in *GetLabelRequest, opts ...grpc.CallOption) (*GetLabelResponse, error)
 	GetLabels(ctx context.Context, in *GetLabelsRequest, opts ...grpc.CallOption) (*GetLabelsResponse, error)
+	ExistLabelConds(ctx context.Context, in *ExistLabelCondsRequest, opts ...grpc.CallOption) (*ExistLabelCondsResponse, error)
 	DeleteLabel(ctx context.Context, in *DeleteLabelRequest, opts ...grpc.CallOption) (*DeleteLabelResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetLabels(ctx context.Context, in *GetLabelsRequest, 
 	return out, nil
 }
 
+func (c *middlewareClient) ExistLabelConds(ctx context.Context, in *ExistLabelCondsRequest, opts ...grpc.CallOption) (*ExistLabelCondsResponse, error) {
+	out := new(ExistLabelCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistLabelConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteLabel(ctx context.Context, in *DeleteLabelRequest, opts ...grpc.CallOption) (*DeleteLabelResponse, error) {
 	out := new(DeleteLabelResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteLabel_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateLabel(context.Context, *UpdateLabelRequest) (*UpdateLabelResponse, error)
 	GetLabel(context.Context, *GetLabelRequest) (*GetLabelResponse, error)
 	GetLabels(context.Context, *GetLabelsRequest) (*GetLabelsResponse, error)
+	ExistLabelConds(context.Context, *ExistLabelCondsRequest) (*ExistLabelCondsResponse, error)
 	DeleteLabel(context.Context, *DeleteLabelRequest) (*DeleteLabelResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetLabel(context.Context, *GetLabelRequest)
 }
 func (UnimplementedMiddlewareServer) GetLabels(context.Context, *GetLabelsRequest) (*GetLabelsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLabels not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistLabelConds(context.Context, *ExistLabelCondsRequest) (*ExistLabelCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistLabelConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteLabel(context.Context, *DeleteLabelRequest) (*DeleteLabelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteLabel not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetLabels_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistLabelConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistLabelCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistLabelConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistLabelConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistLabelConds(ctx, req.(*ExistLabelCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteLabel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteLabelRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLabels",
 			Handler:    _Middleware_GetLabels_Handler,
+		},
+		{
+			MethodName: "ExistLabelConds",
+			Handler:    _Middleware_ExistLabelConds_Handler,
 		},
 		{
 			MethodName: "DeleteLabel",

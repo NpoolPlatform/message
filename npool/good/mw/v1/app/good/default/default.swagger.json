@@ -165,6 +165,14 @@
         }
       }
     },
+    "v1ExistDefaultCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetDefaultResponse": {
       "type": "object",
       "properties": {

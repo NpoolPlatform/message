@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreatePoster_FullMethodName = "/good.middleware.app.good1.poster.v1.Middleware/CreatePoster"
-	Middleware_UpdatePoster_FullMethodName = "/good.middleware.app.good1.poster.v1.Middleware/UpdatePoster"
-	Middleware_GetPoster_FullMethodName    = "/good.middleware.app.good1.poster.v1.Middleware/GetPoster"
-	Middleware_GetPosters_FullMethodName   = "/good.middleware.app.good1.poster.v1.Middleware/GetPosters"
-	Middleware_DeletePoster_FullMethodName = "/good.middleware.app.good1.poster.v1.Middleware/DeletePoster"
+	Middleware_CreatePoster_FullMethodName     = "/good.middleware.app.good1.poster.v1.Middleware/CreatePoster"
+	Middleware_UpdatePoster_FullMethodName     = "/good.middleware.app.good1.poster.v1.Middleware/UpdatePoster"
+	Middleware_GetPoster_FullMethodName        = "/good.middleware.app.good1.poster.v1.Middleware/GetPoster"
+	Middleware_GetPosters_FullMethodName       = "/good.middleware.app.good1.poster.v1.Middleware/GetPosters"
+	Middleware_ExistPosterConds_FullMethodName = "/good.middleware.app.good1.poster.v1.Middleware/ExistPosterConds"
+	Middleware_DeletePoster_FullMethodName     = "/good.middleware.app.good1.poster.v1.Middleware/DeletePoster"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdatePoster(ctx context.Context, in *UpdatePosterRequest, opts ...grpc.CallOption) (*UpdatePosterResponse, error)
 	GetPoster(ctx context.Context, in *GetPosterRequest, opts ...grpc.CallOption) (*GetPosterResponse, error)
 	GetPosters(ctx context.Context, in *GetPostersRequest, opts ...grpc.CallOption) (*GetPostersResponse, error)
+	ExistPosterConds(ctx context.Context, in *ExistPosterCondsRequest, opts ...grpc.CallOption) (*ExistPosterCondsResponse, error)
 	DeletePoster(ctx context.Context, in *DeletePosterRequest, opts ...grpc.CallOption) (*DeletePosterResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetPosters(ctx context.Context, in *GetPostersRequest
 	return out, nil
 }
 
+func (c *middlewareClient) ExistPosterConds(ctx context.Context, in *ExistPosterCondsRequest, opts ...grpc.CallOption) (*ExistPosterCondsResponse, error) {
+	out := new(ExistPosterCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistPosterConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeletePoster(ctx context.Context, in *DeletePosterRequest, opts ...grpc.CallOption) (*DeletePosterResponse, error) {
 	out := new(DeletePosterResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeletePoster_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdatePoster(context.Context, *UpdatePosterRequest) (*UpdatePosterResponse, error)
 	GetPoster(context.Context, *GetPosterRequest) (*GetPosterResponse, error)
 	GetPosters(context.Context, *GetPostersRequest) (*GetPostersResponse, error)
+	ExistPosterConds(context.Context, *ExistPosterCondsRequest) (*ExistPosterCondsResponse, error)
 	DeletePoster(context.Context, *DeletePosterRequest) (*DeletePosterResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetPoster(context.Context, *GetPosterReques
 }
 func (UnimplementedMiddlewareServer) GetPosters(context.Context, *GetPostersRequest) (*GetPostersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPosters not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistPosterConds(context.Context, *ExistPosterCondsRequest) (*ExistPosterCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistPosterConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeletePoster(context.Context, *DeletePosterRequest) (*DeletePosterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePoster not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetPosters_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistPosterConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistPosterCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistPosterConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistPosterConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistPosterConds(ctx, req.(*ExistPosterCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeletePoster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeletePosterRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetPosters",
 			Handler:    _Middleware_GetPosters_Handler,
+		},
+		{
+			MethodName: "ExistPosterConds",
+			Handler:    _Middleware_ExistPosterConds_Handler,
 		},
 		{
 			MethodName: "DeletePoster",

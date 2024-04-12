@@ -80,6 +80,14 @@
         }
       }
     },
+    "v1ExitTopMostConstraintCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetTopMostConstraintResponse": {
       "type": "object",
       "properties": {

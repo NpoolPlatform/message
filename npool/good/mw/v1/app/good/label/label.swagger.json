@@ -86,6 +86,14 @@
         }
       }
     },
+    "v1ExistLabelCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetLabelResponse": {
       "type": "object",
       "properties": {

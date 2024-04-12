@@ -80,6 +80,14 @@
         }
       }
     },
+    "v1ExistTopMostCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetTopMostResponse": {
       "type": "object",
       "properties": {

@@ -168,6 +168,14 @@
         }
       }
     },
+    "v1ExistDisplayNameCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetDisplayNameResponse": {
       "type": "object",
       "properties": {

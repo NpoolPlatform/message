@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateDisplayColor_FullMethodName = "/good.middleware.app.good1.display.color.v1.Middleware/CreateDisplayColor"
-	Middleware_UpdateDisplayColor_FullMethodName = "/good.middleware.app.good1.display.color.v1.Middleware/UpdateDisplayColor"
-	Middleware_GetDisplayColor_FullMethodName    = "/good.middleware.app.good1.display.color.v1.Middleware/GetDisplayColor"
-	Middleware_GetDisplayColors_FullMethodName   = "/good.middleware.app.good1.display.color.v1.Middleware/GetDisplayColors"
-	Middleware_DeleteDisplayColor_FullMethodName = "/good.middleware.app.good1.display.color.v1.Middleware/DeleteDisplayColor"
+	Middleware_CreateDisplayColor_FullMethodName     = "/good.middleware.app.good1.display.color.v1.Middleware/CreateDisplayColor"
+	Middleware_UpdateDisplayColor_FullMethodName     = "/good.middleware.app.good1.display.color.v1.Middleware/UpdateDisplayColor"
+	Middleware_GetDisplayColor_FullMethodName        = "/good.middleware.app.good1.display.color.v1.Middleware/GetDisplayColor"
+	Middleware_GetDisplayColors_FullMethodName       = "/good.middleware.app.good1.display.color.v1.Middleware/GetDisplayColors"
+	Middleware_ExistDisplayColorConds_FullMethodName = "/good.middleware.app.good1.display.color.v1.Middleware/ExistDisplayColorConds"
+	Middleware_DeleteDisplayColor_FullMethodName     = "/good.middleware.app.good1.display.color.v1.Middleware/DeleteDisplayColor"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateDisplayColor(ctx context.Context, in *UpdateDisplayColorRequest, opts ...grpc.CallOption) (*UpdateDisplayColorResponse, error)
 	GetDisplayColor(ctx context.Context, in *GetDisplayColorRequest, opts ...grpc.CallOption) (*GetDisplayColorResponse, error)
 	GetDisplayColors(ctx context.Context, in *GetDisplayColorsRequest, opts ...grpc.CallOption) (*GetDisplayColorsResponse, error)
+	ExistDisplayColorConds(ctx context.Context, in *ExistDisplayColorCondsRequest, opts ...grpc.CallOption) (*ExistDisplayColorCondsResponse, error)
 	DeleteDisplayColor(ctx context.Context, in *DeleteDisplayColorRequest, opts ...grpc.CallOption) (*DeleteDisplayColorResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetDisplayColors(ctx context.Context, in *GetDisplayC
 	return out, nil
 }
 
+func (c *middlewareClient) ExistDisplayColorConds(ctx context.Context, in *ExistDisplayColorCondsRequest, opts ...grpc.CallOption) (*ExistDisplayColorCondsResponse, error) {
+	out := new(ExistDisplayColorCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistDisplayColorConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteDisplayColor(ctx context.Context, in *DeleteDisplayColorRequest, opts ...grpc.CallOption) (*DeleteDisplayColorResponse, error) {
 	out := new(DeleteDisplayColorResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteDisplayColor_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateDisplayColor(context.Context, *UpdateDisplayColorRequest) (*UpdateDisplayColorResponse, error)
 	GetDisplayColor(context.Context, *GetDisplayColorRequest) (*GetDisplayColorResponse, error)
 	GetDisplayColors(context.Context, *GetDisplayColorsRequest) (*GetDisplayColorsResponse, error)
+	ExistDisplayColorConds(context.Context, *ExistDisplayColorCondsRequest) (*ExistDisplayColorCondsResponse, error)
 	DeleteDisplayColor(context.Context, *DeleteDisplayColorRequest) (*DeleteDisplayColorResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetDisplayColor(context.Context, *GetDispla
 }
 func (UnimplementedMiddlewareServer) GetDisplayColors(context.Context, *GetDisplayColorsRequest) (*GetDisplayColorsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDisplayColors not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistDisplayColorConds(context.Context, *ExistDisplayColorCondsRequest) (*ExistDisplayColorCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistDisplayColorConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteDisplayColor(context.Context, *DeleteDisplayColorRequest) (*DeleteDisplayColorResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteDisplayColor not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetDisplayColors_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistDisplayColorConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistDisplayColorCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistDisplayColorConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistDisplayColorConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistDisplayColorConds(ctx, req.(*ExistDisplayColorCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteDisplayColor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteDisplayColorRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDisplayColors",
 			Handler:    _Middleware_GetDisplayColors_Handler,
+		},
+		{
+			MethodName: "ExistDisplayColorConds",
+			Handler:    _Middleware_ExistDisplayColorConds_Handler,
 		},
 		{
 			MethodName: "DeleteDisplayColor",

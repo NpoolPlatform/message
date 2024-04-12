@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateDefault_FullMethodName = "/good.middleware.app.good1.default1.v1.Middleware/CreateDefault"
-	Middleware_UpdateDefault_FullMethodName = "/good.middleware.app.good1.default1.v1.Middleware/UpdateDefault"
-	Middleware_GetDefault_FullMethodName    = "/good.middleware.app.good1.default1.v1.Middleware/GetDefault"
-	Middleware_GetDefaults_FullMethodName   = "/good.middleware.app.good1.default1.v1.Middleware/GetDefaults"
-	Middleware_DeleteDefault_FullMethodName = "/good.middleware.app.good1.default1.v1.Middleware/DeleteDefault"
+	Middleware_CreateDefault_FullMethodName     = "/good.middleware.app.good1.default1.v1.Middleware/CreateDefault"
+	Middleware_UpdateDefault_FullMethodName     = "/good.middleware.app.good1.default1.v1.Middleware/UpdateDefault"
+	Middleware_GetDefault_FullMethodName        = "/good.middleware.app.good1.default1.v1.Middleware/GetDefault"
+	Middleware_GetDefaults_FullMethodName       = "/good.middleware.app.good1.default1.v1.Middleware/GetDefaults"
+	Middleware_ExistDefaultConds_FullMethodName = "/good.middleware.app.good1.default1.v1.Middleware/ExistDefaultConds"
+	Middleware_DeleteDefault_FullMethodName     = "/good.middleware.app.good1.default1.v1.Middleware/DeleteDefault"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateDefault(ctx context.Context, in *UpdateDefaultRequest, opts ...grpc.CallOption) (*UpdateDefaultResponse, error)
 	GetDefault(ctx context.Context, in *GetDefaultRequest, opts ...grpc.CallOption) (*GetDefaultResponse, error)
 	GetDefaults(ctx context.Context, in *GetDefaultsRequest, opts ...grpc.CallOption) (*GetDefaultsResponse, error)
+	ExistDefaultConds(ctx context.Context, in *ExistDefaultCondsRequest, opts ...grpc.CallOption) (*ExistDefaultCondsResponse, error)
 	DeleteDefault(ctx context.Context, in *DeleteDefaultRequest, opts ...grpc.CallOption) (*DeleteDefaultResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetDefaults(ctx context.Context, in *GetDefaultsReque
 	return out, nil
 }
 
+func (c *middlewareClient) ExistDefaultConds(ctx context.Context, in *ExistDefaultCondsRequest, opts ...grpc.CallOption) (*ExistDefaultCondsResponse, error) {
+	out := new(ExistDefaultCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistDefaultConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteDefault(ctx context.Context, in *DeleteDefaultRequest, opts ...grpc.CallOption) (*DeleteDefaultResponse, error) {
 	out := new(DeleteDefaultResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteDefault_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateDefault(context.Context, *UpdateDefaultRequest) (*UpdateDefaultResponse, error)
 	GetDefault(context.Context, *GetDefaultRequest) (*GetDefaultResponse, error)
 	GetDefaults(context.Context, *GetDefaultsRequest) (*GetDefaultsResponse, error)
+	ExistDefaultConds(context.Context, *ExistDefaultCondsRequest) (*ExistDefaultCondsResponse, error)
 	DeleteDefault(context.Context, *DeleteDefaultRequest) (*DeleteDefaultResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetDefault(context.Context, *GetDefaultRequ
 }
 func (UnimplementedMiddlewareServer) GetDefaults(context.Context, *GetDefaultsRequest) (*GetDefaultsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDefaults not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistDefaultConds(context.Context, *ExistDefaultCondsRequest) (*ExistDefaultCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistDefaultConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteDefault(context.Context, *DeleteDefaultRequest) (*DeleteDefaultResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteDefault not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetDefaults_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistDefaultConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistDefaultCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistDefaultConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistDefaultConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistDefaultConds(ctx, req.(*ExistDefaultCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteDefault_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteDefaultRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDefaults",
 			Handler:    _Middleware_GetDefaults_Handler,
+		},
+		{
+			MethodName: "ExistDefaultConds",
+			Handler:    _Middleware_ExistDefaultConds_Handler,
 		},
 		{
 			MethodName: "DeleteDefault",
