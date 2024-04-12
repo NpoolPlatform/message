@@ -20,6 +20,7 @@ service Middleware {
     rpc UpdatePowerRental (UpdatePowerRentalRequest) returns (UpdatePowerRentalResponse) {}
     rpc GetPowerRental (GetPowerRentalRequest) returns (GetPowerRentalResponse) {}
     rpc GetPowerRentals (GetPowerRentalsRequest) returns (GetPowerRentalsResponse) {}
+    rpc ExistPowerRentalConds (ExistPowerRentalCondsRequest) returns (ExistPowerRentalCondsResponse) {}
     rpc DeletePowerRental (DeletePowerRentalRequest) returns (DeletePowerRentalResponse) {}
 }
 
@@ -245,15 +246,15 @@ message PowerRental {
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID        = 10;
-    optional basetypes.v1.StringVal      EntID     = 20;
-    optional basetypes.v1.StringVal      GoodID    = 30;
-    optional basetypes.v1.StringSliceVal GoodIDs   = 40;
-    optional basetypes.v1.StringVal      AppGoodID  = 50;
+    optional basetypes.v1.Uint32Val ID = 10;
+    optional basetypes.v1.StringVal EntID = 20;
+    optional basetypes.v1.StringVal GoodID = 30;
+    optional basetypes.v1.StringSliceVal GoodIDs = 40;
+    optional basetypes.v1.StringVal AppGoodID = 50;
     optional basetypes.v1.StringSliceVal AppGoodIDs = 60;
-    optional basetypes.v1.Uint32Val      GoodType  = 70;
+    optional basetypes.v1.Uint32Val GoodType = 70;
     optional basetypes.v1.Uint32SliceVal GoodTypes = 80;
-    optional basetypes.v1.StringVal      CoinTypeID = 90;
+    optional basetypes.v1.StringVal CoinTypeID = 90;
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 100;
 }
 
@@ -282,14 +283,22 @@ message GetPowerRentalResponse {
 }
 
 message GetPowerRentalsRequest {
-    Conds Conds  = 10;
+    Conds Conds = 10;
     int32 Offset = 20;
-    int32 Limit  = 30;
+    int32 Limit = 30;
 }
 
 message GetPowerRentalsResponse {
     repeated PowerRental Infos = 10;
-    uint32               Total = 20;
+    uint32 Total = 20;
+}
+
+message ExistPowerRentalCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistPowerRentalCondsResponse {
+    bool Info = 10;
 }
 
 message DeletePowerRentalRequest {
