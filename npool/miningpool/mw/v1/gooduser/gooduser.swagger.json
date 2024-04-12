@@ -236,10 +236,11 @@
     "v1RevenueType": {
       "type": "string",
       "enum": [
+        "DefaultRevenueType",
         "FPPS",
         "PPLNS"
       ],
-      "default": "FPPS"
+      "default": "DefaultRevenueType"
     },
     "v1StringSliceVal": {
       "type": "object",

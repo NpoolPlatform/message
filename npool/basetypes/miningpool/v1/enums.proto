@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/basetypes/miningpool
 
 enum MiningpoolType {
     DefaultMiningpoolType = 0;
+    
     F2Pool                = 10;
     AntPool               = 20;
 }
@@ -16,8 +17,10 @@ enum CoinType {
 }
 
 enum RevenueType {
-    FPPS  = 0;
-    PPLNS = 10;
+    DefaultRevenueType = 0;
+
+    FPPS  = 10;
+    PPLNS = 20;
 }
 
 enum WithdrawState {

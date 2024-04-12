@@ -435,10 +435,11 @@
     "v1RevenueType": {
       "type": "string",
       "enum": [
+        "DefaultRevenueType",
         "FPPS",
         "PPLNS"
       ],
-      "default": "FPPS"
+      "default": "DefaultRevenueType"
     }
   }
 }
