@@ -80,7 +80,7 @@
         }
       }
     },
-    "v1ExitTopMostConstraintCondsResponse": {
+    "v1ExistTopMostConstraintCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
