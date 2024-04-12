@@ -13,7 +13,7 @@ service Middleware {
     rpc UpdateTopMostConstraint (UpdateTopMostConstraintRequest) returns (UpdateTopMostConstraintResponse) {}
     rpc GetTopMostConstraint (GetTopMostConstraintRequest) returns (GetTopMostConstraintResponse) {}
     rpc GetTopMostConstraints (GetTopMostConstraintsRequest) returns (GetTopMostConstraintsResponse) {}
-    rpc ExitTopMostConstraintConds (ExitTopMostConstraintCondsRequest) returns (ExitTopMostConstraintCondsResponse) {}
+    rpc ExistTopMostConstraintConds (ExistTopMostConstraintCondsRequest) returns (ExistTopMostConstraintCondsResponse) {}
     rpc DeleteTopMostConstraint (DeleteTopMostConstraintRequest) returns (DeleteTopMostConstraintResponse) {}
 }
 
@@ -100,11 +100,11 @@ message GetTopMostConstraintsResponse {
     uint32 Total = 20;
 }
 
-message ExitTopMostConstraintCondsRequest {
+message ExistTopMostConstraintCondsRequest {
     Conds Conds = 10;
 }
 
-message ExitTopMostConstraintCondsResponse {
+message ExistTopMostConstraintCondsResponse {
     bool Info = 10;
 }
 
