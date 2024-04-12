@@ -98,7 +98,6 @@ message UpdateAppConfigRequest {
     string          EntID   = 20;
     string          AppID   = 30;
     optional uint32 StartAt = 40;
-    uint32          MaxLevelCount = 50;
 }
 
 message UpdateAppConfigResponse {
@@ -110,7 +109,6 @@ message UpdateNAppConfigRequest {
     string          EntID   = 20;
     string          TargetAppID   = 30;
     optional uint32 StartAt = 40;
-    uint32          MaxLevelCount = 50;
 }
 
 message UpdateNAppConfigResponse {

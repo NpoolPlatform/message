@@ -491,10 +491,6 @@
         "StartAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "MaxLevelCount": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -520,10 +516,6 @@
           "type": "string"
         },
         "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxLevelCount": {
           "type": "integer",
           "format": "int64"
         }
