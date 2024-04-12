@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateTopMost_FullMethodName = "/good.middleware.app.good1.topmost.v1.Middleware/CreateTopMost"
-	Middleware_UpdateTopMost_FullMethodName = "/good.middleware.app.good1.topmost.v1.Middleware/UpdateTopMost"
-	Middleware_GetTopMost_FullMethodName    = "/good.middleware.app.good1.topmost.v1.Middleware/GetTopMost"
-	Middleware_GetTopMosts_FullMethodName   = "/good.middleware.app.good1.topmost.v1.Middleware/GetTopMosts"
-	Middleware_DeleteTopMost_FullMethodName = "/good.middleware.app.good1.topmost.v1.Middleware/DeleteTopMost"
+	Middleware_CreateTopMost_FullMethodName     = "/good.middleware.app.good1.topmost.v1.Middleware/CreateTopMost"
+	Middleware_UpdateTopMost_FullMethodName     = "/good.middleware.app.good1.topmost.v1.Middleware/UpdateTopMost"
+	Middleware_GetTopMost_FullMethodName        = "/good.middleware.app.good1.topmost.v1.Middleware/GetTopMost"
+	Middleware_GetTopMosts_FullMethodName       = "/good.middleware.app.good1.topmost.v1.Middleware/GetTopMosts"
+	Middleware_ExistTopMostConds_FullMethodName = "/good.middleware.app.good1.topmost.v1.Middleware/ExistTopMostConds"
+	Middleware_DeleteTopMost_FullMethodName     = "/good.middleware.app.good1.topmost.v1.Middleware/DeleteTopMost"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateTopMost(ctx context.Context, in *UpdateTopMostRequest, opts ...grpc.CallOption) (*UpdateTopMostResponse, error)
 	GetTopMost(ctx context.Context, in *GetTopMostRequest, opts ...grpc.CallOption) (*GetTopMostResponse, error)
 	GetTopMosts(ctx context.Context, in *GetTopMostsRequest, opts ...grpc.CallOption) (*GetTopMostsResponse, error)
+	ExistTopMostConds(ctx context.Context, in *ExistTopMostCondsRequest, opts ...grpc.CallOption) (*ExistTopMostCondsResponse, error)
 	DeleteTopMost(ctx context.Context, in *DeleteTopMostRequest, opts ...grpc.CallOption) (*DeleteTopMostResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetTopMosts(ctx context.Context, in *GetTopMostsReque
 	return out, nil
 }
 
+func (c *middlewareClient) ExistTopMostConds(ctx context.Context, in *ExistTopMostCondsRequest, opts ...grpc.CallOption) (*ExistTopMostCondsResponse, error) {
+	out := new(ExistTopMostCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistTopMostConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteTopMost(ctx context.Context, in *DeleteTopMostRequest, opts ...grpc.CallOption) (*DeleteTopMostResponse, error) {
 	out := new(DeleteTopMostResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteTopMost_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateTopMost(context.Context, *UpdateTopMostRequest) (*UpdateTopMostResponse, error)
 	GetTopMost(context.Context, *GetTopMostRequest) (*GetTopMostResponse, error)
 	GetTopMosts(context.Context, *GetTopMostsRequest) (*GetTopMostsResponse, error)
+	ExistTopMostConds(context.Context, *ExistTopMostCondsRequest) (*ExistTopMostCondsResponse, error)
 	DeleteTopMost(context.Context, *DeleteTopMostRequest) (*DeleteTopMostResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetTopMost(context.Context, *GetTopMostRequ
 }
 func (UnimplementedMiddlewareServer) GetTopMosts(context.Context, *GetTopMostsRequest) (*GetTopMostsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTopMosts not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistTopMostConds(context.Context, *ExistTopMostCondsRequest) (*ExistTopMostCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistTopMostConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteTopMost(context.Context, *DeleteTopMostRequest) (*DeleteTopMostResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTopMost not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetTopMosts_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistTopMostConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistTopMostCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistTopMostConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistTopMostConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistTopMostConds(ctx, req.(*ExistTopMostCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteTopMost_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteTopMostRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTopMosts",
 			Handler:    _Middleware_GetTopMosts_Handler,
+		},
+		{
+			MethodName: "ExistTopMostConds",
+			Handler:    _Middleware_ExistTopMostConds_Handler,
 		},
 		{
 			MethodName: "DeleteTopMost",

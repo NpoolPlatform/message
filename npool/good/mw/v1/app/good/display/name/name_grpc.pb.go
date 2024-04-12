@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateDisplayName_FullMethodName = "/good.middleware.app.good1.display.name.v1.Middleware/CreateDisplayName"
-	Middleware_UpdateDisplayName_FullMethodName = "/good.middleware.app.good1.display.name.v1.Middleware/UpdateDisplayName"
-	Middleware_GetDisplayName_FullMethodName    = "/good.middleware.app.good1.display.name.v1.Middleware/GetDisplayName"
-	Middleware_GetDisplayNames_FullMethodName   = "/good.middleware.app.good1.display.name.v1.Middleware/GetDisplayNames"
-	Middleware_DeleteDisplayName_FullMethodName = "/good.middleware.app.good1.display.name.v1.Middleware/DeleteDisplayName"
+	Middleware_CreateDisplayName_FullMethodName     = "/good.middleware.app.good1.display.name.v1.Middleware/CreateDisplayName"
+	Middleware_UpdateDisplayName_FullMethodName     = "/good.middleware.app.good1.display.name.v1.Middleware/UpdateDisplayName"
+	Middleware_GetDisplayName_FullMethodName        = "/good.middleware.app.good1.display.name.v1.Middleware/GetDisplayName"
+	Middleware_GetDisplayNames_FullMethodName       = "/good.middleware.app.good1.display.name.v1.Middleware/GetDisplayNames"
+	Middleware_ExistDisplayNameConds_FullMethodName = "/good.middleware.app.good1.display.name.v1.Middleware/ExistDisplayNameConds"
+	Middleware_DeleteDisplayName_FullMethodName     = "/good.middleware.app.good1.display.name.v1.Middleware/DeleteDisplayName"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateDisplayName(ctx context.Context, in *UpdateDisplayNameRequest, opts ...grpc.CallOption) (*UpdateDisplayNameResponse, error)
 	GetDisplayName(ctx context.Context, in *GetDisplayNameRequest, opts ...grpc.CallOption) (*GetDisplayNameResponse, error)
 	GetDisplayNames(ctx context.Context, in *GetDisplayNamesRequest, opts ...grpc.CallOption) (*GetDisplayNamesResponse, error)
+	ExistDisplayNameConds(ctx context.Context, in *ExistDisplayNameCondsRequest, opts ...grpc.CallOption) (*ExistDisplayNameCondsResponse, error)
 	DeleteDisplayName(ctx context.Context, in *DeleteDisplayNameRequest, opts ...grpc.CallOption) (*DeleteDisplayNameResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetDisplayNames(ctx context.Context, in *GetDisplayNa
 	return out, nil
 }
 
+func (c *middlewareClient) ExistDisplayNameConds(ctx context.Context, in *ExistDisplayNameCondsRequest, opts ...grpc.CallOption) (*ExistDisplayNameCondsResponse, error) {
+	out := new(ExistDisplayNameCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistDisplayNameConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteDisplayName(ctx context.Context, in *DeleteDisplayNameRequest, opts ...grpc.CallOption) (*DeleteDisplayNameResponse, error) {
 	out := new(DeleteDisplayNameResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteDisplayName_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateDisplayName(context.Context, *UpdateDisplayNameRequest) (*UpdateDisplayNameResponse, error)
 	GetDisplayName(context.Context, *GetDisplayNameRequest) (*GetDisplayNameResponse, error)
 	GetDisplayNames(context.Context, *GetDisplayNamesRequest) (*GetDisplayNamesResponse, error)
+	ExistDisplayNameConds(context.Context, *ExistDisplayNameCondsRequest) (*ExistDisplayNameCondsResponse, error)
 	DeleteDisplayName(context.Context, *DeleteDisplayNameRequest) (*DeleteDisplayNameResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetDisplayName(context.Context, *GetDisplay
 }
 func (UnimplementedMiddlewareServer) GetDisplayNames(context.Context, *GetDisplayNamesRequest) (*GetDisplayNamesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDisplayNames not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistDisplayNameConds(context.Context, *ExistDisplayNameCondsRequest) (*ExistDisplayNameCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistDisplayNameConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteDisplayName(context.Context, *DeleteDisplayNameRequest) (*DeleteDisplayNameResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteDisplayName not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetDisplayNames_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistDisplayNameConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistDisplayNameCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistDisplayNameConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistDisplayNameConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistDisplayNameConds(ctx, req.(*ExistDisplayNameCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteDisplayName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteDisplayNameRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDisplayNames",
 			Handler:    _Middleware_GetDisplayNames_Handler,
+		},
+		{
+			MethodName: "ExistDisplayNameConds",
+			Handler:    _Middleware_ExistDisplayNameConds_Handler,
 		},
 		{
 			MethodName: "DeleteDisplayName",

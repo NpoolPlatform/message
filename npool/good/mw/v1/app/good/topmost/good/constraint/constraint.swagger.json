@@ -83,6 +83,14 @@
         }
       }
     },
+    "v1ExistTopMostGoodConstraintCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetTopMostGoodConstraintResponse": {
       "type": "object",
       "properties": {

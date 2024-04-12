@@ -8,40 +8,40 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateRecommend      (CreateRecommendRequest)      returns (CreateRecommendResponse)      {}
-    rpc UpdateRecommend      (UpdateRecommendRequest)      returns (UpdateRecommendResponse)      {}
-    rpc GetRecommend         (GetRecommendRequest)         returns (GetRecommendResponse)         {}
-    rpc GetRecommends        (GetRecommendsRequest)        returns (GetRecommendsResponse)        {}
-    rpc ExistRecommendConds  (ExistRecommendCondsRequest)  returns (ExistRecommendCondsResponse)  {}
-    rpc DeleteRecommend      (DeleteRecommendRequest)      returns (DeleteRecommendResponse)      {}
+    rpc CreateRecommend (CreateRecommendRequest) returns (CreateRecommendResponse) {}
+    rpc UpdateRecommend (UpdateRecommendRequest) returns (UpdateRecommendResponse) {}
+    rpc GetRecommend (GetRecommendRequest) returns (GetRecommendResponse) {}
+    rpc GetRecommends (GetRecommendsRequest) returns (GetRecommendsResponse) {}
+    rpc ExistRecommendConds (ExistRecommendCondsRequest) returns (ExistRecommendCondsResponse) {}
+    rpc DeleteRecommend (DeleteRecommendRequest) returns (DeleteRecommendResponse) {}
 }
 
 message RecommendReq {
-    optional uint32 ID             = 9;
-    optional string EntID          = 10;
-    optional string RecommenderID  = 30;
-    optional string AppGoodID      = 40;
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string RecommenderID = 30;
+    optional string AppGoodID = 40;
     optional string RecommendIndex = 50;
-    optional string Message        = 60;
+    optional string Message = 60;
 }
 
 message Recommend {
     // @inject_tag: sql:"id"
-    uint32 ID        = 9;
+    uint32 ID = 10;
     // @inject_tag: sql:"ent_id"
-    string EntID     = 10;
+    string EntID = 20;
     // @inject_tag: sql:"app_id"
-    string AppID     = 20;
+    string AppID = 30;
     // @inject_tag: sql:"recommender_id"
-    string RecommenderID = 30;
+    string RecommenderID = 40;
     // @inject_tag: sql:"app_good_id"
-    string AppGoodID = 40;
+    string AppGoodID = 50;
     // @inject_tag: sql:"good_name"
-    string GoodName  = 50;
+    string GoodName = 60;
     // @inject_tag: sql:"recommend_index"
-    string RecommendIndex = 60;
+    string RecommendIndex = 70;
     // @inject_tag: sql:"message"
-    string Message   = 70;
+    string Message = 80;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
@@ -49,12 +49,12 @@ message Recommend {
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID      = 9;
-    optional basetypes.v1.StringVal      EntID   = 10;
-    optional basetypes.v1.StringVal      AppID   = 20;
-    optional basetypes.v1.StringVal      RecommenderID = 30;
-    optional basetypes.v1.StringVal      AppGoodID  = 40;
-    optional basetypes.v1.StringSliceVal AppGoodIDs = 50;
+    optional basetypes.v1.Uint32Val ID = 10;
+    optional basetypes.v1.StringVal EntID = 20;
+    optional basetypes.v1.StringVal AppID = 30;
+    optional basetypes.v1.StringVal RecommenderID = 40;
+    optional basetypes.v1.StringVal AppGoodID = 50;
+    optional basetypes.v1.StringSliceVal AppGoodIDs = 60;
 }
 
 message CreateRecommendRequest {
@@ -82,14 +82,14 @@ message GetRecommendResponse {
 }
 
 message GetRecommendsRequest {
-    Conds Conds  = 10;
+    Conds Conds = 10;
     int32 Offset = 20;
-    int32 Limit  = 30;
+    int32 Limit = 30;
 }
 
 message GetRecommendsResponse {
     repeated Recommend Infos = 10;
-    uint32             Total = 20;
+    uint32 Total = 20;
 }
 
 message ExistRecommendCondsRequest {

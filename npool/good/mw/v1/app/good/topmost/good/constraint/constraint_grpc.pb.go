@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateTopMostGoodConstraint_FullMethodName = "/good.middleware.app.good1.topmost.good2.constraint.v1.Middleware/CreateTopMostGoodConstraint"
-	Middleware_UpdateTopMostGoodConstraint_FullMethodName = "/good.middleware.app.good1.topmost.good2.constraint.v1.Middleware/UpdateTopMostGoodConstraint"
-	Middleware_GetTopMostGoodConstraint_FullMethodName    = "/good.middleware.app.good1.topmost.good2.constraint.v1.Middleware/GetTopMostGoodConstraint"
-	Middleware_GetTopMostGoodConstraints_FullMethodName   = "/good.middleware.app.good1.topmost.good2.constraint.v1.Middleware/GetTopMostGoodConstraints"
-	Middleware_DeleteTopMostGoodConstraint_FullMethodName = "/good.middleware.app.good1.topmost.good2.constraint.v1.Middleware/DeleteTopMostGoodConstraint"
+	Middleware_CreateTopMostGoodConstraint_FullMethodName     = "/good.middleware.app.good1.topmost.good2.constraint.v1.Middleware/CreateTopMostGoodConstraint"
+	Middleware_UpdateTopMostGoodConstraint_FullMethodName     = "/good.middleware.app.good1.topmost.good2.constraint.v1.Middleware/UpdateTopMostGoodConstraint"
+	Middleware_GetTopMostGoodConstraint_FullMethodName        = "/good.middleware.app.good1.topmost.good2.constraint.v1.Middleware/GetTopMostGoodConstraint"
+	Middleware_GetTopMostGoodConstraints_FullMethodName       = "/good.middleware.app.good1.topmost.good2.constraint.v1.Middleware/GetTopMostGoodConstraints"
+	Middleware_ExistTopMostGoodConstraintConds_FullMethodName = "/good.middleware.app.good1.topmost.good2.constraint.v1.Middleware/ExistTopMostGoodConstraintConds"
+	Middleware_DeleteTopMostGoodConstraint_FullMethodName     = "/good.middleware.app.good1.topmost.good2.constraint.v1.Middleware/DeleteTopMostGoodConstraint"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateTopMostGoodConstraint(ctx context.Context, in *UpdateTopMostGoodConstraintRequest, opts ...grpc.CallOption) (*UpdateTopMostGoodConstraintResponse, error)
 	GetTopMostGoodConstraint(ctx context.Context, in *GetTopMostGoodConstraintRequest, opts ...grpc.CallOption) (*GetTopMostGoodConstraintResponse, error)
 	GetTopMostGoodConstraints(ctx context.Context, in *GetTopMostGoodConstraintsRequest, opts ...grpc.CallOption) (*GetTopMostGoodConstraintsResponse, error)
+	ExistTopMostGoodConstraintConds(ctx context.Context, in *ExistTopMostGoodConstraintCondsRequest, opts ...grpc.CallOption) (*ExistTopMostGoodConstraintCondsResponse, error)
 	DeleteTopMostGoodConstraint(ctx context.Context, in *DeleteTopMostGoodConstraintRequest, opts ...grpc.CallOption) (*DeleteTopMostGoodConstraintResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetTopMostGoodConstraints(ctx context.Context, in *Ge
 	return out, nil
 }
 
+func (c *middlewareClient) ExistTopMostGoodConstraintConds(ctx context.Context, in *ExistTopMostGoodConstraintCondsRequest, opts ...grpc.CallOption) (*ExistTopMostGoodConstraintCondsResponse, error) {
+	out := new(ExistTopMostGoodConstraintCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistTopMostGoodConstraintConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteTopMostGoodConstraint(ctx context.Context, in *DeleteTopMostGoodConstraintRequest, opts ...grpc.CallOption) (*DeleteTopMostGoodConstraintResponse, error) {
 	out := new(DeleteTopMostGoodConstraintResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteTopMostGoodConstraint_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateTopMostGoodConstraint(context.Context, *UpdateTopMostGoodConstraintRequest) (*UpdateTopMostGoodConstraintResponse, error)
 	GetTopMostGoodConstraint(context.Context, *GetTopMostGoodConstraintRequest) (*GetTopMostGoodConstraintResponse, error)
 	GetTopMostGoodConstraints(context.Context, *GetTopMostGoodConstraintsRequest) (*GetTopMostGoodConstraintsResponse, error)
+	ExistTopMostGoodConstraintConds(context.Context, *ExistTopMostGoodConstraintCondsRequest) (*ExistTopMostGoodConstraintCondsResponse, error)
 	DeleteTopMostGoodConstraint(context.Context, *DeleteTopMostGoodConstraintRequest) (*DeleteTopMostGoodConstraintResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetTopMostGoodConstraint(context.Context, *
 }
 func (UnimplementedMiddlewareServer) GetTopMostGoodConstraints(context.Context, *GetTopMostGoodConstraintsRequest) (*GetTopMostGoodConstraintsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTopMostGoodConstraints not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistTopMostGoodConstraintConds(context.Context, *ExistTopMostGoodConstraintCondsRequest) (*ExistTopMostGoodConstraintCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistTopMostGoodConstraintConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteTopMostGoodConstraint(context.Context, *DeleteTopMostGoodConstraintRequest) (*DeleteTopMostGoodConstraintResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTopMostGoodConstraint not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetTopMostGoodConstraints_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistTopMostGoodConstraintConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistTopMostGoodConstraintCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistTopMostGoodConstraintConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistTopMostGoodConstraintConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistTopMostGoodConstraintConds(ctx, req.(*ExistTopMostGoodConstraintCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteTopMostGoodConstraint_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteTopMostGoodConstraintRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTopMostGoodConstraints",
 			Handler:    _Middleware_GetTopMostGoodConstraints_Handler,
+		},
+		{
+			MethodName: "ExistTopMostGoodConstraintConds",
+			Handler:    _Middleware_ExistTopMostGoodConstraintConds_Handler,
 		},
 		{
 			MethodName: "DeleteTopMostGoodConstraint",

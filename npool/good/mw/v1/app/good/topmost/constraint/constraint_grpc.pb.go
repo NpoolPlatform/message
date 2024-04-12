@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateTopMostConstraint_FullMethodName = "/good.middleware.app.good1.topmost.constraint.v1.Middleware/CreateTopMostConstraint"
-	Middleware_UpdateTopMostConstraint_FullMethodName = "/good.middleware.app.good1.topmost.constraint.v1.Middleware/UpdateTopMostConstraint"
-	Middleware_GetTopMostConstraint_FullMethodName    = "/good.middleware.app.good1.topmost.constraint.v1.Middleware/GetTopMostConstraint"
-	Middleware_GetTopMostConstraints_FullMethodName   = "/good.middleware.app.good1.topmost.constraint.v1.Middleware/GetTopMostConstraints"
-	Middleware_DeleteTopMostConstraint_FullMethodName = "/good.middleware.app.good1.topmost.constraint.v1.Middleware/DeleteTopMostConstraint"
+	Middleware_CreateTopMostConstraint_FullMethodName    = "/good.middleware.app.good1.topmost.constraint.v1.Middleware/CreateTopMostConstraint"
+	Middleware_UpdateTopMostConstraint_FullMethodName    = "/good.middleware.app.good1.topmost.constraint.v1.Middleware/UpdateTopMostConstraint"
+	Middleware_GetTopMostConstraint_FullMethodName       = "/good.middleware.app.good1.topmost.constraint.v1.Middleware/GetTopMostConstraint"
+	Middleware_GetTopMostConstraints_FullMethodName      = "/good.middleware.app.good1.topmost.constraint.v1.Middleware/GetTopMostConstraints"
+	Middleware_ExitTopMostConstraintConds_FullMethodName = "/good.middleware.app.good1.topmost.constraint.v1.Middleware/ExitTopMostConstraintConds"
+	Middleware_DeleteTopMostConstraint_FullMethodName    = "/good.middleware.app.good1.topmost.constraint.v1.Middleware/DeleteTopMostConstraint"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateTopMostConstraint(ctx context.Context, in *UpdateTopMostConstraintRequest, opts ...grpc.CallOption) (*UpdateTopMostConstraintResponse, error)
 	GetTopMostConstraint(ctx context.Context, in *GetTopMostConstraintRequest, opts ...grpc.CallOption) (*GetTopMostConstraintResponse, error)
 	GetTopMostConstraints(ctx context.Context, in *GetTopMostConstraintsRequest, opts ...grpc.CallOption) (*GetTopMostConstraintsResponse, error)
+	ExitTopMostConstraintConds(ctx context.Context, in *ExitTopMostConstraintCondsRequest, opts ...grpc.CallOption) (*ExitTopMostConstraintCondsResponse, error)
 	DeleteTopMostConstraint(ctx context.Context, in *DeleteTopMostConstraintRequest, opts ...grpc.CallOption) (*DeleteTopMostConstraintResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetTopMostConstraints(ctx context.Context, in *GetTop
 	return out, nil
 }
 
+func (c *middlewareClient) ExitTopMostConstraintConds(ctx context.Context, in *ExitTopMostConstraintCondsRequest, opts ...grpc.CallOption) (*ExitTopMostConstraintCondsResponse, error) {
+	out := new(ExitTopMostConstraintCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExitTopMostConstraintConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteTopMostConstraint(ctx context.Context, in *DeleteTopMostConstraintRequest, opts ...grpc.CallOption) (*DeleteTopMostConstraintResponse, error) {
 	out := new(DeleteTopMostConstraintResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteTopMostConstraint_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateTopMostConstraint(context.Context, *UpdateTopMostConstraintRequest) (*UpdateTopMostConstraintResponse, error)
 	GetTopMostConstraint(context.Context, *GetTopMostConstraintRequest) (*GetTopMostConstraintResponse, error)
 	GetTopMostConstraints(context.Context, *GetTopMostConstraintsRequest) (*GetTopMostConstraintsResponse, error)
+	ExitTopMostConstraintConds(context.Context, *ExitTopMostConstraintCondsRequest) (*ExitTopMostConstraintCondsResponse, error)
 	DeleteTopMostConstraint(context.Context, *DeleteTopMostConstraintRequest) (*DeleteTopMostConstraintResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetTopMostConstraint(context.Context, *GetT
 }
 func (UnimplementedMiddlewareServer) GetTopMostConstraints(context.Context, *GetTopMostConstraintsRequest) (*GetTopMostConstraintsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTopMostConstraints not implemented")
+}
+func (UnimplementedMiddlewareServer) ExitTopMostConstraintConds(context.Context, *ExitTopMostConstraintCondsRequest) (*ExitTopMostConstraintCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExitTopMostConstraintConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteTopMostConstraint(context.Context, *DeleteTopMostConstraintRequest) (*DeleteTopMostConstraintResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTopMostConstraint not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetTopMostConstraints_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExitTopMostConstraintConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExitTopMostConstraintCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExitTopMostConstraintConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExitTopMostConstraintConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExitTopMostConstraintConds(ctx, req.(*ExitTopMostConstraintCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteTopMostConstraint_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteTopMostConstraintRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTopMostConstraints",
 			Handler:    _Middleware_GetTopMostConstraints_Handler,
+		},
+		{
+			MethodName: "ExitTopMostConstraintConds",
+			Handler:    _Middleware_ExitTopMostConstraintConds_Handler,
 		},
 		{
 			MethodName: "DeleteTopMostConstraint",

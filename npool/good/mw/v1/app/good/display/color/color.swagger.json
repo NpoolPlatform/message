@@ -168,6 +168,14 @@
         }
       }
     },
+    "v1ExistDisplayColorCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetDisplayColorResponse": {
       "type": "object",
       "properties": {
