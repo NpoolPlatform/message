@@ -25,9 +25,9 @@ message CoinReq {
     optional basetypes.miningpool.v1.MiningpoolType       MiningpoolType    = 20;
     optional basetypes.miningpool.v1.CoinType             CoinType          = 30;
     repeated basetypes.miningpool.v1.RevenueType          RevenueTypes      = 40;
-    optional float                                        FeeRate           = 50;
+    optional string                                       FeeRate           = 50;
     optional bool                                         FixedRevenueAble  = 60;
-    optional float                                        Threshold         = 70;
+    optional string                                       Threshold         = 70;
     optional string                                       Remark            = 80;
 }
 
@@ -46,11 +46,11 @@ message Coin {
     string               RevenueTypesStr   = 50;
     repeated basetypes.miningpool.v1.RevenueType    RevenueTypes = 51;
     // @inject_tag: sql:"fee_rate"
-    float                FeeRate           = 60;
+    string               FeeRate           = 60;
     // @inject_tag: sql:"fixed_revenue_able" 
     bool                 FixedRevenueAble  = 70;
     // @inject_tag: sql:"threshold"
-    float                Threshold         = 80;
+    string               Threshold         = 80;
     // @inject_tag: sql:"remark"
     string               Remark            = 90;
     // @inject_tag: sql:"created_at"

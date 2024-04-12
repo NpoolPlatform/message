@@ -56,9 +56,9 @@ message Pool {
 message Coin {
     basetypes.miningpool.v1.CoinType                CoinType     = 10;
     repeated basetypes.miningpool.v1.RevenueType    RevenueTypes = 20;
-    float                FeeRate           = 30;
+    string               FeeRate           = 30;
     bool                 FixedRevenueAble  = 40;
-    float                Threshold         = 50;
+    string               Threshold         = 50;
     string               Remark            = 60;
 }
 

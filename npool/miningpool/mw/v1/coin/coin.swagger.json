@@ -92,8 +92,7 @@
           }
         },
         "FeeRate": {
-          "type": "number",
-          "format": "float",
+          "type": "string",
           "title": "@inject_tag: sql:\"fee_rate\""
         },
         "FixedRevenueAble": {
@@ -101,8 +100,7 @@
           "title": "@inject_tag: sql:\"fixed_revenue_able\""
         },
         "Threshold": {
-          "type": "number",
-          "format": "float",
+          "type": "string",
           "title": "@inject_tag: sql:\"threshold\""
         },
         "Remark": {
@@ -144,15 +142,13 @@
           }
         },
         "FeeRate": {
-          "type": "number",
-          "format": "float"
+          "type": "string"
         },
         "FixedRevenueAble": {
           "type": "boolean"
         },
         "Threshold": {
-          "type": "number",
-          "format": "float"
+          "type": "string"
         },
         "Remark": {
           "type": "string"

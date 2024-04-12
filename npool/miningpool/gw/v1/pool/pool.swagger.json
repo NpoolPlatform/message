@@ -122,15 +122,13 @@
           }
         },
         "FeeRate": {
-          "type": "number",
-          "format": "float"
+          "type": "string"
         },
         "FixedRevenueAble": {
           "type": "boolean"
         },
         "Threshold": {
-          "type": "number",
-          "format": "float"
+          "type": "string"
         },
         "Remark": {
           "type": "string"
