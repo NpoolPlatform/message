@@ -86,7 +86,7 @@ message CreateTopMostGoodRequest {
     string AppID = 10;
     string TopMostID = 20;
     string AppGoodID = 30;
-    optional string UnitPrice = 40;
+    string UnitPrice = 40;
     optional uint32 Index = 50;
 }
 
