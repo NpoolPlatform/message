@@ -17,10 +17,10 @@ service Gateway {
     };
   }
 
-  rpc CreateNAppGoodCommissionConfig(CreateNAppGoodCommissionConfigRequest)
-      returns (CreateNAppGoodCommissionConfigResponse) {
+  rpc AdminCreateAppGoodCommissionConfig(AdminCreateAppGoodCommissionConfigRequest)
+      returns (AdminCreateAppGoodCommissionConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/create/n/app/good/commission/config"
+      post : "/v1/admin/create/app/good/commission/config"
       body : "*"
     };
   }
@@ -32,10 +32,10 @@ service Gateway {
       body : "*"
     };
   }
-  rpc UpdateNAppGoodCommissionConfig(UpdateNAppGoodCommissionConfigRequest)
-      returns (UpdateNAppGoodCommissionConfigResponse) {
+  rpc AdminUpdateAppGoodCommissionConfig(AdminUpdateAppGoodCommissionConfigRequest)
+      returns (AdminUpdateAppGoodCommissionConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/update/n/app/good/commission/config"
+      post : "/v1/admin/update/app/good/commission/config"
       body : "*"
     };
   }
@@ -46,10 +46,10 @@ service Gateway {
       body : "*"
     };
   }
-  rpc GetNAppGoodCommissionConfigs(GetNAppGoodCommissionConfigsRequest)
-      returns (GetNAppGoodCommissionConfigsResponse) {
+  rpc AdminGetAppGoodCommissionConfigs(AdminGetAppGoodCommissionConfigsRequest)
+      returns (AdminGetAppGoodCommissionConfigsResponse) {
     option (google.api.http) = {
-      post : "/v1/get/n/app/good/commission/configs"
+      post : "/v1/admin/get/app/good/commission/configs"
       body : "*"
     };
   }
@@ -94,7 +94,7 @@ message CreateAppGoodCommissionConfigResponse {
   AppGoodCommissionConfig Info = 10;
 }
 
-message CreateNAppGoodCommissionConfigRequest {
+message AdminCreateAppGoodCommissionConfigRequest {
   string TargetAppID = 10;
   string AppGoodID = 20;
   string ThresholdAmount = 30;
@@ -106,7 +106,7 @@ message CreateNAppGoodCommissionConfigRequest {
   uint32 Level = 90;
 }
 
-message CreateNAppGoodCommissionConfigResponse {
+message AdminCreateAppGoodCommissionConfigResponse {
   AppGoodCommissionConfig Info = 10;
 }
 
@@ -125,7 +125,7 @@ message UpdateAppGoodCommissionConfigResponse {
   AppGoodCommissionConfig Info = 10;
 }
 
-message UpdateNAppGoodCommissionConfigRequest {
+message AdminUpdateAppGoodCommissionConfigRequest {
   uint32 ID = 10;
   string EntID = 20;
   string TargetAppID = 30;
@@ -136,7 +136,7 @@ message UpdateNAppGoodCommissionConfigRequest {
   optional uint32 Level = 80;
 }
 
-message UpdateNAppGoodCommissionConfigResponse {
+message AdminUpdateAppGoodCommissionConfigResponse {
   AppGoodCommissionConfig Info = 10;
 }
 
@@ -152,14 +152,14 @@ message GetAppGoodCommissionConfigsResponse {
   uint32 Total = 20;
 }
 
-message GetNAppGoodCommissionConfigsRequest {
+message AdminGetAppGoodCommissionConfigsRequest {
   string TargetAppID = 10;
   optional uint32 EndAt = 20;
   int32 Offset = 30;
   int32 Limit = 40;
 }
 
-message GetNAppGoodCommissionConfigsResponse {
+message AdminGetAppGoodCommissionConfigsResponse {
   repeated AppGoodCommissionConfig Infos = 10;
   uint32 Total = 20;
 }

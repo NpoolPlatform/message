@@ -17,10 +17,10 @@ service Gateway {
     };
   }
 
-  rpc CreateNAppCommissionConfig(CreateNAppCommissionConfigRequest)
-      returns (CreateNAppCommissionConfigResponse) {
+  rpc AdminCreateAppCommissionConfig(AdminCreateAppCommissionConfigRequest)
+      returns (AdminCreateAppCommissionConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/create/n/app/commission/config"
+      post : "/v1/admin/create/app/commission/config"
       body : "*"
     };
   }
@@ -32,10 +32,10 @@ service Gateway {
       body : "*"
     };
   }
-  rpc UpdateNAppCommissionConfig(UpdateNAppCommissionConfigRequest)
-      returns (UpdateNAppCommissionConfigResponse) {
+  rpc AdminUpdateAppCommissionConfig(AdminUpdateAppCommissionConfigRequest)
+      returns (AdminUpdateAppCommissionConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/update/n/app/commission/config"
+      post : "/v1/admin/update/app/commission/config"
       body : "*"
     };
   }
@@ -46,10 +46,10 @@ service Gateway {
       body : "*"
     };
   }
-  rpc GetNAppCommissionConfigs(GetNAppCommissionConfigsRequest)
-      returns (GetNAppCommissionConfigsResponse) {
+  rpc AdminGetAppCommissionConfigs(AdminGetAppCommissionConfigsRequest)
+      returns (AdminGetAppCommissionConfigsResponse) {
     option (google.api.http) = {
-      post : "/v1/get/n/app/commission/configs"
+      post : "/v1/admin/get/app/commission/configs"
       body : "*"
     };
   }
@@ -84,7 +84,7 @@ message CreateAppCommissionConfigRequest {
 
 message CreateAppCommissionConfigResponse { AppCommissionConfig Info = 10; }
 
-message CreateNAppCommissionConfigRequest {
+message AdminCreateAppCommissionConfigRequest {
   string TargetAppID = 10;
   string ThresholdAmount = 20;
   string AmountOrPercent = 30;
@@ -95,7 +95,7 @@ message CreateNAppCommissionConfigRequest {
   uint32 Level = 80;
 }
 
-message CreateNAppCommissionConfigResponse { AppCommissionConfig Info = 10; }
+message AdminCreateAppCommissionConfigResponse { AppCommissionConfig Info = 10; }
 
 message UpdateAppCommissionConfigRequest {
   uint32 ID = 10;
@@ -110,7 +110,7 @@ message UpdateAppCommissionConfigRequest {
 
 message UpdateAppCommissionConfigResponse { AppCommissionConfig Info = 10; }
 
-message UpdateNAppCommissionConfigRequest {
+message AdminUpdateAppCommissionConfigRequest {
   uint32 ID = 10;
   string EntID = 20;
   string TargetAppID = 30;
@@ -121,7 +121,7 @@ message UpdateNAppCommissionConfigRequest {
   optional uint32 Level = 80;
 }
 
-message UpdateNAppCommissionConfigResponse { AppCommissionConfig Info = 10; }
+message AdminUpdateAppCommissionConfigResponse { AppCommissionConfig Info = 10; }
 
 message GetAppCommissionConfigsRequest {
   string AppID = 10;
@@ -135,14 +135,14 @@ message GetAppCommissionConfigsResponse {
   uint32 Total = 20;
 }
 
-message GetNAppCommissionConfigsRequest {
+message AdminGetAppCommissionConfigsRequest {
   string TargetAppID = 10;
   optional uint32 EndAt = 20;
   int32 Offset = 30;
   int32 Limit = 40;
 }
 
-message GetNAppCommissionConfigsResponse {
+message AdminGetAppCommissionConfigsResponse {
   repeated AppCommissionConfig Infos = 10;
   uint32 Total = 20;
 }

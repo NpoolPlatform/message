@@ -16,10 +16,10 @@ service Gateway {
       body : "*"
     };
   }
-  rpc CreateNAppConfig(CreateNAppConfigRequest)
-      returns (CreateNAppConfigResponse) {
+  rpc AdminCreateAppConfig(AdminCreateAppConfigRequest)
+      returns (AdminCreateAppConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/create/n/app/config"
+      post : "/v1/admin/create/app/config"
       body : "*"
     };
   }
@@ -30,10 +30,10 @@ service Gateway {
       body : "*"
     };
   }
-  rpc UpdateNAppConfig(UpdateNAppConfigRequest)
-      returns (UpdateNAppConfigResponse) {
+  rpc AdminUpdateAppConfig(AdminUpdateAppConfigRequest)
+      returns (AdminUpdateAppConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/update/n/app/config"
+      post : "/v1/admin/update/app/config"
       body : "*"
     };
   }
@@ -43,9 +43,9 @@ service Gateway {
       body : "*"
     };
   }
-  rpc GetNAppConfigs(GetNAppConfigsRequest) returns (GetNAppConfigsResponse) {
+  rpc AdminGetAppConfigs(AdminGetAppConfigsRequest) returns (AdminGetAppConfigsResponse) {
     option (google.api.http) = {
-      post : "/v1/get/n/app/configs"
+      post : "/v1/admin/get/app/configs"
       body : "*"
     };
   }
@@ -80,7 +80,7 @@ message CreateAppConfigRequest {
 
 message CreateAppConfigResponse { AppConfig Info = 10; }
 
-message CreateNAppConfigRequest {
+message AdminCreateAppConfigRequest {
   string TargetAppID = 10;
   basetypes.inspire.v1.SettleMode SettleMode = 20;
   basetypes.inspire.v1.SettleAmountType SettleAmountType = 30;
@@ -91,7 +91,7 @@ message CreateNAppConfigRequest {
   uint32 MaxLevelCount = 80;
 }
 
-message CreateNAppConfigResponse { AppConfig Info = 10; }
+message AdminCreateAppConfigResponse { AppConfig Info = 10; }
 
 message UpdateAppConfigRequest {
   uint32 ID = 10;
@@ -102,14 +102,14 @@ message UpdateAppConfigRequest {
 
 message UpdateAppConfigResponse { AppConfig Info = 10; }
 
-message UpdateNAppConfigRequest {
+message AdminUpdateAppConfigRequest {
   uint32 ID = 10;
   string EntID = 20;
   string TargetAppID = 30;
   optional uint32 StartAt = 40;
 }
 
-message UpdateNAppConfigResponse { AppConfig Info = 10; }
+message AdminUpdateAppConfigResponse { AppConfig Info = 10; }
 
 message GetAppConfigsRequest {
   string AppID = 10;
@@ -123,14 +123,14 @@ message GetAppConfigsResponse {
   uint32 Total = 20;
 }
 
-message GetNAppConfigsRequest {
+message AdminGetAppConfigsRequest {
   string TargetAppID = 10;
   optional uint32 EndAt = 20;
   int32 Offset = 30;
   int32 Limit = 40;
 }
 
-message GetNAppConfigsResponse {
+message AdminGetAppConfigsResponse {
   repeated AppConfig Infos = 10;
   uint32 Total = 20;
 }

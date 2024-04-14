@@ -16,6 +16,102 @@
     "application/json"
   ],
   "paths": {
+    "/v1/admin/create/app/config": {
+      "post": {
+        "operationId": "Gateway_AdminCreateAppConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateAppConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateAppConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/get/app/configs": {
+      "post": {
+        "operationId": "Gateway_AdminGetAppConfigs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetAppConfigsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetAppConfigsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/app/config": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateAppConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateAppConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateAppConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/create/app/config": {
       "post": {
         "operationId": "Gateway_CreateAppConfig",
@@ -40,38 +136,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateAppConfigRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/create/n/app/config": {
-      "post": {
-        "operationId": "Gateway_CreateNAppConfig",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateNAppConfigResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateNAppConfigRequest"
             }
           }
         ],
@@ -112,38 +176,6 @@
         ]
       }
     },
-    "/v1/get/n/app/configs": {
-      "post": {
-        "operationId": "Gateway_GetNAppConfigs",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppConfigsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppConfigsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/update/app/config": {
       "post": {
         "operationId": "Gateway_UpdateAppConfig",
@@ -168,38 +200,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1UpdateAppConfigRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/update/n/app/config": {
-      "post": {
-        "operationId": "Gateway_UpdateNAppConfig",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateNAppConfigResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateNAppConfigRequest"
             }
           }
         ],
@@ -234,6 +234,107 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AdminCreateAppConfigRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
+        },
+        "CommissionType": {
+          "$ref": "#/definitions/v1CommissionType"
+        },
+        "SettleBenefit": {
+          "type": "boolean"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxLevelCount": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminCreateAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
+        }
+      }
+    },
+    "v1AdminGetAppConfigsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AdminGetAppConfigsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdateAppConfigRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdateAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
         }
       }
     },
@@ -337,45 +438,6 @@
         }
       }
     },
-    "v1CreateNAppConfigRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "SettleMode": {
-          "$ref": "#/definitions/v1SettleMode"
-        },
-        "SettleAmountType": {
-          "$ref": "#/definitions/v1SettleAmountType"
-        },
-        "SettleInterval": {
-          "$ref": "#/definitions/v1SettleInterval"
-        },
-        "CommissionType": {
-          "$ref": "#/definitions/v1CommissionType"
-        },
-        "SettleBenefit": {
-          "type": "boolean"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxLevelCount": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateNAppConfigResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppConfig"
-        }
-      }
-    },
     "v1GetAppConfigsRequest": {
       "type": "object",
       "properties": {
@@ -397,41 +459,6 @@
       }
     },
     "v1GetAppConfigsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppConfig"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetNAppConfigsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetNAppConfigsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -495,33 +522,6 @@
       }
     },
     "v1UpdateAppConfigResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppConfig"
-        }
-      }
-    },
-    "v1UpdateNAppConfigRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateNAppConfigResponse": {
       "type": "object",
       "properties": {
         "Info": {

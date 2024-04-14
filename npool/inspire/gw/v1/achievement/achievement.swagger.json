@@ -136,18 +136,31 @@
         "Kol": {
           "type": "boolean"
         },
-        "TotalInvitees": {
-          "type": "integer",
-          "format": "int64"
-        },
         "Achievements": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1GoodAchievement"
           }
         },
-        "UserAchievement": {
-          "$ref": "#/definitions/v1UserAchievement"
+        "TotalCommission": {
+          "type": "string"
+        },
+        "SelfCommission": {
+          "type": "string"
+        },
+        "DirectInvites": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "IndirectInvites": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DirectConsumeAmount": {
+          "type": "string"
+        },
+        "InviteeConsumeAmount": {
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
@@ -337,31 +350,6 @@
       ],
       "default": "DefaultSettleType",
       "title": "- GoodOrderPayment: Divide commission according to order payment amount or good value\n - TechniqueServiceFee: Divice commission according to order technique fee"
-    },
-    "v1UserAchievement": {
-      "type": "object",
-      "properties": {
-        "TotalCommission": {
-          "type": "string"
-        },
-        "SelfCommission": {
-          "type": "string"
-        },
-        "DirectInvites": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "IndirectInvites": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DirectConsumeAmount": {
-          "type": "string"
-        },
-        "InviteeConsumeAmount": {
-          "type": "string"
-        }
-      }
     }
   }
 }

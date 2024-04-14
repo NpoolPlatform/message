@@ -16,6 +16,102 @@
     "application/json"
   ],
   "paths": {
+    "/v1/admin/create/app/good/commission/config": {
+      "post": {
+        "operationId": "Gateway_AdminCreateAppGoodCommissionConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateAppGoodCommissionConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateAppGoodCommissionConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/get/app/good/commission/configs": {
+      "post": {
+        "operationId": "Gateway_AdminGetAppGoodCommissionConfigs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetAppGoodCommissionConfigsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetAppGoodCommissionConfigsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/app/good/commission/config": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateAppGoodCommissionConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateAppGoodCommissionConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateAppGoodCommissionConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/create/app/good/commission/config": {
       "post": {
         "operationId": "Gateway_CreateAppGoodCommissionConfig",
@@ -40,38 +136,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateAppGoodCommissionConfigRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/create/n/app/good/commission/config": {
-      "post": {
-        "operationId": "Gateway_CreateNAppGoodCommissionConfig",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateNAppGoodCommissionConfigResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateNAppGoodCommissionConfigRequest"
             }
           }
         ],
@@ -112,38 +176,6 @@
         ]
       }
     },
-    "/v1/get/n/app/good/commission/configs": {
-      "post": {
-        "operationId": "Gateway_GetNAppGoodCommissionConfigs",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppGoodCommissionConfigsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetNAppGoodCommissionConfigsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/update/app/good/commission/config": {
       "post": {
         "operationId": "Gateway_UpdateAppGoodCommissionConfig",
@@ -168,38 +200,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1UpdateAppGoodCommissionConfigRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/update/n/app/good/commission/config": {
-      "post": {
-        "operationId": "Gateway_UpdateNAppGoodCommissionConfig",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateNAppGoodCommissionConfigResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateNAppGoodCommissionConfigRequest"
             }
           }
         ],
@@ -234,6 +234,125 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AdminCreateAppGoodCommissionConfigRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "ThresholdAmount": {
+          "type": "string"
+        },
+        "AmountOrPercent": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Invites": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+        "Disabled": {
+          "type": "boolean"
+        },
+        "Level": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminCreateAppGoodCommissionConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodCommissionConfig"
+        }
+      }
+    },
+    "v1AdminGetAppGoodCommissionConfigsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AdminGetAppGoodCommissionConfigsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppGoodCommissionConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdateAppGoodCommissionConfigRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ThresholdAmount": {
+          "type": "string"
+        },
+        "Invites": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Disabled": {
+          "type": "boolean"
+        },
+        "Level": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdateAppGoodCommissionConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppGoodCommissionConfig"
         }
       }
     },
@@ -352,49 +471,6 @@
         }
       }
     },
-    "v1CreateNAppGoodCommissionConfigRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "AppGoodID": {
-          "type": "string"
-        },
-        "ThresholdAmount": {
-          "type": "string"
-        },
-        "AmountOrPercent": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Invites": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SettleType": {
-          "$ref": "#/definitions/v1SettleType"
-        },
-        "Disabled": {
-          "type": "boolean"
-        },
-        "Level": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1CreateNAppGoodCommissionConfigResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppGoodCommissionConfig"
-        }
-      }
-    },
     "v1GetAppGoodCommissionConfigsRequest": {
       "type": "object",
       "properties": {
@@ -416,41 +492,6 @@
       }
     },
     "v1GetAppGoodCommissionConfigsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppGoodCommissionConfig"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetNAppGoodCommissionConfigsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetNAppGoodCommissionConfigsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -509,47 +550,6 @@
       }
     },
     "v1UpdateAppGoodCommissionConfigResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppGoodCommissionConfig"
-        }
-      }
-    },
-    "v1UpdateNAppGoodCommissionConfigRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ThresholdAmount": {
-          "type": "string"
-        },
-        "Invites": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Disabled": {
-          "type": "boolean"
-        },
-        "Level": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateNAppGoodCommissionConfigResponse": {
       "type": "object",
       "properties": {
         "Info": {

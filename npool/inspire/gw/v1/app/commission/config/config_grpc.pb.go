@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateAppCommissionConfig_FullMethodName  = "/inspire.gateway.app.commission.config.v1.Gateway/CreateAppCommissionConfig"
-	Gateway_CreateNAppCommissionConfig_FullMethodName = "/inspire.gateway.app.commission.config.v1.Gateway/CreateNAppCommissionConfig"
-	Gateway_UpdateAppCommissionConfig_FullMethodName  = "/inspire.gateway.app.commission.config.v1.Gateway/UpdateAppCommissionConfig"
-	Gateway_UpdateNAppCommissionConfig_FullMethodName = "/inspire.gateway.app.commission.config.v1.Gateway/UpdateNAppCommissionConfig"
-	Gateway_GetAppCommissionConfigs_FullMethodName    = "/inspire.gateway.app.commission.config.v1.Gateway/GetAppCommissionConfigs"
-	Gateway_GetNAppCommissionConfigs_FullMethodName   = "/inspire.gateway.app.commission.config.v1.Gateway/GetNAppCommissionConfigs"
+	Gateway_CreateAppCommissionConfig_FullMethodName      = "/inspire.gateway.app.commission.config.v1.Gateway/CreateAppCommissionConfig"
+	Gateway_AdminCreateAppCommissionConfig_FullMethodName = "/inspire.gateway.app.commission.config.v1.Gateway/AdminCreateAppCommissionConfig"
+	Gateway_UpdateAppCommissionConfig_FullMethodName      = "/inspire.gateway.app.commission.config.v1.Gateway/UpdateAppCommissionConfig"
+	Gateway_AdminUpdateAppCommissionConfig_FullMethodName = "/inspire.gateway.app.commission.config.v1.Gateway/AdminUpdateAppCommissionConfig"
+	Gateway_GetAppCommissionConfigs_FullMethodName        = "/inspire.gateway.app.commission.config.v1.Gateway/GetAppCommissionConfigs"
+	Gateway_AdminGetAppCommissionConfigs_FullMethodName   = "/inspire.gateway.app.commission.config.v1.Gateway/AdminGetAppCommissionConfigs"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -32,11 +32,11 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateAppCommissionConfig(ctx context.Context, in *CreateAppCommissionConfigRequest, opts ...grpc.CallOption) (*CreateAppCommissionConfigResponse, error)
-	CreateNAppCommissionConfig(ctx context.Context, in *CreateNAppCommissionConfigRequest, opts ...grpc.CallOption) (*CreateNAppCommissionConfigResponse, error)
+	AdminCreateAppCommissionConfig(ctx context.Context, in *AdminCreateAppCommissionConfigRequest, opts ...grpc.CallOption) (*AdminCreateAppCommissionConfigResponse, error)
 	UpdateAppCommissionConfig(ctx context.Context, in *UpdateAppCommissionConfigRequest, opts ...grpc.CallOption) (*UpdateAppCommissionConfigResponse, error)
-	UpdateNAppCommissionConfig(ctx context.Context, in *UpdateNAppCommissionConfigRequest, opts ...grpc.CallOption) (*UpdateNAppCommissionConfigResponse, error)
+	AdminUpdateAppCommissionConfig(ctx context.Context, in *AdminUpdateAppCommissionConfigRequest, opts ...grpc.CallOption) (*AdminUpdateAppCommissionConfigResponse, error)
 	GetAppCommissionConfigs(ctx context.Context, in *GetAppCommissionConfigsRequest, opts ...grpc.CallOption) (*GetAppCommissionConfigsResponse, error)
-	GetNAppCommissionConfigs(ctx context.Context, in *GetNAppCommissionConfigsRequest, opts ...grpc.CallOption) (*GetNAppCommissionConfigsResponse, error)
+	AdminGetAppCommissionConfigs(ctx context.Context, in *AdminGetAppCommissionConfigsRequest, opts ...grpc.CallOption) (*AdminGetAppCommissionConfigsResponse, error)
 }
 
 type gatewayClient struct {
@@ -56,9 +56,9 @@ func (c *gatewayClient) CreateAppCommissionConfig(ctx context.Context, in *Creat
 	return out, nil
 }
 
-func (c *gatewayClient) CreateNAppCommissionConfig(ctx context.Context, in *CreateNAppCommissionConfigRequest, opts ...grpc.CallOption) (*CreateNAppCommissionConfigResponse, error) {
-	out := new(CreateNAppCommissionConfigResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateNAppCommissionConfig_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminCreateAppCommissionConfig(ctx context.Context, in *AdminCreateAppCommissionConfigRequest, opts ...grpc.CallOption) (*AdminCreateAppCommissionConfigResponse, error) {
+	out := new(AdminCreateAppCommissionConfigResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminCreateAppCommissionConfig_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -74,9 +74,9 @@ func (c *gatewayClient) UpdateAppCommissionConfig(ctx context.Context, in *Updat
 	return out, nil
 }
 
-func (c *gatewayClient) UpdateNAppCommissionConfig(ctx context.Context, in *UpdateNAppCommissionConfigRequest, opts ...grpc.CallOption) (*UpdateNAppCommissionConfigResponse, error) {
-	out := new(UpdateNAppCommissionConfigResponse)
-	err := c.cc.Invoke(ctx, Gateway_UpdateNAppCommissionConfig_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminUpdateAppCommissionConfig(ctx context.Context, in *AdminUpdateAppCommissionConfigRequest, opts ...grpc.CallOption) (*AdminUpdateAppCommissionConfigResponse, error) {
+	out := new(AdminUpdateAppCommissionConfigResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminUpdateAppCommissionConfig_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -92,9 +92,9 @@ func (c *gatewayClient) GetAppCommissionConfigs(ctx context.Context, in *GetAppC
 	return out, nil
 }
 
-func (c *gatewayClient) GetNAppCommissionConfigs(ctx context.Context, in *GetNAppCommissionConfigsRequest, opts ...grpc.CallOption) (*GetNAppCommissionConfigsResponse, error) {
-	out := new(GetNAppCommissionConfigsResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetNAppCommissionConfigs_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminGetAppCommissionConfigs(ctx context.Context, in *AdminGetAppCommissionConfigsRequest, opts ...grpc.CallOption) (*AdminGetAppCommissionConfigsResponse, error) {
+	out := new(AdminGetAppCommissionConfigsResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminGetAppCommissionConfigs_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,11 +106,11 @@ func (c *gatewayClient) GetNAppCommissionConfigs(ctx context.Context, in *GetNAp
 // for forward compatibility
 type GatewayServer interface {
 	CreateAppCommissionConfig(context.Context, *CreateAppCommissionConfigRequest) (*CreateAppCommissionConfigResponse, error)
-	CreateNAppCommissionConfig(context.Context, *CreateNAppCommissionConfigRequest) (*CreateNAppCommissionConfigResponse, error)
+	AdminCreateAppCommissionConfig(context.Context, *AdminCreateAppCommissionConfigRequest) (*AdminCreateAppCommissionConfigResponse, error)
 	UpdateAppCommissionConfig(context.Context, *UpdateAppCommissionConfigRequest) (*UpdateAppCommissionConfigResponse, error)
-	UpdateNAppCommissionConfig(context.Context, *UpdateNAppCommissionConfigRequest) (*UpdateNAppCommissionConfigResponse, error)
+	AdminUpdateAppCommissionConfig(context.Context, *AdminUpdateAppCommissionConfigRequest) (*AdminUpdateAppCommissionConfigResponse, error)
 	GetAppCommissionConfigs(context.Context, *GetAppCommissionConfigsRequest) (*GetAppCommissionConfigsResponse, error)
-	GetNAppCommissionConfigs(context.Context, *GetNAppCommissionConfigsRequest) (*GetNAppCommissionConfigsResponse, error)
+	AdminGetAppCommissionConfigs(context.Context, *AdminGetAppCommissionConfigsRequest) (*AdminGetAppCommissionConfigsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -121,20 +121,20 @@ type UnimplementedGatewayServer struct {
 func (UnimplementedGatewayServer) CreateAppCommissionConfig(context.Context, *CreateAppCommissionConfigRequest) (*CreateAppCommissionConfigResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppCommissionConfig not implemented")
 }
-func (UnimplementedGatewayServer) CreateNAppCommissionConfig(context.Context, *CreateNAppCommissionConfigRequest) (*CreateNAppCommissionConfigResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateNAppCommissionConfig not implemented")
+func (UnimplementedGatewayServer) AdminCreateAppCommissionConfig(context.Context, *AdminCreateAppCommissionConfigRequest) (*AdminCreateAppCommissionConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateAppCommissionConfig not implemented")
 }
 func (UnimplementedGatewayServer) UpdateAppCommissionConfig(context.Context, *UpdateAppCommissionConfigRequest) (*UpdateAppCommissionConfigResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppCommissionConfig not implemented")
 }
-func (UnimplementedGatewayServer) UpdateNAppCommissionConfig(context.Context, *UpdateNAppCommissionConfigRequest) (*UpdateNAppCommissionConfigResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateNAppCommissionConfig not implemented")
+func (UnimplementedGatewayServer) AdminUpdateAppCommissionConfig(context.Context, *AdminUpdateAppCommissionConfigRequest) (*AdminUpdateAppCommissionConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateAppCommissionConfig not implemented")
 }
 func (UnimplementedGatewayServer) GetAppCommissionConfigs(context.Context, *GetAppCommissionConfigsRequest) (*GetAppCommissionConfigsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppCommissionConfigs not implemented")
 }
-func (UnimplementedGatewayServer) GetNAppCommissionConfigs(context.Context, *GetNAppCommissionConfigsRequest) (*GetNAppCommissionConfigsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNAppCommissionConfigs not implemented")
+func (UnimplementedGatewayServer) AdminGetAppCommissionConfigs(context.Context, *AdminGetAppCommissionConfigsRequest) (*AdminGetAppCommissionConfigsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminGetAppCommissionConfigs not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -167,20 +167,20 @@ func _Gateway_CreateAppCommissionConfig_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_CreateNAppCommissionConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateNAppCommissionConfigRequest)
+func _Gateway_AdminCreateAppCommissionConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCreateAppCommissionConfigRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).CreateNAppCommissionConfig(ctx, in)
+		return srv.(GatewayServer).AdminCreateAppCommissionConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_CreateNAppCommissionConfig_FullMethodName,
+		FullMethod: Gateway_AdminCreateAppCommissionConfig_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateNAppCommissionConfig(ctx, req.(*CreateNAppCommissionConfigRequest))
+		return srv.(GatewayServer).AdminCreateAppCommissionConfig(ctx, req.(*AdminCreateAppCommissionConfigRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -203,20 +203,20 @@ func _Gateway_UpdateAppCommissionConfig_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_UpdateNAppCommissionConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateNAppCommissionConfigRequest)
+func _Gateway_AdminUpdateAppCommissionConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminUpdateAppCommissionConfigRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).UpdateNAppCommissionConfig(ctx, in)
+		return srv.(GatewayServer).AdminUpdateAppCommissionConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_UpdateNAppCommissionConfig_FullMethodName,
+		FullMethod: Gateway_AdminUpdateAppCommissionConfig_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateNAppCommissionConfig(ctx, req.(*UpdateNAppCommissionConfigRequest))
+		return srv.(GatewayServer).AdminUpdateAppCommissionConfig(ctx, req.(*AdminUpdateAppCommissionConfigRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -239,20 +239,20 @@ func _Gateway_GetAppCommissionConfigs_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetNAppCommissionConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNAppCommissionConfigsRequest)
+func _Gateway_AdminGetAppCommissionConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminGetAppCommissionConfigsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetNAppCommissionConfigs(ctx, in)
+		return srv.(GatewayServer).AdminGetAppCommissionConfigs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetNAppCommissionConfigs_FullMethodName,
+		FullMethod: Gateway_AdminGetAppCommissionConfigs_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetNAppCommissionConfigs(ctx, req.(*GetNAppCommissionConfigsRequest))
+		return srv.(GatewayServer).AdminGetAppCommissionConfigs(ctx, req.(*AdminGetAppCommissionConfigsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -269,24 +269,24 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_CreateAppCommissionConfig_Handler,
 		},
 		{
-			MethodName: "CreateNAppCommissionConfig",
-			Handler:    _Gateway_CreateNAppCommissionConfig_Handler,
+			MethodName: "AdminCreateAppCommissionConfig",
+			Handler:    _Gateway_AdminCreateAppCommissionConfig_Handler,
 		},
 		{
 			MethodName: "UpdateAppCommissionConfig",
 			Handler:    _Gateway_UpdateAppCommissionConfig_Handler,
 		},
 		{
-			MethodName: "UpdateNAppCommissionConfig",
-			Handler:    _Gateway_UpdateNAppCommissionConfig_Handler,
+			MethodName: "AdminUpdateAppCommissionConfig",
+			Handler:    _Gateway_AdminUpdateAppCommissionConfig_Handler,
 		},
 		{
 			MethodName: "GetAppCommissionConfigs",
 			Handler:    _Gateway_GetAppCommissionConfigs_Handler,
 		},
 		{
-			MethodName: "GetNAppCommissionConfigs",
-			Handler:    _Gateway_GetNAppCommissionConfigs_Handler,
+			MethodName: "AdminGetAppCommissionConfigs",
+			Handler:    _Gateway_AdminGetAppCommissionConfigs_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

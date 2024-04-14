@@ -65,8 +65,8 @@ func local_request_Gateway_CreateAppGoodCommissionConfig_0(ctx context.Context, 
 
 }
 
-func request_Gateway_CreateNAppGoodCommissionConfig_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateNAppGoodCommissionConfigRequest
+func request_Gateway_AdminCreateAppGoodCommissionConfig_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq AdminCreateAppGoodCommissionConfigRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -77,13 +77,13 @@ func request_Gateway_CreateNAppGoodCommissionConfig_0(ctx context.Context, marsh
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateNAppGoodCommissionConfig(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.AdminCreateAppGoodCommissionConfig(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Gateway_CreateNAppGoodCommissionConfig_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateNAppGoodCommissionConfigRequest
+func local_request_Gateway_AdminCreateAppGoodCommissionConfig_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq AdminCreateAppGoodCommissionConfigRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -94,7 +94,7 @@ func local_request_Gateway_CreateNAppGoodCommissionConfig_0(ctx context.Context,
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateNAppGoodCommissionConfig(ctx, &protoReq)
+	msg, err := server.AdminCreateAppGoodCommissionConfig(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -133,8 +133,8 @@ func local_request_Gateway_UpdateAppGoodCommissionConfig_0(ctx context.Context, 
 
 }
 
-func request_Gateway_UpdateNAppGoodCommissionConfig_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateNAppGoodCommissionConfigRequest
+func request_Gateway_AdminUpdateAppGoodCommissionConfig_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq AdminUpdateAppGoodCommissionConfigRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -145,13 +145,13 @@ func request_Gateway_UpdateNAppGoodCommissionConfig_0(ctx context.Context, marsh
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.UpdateNAppGoodCommissionConfig(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.AdminUpdateAppGoodCommissionConfig(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Gateway_UpdateNAppGoodCommissionConfig_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateNAppGoodCommissionConfigRequest
+func local_request_Gateway_AdminUpdateAppGoodCommissionConfig_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq AdminUpdateAppGoodCommissionConfigRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -162,7 +162,7 @@ func local_request_Gateway_UpdateNAppGoodCommissionConfig_0(ctx context.Context,
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.UpdateNAppGoodCommissionConfig(ctx, &protoReq)
+	msg, err := server.AdminUpdateAppGoodCommissionConfig(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -201,8 +201,8 @@ func local_request_Gateway_GetAppGoodCommissionConfigs_0(ctx context.Context, ma
 
 }
 
-func request_Gateway_GetNAppGoodCommissionConfigs_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetNAppGoodCommissionConfigsRequest
+func request_Gateway_AdminGetAppGoodCommissionConfigs_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq AdminGetAppGoodCommissionConfigsRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -213,13 +213,13 @@ func request_Gateway_GetNAppGoodCommissionConfigs_0(ctx context.Context, marshal
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetNAppGoodCommissionConfigs(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.AdminGetAppGoodCommissionConfigs(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Gateway_GetNAppGoodCommissionConfigs_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetNAppGoodCommissionConfigsRequest
+func local_request_Gateway_AdminGetAppGoodCommissionConfigs_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq AdminGetAppGoodCommissionConfigsRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -230,7 +230,7 @@ func local_request_Gateway_GetNAppGoodCommissionConfigs_0(ctx context.Context, m
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetNAppGoodCommissionConfigs(ctx, &protoReq)
+	msg, err := server.AdminGetAppGoodCommissionConfigs(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -264,18 +264,18 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_CreateNAppGoodCommissionConfig_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_AdminCreateAppGoodCommissionConfig_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/CreateNAppGoodCommissionConfig", runtime.WithHTTPPathPattern("/v1/create/n/app/good/commission/config"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/AdminCreateAppGoodCommissionConfig", runtime.WithHTTPPathPattern("/v1/admin/create/app/good/commission/config"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_CreateNAppGoodCommissionConfig_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_AdminCreateAppGoodCommissionConfig_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -283,7 +283,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Gateway_CreateNAppGoodCommissionConfig_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminCreateAppGoodCommissionConfig_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -310,18 +310,18 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_UpdateNAppGoodCommissionConfig_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_AdminUpdateAppGoodCommissionConfig_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/UpdateNAppGoodCommissionConfig", runtime.WithHTTPPathPattern("/v1/update/n/app/good/commission/config"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/AdminUpdateAppGoodCommissionConfig", runtime.WithHTTPPathPattern("/v1/admin/update/app/good/commission/config"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_UpdateNAppGoodCommissionConfig_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_AdminUpdateAppGoodCommissionConfig_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -329,7 +329,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Gateway_UpdateNAppGoodCommissionConfig_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminUpdateAppGoodCommissionConfig_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -356,18 +356,18 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_GetNAppGoodCommissionConfigs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_AdminGetAppGoodCommissionConfigs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/GetNAppGoodCommissionConfigs", runtime.WithHTTPPathPattern("/v1/get/n/app/good/commission/configs"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/AdminGetAppGoodCommissionConfigs", runtime.WithHTTPPathPattern("/v1/admin/get/app/good/commission/configs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_GetNAppGoodCommissionConfigs_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_AdminGetAppGoodCommissionConfigs_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -375,7 +375,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Gateway_GetNAppGoodCommissionConfigs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminGetAppGoodCommissionConfigs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -440,23 +440,23 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_CreateNAppGoodCommissionConfig_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_AdminCreateAppGoodCommissionConfig_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/CreateNAppGoodCommissionConfig", runtime.WithHTTPPathPattern("/v1/create/n/app/good/commission/config"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/AdminCreateAppGoodCommissionConfig", runtime.WithHTTPPathPattern("/v1/admin/create/app/good/commission/config"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_CreateNAppGoodCommissionConfig_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_AdminCreateAppGoodCommissionConfig_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_CreateNAppGoodCommissionConfig_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminCreateAppGoodCommissionConfig_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -480,23 +480,23 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_UpdateNAppGoodCommissionConfig_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_AdminUpdateAppGoodCommissionConfig_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/UpdateNAppGoodCommissionConfig", runtime.WithHTTPPathPattern("/v1/update/n/app/good/commission/config"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/AdminUpdateAppGoodCommissionConfig", runtime.WithHTTPPathPattern("/v1/admin/update/app/good/commission/config"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_UpdateNAppGoodCommissionConfig_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_AdminUpdateAppGoodCommissionConfig_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_UpdateNAppGoodCommissionConfig_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminUpdateAppGoodCommissionConfig_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -520,23 +520,23 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_GetNAppGoodCommissionConfigs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_AdminGetAppGoodCommissionConfigs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/GetNAppGoodCommissionConfigs", runtime.WithHTTPPathPattern("/v1/get/n/app/good/commission/configs"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.good.commission.config.v1.Gateway/AdminGetAppGoodCommissionConfigs", runtime.WithHTTPPathPattern("/v1/admin/get/app/good/commission/configs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_GetNAppGoodCommissionConfigs_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_AdminGetAppGoodCommissionConfigs_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_GetNAppGoodCommissionConfigs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminGetAppGoodCommissionConfigs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -546,27 +546,27 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 var (
 	pattern_Gateway_CreateAppGoodCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "create", "app", "good", "commission", "config"}, ""))
 
-	pattern_Gateway_CreateNAppGoodCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "create", "n", "app", "good", "commission", "config"}, ""))
+	pattern_Gateway_AdminCreateAppGoodCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "admin", "create", "app", "good", "commission", "config"}, ""))
 
 	pattern_Gateway_UpdateAppGoodCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "update", "app", "good", "commission", "config"}, ""))
 
-	pattern_Gateway_UpdateNAppGoodCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "update", "n", "app", "good", "commission", "config"}, ""))
+	pattern_Gateway_AdminUpdateAppGoodCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "admin", "update", "app", "good", "commission", "config"}, ""))
 
 	pattern_Gateway_GetAppGoodCommissionConfigs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "get", "app", "good", "commission", "configs"}, ""))
 
-	pattern_Gateway_GetNAppGoodCommissionConfigs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "get", "n", "app", "good", "commission", "configs"}, ""))
+	pattern_Gateway_AdminGetAppGoodCommissionConfigs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"v1", "admin", "get", "app", "good", "commission", "configs"}, ""))
 )
 
 var (
 	forward_Gateway_CreateAppGoodCommissionConfig_0 = runtime.ForwardResponseMessage
 
-	forward_Gateway_CreateNAppGoodCommissionConfig_0 = runtime.ForwardResponseMessage
+	forward_Gateway_AdminCreateAppGoodCommissionConfig_0 = runtime.ForwardResponseMessage
 
 	forward_Gateway_UpdateAppGoodCommissionConfig_0 = runtime.ForwardResponseMessage
 
-	forward_Gateway_UpdateNAppGoodCommissionConfig_0 = runtime.ForwardResponseMessage
+	forward_Gateway_AdminUpdateAppGoodCommissionConfig_0 = runtime.ForwardResponseMessage
 
 	forward_Gateway_GetAppGoodCommissionConfigs_0 = runtime.ForwardResponseMessage
 
-	forward_Gateway_GetNAppGoodCommissionConfigs_0 = runtime.ForwardResponseMessage
+	forward_Gateway_AdminGetAppGoodCommissionConfigs_0 = runtime.ForwardResponseMessage
 )
