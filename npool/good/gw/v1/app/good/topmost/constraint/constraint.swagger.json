@@ -421,6 +421,9 @@
         "TopMostID": {
           "type": "string"
         },
+        "Constraint": {
+          "$ref": "#/definitions/v1GoodTopMostConstraint"
+        },
         "TargetValue": {
           "type": "string"
         },
