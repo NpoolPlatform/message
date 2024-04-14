@@ -5,6 +5,7 @@ package good.middleware.app.good1.recommend.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/recommend";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Middleware {
@@ -27,6 +28,8 @@ message RecommendReq {
     optional string AppGoodID = 40;
     optional string RecommendIndex = 50;
     optional string Message = 60;
+    optional bool Hide = 70;
+    optional basetypes.good.v1.GoodCommentHideReason HideReason = 80;
 }
 
 message Recommend {
@@ -46,6 +49,11 @@ message Recommend {
     string RecommendIndex = 70;
     // @inject_tag: sql:"message"
     string Message = 80;
+    // @inject_tag: sql:"hide"
+    bool Hide = 90;
+    // @inject_tag: sql:"hide_reason"
+    string HideReasonStr = 100;
+    basetypes.good.v1.GoodCommentHideReason HideReason = 110;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
