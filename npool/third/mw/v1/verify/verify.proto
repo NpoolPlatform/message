@@ -5,13 +5,10 @@ package third.middleware.verify.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/verify";
 
 service Middleware {
-    rpc VerifyGoogleRecaptchaV3 (VerifyGoogleRecaptchaV3Request) returns (VerifyGoogleRecaptchaV3Response) {}
+  rpc VerifyGoogleRecaptchaV3(VerifyGoogleRecaptchaV3Request)
+      returns (VerifyGoogleRecaptchaV3Response) {}
 }
 
-message VerifyGoogleRecaptchaV3Request {
-    string RecaptchaToken = 10;
-}
+message VerifyGoogleRecaptchaV3Request { string RecaptchaToken = 10; }
 
-message VerifyGoogleRecaptchaV3Response {
-
-}
+message VerifyGoogleRecaptchaV3Response {}

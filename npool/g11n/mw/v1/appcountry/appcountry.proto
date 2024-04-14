@@ -8,91 +8,75 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateCountry     (CreateCountryRequest)     returns (CreateCountryResponse)     {}
-    rpc CreateCountries   (CreateCountriesRequest)   returns (CreateCountriesResponse)   {}
-    rpc GetCountries      (GetCountriesRequest)      returns (GetCountriesResponse)      {}
-    rpc ExistCountryConds (ExistCountryCondsRequest) returns (ExistCountryCondsResponse) {}
-    rpc DeleteCountry     (DeleteCountryRequest)     returns (DeleteCountryResponse)     {}
+  rpc CreateCountry(CreateCountryRequest) returns (CreateCountryResponse) {}
+  rpc CreateCountries(CreateCountriesRequest)
+      returns (CreateCountriesResponse) {}
+  rpc GetCountries(GetCountriesRequest) returns (GetCountriesResponse) {}
+  rpc ExistCountryConds(ExistCountryCondsRequest)
+      returns (ExistCountryCondsResponse) {}
+  rpc DeleteCountry(DeleteCountryRequest) returns (DeleteCountryResponse) {}
 }
 
 message CountryReq {
-    optional uint32 ID        = 9;
-    optional string EntID     = 10;
-    optional string AppID     = 20;
-    optional string CountryID = 30;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional string CountryID = 30;
 }
 
 message Country {
-    // @inject_tag: sql:"id"
-    uint32 ID         = 9;
-    // @inject_tag: sql:"ent_id"
-    string EntID      = 10;
-    // @inject_tag: sql:"app_id"
-    string AppID      = 20;
-    // @inject_tag: sql:"country_id"
-    string CountryID  = 30;
-    // @inject_tag: sql:"country"
-    string Country    = 40;
-    // @inject_tag: sql:"flag"
-    string Flag       = 50;
-    // @inject_tag: sql:"code"
-    string Code       = 60;
-    // @inject_tag: sql:"short"
-    string Short      = 70;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt  = 80;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt  = 90;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"app_id"
+  string AppID = 20;
+  // @inject_tag: sql:"country_id"
+  string CountryID = 30;
+  // @inject_tag: sql:"country"
+  string Country = 40;
+  // @inject_tag: sql:"flag"
+  string Flag = 50;
+  // @inject_tag: sql:"code"
+  string Code = 60;
+  // @inject_tag: sql:"short"
+  string Short = 70;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 80;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 90;
 }
 
 message Conds {
-    basetypes.v1.Uint32Val ID         = 9;
-    basetypes.v1.StringVal EntID      = 10;
-    basetypes.v1.StringVal AppID      = 20;
-    basetypes.v1.StringVal CountryID  = 30;
+  basetypes.v1.Uint32Val ID = 9;
+  basetypes.v1.StringVal EntID = 10;
+  basetypes.v1.StringVal AppID = 20;
+  basetypes.v1.StringVal CountryID = 30;
 }
 
+message CreateCountryRequest { CountryReq Info = 10; }
 
-message CreateCountryRequest {
-    CountryReq Info = 10;
-}
+message CreateCountryResponse { Country Info = 10; }
 
-message CreateCountryResponse {
-    Country Info = 10;
-}
+message CreateCountriesRequest { repeated CountryReq Infos = 10; }
 
-message CreateCountriesRequest {
-    repeated CountryReq Infos = 10;
-}
-
-message CreateCountriesResponse {
-    repeated Country Infos = 10;
-}
+message CreateCountriesResponse { repeated Country Infos = 10; }
 
 message GetCountriesRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetCountriesResponse {
-    repeated Country Infos = 10;
-    uint32           Total = 20;
+  repeated Country Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistCountryCondsRequest {
-    Conds Conds = 10;
-}
+message ExistCountryCondsRequest { Conds Conds = 10; }
 
-message ExistCountryCondsResponse {
-    bool Info = 10;
-}
+message ExistCountryCondsResponse { bool Info = 10; }
 
-message DeleteCountryRequest {
-    CountryReq Info = 10;
-}
+message DeleteCountryRequest { CountryReq Info = 10; }
 
-message DeleteCountryResponse {
-    Country Info = 10;
-}
-
+message DeleteCountryResponse { Country Info = 10; }

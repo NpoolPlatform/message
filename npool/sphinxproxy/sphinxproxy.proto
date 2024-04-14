@@ -91,11 +91,9 @@ message BalanceInfo {
   string BalanceStr = 110;
 }
 
-message GetEstimateGasRequest{
-  string Name = 100;
-}
+message GetEstimateGasRequest { string Name = 100; }
 
-message GetEstimateGasResponse{
+message GetEstimateGasResponse {
   string Fee = 100;
   string GasLimit = 110;
   string GasPrice = 120;
@@ -273,5 +271,5 @@ enum TransactionState {
   TransactionStateBroadcast = 20; // TODO: caution
 
   // some coin such as aleo 30 -> 1
-  TransactionStateRetrievePrivateInfo = 30; 
+  TransactionStateRetrievePrivateInfo = 30;
 }

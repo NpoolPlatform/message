@@ -5,7 +5,7 @@ package basetypes.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
 enum Result {
-    DefaultResult  = 0;
-    Success        = 10;
-    Fail           = 20;
+  DefaultResult = 0;
+  Success = 10;
+  Fail = 20;
 }

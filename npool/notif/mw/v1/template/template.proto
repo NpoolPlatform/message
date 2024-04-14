@@ -8,38 +8,36 @@ import "npool/basetypes/v1/channel.proto";
 import "npool/basetypes/v1/usedfor.proto";
 
 service Middleware {
-    rpc GenerateText (GenerateTextRequest) returns (GenerateTextResponse) {}
+  rpc GenerateText(GenerateTextRequest) returns (GenerateTextResponse) {}
 }
 
 message TemplateVars {
-    optional string Username  = 10;
-    optional string Message   = 20;
-    optional string Amount    = 30;
-    optional string CoinUnit  = 40;
-    optional uint32 Timestamp = 50;
-    optional string Address   = 60;
-    optional string Code      = 70;
-    optional string IP        = 80;
-    optional string Location  = 90;
-    optional string UserAgent = 100;
+  optional string Username = 10;
+  optional string Message = 20;
+  optional string Amount = 30;
+  optional string CoinUnit = 40;
+  optional uint32 Timestamp = 50;
+  optional string Address = 60;
+  optional string Code = 70;
+  optional string IP = 80;
+  optional string Location = 90;
+  optional string UserAgent = 100;
 }
 
 message TextInfo {
-    string          Subject  = 10;
-    string          Content  = 20;
-    string          From     = 30;
-    repeated string ToCCs    = 40;
-    repeated string ReplyTos = 50;
+  string Subject = 10;
+  string Content = 20;
+  string From = 30;
+  repeated string ToCCs = 40;
+  repeated string ReplyTos = 50;
 }
 
 message GenerateTextRequest {
-    string                    AppID     = 10;
-    string                    LangID    = 20;
-    basetypes.v1.NotifChannel Channel   = 30;
-    basetypes.v1.UsedFor      EventType = 40;
-    optional TemplateVars     Vars      = 50;
+  string AppID = 10;
+  string LangID = 20;
+  basetypes.v1.NotifChannel Channel = 30;
+  basetypes.v1.UsedFor EventType = 40;
+  optional TemplateVars Vars = 50;
 }
 
-message GenerateTextResponse {
-    TextInfo Info = 10;
-}
+message GenerateTextResponse { TextInfo Info = 10; }

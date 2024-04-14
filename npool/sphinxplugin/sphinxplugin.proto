@@ -39,7 +39,7 @@ enum CoinType {
   CoinTypetusdtbep20 = 113;
 }
 
-enum ChainType{
+enum ChainType {
   UnKnow = 0;
   // mainnet
   Filecoin = 1;

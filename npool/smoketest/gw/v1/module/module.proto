@@ -9,70 +9,70 @@ import "npool/smoketest/mw/v1/module/module.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateModule (CreateModuleRequest) returns (CreateModuleResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/module"
-            body: "*"
-        };
-    }
+  rpc CreateModule(CreateModuleRequest) returns (CreateModuleResponse) {
+    option (google.api.http) = {
+      post : "/v1/create/module"
+      body : "*"
+    };
+  }
 
-    rpc DeleteModule (DeleteModuleRequest) returns (DeleteModuleResponse) {
-        option (google.api.http) = {
-            post: "/v1/delete/module"
-            body: "*"
-        };
-    }
+  rpc DeleteModule(DeleteModuleRequest) returns (DeleteModuleResponse) {
+    option (google.api.http) = {
+      post : "/v1/delete/module"
+      body : "*"
+    };
+  }
 
-    rpc UpdateModule (UpdateModuleRequest) returns (UpdateModuleResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/module"
-            body: "*"
-        };
-    }
+  rpc UpdateModule(UpdateModuleRequest) returns (UpdateModuleResponse) {
+    option (google.api.http) = {
+      post : "/v1/update/module"
+      body : "*"
+    };
+  }
 
-    rpc GetModules (GetModulesRequest) returns (GetModulesResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/modules"
-            body: "*"
-        };
-    }
+  rpc GetModules(GetModulesRequest) returns (GetModulesResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/modules"
+      body : "*"
+    };
+  }
 }
 
 message CreateModuleRequest {
-    string                    Name                = 10;
-    optional  string          Description         = 20;
+  string Name = 10;
+  optional string Description = 20;
 }
 
 message CreateModuleResponse {
-    smoketest.middleware.module.v1.Module Info = 10;
+  smoketest.middleware.module.v1.Module Info = 10;
 }
 
 message DeleteModuleRequest {
-    uint32 ID        = 10;
-    string EntID     = 20;
+  uint32 ID = 10;
+  string EntID = 20;
 }
 
 message DeleteModuleResponse {
-    smoketest.middleware.module.v1.Module Info = 10;
+  smoketest.middleware.module.v1.Module Info = 10;
 }
 
 message UpdateModuleRequest {
-    uint32          ID                  = 9;
-    string          EntID               = 10;
-    optional string Name                = 20;
-    optional string Description         = 30;
+  uint32 ID = 9;
+  string EntID = 10;
+  optional string Name = 20;
+  optional string Description = 30;
 }
 
 message UpdateModuleResponse {
-    smoketest.middleware.module.v1.Module Info = 10;
+  smoketest.middleware.module.v1.Module Info = 10;
 }
 
 message GetModulesRequest {
-    int32  Offset = 10;
-    int32  Limit  = 20;
+  int32 Offset = 10;
+  int32 Limit = 20;
 }
 
 message GetModulesResponse {
-    repeated smoketest.middleware.module.v1.Module Infos  = 10;
-    uint32                                         Total  = 20;
+  repeated smoketest.middleware.module.v1.Module Infos = 10;
+  uint32 Total = 20;
 }

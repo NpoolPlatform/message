@@ -9,111 +9,96 @@ import "npool/basetypes/v1/result.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateGoodBenefit     (CreateGoodBenefitRequest)     returns (CreateGoodBenefitResponse)     {}
-    rpc UpdateGoodBenefit     (UpdateGoodBenefitRequest)     returns (UpdateGoodBenefitResponse)     {}
-    rpc GetGoodBenefits       (GetGoodBenefitsRequest)       returns (GetGoodBenefitsResponse)       {}
-    rpc GetGoodBenefit        (GetGoodBenefitRequest)        returns (GetGoodBenefitResponse)        {}
-    rpc ExistGoodBenefitConds (ExistGoodBenefitCondsRequest) returns (ExistGoodBenefitCondsResponse) {}
-    rpc DeleteGoodBenefit     (DeleteGoodBenefitRequest)     returns (DeleteGoodBenefitResponse)     {}
+  rpc CreateGoodBenefit(CreateGoodBenefitRequest)
+      returns (CreateGoodBenefitResponse) {}
+  rpc UpdateGoodBenefit(UpdateGoodBenefitRequest)
+      returns (UpdateGoodBenefitResponse) {}
+  rpc GetGoodBenefits(GetGoodBenefitsRequest)
+      returns (GetGoodBenefitsResponse) {}
+  rpc GetGoodBenefit(GetGoodBenefitRequest) returns (GetGoodBenefitResponse) {}
+  rpc ExistGoodBenefitConds(ExistGoodBenefitCondsRequest)
+      returns (ExistGoodBenefitCondsResponse) {}
+  rpc DeleteGoodBenefit(DeleteGoodBenefitRequest)
+      returns (DeleteGoodBenefitResponse) {}
 }
 
 message GoodBenefitReq {
-    optional uint32              ID          = 9;
-    optional string              EntID       = 10;
-    optional string              GoodID      = 20;
-    optional string              GoodName    = 30;
-    optional string              Amount      = 40;
-    optional basetypes.v1.Result State       = 50;
-    optional string              Message     = 60;
-    optional uint32              BenefitDate = 70;
-    optional string              TxID        = 80;
-    optional bool                Generated   = 90;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string GoodID = 20;
+  optional string GoodName = 30;
+  optional string Amount = 40;
+  optional basetypes.v1.Result State = 50;
+  optional string Message = 60;
+  optional uint32 BenefitDate = 70;
+  optional string TxID = 80;
+  optional bool Generated = 90;
 }
 
 message GoodBenefit {
-    // @inject_tag: sql:"id"
-    uint32              ID          = 9;
-    // @inject_tag: sql:"ent_id"
-    string              EntID       = 10;
-    // @inject_tag: sql:"good_id"
-    string              GoodID      = 20;
-     // @inject_tag: sql:"good_name"
-    string              GoodName    = 30;
-     // @inject_tag: sql:"amount"
-    string              Amount      = 40;
-    // @inject_tag: sql:"state"
-    string              StateStr    = 50;
-    basetypes.v1.Result State       = 51;
-     // @inject_tag: sql:"message"
-    string              Message     = 60;
-     // @inject_tag: sql:"benefit_date"
-    uint32              BenefitDate = 70;
-    // @inject_tag: sql:"tx_id"
-    string              TxID        = 80;
-    // @inject_tag: sql:"generated"
-    bool                Generated   = 90;
-     // @inject_tag: sql:"created_at"
-    uint32              CreatedAt   = 100;
-     // @inject_tag: sql:"updated_at"
-    uint32              UpdatedAt   = 110;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"good_id"
+  string GoodID = 20;
+  // @inject_tag: sql:"good_name"
+  string GoodName = 30;
+  // @inject_tag: sql:"amount"
+  string Amount = 40;
+  // @inject_tag: sql:"state"
+  string StateStr = 50;
+  basetypes.v1.Result State = 51;
+  // @inject_tag: sql:"message"
+  string Message = 60;
+  // @inject_tag: sql:"benefit_date"
+  uint32 BenefitDate = 70;
+  // @inject_tag: sql:"tx_id"
+  string TxID = 80;
+  // @inject_tag: sql:"generated"
+  bool Generated = 90;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 100;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 110;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val ID               = 9;
-    optional basetypes.v1.StringVal EntID            = 10;
-    optional basetypes.v1.StringVal GoodID           = 20;
-    optional basetypes.v1.BoolVal   Generated        = 30;
-    optional basetypes.v1.Uint32Val BenefitDateStart = 40;
-    optional basetypes.v1.Uint32Val BenefitDateEnd   = 50;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal GoodID = 20;
+  optional basetypes.v1.BoolVal Generated = 30;
+  optional basetypes.v1.Uint32Val BenefitDateStart = 40;
+  optional basetypes.v1.Uint32Val BenefitDateEnd = 50;
 }
 
-message CreateGoodBenefitRequest {
-    GoodBenefitReq Info = 10;
-}
+message CreateGoodBenefitRequest { GoodBenefitReq Info = 10; }
 
-message CreateGoodBenefitResponse {
-    GoodBenefit Info = 10;
-}
+message CreateGoodBenefitResponse { GoodBenefit Info = 10; }
 
-message UpdateGoodBenefitRequest {
-    GoodBenefitReq Info = 10;
-}
+message UpdateGoodBenefitRequest { GoodBenefitReq Info = 10; }
 
-message UpdateGoodBenefitResponse {
-    GoodBenefit Info = 10;
-}
+message UpdateGoodBenefitResponse { GoodBenefit Info = 10; }
 
 message GetGoodBenefitsRequest {
-    Conds Conds    = 10;
-    int32 Offset   = 20;
-    int32 Limit    = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetGoodBenefitsResponse {
-    repeated GoodBenefit Infos = 10;
-    uint32               Total = 20;
+  repeated GoodBenefit Infos = 10;
+  uint32 Total = 20;
 }
 
-message GetGoodBenefitRequest {
-    string EntID = 10;
-}
+message GetGoodBenefitRequest { string EntID = 10; }
 
-message GetGoodBenefitResponse {
-    GoodBenefit Info = 10;
-}
+message GetGoodBenefitResponse { GoodBenefit Info = 10; }
 
-message ExistGoodBenefitCondsRequest {
-    Conds Conds = 10;
-}
+message ExistGoodBenefitCondsRequest { Conds Conds = 10; }
 
-message ExistGoodBenefitCondsResponse {
-    bool Info = 10;
-}
+message ExistGoodBenefitCondsResponse { bool Info = 10; }
 
-message DeleteGoodBenefitRequest {
-    GoodBenefitReq Info = 10;
-}
+message DeleteGoodBenefitRequest { GoodBenefitReq Info = 10; }
 
-message DeleteGoodBenefitResponse {
-    GoodBenefit    Info = 10;
-}
+message DeleteGoodBenefitResponse { GoodBenefit Info = 10; }

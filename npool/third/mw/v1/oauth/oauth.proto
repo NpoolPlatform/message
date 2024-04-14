@@ -7,42 +7,40 @@ option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/oauth";
 import "npool/basetypes/v1/signmethod.proto";
 
 service Middleware {
-    rpc GetOAuthAccessToken (GetOAuthAccessTokenRequest) returns (GetOAuthAccessTokenResponse) {}
-    rpc GetOAuthUserInfo    (GetOAuthUserInfoRequest)    returns (GetOAuthUserInfoResponse) {}
+  rpc GetOAuthAccessToken(GetOAuthAccessTokenRequest)
+      returns (GetOAuthAccessTokenResponse) {}
+  rpc GetOAuthUserInfo(GetOAuthUserInfoRequest)
+      returns (GetOAuthUserInfoResponse) {}
 }
 
 message ThirdUserInfo {
-    string ID        = 10;
-    string Name      = 20;
-    string Login     = 30;
-    string AvatarURL = 40;
-    string Message   = 50;
+  string ID = 10;
+  string Name = 20;
+  string Login = 30;
+  string AvatarURL = 40;
+  string Message = 50;
 }
 
 message AccessTokenInfo {
-    string AccessToken = 10;
-    string RefreshAccessToken = 20;
-    string TokenType = 30;
-    string Scope = 40;
+  string AccessToken = 10;
+  string RefreshAccessToken = 20;
+  string TokenType = 30;
+  string Scope = 40;
 }
 
 message GetOAuthAccessTokenRequest {
-    basetypes.v1.SignMethod ClientName   = 10;
-    string                  Code         = 20;
-    string                  ClientID     = 30;
-    string                  ClientSecret = 40;
-		string                  RedirectURI  = 50;
+  basetypes.v1.SignMethod ClientName = 10;
+  string Code = 20;
+  string ClientID = 30;
+  string ClientSecret = 40;
+  string RedirectURI = 50;
 }
 
-message GetOAuthAccessTokenResponse {
-    AccessTokenInfo Info = 10;
-}
+message GetOAuthAccessTokenResponse { AccessTokenInfo Info = 10; }
 
 message GetOAuthUserInfoRequest {
-    basetypes.v1.SignMethod ClientName  = 10;
-    string                  AccessToken = 20;
+  basetypes.v1.SignMethod ClientName = 10;
+  string AccessToken = 20;
 }
 
-message GetOAuthUserInfoResponse {
-    ThirdUserInfo Info = 10;
-}
+message GetOAuthUserInfoResponse { ThirdUserInfo Info = 10; }

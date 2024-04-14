@@ -8,119 +8,82 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateDetail     (CreateDetailRequest)     returns (CreateDetailResponse)     {}
-    rpc CreateDetails    (CreateDetailsRequest)    returns (CreateDetailsResponse)    {}
-    rpc UpdateDetail     (UpdateDetailRequest)     returns (UpdateDetailResponse)     {}
-    rpc GetDetail        (GetDetailRequest)        returns (GetDetailResponse)        {}
-    rpc GetDetailOnly    (GetDetailOnlyRequest)    returns (GetDetailOnlyResponse)    {}
-    rpc GetDetails       (GetDetailsRequest)       returns (GetDetailsResponse)       {}
-    rpc ExistDetail      (ExistDetailRequest)      returns (ExistDetailResponse)      {}
-    rpc ExistDetailConds (ExistDetailCondsRequest) returns (ExistDetailCondsResponse) {}
-    rpc CountDetails     (CountDetailsRequest)     returns (CountDetailsResponse)     {}
-    rpc DeleteDetail     (DeleteDetailRequest)     returns (DeleteDetailResponse)     {}
+  rpc CreateDetail(CreateDetailRequest) returns (CreateDetailResponse) {}
+  rpc CreateDetails(CreateDetailsRequest) returns (CreateDetailsResponse) {}
+  rpc UpdateDetail(UpdateDetailRequest) returns (UpdateDetailResponse) {}
+  rpc GetDetail(GetDetailRequest) returns (GetDetailResponse) {}
+  rpc GetDetailOnly(GetDetailOnlyRequest) returns (GetDetailOnlyResponse) {}
+  rpc GetDetails(GetDetailsRequest) returns (GetDetailsResponse) {}
+  rpc ExistDetail(ExistDetailRequest) returns (ExistDetailResponse) {}
+  rpc ExistDetailConds(ExistDetailCondsRequest)
+      returns (ExistDetailCondsResponse) {}
+  rpc CountDetails(CountDetailsRequest) returns (CountDetailsResponse) {}
+  rpc DeleteDetail(DeleteDetailRequest) returns (DeleteDetailResponse) {}
 }
 
 message DetailReq {
-    optional string EntID     = 10;
-    optional string ID        = 20;
-    optional string SampleCol = 30;
-    optional uint32 CreatedAt = 40;
+  optional string EntID = 10;
+  optional string ID = 20;
+  optional string SampleCol = 30;
+  optional uint32 CreatedAt = 40;
 }
 
 message Detail {
-    string EntID     = 10;
-    string ID        = 20;
-    string SampleCol = 30;
-    uint32 CreatedAt = 40;
+  string EntID = 10;
+  string ID = 20;
+  string SampleCol = 30;
+  uint32 CreatedAt = 40;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal EntID     = 10;
-    optional basetypes.v1.StringVal ID        = 20;
-    optional basetypes.v1.StringVal SampleCol = 30;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal ID = 20;
+  optional basetypes.v1.StringVal SampleCol = 30;
 }
 
+message CreateDetailRequest { DetailReq Info = 10; }
 
-message CreateDetailRequest {
-    DetailReq Info = 10;
-}
+message CreateDetailResponse { Detail Info = 10; }
 
-message CreateDetailResponse {
-    Detail Info = 10;
-}
+message CreateDetailsRequest { repeated DetailReq Infos = 10; }
 
-message CreateDetailsRequest {
-    repeated DetailReq Infos = 10;
-}
+message CreateDetailsResponse { repeated Detail Infos = 10; }
 
-message CreateDetailsResponse {
-    repeated Detail Infos = 10;
-}
+message UpdateDetailRequest { DetailReq Info = 10; }
 
-message UpdateDetailRequest {
-    DetailReq Info = 10;
-}
+message UpdateDetailResponse { Detail Info = 10; }
 
-message UpdateDetailResponse {
-    Detail Info = 10;
-}
+message GetDetailRequest { string EntID = 10; }
 
-message GetDetailRequest {
-    string EntID = 10;
-}
-
-message GetDetailResponse {
-    Detail Info = 10;
-}
+message GetDetailResponse { Detail Info = 10; }
 
 message GetDetailsRequest {
-    Conds Conds   = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetDetailsResponse {
-    repeated Detail Infos = 10;
-    uint32          Total = 20;
+  repeated Detail Infos = 10;
+  uint32 Total = 20;
 }
 
-message GetDetailOnlyRequest {
-    Conds Conds = 10;
-}
+message GetDetailOnlyRequest { Conds Conds = 10; }
 
-message GetDetailOnlyResponse {
-    Detail Info = 10;
-}
+message GetDetailOnlyResponse { Detail Info = 10; }
 
-message ExistDetailRequest {
-    string EntID = 10;
-}
+message ExistDetailRequest { string EntID = 10; }
 
-message ExistDetailResponse {
-    bool Info = 10;
-}
+message ExistDetailResponse { bool Info = 10; }
 
-message ExistDetailCondsRequest {
-    Conds Conds = 10;
-}
+message ExistDetailCondsRequest { Conds Conds = 10; }
 
-message ExistDetailCondsResponse {
-    bool Info = 10;
-}
+message ExistDetailCondsResponse { bool Info = 10; }
 
-message CountDetailsRequest {
-    Conds Conds = 10;
-}
+message CountDetailsRequest { Conds Conds = 10; }
 
-message CountDetailsResponse {
-    uint32 Info = 10;
-}
+message CountDetailsResponse { uint32 Info = 10; }
 
-message DeleteDetailRequest {
-    DetailReq Info = 10;
-}
+message DeleteDetailRequest { DetailReq Info = 10; }
 
-message DeleteDetailResponse {
-    Detail Info = 10;
-}
-
+message DeleteDetailResponse { Detail Info = 10; }

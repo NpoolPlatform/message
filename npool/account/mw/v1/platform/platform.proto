@@ -11,136 +11,113 @@ import "npool/basetypes/v1/accountlockedby.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateAccount     (CreateAccountRequest)     returns (CreateAccountResponse)     {}
-    rpc UpdateAccount     (UpdateAccountRequest)     returns (UpdateAccountResponse)     {}
-    rpc GetAccount        (GetAccountRequest)        returns (GetAccountResponse)        {}
-    rpc GetAccounts       (GetAccountsRequest)       returns (GetAccountsResponse)       {}
-    rpc ExistAccount      (ExistAccountRequest)      returns (ExistAccountResponse)      {}
-    rpc ExistAccountConds (ExistAccountCondsRequest) returns (ExistAccountCondsResponse) {}
-    rpc DeleteAccount     (DeleteAccountRequest)     returns (DeleteAccountResponse)     {
-        option (google.api.http) = {
-            post: "/v1/platform_DeleteAccount"
-            body: "*"
-        };
-    }
+  rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse) {}
+  rpc UpdateAccount(UpdateAccountRequest) returns (UpdateAccountResponse) {}
+  rpc GetAccount(GetAccountRequest) returns (GetAccountResponse) {}
+  rpc GetAccounts(GetAccountsRequest) returns (GetAccountsResponse) {}
+  rpc ExistAccount(ExistAccountRequest) returns (ExistAccountResponse) {}
+  rpc ExistAccountConds(ExistAccountCondsRequest)
+      returns (ExistAccountCondsResponse) {}
+  rpc DeleteAccount(DeleteAccountRequest) returns (DeleteAccountResponse) {
+    option (google.api.http) = {
+      post : "/v1/platform_DeleteAccount"
+      body : "*"
+    };
+  }
 }
 
 message AccountReq {
-    optional uint32         ID          = 9;
-    optional string         EntID       = 10;
-    optional string         CoinTypeID  = 20;
-    // Only [UserBenefitHot, UserBenefitCold, PlatformBenefitCold, GasProvider, PaymentCollector]
-    optional basetypes.v1.AccountUsedFor UsedFor = 30;
-    optional string         AccountID   = 40;
-    optional string         Address     = 50;
-    optional bool           Backup      = 60;
-    optional bool           Active      = 70;
-    optional bool           Locked      = 80;   // Locked when collecting
-    optional basetypes.v1.AccountLockedBy LockedBy = 90;
-    optional bool           Blocked     = 100;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string CoinTypeID = 20;
+  // Only [UserBenefitHot, UserBenefitCold, PlatformBenefitCold, GasProvider,
+  // PaymentCollector]
+  optional basetypes.v1.AccountUsedFor UsedFor = 30;
+  optional string AccountID = 40;
+  optional string Address = 50;
+  optional bool Backup = 60;
+  optional bool Active = 70;
+  optional bool Locked = 80; // Locked when collecting
+  optional basetypes.v1.AccountLockedBy LockedBy = 90;
+  optional bool Blocked = 100;
 }
 
 message Account {
-    // @inject_tag: sql:"id"
-    uint32         ID          = 9;
-    // @inject_tag: sql:"ent_id"
-    string         EntID       = 10;
-    // @inject_tag: sql:"coin_type_id"
-    string         CoinTypeID  = 20;
-    // @inject_tag: sql:"used_for"
-    string         UsedForStr  = 40;
-    basetypes.v1.AccountUsedFor UsedFor  = 30;
-    // @inject_tag: sql:"account_id"
-    string         AccountID   = 50;
-    // @inject_tag: sql:"address"
-    string         Address     = 60;
-    // @inject_tag: sql:"backup"
-    bool           Backup      = 70;
-    // @inject_tag: sql:"active"
-    bool           Active      = 80;
-    // @inject_tag: sql:"locked"
-    bool           Locked      = 90;
-    basetypes.v1.AccountLockedBy LockedBy = 100;
-    // @inject_tag: sql:"locked_by"
-    string         LockedByStr = 110;
-    // @inject_tag: sql:"blocked"
-    bool           Blocked     = 120;
-    // @inject_tag: sql:"created_at"
-    uint32         CreatedAt   = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32         UpdatedAt   = 1010;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 20;
+  // @inject_tag: sql:"used_for"
+  string UsedForStr = 40;
+  basetypes.v1.AccountUsedFor UsedFor = 30;
+  // @inject_tag: sql:"account_id"
+  string AccountID = 50;
+  // @inject_tag: sql:"address"
+  string Address = 60;
+  // @inject_tag: sql:"backup"
+  bool Backup = 70;
+  // @inject_tag: sql:"active"
+  bool Active = 80;
+  // @inject_tag: sql:"locked"
+  bool Locked = 90;
+  basetypes.v1.AccountLockedBy LockedBy = 100;
+  // @inject_tag: sql:"locked_by"
+  string LockedByStr = 110;
+  // @inject_tag: sql:"blocked"
+  bool Blocked = 120;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val ID          = 9;
-    optional basetypes.v1.StringVal EntID       = 10;
-    optional basetypes.v1.StringVal CoinTypeID  = 20;
-    optional basetypes.v1.Uint32Val UsedFor     = 30;
-    optional basetypes.v1.StringVal AccountID   = 40;
-    optional basetypes.v1.BoolVal   Backup      = 50;
-    optional basetypes.v1.BoolVal   Active      = 60;
-    optional basetypes.v1.BoolVal   Locked      = 70;
-    optional basetypes.v1.Uint32Val LockedBy    = 80;
-    optional basetypes.v1.BoolVal   Blocked     = 90;
-    optional basetypes.v1.StringVal Address     = 100;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal CoinTypeID = 20;
+  optional basetypes.v1.Uint32Val UsedFor = 30;
+  optional basetypes.v1.StringVal AccountID = 40;
+  optional basetypes.v1.BoolVal Backup = 50;
+  optional basetypes.v1.BoolVal Active = 60;
+  optional basetypes.v1.BoolVal Locked = 70;
+  optional basetypes.v1.Uint32Val LockedBy = 80;
+  optional basetypes.v1.BoolVal Blocked = 90;
+  optional basetypes.v1.StringVal Address = 100;
 }
 
+message CreateAccountRequest { AccountReq Info = 10; }
 
-message CreateAccountRequest {
-    AccountReq Info = 10;
-}
+message CreateAccountResponse { Account Info = 10; }
 
-message CreateAccountResponse {
-    Account Info = 10;
-}
+message UpdateAccountRequest { AccountReq Info = 10; }
 
-message UpdateAccountRequest {
-    AccountReq Info = 10;
-}
+message UpdateAccountResponse { Account Info = 10; }
 
-message UpdateAccountResponse {
-    Account Info = 10;
-}
+message GetAccountRequest { string EntID = 10; }
 
-message GetAccountRequest {
-    string EntID = 10;
-}
-
-message GetAccountResponse {
-    Account Info = 10;
-}
+message GetAccountResponse { Account Info = 10; }
 
 message GetAccountsRequest {
-    Conds Conds = 10;
-    int32 Offset = 20;
-    int32 Limit = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetAccountsResponse {
-    repeated Account Infos = 10;
-    uint32           Total = 20;
+  repeated Account Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistAccountRequest {
-    string EntID = 10;
-}
+message ExistAccountRequest { string EntID = 10; }
 
-message ExistAccountResponse {
-    bool Info = 10;
-}
+message ExistAccountResponse { bool Info = 10; }
 
-message ExistAccountCondsRequest {
-    Conds Conds = 10;
-}
+message ExistAccountCondsRequest { Conds Conds = 10; }
 
-message ExistAccountCondsResponse {
-    bool Info = 10;
-}
+message ExistAccountCondsResponse { bool Info = 10; }
 
-message DeleteAccountRequest {
-    AccountReq Info = 10;
-}
+message DeleteAccountRequest { AccountReq Info = 10; }
 
-message DeleteAccountResponse {
-    Account Info = 10;
-}
+message DeleteAccountResponse { Account Info = 10; }

@@ -5,32 +5,21 @@ package scheduler.middleware.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/scheduler/mw/v1";
 
 service Middleware {
-    rpc ListSubsystems   (ListSubsystemsRequest)   returns (ListSubsystemsResponse)   {}
-    rpc EnableSubsystem  (EnableSubsystemRequest)  returns (EnableSubsystemResponse)  {}
-    rpc DisableSubsystem (DisableSubsystemRequest) returns (DisableSubsystemResponse) {}
+  rpc ListSubsystems(ListSubsystemsRequest) returns (ListSubsystemsResponse) {}
+  rpc EnableSubsystem(EnableSubsystemRequest)
+      returns (EnableSubsystemResponse) {}
+  rpc DisableSubsystem(DisableSubsystemRequest)
+      returns (DisableSubsystemResponse) {}
 }
 
-message ListSubsystemsRequest {
-}
+message ListSubsystemsRequest {}
 
-message ListSubsystemsResponse {
-    repeated string Infos = 10;
-}
+message ListSubsystemsResponse { repeated string Infos = 10; }
 
-message EnableSubsystemRequest {
-    repeated string Infos = 10;
-}
+message EnableSubsystemRequest { repeated string Infos = 10; }
 
-message EnableSubsystemResponse {
-    repeated string Infos = 10;
-}
+message EnableSubsystemResponse { repeated string Infos = 10; }
 
+message DisableSubsystemRequest { repeated string Infos = 10; }
 
-message DisableSubsystemRequest {
-    repeated string Infos = 10;
-}
-
-message DisableSubsystemResponse {
-    repeated string Infos = 10;
-}
-
+message DisableSubsystemResponse { repeated string Infos = 10; }

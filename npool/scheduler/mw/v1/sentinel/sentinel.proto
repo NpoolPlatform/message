@@ -5,20 +5,17 @@ package scheduler.middleware.sentinel.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/scheduler/mw/v1/sentinel";
 
 service Middleware {
-    rpc Trigger (TriggerRequest) returns (TriggerResponse) {}
+  rpc Trigger(TriggerRequest) returns (TriggerResponse) {}
 }
 
 message BenefitWait {
-    repeated string GoodIDs  = 10;
-    uint32          RewardAt = 20;
+  repeated string GoodIDs = 10;
+  uint32 RewardAt = 20;
 }
 
 message TriggerRequest {
-    string Subsystem = 10;
-    oneof Cond {
-        BenefitWait BenefitWait = 20;
-    }
+  string Subsystem = 10;
+  oneof Cond { BenefitWait BenefitWait = 20; }
 }
 
-message TriggerResponse {
-}
+message TriggerResponse {}

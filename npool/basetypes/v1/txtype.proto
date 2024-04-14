@@ -5,13 +5,12 @@ package basetypes.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
 enum TxType {
-    DefaultTxType     = 0;
-    TxWithdraw        = 10;
-    TxFeedGas         = 20;
-    TxPaymentCollect  = 30;
-    TxBenefit         = 40;
-    TxLimitation      = 50;
-    TxPlatformBenefit = 60;
-    TxUserBenefit     = 70;
+  DefaultTxType = 0;
+  TxWithdraw = 10;
+  TxFeedGas = 20;
+  TxPaymentCollect = 30;
+  TxBenefit = 40;
+  TxLimitation = 50;
+  TxPlatformBenefit = 60;
+  TxUserBenefit = 70;
 }
-

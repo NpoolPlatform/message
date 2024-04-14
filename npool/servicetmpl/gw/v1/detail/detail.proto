@@ -9,57 +9,56 @@ import "npool/servicetmpl/mw/v1/detail/detail.proto";
 
 // Service Name
 service Gateway {
-    rpc GetDetails (GetDetailsRequest) returns (GetDetailsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/sampledetails"
-            body: "*"
-        };
-    }
-    rpc GetAppDetails (GetAppDetailsRequest) returns (GetAppDetailsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/sampledetails"
-            body: "*"
-        };
-    }
-    rpc GetNAppDetails (GetNAppDetailsRequest) returns (GetNAppDetailsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/n/app/sampledetails"
-            body: "*"
-        };
-    }
+  rpc GetDetails(GetDetailsRequest) returns (GetDetailsResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/sampledetails"
+      body : "*"
+    };
+  }
+  rpc GetAppDetails(GetAppDetailsRequest) returns (GetAppDetailsResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/app/sampledetails"
+      body : "*"
+    };
+  }
+  rpc GetNAppDetails(GetNAppDetailsRequest) returns (GetNAppDetailsResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/n/app/sampledetails"
+      body : "*"
+    };
+  }
 }
 
 message GetDetailsRequest {
-    string AppID  = 10;
-    string UserID = 20;
-    int32  Offset = 30;
-    int32  Limit  = 40;
+  string AppID = 10;
+  string UserID = 20;
+  int32 Offset = 30;
+  int32 Limit = 40;
 }
 
 message GetDetailsResponse {
-    repeated servicetmpl.middleware.detail.v1.Detail Infos = 10;
-    uint32                                           Total = 20;
+  repeated servicetmpl.middleware.detail.v1.Detail Infos = 10;
+  uint32 Total = 20;
 }
 
-
 message GetAppDetailsRequest {
-    string AppID  = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+  string AppID = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetAppDetailsResponse {
-    repeated servicetmpl.middleware.detail.v1.Detail Infos = 10;
-    uint32                                           Total = 20;
+  repeated servicetmpl.middleware.detail.v1.Detail Infos = 10;
+  uint32 Total = 20;
 }
 
 message GetNAppDetailsRequest {
-    string TargetAppID  = 10;
-    int32  Offset       = 20;
-    int32  Limit        = 30;
+  string TargetAppID = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetNAppDetailsResponse {
-    repeated servicetmpl.middleware.detail.v1.Detail Infos = 10;
-    uint32                                           Total = 20;
+  repeated servicetmpl.middleware.detail.v1.Detail Infos = 10;
+  uint32 Total = 20;
 }

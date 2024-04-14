@@ -8,18 +8,17 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    rpc Reconcile (ReconcileRequest) returns (ReconcileResponse) {
-        option (google.api.http) = {
-            post: "/v1/reconcile"
-            body: "*"
-        };
-    }
+  rpc Reconcile(ReconcileRequest) returns (ReconcileResponse) {
+    option (google.api.http) = {
+      post : "/v1/reconcile"
+      body : "*"
+    };
+  }
 }
 
 message ReconcileRequest {
-    string AppID     = 10;
-    string AppGoodID = 20;
+  string AppID = 10;
+  string AppGoodID = 20;
 }
 
-message ReconcileResponse {
-}
+message ReconcileResponse {}

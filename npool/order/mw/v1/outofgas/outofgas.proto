@@ -9,124 +9,101 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateOutOfGas     (CreateOutOfGasRequest)     returns (CreateOutOfGasResponse)     {
-        option (google.api.http) = {
-            post: "/v1/outofgas_CreateOutOfGas"
-            body: "*"
-        };
-    }
-    rpc UpdateOutOfGas     (UpdateOutOfGasRequest)     returns (UpdateOutOfGasResponse)     {
-        option (google.api.http) = {
-            post: "/v1/outofgas_UpdateOutOfGas"
-            body: "*"
-        };
-    }
-    rpc GetOutOfGas        (GetOutOfGasRequest)        returns (GetOutOfGasResponse)        {
-        option (google.api.http) = {
-            post: "/v1/outofgas_GetOutOfGas"
-            body: "*"
-        };
-    }
-    rpc GetOutOfGases      (GetOutOfGasesRequest)      returns (GetOutOfGasesResponse)      {}
-    rpc ExistOutOfGas      (ExistOutOfGasRequest)      returns (ExistOutOfGasResponse)      {}
-    rpc ExistOutOfGasConds (ExistOutOfGasCondsRequest) returns (ExistOutOfGasCondsResponse) {}
-    rpc DeleteOutOfGas     (DeleteOutOfGasRequest)     returns (DeleteOutOfGasResponse)     {
-        option (google.api.http) = {
-            post: "/v1/outofgas_DeleteOutOfGas"
-            body: "*"
-        };
-    }
+  rpc CreateOutOfGas(CreateOutOfGasRequest) returns (CreateOutOfGasResponse) {
+    option (google.api.http) = {
+      post : "/v1/outofgas_CreateOutOfGas"
+      body : "*"
+    };
+  }
+  rpc UpdateOutOfGas(UpdateOutOfGasRequest) returns (UpdateOutOfGasResponse) {
+    option (google.api.http) = {
+      post : "/v1/outofgas_UpdateOutOfGas"
+      body : "*"
+    };
+  }
+  rpc GetOutOfGas(GetOutOfGasRequest) returns (GetOutOfGasResponse) {
+    option (google.api.http) = {
+      post : "/v1/outofgas_GetOutOfGas"
+      body : "*"
+    };
+  }
+  rpc GetOutOfGases(GetOutOfGasesRequest) returns (GetOutOfGasesResponse) {}
+  rpc ExistOutOfGas(ExistOutOfGasRequest) returns (ExistOutOfGasResponse) {}
+  rpc ExistOutOfGasConds(ExistOutOfGasCondsRequest)
+      returns (ExistOutOfGasCondsResponse) {}
+  rpc DeleteOutOfGas(DeleteOutOfGasRequest) returns (DeleteOutOfGasResponse) {
+    option (google.api.http) = {
+      post : "/v1/outofgas_DeleteOutOfGas"
+      body : "*"
+    };
+  }
 }
 
 message OutOfGasReq {
-    optional uint32     ID        = 9;
-    optional string     EntID     = 10;
-    optional string     OrderID   = 20;
-    optional uint32     StartAt   = 30;
-    optional uint32     EndAt     = 40;
-    optional uint32     CreatedAt = 50;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string OrderID = 20;
+  optional uint32 StartAt = 30;
+  optional uint32 EndAt = 40;
+  optional uint32 CreatedAt = 50;
 }
 
 message OutOfGas {
-    // @inject_tag: sql:"id"
-    uint32     ID        = 9;
-    // @inject_tag: sql:"ent_id"
-    string     EntID     = 10;
-    // @inject_tag: sql:"order_id"
-    string     OrderID   = 20;
-    // @inject_tag: sql:"start_at"
-    uint32     StartAt   = 30;
-    // @inject_tag: sql:"end_at"
-    uint32     EndAt     = 40;
-    // @inject_tag: sql:"created_at"
-    uint32     CreatedAt = 50;
-    // @inject_tag: sql:"updated_at"
-    uint32     UpdatedAt = 60;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"order_id"
+  string OrderID = 20;
+  // @inject_tag: sql:"start_at"
+  uint32 StartAt = 30;
+  // @inject_tag: sql:"end_at"
+  uint32 EndAt = 40;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 50;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 60;
 }
 
 message Conds {
-    basetypes.v1.Uint32Val ID      = 9;
-    basetypes.v1.StringVal EntID   = 10;
-    basetypes.v1.StringVal OrderID = 20;
-    basetypes.v1.Uint32Val StartAt = 30;
-    basetypes.v1.Uint32Val EndAt   = 40;
+  basetypes.v1.Uint32Val ID = 9;
+  basetypes.v1.StringVal EntID = 10;
+  basetypes.v1.StringVal OrderID = 20;
+  basetypes.v1.Uint32Val StartAt = 30;
+  basetypes.v1.Uint32Val EndAt = 40;
 }
 
-message CreateOutOfGasRequest {
-    OutOfGasReq Info = 10;
-}
+message CreateOutOfGasRequest { OutOfGasReq Info = 10; }
 
-message CreateOutOfGasResponse {
-    OutOfGas Info = 10;
-}
+message CreateOutOfGasResponse { OutOfGas Info = 10; }
 
-message UpdateOutOfGasRequest {
-    OutOfGasReq Info = 10;
-}
+message UpdateOutOfGasRequest { OutOfGasReq Info = 10; }
 
-message UpdateOutOfGasResponse {
-    OutOfGas Info = 10;
-}
+message UpdateOutOfGasResponse { OutOfGas Info = 10; }
 
-message GetOutOfGasRequest {
-    string EntID = 10;
-}
+message GetOutOfGasRequest { string EntID = 10; }
 
-message GetOutOfGasResponse {
-    OutOfGas Info = 10;
-}
+message GetOutOfGasResponse { OutOfGas Info = 10; }
 
 message GetOutOfGasesRequest {
-    Conds Conds   = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetOutOfGasesResponse {
-    repeated OutOfGas Infos = 10;
-    uint32            Total = 20;
+  repeated OutOfGas Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistOutOfGasRequest {
-    string EntID = 10;
-}
+message ExistOutOfGasRequest { string EntID = 10; }
 
-message ExistOutOfGasResponse {
-    bool Info = 10;
-}
+message ExistOutOfGasResponse { bool Info = 10; }
 
-message ExistOutOfGasCondsRequest {
-    Conds Conds = 10;
-}
+message ExistOutOfGasCondsRequest { Conds Conds = 10; }
 
-message ExistOutOfGasCondsResponse {
-    bool Info = 10;
-}
+message ExistOutOfGasCondsResponse { bool Info = 10; }
 
-message DeleteOutOfGasRequest {
-    OutOfGasReq Info = 10;
-}
+message DeleteOutOfGasRequest { OutOfGasReq Info = 10; }
 
-message DeleteOutOfGasResponse {
-    OutOfGas Info = 10;
-}
+message DeleteOutOfGasResponse { OutOfGas Info = 10; }

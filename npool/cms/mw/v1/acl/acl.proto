@@ -8,97 +8,76 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateACL     (CreateACLRequest)     returns (CreateACLResponse)     {}
-    rpc GetACL        (GetACLRequest)        returns (GetACLResponse)        {}
-    rpc GetACLs       (GetACLsRequest)       returns (GetACLsResponse)       {}
-    rpc ExistACL      (ExistACLRequest)      returns (ExistACLResponse)      {}
-    rpc ExistACLConds (ExistACLCondsRequest) returns (ExistACLCondsResponse) {}
-    rpc DeleteACL     (DeleteACLRequest)     returns (DeleteACLResponse)     {}
+  rpc CreateACL(CreateACLRequest) returns (CreateACLResponse) {}
+  rpc GetACL(GetACLRequest) returns (GetACLResponse) {}
+  rpc GetACLs(GetACLsRequest) returns (GetACLsResponse) {}
+  rpc ExistACL(ExistACLRequest) returns (ExistACLResponse) {}
+  rpc ExistACLConds(ExistACLCondsRequest) returns (ExistACLCondsResponse) {}
+  rpc DeleteACL(DeleteACLRequest) returns (DeleteACLResponse) {}
 }
 
 message ACLReq {
-    optional uint32 ID          = 10;
-    optional string EntID       = 20;
-    optional string AppID       = 30;
-    optional string RoleID      = 40;
-    optional string ArticleKey  = 50;
+  optional uint32 ID = 10;
+  optional string EntID = 20;
+  optional string AppID = 30;
+  optional string RoleID = 40;
+  optional string ArticleKey = 50;
 }
 
 message ACL {
-    // @inject_tag: sql:"id"
-    uint32 ID         = 10;
-    // @inject_tag: sql:"ent_id"
-    string EntID      = 20;
-    // @inject_tag: sql:"app_id"
-    string AppID      = 30;
-    // @inject_tag: sql:"role_id"
-    string RoleID     = 40;
-    // @inject_tag: sql:"article_key"
-    string ArticleKey = 50;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt  = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt  = 1010;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"app_id"
+  string AppID = 30;
+  // @inject_tag: sql:"role_id"
+  string RoleID = 40;
+  // @inject_tag: sql:"article_key"
+  string ArticleKey = 50;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    basetypes.v1.Uint32Val      ID         = 10;
-    basetypes.v1.StringVal      EntID      = 20;
-    basetypes.v1.StringVal      AppID      = 30;
-    basetypes.v1.StringVal      RoleID     = 40;
-    basetypes.v1.StringVal      ArticleKey = 50;
-    basetypes.v1.Uint32SliceVal IDs        = 80;
-    basetypes.v1.StringSliceVal EntIDs     = 90;
+  basetypes.v1.Uint32Val ID = 10;
+  basetypes.v1.StringVal EntID = 20;
+  basetypes.v1.StringVal AppID = 30;
+  basetypes.v1.StringVal RoleID = 40;
+  basetypes.v1.StringVal ArticleKey = 50;
+  basetypes.v1.Uint32SliceVal IDs = 80;
+  basetypes.v1.StringSliceVal EntIDs = 90;
 }
 
-message CreateACLRequest {
-    ACLReq Info = 10;
-}
+message CreateACLRequest { ACLReq Info = 10; }
 
-message CreateACLResponse {
-    ACL Info = 10;
-}
+message CreateACLResponse { ACL Info = 10; }
 
-message GetACLRequest {
-    string EntID = 10;
-}
+message GetACLRequest { string EntID = 10; }
 
-message GetACLResponse {
-    ACL Info = 10;
-}
+message GetACLResponse { ACL Info = 10; }
 
 message GetACLsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetACLsResponse {
-    repeated ACL Infos = 10;
-    uint32       Total = 20;
+  repeated ACL Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistACLRequest {
-    string EntID = 10;
-}
+message ExistACLRequest { string EntID = 10; }
 
-message ExistACLResponse {
-    bool Info = 10;
-}
+message ExistACLResponse { bool Info = 10; }
 
-message ExistACLCondsRequest {
-    Conds Conds = 10;
-}
+message ExistACLCondsRequest { Conds Conds = 10; }
 
-message ExistACLCondsResponse {
-    bool Info = 10;
-}
+message ExistACLCondsResponse { bool Info = 10; }
 
-message DeleteACLRequest {
-    ACLReq Info = 10;
-}
+message DeleteACLRequest { ACLReq Info = 10; }
 
-message DeleteACLResponse {
-    ACL Info = 10;
-}
-
+message DeleteACLResponse { ACL Info = 10; }

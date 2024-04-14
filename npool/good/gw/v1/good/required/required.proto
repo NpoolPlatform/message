@@ -8,71 +8,71 @@ import "google/api/annotations.proto";
 import "npool/good/mw/v1/good/required/required.proto";
 
 service Gateway {
-    rpc CreateRequired (CreateRequiredRequest) returns (CreateRequiredResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/requiredgood"
-            body: "*"
-        };
-    }
+  rpc CreateRequired(CreateRequiredRequest) returns (CreateRequiredResponse) {
+    option (google.api.http) = {
+      post : "/v1/create/requiredgood"
+      body : "*"
+    };
+  }
 
-    rpc UpdateRequired (UpdateRequiredRequest) returns (UpdateRequiredResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/requiredgood"
-            body: "*"
-        };
-    }
+  rpc UpdateRequired(UpdateRequiredRequest) returns (UpdateRequiredResponse) {
+    option (google.api.http) = {
+      post : "/v1/update/requiredgood"
+      body : "*"
+    };
+  }
 
-    rpc GetRequireds (GetRequiredsRequest) returns (GetRequiredsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/requiredgoods"
-            body: "*"
-        };
-    }
+  rpc GetRequireds(GetRequiredsRequest) returns (GetRequiredsResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/requiredgoods"
+      body : "*"
+    };
+  }
 
-    rpc DeleteRequired (DeleteRequiredRequest) returns (DeleteRequiredResponse) {
-        option (google.api.http) = {
-            post: "/v1/delete/requiredgood"
-            body: "*"
-        };
-    }
+  rpc DeleteRequired(DeleteRequiredRequest) returns (DeleteRequiredResponse) {
+    option (google.api.http) = {
+      post : "/v1/delete/requiredgood"
+      body : "*"
+    };
+  }
 }
 
 message CreateRequiredRequest {
-    string MainGoodID     = 10;
-    string RequiredGoodID = 20;
-    bool   Must           = 30;
+  string MainGoodID = 10;
+  string RequiredGoodID = 20;
+  bool Must = 30;
 }
 
 message CreateRequiredResponse {
-    middleware.good1.required1.v1.Required Info = 10;
+  middleware.good1.required1.v1.Required Info = 10;
 }
 
 message UpdateRequiredRequest {
-    uint32 ID    = 9;
-    string EntID = 10;
-    bool   Must  = 20;
+  uint32 ID = 9;
+  string EntID = 10;
+  bool Must = 20;
 }
 
 message UpdateRequiredResponse {
-    middleware.good1.required1.v1.Required Info = 10;
+  middleware.good1.required1.v1.Required Info = 10;
 }
 
 message GetRequiredsRequest {
-    optional string GoodID = 10;
-    int32           Offset = 20;
-    int32           Limit  = 30;
+  optional string GoodID = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetRequiredsResponse {
-    repeated middleware.good1.required1.v1.Required Infos = 10;
-    uint32                                          Total = 20;
+  repeated middleware.good1.required1.v1.Required Infos = 10;
+  uint32 Total = 20;
 }
 
 message DeleteRequiredRequest {
-    uint32 ID    = 9;
-    string EntID = 10;
+  uint32 ID = 9;
+  string EntID = 10;
 }
 
 message DeleteRequiredResponse {
-    middleware.good1.required1.v1.Required Info = 10;
+  middleware.good1.required1.v1.Required Info = 10;
 }

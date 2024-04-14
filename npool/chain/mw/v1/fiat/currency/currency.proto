@@ -9,68 +9,63 @@ import "npool/basetypes/v1/currencyfeedtype.proto";
 
 // Service Name
 service Middleware {
-    rpc GetCurrency   (GetCurrencyRequest)   returns (GetCurrencyResponse)   {}
-    rpc GetCurrencies (GetCurrenciesRequest) returns (GetCurrenciesResponse) {}
+  rpc GetCurrency(GetCurrencyRequest) returns (GetCurrencyResponse) {}
+  rpc GetCurrencies(GetCurrenciesRequest) returns (GetCurrenciesResponse) {}
 }
 
 message CurrencyReq {
-    optional uint32 ID     = 10;
-    optional string EntID  = 11;
-    optional string FiatID = 20;
-    optional basetypes.v1.CurrencyFeedType FeedType = 30;
-    optional string MarketValueHigh = 40;
-    optional string MarketValueLow  = 50;
+  optional uint32 ID = 10;
+  optional string EntID = 11;
+  optional string FiatID = 20;
+  optional basetypes.v1.CurrencyFeedType FeedType = 30;
+  optional string MarketValueHigh = 40;
+  optional string MarketValueLow = 50;
 }
 
 message Currency {
-    // @inject_tag: sql:"id"
-    uint32 ID              = 10;
-    // @inject_tag: sql:"ent_id"
-    string EntID           = 11;
-    // @inject_tag: sql:"fiat_id"
-    string FiatID          = 20;
-    // @inject_tag: sql:"feed_type"
-    string FeedTypeStr     = 30;
-    basetypes.v1.CurrencyFeedType FeedType = 40;
-    // @inject_tag: sql:"fiat_name"
-    string FiatName        = 50;
-    // @inject_tag: sql:"fiat_logo"
-    string FiatLogo        = 60;
-    // @inject_tag: sql:"fiat_unit"
-    string FiatUnit        = 70;
-    // @inject_tag: sql:"market_value_high"
-    string MarketValueHigh = 80;
-    // @inject_tag: sql:"market_value_low"
-    string MarketValueLow  = 90;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt       = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt       = 1010;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 11;
+  // @inject_tag: sql:"fiat_id"
+  string FiatID = 20;
+  // @inject_tag: sql:"feed_type"
+  string FeedTypeStr = 30;
+  basetypes.v1.CurrencyFeedType FeedType = 40;
+  // @inject_tag: sql:"fiat_name"
+  string FiatName = 50;
+  // @inject_tag: sql:"fiat_logo"
+  string FiatLogo = 60;
+  // @inject_tag: sql:"fiat_unit"
+  string FiatUnit = 70;
+  // @inject_tag: sql:"market_value_high"
+  string MarketValueHigh = 80;
+  // @inject_tag: sql:"market_value_low"
+  string MarketValueLow = 90;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      EntID    = 10;
-    optional basetypes.v1.StringVal      FiatID   = 20;
-    optional basetypes.v1.StringSliceVal FiatIDs  = 30;
-    optional basetypes.v1.StringVal      FiatName = 40;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal FiatID = 20;
+  optional basetypes.v1.StringSliceVal FiatIDs = 30;
+  optional basetypes.v1.StringVal FiatName = 40;
 }
 
-message GetCurrencyRequest {
-    string EntID = 10;
-}
+message GetCurrencyRequest { string EntID = 10; }
 
-message GetCurrencyResponse {
-    Currency Info = 10;
-}
+message GetCurrencyResponse { Currency Info = 10; }
 
 message GetCurrenciesRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetCurrenciesResponse {
-    repeated Currency Infos = 10;
-    uint32            Total = 20;
+  repeated Currency Infos = 10;
+  uint32 Total = 20;
 }
-

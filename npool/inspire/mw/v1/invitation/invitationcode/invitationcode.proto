@@ -9,95 +9,83 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateInvitationCode     (CreateInvitationCodeRequest)     returns (CreateInvitationCodeResponse)     {}
-    rpc UpdateInvitationCode     (UpdateInvitationCodeRequest)     returns (UpdateInvitationCodeResponse)     {}
-    rpc GetInvitationCode        (GetInvitationCodeRequest)        returns (GetInvitationCodeResponse)        {}
-    rpc GetInvitationCodes       (GetInvitationCodesRequest)       returns (GetInvitationCodesResponse)       {}
-    rpc DeleteInvitationCode     (DeleteInvitationCodeRequest)     returns (DeleteInvitationCodeResponse)     {
-        option (google.api.http) = {
-            post: "/v1/invitationcode_DeleteInvitationCode"
-            body: "*"
-        };
-    }
+  rpc CreateInvitationCode(CreateInvitationCodeRequest)
+      returns (CreateInvitationCodeResponse) {}
+  rpc UpdateInvitationCode(UpdateInvitationCodeRequest)
+      returns (UpdateInvitationCodeResponse) {}
+  rpc GetInvitationCode(GetInvitationCodeRequest)
+      returns (GetInvitationCodeResponse) {}
+  rpc GetInvitationCodes(GetInvitationCodesRequest)
+      returns (GetInvitationCodesResponse) {}
+  rpc DeleteInvitationCode(DeleteInvitationCodeRequest)
+      returns (DeleteInvitationCodeResponse) {
+    option (google.api.http) = {
+      post : "/v1/invitationcode_DeleteInvitationCode"
+      body : "*"
+    };
+  }
 }
 
 message InvitationCodeReq {
-    optional uint32 ID             = 10;
-    optional string EntID          = 11;
-    optional string AppID          = 20;
-    optional string UserID         = 30;
-    optional string InvitationCode = 40;
-    optional bool   Disabled       = 50;
+  optional uint32 ID = 10;
+  optional string EntID = 11;
+  optional string AppID = 20;
+  optional string UserID = 30;
+  optional string InvitationCode = 40;
+  optional bool Disabled = 50;
 }
 
 message InvitationCode {
-    // @inject_tag: sql:"id"
-    uint32 ID             = 10;
-    // @inject_tag: sql:"ent_id"
-    string EntID          = 11;
-    // @inject_tag: sql:"app_id"
-    string AppID          = 20;
-    // @inject_tag: sql:"user_id"
-    string UserID         = 30;
-    // @inject_tag: sql:"invitation_code"
-    string InvitationCode = 40;
-    // @inject_tag: sql:"disabled"
-    bool   Disabled       = 50;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt      = 60;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt      = 70;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 11;
+  // @inject_tag: sql:"app_id"
+  string AppID = 20;
+  // @inject_tag: sql:"user_id"
+  string UserID = 30;
+  // @inject_tag: sql:"invitation_code"
+  string InvitationCode = 40;
+  // @inject_tag: sql:"disabled"
+  bool Disabled = 50;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 60;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 70;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal EntID          = 10;
-    optional basetypes.v1.StringVal AppID          = 20;
-    optional basetypes.v1.StringVal UserID         = 30;
-    optional basetypes.v1.StringVal InvitationCode = 40;
-    optional basetypes.v1.BoolVal   Disabled       = 50;
-    optional basetypes.v1.StringSliceVal UserIDs   = 60;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal UserID = 30;
+  optional basetypes.v1.StringVal InvitationCode = 40;
+  optional basetypes.v1.BoolVal Disabled = 50;
+  optional basetypes.v1.StringSliceVal UserIDs = 60;
 }
 
-message CreateInvitationCodeRequest {
-    InvitationCodeReq Info = 10;
-}
+message CreateInvitationCodeRequest { InvitationCodeReq Info = 10; }
 
-message CreateInvitationCodeResponse {
-    InvitationCode Info = 10;
-}
+message CreateInvitationCodeResponse { InvitationCode Info = 10; }
 
-message UpdateInvitationCodeRequest {
-    InvitationCodeReq Info = 10;
-}
+message UpdateInvitationCodeRequest { InvitationCodeReq Info = 10; }
 
-message UpdateInvitationCodeResponse {
-    InvitationCode Info = 10;
-}
+message UpdateInvitationCodeResponse { InvitationCode Info = 10; }
 
-message GetInvitationCodeRequest {
-    string EntID = 10;
-}
+message GetInvitationCodeRequest { string EntID = 10; }
 
-message GetInvitationCodeResponse {
-    InvitationCode Info = 10;
-}
+message GetInvitationCodeResponse { InvitationCode Info = 10; }
 
 message GetInvitationCodesRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetInvitationCodesResponse {
-    repeated InvitationCode Infos = 10;
-    uint32 Total = 20;
+  repeated InvitationCode Infos = 10;
+  uint32 Total = 20;
 }
 
-message DeleteInvitationCodeRequest {
-    InvitationCodeReq Info = 10;
-}
+message DeleteInvitationCodeRequest { InvitationCodeReq Info = 10; }
 
-message DeleteInvitationCodeResponse {
-    InvitationCode Info = 10;
-}
-
+message DeleteInvitationCodeResponse { InvitationCode Info = 10; }

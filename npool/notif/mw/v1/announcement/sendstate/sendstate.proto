@@ -10,122 +10,106 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateSendState     (CreateSendStateRequest)     returns (CreateSendStateResponse)  {
-        option (google.api.http) = {
-            post: "/v1/sendstate_CreateSendState"
-            body: "*"
-        };
-    }
-    rpc CreateSendStates    (CreateSendStatesRequest)    returns (CreateSendStatesResponse)  {}
-    rpc GetSendStates       (GetSendStatesRequest)       returns (GetSendStatesResponse)    {}
-    rpc GetSendState        (GetSendStateRequest)        returns (GetSendStateResponse)        {}
-    rpc ExistSendStateConds (ExistSendStateCondsRequest) returns (ExistSendStateCondsResponse) {}
-    rpc DeleteSendState     (DeleteSendStateRequest)     returns (DeleteSendStateResponse)     {
-        option (google.api.http) = {
-            post: "/v1/sendstate_DeleteSendState"
-            body: "*"
-        };
-    }
+  rpc CreateSendState(CreateSendStateRequest)
+      returns (CreateSendStateResponse) {
+    option (google.api.http) = {
+      post : "/v1/sendstate_CreateSendState"
+      body : "*"
+    };
+  }
+  rpc CreateSendStates(CreateSendStatesRequest)
+      returns (CreateSendStatesResponse) {}
+  rpc GetSendStates(GetSendStatesRequest) returns (GetSendStatesResponse) {}
+  rpc GetSendState(GetSendStateRequest) returns (GetSendStateResponse) {}
+  rpc ExistSendStateConds(ExistSendStateCondsRequest)
+      returns (ExistSendStateCondsResponse) {}
+  rpc DeleteSendState(DeleteSendStateRequest)
+      returns (DeleteSendStateResponse) {
+    option (google.api.http) = {
+      post : "/v1/sendstate_DeleteSendState"
+      body : "*"
+    };
+  }
 }
 
 message SendState {
-    // @inject_tag: sql:"id"
-    uint32 ID             = 9;
-    // @inject_tag: sql:"ent_id"
-    string EntID          = 10;
-    // @inject_tag: sql:"app_id"
-    string AppID          = 20;
-    // @inject_tag: sql:"user_id"
-    string UserID         = 30;
-    // @inject_tag: sql:"announcement_id"
-    string AnnouncementID = 40;
-    // @inject_tag: sql:"lang_id"
-    string LangID         = 50;
-    // @inject_tag: sql:"title"
-    string Title          = 60;
-    // @inject_tag: sql:"content"
-    string Content        = 70;
-    // @inject_tag: sql:"type"
-    string AnnouncementType = 80;
-    // @inject_tag: sql:"channel"
-    string Channel        = 90;
-    // @inject_tag: sql:"start_at"
-    uint32 StartAt          = 99;
-    // @inject_tag: sql:"end_at"
-    uint32 EndAt          = 100;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt      = 110;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt      = 120;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"app_id"
+  string AppID = 20;
+  // @inject_tag: sql:"user_id"
+  string UserID = 30;
+  // @inject_tag: sql:"announcement_id"
+  string AnnouncementID = 40;
+  // @inject_tag: sql:"lang_id"
+  string LangID = 50;
+  // @inject_tag: sql:"title"
+  string Title = 60;
+  // @inject_tag: sql:"content"
+  string Content = 70;
+  // @inject_tag: sql:"type"
+  string AnnouncementType = 80;
+  // @inject_tag: sql:"channel"
+  string Channel = 90;
+  // @inject_tag: sql:"start_at"
+  uint32 StartAt = 99;
+  // @inject_tag: sql:"end_at"
+  uint32 EndAt = 100;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 110;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 120;
 }
 
 message SendStateReq {
-    optional uint32 ID             = 9;
-    optional string EntID          = 10;
-    optional string AppID          = 20;
-    optional string UserID         = 30;
-    optional string AnnouncementID = 40;
-    optional basetypes.v1.NotifChannel Channel = 50;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional string UserID = 30;
+  optional string AnnouncementID = 40;
+  optional basetypes.v1.NotifChannel Channel = 50;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID             = 9;
-    optional basetypes.v1.StringVal      EntID          = 10;
-    optional basetypes.v1.StringVal      AppID          = 20;
-    optional basetypes.v1.StringVal      UserID         = 30;
-    optional basetypes.v1.StringVal      AnnouncementID = 40;
-    optional basetypes.v1.Uint32Val      Channel        = 50;
-    optional basetypes.v1.Uint32Val      EndAt          = 60;
-    optional basetypes.v1.StringSliceVal UserIDs        = 70;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal UserID = 30;
+  optional basetypes.v1.StringVal AnnouncementID = 40;
+  optional basetypes.v1.Uint32Val Channel = 50;
+  optional basetypes.v1.Uint32Val EndAt = 60;
+  optional basetypes.v1.StringSliceVal UserIDs = 70;
 }
 
-message CreateSendStateRequest {
-    SendStateReq Info = 10;
-}
+message CreateSendStateRequest { SendStateReq Info = 10; }
 
-message CreateSendStateResponse {
-    SendState Info = 10;
-}
+message CreateSendStateResponse { SendState Info = 10; }
 
-message CreateSendStatesRequest {
-    repeated SendStateReq Infos = 10;
-}
+message CreateSendStatesRequest { repeated SendStateReq Infos = 10; }
 
-message CreateSendStatesResponse {
-    repeated SendState Infos = 10;
-}
+message CreateSendStatesResponse { repeated SendState Infos = 10; }
 
 message GetSendStatesRequest {
-    Conds  Conds  = 10;
-    int32  Offset = 30;
-    int32  Limit  = 40;
+  Conds Conds = 10;
+  int32 Offset = 30;
+  int32 Limit = 40;
 }
 
 message GetSendStatesResponse {
-    repeated SendState Infos = 10;
-    uint32             Total = 20;
+  repeated SendState Infos = 10;
+  uint32 Total = 20;
 }
 
-message GetSendStateRequest {
-    string EntID = 10;
-}
+message GetSendStateRequest { string EntID = 10; }
 
-message GetSendStateResponse {
-    SendState Info = 10;
-}
+message GetSendStateResponse { SendState Info = 10; }
 
-message ExistSendStateCondsRequest {
-    Conds Conds = 10;
-}
+message ExistSendStateCondsRequest { Conds Conds = 10; }
 
-message ExistSendStateCondsResponse {
-    bool Info = 10;
-}
+message ExistSendStateCondsResponse { bool Info = 10; }
 
-message DeleteSendStateRequest {
-    SendStateReq Info = 10;
-}
+message DeleteSendStateRequest { SendStateReq Info = 10; }
 
-message DeleteSendStateResponse {
-    SendState Info = 10;
-}
+message DeleteSendStateResponse { SendState Info = 10; }

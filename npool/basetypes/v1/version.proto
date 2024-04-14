@@ -4,7 +4,4 @@ package basetypes.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
-message VersionResponse {
-    string Info = 10;
-}
-
+message VersionResponse { string Info = 10; }

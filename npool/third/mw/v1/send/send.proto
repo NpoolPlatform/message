@@ -7,18 +7,17 @@ option go_package = "github.com/NpoolPlatform/message/npool/third/mw/v1/send";
 import "npool/basetypes/v1/signmethod.proto";
 
 service Middleware {
-    rpc SendMessage (SendMessageRequest) returns (SendMessageResponse) {}
+  rpc SendMessage(SendMessageRequest) returns (SendMessageResponse) {}
 }
 
 message SendMessageRequest {
-    string                  Subject     = 10;
-    string                  Content     = 20;
-    string                  From        = 30;
-    string                  To          = 40;
-    repeated string         ToCCs       = 50;
-    repeated string         ReplyTos    = 60;
-    basetypes.v1.SignMethod AccountType = 70;
+  string Subject = 10;
+  string Content = 20;
+  string From = 30;
+  string To = 40;
+  repeated string ToCCs = 50;
+  repeated string ReplyTos = 60;
+  basetypes.v1.SignMethod AccountType = 70;
 }
 
-message SendMessageResponse {
-}
+message SendMessageResponse {}

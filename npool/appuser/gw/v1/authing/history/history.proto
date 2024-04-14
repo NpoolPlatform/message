@@ -8,21 +8,22 @@ import "google/api/annotations.proto";
 import "npool/appuser/mw/v1/authing/history/history.proto";
 
 service Gateway {
-    rpc GetAppAuthHistories (GetAppAuthHistoriesRequest) returns (GetAppAuthHistoriesResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/authhistories"
-            body: "*"
-        };
-    }
+  rpc GetAppAuthHistories(GetAppAuthHistoriesRequest)
+      returns (GetAppAuthHistoriesResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/app/authhistories"
+      body : "*"
+    };
+  }
 }
 
 message GetAppAuthHistoriesRequest {
-    string TargetAppID = 10;
-    int32  Offset      = 20;
-    int32  Limit       = 30;
+  string TargetAppID = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetAppAuthHistoriesResponse {
-   repeated appuser.middleware.authing.history.v1.History Infos = 10;
-   uint32   Total                                               = 20;
+  repeated appuser.middleware.authing.history.v1.History Infos = 10;
+  uint32 Total = 20;
 }

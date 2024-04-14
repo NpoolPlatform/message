@@ -5,8 +5,7 @@ package basetypes.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
 enum LoginType {
-    DefaultLoginType = 0;
-    FreshLogin       = 10;
-    RefreshLogin     = 20;
+  DefaultLoginType = 0;
+  FreshLogin = 10;
+  RefreshLogin = 20;
 }
-

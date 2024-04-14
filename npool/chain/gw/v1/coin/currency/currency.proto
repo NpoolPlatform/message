@@ -9,37 +9,33 @@ import "npool/chain/mw/v1/coin/currency/currency.proto";
 
 // Service Name
 service Gateway {
-    rpc GetCurrency (GetCurrencyRequest) returns (GetCurrencyResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/coincurrency"
-            body: "*"
-        };
-    }
-    rpc GetCurrencies (GetCurrenciesRequest) returns (GetCurrenciesResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/coincurrencies"
-            body: "*"
-        };
-    }
+  rpc GetCurrency(GetCurrencyRequest) returns (GetCurrencyResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/coincurrency"
+      body : "*"
+    };
+  }
+  rpc GetCurrencies(GetCurrenciesRequest) returns (GetCurrenciesResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/coincurrencies"
+      body : "*"
+    };
+  }
 }
 
-message GetCurrencyRequest {
-    string CoinTypeID = 10;
-}
+message GetCurrencyRequest { string CoinTypeID = 10; }
 
 message GetCurrencyResponse {
-    chain.middleware.coin.currency.v1.Currency Info  = 10;
+  chain.middleware.coin.currency.v1.Currency Info = 10;
 }
 
-
 message GetCurrenciesRequest {
-    repeated string CoinTypeIDs = 10;
-    int32           Offset      = 20;
-    int32           Limit       = 30;
+  repeated string CoinTypeIDs = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetCurrenciesResponse {
-    repeated chain.middleware.coin.currency.v1.Currency Infos = 10;
-    uint32                                              Total = 20;
+  repeated chain.middleware.coin.currency.v1.Currency Infos = 10;
+  uint32 Total = 20;
 }
-
