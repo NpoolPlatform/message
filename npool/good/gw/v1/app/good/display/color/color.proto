@@ -70,12 +70,12 @@ message DisplayColor {
     uint32 ID = 10;
     string EntID = 20;
     string AppID = 30;
-    string AppColor = 40;
+    string AppName = 40;
     string GoodID = 50;
-    string GoodColor = 60;
+    string GoodName = 60;
     basetypes.good.v1.GoodType GoodType = 70;
     string AppGoodID = 80;
-    string AppGoodColor = 90;
+    string AppGoodName = 90;
     string Color = 100;
     uint32 Index = 110;
 
@@ -131,7 +131,7 @@ message DeleteDisplayColorResponse {
 message AdminCreateDisplayColorRequest {
     string TargetAppID = 10;
     string AppGoodID = 30;
-    string DisplayColor = 40;
+    string Color = 40;
     optional uint32 Index = 50;
 }
 
