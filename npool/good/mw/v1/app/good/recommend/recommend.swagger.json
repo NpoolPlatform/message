@@ -114,6 +114,16 @@
         }
       }
     },
+    "v1GoodCommentHideReason": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodCommentHideReason",
+        "GoodCommentHideBySpam",
+        "GoodCommentHideByNotThisGood",
+        "GoodCommentHideByFalseDescription"
+      ],
+      "default": "DefaultGoodCommentHideReason"
+    },
     "v1Recommend": {
       "type": "object",
       "properties": {
@@ -150,6 +160,17 @@
           "type": "string",
           "title": "@inject_tag: sql:\"message\""
         },
+        "Hide": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"hide\""
+        },
+        "HideReasonStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"hide_reason\""
+        },
+        "HideReason": {
+          "$ref": "#/definitions/v1GoodCommentHideReason"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -183,6 +204,12 @@
         },
         "Message": {
           "type": "string"
+        },
+        "Hide": {
+          "type": "boolean"
+        },
+        "HideReason": {
+          "$ref": "#/definitions/v1GoodCommentHideReason"
         }
       }
     },
