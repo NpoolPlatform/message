@@ -311,7 +311,7 @@
         "AppGoodID": {
           "type": "string"
         },
-        "DisplayColor": {
+        "Color": {
           "type": "string"
         },
         "Index": {
@@ -474,13 +474,13 @@
         "AppID": {
           "type": "string"
         },
-        "AppColor": {
+        "AppName": {
           "type": "string"
         },
         "GoodID": {
           "type": "string"
         },
-        "GoodColor": {
+        "GoodName": {
           "type": "string"
         },
         "GoodType": {
@@ -489,7 +489,7 @@
         "AppGoodID": {
           "type": "string"
         },
-        "AppGoodColor": {
+        "AppGoodName": {
           "type": "string"
         },
         "Color": {
