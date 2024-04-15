@@ -134,7 +134,7 @@ message AdminCreateTopMostConstraintRequest {
     string TargetAppID = 10;
     string TopMostID = 20;
     basetypes.good.v1.GoodTopMostConstraint Constraint = 30;
-    string TargetValue = 40;
+    optional string TargetValue = 40;
     optional uint32 Index = 50;
 }
 
