@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/achievement_DeleteAchievementUser": {
+    "/v1/achievementuser_DeleteAchievementUser": {
       "post": {
         "operationId": "Middleware_DeleteAchievementUser",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/achievement_GetAchievementUsers": {
+    "/v1/achievementuser_GetAchievementUsers": {
       "post": {
         "operationId": "Middleware_GetAchievementUsers",
         "responses": {

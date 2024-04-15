@@ -111,7 +111,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.achievement.user.v1.Middleware/GetAchievementUsers", runtime.WithHTTPPathPattern("/v1/achievement_GetAchievementUsers"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.achievement.user.v1.Middleware/GetAchievementUsers", runtime.WithHTTPPathPattern("/v1/achievementuser_GetAchievementUsers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -134,7 +134,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.achievement.user.v1.Middleware/DeleteAchievementUser", runtime.WithHTTPPathPattern("/v1/achievement_DeleteAchievementUser"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.achievement.user.v1.Middleware/DeleteAchievementUser", runtime.WithHTTPPathPattern("/v1/achievementuser_DeleteAchievementUser"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -196,7 +196,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.achievement.user.v1.Middleware/GetAchievementUsers", runtime.WithHTTPPathPattern("/v1/achievement_GetAchievementUsers"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.achievement.user.v1.Middleware/GetAchievementUsers", runtime.WithHTTPPathPattern("/v1/achievementuser_GetAchievementUsers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -216,7 +216,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.achievement.user.v1.Middleware/DeleteAchievementUser", runtime.WithHTTPPathPattern("/v1/achievement_DeleteAchievementUser"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.achievement.user.v1.Middleware/DeleteAchievementUser", runtime.WithHTTPPathPattern("/v1/achievementuser_DeleteAchievementUser"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -236,9 +236,9 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 }
 
 var (
-	pattern_Middleware_GetAchievementUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "achievement_GetAchievementUsers"}, ""))
+	pattern_Middleware_GetAchievementUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "achievementuser_GetAchievementUsers"}, ""))
 
-	pattern_Middleware_DeleteAchievementUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "achievement_DeleteAchievementUser"}, ""))
+	pattern_Middleware_DeleteAchievementUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "achievementuser_DeleteAchievementUser"}, ""))
 )
 
 var (

@@ -12,14 +12,14 @@ service Middleware {
   rpc GetAchievementUsers(GetAchievementUsersRequest)
       returns (GetAchievementUsersResponse) {
     option (google.api.http) = {
-      post : "/v1/achievement_GetAchievementUsers"
+      post : "/v1/achievementuser_GetAchievementUsers"
       body : "*"
     };
   }
   rpc DeleteAchievementUser(DeleteAchievementUserRequest)
       returns (DeleteAchievementUserResponse) {
     option (google.api.http) = {
-      post : "/v1/achievement_DeleteAchievementUser"
+      post : "/v1/achievementuser_DeleteAchievementUser"
       body : "*"
     };
   }
