@@ -149,9 +149,6 @@
     "goodgatewaydeviceposterv1GetPostersRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
-          "type": "string"
-        },
         "DeviceTypeID": {
           "type": "string"
         },
@@ -258,9 +255,6 @@
           "format": "int64"
         },
         "EntID": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         },
         "Poster": {
