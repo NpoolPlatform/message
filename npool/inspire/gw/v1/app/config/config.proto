@@ -12,40 +12,40 @@ service Gateway {
   rpc CreateAppConfig(CreateAppConfigRequest)
       returns (CreateAppConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/create/app/config"
+      post : "/v1/create/appconfig"
       body : "*"
     };
   }
   rpc AdminCreateAppConfig(AdminCreateAppConfigRequest)
       returns (AdminCreateAppConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/create/app/config"
+      post : "/v1/admin/create/appconfig"
       body : "*"
     };
   }
   rpc UpdateAppConfig(UpdateAppConfigRequest)
       returns (UpdateAppConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/update/app/config"
+      post : "/v1/update/appconfig"
       body : "*"
     };
   }
   rpc AdminUpdateAppConfig(AdminUpdateAppConfigRequest)
       returns (AdminUpdateAppConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/update/app/config"
+      post : "/v1/admin/update/appconfig"
       body : "*"
     };
   }
   rpc GetAppConfigs(GetAppConfigsRequest) returns (GetAppConfigsResponse) {
     option (google.api.http) = {
-      post : "/v1/get/app/configs"
+      post : "/v1/get/appconfigs"
       body : "*"
     };
   }
   rpc AdminGetAppConfigs(AdminGetAppConfigsRequest) returns (AdminGetAppConfigsResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/app/configs"
+      post : "/v1/admin/get/appconfigs"
       body : "*"
     };
   }
