@@ -62,7 +62,7 @@ message AppConfig {
   bool SettleBenefit = 80;
   uint32 StartAt = 90;
   uint32 EndAt = 100;
-  uint32 MaxLevelCount = 110;
+  uint32 MaxLevel = 110;
   uint32 CreatedAt = 1000;
   uint32 UpdatedAt = 1010;
 }
@@ -75,7 +75,7 @@ message CreateAppConfigRequest {
   basetypes.inspire.v1.CommissionType CommissionType = 50;
   bool SettleBenefit = 60;
   optional uint32 StartAt = 70;
-  uint32 MaxLevelCount = 80;
+  uint32 MaxLevel = 80;
 }
 
 message CreateAppConfigResponse { AppConfig Info = 10; }
@@ -88,7 +88,7 @@ message AdminCreateAppConfigRequest {
   basetypes.inspire.v1.CommissionType CommissionType = 50;
   bool SettleBenefit = 60;
   optional uint32 StartAt = 70;
-  uint32 MaxLevelCount = 80;
+  uint32 MaxLevel = 80;
 }
 
 message AdminCreateAppConfigResponse { AppConfig Info = 10; }

@@ -31,7 +31,7 @@ message AppConfigReq {
   optional basetypes.inspire.v1.CommissionType CommissionType = 70;
   optional bool SettleBenefit = 80;
   optional uint32 StartAt = 90;
-  optional uint32 MaxLevelCount = 100;
+  optional uint32 MaxLevel = 100;
 }
 
 message AppConfig {
@@ -59,8 +59,8 @@ message AppConfig {
   uint32 StartAt = 130;
   // @inject_tag: sql:"end_at"
   uint32 EndAt = 140;
-  // @inject_tag: sql:"max_level_count"
-  uint32 MaxLevelCount = 150;
+  // @inject_tag: sql:"max_level"
+  uint32 MaxLevel = 150;
 
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 1000;

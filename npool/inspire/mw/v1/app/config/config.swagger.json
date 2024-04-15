@@ -102,10 +102,10 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"end_at\""
         },
-        "MaxLevelCount": {
+        "MaxLevel": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"max_level_count\""
+          "title": "@inject_tag: sql:\"max_level\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -151,7 +151,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "MaxLevelCount": {
+        "MaxLevel": {
           "type": "integer",
           "format": "int64"
         }
