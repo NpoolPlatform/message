@@ -19,9 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateScore_FullMethodName = "/good.gateway.app.good1.score.v1.Gateway/CreateScore"
-	Gateway_GetScores_FullMethodName   = "/good.gateway.app.good1.score.v1.Gateway/GetScores"
-	Gateway_DeleteScore_FullMethodName = "/good.gateway.app.good1.score.v1.Gateway/DeleteScore"
+	Gateway_CreateScore_FullMethodName    = "/good.gateway.app.good1.score.v1.Gateway/CreateScore"
+	Gateway_GetScores_FullMethodName      = "/good.gateway.app.good1.score.v1.Gateway/GetScores"
+	Gateway_DeleteScore_FullMethodName    = "/good.gateway.app.good1.score.v1.Gateway/DeleteScore"
+	Gateway_AdminGetScores_FullMethodName = "/good.gateway.app.good1.score.v1.Gateway/AdminGetScores"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -31,6 +32,7 @@ type GatewayClient interface {
 	CreateScore(ctx context.Context, in *CreateScoreRequest, opts ...grpc.CallOption) (*CreateScoreResponse, error)
 	GetScores(ctx context.Context, in *GetScoresRequest, opts ...grpc.CallOption) (*GetScoresResponse, error)
 	DeleteScore(ctx context.Context, in *DeleteScoreRequest, opts ...grpc.CallOption) (*DeleteScoreResponse, error)
+	AdminGetScores(ctx context.Context, in *AdminGetScoresRequest, opts ...grpc.CallOption) (*AdminGetScoresResponse, error)
 }
 
 type gatewayClient struct {
@@ -68,6 +70,15 @@ func (c *gatewayClient) DeleteScore(ctx context.Context, in *DeleteScoreRequest,
 	return out, nil
 }
 
+func (c *gatewayClient) AdminGetScores(ctx context.Context, in *AdminGetScoresRequest, opts ...grpc.CallOption) (*AdminGetScoresResponse, error) {
+	out := new(AdminGetScoresResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminGetScores_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -75,6 +86,7 @@ type GatewayServer interface {
 	CreateScore(context.Context, *CreateScoreRequest) (*CreateScoreResponse, error)
 	GetScores(context.Context, *GetScoresRequest) (*GetScoresResponse, error)
 	DeleteScore(context.Context, *DeleteScoreRequest) (*DeleteScoreResponse, error)
+	AdminGetScores(context.Context, *AdminGetScoresRequest) (*AdminGetScoresResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -90,6 +102,9 @@ func (UnimplementedGatewayServer) GetScores(context.Context, *GetScoresRequest) 
 }
 func (UnimplementedGatewayServer) DeleteScore(context.Context, *DeleteScoreRequest) (*DeleteScoreResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteScore not implemented")
+}
+func (UnimplementedGatewayServer) AdminGetScores(context.Context, *AdminGetScoresRequest) (*AdminGetScoresResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminGetScores not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -158,6 +173,24 @@ func _Gateway_DeleteScore_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_AdminGetScores_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminGetScoresRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminGetScores(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminGetScores_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminGetScores(ctx, req.(*AdminGetScoresRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -176,6 +209,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteScore",
 			Handler:    _Gateway_DeleteScore_Handler,
+		},
+		{
+			MethodName: "AdminGetScores",
+			Handler:    _Gateway_AdminGetScores_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
