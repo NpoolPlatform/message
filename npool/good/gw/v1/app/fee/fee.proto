@@ -135,7 +135,7 @@ message AdminGetAppFeesResponse {
 message AdminUpdateAppFeeRequest {
     uint32 ID = 10;
     string EntID = 20;
-    string AppID = 30;
+    string TargetAppID = 30;
     string AppGoodID = 40;
 
     optional string ProductPage = 50;
