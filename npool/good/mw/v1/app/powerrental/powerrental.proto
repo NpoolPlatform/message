@@ -248,14 +248,15 @@ message PowerRental {
 message Conds {
     optional basetypes.v1.Uint32Val ID = 10;
     optional basetypes.v1.StringVal EntID = 20;
-    optional basetypes.v1.StringVal GoodID = 30;
-    optional basetypes.v1.StringSliceVal GoodIDs = 40;
-    optional basetypes.v1.StringVal AppGoodID = 50;
-    optional basetypes.v1.StringSliceVal AppGoodIDs = 60;
-    optional basetypes.v1.Uint32Val GoodType = 70;
-    optional basetypes.v1.Uint32SliceVal GoodTypes = 80;
-    optional basetypes.v1.StringVal CoinTypeID = 90;
-    optional basetypes.v1.StringSliceVal CoinTypeIDs = 100;
+    optional basetypes.v1.StringVal AppID = 30;
+    optional basetypes.v1.StringVal GoodID = 40;
+    optional basetypes.v1.StringSliceVal GoodIDs = 50;
+    optional basetypes.v1.StringVal AppGoodID = 60;
+    optional basetypes.v1.StringSliceVal AppGoodIDs = 70;
+    optional basetypes.v1.Uint32Val GoodType = 80;
+    optional basetypes.v1.Uint32SliceVal GoodTypes = 90;
+    optional basetypes.v1.StringVal CoinTypeID = 100;
+    optional basetypes.v1.StringSliceVal CoinTypeIDs = 110;
 }
 
 message CreatePowerRentalRequest {
