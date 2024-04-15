@@ -131,7 +131,7 @@ message DeleteDisplayNameResponse {
 message AdminCreateDisplayNameRequest {
     string TargetAppID = 10;
     string AppGoodID = 30;
-    string DisplayName = 40;
+    string Name = 40;
     optional uint32 Index = 50;
 }
 

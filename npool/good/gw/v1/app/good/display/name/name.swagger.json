@@ -311,7 +311,7 @@
         "AppGoodID": {
           "type": "string"
         },
-        "DisplayName": {
+        "Name": {
           "type": "string"
         },
         "Index": {
