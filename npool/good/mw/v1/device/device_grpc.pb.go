@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateDeviceType_FullMethodName = "/good.middleware.device.v1.Middleware/CreateDeviceType"
-	Middleware_UpdateDeviceType_FullMethodName = "/good.middleware.device.v1.Middleware/UpdateDeviceType"
-	Middleware_GetDeviceType_FullMethodName    = "/good.middleware.device.v1.Middleware/GetDeviceType"
-	Middleware_GetDeviceTypes_FullMethodName   = "/good.middleware.device.v1.Middleware/GetDeviceTypes"
-	Middleware_DeleteDeviceType_FullMethodName = "/good.middleware.device.v1.Middleware/DeleteDeviceType"
+	Middleware_CreateDeviceType_FullMethodName     = "/good.middleware.device.v1.Middleware/CreateDeviceType"
+	Middleware_UpdateDeviceType_FullMethodName     = "/good.middleware.device.v1.Middleware/UpdateDeviceType"
+	Middleware_GetDeviceType_FullMethodName        = "/good.middleware.device.v1.Middleware/GetDeviceType"
+	Middleware_GetDeviceTypes_FullMethodName       = "/good.middleware.device.v1.Middleware/GetDeviceTypes"
+	Middleware_ExistDeviceTypeConds_FullMethodName = "/good.middleware.device.v1.Middleware/ExistDeviceTypeConds"
+	Middleware_DeleteDeviceType_FullMethodName     = "/good.middleware.device.v1.Middleware/DeleteDeviceType"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateDeviceType(ctx context.Context, in *UpdateDeviceTypeRequest, opts ...grpc.CallOption) (*UpdateDeviceTypeResponse, error)
 	GetDeviceType(ctx context.Context, in *GetDeviceTypeRequest, opts ...grpc.CallOption) (*GetDeviceTypeResponse, error)
 	GetDeviceTypes(ctx context.Context, in *GetDeviceTypesRequest, opts ...grpc.CallOption) (*GetDeviceTypesResponse, error)
+	ExistDeviceTypeConds(ctx context.Context, in *ExistDeviceTypeCondsRequest, opts ...grpc.CallOption) (*ExistDeviceTypeCondsResponse, error)
 	DeleteDeviceType(ctx context.Context, in *DeleteDeviceTypeRequest, opts ...grpc.CallOption) (*DeleteDeviceTypeResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetDeviceTypes(ctx context.Context, in *GetDeviceType
 	return out, nil
 }
 
+func (c *middlewareClient) ExistDeviceTypeConds(ctx context.Context, in *ExistDeviceTypeCondsRequest, opts ...grpc.CallOption) (*ExistDeviceTypeCondsResponse, error) {
+	out := new(ExistDeviceTypeCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistDeviceTypeConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteDeviceType(ctx context.Context, in *DeleteDeviceTypeRequest, opts ...grpc.CallOption) (*DeleteDeviceTypeResponse, error) {
 	out := new(DeleteDeviceTypeResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteDeviceType_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateDeviceType(context.Context, *UpdateDeviceTypeRequest) (*UpdateDeviceTypeResponse, error)
 	GetDeviceType(context.Context, *GetDeviceTypeRequest) (*GetDeviceTypeResponse, error)
 	GetDeviceTypes(context.Context, *GetDeviceTypesRequest) (*GetDeviceTypesResponse, error)
+	ExistDeviceTypeConds(context.Context, *ExistDeviceTypeCondsRequest) (*ExistDeviceTypeCondsResponse, error)
 	DeleteDeviceType(context.Context, *DeleteDeviceTypeRequest) (*DeleteDeviceTypeResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetDeviceType(context.Context, *GetDeviceTy
 }
 func (UnimplementedMiddlewareServer) GetDeviceTypes(context.Context, *GetDeviceTypesRequest) (*GetDeviceTypesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDeviceTypes not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistDeviceTypeConds(context.Context, *ExistDeviceTypeCondsRequest) (*ExistDeviceTypeCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistDeviceTypeConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteDeviceType(context.Context, *DeleteDeviceTypeRequest) (*DeleteDeviceTypeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteDeviceType not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetDeviceTypes_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistDeviceTypeConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistDeviceTypeCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistDeviceTypeConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistDeviceTypeConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistDeviceTypeConds(ctx, req.(*ExistDeviceTypeCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteDeviceType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteDeviceTypeRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDeviceTypes",
 			Handler:    _Middleware_GetDeviceTypes_Handler,
+		},
+		{
+			MethodName: "ExistDeviceTypeConds",
+			Handler:    _Middleware_ExistDeviceTypeConds_Handler,
 		},
 		{
 			MethodName: "DeleteDeviceType",
