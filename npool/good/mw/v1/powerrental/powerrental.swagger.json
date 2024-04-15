@@ -123,6 +123,14 @@
         }
       }
     },
+    "v1ExistPowerRentalCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetPowerRentalResponse": {
       "type": "object",
       "properties": {

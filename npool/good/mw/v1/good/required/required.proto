@@ -8,51 +8,51 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateRequired      (CreateRequiredRequest)      returns (CreateRequiredResponse)      {}
-    rpc GetRequired         (GetRequiredRequest)         returns (GetRequiredResponse)         {}
-    rpc ExistRequiredConds  (ExistRequiredCondsRequest)  returns (ExistRequiredCondsResponse)  {}
-    rpc GetRequireds        (GetRequiredsRequest)        returns (GetRequiredsResponse)        {}
-    rpc UpdateRequired      (UpdateRequiredRequest)      returns (UpdateRequiredResponse)      {}
-    rpc DeleteRequired      (DeleteRequiredRequest)      returns (DeleteRequiredResponse)      {}
+    rpc CreateRequired (CreateRequiredRequest) returns (CreateRequiredResponse) {}
+    rpc GetRequired (GetRequiredRequest) returns (GetRequiredResponse) {}
+    rpc ExistRequiredConds (ExistRequiredCondsRequest) returns (ExistRequiredCondsResponse) {}
+    rpc GetRequireds (GetRequiredsRequest) returns (GetRequiredsResponse) {}
+    rpc UpdateRequired (UpdateRequiredRequest) returns (UpdateRequiredResponse) {}
+    rpc DeleteRequired (DeleteRequiredRequest) returns (DeleteRequiredResponse) {}
 }
 
 message RequiredReq {
-    optional uint32 ID             = 9;
-    optional string EntID          = 10;
-    optional string MainGoodID     = 20;
-    optional string RequiredGoodID = 30;
-    optional bool   Must           = 40;
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string MainGoodID = 30;
+    optional string RequiredGoodID = 40;
+    optional bool   Must = 50;
 }
 
 message Required {
     // @inject_tag: sql:"id"
-    uint32 ID             = 9;
+    uint32 ID = 10;
     // @inject_tag: sql:"ent_id"
-    string EntID          = 10;
+    string EntID = 20;
     // @inject_tag: sql:"main_good_id"
-    string MainGoodID     = 20;
+    string MainGoodID = 30;
     // @inject_tag: sql:"main_good_name"
-    string MainGoodName   = 30;
+    string MainGoodName = 40;
     // @inject_tag: sql:"required_good_id"
-    string RequiredGoodID = 40;
+    string RequiredGoodID = 50;
     // @inject_tag: sql:"required_good_name"
-    string RequiredGoodName = 50;
+    string RequiredGoodName = 60;
     // @inject_tag: sql:"must"
-    bool   Must           = 60;
+    bool Must = 70;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt      = 1000;
+    uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt      = 1010;
+    uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID              = 9;
-    optional basetypes.v1.StringVal      EntID           = 10;
-    optional basetypes.v1.StringVal      GoodID          = 20;
-    optional basetypes.v1.StringSliceVal GoodIDs         = 30;
-    optional basetypes.v1.StringVal      MainGoodID      = 40;
-    optional basetypes.v1.StringVal      RequiredGoodID  = 50;
-    optional basetypes.v1.BoolVal        Must            = 60;
+    optional basetypes.v1.Uint32Val ID = 10;
+    optional basetypes.v1.StringVal EntID = 20;
+    optional basetypes.v1.StringVal GoodID = 30;
+    optional basetypes.v1.StringSliceVal GoodIDs = 40;
+    optional basetypes.v1.StringVal MainGoodID = 50;
+    optional basetypes.v1.StringVal RequiredGoodID  = 60;
+    optional basetypes.v1.BoolVal Must = 70;
 }
 
 message CreateRequiredRequest {
@@ -80,14 +80,14 @@ message ExistRequiredCondsResponse {
 }
 
 message GetRequiredsRequest {
-    Conds Conds  = 10;
+    Conds Conds = 10;
     int32 Offset = 20;
-    int32 Limit  = 30;
+    int32 Limit = 30;
 }
 
 message GetRequiredsResponse {
     repeated Required Infos = 10;
-    uint32            Total = 20;
+    uint32 Total = 20;
 }
 
 message UpdateRequiredRequest {

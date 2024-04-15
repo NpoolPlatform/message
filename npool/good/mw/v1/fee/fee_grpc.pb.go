@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateFee_FullMethodName = "/good.middleware.fee.v1.Middleware/CreateFee"
-	Middleware_UpdateFee_FullMethodName = "/good.middleware.fee.v1.Middleware/UpdateFee"
-	Middleware_GetFee_FullMethodName    = "/good.middleware.fee.v1.Middleware/GetFee"
-	Middleware_GetFees_FullMethodName   = "/good.middleware.fee.v1.Middleware/GetFees"
-	Middleware_DeleteFee_FullMethodName = "/good.middleware.fee.v1.Middleware/DeleteFee"
+	Middleware_CreateFee_FullMethodName     = "/good.middleware.fee.v1.Middleware/CreateFee"
+	Middleware_UpdateFee_FullMethodName     = "/good.middleware.fee.v1.Middleware/UpdateFee"
+	Middleware_GetFee_FullMethodName        = "/good.middleware.fee.v1.Middleware/GetFee"
+	Middleware_GetFees_FullMethodName       = "/good.middleware.fee.v1.Middleware/GetFees"
+	Middleware_ExistFeeConds_FullMethodName = "/good.middleware.fee.v1.Middleware/ExistFeeConds"
+	Middleware_DeleteFee_FullMethodName     = "/good.middleware.fee.v1.Middleware/DeleteFee"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateFee(ctx context.Context, in *UpdateFeeRequest, opts ...grpc.CallOption) (*UpdateFeeResponse, error)
 	GetFee(ctx context.Context, in *GetFeeRequest, opts ...grpc.CallOption) (*GetFeeResponse, error)
 	GetFees(ctx context.Context, in *GetFeesRequest, opts ...grpc.CallOption) (*GetFeesResponse, error)
+	ExistFeeConds(ctx context.Context, in *ExistFeeCondsRequest, opts ...grpc.CallOption) (*ExistFeeCondsResponse, error)
 	DeleteFee(ctx context.Context, in *DeleteFeeRequest, opts ...grpc.CallOption) (*DeleteFeeResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetFees(ctx context.Context, in *GetFeesRequest, opts
 	return out, nil
 }
 
+func (c *middlewareClient) ExistFeeConds(ctx context.Context, in *ExistFeeCondsRequest, opts ...grpc.CallOption) (*ExistFeeCondsResponse, error) {
+	out := new(ExistFeeCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistFeeConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteFee(ctx context.Context, in *DeleteFeeRequest, opts ...grpc.CallOption) (*DeleteFeeResponse, error) {
 	out := new(DeleteFeeResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteFee_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateFee(context.Context, *UpdateFeeRequest) (*UpdateFeeResponse, error)
 	GetFee(context.Context, *GetFeeRequest) (*GetFeeResponse, error)
 	GetFees(context.Context, *GetFeesRequest) (*GetFeesResponse, error)
+	ExistFeeConds(context.Context, *ExistFeeCondsRequest) (*ExistFeeCondsResponse, error)
 	DeleteFee(context.Context, *DeleteFeeRequest) (*DeleteFeeResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetFee(context.Context, *GetFeeRequest) (*G
 }
 func (UnimplementedMiddlewareServer) GetFees(context.Context, *GetFeesRequest) (*GetFeesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFees not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistFeeConds(context.Context, *ExistFeeCondsRequest) (*ExistFeeCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistFeeConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteFee(context.Context, *DeleteFeeRequest) (*DeleteFeeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteFee not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetFees_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistFeeConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistFeeCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistFeeConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistFeeConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistFeeConds(ctx, req.(*ExistFeeCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteFee_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteFeeRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetFees",
 			Handler:    _Middleware_GetFees_Handler,
+		},
+		{
+			MethodName: "ExistFeeConds",
+			Handler:    _Middleware_ExistFeeConds_Handler,
 		},
 		{
 			MethodName: "DeleteFee",

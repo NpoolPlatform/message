@@ -13,6 +13,7 @@ service Middleware {
     rpc UpdateFee (UpdateFeeRequest) returns (UpdateFeeResponse) {}
     rpc GetFee (GetFeeRequest) returns (GetFeeResponse) {}
     rpc GetFees (GetFeesRequest) returns (GetFeesResponse) {}
+    rpc ExistFeeConds (ExistFeeCondsRequest) returns (ExistFeeCondsResponse) {}
     rpc DeleteFee (DeleteFeeRequest) returns (DeleteFeeResponse) {}
 }
 
@@ -89,14 +90,22 @@ message GetFeeResponse {
 }
 
 message GetFeesRequest {
-    Conds Conds  = 10;
+    Conds Conds = 10;
     int32 Offset = 20;
-    int32 Limit  = 30;
+    int32 Limit = 30;
 }
 
 message GetFeesResponse {
     repeated Fee Infos = 10;
-    uint32       Total = 20;
+    uint32 Total = 20;
+}
+
+message ExistFeeCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistFeeCondsResponse {
+    bool Info = 10;
 }
 
 message DeleteFeeRequest {

@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateLocation_FullMethodName = "/good.middleware.vendor.location.v1.Middleware/CreateLocation"
-	Middleware_UpdateLocation_FullMethodName = "/good.middleware.vendor.location.v1.Middleware/UpdateLocation"
-	Middleware_GetLocation_FullMethodName    = "/good.middleware.vendor.location.v1.Middleware/GetLocation"
-	Middleware_GetLocations_FullMethodName   = "/good.middleware.vendor.location.v1.Middleware/GetLocations"
-	Middleware_DeleteLocation_FullMethodName = "/good.middleware.vendor.location.v1.Middleware/DeleteLocation"
+	Middleware_CreateLocation_FullMethodName     = "/good.middleware.vendor.location.v1.Middleware/CreateLocation"
+	Middleware_UpdateLocation_FullMethodName     = "/good.middleware.vendor.location.v1.Middleware/UpdateLocation"
+	Middleware_GetLocation_FullMethodName        = "/good.middleware.vendor.location.v1.Middleware/GetLocation"
+	Middleware_GetLocations_FullMethodName       = "/good.middleware.vendor.location.v1.Middleware/GetLocations"
+	Middleware_ExistLocationConds_FullMethodName = "/good.middleware.vendor.location.v1.Middleware/ExistLocationConds"
+	Middleware_DeleteLocation_FullMethodName     = "/good.middleware.vendor.location.v1.Middleware/DeleteLocation"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateLocation(ctx context.Context, in *UpdateLocationRequest, opts ...grpc.CallOption) (*UpdateLocationResponse, error)
 	GetLocation(ctx context.Context, in *GetLocationRequest, opts ...grpc.CallOption) (*GetLocationResponse, error)
 	GetLocations(ctx context.Context, in *GetLocationsRequest, opts ...grpc.CallOption) (*GetLocationsResponse, error)
+	ExistLocationConds(ctx context.Context, in *ExistLocationCondsRequest, opts ...grpc.CallOption) (*ExistLocationCondsResponse, error)
 	DeleteLocation(ctx context.Context, in *DeleteLocationRequest, opts ...grpc.CallOption) (*DeleteLocationResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetLocations(ctx context.Context, in *GetLocationsReq
 	return out, nil
 }
 
+func (c *middlewareClient) ExistLocationConds(ctx context.Context, in *ExistLocationCondsRequest, opts ...grpc.CallOption) (*ExistLocationCondsResponse, error) {
+	out := new(ExistLocationCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistLocationConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteLocation(ctx context.Context, in *DeleteLocationRequest, opts ...grpc.CallOption) (*DeleteLocationResponse, error) {
 	out := new(DeleteLocationResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteLocation_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateLocation(context.Context, *UpdateLocationRequest) (*UpdateLocationResponse, error)
 	GetLocation(context.Context, *GetLocationRequest) (*GetLocationResponse, error)
 	GetLocations(context.Context, *GetLocationsRequest) (*GetLocationsResponse, error)
+	ExistLocationConds(context.Context, *ExistLocationCondsRequest) (*ExistLocationCondsResponse, error)
 	DeleteLocation(context.Context, *DeleteLocationRequest) (*DeleteLocationResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetLocation(context.Context, *GetLocationRe
 }
 func (UnimplementedMiddlewareServer) GetLocations(context.Context, *GetLocationsRequest) (*GetLocationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLocations not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistLocationConds(context.Context, *ExistLocationCondsRequest) (*ExistLocationCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistLocationConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteLocation(context.Context, *DeleteLocationRequest) (*DeleteLocationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteLocation not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetLocations_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistLocationConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistLocationCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistLocationConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistLocationConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistLocationConds(ctx, req.(*ExistLocationCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteLocationRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLocations",
 			Handler:    _Middleware_GetLocations_Handler,
+		},
+		{
+			MethodName: "ExistLocationConds",
+			Handler:    _Middleware_ExistLocationConds_Handler,
 		},
 		{
 			MethodName: "DeleteLocation",

@@ -80,6 +80,14 @@
         }
       }
     },
+    "v1ExistLocationCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetLocationResponse": {
       "type": "object",
       "properties": {
