@@ -51,9 +51,8 @@ message AdminCreatePosterResponse {
 message AdminUpdatePosterRequest {
     uint32 ID = 10;
     string EntID = 20;
-    string AppID = 30;
-    optional string Poster = 40;
-    optional uint32 Index = 50;
+    optional string Poster = 30;
+    optional uint32 Index = 40;
 }
 
 message AdminUpdatePosterResponse {
@@ -61,10 +60,9 @@ message AdminUpdatePosterResponse {
 }
 
 message GetPostersRequest {
-    string AppID = 10;
-    optional string DeviceTypeID = 20;
-    int32 Offset = 30;
-    int32 Limit = 40;
+    optional string DeviceTypeID = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
 message GetPostersResponse {
