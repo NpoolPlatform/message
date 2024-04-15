@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateBrand_FullMethodName = "/good.middleware.vendor.brand.v1.Middleware/CreateBrand"
-	Middleware_UpdateBrand_FullMethodName = "/good.middleware.vendor.brand.v1.Middleware/UpdateBrand"
-	Middleware_GetBrand_FullMethodName    = "/good.middleware.vendor.brand.v1.Middleware/GetBrand"
-	Middleware_GetBrands_FullMethodName   = "/good.middleware.vendor.brand.v1.Middleware/GetBrands"
-	Middleware_DeleteBrand_FullMethodName = "/good.middleware.vendor.brand.v1.Middleware/DeleteBrand"
+	Middleware_CreateBrand_FullMethodName     = "/good.middleware.vendor.brand.v1.Middleware/CreateBrand"
+	Middleware_UpdateBrand_FullMethodName     = "/good.middleware.vendor.brand.v1.Middleware/UpdateBrand"
+	Middleware_GetBrand_FullMethodName        = "/good.middleware.vendor.brand.v1.Middleware/GetBrand"
+	Middleware_GetBrands_FullMethodName       = "/good.middleware.vendor.brand.v1.Middleware/GetBrands"
+	Middleware_ExistBrandConds_FullMethodName = "/good.middleware.vendor.brand.v1.Middleware/ExistBrandConds"
+	Middleware_DeleteBrand_FullMethodName     = "/good.middleware.vendor.brand.v1.Middleware/DeleteBrand"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateBrand(ctx context.Context, in *UpdateBrandRequest, opts ...grpc.CallOption) (*UpdateBrandResponse, error)
 	GetBrand(ctx context.Context, in *GetBrandRequest, opts ...grpc.CallOption) (*GetBrandResponse, error)
 	GetBrands(ctx context.Context, in *GetBrandsRequest, opts ...grpc.CallOption) (*GetBrandsResponse, error)
+	ExistBrandConds(ctx context.Context, in *ExistBrandCondsRequest, opts ...grpc.CallOption) (*ExistBrandCondsResponse, error)
 	DeleteBrand(ctx context.Context, in *DeleteBrandRequest, opts ...grpc.CallOption) (*DeleteBrandResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetBrands(ctx context.Context, in *GetBrandsRequest, 
 	return out, nil
 }
 
+func (c *middlewareClient) ExistBrandConds(ctx context.Context, in *ExistBrandCondsRequest, opts ...grpc.CallOption) (*ExistBrandCondsResponse, error) {
+	out := new(ExistBrandCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistBrandConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteBrand(ctx context.Context, in *DeleteBrandRequest, opts ...grpc.CallOption) (*DeleteBrandResponse, error) {
 	out := new(DeleteBrandResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteBrand_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateBrand(context.Context, *UpdateBrandRequest) (*UpdateBrandResponse, error)
 	GetBrand(context.Context, *GetBrandRequest) (*GetBrandResponse, error)
 	GetBrands(context.Context, *GetBrandsRequest) (*GetBrandsResponse, error)
+	ExistBrandConds(context.Context, *ExistBrandCondsRequest) (*ExistBrandCondsResponse, error)
 	DeleteBrand(context.Context, *DeleteBrandRequest) (*DeleteBrandResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetBrand(context.Context, *GetBrandRequest)
 }
 func (UnimplementedMiddlewareServer) GetBrands(context.Context, *GetBrandsRequest) (*GetBrandsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBrands not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistBrandConds(context.Context, *ExistBrandCondsRequest) (*ExistBrandCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistBrandConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteBrand(context.Context, *DeleteBrandRequest) (*DeleteBrandResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteBrand not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetBrands_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistBrandConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistBrandCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistBrandConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistBrandConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistBrandConds(ctx, req.(*ExistBrandCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteBrandRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetBrands",
 			Handler:    _Middleware_GetBrands_Handler,
+		},
+		{
+			MethodName: "ExistBrandConds",
+			Handler:    _Middleware_ExistBrandConds_Handler,
 		},
 		{
 			MethodName: "DeleteBrand",

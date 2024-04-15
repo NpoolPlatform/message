@@ -124,6 +124,14 @@
         }
       }
     },
+    "v1ExistBrandCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetBrandResponse": {
       "type": "object",
       "properties": {
