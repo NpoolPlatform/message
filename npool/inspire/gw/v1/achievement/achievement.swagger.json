@@ -136,6 +136,10 @@
         "Kol": {
           "type": "boolean"
         },
+        "TotalInvitees": {
+          "type": "integer",
+          "format": "int64"
+        },
         "Achievements": {
           "type": "array",
           "items": {

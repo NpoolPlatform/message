@@ -65,15 +65,16 @@ message Achievement {
   string FirstName = 50;
   string LastName = 60;
   bool Kol = 70;
-  repeated GoodAchievement Achievements = 80;
-  string TotalCommission = 90;
-  string SelfCommission = 100;
-  uint32 DirectInvites = 110;
-  uint32 IndirectInvites = 120;
-  string DirectConsumeAmount = 130;
-  string InviteeConsumeAmount = 140;
-  uint32 CreatedAt = 150;
-  uint32 InvitedAt = 160;
+  uint32 TotalInvitees = 80;
+  repeated GoodAchievement Achievements = 90;
+  string TotalCommission = 100;
+  string SelfCommission = 110;
+  uint32 DirectInvites = 120;
+  uint32 IndirectInvites = 130;
+  string DirectConsumeAmount = 140;
+  string InviteeConsumeAmount = 150;
+  uint32 CreatedAt = 1000;
+  uint32 InvitedAt = 1010;
 }
 
 message GetAchievementsRequest {
