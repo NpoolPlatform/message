@@ -91,7 +91,7 @@ message CreateTopMostGoodConstraintRequest {
     string AppID = 10;
     string TopMostGoodID = 20;
     basetypes.good.v1.GoodTopMostConstraint Constraint = 30;
-    string TargetValue = 40;
+    optional string TargetValue = 40;
     optional uint32 Index = 50;
 }
 
@@ -136,7 +136,7 @@ message DeleteTopMostGoodConstraintResponse {
 message AdminCreateTopMostGoodConstraintRequest {
     string TargetAppID = 10;
     string TopMostGoodID = 20;
-    string TargetValue = 30;
+    optional string TargetValue = 30;
     optional uint32 Index = 40;
 }
 
