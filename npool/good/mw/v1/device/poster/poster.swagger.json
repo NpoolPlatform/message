@@ -77,6 +77,14 @@
         }
       }
     },
+    "v1ExistPosterCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetPosterResponse": {
       "type": "object",
       "properties": {

@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateManufacturer_FullMethodName = "/good.middleware.device.manufacturer.v1.Middleware/CreateManufacturer"
-	Middleware_UpdateManufacturer_FullMethodName = "/good.middleware.device.manufacturer.v1.Middleware/UpdateManufacturer"
-	Middleware_GetManufacturer_FullMethodName    = "/good.middleware.device.manufacturer.v1.Middleware/GetManufacturer"
-	Middleware_GetManufacturers_FullMethodName   = "/good.middleware.device.manufacturer.v1.Middleware/GetManufacturers"
-	Middleware_DeleteManufacturer_FullMethodName = "/good.middleware.device.manufacturer.v1.Middleware/DeleteManufacturer"
+	Middleware_CreateManufacturer_FullMethodName     = "/good.middleware.device.manufacturer.v1.Middleware/CreateManufacturer"
+	Middleware_UpdateManufacturer_FullMethodName     = "/good.middleware.device.manufacturer.v1.Middleware/UpdateManufacturer"
+	Middleware_GetManufacturer_FullMethodName        = "/good.middleware.device.manufacturer.v1.Middleware/GetManufacturer"
+	Middleware_GetManufacturers_FullMethodName       = "/good.middleware.device.manufacturer.v1.Middleware/GetManufacturers"
+	Middleware_ExistManufacturerConds_FullMethodName = "/good.middleware.device.manufacturer.v1.Middleware/ExistManufacturerConds"
+	Middleware_DeleteManufacturer_FullMethodName     = "/good.middleware.device.manufacturer.v1.Middleware/DeleteManufacturer"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateManufacturer(ctx context.Context, in *UpdateManufacturerRequest, opts ...grpc.CallOption) (*UpdateManufacturerResponse, error)
 	GetManufacturer(ctx context.Context, in *GetManufacturerRequest, opts ...grpc.CallOption) (*GetManufacturerResponse, error)
 	GetManufacturers(ctx context.Context, in *GetManufacturersRequest, opts ...grpc.CallOption) (*GetManufacturersResponse, error)
+	ExistManufacturerConds(ctx context.Context, in *ExistManufacturerCondsRequest, opts ...grpc.CallOption) (*ExistManufacturerCondsResponse, error)
 	DeleteManufacturer(ctx context.Context, in *DeleteManufacturerRequest, opts ...grpc.CallOption) (*DeleteManufacturerResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetManufacturers(ctx context.Context, in *GetManufact
 	return out, nil
 }
 
+func (c *middlewareClient) ExistManufacturerConds(ctx context.Context, in *ExistManufacturerCondsRequest, opts ...grpc.CallOption) (*ExistManufacturerCondsResponse, error) {
+	out := new(ExistManufacturerCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistManufacturerConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteManufacturer(ctx context.Context, in *DeleteManufacturerRequest, opts ...grpc.CallOption) (*DeleteManufacturerResponse, error) {
 	out := new(DeleteManufacturerResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteManufacturer_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateManufacturer(context.Context, *UpdateManufacturerRequest) (*UpdateManufacturerResponse, error)
 	GetManufacturer(context.Context, *GetManufacturerRequest) (*GetManufacturerResponse, error)
 	GetManufacturers(context.Context, *GetManufacturersRequest) (*GetManufacturersResponse, error)
+	ExistManufacturerConds(context.Context, *ExistManufacturerCondsRequest) (*ExistManufacturerCondsResponse, error)
 	DeleteManufacturer(context.Context, *DeleteManufacturerRequest) (*DeleteManufacturerResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetManufacturer(context.Context, *GetManufa
 }
 func (UnimplementedMiddlewareServer) GetManufacturers(context.Context, *GetManufacturersRequest) (*GetManufacturersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetManufacturers not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistManufacturerConds(context.Context, *ExistManufacturerCondsRequest) (*ExistManufacturerCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistManufacturerConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteManufacturer(context.Context, *DeleteManufacturerRequest) (*DeleteManufacturerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteManufacturer not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetManufacturers_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistManufacturerConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistManufacturerCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistManufacturerConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistManufacturerConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistManufacturerConds(ctx, req.(*ExistManufacturerCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteManufacturer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteManufacturerRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetManufacturers",
 			Handler:    _Middleware_GetManufacturers_Handler,
+		},
+		{
+			MethodName: "ExistManufacturerConds",
+			Handler:    _Middleware_ExistManufacturerConds_Handler,
 		},
 		{
 			MethodName: "DeleteManufacturer",

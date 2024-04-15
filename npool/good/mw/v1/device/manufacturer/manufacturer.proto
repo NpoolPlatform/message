@@ -10,27 +10,28 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc CreateManufacturer (CreateManufacturerRequest) returns (CreateManufacturerResponse) {}
     rpc UpdateManufacturer (UpdateManufacturerRequest) returns (UpdateManufacturerResponse) {}
-    rpc GetManufacturer    (GetManufacturerRequest)    returns (GetManufacturerResponse)    {}
-    rpc GetManufacturers   (GetManufacturersRequest)   returns (GetManufacturersResponse)   {}
+    rpc GetManufacturer (GetManufacturerRequest) returns (GetManufacturerResponse) {}
+    rpc GetManufacturers (GetManufacturersRequest) returns (GetManufacturersResponse) {}
+    rpc ExistManufacturerConds (ExistManufacturerCondsRequest) returns (ExistManufacturerCondsResponse) {}
     rpc DeleteManufacturer (DeleteManufacturerRequest) returns (DeleteManufacturerResponse) {}
 }
 
 message ManufacturerReq {
-    optional uint32 ID    = 9;
-    optional string EntID = 10;
-    optional string Name  = 20;
-    optional string Logo  = 30;
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string Name = 30;
+    optional string Logo = 40;
 }
 
 message Manufacturer {
     // @inject_tag: sql:"id"
-    uint32 ID        = 9;
+    uint32 ID = 10;
     // @inject_tag: sql:"ent_id"
-    string EntID     = 10;
+    string EntID = 20;
     // @inject_tag: sql:"name"
-    string Name      = 20;
+    string Name = 30;
     // @inject_tag: sql:"logo"
-    string Logo      = 30;
+    string Logo = 40;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
@@ -38,9 +39,9 @@ message Manufacturer {
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val ID    = 9;
-    optional basetypes.v1.StringVal EntID = 10;
-    optional basetypes.v1.StringVal Name  = 20;
+    optional basetypes.v1.Uint32Val ID = 10;
+    optional basetypes.v1.StringVal EntID = 20;
+    optional basetypes.v1.StringVal Name = 30;
 }
 
 
@@ -69,14 +70,22 @@ message GetManufacturerResponse {
 }
 
 message GetManufacturersRequest {
-    Conds Conds   = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
 message GetManufacturersResponse {
     repeated Manufacturer Infos = 10;
-    uint32                Total = 20;
+    uint32 Total = 20;
+}
+
+message ExistManufacturerCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistManufacturerCondsResponse {
+    bool Info = 10;
 }
 
 message DeleteManufacturerRequest {

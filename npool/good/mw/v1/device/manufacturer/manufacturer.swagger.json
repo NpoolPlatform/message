@@ -74,6 +74,14 @@
         }
       }
     },
+    "v1ExistManufacturerCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetManufacturerResponse": {
       "type": "object",
       "properties": {
