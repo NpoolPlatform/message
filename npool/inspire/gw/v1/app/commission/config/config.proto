@@ -12,7 +12,7 @@ service Gateway {
   rpc CreateAppCommissionConfig(CreateAppCommissionConfigRequest)
       returns (CreateAppCommissionConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/create/app/commission/config"
+      post : "/v1/create/appcommissionconfig"
       body : "*"
     };
   }
@@ -20,7 +20,7 @@ service Gateway {
   rpc AdminCreateAppCommissionConfig(AdminCreateAppCommissionConfigRequest)
       returns (AdminCreateAppCommissionConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/create/app/commission/config"
+      post : "/v1/admin/create/appcommissionconfig"
       body : "*"
     };
   }
@@ -28,28 +28,28 @@ service Gateway {
   rpc UpdateAppCommissionConfig(UpdateAppCommissionConfigRequest)
       returns (UpdateAppCommissionConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/update/app/commission/config"
+      post : "/v1/update/appcommissionconfig"
       body : "*"
     };
   }
   rpc AdminUpdateAppCommissionConfig(AdminUpdateAppCommissionConfigRequest)
       returns (AdminUpdateAppCommissionConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/update/app/commission/config"
+      post : "/v1/admin/update/appcommissionconfig"
       body : "*"
     };
   }
   rpc GetAppCommissionConfigs(GetAppCommissionConfigsRequest)
       returns (GetAppCommissionConfigsResponse) {
     option (google.api.http) = {
-      post : "/v1/get/app/commission/configs"
+      post : "/v1/get/appcommissionconfigs"
       body : "*"
     };
   }
   rpc AdminGetAppCommissionConfigs(AdminGetAppCommissionConfigsRequest)
       returns (AdminGetAppCommissionConfigsResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/app/commission/configs"
+      post : "/v1/admin/get/appcommissionconfigs"
       body : "*"
     };
   }

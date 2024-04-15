@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/app/good/commission/config": {
+    "/v1/admin/create/appgoodcommissionconfig": {
       "post": {
         "operationId": "Gateway_AdminCreateAppGoodCommissionConfig",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/admin/get/app/good/commission/configs": {
+    "/v1/admin/get/appgoodcommissionconfigs": {
       "post": {
         "operationId": "Gateway_AdminGetAppGoodCommissionConfigs",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/admin/update/app/good/commission/config": {
+    "/v1/admin/update/appgoodcommissionconfig": {
       "post": {
         "operationId": "Gateway_AdminUpdateAppGoodCommissionConfig",
         "responses": {
@@ -112,7 +112,7 @@
         ]
       }
     },
-    "/v1/create/app/good/commission/config": {
+    "/v1/create/appgoodcommissionconfig": {
       "post": {
         "operationId": "Gateway_CreateAppGoodCommissionConfig",
         "responses": {
@@ -144,7 +144,7 @@
         ]
       }
     },
-    "/v1/get/app/good/commission/configs": {
+    "/v1/get/appgoodcommissionconfigs": {
       "post": {
         "operationId": "Gateway_GetAppGoodCommissionConfigs",
         "responses": {
@@ -176,7 +176,7 @@
         ]
       }
     },
-    "/v1/update/app/good/commission/config": {
+    "/v1/update/appgoodcommissionconfig": {
       "post": {
         "operationId": "Gateway_UpdateAppGoodCommissionConfig",
         "responses": {

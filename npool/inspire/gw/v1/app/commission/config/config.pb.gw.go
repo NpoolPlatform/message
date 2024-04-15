@@ -247,7 +247,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/CreateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/create/app/commission/config"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/CreateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/create/appcommissionconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -270,7 +270,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/AdminCreateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/admin/create/app/commission/config"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/AdminCreateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/admin/create/appcommissionconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -293,7 +293,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/UpdateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/update/app/commission/config"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/UpdateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/update/appcommissionconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -316,7 +316,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/AdminUpdateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/admin/update/app/commission/config"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/AdminUpdateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/admin/update/appcommissionconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -339,7 +339,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/GetAppCommissionConfigs", runtime.WithHTTPPathPattern("/v1/get/app/commission/configs"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/GetAppCommissionConfigs", runtime.WithHTTPPathPattern("/v1/get/appcommissionconfigs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -362,7 +362,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/AdminGetAppCommissionConfigs", runtime.WithHTTPPathPattern("/v1/admin/get/app/commission/configs"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/AdminGetAppCommissionConfigs", runtime.WithHTTPPathPattern("/v1/admin/get/appcommissionconfigs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -424,7 +424,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/CreateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/create/app/commission/config"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/CreateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/create/appcommissionconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -444,7 +444,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/AdminCreateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/admin/create/app/commission/config"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/AdminCreateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/admin/create/appcommissionconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -464,7 +464,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/UpdateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/update/app/commission/config"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/UpdateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/update/appcommissionconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -484,7 +484,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/AdminUpdateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/admin/update/app/commission/config"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/AdminUpdateAppCommissionConfig", runtime.WithHTTPPathPattern("/v1/admin/update/appcommissionconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -504,7 +504,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/GetAppCommissionConfigs", runtime.WithHTTPPathPattern("/v1/get/app/commission/configs"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/GetAppCommissionConfigs", runtime.WithHTTPPathPattern("/v1/get/appcommissionconfigs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -524,7 +524,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/AdminGetAppCommissionConfigs", runtime.WithHTTPPathPattern("/v1/admin/get/app/commission/configs"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.app.commission.config.v1.Gateway/AdminGetAppCommissionConfigs", runtime.WithHTTPPathPattern("/v1/admin/get/appcommissionconfigs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -544,17 +544,17 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_CreateAppCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "create", "app", "commission", "config"}, ""))
+	pattern_Gateway_CreateAppCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "create", "appcommissionconfig"}, ""))
 
-	pattern_Gateway_AdminCreateAppCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "admin", "create", "app", "commission", "config"}, ""))
+	pattern_Gateway_AdminCreateAppCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "appcommissionconfig"}, ""))
 
-	pattern_Gateway_UpdateAppCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "update", "app", "commission", "config"}, ""))
+	pattern_Gateway_UpdateAppCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "update", "appcommissionconfig"}, ""))
 
-	pattern_Gateway_AdminUpdateAppCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "admin", "update", "app", "commission", "config"}, ""))
+	pattern_Gateway_AdminUpdateAppCommissionConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "update", "appcommissionconfig"}, ""))
 
-	pattern_Gateway_GetAppCommissionConfigs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "app", "commission", "configs"}, ""))
+	pattern_Gateway_GetAppCommissionConfigs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "appcommissionconfigs"}, ""))
 
-	pattern_Gateway_AdminGetAppCommissionConfigs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"v1", "admin", "get", "app", "commission", "configs"}, ""))
+	pattern_Gateway_AdminGetAppCommissionConfigs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "get", "appcommissionconfigs"}, ""))
 )
 
 var (

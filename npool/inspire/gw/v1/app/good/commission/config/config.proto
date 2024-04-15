@@ -12,7 +12,7 @@ service Gateway {
   rpc CreateAppGoodCommissionConfig(CreateAppGoodCommissionConfigRequest)
       returns (CreateAppGoodCommissionConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/create/app/good/commission/config"
+      post : "/v1/create/appgoodcommissionconfig"
       body : "*"
     };
   }
@@ -20,7 +20,7 @@ service Gateway {
   rpc AdminCreateAppGoodCommissionConfig(AdminCreateAppGoodCommissionConfigRequest)
       returns (AdminCreateAppGoodCommissionConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/create/app/good/commission/config"
+      post : "/v1/admin/create/appgoodcommissionconfig"
       body : "*"
     };
   }
@@ -28,28 +28,28 @@ service Gateway {
   rpc UpdateAppGoodCommissionConfig(UpdateAppGoodCommissionConfigRequest)
       returns (UpdateAppGoodCommissionConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/update/app/good/commission/config"
+      post : "/v1/update/appgoodcommissionconfig"
       body : "*"
     };
   }
   rpc AdminUpdateAppGoodCommissionConfig(AdminUpdateAppGoodCommissionConfigRequest)
       returns (AdminUpdateAppGoodCommissionConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/update/app/good/commission/config"
+      post : "/v1/admin/update/appgoodcommissionconfig"
       body : "*"
     };
   }
   rpc GetAppGoodCommissionConfigs(GetAppGoodCommissionConfigsRequest)
       returns (GetAppGoodCommissionConfigsResponse) {
     option (google.api.http) = {
-      post : "/v1/get/app/good/commission/configs"
+      post : "/v1/get/appgoodcommissionconfigs"
       body : "*"
     };
   }
   rpc AdminGetAppGoodCommissionConfigs(AdminGetAppGoodCommissionConfigsRequest)
       returns (AdminGetAppGoodCommissionConfigsResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/app/good/commission/configs"
+      post : "/v1/admin/get/appgoodcommissionconfigs"
       body : "*"
     };
   }

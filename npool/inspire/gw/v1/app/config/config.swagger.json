@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/app/config": {
+    "/v1/admin/create/appconfig": {
       "post": {
         "operationId": "Gateway_AdminCreateAppConfig",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/admin/get/app/configs": {
+    "/v1/admin/get/appconfigs": {
       "post": {
         "operationId": "Gateway_AdminGetAppConfigs",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/admin/update/app/config": {
+    "/v1/admin/update/appconfig": {
       "post": {
         "operationId": "Gateway_AdminUpdateAppConfig",
         "responses": {
@@ -112,7 +112,7 @@
         ]
       }
     },
-    "/v1/create/app/config": {
+    "/v1/create/appconfig": {
       "post": {
         "operationId": "Gateway_CreateAppConfig",
         "responses": {
@@ -144,7 +144,7 @@
         ]
       }
     },
-    "/v1/get/app/configs": {
+    "/v1/get/appconfigs": {
       "post": {
         "operationId": "Gateway_GetAppConfigs",
         "responses": {
@@ -176,7 +176,7 @@
         ]
       }
     },
-    "/v1/update/app/config": {
+    "/v1/update/appconfig": {
       "post": {
         "operationId": "Gateway_UpdateAppConfig",
         "responses": {
