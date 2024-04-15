@@ -8,118 +8,93 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateMessage     (CreateMessageRequest)     returns (CreateMessageResponse)     {}
-    rpc CreateMessages    (CreateMessagesRequest)    returns (CreateMessagesResponse)    {}
-    rpc UpdateMessage     (UpdateMessageRequest)     returns (UpdateMessageResponse)     {}
-    rpc GetMessage        (GetMessageRequest)        returns (GetMessageResponse)        {}
-    rpc GetMessages       (GetMessagesRequest)       returns (GetMessagesResponse)       {}
-    rpc ExistMessageConds (ExistMessageCondsRequest) returns (ExistMessageCondsResponse) {}
-    rpc DeleteMessage     (DeleteMessageRequest)     returns (DeleteMessageResponse)     {}
+  rpc CreateMessage(CreateMessageRequest) returns (CreateMessageResponse) {}
+  rpc CreateMessages(CreateMessagesRequest) returns (CreateMessagesResponse) {}
+  rpc UpdateMessage(UpdateMessageRequest) returns (UpdateMessageResponse) {}
+  rpc GetMessage(GetMessageRequest) returns (GetMessageResponse) {}
+  rpc GetMessages(GetMessagesRequest) returns (GetMessagesResponse) {}
+  rpc ExistMessageConds(ExistMessageCondsRequest)
+      returns (ExistMessageCondsResponse) {}
+  rpc DeleteMessage(DeleteMessageRequest) returns (DeleteMessageResponse) {}
 }
 
 message MessageReq {
-    optional uint32 ID        = 9;
-    optional string EntID     = 10;
-    optional string AppID     = 20;
-    optional string LangID    = 30;
-    optional string MessageID = 40;
-    optional string Message   = 50;
-    optional uint32 GetIndex  = 60;
-    optional bool   Disabled  = 70;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional string LangID = 30;
+  optional string MessageID = 40;
+  optional string Message = 50;
+  optional uint32 GetIndex = 60;
+  optional bool Disabled = 70;
 }
 
 message Message {
-    // @inject_tag: sql:"id"
-    uint32 ID         = 9;
-    // @inject_tag: sql:"ent_id"
-    string EntID      = 10;
-    // @inject_tag: sql:"app_id"
-    string AppID      = 20;
-    // @inject_tag: sql:"lang_id"
-    string LangID     = 30;
-    // @inject_tag: sql:"lang"
-    string Lang       = 40;
-    // @inject_tag: sql:"message_id"
-    string MessageID  = 50;
-    // @inject_tag: sql:"message"
-    string Message    = 60;
-    // @inject_tag: sql:"get_index"
-    uint32 GetIndex   = 70;
-    // @inject_tag: sql:"disabled"
-    bool   Disabled   = 80;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt  = 90;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt  = 100;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"app_id"
+  string AppID = 20;
+  // @inject_tag: sql:"lang_id"
+  string LangID = 30;
+  // @inject_tag: sql:"lang"
+  string Lang = 40;
+  // @inject_tag: sql:"message_id"
+  string MessageID = 50;
+  // @inject_tag: sql:"message"
+  string Message = 60;
+  // @inject_tag: sql:"get_index"
+  uint32 GetIndex = 70;
+  // @inject_tag: sql:"disabled"
+  bool Disabled = 80;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 90;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 100;
 }
 
 message Conds {
-    basetypes.v1.Uint32Val ID         = 9;
-    basetypes.v1.StringVal EntID      = 10;
-    basetypes.v1.StringVal AppID      = 20;
-    basetypes.v1.StringVal LangID     = 30;
-    basetypes.v1.StringVal MessageID  = 40;
-    basetypes.v1.BoolVal   Disabled   = 50;
-    basetypes.v1.StringSliceVal MessageIDs  = 60;
+  basetypes.v1.Uint32Val ID = 9;
+  basetypes.v1.StringVal EntID = 10;
+  basetypes.v1.StringVal AppID = 20;
+  basetypes.v1.StringVal LangID = 30;
+  basetypes.v1.StringVal MessageID = 40;
+  basetypes.v1.BoolVal Disabled = 50;
+  basetypes.v1.StringSliceVal MessageIDs = 60;
 }
 
+message CreateMessageRequest { MessageReq Info = 10; }
 
-message CreateMessageRequest {
-    MessageReq Info = 10;
-}
+message CreateMessageResponse { Message Info = 10; }
 
-message CreateMessageResponse {
-    Message Info = 10;
-}
+message CreateMessagesRequest { repeated MessageReq Infos = 10; }
 
-message CreateMessagesRequest {
-    repeated MessageReq Infos = 10;
-}
+message CreateMessagesResponse { repeated Message Infos = 10; }
 
-message CreateMessagesResponse {
-    repeated Message Infos = 10;
-}
+message UpdateMessageRequest { MessageReq Info = 10; }
 
-message UpdateMessageRequest {
-    MessageReq Info = 10;
-}
+message UpdateMessageResponse { Message Info = 10; }
 
-message UpdateMessageResponse {
-    Message Info = 10;
-}
+message GetMessageRequest { string EntID = 10; }
 
-message GetMessageRequest {
-    string EntID = 10;
-}
-
-message GetMessageResponse {
-    Message Info = 10;
-}
+message GetMessageResponse { Message Info = 10; }
 
 message GetMessagesRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetMessagesResponse {
-    repeated Message Infos = 10;
-    uint32           Total = 20;
+  repeated Message Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistMessageCondsRequest {
-    Conds Conds = 10;
-}
+message ExistMessageCondsRequest { Conds Conds = 10; }
 
-message ExistMessageCondsResponse {
-    bool Info = 10;
-}
+message ExistMessageCondsResponse { bool Info = 10; }
 
-message DeleteMessageRequest {
-    MessageReq Info = 10;
-}
+message DeleteMessageRequest { MessageReq Info = 10; }
 
-message DeleteMessageResponse {
-    Message Info = 10;
-}
-
+message DeleteMessageResponse { Message Info = 10; }

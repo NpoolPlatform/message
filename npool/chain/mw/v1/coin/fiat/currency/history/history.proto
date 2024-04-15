@@ -9,23 +9,23 @@ import "npool/chain/mw/v1/coin/fiat/currency/currency.proto";
 
 // Service Name
 service Middleware {
-    rpc GetCurrencies (GetCurrenciesRequest) returns (GetCurrenciesResponse) {}
+  rpc GetCurrencies(GetCurrenciesRequest) returns (GetCurrenciesResponse) {}
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      CoinTypeID  = 20;
-    optional basetypes.v1.StringSliceVal CoinTypeIDs = 30;
-    optional basetypes.v1.Uint32Val      StartAt     = 40;
-    optional basetypes.v1.Uint32Val      EndAt       = 50;
+  optional basetypes.v1.StringVal CoinTypeID = 20;
+  optional basetypes.v1.StringSliceVal CoinTypeIDs = 30;
+  optional basetypes.v1.Uint32Val StartAt = 40;
+  optional basetypes.v1.Uint32Val EndAt = 50;
 }
 
 message GetCurrenciesRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetCurrenciesResponse {
-    repeated chain.middleware.coin.fiat.currency.v1.Currency Infos = 10;
-    uint32                                                   Total = 20;
+  repeated chain.middleware.coin.fiat.currency.v1.Currency Infos = 10;
+  uint32 Total = 20;
 }

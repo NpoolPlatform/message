@@ -9,85 +9,76 @@ import "npool/basetypes/chain/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateCoinUsedFor (CreateCoinUsedForRequest) returns (CreateCoinUsedForResponse) {}
-    rpc GetCoinUsedFor    (GetCoinUsedForRequest)    returns (GetCoinUsedForResponse)    {}
-    rpc GetCoinUsedFors   (GetCoinUsedForsRequest)   returns (GetCoinUsedForsResponse)   {}
-    rpc DeleteCoinUsedFor (DeleteCoinUsedForRequest) returns (DeleteCoinUsedForResponse) {}
+  rpc CreateCoinUsedFor(CreateCoinUsedForRequest)
+      returns (CreateCoinUsedForResponse) {}
+  rpc GetCoinUsedFor(GetCoinUsedForRequest) returns (GetCoinUsedForResponse) {}
+  rpc GetCoinUsedFors(GetCoinUsedForsRequest)
+      returns (GetCoinUsedForsResponse) {}
+  rpc DeleteCoinUsedFor(DeleteCoinUsedForRequest)
+      returns (DeleteCoinUsedForResponse) {}
 }
 
 message CoinUsedForReq {
-    optional uint32    ID              = 10;
-    optional string    EntID           = 11;
-    optional string    CoinTypeID      = 20;
-    optional basetypes.chain.v1.CoinUsedFor UsedFor = 30;
-    optional uint32    Priority        = 40;
+  optional uint32 ID = 10;
+  optional string EntID = 11;
+  optional string CoinTypeID = 20;
+  optional basetypes.chain.v1.CoinUsedFor UsedFor = 30;
+  optional uint32 Priority = 40;
 }
 
 message CoinUsedFor {
-    // @inject_tag: sql:"id"
-    uint32 ID           = 10;
-    // @inject_tag: sql:"ent_id"
-    string EntID        = 11;
-    // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID   = 20;
-    // @inject_tag: sql:"coin_name"
-    string CoinName     = 30;
-    // @inject_tag: sql:"coin_logo"
-    string CoinLogo     = 40;
-    // @inject_tag: sql:"coin_unit"
-    string CoinUnit     = 50;
-    // @inject_tag: sql:"coin_env"
-    string CoinENV      = 60;
-    // @inject_tag: sql:"used_for"
-    string UsedForStr   = 70;
-    basetypes.chain.v1.CoinUsedFor UsedFor = 80;
-    // @inject_tag: sql:"priority"
-    uint32 Priority     = 90;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt    = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt    = 1010;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 11;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 20;
+  // @inject_tag: sql:"coin_name"
+  string CoinName = 30;
+  // @inject_tag: sql:"coin_logo"
+  string CoinLogo = 40;
+  // @inject_tag: sql:"coin_unit"
+  string CoinUnit = 50;
+  // @inject_tag: sql:"coin_env"
+  string CoinENV = 60;
+  // @inject_tag: sql:"used_for"
+  string UsedForStr = 70;
+  basetypes.chain.v1.CoinUsedFor UsedFor = 80;
+  // @inject_tag: sql:"priority"
+  uint32 Priority = 90;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      EntID       = 10;
-    optional basetypes.v1.StringVal      CoinTypeID  = 20;
-    optional basetypes.v1.StringSliceVal CoinTypeIDs = 30;
-    optional basetypes.v1.Uint32Val      UsedFor     = 40;
-    optional basetypes.v1.Uint32SliceVal UsedFors    = 50;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal CoinTypeID = 20;
+  optional basetypes.v1.StringSliceVal CoinTypeIDs = 30;
+  optional basetypes.v1.Uint32Val UsedFor = 40;
+  optional basetypes.v1.Uint32SliceVal UsedFors = 50;
 }
 
-message CreateCoinUsedForRequest {
-    CoinUsedForReq Info = 10;
-}
+message CreateCoinUsedForRequest { CoinUsedForReq Info = 10; }
 
-message CreateCoinUsedForResponse {
-    CoinUsedFor Info = 10;
-}
+message CreateCoinUsedForResponse { CoinUsedFor Info = 10; }
 
-message GetCoinUsedForRequest {
-    string EntID = 10;
-}
+message GetCoinUsedForRequest { string EntID = 10; }
 
-message GetCoinUsedForResponse {
-    CoinUsedFor Info = 10;
-}
+message GetCoinUsedForResponse { CoinUsedFor Info = 10; }
 
 message GetCoinUsedForsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetCoinUsedForsResponse {
-    repeated CoinUsedFor Infos = 10;
-    uint32               Total = 20;
+  repeated CoinUsedFor Infos = 10;
+  uint32 Total = 20;
 }
 
-message DeleteCoinUsedForRequest {
-    CoinUsedForReq Info = 10;
-}
+message DeleteCoinUsedForRequest { CoinUsedForReq Info = 10; }
 
-message DeleteCoinUsedForResponse {
-    CoinUsedFor Info = 10;
-}
+message DeleteCoinUsedForResponse { CoinUsedFor Info = 10; }

@@ -9,181 +9,173 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateGood (CreateGoodRequest) returns (CreateGoodResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/good"
-            body: "*"
-        };
-    }
+  rpc CreateGood(CreateGoodRequest) returns (CreateGoodResponse) {
+    option (google.api.http) = {
+      post : "/v1/create/good"
+      body : "*"
+    };
+  }
 
-    rpc GetGood (GetGoodRequest) returns (GetGoodResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/good"
-            body: "*"
-        };
-    }
+  rpc GetGood(GetGoodRequest) returns (GetGoodResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/good"
+      body : "*"
+    };
+  }
 
-    rpc UpdateGood (UpdateGoodRequest) returns (UpdateGoodResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/good"
-            body: "*"
-        };
-    }
+  rpc UpdateGood(UpdateGoodRequest) returns (UpdateGoodResponse) {
+    option (google.api.http) = {
+      post : "/v1/update/good"
+      body : "*"
+    };
+  }
 
-    rpc GetGoods (GetGoodsRequest) returns (GetGoodsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/goods"
-            body: "*"
-        };
-    }
+  rpc GetGoods(GetGoodsRequest) returns (GetGoodsResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/goods"
+      body : "*"
+    };
+  }
 }
 
 message Good {
-    uint32           ID                          = 9;
-    string           EntID                       = 10;
+  uint32 ID = 9;
+  string EntID = 10;
 
-    string           DeviceInfoID                = 20;
-    string           DeviceType                  = 30;
-    string           DeviceManufacturer          = 40;
-    uint32           DevicePowerConsumption      = 50;
-    uint32           DeviceShipmentAt            = 60;
-    repeated string  DevicePosters               = 70;
+  string DeviceInfoID = 20;
+  string DeviceType = 30;
+  string DeviceManufacturer = 40;
+  uint32 DevicePowerConsumption = 50;
+  uint32 DeviceShipmentAt = 60;
+  repeated string DevicePosters = 70;
 
-    string           CoinTypeID                  = 90;
-    string           CoinLogo                    = 100;
-    string           CoinName                    = 110;
-    string           CoinUnit                    = 120;
-    bool             CoinPreSale                 = 130;
+  string CoinTypeID = 90;
+  string CoinLogo = 100;
+  string CoinName = 110;
+  string CoinUnit = 120;
+  bool CoinPreSale = 130;
 
-    string           VendorLocationID            = 180;
-    string           VendorLocationCountry       = 190;
-    string           VendorLocationProvince      = 200;
-    string           VendorLocationCity          = 210;
-    string           VendorLocationAddress       = 220;
-    string           VendorBrandName             = 221;
-    string           VendorBrandLogo             = 222;
+  string VendorLocationID = 180;
+  string VendorLocationCountry = 190;
+  string VendorLocationProvince = 200;
+  string VendorLocationCity = 210;
+  string VendorLocationAddress = 220;
+  string VendorBrandName = 221;
+  string VendorBrandLogo = 222;
 
-    basetypes.good.v1.GoodType    GoodType    = 230;
-    basetypes.good.v1.BenefitType BenefitType = 240;
+  basetypes.good.v1.GoodType GoodType = 230;
+  basetypes.good.v1.BenefitType BenefitType = 240;
 
-    string           UnitPrice          = 250;
-    string           Title              = 260;
-    string           QuantityUnit       = 270;
-    string           QuantityUnitAmount = 280;
-    bool             TestOnly           = 290;
-    repeated string  Posters            = 300;
-    repeated basetypes.good.v1.GoodLabel Labels = 310;
+  string UnitPrice = 250;
+  string Title = 260;
+  string QuantityUnit = 270;
+  string QuantityUnitAmount = 280;
+  bool TestOnly = 290;
+  repeated string Posters = 300;
+  repeated basetypes.good.v1.GoodLabel Labels = 310;
 
-    string           StockID        = 350;
-    string           Total          = 360;
-    string           SpotQuantity   = 361;
-    string           Locked         = 370;
-    string           InService      = 380;
-    string           WaitStart      = 381;
-    string           Sold           = 390;
-    string           AppReserved    = 391;
+  string StockID = 350;
+  string Total = 360;
+  string SpotQuantity = 361;
+  string Locked = 370;
+  string InService = 380;
+  string WaitStart = 381;
+  string Sold = 390;
+  string AppReserved = 391;
 
-    uint32           DeliveryAt         = 400;
-    uint32           StartAt            = 410;
-    basetypes.good.v1.GoodStartMode StartMode = 411;
-    uint32           CreatedAt          = 420;
-    uint32           UpdatedAt          = 430;
+  uint32 DeliveryAt = 400;
+  uint32 StartAt = 410;
+  basetypes.good.v1.GoodStartMode StartMode = 411;
+  uint32 CreatedAt = 420;
+  uint32 UpdatedAt = 430;
 
-    uint32           BenefitIntervalHours = 450;
-    uint32           LastBenefitAt        = 460;
-    string           NextBenefitStartAmount = 470;
-    string           LastBenefitAmount    = 480;
+  uint32 BenefitIntervalHours = 450;
+  uint32 LastBenefitAt = 460;
+  string NextBenefitStartAmount = 470;
+  string LastBenefitAmount = 480;
 
-    uint32           Likes        = 490;
-    uint32           Dislikes     = 500;
-    string           Score        = 510;
-    uint32           ScoreCount   = 520;
-    uint32           RecommendCount = 530;
-    uint32           CommentCount = 540;
-    string           UnitLockDeposit = 550;
-    basetypes.good.v1.GoodUnitType UnitType = 560;
-    basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 570;
-    basetypes.good.v1.GoodDurationType DurationType = 580;
-    basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 590;
-    basetypes.good.v1.GoodSettlementType SettlementType = 600;
+  uint32 Likes = 490;
+  uint32 Dislikes = 500;
+  string Score = 510;
+  uint32 ScoreCount = 520;
+  uint32 RecommendCount = 530;
+  uint32 CommentCount = 540;
+  string UnitLockDeposit = 550;
+  basetypes.good.v1.GoodUnitType UnitType = 560;
+  basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 570;
+  basetypes.good.v1.GoodDurationType DurationType = 580;
+  basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 590;
+  basetypes.good.v1.GoodSettlementType SettlementType = 600;
 }
 
 message CreateGoodRequest {
-    string          DeviceInfoID       = 20;
-    string          CoinTypeID         = 40;
-    string          VendorLocationID   = 60;
-    string          UnitPrice          = 70;
-    basetypes.good.v1.BenefitType BenefitType = 80;
-    basetypes.good.v1.GoodType    GoodType    = 90;
-    string          Title              = 100;
-    string          QuantityUnit       = 110;
-    string          QuantityUnitAmount = 120;
-    uint32          DeliveryAt         = 140;
-    uint32          StartAt            = 150;
-    basetypes.good.v1.GoodStartMode StartMode = 151;
-    bool            TestOnly           = 160;
-    string          Total              = 170;
-    repeated string Posters            = 210;
-    repeated basetypes.good.v1.GoodLabel Labels = 220;
-    optional uint32 BenefitIntervalHours = 230;
-    optional string UnitLockDeposit    = 240;
-    optional basetypes.good.v1.GoodUnitType UnitType = 250;
-    optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 260;
-    optional basetypes.good.v1.GoodDurationType DurationType = 270;
-    optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 280;
-    optional basetypes.good.v1.GoodSettlementType SettlementType = 290;
+  string DeviceInfoID = 20;
+  string CoinTypeID = 40;
+  string VendorLocationID = 60;
+  string UnitPrice = 70;
+  basetypes.good.v1.BenefitType BenefitType = 80;
+  basetypes.good.v1.GoodType GoodType = 90;
+  string Title = 100;
+  string QuantityUnit = 110;
+  string QuantityUnitAmount = 120;
+  uint32 DeliveryAt = 140;
+  uint32 StartAt = 150;
+  basetypes.good.v1.GoodStartMode StartMode = 151;
+  bool TestOnly = 160;
+  string Total = 170;
+  repeated string Posters = 210;
+  repeated basetypes.good.v1.GoodLabel Labels = 220;
+  optional uint32 BenefitIntervalHours = 230;
+  optional string UnitLockDeposit = 240;
+  optional basetypes.good.v1.GoodUnitType UnitType = 250;
+  optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 260;
+  optional basetypes.good.v1.GoodDurationType DurationType = 270;
+  optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 280;
+  optional basetypes.good.v1.GoodSettlementType SettlementType = 290;
 }
 
-message CreateGoodResponse {
-    Good Info = 10;
-}
+message CreateGoodResponse { Good Info = 10; }
 
-message GetGoodRequest {
-    string EntID = 10;
-}
+message GetGoodRequest { string EntID = 10; }
 
-message GetGoodResponse {
-    Good Info = 10;
-}
+message GetGoodResponse { Good Info = 10; }
 
 message GetGoodsRequest {
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetGoodsResponse {
-    repeated Good Infos = 10;
-    uint32        Total = 20;
+  repeated Good Infos = 10;
+  uint32 Total = 20;
 }
 
 message UpdateGoodRequest {
-    uint32          ID                 = 9;
-    string          EntID              = 10;
-    optional string DeviceInfoID       = 20;
-    optional string CoinTypeID         = 40;
-    optional string VendorLocationID   = 60;
-    optional string UnitPrice          = 70;
-    optional basetypes.good.v1.BenefitType BenefitType = 80;
-    optional basetypes.good.v1.GoodType    GoodType    = 90;
-    optional string Title              = 100;
-    optional string QuantityUnit       = 110;
-    optional string QuantityUnitAmount = 120;
-    optional uint32 DeliveryAt         = 140;
-    optional uint32 StartAt            = 150;
-    optional basetypes.good.v1.GoodStartMode StartMode = 151;
-    optional bool   TestOnly           = 160;
-    optional string Total              = 170;
-    repeated string Posters            = 210;
-    repeated basetypes.good.v1.GoodLabel Labels = 220;
-    optional uint32 BenefitIntervalHours = 230;
-    optional string UnitLockDeposit    = 240;
-    optional basetypes.good.v1.GoodUnitType UnitType = 250;
-    optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 260;
-    optional basetypes.good.v1.GoodDurationType DurationType = 270;
-    optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 280;
-    optional basetypes.good.v1.GoodSettlementType SettlementType = 290;
+  uint32 ID = 9;
+  string EntID = 10;
+  optional string DeviceInfoID = 20;
+  optional string CoinTypeID = 40;
+  optional string VendorLocationID = 60;
+  optional string UnitPrice = 70;
+  optional basetypes.good.v1.BenefitType BenefitType = 80;
+  optional basetypes.good.v1.GoodType GoodType = 90;
+  optional string Title = 100;
+  optional string QuantityUnit = 110;
+  optional string QuantityUnitAmount = 120;
+  optional uint32 DeliveryAt = 140;
+  optional uint32 StartAt = 150;
+  optional basetypes.good.v1.GoodStartMode StartMode = 151;
+  optional bool TestOnly = 160;
+  optional string Total = 170;
+  repeated string Posters = 210;
+  repeated basetypes.good.v1.GoodLabel Labels = 220;
+  optional uint32 BenefitIntervalHours = 230;
+  optional string UnitLockDeposit = 240;
+  optional basetypes.good.v1.GoodUnitType UnitType = 250;
+  optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 260;
+  optional basetypes.good.v1.GoodDurationType DurationType = 270;
+  optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 280;
+  optional basetypes.good.v1.GoodSettlementType SettlementType = 290;
 }
 
-message UpdateGoodResponse {
-    Good Info = 10;
-}
+message UpdateGoodResponse { Good Info = 10; }

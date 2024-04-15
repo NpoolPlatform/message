@@ -5,8 +5,8 @@ package basetypes.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
 enum CreateInvitationCodeWhen {
-    DefaultWhen     = 0;
-    Registration    = 10;
-    SetToKol        = 20;
-    HasPaidOrder    = 30;
+  DefaultWhen = 0;
+  Registration = 10;
+  SetToKol = 20;
+  HasPaidOrder = 30;
 }

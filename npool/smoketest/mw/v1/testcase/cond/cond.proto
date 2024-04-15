@@ -8,108 +8,88 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateCond     (CreateCondRequest)     returns (CreateCondResponse)     {}
-    rpc UpdateCond     (UpdateCondRequest)     returns (UpdateCondResponse)     {}
-    rpc GetCond        (GetCondRequest)        returns (GetCondResponse)        {}
-    rpc GetConds       (GetCondsRequest)      returns (GetCondsResponse)       {}
-    rpc DeleteCond     (DeleteCondRequest)     returns (DeleteCondResponse)     {}
+  rpc CreateCond(CreateCondRequest) returns (CreateCondResponse) {}
+  rpc UpdateCond(UpdateCondRequest) returns (UpdateCondResponse) {}
+  rpc GetCond(GetCondRequest) returns (GetCondResponse) {}
+  rpc GetConds(GetCondsRequest) returns (GetCondsResponse) {}
+  rpc DeleteCond(DeleteCondRequest) returns (DeleteCondResponse) {}
 }
 
 enum CondType {
-    DefaultCondType          = 0;
-    PreCondition             = 10;
-    Cleaner                  = 20;
+  DefaultCondType = 0;
+  PreCondition = 10;
+  Cleaner = 20;
 }
 
 message CondReq {
-    optional uint32   ID               = 9;
-    optional string   EntID            = 10;
-    optional CondType CondType         = 20;
-    optional string   TestCaseID       = 30;
-    optional string   CondTestCaseID   = 40;
-    optional uint32   Index            = 50;
-    optional string   ArgumentMap      = 60;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional CondType CondType = 20;
+  optional string TestCaseID = 30;
+  optional string CondTestCaseID = 40;
+  optional uint32 Index = 50;
+  optional string ArgumentMap = 60;
 }
 
 message Cond {
-    // @inject_tag: sql:"id"
-    uint32          ID                       = 9;
-    // @inject_tag: sql:"ent_id"
-    string          EntID                    = 10;
-    // @inject_tag: sql:"cond_type"
-    string          CondTypeStr              = 20;
-    CondType        CondType                 = 30;
-    // @inject_tag: sql:"test_case_id"
-    string          TestCaseID               = 40;
-    // @inject_tag: sql:"cond_test_case_id"
-    string          CondTestCaseID           = 50;
-    // @inject_tag: sql:"index"
-    uint32          Index                    = 60;
-    // @inject_tag: sql:"argument_map"
-    string          ArgumentMap              = 70;
-    // @inject_tag: sql:"created_at"
-    uint32          CreatedAt                = 80;
-    // @inject_tag: sql:"updated_at"
-    uint32          UpdatedAt                = 90;
-    // @inject_tag: sql:"deleted_at"
-    uint32          DeletedAt                = 100;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"cond_type"
+  string CondTypeStr = 20;
+  CondType CondType = 30;
+  // @inject_tag: sql:"test_case_id"
+  string TestCaseID = 40;
+  // @inject_tag: sql:"cond_test_case_id"
+  string CondTestCaseID = 50;
+  // @inject_tag: sql:"index"
+  uint32 Index = 60;
+  // @inject_tag: sql:"argument_map"
+  string ArgumentMap = 70;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 80;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 90;
+  // @inject_tag: sql:"deleted_at"
+  uint32 DeletedAt = 100;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val  ID             = 9;
-    optional basetypes.v1.StringVal  EntID          = 10;
-    optional basetypes.v1.Uint32Val  CondType       = 20;
-    optional basetypes.v1.StringVal  TestCaseID     = 30;
-    optional basetypes.v1.StringVal  CondTestCaseID = 40;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.Uint32Val CondType = 20;
+  optional basetypes.v1.StringVal TestCaseID = 30;
+  optional basetypes.v1.StringVal CondTestCaseID = 40;
 }
 
-message CreateCondRequest {
-    CondReq Info = 10;
-}
+message CreateCondRequest { CondReq Info = 10; }
 
-message CreateCondResponse {
-    Cond Info = 10;
-}
+message CreateCondResponse { Cond Info = 10; }
 
-message CreateCondsRequest {
-    repeated CondReq Infos = 10;
-}
+message CreateCondsRequest { repeated CondReq Infos = 10; }
 
-message CreateCondsResponse {
-    repeated Cond Infos = 10;
-}
+message CreateCondsResponse { repeated Cond Infos = 10; }
 
-message UpdateCondRequest {
-    CondReq Info = 10;
-}
+message UpdateCondRequest { CondReq Info = 10; }
 
-message UpdateCondResponse {
-    Cond Info = 10;
-}
+message UpdateCondResponse { Cond Info = 10; }
 
-message GetCondRequest {
-    string EntID = 10;
-}
+message GetCondRequest { string EntID = 10; }
 
-message GetCondResponse {
-    Cond Info = 10;
-}
+message GetCondResponse { Cond Info = 10; }
 
 message GetCondsRequest {
-    Conds Conds   = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetCondsResponse {
-    repeated Cond Infos = 10;
-    uint32        Total = 20;
+  repeated Cond Infos = 10;
+  uint32 Total = 20;
 }
 
-message DeleteCondRequest {
-    CondReq Info = 10;
-}
+message DeleteCondRequest { CondReq Info = 10; }
 
-message DeleteCondResponse {
-    Cond Info = 10;
-}
+message DeleteCondResponse { Cond Info = 10; }

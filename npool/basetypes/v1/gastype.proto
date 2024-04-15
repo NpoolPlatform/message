@@ -5,8 +5,8 @@ package basetypes.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
 enum GasType {
-    DefaultGasType = 0;
-    FixedGas       = 10;
-    DynamicGas     = 20;
-    GasUnsupported = 30;
+  DefaultGasType = 0;
+  FixedGas = 10;
+  DynamicGas = 20;
+  GasUnsupported = 30;
 }

@@ -5,7 +5,7 @@ package basetypes.cms.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/cms/v1";
 
 enum ArticleStatus {
-    DefaultArticleStatus = 0;
-    Draft                = 10;
-    Published            = 20;
+  DefaultArticleStatus = 0;
+  Draft = 10;
+  Published = 20;
 }

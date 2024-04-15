@@ -1,0 +1,288 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/mw/v1/app/commission/config/config.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AppCommissionConfig": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "ThresholdAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"threshold_amount\""
+        },
+        "AmountOrPercent": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"amount_or_percent\""
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end_at\""
+        },
+        "Invites": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"invites\""
+        },
+        "SettleTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settle_type\""
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+        "Disabled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"disabled\""
+        },
+        "Level": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"level\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1AppCommissionConfigReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "ThresholdAmount": {
+          "type": "string"
+        },
+        "AmountOrPercent": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Invites": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
+        },
+        "Disabled": {
+          "type": "boolean"
+        },
+        "Level": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "Disabled": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "Level": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CreateAppCommissionConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppCommissionConfig"
+        }
+      }
+    },
+    "v1ExistAppCommissionConfigCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetAppCommissionConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppCommissionConfig"
+        }
+      }
+    },
+    "v1GetAppCommissionConfigsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppCommissionConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1SettleType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleType",
+        "GoodOrderPayment",
+        "TechniqueServiceFee"
+      ],
+      "default": "DefaultSettleType",
+      "title": "- GoodOrderPayment: Divide commission according to order payment amount or good value\n - TechniqueServiceFee: Divice commission according to order technique fee"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAppCommissionConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppCommissionConfig"
+        }
+      }
+    }
+  }
+}

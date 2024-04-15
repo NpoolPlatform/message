@@ -8,133 +8,113 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateTestPlan     (CreateTestPlanRequest)     returns (CreateTestPlanResponse)     {}
-    rpc UpdateTestPlan     (UpdateTestPlanRequest)     returns (UpdateTestPlanResponse)     {}
-    rpc GetTestPlan        (GetTestPlanRequest)        returns (GetTestPlanResponse)        {}
-    rpc GetTestPlans       (GetTestPlansRequest)       returns (GetTestPlansResponse)       {}
-    rpc ExistTestPlan      (ExistTestPlanRequest)      returns (ExistTestPlanResponse)      {}
-    rpc DeleteTestPlan     (DeleteTestPlanRequest)     returns (DeleteTestPlanResponse)     {}
+  rpc CreateTestPlan(CreateTestPlanRequest) returns (CreateTestPlanResponse) {}
+  rpc UpdateTestPlan(UpdateTestPlanRequest) returns (UpdateTestPlanResponse) {}
+  rpc GetTestPlan(GetTestPlanRequest) returns (GetTestPlanResponse) {}
+  rpc GetTestPlans(GetTestPlansRequest) returns (GetTestPlansResponse) {}
+  rpc ExistTestPlan(ExistTestPlanRequest) returns (ExistTestPlanResponse) {}
+  rpc DeleteTestPlan(DeleteTestPlanRequest) returns (DeleteTestPlanResponse) {}
 }
 
 enum TestResultState {
-    DefaultTestResultState = 0;
-    Passed                 = 10;
-    Failed                 = 20;
+  DefaultTestResultState = 0;
+  Passed = 10;
+  Failed = 20;
 }
 
 enum TestPlanState {
-    DefaultTestPlanState      = 0;
-    WaitStart                 = 10;
-    InProgress                = 20;
-    Finished                  = 30;
-    Overdue                   = 40;
+  DefaultTestPlanState = 0;
+  WaitStart = 10;
+  InProgress = 20;
+  Finished = 30;
+  Overdue = 40;
 }
 
 message TestPlan {
-    // @inject_tag: sql:"id"
-    uint32          ID                                = 9;
-    // @inject_tag: sql:"ent_id"
-    string          EntID                             = 10;
-    // @inject_tag: sql:"name"
-    string          Name                              = 20;
-    // @inject_tag: sql:"state"
-    string          StateStr                          = 30;
-    TestPlanState   State                             = 40;
-    // @inject_tag: sql:"created_by"
-    string          CreatedBy                         = 50;
-    // @inject_tag: sql:"executor"
-    string          Executor                          = 60;
-    // @inject_tag: sql:"fails"
-    uint32          Fails                             = 70;
-    // @inject_tag: sql:"passes"
-    uint32          Passes                            = 80;
-    // @inject_tag: sql:"skips"
-    uint32          Skips                             = 90;
-    // @inject_tag: sql:"run_duration"
-    uint32          RunDuration                       = 100;
-    // @inject_tag: sql:"result"
-    string          ResultStr                         = 110;
-    TestResultState Result                            = 120;
-    // @inject_tag: sql:"deadline"
-    uint32          Deadline                          = 130;
-    // @inject_tag: sql:"created_at"
-    uint32          CreatedAt                         = 140;
-    // @inject_tag: sql:"updated_at"
-    uint32          UpdatedAt                         = 150;
-    // @inject_tag: sql:"deleted_at"
-    uint32          DeletedAt                         = 160;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"name"
+  string Name = 20;
+  // @inject_tag: sql:"state"
+  string StateStr = 30;
+  TestPlanState State = 40;
+  // @inject_tag: sql:"created_by"
+  string CreatedBy = 50;
+  // @inject_tag: sql:"executor"
+  string Executor = 60;
+  // @inject_tag: sql:"fails"
+  uint32 Fails = 70;
+  // @inject_tag: sql:"passes"
+  uint32 Passes = 80;
+  // @inject_tag: sql:"skips"
+  uint32 Skips = 90;
+  // @inject_tag: sql:"run_duration"
+  uint32 RunDuration = 100;
+  // @inject_tag: sql:"result"
+  string ResultStr = 110;
+  TestResultState Result = 120;
+  // @inject_tag: sql:"deadline"
+  uint32 Deadline = 130;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 140;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 150;
+  // @inject_tag: sql:"deleted_at"
+  uint32 DeletedAt = 160;
 }
 
 message TestPlanReq {
-    optional uint32          ID                                = 9;
-    optional string          EntID                             = 10;
-    optional string          Name                              = 20;
-    optional TestPlanState   State                             = 30;
-    optional string          CreatedBy                         = 40;
-    optional string          Executor                          = 50;
-    optional uint32          Fails                             = 60;
-    optional uint32          Passes                            = 70;
-    optional uint32          Skips                             = 80;
-    optional uint32          RunDuration                       = 90;
-    optional TestResultState Result                            = 100;
-    optional uint32          Deadline                          = 110;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string Name = 20;
+  optional TestPlanState State = 30;
+  optional string CreatedBy = 40;
+  optional string Executor = 50;
+  optional uint32 Fails = 60;
+  optional uint32 Passes = 70;
+  optional uint32 Skips = 80;
+  optional uint32 RunDuration = 90;
+  optional TestResultState Result = 100;
+  optional uint32 Deadline = 110;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID                         = 9;
-    optional basetypes.v1.StringVal      EntID                      = 10;
-    optional basetypes.v1.Uint32Val      State                      = 20;
-    optional basetypes.v1.StringVal      CreatedBy                  = 30;
-    optional basetypes.v1.StringVal      Executor                   = 40;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.Uint32Val State = 20;
+  optional basetypes.v1.StringVal CreatedBy = 30;
+  optional basetypes.v1.StringVal Executor = 40;
 }
 
-message CreateTestPlanRequest {
-    TestPlanReq Info = 10;
-}
+message CreateTestPlanRequest { TestPlanReq Info = 10; }
 
-message CreateTestPlanResponse {
-    TestPlan Info = 10;
-}
+message CreateTestPlanResponse { TestPlan Info = 10; }
 
-message UpdateTestPlanRequest {
-    TestPlanReq Info = 10;
-}
+message UpdateTestPlanRequest { TestPlanReq Info = 10; }
 
-message UpdateTestPlanResponse {
-    TestPlan Info = 10;
-}
+message UpdateTestPlanResponse { TestPlan Info = 10; }
 
-message GetTestPlanRequest {
-    string EntID = 10;
-}
+message GetTestPlanRequest { string EntID = 10; }
 
-message GetTestPlanResponse {
-    TestPlan Info = 10;
-}
+message GetTestPlanResponse { TestPlan Info = 10; }
 
 message GetTestPlansRequest {
-    Conds Conds   = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetTestPlansResponse {
-    repeated TestPlan Infos = 10;
-    uint32            Total = 20;
+  repeated TestPlan Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistTestPlanRequest {
-    string EntID = 10;
-}
+message ExistTestPlanRequest { string EntID = 10; }
 
-message ExistTestPlanResponse {
-    bool Info = 10;
-}
+message ExistTestPlanResponse { bool Info = 10; }
 
-message DeleteTestPlanRequest {
-    TestPlanReq Info = 10;
-}
+message DeleteTestPlanRequest { TestPlanReq Info = 10; }
 
-message DeleteTestPlanResponse {
-    TestPlan Info = 10;
-}
+message DeleteTestPlanResponse { TestPlan Info = 10; }

@@ -9,104 +9,95 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-    rpc GetCategoryList(GetCategoryListRequest) returns (GetCategoryListResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/categorylist"
-            body: "*"
-        };
-    }
+  rpc GetCategoryList(GetCategoryListRequest)
+      returns (GetCategoryListResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/categorylist"
+      body : "*"
+    };
+  }
 
-    rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/category"
-            body: "*"
-        };
-    }
-    rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/category"
-            body: "*"
-        };
-    }
-    rpc GetCategories(GetCategoriesRequest) returns (GetCategoriesResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/categories"
-            body: "*"
-        };
-    }
-    rpc DeleteCategory(DeleteCategoryRequest) returns (DeleteCategoryResponse) {
-        option (google.api.http) = {
-            post: "/v1/delete/category"
-            body: "*"
-        };
-    }
+  rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {
+    option (google.api.http) = {
+      post : "/v1/create/category"
+      body : "*"
+    };
+  }
+  rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse) {
+    option (google.api.http) = {
+      post : "/v1/update/category"
+      body : "*"
+    };
+  }
+  rpc GetCategories(GetCategoriesRequest) returns (GetCategoriesResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/categories"
+      body : "*"
+    };
+  }
+  rpc DeleteCategory(DeleteCategoryRequest) returns (DeleteCategoryResponse) {
+    option (google.api.http) = {
+      post : "/v1/delete/category"
+      body : "*"
+    };
+  }
 }
 
 message Category {
-    uint32 ID                  = 10;
-    string EntID               = 20;
-    string AppID               = 30;
-    string ParentID            = 40;
-    string Name                = 50;
-    string Slug                = 60;
-    string FullSlug            = 70;
-    bool   Enabled             = 80;
-    uint32 Index               = 90;
-    repeated Category Children = 100;
+  uint32 ID = 10;
+  string EntID = 20;
+  string AppID = 30;
+  string ParentID = 40;
+  string Name = 50;
+  string Slug = 60;
+  string FullSlug = 70;
+  bool Enabled = 80;
+  uint32 Index = 90;
+  repeated Category Children = 100;
 }
 
-message GetCategoryListRequest {
-    string AppID = 10;
-}
+message GetCategoryListRequest { string AppID = 10; }
 
-message GetCategoryListResponse {
-    repeated Category Infos = 10;
-}
+message GetCategoryListResponse { repeated Category Infos = 10; }
 
 message CreateCategoryRequest {
-    string AppID             = 10;
-    optional string ParentID = 20;
-    string Name              = 30;
-    string Slug              = 40;
-    bool   Enabled           = 50;
-    uint32 Index             = 60;
+  string AppID = 10;
+  optional string ParentID = 20;
+  string Name = 30;
+  string Slug = 40;
+  bool Enabled = 50;
+  uint32 Index = 60;
 }
 
-message CreateCategoryResponse {
-    Category Info = 10;
-}
+message CreateCategoryResponse { Category Info = 10; }
 
 message UpdateCategoryRequest {
-    uint32          ID            = 10;
-    string          EntID         = 20;
-    string          AppID         = 30;
-    optional string ParentID      = 40;
-    optional string Name          = 50;
-    optional bool   Enabled       = 60;
-    optional uint32 Index         = 70;
+  uint32 ID = 10;
+  string EntID = 20;
+  string AppID = 30;
+  optional string ParentID = 40;
+  optional string Name = 50;
+  optional bool Enabled = 60;
+  optional uint32 Index = 70;
 }
 
-message UpdateCategoryResponse {
-    Category Info = 10;
-}
+message UpdateCategoryResponse { Category Info = 10; }
 
 message GetCategoriesRequest {
-    string AppID   = 10;
-    int32  Offset  = 20;
-    int32  Limit   = 30;
+  string AppID = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetCategoriesResponse {
-    repeated Category Infos = 10;
-    uint32            Total = 20;
+  repeated Category Infos = 10;
+  uint32 Total = 20;
 }
 
 message DeleteCategoryRequest {
-    uint32 ID    = 10;
-    string EntID = 20;
-    string AppID = 30;
+  uint32 ID = 10;
+  string EntID = 20;
+  string AppID = 30;
 }
 
-message DeleteCategoryResponse {
-    middleware.category.v1.Category Info = 10;
-}
+message DeleteCategoryResponse { middleware.category.v1.Category Info = 10; }

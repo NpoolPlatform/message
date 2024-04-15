@@ -8,59 +8,59 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc GetHistories (GetHistoriesRequest) returns (GetHistoriesResponse) {}
+  rpc GetHistories(GetHistoriesRequest) returns (GetHistoriesResponse) {}
 }
 
 message HistoryReq {
-    optional uint32 ID         = 9;
-    optional string EntID      = 10;
-    optional string GoodID     = 20;
-    optional uint32 RewardDate = 30;
-    optional string TID        = 40;
-    optional string Amount     = 50;
-    optional string UnitAmount = 60;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string GoodID = 20;
+  optional uint32 RewardDate = 30;
+  optional string TID = 40;
+  optional string Amount = 50;
+  optional string UnitAmount = 60;
 }
 
 message History {
-    // @inject_tag: sql:"id"
-    uint32 ID        = 9;
-    // @inject_tag: sql:"ent_id"
-    string EntID     = 10;
-    // @inject_tag: sql:"good_id"
-    string GoodID    = 20;
-    // @inject_tag: sql:"good_name"
-    string GoodName  = 30;
-    // @inject_tag: sql:"reward_date"
-    uint32 RewardDate = 40;
-    // @inject_tag: sql:"tid"
-    string TID       = 50;
-    // @inject_tag: sql:"amount"
-    string Amount    = 60;
-    // @inject_tag: sql:"unit_amount"
-    string UnitAmount = 70;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt = 1010;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"good_id"
+  string GoodID = 20;
+  // @inject_tag: sql:"good_name"
+  string GoodName = 30;
+  // @inject_tag: sql:"reward_date"
+  uint32 RewardDate = 40;
+  // @inject_tag: sql:"tid"
+  string TID = 50;
+  // @inject_tag: sql:"amount"
+  string Amount = 60;
+  // @inject_tag: sql:"unit_amount"
+  string UnitAmount = 70;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID      = 9;
-    optional basetypes.v1.StringVal      EntID   = 10;
-    optional basetypes.v1.StringVal      GoodID  = 20;
-    optional basetypes.v1.StringSliceVal GoodIDs = 30;
-    optional basetypes.v1.Uint32Val      RewardDate = 40;
-    optional basetypes.v1.Uint32Val      StartAt = 50;
-    optional basetypes.v1.Uint32Val      EndAt   = 60;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal GoodID = 20;
+  optional basetypes.v1.StringSliceVal GoodIDs = 30;
+  optional basetypes.v1.Uint32Val RewardDate = 40;
+  optional basetypes.v1.Uint32Val StartAt = 50;
+  optional basetypes.v1.Uint32Val EndAt = 60;
 }
 
 message GetHistoriesRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetHistoriesResponse {
-    repeated History Infos = 10;
-    uint32           Total = 20;
+  repeated History Infos = 10;
+  uint32 Total = 20;
 }

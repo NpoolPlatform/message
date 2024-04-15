@@ -8,109 +8,83 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateLang     (CreateLangRequest)     returns (CreateLangResponse)     {}
-    rpc CreateLangs    (CreateLangsRequest)    returns (CreateLangsResponse)    {}
-    rpc UpdateLang     (UpdateLangRequest)     returns (UpdateLangResponse)     {}
-    rpc GetLang        (GetLangRequest)        returns (GetLangResponse)        {}
-    rpc GetLangs       (GetLangsRequest)       returns (GetLangsResponse)       {}
-    rpc ExistLangConds (ExistLangCondsRequest) returns (ExistLangCondsResponse) {}
-    rpc DeleteLang     (DeleteLangRequest)     returns (DeleteLangResponse)     {}
+  rpc CreateLang(CreateLangRequest) returns (CreateLangResponse) {}
+  rpc CreateLangs(CreateLangsRequest) returns (CreateLangsResponse) {}
+  rpc UpdateLang(UpdateLangRequest) returns (UpdateLangResponse) {}
+  rpc GetLang(GetLangRequest) returns (GetLangResponse) {}
+  rpc GetLangs(GetLangsRequest) returns (GetLangsResponse) {}
+  rpc ExistLangConds(ExistLangCondsRequest) returns (ExistLangCondsResponse) {}
+  rpc DeleteLang(DeleteLangRequest) returns (DeleteLangResponse) {}
 }
 
 message LangReq {
-    optional uint32 ID    = 9;
-    optional string EntID = 10;
-    optional string Lang  = 20;
-    optional string Logo  = 30;
-    optional string Name  = 40;
-    optional string Short = 50;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string Lang = 20;
+  optional string Logo = 30;
+  optional string Name = 40;
+  optional string Short = 50;
 }
 
 message Lang {
-    // @inject_tag: sql:"id"
-    uint32 ID    = 9;
-    // @inject_tag: sql:"ent_id"
-    string EntID = 10;
-    // @inject_tag: sql:"lang"
-    string Lang  = 20;
-    // @inject_tag: sql:"logo"
-    string Logo  = 30;
-    // @inject_tag: sql:"name"
-    string Name  = 40;
-    // @inject_tag: sql:"short"
-    string Short = 50;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt  = 60;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt  = 70;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"lang"
+  string Lang = 20;
+  // @inject_tag: sql:"logo"
+  string Logo = 30;
+  // @inject_tag: sql:"name"
+  string Name = 40;
+  // @inject_tag: sql:"short"
+  string Short = 50;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 60;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 70;
 }
 
 message Conds {
-    basetypes.v1.Uint32Val ID    = 9;
-    basetypes.v1.StringVal EntID = 10;
-    basetypes.v1.StringVal Lang  = 20;
-    basetypes.v1.StringVal Name  = 30;
-    basetypes.v1.StringVal Short = 40;
-    basetypes.v1.StringSliceVal Langs = 50;
+  basetypes.v1.Uint32Val ID = 9;
+  basetypes.v1.StringVal EntID = 10;
+  basetypes.v1.StringVal Lang = 20;
+  basetypes.v1.StringVal Name = 30;
+  basetypes.v1.StringVal Short = 40;
+  basetypes.v1.StringSliceVal Langs = 50;
 }
 
+message CreateLangRequest { LangReq Info = 10; }
 
-message CreateLangRequest {
-    LangReq Info = 10;
-}
+message CreateLangResponse { Lang Info = 10; }
 
-message CreateLangResponse {
-    Lang Info = 10;
-}
+message CreateLangsRequest { repeated LangReq Infos = 10; }
 
-message CreateLangsRequest {
-    repeated LangReq Infos = 10;
-}
+message CreateLangsResponse { repeated Lang Infos = 10; }
 
-message CreateLangsResponse {
-    repeated Lang Infos = 10;
-}
+message UpdateLangRequest { LangReq Info = 10; }
 
-message UpdateLangRequest {
-    LangReq Info = 10;
-}
+message UpdateLangResponse { Lang Info = 10; }
 
-message UpdateLangResponse {
-    Lang Info = 10;
-}
+message GetLangRequest { string EntID = 10; }
 
-message GetLangRequest {
-    string EntID = 10;
-}
-
-message GetLangResponse {
-    Lang Info = 10;
-}
+message GetLangResponse { Lang Info = 10; }
 
 message GetLangsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetLangsResponse {
-    repeated Lang Infos = 10;
-    uint32        Total = 20;
+  repeated Lang Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistLangCondsRequest {
-    Conds Conds = 10;
-}
+message ExistLangCondsRequest { Conds Conds = 10; }
 
-message ExistLangCondsResponse {
-    bool Info = 10;
-}
+message ExistLangCondsResponse { bool Info = 10; }
 
-message DeleteLangRequest {
-    LangReq Info = 10;
-}
+message DeleteLangRequest { LangReq Info = 10; }
 
-message DeleteLangResponse {
-    Lang Info = 10;
-}
-
+message DeleteLangResponse { Lang Info = 10; }

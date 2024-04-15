@@ -5,115 +5,115 @@ package basetypes.good.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/good/v1";
 
 enum BenefitType {
-    DefaultBenefitType   = 0;
-    // Platform receive benefit, then distribute benefit to user
-    BenefitTypePlatform  = 10;
-    // User receive benefit from pool directly
-    BenefitTypePool      = 20;
-    // User do not receive any online reward
-    BenefitTypeOffline   = 30;
+  DefaultBenefitType = 0;
+  // Platform receive benefit, then distribute benefit to user
+  BenefitTypePlatform = 10;
+  // User receive benefit from pool directly
+  BenefitTypePool = 20;
+  // User do not receive any online reward
+  BenefitTypeOffline = 30;
 }
 
 enum GoodType {
-    DefaultGoodType   = 0;
+  DefaultGoodType = 0;
 
-    PowerRenting      = 10;
-    MachineRenting    = 20;
-    MachineHosting    = 30;
+  PowerRenting = 10;
+  MachineRenting = 20;
+  MachineHosting = 30;
 
-    TechniqueServiceFee = 1000;
-    ElectricityFee      = 2000;
+  TechniqueServiceFee = 1000;
+  ElectricityFee = 2000;
 }
 
 enum BenefitState {
-    DefaultBenefitState    = 0;
+  DefaultBenefitState = 0;
 
-    BenefitWait         = 10;
-    BenefitTransferring = 20;
-    // Good bookkeeping
-    BenefitBookKeeping         = 30;
-    BenefitUserBookKeeping     = 31;
-    BenefitSimulateBookKeeping = 32;
-    BenefitDone         = 40;
-    BenefitFail         = 50;
+  BenefitWait = 10;
+  BenefitTransferring = 20;
+  // Good bookkeeping
+  BenefitBookKeeping = 30;
+  BenefitUserBookKeeping = 31;
+  BenefitSimulateBookKeeping = 32;
+  BenefitDone = 40;
+  BenefitFail = 50;
 }
 
 enum CancelMode {
-    DefaultCancelMode        = 0;
+  DefaultCancelMode = 0;
 
-    CancellableBeforeStart   = 10;
-    CancellableBeforeBenefit = 20;
-    Uncancellable            = 30;
+  CancellableBeforeStart = 10;
+  CancellableBeforeBenefit = 20;
+  Uncancellable = 30;
 }
 
 enum GoodLabel {
-    DefaultGoodLabel = 0;
+  DefaultGoodLabel = 0;
 
-    GoodLabelPromotion         = 10;
-    GoodLabelNoviceExclusive   = 20; // Newbie
-    GoodLabelInnovationStarter = 30; // First batch mining
-    GoodLabelLoyaltyExclusive  = 40; // User with action credis pass threshold
+  GoodLabelPromotion = 10;
+  GoodLabelNoviceExclusive = 20;   // Newbie
+  GoodLabelInnovationStarter = 30; // First batch mining
+  GoodLabelLoyaltyExclusive = 40;  // User with action credis pass threshold
 }
 
 enum GoodTopMostType {
-    DefaultGoodTopMostType   = 0;
+  DefaultGoodTopMostType = 0;
 
-    TopMostPromotion         = 10;
-    TopMostNoviceExclusive   = 20;
-    TopMostBestOffer         = 30;
-    TopMostInnovationStarter = 40;
-    TopMostLoyaltyExclusive  = 50;
+  TopMostPromotion = 10;
+  TopMostNoviceExclusive = 20;
+  TopMostBestOffer = 30;
+  TopMostInnovationStarter = 40;
+  TopMostLoyaltyExclusive = 50;
 }
 
 enum GoodStartMode {
-    DefaultGoodStartMode = 0;
+  DefaultGoodStartMode = 0;
 
-    GoodStartModeTBD       = 10; // Start time will be adjusted in future
-    GoodStartModeConfirmed = 20; // Deprecated
-    GoodStartModeInstantly = 30; // Start when order paid
-    GoodStartModeNextDay   = 40; // Start at next 00:00 UTC
-    GoodStartModePreset    = 50; // Start at a preset time
+  GoodStartModeTBD = 10;       // Start time will be adjusted in future
+  GoodStartModeConfirmed = 20; // Deprecated
+  GoodStartModeInstantly = 30; // Start when order paid
+  GoodStartModeNextDay = 40;   // Start at next 00:00 UTC
+  GoodStartModePreset = 50;    // Start at a preset time
 }
 
 enum AppStockLockState {
-    DefaultAppStockLockState = 0;
+  DefaultAppStockLockState = 0;
 
-    AppStockLocked     = 10;
-    AppStockWaitStart  = 20;
-    AppStockInService  = 30;
-    AppStockExpired    = 40;
-    AppStockChargeBack = 50;
-    AppStockRollback   = 60;
-    AppStockCanceled   = 70;
+  AppStockLocked = 10;
+  AppStockWaitStart = 20;
+  AppStockInService = 30;
+  AppStockExpired = 40;
+  AppStockChargeBack = 50;
+  AppStockRollback = 60;
+  AppStockCanceled = 70;
 }
 
 enum GoodUnitType {
-    DefaultGoodUnitType = 0;
+  DefaultGoodUnitType = 0;
 
-    GoodUnitByDuration            = 10;
-    GoodUnitByQuantity            = 20;
-    GoodUnitByDurationAndQuantity = 30;
+  GoodUnitByDuration = 10;
+  GoodUnitByQuantity = 20;
+  GoodUnitByDurationAndQuantity = 30;
 }
 
 enum GoodUnitCalculateType {
-    DefaultGoodUnitCalculateType = 0;
+  DefaultGoodUnitCalculateType = 0;
 
-    GoodUnitCalculateBySelf   = 10;
-    GoodUnitCalculateByParent = 20;
+  GoodUnitCalculateBySelf = 10;
+  GoodUnitCalculateByParent = 20;
 }
 
 enum GoodDurationType {
-    DefaultGoodDurationType = 0;
+  DefaultGoodDurationType = 0;
 
-    GoodDurationByHour  = 10;
-    GoodDurationByDay   = 20;
-    GoodDurationByMonth = 30;
-    GoodDurationByYear  = 40;
+  GoodDurationByHour = 10;
+  GoodDurationByDay = 20;
+  GoodDurationByMonth = 30;
+  GoodDurationByYear = 40;
 }
 
 enum GoodSettlementType {
-    DefaultGoodSettlementType = 0;
+  DefaultGoodSettlementType = 0;
 
-    GoodSettledByCash   = 10;
-    GoodSettledByProfit = 20; // Percent in default
+  GoodSettledByCash = 10;
+  GoodSettledByProfit = 20; // Percent in default
 }

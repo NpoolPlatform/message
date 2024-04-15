@@ -9,100 +9,92 @@ import "npool/basetypes/v1/result.proto";
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc CreateOpLog   (CreateOpLogRequest)  returns (CreateOpLogResponse)  {}
-    rpc UpdateOpLog   (UpdateOpLogRequest)  returns (UpdateOpLogResponse)  {}
-    rpc GetOpLogs     (GetOpLogsRequest)    returns (GetOpLogsResponse)    {}
+  rpc CreateOpLog(CreateOpLogRequest) returns (CreateOpLogResponse) {}
+  rpc UpdateOpLog(UpdateOpLogRequest) returns (UpdateOpLogResponse) {}
+  rpc GetOpLogs(GetOpLogsRequest) returns (GetOpLogsResponse) {}
 }
 
 message OpLogReq {
-    optional uint32 ID              = 9;
-    optional string EntID           = 10;
-    optional string AppID           = 20;
-    optional string UserID          = 30;
-    optional string Path            = 40;
-    optional basetypes.v1.HTTPMethod Method = 50;
-    optional string Arguments       = 60;
-    optional string CurValue        = 70;
-    optional string NewValue        = 80;
-    optional string HumanReadable   = 90;
-    optional basetypes.v1.Result Result = 100;
-    optional string FailReason      = 110;
-    optional int32  StatusCode      = 120;
-    optional string ReqHeaders      = 130;
-    optional string RespHeaders     = 140;
-    optional uint32 ElapsedMillisecs = 160;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional string UserID = 30;
+  optional string Path = 40;
+  optional basetypes.v1.HTTPMethod Method = 50;
+  optional string Arguments = 60;
+  optional string CurValue = 70;
+  optional string NewValue = 80;
+  optional string HumanReadable = 90;
+  optional basetypes.v1.Result Result = 100;
+  optional string FailReason = 110;
+  optional int32 StatusCode = 120;
+  optional string ReqHeaders = 130;
+  optional string RespHeaders = 140;
+  optional uint32 ElapsedMillisecs = 160;
 }
 
 message OpLog {
-    // @inject_tag: sql:"id"
-    uint32          ID              = 10;
-    // @inject_tag: sql:"ent_id"
-    string          EntID           = 20;
-    // @inject_tag: sql:"app_id"
-    string          AppID           = 30;
-    // @inject_tag: sql:"user_id"
-    optional string UserID          = 40;
-    // @inject_tag: sql:"path"
-    string          Path            = 50;
-    // @inject_tag: sql:"method"
-    string          MethodStr       = 60;
-    basetypes.v1.HTTPMethod Method  = 70;
-    // @inject_tag: sql:"arguments"
-    string          Arguments       = 80;
-    // @inject_tag: sql:"cur_value"
-    string          CurValue        = 90;
-    // @inject_tag: sql:"new_value"
-    string          NewValue        = 100;
-    // @inject_tag: sql:"human_readable"
-    string          HumanReadable   = 110;
-    // @inject_tag: sql:"result"
-    string          ResultStr       = 120;
-    basetypes.v1.Result Result      = 130;
-    // @inject_tag: sql:"fail_reason"
-    string          FailReason      = 140;
-    // @inject_tag: sql:"status_code"
-    int32           StatusCode      = 150;
-    // @inject_tag: sql:"req_headers"
-    string          ReqHeaders      = 160;
-    // @inject_tag: sql:"resp_headers"
-    string          RespHeaders     = 170;
-    // @inject_tag: sql:"created_at"
-    uint32          CreatedAt       = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32          UpdatedAt       = 1010;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"app_id"
+  string AppID = 30;
+  // @inject_tag: sql:"user_id"
+  optional string UserID = 40;
+  // @inject_tag: sql:"path"
+  string Path = 50;
+  // @inject_tag: sql:"method"
+  string MethodStr = 60;
+  basetypes.v1.HTTPMethod Method = 70;
+  // @inject_tag: sql:"arguments"
+  string Arguments = 80;
+  // @inject_tag: sql:"cur_value"
+  string CurValue = 90;
+  // @inject_tag: sql:"new_value"
+  string NewValue = 100;
+  // @inject_tag: sql:"human_readable"
+  string HumanReadable = 110;
+  // @inject_tag: sql:"result"
+  string ResultStr = 120;
+  basetypes.v1.Result Result = 130;
+  // @inject_tag: sql:"fail_reason"
+  string FailReason = 140;
+  // @inject_tag: sql:"status_code"
+  int32 StatusCode = 150;
+  // @inject_tag: sql:"req_headers"
+  string ReqHeaders = 160;
+  // @inject_tag: sql:"resp_headers"
+  string RespHeaders = 170;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val ID     = 9;
-    optional basetypes.v1.StringVal EntID  = 10;
-    optional basetypes.v1.StringVal AppID  = 20;
-    optional basetypes.v1.StringVal UserID = 30;
-    optional basetypes.v1.Uint32Val Result = 40;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal UserID = 30;
+  optional basetypes.v1.Uint32Val Result = 40;
 }
 
-message CreateOpLogRequest {
-    OpLogReq Info = 10;
-}
+message CreateOpLogRequest { OpLogReq Info = 10; }
 
-message CreateOpLogResponse {
-    OpLog Info = 10;
-}
+message CreateOpLogResponse { OpLog Info = 10; }
 
-message UpdateOpLogRequest {
-    OpLogReq Info = 10;
-}
+message UpdateOpLogRequest { OpLogReq Info = 10; }
 
-message UpdateOpLogResponse {
-    OpLog Info = 10;
-}
+message UpdateOpLogResponse { OpLog Info = 10; }
 
 message GetOpLogsRequest {
-    Conds  Conds    = 10;
-    int32  Offset   = 20;
-    int32  Limit    = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetOpLogsResponse {
-    repeated OpLog Infos = 10;
-    uint32         Total = 20;
+  repeated OpLog Infos = 10;
+  uint32 Total = 20;
 }

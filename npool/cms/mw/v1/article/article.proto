@@ -9,156 +9,132 @@ import "npool/basetypes/cms/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateArticle     (CreateArticleRequest)     returns (CreateArticleResponse)     {}
-    rpc UpdateArticle     (UpdateArticleRequest)     returns (UpdateArticleResponse)     {}
-    rpc GetArticle        (GetArticleRequest)        returns (GetArticleResponse)        {}
-    rpc GetArticles       (GetArticlesRequest)       returns (GetArticlesResponse)       {}
-    rpc ExistArticle      (ExistArticleRequest)      returns (ExistArticleResponse)      {}
-    rpc ExistArticleConds (ExistArticleCondsRequest) returns (ExistArticleCondsResponse) {}
-    rpc DeleteArticle     (DeleteArticleRequest)     returns (DeleteArticleResponse)     {}
+  rpc CreateArticle(CreateArticleRequest) returns (CreateArticleResponse) {}
+  rpc UpdateArticle(UpdateArticleRequest) returns (UpdateArticleResponse) {}
+  rpc GetArticle(GetArticleRequest) returns (GetArticleResponse) {}
+  rpc GetArticles(GetArticlesRequest) returns (GetArticlesResponse) {}
+  rpc ExistArticle(ExistArticleRequest) returns (ExistArticleResponse) {}
+  rpc ExistArticleConds(ExistArticleCondsRequest)
+      returns (ExistArticleCondsResponse) {}
+  rpc DeleteArticle(DeleteArticleRequest) returns (DeleteArticleResponse) {}
 }
 
 message ArticleReq {
-    optional uint32 ID                             = 10;
-    optional string EntID                          = 20;
-    optional string AppID                          = 30;
-    optional string ISO                            = 40;
-    optional string CategoryID                     = 50;
-    optional string AuthorID                       = 60;
-    optional string ArticleKey                     = 70;
-    optional string Title                          = 80;
-    optional string Subtitle                       = 90;
-    optional string Digest                         = 100;
-    optional basetypes.cms.v1.ArticleStatus Status = 110;
-    optional string Host                           = 120;
-    optional uint32 Version                        = 130;
-    optional string ContentURL                     = 140;
-    optional bool   Latest                         = 150;
-    optional bool   ACLEnabled                     = 160;
+  optional uint32 ID = 10;
+  optional string EntID = 20;
+  optional string AppID = 30;
+  optional string ISO = 40;
+  optional string CategoryID = 50;
+  optional string AuthorID = 60;
+  optional string ArticleKey = 70;
+  optional string Title = 80;
+  optional string Subtitle = 90;
+  optional string Digest = 100;
+  optional basetypes.cms.v1.ArticleStatus Status = 110;
+  optional string Host = 120;
+  optional uint32 Version = 130;
+  optional string ContentURL = 140;
+  optional bool Latest = 150;
+  optional bool ACLEnabled = 160;
 }
 
 message Article {
-    // @inject_tag: sql:"id"
-    uint32 ID                             = 10;
-    // @inject_tag: sql:"ent_id"
-    string EntID                          = 20;
-    // @inject_tag: sql:"app_id"
-    string AppID                          = 30;
-    // @inject_tag: sql:"iso"
-    string ISO                            = 40;
-    // @inject_tag: sql:"category_id"
-    string CategoryID                     = 50;
-    // @inject_tag: sql:"category_name"
-    string CategoryName                   = 60;
-    // @inject_tag: sql:"author_id"
-    string AuthorID                       = 70;
-    // @inject_tag: sql:"article_key"
-    string ArticleKey                     = 80;
-    // @inject_tag: sql:"title"
-    string Title                          = 90;
-    // @inject_tag: sql:"subtitle"
-    string Subtitle                       = 100;
-    // @inject_tag: sql:"digest"
-    string Digest                         = 110;
-    // @inject_tag: sql:"status"
-    string StatusStr                      = 120;
-    basetypes.cms.v1.ArticleStatus Status = 130;
-    // @inject_tag: sql:"host"
-    string Host                           = 140;
-    // @inject_tag: sql:"version"
-    uint32 Version                        = 150;
-    // @inject_tag: sql:"content_url"
-    string ContentURL                     = 160;
-    // @inject_tag: sql:"latest"
-    bool   Latest                         = 170;
-    // @inject_tag: sql:"published_at"
-    string PublishedAt                    = 180;
-    // @inject_tag: sql:"acl_enabled"
-    bool   ACLEnabled                     = 190;
-    repeated string ACLRoleIDs            = 200;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt                      = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt                      = 1010;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"app_id"
+  string AppID = 30;
+  // @inject_tag: sql:"iso"
+  string ISO = 40;
+  // @inject_tag: sql:"category_id"
+  string CategoryID = 50;
+  // @inject_tag: sql:"category_name"
+  string CategoryName = 60;
+  // @inject_tag: sql:"author_id"
+  string AuthorID = 70;
+  // @inject_tag: sql:"article_key"
+  string ArticleKey = 80;
+  // @inject_tag: sql:"title"
+  string Title = 90;
+  // @inject_tag: sql:"subtitle"
+  string Subtitle = 100;
+  // @inject_tag: sql:"digest"
+  string Digest = 110;
+  // @inject_tag: sql:"status"
+  string StatusStr = 120;
+  basetypes.cms.v1.ArticleStatus Status = 130;
+  // @inject_tag: sql:"host"
+  string Host = 140;
+  // @inject_tag: sql:"version"
+  uint32 Version = 150;
+  // @inject_tag: sql:"content_url"
+  string ContentURL = 160;
+  // @inject_tag: sql:"latest"
+  bool Latest = 170;
+  // @inject_tag: sql:"published_at"
+  string PublishedAt = 180;
+  // @inject_tag: sql:"acl_enabled"
+  bool ACLEnabled = 190;
+  repeated string ACLRoleIDs = 200;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    basetypes.v1.Uint32Val ID          = 10;
-    basetypes.v1.StringVal EntID       = 20;
-    basetypes.v1.StringVal AppID       = 30;
-    basetypes.v1.StringVal ISO         = 40;
-    basetypes.v1.StringVal CategoryID  = 50;
-    basetypes.v1.StringVal AuthorID    = 60;
-    basetypes.v1.StringVal ArticleKey  = 70;
-    basetypes.v1.StringVal Title       = 80;
-    basetypes.v1.StringVal Subtitle    = 90;
-    basetypes.v1.StringVal Digest      = 100;
-    basetypes.v1.Uint32Val Status      = 110;
-    basetypes.v1.Uint32Val Version     = 120;
-    basetypes.v1.BoolVal   Latest      = 130;
-    basetypes.v1.StringVal Host        = 140;
-    basetypes.v1.StringVal ContentURL  = 150;
-    basetypes.v1.Uint32SliceVal IDs    = 160;
-    basetypes.v1.StringSliceVal EntIDs = 170;
-    basetypes.v1.BoolVal   ACLEnabled  = 180;
+  basetypes.v1.Uint32Val ID = 10;
+  basetypes.v1.StringVal EntID = 20;
+  basetypes.v1.StringVal AppID = 30;
+  basetypes.v1.StringVal ISO = 40;
+  basetypes.v1.StringVal CategoryID = 50;
+  basetypes.v1.StringVal AuthorID = 60;
+  basetypes.v1.StringVal ArticleKey = 70;
+  basetypes.v1.StringVal Title = 80;
+  basetypes.v1.StringVal Subtitle = 90;
+  basetypes.v1.StringVal Digest = 100;
+  basetypes.v1.Uint32Val Status = 110;
+  basetypes.v1.Uint32Val Version = 120;
+  basetypes.v1.BoolVal Latest = 130;
+  basetypes.v1.StringVal Host = 140;
+  basetypes.v1.StringVal ContentURL = 150;
+  basetypes.v1.Uint32SliceVal IDs = 160;
+  basetypes.v1.StringSliceVal EntIDs = 170;
+  basetypes.v1.BoolVal ACLEnabled = 180;
 }
 
-message CreateArticleRequest {
-    ArticleReq Info = 10;
-}
+message CreateArticleRequest { ArticleReq Info = 10; }
 
-message CreateArticleResponse {
-    Article Info = 10;
-}
+message CreateArticleResponse { Article Info = 10; }
 
-message UpdateArticleRequest {
-    ArticleReq Info = 10;
-}
+message UpdateArticleRequest { ArticleReq Info = 10; }
 
-message UpdateArticleResponse {
-    Article Info = 10;
-}
+message UpdateArticleResponse { Article Info = 10; }
 
-message GetArticleRequest {
-    string EntID = 10;
-}
+message GetArticleRequest { string EntID = 10; }
 
-message GetArticleResponse {
-    Article Info = 10;
-}
+message GetArticleResponse { Article Info = 10; }
 
 message GetArticlesRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetArticlesResponse {
-    repeated Article Infos = 10;
-    uint32           Total = 20;
+  repeated Article Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistArticleRequest {
-    string EntID = 10;
-}
+message ExistArticleRequest { string EntID = 10; }
 
-message ExistArticleResponse {
-    bool Info = 10;
-}
+message ExistArticleResponse { bool Info = 10; }
 
-message ExistArticleCondsRequest {
-    Conds Conds = 10;
-}
+message ExistArticleCondsRequest { Conds Conds = 10; }
 
-message ExistArticleCondsResponse {
-    bool Info = 10;
-}
+message ExistArticleCondsResponse { bool Info = 10; }
 
-message DeleteArticleRequest {
-    ArticleReq Info = 10;
-}
+message DeleteArticleRequest { ArticleReq Info = 10; }
 
-message DeleteArticleResponse {
-    Article Info = 10;
-}
-
+message DeleteArticleResponse { Article Info = 10; }

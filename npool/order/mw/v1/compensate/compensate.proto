@@ -9,149 +9,129 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateCompensate     (CreateCompensateRequest)     returns (CreateCompensateResponse)     {
-        option (google.api.http) = {
-            post: "/v1/compensate_CreateCompensate"
-            body: "*"
-        };
-    }
-    rpc UpdateCompensate     (UpdateCompensateRequest)     returns (UpdateCompensateResponse)     {
-        option (google.api.http) = {
-            post: "/v1/compensate_UpdateCompensate"
-            body: "*"
-        };
-    }
-    rpc GetCompensate        (GetCompensateRequest)        returns (GetCompensateResponse)        {
-        option (google.api.http) = {
-            post: "/v1/compensate_GetCompensate"
-            body: "*"
-        };
-    }
-    rpc GetCompensates       (GetCompensatesRequest)       returns (GetCompensatesResponse)       {}
-    rpc ExistCompensate      (ExistCompensateRequest)      returns (ExistCompensateResponse)      {}
-    rpc ExistCompensateConds (ExistCompensateCondsRequest) returns (ExistCompensateCondsResponse) {}
-    rpc DeleteCompensate     (DeleteCompensateRequest)     returns (DeleteCompensateResponse)     {
-        option (google.api.http) = {
-            post: "/v1/compensate_DeleteCompensate"
-            body: "*"
-        };
-    }
+  rpc CreateCompensate(CreateCompensateRequest)
+      returns (CreateCompensateResponse) {
+    option (google.api.http) = {
+      post : "/v1/compensate_CreateCompensate"
+      body : "*"
+    };
+  }
+  rpc UpdateCompensate(UpdateCompensateRequest)
+      returns (UpdateCompensateResponse) {
+    option (google.api.http) = {
+      post : "/v1/compensate_UpdateCompensate"
+      body : "*"
+    };
+  }
+  rpc GetCompensate(GetCompensateRequest) returns (GetCompensateResponse) {
+    option (google.api.http) = {
+      post : "/v1/compensate_GetCompensate"
+      body : "*"
+    };
+  }
+  rpc GetCompensates(GetCompensatesRequest) returns (GetCompensatesResponse) {}
+  rpc ExistCompensate(ExistCompensateRequest)
+      returns (ExistCompensateResponse) {}
+  rpc ExistCompensateConds(ExistCompensateCondsRequest)
+      returns (ExistCompensateCondsResponse) {}
+  rpc DeleteCompensate(DeleteCompensateRequest)
+      returns (DeleteCompensateResponse) {
+    option (google.api.http) = {
+      post : "/v1/compensate_DeleteCompensate"
+      body : "*"
+    };
+  }
 }
 
 message CompensateReq {
-    optional uint32     ID        = 9;
-    optional string     EntID     = 10;
-    optional string     OrderID   = 20;
-    optional uint32     StartAt   = 30;
-    optional uint32     EndAt     = 40;
-    optional string     Title     = 50;
-    optional string     Message   = 60;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string OrderID = 20;
+  optional uint32 StartAt = 30;
+  optional uint32 EndAt = 40;
+  optional string Title = 50;
+  optional string Message = 60;
 }
 
 message Compensate {
-    // @inject_tag: sql:"id"
-    uint32     ID        = 9;
-    // @inject_tag: sql:"ent_id"
-    string     EntID     = 10;
-    // @inject_tag: sql:"order_id"
-    string     OrderID   = 20;
-    // @inject_tag: sql:"start_at"
-    uint32     StartAt   = 30;
-    // @inject_tag: sql:"end_at"
-    uint32     EndAt     = 40;
-    // @inject_tag: sql:"title"
-    string     Title     = 50;
-    // @inject_tag: sql:"message"
-    string     Message   = 51;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"order_id"
+  string OrderID = 20;
+  // @inject_tag: sql:"start_at"
+  uint32 StartAt = 30;
+  // @inject_tag: sql:"end_at"
+  uint32 EndAt = 40;
+  // @inject_tag: sql:"title"
+  string Title = 50;
+  // @inject_tag: sql:"message"
+  string Message = 51;
 
-    // order
-    // @inject_tag: sql:"app_id"
-    string AppID                                     = 60;
-    // @inject_tag: sql:"user_id"
-    string UserID                                    = 70;
-    // @inject_tag: sql:"good_id"
-    string GoodID                                    = 80;
-    // @inject_tag: sql:"app_good_id"
-    string AppGoodID                                 = 90;
-    // @inject_tag: sql:"units_v1"
-    string Units                                     = 120;
+  // order
+  // @inject_tag: sql:"app_id"
+  string AppID = 60;
+  // @inject_tag: sql:"user_id"
+  string UserID = 70;
+  // @inject_tag: sql:"good_id"
+  string GoodID = 80;
+  // @inject_tag: sql:"app_good_id"
+  string AppGoodID = 90;
+  // @inject_tag: sql:"units_v1"
+  string Units = 120;
 
-    // orderstate
-    // @inject_tag: sql:"order_start_at"
-    uint32 OrderStartAt                              = 260;
-    // @inject_tag: sql:"order_end_at"
-    uint32 OrderEndAt                                = 270;
+  // orderstate
+  // @inject_tag: sql:"order_start_at"
+  uint32 OrderStartAt = 260;
+  // @inject_tag: sql:"order_end_at"
+  uint32 OrderEndAt = 270;
 
-    // @inject_tag: sql:"created_at"
-    uint32     CreatedAt = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32     UpdatedAt = 1010;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    basetypes.v1.Uint32Val ID      = 9;
-    basetypes.v1.StringVal EntID   = 10;
-    basetypes.v1.StringVal OrderID = 20;
-    basetypes.v1.Uint32Val StartAt = 30;
-    basetypes.v1.Uint32Val EndAt   = 40;
+  basetypes.v1.Uint32Val ID = 9;
+  basetypes.v1.StringVal EntID = 10;
+  basetypes.v1.StringVal OrderID = 20;
+  basetypes.v1.Uint32Val StartAt = 30;
+  basetypes.v1.Uint32Val EndAt = 40;
 }
 
+message CreateCompensateRequest { CompensateReq Info = 10; }
 
-message CreateCompensateRequest {
-    CompensateReq Info = 10;
-}
+message CreateCompensateResponse { Compensate Info = 10; }
 
-message CreateCompensateResponse {
-    Compensate Info = 10;
-}
+message UpdateCompensateRequest { CompensateReq Info = 10; }
 
-message UpdateCompensateRequest {
-    CompensateReq Info = 10;
-}
+message UpdateCompensateResponse { Compensate Info = 10; }
 
-message UpdateCompensateResponse {
-    Compensate Info = 10;
-}
+message GetCompensateRequest { string EntID = 10; }
 
-message GetCompensateRequest {
-    string EntID = 10;
-}
-
-message GetCompensateResponse {
-    Compensate Info = 10;
-}
+message GetCompensateResponse { Compensate Info = 10; }
 
 message GetCompensatesRequest {
-    Conds Conds   = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetCompensatesResponse {
-    repeated Compensate Infos = 10;
-    uint32              Total = 20;
+  repeated Compensate Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistCompensateRequest {
-    string EntID = 10;
-}
+message ExistCompensateRequest { string EntID = 10; }
 
-message ExistCompensateResponse {
-    bool Info = 10;
-}
+message ExistCompensateResponse { bool Info = 10; }
 
-message ExistCompensateCondsRequest {
-    Conds Conds = 10;
-}
+message ExistCompensateCondsRequest { Conds Conds = 10; }
 
-message ExistCompensateCondsResponse {
-    bool Info = 10;
-}
+message ExistCompensateCondsResponse { bool Info = 10; }
 
-message DeleteCompensateRequest {
-    CompensateReq Info = 10;
-}
+message DeleteCompensateRequest { CompensateReq Info = 10; }
 
-message DeleteCompensateResponse {
-    Compensate Info = 10;
-}
+message DeleteCompensateResponse { Compensate Info = 10; }

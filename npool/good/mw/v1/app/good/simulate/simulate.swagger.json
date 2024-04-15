@@ -70,6 +70,9 @@
         },
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AppGoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },

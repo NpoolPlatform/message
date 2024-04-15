@@ -8,92 +8,76 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateDefault    (CreateDefaultRequest)    returns (CreateDefaultResponse)    {}
-    rpc UpdateDefault    (UpdateDefaultRequest)    returns (UpdateDefaultResponse)    {}
-    rpc GetDefault       (GetDefaultRequest)       returns (GetDefaultResponse)       {}
-    rpc GetDefaults      (GetDefaultsRequest)      returns (GetDefaultsResponse)      {}
-    rpc DeleteDefault    (DeleteDefaultRequest)    returns (DeleteDefaultResponse)    {}
+  rpc CreateDefault(CreateDefaultRequest) returns (CreateDefaultResponse) {}
+  rpc UpdateDefault(UpdateDefaultRequest) returns (UpdateDefaultResponse) {}
+  rpc GetDefault(GetDefaultRequest) returns (GetDefaultResponse) {}
+  rpc GetDefaults(GetDefaultsRequest) returns (GetDefaultsResponse) {}
+  rpc DeleteDefault(DeleteDefaultRequest) returns (DeleteDefaultResponse) {}
 }
 
 message DefaultReq {
-    optional uint32 ID        = 9;
-    optional string EntID     = 10;
-    optional string AppGoodID = 20;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppGoodID = 20;
 }
 
 message Default {
-    // @inject_tag: sql:"id"
-    uint32 ID         = 9;
-    // @inject_tag: sql:"ent_id"
-    string EntID      = 10;
-    // @inject_tag: sql:"app_id"
-    string AppID      = 20;
-    // @inject_tag: sql:"good_id"
-    string GoodID     = 30;
-    // @inject_tag: sql:"good_name"
-    string GoodName   = 40;
-    // @inject_tag: sql:"app_good_id"
-    string AppGoodID  = 50;
-    // @inject_tag: sql:"app_good_name"
-    string AppGoodName = 60;
-    // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID = 70;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt  = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt  = 1010;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"app_id"
+  string AppID = 20;
+  // @inject_tag: sql:"good_id"
+  string GoodID = 30;
+  // @inject_tag: sql:"good_name"
+  string GoodName = 40;
+  // @inject_tag: sql:"app_good_id"
+  string AppGoodID = 50;
+  // @inject_tag: sql:"app_good_name"
+  string AppGoodName = 60;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 70;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID          = 9;
-    optional basetypes.v1.StringVal      EntID       = 10;
-    optional basetypes.v1.StringVal      AppID       = 20;
-    optional basetypes.v1.StringVal      GoodID      = 30;
-    optional basetypes.v1.StringVal      AppGoodID   = 40;
-    optional basetypes.v1.StringVal      CoinTypeID  = 50;
-    optional basetypes.v1.StringSliceVal GoodIDs     = 60;
-    optional basetypes.v1.StringSliceVal CoinTypeIDs = 70;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal GoodID = 30;
+  optional basetypes.v1.StringVal AppGoodID = 40;
+  optional basetypes.v1.StringVal CoinTypeID = 50;
+  optional basetypes.v1.StringSliceVal GoodIDs = 60;
+  optional basetypes.v1.StringSliceVal CoinTypeIDs = 70;
 }
 
-message CreateDefaultRequest {
-    DefaultReq Info = 10;
-}
+message CreateDefaultRequest { DefaultReq Info = 10; }
 
-message CreateDefaultResponse {
-    Default Info = 10;
-}
+message CreateDefaultResponse { Default Info = 10; }
 
-message UpdateDefaultRequest {
-    DefaultReq Info = 10;
-}
+message UpdateDefaultRequest { DefaultReq Info = 10; }
 
-message UpdateDefaultResponse {
-    Default Info = 10;
-}
+message UpdateDefaultResponse { Default Info = 10; }
 
-message GetDefaultRequest {
-    string EntID = 10;
-}
+message GetDefaultRequest { string EntID = 10; }
 
-message GetDefaultResponse {
-    Default Info = 10;
-}
+message GetDefaultResponse { Default Info = 10; }
 
 message GetDefaultsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetDefaultsResponse {
-    repeated Default Infos = 10;
-    uint32           Total = 20;
+  repeated Default Infos = 10;
+  uint32 Total = 20;
 }
 
-message DeleteDefaultRequest {
-    DefaultReq Info = 10;
-}
+message DeleteDefaultRequest { DefaultReq Info = 10; }
 
-message DeleteDefaultResponse {
-    Default Info = 10;
-}
+message DeleteDefaultResponse { Default Info = 10; }

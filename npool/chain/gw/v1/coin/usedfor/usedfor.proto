@@ -10,54 +10,56 @@ import "npool/basetypes/chain/v1/enums.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateCoinUsedFor (CreateCoinUsedForRequest) returns (CreateCoinUsedForResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/coinusedfor"
-            body: "*"
-        };
-    }
-    rpc GetCoinUsedFors (GetCoinUsedForsRequest) returns (GetCoinUsedForsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/coinusedfors"
-            body: "*"
-        };
-    }
-    rpc DeleteCoinUsedFor (DeleteCoinUsedForRequest) returns (DeleteCoinUsedForResponse) {
-        option (google.api.http) = {
-            post: "/v1/delete/coinusedfor"
-            body: "*"
-        };
-    }
+  rpc CreateCoinUsedFor(CreateCoinUsedForRequest)
+      returns (CreateCoinUsedForResponse) {
+    option (google.api.http) = {
+      post : "/v1/create/coinusedfor"
+      body : "*"
+    };
+  }
+  rpc GetCoinUsedFors(GetCoinUsedForsRequest)
+      returns (GetCoinUsedForsResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/coinusedfors"
+      body : "*"
+    };
+  }
+  rpc DeleteCoinUsedFor(DeleteCoinUsedForRequest)
+      returns (DeleteCoinUsedForResponse) {
+    option (google.api.http) = {
+      post : "/v1/delete/coinusedfor"
+      body : "*"
+    };
+  }
 }
 
 message CreateCoinUsedForRequest {
-    string CoinTypeID = 10;
-    basetypes.chain.v1.CoinUsedFor UsedFor = 20;
-    optional uint32 Priority = 30;
+  string CoinTypeID = 10;
+  basetypes.chain.v1.CoinUsedFor UsedFor = 20;
+  optional uint32 Priority = 30;
 }
 
 message CreateCoinUsedForResponse {
-    chain.middleware.coin.usedfor.v1.CoinUsedFor Info = 10;
+  chain.middleware.coin.usedfor.v1.CoinUsedFor Info = 10;
 }
 
 message GetCoinUsedForsRequest {
-    repeated string CoinTypeIDs = 10;
-    repeated basetypes.chain.v1.CoinUsedFor UsedFors = 20;
-    int32           Offset      = 30;
-    int32           Limit       = 40;
+  repeated string CoinTypeIDs = 10;
+  repeated basetypes.chain.v1.CoinUsedFor UsedFors = 20;
+  int32 Offset = 30;
+  int32 Limit = 40;
 }
 
 message GetCoinUsedForsResponse {
-    repeated chain.middleware.coin.usedfor.v1.CoinUsedFor Infos = 10;
-    uint32                                                Total = 20;
+  repeated chain.middleware.coin.usedfor.v1.CoinUsedFor Infos = 10;
+  uint32 Total = 20;
 }
 
 message DeleteCoinUsedForRequest {
-    uint32 ID    = 10;
-    string EntID = 20;
+  uint32 ID = 10;
+  string EntID = 20;
 }
 
 message DeleteCoinUsedForResponse {
-    chain.middleware.coin.usedfor.v1.CoinUsedFor Info = 10;
+  chain.middleware.coin.usedfor.v1.CoinUsedFor Info = 10;
 }
-

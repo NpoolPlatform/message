@@ -9,100 +9,89 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateCoinDescription     (CreateCoinDescriptionRequest)     returns (CreateCoinDescriptionResponse)     {}
-    rpc GetCoinDescription        (GetCoinDescriptionRequest)        returns (GetCoinDescriptionResponse)        {}
-    rpc GetCoinDescriptions       (GetCoinDescriptionsRequest)       returns (GetCoinDescriptionsResponse)       {}
-    rpc ExistCoinDescriptionConds (ExistCoinDescriptionCondsRequest) returns (ExistCoinDescriptionCondsResponse) {}
-    rpc UpdateCoinDescription     (UpdateCoinDescriptionRequest)     returns (UpdateCoinDescriptionResponse)     {}
+  rpc CreateCoinDescription(CreateCoinDescriptionRequest)
+      returns (CreateCoinDescriptionResponse) {}
+  rpc GetCoinDescription(GetCoinDescriptionRequest)
+      returns (GetCoinDescriptionResponse) {}
+  rpc GetCoinDescriptions(GetCoinDescriptionsRequest)
+      returns (GetCoinDescriptionsResponse) {}
+  rpc ExistCoinDescriptionConds(ExistCoinDescriptionCondsRequest)
+      returns (ExistCoinDescriptionCondsResponse) {}
+  rpc UpdateCoinDescription(UpdateCoinDescriptionRequest)
+      returns (UpdateCoinDescriptionResponse) {}
 }
 
 message CoinDescriptionReq {
-    optional uint32    ID         = 9;
-    optional string    EntID      = 10;
-    optional string    AppID      = 20;
-    optional string    CoinTypeID = 30;
-    optional basetypes.v1.UsedFor UsedFor = 40;
-    optional string    Title      = 50;
-    optional string    Message    = 60;
-    optional uint32    DeletedAt  = 70;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional string CoinTypeID = 30;
+  optional basetypes.v1.UsedFor UsedFor = 40;
+  optional string Title = 50;
+  optional string Message = 60;
+  optional uint32 DeletedAt = 70;
 }
 
 message CoinDescription {
-    // @inject_tag: sql:"id"
-    uint32  ID         = 9;
-    // @inject_tag: sql:"ent_id"
-    string  EntID      = 10;
-    // @inject_tag: sql:"app_id"
-    string  AppID      = 20;
-    // @inject_tag: sql:"coin_type_id"
-    string  CoinTypeID = 30;
-    // @inject_tag: sql:"coin_name"
-    string  CoinName   = 40;
-    // @inject_tag: sql:"coin_logo"
-    string  CoinLogo   = 50;
-    // @inject_tag: sql:"coin_unit"
-    string  CoinUnit   = 60;
-    // @inject_tag: sql:"coin_env"
-    string  CoinENV    = 70;
-    // @inject_tag: sql:"used_for"
-    string  UsedForStr = 80;
-    basetypes.v1.UsedFor UsedFor = 90;
-    // @inject_tag: sql:"title"
-    string  Title      = 100;
-    // @inject_tag: sql:"message"
-    string  Message    = 110;
-    // @inject_tag: sql:"created_at"
-    uint32  CreatedAt  = 120;
-    // @inject_tag: sql:"updated_at"
-    uint32  UpdatedAt  = 130;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"app_id"
+  string AppID = 20;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 30;
+  // @inject_tag: sql:"coin_name"
+  string CoinName = 40;
+  // @inject_tag: sql:"coin_logo"
+  string CoinLogo = 50;
+  // @inject_tag: sql:"coin_unit"
+  string CoinUnit = 60;
+  // @inject_tag: sql:"coin_env"
+  string CoinENV = 70;
+  // @inject_tag: sql:"used_for"
+  string UsedForStr = 80;
+  basetypes.v1.UsedFor UsedFor = 90;
+  // @inject_tag: sql:"title"
+  string Title = 100;
+  // @inject_tag: sql:"message"
+  string Message = 110;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 120;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 130;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal EntID      = 10;
-    optional basetypes.v1.StringVal AppID      = 20;
-    optional basetypes.v1.StringVal CoinTypeID = 30;
-    optional basetypes.v1.Int32Val  UsedFor    = 40;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal CoinTypeID = 30;
+  optional basetypes.v1.Int32Val UsedFor = 40;
 }
 
-message CreateCoinDescriptionRequest {
-    CoinDescriptionReq Info = 10;
-}
+message CreateCoinDescriptionRequest { CoinDescriptionReq Info = 10; }
 
-message CreateCoinDescriptionResponse {
-    CoinDescription Info = 10;
-}
+message CreateCoinDescriptionResponse { CoinDescription Info = 10; }
 
-message UpdateCoinDescriptionRequest {
-    CoinDescriptionReq Info = 10;
-}
+message UpdateCoinDescriptionRequest { CoinDescriptionReq Info = 10; }
 
-message UpdateCoinDescriptionResponse {
-    CoinDescription Info = 10;
-}
+message UpdateCoinDescriptionResponse { CoinDescription Info = 10; }
 
-message GetCoinDescriptionRequest {
-    string EntID = 10;
-}
+message GetCoinDescriptionRequest { string EntID = 10; }
 
-message GetCoinDescriptionResponse {
-    CoinDescription Info = 10;
-}
+message GetCoinDescriptionResponse { CoinDescription Info = 10; }
 
 message GetCoinDescriptionsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetCoinDescriptionsResponse {
-    repeated CoinDescription Infos = 10;
-    uint32                   Total = 20;
+  repeated CoinDescription Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistCoinDescriptionCondsRequest {
-    Conds Conds  = 10;
-}
+message ExistCoinDescriptionCondsRequest { Conds Conds = 10; }
 
-message ExistCoinDescriptionCondsResponse {
-    bool Info = 10;
-}
+message ExistCoinDescriptionCondsResponse { bool Info = 10; }

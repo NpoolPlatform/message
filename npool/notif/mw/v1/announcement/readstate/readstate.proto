@@ -8,108 +8,90 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateReadState     (CreateReadStateRequest)     returns (CreateReadStateResponse)     {}
-    rpc GetReadState        (GetReadStateRequest)        returns (GetReadStateResponse)        {}
-    rpc GetReadStates       (GetReadStatesRequest)       returns (GetReadStatesResponse)       {}
-    rpc ExistReadStateConds (ExistReadStateCondsRequest) returns (ExistReadStateCondsResponse) {}
-    rpc DeleteReadState     (DeleteReadStateRequest)     returns (DeleteReadStateResponse)     {}
+  rpc CreateReadState(CreateReadStateRequest)
+      returns (CreateReadStateResponse) {}
+  rpc GetReadState(GetReadStateRequest) returns (GetReadStateResponse) {}
+  rpc GetReadStates(GetReadStatesRequest) returns (GetReadStatesResponse) {}
+  rpc ExistReadStateConds(ExistReadStateCondsRequest)
+      returns (ExistReadStateCondsResponse) {}
+  rpc DeleteReadState(DeleteReadStateRequest)
+      returns (DeleteReadStateResponse) {}
 }
 
 message ReadState {
-    // @inject_tag: sql:"id"
-    uint32 ID             = 9;
-    // @inject_tag: sql:"ent_id"
-    string EntID          = 10;
-    // @inject_tag: sql:"app_id"
-    string AppID          = 20;
-    // @inject_tag: sql:"user_id"
-    string UserID         = 30;
-    // @inject_tag: sql:"announcement_id"
-    string AnnouncementID = 40;
-    // @inject_tag: sql:"lang_id"
-    string LangID         = 50;
-    // @inject_tag: sql:"title"
-    string Title          = 60;
-    // @inject_tag: sql:"content"
-    string Content        = 70;
-    // @inject_tag: sql:"type"
-    string AnnouncementType    = 80;
-    // @inject_tag: sql:"channel"
-    string Channel        = 90;
-    // @inject_tag: sql:"start_at"
-    uint32 StartAt          = 99;
-    // @inject_tag: sql:"end_at"
-    uint32 EndAt          = 100;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt      = 110;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt      = 120;
-
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"app_id"
+  string AppID = 20;
+  // @inject_tag: sql:"user_id"
+  string UserID = 30;
+  // @inject_tag: sql:"announcement_id"
+  string AnnouncementID = 40;
+  // @inject_tag: sql:"lang_id"
+  string LangID = 50;
+  // @inject_tag: sql:"title"
+  string Title = 60;
+  // @inject_tag: sql:"content"
+  string Content = 70;
+  // @inject_tag: sql:"type"
+  string AnnouncementType = 80;
+  // @inject_tag: sql:"channel"
+  string Channel = 90;
+  // @inject_tag: sql:"start_at"
+  uint32 StartAt = 99;
+  // @inject_tag: sql:"end_at"
+  uint32 EndAt = 100;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 110;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 120;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val ID             = 9;
-    optional basetypes.v1.StringVal EntID          = 10;
-    optional basetypes.v1.StringVal AppID          = 20;
-    optional basetypes.v1.StringVal UserID         = 30;
-    optional basetypes.v1.StringVal AnnouncementID = 40;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal UserID = 30;
+  optional basetypes.v1.StringVal AnnouncementID = 40;
 }
 
 message ReadStateReq {
-    optional uint32 ID             = 9;
-    optional string EntID          = 10;
-    optional string AppID          = 20;
-    optional string UserID         = 30;
-    optional string AnnouncementID = 40;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional string UserID = 30;
+  optional string AnnouncementID = 40;
 }
 
-message CreateReadStateRequest {
-    ReadStateReq Info = 10;
-}
+message CreateReadStateRequest { ReadStateReq Info = 10; }
 
-message CreateReadStateResponse {
-    ReadState Info = 10;
-}
+message CreateReadStateResponse { ReadState Info = 10; }
 
-message UpdateReadStateRequest {
-    ReadStateReq Info = 10;
-}
+message UpdateReadStateRequest { ReadStateReq Info = 10; }
 
-message UpdateReadStateResponse {
-    ReadState Info = 10;
-}
+message UpdateReadStateResponse { ReadState Info = 10; }
 
-message GetReadStateRequest {
-    string EntID = 10;
-}
+message GetReadStateRequest { string EntID = 10; }
 
-message GetReadStateResponse {
-    ReadState Info = 10;
-}
+message GetReadStateResponse { ReadState Info = 10; }
 
 message GetReadStatesRequest {
-    Conds Conds   = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetReadStatesResponse {
-    repeated ReadState Infos = 10;
-    uint32             Total = 20;
+  repeated ReadState Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistReadStateCondsRequest {
-    Conds Conds = 10;
-}
+message ExistReadStateCondsRequest { Conds Conds = 10; }
 
-message ExistReadStateCondsResponse {
-    bool Info = 10;
-}
+message ExistReadStateCondsResponse { bool Info = 10; }
 
-message DeleteReadStateRequest {
-    ReadStateReq Info = 10;
-}
+message DeleteReadStateRequest { ReadStateReq Info = 10; }
 
-message DeleteReadStateResponse {
-    ReadState Info = 10;
-}
+message DeleteReadStateResponse { ReadState Info = 10; }
