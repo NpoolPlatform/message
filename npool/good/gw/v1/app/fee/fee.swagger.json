@@ -313,7 +313,7 @@
         "EntID": {
           "type": "string"
         },
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
         "AppGoodID": {
