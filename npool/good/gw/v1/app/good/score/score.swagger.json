@@ -16,7 +16,39 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/goodscore": {
+    "/v1/admin/get/appgoodscores": {
+      "post": {
+        "operationId": "Gateway_AdminGetScores",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetScoresResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetScoresRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/create/appgoodscore": {
       "post": {
         "operationId": "Gateway_CreateScore",
         "responses": {
@@ -48,7 +80,7 @@
         ]
       }
     },
-    "/v1/delete/goodscore": {
+    "/v1/delete/appgoodscore": {
       "post": {
         "operationId": "Gateway_DeleteScore",
         "responses": {
@@ -80,7 +112,7 @@
         ]
       }
     },
-    "/v1/get/goodscores": {
+    "/v1/get/appgoodscores": {
       "post": {
         "operationId": "Gateway_GetScores",
         "responses": {
@@ -138,6 +170,43 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AdminGetScoresRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AdminGetScoresResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Score"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
