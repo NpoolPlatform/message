@@ -24,7 +24,6 @@ const (
 	Middleware_ExistPool_FullMethodName      = "/miningpool.middleware.app.pool.v1.Middleware/ExistPool"
 	Middleware_GetPools_FullMethodName       = "/miningpool.middleware.app.pool.v1.Middleware/GetPools"
 	Middleware_ExistPoolConds_FullMethodName = "/miningpool.middleware.app.pool.v1.Middleware/ExistPoolConds"
-	Middleware_UpdatePool_FullMethodName     = "/miningpool.middleware.app.pool.v1.Middleware/UpdatePool"
 	Middleware_DeletePool_FullMethodName     = "/miningpool.middleware.app.pool.v1.Middleware/DeletePool"
 )
 
@@ -37,7 +36,6 @@ type MiddlewareClient interface {
 	ExistPool(ctx context.Context, in *ExistPoolRequest, opts ...grpc.CallOption) (*ExistPoolResponse, error)
 	GetPools(ctx context.Context, in *GetPoolsRequest, opts ...grpc.CallOption) (*GetPoolsResponse, error)
 	ExistPoolConds(ctx context.Context, in *ExistPoolCondsRequest, opts ...grpc.CallOption) (*ExistPoolCondsResponse, error)
-	UpdatePool(ctx context.Context, in *UpdatePoolRequest, opts ...grpc.CallOption) (*UpdatePoolResponse, error)
 	DeletePool(ctx context.Context, in *DeletePoolRequest, opts ...grpc.CallOption) (*DeletePoolResponse, error)
 }
 
@@ -94,15 +92,6 @@ func (c *middlewareClient) ExistPoolConds(ctx context.Context, in *ExistPoolCond
 	return out, nil
 }
 
-func (c *middlewareClient) UpdatePool(ctx context.Context, in *UpdatePoolRequest, opts ...grpc.CallOption) (*UpdatePoolResponse, error) {
-	out := new(UpdatePoolResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdatePool_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeletePool(ctx context.Context, in *DeletePoolRequest, opts ...grpc.CallOption) (*DeletePoolResponse, error) {
 	out := new(DeletePoolResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeletePool_FullMethodName, in, out, opts...)
@@ -121,7 +110,6 @@ type MiddlewareServer interface {
 	ExistPool(context.Context, *ExistPoolRequest) (*ExistPoolResponse, error)
 	GetPools(context.Context, *GetPoolsRequest) (*GetPoolsResponse, error)
 	ExistPoolConds(context.Context, *ExistPoolCondsRequest) (*ExistPoolCondsResponse, error)
-	UpdatePool(context.Context, *UpdatePoolRequest) (*UpdatePoolResponse, error)
 	DeletePool(context.Context, *DeletePoolRequest) (*DeletePoolResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -144,9 +132,6 @@ func (UnimplementedMiddlewareServer) GetPools(context.Context, *GetPoolsRequest)
 }
 func (UnimplementedMiddlewareServer) ExistPoolConds(context.Context, *ExistPoolCondsRequest) (*ExistPoolCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistPoolConds not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdatePool(context.Context, *UpdatePoolRequest) (*UpdatePoolResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdatePool not implemented")
 }
 func (UnimplementedMiddlewareServer) DeletePool(context.Context, *DeletePoolRequest) (*DeletePoolResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePool not implemented")
@@ -254,24 +239,6 @@ func _Middleware_ExistPoolConds_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_UpdatePool_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdatePoolRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdatePool(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdatePool_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdatePool(ctx, req.(*UpdatePoolRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeletePool_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeletePoolRequest)
 	if err := dec(in); err != nil {
@@ -316,10 +283,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistPoolConds",
 			Handler:    _Middleware_ExistPoolConds_Handler,
-		},
-		{
-			MethodName: "UpdatePool",
-			Handler:    _Middleware_UpdatePool_Handler,
 		},
 		{
 			MethodName: "DeletePool",

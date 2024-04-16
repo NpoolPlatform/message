@@ -10,138 +10,121 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateOrderUser     (CreateOrderUserRequest)       returns (CreateOrderUserResponse)      {
-        option (google.api.http) = {
-            post: "/v1/miningpool_CreateOrderUser"
-            body: "*"
-        };
-    }
-    rpc GetOrderUser        (GetOrderUserRequest)          returns (GetOrderUserResponse)         {}
-    rpc GetOrderUsers       (GetOrderUsersRequest)         returns (GetOrderUsersResponse)        {}
-    rpc ExistOrderUserConds (ExistOrderUserCondsRequest)   returns (ExistOrderUserCondsResponse)  {}
-    rpc UpdateOrderUser     (UpdateOrderUserRequest)       returns (UpdateOrderUserResponse)      {}
-    rpc DeleteOrderUser     (DeleteOrderUserRequest)       returns (DeleteOrderUserResponse)      {
-        option (google.api.http) = {
-            post: "/v1/miningpool_DeleteOrderUser"
-            body: "*"
-        };
-    }
+  rpc CreateOrderUser(CreateOrderUserRequest)
+      returns (CreateOrderUserResponse) {
+    option (google.api.http) = {
+      post : "/v1/miningpool_CreateOrderUser"
+      body : "*"
+    };
+  }
+  rpc GetOrderUser(GetOrderUserRequest) returns (GetOrderUserResponse) {}
+  rpc GetOrderUsers(GetOrderUsersRequest) returns (GetOrderUsersResponse) {}
+  rpc ExistOrderUserConds(ExistOrderUserCondsRequest)
+      returns (ExistOrderUserCondsResponse) {}
+  rpc UpdateOrderUser(UpdateOrderUserRequest)
+      returns (UpdateOrderUserResponse) {}
+  rpc DeleteOrderUser(DeleteOrderUserRequest)
+      returns (DeleteOrderUserResponse) {
+    option (google.api.http) = {
+      post : "/v1/miningpool_DeleteOrderUser"
+      body : "*"
+    };
+  }
 }
 
 message OrderUserReq {
-    optional uint32    ID                  = 10;
-    optional string    EntID               = 20;
-    optional string    AppID               = 30;
-    optional string    UserID              = 40;
-    optional string    RootUserID          = 50;
-    optional string    GoodUserID          = 60;
-    optional string    Name                = 70;
-    optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
-    optional basetypes.miningpool.v1.CoinType CoinType = 90;
-    optional float     Proportion          = 100;
-    optional string    RevenueAddress      = 110;
-    optional string    ReadPageLink        = 120;
-    optional bool      AutoPay             = 130;
+  optional uint32 ID = 10;
+  optional string EntID = 20;
+  optional string AppID = 30;
+  optional string UserID = 40;
+  optional string RootUserID = 50;
+  optional string GoodUserID = 60;
+  optional string Name = 70;
+  optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
+  optional basetypes.miningpool.v1.CoinType CoinType = 90;
+  optional float Proportion = 100;
+  optional string RevenueAddress = 110;
+  optional string ReadPageLink = 120;
+  optional bool AutoPay = 130;
 }
 
 message OrderUser {
-    // @inject_tag: sql:"id"
-    uint32               ID                = 10;
-    // @inject_tag: sql:"ent_id"
-    string               EntID             = 20;
-    // @inject_tag: sql:"app_id"
-    string               AppID             = 30;
-    // @inject_tag: sql:"user_id"
-    string               UserID            =40;
-    // @inject_tag: sql:"root_user_id"
-    string               RootUserID        =50;
-    // @inject_tag: sql:"good_user_id"
-    string               GoodUserID        =60;
-    // @inject_tag: sql:"name"
-    string               Name              =70;
-    // @inject_tag: sql:"miningpool_type"
-    string               MiningpoolTypeStr =80;
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType =81;
-    // @inject_tag: sql:"coin_type"
-    string               CoinTypeStr       =90;
-    basetypes.miningpool.v1.CoinType CoinType =91;
-    // @inject_tag: sql:"proportion"
-    float                Proportion        =100;
-    // @inject_tag: sql:"revenue_address"
-    string               RevenueAddress    = 110;
-    // @inject_tag: sql:"read_page_link"
-    string               ReadPageLink      = 120;
-    // @inject_tag: sql:"auto_pay"
-    bool                 AutoPay           = 130;
-    // @inject_tag: sql:"created_at"
-    uint32               CreatedAt         = 140;
-    // @inject_tag: sql:"updated_at"
-    uint32               UpdatedAt         = 150;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"app_id"
+  string AppID = 30;
+  // @inject_tag: sql:"user_id"
+  string UserID = 40;
+  // @inject_tag: sql:"root_user_id"
+  string RootUserID = 50;
+  // @inject_tag: sql:"good_user_id"
+  string GoodUserID = 60;
+  // @inject_tag: sql:"name"
+  string Name = 70;
+  // @inject_tag: sql:"miningpool_type"
+  string MiningpoolTypeStr = 80;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 81;
+  // @inject_tag: sql:"coin_type"
+  string CoinTypeStr = 90;
+  basetypes.miningpool.v1.CoinType CoinType = 91;
+  // @inject_tag: sql:"proportion"
+  float Proportion = 100;
+  // @inject_tag: sql:"revenue_address"
+  string RevenueAddress = 110;
+  // @inject_tag: sql:"read_page_link"
+  string ReadPageLink = 120;
+  // @inject_tag: sql:"auto_pay"
+  bool AutoPay = 130;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 140;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 150;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID              = 9;
-    optional basetypes.v1.StringVal      EntID           = 10;
-    optional basetypes.v1.StringVal      AppID           = 20;
-    optional basetypes.v1.StringVal      UserID          = 30;
-    optional basetypes.v1.StringVal      RootUserID      = 40;
-    optional basetypes.v1.StringVal      GoodUserID      = 50;
-    optional basetypes.v1.StringVal      Name            = 60;
-    optional basetypes.v1.Uint32Val      MiningpoolType  = 70;
-    optional basetypes.v1.Uint32Val      CoinType        = 80;
-    optional basetypes.v1.StringVal      RevenueAddress  = 90;
-    optional basetypes.v1.BoolVal        AutoPay         = 100;
-    optional basetypes.v1.StringSliceVal EntIDs          = 110;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal UserID = 30;
+  optional basetypes.v1.StringVal RootUserID = 40;
+  optional basetypes.v1.StringVal GoodUserID = 50;
+  optional basetypes.v1.StringVal Name = 60;
+  optional basetypes.v1.Uint32Val MiningpoolType = 70;
+  optional basetypes.v1.Uint32Val CoinType = 80;
+  optional basetypes.v1.StringVal RevenueAddress = 90;
+  optional basetypes.v1.BoolVal AutoPay = 100;
+  optional basetypes.v1.StringSliceVal EntIDs = 110;
 }
 
-message CreateOrderUserRequest {
-    OrderUserReq Info = 10;
-}
+message CreateOrderUserRequest { OrderUserReq Info = 10; }
 
-message CreateOrderUserResponse {
-    OrderUser Info = 10;
-}
+message CreateOrderUserResponse { OrderUser Info = 10; }
 
-message GetOrderUserRequest {
-    string EntID = 10;
-}
+message GetOrderUserRequest { string EntID = 10; }
 
-message GetOrderUserResponse {
-    OrderUser Info = 10;
-}
+message GetOrderUserResponse { OrderUser Info = 10; }
 
 message GetOrderUsersRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetOrderUsersResponse {
-    repeated OrderUser Infos = 10;
-    uint32      Total = 20;
+  repeated OrderUser Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistOrderUserCondsRequest {
-    Conds Conds  = 10;
-}
+message ExistOrderUserCondsRequest { Conds Conds = 10; }
 
-message ExistOrderUserCondsResponse {
-    bool Info = 10;
-}
+message ExistOrderUserCondsResponse { bool Info = 10; }
 
+message UpdateOrderUserRequest { OrderUserReq Info = 10; }
 
-message UpdateOrderUserRequest {
-    OrderUserReq Info = 10;
-}
+message UpdateOrderUserResponse { OrderUser Info = 10; }
 
-message UpdateOrderUserResponse {
-    OrderUser Info = 10;
-}
+message DeleteOrderUserRequest { OrderUserReq Info = 10; }
 
-message DeleteOrderUserRequest {
-    OrderUserReq Info = 10;
-}
-
-message DeleteOrderUserResponse {
-    OrderUser Info = 10;
-}
+message DeleteOrderUserResponse { OrderUser Info = 10; }

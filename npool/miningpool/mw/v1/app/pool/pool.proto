@@ -8,101 +8,71 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreatePool     (CreatePoolRequest)   returns (CreatePoolResponse)    {}
-    rpc GetPool        (GetPoolRequest)      returns (GetPoolResponse)       {}
-    rpc ExistPool      (ExistPoolRequest)    returns (ExistPoolResponse)     {}
-    rpc GetPools       (GetPoolsRequest)     returns (GetPoolsResponse)      {}
-    rpc ExistPoolConds (ExistPoolCondsRequest) returns (ExistPoolCondsResponse) {}
-    rpc UpdatePool     (UpdatePoolRequest)   returns (UpdatePoolResponse)    {}
-    rpc DeletePool     (DeletePoolRequest)   returns (DeletePoolResponse)    {}
+  rpc CreatePool(CreatePoolRequest) returns (CreatePoolResponse) {}
+  rpc GetPool(GetPoolRequest) returns (GetPoolResponse) {}
+  rpc ExistPool(ExistPoolRequest) returns (ExistPoolResponse) {}
+  rpc GetPools(GetPoolsRequest) returns (GetPoolsResponse) {}
+  rpc ExistPoolConds(ExistPoolCondsRequest) returns (ExistPoolCondsResponse) {}
+  rpc DeletePool(DeletePoolRequest) returns (DeletePoolResponse) {}
 }
 
-
 message PoolReq {
-    optional uint32                                       ID                = 9;
-    optional string                                       EntID             = 10;
-    optional string                                       AppID             = 20;
-    optional string                                       PoolID            = 30;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional string PoolID = 30;
 }
 
 message Pool {
-    // @inject_tag: sql:"id"
-    uint32               ID                = 10;
-    // @inject_tag: sql:"ent_id"
-    string               EntID             = 20;
-    // @inject_tag: sql:"app_id"
-    string               AppID             = 30;
-    // @inject_tag: sql:"pool_id"
-    string               PoolID            = 40;
-    // @inject_tag: sql:"created_at"
-    uint32               CreatedAt         = 110;
-    // @inject_tag: sql:"updated_at"
-    uint32               UpdatedAt         = 120;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"app_id"
+  string AppID = 30;
+  // @inject_tag: sql:"pool_id"
+  string PoolID = 40;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 110;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 120;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID                = 9;
-    optional basetypes.v1.StringVal      EntID             = 10;
-    optional basetypes.v1.StringVal      AppID             = 20;
-    optional basetypes.v1.StringVal      PoolID            = 30;
-    optional basetypes.v1.StringSliceVal EntIDs            = 40;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal PoolID = 30;
+  optional basetypes.v1.StringSliceVal EntIDs = 40;
 }
 
-message CreatePoolRequest {
-    PoolReq Info = 10;
-}
+message CreatePoolRequest { PoolReq Info = 10; }
 
-message CreatePoolResponse {
-    Pool Info = 10;
-}
+message CreatePoolResponse { Pool Info = 10; }
 
-message GetPoolRequest {
-    string EntID = 10;
-}
+message GetPoolRequest { string EntID = 10; }
 
-message GetPoolResponse {
-    Pool Info = 10;
-}
+message GetPoolResponse { Pool Info = 10; }
 
-message ExistPoolRequest {
-    string EntID = 10;
-}
+message ExistPoolRequest { string EntID = 10; }
 
-message ExistPoolResponse {
-    bool Info = 10;
-}
+message ExistPoolResponse { bool Info = 10; }
 
 message GetPoolsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetPoolsResponse {
-    repeated Pool Infos = 10;
-    uint32        Total = 20;
+  repeated Pool Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistPoolCondsRequest {
-    Conds Conds  = 10;
-}
+message ExistPoolCondsRequest { Conds Conds = 10; }
 
-message ExistPoolCondsResponse {
-    bool Info = 10;
-}
+message ExistPoolCondsResponse { bool Info = 10; }
 
-message UpdatePoolRequest {
-    PoolReq Info = 10;
-}
+message DeletePoolRequest { PoolReq Info = 10; }
 
-message UpdatePoolResponse {
-    Pool Info = 10;
-}
-
-message DeletePoolRequest {
-    PoolReq Info = 10;
-}
-
-message DeletePoolResponse {
-    Pool Info = 10;
-}
+message DeletePoolResponse { Pool Info = 10; }
