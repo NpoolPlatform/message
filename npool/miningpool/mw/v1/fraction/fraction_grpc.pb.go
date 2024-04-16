@@ -22,6 +22,7 @@ const (
 	Middleware_CreateFraction_FullMethodName     = "/miningpool.middleware.fraction.v1.Middleware/CreateFraction"
 	Middleware_GetFraction_FullMethodName        = "/miningpool.middleware.fraction.v1.Middleware/GetFraction"
 	Middleware_GetFractions_FullMethodName       = "/miningpool.middleware.fraction.v1.Middleware/GetFractions"
+	Middleware_ExistFraction_FullMethodName      = "/miningpool.middleware.fraction.v1.Middleware/ExistFraction"
 	Middleware_ExistFractionConds_FullMethodName = "/miningpool.middleware.fraction.v1.Middleware/ExistFractionConds"
 	Middleware_UpdateFraction_FullMethodName     = "/miningpool.middleware.fraction.v1.Middleware/UpdateFraction"
 	Middleware_DeleteFraction_FullMethodName     = "/miningpool.middleware.fraction.v1.Middleware/DeleteFraction"
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	CreateFraction(ctx context.Context, in *CreateFractionRequest, opts ...grpc.CallOption) (*CreateFractionResponse, error)
 	GetFraction(ctx context.Context, in *GetFractionRequest, opts ...grpc.CallOption) (*GetFractionResponse, error)
 	GetFractions(ctx context.Context, in *GetFractionsRequest, opts ...grpc.CallOption) (*GetFractionsResponse, error)
+	ExistFraction(ctx context.Context, in *ExistFractionRequest, opts ...grpc.CallOption) (*ExistFractionResponse, error)
 	ExistFractionConds(ctx context.Context, in *ExistFractionCondsRequest, opts ...grpc.CallOption) (*ExistFractionCondsResponse, error)
 	UpdateFraction(ctx context.Context, in *UpdateFractionRequest, opts ...grpc.CallOption) (*UpdateFractionResponse, error)
 	DeleteFraction(ctx context.Context, in *DeleteFractionRequest, opts ...grpc.CallOption) (*DeleteFractionResponse, error)
@@ -74,6 +76,15 @@ func (c *middlewareClient) GetFractions(ctx context.Context, in *GetFractionsReq
 	return out, nil
 }
 
+func (c *middlewareClient) ExistFraction(ctx context.Context, in *ExistFractionRequest, opts ...grpc.CallOption) (*ExistFractionResponse, error) {
+	out := new(ExistFractionResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistFraction_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) ExistFractionConds(ctx context.Context, in *ExistFractionCondsRequest, opts ...grpc.CallOption) (*ExistFractionCondsResponse, error) {
 	out := new(ExistFractionCondsResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistFractionConds_FullMethodName, in, out, opts...)
@@ -108,6 +119,7 @@ type MiddlewareServer interface {
 	CreateFraction(context.Context, *CreateFractionRequest) (*CreateFractionResponse, error)
 	GetFraction(context.Context, *GetFractionRequest) (*GetFractionResponse, error)
 	GetFractions(context.Context, *GetFractionsRequest) (*GetFractionsResponse, error)
+	ExistFraction(context.Context, *ExistFractionRequest) (*ExistFractionResponse, error)
 	ExistFractionConds(context.Context, *ExistFractionCondsRequest) (*ExistFractionCondsResponse, error)
 	UpdateFraction(context.Context, *UpdateFractionRequest) (*UpdateFractionResponse, error)
 	DeleteFraction(context.Context, *DeleteFractionRequest) (*DeleteFractionResponse, error)
@@ -126,6 +138,9 @@ func (UnimplementedMiddlewareServer) GetFraction(context.Context, *GetFractionRe
 }
 func (UnimplementedMiddlewareServer) GetFractions(context.Context, *GetFractionsRequest) (*GetFractionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFractions not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistFraction(context.Context, *ExistFractionRequest) (*ExistFractionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistFraction not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistFractionConds(context.Context, *ExistFractionCondsRequest) (*ExistFractionCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistFractionConds not implemented")
@@ -203,6 +218,24 @@ func _Middleware_GetFractions_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistFraction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistFractionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistFraction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistFraction_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistFraction(ctx, req.(*ExistFractionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_ExistFractionConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistFractionCondsRequest)
 	if err := dec(in); err != nil {
@@ -275,6 +308,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetFractions",
 			Handler:    _Middleware_GetFractions_Handler,
+		},
+		{
+			MethodName: "ExistFraction",
+			Handler:    _Middleware_ExistFraction_Handler,
 		},
 		{
 			MethodName: "ExistFractionConds",
