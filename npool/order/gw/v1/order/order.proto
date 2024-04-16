@@ -104,20 +104,6 @@ service Gateway {
             body: "*"
         };
     }
-
-    rpc CreateSimulateOrder (CreateSimulateOrderRequest) returns (CreateSimulateOrderResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/simulateorder"
-            body: "*"
-        };
-    }
-
-    rpc CreateSimulateOrders (CreateSimulateOrdersRequest) returns (CreateSimulateOrdersResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/simulateorders"
-            body: "*"
-        };
-    }
 }
 
 message Coupon {
@@ -178,9 +164,6 @@ message Order {
     bool   MultiPaymentCoins                          = 290;
     repeated order.middleware.order1.v1.PaymentAmount PaymentAmounts = 300;
 
-    uint32 CreatedAt              = 350;
-    uint32 PaidAt                 = 360;
-
     basetypes.order.v1.OrderState   OrderState  = 370;
     basetypes.order.v1.OrderState   CancelState = 371;
     basetypes.order.v1.OrderType    OrderType   = 380;
@@ -196,6 +179,9 @@ message Order {
     bool   UserSetCanceled        = 520;
     bool   AdminSetCanceled       = 530;
     bool   Simulate               = 540;
+
+    uint32 PaidAt                 = 1000;
+    uint32 CreatedAt              = 1010;
 }
 
 message CreateOrderRequest {
@@ -209,6 +195,7 @@ message CreateOrderRequest {
     optional string PayWithBalanceAmount = 70;
     repeated string CouponIDs            = 90;
     basetypes.order.v1.InvestmentType InvestmentType = 100;
+    optional bool   Simulate = 110;
 }
 
 message CreateOrderResponse {
@@ -369,25 +356,3 @@ message GetNAppOrdersResponse {
     uint32         Total = 20;
 }
 
-message CreateSimulateOrderRequest {
-    string          AppID                = 10;
-    string          UserID               = 20;
-    string          AppGoodID            = 30;
-    optional string ParentOrderID        = 60;
-    basetypes.order.v1.InvestmentType InvestmentType = 70;
-}
-
-message CreateSimulateOrderResponse {
-    Order Info = 10;
-}
-
-message CreateSimulateOrdersRequest {
-    string          AppID   = 10;
-    string          UserID  = 20;
-    repeated CreateOrdersRequest.OrderReq Orders = 30;
-    basetypes.order.v1.InvestmentType InvestmentType = 40;
-}
-
-message CreateSimulateOrdersResponse {
-    repeated Order Infos = 10;
-}
