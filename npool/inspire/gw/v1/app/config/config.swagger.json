@@ -262,7 +262,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "MaxLevelCount": {
+        "MaxLevel": {
           "type": "integer",
           "format": "int64"
         }
@@ -374,7 +374,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "MaxLevelCount": {
+        "MaxLevel": {
           "type": "integer",
           "format": "int64"
         },
@@ -424,7 +424,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "MaxLevelCount": {
+        "MaxLevel": {
           "type": "integer",
           "format": "int64"
         }
