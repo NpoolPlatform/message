@@ -9,113 +9,98 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateGoodUser     (CreateGoodUserRequest)   returns (CreateGoodUserResponse)    {}
-    rpc GetGoodUser        (GetGoodUserRequest)      returns (GetGoodUserResponse)       {}
-    rpc GetGoodUsers       (GetGoodUsersRequest)     returns (GetGoodUsersResponse)      {}
-    rpc ExistGoodUserConds (ExistGoodUserCondsRequest) returns (ExistGoodUserCondsResponse) {}
-    rpc UpdateGoodUser     (UpdateGoodUserRequest)   returns (UpdateGoodUserResponse)    {}
-    rpc DeleteGoodUser     (DeleteGoodUserRequest)   returns (DeleteGoodUserResponse)    {}
+  rpc CreateGoodUser(CreateGoodUserRequest) returns (CreateGoodUserResponse) {}
+  rpc GetGoodUser(GetGoodUserRequest) returns (GetGoodUserResponse) {}
+  rpc GetGoodUsers(GetGoodUsersRequest) returns (GetGoodUsersResponse) {}
+  rpc ExistGoodUser(ExistGoodUserRequest) returns (ExistGoodUserResponse) {}
+  rpc ExistGoodUserConds(ExistGoodUserCondsRequest)
+      returns (ExistGoodUserCondsResponse) {}
+  rpc UpdateGoodUser(UpdateGoodUserRequest) returns (UpdateGoodUserResponse) {}
+  rpc DeleteGoodUser(DeleteGoodUserRequest) returns (DeleteGoodUserResponse) {}
 }
 
 message GoodUserReq {
-    optional uint32                                 ID             = 10;
-    optional string                                 EntID          = 20;
-    optional string                                 Name           = 30;
-    optional string                                 RootUserID     = 40;
-    optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 50;
-    optional basetypes.miningpool.v1.CoinType       CoinType       = 60;
-    optional float                                  HashRate       = 70;
-    optional string                                 ReadPageLink   = 80;
-    optional basetypes.miningpool.v1.RevenueType    RevenueType    = 90;
+  optional uint32 ID = 10;
+  optional string EntID = 20;
+  optional string Name = 30;
+  optional string RootUserID = 40;
+  optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 50;
+  optional basetypes.miningpool.v1.CoinType CoinType = 60;
+  optional float HashRate = 70;
+  optional string ReadPageLink = 80;
+  optional basetypes.miningpool.v1.RevenueType RevenueType = 90;
 }
 
 message GoodUser {
-    // @inject_tag: sql:"id"
-    uint32               ID                = 10;
-    // @inject_tag: sql:"ent_id"
-    string               EntID             = 20;
-    // @inject_tag: sql:"name"
-    string               Name              = 30;
-    // @inject_tag: sql:"root_user_id"
-    string               RootUserID        = 40;
-    // @inject_tag: sql:"miningpool_type"
-    string               MiningpoolTypeStr = 50;
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 51;
-    // @inject_tag: sql:"coin_type" 
-    string               CoinTypeStr       = 60;
-    basetypes.miningpool.v1.CoinType CoinType = 61;
-    // @inject_tag: sql:"hash_rate"
-    float                HashRate          = 70;
-    // @inject_tag: sql:"read_page_link"
-    string               ReadPageLink    = 80;
-    // @inject_tag: sql:"revenue_type"
-    string               RevenueTypeStr       = 90;
-    basetypes.miningpool.v1.RevenueType RevenueType = 91;
-    // @inject_tag: sql:"created_at"
-    uint32               CreatedAt         = 100;
-    // @inject_tag: sql:"updated_at"
-    uint32               UpdatedAt         = 110;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"name"
+  string Name = 30;
+  // @inject_tag: sql:"root_user_id"
+  string RootUserID = 40;
+  // @inject_tag: sql:"miningpool_type"
+  string MiningpoolTypeStr = 50;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 51;
+  // @inject_tag: sql:"coin_type"
+  string CoinTypeStr = 60;
+  basetypes.miningpool.v1.CoinType CoinType = 61;
+  // @inject_tag: sql:"hash_rate"
+  float HashRate = 70;
+  // @inject_tag: sql:"read_page_link"
+  string ReadPageLink = 80;
+  // @inject_tag: sql:"revenue_type"
+  string RevenueTypeStr = 90;
+  basetypes.miningpool.v1.RevenueType RevenueType = 91;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 100;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 110;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID             = 9;
-    optional basetypes.v1.StringVal      EntID          = 10;
-    optional basetypes.v1.StringVal      Name           = 20;
-    optional basetypes.v1.StringVal      RootUserID     = 30;
-    optional basetypes.v1.Uint32Val      MiningpoolType = 40;
-    optional basetypes.v1.Uint32Val      CoinType       = 50;
-    optional basetypes.v1.Uint32Val      RevenueType    = 60;
-    optional basetypes.v1.StringSliceVal EntIDs         = 70;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal Name = 20;
+  optional basetypes.v1.StringVal RootUserID = 30;
+  optional basetypes.v1.Uint32Val MiningpoolType = 40;
+  optional basetypes.v1.Uint32Val CoinType = 50;
+  optional basetypes.v1.Uint32Val RevenueType = 60;
+  optional basetypes.v1.StringSliceVal EntIDs = 70;
 }
 
-message CreateGoodUserRequest {
-    GoodUserReq Info = 10;
-}
+message CreateGoodUserRequest { GoodUserReq Info = 10; }
 
-message CreateGoodUserResponse {
-    GoodUser Info = 10;
-}
+message CreateGoodUserResponse { GoodUser Info = 10; }
 
-message GetGoodUserRequest {
-    string EntID = 10;
-}
+message GetGoodUserRequest { string EntID = 10; }
 
-message GetGoodUserResponse {
-    GoodUser Info = 10;
-}
+message GetGoodUserResponse { GoodUser Info = 10; }
 
 message GetGoodUsersRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetGoodUsersResponse {
-    repeated GoodUser Infos = 10;
-    uint32      Total = 20;
+  repeated GoodUser Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistGoodUserCondsRequest {
-    Conds Conds  = 10;
-}
+message ExistGoodUserRequest { string EntID = 10; }
 
-message ExistGoodUserCondsResponse {
-    bool Info = 10;
-}
+message ExistGoodUserResponse { bool Info = 10; }
 
+message ExistGoodUserCondsRequest { Conds Conds = 10; }
 
-message UpdateGoodUserRequest {
-    GoodUserReq Info = 10;
-}
+message ExistGoodUserCondsResponse { bool Info = 10; }
 
-message UpdateGoodUserResponse {
-    GoodUser Info = 10;
-}
+message UpdateGoodUserRequest { GoodUserReq Info = 10; }
 
-message DeleteGoodUserRequest {
-    GoodUserReq Info = 10;
-}
+message UpdateGoodUserResponse { GoodUser Info = 10; }
 
-message DeleteGoodUserResponse {
-    GoodUser Info = 10;
-}
+message DeleteGoodUserRequest { GoodUserReq Info = 10; }
+
+message DeleteGoodUserResponse { GoodUser Info = 10; }

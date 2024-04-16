@@ -209,6 +209,14 @@
         }
       }
     },
+    "v1ExistOrderUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetOrderUserResponse": {
       "type": "object",
       "properties": {

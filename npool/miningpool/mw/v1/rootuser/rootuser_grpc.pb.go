@@ -22,6 +22,7 @@ const (
 	Middleware_CreateRootUser_FullMethodName     = "/miningpool.middleware.rootuser.v1.Middleware/CreateRootUser"
 	Middleware_GetRootUser_FullMethodName        = "/miningpool.middleware.rootuser.v1.Middleware/GetRootUser"
 	Middleware_GetRootUsers_FullMethodName       = "/miningpool.middleware.rootuser.v1.Middleware/GetRootUsers"
+	Middleware_ExistRootUser_FullMethodName      = "/miningpool.middleware.rootuser.v1.Middleware/ExistRootUser"
 	Middleware_ExistRootUserConds_FullMethodName = "/miningpool.middleware.rootuser.v1.Middleware/ExistRootUserConds"
 	Middleware_UpdateRootUser_FullMethodName     = "/miningpool.middleware.rootuser.v1.Middleware/UpdateRootUser"
 	Middleware_DeleteRootUser_FullMethodName     = "/miningpool.middleware.rootuser.v1.Middleware/DeleteRootUser"
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	CreateRootUser(ctx context.Context, in *CreateRootUserRequest, opts ...grpc.CallOption) (*CreateRootUserResponse, error)
 	GetRootUser(ctx context.Context, in *GetRootUserRequest, opts ...grpc.CallOption) (*GetRootUserResponse, error)
 	GetRootUsers(ctx context.Context, in *GetRootUsersRequest, opts ...grpc.CallOption) (*GetRootUsersResponse, error)
+	ExistRootUser(ctx context.Context, in *ExistRootUserRequest, opts ...grpc.CallOption) (*ExistRootUserResponse, error)
 	ExistRootUserConds(ctx context.Context, in *ExistRootUserCondsRequest, opts ...grpc.CallOption) (*ExistRootUserCondsResponse, error)
 	UpdateRootUser(ctx context.Context, in *UpdateRootUserRequest, opts ...grpc.CallOption) (*UpdateRootUserResponse, error)
 	DeleteRootUser(ctx context.Context, in *DeleteRootUserRequest, opts ...grpc.CallOption) (*DeleteRootUserResponse, error)
@@ -74,6 +76,15 @@ func (c *middlewareClient) GetRootUsers(ctx context.Context, in *GetRootUsersReq
 	return out, nil
 }
 
+func (c *middlewareClient) ExistRootUser(ctx context.Context, in *ExistRootUserRequest, opts ...grpc.CallOption) (*ExistRootUserResponse, error) {
+	out := new(ExistRootUserResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistRootUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) ExistRootUserConds(ctx context.Context, in *ExistRootUserCondsRequest, opts ...grpc.CallOption) (*ExistRootUserCondsResponse, error) {
 	out := new(ExistRootUserCondsResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistRootUserConds_FullMethodName, in, out, opts...)
@@ -108,6 +119,7 @@ type MiddlewareServer interface {
 	CreateRootUser(context.Context, *CreateRootUserRequest) (*CreateRootUserResponse, error)
 	GetRootUser(context.Context, *GetRootUserRequest) (*GetRootUserResponse, error)
 	GetRootUsers(context.Context, *GetRootUsersRequest) (*GetRootUsersResponse, error)
+	ExistRootUser(context.Context, *ExistRootUserRequest) (*ExistRootUserResponse, error)
 	ExistRootUserConds(context.Context, *ExistRootUserCondsRequest) (*ExistRootUserCondsResponse, error)
 	UpdateRootUser(context.Context, *UpdateRootUserRequest) (*UpdateRootUserResponse, error)
 	DeleteRootUser(context.Context, *DeleteRootUserRequest) (*DeleteRootUserResponse, error)
@@ -126,6 +138,9 @@ func (UnimplementedMiddlewareServer) GetRootUser(context.Context, *GetRootUserRe
 }
 func (UnimplementedMiddlewareServer) GetRootUsers(context.Context, *GetRootUsersRequest) (*GetRootUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRootUsers not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistRootUser(context.Context, *ExistRootUserRequest) (*ExistRootUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistRootUser not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistRootUserConds(context.Context, *ExistRootUserCondsRequest) (*ExistRootUserCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistRootUserConds not implemented")
@@ -203,6 +218,24 @@ func _Middleware_GetRootUsers_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistRootUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistRootUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistRootUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistRootUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistRootUser(ctx, req.(*ExistRootUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_ExistRootUserConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistRootUserCondsRequest)
 	if err := dec(in); err != nil {
@@ -275,6 +308,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetRootUsers",
 			Handler:    _Middleware_GetRootUsers_Handler,
+		},
+		{
+			MethodName: "ExistRootUser",
+			Handler:    _Middleware_ExistRootUser_Handler,
 		},
 		{
 			MethodName: "ExistRootUserConds",

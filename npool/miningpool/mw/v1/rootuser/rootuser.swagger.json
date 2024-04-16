@@ -105,6 +105,14 @@
         }
       }
     },
+    "v1ExistRootUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetRootUserResponse": {
       "type": "object",
       "properties": {

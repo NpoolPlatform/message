@@ -99,6 +99,14 @@
         }
       }
     },
+    "v1ExistFractionRuleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1FractionRule": {
       "type": "object",
       "properties": {

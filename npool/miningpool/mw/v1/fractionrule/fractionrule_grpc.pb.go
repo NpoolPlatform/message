@@ -22,6 +22,7 @@ const (
 	Middleware_CreateFractionRule_FullMethodName     = "/miningpool.middleware.fractionrule.v1.Middleware/CreateFractionRule"
 	Middleware_GetFractionRule_FullMethodName        = "/miningpool.middleware.fractionrule.v1.Middleware/GetFractionRule"
 	Middleware_GetFractionRules_FullMethodName       = "/miningpool.middleware.fractionrule.v1.Middleware/GetFractionRules"
+	Middleware_ExistFractionRule_FullMethodName      = "/miningpool.middleware.fractionrule.v1.Middleware/ExistFractionRule"
 	Middleware_ExistFractionRuleConds_FullMethodName = "/miningpool.middleware.fractionrule.v1.Middleware/ExistFractionRuleConds"
 	Middleware_UpdateFractionRule_FullMethodName     = "/miningpool.middleware.fractionrule.v1.Middleware/UpdateFractionRule"
 	Middleware_DeleteFractionRule_FullMethodName     = "/miningpool.middleware.fractionrule.v1.Middleware/DeleteFractionRule"
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	CreateFractionRule(ctx context.Context, in *CreateFractionRuleRequest, opts ...grpc.CallOption) (*CreateFractionRuleResponse, error)
 	GetFractionRule(ctx context.Context, in *GetFractionRuleRequest, opts ...grpc.CallOption) (*GetFractionRuleResponse, error)
 	GetFractionRules(ctx context.Context, in *GetFractionRulesRequest, opts ...grpc.CallOption) (*GetFractionRulesResponse, error)
+	ExistFractionRule(ctx context.Context, in *ExistFractionRuleRequest, opts ...grpc.CallOption) (*ExistFractionRuleResponse, error)
 	ExistFractionRuleConds(ctx context.Context, in *ExistFractionRuleCondsRequest, opts ...grpc.CallOption) (*ExistFractionRuleCondsResponse, error)
 	UpdateFractionRule(ctx context.Context, in *UpdateFractionRuleRequest, opts ...grpc.CallOption) (*UpdateFractionRuleResponse, error)
 	DeleteFractionRule(ctx context.Context, in *DeleteFractionRuleRequest, opts ...grpc.CallOption) (*DeleteFractionRuleResponse, error)
@@ -74,6 +76,15 @@ func (c *middlewareClient) GetFractionRules(ctx context.Context, in *GetFraction
 	return out, nil
 }
 
+func (c *middlewareClient) ExistFractionRule(ctx context.Context, in *ExistFractionRuleRequest, opts ...grpc.CallOption) (*ExistFractionRuleResponse, error) {
+	out := new(ExistFractionRuleResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistFractionRule_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) ExistFractionRuleConds(ctx context.Context, in *ExistFractionRuleCondsRequest, opts ...grpc.CallOption) (*ExistFractionRuleCondsResponse, error) {
 	out := new(ExistFractionRuleCondsResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistFractionRuleConds_FullMethodName, in, out, opts...)
@@ -108,6 +119,7 @@ type MiddlewareServer interface {
 	CreateFractionRule(context.Context, *CreateFractionRuleRequest) (*CreateFractionRuleResponse, error)
 	GetFractionRule(context.Context, *GetFractionRuleRequest) (*GetFractionRuleResponse, error)
 	GetFractionRules(context.Context, *GetFractionRulesRequest) (*GetFractionRulesResponse, error)
+	ExistFractionRule(context.Context, *ExistFractionRuleRequest) (*ExistFractionRuleResponse, error)
 	ExistFractionRuleConds(context.Context, *ExistFractionRuleCondsRequest) (*ExistFractionRuleCondsResponse, error)
 	UpdateFractionRule(context.Context, *UpdateFractionRuleRequest) (*UpdateFractionRuleResponse, error)
 	DeleteFractionRule(context.Context, *DeleteFractionRuleRequest) (*DeleteFractionRuleResponse, error)
@@ -126,6 +138,9 @@ func (UnimplementedMiddlewareServer) GetFractionRule(context.Context, *GetFracti
 }
 func (UnimplementedMiddlewareServer) GetFractionRules(context.Context, *GetFractionRulesRequest) (*GetFractionRulesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFractionRules not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistFractionRule(context.Context, *ExistFractionRuleRequest) (*ExistFractionRuleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistFractionRule not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistFractionRuleConds(context.Context, *ExistFractionRuleCondsRequest) (*ExistFractionRuleCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistFractionRuleConds not implemented")
@@ -203,6 +218,24 @@ func _Middleware_GetFractionRules_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistFractionRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistFractionRuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistFractionRule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistFractionRule_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistFractionRule(ctx, req.(*ExistFractionRuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_ExistFractionRuleConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistFractionRuleCondsRequest)
 	if err := dec(in); err != nil {
@@ -275,6 +308,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetFractionRules",
 			Handler:    _Middleware_GetFractionRules_Handler,
+		},
+		{
+			MethodName: "ExistFractionRule",
+			Handler:    _Middleware_ExistFractionRule_Handler,
 		},
 		{
 			MethodName: "ExistFractionRuleConds",

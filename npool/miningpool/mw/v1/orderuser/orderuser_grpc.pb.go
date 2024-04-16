@@ -22,6 +22,7 @@ const (
 	Middleware_CreateOrderUser_FullMethodName     = "/miningpool.middleware.orderuser.v1.Middleware/CreateOrderUser"
 	Middleware_GetOrderUser_FullMethodName        = "/miningpool.middleware.orderuser.v1.Middleware/GetOrderUser"
 	Middleware_GetOrderUsers_FullMethodName       = "/miningpool.middleware.orderuser.v1.Middleware/GetOrderUsers"
+	Middleware_ExistOrderUser_FullMethodName      = "/miningpool.middleware.orderuser.v1.Middleware/ExistOrderUser"
 	Middleware_ExistOrderUserConds_FullMethodName = "/miningpool.middleware.orderuser.v1.Middleware/ExistOrderUserConds"
 	Middleware_UpdateOrderUser_FullMethodName     = "/miningpool.middleware.orderuser.v1.Middleware/UpdateOrderUser"
 	Middleware_DeleteOrderUser_FullMethodName     = "/miningpool.middleware.orderuser.v1.Middleware/DeleteOrderUser"
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	CreateOrderUser(ctx context.Context, in *CreateOrderUserRequest, opts ...grpc.CallOption) (*CreateOrderUserResponse, error)
 	GetOrderUser(ctx context.Context, in *GetOrderUserRequest, opts ...grpc.CallOption) (*GetOrderUserResponse, error)
 	GetOrderUsers(ctx context.Context, in *GetOrderUsersRequest, opts ...grpc.CallOption) (*GetOrderUsersResponse, error)
+	ExistOrderUser(ctx context.Context, in *ExistOrderUserRequest, opts ...grpc.CallOption) (*ExistOrderUserResponse, error)
 	ExistOrderUserConds(ctx context.Context, in *ExistOrderUserCondsRequest, opts ...grpc.CallOption) (*ExistOrderUserCondsResponse, error)
 	UpdateOrderUser(ctx context.Context, in *UpdateOrderUserRequest, opts ...grpc.CallOption) (*UpdateOrderUserResponse, error)
 	DeleteOrderUser(ctx context.Context, in *DeleteOrderUserRequest, opts ...grpc.CallOption) (*DeleteOrderUserResponse, error)
@@ -74,6 +76,15 @@ func (c *middlewareClient) GetOrderUsers(ctx context.Context, in *GetOrderUsersR
 	return out, nil
 }
 
+func (c *middlewareClient) ExistOrderUser(ctx context.Context, in *ExistOrderUserRequest, opts ...grpc.CallOption) (*ExistOrderUserResponse, error) {
+	out := new(ExistOrderUserResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistOrderUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) ExistOrderUserConds(ctx context.Context, in *ExistOrderUserCondsRequest, opts ...grpc.CallOption) (*ExistOrderUserCondsResponse, error) {
 	out := new(ExistOrderUserCondsResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistOrderUserConds_FullMethodName, in, out, opts...)
@@ -108,6 +119,7 @@ type MiddlewareServer interface {
 	CreateOrderUser(context.Context, *CreateOrderUserRequest) (*CreateOrderUserResponse, error)
 	GetOrderUser(context.Context, *GetOrderUserRequest) (*GetOrderUserResponse, error)
 	GetOrderUsers(context.Context, *GetOrderUsersRequest) (*GetOrderUsersResponse, error)
+	ExistOrderUser(context.Context, *ExistOrderUserRequest) (*ExistOrderUserResponse, error)
 	ExistOrderUserConds(context.Context, *ExistOrderUserCondsRequest) (*ExistOrderUserCondsResponse, error)
 	UpdateOrderUser(context.Context, *UpdateOrderUserRequest) (*UpdateOrderUserResponse, error)
 	DeleteOrderUser(context.Context, *DeleteOrderUserRequest) (*DeleteOrderUserResponse, error)
@@ -126,6 +138,9 @@ func (UnimplementedMiddlewareServer) GetOrderUser(context.Context, *GetOrderUser
 }
 func (UnimplementedMiddlewareServer) GetOrderUsers(context.Context, *GetOrderUsersRequest) (*GetOrderUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrderUsers not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistOrderUser(context.Context, *ExistOrderUserRequest) (*ExistOrderUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistOrderUser not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistOrderUserConds(context.Context, *ExistOrderUserCondsRequest) (*ExistOrderUserCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistOrderUserConds not implemented")
@@ -203,6 +218,24 @@ func _Middleware_GetOrderUsers_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistOrderUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistOrderUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistOrderUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistOrderUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistOrderUser(ctx, req.(*ExistOrderUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_ExistOrderUserConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistOrderUserCondsRequest)
 	if err := dec(in); err != nil {
@@ -275,6 +308,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetOrderUsers",
 			Handler:    _Middleware_GetOrderUsers_Handler,
+		},
+		{
+			MethodName: "ExistOrderUser",
+			Handler:    _Middleware_ExistOrderUser_Handler,
 		},
 		{
 			MethodName: "ExistOrderUserConds",

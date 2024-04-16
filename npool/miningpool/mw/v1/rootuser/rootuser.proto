@@ -7,110 +7,94 @@ option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/roo
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
-
 // Service Name
 service Middleware {
-    rpc CreateRootUser     (CreateRootUserRequest)   returns (CreateRootUserResponse)    {}
-    rpc GetRootUser        (GetRootUserRequest)      returns (GetRootUserResponse)       {}
-    rpc GetRootUsers       (GetRootUsersRequest)     returns (GetRootUsersResponse)      {}
-    rpc ExistRootUserConds (ExistRootUserCondsRequest) returns (ExistRootUserCondsResponse) {}
-    rpc UpdateRootUser     (UpdateRootUserRequest)   returns (UpdateRootUserResponse)    {}
-    rpc DeleteRootUser     (DeleteRootUserRequest)   returns (DeleteRootUserResponse)    {}
+  rpc CreateRootUser(CreateRootUserRequest) returns (CreateRootUserResponse) {}
+  rpc GetRootUser(GetRootUserRequest) returns (GetRootUserResponse) {}
+  rpc GetRootUsers(GetRootUsersRequest) returns (GetRootUsersResponse) {}
+  rpc ExistRootUser(ExistRootUserRequest) returns (ExistRootUserResponse) {}
+  rpc ExistRootUserConds(ExistRootUserCondsRequest)
+      returns (ExistRootUserCondsResponse) {}
+  rpc UpdateRootUser(UpdateRootUserRequest) returns (UpdateRootUserResponse) {}
+  rpc DeleteRootUser(DeleteRootUserRequest) returns (DeleteRootUserResponse) {}
 }
 
 message RootUserReq {
-    optional uint32    ID              = 10;
-    optional string    EntID           = 20;
-    optional string    Name            = 30;
-    optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 40;
-    optional string    Email           = 50;
-    optional string    AuthToken       = 60;
-    optional bool      Authed          = 70;
-    optional string    Remark          = 80;
+  optional uint32 ID = 10;
+  optional string EntID = 20;
+  optional string Name = 30;
+  optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 40;
+  optional string Email = 50;
+  optional string AuthToken = 60;
+  optional bool Authed = 70;
+  optional string Remark = 80;
 }
 
 message RootUser {
-    // @inject_tag: sql:"id"
-    uint32               ID                = 10;
-    // @inject_tag: sql:"ent_id"
-    string               EntID             = 20;
-    // @inject_tag: sql:"name"
-    string               Name              = 30;
-    // @inject_tag: sql:"miningpool_type"
-    string               MiningpoolTypeStr = 40;
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 41;
-    // @inject_tag: sql:"email"
-    string               Email             = 50;
-    // @inject_tag: sql:"auth_token"
-    string               AuthToken         = 60;
-    // @inject_tag: sql:"authed" 
-    bool                 Authed            = 70;
-    // @inject_tag: sql:"remark"
-    string               Remark            = 80;
-    // @inject_tag: sql:"created_at"
-    uint32               CreatedAt         = 90;
-    // @inject_tag: sql:"updated_at"
-    uint32               UpdatedAt         = 100;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"name"
+  string Name = 30;
+  // @inject_tag: sql:"miningpool_type"
+  string MiningpoolTypeStr = 40;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 41;
+  // @inject_tag: sql:"email"
+  string Email = 50;
+  // @inject_tag: sql:"auth_token"
+  string AuthToken = 60;
+  // @inject_tag: sql:"authed"
+  bool Authed = 70;
+  // @inject_tag: sql:"remark"
+  string Remark = 80;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 90;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 100;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID             = 9;
-    optional basetypes.v1.StringVal      EntID          = 10;
-    optional basetypes.v1.StringVal      Name           = 20;
-    optional basetypes.v1.Uint32Val      MiningpoolType = 30;
-    optional basetypes.v1.StringVal      Email          = 40;
-    optional basetypes.v1.BoolVal        Authed         = 50;
-    optional basetypes.v1.StringSliceVal EntIDs         = 60;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal Name = 20;
+  optional basetypes.v1.Uint32Val MiningpoolType = 30;
+  optional basetypes.v1.StringVal Email = 40;
+  optional basetypes.v1.BoolVal Authed = 50;
+  optional basetypes.v1.StringSliceVal EntIDs = 60;
 }
 
-message CreateRootUserRequest {
-    RootUserReq Info = 10;
-}
+message CreateRootUserRequest { RootUserReq Info = 10; }
 
-message CreateRootUserResponse {
-    RootUser Info = 10;
-}
+message CreateRootUserResponse { RootUser Info = 10; }
 
-message GetRootUserRequest {
-    string EntID = 10;
-}
+message GetRootUserRequest { string EntID = 10; }
 
-message GetRootUserResponse {
-    RootUser Info = 10;
-}
+message GetRootUserResponse { RootUser Info = 10; }
 
 message GetRootUsersRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetRootUsersResponse {
-    repeated RootUser Infos = 10;
-    uint32      Total = 20;
+  repeated RootUser Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistRootUserCondsRequest {
-    Conds Conds  = 10;
-}
+message ExistRootUserRequest { string EntID = 10; }
 
-message ExistRootUserCondsResponse {
-    bool Info = 10;
-}
+message ExistRootUserResponse { bool Info = 10; }
 
+message ExistRootUserCondsRequest { Conds Conds = 10; }
 
-message UpdateRootUserRequest {
-    RootUserReq Info = 10;
-}
+message ExistRootUserCondsResponse { bool Info = 10; }
 
-message UpdateRootUserResponse {
-    RootUser Info = 10;
-}
+message UpdateRootUserRequest { RootUserReq Info = 10; }
 
-message DeleteRootUserRequest {
-    RootUserReq Info = 10;
-}
+message UpdateRootUserResponse { RootUser Info = 10; }
 
-message DeleteRootUserResponse {
-    RootUser Info = 10;
-}
+message DeleteRootUserRequest { RootUserReq Info = 10; }
+
+message DeleteRootUserResponse { RootUser Info = 10; }
