@@ -40,7 +40,7 @@ service Gateway {
 message AdminCreateRequiredRequest {
     string MainGoodID = 10;
     string RequiredGoodID = 20;
-    bool   Must = 30;
+    optional bool Must = 30;
 }
 
 message AdminCreateRequiredResponse {
@@ -50,7 +50,7 @@ message AdminCreateRequiredResponse {
 message AdminUpdateRequiredRequest {
     uint32 ID = 10;
     string EntID = 20;
-    bool   Must = 30;
+    optional bool Must = 30;
 }
 
 message AdminUpdateRequiredResponse {
