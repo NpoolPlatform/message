@@ -19,8 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetOrderUser_FullMethodName    = "/miningpool.gateway.orderuser.v1.Gateway/GetOrderUser"
-	Gateway_UpdateOrderUser_FullMethodName = "/miningpool.gateway.orderuser.v1.Gateway/UpdateOrderUser"
+	Gateway_GetOrderUser_FullMethodName = "/miningpool.gateway.orderuser.v1.Gateway/GetOrderUser"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -28,7 +27,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	GetOrderUser(ctx context.Context, in *GetOrderUserRequest, opts ...grpc.CallOption) (*GetOrderUserResponse, error)
-	UpdateOrderUser(ctx context.Context, in *UpdateOrderUserRequest, opts ...grpc.CallOption) (*UpdateOrderUserResponse, error)
 }
 
 type gatewayClient struct {
@@ -48,21 +46,11 @@ func (c *gatewayClient) GetOrderUser(ctx context.Context, in *GetOrderUserReques
 	return out, nil
 }
 
-func (c *gatewayClient) UpdateOrderUser(ctx context.Context, in *UpdateOrderUserRequest, opts ...grpc.CallOption) (*UpdateOrderUserResponse, error) {
-	out := new(UpdateOrderUserResponse)
-	err := c.cc.Invoke(ctx, Gateway_UpdateOrderUser_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
 	GetOrderUser(context.Context, *GetOrderUserRequest) (*GetOrderUserResponse, error)
-	UpdateOrderUser(context.Context, *UpdateOrderUserRequest) (*UpdateOrderUserResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -72,9 +60,6 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) GetOrderUser(context.Context, *GetOrderUserRequest) (*GetOrderUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrderUser not implemented")
-}
-func (UnimplementedGatewayServer) UpdateOrderUser(context.Context, *UpdateOrderUserRequest) (*UpdateOrderUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrderUser not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -107,24 +92,6 @@ func _Gateway_GetOrderUser_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_UpdateOrderUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateOrderUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).UpdateOrderUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_UpdateOrderUser_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateOrderUser(ctx, req.(*UpdateOrderUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -135,10 +102,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetOrderUser",
 			Handler:    _Gateway_GetOrderUser_Handler,
-		},
-		{
-			MethodName: "UpdateOrderUser",
-			Handler:    _Gateway_UpdateOrderUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

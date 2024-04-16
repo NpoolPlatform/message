@@ -4,73 +4,70 @@ package miningpool.gateway.fraction.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/fraction";
 
-import "google/api/annotations.proto";;
+import "google/api/annotations.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
-// Service Name  
+// Service Name
 service Gateway {
-    rpc CreateFraction     (CreateFractionRequest)   returns (CreateFractionResponse)    {
-        option (google.api.http) = {
-            post: "/v1/create/fraction"
-            body: "*"
-        };
-    }
-    rpc GetFraction        (GetFractionRequest)      returns (GetFractionResponse)       {
-        option (google.api.http) = {
-            post: "/v1/get/fraction"
-            body: "*"
-        };
-    }
-    rpc GetUserFractions       (GetUserFractionsRequest)     returns (GetUserFractionsResponse)      {
-        option (google.api.http) = {
-            post: "/v1/get/user/fractions"
-            body: "*"
-        };
-    }
+  rpc CreateFraction(CreateFractionRequest) returns (CreateFractionResponse) {
+    option (google.api.http) = {
+      post : "/v1/create/fraction"
+      body : "*"
+    };
+  }
+  rpc GetFraction(GetFractionRequest) returns (GetFractionResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/fraction"
+      body : "*"
+    };
+  }
+  rpc GetUserFractions(GetUserFractionsRequest)
+      returns (GetUserFractionsResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/user/fractions"
+      body : "*"
+    };
+  }
 }
 
 message Fraction {
-    uint32                                   ID                 = 10;
-    string                                   EntID              = 20;
-    string                                   AppID              = 30;
-    string                                   UserID             = 40;
-    string                                   OrderUserID        = 50;
-    basetypes.miningpool.v1.WithdrawState    WithdrawState      = 60;
-    uint32                                   WithdrawTime       = 70;
-    uint32                                   PayTime            = 80;
-    string                                   Msg                = 90;
-    uint32                                   CreatedAt          = 100;
-    uint32                                   UpdatedAt          = 110;
+  uint32 ID = 10;
+  string EntID = 20;
+  string AppID = 30;
+  string UserID = 40;
+  string OrderUserID = 50;
+  basetypes.miningpool.v1.WithdrawState WithdrawState = 60;
+  uint32 WithdrawTime = 70;
+  uint32 PayTime = 80;
+  string Msg = 90;
+  uint32 CreatedAt = 100;
+  uint32 UpdatedAt = 110;
 }
 
 message CreateFractionRequest {
-    string   AppID         = 10;
-    string   UserID        = 20;
-    string   OrderUserID   = 30;
+  string AppID = 10;
+  string UserID = 20;
+  string OrderUserID = 30;
 }
 
-message CreateFractionResponse {
-    Fraction Info = 10;
-}
+message CreateFractionResponse { Fraction Info = 10; }
 
 message GetFractionRequest {
-    string   EntID         = 10;
-    string   AppID         = 20;
-    string   UserID        = 30;
+  string EntID = 10;
+  string AppID = 20;
+  string UserID = 30;
 }
 
-message GetFractionResponse {
-    Fraction Info = 10;
-}
+message GetFractionResponse { Fraction Info = 10; }
 
 message GetUserFractionsRequest {
-    string   AppID         = 10;
-    string   UserID        = 20;
-    int32    Offset        = 30;
-    int32    Limit         = 40;
+  string AppID = 10;
+  string UserID = 20;
+  int32 Offset = 30;
+  int32 Limit = 40;
 }
 
 message GetUserFractionsResponse {
-    repeated Fraction Infos = 10;
-    uint32      Total = 20;
+  repeated Fraction Infos = 10;
+  uint32 Total = 20;
 }

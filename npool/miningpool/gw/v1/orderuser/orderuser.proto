@@ -4,62 +4,41 @@ package miningpool.gateway.orderuser.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/orderuser";
 
-import "google/api/annotations.proto";;
+import "google/api/annotations.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
-    rpc GetOrderUser        (GetOrderUserRequest)          returns (GetOrderUserResponse)         {
-        option (google.api.http) = {
-            post: "/v1/get/orderuser"
-            body: "*"
-        };
-    }
-    rpc UpdateOrderUser      (UpdateOrderUserRequest)          returns (UpdateOrderUserResponse)         {
-        option (google.api.http) = {
-            post: "/v1/update/orderuser"
-            body: "*"
-        };
-    }
+  rpc GetOrderUser(GetOrderUserRequest) returns (GetOrderUserResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/orderuser"
+      body : "*"
+    };
+  }
 }
 
 message OrderUser {
-    uint32               ID                = 10;
-    string               EntID             = 20;
-    string               Name              = 30;
-    string               RootUserID        = 40;
-    string               GoodUserID        = 50;
-    string               AppID             = 60;
-    string               UserID            = 70;
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
-    basetypes.miningpool.v1.CoinType CoinType = 90;
-    float                Proportion        = 100;
-    string               RevenueAddress    = 110;
-    string               ReadPageLink      = 120;
-    bool                 AutoPay           = 130;
-    uint32               CreatedAt         = 140;
-    uint32               UpdatedAt         = 150;
+  uint32 ID = 10;
+  string EntID = 20;
+  string Name = 30;
+  string RootUserID = 40;
+  string GoodUserID = 50;
+  string AppID = 60;
+  string UserID = 70;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
+  basetypes.miningpool.v1.CoinType CoinType = 90;
+  float Proportion = 100;
+  string RevenueAddress = 110;
+  string ReadPageLink = 120;
+  bool AutoPay = 130;
+  uint32 CreatedAt = 140;
+  uint32 UpdatedAt = 150;
 }
-
 
 message GetOrderUserRequest {
-    string EntID  = 10;
-    string AppID  = 20;
-    string UserID = 30;
+  string EntID = 10;
+  string AppID = 20;
+  string UserID = 30;
 }
 
-message GetOrderUserResponse {
-    OrderUser Info = 10;
-}
-
-message UpdateOrderUserRequest{
-    string EntID          = 10;
-    string AppID          = 20;
-    string UserID         = 30;
-    optional string RevenueAddress = 40;
-    optional bool   AutoPay    = 50;
-}
-
-message UpdateOrderUserResponse{
-    OrderUser Info = 10;
-}
+message GetOrderUserResponse { OrderUser Info = 10; }

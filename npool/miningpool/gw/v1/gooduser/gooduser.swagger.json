@@ -373,9 +373,6 @@
         "EntID": {
           "type": "string"
         },
-        "RootUserID": {
-          "type": "string"
-        },
         "HashRate": {
           "type": "number",
           "format": "float"

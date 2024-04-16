@@ -4,104 +4,94 @@ package miningpool.gateway.rootuser.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/rootuser";
 
-import "google/api/annotations.proto";;
+import "google/api/annotations.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateRootUser     (CreateRootUserRequest)   returns (CreateRootUserResponse)    {
-        option (google.api.http) = {
-            post: "/v1/create/rootuser"
-            body: "*"
-        };
-    }
-    rpc GetRootUser        (GetRootUserRequest)      returns (GetRootUserResponse)       {
-        option (google.api.http) = {
-            post: "/v1/get/rootuser"
-            body: "*"
-        };
-    }
-    rpc GetRootUsers       (GetRootUsersRequest)     returns (GetRootUsersResponse)      {
-        option (google.api.http) = {
-            post: "/v1/get/rootusers"
-            body: "*"
-        };
-    }
-    rpc UpdateRootUser     (UpdateRootUserRequest)   returns (UpdateRootUserResponse)    {
-        option (google.api.http) = {
-            post: "/v1/update/rootuser"
-            body: "*"
-        };
-    }
-    rpc DeleteRootUser     (DeleteRootUserRequest)   returns (DeleteRootUserResponse)    {
-        option (google.api.http) = {
-            post: "/v1/delete/rootuser"
-            body: "*"
-        };
-    }
+  rpc CreateRootUser(CreateRootUserRequest) returns (CreateRootUserResponse) {
+    option (google.api.http) = {
+      post : "/v1/create/rootuser"
+      body : "*"
+    };
+  }
+  rpc GetRootUser(GetRootUserRequest) returns (GetRootUserResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/rootuser"
+      body : "*"
+    };
+  }
+  rpc GetRootUsers(GetRootUsersRequest) returns (GetRootUsersResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/rootusers"
+      body : "*"
+    };
+  }
+  rpc UpdateRootUser(UpdateRootUserRequest) returns (UpdateRootUserResponse) {
+    option (google.api.http) = {
+      post : "/v1/update/rootuser"
+      body : "*"
+    };
+  }
+  rpc DeleteRootUser(DeleteRootUserRequest) returns (DeleteRootUserResponse) {
+    option (google.api.http) = {
+      post : "/v1/delete/rootuser"
+      body : "*"
+    };
+  }
 }
 
 message RootUser {
-    uint32               ID                = 10;
-    string               EntID             = 20;
-    string               Name              = 30;
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 40;
-    string               Email             = 50;
-    string               AuthToken         = 60;
-    bool                 Authed            = 70;
-    string               Remark            = 80;
-    uint32               CreatedAt         = 90;
-    uint32               UpdatedAt         = 100;
+  uint32 ID = 10;
+  string EntID = 20;
+  string Name = 30;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 40;
+  string Email = 50;
+  string AuthToken = 60;
+  bool Authed = 70;
+  string Remark = 80;
+  uint32 CreatedAt = 90;
+  uint32 UpdatedAt = 100;
 }
 
 message CreateRootUserRequest {
-    string    Name            = 10;
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 20;
-    string    Email           = 30;
-    string    AuthToken       = 40;
-    optional  string Remark   = 50;
+  string Name = 10;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 20;
+  string Email = 30;
+  string AuthToken = 40;
+  optional string Remark = 50;
 }
 
-message CreateRootUserResponse {
-    RootUser Info = 10;
-}
+message CreateRootUserResponse { RootUser Info = 10; }
 
-message GetRootUserRequest {
-    string EntID = 10;
-}
+message GetRootUserRequest { string EntID = 10; }
 
-message GetRootUserResponse {
-    RootUser Info = 10;
-}
+message GetRootUserResponse { RootUser Info = 10; }
 
 message GetRootUsersRequest {
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetRootUsersResponse {
-    repeated RootUser Infos = 10;
-    uint32      Total = 20;
+  repeated RootUser Infos = 10;
+  uint32 Total = 20;
 }
 
 message UpdateRootUserRequest {
-    uint32               ID                = 10;
-    string               EntID             = 20;
-    optional string      Name              = 30;
-    optional string      Email             = 40;
-    optional string      AuthToken         = 50;
-    optional string      Remark            = 60;
+  uint32 ID = 10;
+  string EntID = 20;
+  optional string Name = 30;
+  optional string Email = 40;
+  optional string AuthToken = 50;
+  optional string Remark = 60;
 }
 
-message UpdateRootUserResponse {
-    RootUser Info = 10;
-}
+message UpdateRootUserResponse { RootUser Info = 10; }
 
 message DeleteRootUserRequest {
-    uint32               ID                = 10;
-    string               EntID             = 20;
+  uint32 ID = 10;
+  string EntID = 20;
 }
 
-message DeleteRootUserResponse {
-    RootUser Info = 10;
-}
+message DeleteRootUserResponse { RootUser Info = 10; }
