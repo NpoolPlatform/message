@@ -70,7 +70,7 @@ message CreateRequiredRequest {
     string AppID = 10;
     string MainAppGoodID = 20;
     string RequiredAppGoodID = 30;
-    bool Must = 40;
+    optional bool Must = 40;
 }
 
 message CreateRequiredResponse {
@@ -114,7 +114,7 @@ message AdminCreateRequiredRequest {
     string TargetAppID = 10;
     string MainAppGoodID = 20;
     string RequiredAppGoodID = 30;
-    bool Must = 40;
+    optional bool Must = 40;
 }
 
 message AdminCreateRequiredResponse {
