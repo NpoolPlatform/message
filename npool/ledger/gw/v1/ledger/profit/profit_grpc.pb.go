@@ -19,10 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetMiningRewards_FullMethodName   = "/ledger.gateway.ledger.profit.v1.Gateway/GetMiningRewards"
-	Gateway_GetProfits_FullMethodName         = "/ledger.gateway.ledger.profit.v1.Gateway/GetProfits"
-	Gateway_GetIntervalProfits_FullMethodName = "/ledger.gateway.ledger.profit.v1.Gateway/GetIntervalProfits"
-	Gateway_GetGoodProfits_FullMethodName     = "/ledger.gateway.ledger.profit.v1.Gateway/GetGoodProfits"
+	Gateway_GetMiningRewards_FullMethodName = "/ledger.gateway.ledger.profit.v1.Gateway/GetMiningRewards"
+	Gateway_GetCoinProfits_FullMethodName   = "/ledger.gateway.ledger.profit.v1.Gateway/GetCoinProfits"
+	Gateway_GetGoodProfits_FullMethodName   = "/ledger.gateway.ledger.profit.v1.Gateway/GetGoodProfits"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -30,8 +29,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	GetMiningRewards(ctx context.Context, in *GetMiningRewardsRequest, opts ...grpc.CallOption) (*GetMiningRewardsResponse, error)
-	GetProfits(ctx context.Context, in *GetProfitsRequest, opts ...grpc.CallOption) (*GetProfitsResponse, error)
-	GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error)
+	GetCoinProfits(ctx context.Context, in *GetCoinProfitsRequest, opts ...grpc.CallOption) (*GetCoinProfitsResponse, error)
 	GetGoodProfits(ctx context.Context, in *GetGoodProfitsRequest, opts ...grpc.CallOption) (*GetGoodProfitsResponse, error)
 }
 
@@ -52,18 +50,9 @@ func (c *gatewayClient) GetMiningRewards(ctx context.Context, in *GetMiningRewar
 	return out, nil
 }
 
-func (c *gatewayClient) GetProfits(ctx context.Context, in *GetProfitsRequest, opts ...grpc.CallOption) (*GetProfitsResponse, error) {
-	out := new(GetProfitsResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetProfits_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetIntervalProfits(ctx context.Context, in *GetIntervalProfitsRequest, opts ...grpc.CallOption) (*GetIntervalProfitsResponse, error) {
-	out := new(GetIntervalProfitsResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetIntervalProfits_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetCoinProfits(ctx context.Context, in *GetCoinProfitsRequest, opts ...grpc.CallOption) (*GetCoinProfitsResponse, error) {
+	out := new(GetCoinProfitsResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetCoinProfits_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -84,8 +73,7 @@ func (c *gatewayClient) GetGoodProfits(ctx context.Context, in *GetGoodProfitsRe
 // for forward compatibility
 type GatewayServer interface {
 	GetMiningRewards(context.Context, *GetMiningRewardsRequest) (*GetMiningRewardsResponse, error)
-	GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error)
-	GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error)
+	GetCoinProfits(context.Context, *GetCoinProfitsRequest) (*GetCoinProfitsResponse, error)
 	GetGoodProfits(context.Context, *GetGoodProfitsRequest) (*GetGoodProfitsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -97,11 +85,8 @@ type UnimplementedGatewayServer struct {
 func (UnimplementedGatewayServer) GetMiningRewards(context.Context, *GetMiningRewardsRequest) (*GetMiningRewardsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMiningRewards not implemented")
 }
-func (UnimplementedGatewayServer) GetProfits(context.Context, *GetProfitsRequest) (*GetProfitsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetProfits not implemented")
-}
-func (UnimplementedGatewayServer) GetIntervalProfits(context.Context, *GetIntervalProfitsRequest) (*GetIntervalProfitsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetIntervalProfits not implemented")
+func (UnimplementedGatewayServer) GetCoinProfits(context.Context, *GetCoinProfitsRequest) (*GetCoinProfitsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCoinProfits not implemented")
 }
 func (UnimplementedGatewayServer) GetGoodProfits(context.Context, *GetGoodProfitsRequest) (*GetGoodProfitsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodProfits not implemented")
@@ -137,38 +122,20 @@ func _Gateway_GetMiningRewards_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetProfits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetProfitsRequest)
+func _Gateway_GetCoinProfits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoinProfitsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetProfits(ctx, in)
+		return srv.(GatewayServer).GetCoinProfits(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetProfits_FullMethodName,
+		FullMethod: Gateway_GetCoinProfits_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetProfits(ctx, req.(*GetProfitsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetIntervalProfits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetIntervalProfitsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetIntervalProfits(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetIntervalProfits_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetIntervalProfits(ctx, req.(*GetIntervalProfitsRequest))
+		return srv.(GatewayServer).GetCoinProfits(ctx, req.(*GetCoinProfitsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -203,12 +170,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetMiningRewards_Handler,
 		},
 		{
-			MethodName: "GetProfits",
-			Handler:    _Gateway_GetProfits_Handler,
-		},
-		{
-			MethodName: "GetIntervalProfits",
-			Handler:    _Gateway_GetIntervalProfits_Handler,
+			MethodName: "GetCoinProfits",
+			Handler:    _Gateway_GetCoinProfits_Handler,
 		},
 		{
 			MethodName: "GetGoodProfits",
