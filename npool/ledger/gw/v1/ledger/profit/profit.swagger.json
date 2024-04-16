@@ -362,6 +362,9 @@
         "GoodName": {
           "type": "string"
         },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "GoodUnit": {
           "type": "string"
         },
@@ -402,6 +405,19 @@
         }
       }
     },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
+    },
     "v1IOSubType": {
       "type": "string",
       "enum": [
@@ -433,6 +449,19 @@
     "v1MiningReward": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
@@ -466,25 +495,18 @@
         "AppGoodID": {
           "type": "string"
         },
+        "AppGoodName": {
+          "type": "string"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "OrderID": {
           "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
         }
       }
     },
