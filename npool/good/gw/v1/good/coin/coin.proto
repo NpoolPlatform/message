@@ -39,7 +39,7 @@ message AdminCreateGoodCoinRequest {
     string GoodID = 10;
     string CoinTypeID = 20;
     optional bool Main = 30;
-    optional bool Index = 40;
+    optional int32 Index = 40;
 }
 
 message AdminCreateGoodCoinResponse {
@@ -50,7 +50,7 @@ message AdminUpdateGoodCoinRequest {
     uint32 ID = 10;
     string EntID = 20;
     optional bool Main = 30;
-    optional bool Index = 40;
+    optional int32 Index = 40;
 }
 
 message AdminUpdateGoodCoinResponse {
