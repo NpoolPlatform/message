@@ -111,7 +111,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.gateway.ledger.statement.v1.Gateway/GetStatements", runtime.WithHTTPPathPattern("/v1/get/details"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.gateway.ledger.statement.v1.Gateway/GetStatements", runtime.WithHTTPPathPattern("/v1/get/ledgerstatements"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -134,7 +134,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.gateway.ledger.statement.v1.Gateway/GetAppStatements", runtime.WithHTTPPathPattern("/v1/get/app/details"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ledger.gateway.ledger.statement.v1.Gateway/GetAppStatements", runtime.WithHTTPPathPattern("/v1/get/app/ledgerstatements"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -196,7 +196,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.gateway.ledger.statement.v1.Gateway/GetStatements", runtime.WithHTTPPathPattern("/v1/get/details"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.gateway.ledger.statement.v1.Gateway/GetStatements", runtime.WithHTTPPathPattern("/v1/get/ledgerstatements"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -216,7 +216,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.gateway.ledger.statement.v1.Gateway/GetAppStatements", runtime.WithHTTPPathPattern("/v1/get/app/details"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/ledger.gateway.ledger.statement.v1.Gateway/GetAppStatements", runtime.WithHTTPPathPattern("/v1/get/app/ledgerstatements"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -236,9 +236,9 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_GetStatements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "details"}, ""))
+	pattern_Gateway_GetStatements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "ledgerstatements"}, ""))
 
-	pattern_Gateway_GetAppStatements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "app", "details"}, ""))
+	pattern_Gateway_GetAppStatements_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "app", "ledgerstatements"}, ""))
 )
 
 var (
