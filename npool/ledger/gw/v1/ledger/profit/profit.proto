@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/ledger/gw/v1/ledger/
 import "google/api/annotations.proto";
 import "npool/basetypes/ledger/v1/enums.proto";
 import "npool/basetypes/good/v1/enums.proto";
+import "npool/basetypes/good/v1/types.proto";
 
 // Service Name
 service Gateway {
@@ -40,33 +41,36 @@ service Gateway {
 }
 
 message MiningReward {
-    string CoinTypeID   = 10;
-    string CoinName     = 20;
-    string CoinLogo     = 30;
-    string CoinUnit     = 40;
-    basetypes.ledger.v1.IOType    IOType    = 50;
-    basetypes.ledger.v1.IOSubType IOSubType = 60;
-    string RewardAmount = 70;
-    string RewardAmountPerUnit = 80;
-    string Units        = 90;
-    string Extra        = 100;
-    string AppGoodID    = 110;
-    string OrderID      = 120;
-    uint32 CreatedAt    = 130;
-    string UserID       = 140;
-    string AppID        = 150;
-    uint32 ID           = 160;
-    string EntID        = 170;
+    uint32 ID = 10;
+    string EntID = 20;
+    string UserID = 30;
+    string AppID = 40;
+    string CoinTypeID = 50;
+    string CoinName = 60;
+    string CoinLogo = 70;
+    string CoinUnit = 80;
+    basetypes.ledger.v1.IOType IOType = 90;
+    basetypes.ledger.v1.IOSubType IOSubType = 100;
+    string RewardAmount = 110;
+    string RewardAmountPerUnit = 120;
+    string Units = 130;
+    string Extra = 140;
+    string AppGoodID = 150;
+    string AppGoodName = 160;
+    basetypes.good.v1.GoodType GoodType = 170;
+    string OrderID = 180;
+
+    uint32 CreatedAt = 1000;
 }
 
 message GetMiningRewardsRequest {
-    string AppID                 = 10;
-    string UserID                = 20;
-    uint32 StartAt               = 30;
-    uint32 EndAt                 = 40;
+    string AppID = 10;
+    string UserID = 20;
+    uint32 StartAt = 30;
+    uint32 EndAt = 40;
     optional bool SimulateOnly   = 50;
-    int32  Offset                = 60;
-    int32  Limit                 = 70;
+    int32  Offset = 60;
+    int32  Limit = 70;
 }
 
 message GetMiningRewardsResponse {
@@ -75,70 +79,71 @@ message GetMiningRewardsResponse {
 }
 
 message Profit {
-    string AppID      = 8;
-    string UserID     = 9;
-    string CoinTypeID = 10;
-    string CoinName   = 20;
-    repeated string DisplayNames = 21;
-    string CoinLogo   = 30;
-    string CoinUnit   = 40;
-    string Incoming   = 50;
+    string AppID = 10;
+    string UserID = 20;
+    string CoinTypeID = 30;
+    string CoinName = 40;
+    repeated string DisplayNames = 50;
+    string CoinLogo = 60;
+    string CoinUnit = 70;
+    string Incoming = 80;
 }
 
 message GetProfitsRequest {
-    string AppID   = 10;
-    string UserID  = 20;
-    int32  Offset  = 30;
-    int32  Limit   = 40;
+    string AppID = 10;
+    string UserID = 20;
+    int32  Offset = 30;
+    int32  Limit = 40;
 }
 
 message GetProfitsResponse {
     repeated Profit Infos = 10;
-    uint32          Total = 20;
+    uint32 Total = 20;
 }
 
 message GetIntervalProfitsRequest {
-    string AppID   = 10;
-    string UserID  = 20;
+    string AppID  = 10;
+    string UserID = 20;
     uint32 StartAt = 30;
-    uint32 EndAt   = 40;
-    int32  Offset  = 50;
-    int32  Limit   = 60;
+    uint32 EndAt = 40;
+    int32  Offset = 50;
+    int32  Limit = 60;
 }
 
 message GetIntervalProfitsResponse {
     repeated Profit Infos = 10;
-    uint32          Total = 20;
+    uint32 Total = 20;
 }
 
 message GoodProfit {
-    string AppID      = 8;
-    string UserID     = 9;
-    string AppGoodID  = 10;
-    string GoodName   = 20;
-    string GoodUnit   = 30;
-    uint32 MinOrderDuration = 31;
-    uint32 MaxOrderDuration = 32;
-    basetypes.good.v1.GoodDurationType DurationType = 33;
-    string Units      = 40;
-    string CoinTypeID = 50;
-    string CoinName   = 60;
-    repeated string DisplayNames = 61;
-    string CoinLogo   = 70;
-    string CoinUnit   = 80;
-    string Incoming   = 90;
+    string AppID = 10;
+    string UserID = 20;
+    string AppGoodID = 30;
+    string GoodName = 40;
+    basetypes.good.v1.GoodType GoodType = 50;
+    string GoodUnit = 60;
+    uint32 MinOrderDuration = 70;
+    uint32 MaxOrderDuration = 80;
+    basetypes.good.v1.GoodDurationType DurationType = 90;
+    string Units = 100;
+    string CoinTypeID = 110;
+    string CoinName = 120;
+    repeated string DisplayNames = 130;
+    string CoinLogo = 140;
+    string CoinUnit = 150;
+    string Incoming = 160;
 }
 
 message GetGoodProfitsRequest {
-    string AppID   = 10;
-    string UserID  = 20;
+    string AppID = 10;
+    string UserID = 20;
     uint32 StartAt = 30;
-    uint32 EndAt   = 40;
-    int32  Offset  = 50;
-    int32  Limit   = 60;
+    uint32 EndAt = 40;
+    int32  Offset = 50;
+    int32  Limit = 60;
 }
 
 message GetGoodProfitsResponse {
     repeated GoodProfit Infos = 10;
-    uint32              Total = 20;
+    uint32 Total = 20;
 }
