@@ -47,7 +47,7 @@ message GetStatementsRequest {
     string AppID = 10;
     string UserID = 20;
     optional uint32 StartAt = 30;
-    uint32 EndAt = 40;
+    optional uint32 EndAt = 40;
     int32  Offset = 50;
     int32  Limit = 60;
 }
