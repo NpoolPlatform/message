@@ -18,16 +18,9 @@ service Gateway {
         };
     }
 
-    rpc GetProfits (GetProfitsRequest) returns (GetProfitsResponse) {
+    rpc GetCoinProfits (GetCoinProfitsRequest) returns (GetCoinProfitsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/profits"
-            body: "*"
-        };
-    }
-
-    rpc GetIntervalProfits (GetIntervalProfitsRequest) returns (GetIntervalProfitsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/intervalprofits"
+            post: "/v1/get/coinprofits"
             body: "*"
         };
     }
@@ -66,8 +59,8 @@ message MiningReward {
 message GetMiningRewardsRequest {
     string AppID = 10;
     string UserID = 20;
-    uint32 StartAt = 30;
-    uint32 EndAt = 40;
+    optional uint32 StartAt = 30;
+    optional uint32 EndAt = 40;
     optional bool SimulateOnly   = 50;
     int32  Offset = 60;
     int32  Limit = 70;
@@ -78,7 +71,7 @@ message GetMiningRewardsResponse {
     uint32  Total = 20;
 }
 
-message Profit {
+message CoinProfit {
     string AppID = 10;
     string UserID = 20;
     string CoinTypeID = 30;
@@ -89,29 +82,17 @@ message Profit {
     string Incoming = 80;
 }
 
-message GetProfitsRequest {
+message GetCoinProfitsRequest {
     string AppID = 10;
     string UserID = 20;
-    int32  Offset = 30;
-    int32  Limit = 40;
-}
-
-message GetProfitsResponse {
-    repeated Profit Infos = 10;
-    uint32 Total = 20;
-}
-
-message GetIntervalProfitsRequest {
-    string AppID  = 10;
-    string UserID = 20;
-    uint32 StartAt = 30;
-    uint32 EndAt = 40;
+    optional uint32 StartAt = 30;
+    optional uint32 EndAt = 40;
     int32  Offset = 50;
     int32  Limit = 60;
 }
 
-message GetIntervalProfitsResponse {
-    repeated Profit Infos = 10;
+message GetCoinProfitsResponse {
+    repeated CoinProfit Infos = 10;
     uint32 Total = 20;
 }
 
@@ -119,26 +100,17 @@ message GoodProfit {
     string AppID = 10;
     string UserID = 20;
     string AppGoodID = 30;
-    string GoodName = 40;
+    string AppGoodName = 40;
     basetypes.good.v1.GoodType GoodType = 50;
-    string GoodUnit = 60;
-    uint32 MinOrderDuration = 70;
-    uint32 MaxOrderDuration = 80;
-    basetypes.good.v1.GoodDurationType DurationType = 90;
     string Units = 100;
-    string CoinTypeID = 110;
-    string CoinName = 120;
-    repeated string DisplayNames = 130;
-    string CoinLogo = 140;
-    string CoinUnit = 150;
     string Incoming = 160;
 }
 
 message GetGoodProfitsRequest {
     string AppID = 10;
     string UserID = 20;
-    uint32 StartAt = 30;
-    uint32 EndAt = 40;
+    optional uint32 StartAt = 30;
+    optional uint32 EndAt = 40;
     int32  Offset = 50;
     int32  Limit = 60;
 }
@@ -147,3 +119,4 @@ message GetGoodProfitsResponse {
     repeated GoodProfit Infos = 10;
     uint32 Total = 20;
 }
+
