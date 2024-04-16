@@ -109,6 +109,20 @@
         }
       }
     },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -135,8 +149,8 @@
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Incoming": {
-          "$ref": "#/definitions/v1StringVal"
+        "CoinTypeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
