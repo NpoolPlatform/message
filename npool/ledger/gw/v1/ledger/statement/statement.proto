@@ -11,59 +11,59 @@ import "npool/basetypes/ledger/v1/enums.proto";
 service Gateway {
     rpc GetStatements (GetStatementsRequest) returns (GetStatementsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/details"
+            post: "/v1/get/ledgerstatements"
             body: "*"
         };
     }
 
     rpc GetAppStatements (GetAppStatementsRequest) returns (GetAppStatementsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/details"
+            post: "/v1/get/app/ledgerstatements"
             body: "*"
         };
     }
 }
 
 message Statement {
-    string CoinTypeID = 10;
-    string CoinName   = 20;
-    repeated string DisplayNames = 21;
-    string CoinLogo   = 30;
-    string CoinUnit   = 40;
-    basetypes.ledger.v1.IOType    IOType    = 50;
-    basetypes.ledger.v1.IOSubType IOSubType = 60;
-    string Amount     = 70;
-    string IOExtra    = 80;
-    uint32 CreatedAt  = 90;
-    string UserID     = 100;
-    string PhoneNO       = 110;
-    string EmailAddress  = 120;
-    string AppID      = 130;
-    uint32 ID         = 140;
-    string EntID      = 150;
+    uint32 ID = 10;
+    string EntID = 20;
+    string AppID = 30;
+    string UserID = 40;
+    string CoinTypeID = 50;
+    string CoinName = 60;
+    repeated string DisplayNames = 70;
+    string CoinLogo = 80;
+    string CoinUnit = 90;
+    basetypes.ledger.v1.IOType IOType = 100;
+    basetypes.ledger.v1.IOSubType IOSubType = 110;
+    string Amount = 120;
+    string IOExtra = 130;
+    string PhoneNO = 140;
+    string EmailAddress = 150;
+    uint32 CreatedAt = 1000;
 }
 
 message GetStatementsRequest {
-    string AppID   = 10;
-    string UserID  = 20;
-    uint32 StartAt = 30;
-    uint32 EndAt   = 40;
-    int32  Offset  = 50;
-    int32  Limit   = 60;
+    string AppID = 10;
+    string UserID = 20;
+    optional uint32 StartAt = 30;
+    uint32 EndAt = 40;
+    int32  Offset = 50;
+    int32  Limit = 60;
 }
 
 message GetStatementsResponse {
     repeated Statement Infos = 10;
-    uint32             Total = 20;
+    uint32 Total = 20;
 }
 
 message GetAppStatementsRequest {
-    string TargetAppID   = 10;
-    int32  Offset        = 20;
-    int32  Limit         = 30;
+    string TargetAppID = 10;
+    int32  Offset = 20;
+    int32  Limit = 30;
 }
 
 message GetAppStatementsResponse {
     repeated Statement Infos = 10;
-    uint32          Total = 20;
+    uint32 Total = 20;
 }

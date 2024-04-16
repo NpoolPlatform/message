@@ -139,6 +139,19 @@
     "v1Statement": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
@@ -169,28 +182,15 @@
         "IOExtra": {
           "type": "string"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UserID": {
-          "type": "string"
-        },
         "PhoneNO": {
           "type": "string"
         },
         "EmailAddress": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "ID": {
+        "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
         }
       }
     }
