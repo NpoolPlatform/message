@@ -290,11 +290,11 @@ message AdminCreateAppPowerRentalRequest {
     optional string ProductPage = 50;
     optional bool Online = 60;
     optional bool Visible = 70;
-    optional string Name = 80;
+    string Name = 80;
     optional int32 DisplayIndex = 90;
     optional string Banner = 100;
 
-    optional uint32 ServiceStartAt = 110;
+    uint32 ServiceStartAt = 110;
     optional basetypes.good.v1.CancelMode CancelMode = 120;
     optional uint32 CancelableBeforeStartSeconds = 130;
     optional bool EnableSetCommission =140;
@@ -303,10 +303,10 @@ message AdminCreateAppPowerRentalRequest {
     optional string MaxUserAmount = 170;
     optional uint32 MinOrderDuration = 180;
     optional uint32 MaxOrderDuration = 190;
-    optional string UnitPrice = 200;
-    optional uint32 SaleStartAt = 210;
-    optional uint32 SaleEndAt = 220;
-    optional basetypes.good.v1.GoodSaleMode SaleMode = 230;
+    string UnitPrice = 200;
+    uint32 SaleStartAt = 210;
+    uint32 SaleEndAt = 220;
+    basetypes.good.v1.GoodSaleMode SaleMode = 230;
     optional bool FixedDuration = 240;
     optional bool PackageWithRequireds = 250;
 }
