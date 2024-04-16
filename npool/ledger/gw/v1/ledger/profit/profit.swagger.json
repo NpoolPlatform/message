@@ -320,6 +320,28 @@
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
         },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "Good is multiple coins"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "GoodMainCoin": {
+          "type": "boolean"
+        },
         "Units": {
           "type": "string"
         },
