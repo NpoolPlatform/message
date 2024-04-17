@@ -74,6 +74,7 @@ message Conds {
   optional basetypes.v1.StringSliceVal EntIDs = 60;
   optional basetypes.v1.BoolVal Disabled = 70;
   optional basetypes.v1.Uint32Val Level = 80;
+  optional basetypes.v1.Uint32Val ID = 90;
 }
 
 message CreateAppCommissionConfigRequest { AppCommissionConfigReq Info = 10; }

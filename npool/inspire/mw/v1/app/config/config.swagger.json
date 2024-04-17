@@ -211,6 +211,12 @@
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "MaxLevel": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
