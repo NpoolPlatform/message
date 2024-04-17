@@ -199,6 +199,13 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"end_at\""
         },
+        "CompensateTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"compensate_type\""
+        },
+        "CompensateType": {
+          "$ref": "#/definitions/v1CompensateType"
+        },
         "Title": {
           "type": "string",
           "title": "@inject_tag: sql:\"title\""
@@ -270,6 +277,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "CompensateType": {
+          "$ref": "#/definitions/v1CompensateType"
+        },
         "Title": {
           "type": "string"
         },
@@ -277,6 +287,16 @@
           "type": "string"
         }
       }
+    },
+    "v1CompensateType": {
+      "type": "string",
+      "enum": [
+        "DefaultCompensateType",
+        "CompensateMalfunction",
+        "CompensateWalfare",
+        "CompensateStarterDelay"
+      ],
+      "default": "DefaultCompensateType"
     },
     "v1Conds": {
       "type": "object",
@@ -295,6 +315,12 @@
         },
         "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
