@@ -182,10 +182,11 @@ enum InvestmentType {
 enum PaymentType {
   DefaultPaymentType = 0;
 
-  PayWithBalanceOnly = 10;
-  PayWithTransferOnly = 20;
-  PayWithTransferAndBalance = 30;
-  PayWithParentOrder = 40;
+    PayWithBalanceOnly        = 10;
+    PayWithTransferOnly       = 20;
+    PayWithTransferAndBalance = 30;
+    PayWithParentOrder        = 40;
+    PayWithContract           = 50;
 
   PayWithOffline = 1000;
   PayWithNoPayment = 1010;
@@ -225,8 +226,9 @@ enum OrderLockType {
   LockCommission = 30;
 }
 
-enum SendCouponMode {
-  DefaultCouponMode = 0;
+
+enum SimulateOrderCouponMode {
+    DefaultCouponMode = 0;
 
   WithoutCoupon = 10;
   FirstBenifit = 20;

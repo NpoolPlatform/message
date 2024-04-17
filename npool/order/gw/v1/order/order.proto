@@ -134,7 +134,10 @@ message Order {
     bool   CoinPresale            = 111;
 
     string GoodID                 = 120;
-    string AppGoodID              = 121;
+    basetypes.good.v1.GoodType GoodType = 121;
+    string AppGoodID              = 122;
+    string AppGoodStockID         = 123;
+    basetypes.good.v1.GoodStockMode StockMode = 124;
     string GoodName               = 130;
     string GoodUnit               = 131;
     string GoodUnitPrice          = 133;

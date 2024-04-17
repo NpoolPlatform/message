@@ -1,0 +1,119 @@
+syntax = "proto3";
+
+package order.middleware.app.config.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/app/config";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/order/v1/enums.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateAppConfig     (CreateAppConfigRequest)     returns (CreateAppConfigResponse)     {}
+    rpc UpdateAppConfig     (UpdateAppConfigRequest)     returns (UpdateAppConfigResponse)     {}
+    rpc GetAppConfig        (GetAppConfigRequest)        returns (GetAppConfigResponse)        {}
+    rpc GetAppConfigs       (GetAppConfigsRequest)       returns (GetAppConfigsResponse)       {}
+    rpc ExistAppConfig      (ExistAppConfigRequest)      returns (ExistAppConfigResponse)      {}
+    rpc ExistAppConfigConds (ExistAppConfigCondsRequest) returns (ExistAppConfigCondsResponse) {}
+    rpc DeleteAppConfig     (DeleteAppConfigRequest)     returns (DeleteAppConfigResponse)     {}
+}
+
+message AppConfigReq {
+    optional uint32                            ID                        = 10;
+    optional string                            EntID                     = 20;
+    optional string                            AppID                     = 30;
+    optional basetypes.order.v1.SimulateOrderCouponMode SendCouponMode            = 40;
+    optional string                            SendCouponProbability     = 50;
+    optional string                            CashableProfitProbability = 60;
+    optional bool                              Enabled                   = 70;
+}
+
+message AppConfig {
+    // @inject_tag: sql:"id"
+    uint32     ID           = 10;
+    // @inject_tag: sql:"ent_id"
+    string     EntID        = 20;
+    // @inject_tag: sql:"app_id"
+    string     AppID        = 30;
+    // @inject_tag: sql:"send_coupon_mode"
+    string     SendCouponModeStr                     = 40;
+    basetypes.order.v1.SimulateOrderCouponMode SendCouponMode = 50;
+    // @inject_tag: sql:"send_coupon_probability"
+    string     SendCouponProbability     = 60;
+    // @inject_tag: sql:"cashable_profit_probability"
+    string     CashableProfitProbability = 70;
+    // @inject_tag: sql:"enabled"
+    bool       Enabled               = 80;
+
+    // @inject_tag: sql:"created_at"
+    uint32     CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32     UpdatedAt = 1010;
+}
+
+message Conds {
+  basetypes.v1.Uint32Val ID = 10;
+  basetypes.v1.StringVal EntID = 20;
+  basetypes.v1.StringVal AppID = 30;
+  basetypes.v1.Uint32Val SendCouponMode = 40;
+  basetypes.v1.BoolVal Enabled = 50;
+}
+
+message CreateAppConfigRequest {
+    AppConfigReq Info = 10;
+}
+
+message CreateAppConfigResponse {
+    AppConfig Info = 10;
+}
+
+message UpdateAppConfigRequest {
+    AppConfigReq Info = 10;
+}
+
+message UpdateAppConfigResponse {
+    AppConfig Info = 10;
+}
+
+message GetAppConfigRequest {
+    string EntID = 10;
+}
+
+message GetAppConfigResponse {
+    AppConfig Info = 10;
+}
+
+message GetAppConfigsRequest {
+    Conds Conds   = 10;
+    int32 Offset  = 20;
+    int32 Limit   = 30;
+}
+
+message GetAppConfigsResponse {
+    repeated AppConfig Infos = 10;
+    uint32                  Total = 20;
+}
+
+message ExistAppConfigRequest {
+    string EntID = 10;
+}
+
+message ExistAppConfigResponse {
+    bool Info = 10;
+}
+
+message ExistAppConfigCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistAppConfigCondsResponse {
+    bool Info = 10;
+}
+
+message DeleteAppConfigRequest {
+    AppConfigReq Info = 10;
+}
+
+message DeleteAppConfigResponse {
+    AppConfig Info = 10;
+}
