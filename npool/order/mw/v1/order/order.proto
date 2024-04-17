@@ -12,6 +12,9 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc GetOrders (GetOrdersRequest) returns (GetOrdersResponse) {}
+    rpc CountOrders (CountOrdersRequest) returns (CountOrdersResponse) {}
+    rpc SumOrdersPaymentUSD (SumOrdersPaymentUSDRequest) returns (SumOrdersPaymentUSDResponse) {}
+    rpc SumOrdersValueUSD (SumOrdersValueUSDRequest) returns (SumOrdersValueUSDResponse) {}
 }
 
 message Order {
@@ -95,8 +98,8 @@ message Conds {
 
 message GetOrdersRequest {
     Conds Conds = 10;
-    int32 Offset = 30;
-    int32 Limit = 40;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
 message GetOrdersResponse {
@@ -104,3 +107,26 @@ message GetOrdersResponse {
     uint32 Total = 20;
 }
 
+message CountOrdersRequest {
+    Conds Conds = 10;
+}
+
+message CountOrdersResponse {
+    string Info = 10;
+}
+
+message SumOrdersPaymentUSDRequest {
+    Conds Conds = 10;
+}
+
+message SumOrdersPaymentUSDResponse {
+    string Info = 10;
+}
+
+message SumOrdersValueUSDRequest {
+    Conds Conds = 10;
+}
+
+message SumOrdersValueUSDResponse {
+    string Info = 10;
+}
