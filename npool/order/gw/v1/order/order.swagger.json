@@ -635,8 +635,17 @@
         "GoodID": {
           "type": "string"
         },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "AppGoodID": {
           "type": "string"
+        },
+        "AppGoodStockID": {
+          "type": "string"
+        },
+        "StockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
         },
         "GoodName": {
           "type": "string"
@@ -1092,6 +1101,28 @@
       ],
       "default": "DefaultGoodDurationType"
     },
+    "v1GoodStockMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStockMode",
+        "GoodStockByMiningPool",
+        "GoodStockByUnique"
+      ],
+      "default": "DefaultGoodStockMode"
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
+    },
     "v1InvestmentType": {
       "type": "string",
       "enum": [
@@ -1195,6 +1226,7 @@
         "PayWithTransferOnly",
         "PayWithTransferAndBalance",
         "PayWithParentOrder",
+        "PayWithContract",
         "PayWithOffline",
         "PayWithNoPayment"
       ],

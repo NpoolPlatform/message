@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package order.middleware.order1.v1;
+package order.middleware.powerrental.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/order";
+option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/powerrental";
 
 import "google/api/annotations.proto";
 import "npool/basetypes/order/v1/enums.proto";
@@ -11,47 +11,44 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateOrder     (CreateOrderRequest)    returns (CreateOrderResponse)    {}
-    rpc CreateOrders    (CreateOrdersRequest)   returns (CreateOrdersResponse)   {}
-    rpc UpdateOrder     (UpdateOrderRequest)    returns (UpdateOrderResponse)    {
+    rpc CreatePowerRentalOrder (CreatePowerRentalOrderRequest) returns (CreatePowerRentalOrderResponse) {}
+    rpc CreatePowerRentalOrders (CreatePowerRentalOrdersRequest) returns (CreatePowerRentalOrdersResponse) {}
+    rpc UpdatePowerRentalOrder (UpdatePowerRentalOrderRequest) returns (UpdatePowerRentalOrderResponse) {
         option (google.api.http) = {
-            post: "/v1/order_UpdateOrder"
+            post: "/v1/order_UpdatePowerRentalOrder"
             body: "*"
         };
     }
-    rpc UpdateOrders    (UpdateOrdersRequest)   returns (UpdateOrdersResponse)   {}
-    rpc GetOrder        (GetOrderRequest)       returns (GetOrderResponse)       {}
-    rpc GetOrders       (GetOrdersRequest)      returns (GetOrdersResponse)      {}
-    rpc SumOrderUnits   (SumOrderUnitsRequest)  returns (SumOrderUnitsResponse)  {}
-    rpc SumOrderPaymentAmounts   (SumOrderPaymentAmountsRequest)  returns (SumOrderPaymentAmountsResponse)  {}
-    rpc CountOrders     (CountOrdersRequest)    returns (CountOrdersResponse)    {}
-    rpc ExistOrder      (ExistOrderRequest)      returns (ExistOrderResponse)      {}
-    rpc ExistOrderConds (ExistOrderCondsRequest) returns (ExistOrderCondsResponse) {}
-    rpc DeleteOrder     (DeleteOrderRequest)     returns (DeleteOrderResponse)     {
+    rpc UpdatePowerRentalOrders (UpdatePowerRentalOrdersRequest) returns (UpdatePowerRentalOrdersResponse) {}
+    rpc GetPowerRentalOrder (GetPowerRentalOrderRequest) returns (GetPowerRentalOrderResponse) {}
+    rpc GetPowerRentalOrders (GetPowerRentalOrdersRequest) returns (GetPowerRentalOrdersResponse) {}
+    rpc SumPowerRentalOrders (SumPowerRentalOrdersRequest) returns (SumPowerRentalOrdersResponse) {}
+    rpc CountPowerRentalOrders (CountPowerRentalOrdersRequest) returns (CountPowerRentalOrdersResponse) {}
+    rpc ExistPowerRentalOrder (ExistPowerRentalOrderRequest) returns (ExistPowerRentalOrderResponse) {}
+    rpc ExistPowerRentalOrderConds (ExistPowerRentalOrderCondsRequest) returns (ExistPowerRentalOrderCondsResponse) {}
+    rpc DeletePowerRentalOrder (DeletePowerRentalOrderRequest) returns (DeletePowerRentalOrderResponse) {
         option (google.api.http) = {
-            post: "/v1/order_DeleteOrder"
+            post: "/v1/order_DeletePowerRentalOrder"
             body: "*"
         };
     }
-    rpc DeleteOrders    (DeleteOrdersRequest)    returns (DeleteOrdersResponse)    {}
+    rpc DeletePowerRentalOrders (DeletePowerRentalOrdersRequest) returns (DeletePowerRentalOrdersResponse) {}
 }
 
 message PaymentAmount {
-    string CoinTypeID  = 10;
+    string CoinTypeID = 10;
     string USDCurrency = 20;
-    string Amount      = 30;
+    string Amount = 30;
 }
 
-message OrderReq {
-    optional uint32 ID                        = 9;
-    optional string EntID                     = 10;
-    optional string AppID                     = 20;
-    optional string UserID                    = 30;
-    optional string GoodID                    = 40;
-    optional string AppGoodID                 = 50;
-    // AppGoodStockID or AppMiningGoodStockID
-    optional string AppGoodStockID            = 51;
-    optional string ParentOrderID             = 60;
+message PowerRentalOrderReq {
+    optional uint32 ID                        = 10;
+    optional string EntID                     = 20;
+    optional string AppID                     = 30;
+    optional string UserID                    = 40;
+    optional string GoodID                    = 50;
+    optional string AppGoodID                 = 60;
+    optional string ParentOrderID             = 61;
     optional string Units                     = 70;
     optional string GoodValue                 = 80;
     optional string GoodValueUSD              = 81;
@@ -104,7 +101,7 @@ message OrderReq {
     optional bool   Simulate                              = 440;
 }
 
-message Order {
+message PowerRentalOrder {
     // order
     // @inject_tag: sql:"id"
     uint32 ID                                        = 9;
@@ -180,7 +177,7 @@ message Order {
     // @inject_tag: sql:"payment_start_amount"
     string PaymentStartAmount                    = 290;
 
-    // Orderstate
+    // OrderState
     // @inject_tag: sql:"orderstate_id"
     string OrderStateID                          = 300;
     // @inject_tag: sql:"order_state"
@@ -284,109 +281,108 @@ message Conds {
     optional basetypes.v1.BoolVal        Simulate              = 330;
 }
 
-message CreateOrderRequest {
-    OrderReq Info = 10;
+message CreatePowerRentalOrderRequest {
+    PowerRentalOrderReq Info = 10;
 }
 
-message CreateOrderResponse {
-    Order Info = 10;
+message CreatePowerRentalOrderResponse {
+    PowerRentalOrder Info = 10;
 }
 
-message CreateOrdersRequest {
-    repeated OrderReq Infos = 10;
+message CreatePowerRentalOrdersRequest {
+    repeated PowerRentalOrderReq Infos = 10;
 }
 
-message CreateOrdersResponse {
-    repeated Order Infos = 10;
+message CreatePowerRentalOrdersResponse {
+    repeated PowerRentalOrder Infos = 10;
 }
 
-message UpdateOrderRequest {
-    OrderReq Info = 10;
+message UpdatePowerRentalOrderRequest {
+    PowerRentalOrderReq Info = 10;
 }
 
-message UpdateOrderResponse {
-    Order Info = 10;
+message UpdatePowerRentalOrderResponse {
+    PowerRentalOrder Info = 10;
 }
 
-message UpdateOrdersRequest {
-    repeated OrderReq Infos = 10;
+message UpdatePowerRentalOrdersRequest {
+    repeated PowerRentalOrderReq Infos = 10;
 }
 
-message UpdateOrdersResponse {
-    repeated Order Infos = 10;
+message UpdatePowerRentalOrdersResponse {
+    repeated PowerRentalOrder Infos = 10;
 }
 
-message GetOrderRequest {
+message GetPowerRentalOrderRequest {
     string EntID  = 10;
 }
 
-message GetOrderResponse {
-    Order Info = 10;
+message GetPowerRentalOrderResponse {
+    PowerRentalOrder Info = 10;
 }
 
-message GetOrdersRequest {
+message GetPowerRentalOrdersRequest {
     Conds Conds  = 10;
     int32 Offset = 30;
     int32 Limit  = 40;
 }
 
-message GetOrdersResponse {
-    repeated Order Infos = 10;
-    uint32         Total = 20;
+message GetPowerRentalOrdersResponse {
+    repeated PowerRentalOrder Infos = 10;
+    uint32 Total = 20;
 }
 
-message SumOrderUnitsRequest {
+message OrderSummary {
+    uint32 Count = 10;
+    string Units = 20;
+    string USDAmount = 30;
+    repeated PaymentAmount PaymentAmounts = 40;
+}
+
+message SumPowerRentalOrdersRequest {
     Conds Conds  = 10;
 }
 
-message SumOrderUnitsResponse {
-    string Info = 10;
+message SumPowerRentalOrdersResponse {
+    OrderSummary Info = 10;
 }
 
-message SumOrderPaymentAmountsRequest {
+message CountPowerRentalOrdersRequest {
     Conds Conds  = 10;
 }
 
-message SumOrderPaymentAmountsResponse {
-    string Info = 10;
-}
-
-message CountOrdersRequest {
-    Conds Conds  = 10;
-}
-
-message CountOrdersResponse {
+message CountPowerRentalOrdersResponse {
     uint32 Info = 10;
 }
 
-message ExistOrderRequest {
+message ExistPowerRentalOrderRequest {
     string EntID = 10;
 }
 
-message ExistOrderResponse {
+message ExistPowerRentalOrderResponse {
     bool Info = 10;
 }
 
-message ExistOrderCondsRequest {
+message ExistPowerRentalOrderCondsRequest {
     Conds Conds = 10;
 }
 
-message ExistOrderCondsResponse {
+message ExistPowerRentalOrderCondsResponse {
     bool Info = 10;
 }
 
-message DeleteOrderRequest {
-    OrderReq Info = 10;
+message DeletePowerRentalOrderRequest {
+    PowerRentalOrderReq Info = 10;
 }
 
-message DeleteOrderResponse {
-    Order Info = 10;
+message DeletePowerRentalOrderResponse {
+    PowerRentalOrder Info = 10;
 }
 
-message DeleteOrdersRequest {
-    repeated OrderReq Infos = 10;
+message DeletePowerRentalOrdersRequest {
+    repeated PowerRentalOrderReq Infos = 10;
 }
 
-message DeleteOrdersResponse {
-    repeated Order Infos = 10;
+message DeletePowerRentalOrdersResponse {
+    repeated PowerRentalOrder Infos = 10;
 }

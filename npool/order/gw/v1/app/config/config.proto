@@ -1,0 +1,162 @@
+syntax = "proto3";
+
+package order.gateway.app.config.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/order/gw/v1/app/config";
+
+import "google/api/annotations.proto";
+import "npool/order/mw/v1/app/config/config.proto";
+import "npool/basetypes/order/v1/enums.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateAppConfig (CreateAppConfigRequest) returns (CreateAppConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/appconfig"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppConfig (UpdateAppConfigRequest) returns (UpdateAppConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/appconfig"
+            body: "*"
+        };
+    }
+
+    rpc GetAppConfig (GetAppConfigRequest) returns (GetAppConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/appconfig"
+            body: "*"
+        };
+    }
+
+    rpc GetAppConfigs (GetAppConfigsRequest) returns (GetAppConfigsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/appconfigs"
+            body: "*"
+        };
+    }
+
+    // Admin apis
+    rpc CreateAppAppConfig (CreateAppAppConfigRequest) returns (CreateAppAppConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/app/app/config"
+            body: "*"
+        };
+    }
+
+    rpc UpdateAppAppConfig (UpdateAppAppConfigRequest) returns (UpdateAppAppConfigResponse) {
+      option (google.api.http) = {
+          post: "/v1/update/app/app/config"
+          body: "*"
+      };
+    }
+
+    rpc GetAppAppConfigs (GetAppAppConfigsRequest) returns (GetAppAppConfigsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/app/app/configs"
+            body: "*"
+        };
+    }
+
+    rpc DeleteAppAppConfig (DeleteAppAppConfigRequest) returns (DeleteAppAppConfigResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/app/app/config"
+            body: "*"
+        };
+    }
+}
+
+message CreateAppConfigRequest {
+    string                                 AppID                     = 10;
+    basetypes.order.v1.SimulateOrderCouponMode      SimulateOrderCouponMode            = 20;
+    optional string                        SimulateOrderCouponProbability     = 30;
+    optional string                        CashableProfitProbability = 40;
+    optional bool                          Enabled                   = 50;
+}
+
+message CreateAppConfigResponse {
+    order.middleware.app.config.v1.AppConfig Info = 10;
+}
+
+message UpdateAppConfigRequest {
+    uint32                                 ID                    = 10;
+    string                                 EntID                 = 20;
+    string                                 AppID                 = 30;
+    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode    = 40;
+    optional string                        SimulateOrderCouponProbability = 50;
+    optional string                        CashableProfitProbability = 60;
+    optional bool                          Enabled               = 70;
+}
+
+message UpdateAppConfigResponse {
+    order.middleware.app.config.v1.AppConfig Info = 10;
+}
+
+message GetAppConfigRequest {
+    string AppID = 10;
+    string EntID = 20;
+}
+
+message GetAppConfigResponse {
+    order.middleware.app.config.v1.AppConfig Info = 10;
+}
+
+message GetAppConfigsRequest {
+    string AppID  = 10;
+    int32  Offset = 20;
+    int32  Limit  = 30;
+}
+
+message GetAppConfigsResponse {
+    repeated order.middleware.app.config.v1.AppConfig Infos = 10;
+    uint32                  Total = 20;
+}
+
+message CreateAppAppConfigRequest {
+    string                            TargetAppID               = 10;
+    basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode            = 20;
+    optional string                   SimulateOrderCouponProbability     = 30;
+    optional string                   CashableProfitProbability = 40;
+    optional bool                     Enabled                   = 50;
+}
+
+message CreateAppAppConfigResponse {
+    order.middleware.app.config.v1.AppConfig Info = 10;
+}
+
+message UpdateAppAppConfigRequest {
+  uint32                                 ID                    = 10;
+  string                                 EntID                 = 20;
+  string                                 TargetAppID           = 30;
+  optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode    = 40;
+  optional string                        SimulateOrderCouponProbability = 50;
+  optional string                        CashableProfitProbability = 60;
+  optional bool                          Enabled               = 70;
+}
+
+message UpdateAppAppConfigResponse {
+    order.middleware.app.config.v1.AppConfig Info = 10;
+}
+
+message GetAppAppConfigsRequest {
+    string TargetAppID = 10;
+    int32  Offset      = 20;
+    int32  Limit       = 30;
+}
+
+message GetAppAppConfigsResponse {
+    repeated order.middleware.app.config.v1.AppConfig Infos = 10;
+    uint32                  Total = 20;
+}
+
+message DeleteAppAppConfigRequest {
+    uint32 ID          = 10;
+    string EntID       = 20;
+    string TargetAppID = 30;
+}
+
+message DeleteAppAppConfigResponse {
+    order.middleware.app.config.v1.AppConfig Info = 10;
+}

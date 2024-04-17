@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/order/gw/v1/simulate/config/config.proto",
+    "title": "npool/order/gw/v1/app/config/config.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,15 +16,15 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/app/simulate/config": {
+    "/v1/create/app/app/config": {
       "post": {
         "summary": "Admin apis",
-        "operationId": "Gateway_CreateAppSimulateConfig",
+        "operationId": "Gateway_CreateAppAppConfig",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAppSimulateConfigResponse"
+              "$ref": "#/definitions/v1CreateAppAppConfigResponse"
             }
           },
           "default": {
@@ -40,7 +40,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAppSimulateConfigRequest"
+              "$ref": "#/definitions/v1CreateAppAppConfigRequest"
             }
           }
         ],
@@ -49,14 +49,14 @@
         ]
       }
     },
-    "/v1/create/simulate/config": {
+    "/v1/create/appconfig": {
       "post": {
-        "operationId": "Gateway_CreateSimulateConfig",
+        "operationId": "Gateway_CreateAppConfig",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ordergatewaysimulateconfigv1CreateSimulateConfigResponse"
+              "$ref": "#/definitions/ordergatewayappconfigv1CreateAppConfigResponse"
             }
           },
           "default": {
@@ -72,7 +72,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ordergatewaysimulateconfigv1CreateSimulateConfigRequest"
+              "$ref": "#/definitions/ordergatewayappconfigv1CreateAppConfigRequest"
             }
           }
         ],
@@ -81,14 +81,14 @@
         ]
       }
     },
-    "/v1/delete/app/simulate/config": {
+    "/v1/delete/app/app/config": {
       "post": {
-        "operationId": "Gateway_DeleteAppSimulateConfig",
+        "operationId": "Gateway_DeleteAppAppConfig",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteAppSimulateConfigResponse"
+              "$ref": "#/definitions/v1DeleteAppAppConfigResponse"
             }
           },
           "default": {
@@ -104,7 +104,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteAppSimulateConfigRequest"
+              "$ref": "#/definitions/v1DeleteAppAppConfigRequest"
             }
           }
         ],
@@ -113,14 +113,14 @@
         ]
       }
     },
-    "/v1/get/app/simulate/configs": {
+    "/v1/get/app/app/configs": {
       "post": {
-        "operationId": "Gateway_GetAppSimulateConfigs",
+        "operationId": "Gateway_GetAppAppConfigs",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppSimulateConfigsResponse"
+              "$ref": "#/definitions/v1GetAppAppConfigsResponse"
             }
           },
           "default": {
@@ -136,7 +136,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppSimulateConfigsRequest"
+              "$ref": "#/definitions/v1GetAppAppConfigsRequest"
             }
           }
         ],
@@ -145,14 +145,14 @@
         ]
       }
     },
-    "/v1/get/simulate/config": {
+    "/v1/get/appconfig": {
       "post": {
-        "operationId": "Gateway_GetSimulateConfig",
+        "operationId": "Gateway_GetAppConfig",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ordergatewaysimulateconfigv1GetSimulateConfigResponse"
+              "$ref": "#/definitions/ordergatewayappconfigv1GetAppConfigResponse"
             }
           },
           "default": {
@@ -168,7 +168,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ordergatewaysimulateconfigv1GetSimulateConfigRequest"
+              "$ref": "#/definitions/ordergatewayappconfigv1GetAppConfigRequest"
             }
           }
         ],
@@ -177,14 +177,14 @@
         ]
       }
     },
-    "/v1/get/simulate/configs": {
+    "/v1/get/appconfigs": {
       "post": {
-        "operationId": "Gateway_GetSimulateConfigs",
+        "operationId": "Gateway_GetAppConfigs",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ordergatewaysimulateconfigv1GetSimulateConfigsResponse"
+              "$ref": "#/definitions/ordergatewayappconfigv1GetAppConfigsResponse"
             }
           },
           "default": {
@@ -200,7 +200,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ordergatewaysimulateconfigv1GetSimulateConfigsRequest"
+              "$ref": "#/definitions/ordergatewayappconfigv1GetAppConfigsRequest"
             }
           }
         ],
@@ -209,14 +209,14 @@
         ]
       }
     },
-    "/v1/update/app/simulate/config": {
+    "/v1/update/app/app/config": {
       "post": {
-        "operationId": "Gateway_UpdateAppSimulateConfig",
+        "operationId": "Gateway_UpdateAppAppConfig",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppSimulateConfigResponse"
+              "$ref": "#/definitions/v1UpdateAppAppConfigResponse"
             }
           },
           "default": {
@@ -232,7 +232,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateAppSimulateConfigRequest"
+              "$ref": "#/definitions/v1UpdateAppAppConfigRequest"
             }
           }
         ],
@@ -241,14 +241,14 @@
         ]
       }
     },
-    "/v1/update/simulate/config": {
+    "/v1/update/appconfig": {
       "post": {
-        "operationId": "Gateway_UpdateSimulateConfig",
+        "operationId": "Gateway_UpdateAppConfig",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ordergatewaysimulateconfigv1UpdateSimulateConfigResponse"
+              "$ref": "#/definitions/ordergatewayappconfigv1UpdateAppConfigResponse"
             }
           },
           "default": {
@@ -264,7 +264,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ordergatewaysimulateconfigv1UpdateSimulateConfigRequest"
+              "$ref": "#/definitions/ordergatewayappconfigv1UpdateAppConfigRequest"
             }
           }
         ],
@@ -275,16 +275,16 @@
     }
   },
   "definitions": {
-    "ordergatewaysimulateconfigv1CreateSimulateConfigRequest": {
+    "ordergatewayappconfigv1CreateAppConfigRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
-        "SendCouponMode": {
-          "$ref": "#/definitions/v1SendCouponMode"
+        "SimulateOrderCouponMode": {
+          "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
-        "SendCouponProbability": {
+        "SimulateOrderCouponProbability": {
           "type": "string"
         },
         "CashableProfitProbability": {
@@ -295,15 +295,15 @@
         }
       }
     },
-    "ordergatewaysimulateconfigv1CreateSimulateConfigResponse": {
+    "ordergatewayappconfigv1CreateAppConfigResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1SimulateConfig"
+          "$ref": "#/definitions/v1AppConfig"
         }
       }
     },
-    "ordergatewaysimulateconfigv1GetSimulateConfigRequest": {
+    "ordergatewayappconfigv1GetAppConfigRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -314,15 +314,15 @@
         }
       }
     },
-    "ordergatewaysimulateconfigv1GetSimulateConfigResponse": {
+    "ordergatewayappconfigv1GetAppConfigResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1SimulateConfig"
+          "$ref": "#/definitions/v1AppConfig"
         }
       }
     },
-    "ordergatewaysimulateconfigv1GetSimulateConfigsRequest": {
+    "ordergatewayappconfigv1GetAppConfigsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -338,13 +338,13 @@
         }
       }
     },
-    "ordergatewaysimulateconfigv1GetSimulateConfigsResponse": {
+    "ordergatewayappconfigv1GetAppConfigsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1SimulateConfig"
+            "$ref": "#/definitions/v1AppConfig"
           }
         },
         "Total": {
@@ -353,7 +353,7 @@
         }
       }
     },
-    "ordergatewaysimulateconfigv1UpdateSimulateConfigRequest": {
+    "ordergatewayappconfigv1UpdateAppConfigRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -366,10 +366,10 @@
         "AppID": {
           "type": "string"
         },
-        "SendCouponMode": {
-          "$ref": "#/definitions/v1SendCouponMode"
+        "SimulateOrderCouponMode": {
+          "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
-        "SendCouponProbability": {
+        "SimulateOrderCouponProbability": {
           "type": "string"
         },
         "CashableProfitProbability": {
@@ -380,11 +380,11 @@
         }
       }
     },
-    "ordergatewaysimulateconfigv1UpdateSimulateConfigResponse": {
+    "ordergatewayappconfigv1UpdateAppConfigResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1SimulateConfig"
+          "$ref": "#/definitions/v1AppConfig"
         }
       }
     },
@@ -415,100 +415,7 @@
         }
       }
     },
-    "v1CreateAppSimulateConfigRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "SendCouponMode": {
-          "$ref": "#/definitions/v1SendCouponMode"
-        },
-        "SendCouponProbability": {
-          "type": "string"
-        },
-        "CashableProfitProbability": {
-          "type": "string"
-        },
-        "Enabled": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1CreateAppSimulateConfigResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1SimulateConfig"
-        }
-      }
-    },
-    "v1DeleteAppSimulateConfigRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteAppSimulateConfigResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1SimulateConfig"
-        }
-      }
-    },
-    "v1GetAppSimulateConfigsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppSimulateConfigsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1SimulateConfig"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1SendCouponMode": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponMode",
-        "WithoutCoupon",
-        "FirstBenifit",
-        "RandomBenifit",
-        "FirstAndRandomBenifit"
-      ],
-      "default": "DefaultCouponMode"
-    },
-    "v1SimulateConfig": {
+    "v1AppConfig": {
       "type": "object",
       "properties": {
         "ID": {
@@ -529,7 +436,7 @@
           "title": "@inject_tag: sql:\"send_coupon_mode\""
         },
         "SendCouponMode": {
-          "$ref": "#/definitions/v1SendCouponMode"
+          "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
         "SendCouponProbability": {
           "type": "string",
@@ -555,7 +462,100 @@
         }
       }
     },
-    "v1UpdateAppSimulateConfigRequest": {
+    "v1CreateAppAppConfigRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "SimulateOrderCouponMode": {
+          "$ref": "#/definitions/v1SimulateOrderCouponMode"
+        },
+        "SimulateOrderCouponProbability": {
+          "type": "string"
+        },
+        "CashableProfitProbability": {
+          "type": "string"
+        },
+        "Enabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CreateAppAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
+        }
+      }
+    },
+    "v1DeleteAppAppConfigRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteAppAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
+        }
+      }
+    },
+    "v1GetAppAppConfigsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAppAppConfigsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1SimulateOrderCouponMode": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponMode",
+        "WithoutCoupon",
+        "FirstBenifit",
+        "RandomBenifit",
+        "FirstAndRandomBenifit"
+      ],
+      "default": "DefaultCouponMode"
+    },
+    "v1UpdateAppAppConfigRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -568,10 +568,10 @@
         "TargetAppID": {
           "type": "string"
         },
-        "SendCouponMode": {
-          "$ref": "#/definitions/v1SendCouponMode"
+        "SimulateOrderCouponMode": {
+          "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
-        "SendCouponProbability": {
+        "SimulateOrderCouponProbability": {
           "type": "string"
         },
         "CashableProfitProbability": {
@@ -582,11 +582,11 @@
         }
       }
     },
-    "v1UpdateAppSimulateConfigResponse": {
+    "v1UpdateAppAppConfigResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1SimulateConfig"
+          "$ref": "#/definitions/v1AppConfig"
         }
       }
     }

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/order/mw/v1/order/order.proto",
+    "title": "npool/order/mw/v1/powerrental/powerrental.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/order_DeleteOrder": {
+    "/v1/order_DeletePowerRentalOrder": {
       "post": {
-        "operationId": "Middleware_DeleteOrder",
+        "operationId": "Middleware_DeletePowerRentalOrder",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteOrderResponse"
+              "$ref": "#/definitions/v1DeletePowerRentalOrderResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteOrderRequest"
+              "$ref": "#/definitions/v1DeletePowerRentalOrderRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/order_UpdateOrder": {
+    "/v1/order_UpdatePowerRentalOrder": {
       "post": {
-        "operationId": "Middleware_UpdateOrder",
+        "operationId": "Middleware_UpdatePowerRentalOrder",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateOrderResponse"
+              "$ref": "#/definitions/v1UpdatePowerRentalOrderResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateOrderRequest"
+              "$ref": "#/definitions/v1UpdatePowerRentalOrderRequest"
             }
           }
         ],
@@ -243,7 +243,7 @@
         }
       }
     },
-    "v1CountOrdersResponse": {
+    "v1CountPowerRentalOrdersResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -252,53 +252,53 @@
         }
       }
     },
-    "v1CreateOrderResponse": {
+    "v1CreatePowerRentalOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/v1PowerRentalOrder"
         }
       }
     },
-    "v1CreateOrdersResponse": {
+    "v1CreatePowerRentalOrdersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Order"
+            "$ref": "#/definitions/v1PowerRentalOrder"
           }
         }
       }
     },
-    "v1DeleteOrderRequest": {
+    "v1DeletePowerRentalOrderRequest": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1OrderReq"
+          "$ref": "#/definitions/v1PowerRentalOrderReq"
         }
       }
     },
-    "v1DeleteOrderResponse": {
+    "v1DeletePowerRentalOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/v1PowerRentalOrder"
         }
       }
     },
-    "v1DeleteOrdersResponse": {
+    "v1DeletePowerRentalOrdersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Order"
+            "$ref": "#/definitions/v1PowerRentalOrder"
           }
         }
       }
     },
-    "v1ExistOrderCondsResponse": {
+    "v1ExistPowerRentalOrderCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -306,7 +306,7 @@
         }
       }
     },
-    "v1ExistOrderResponse": {
+    "v1ExistPowerRentalOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -314,21 +314,21 @@
         }
       }
     },
-    "v1GetOrderResponse": {
+    "v1GetPowerRentalOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/v1PowerRentalOrder"
         }
       }
     },
-    "v1GetOrdersResponse": {
+    "v1GetPowerRentalOrdersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Order"
+            "$ref": "#/definitions/v1PowerRentalOrder"
           }
         },
         "Total": {
@@ -346,7 +346,152 @@
       ],
       "default": "DefaultInvestmentType"
     },
-    "v1Order": {
+    "v1OrderCreateMethod": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderCreateMethod",
+        "OrderCreatedByPurchase",
+        "OrderCreatedByAdmin",
+        "OrderCreatedByRenew"
+      ],
+      "default": "DefaultOrderCreateMethod"
+    },
+    "v1OrderRenewState": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderRenewState",
+        "OrderRenewWait",
+        "OrderRenewCheck",
+        "OrderRenewNotify",
+        "OrderRenewExecute",
+        "OrderRenewFail"
+      ],
+      "default": "DefaultOrderRenewState"
+    },
+    "v1OrderStartMode": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderStartMode",
+        "OrderStartTBD",
+        "OrderStartConfirmed",
+        "OrderStartInstantly",
+        "OrderStartNextDay",
+        "OrderStartPreset"
+      ],
+      "default": "DefaultOrderStartMode"
+    },
+    "v1OrderState": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderState",
+        "OrderStateCreated",
+        "OrderStateWaitPayment",
+        "OrderStatePaymentTransferReceived",
+        "OrderStatePaymentTransferBookKeeping",
+        "OrderStatePaymentSpendBalance",
+        "OrderStateTransferGoodStockLocked",
+        "OrderStateAddCommission",
+        "OrderStateAchievementBookKeeping",
+        "OrderStatePaymentUnlockAccount",
+        "OrderStateUpdatePaidChilds",
+        "OrderStatePaid",
+        "OrderStateTransferGoodStockWaitStart",
+        "OrderStateUpdateInServiceChilds",
+        "OrderStateInService",
+        "OrderStatePaymentTimeout",
+        "OrderStatePreCancel",
+        "OrderStatePreExpired",
+        "OrderStateRestoreExpiredStock",
+        "OrderStateUpdateExpiredChilds",
+        "OrderStateRestoreCanceledStock",
+        "OrderStateDeductLockedCommission",
+        "OrderStateCancelAchievement",
+        "OrderStateReturnCanceledBalance",
+        "OrderStateCanceledTransferBookKeeping",
+        "OrderStateCancelUnlockPaymentAccount",
+        "OrderStateUpdateCanceledChilds",
+        "OrderStateCanceled",
+        "OrderStateExpired",
+        "OrderStateChildPaidByParent",
+        "OrderStateChildInServiceByParent",
+        "OrderStateChildExpiredByParent",
+        "OrderStateChildCanceledByParent"
+      ],
+      "default": "DefaultOrderState",
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state\n - OrderStateChildPaidByParent: Child paid"
+    },
+    "v1OrderSummary": {
+      "type": "object",
+      "properties": {
+        "Count": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Units": {
+          "type": "string"
+        },
+        "USDAmount": {
+          "type": "string"
+        },
+        "PaymentAmounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PaymentAmount"
+          }
+        }
+      }
+    },
+    "v1OrderType": {
+      "type": "string",
+      "enum": [
+        "DefaultOrderType",
+        "Normal",
+        "Offline",
+        "Airdrop"
+      ],
+      "default": "DefaultOrderType"
+    },
+    "v1PaymentAmount": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "USDCurrency": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PaymentState": {
+      "type": "string",
+      "enum": [
+        "DefaultPaymentState",
+        "PaymentStateWait",
+        "PaymentStateDone",
+        "PaymentStateCanceled",
+        "PaymentStateTimeout",
+        "PaymentStateNoPayment"
+      ],
+      "default": "DefaultPaymentState"
+    },
+    "v1PaymentType": {
+      "type": "string",
+      "enum": [
+        "DefaultPaymentType",
+        "PayWithBalanceOnly",
+        "PayWithTransferOnly",
+        "PayWithTransferAndBalance",
+        "PayWithParentOrder",
+        "PayWithContract",
+        "PayWithOffline",
+        "PayWithNoPayment"
+      ],
+      "default": "DefaultPaymentType"
+    },
+    "v1PowerRentalOrder": {
       "type": "object",
       "properties": {
         "ID": {
@@ -505,7 +650,7 @@
         },
         "OrderStateID": {
           "type": "string",
-          "title": "Orderstate\n@inject_tag: sql:\"orderstate_id\""
+          "title": "OrderState\n@inject_tag: sql:\"orderstate_id\""
         },
         "OrderStateStr": {
           "type": "string",
@@ -628,29 +773,7 @@
         }
       }
     },
-    "v1OrderCreateMethod": {
-      "type": "string",
-      "enum": [
-        "DefaultOrderCreateMethod",
-        "OrderCreatedByPurchase",
-        "OrderCreatedByAdmin",
-        "OrderCreatedByRenew"
-      ],
-      "default": "DefaultOrderCreateMethod"
-    },
-    "v1OrderRenewState": {
-      "type": "string",
-      "enum": [
-        "DefaultOrderRenewState",
-        "OrderRenewWait",
-        "OrderRenewCheck",
-        "OrderRenewNotify",
-        "OrderRenewExecute",
-        "OrderRenewFail"
-      ],
-      "default": "DefaultOrderRenewState"
-    },
-    "v1OrderReq": {
+    "v1PowerRentalOrderReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -671,10 +794,6 @@
         },
         "AppGoodID": {
           "type": "string"
-        },
-        "AppGoodStockID": {
-          "type": "string",
-          "title": "AppGoodStockID or AppMiningGoodStockID"
         },
         "ParentOrderID": {
           "type": "string"
@@ -826,108 +945,6 @@
         }
       }
     },
-    "v1OrderStartMode": {
-      "type": "string",
-      "enum": [
-        "DefaultOrderStartMode",
-        "OrderStartTBD",
-        "OrderStartConfirmed",
-        "OrderStartInstantly",
-        "OrderStartNextDay",
-        "OrderStartPreset"
-      ],
-      "default": "DefaultOrderStartMode"
-    },
-    "v1OrderState": {
-      "type": "string",
-      "enum": [
-        "DefaultOrderState",
-        "OrderStateCreated",
-        "OrderStateWaitPayment",
-        "OrderStatePaymentTransferReceived",
-        "OrderStatePaymentTransferBookKeeping",
-        "OrderStatePaymentSpendBalance",
-        "OrderStateTransferGoodStockLocked",
-        "OrderStateAddCommission",
-        "OrderStateAchievementBookKeeping",
-        "OrderStatePaymentUnlockAccount",
-        "OrderStateUpdatePaidChilds",
-        "OrderStatePaid",
-        "OrderStateTransferGoodStockWaitStart",
-        "OrderStateUpdateInServiceChilds",
-        "OrderStateInService",
-        "OrderStatePaymentTimeout",
-        "OrderStatePreCancel",
-        "OrderStatePreExpired",
-        "OrderStateRestoreExpiredStock",
-        "OrderStateUpdateExpiredChilds",
-        "OrderStateRestoreCanceledStock",
-        "OrderStateDeductLockedCommission",
-        "OrderStateCancelAchievement",
-        "OrderStateReturnCanceledBalance",
-        "OrderStateCanceledTransferBookKeeping",
-        "OrderStateCancelUnlockPaymentAccount",
-        "OrderStateUpdateCanceledChilds",
-        "OrderStateCanceled",
-        "OrderStateExpired",
-        "OrderStateChildPaidByParent",
-        "OrderStateChildInServiceByParent",
-        "OrderStateChildExpiredByParent",
-        "OrderStateChildCanceledByParent"
-      ],
-      "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state\n - OrderStateChildPaidByParent: Child paid"
-    },
-    "v1OrderType": {
-      "type": "string",
-      "enum": [
-        "DefaultOrderType",
-        "Normal",
-        "Offline",
-        "Airdrop"
-      ],
-      "default": "DefaultOrderType"
-    },
-    "v1PaymentAmount": {
-      "type": "object",
-      "properties": {
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "USDCurrency": {
-          "type": "string"
-        },
-        "Amount": {
-          "type": "string"
-        }
-      }
-    },
-    "v1PaymentState": {
-      "type": "string",
-      "enum": [
-        "DefaultPaymentState",
-        "PaymentStateWait",
-        "PaymentStateDone",
-        "PaymentStateCanceled",
-        "PaymentStateTimeout",
-        "PaymentStateNoPayment"
-      ],
-      "default": "DefaultPaymentState"
-    },
-    "v1PaymentType": {
-      "type": "string",
-      "enum": [
-        "DefaultPaymentType",
-        "PayWithBalanceOnly",
-        "PayWithTransferOnly",
-        "PayWithTransferAndBalance",
-        "PayWithParentOrder",
-        "PayWithContract",
-        "PayWithOffline",
-        "PayWithNoPayment"
-      ],
-      "default": "DefaultPaymentType"
-    },
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -953,19 +970,11 @@
         }
       }
     },
-    "v1SumOrderPaymentAmountsResponse": {
+    "v1SumPowerRentalOrdersResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "type": "string"
-        }
-      }
-    },
-    "v1SumOrderUnitsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "string"
+          "$ref": "#/definitions/v1OrderSummary"
         }
       }
     },
@@ -996,29 +1005,29 @@
         }
       }
     },
-    "v1UpdateOrderRequest": {
+    "v1UpdatePowerRentalOrderRequest": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1OrderReq"
+          "$ref": "#/definitions/v1PowerRentalOrderReq"
         }
       }
     },
-    "v1UpdateOrderResponse": {
+    "v1UpdatePowerRentalOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Order"
+          "$ref": "#/definitions/v1PowerRentalOrder"
         }
       }
     },
-    "v1UpdateOrdersResponse": {
+    "v1UpdatePowerRentalOrdersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Order"
+            "$ref": "#/definitions/v1PowerRentalOrder"
           }
         }
       }

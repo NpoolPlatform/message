@@ -194,6 +194,7 @@ enum PaymentType {
     PayWithTransferOnly       = 20;
     PayWithTransferAndBalance = 30;
     PayWithParentOrder        = 40;
+    PayWithContract           = 50;
 
     PayWithOffline            = 1000;
     PayWithNoPayment          = 1010;
@@ -234,7 +235,7 @@ enum OrderLockType {
 }
 
 
-enum SendCouponMode {
+enum SimulateOrderCouponMode {
     DefaultCouponMode = 0;
 
     WithoutCoupon         = 10;
