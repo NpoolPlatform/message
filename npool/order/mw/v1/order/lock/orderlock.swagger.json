@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/order/mw/v1/order/orderlock/orderlock.proto",
+    "title": "npool/order/mw/v1/order/lock/orderlock.proto",
     "version": "version not set"
   },
   "tags": [

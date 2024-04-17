@@ -5,88 +5,13 @@ package order.gateway.order1.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/order/gw/v1/order";
 
 import "google/api/annotations.proto";
-import "npool/basetypes/inspire/v1/enums.proto";
-import "npool/basetypes/order/v1/enums.proto";
-import "npool/basetypes/good/v1/enums.proto";
 import "npool/order/mw/v1/order/order.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/order"
-            body: "*"
-        };
-    }
-
-    rpc CreateOrders (CreateOrdersRequest) returns (CreateOrdersResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/orders"
-            body: "*"
-        };
-    }
-
-    rpc UpdateOrder (UpdateOrderRequest) returns (UpdateOrderResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/order"
-            body: "*"
-        };
-    }
-
-    rpc UpdateUserOrder (UpdateUserOrderRequest) returns (UpdateUserOrderResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/user/order"
-            body: "*"
-        };
-    }
-
-    rpc UpdateAppUserOrder (UpdateAppUserOrderRequest) returns (UpdateAppUserOrderResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/app/user/order"
-            body: "*"
-        };
-    }
-
-    rpc GetOrder (GetOrderRequest) returns (GetOrderResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/order"
-            body: "*"
-        };
-    }
-
     rpc GetOrders (GetOrdersRequest) returns (GetOrdersResponse) {
         option (google.api.http) = {
             post: "/v1/get/orders"
-            body: "*"
-        };
-    }
-
-    // Admin apis
-
-    rpc CreateUserOrder (CreateUserOrderRequest) returns (CreateUserOrderResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/user/order"
-            body: "*"
-        };
-    }
-
-    rpc CreateAppUserOrder (CreateAppUserOrderRequest) returns (CreateAppUserOrderResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/app/user/order"
-            body: "*"
-        };
-    }
-
-    rpc GetUserOrders (GetUserOrdersRequest) returns (GetUserOrdersResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/user/orders"
-            body: "*"
-        };
-    }
-
-    rpc GetAppUserOrders (GetAppUserOrdersRequest) returns (GetAppUserOrdersResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/app/user/orders"
             body: "*"
         };
     }
@@ -98,248 +23,45 @@ service Gateway {
         };
     }
 
-    rpc GetNAppOrders (GetNAppOrdersRequest) returns (GetNAppOrdersResponse) {
+    rpc AdminGetOrders (AdminGetOrdersRequest) returns (AdminGetOrdersResponse) {
         option (google.api.http) = {
-            post: "/v1/get/n/app/orders"
+            post: "/v1/admin/get/orders"
             body: "*"
         };
     }
 }
 
-message Coupon {
-  string CouponID = 10;
-  basetypes.inspire.v1.CouponType CouponType = 20;
-  string CouponName = 30;
-  string CouponValue = 40;
-}
-
-message Order {
-    uint32 ID                     = 9;
-    string EntID                  = 10;
-
-    string ParentOrderID          = 20;
-    string ParentOrderGoodID      = 30;
-    string ParentOrderGoodName    = 40;
-    string ParentOrderAppGoodID   = 41;
-
-    string AppID                  = 49;
-    string UserID                 = 50;
-    string EmailAddress           = 60;
-    string PhoneNO                = 70;
-
-    string CoinTypeID             = 80;
-    string CoinName               = 90;
-    string CoinLogo               = 100;
-    string CoinUnit               = 110;
-    bool   CoinPresale            = 111;
-
-    string GoodID                 = 120;
-    basetypes.good.v1.GoodType GoodType = 121;
-    string AppGoodID              = 122;
-    string AppGoodStockID         = 123;
-    basetypes.good.v1.GoodStockMode StockMode = 124;
-    string GoodName               = 130;
-    string GoodUnit               = 131;
-    string GoodUnitPrice          = 133;
-    string GoodValue              = 134;
-    string GoodValueUSD           = 135;
-    string Units                  = 140;
-    uint32 Duration               = 141;
-    basetypes.good.v1.GoodDurationType DurationType = 142;
-
-    string PaymentID              = 150;
-    string PaymentCoinTypeID      = 160;
-    string PaymentCoinName        = 170;
-    string PaymentCoinLogo        = 180;
-    string PaymentCoinUnit        = 190;
-    string PaymentCoinUSDCurrency = 200;
-    string PaymentLiveUSDCurrency = 210;
-    string PaymentLocalUSDCurrency = 220;
-    string PaymentAddress         = 230;
-    string PaymentAmount          = 240;
-    string PaymentStartAmount     = 241;
-    string PaymentFinishAmount    = 242;
-    string PayWithBalanceAmount   = 250;
-    string TransferAmount         = 260;
-    bool   PayWithParent          = 270;
-
-    basetypes.order.v1.OrderCreateMethod CreateMethod = 280;
-    bool   MultiPaymentCoins                          = 290;
-    repeated order.middleware.order1.v1.PaymentAmount PaymentAmounts = 300;
-
-    basetypes.order.v1.OrderState   OrderState  = 370;
-    basetypes.order.v1.OrderState   CancelState = 371;
-    basetypes.order.v1.OrderType    OrderType   = 380;
-    basetypes.order.v1.PaymentType  PaymentType = 390;
-    basetypes.order.v1.PaymentState PaymentState = 391;
-
-    uint32 StartAt                  = 400;
-    uint32 EndAt                    = 410;
-    basetypes.order.v1.InvestmentType InvestmentType = 420;
-    repeated Coupon Coupons       = 500;
-    uint32 LastBenefitAt          = 510;
-
-    bool   UserSetCanceled        = 520;
-    bool   AdminSetCanceled       = 530;
-    bool   Simulate               = 540;
-
-    uint32 PaidAt                 = 1000;
-    uint32 CreatedAt              = 1010;
-}
-
-message CreateOrderRequest {
-    string          AppID                = 10;
-    string          UserID               = 20;
-    string          AppGoodID            = 30;
-    optional string Units                = 40;
-    optional uint32 Duration             = 41;
-    string          PaymentCoinID        = 50;
-    optional string ParentOrderID        = 60;
-    optional string PayWithBalanceAmount = 70;
-    repeated string CouponIDs            = 90;
-    basetypes.order.v1.InvestmentType InvestmentType = 100;
-    optional bool   Simulate = 110;
-}
-
-message CreateOrderResponse { Order Info = 10; }
-
-message CreateOrdersRequest {
-  string AppID = 10;
-  string UserID = 20;
-  string PaymentCoinID = 30;
-  optional string PayWithBalanceAmount = 40;
-  repeated string CouponIDs = 60;
-  basetypes.order.v1.InvestmentType InvestmentType = 70;
-  message OrderReq {
-    string AppGoodID = 10;
-    optional string Units = 20;
-    optional uint32 Duration = 21;
-    bool Parent = 30;
-  }
-  repeated OrderReq Orders = 80;
-}
-
-message CreateOrdersResponse { repeated Order Infos = 10; }
-
-message UpdateOrderRequest {
-  string AppID = 10;
-  string UserID = 20;
-  uint32 ID = 30;
-  string EntID = 40;
-  optional bool Canceled = 50;
-}
-
-message UpdateOrderResponse { Order Info = 10; }
-
-message UpdateUserOrderRequest {
-  string AppID = 10;
-  string TargetUserID = 20;
-  uint32 ID = 30;
-  string EntID = 40;
-  optional bool Canceled = 50;
-}
-
-message UpdateUserOrderResponse { Order Info = 10; }
-
-message UpdateAppUserOrderRequest {
-  string TargetAppID = 10;
-  string TargetUserID = 20;
-  uint32 ID = 30;
-  string EntID = 40;
-  optional bool Canceled = 50;
-}
-
-message UpdateAppUserOrderResponse { Order Info = 10; }
-
-message GetOrderRequest {
-  string AppID = 10;
-  string UserID = 20;
-  string EntID = 30;
-}
-
-message GetOrderResponse { Order Info = 10; }
-
 message GetOrdersRequest {
-  string AppID = 10;
-  string UserID = 20;
-  int32 Offset = 30;
-  int32 Limit = 40;
+    string AppID = 10;
+    string UserID = 20;
+    int32 Offset = 30;
+    int32 Limit = 40;
 }
 
 message GetOrdersResponse {
-  repeated Order Infos = 10;
-  uint32 Total = 20;
-}
-
-message GetUserOrdersRequest {
-  string AppID = 10;
-  string TargetUserID = 20;
-  int32 Offset = 30;
-  int32 Limit = 40;
-}
-
-message GetUserOrdersResponse {
-  repeated Order Infos = 10;
-  uint32 Total = 20;
-}
-
-message CreateUserOrderRequest {
-  string AppID = 10;
-  string TargetUserID = 20;
-  string AppGoodID = 30;
-  optional string Units = 40;
-  optional uint32 Duration = 50;
-  optional string ParentOrderID = 60;
-  basetypes.order.v1.OrderType OrderType = 70;
-  basetypes.order.v1.InvestmentType InvestmentType = 80;
-}
-
-message CreateUserOrderResponse { Order Info = 10; }
-
-message CreateAppUserOrderRequest {
-  string TargetAppID = 10;
-  string TargetUserID = 20;
-  string AppGoodID = 30;
-  optional string Units = 40;
-  optional uint32 Duration = 50;
-  optional string ParentOrderID = 60;
-  basetypes.order.v1.OrderType OrderType = 70;
-  basetypes.order.v1.InvestmentType InvestmentType = 80;
-}
-
-message CreateAppUserOrderResponse { Order Info = 10; }
-
-message GetAppUserOrdersRequest {
-  string TargetAppID = 10;
-  string TargetUserID = 20;
-  int32 Offset = 30;
-  int32 Limit = 40;
-}
-
-message GetAppUserOrdersResponse {
-  repeated Order Infos = 10;
-  uint32 Total = 20;
+    repeated order.middleware.order1.v1.Order Infos = 10;
+    uint32 Total = 20;
 }
 
 message GetAppOrdersRequest {
-  string AppID = 10;
-  int32 Offset = 20;
-  int32 Limit = 30;
+    string AppID = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
 message GetAppOrdersResponse {
-  repeated Order Infos = 10;
-  uint32 Total = 20;
+    repeated order.middleware.order1.v1.Order Infos = 10;
+    uint32 Total = 20;
 }
 
-message GetNAppOrdersRequest {
-  string TargetAppID = 10;
-  int32 Offset = 20;
-  int32 Limit = 30;
+message AdminGetOrdersRequest {
+    string TargetAppID = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
-message GetNAppOrdersResponse {
-  repeated Order Infos = 10;
-  uint32 Total = 20;
+message AdminGetOrdersResponse {
+    repeated order.middleware.order1.v1.Order Infos = 10;
+    uint32 Total = 20;
 }
 
