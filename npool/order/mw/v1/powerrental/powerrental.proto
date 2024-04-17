@@ -162,6 +162,10 @@ message PowerRentalOrder {
     basetypes.order.v1.OrderRenewState RenewState = 440;
     // @inject_tag: sql:"renew_notify_at"
     uint32 RenewNotifyAt = 450;
+    // @inject_tag: sql:"app_good_stock_lock_id"
+    string AppGoodStockLockID = 460;
+    // @inject_tag: sql:"ledger_lock_id"
+    string LedgerLockID = 470;
 
     // Coupons
     repeated order.middleware.order1.coupon.v1.OrderCouponInfo Coupons = 600;
