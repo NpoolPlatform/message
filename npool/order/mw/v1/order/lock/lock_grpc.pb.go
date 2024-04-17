@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/order/mw/v1/order/orderlock/orderlock.proto
+// source: npool/order/mw/v1/order/lock/lock.proto
 
-package orderlock
+package lock
 
 import (
 	context "context"
@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetOrderLock_FullMethodName     = "/order.middleware.order1.orderlock.v1.Middleware/GetOrderLock"
-	Middleware_GetOrderLocks_FullMethodName    = "/order.middleware.order1.orderlock.v1.Middleware/GetOrderLocks"
-	Middleware_CreateOrderLocks_FullMethodName = "/order.middleware.order1.orderlock.v1.Middleware/CreateOrderLocks"
-	Middleware_DeleteOrderLocks_FullMethodName = "/order.middleware.order1.orderlock.v1.Middleware/DeleteOrderLocks"
+	Middleware_GetOrderLock_FullMethodName     = "/order.middleware.order1.lock.v1.Middleware/GetOrderLock"
+	Middleware_GetOrderLocks_FullMethodName    = "/order.middleware.order1.lock.v1.Middleware/GetOrderLocks"
+	Middleware_CreateOrderLocks_FullMethodName = "/order.middleware.order1.lock.v1.Middleware/CreateOrderLocks"
+	Middleware_DeleteOrderLocks_FullMethodName = "/order.middleware.order1.lock.v1.Middleware/DeleteOrderLocks"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -195,7 +195,7 @@ func _Middleware_DeleteOrderLocks_Handler(srv interface{}, ctx context.Context, 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "order.middleware.order1.orderlock.v1.Middleware",
+	ServiceName: "order.middleware.order1.lock.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -216,5 +216,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/order/mw/v1/order/orderlock/orderlock.proto",
+	Metadata: "npool/order/mw/v1/order/lock/lock.proto",
 }

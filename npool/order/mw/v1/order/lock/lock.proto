@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+package order.middleware.order1.lock.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/order/lock";
+
+import "npool/basetypes/order/v1/enums.proto";
+import "npool/basetypes/v1/conds.proto";
+
+
+// Service Name
+service Middleware {
+    rpc GetOrderLock (GetOrderLockRequest) returns (GetOrderLockResponse) {}
+    rpc GetOrderLocks (GetOrderLocksRequest) returns (GetOrderLocksResponse) {}
+    rpc CreateOrderLocks (CreateOrderLocksRequest) returns (CreateOrderLocksResponse) {}
+    rpc DeleteOrderLocks (DeleteOrderLocksRequest) returns (DeleteOrderLocksResponse) {}
+}
+
+message OrderLockReq {
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string AppID = 30;
+    optional string UserID = 40;
+    optional string OrderID = 50;
+    optional basetypes.order.v1.OrderLockType LockType = 60;
+}
+
+message OrderLock {
+    // @inject_tag: sql:"id"
+    uint32 ID = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID = 20;
+    // @inject_tag: sql:"app_id"
+    string AppID = 30;
+    // @inject_tag: sql:"user_id"
+    string UserID = 40;
+    // @inject_tag: sql:"order_id"
+    string OrderID = 50;
+    // @inject_tag: sql:"lock_type"
+    string LockTypeStr = 60;
+    basetypes.order.v1.OrderLockType LockType = 70;
+
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 1010;
+}
+
+message Conds {
+    // order
+    basetypes.v1.Uint32Val ID = 10;
+    basetypes.v1.Uint32SliceVal IDs = 20;
+    basetypes.v1.StringVal EntID = 30;
+    basetypes.v1.StringSliceVal EntIDs = 40;
+    basetypes.v1.StringVal AppID = 50;
+    basetypes.v1.StringVal UserID = 60;
+    basetypes.v1.StringVal OrderID = 70;
+    basetypes.v1.StringSliceVal OrderIDs = 80;
+    basetypes.v1.Uint32Val LockType = 90;
+}
+
+message GetOrderLockRequest {
+    string EntID = 10;
+}
+
+message GetOrderLockResponse {
+    OrderLock Info = 10;
+}
+
+message GetOrderLocksRequest {
+    Conds Conds = 10;
+    int32 Offset = 30;
+    int32 Limit = 40;
+}
+
+message GetOrderLocksResponse {
+    repeated OrderLock Infos = 10;
+    uint32 Total = 20;
+}
+
+message CreateOrderLocksRequest {
+    repeated OrderLockReq Infos = 10;
+}
+
+message CreateOrderLocksResponse {
+    repeated OrderLock Infos = 10;
+}
+
+message DeleteOrderLocksRequest {
+    repeated OrderLockReq Infos = 10;
+}
+
+message DeleteOrderLocksResponse {
+    repeated OrderLock Infos = 10;
+}
