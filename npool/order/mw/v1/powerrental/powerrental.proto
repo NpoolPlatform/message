@@ -37,43 +37,43 @@ message PowerRentalOrderReq {
     optional string GoodValueUSD = 90;
     optional string PaymentAmountUSD = 100;
     optional string DiscountAmountUSD = 110;
-    optional string PromotionID = 110;
-    optional uint32 Duration = 120;
-    optional basetypes.order.v1.OrderType OrderType = 130;
-    optional basetypes.order.v1.InvestmentType InvestmentType = 140;
-    optional basetypes.order.v1.PaymentType PaymentType = 150;
-    optional string CoinTypeID = 160;
+    optional string PromotionID = 120;
+    optional uint32 Duration = 130;
+    optional basetypes.order.v1.OrderType OrderType = 140;
+    optional basetypes.order.v1.InvestmentType InvestmentType = 150;
+    optional basetypes.order.v1.PaymentType PaymentType = 160;
+    optional string CoinTypeID = 170;
 
     // Support multiple payment coins from user balances
-    optional basetypes.order.v1.OrderCreateMethod CreateMethod = 170;
+    optional basetypes.order.v1.OrderCreateMethod CreateMethod = 180;
 
     // Create or Update
     // orderstate
-    optional basetypes.order.v1.OrderState OrderState = 180;
-    optional basetypes.order.v1.OrderStartMode StartMode = 190;
-    optional uint32 StartAt = 200;
-    optional uint32 EndAt = 210;
-    optional uint32 LastBenefitAt = 220;
-    optional basetypes.order.v1.BenefitState BenefitState = 230;
-    optional bool UserSetPaid = 240;
-    optional bool UserSetCanceled = 250;
-    optional bool AdminSetCanceled = 260;
-    optional basetypes.order.v1.PaymentState PaymentState = 270;
-    optional uint32 OutOfGasHours = 280;
-    optional uint32 CompensateHours = 290;
-    optional bool Rollback = 300;
-    optional string AppGoodStockLockID = 310;
-    optional string LedgerLockID = 320;
-    optional basetypes.order.v1.OrderRenewState RenewState = 330;
-    optional uint32 RenewNotifyAt = 340;
-    optional bool Simulate = 350;
+    optional basetypes.order.v1.OrderState OrderState = 190;
+    optional basetypes.order.v1.OrderStartMode StartMode = 200;
+    optional uint32 StartAt = 210;
+    optional uint32 EndAt = 220;
+    optional uint32 LastBenefitAt = 230;
+    optional basetypes.order.v1.BenefitState BenefitState = 240;
+    optional bool UserSetPaid = 250;
+    optional bool UserSetCanceled = 260;
+    optional bool AdminSetCanceled = 270;
+    optional basetypes.order.v1.PaymentState PaymentState = 280;
+    optional uint32 OutOfGasHours = 290;
+    optional uint32 CompensateHours = 300;
+    optional bool Rollback = 310;
+    optional string AppGoodStockLockID = 320;
+    optional string LedgerLockID = 330;
+    optional basetypes.order.v1.OrderRenewState RenewState = 340;
+    optional uint32 RenewNotifyAt = 350;
+    optional bool Simulate = 360;
 
     // Coupons
-    repeated string CouponIDs = 360;
+    repeated string CouponIDs = 370;
     // Payment balances
-    repeated order.middleware.payment.v1.PaymentBalanceReq PaymentBalances = 370;
+    repeated order.middleware.payment.v1.PaymentBalanceReq PaymentBalances = 380;
     // Payment transfers
-    repeated order.middleware.payment.v1.PaymentTransferReq PaymentTransfers = 380;
+    repeated order.middleware.payment.v1.PaymentTransferReq PaymentTransfers = 390;
 }
 
 message PowerRentalOrder {
@@ -166,9 +166,9 @@ message PowerRentalOrder {
     // Coupons
     repeated order.middleware.order1.coupon.v1.OrderCouponInfo Coupons = 600;
     // Payment balances
-    repeated order.middleware.payment.v1.PaymentBalance PaymentBalances = 610;
+    repeated order.middleware.payment.v1.PaymentBalanceInfo PaymentBalances = 610;
     // Payment transfers
-    repeated order.middleware.payment.v1.PaymentTransfer PaymentTransfers = 620;
+    repeated order.middleware.payment.v1.PaymentTransferInfo PaymentTransfers = 620;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
@@ -208,31 +208,103 @@ message Conds {
 
     // power rental state
     optional basetypes.v1.Uint32Val RenewState = 250;
-    optional basetypes.v1.Uint32Val RenewNotifyAt = 250;
-    optional basetypes.v1.Uint32Val PaymentState = 260;
+    optional basetypes.v1.Uint32Val RenewNotifyAt = 260;
+    optional basetypes.v1.Uint32Val PaymentState = 270;
 
     // coupon
-    optional basetypes.v1.StringVal CouponID = 270;
-    optional basetypes.v1.StringStringVal CouponIDs = 280;
+    optional basetypes.v1.StringVal CouponID = 280;
+    optional basetypes.v1.StringSliceVal CouponIDs = 290;
 
     // transaction id
-    optional basetypes.v1.StringVal TransactionID = 290;
-    optional basetypes.v1.StringStringVal TransactionIDs = 300;
+    optional basetypes.v1.StringVal TransactionID = 300;
+    optional basetypes.v1.StringSliceVal TransactionIDs = 310;
 
     // other
-    optional basetypes.v1.Uint32Val CreatedAt = 310;
-    optional basetypes.v1.Uint32Val UpdatedAt = 320;
-    optional basetypes.v1.Uint32Val PaidAt = 330;
+    optional basetypes.v1.Uint32Val CreatedAt = 320;
+    optional basetypes.v1.Uint32Val UpdatedAt = 330;
+    optional basetypes.v1.Uint32Val PaidAt = 340;
 }
 
-message GetOrdersRequest {
+message CreatePowerRentalOrderRequest {
+    PowerRentalOrderReq Info = 10;
+}
+
+message CreatePowerRentalOrderResponse {
+    PowerRentalOrder Info = 10;
+}
+
+message CreatePowerRentalOrdersRequest {
+    repeated PowerRentalOrderReq Infos = 10;
+}
+
+message CreatePowerRentalOrdersResponse {
+    repeated PowerRentalOrder Infos = 10;
+}
+
+message UpdatePowerRentalOrderRequest {
+    PowerRentalOrderReq Info = 10;
+}
+
+message UpdatePowerRentalOrderResponse {
+    PowerRentalOrder Info = 10;
+}
+
+message UpdatePowerRentalOrdersRequest {
+    repeated PowerRentalOrderReq Infos = 10;
+}
+
+message UpdatePowerRentalOrdersResponse {
+    repeated PowerRentalOrder Infos = 10;
+}
+
+message GetPowerRentalOrderRequest {
+    string OrderID = 10;
+}
+
+message GetPowerRentalOrderResponse {
+    PowerRentalOrder Info = 10;
+}
+
+message GetPowerRentalOrdersRequest {
     Conds Conds = 10;
-    int32 Offset = 30;
-    int32 Limit = 40;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
-message GetOrdersResponse {
-    repeated Order Infos = 10;
+message GetPowerRentalOrdersResponse {
+    repeated PowerRentalOrder Infos = 10;
     uint32 Total = 20;
+}
+
+message ExistPowerRentalOrderRequest {
+    string OrderID = 10;
+}
+
+message ExistPowerRentalOrderResponse {
+    bool Info = 10;
+}
+
+message ExistPowerRentalOrderCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistPowerRentalOrderCondsResponse {
+    bool Info = 10;
+}
+
+message DeletePowerRentalOrderRequest {
+    PowerRentalOrderReq Info = 10;
+}
+
+message DeletePowerRentalOrderResponse {
+    PowerRentalOrder Info = 10;
+}
+
+message DeletePowerRentalOrdersRequest {
+    repeated PowerRentalOrderReq Infos = 10;
+}
+
+message DeletePowerRentalOrdersResponse {
+    repeated PowerRentalOrder Infos = 10;
 }
 
