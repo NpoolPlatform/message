@@ -9,28 +9,28 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateOutOfGas     (CreateOutOfGasRequest)     returns (CreateOutOfGasResponse)     {
+    rpc CreateOutOfGas (CreateOutOfGasRequest) returns (CreateOutOfGasResponse) {
         option (google.api.http) = {
             post: "/v1/outofgas_CreateOutOfGas"
             body: "*"
         };
     }
-    rpc UpdateOutOfGas     (UpdateOutOfGasRequest)     returns (UpdateOutOfGasResponse)     {
+    rpc UpdateOutOfGas (UpdateOutOfGasRequest) returns (UpdateOutOfGasResponse) {
         option (google.api.http) = {
             post: "/v1/outofgas_UpdateOutOfGas"
             body: "*"
         };
     }
-    rpc GetOutOfGas        (GetOutOfGasRequest)        returns (GetOutOfGasResponse)        {
+    rpc GetOutOfGas (GetOutOfGasRequest) returns (GetOutOfGasResponse) {
         option (google.api.http) = {
             post: "/v1/outofgas_GetOutOfGas"
             body: "*"
         };
     }
-    rpc GetOutOfGases      (GetOutOfGasesRequest)      returns (GetOutOfGasesResponse)      {}
-    rpc ExistOutOfGas      (ExistOutOfGasRequest)      returns (ExistOutOfGasResponse)      {}
+    rpc GetOutOfGases (GetOutOfGasesRequest) returns (GetOutOfGasesResponse) {}
+    rpc ExistOutOfGas (ExistOutOfGasRequest) returns (ExistOutOfGasResponse) {}
     rpc ExistOutOfGasConds (ExistOutOfGasCondsRequest) returns (ExistOutOfGasCondsResponse) {}
-    rpc DeleteOutOfGas     (DeleteOutOfGasRequest)     returns (DeleteOutOfGasResponse)     {
+    rpc DeleteOutOfGas (DeleteOutOfGasRequest) returns (DeleteOutOfGasResponse) {
         option (google.api.http) = {
             post: "/v1/outofgas_DeleteOutOfGas"
             body: "*"
@@ -39,37 +39,49 @@ service Middleware {
 }
 
 message OutOfGasReq {
-    optional uint32     ID        = 9;
-    optional string     EntID     = 10;
-    optional string     OrderID   = 20;
-    optional uint32     StartAt   = 30;
-    optional uint32     EndAt     = 40;
-    optional uint32     CreatedAt = 50;
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string OrderID = 30;
+    optional uint32 StartAt = 40;
+    optional uint32 EndAt = 50;
+    optional uint32 CreatedAt = 60;
 }
 
 message OutOfGas {
     // @inject_tag: sql:"id"
-    uint32     ID        = 9;
+    uint32 ID = 10;
     // @inject_tag: sql:"ent_id"
-    string     EntID     = 10;
+    string EntID = 20;
+    // @inject_tag: sql:"app_id"
+    string AppID = 30;
+    // @inject_tag: sql:"user_id"
+    string UserID = 40;
+    // @inject_tag: sql:"good_id"
+    string GoodID = 50;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID = 60;
     // @inject_tag: sql:"order_id"
-    string     OrderID   = 20;
+    string OrderID = 70;
     // @inject_tag: sql:"start_at"
-    uint32     StartAt   = 30;
+    uint32 StartAt = 80;
     // @inject_tag: sql:"end_at"
-    uint32     EndAt     = 40;
+    uint32 EndAt = 90;
     // @inject_tag: sql:"created_at"
-    uint32     CreatedAt = 50;
+    uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32     UpdatedAt = 60;
+    uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    basetypes.v1.Uint32Val ID      = 9;
-    basetypes.v1.StringVal EntID   = 10;
-    basetypes.v1.StringVal OrderID = 20;
-    basetypes.v1.Uint32Val StartAt = 30;
-    basetypes.v1.Uint32Val EndAt   = 40;
+    basetypes.v1.Uint32Val ID      = 10;
+    basetypes.v1.StringVal EntID   = 20;
+    basetypes.v1.StringVal AppID = 30;
+    basetypes.v1.StringVal UserID = 40;
+    basetypes.v1.StringVal GoodID = 50;
+    basetypes.v1.StringVal AppGoodID = 60;
+    basetypes.v1.StringVal OrderID = 70;
+    basetypes.v1.Uint32Val StartAt = 80;
+    basetypes.v1.Uint32Val EndAt = 90;
 }
 
 message CreateOutOfGasRequest {
@@ -97,14 +109,14 @@ message GetOutOfGasResponse {
 }
 
 message GetOutOfGasesRequest {
-    Conds Conds   = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
 message GetOutOfGasesResponse {
     repeated OutOfGas Infos = 10;
-    uint32            Total = 20;
+    uint32 Total = 20;
 }
 
 message ExistOutOfGasRequest {
