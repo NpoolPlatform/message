@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package order.middleware.payment.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/payment";
+
+message PaymentBalanceReq {
+    optional string CoinTypeID = 10;
+    optional string Amount = 20;
+    optional string CoinUSDCurrency = 30;
+    optional string LocalCoinUSDCurrency = 40;
+    optional string LiveCoinUSDCurrency = 50;
+}
+
+message PaymentBalanceInfo {
+    // @inject_tag: sql:"order_id"
+    string OrderID = 10;
+    // @inject_tag: sql:"coin_type_id"
+    string CoinTypeID = 20;
+    // @inject_tag: sql:"amount"
+    string Amount = 30;
+    // @inject_tag: sql:"coin_usd_currency"
+    string CoinUSDCurrency = 40;
+    // @inject_tag: sql:"local_coin_usd_currency"
+    string LocalCoinUSDCurrency = 50;
+    // @inject_tag: sql:"live_coin_usd_currency"
+    string LiveCoinUSDCurrency = 60;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 70;
+}
+
+message PaymentContractReq {
+    optional string CoinTypeID = 10;
+    optional string Amount = 20;
+}
+
+message PaymentContractInfo {
+    // @inject_tag: sql:"order_id"
+    string OrderID = 10;
+    // @inject_tag: sql:"coin_type_id"
+    string CoinTypeID = 20;
+    // @inject_tag: sql:"amount"
+    string Amount = 30;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 40;
+}
+
+message PaymentTransferReq {
+    optional string CoinTypeID = 10;
+    optional string Amount = 20;
+    optional string AccountID = 30;
+    optional string StartAmount = 40;
+    optional string CoinUSDCurrency = 50;
+    optional string LocalCoinUSDCurrency = 60;
+    optional string LiveCoinUSDCurrency = 70;
+    optional string FinishAmount = 80;
+}
+
+message PaymentBalanceInfo {
+    // @inject_tag: sql:"order_id"
+    string OrderID = 10;
+    // @inject_tag: sql:"coin_type_id"
+    string CoinTypeID = 20;
+    // @inject_tag: sql:"amount"
+    string Amount = 30;
+    // @inject_tag: sql:"account_id"
+    string AccountID = 40;
+    // @inject_tag: sql:"start_amount"
+    string StartAmount = 50;
+    // @inject_tag: sql:"coin_usd_currency"
+    string CoinUSDCurrency = 60;
+    // @inject_tag: sql:"local_coin_usd_currency"
+    string LocalCoinUSDCurrency = 70;
+    // @inject_tag: sql:"live_coin_usd_currency"
+    string LiveCoinUSDCurrency = 80;
+    // @inject_tag: sql:"finish_amount"
+    string FinishAmount = 90;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 100;
+}
