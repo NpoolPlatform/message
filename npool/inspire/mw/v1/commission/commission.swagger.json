@@ -425,6 +425,14 @@
         }
       }
     },
+    "v1ExistCommissionCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetCommissionRequest": {
       "type": "object",
       "properties": {

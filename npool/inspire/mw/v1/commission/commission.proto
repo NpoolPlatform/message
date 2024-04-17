@@ -43,6 +43,7 @@ service Middleware {
       body : "*"
     };
   }
+  rpc ExistCommissionConds(ExistCommissionCondsRequest) returns (ExistCommissionCondsResponse) {}
 }
 
 message CommissionReq {
@@ -158,3 +159,7 @@ message CloneCommissionsRequest {
 }
 
 message CloneCommissionsResponse {}
+
+message ExistCommissionCondsRequest { Conds Conds = 10; }
+
+message ExistCommissionCondsResponse { bool Info = 10; }
