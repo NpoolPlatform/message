@@ -25,8 +25,6 @@ const (
 	Middleware_UpdatePowerRentalOrders_FullMethodName    = "/order.middleware.powerrental.v1.Middleware/UpdatePowerRentalOrders"
 	Middleware_GetPowerRentalOrder_FullMethodName        = "/order.middleware.powerrental.v1.Middleware/GetPowerRentalOrder"
 	Middleware_GetPowerRentalOrders_FullMethodName       = "/order.middleware.powerrental.v1.Middleware/GetPowerRentalOrders"
-	Middleware_SumPowerRentalOrders_FullMethodName       = "/order.middleware.powerrental.v1.Middleware/SumPowerRentalOrders"
-	Middleware_CountPowerRentalOrders_FullMethodName     = "/order.middleware.powerrental.v1.Middleware/CountPowerRentalOrders"
 	Middleware_ExistPowerRentalOrder_FullMethodName      = "/order.middleware.powerrental.v1.Middleware/ExistPowerRentalOrder"
 	Middleware_ExistPowerRentalOrderConds_FullMethodName = "/order.middleware.powerrental.v1.Middleware/ExistPowerRentalOrderConds"
 	Middleware_DeletePowerRentalOrder_FullMethodName     = "/order.middleware.powerrental.v1.Middleware/DeletePowerRentalOrder"
@@ -43,8 +41,6 @@ type MiddlewareClient interface {
 	UpdatePowerRentalOrders(ctx context.Context, in *UpdatePowerRentalOrdersRequest, opts ...grpc.CallOption) (*UpdatePowerRentalOrdersResponse, error)
 	GetPowerRentalOrder(ctx context.Context, in *GetPowerRentalOrderRequest, opts ...grpc.CallOption) (*GetPowerRentalOrderResponse, error)
 	GetPowerRentalOrders(ctx context.Context, in *GetPowerRentalOrdersRequest, opts ...grpc.CallOption) (*GetPowerRentalOrdersResponse, error)
-	SumPowerRentalOrders(ctx context.Context, in *SumPowerRentalOrdersRequest, opts ...grpc.CallOption) (*SumPowerRentalOrdersResponse, error)
-	CountPowerRentalOrders(ctx context.Context, in *CountPowerRentalOrdersRequest, opts ...grpc.CallOption) (*CountPowerRentalOrdersResponse, error)
 	ExistPowerRentalOrder(ctx context.Context, in *ExistPowerRentalOrderRequest, opts ...grpc.CallOption) (*ExistPowerRentalOrderResponse, error)
 	ExistPowerRentalOrderConds(ctx context.Context, in *ExistPowerRentalOrderCondsRequest, opts ...grpc.CallOption) (*ExistPowerRentalOrderCondsResponse, error)
 	DeletePowerRentalOrder(ctx context.Context, in *DeletePowerRentalOrderRequest, opts ...grpc.CallOption) (*DeletePowerRentalOrderResponse, error)
@@ -113,24 +109,6 @@ func (c *middlewareClient) GetPowerRentalOrders(ctx context.Context, in *GetPowe
 	return out, nil
 }
 
-func (c *middlewareClient) SumPowerRentalOrders(ctx context.Context, in *SumPowerRentalOrdersRequest, opts ...grpc.CallOption) (*SumPowerRentalOrdersResponse, error) {
-	out := new(SumPowerRentalOrdersResponse)
-	err := c.cc.Invoke(ctx, Middleware_SumPowerRentalOrders_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) CountPowerRentalOrders(ctx context.Context, in *CountPowerRentalOrdersRequest, opts ...grpc.CallOption) (*CountPowerRentalOrdersResponse, error) {
-	out := new(CountPowerRentalOrdersResponse)
-	err := c.cc.Invoke(ctx, Middleware_CountPowerRentalOrders_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) ExistPowerRentalOrder(ctx context.Context, in *ExistPowerRentalOrderRequest, opts ...grpc.CallOption) (*ExistPowerRentalOrderResponse, error) {
 	out := new(ExistPowerRentalOrderResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistPowerRentalOrder_FullMethodName, in, out, opts...)
@@ -177,8 +155,6 @@ type MiddlewareServer interface {
 	UpdatePowerRentalOrders(context.Context, *UpdatePowerRentalOrdersRequest) (*UpdatePowerRentalOrdersResponse, error)
 	GetPowerRentalOrder(context.Context, *GetPowerRentalOrderRequest) (*GetPowerRentalOrderResponse, error)
 	GetPowerRentalOrders(context.Context, *GetPowerRentalOrdersRequest) (*GetPowerRentalOrdersResponse, error)
-	SumPowerRentalOrders(context.Context, *SumPowerRentalOrdersRequest) (*SumPowerRentalOrdersResponse, error)
-	CountPowerRentalOrders(context.Context, *CountPowerRentalOrdersRequest) (*CountPowerRentalOrdersResponse, error)
 	ExistPowerRentalOrder(context.Context, *ExistPowerRentalOrderRequest) (*ExistPowerRentalOrderResponse, error)
 	ExistPowerRentalOrderConds(context.Context, *ExistPowerRentalOrderCondsRequest) (*ExistPowerRentalOrderCondsResponse, error)
 	DeletePowerRentalOrder(context.Context, *DeletePowerRentalOrderRequest) (*DeletePowerRentalOrderResponse, error)
@@ -207,12 +183,6 @@ func (UnimplementedMiddlewareServer) GetPowerRentalOrder(context.Context, *GetPo
 }
 func (UnimplementedMiddlewareServer) GetPowerRentalOrders(context.Context, *GetPowerRentalOrdersRequest) (*GetPowerRentalOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPowerRentalOrders not implemented")
-}
-func (UnimplementedMiddlewareServer) SumPowerRentalOrders(context.Context, *SumPowerRentalOrdersRequest) (*SumPowerRentalOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SumPowerRentalOrders not implemented")
-}
-func (UnimplementedMiddlewareServer) CountPowerRentalOrders(context.Context, *CountPowerRentalOrdersRequest) (*CountPowerRentalOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountPowerRentalOrders not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistPowerRentalOrder(context.Context, *ExistPowerRentalOrderRequest) (*ExistPowerRentalOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistPowerRentalOrder not implemented")
@@ -347,42 +317,6 @@ func _Middleware_GetPowerRentalOrders_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_SumPowerRentalOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SumPowerRentalOrdersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).SumPowerRentalOrders(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_SumPowerRentalOrders_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).SumPowerRentalOrders(ctx, req.(*SumPowerRentalOrdersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_CountPowerRentalOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountPowerRentalOrdersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CountPowerRentalOrders(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CountPowerRentalOrders_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CountPowerRentalOrders(ctx, req.(*CountPowerRentalOrdersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_ExistPowerRentalOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistPowerRentalOrderRequest)
 	if err := dec(in); err != nil {
@@ -485,14 +419,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetPowerRentalOrders",
 			Handler:    _Middleware_GetPowerRentalOrders_Handler,
-		},
-		{
-			MethodName: "SumPowerRentalOrders",
-			Handler:    _Middleware_SumPowerRentalOrders_Handler,
-		},
-		{
-			MethodName: "CountPowerRentalOrders",
-			Handler:    _Middleware_CountPowerRentalOrders_Handler,
 		},
 		{
 			MethodName: "ExistPowerRentalOrder",

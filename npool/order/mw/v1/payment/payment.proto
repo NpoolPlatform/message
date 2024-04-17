@@ -56,7 +56,7 @@ message PaymentTransferReq {
     optional string FinishAmount = 80;
 }
 
-message PaymentBalanceInfo {
+message PaymentTransferInfo {
     // @inject_tag: sql:"order_id"
     string OrderID = 10;
     // @inject_tag: sql:"coin_type_id"
