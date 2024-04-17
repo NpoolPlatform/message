@@ -60,24 +60,29 @@
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
         },
-        "SendCouponModeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"send_coupon_mode\""
+        "EnableSimulateOrder": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enable_simulate_order\""
         },
-        "SendCouponMode": {
+        "SimulateOrderCouponModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"simulate_order_coupon_mode\""
+        },
+        "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
-        "SendCouponProbability": {
+        "SimulateOrderCouponProbability": {
           "type": "string",
-          "title": "@inject_tag: sql:\"send_coupon_probability\""
+          "title": "@inject_tag: sql:\"simulate_order_coupon_probability\""
         },
-        "CashableProfitProbability": {
+        "SimulateOrderCashableProfitProbability": {
           "type": "string",
-          "title": "@inject_tag: sql:\"cashable_profit_probability\""
+          "title": "@inject_tag: sql:\"simulate_order_cashable_profit_probability\""
         },
-        "Enabled": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"enabled\""
+        "MaxUnpaidOrders": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"max_unpaid_orders\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -104,28 +109,17 @@
         "AppID": {
           "type": "string"
         },
-        "SendCouponMode": {
+        "EnableSimulateOrder": {
+          "type": "boolean"
+        },
+        "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
-        "SendCouponProbability": {
+        "SimulateOrderCouponProbability": {
           "type": "string"
         },
-        "CashableProfitProbability": {
+        "SimulateOrderCashableProfitProbability": {
           "type": "string"
-        },
-        "Enabled": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
         }
       }
     },
@@ -140,12 +134,6 @@
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "SendCouponMode": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "Enabled": {
-          "$ref": "#/definitions/v1BoolVal"
         }
       }
     },

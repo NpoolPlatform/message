@@ -9,41 +9,43 @@ import "npool/basetypes/order/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateAppConfig     (CreateAppConfigRequest)     returns (CreateAppConfigResponse)     {}
-    rpc UpdateAppConfig     (UpdateAppConfigRequest)     returns (UpdateAppConfigResponse)     {}
-    rpc GetAppConfig        (GetAppConfigRequest)        returns (GetAppConfigResponse)        {}
-    rpc GetAppConfigs       (GetAppConfigsRequest)       returns (GetAppConfigsResponse)       {}
-    rpc ExistAppConfig      (ExistAppConfigRequest)      returns (ExistAppConfigResponse)      {}
+    rpc CreateAppConfig (CreateAppConfigRequest) returns (CreateAppConfigResponse) {}
+    rpc UpdateAppConfig (UpdateAppConfigRequest) returns (UpdateAppConfigResponse) {}
+    rpc GetAppConfig (GetAppConfigRequest) returns (GetAppConfigResponse) {}
+    rpc GetAppConfigs (GetAppConfigsRequest) returns (GetAppConfigsResponse) {}
+    rpc ExistAppConfig (ExistAppConfigRequest) returns (ExistAppConfigResponse) {}
     rpc ExistAppConfigConds (ExistAppConfigCondsRequest) returns (ExistAppConfigCondsResponse) {}
-    rpc DeleteAppConfig     (DeleteAppConfigRequest)     returns (DeleteAppConfigResponse)     {}
+    rpc DeleteAppConfig (DeleteAppConfigRequest) returns (DeleteAppConfigResponse) {}
 }
 
 message AppConfigReq {
-    optional uint32                            ID                        = 10;
-    optional string                            EntID                     = 20;
-    optional string                            AppID                     = 30;
-    optional basetypes.order.v1.SimulateOrderCouponMode SendCouponMode            = 40;
-    optional string                            SendCouponProbability     = 50;
-    optional string                            CashableProfitProbability = 60;
-    optional bool                              Enabled                   = 70;
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string AppID = 30;
+    optional bool EnableSimulateOrder = 40;
+    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 50;
+    optional string SimulateOrderCouponProbability = 60;
+    optional string SimulateOrderCashableProfitProbability = 70;
 }
 
 message AppConfig {
     // @inject_tag: sql:"id"
-    uint32     ID           = 10;
+    uint32 ID = 10;
     // @inject_tag: sql:"ent_id"
-    string     EntID        = 20;
+    string EntID = 20;
     // @inject_tag: sql:"app_id"
-    string     AppID        = 30;
-    // @inject_tag: sql:"send_coupon_mode"
-    string     SendCouponModeStr                     = 40;
-    basetypes.order.v1.SimulateOrderCouponMode SendCouponMode = 50;
-    // @inject_tag: sql:"send_coupon_probability"
-    string     SendCouponProbability     = 60;
-    // @inject_tag: sql:"cashable_profit_probability"
-    string     CashableProfitProbability = 70;
-    // @inject_tag: sql:"enabled"
-    bool       Enabled               = 80;
+    string AppID = 30;
+    // @inject_tag: sql:"enable_simulate_order"
+    bool EnableSimulateOrder = 40;
+    // @inject_tag: sql:"simulate_order_coupon_mode"
+    string SimulateOrderCouponModeStr = 50;
+    basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 60;
+    // @inject_tag: sql:"simulate_order_coupon_probability"
+    string SimulateOrderCouponProbability = 70;
+    // @inject_tag: sql:"simulate_order_cashable_profit_probability"
+    string SimulateOrderCashableProfitProbability = 80;
+    // @inject_tag: sql:"max_unpaid_orders"
+    uint32 MaxUnpaidOrders = 90;
 
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt = 1000;
@@ -52,11 +54,9 @@ message AppConfig {
 }
 
 message Conds {
-  basetypes.v1.Uint32Val ID = 10;
-  basetypes.v1.StringVal EntID = 20;
-  basetypes.v1.StringVal AppID = 30;
-  basetypes.v1.Uint32Val SendCouponMode = 40;
-  basetypes.v1.BoolVal Enabled = 50;
+    basetypes.v1.Uint32Val ID = 10;
+    basetypes.v1.StringVal EntID = 20;
+    basetypes.v1.StringVal AppID = 30;
 }
 
 message CreateAppConfigRequest {
@@ -84,14 +84,14 @@ message GetAppConfigResponse {
 }
 
 message GetAppConfigsRequest {
-    Conds Conds   = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
 message GetAppConfigsResponse {
     repeated AppConfig Infos = 10;
-    uint32                  Total = 20;
+    uint32 Total = 20;
 }
 
 message ExistAppConfigRequest {
