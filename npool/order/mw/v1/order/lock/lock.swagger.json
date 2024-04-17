@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/order/mw/v1/order/lock/orderlock.proto",
+    "title": "npool/order/mw/v1/order/lock/lock.proto",
     "version": "version not set"
   },
   "tags": [
@@ -51,8 +51,14 @@
           "$ref": "#/definitions/v1Uint32Val",
           "title": "order"
         },
+        "IDs": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        },
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
@@ -63,14 +69,11 @@
         "OrderID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "LockType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1Uint32SliceVal"
-        },
         "OrderIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "LockType": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
