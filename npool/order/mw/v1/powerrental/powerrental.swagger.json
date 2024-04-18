@@ -792,9 +792,6 @@
         "PaymentType": {
           "$ref": "#/definitions/v1PaymentType"
         },
-        "CoinTypeID": {
-          "type": "string"
-        },
         "CreateMethod": {
           "$ref": "#/definitions/v1OrderCreateMethod",
           "title": "Support multiple payment coins from user balances"
