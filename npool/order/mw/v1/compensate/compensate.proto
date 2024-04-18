@@ -72,8 +72,6 @@ message Compensate {
     string GoodID = 120;
     // @inject_tag: sql:"app_good_id"
     string AppGoodID = 130;
-    // @inject_tag: sql:"units_v1"
-    string Units = 140;
 
     // orderstate
     // @inject_tag: sql:"order_start_at"
