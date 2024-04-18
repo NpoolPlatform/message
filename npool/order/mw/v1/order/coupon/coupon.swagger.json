@@ -71,6 +71,12 @@
         },
         "CouponIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
