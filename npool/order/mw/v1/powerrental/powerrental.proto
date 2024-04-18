@@ -23,13 +23,6 @@ service Middleware {
     rpc DeletePowerRentalOrder (DeletePowerRentalOrderRequest) returns (DeletePowerRentalOrderResponse) {}
 }
 
-message ChildOrderReq {
-    optional string OrderID = 10;
-    optional string GoodID = 20;
-    optional string AppGoodID = 30;
-    optional uint32 Duration = 40;
-}
-
 message PowerRentalOrderReq {
     // order
     optional uint32 ID = 10;
@@ -84,7 +77,7 @@ message PowerRentalOrderReq {
 
 message PowerRentalOrderWithChildsReq {
     PowerRentalOrderReq PowerRentalOrder = 10;
-    repeated ChildOrderReq ChildOrders = 20;
+    repeated order.middleware.order1.v1.OrderReq ChildOrders = 20;
 }
 
 message PowerRentalOrder {

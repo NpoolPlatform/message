@@ -114,6 +114,16 @@
     }
   },
   "definitions": {
+    "basetypesorderv1BenefitState": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitState",
+        "BenefitWait",
+        "BenefitCalculated",
+        "BenefitBookKept"
+      ],
+      "default": "DefaultBenefitState"
+    },
     "ordergatewayorder1v1GetOrdersRequest": {
       "type": "object",
       "properties": {
@@ -205,16 +215,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1BenefitState": {
-      "type": "string",
-      "enum": [
-        "DefaultBenefitState",
-        "BenefitWait",
-        "BenefitCalculated",
-        "BenefitBookKept"
-      ],
-      "default": "DefaultBenefitState"
     },
     "v1GetAppOrdersRequest": {
       "type": "object",
@@ -333,7 +333,7 @@
           "title": "@inject_tag: sql:\"benefit_state\""
         },
         "BenefitState": {
-          "$ref": "#/definitions/v1BenefitState"
+          "$ref": "#/definitions/basetypesorderv1BenefitState"
         },
         "CreatedAt": {
           "type": "integer",

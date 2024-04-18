@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/order";
 
 import "google/api/annotations.proto";
 import "npool/basetypes/order/v1/enums.proto";
+import "npool/basetypes/good/v1/enums.proto";
 import "npool/basetypes/v1/conds.proto";
 
 
@@ -16,6 +17,15 @@ service Middleware {
     rpc SumOrdersPaymentUSD (SumOrdersPaymentUSDRequest) returns (SumOrdersPaymentUSDResponse) {}
     rpc SumOrdersValueUSD (SumOrdersValueUSDRequest) returns (SumOrdersValueUSDResponse) {}
     rpc ExistOrderConds (ExistOrderCondsRequest) returns (ExistOrderCondsResponse) {}
+}
+
+// For child order
+message OrderReq {
+    optional string EntID = 10;
+    optional string GoodID = 20;
+    optional string AppGoodID = 30;
+    optional uint32 Duration = 40;
+    optional basetypes.good.v1.GoodType GoodType = 50;
 }
 
 message Order {

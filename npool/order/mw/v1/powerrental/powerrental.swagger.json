@@ -17,6 +17,16 @@
   ],
   "paths": {},
   "definitions": {
+    "basetypesorderv1BenefitState": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitState",
+        "BenefitWait",
+        "BenefitCalculated",
+        "BenefitBookKept"
+      ],
+      "default": "DefaultBenefitState"
+    },
     "middlewarepowerrentalv1Conds": {
       "type": "object",
       "properties": {
@@ -155,16 +165,6 @@
         }
       }
     },
-    "v1BenefitState": {
-      "type": "string",
-      "enum": [
-        "DefaultBenefitState",
-        "BenefitWait",
-        "BenefitCalculated",
-        "BenefitBookKept"
-      ],
-      "default": "DefaultBenefitState"
-    },
     "v1BoolVal": {
       "type": "object",
       "properties": {
@@ -173,24 +173,6 @@
         },
         "Value": {
           "type": "boolean"
-        }
-      }
-    },
-    "v1ChildOrderReq": {
-      "type": "object",
-      "properties": {
-        "OrderID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "AppGoodID": {
-          "type": "string"
-        },
-        "Duration": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -256,6 +238,19 @@
           "format": "int64"
         }
       }
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
     },
     "v1InvestmentType": {
       "type": "string",
@@ -352,7 +347,7 @@
           "title": "@inject_tag: sql:\"benefit_state\""
         },
         "BenefitState": {
-          "$ref": "#/definitions/v1BenefitState"
+          "$ref": "#/definitions/basetypesorderv1BenefitState"
         },
         "CreatedAt": {
           "type": "integer",
@@ -405,6 +400,28 @@
         "OrderRenewFail"
       ],
       "default": "DefaultOrderRenewState"
+    },
+    "v1OrderReq": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        }
+      },
+      "title": "For child order"
     },
     "v1OrderStartMode": {
       "type": "string",
@@ -709,7 +726,7 @@
           "title": "@inject_tag: sql:\"benefit_state\""
         },
         "BenefitState": {
-          "$ref": "#/definitions/v1BenefitState"
+          "$ref": "#/definitions/basetypesorderv1BenefitState"
         },
         "Units": {
           "type": "string",
@@ -923,7 +940,7 @@
           "format": "int64"
         },
         "BenefitState": {
-          "$ref": "#/definitions/v1BenefitState"
+          "$ref": "#/definitions/basetypesorderv1BenefitState"
         },
         "UserSetPaid": {
           "type": "boolean"
@@ -1010,7 +1027,7 @@
         "ChildOrders": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1ChildOrderReq"
+            "$ref": "#/definitions/v1OrderReq"
           }
         }
       }
