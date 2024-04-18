@@ -17,6 +17,16 @@
   ],
   "paths": {},
   "definitions": {
+    "basetypesorderv1BenefitState": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitState",
+        "BenefitWait",
+        "BenefitCalculated",
+        "BenefitBookKept"
+      ],
+      "default": "DefaultBenefitState"
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -43,16 +53,6 @@
           }
         }
       }
-    },
-    "v1BenefitState": {
-      "type": "string",
-      "enum": [
-        "DefaultBenefitState",
-        "BenefitWait",
-        "BenefitCalculated",
-        "BenefitBookKept"
-      ],
-      "default": "DefaultBenefitState"
     },
     "v1BoolVal": {
       "type": "object",
@@ -259,7 +259,7 @@
           "title": "@inject_tag: sql:\"benefit_state\""
         },
         "BenefitState": {
-          "$ref": "#/definitions/v1BenefitState"
+          "$ref": "#/definitions/basetypesorderv1BenefitState"
         },
         "CreatedAt": {
           "type": "integer",
