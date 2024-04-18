@@ -23,6 +23,7 @@ const (
 	Middleware_CountOrders_FullMethodName         = "/order.middleware.order1.v1.Middleware/CountOrders"
 	Middleware_SumOrdersPaymentUSD_FullMethodName = "/order.middleware.order1.v1.Middleware/SumOrdersPaymentUSD"
 	Middleware_SumOrdersValueUSD_FullMethodName   = "/order.middleware.order1.v1.Middleware/SumOrdersValueUSD"
+	Middleware_ExistOrderConds_FullMethodName     = "/order.middleware.order1.v1.Middleware/ExistOrderConds"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -33,6 +34,7 @@ type MiddlewareClient interface {
 	CountOrders(ctx context.Context, in *CountOrdersRequest, opts ...grpc.CallOption) (*CountOrdersResponse, error)
 	SumOrdersPaymentUSD(ctx context.Context, in *SumOrdersPaymentUSDRequest, opts ...grpc.CallOption) (*SumOrdersPaymentUSDResponse, error)
 	SumOrdersValueUSD(ctx context.Context, in *SumOrdersValueUSDRequest, opts ...grpc.CallOption) (*SumOrdersValueUSDResponse, error)
+	ExistOrderConds(ctx context.Context, in *ExistOrderCondsRequest, opts ...grpc.CallOption) (*ExistOrderCondsResponse, error)
 }
 
 type middlewareClient struct {
@@ -79,6 +81,15 @@ func (c *middlewareClient) SumOrdersValueUSD(ctx context.Context, in *SumOrdersV
 	return out, nil
 }
 
+func (c *middlewareClient) ExistOrderConds(ctx context.Context, in *ExistOrderCondsRequest, opts ...grpc.CallOption) (*ExistOrderCondsResponse, error) {
+	out := new(ExistOrderCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistOrderConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -87,6 +98,7 @@ type MiddlewareServer interface {
 	CountOrders(context.Context, *CountOrdersRequest) (*CountOrdersResponse, error)
 	SumOrdersPaymentUSD(context.Context, *SumOrdersPaymentUSDRequest) (*SumOrdersPaymentUSDResponse, error)
 	SumOrdersValueUSD(context.Context, *SumOrdersValueUSDRequest) (*SumOrdersValueUSDResponse, error)
+	ExistOrderConds(context.Context, *ExistOrderCondsRequest) (*ExistOrderCondsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -105,6 +117,9 @@ func (UnimplementedMiddlewareServer) SumOrdersPaymentUSD(context.Context, *SumOr
 }
 func (UnimplementedMiddlewareServer) SumOrdersValueUSD(context.Context, *SumOrdersValueUSDRequest) (*SumOrdersValueUSDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SumOrdersValueUSD not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistOrderConds(context.Context, *ExistOrderCondsRequest) (*ExistOrderCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistOrderConds not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -191,6 +206,24 @@ func _Middleware_SumOrdersValueUSD_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistOrderConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistOrderCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistOrderConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistOrderConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistOrderConds(ctx, req.(*ExistOrderCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -213,6 +246,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SumOrdersValueUSD",
 			Handler:    _Middleware_SumOrdersValueUSD_Handler,
+		},
+		{
+			MethodName: "ExistOrderConds",
+			Handler:    _Middleware_ExistOrderConds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

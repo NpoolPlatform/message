@@ -15,6 +15,7 @@ service Middleware {
     rpc CountOrders (CountOrdersRequest) returns (CountOrdersResponse) {}
     rpc SumOrdersPaymentUSD (SumOrdersPaymentUSDRequest) returns (SumOrdersPaymentUSDResponse) {}
     rpc SumOrdersValueUSD (SumOrdersValueUSDRequest) returns (SumOrdersValueUSDResponse) {}
+    rpc ExistOrderConds (ExistOrderCondsRequest) returns (ExistOrderCondsResponse) {}
 }
 
 message Order {
@@ -129,4 +130,12 @@ message SumOrdersValueUSDRequest {
 
 message SumOrdersValueUSDResponse {
     string Info = 10;
+}
+
+message ExistOrderCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistOrderCondsResponse {
+    bool Info = 10;
 }
