@@ -32,16 +32,17 @@ message PowerRentalOrderReq {
     optional string UserID = 40;
     optional string GoodID = 50;
     optional string AppGoodID = 60;
-    optional string ParentOrderID = 70;
-    optional string Units = 80;
-    optional string GoodValueUSD = 90;
-    optional string PaymentAmountUSD = 100;
-    optional string DiscountAmountUSD = 110;
-    optional string PromotionID = 120;
-    optional uint32 Duration = 130;
-    optional basetypes.order.v1.OrderType OrderType = 140;
-    optional basetypes.order.v1.InvestmentType InvestmentType = 150;
-    optional basetypes.order.v1.PaymentType PaymentType = 160;
+    optional string OrderID = 70;
+    optional string ParentOrderID = 80;
+    optional string Units = 90;
+    optional string GoodValueUSD = 100;
+    optional string PaymentAmountUSD = 110;
+    optional string DiscountAmountUSD = 120;
+    optional string PromotionID = 130;
+    optional uint32 Duration = 140;
+    optional basetypes.order.v1.OrderType OrderType = 150;
+    optional basetypes.order.v1.InvestmentType InvestmentType = 160;
+    optional basetypes.order.v1.PaymentType PaymentType = 170;
 
     // Support multiple payment coins from user balances
     optional basetypes.order.v1.OrderCreateMethod CreateMethod = 180;

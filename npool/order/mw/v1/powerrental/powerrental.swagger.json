@@ -761,6 +761,9 @@
         "AppGoodID": {
           "type": "string"
         },
+        "OrderID": {
+          "type": "string"
+        },
         "ParentOrderID": {
           "type": "string"
         },
