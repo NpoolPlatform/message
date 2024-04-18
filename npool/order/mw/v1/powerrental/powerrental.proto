@@ -42,7 +42,6 @@ message PowerRentalOrderReq {
     optional basetypes.order.v1.OrderType OrderType = 140;
     optional basetypes.order.v1.InvestmentType InvestmentType = 150;
     optional basetypes.order.v1.PaymentType PaymentType = 160;
-    optional string CoinTypeID = 170;
 
     // Support multiple payment coins from user balances
     optional basetypes.order.v1.OrderCreateMethod CreateMethod = 180;
