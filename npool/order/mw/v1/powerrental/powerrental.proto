@@ -9,19 +9,25 @@ import "npool/basetypes/order/v1/enums.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/order/mw/v1/payment/payment.proto";
 import "npool/order/mw/v1/order/coupon/coupon.proto";
+import "npool/order/mw/v1/order/order.proto";
 
 // Service Name
 service Middleware {
     rpc CreatePowerRentalOrder (CreatePowerRentalOrderRequest) returns (CreatePowerRentalOrderResponse) {}
-    rpc CreatePowerRentalOrders (CreatePowerRentalOrdersRequest) returns (CreatePowerRentalOrdersResponse) {}
+    rpc CreatePowerRentalOrderWithChilds (CreatePowerRentalOrderWithChildsRequest) returns (CreatePowerRentalOrderWithChildsResponse) {}
     rpc UpdatePowerRentalOrder (UpdatePowerRentalOrderRequest) returns (UpdatePowerRentalOrderResponse) {}
-    rpc UpdatePowerRentalOrders (UpdatePowerRentalOrdersRequest) returns (UpdatePowerRentalOrdersResponse) {}
     rpc GetPowerRentalOrder (GetPowerRentalOrderRequest) returns (GetPowerRentalOrderResponse) {}
     rpc GetPowerRentalOrders (GetPowerRentalOrdersRequest) returns (GetPowerRentalOrdersResponse) {}
     rpc ExistPowerRentalOrder (ExistPowerRentalOrderRequest) returns (ExistPowerRentalOrderResponse) {}
     rpc ExistPowerRentalOrderConds (ExistPowerRentalOrderCondsRequest) returns (ExistPowerRentalOrderCondsResponse) {}
     rpc DeletePowerRentalOrder (DeletePowerRentalOrderRequest) returns (DeletePowerRentalOrderResponse) {}
-    rpc DeletePowerRentalOrders (DeletePowerRentalOrdersRequest) returns (DeletePowerRentalOrdersResponse) {}
+}
+
+message ChildOrderReq {
+    optional string OrderID = 10;
+    optional string GoodID = 20;
+    optional string AppGoodID = 30;
+    optional uint32 Duration = 40;
 }
 
 message PowerRentalOrderReq {
@@ -74,6 +80,11 @@ message PowerRentalOrderReq {
     repeated order.middleware.payment.v1.PaymentBalanceReq PaymentBalances = 380;
     // Payment transfers
     repeated order.middleware.payment.v1.PaymentTransferReq PaymentTransfers = 390;
+}
+
+message PowerRentalOrderWithChildsReq {
+    PowerRentalOrderReq PowerRentalOrder = 10;
+    repeated ChildOrderReq ChildOrders = 20;
 }
 
 message PowerRentalOrder {
@@ -180,6 +191,11 @@ message PowerRentalOrder {
     uint32 UpdatedAt = 1010;
 }
 
+message PowerRentalOrderWithChilds {
+    PowerRentalOrder PowerRentalOrder = 10;
+    repeated order.middleware.order1.v1.Order ChildOrders = 20;
+}
+
 message Conds {
     // order
     optional basetypes.v1.Uint32Val ID = 10;
@@ -237,12 +253,12 @@ message CreatePowerRentalOrderResponse {
     PowerRentalOrder Info = 10;
 }
 
-message CreatePowerRentalOrdersRequest {
-    repeated PowerRentalOrderReq Infos = 10;
+message CreatePowerRentalOrderWithChildsRequest {
+    PowerRentalOrderWithChildsReq Info = 10;
 }
 
-message CreatePowerRentalOrdersResponse {
-    repeated PowerRentalOrder Infos = 10;
+message CreatePowerRentalOrderWithChildsResponse {
+    PowerRentalOrderWithChilds Info = 10;
 }
 
 message UpdatePowerRentalOrderRequest {
@@ -251,14 +267,6 @@ message UpdatePowerRentalOrderRequest {
 
 message UpdatePowerRentalOrderResponse {
     PowerRentalOrder Info = 10;
-}
-
-message UpdatePowerRentalOrdersRequest {
-    repeated PowerRentalOrderReq Infos = 10;
-}
-
-message UpdatePowerRentalOrdersResponse {
-    repeated PowerRentalOrder Infos = 10;
 }
 
 message GetPowerRentalOrderRequest {
@@ -304,11 +312,4 @@ message DeletePowerRentalOrderResponse {
     PowerRentalOrder Info = 10;
 }
 
-message DeletePowerRentalOrdersRequest {
-    repeated PowerRentalOrderReq Infos = 10;
-}
-
-message DeletePowerRentalOrdersResponse {
-    repeated PowerRentalOrder Infos = 10;
-}
 

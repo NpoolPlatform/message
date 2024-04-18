@@ -19,16 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreatePowerRentalOrder_FullMethodName     = "/order.middleware.powerrental.v1.Middleware/CreatePowerRentalOrder"
-	Middleware_CreatePowerRentalOrders_FullMethodName    = "/order.middleware.powerrental.v1.Middleware/CreatePowerRentalOrders"
-	Middleware_UpdatePowerRentalOrder_FullMethodName     = "/order.middleware.powerrental.v1.Middleware/UpdatePowerRentalOrder"
-	Middleware_UpdatePowerRentalOrders_FullMethodName    = "/order.middleware.powerrental.v1.Middleware/UpdatePowerRentalOrders"
-	Middleware_GetPowerRentalOrder_FullMethodName        = "/order.middleware.powerrental.v1.Middleware/GetPowerRentalOrder"
-	Middleware_GetPowerRentalOrders_FullMethodName       = "/order.middleware.powerrental.v1.Middleware/GetPowerRentalOrders"
-	Middleware_ExistPowerRentalOrder_FullMethodName      = "/order.middleware.powerrental.v1.Middleware/ExistPowerRentalOrder"
-	Middleware_ExistPowerRentalOrderConds_FullMethodName = "/order.middleware.powerrental.v1.Middleware/ExistPowerRentalOrderConds"
-	Middleware_DeletePowerRentalOrder_FullMethodName     = "/order.middleware.powerrental.v1.Middleware/DeletePowerRentalOrder"
-	Middleware_DeletePowerRentalOrders_FullMethodName    = "/order.middleware.powerrental.v1.Middleware/DeletePowerRentalOrders"
+	Middleware_CreatePowerRentalOrder_FullMethodName           = "/order.middleware.powerrental.v1.Middleware/CreatePowerRentalOrder"
+	Middleware_CreatePowerRentalOrderWithChilds_FullMethodName = "/order.middleware.powerrental.v1.Middleware/CreatePowerRentalOrderWithChilds"
+	Middleware_UpdatePowerRentalOrder_FullMethodName           = "/order.middleware.powerrental.v1.Middleware/UpdatePowerRentalOrder"
+	Middleware_GetPowerRentalOrder_FullMethodName              = "/order.middleware.powerrental.v1.Middleware/GetPowerRentalOrder"
+	Middleware_GetPowerRentalOrders_FullMethodName             = "/order.middleware.powerrental.v1.Middleware/GetPowerRentalOrders"
+	Middleware_ExistPowerRentalOrder_FullMethodName            = "/order.middleware.powerrental.v1.Middleware/ExistPowerRentalOrder"
+	Middleware_ExistPowerRentalOrderConds_FullMethodName       = "/order.middleware.powerrental.v1.Middleware/ExistPowerRentalOrderConds"
+	Middleware_DeletePowerRentalOrder_FullMethodName           = "/order.middleware.powerrental.v1.Middleware/DeletePowerRentalOrder"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -36,15 +34,13 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreatePowerRentalOrder(ctx context.Context, in *CreatePowerRentalOrderRequest, opts ...grpc.CallOption) (*CreatePowerRentalOrderResponse, error)
-	CreatePowerRentalOrders(ctx context.Context, in *CreatePowerRentalOrdersRequest, opts ...grpc.CallOption) (*CreatePowerRentalOrdersResponse, error)
+	CreatePowerRentalOrderWithChilds(ctx context.Context, in *CreatePowerRentalOrderWithChildsRequest, opts ...grpc.CallOption) (*CreatePowerRentalOrderWithChildsResponse, error)
 	UpdatePowerRentalOrder(ctx context.Context, in *UpdatePowerRentalOrderRequest, opts ...grpc.CallOption) (*UpdatePowerRentalOrderResponse, error)
-	UpdatePowerRentalOrders(ctx context.Context, in *UpdatePowerRentalOrdersRequest, opts ...grpc.CallOption) (*UpdatePowerRentalOrdersResponse, error)
 	GetPowerRentalOrder(ctx context.Context, in *GetPowerRentalOrderRequest, opts ...grpc.CallOption) (*GetPowerRentalOrderResponse, error)
 	GetPowerRentalOrders(ctx context.Context, in *GetPowerRentalOrdersRequest, opts ...grpc.CallOption) (*GetPowerRentalOrdersResponse, error)
 	ExistPowerRentalOrder(ctx context.Context, in *ExistPowerRentalOrderRequest, opts ...grpc.CallOption) (*ExistPowerRentalOrderResponse, error)
 	ExistPowerRentalOrderConds(ctx context.Context, in *ExistPowerRentalOrderCondsRequest, opts ...grpc.CallOption) (*ExistPowerRentalOrderCondsResponse, error)
 	DeletePowerRentalOrder(ctx context.Context, in *DeletePowerRentalOrderRequest, opts ...grpc.CallOption) (*DeletePowerRentalOrderResponse, error)
-	DeletePowerRentalOrders(ctx context.Context, in *DeletePowerRentalOrdersRequest, opts ...grpc.CallOption) (*DeletePowerRentalOrdersResponse, error)
 }
 
 type middlewareClient struct {
@@ -64,9 +60,9 @@ func (c *middlewareClient) CreatePowerRentalOrder(ctx context.Context, in *Creat
 	return out, nil
 }
 
-func (c *middlewareClient) CreatePowerRentalOrders(ctx context.Context, in *CreatePowerRentalOrdersRequest, opts ...grpc.CallOption) (*CreatePowerRentalOrdersResponse, error) {
-	out := new(CreatePowerRentalOrdersResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreatePowerRentalOrders_FullMethodName, in, out, opts...)
+func (c *middlewareClient) CreatePowerRentalOrderWithChilds(ctx context.Context, in *CreatePowerRentalOrderWithChildsRequest, opts ...grpc.CallOption) (*CreatePowerRentalOrderWithChildsResponse, error) {
+	out := new(CreatePowerRentalOrderWithChildsResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreatePowerRentalOrderWithChilds_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -76,15 +72,6 @@ func (c *middlewareClient) CreatePowerRentalOrders(ctx context.Context, in *Crea
 func (c *middlewareClient) UpdatePowerRentalOrder(ctx context.Context, in *UpdatePowerRentalOrderRequest, opts ...grpc.CallOption) (*UpdatePowerRentalOrderResponse, error) {
 	out := new(UpdatePowerRentalOrderResponse)
 	err := c.cc.Invoke(ctx, Middleware_UpdatePowerRentalOrder_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) UpdatePowerRentalOrders(ctx context.Context, in *UpdatePowerRentalOrdersRequest, opts ...grpc.CallOption) (*UpdatePowerRentalOrdersResponse, error) {
-	out := new(UpdatePowerRentalOrdersResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdatePowerRentalOrders_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -136,29 +123,18 @@ func (c *middlewareClient) DeletePowerRentalOrder(ctx context.Context, in *Delet
 	return out, nil
 }
 
-func (c *middlewareClient) DeletePowerRentalOrders(ctx context.Context, in *DeletePowerRentalOrdersRequest, opts ...grpc.CallOption) (*DeletePowerRentalOrdersResponse, error) {
-	out := new(DeletePowerRentalOrdersResponse)
-	err := c.cc.Invoke(ctx, Middleware_DeletePowerRentalOrders_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	CreatePowerRentalOrder(context.Context, *CreatePowerRentalOrderRequest) (*CreatePowerRentalOrderResponse, error)
-	CreatePowerRentalOrders(context.Context, *CreatePowerRentalOrdersRequest) (*CreatePowerRentalOrdersResponse, error)
+	CreatePowerRentalOrderWithChilds(context.Context, *CreatePowerRentalOrderWithChildsRequest) (*CreatePowerRentalOrderWithChildsResponse, error)
 	UpdatePowerRentalOrder(context.Context, *UpdatePowerRentalOrderRequest) (*UpdatePowerRentalOrderResponse, error)
-	UpdatePowerRentalOrders(context.Context, *UpdatePowerRentalOrdersRequest) (*UpdatePowerRentalOrdersResponse, error)
 	GetPowerRentalOrder(context.Context, *GetPowerRentalOrderRequest) (*GetPowerRentalOrderResponse, error)
 	GetPowerRentalOrders(context.Context, *GetPowerRentalOrdersRequest) (*GetPowerRentalOrdersResponse, error)
 	ExistPowerRentalOrder(context.Context, *ExistPowerRentalOrderRequest) (*ExistPowerRentalOrderResponse, error)
 	ExistPowerRentalOrderConds(context.Context, *ExistPowerRentalOrderCondsRequest) (*ExistPowerRentalOrderCondsResponse, error)
 	DeletePowerRentalOrder(context.Context, *DeletePowerRentalOrderRequest) (*DeletePowerRentalOrderResponse, error)
-	DeletePowerRentalOrders(context.Context, *DeletePowerRentalOrdersRequest) (*DeletePowerRentalOrdersResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -169,14 +145,11 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) CreatePowerRentalOrder(context.Context, *CreatePowerRentalOrderRequest) (*CreatePowerRentalOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePowerRentalOrder not implemented")
 }
-func (UnimplementedMiddlewareServer) CreatePowerRentalOrders(context.Context, *CreatePowerRentalOrdersRequest) (*CreatePowerRentalOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreatePowerRentalOrders not implemented")
+func (UnimplementedMiddlewareServer) CreatePowerRentalOrderWithChilds(context.Context, *CreatePowerRentalOrderWithChildsRequest) (*CreatePowerRentalOrderWithChildsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreatePowerRentalOrderWithChilds not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdatePowerRentalOrder(context.Context, *UpdatePowerRentalOrderRequest) (*UpdatePowerRentalOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePowerRentalOrder not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdatePowerRentalOrders(context.Context, *UpdatePowerRentalOrdersRequest) (*UpdatePowerRentalOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdatePowerRentalOrders not implemented")
 }
 func (UnimplementedMiddlewareServer) GetPowerRentalOrder(context.Context, *GetPowerRentalOrderRequest) (*GetPowerRentalOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPowerRentalOrder not implemented")
@@ -192,9 +165,6 @@ func (UnimplementedMiddlewareServer) ExistPowerRentalOrderConds(context.Context,
 }
 func (UnimplementedMiddlewareServer) DeletePowerRentalOrder(context.Context, *DeletePowerRentalOrderRequest) (*DeletePowerRentalOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePowerRentalOrder not implemented")
-}
-func (UnimplementedMiddlewareServer) DeletePowerRentalOrders(context.Context, *DeletePowerRentalOrdersRequest) (*DeletePowerRentalOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeletePowerRentalOrders not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -227,20 +197,20 @@ func _Middleware_CreatePowerRentalOrder_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CreatePowerRentalOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreatePowerRentalOrdersRequest)
+func _Middleware_CreatePowerRentalOrderWithChilds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreatePowerRentalOrderWithChildsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreatePowerRentalOrders(ctx, in)
+		return srv.(MiddlewareServer).CreatePowerRentalOrderWithChilds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_CreatePowerRentalOrders_FullMethodName,
+		FullMethod: Middleware_CreatePowerRentalOrderWithChilds_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreatePowerRentalOrders(ctx, req.(*CreatePowerRentalOrdersRequest))
+		return srv.(MiddlewareServer).CreatePowerRentalOrderWithChilds(ctx, req.(*CreatePowerRentalOrderWithChildsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -259,24 +229,6 @@ func _Middleware_UpdatePowerRentalOrder_Handler(srv interface{}, ctx context.Con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).UpdatePowerRentalOrder(ctx, req.(*UpdatePowerRentalOrderRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_UpdatePowerRentalOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdatePowerRentalOrdersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdatePowerRentalOrders(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdatePowerRentalOrders_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdatePowerRentalOrders(ctx, req.(*UpdatePowerRentalOrdersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -371,24 +323,6 @@ func _Middleware_DeletePowerRentalOrder_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_DeletePowerRentalOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeletePowerRentalOrdersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).DeletePowerRentalOrders(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_DeletePowerRentalOrders_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeletePowerRentalOrders(ctx, req.(*DeletePowerRentalOrdersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -401,16 +335,12 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_CreatePowerRentalOrder_Handler,
 		},
 		{
-			MethodName: "CreatePowerRentalOrders",
-			Handler:    _Middleware_CreatePowerRentalOrders_Handler,
+			MethodName: "CreatePowerRentalOrderWithChilds",
+			Handler:    _Middleware_CreatePowerRentalOrderWithChilds_Handler,
 		},
 		{
 			MethodName: "UpdatePowerRentalOrder",
 			Handler:    _Middleware_UpdatePowerRentalOrder_Handler,
-		},
-		{
-			MethodName: "UpdatePowerRentalOrders",
-			Handler:    _Middleware_UpdatePowerRentalOrders_Handler,
 		},
 		{
 			MethodName: "GetPowerRentalOrder",
@@ -431,10 +361,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeletePowerRentalOrder",
 			Handler:    _Middleware_DeletePowerRentalOrder_Handler,
-		},
-		{
-			MethodName: "DeletePowerRentalOrders",
-			Handler:    _Middleware_DeletePowerRentalOrders_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
