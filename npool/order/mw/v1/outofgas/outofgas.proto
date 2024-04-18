@@ -73,8 +73,8 @@ message OutOfGas {
 }
 
 message Conds {
-    basetypes.v1.Uint32Val ID      = 10;
-    basetypes.v1.StringVal EntID   = 20;
+    basetypes.v1.Uint32Val ID = 10;
+    basetypes.v1.StringVal EntID = 20;
     basetypes.v1.StringVal AppID = 30;
     basetypes.v1.StringVal UserID = 40;
     basetypes.v1.StringVal GoodID = 50;
