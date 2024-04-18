@@ -53,6 +53,8 @@ message Conds {
     basetypes.v1.StringSliceVal OrderIDs = 60;
     basetypes.v1.StringVal CouponID = 70;
     basetypes.v1.StringSliceVal CouponIDs = 80;
+    basetypes.v1.StringVal AppID = 90;
+    basetypes.v1.StringVal UserID = 100;
 }
 
 message GetOrderCouponsRequest {
