@@ -23,10 +23,14 @@ message OrderCoupon {
     string AppID = 30;
     // @inject_tag: sql:"user_id"
     string UserID = 40;
+    // @inject_tag: sql:"good_id"
+    string GoodID = 50;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID = 60;
     // @inject_tag: sql:"order_id"
-    string OrderID = 50;
+    string OrderID = 70;
     // @inject_tag: sql:"coupon_id"
-    string CouponID = 60;
+    string CouponID = 80;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
