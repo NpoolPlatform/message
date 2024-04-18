@@ -73,12 +73,6 @@ message Compensate {
     // @inject_tag: sql:"app_good_id"
     string AppGoodID = 130;
 
-    // orderstate
-    // @inject_tag: sql:"order_start_at"
-    uint32 OrderStartAt = 150;
-    // @inject_tag: sql:"order_end_at"
-    uint32 OrderEndAt = 160;
-
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
