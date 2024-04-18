@@ -189,15 +189,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"order_id\""
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"start_at\""
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"end_at\""
+        "CompensateFromID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"compensate_from_id\""
         },
         "CompensateTypeStr": {
           "type": "string",
@@ -206,13 +200,10 @@
         "CompensateType": {
           "$ref": "#/definitions/v1CompensateType"
         },
-        "Title": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"title\""
-        },
-        "Message": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"message\""
+        "CompensateSeconds": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"compensate_seconds\""
         },
         "AppID": {
           "type": "string",
@@ -269,22 +260,15 @@
         "OrderID": {
           "type": "string"
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
+        "CompensateFromID": {
+          "type": "string"
         },
         "CompensateType": {
           "$ref": "#/definitions/v1CompensateType"
         },
-        "Title": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
+        "CompensateSeconds": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -310,11 +294,8 @@
         "OrderID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "StartAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "CompensateFromID": {
+          "$ref": "#/definitions/v1StringVal"
         },
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
