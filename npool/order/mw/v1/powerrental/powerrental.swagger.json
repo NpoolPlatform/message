@@ -304,6 +304,9 @@
         "LedgerLockID": {
           "type": "string"
         },
+        "PaymentID": {
+          "type": "string"
+        },
         "CouponIDs": {
           "type": "array",
           "items": {
