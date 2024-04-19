@@ -10,12 +10,12 @@ import "npool/basetypes/good/v1/enums.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/order/mw/v1/payment/payment.proto";
 import "npool/order/mw/v1/order/coupon/coupon.proto";
-import "npool/order/mw/v1/order/order.proto";
+import "npool/order/mw/v1/fee/fee.proto";
 
 // Service Name
 service Middleware {
     rpc CreatePowerRentalOrder (CreatePowerRentalOrderRequest) returns (CreatePowerRentalOrderResponse) {}
-    rpc CreatePowerRentalOrderWithChilds (CreatePowerRentalOrderWithChildsRequest) returns (CreatePowerRentalOrderWithChildsResponse) {}
+    rpc CreatePowerRentalOrderWithFees (CreatePowerRentalOrderWithFeesRequest) returns (CreatePowerRentalOrderWithFeesResponse) {}
     rpc UpdatePowerRentalOrder (UpdatePowerRentalOrderRequest) returns (UpdatePowerRentalOrderResponse) {}
     rpc GetPowerRentalOrder (GetPowerRentalOrderRequest) returns (GetPowerRentalOrderResponse) {}
     rpc GetPowerRentalOrders (GetPowerRentalOrdersRequest) returns (GetPowerRentalOrdersResponse) {}
@@ -34,10 +34,8 @@ message PowerRentalOrderReq {
     optional basetypes.good.v1.GoodType GoodType = 60;
     optional string AppGoodID = 70;
     optional string OrderID = 80;
-    optional string ParentOrderID = 90;
     optional basetypes.order.v1.OrderType OrderType = 100;
     optional basetypes.order.v1.PaymentType PaymentType = 110;
-    optional basetypes.order.v1.OrderCreateMethod CreateMethod = 120;
     optional bool Simulate = 130;
 
     // Power rental
@@ -47,7 +45,7 @@ message PowerRentalOrderReq {
     optional string PaymentAmountUSD = 230;
     optional string DiscountAmountUSD = 240;
     optional string PromotionID = 250;
-    optional uint32 Duration = 260;
+    optional uint32 DurationSeconds = 260;
     optional basetypes.order.v1.InvestmentType InvestmentType = 270;
 
     // Order state base
@@ -59,7 +57,6 @@ message PowerRentalOrderReq {
 
     // Power rental state
     // AppGoodStockID or AppMiningGoodStockID
-    optional uint32 EndAt = 400;
     optional bool UserSetPaid = 410;
     optional bool UserSetCanceled = 420;
     optional bool AdminSetCanceled = 430;
@@ -78,11 +75,6 @@ message PowerRentalOrderReq {
     repeated order.middleware.payment.v1.PaymentBalanceReq PaymentBalances = 610;
     // Payment transfers
     repeated order.middleware.payment.v1.PaymentTransferReq PaymentTransfers = 620;
-}
-
-message PowerRentalOrderWithChildsReq {
-    PowerRentalOrderReq PowerRentalOrder = 10;
-    repeated order.middleware.order1.v1.OrderReq ChildOrders = 20;
 }
 
 message PowerRentalOrder {
@@ -154,7 +146,7 @@ message PowerRentalOrder {
     // @inject_tag: sql:"cancel_state"
     string CancelStateStr = 400;
     basetypes.order.v1.OrderState CancelState = 410;
-    // @inject_tag: sql:"end_at"
+    // Calculate with start at and duration seconds
     uint32 EndAt = 420;
     // @inject_tag: sql:"paid_at"
     uint32 PaidAt = 430;
@@ -187,16 +179,13 @@ message PowerRentalOrder {
     repeated order.middleware.payment.v1.PaymentBalanceInfo PaymentBalances = 610;
     // Payment transfers
     repeated order.middleware.payment.v1.PaymentTransferInfo PaymentTransfers = 620;
+    // Fee duration infos
+    repeated order.middleware.fee.v1.FeeDuration FeeDurations = 630;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt = 1010;
-}
-
-message PowerRentalOrderWithChilds {
-    PowerRentalOrder PowerRentalOrder = 10;
-    repeated order.middleware.order1.v1.Order ChildOrders = 20;
 }
 
 message Conds {
@@ -256,12 +245,12 @@ message CreatePowerRentalOrderResponse {
     PowerRentalOrder Info = 10;
 }
 
-message CreatePowerRentalOrderWithChildsRequest {
-    PowerRentalOrderWithChildsReq Info = 10;
+message CreatePowerRentalOrderWithFeesRequest {
+    PowerRentalOrderReq PowerRentalOrder = 10;
+    repeated order.middleware.fee.v1.FeeOrderReq FeeOrders = 20;
 }
 
-message CreatePowerRentalOrderWithChildsResponse {
-    PowerRentalOrderWithChilds Info = 10;
+message CreatePowerRentalOrderWithFeesResponse {
 }
 
 message UpdatePowerRentalOrderRequest {

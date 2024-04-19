@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/order/mw/v1/powerrental/powerrental.proto",
+    "title": "npool/order/mw/v1/fee/fee.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,17 +17,7 @@
   ],
   "paths": {},
   "definitions": {
-    "basetypesorderv1BenefitState": {
-      "type": "string",
-      "enum": [
-        "DefaultBenefitState",
-        "BenefitWait",
-        "BenefitCalculated",
-        "BenefitBookKept"
-      ],
-      "default": "DefaultBenefitState"
-    },
-    "middlewarepowerrentalv1Conds": {
+    "middlewarefeev1Conds": {
       "type": "object",
       "properties": {
         "ID": {
@@ -41,6 +31,12 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "OrderID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
         "AppID": {
@@ -76,9 +72,6 @@
         "PaymentTypes": {
           "$ref": "#/definitions/v1Uint32SliceVal"
         },
-        "Simulate": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
         "OrderState": {
           "$ref": "#/definitions/v1Uint32Val",
           "title": "orderstate"
@@ -86,44 +79,19 @@
         "OrderStates": {
           "$ref": "#/definitions/v1Uint32SliceVal"
         },
-        "StartMode": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "LastBenefitAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "BenefitState": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "AdminSetCanceled": {
+        "UserSetCanceled": {
           "$ref": "#/definitions/v1BoolVal",
           "title": "power rental"
         },
-        "UserSetCanceled": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "RenewState": {
+        "PaymentState": {
           "$ref": "#/definitions/v1Uint32Val",
           "title": "power rental state"
-        },
-        "RenewNotifyAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "PaymentState": {
-          "$ref": "#/definitions/v1Uint32Val"
         },
         "CouponID": {
           "$ref": "#/definitions/v1StringVal",
           "title": "coupon"
         },
         "CouponIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "TransactionID": {
-          "$ref": "#/definitions/v1StringVal",
-          "title": "transaction id"
-        },
-        "TransactionIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
         "CreatedAt": {
@@ -176,26 +144,34 @@
         }
       }
     },
-    "v1CreatePowerRentalOrderResponse": {
+    "v1CreateFeeOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1PowerRentalOrder"
+          "$ref": "#/definitions/v1FeeOrder"
         }
       }
     },
-    "v1CreatePowerRentalOrderWithFeesResponse": {
-      "type": "object"
+    "v1CreateFeeOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FeeOrder"
+          }
+        }
+      }
     },
-    "v1DeletePowerRentalOrderResponse": {
+    "v1DeleteFeeOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1PowerRentalOrder"
+          "$ref": "#/definitions/v1FeeOrder"
         }
       }
     },
-    "v1ExistPowerRentalOrderCondsResponse": {
+    "v1ExistFeeOrderCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -203,7 +179,7 @@
         }
       }
     },
-    "v1ExistPowerRentalOrderResponse": {
+    "v1ExistFeeOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -211,17 +187,155 @@
         }
       }
     },
-    "v1FeeDuration": {
+    "v1FeeOrder": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "Base order information\n@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "AppGoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_id\""
+        },
+        "ParentOrderID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"parent_order_id\""
+        },
+        "OrderTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"order_type\""
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
+        },
+        "PaymentTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_type\""
+        },
+        "PaymentType": {
+          "$ref": "#/definitions/v1PaymentType"
+        },
+        "CreateMethodStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"create_method\""
+        },
+        "CreateMethod": {
+          "$ref": "#/definitions/v1OrderCreateMethod"
+        },
+        "OrderStateStr": {
+          "type": "string",
+          "title": "Base order state information\n@inject_tag: sql:\"order_state\""
+        },
+        "OrderState": {
+          "$ref": "#/definitions/v1OrderState"
+        },
+        "GoodValueUSD": {
+          "type": "string",
+          "title": "Power rental information\n@inject_tag: sql:\"good_value_usd\""
+        },
+        "PaymentAmountUSD": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_amount_usd\""
+        },
+        "DiscountAmountUSD": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"discount_amount_usd\""
+        },
+        "PromotionID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"promotion_id\""
         },
         "DurationSeconds": {
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"duration_seconds\""
+        },
+        "CancelStateStr": {
+          "type": "string",
+          "title": "Power rental state information\n@inject_tag: sql:\"cancel_state\""
+        },
+        "CancelState": {
+          "$ref": "#/definitions/v1OrderState"
+        },
+        "PaidAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"paid_at\""
+        },
+        "UserSetPaid": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"user_set_paid\""
+        },
+        "UserSetCanceled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"user_set_canceled\""
+        },
+        "PaymentStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_state\""
+        },
+        "PaymentState": {
+          "$ref": "#/definitions/v1PaymentState"
+        },
+        "LedgerLockID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ledger_lock_id\""
+        },
+        "Coupons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderCouponInfo"
+          },
+          "title": "Coupons"
+        },
+        "PaymentBalances": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PaymentBalanceInfo"
+          },
+          "title": "Payment balances"
+        },
+        "PaymentTransfers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PaymentTransferInfo"
+          },
+          "title": "Payment transfers"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
@@ -327,21 +441,21 @@
         }
       }
     },
-    "v1GetPowerRentalOrderResponse": {
+    "v1GetFeeOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1PowerRentalOrder"
+          "$ref": "#/definitions/v1FeeOrder"
         }
       }
     },
-    "v1GetPowerRentalOrdersResponse": {
+    "v1GetFeeOrdersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1PowerRentalOrder"
+            "$ref": "#/definitions/v1FeeOrder"
           }
         },
         "Total": {
@@ -362,15 +476,6 @@
         "ElectricityFee"
       ],
       "default": "DefaultGoodType"
-    },
-    "v1InvestmentType": {
-      "type": "string",
-      "enum": [
-        "DefaultInvestmentType",
-        "UnionMining",
-        "FullPayment"
-      ],
-      "default": "DefaultInvestmentType"
     },
     "v1OrderCouponInfo": {
       "type": "object",
@@ -399,30 +504,6 @@
         "OrderCreatedByRenew"
       ],
       "default": "DefaultOrderCreateMethod"
-    },
-    "v1OrderRenewState": {
-      "type": "string",
-      "enum": [
-        "DefaultOrderRenewState",
-        "OrderRenewWait",
-        "OrderRenewCheck",
-        "OrderRenewNotify",
-        "OrderRenewExecute",
-        "OrderRenewFail"
-      ],
-      "default": "DefaultOrderRenewState"
-    },
-    "v1OrderStartMode": {
-      "type": "string",
-      "enum": [
-        "DefaultOrderStartMode",
-        "OrderStartTBD",
-        "OrderStartConfirmed",
-        "OrderStartInstantly",
-        "OrderStartNextDay",
-        "OrderStartPreset"
-      ],
-      "default": "DefaultOrderStartMode"
     },
     "v1OrderState": {
       "type": "string",
@@ -629,378 +710,6 @@
       ],
       "default": "DefaultPaymentType"
     },
-    "v1PowerRentalOrder": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64",
-          "title": "Base order information\n@inject_tag: sql:\"id\""
-        },
-        "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
-        },
-        "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
-        },
-        "GoodTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_type\""
-        },
-        "GoodType": {
-          "$ref": "#/definitions/v1GoodType"
-        },
-        "AppGoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_good_id\""
-        },
-        "ParentOrderID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"parent_order_id\""
-        },
-        "OrderTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"order_type\""
-        },
-        "OrderType": {
-          "$ref": "#/definitions/v1OrderType"
-        },
-        "PaymentTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"payment_type\""
-        },
-        "PaymentType": {
-          "$ref": "#/definitions/v1PaymentType"
-        },
-        "CreateMethodStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"create_method\""
-        },
-        "CreateMethod": {
-          "$ref": "#/definitions/v1OrderCreateMethod"
-        },
-        "Simulate": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"simulate\""
-        },
-        "OrderStateStr": {
-          "type": "string",
-          "title": "Base order state information\n@inject_tag: sql:\"order_state\""
-        },
-        "OrderState": {
-          "$ref": "#/definitions/v1OrderState"
-        },
-        "StartModeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"start_mode\""
-        },
-        "StartMode": {
-          "$ref": "#/definitions/v1OrderStartMode"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"start_at\""
-        },
-        "LastBenefitAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"last_benefit_at\""
-        },
-        "BenefitStateStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"benefit_state\""
-        },
-        "BenefitState": {
-          "$ref": "#/definitions/basetypesorderv1BenefitState"
-        },
-        "AppGoodStockID": {
-          "type": "string",
-          "title": "Power rental information\n@inject_tag: sql:\"app_good_stock_id\""
-        },
-        "Units": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"units\""
-        },
-        "GoodValueUSD": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_value_usd\""
-        },
-        "PaymentAmountUSD": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"payment_amount_usd\""
-        },
-        "DiscountAmountUSD": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"discount_amount_usd\""
-        },
-        "PromotionID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"promotion_id\""
-        },
-        "Duration": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"duration\""
-        },
-        "InvestmentTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"investment_type\""
-        },
-        "InvestmentType": {
-          "$ref": "#/definitions/v1InvestmentType"
-        },
-        "CancelStateStr": {
-          "type": "string",
-          "title": "Power rental state information\n@inject_tag: sql:\"cancel_state\""
-        },
-        "CancelState": {
-          "$ref": "#/definitions/v1OrderState"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "Calculate with start at and duration seconds"
-        },
-        "PaidAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"paid_at\""
-        },
-        "UserSetPaid": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"user_set_paid\""
-        },
-        "UserSetCanceled": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"user_set_canceled\""
-        },
-        "AdminSetCanceled": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"admin_set_canceled\""
-        },
-        "PaymentStateStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"payment_state\""
-        },
-        "PaymentState": {
-          "$ref": "#/definitions/v1PaymentState"
-        },
-        "OutOfGasHours": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"out_of_gas_hours\""
-        },
-        "CompensateHours": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"compensate_horus\""
-        },
-        "RenewStateStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"renew_state\""
-        },
-        "RenewState": {
-          "$ref": "#/definitions/v1OrderRenewState"
-        },
-        "RenewNotifyAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"renew_notify_at\""
-        },
-        "AppGoodStockLockID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_good_stock_lock_id\""
-        },
-        "LedgerLockID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ledger_lock_id\""
-        },
-        "Coupons": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1OrderCouponInfo"
-          },
-          "title": "Coupons"
-        },
-        "PaymentBalances": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1PaymentBalanceInfo"
-          },
-          "title": "Payment balances"
-        },
-        "PaymentTransfers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1PaymentTransferInfo"
-          },
-          "title": "Payment transfers"
-        },
-        "FeeDurations": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1FeeDuration"
-          },
-          "title": "Fee duration infos"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v1PowerRentalOrderReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64",
-          "title": "Order base"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "GoodType": {
-          "$ref": "#/definitions/v1GoodType"
-        },
-        "AppGoodID": {
-          "type": "string"
-        },
-        "OrderID": {
-          "type": "string"
-        },
-        "OrderType": {
-          "$ref": "#/definitions/v1OrderType"
-        },
-        "PaymentType": {
-          "$ref": "#/definitions/v1PaymentType"
-        },
-        "Simulate": {
-          "type": "boolean"
-        },
-        "AppGoodStockID": {
-          "type": "string",
-          "title": "Power rental"
-        },
-        "Units": {
-          "type": "string"
-        },
-        "GoodValueUSD": {
-          "type": "string"
-        },
-        "PaymentAmountUSD": {
-          "type": "string"
-        },
-        "DiscountAmountUSD": {
-          "type": "string"
-        },
-        "PromotionID": {
-          "type": "string"
-        },
-        "DurationSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "InvestmentType": {
-          "$ref": "#/definitions/v1InvestmentType"
-        },
-        "OrderState": {
-          "$ref": "#/definitions/v1OrderState",
-          "title": "Order state base"
-        },
-        "StartMode": {
-          "$ref": "#/definitions/v1OrderStartMode"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "LastBenefitAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "BenefitState": {
-          "$ref": "#/definitions/basetypesorderv1BenefitState"
-        },
-        "UserSetPaid": {
-          "type": "boolean",
-          "title": "Power rental state\nAppGoodStockID or AppMiningGoodStockID"
-        },
-        "UserSetCanceled": {
-          "type": "boolean"
-        },
-        "AdminSetCanceled": {
-          "type": "boolean"
-        },
-        "PaymentState": {
-          "$ref": "#/definitions/v1PaymentState"
-        },
-        "RenewState": {
-          "$ref": "#/definitions/v1OrderRenewState"
-        },
-        "RenewNotifyAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Rollback": {
-          "type": "boolean",
-          "title": "Work flow and lock"
-        },
-        "AppGoodStockLockID": {
-          "type": "string"
-        },
-        "LedgerLockID": {
-          "type": "string"
-        },
-        "CouponIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "Coupons"
-        },
-        "PaymentBalances": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1PaymentBalanceReq"
-          },
-          "title": "Payment balances"
-        },
-        "PaymentTransfers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1PaymentTransferReq"
-          },
-          "title": "Payment transfers"
-        }
-      }
-    },
     "v1StringSliceVal": {
       "type": "object",
       "properties": {
@@ -1053,11 +762,11 @@
         }
       }
     },
-    "v1UpdatePowerRentalOrderResponse": {
+    "v1UpdateFeeOrderResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1PowerRentalOrder"
+          "$ref": "#/definitions/v1FeeOrder"
         }
       }
     }
