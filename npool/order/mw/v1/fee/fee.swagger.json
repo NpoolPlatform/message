@@ -83,6 +83,9 @@
           "$ref": "#/definitions/v1BoolVal",
           "title": "power rental"
         },
+        "AdminSetCanceled": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
         "PaymentState": {
           "$ref": "#/definitions/v1Uint32Val",
           "title": "power rental state"
@@ -299,6 +302,10 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"user_set_canceled\""
         },
+        "AdminSetCanceled": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"admin_set_canceled\""
+        },
         "PaymentStateStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"payment_state\""
@@ -421,6 +428,9 @@
           "title": "Power rental state"
         },
         "UserSetCanceled": {
+          "type": "boolean"
+        },
+        "AdminSetCanceled": {
           "type": "boolean"
         },
         "PaymentState": {
