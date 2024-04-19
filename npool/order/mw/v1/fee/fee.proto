@@ -56,7 +56,7 @@ message FeeOrderReq {
 
     // Work flow and lock
     optional bool Rollback = 500;
-    optional string AppGoodStockLockID = 510;
+    optional string LedgerLockID = 510;
 
     // Coupons
     repeated string CouponIDs = 600;
