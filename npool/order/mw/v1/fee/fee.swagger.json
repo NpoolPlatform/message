@@ -631,6 +631,7 @@
       "type": "string",
       "enum": [
         "DefaultPaymentObseleteState",
+        "PaymentObseleteNone",
         "PaymentObseleteWait",
         "PaymentObseleteUnlock",
         "PaymentObseleted",
