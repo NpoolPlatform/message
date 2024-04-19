@@ -83,17 +83,19 @@ message FeeOrder {
     basetypes.good.v1.GoodType GoodType = 70;
     // @inject_tag: sql:"app_good_id"
     string AppGoodID = 80;
+    // @inject_tag: sql:"order_id"
+    string OrderID = 90;
     // @inject_tag: sql:"parent_order_id"
-    string ParentOrderID = 90;
+    string ParentOrderID = 100;
     // @inject_tag: sql:"order_type"
-    string OrderTypeStr = 100;
-    basetypes.order.v1.OrderType OrderType = 110;
+    string OrderTypeStr = 110;
+    basetypes.order.v1.OrderType OrderType = 120;
     // @inject_tag: sql:"payment_type"
-    string PaymentTypeStr = 120;
-    basetypes.order.v1.PaymentType PaymentType = 130;
+    string PaymentTypeStr = 130;
+    basetypes.order.v1.PaymentType PaymentType = 140;
     // @inject_tag: sql:"create_method"
-    string CreateMethodStr = 140;
-    basetypes.order.v1.OrderCreateMethod CreateMethod = 150;
+    string CreateMethodStr = 150;
+    basetypes.order.v1.OrderCreateMethod CreateMethod = 160;
 
     // Base order state information
     // @inject_tag: sql:"order_state"
