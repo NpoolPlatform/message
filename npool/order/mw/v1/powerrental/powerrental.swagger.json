@@ -664,6 +664,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
         },
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "AppGoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_id\""
@@ -728,9 +735,13 @@
         "BenefitState": {
           "$ref": "#/definitions/basetypesorderv1BenefitState"
         },
+        "AppGoodStockID": {
+          "type": "string",
+          "title": "Power rental information\n@inject_tag: sql:\"app_good_stock_id\""
+        },
         "Units": {
           "type": "string",
-          "title": "Power rental information\n@inject_tag: sql:\"units\""
+          "title": "@inject_tag: sql:\"units\""
         },
         "GoodValueUSD": {
           "type": "string",
@@ -865,7 +876,7 @@
         "ID": {
           "type": "integer",
           "format": "int64",
-          "title": "order"
+          "title": "Order base"
         },
         "EntID": {
           "type": "string"
@@ -879,6 +890,9 @@
         "GoodID": {
           "type": "string"
         },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "AppGoodID": {
           "type": "string"
         },
@@ -887,6 +901,22 @@
         },
         "ParentOrderID": {
           "type": "string"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
+        },
+        "PaymentType": {
+          "$ref": "#/definitions/v1PaymentType"
+        },
+        "CreateMethod": {
+          "$ref": "#/definitions/v1OrderCreateMethod"
+        },
+        "Simulate": {
+          "type": "boolean"
+        },
+        "AppGoodStockID": {
+          "type": "string",
+          "title": "Power rental"
         },
         "Units": {
           "type": "string"
@@ -907,31 +937,17 @@
           "type": "integer",
           "format": "int64"
         },
-        "OrderType": {
-          "$ref": "#/definitions/v1OrderType"
-        },
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
         },
-        "PaymentType": {
-          "$ref": "#/definitions/v1PaymentType"
-        },
-        "CreateMethod": {
-          "$ref": "#/definitions/v1OrderCreateMethod",
-          "title": "Support multiple payment coins from user balances"
-        },
         "OrderState": {
           "$ref": "#/definitions/v1OrderState",
-          "title": "Create or Update\norderstate"
+          "title": "Order state base"
         },
         "StartMode": {
           "$ref": "#/definitions/v1OrderStartMode"
         },
         "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
           "type": "integer",
           "format": "int64"
         },
@@ -941,6 +957,11 @@
         },
         "BenefitState": {
           "$ref": "#/definitions/basetypesorderv1BenefitState"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "Power rental state\nAppGoodStockID or AppMiningGoodStockID"
         },
         "UserSetPaid": {
           "type": "boolean"
@@ -954,23 +975,6 @@
         "PaymentState": {
           "$ref": "#/definitions/v1PaymentState"
         },
-        "OutOfGasHours": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CompensateHours": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Rollback": {
-          "type": "boolean"
-        },
-        "AppGoodStockLockID": {
-          "type": "string"
-        },
-        "LedgerLockID": {
-          "type": "string"
-        },
         "RenewState": {
           "$ref": "#/definitions/v1OrderRenewState"
         },
@@ -978,8 +982,15 @@
           "type": "integer",
           "format": "int64"
         },
-        "Simulate": {
-          "type": "boolean"
+        "Rollback": {
+          "type": "boolean",
+          "title": "Work flow and lock"
+        },
+        "AppGoodStockLockID": {
+          "type": "string"
+        },
+        "LedgerLockID": {
+          "type": "string"
         },
         "CouponIDs": {
           "type": "array",
