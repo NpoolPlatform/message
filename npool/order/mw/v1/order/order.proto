@@ -18,15 +18,6 @@ service Middleware {
     rpc ExistOrderConds (ExistOrderCondsRequest) returns (ExistOrderCondsResponse) {}
 }
 
-// For child order
-message OrderReq {
-    optional string EntID = 10;
-    optional string GoodID = 20;
-    optional string AppGoodID = 30;
-    optional uint32 Duration = 40;
-    optional basetypes.good.v1.GoodType GoodType = 50;
-}
-
 message Order {
     // order
     // @inject_tag: sql:"id"
