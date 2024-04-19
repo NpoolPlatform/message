@@ -57,6 +57,7 @@ message FeeOrderReq {
     // Work flow and lock
     optional bool Rollback = 500;
     optional string LedgerLockID = 510;
+    optional string PaymentID = 520;
 
     // Coupons
     repeated string CouponIDs = 600;
@@ -129,6 +130,8 @@ message FeeOrder {
     basetypes.order.v1.PaymentState PaymentState = 480;
     // @inject_tag: sql:"ledger_lock_id"
     string LedgerLockID = 490;
+    // @inject_tag: sql:"payment_id"
+    string PaymentID = 500;
 
     // Coupons
     repeated order.middleware.order1.coupon.v1.OrderCouponInfo Coupons = 600;

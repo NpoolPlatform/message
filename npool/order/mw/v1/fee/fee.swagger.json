@@ -310,6 +310,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ledger_lock_id\""
         },
+        "PaymentID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_id\""
+        },
         "Coupons": {
           "type": "array",
           "items": {
@@ -420,6 +424,9 @@
           "title": "Work flow and lock"
         },
         "LedgerLockID": {
+          "type": "string"
+        },
+        "PaymentID": {
           "type": "string"
         },
         "CouponIDs": {
