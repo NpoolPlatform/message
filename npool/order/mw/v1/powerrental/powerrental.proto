@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/powerren
 
 import "google/api/annotations.proto";
 import "npool/basetypes/order/v1/enums.proto";
+import "npool/basetypes/good/v1/enums.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/order/mw/v1/payment/payment.proto";
 import "npool/order/mw/v1/order/coupon/coupon.proto";
@@ -24,55 +25,59 @@ service Middleware {
 }
 
 message PowerRentalOrderReq {
-    // order
+    // Order base
     optional uint32 ID = 10;
     optional string EntID = 20;
     optional string AppID = 30;
     optional string UserID = 40;
     optional string GoodID = 50;
-    optional string AppGoodID = 60;
-    optional string OrderID = 70;
-    optional string ParentOrderID = 80;
-    optional string Units = 90;
-    optional string GoodValueUSD = 100;
-    optional string PaymentAmountUSD = 110;
-    optional string DiscountAmountUSD = 120;
-    optional string PromotionID = 130;
-    optional uint32 Duration = 140;
-    optional basetypes.order.v1.OrderType OrderType = 150;
-    optional basetypes.order.v1.InvestmentType InvestmentType = 160;
-    optional basetypes.order.v1.PaymentType PaymentType = 170;
+    optional basetypes.good.v1.GoodType GoodType = 60;
+    optional string AppGoodID = 70;
+    optional string OrderID = 80;
+    optional string ParentOrderID = 90;
+    optional basetypes.order.v1.OrderType OrderType = 100;
+    optional basetypes.order.v1.PaymentType PaymentType = 110;
+    optional basetypes.order.v1.OrderCreateMethod CreateMethod = 120;
+    optional bool Simulate = 130;
 
-    // Support multiple payment coins from user balances
-    optional basetypes.order.v1.OrderCreateMethod CreateMethod = 180;
+    // Power rental
+    optional string AppGoodStockID = 200;
+    optional string Units = 210;
+    optional string GoodValueUSD = 220;
+    optional string PaymentAmountUSD = 230;
+    optional string DiscountAmountUSD = 240;
+    optional string PromotionID = 250;
+    optional uint32 Duration = 260;
+    optional basetypes.order.v1.InvestmentType InvestmentType = 270;
 
-    // Create or Update
-    // orderstate
-    optional basetypes.order.v1.OrderState OrderState = 190;
-    optional basetypes.order.v1.OrderStartMode StartMode = 200;
-    optional uint32 StartAt = 210;
-    optional uint32 EndAt = 220;
-    optional uint32 LastBenefitAt = 230;
-    optional basetypes.order.v1.BenefitState BenefitState = 240;
-    optional bool UserSetPaid = 250;
-    optional bool UserSetCanceled = 260;
-    optional bool AdminSetCanceled = 270;
-    optional basetypes.order.v1.PaymentState PaymentState = 280;
-    optional uint32 OutOfGasHours = 290;
-    optional uint32 CompensateHours = 300;
-    optional bool Rollback = 310;
-    optional string AppGoodStockLockID = 320;
-    optional string LedgerLockID = 330;
-    optional basetypes.order.v1.OrderRenewState RenewState = 340;
-    optional uint32 RenewNotifyAt = 350;
-    optional bool Simulate = 360;
+    // Order state base
+    optional basetypes.order.v1.OrderState OrderState = 300;
+    optional basetypes.order.v1.OrderStartMode StartMode = 310;
+    optional uint32 StartAt = 320;
+    optional uint32 LastBenefitAt = 330;
+    optional basetypes.order.v1.BenefitState BenefitState = 340;
+
+    // Power rental state
+    // AppGoodStockID or AppMiningGoodStockID
+    optional uint32 EndAt = 400;
+    optional bool UserSetPaid = 410;
+    optional bool UserSetCanceled = 420;
+    optional bool AdminSetCanceled = 430;
+    optional basetypes.order.v1.PaymentState PaymentState = 440;
+    optional basetypes.order.v1.OrderRenewState RenewState = 450;
+    optional uint32 RenewNotifyAt = 460;
+
+    // Work flow and lock
+    optional bool Rollback = 500;
+    optional string AppGoodStockLockID = 510;
+    optional string LedgerLockID = 520;
 
     // Coupons
-    repeated string CouponIDs = 370;
+    repeated string CouponIDs = 600;
     // Payment balances
-    repeated order.middleware.payment.v1.PaymentBalanceReq PaymentBalances = 380;
+    repeated order.middleware.payment.v1.PaymentBalanceReq PaymentBalances = 610;
     // Payment transfers
-    repeated order.middleware.payment.v1.PaymentTransferReq PaymentTransfers = 390;
+    repeated order.middleware.payment.v1.PaymentTransferReq PaymentTransfers = 620;
 }
 
 message PowerRentalOrderWithChildsReq {
@@ -92,84 +97,89 @@ message PowerRentalOrder {
     string UserID = 40;
     // @inject_tag: sql:"good_id"
     string GoodID = 50;
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 60;
+    basetypes.good.v1.GoodType GoodType = 70;
     // @inject_tag: sql:"app_good_id"
-    string AppGoodID = 60;
+    string AppGoodID = 80;
     // @inject_tag: sql:"parent_order_id"
-    string ParentOrderID = 70;
+    string ParentOrderID = 90;
     // @inject_tag: sql:"order_type"
-    string OrderTypeStr = 90;
-    basetypes.order.v1.OrderType OrderType = 100;
+    string OrderTypeStr = 100;
+    basetypes.order.v1.OrderType OrderType = 110;
     // @inject_tag: sql:"payment_type"
-    string PaymentTypeStr = 110;
-    basetypes.order.v1.PaymentType PaymentType = 120;
+    string PaymentTypeStr = 120;
+    basetypes.order.v1.PaymentType PaymentType = 130;
     // @inject_tag: sql:"create_method"
-    string CreateMethodStr = 130;
-    basetypes.order.v1.OrderCreateMethod CreateMethod = 140;
+    string CreateMethodStr = 140;
+    basetypes.order.v1.OrderCreateMethod CreateMethod = 150;
     // @inject_tag: sql:"simulate"
-    bool Simulate = 150;
+    bool Simulate = 160;
 
     // Base order state information
     // @inject_tag: sql:"order_state"
-    string OrderStateStr = 160;
-    basetypes.order.v1.OrderState OrderState = 170;
+    string OrderStateStr = 200;
+    basetypes.order.v1.OrderState OrderState = 210;
     // @inject_tag: sql:"start_mode"
-    string StartModeStr = 180;
-    basetypes.order.v1.OrderStartMode StartMode = 190;
+    string StartModeStr = 220;
+    basetypes.order.v1.OrderStartMode StartMode = 230;
     // @inject_tag: sql:"start_at"
-    uint32 StartAt = 200;
+    uint32 StartAt = 240;
     // @inject_tag: sql:"last_benefit_at"
-    uint32 LastBenefitAt = 210;
+    uint32 LastBenefitAt = 250;
     // @inject_tag: sql:"benefit_state"
-    string BenefitStateStr = 220;
-    basetypes.order.v1.BenefitState BenefitState = 230;
+    string BenefitStateStr = 260;
+    basetypes.order.v1.BenefitState BenefitState = 270;
 
     // Power rental information
+    // @inject_tag: sql:"app_good_stock_id"
+    string AppGoodStockID = 300;
     // @inject_tag: sql:"units"
-    string Units = 240;
+    string Units = 310;
     // @inject_tag: sql:"good_value_usd"
-    string GoodValueUSD = 250;
+    string GoodValueUSD = 320;
     // @inject_tag: sql:"payment_amount_usd"
-    string PaymentAmountUSD = 260;
+    string PaymentAmountUSD = 330;
     // @inject_tag: sql:"discount_amount_usd"
-    string DiscountAmountUSD = 270;
+    string DiscountAmountUSD = 340;
     // @inject_tag: sql:"promotion_id"
-    string PromotionID = 280;
+    string PromotionID = 350;
     // @inject_tag: sql:"duration"
-    uint32 Duration = 290;
+    uint32 Duration = 360;
     // @inject_tag: sql:"investment_type"
-    string InvestmentTypeStr = 300;
-    basetypes.order.v1.InvestmentType InvestmentType = 310;
+    string InvestmentTypeStr = 370;
+    basetypes.order.v1.InvestmentType InvestmentType = 380;
 
     // Power rental state information
     // @inject_tag: sql:"cancel_state"
-    string CancelStateStr = 320;
-    basetypes.order.v1.OrderState CancelState = 330;
+    string CancelStateStr = 400;
+    basetypes.order.v1.OrderState CancelState = 410;
     // @inject_tag: sql:"end_at"
-    uint32 EndAt = 340;
+    uint32 EndAt = 420;
     // @inject_tag: sql:"paid_at"
-    uint32 PaidAt = 350;
+    uint32 PaidAt = 430;
     // @inject_tag: sql:"user_set_paid"
-    bool UserSetPaid = 360;
+    bool UserSetPaid = 440;
     // @inject_tag: sql:"user_set_canceled"
-    bool UserSetCanceled = 370;
+    bool UserSetCanceled = 450;
     // @inject_tag: sql:"admin_set_canceled"
-    bool AdminSetCanceled = 380;
+    bool AdminSetCanceled = 460;
     // @inject_tag: sql:"payment_state"
-    string PaymentStateStr = 390;
-    basetypes.order.v1.PaymentState PaymentState = 400;
+    string PaymentStateStr = 470;
+    basetypes.order.v1.PaymentState PaymentState = 480;
     // @inject_tag: sql:"out_of_gas_hours"
-    uint32 OutOfGasHours = 410;
+    uint32 OutOfGasHours = 490;
     // @inject_tag: sql:"compensate_horus"
-    uint32 CompensateHours = 420;
+    uint32 CompensateHours = 500;
     // @inject_tag: sql:"renew_state"
-    string RenewStateStr = 430;
-    basetypes.order.v1.OrderRenewState RenewState = 440;
+    string RenewStateStr = 510;
+    basetypes.order.v1.OrderRenewState RenewState = 520;
     // @inject_tag: sql:"renew_notify_at"
-    uint32 RenewNotifyAt = 450;
+    uint32 RenewNotifyAt = 530;
     // @inject_tag: sql:"app_good_stock_lock_id"
-    string AppGoodStockLockID = 460;
+    string AppGoodStockLockID = 540;
     // @inject_tag: sql:"ledger_lock_id"
-    string LedgerLockID = 470;
+    string LedgerLockID = 550;
 
     // Coupons
     repeated order.middleware.order1.coupon.v1.OrderCouponInfo Coupons = 600;
