@@ -183,10 +183,11 @@ enum PaymentState {
 enum PaymentObseleteState {
     DefaultPaymentObseleteState = 0;
 
-    PaymentObseleteWait    = 10;
-    PaymentObseleteUnlock  = 20;
-    PaymentObseleted       = 30;
-    PaymentObseleteFail    = 40;
+    PaymentObseleteNone    = 10;
+    PaymentObseleteWait    = 20;
+    PaymentObseleteUnlock  = 30;
+    PaymentObseleted       = 40;
+    PaymentObseleteFail    = 50;
 }
 
 enum InvestmentType {
