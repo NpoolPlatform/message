@@ -180,6 +180,15 @@ enum PaymentState {
     PaymentStateNoPayment = 1000;
 }
 
+enum PaymentObseleteState {
+    DefaultPaymentObseleteState = 0;
+
+    PaymentObseleteWait    = 10;
+    PaymentObseleteUnlock  = 20;
+    PaymentObseleted       = 30;
+    PaymentObseleteFail    = 40;
+}
+
 enum InvestmentType {
     DefaultInvestmentType = 0;
 
