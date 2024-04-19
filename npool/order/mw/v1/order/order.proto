@@ -40,35 +40,38 @@ message Order {
     string UserID = 40;
     // @inject_tag: sql:"good_id"
     string GoodID = 50;
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 60;
+    basetypes.good.v1.GoodType GoodType = 70;
     // @inject_tag: sql:"app_good_id"
-    string AppGoodID = 60;
+    string AppGoodID = 80;
     // @inject_tag: sql:"parent_order_id"
-    string ParentOrderID = 70;
+    string ParentOrderID = 90;
     // @inject_tag: sql:"order_type"
-    string OrderTypeStr = 90;
-    basetypes.order.v1.OrderType OrderType = 100;
+    string OrderTypeStr = 100;
+    basetypes.order.v1.OrderType OrderType = 110;
     // @inject_tag: sql:"payment_type"
-    string PaymentTypeStr = 110;
-    basetypes.order.v1.PaymentType PaymentType = 120;
+    string PaymentTypeStr = 120;
+    basetypes.order.v1.PaymentType PaymentType = 130;
     // @inject_tag: sql:"create_method"
-    string CreateMethodStr = 130;
-    basetypes.order.v1.OrderCreateMethod CreateMethod = 140;
+    string CreateMethodStr = 140;
+    basetypes.order.v1.OrderCreateMethod CreateMethod = 150;
     // @inject_tag: sql:"simulate"
-    bool Simulate = 150;
+    bool Simulate = 160;
 
     // @inject_tag: sql:"order_state"
-    string OrderStateStr = 160;
-    basetypes.order.v1.OrderState OrderState = 170;
+    string OrderStateStr = 200;
+    basetypes.order.v1.OrderState OrderState = 210;
     // @inject_tag: sql:"start_mode"
-    string StartModeStr = 180;
-    basetypes.order.v1.OrderStartMode StartMode = 190;
+    string StartModeStr = 220;
+    basetypes.order.v1.OrderStartMode StartMode = 230;
     // @inject_tag: sql:"start_at"
-    uint32 StartAt = 200;
+    uint32 StartAt = 240;
     // @inject_tag: sql:"last_benefit_at"
-    uint32 LastBenefitAt = 210;
+    uint32 LastBenefitAt = 250;
     // @inject_tag: sql:"benefit_state"
-    string BenefitStateStr = 220;
-    basetypes.order.v1.BenefitState BenefitState = 230;
+    string BenefitStateStr = 260;
+    basetypes.order.v1.BenefitState BenefitState = 270;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
