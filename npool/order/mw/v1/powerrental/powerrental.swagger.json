@@ -294,6 +294,9 @@
         "UserSetCanceled": {
           "type": "boolean"
         },
+        "AdminSetCanceled": {
+          "type": "boolean"
+        },
         "PaymentState": {
           "$ref": "#/definitions/v1PaymentState"
         },

@@ -52,6 +52,7 @@ message FeeOrderReq {
     // Power rental state
     optional bool UserSetPaid = 410;
     optional bool UserSetCanceled = 420;
+    optional bool AdminSetCanceled = 430;
     optional basetypes.order.v1.PaymentState PaymentState = 440;
 
     // Work flow and lock
@@ -125,6 +126,8 @@ message FeeOrder {
     bool UserSetPaid = 440;
     // @inject_tag: sql:"user_set_canceled"
     bool UserSetCanceled = 450;
+    // @inject_tag: sql:"admin_set_canceled"
+    bool AdminSetCanceled = 460;
     // @inject_tag: sql:"payment_state"
     string PaymentStateStr = 470;
     basetypes.order.v1.PaymentState PaymentState = 480;
@@ -182,6 +185,7 @@ message Conds {
 
     // power rental
     optional basetypes.v1.BoolVal UserSetCanceled = 300;
+    optional basetypes.v1.BoolVal AdminSetCanceled = 310;
 
     // power rental state
     optional basetypes.v1.Uint32Val PaymentState = 400;
