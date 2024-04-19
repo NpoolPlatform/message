@@ -301,7 +301,7 @@
           "type": "boolean",
           "title": "Work flow and lock"
         },
-        "AppGoodStockLockID": {
+        "LedgerLockID": {
           "type": "string"
         },
         "CouponIDs": {
