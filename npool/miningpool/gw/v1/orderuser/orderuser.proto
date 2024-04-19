@@ -27,7 +27,7 @@ message OrderUser {
   string UserID = 70;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
   basetypes.miningpool.v1.CoinType CoinType = 90;
-  float Proportion = 100;
+  string Proportion = 100;
   string RevenueAddress = 110;
   string ReadPageLink = 120;
   bool AutoPay = 130;

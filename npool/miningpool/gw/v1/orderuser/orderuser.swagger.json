@@ -148,8 +148,7 @@
           "$ref": "#/definitions/v1CoinType"
         },
         "Proportion": {
-          "type": "number",
-          "format": "float"
+          "type": "string"
         },
         "RevenueAddress": {
           "type": "string"

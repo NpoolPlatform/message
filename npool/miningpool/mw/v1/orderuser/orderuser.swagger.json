@@ -296,8 +296,7 @@
           "$ref": "#/definitions/v1CoinType"
         },
         "Proportion": {
-          "type": "number",
-          "format": "float",
+          "type": "string",
           "title": "@inject_tag: sql:\"proportion\""
         },
         "RevenueAddress": {
@@ -356,8 +355,7 @@
           "$ref": "#/definitions/v1CoinType"
         },
         "Proportion": {
-          "type": "number",
-          "format": "float"
+          "type": "string"
         },
         "RevenueAddress": {
           "type": "string"

@@ -43,7 +43,7 @@ message OrderUserReq {
   optional string Name = 70;
   optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
   optional basetypes.miningpool.v1.CoinType CoinType = 90;
-  optional float Proportion = 100;
+  optional string Proportion = 100;
   optional string RevenueAddress = 110;
   optional string ReadPageLink = 120;
   optional bool AutoPay = 130;
@@ -71,7 +71,7 @@ message OrderUser {
   string CoinTypeStr = 90;
   basetypes.miningpool.v1.CoinType CoinType = 91;
   // @inject_tag: sql:"proportion"
-  float Proportion = 100;
+  string Proportion = 100;
   // @inject_tag: sql:"revenue_address"
   string RevenueAddress = 110;
   // @inject_tag: sql:"read_page_link"
