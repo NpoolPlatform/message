@@ -200,41 +200,43 @@ message Conds {
     optional basetypes.v1.StringSliceVal GoodIDs = 80;
     optional basetypes.v1.StringVal AppGoodID = 90;
     optional basetypes.v1.StringSliceVal AppGoodIDs = 100;
-    optional basetypes.v1.StringVal ParentOrderID = 110;
-    optional basetypes.v1.StringSliceVal ParentOrderIDs = 120;
-    optional basetypes.v1.Uint32Val OrderType = 130;
-    optional basetypes.v1.Uint32Val PaymentType = 140;
-    optional basetypes.v1.Uint32SliceVal PaymentTypes = 150;
-    optional basetypes.v1.BoolVal Simulate = 160;
+    optional basetypes.v1.StringVal OrderID = 110;
+    optional basetypes.v1.StringSliceVal OrderIDs = 120;
+    optional basetypes.v1.StringVal ParentOrderID = 130;
+    optional basetypes.v1.StringSliceVal ParentOrderIDs = 140;
+    optional basetypes.v1.Uint32Val OrderType = 150;
+    optional basetypes.v1.Uint32Val PaymentType = 160;
+    optional basetypes.v1.Uint32SliceVal PaymentTypes = 170;
+    optional basetypes.v1.BoolVal Simulate = 180;
 
     // orderstate
-    optional basetypes.v1.Uint32Val OrderState = 170;
-    optional basetypes.v1.Uint32SliceVal OrderStates = 180;
-    optional basetypes.v1.Uint32Val StartMode = 190;
-    optional basetypes.v1.Uint32Val LastBenefitAt = 200;
-    optional basetypes.v1.Uint32Val BenefitState = 210;
+    optional basetypes.v1.Uint32Val OrderState = 200;
+    optional basetypes.v1.Uint32SliceVal OrderStates = 210;
+    optional basetypes.v1.Uint32Val StartMode = 220;
+    optional basetypes.v1.Uint32Val LastBenefitAt = 230;
+    optional basetypes.v1.Uint32Val BenefitState = 240;
 
     // power rental
-    optional basetypes.v1.BoolVal AdminSetCanceled = 220;
-    optional basetypes.v1.BoolVal UserSetCanceled = 240;
+    optional basetypes.v1.BoolVal AdminSetCanceled = 300;
+    optional basetypes.v1.BoolVal UserSetCanceled = 310;
 
     // power rental state
-    optional basetypes.v1.Uint32Val RenewState = 250;
-    optional basetypes.v1.Uint32Val RenewNotifyAt = 260;
-    optional basetypes.v1.Uint32Val PaymentState = 270;
+    optional basetypes.v1.Uint32Val RenewState = 400;
+    optional basetypes.v1.Uint32Val RenewNotifyAt = 410;
+    optional basetypes.v1.Uint32Val PaymentState = 420;
 
     // coupon
-    optional basetypes.v1.StringVal CouponID = 280;
-    optional basetypes.v1.StringSliceVal CouponIDs = 290;
+    optional basetypes.v1.StringVal CouponID = 500;
+    optional basetypes.v1.StringSliceVal CouponIDs = 510;
 
     // transaction id
-    optional basetypes.v1.StringVal TransactionID = 300;
-    optional basetypes.v1.StringSliceVal TransactionIDs = 310;
+    optional basetypes.v1.StringVal TransactionID = 600;
+    optional basetypes.v1.StringSliceVal TransactionIDs = 610;
 
     // other
-    optional basetypes.v1.Uint32Val CreatedAt = 320;
-    optional basetypes.v1.Uint32Val UpdatedAt = 330;
-    optional basetypes.v1.Uint32Val PaidAt = 340;
+    optional basetypes.v1.Uint32Val CreatedAt = 700;
+    optional basetypes.v1.Uint32Val UpdatedAt = 710;
+    optional basetypes.v1.Uint32Val PaidAt = 720;
 }
 
 message CreatePowerRentalOrderRequest {

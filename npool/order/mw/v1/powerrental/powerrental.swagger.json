@@ -61,6 +61,12 @@
         "AppGoodIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
+        "OrderID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "ParentOrderID": {
           "$ref": "#/definitions/v1StringVal"
         },
