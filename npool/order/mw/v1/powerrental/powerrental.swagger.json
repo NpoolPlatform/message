@@ -118,6 +118,9 @@
         "PaymentState": {
           "$ref": "#/definitions/v1Uint32Val"
         },
+        "PaymentStates": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        },
         "CouponID": {
           "$ref": "#/definitions/v1StringVal",
           "title": "coupon"
