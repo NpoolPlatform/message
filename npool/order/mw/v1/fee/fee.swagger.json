@@ -586,9 +586,9 @@
     "v1PaymentBalanceInfo": {
       "type": "object",
       "properties": {
-        "OrderID": {
+        "PaymentID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"order_id\""
+          "title": "@inject_tag: sql:\"payment_id\""
         },
         "CoinTypeID": {
           "type": "string",
@@ -664,9 +664,9 @@
     "v1PaymentTransferInfo": {
       "type": "object",
       "properties": {
-        "OrderID": {
+        "PaymentID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"order_id\""
+          "title": "@inject_tag: sql:\"payment_id\""
         },
         "CoinTypeID": {
           "type": "string",

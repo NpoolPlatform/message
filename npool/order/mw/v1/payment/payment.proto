@@ -13,8 +13,8 @@ message PaymentBalanceReq {
 }
 
 message PaymentBalanceInfo {
-    // @inject_tag: sql:"order_id"
-    string OrderID = 10;
+    // @inject_tag: sql:"payment_id"
+    string PaymentID = 10;
     // @inject_tag: sql:"coin_type_id"
     string CoinTypeID = 20;
     // @inject_tag: sql:"amount"
@@ -35,8 +35,8 @@ message PaymentContractReq {
 }
 
 message PaymentContractInfo {
-    // @inject_tag: sql:"order_id"
-    string OrderID = 10;
+    // @inject_tag: sql:"payment_id"
+    string PaymentID = 10;
     // @inject_tag: sql:"coin_type_id"
     string CoinTypeID = 20;
     // @inject_tag: sql:"amount"
@@ -57,8 +57,8 @@ message PaymentTransferReq {
 }
 
 message PaymentTransferInfo {
-    // @inject_tag: sql:"order_id"
-    string OrderID = 10;
+    // @inject_tag: sql:"payment_id"
+    string PaymentID = 10;
     // @inject_tag: sql:"coin_type_id"
     string CoinTypeID = 20;
     // @inject_tag: sql:"amount"
