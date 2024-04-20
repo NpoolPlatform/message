@@ -779,10 +779,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"promotion_id\""
         },
-        "Duration": {
+        "DurationSeconds": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"duration\""
+          "title": "@inject_tag: sql:\"duration_seconds\""
         },
         "InvestmentTypeStr": {
           "type": "string",
