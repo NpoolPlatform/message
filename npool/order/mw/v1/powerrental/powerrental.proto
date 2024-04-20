@@ -224,6 +224,7 @@ message Conds {
     optional basetypes.v1.Uint32Val RenewState = 400;
     optional basetypes.v1.Uint32Val RenewNotifyAt = 410;
     optional basetypes.v1.Uint32Val PaymentState = 420;
+    optional basetypes.v1.Uint32SliceVal PaymentStates = 430;
 
     // coupon
     optional basetypes.v1.StringVal CouponID = 500;
