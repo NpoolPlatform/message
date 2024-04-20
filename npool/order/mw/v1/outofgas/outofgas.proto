@@ -9,18 +9,6 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateOutOfGas (CreateOutOfGasRequest) returns (CreateOutOfGasResponse) {
-        option (google.api.http) = {
-            post: "/v1/outofgas_CreateOutOfGas"
-            body: "*"
-        };
-    }
-    rpc UpdateOutOfGas (UpdateOutOfGasRequest) returns (UpdateOutOfGasResponse) {
-        option (google.api.http) = {
-            post: "/v1/outofgas_UpdateOutOfGas"
-            body: "*"
-        };
-    }
     rpc GetOutOfGas (GetOutOfGasRequest) returns (GetOutOfGasResponse) {
         option (google.api.http) = {
             post: "/v1/outofgas_GetOutOfGas"
@@ -30,21 +18,6 @@ service Middleware {
     rpc GetOutOfGases (GetOutOfGasesRequest) returns (GetOutOfGasesResponse) {}
     rpc ExistOutOfGas (ExistOutOfGasRequest) returns (ExistOutOfGasResponse) {}
     rpc ExistOutOfGasConds (ExistOutOfGasCondsRequest) returns (ExistOutOfGasCondsResponse) {}
-    rpc DeleteOutOfGas (DeleteOutOfGasRequest) returns (DeleteOutOfGasResponse) {
-        option (google.api.http) = {
-            post: "/v1/outofgas_DeleteOutOfGas"
-            body: "*"
-        };
-    }
-}
-
-message OutOfGasReq {
-    optional uint32 ID = 10;
-    optional string EntID = 20;
-    optional string OrderID = 30;
-    optional uint32 StartAt = 40;
-    optional uint32 EndAt = 50;
-    optional uint32 CreatedAt = 60;
 }
 
 message OutOfGas {
@@ -84,15 +57,9 @@ message Conds {
     basetypes.v1.Uint32Val EndAt = 90;
 }
 
-message CreateOutOfGasRequest { OutOfGasReq Info = 10; }
-
-message CreateOutOfGasResponse { OutOfGas Info = 10; }
-
-message UpdateOutOfGasRequest { OutOfGasReq Info = 10; }
-
-message UpdateOutOfGasResponse { OutOfGas Info = 10; }
-
-message GetOutOfGasRequest { string EntID = 10; }
+message GetOutOfGasRequest {
+    string EntID = 10;
+}
 
 message GetOutOfGasResponse { OutOfGas Info = 10; }
 
@@ -114,9 +81,3 @@ message ExistOutOfGasResponse { bool Info = 10; }
 message ExistOutOfGasCondsRequest { Conds Conds = 10; }
 
 message ExistOutOfGasCondsResponse { bool Info = 10; }
-
-message DeleteOutOfGasRequest { OutOfGasReq Info = 10; }
-
-message DeleteOutOfGasResponse {
-    OutOfGas Info = 10;
-}

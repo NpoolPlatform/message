@@ -10,18 +10,6 @@ import "npool/basetypes/order/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateCompensate (CreateCompensateRequest) returns (CreateCompensateResponse) {
-        option (google.api.http) = {
-            post: "/v1/compensate_CreateCompensate"
-            body: "*"
-        };
-    }
-    rpc UpdateCompensate (UpdateCompensateRequest) returns (UpdateCompensateResponse) {
-        option (google.api.http) = {
-            post: "/v1/compensate_UpdateCompensate"
-            body: "*"
-        };
-    }
     rpc GetCompensate (GetCompensateRequest) returns (GetCompensateResponse) {
         option (google.api.http) = {
             post: "/v1/compensate_GetCompensate"
@@ -31,21 +19,6 @@ service Middleware {
     rpc GetCompensates (GetCompensatesRequest) returns (GetCompensatesResponse) {}
     rpc ExistCompensate (ExistCompensateRequest) returns (ExistCompensateResponse) {}
     rpc ExistCompensateConds (ExistCompensateCondsRequest) returns (ExistCompensateCondsResponse) {}
-    rpc DeleteCompensate (DeleteCompensateRequest) returns (DeleteCompensateResponse) {
-        option (google.api.http) = {
-            post: "/v1/compensate_DeleteCompensate"
-            body: "*"
-        };
-    }
-}
-
-message CompensateReq {
-    optional uint32 ID = 10;
-    optional string EntID = 20;
-    optional string OrderID = 30;
-    optional string CompensateFromID = 40;
-    optional basetypes.order.v1.CompensateType CompensateType = 50;
-    optional uint32 CompensateSeconds = 60;
 }
 
 message Compensate {
@@ -88,17 +61,13 @@ message Conds {
     basetypes.v1.StringVal AppID = 60;
 }
 
-message CreateCompensateRequest { CompensateReq Info = 10; }
+message GetCompensateRequest {
+    string EntID = 10;
+}
 
-message CreateCompensateResponse { Compensate Info = 10; }
-
-message UpdateCompensateRequest { CompensateReq Info = 10; }
-
-message UpdateCompensateResponse { Compensate Info = 10; }
-
-message GetCompensateRequest { string EntID = 10; }
-
-message GetCompensateResponse { Compensate Info = 10; }
+message GetCompensateResponse {
+    Compensate Info = 10;
+}
 
 message GetCompensatesRequest {
     Conds Conds = 10;
@@ -119,6 +88,3 @@ message ExistCompensateCondsRequest { Conds Conds = 10; }
 
 message ExistCompensateCondsResponse { bool Info = 10; }
 
-message DeleteCompensateRequest { CompensateReq Info = 10; }
-
-message DeleteCompensateResponse { Compensate Info = 10; }
