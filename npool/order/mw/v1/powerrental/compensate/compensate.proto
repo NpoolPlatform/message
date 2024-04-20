@@ -7,18 +7,47 @@ option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/compensa
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/order/v1/enums.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Middleware {
+    rpc CreateCompensate (CreateCompensateRequest) returns (CreateCompensateResponse) {
+        option (google.api.http) = {
+            post: "/v1/powerrental_compensate_CreateCompensate"
+            body: "*"
+        };
+    }
+    rpc UpdateCompensate (UpdateCompensateRequest) returns (UpdateCompensateResponse) {
+        option (google.api.http) = {
+            post: "/v1/powerrental_compensate_UpdateCompensate"
+            body: "*"
+        };
+    }
     rpc GetCompensate (GetCompensateRequest) returns (GetCompensateResponse) {
         option (google.api.http) = {
-            post: "/v1/compensate_GetCompensate"
+            post: "/v1/powerrental_compensate_GetCompensate"
             body: "*"
         };
     }
     rpc GetCompensates (GetCompensatesRequest) returns (GetCompensatesResponse) {}
     rpc ExistCompensate (ExistCompensateRequest) returns (ExistCompensateResponse) {}
     rpc ExistCompensateConds (ExistCompensateCondsRequest) returns (ExistCompensateCondsResponse) {}
+    rpc DeleteCompensate (DeleteCompensateRequest) returns (DeleteCompensateResponse) {
+        option (google.api.http) = {
+            post: "/v1/powerrental_compensate_DeleteCompensate"
+            body: "*"
+        };
+    }
+}
+
+message CompensateReq {
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string GoodID = 30; // If good id is set, we create compensate for all orders of this good
+    optional string OrderID = 40; // If order id is set, we create one compensate for this order
+    optional string CompensateFromID = 50;
+    optional basetypes.order.v1.CompensateType CompensateType = 60;
+    optional uint32 CompensateSeconds = 70;
 }
 
 message Compensate {
@@ -43,8 +72,11 @@ message Compensate {
     string UserID = 110;
     // @inject_tag: sql:"good_id"
     string GoodID = 120;
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 130;
+    basetypes.good.v1.GoodType GoodType = 140;
     // @inject_tag: sql:"app_good_id"
-    string AppGoodID = 130;
+    string AppGoodID = 150;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
@@ -55,10 +87,29 @@ message Compensate {
 message Conds {
     basetypes.v1.Uint32Val ID = 10;
     basetypes.v1.StringVal EntID = 20;
-    basetypes.v1.StringVal OrderID = 30;
-    basetypes.v1.StringVal CompensateFromID = 40;
-    basetypes.v1.StringVal UserID = 50;
-    basetypes.v1.StringVal AppID = 60;
+    basetypes.v1.StringVal GoodID = 30;
+    basetypes.v1.StringVal AppGoodID = 40;
+    basetypes.v1.StringVal OrderID = 50;
+    basetypes.v1.StringVal CompensateFromID = 60;
+    basetypes.v1.StringVal UserID = 70;
+    basetypes.v1.StringVal AppID = 80;
+}
+
+
+message CreateCompensateRequest {
+    CompensateReq Info = 10;
+}
+
+message CreateCompensateResponse {
+    Compensate Info = 10;
+}
+
+message UpdateCompensateRequest {
+    CompensateReq Info = 10;
+}
+
+message UpdateCompensateResponse {
+    Compensate Info = 10;
 }
 
 message GetCompensateRequest {
@@ -96,3 +147,10 @@ message ExistCompensateCondsResponse {
     bool Info = 10;
 }
 
+message DeleteCompensateRequest {
+    CompensateReq Info = 10;
+}
+
+message DeleteCompensateResponse {
+    Compensate Info = 10;
+}

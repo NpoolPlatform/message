@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/order/mw/v1/compensate/compensate.proto
+// source: npool/order/mw/v1/powerrental/compensate/compensate.proto
 
 package compensate
 
@@ -19,20 +19,26 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
+	Middleware_CreateCompensate_FullMethodName     = "/order.middleware.compensate.v1.Middleware/CreateCompensate"
+	Middleware_UpdateCompensate_FullMethodName     = "/order.middleware.compensate.v1.Middleware/UpdateCompensate"
 	Middleware_GetCompensate_FullMethodName        = "/order.middleware.compensate.v1.Middleware/GetCompensate"
 	Middleware_GetCompensates_FullMethodName       = "/order.middleware.compensate.v1.Middleware/GetCompensates"
 	Middleware_ExistCompensate_FullMethodName      = "/order.middleware.compensate.v1.Middleware/ExistCompensate"
 	Middleware_ExistCompensateConds_FullMethodName = "/order.middleware.compensate.v1.Middleware/ExistCompensateConds"
+	Middleware_DeleteCompensate_FullMethodName     = "/order.middleware.compensate.v1.Middleware/DeleteCompensate"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
+	CreateCompensate(ctx context.Context, in *CreateCompensateRequest, opts ...grpc.CallOption) (*CreateCompensateResponse, error)
+	UpdateCompensate(ctx context.Context, in *UpdateCompensateRequest, opts ...grpc.CallOption) (*UpdateCompensateResponse, error)
 	GetCompensate(ctx context.Context, in *GetCompensateRequest, opts ...grpc.CallOption) (*GetCompensateResponse, error)
 	GetCompensates(ctx context.Context, in *GetCompensatesRequest, opts ...grpc.CallOption) (*GetCompensatesResponse, error)
 	ExistCompensate(ctx context.Context, in *ExistCompensateRequest, opts ...grpc.CallOption) (*ExistCompensateResponse, error)
 	ExistCompensateConds(ctx context.Context, in *ExistCompensateCondsRequest, opts ...grpc.CallOption) (*ExistCompensateCondsResponse, error)
+	DeleteCompensate(ctx context.Context, in *DeleteCompensateRequest, opts ...grpc.CallOption) (*DeleteCompensateResponse, error)
 }
 
 type middlewareClient struct {
@@ -41,6 +47,24 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
+}
+
+func (c *middlewareClient) CreateCompensate(ctx context.Context, in *CreateCompensateRequest, opts ...grpc.CallOption) (*CreateCompensateResponse, error) {
+	out := new(CreateCompensateResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateCompensate_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateCompensate(ctx context.Context, in *UpdateCompensateRequest, opts ...grpc.CallOption) (*UpdateCompensateResponse, error) {
+	out := new(UpdateCompensateResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateCompensate_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *middlewareClient) GetCompensate(ctx context.Context, in *GetCompensateRequest, opts ...grpc.CallOption) (*GetCompensateResponse, error) {
@@ -79,14 +103,26 @@ func (c *middlewareClient) ExistCompensateConds(ctx context.Context, in *ExistCo
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteCompensate(ctx context.Context, in *DeleteCompensateRequest, opts ...grpc.CallOption) (*DeleteCompensateResponse, error) {
+	out := new(DeleteCompensateResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteCompensate_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
+	CreateCompensate(context.Context, *CreateCompensateRequest) (*CreateCompensateResponse, error)
+	UpdateCompensate(context.Context, *UpdateCompensateRequest) (*UpdateCompensateResponse, error)
 	GetCompensate(context.Context, *GetCompensateRequest) (*GetCompensateResponse, error)
 	GetCompensates(context.Context, *GetCompensatesRequest) (*GetCompensatesResponse, error)
 	ExistCompensate(context.Context, *ExistCompensateRequest) (*ExistCompensateResponse, error)
 	ExistCompensateConds(context.Context, *ExistCompensateCondsRequest) (*ExistCompensateCondsResponse, error)
+	DeleteCompensate(context.Context, *DeleteCompensateRequest) (*DeleteCompensateResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -94,6 +130,12 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
+func (UnimplementedMiddlewareServer) CreateCompensate(context.Context, *CreateCompensateRequest) (*CreateCompensateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCompensate not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateCompensate(context.Context, *UpdateCompensateRequest) (*UpdateCompensateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCompensate not implemented")
+}
 func (UnimplementedMiddlewareServer) GetCompensate(context.Context, *GetCompensateRequest) (*GetCompensateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCompensate not implemented")
 }
@@ -106,6 +148,9 @@ func (UnimplementedMiddlewareServer) ExistCompensate(context.Context, *ExistComp
 func (UnimplementedMiddlewareServer) ExistCompensateConds(context.Context, *ExistCompensateCondsRequest) (*ExistCompensateCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistCompensateConds not implemented")
 }
+func (UnimplementedMiddlewareServer) DeleteCompensate(context.Context, *DeleteCompensateRequest) (*DeleteCompensateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCompensate not implemented")
+}
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
 // UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
@@ -117,6 +162,42 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
+}
+
+func _Middleware_CreateCompensate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCompensateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateCompensate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateCompensate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateCompensate(ctx, req.(*CreateCompensateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateCompensate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCompensateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateCompensate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateCompensate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateCompensate(ctx, req.(*UpdateCompensateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetCompensate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -191,6 +272,24 @@ func _Middleware_ExistCompensateConds_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteCompensate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCompensateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteCompensate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteCompensate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteCompensate(ctx, req.(*DeleteCompensateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -198,6 +297,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "order.middleware.compensate.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateCompensate",
+			Handler:    _Middleware_CreateCompensate_Handler,
+		},
+		{
+			MethodName: "UpdateCompensate",
+			Handler:    _Middleware_UpdateCompensate_Handler,
+		},
 		{
 			MethodName: "GetCompensate",
 			Handler:    _Middleware_GetCompensate_Handler,
@@ -214,7 +321,11 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "ExistCompensateConds",
 			Handler:    _Middleware_ExistCompensateConds_Handler,
 		},
+		{
+			MethodName: "DeleteCompensate",
+			Handler:    _Middleware_DeleteCompensate_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/order/mw/v1/compensate/compensate.proto",
+	Metadata: "npool/order/mw/v1/powerrental/compensate/compensate.proto",
 }

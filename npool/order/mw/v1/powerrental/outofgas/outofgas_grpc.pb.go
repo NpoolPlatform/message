@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/order/mw/v1/outofgas/outofgas.proto
+// source: npool/order/mw/v1/powerrental/outofgas/outofgas.proto
 
 package outofgas
 
@@ -19,20 +19,26 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetOutOfGas_FullMethodName        = "/order.middleware.outofgas.v1.Middleware/GetOutOfGas"
-	Middleware_GetOutOfGases_FullMethodName      = "/order.middleware.outofgas.v1.Middleware/GetOutOfGases"
-	Middleware_ExistOutOfGas_FullMethodName      = "/order.middleware.outofgas.v1.Middleware/ExistOutOfGas"
-	Middleware_ExistOutOfGasConds_FullMethodName = "/order.middleware.outofgas.v1.Middleware/ExistOutOfGasConds"
+	Middleware_CreateOutOfGas_FullMethodName     = "/order.middleware.powerrental.outofgas.v1.Middleware/CreateOutOfGas"
+	Middleware_UpdateOutOfGas_FullMethodName     = "/order.middleware.powerrental.outofgas.v1.Middleware/UpdateOutOfGas"
+	Middleware_GetOutOfGas_FullMethodName        = "/order.middleware.powerrental.outofgas.v1.Middleware/GetOutOfGas"
+	Middleware_GetOutOfGases_FullMethodName      = "/order.middleware.powerrental.outofgas.v1.Middleware/GetOutOfGases"
+	Middleware_ExistOutOfGas_FullMethodName      = "/order.middleware.powerrental.outofgas.v1.Middleware/ExistOutOfGas"
+	Middleware_ExistOutOfGasConds_FullMethodName = "/order.middleware.powerrental.outofgas.v1.Middleware/ExistOutOfGasConds"
+	Middleware_DeleteOutOfGas_FullMethodName     = "/order.middleware.powerrental.outofgas.v1.Middleware/DeleteOutOfGas"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
+	CreateOutOfGas(ctx context.Context, in *CreateOutOfGasRequest, opts ...grpc.CallOption) (*CreateOutOfGasResponse, error)
+	UpdateOutOfGas(ctx context.Context, in *UpdateOutOfGasRequest, opts ...grpc.CallOption) (*UpdateOutOfGasResponse, error)
 	GetOutOfGas(ctx context.Context, in *GetOutOfGasRequest, opts ...grpc.CallOption) (*GetOutOfGasResponse, error)
 	GetOutOfGases(ctx context.Context, in *GetOutOfGasesRequest, opts ...grpc.CallOption) (*GetOutOfGasesResponse, error)
 	ExistOutOfGas(ctx context.Context, in *ExistOutOfGasRequest, opts ...grpc.CallOption) (*ExistOutOfGasResponse, error)
 	ExistOutOfGasConds(ctx context.Context, in *ExistOutOfGasCondsRequest, opts ...grpc.CallOption) (*ExistOutOfGasCondsResponse, error)
+	DeleteOutOfGas(ctx context.Context, in *DeleteOutOfGasRequest, opts ...grpc.CallOption) (*DeleteOutOfGasResponse, error)
 }
 
 type middlewareClient struct {
@@ -41,6 +47,24 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
+}
+
+func (c *middlewareClient) CreateOutOfGas(ctx context.Context, in *CreateOutOfGasRequest, opts ...grpc.CallOption) (*CreateOutOfGasResponse, error) {
+	out := new(CreateOutOfGasResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateOutOfGas_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) UpdateOutOfGas(ctx context.Context, in *UpdateOutOfGasRequest, opts ...grpc.CallOption) (*UpdateOutOfGasResponse, error) {
+	out := new(UpdateOutOfGasResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateOutOfGas_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *middlewareClient) GetOutOfGas(ctx context.Context, in *GetOutOfGasRequest, opts ...grpc.CallOption) (*GetOutOfGasResponse, error) {
@@ -79,14 +103,26 @@ func (c *middlewareClient) ExistOutOfGasConds(ctx context.Context, in *ExistOutO
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteOutOfGas(ctx context.Context, in *DeleteOutOfGasRequest, opts ...grpc.CallOption) (*DeleteOutOfGasResponse, error) {
+	out := new(DeleteOutOfGasResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteOutOfGas_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
+	CreateOutOfGas(context.Context, *CreateOutOfGasRequest) (*CreateOutOfGasResponse, error)
+	UpdateOutOfGas(context.Context, *UpdateOutOfGasRequest) (*UpdateOutOfGasResponse, error)
 	GetOutOfGas(context.Context, *GetOutOfGasRequest) (*GetOutOfGasResponse, error)
 	GetOutOfGases(context.Context, *GetOutOfGasesRequest) (*GetOutOfGasesResponse, error)
 	ExistOutOfGas(context.Context, *ExistOutOfGasRequest) (*ExistOutOfGasResponse, error)
 	ExistOutOfGasConds(context.Context, *ExistOutOfGasCondsRequest) (*ExistOutOfGasCondsResponse, error)
+	DeleteOutOfGas(context.Context, *DeleteOutOfGasRequest) (*DeleteOutOfGasResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -94,6 +130,12 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
+func (UnimplementedMiddlewareServer) CreateOutOfGas(context.Context, *CreateOutOfGasRequest) (*CreateOutOfGasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOutOfGas not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateOutOfGas(context.Context, *UpdateOutOfGasRequest) (*UpdateOutOfGasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOutOfGas not implemented")
+}
 func (UnimplementedMiddlewareServer) GetOutOfGas(context.Context, *GetOutOfGasRequest) (*GetOutOfGasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOutOfGas not implemented")
 }
@@ -106,6 +148,9 @@ func (UnimplementedMiddlewareServer) ExistOutOfGas(context.Context, *ExistOutOfG
 func (UnimplementedMiddlewareServer) ExistOutOfGasConds(context.Context, *ExistOutOfGasCondsRequest) (*ExistOutOfGasCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistOutOfGasConds not implemented")
 }
+func (UnimplementedMiddlewareServer) DeleteOutOfGas(context.Context, *DeleteOutOfGasRequest) (*DeleteOutOfGasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteOutOfGas not implemented")
+}
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
 // UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
@@ -117,6 +162,42 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
+}
+
+func _Middleware_CreateOutOfGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOutOfGasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateOutOfGas(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateOutOfGas_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateOutOfGas(ctx, req.(*CreateOutOfGasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_UpdateOutOfGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOutOfGasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateOutOfGas(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateOutOfGas_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateOutOfGas(ctx, req.(*UpdateOutOfGasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetOutOfGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -191,13 +272,39 @@ func _Middleware_ExistOutOfGasConds_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteOutOfGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteOutOfGasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteOutOfGas(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteOutOfGas_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteOutOfGas(ctx, req.(*DeleteOutOfGasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "order.middleware.outofgas.v1.Middleware",
+	ServiceName: "order.middleware.powerrental.outofgas.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateOutOfGas",
+			Handler:    _Middleware_CreateOutOfGas_Handler,
+		},
+		{
+			MethodName: "UpdateOutOfGas",
+			Handler:    _Middleware_UpdateOutOfGas_Handler,
+		},
 		{
 			MethodName: "GetOutOfGas",
 			Handler:    _Middleware_GetOutOfGas_Handler,
@@ -214,7 +321,11 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "ExistOutOfGasConds",
 			Handler:    _Middleware_ExistOutOfGasConds_Handler,
 		},
+		{
+			MethodName: "DeleteOutOfGas",
+			Handler:    _Middleware_DeleteOutOfGas_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/order/mw/v1/outofgas/outofgas.proto",
+	Metadata: "npool/order/mw/v1/powerrental/outofgas/outofgas.proto",
 }
