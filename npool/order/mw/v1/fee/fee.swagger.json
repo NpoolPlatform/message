@@ -90,6 +90,9 @@
           "$ref": "#/definitions/v1Uint32Val",
           "title": "power rental state"
         },
+        "PaymentStates": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        },
         "CouponID": {
           "$ref": "#/definitions/v1StringVal",
           "title": "coupon"

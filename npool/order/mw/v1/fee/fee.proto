@@ -189,6 +189,7 @@ message Conds {
 
     // power rental state
     optional basetypes.v1.Uint32Val PaymentState = 400;
+    optional basetypes.v1.Uint32SliceVal PaymentStates = 410;
 
     // coupon
     optional basetypes.v1.StringVal CouponID = 500;
