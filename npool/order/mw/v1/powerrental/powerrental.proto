@@ -138,8 +138,8 @@ message PowerRentalOrder {
     string DiscountAmountUSD = 340;
     // @inject_tag: sql:"promotion_id"
     string PromotionID = 350;
-    // @inject_tag: sql:"duration"
-    uint32 Duration = 360;
+    // @inject_tag: sql:"duration_seconds"
+    uint32 DurationSeconds = 360;
     // @inject_tag: sql:"investment_type"
     string InvestmentTypeStr = 370;
     basetypes.order.v1.InvestmentType InvestmentType = 380;
