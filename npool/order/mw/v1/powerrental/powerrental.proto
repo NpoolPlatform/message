@@ -174,6 +174,11 @@ message PowerRentalOrder {
     string AppGoodStockLockID = 540;
     // @inject_tag: sql:"ledger_lock_id"
     string LedgerLockID = 550;
+    // @inject_tag: sql:"payment_id"
+    string PaymentID = 560;
+    // @inject_tag: sql:"payment_obselete_state"
+    string PaymentObseleteStateStr = 570;
+    basetypes.order.v1.PaymentObseleteState PaymentObseleteState = 580;
 
     // Coupons
     repeated order.middleware.order1.coupon.v1.OrderCouponInfo Coupons = 600;
