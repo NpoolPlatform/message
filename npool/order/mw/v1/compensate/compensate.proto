@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/compensa
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/order/v1/enums.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Middleware {
@@ -43,8 +44,11 @@ message Compensate {
     string UserID = 110;
     // @inject_tag: sql:"good_id"
     string GoodID = 120;
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 130;
+    basetypes.good.v1.GoodType GoodType = 140;
     // @inject_tag: sql:"app_good_id"
-    string AppGoodID = 130;
+    string AppGoodID = 150;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
@@ -56,9 +60,12 @@ message Conds {
     basetypes.v1.Uint32Val ID = 10;
     basetypes.v1.StringVal EntID = 20;
     basetypes.v1.StringVal OrderID = 30;
-    basetypes.v1.StringVal CompensateFromID = 40;
-    basetypes.v1.StringVal UserID = 50;
-    basetypes.v1.StringVal AppID = 60;
+    basetypes.v1.StringVal GoodID = 40;
+    basetypes.v1.StringVal AppGoodID = 50;
+    basetypes.v1.StringVal CompensateFromID = 60;
+    basetypes.v1.Uint32Val CompensateType = 70;
+    basetypes.v1.StringVal UserID = 80;
+    basetypes.v1.StringVal AppID = 90;
 }
 
 message GetCompensateRequest {
