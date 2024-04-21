@@ -827,15 +827,15 @@
         "PaymentState": {
           "$ref": "#/definitions/v1PaymentState"
         },
-        "OutOfGasHours": {
+        "OutOfGasSeconds": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"out_of_gas_hours\""
+          "title": "@inject_tag: sql:\"out_of_gas_seconds\""
         },
-        "CompensateHours": {
+        "CompensateSeconds": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"compensate_horus\""
+          "title": "@inject_tag: sql:\"compensate_seconds\""
         },
         "RenewStateStr": {
           "type": "string",
