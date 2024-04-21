@@ -58,8 +58,9 @@ message Conds {
     basetypes.v1.StringVal GoodID = 50;
     basetypes.v1.StringVal AppGoodID = 60;
     basetypes.v1.StringVal OrderID = 70;
-    basetypes.v1.Uint32Val StartAt = 80;
-    basetypes.v1.Uint32Val EndAt = 90;
+    basetypes.v1.StringSliceVal OrderIDs = 80;
+    basetypes.v1.Uint32Val StartAt = 90;
+    basetypes.v1.Uint32Val EndAt = 100;
 }
 
 message GetOutOfGasRequest {
