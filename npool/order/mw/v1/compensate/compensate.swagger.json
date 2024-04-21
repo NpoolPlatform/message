@@ -166,6 +166,9 @@
         "OrderID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "OrderIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -245,6 +248,20 @@
         "ElectricityFee"
       ],
       "default": "DefaultGoodType"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     },
     "v1StringVal": {
       "type": "object",
