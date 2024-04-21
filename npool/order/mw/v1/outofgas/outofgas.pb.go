@@ -7,7 +7,8 @@
 package outofgas
 
 import (
-	v1 "github.com/NpoolPlatform/message/npool/basetypes/v1"
+	v1 "github.com/NpoolPlatform/message/npool/basetypes/good/v1"
+	v11 "github.com/NpoolPlatform/message/npool/basetypes/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -37,14 +38,17 @@ type OutOfGas struct {
 	UserID string `protobuf:"bytes,40,opt,name=UserID,proto3" json:"UserID,omitempty" sql:"user_id"`
 	// @inject_tag: sql:"good_id"
 	GoodID string `protobuf:"bytes,50,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id"`
+	// @inject_tag: sql:"good_type"
+	GoodTypeStr string      `protobuf:"bytes,60,opt,name=GoodTypeStr,proto3" json:"GoodTypeStr,omitempty" sql:"good_type"`
+	GoodType    v1.GoodType `protobuf:"varint,70,opt,name=GoodType,proto3,enum=basetypes.good.v1.GoodType" json:"GoodType,omitempty"`
 	// @inject_tag: sql:"app_good_id"
-	AppGoodID string `protobuf:"bytes,60,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty" sql:"app_good_id"`
+	AppGoodID string `protobuf:"bytes,80,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty" sql:"app_good_id"`
 	// @inject_tag: sql:"order_id"
-	OrderID string `protobuf:"bytes,70,opt,name=OrderID,proto3" json:"OrderID,omitempty" sql:"order_id"`
+	OrderID string `protobuf:"bytes,90,opt,name=OrderID,proto3" json:"OrderID,omitempty" sql:"order_id"`
 	// @inject_tag: sql:"start_at"
-	StartAt uint32 `protobuf:"varint,80,opt,name=StartAt,proto3" json:"StartAt,omitempty" sql:"start_at"`
+	StartAt uint32 `protobuf:"varint,100,opt,name=StartAt,proto3" json:"StartAt,omitempty" sql:"start_at"`
 	// @inject_tag: sql:"end_at"
-	EndAt uint32 `protobuf:"varint,90,opt,name=EndAt,proto3" json:"EndAt,omitempty" sql:"end_at"`
+	EndAt uint32 `protobuf:"varint,110,opt,name=EndAt,proto3" json:"EndAt,omitempty" sql:"end_at"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
@@ -118,6 +122,20 @@ func (x *OutOfGas) GetGoodID() string {
 	return ""
 }
 
+func (x *OutOfGas) GetGoodTypeStr() string {
+	if x != nil {
+		return x.GoodTypeStr
+	}
+	return ""
+}
+
+func (x *OutOfGas) GetGoodType() v1.GoodType {
+	if x != nil {
+		return x.GoodType
+	}
+	return v1.GoodType(0)
+}
+
 func (x *OutOfGas) GetAppGoodID() string {
 	if x != nil {
 		return x.AppGoodID
@@ -165,15 +183,15 @@ type Conds struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID        *v1.Uint32Val `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	EntID     *v1.StringVal `protobuf:"bytes,20,opt,name=EntID,proto3" json:"EntID,omitempty"`
-	AppID     *v1.StringVal `protobuf:"bytes,30,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	UserID    *v1.StringVal `protobuf:"bytes,40,opt,name=UserID,proto3" json:"UserID,omitempty"`
-	GoodID    *v1.StringVal `protobuf:"bytes,50,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
-	AppGoodID *v1.StringVal `protobuf:"bytes,60,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty"`
-	OrderID   *v1.StringVal `protobuf:"bytes,70,opt,name=OrderID,proto3" json:"OrderID,omitempty"`
-	StartAt   *v1.Uint32Val `protobuf:"bytes,80,opt,name=StartAt,proto3" json:"StartAt,omitempty"`
-	EndAt     *v1.Uint32Val `protobuf:"bytes,90,opt,name=EndAt,proto3" json:"EndAt,omitempty"`
+	ID        *v11.Uint32Val `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+	EntID     *v11.StringVal `protobuf:"bytes,20,opt,name=EntID,proto3" json:"EntID,omitempty"`
+	AppID     *v11.StringVal `protobuf:"bytes,30,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	UserID    *v11.StringVal `protobuf:"bytes,40,opt,name=UserID,proto3" json:"UserID,omitempty"`
+	GoodID    *v11.StringVal `protobuf:"bytes,50,opt,name=GoodID,proto3" json:"GoodID,omitempty"`
+	AppGoodID *v11.StringVal `protobuf:"bytes,60,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty"`
+	OrderID   *v11.StringVal `protobuf:"bytes,70,opt,name=OrderID,proto3" json:"OrderID,omitempty"`
+	StartAt   *v11.Uint32Val `protobuf:"bytes,80,opt,name=StartAt,proto3" json:"StartAt,omitempty"`
+	EndAt     *v11.Uint32Val `protobuf:"bytes,90,opt,name=EndAt,proto3" json:"EndAt,omitempty"`
 }
 
 func (x *Conds) Reset() {
@@ -208,63 +226,63 @@ func (*Conds) Descriptor() ([]byte, []int) {
 	return file_npool_order_mw_v1_outofgas_outofgas_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *Conds) GetID() *v1.Uint32Val {
+func (x *Conds) GetID() *v11.Uint32Val {
 	if x != nil {
 		return x.ID
 	}
 	return nil
 }
 
-func (x *Conds) GetEntID() *v1.StringVal {
+func (x *Conds) GetEntID() *v11.StringVal {
 	if x != nil {
 		return x.EntID
 	}
 	return nil
 }
 
-func (x *Conds) GetAppID() *v1.StringVal {
+func (x *Conds) GetAppID() *v11.StringVal {
 	if x != nil {
 		return x.AppID
 	}
 	return nil
 }
 
-func (x *Conds) GetUserID() *v1.StringVal {
+func (x *Conds) GetUserID() *v11.StringVal {
 	if x != nil {
 		return x.UserID
 	}
 	return nil
 }
 
-func (x *Conds) GetGoodID() *v1.StringVal {
+func (x *Conds) GetGoodID() *v11.StringVal {
 	if x != nil {
 		return x.GoodID
 	}
 	return nil
 }
 
-func (x *Conds) GetAppGoodID() *v1.StringVal {
+func (x *Conds) GetAppGoodID() *v11.StringVal {
 	if x != nil {
 		return x.AppGoodID
 	}
 	return nil
 }
 
-func (x *Conds) GetOrderID() *v1.StringVal {
+func (x *Conds) GetOrderID() *v11.StringVal {
 	if x != nil {
 		return x.OrderID
 	}
 	return nil
 }
 
-func (x *Conds) GetStartAt() *v1.Uint32Val {
+func (x *Conds) GetStartAt() *v11.Uint32Val {
 	if x != nil {
 		return x.StartAt
 	}
 	return nil
 }
 
-func (x *Conds) GetEndAt() *v1.Uint32Val {
+func (x *Conds) GetEndAt() *v11.Uint32Val {
 	if x != nil {
 		return x.EndAt
 	}
@@ -682,20 +700,28 @@ var file_npool_order_mw_v1_outofgas_outofgas_proto_rawDesc = []byte{
 	0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62,
 	0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6e, 0x64,
-	0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x9c, 0x02, 0x0a, 0x08, 0x4f, 0x75, 0x74, 0x4f,
-	0x66, 0x47, 0x61, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d,
-	0x52, 0x02, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x14, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70,
-	0x70, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44,
-	0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64,
-	0x49, 0x44, 0x18, 0x32, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44,
-	0x12, 0x1c, 0x0a, 0x09, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x3c, 0x20,
+	0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x23, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62,
+	0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x76, 0x31,
+	0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xf7, 0x02, 0x0a,
+	0x08, 0x4f, 0x75, 0x74, 0x4f, 0x66, 0x47, 0x61, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18,
+	0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x45, 0x6e, 0x74,
+	0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x12,
+	0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18,
+	0x28, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x16, 0x0a,
+	0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x32, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x47,
+	0x6f, 0x6f, 0x64, 0x49, 0x44, 0x12, 0x20, 0x0a, 0x0b, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70,
+	0x65, 0x53, 0x74, 0x72, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x47, 0x6f, 0x6f, 0x64,
+	0x54, 0x79, 0x70, 0x65, 0x53, 0x74, 0x72, 0x12, 0x37, 0x0a, 0x08, 0x47, 0x6f, 0x6f, 0x64, 0x54,
+	0x79, 0x70, 0x65, 0x18, 0x46, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1b, 0x2e, 0x62, 0x61, 0x73, 0x65,
+	0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x6f,
+	0x6f, 0x64, 0x54, 0x79, 0x70, 0x65, 0x52, 0x08, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70, 0x65,
+	0x12, 0x1c, 0x0a, 0x09, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x50, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x09, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x12, 0x18,
-	0x0a, 0x07, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x18, 0x46, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0a, 0x07, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x18, 0x5a, 0x20, 0x01, 0x28, 0x09, 0x52,
 	0x07, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x53, 0x74, 0x61, 0x72,
-	0x74, 0x41, 0x74, 0x18, 0x50, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x07, 0x53, 0x74, 0x61, 0x72, 0x74,
-	0x41, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x45, 0x6e, 0x64, 0x41, 0x74, 0x18, 0x5a, 0x20, 0x01, 0x28,
+	0x74, 0x41, 0x74, 0x18, 0x64, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x07, 0x53, 0x74, 0x61, 0x72, 0x74,
+	0x41, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x45, 0x6e, 0x64, 0x41, 0x74, 0x18, 0x6e, 0x20, 0x01, 0x28,
 	0x0d, 0x52, 0x05, 0x45, 0x6e, 0x64, 0x41, 0x74, 0x12, 0x1d, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61,
 	0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xe8, 0x07, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x43, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x1d, 0x0a, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74,
@@ -831,36 +857,38 @@ var file_npool_order_mw_v1_outofgas_outofgas_proto_goTypes = []interface{}{
 	(*ExistOutOfGasResponse)(nil),      // 7: order.middleware.outofgas.v1.ExistOutOfGasResponse
 	(*ExistOutOfGasCondsRequest)(nil),  // 8: order.middleware.outofgas.v1.ExistOutOfGasCondsRequest
 	(*ExistOutOfGasCondsResponse)(nil), // 9: order.middleware.outofgas.v1.ExistOutOfGasCondsResponse
-	(*v1.Uint32Val)(nil),               // 10: basetypes.v1.Uint32Val
-	(*v1.StringVal)(nil),               // 11: basetypes.v1.StringVal
+	(v1.GoodType)(0),                   // 10: basetypes.good.v1.GoodType
+	(*v11.Uint32Val)(nil),              // 11: basetypes.v1.Uint32Val
+	(*v11.StringVal)(nil),              // 12: basetypes.v1.StringVal
 }
 var file_npool_order_mw_v1_outofgas_outofgas_proto_depIdxs = []int32{
-	10, // 0: order.middleware.outofgas.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
-	11, // 1: order.middleware.outofgas.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	11, // 2: order.middleware.outofgas.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	11, // 3: order.middleware.outofgas.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
-	11, // 4: order.middleware.outofgas.v1.Conds.GoodID:type_name -> basetypes.v1.StringVal
-	11, // 5: order.middleware.outofgas.v1.Conds.AppGoodID:type_name -> basetypes.v1.StringVal
-	11, // 6: order.middleware.outofgas.v1.Conds.OrderID:type_name -> basetypes.v1.StringVal
-	10, // 7: order.middleware.outofgas.v1.Conds.StartAt:type_name -> basetypes.v1.Uint32Val
-	10, // 8: order.middleware.outofgas.v1.Conds.EndAt:type_name -> basetypes.v1.Uint32Val
-	0,  // 9: order.middleware.outofgas.v1.GetOutOfGasResponse.Info:type_name -> order.middleware.outofgas.v1.OutOfGas
-	1,  // 10: order.middleware.outofgas.v1.GetOutOfGasesRequest.Conds:type_name -> order.middleware.outofgas.v1.Conds
-	0,  // 11: order.middleware.outofgas.v1.GetOutOfGasesResponse.Infos:type_name -> order.middleware.outofgas.v1.OutOfGas
-	1,  // 12: order.middleware.outofgas.v1.ExistOutOfGasCondsRequest.Conds:type_name -> order.middleware.outofgas.v1.Conds
-	2,  // 13: order.middleware.outofgas.v1.Middleware.GetOutOfGas:input_type -> order.middleware.outofgas.v1.GetOutOfGasRequest
-	4,  // 14: order.middleware.outofgas.v1.Middleware.GetOutOfGases:input_type -> order.middleware.outofgas.v1.GetOutOfGasesRequest
-	6,  // 15: order.middleware.outofgas.v1.Middleware.ExistOutOfGas:input_type -> order.middleware.outofgas.v1.ExistOutOfGasRequest
-	8,  // 16: order.middleware.outofgas.v1.Middleware.ExistOutOfGasConds:input_type -> order.middleware.outofgas.v1.ExistOutOfGasCondsRequest
-	3,  // 17: order.middleware.outofgas.v1.Middleware.GetOutOfGas:output_type -> order.middleware.outofgas.v1.GetOutOfGasResponse
-	5,  // 18: order.middleware.outofgas.v1.Middleware.GetOutOfGases:output_type -> order.middleware.outofgas.v1.GetOutOfGasesResponse
-	7,  // 19: order.middleware.outofgas.v1.Middleware.ExistOutOfGas:output_type -> order.middleware.outofgas.v1.ExistOutOfGasResponse
-	9,  // 20: order.middleware.outofgas.v1.Middleware.ExistOutOfGasConds:output_type -> order.middleware.outofgas.v1.ExistOutOfGasCondsResponse
-	17, // [17:21] is the sub-list for method output_type
-	13, // [13:17] is the sub-list for method input_type
-	13, // [13:13] is the sub-list for extension type_name
-	13, // [13:13] is the sub-list for extension extendee
-	0,  // [0:13] is the sub-list for field type_name
+	10, // 0: order.middleware.outofgas.v1.OutOfGas.GoodType:type_name -> basetypes.good.v1.GoodType
+	11, // 1: order.middleware.outofgas.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
+	12, // 2: order.middleware.outofgas.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	12, // 3: order.middleware.outofgas.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	12, // 4: order.middleware.outofgas.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
+	12, // 5: order.middleware.outofgas.v1.Conds.GoodID:type_name -> basetypes.v1.StringVal
+	12, // 6: order.middleware.outofgas.v1.Conds.AppGoodID:type_name -> basetypes.v1.StringVal
+	12, // 7: order.middleware.outofgas.v1.Conds.OrderID:type_name -> basetypes.v1.StringVal
+	11, // 8: order.middleware.outofgas.v1.Conds.StartAt:type_name -> basetypes.v1.Uint32Val
+	11, // 9: order.middleware.outofgas.v1.Conds.EndAt:type_name -> basetypes.v1.Uint32Val
+	0,  // 10: order.middleware.outofgas.v1.GetOutOfGasResponse.Info:type_name -> order.middleware.outofgas.v1.OutOfGas
+	1,  // 11: order.middleware.outofgas.v1.GetOutOfGasesRequest.Conds:type_name -> order.middleware.outofgas.v1.Conds
+	0,  // 12: order.middleware.outofgas.v1.GetOutOfGasesResponse.Infos:type_name -> order.middleware.outofgas.v1.OutOfGas
+	1,  // 13: order.middleware.outofgas.v1.ExistOutOfGasCondsRequest.Conds:type_name -> order.middleware.outofgas.v1.Conds
+	2,  // 14: order.middleware.outofgas.v1.Middleware.GetOutOfGas:input_type -> order.middleware.outofgas.v1.GetOutOfGasRequest
+	4,  // 15: order.middleware.outofgas.v1.Middleware.GetOutOfGases:input_type -> order.middleware.outofgas.v1.GetOutOfGasesRequest
+	6,  // 16: order.middleware.outofgas.v1.Middleware.ExistOutOfGas:input_type -> order.middleware.outofgas.v1.ExistOutOfGasRequest
+	8,  // 17: order.middleware.outofgas.v1.Middleware.ExistOutOfGasConds:input_type -> order.middleware.outofgas.v1.ExistOutOfGasCondsRequest
+	3,  // 18: order.middleware.outofgas.v1.Middleware.GetOutOfGas:output_type -> order.middleware.outofgas.v1.GetOutOfGasResponse
+	5,  // 19: order.middleware.outofgas.v1.Middleware.GetOutOfGases:output_type -> order.middleware.outofgas.v1.GetOutOfGasesResponse
+	7,  // 20: order.middleware.outofgas.v1.Middleware.ExistOutOfGas:output_type -> order.middleware.outofgas.v1.ExistOutOfGasResponse
+	9,  // 21: order.middleware.outofgas.v1.Middleware.ExistOutOfGasConds:output_type -> order.middleware.outofgas.v1.ExistOutOfGasCondsResponse
+	18, // [18:22] is the sub-list for method output_type
+	14, // [14:18] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	14, // [14:14] is the sub-list for extension extendee
+	0,  // [0:14] is the sub-list for field type_name
 }
 
 func init() { file_npool_order_mw_v1_outofgas_outofgas_proto_init() }
