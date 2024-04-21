@@ -448,8 +448,8 @@ type PowerRentalOrder struct {
 	// @inject_tag: sql:"payment_state"
 	PaymentStateStr string           `protobuf:"bytes,470,opt,name=PaymentStateStr,proto3" json:"PaymentStateStr,omitempty" sql:"payment_state"`
 	PaymentState    v11.PaymentState `protobuf:"varint,480,opt,name=PaymentState,proto3,enum=basetypes.order.v1.PaymentState" json:"PaymentState,omitempty"`
-	// @inject_tag: sql:"out_of_gas_seconds"
-	OutOfGasSeconds uint32 `protobuf:"varint,490,opt,name=OutOfGasSeconds,proto3" json:"OutOfGasSeconds,omitempty" sql:"out_of_gas_seconds"`
+	// @inject_tag: sql:"outofgas_seconds"
+	OutOfGasSeconds uint32 `protobuf:"varint,490,opt,name=OutOfGasSeconds,proto3" json:"OutOfGasSeconds,omitempty" sql:"outofgas_seconds"`
 	// @inject_tag: sql:"compensate_seconds"
 	CompensateSeconds uint32 `protobuf:"varint,500,opt,name=CompensateSeconds,proto3" json:"CompensateSeconds,omitempty" sql:"compensate_seconds"`
 	// @inject_tag: sql:"renew_state"
