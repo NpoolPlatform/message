@@ -1,13 +1,14 @@
 syntax = "proto3";
 
-package order.middleware.compensate.v1;
+package order.middleware.powerrental.compensate.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/compensate";
+option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/powerrental/compensate";
 
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/order/v1/enums.proto";
 import "npool/basetypes/good/v1/enums.proto";
+import "npool/order/mw/v1/compensate/compensate.proto";
 
 // Service Name
 service Middleware {
@@ -17,21 +18,6 @@ service Middleware {
             body: "*"
         };
     }
-    rpc UpdateCompensate (UpdateCompensateRequest) returns (UpdateCompensateResponse) {
-        option (google.api.http) = {
-            post: "/v1/powerrental_compensate_UpdateCompensate"
-            body: "*"
-        };
-    }
-    rpc GetCompensate (GetCompensateRequest) returns (GetCompensateResponse) {
-        option (google.api.http) = {
-            post: "/v1/powerrental_compensate_GetCompensate"
-            body: "*"
-        };
-    }
-    rpc GetCompensates (GetCompensatesRequest) returns (GetCompensatesResponse) {}
-    rpc ExistCompensate (ExistCompensateRequest) returns (ExistCompensateResponse) {}
-    rpc ExistCompensateConds (ExistCompensateCondsRequest) returns (ExistCompensateCondsResponse) {}
     rpc DeleteCompensate (DeleteCompensateRequest) returns (DeleteCompensateResponse) {
         option (google.api.http) = {
             post: "/v1/powerrental_compensate_DeleteCompensate"
@@ -50,101 +36,12 @@ message CompensateReq {
     optional uint32 CompensateSeconds = 70;
 }
 
-message Compensate {
-    // @inject_tag: sql:"id"
-    uint32 ID = 10;
-    // @inject_tag: sql:"ent_id"
-    string EntID = 20;
-    // @inject_tag: sql:"order_id"
-    string OrderID = 30;
-    // @inject_tag: sql:"compensate_from_id"
-    string CompensateFromID = 40;
-    // @inject_tag: sql:"compensate_type"
-    string CompensateTypeStr = 50;
-    basetypes.order.v1.CompensateType CompensateType = 60;
-    // @inject_tag: sql:"compensate_seconds"
-    uint32 CompensateSeconds = 70;
-
-    // order
-    // @inject_tag: sql:"app_id"
-    string AppID = 100;
-    // @inject_tag: sql:"user_id"
-    string UserID = 110;
-    // @inject_tag: sql:"good_id"
-    string GoodID = 120;
-    // @inject_tag: sql:"good_type"
-    string GoodTypeStr = 130;
-    basetypes.good.v1.GoodType GoodType = 140;
-    // @inject_tag: sql:"app_good_id"
-    string AppGoodID = 150;
-
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt = 1010;
-}
-
-message Conds {
-    basetypes.v1.Uint32Val ID = 10;
-    basetypes.v1.StringVal EntID = 20;
-    basetypes.v1.StringVal GoodID = 30;
-    basetypes.v1.StringVal AppGoodID = 40;
-    basetypes.v1.StringVal OrderID = 50;
-    basetypes.v1.StringVal CompensateFromID = 60;
-    basetypes.v1.StringVal UserID = 70;
-    basetypes.v1.StringVal AppID = 80;
-}
-
-
 message CreateCompensateRequest {
     CompensateReq Info = 10;
 }
 
 message CreateCompensateResponse {
-    Compensate Info = 10;
-}
-
-message UpdateCompensateRequest {
-    CompensateReq Info = 10;
-}
-
-message UpdateCompensateResponse {
-    Compensate Info = 10;
-}
-
-message GetCompensateRequest {
-    string EntID = 10;
-}
-
-message GetCompensateResponse {
-    Compensate Info = 10;
-}
-
-message GetCompensatesRequest {
-    Conds Conds = 10;
-    int32 Offset = 20;
-    int32 Limit = 30;
-}
-
-message GetCompensatesResponse {
-    repeated Compensate Infos = 10;
-    uint32 Total = 20;
-}
-
-message ExistCompensateRequest {
-    string EntID = 10;
-}
-
-message ExistCompensateResponse {
-    bool Info = 10;
-}
-
-message ExistCompensateCondsRequest {
-    Conds Conds = 10;
-}
-
-message ExistCompensateCondsResponse {
-    bool Info = 10;
+    order.middleware.compensate.v1.Compensate Info = 10;
 }
 
 message DeleteCompensateRequest {
@@ -152,5 +49,5 @@ message DeleteCompensateRequest {
 }
 
 message DeleteCompensateResponse {
-    Compensate Info = 10;
+    order.middleware.compensate.v1.Compensate Info = 10;
 }
