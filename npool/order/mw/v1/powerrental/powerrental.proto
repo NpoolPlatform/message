@@ -161,7 +161,7 @@ message PowerRentalOrder {
     // @inject_tag: sql:"payment_state"
     string PaymentStateStr = 470;
     basetypes.order.v1.PaymentState PaymentState = 480;
-    // @inject_tag: sql:"out_of_gas_seconds"
+    // @inject_tag: sql:"outofgas_seconds"
     uint32 OutOfGasSeconds = 490;
     // @inject_tag: sql:"compensate_seconds"
     uint32 CompensateSeconds = 500;
