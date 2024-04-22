@@ -26,6 +26,7 @@ message AppConfigReq {
     optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 50;
     optional string SimulateOrderCouponProbability = 60;
     optional string SimulateOrderCashableProfitProbability = 70;
+    optional string MaxUnpaidOrders = 80;
 }
 
 message AppConfig {
