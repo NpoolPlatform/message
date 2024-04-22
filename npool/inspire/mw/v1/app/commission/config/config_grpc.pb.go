@@ -24,6 +24,7 @@ const (
 	Middleware_GetAppCommissionConfig_FullMethodName        = "/inspire.middleware.app.commission.config.v1.Middleware/GetAppCommissionConfig"
 	Middleware_GetAppCommissionConfigs_FullMethodName       = "/inspire.middleware.app.commission.config.v1.Middleware/GetAppCommissionConfigs"
 	Middleware_ExistAppCommissionConfigConds_FullMethodName = "/inspire.middleware.app.commission.config.v1.Middleware/ExistAppCommissionConfigConds"
+	Middleware_DeleteAppCommissionConfig_FullMethodName     = "/inspire.middleware.app.commission.config.v1.Middleware/DeleteAppCommissionConfig"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -35,6 +36,7 @@ type MiddlewareClient interface {
 	GetAppCommissionConfig(ctx context.Context, in *GetAppCommissionConfigRequest, opts ...grpc.CallOption) (*GetAppCommissionConfigResponse, error)
 	GetAppCommissionConfigs(ctx context.Context, in *GetAppCommissionConfigsRequest, opts ...grpc.CallOption) (*GetAppCommissionConfigsResponse, error)
 	ExistAppCommissionConfigConds(ctx context.Context, in *ExistAppCommissionConfigCondsRequest, opts ...grpc.CallOption) (*ExistAppCommissionConfigCondsResponse, error)
+	DeleteAppCommissionConfig(ctx context.Context, in *DeleteAppCommissionConfigRequest, opts ...grpc.CallOption) (*DeleteAppCommissionConfigResponse, error)
 }
 
 type middlewareClient struct {
@@ -90,6 +92,15 @@ func (c *middlewareClient) ExistAppCommissionConfigConds(ctx context.Context, in
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteAppCommissionConfig(ctx context.Context, in *DeleteAppCommissionConfigRequest, opts ...grpc.CallOption) (*DeleteAppCommissionConfigResponse, error) {
+	out := new(DeleteAppCommissionConfigResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteAppCommissionConfig_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -99,6 +110,7 @@ type MiddlewareServer interface {
 	GetAppCommissionConfig(context.Context, *GetAppCommissionConfigRequest) (*GetAppCommissionConfigResponse, error)
 	GetAppCommissionConfigs(context.Context, *GetAppCommissionConfigsRequest) (*GetAppCommissionConfigsResponse, error)
 	ExistAppCommissionConfigConds(context.Context, *ExistAppCommissionConfigCondsRequest) (*ExistAppCommissionConfigCondsResponse, error)
+	DeleteAppCommissionConfig(context.Context, *DeleteAppCommissionConfigRequest) (*DeleteAppCommissionConfigResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -120,6 +132,9 @@ func (UnimplementedMiddlewareServer) GetAppCommissionConfigs(context.Context, *G
 }
 func (UnimplementedMiddlewareServer) ExistAppCommissionConfigConds(context.Context, *ExistAppCommissionConfigCondsRequest) (*ExistAppCommissionConfigCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAppCommissionConfigConds not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteAppCommissionConfig(context.Context, *DeleteAppCommissionConfigRequest) (*DeleteAppCommissionConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppCommissionConfig not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -224,6 +239,24 @@ func _Middleware_ExistAppCommissionConfigConds_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteAppCommissionConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppCommissionConfigRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteAppCommissionConfig(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteAppCommissionConfig_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteAppCommissionConfig(ctx, req.(*DeleteAppCommissionConfigRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -250,6 +283,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistAppCommissionConfigConds",
 			Handler:    _Middleware_ExistAppCommissionConfigConds_Handler,
+		},
+		{
+			MethodName: "DeleteAppCommissionConfig",
+			Handler:    _Middleware_DeleteAppCommissionConfig_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
