@@ -178,12 +178,7 @@
       }
     },
     "v1CreateOrderUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
+      "type": "object"
     },
     "v1DeleteOrderUserRequest": {
       "type": "object",
@@ -194,12 +189,7 @@
       }
     },
     "v1DeleteOrderUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
+      "type": "object"
     },
     "v1ExistOrderUserCondsResponse": {
       "type": "object",

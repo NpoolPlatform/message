@@ -72,7 +72,7 @@ message Conds {
 
 message CreateGoodUserRequest { GoodUserReq Info = 10; }
 
-message CreateGoodUserResponse { GoodUser Info = 10; }
+message CreateGoodUserResponse {}
 
 message GetGoodUserRequest { string EntID = 10; }
 
@@ -103,4 +103,4 @@ message UpdateGoodUserResponse { GoodUser Info = 10; }
 
 message DeleteGoodUserRequest { GoodUserReq Info = 10; }
 
-message DeleteGoodUserResponse { GoodUser Info = 10; }
+message DeleteGoodUserResponse {}

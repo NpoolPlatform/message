@@ -104,12 +104,7 @@
       }
     },
     "v1CreateFractionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Fraction"
-        }
-      }
+      "type": "object"
     },
     "v1DeleteFractionRequest": {
       "type": "object",
@@ -120,12 +115,7 @@
       }
     },
     "v1DeleteFractionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Fraction"
-        }
-      }
+      "type": "object"
     },
     "v1ExistFractionCondsResponse": {
       "type": "object",

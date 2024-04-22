@@ -75,7 +75,7 @@ message Conds {
 
 message CreateFractionRequest { FractionReq Info = 10; }
 
-message CreateFractionResponse { Fraction Info = 10; }
+message CreateFractionResponse {}
 
 message GetFractionRequest { string EntID = 10; }
 
@@ -106,4 +106,4 @@ message UpdateFractionResponse { Fraction Info = 10; }
 
 message DeleteFractionRequest { FractionReq Info = 10; }
 
-message DeleteFractionResponse { Fraction Info = 10; }
+message DeleteFractionResponse {}

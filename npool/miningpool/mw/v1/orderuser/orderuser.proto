@@ -101,7 +101,7 @@ message Conds {
 
 message CreateOrderUserRequest { OrderUserReq Info = 10; }
 
-message CreateOrderUserResponse { OrderUser Info = 10; }
+message CreateOrderUserResponse {}
 
 message GetOrderUserRequest { string EntID = 10; }
 
@@ -132,4 +132,4 @@ message UpdateOrderUserResponse { OrderUser Info = 10; }
 
 message DeleteOrderUserRequest { OrderUserReq Info = 10; }
 
-message DeleteOrderUserResponse { OrderUser Info = 10; }
+message DeleteOrderUserResponse {}

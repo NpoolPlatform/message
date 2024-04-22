@@ -9,120 +9,95 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateCoin     (CreateCoinRequest)   returns (CreateCoinResponse)    {}
-    rpc GetCoin        (GetCoinRequest)      returns (GetCoinResponse)       {}
-    rpc ExistCoin      (ExistCoinRequest)    returns (ExistCoinResponse)     {}
-    rpc GetCoins       (GetCoinsRequest)     returns (GetCoinsResponse)      {}
-    rpc ExistCoinConds (ExistCoinCondsRequest) returns (ExistCoinCondsResponse) {}
-    rpc UpdateCoin     (UpdateCoinRequest)   returns (UpdateCoinResponse)    {}
-    rpc DeleteCoin     (DeleteCoinRequest)   returns (DeleteCoinResponse)    {}
+  rpc CreateCoin(CreateCoinRequest) returns (CreateCoinResponse) {}
+  rpc GetCoin(GetCoinRequest) returns (GetCoinResponse) {}
+  rpc ExistCoin(ExistCoinRequest) returns (ExistCoinResponse) {}
+  rpc GetCoins(GetCoinsRequest) returns (GetCoinsResponse) {}
+  rpc ExistCoinConds(ExistCoinCondsRequest) returns (ExistCoinCondsResponse) {}
+  rpc UpdateCoin(UpdateCoinRequest) returns (UpdateCoinResponse) {}
+  rpc DeleteCoin(DeleteCoinRequest) returns (DeleteCoinResponse) {}
 }
 
-
 message CoinReq {
-    optional uint32                                       ID                = 9;
-    optional string                                       EntID             = 10;
-    optional basetypes.miningpool.v1.MiningpoolType       MiningpoolType    = 20;
-    optional basetypes.miningpool.v1.CoinType             CoinType          = 30;
-    repeated basetypes.miningpool.v1.RevenueType          RevenueTypes      = 40;
-    optional string                                       FeeRate           = 50;
-    optional bool                                         FixedRevenueAble  = 60;
-    optional string                                       Threshold         = 70;
-    optional string                                       Remark            = 80;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 20;
+  optional basetypes.miningpool.v1.CoinType CoinType = 30;
+  repeated basetypes.miningpool.v1.RevenueType RevenueTypes = 40;
+  optional string FeeRate = 50;
+  optional bool FixedRevenueAble = 60;
+  optional string Threshold = 70;
+  optional string Remark = 80;
 }
 
 message Coin {
-    // @inject_tag: sql:"id"
-    uint32               ID                = 10;
-    // @inject_tag: sql:"ent_id"
-    string               EntID             = 20;
-    // @inject_tag: sql:"miningpool_type"
-    string               MiningpoolTypeStr = 30;
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 31;
-    // @inject_tag: sql:"coin_type"
-    string               CoinTypeStr       = 40;
-    basetypes.miningpool.v1.CoinType       CoinType = 41;
-    // @inject_tag: sql:"revenue_types"
-    string               RevenueTypesStr   = 50;
-    repeated basetypes.miningpool.v1.RevenueType    RevenueTypes = 51;
-    // @inject_tag: sql:"fee_rate"
-    string               FeeRate           = 60;
-    // @inject_tag: sql:"fixed_revenue_able" 
-    bool                 FixedRevenueAble  = 70;
-    // @inject_tag: sql:"threshold"
-    string               Threshold         = 80;
-    // @inject_tag: sql:"remark"
-    string               Remark            = 90;
-    // @inject_tag: sql:"created_at"
-    uint32               CreatedAt         = 100;
-    // @inject_tag: sql:"updated_at"
-    uint32               UpdatedAt         = 110;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"miningpool_type"
+  string MiningpoolTypeStr = 30;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 31;
+  // @inject_tag: sql:"coin_type"
+  string CoinTypeStr = 40;
+  basetypes.miningpool.v1.CoinType CoinType = 41;
+  // @inject_tag: sql:"revenue_types"
+  string RevenueTypesStr = 50;
+  repeated basetypes.miningpool.v1.RevenueType RevenueTypes = 51;
+  // @inject_tag: sql:"fee_rate"
+  string FeeRate = 60;
+  // @inject_tag: sql:"fixed_revenue_able"
+  bool FixedRevenueAble = 70;
+  // @inject_tag: sql:"threshold"
+  string Threshold = 80;
+  // @inject_tag: sql:"remark"
+  string Remark = 90;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 100;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 110;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID                = 9;
-    optional basetypes.v1.StringVal      EntID             = 10;
-    optional basetypes.v1.Uint32Val      MiningpoolType    = 20;
-    optional basetypes.v1.Uint32Val      CoinType          = 30;
-    optional basetypes.v1.BoolVal        FixedRevenueAble  = 40;
-    optional basetypes.v1.StringSliceVal EntIDs            = 50;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.Uint32Val MiningpoolType = 20;
+  optional basetypes.v1.Uint32Val CoinType = 30;
+  optional basetypes.v1.BoolVal FixedRevenueAble = 40;
+  optional basetypes.v1.StringSliceVal EntIDs = 50;
 }
 
-message CreateCoinRequest {
-    CoinReq Info = 10;
-}
+message CreateCoinRequest { CoinReq Info = 10; }
 
-message CreateCoinResponse {
-    Coin Info = 10;
-}
+message CreateCoinResponse {}
 
-message GetCoinRequest {
-    string EntID = 10;
-}
+message GetCoinRequest { string EntID = 10; }
 
-message GetCoinResponse {
-    Coin Info = 10;
-}
+message GetCoinResponse { Coin Info = 10; }
 
-message ExistCoinRequest {
-    string EntID = 10;
-}
+message ExistCoinRequest { string EntID = 10; }
 
-message ExistCoinResponse {
-    bool Info = 10;
-}
+message ExistCoinResponse { bool Info = 10; }
 
 message GetCoinsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetCoinsResponse {
-    repeated Coin Infos = 10;
-    uint32        Total = 20;
+  repeated Coin Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistCoinCondsRequest {
-    Conds Conds  = 10;
-}
+message ExistCoinCondsRequest { Conds Conds = 10; }
 
-message ExistCoinCondsResponse {
-    bool Info = 10;
-}
+message ExistCoinCondsResponse { bool Info = 10; }
 
-message UpdateCoinRequest {
-    CoinReq Info = 10;
-}
+message UpdateCoinRequest { CoinReq Info = 10; }
 
-message UpdateCoinResponse {
-    Coin Info = 10;
-}
+message UpdateCoinResponse { Coin Info = 10; }
 
-message DeleteCoinRequest {
-    CoinReq Info = 10;
-}
+message DeleteCoinRequest { CoinReq Info = 10; }
 
-message DeleteCoinResponse {
-    Coin Info = 10;
-}
+message DeleteCoinResponse {}

@@ -82,20 +82,10 @@
       }
     },
     "v1CreateGoodUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodUser"
-        }
-      }
+      "type": "object"
     },
     "v1DeleteGoodUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodUser"
-        }
-      }
+      "type": "object"
     },
     "v1ExistGoodUserCondsResponse": {
       "type": "object",

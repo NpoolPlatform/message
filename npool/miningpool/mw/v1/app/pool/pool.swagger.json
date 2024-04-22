@@ -65,20 +65,10 @@
       }
     },
     "v1CreatePoolResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Pool"
-        }
-      }
+      "type": "object"
     },
     "v1DeletePoolResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Pool"
-        }
-      }
+      "type": "object"
     },
     "v1ExistPoolCondsResponse": {
       "type": "object",

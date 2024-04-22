@@ -48,7 +48,7 @@ message Conds {
 
 message CreatePoolRequest { PoolReq Info = 10; }
 
-message CreatePoolResponse { Pool Info = 10; }
+message CreatePoolResponse {}
 
 message GetPoolRequest { string EntID = 10; }
 
@@ -75,4 +75,4 @@ message ExistPoolCondsResponse { bool Info = 10; }
 
 message DeletePoolRequest { PoolReq Info = 10; }
 
-message DeletePoolResponse { Pool Info = 10; }
+message DeletePoolResponse {}
