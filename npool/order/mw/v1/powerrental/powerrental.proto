@@ -36,6 +36,7 @@ message PowerRentalOrderReq {
     optional string OrderID = 80;
     optional basetypes.order.v1.OrderType OrderType = 100;
     optional basetypes.order.v1.PaymentType PaymentType = 110;
+    optional basetypes.order.v1.OrderCreateMethod CreateMethod = 120;
     optional bool Simulate = 130;
 
     // Power rental
@@ -68,6 +69,7 @@ message PowerRentalOrderReq {
     optional bool Rollback = 500;
     optional string AppGoodStockLockID = 510;
     optional string LedgerLockID = 520;
+    optional string PaymentID = 530;
 
     // Coupons
     repeated string CouponIDs = 600;
