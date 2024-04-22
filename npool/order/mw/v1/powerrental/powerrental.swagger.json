@@ -944,6 +944,9 @@
         "PaymentType": {
           "$ref": "#/definitions/v1PaymentType"
         },
+        "CreateMethod": {
+          "$ref": "#/definitions/v1OrderCreateMethod"
+        },
         "Simulate": {
           "type": "boolean"
         },
@@ -1019,6 +1022,9 @@
           "type": "string"
         },
         "LedgerLockID": {
+          "type": "string"
+        },
+        "PaymentID": {
           "type": "string"
         },
         "CouponIDs": {
