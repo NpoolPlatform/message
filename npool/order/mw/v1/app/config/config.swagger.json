@@ -120,6 +120,9 @@
         },
         "SimulateOrderCashableProfitProbability": {
           "type": "string"
+        },
+        "MaxUnpaidOrders": {
+          "type": "string"
         }
       }
     },
