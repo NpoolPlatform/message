@@ -17,6 +17,12 @@ service Middleware {
             body: "*"
         };
     }
+    rpc UpdateOutOfGas (UpdateOutOfGasRequest) returns (UpdateOutOfGasResponse) {
+        option (google.api.http) = {
+            post: "/v1/powerrental_outofgas_UpdateOutOfGas"
+            body: "*"
+        };
+    }
     rpc DeleteOutOfGas (DeleteOutOfGasRequest) returns (DeleteOutOfGasResponse) {
         option (google.api.http) = {
             post: "/v1/powerrental_outofgas_DeleteOutOfGas"
@@ -38,6 +44,14 @@ message CreateOutOfGasRequest {
 }
 
 message CreateOutOfGasResponse {
+    order.middleware.outofgas.v1.OutOfGas Info = 10;
+}
+
+message UpdateOutOfGasRequest {
+    OutOfGasReq Info = 10;
+}
+
+message UpdateOutOfGasResponse {
     order.middleware.outofgas.v1.OutOfGas Info = 10;
 }
 

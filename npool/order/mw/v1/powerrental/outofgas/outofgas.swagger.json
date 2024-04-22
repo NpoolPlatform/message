@@ -79,6 +79,38 @@
           "Middleware"
         ]
       }
+    },
+    "/v1/powerrental_outofgas_UpdateOutOfGas": {
+      "post": {
+        "operationId": "Middleware_UpdateOutOfGas",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateOutOfGasResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateOutOfGasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
     }
   },
   "definitions": {
@@ -235,6 +267,22 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1UpdateOutOfGasRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OutOfGasReq"
+        }
+      }
+    },
+    "v1UpdateOutOfGasResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OutOfGas"
         }
       }
     }

@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateOutOfGas_FullMethodName = "/order.middleware.powerrental.outofgas.v1.Middleware/CreateOutOfGas"
+	Middleware_UpdateOutOfGas_FullMethodName = "/order.middleware.powerrental.outofgas.v1.Middleware/UpdateOutOfGas"
 	Middleware_DeleteOutOfGas_FullMethodName = "/order.middleware.powerrental.outofgas.v1.Middleware/DeleteOutOfGas"
 )
 
@@ -28,6 +29,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateOutOfGas(ctx context.Context, in *CreateOutOfGasRequest, opts ...grpc.CallOption) (*CreateOutOfGasResponse, error)
+	UpdateOutOfGas(ctx context.Context, in *UpdateOutOfGasRequest, opts ...grpc.CallOption) (*UpdateOutOfGasResponse, error)
 	DeleteOutOfGas(ctx context.Context, in *DeleteOutOfGasRequest, opts ...grpc.CallOption) (*DeleteOutOfGasResponse, error)
 }
 
@@ -48,6 +50,15 @@ func (c *middlewareClient) CreateOutOfGas(ctx context.Context, in *CreateOutOfGa
 	return out, nil
 }
 
+func (c *middlewareClient) UpdateOutOfGas(ctx context.Context, in *UpdateOutOfGasRequest, opts ...grpc.CallOption) (*UpdateOutOfGasResponse, error) {
+	out := new(UpdateOutOfGasResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateOutOfGas_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteOutOfGas(ctx context.Context, in *DeleteOutOfGasRequest, opts ...grpc.CallOption) (*DeleteOutOfGasResponse, error) {
 	out := new(DeleteOutOfGasResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteOutOfGas_FullMethodName, in, out, opts...)
@@ -62,6 +73,7 @@ func (c *middlewareClient) DeleteOutOfGas(ctx context.Context, in *DeleteOutOfGa
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateOutOfGas(context.Context, *CreateOutOfGasRequest) (*CreateOutOfGasResponse, error)
+	UpdateOutOfGas(context.Context, *UpdateOutOfGasRequest) (*UpdateOutOfGasResponse, error)
 	DeleteOutOfGas(context.Context, *DeleteOutOfGasRequest) (*DeleteOutOfGasResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -72,6 +84,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateOutOfGas(context.Context, *CreateOutOfGasRequest) (*CreateOutOfGasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOutOfGas not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateOutOfGas(context.Context, *UpdateOutOfGasRequest) (*UpdateOutOfGasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOutOfGas not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteOutOfGas(context.Context, *DeleteOutOfGasRequest) (*DeleteOutOfGasResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteOutOfGas not implemented")
@@ -107,6 +122,24 @@ func _Middleware_CreateOutOfGas_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_UpdateOutOfGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOutOfGasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateOutOfGas(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateOutOfGas_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateOutOfGas(ctx, req.(*UpdateOutOfGasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteOutOfGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteOutOfGasRequest)
 	if err := dec(in); err != nil {
@@ -135,6 +168,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateOutOfGas",
 			Handler:    _Middleware_CreateOutOfGas_Handler,
+		},
+		{
+			MethodName: "UpdateOutOfGas",
+			Handler:    _Middleware_UpdateOutOfGas_Handler,
 		},
 		{
 			MethodName: "DeleteOutOfGas",
