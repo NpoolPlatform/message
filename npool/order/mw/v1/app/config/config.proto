@@ -96,7 +96,7 @@ message GetAppConfigsResponse {
 }
 
 message ExistAppConfigRequest {
-    string EntID = 10;
+    string AppID = 10;
 }
 
 message ExistAppConfigResponse {
