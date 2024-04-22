@@ -447,6 +447,7 @@
         "PayWithTransferOnly",
         "PayWithTransferAndBalance",
         "PayWithParentOrder",
+        "PayWithOtherOrder",
         "PayWithContract",
         "PayWithOffline",
         "PayWithNoPayment"
