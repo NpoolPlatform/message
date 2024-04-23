@@ -366,7 +366,7 @@
         "Remark": {
           "type": "string"
         },
-        "AdminCreatedAt": {
+        "CreatedAt": {
           "type": "integer",
           "format": "int64"
         },

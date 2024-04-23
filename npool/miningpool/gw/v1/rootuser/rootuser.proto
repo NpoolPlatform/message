@@ -55,7 +55,7 @@ message RootUser {
   string AuthToken = 60;
   bool Authed = 70;
   string Remark = 80;
-  uint32 AdminCreatedAt = 90;
+  uint32 CreatedAt = 90;
   uint32 UpdatedAt = 100;
 }
 
