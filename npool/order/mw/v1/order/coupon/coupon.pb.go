@@ -7,8 +7,9 @@
 package coupon
 
 import (
+	v1 "github.com/NpoolPlatform/message/npool/basetypes/good/v1"
 	_ "github.com/NpoolPlatform/message/npool/basetypes/order/v1"
-	v1 "github.com/NpoolPlatform/message/npool/basetypes/v1"
+	v11 "github.com/NpoolPlatform/message/npool/basetypes/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -37,12 +38,15 @@ type OrderCoupon struct {
 	UserID string `protobuf:"bytes,40,opt,name=UserID,proto3" json:"UserID,omitempty" sql:"user_id"`
 	// @inject_tag: sql:"good_id"
 	GoodID string `protobuf:"bytes,50,opt,name=GoodID,proto3" json:"GoodID,omitempty" sql:"good_id"`
+	// @inject_tag: sql:"good_type"
+	GoodTypeStr string      `protobuf:"bytes,60,opt,name=GoodTypeStr,proto3" json:"GoodTypeStr,omitempty" sql:"good_type"`
+	GoodType    v1.GoodType `protobuf:"varint,70,opt,name=GoodType,proto3,enum=basetypes.good.v1.GoodType" json:"GoodType,omitempty"`
 	// @inject_tag: sql:"app_good_id"
-	AppGoodID string `protobuf:"bytes,60,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty" sql:"app_good_id"`
+	AppGoodID string `protobuf:"bytes,80,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty" sql:"app_good_id"`
 	// @inject_tag: sql:"order_id"
-	OrderID string `protobuf:"bytes,70,opt,name=OrderID,proto3" json:"OrderID,omitempty" sql:"order_id"`
+	OrderID string `protobuf:"bytes,90,opt,name=OrderID,proto3" json:"OrderID,omitempty" sql:"order_id"`
 	// @inject_tag: sql:"coupon_id"
-	CouponID string `protobuf:"bytes,80,opt,name=CouponID,proto3" json:"CouponID,omitempty" sql:"coupon_id"`
+	CouponID string `protobuf:"bytes,100,opt,name=CouponID,proto3" json:"CouponID,omitempty" sql:"coupon_id"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,1000,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`
 	// @inject_tag: sql:"updated_at"
@@ -114,6 +118,20 @@ func (x *OrderCoupon) GetGoodID() string {
 		return x.GoodID
 	}
 	return ""
+}
+
+func (x *OrderCoupon) GetGoodTypeStr() string {
+	if x != nil {
+		return x.GoodTypeStr
+	}
+	return ""
+}
+
+func (x *OrderCoupon) GetGoodType() v1.GoodType {
+	if x != nil {
+		return x.GoodType
+	}
+	return v1.GoodType(0)
 }
 
 func (x *OrderCoupon) GetAppGoodID() string {
@@ -223,16 +241,16 @@ type Conds struct {
 	unknownFields protoimpl.UnknownFields
 
 	// order
-	ID        *v1.Uint32Val      `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
-	IDs       *v1.Uint32SliceVal `protobuf:"bytes,20,opt,name=IDs,proto3" json:"IDs,omitempty"`
-	EntID     *v1.StringVal      `protobuf:"bytes,30,opt,name=EntID,proto3" json:"EntID,omitempty"`
-	EntIDs    *v1.StringSliceVal `protobuf:"bytes,40,opt,name=EntIDs,proto3" json:"EntIDs,omitempty"`
-	OrderID   *v1.StringVal      `protobuf:"bytes,50,opt,name=OrderID,proto3" json:"OrderID,omitempty"`
-	OrderIDs  *v1.StringSliceVal `protobuf:"bytes,60,opt,name=OrderIDs,proto3" json:"OrderIDs,omitempty"`
-	CouponID  *v1.StringVal      `protobuf:"bytes,70,opt,name=CouponID,proto3" json:"CouponID,omitempty"`
-	CouponIDs *v1.StringSliceVal `protobuf:"bytes,80,opt,name=CouponIDs,proto3" json:"CouponIDs,omitempty"`
-	AppID     *v1.StringVal      `protobuf:"bytes,90,opt,name=AppID,proto3" json:"AppID,omitempty"`
-	UserID    *v1.StringVal      `protobuf:"bytes,100,opt,name=UserID,proto3" json:"UserID,omitempty"`
+	ID        *v11.Uint32Val      `protobuf:"bytes,10,opt,name=ID,proto3" json:"ID,omitempty"`
+	IDs       *v11.Uint32SliceVal `protobuf:"bytes,20,opt,name=IDs,proto3" json:"IDs,omitempty"`
+	EntID     *v11.StringVal      `protobuf:"bytes,30,opt,name=EntID,proto3" json:"EntID,omitempty"`
+	EntIDs    *v11.StringSliceVal `protobuf:"bytes,40,opt,name=EntIDs,proto3" json:"EntIDs,omitempty"`
+	OrderID   *v11.StringVal      `protobuf:"bytes,50,opt,name=OrderID,proto3" json:"OrderID,omitempty"`
+	OrderIDs  *v11.StringSliceVal `protobuf:"bytes,60,opt,name=OrderIDs,proto3" json:"OrderIDs,omitempty"`
+	CouponID  *v11.StringVal      `protobuf:"bytes,70,opt,name=CouponID,proto3" json:"CouponID,omitempty"`
+	CouponIDs *v11.StringSliceVal `protobuf:"bytes,80,opt,name=CouponIDs,proto3" json:"CouponIDs,omitempty"`
+	AppID     *v11.StringVal      `protobuf:"bytes,90,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	UserID    *v11.StringVal      `protobuf:"bytes,100,opt,name=UserID,proto3" json:"UserID,omitempty"`
 }
 
 func (x *Conds) Reset() {
@@ -267,70 +285,70 @@ func (*Conds) Descriptor() ([]byte, []int) {
 	return file_npool_order_mw_v1_order_coupon_coupon_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *Conds) GetID() *v1.Uint32Val {
+func (x *Conds) GetID() *v11.Uint32Val {
 	if x != nil {
 		return x.ID
 	}
 	return nil
 }
 
-func (x *Conds) GetIDs() *v1.Uint32SliceVal {
+func (x *Conds) GetIDs() *v11.Uint32SliceVal {
 	if x != nil {
 		return x.IDs
 	}
 	return nil
 }
 
-func (x *Conds) GetEntID() *v1.StringVal {
+func (x *Conds) GetEntID() *v11.StringVal {
 	if x != nil {
 		return x.EntID
 	}
 	return nil
 }
 
-func (x *Conds) GetEntIDs() *v1.StringSliceVal {
+func (x *Conds) GetEntIDs() *v11.StringSliceVal {
 	if x != nil {
 		return x.EntIDs
 	}
 	return nil
 }
 
-func (x *Conds) GetOrderID() *v1.StringVal {
+func (x *Conds) GetOrderID() *v11.StringVal {
 	if x != nil {
 		return x.OrderID
 	}
 	return nil
 }
 
-func (x *Conds) GetOrderIDs() *v1.StringSliceVal {
+func (x *Conds) GetOrderIDs() *v11.StringSliceVal {
 	if x != nil {
 		return x.OrderIDs
 	}
 	return nil
 }
 
-func (x *Conds) GetCouponID() *v1.StringVal {
+func (x *Conds) GetCouponID() *v11.StringVal {
 	if x != nil {
 		return x.CouponID
 	}
 	return nil
 }
 
-func (x *Conds) GetCouponIDs() *v1.StringSliceVal {
+func (x *Conds) GetCouponIDs() *v11.StringSliceVal {
 	if x != nil {
 		return x.CouponIDs
 	}
 	return nil
 }
 
-func (x *Conds) GetAppID() *v1.StringVal {
+func (x *Conds) GetAppID() *v11.StringVal {
 	if x != nil {
 		return x.AppID
 	}
 	return nil
 }
 
-func (x *Conds) GetUserID() *v1.StringVal {
+func (x *Conds) GetUserID() *v11.StringVal {
 	if x != nil {
 		return x.UserID
 	}
@@ -559,21 +577,29 @@ var file_npool_order_mw_v1_order_coupon_coupon_proto_rawDesc = []byte{
 	0x6f, 0x72, 0x64, 0x65, 0x72, 0x31, 0x2e, 0x63, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x2e, 0x76, 0x31,
 	0x1a, 0x24, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65,
 	0x73, 0x2f, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x2f, 0x76, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1e, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61,
-	0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6e, 0x64, 0x73,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x8b, 0x02, 0x0a, 0x0b, 0x4f, 0x72, 0x64, 0x65, 0x72,
-	0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01,
-	0x28, 0x0d, 0x52, 0x02, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x18,
-	0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05,
-	0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70, 0x70,
-	0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x28, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x47, 0x6f,
-	0x6f, 0x64, 0x49, 0x44, 0x18, 0x32, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x47, 0x6f, 0x6f, 0x64,
-	0x49, 0x44, 0x12, 0x1c, 0x0a, 0x09, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18,
-	0x3c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44,
-	0x12, 0x18, 0x0a, 0x07, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x18, 0x46, 0x20, 0x01, 0x28,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x23, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x61,
+	0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x64, 0x2f, 0x76, 0x31, 0x2f,
+	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1e, 0x6e, 0x70, 0x6f,
+	0x6f, 0x6c, 0x2f, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x76, 0x31, 0x2f,
+	0x63, 0x6f, 0x6e, 0x64, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xe6, 0x02, 0x0a, 0x0b,
+	0x4f, 0x72, 0x64, 0x65, 0x72, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x12, 0x0e, 0x0a, 0x02, 0x49,
+	0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x45,
+	0x6e, 0x74, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x45, 0x6e, 0x74, 0x49,
+	0x44, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49,
+	0x44, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12,
+	0x16, 0x0a, 0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x32, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x06, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x12, 0x20, 0x0a, 0x0b, 0x47, 0x6f, 0x6f, 0x64, 0x54,
+	0x79, 0x70, 0x65, 0x53, 0x74, 0x72, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x47, 0x6f,
+	0x6f, 0x64, 0x54, 0x79, 0x70, 0x65, 0x53, 0x74, 0x72, 0x12, 0x37, 0x0a, 0x08, 0x47, 0x6f, 0x6f,
+	0x64, 0x54, 0x79, 0x70, 0x65, 0x18, 0x46, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1b, 0x2e, 0x62, 0x61,
+	0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e,
+	0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70, 0x65, 0x52, 0x08, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79,
+	0x70, 0x65, 0x12, 0x1c, 0x0a, 0x09, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18,
+	0x50, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44,
+	0x12, 0x18, 0x0a, 0x07, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x18, 0x5a, 0x20, 0x01, 0x28,
 	0x09, 0x52, 0x07, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x12, 0x1a, 0x0a, 0x08, 0x43, 0x6f,
-	0x75, 0x70, 0x6f, 0x6e, 0x49, 0x44, 0x18, 0x50, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x43, 0x6f,
+	0x75, 0x70, 0x6f, 0x6e, 0x49, 0x44, 0x18, 0x64, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x43, 0x6f,
 	0x75, 0x70, 0x6f, 0x6e, 0x49, 0x44, 0x12, 0x1d, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
 	0x64, 0x41, 0x74, 0x18, 0xe8, 0x07, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x43, 0x72, 0x65, 0x61,
 	0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x1d, 0x0a, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64,
@@ -690,34 +716,36 @@ var file_npool_order_mw_v1_order_coupon_coupon_proto_goTypes = []interface{}{
 	(*GetOrderCouponsResponse)(nil),       // 4: order.middleware.order1.coupon.v1.GetOrderCouponsResponse
 	(*ExistOrderCouponCondsRequest)(nil),  // 5: order.middleware.order1.coupon.v1.ExistOrderCouponCondsRequest
 	(*ExistOrderCouponCondsResponse)(nil), // 6: order.middleware.order1.coupon.v1.ExistOrderCouponCondsResponse
-	(*v1.Uint32Val)(nil),                  // 7: basetypes.v1.Uint32Val
-	(*v1.Uint32SliceVal)(nil),             // 8: basetypes.v1.Uint32SliceVal
-	(*v1.StringVal)(nil),                  // 9: basetypes.v1.StringVal
-	(*v1.StringSliceVal)(nil),             // 10: basetypes.v1.StringSliceVal
+	(v1.GoodType)(0),                      // 7: basetypes.good.v1.GoodType
+	(*v11.Uint32Val)(nil),                 // 8: basetypes.v1.Uint32Val
+	(*v11.Uint32SliceVal)(nil),            // 9: basetypes.v1.Uint32SliceVal
+	(*v11.StringVal)(nil),                 // 10: basetypes.v1.StringVal
+	(*v11.StringSliceVal)(nil),            // 11: basetypes.v1.StringSliceVal
 }
 var file_npool_order_mw_v1_order_coupon_coupon_proto_depIdxs = []int32{
-	7,  // 0: order.middleware.order1.coupon.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
-	8,  // 1: order.middleware.order1.coupon.v1.Conds.IDs:type_name -> basetypes.v1.Uint32SliceVal
-	9,  // 2: order.middleware.order1.coupon.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	10, // 3: order.middleware.order1.coupon.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
-	9,  // 4: order.middleware.order1.coupon.v1.Conds.OrderID:type_name -> basetypes.v1.StringVal
-	10, // 5: order.middleware.order1.coupon.v1.Conds.OrderIDs:type_name -> basetypes.v1.StringSliceVal
-	9,  // 6: order.middleware.order1.coupon.v1.Conds.CouponID:type_name -> basetypes.v1.StringVal
-	10, // 7: order.middleware.order1.coupon.v1.Conds.CouponIDs:type_name -> basetypes.v1.StringSliceVal
-	9,  // 8: order.middleware.order1.coupon.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	9,  // 9: order.middleware.order1.coupon.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
-	2,  // 10: order.middleware.order1.coupon.v1.GetOrderCouponsRequest.Conds:type_name -> order.middleware.order1.coupon.v1.Conds
-	0,  // 11: order.middleware.order1.coupon.v1.GetOrderCouponsResponse.Infos:type_name -> order.middleware.order1.coupon.v1.OrderCoupon
-	2,  // 12: order.middleware.order1.coupon.v1.ExistOrderCouponCondsRequest.Conds:type_name -> order.middleware.order1.coupon.v1.Conds
-	3,  // 13: order.middleware.order1.coupon.v1.Middleware.GetOrderCoupons:input_type -> order.middleware.order1.coupon.v1.GetOrderCouponsRequest
-	5,  // 14: order.middleware.order1.coupon.v1.Middleware.ExistOrderCouponConds:input_type -> order.middleware.order1.coupon.v1.ExistOrderCouponCondsRequest
-	4,  // 15: order.middleware.order1.coupon.v1.Middleware.GetOrderCoupons:output_type -> order.middleware.order1.coupon.v1.GetOrderCouponsResponse
-	6,  // 16: order.middleware.order1.coupon.v1.Middleware.ExistOrderCouponConds:output_type -> order.middleware.order1.coupon.v1.ExistOrderCouponCondsResponse
-	15, // [15:17] is the sub-list for method output_type
-	13, // [13:15] is the sub-list for method input_type
-	13, // [13:13] is the sub-list for extension type_name
-	13, // [13:13] is the sub-list for extension extendee
-	0,  // [0:13] is the sub-list for field type_name
+	7,  // 0: order.middleware.order1.coupon.v1.OrderCoupon.GoodType:type_name -> basetypes.good.v1.GoodType
+	8,  // 1: order.middleware.order1.coupon.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
+	9,  // 2: order.middleware.order1.coupon.v1.Conds.IDs:type_name -> basetypes.v1.Uint32SliceVal
+	10, // 3: order.middleware.order1.coupon.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	11, // 4: order.middleware.order1.coupon.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
+	10, // 5: order.middleware.order1.coupon.v1.Conds.OrderID:type_name -> basetypes.v1.StringVal
+	11, // 6: order.middleware.order1.coupon.v1.Conds.OrderIDs:type_name -> basetypes.v1.StringSliceVal
+	10, // 7: order.middleware.order1.coupon.v1.Conds.CouponID:type_name -> basetypes.v1.StringVal
+	11, // 8: order.middleware.order1.coupon.v1.Conds.CouponIDs:type_name -> basetypes.v1.StringSliceVal
+	10, // 9: order.middleware.order1.coupon.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	10, // 10: order.middleware.order1.coupon.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
+	2,  // 11: order.middleware.order1.coupon.v1.GetOrderCouponsRequest.Conds:type_name -> order.middleware.order1.coupon.v1.Conds
+	0,  // 12: order.middleware.order1.coupon.v1.GetOrderCouponsResponse.Infos:type_name -> order.middleware.order1.coupon.v1.OrderCoupon
+	2,  // 13: order.middleware.order1.coupon.v1.ExistOrderCouponCondsRequest.Conds:type_name -> order.middleware.order1.coupon.v1.Conds
+	3,  // 14: order.middleware.order1.coupon.v1.Middleware.GetOrderCoupons:input_type -> order.middleware.order1.coupon.v1.GetOrderCouponsRequest
+	5,  // 15: order.middleware.order1.coupon.v1.Middleware.ExistOrderCouponConds:input_type -> order.middleware.order1.coupon.v1.ExistOrderCouponCondsRequest
+	4,  // 16: order.middleware.order1.coupon.v1.Middleware.GetOrderCoupons:output_type -> order.middleware.order1.coupon.v1.GetOrderCouponsResponse
+	6,  // 17: order.middleware.order1.coupon.v1.Middleware.ExistOrderCouponConds:output_type -> order.middleware.order1.coupon.v1.ExistOrderCouponCondsResponse
+	16, // [16:18] is the sub-list for method output_type
+	14, // [14:16] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	14, // [14:14] is the sub-list for extension extendee
+	0,  // [0:14] is the sub-list for field type_name
 }
 
 func init() { file_npool_order_mw_v1_order_coupon_coupon_proto_init() }
