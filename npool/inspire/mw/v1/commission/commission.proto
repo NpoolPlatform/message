@@ -43,6 +43,7 @@ service Middleware {
       body : "*"
     };
   }
+  rpc ExistCommissionConds(ExistCommissionCondsRequest) returns (ExistCommissionCondsResponse) {}
 }
 
 message CommissionReq {
@@ -122,6 +123,7 @@ message Conds {
   optional basetypes.v1.StringSliceVal GoodIDs = 80;
   optional basetypes.v1.StringSliceVal AppGoodIDs = 81;
   optional basetypes.v1.Uint32Val StartAt = 90;
+  optional basetypes.v1.Uint32Val ID = 100;
 }
 
 message CreateCommissionRequest { CommissionReq Info = 10; }
@@ -157,3 +159,7 @@ message CloneCommissionsRequest {
 }
 
 message CloneCommissionsResponse {}
+
+message ExistCommissionCondsRequest { Conds Conds = 10; }
+
+message ExistCommissionCondsResponse { bool Info = 10; }

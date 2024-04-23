@@ -15,7 +15,40 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/appcommissionconfig_DeleteAppCommissionConfig": {
+      "post": {
+        "operationId": "Middleware_DeleteAppCommissionConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppCommissionConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAppCommissionConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -187,10 +220,29 @@
         },
         "Level": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
     "v1CreateAppCommissionConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppCommissionConfig"
+        }
+      }
+    },
+    "v1DeleteAppCommissionConfigRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppCommissionConfigReq"
+        }
+      }
+    },
+    "v1DeleteAppCommissionConfigResponse": {
       "type": "object",
       "properties": {
         "Info": {

@@ -4,6 +4,7 @@ package inspire.middleware.app.commission.config.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/app/commission/config";
 
+import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/inspire/v1/enums.proto";
 
@@ -19,6 +20,13 @@ service Middleware {
       returns (GetAppCommissionConfigsResponse) {}
   rpc ExistAppCommissionConfigConds(ExistAppCommissionConfigCondsRequest)
       returns (ExistAppCommissionConfigCondsResponse) {}
+  rpc DeleteAppCommissionConfig(DeleteAppCommissionConfigRequest)
+      returns (DeleteAppCommissionConfigResponse) {
+    option (google.api.http) = {
+      post : "/v1/appcommissionconfig_DeleteAppCommissionConfig"
+      body : "*"
+    };
+  }
 }
 
 message AppCommissionConfigReq {
@@ -74,6 +82,7 @@ message Conds {
   optional basetypes.v1.StringSliceVal EntIDs = 60;
   optional basetypes.v1.BoolVal Disabled = 70;
   optional basetypes.v1.Uint32Val Level = 80;
+  optional basetypes.v1.Uint32Val ID = 90;
 }
 
 message CreateAppCommissionConfigRequest { AppCommissionConfigReq Info = 10; }
@@ -97,6 +106,14 @@ message GetAppCommissionConfigsRequest {
 message GetAppCommissionConfigsResponse {
   repeated AppCommissionConfig Infos = 10;
   uint32 Total = 20;
+}
+
+message DeleteAppCommissionConfigRequest {
+  AppCommissionConfigReq Info = 10;
+}
+
+message DeleteAppCommissionConfigResponse {
+  AppCommissionConfig Info = 10;
 }
 
 message ExistAppCommissionConfigCondsRequest { Conds Conds = 10; }

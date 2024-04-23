@@ -93,6 +93,7 @@ message Conds {
   optional basetypes.v1.StringSliceVal AppGoodIDs = 100;
   optional basetypes.v1.BoolVal Disabled = 110;
   optional basetypes.v1.Uint32Val Level = 120;
+  optional basetypes.v1.Uint32Val ID = 130;
 }
 
 message CreateAppGoodCommissionConfigRequest {
