@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/rootuser": {
+    "/v1/admin/create/rootuser": {
       "post": {
-        "operationId": "Gateway_CreateRootUser",
+        "operationId": "Gateway_AdminCreateRootUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateRootUserResponse"
+              "$ref": "#/definitions/v1AdminCreateRootUserResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateRootUserRequest"
+              "$ref": "#/definitions/v1AdminCreateRootUserRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/delete/rootuser": {
+    "/v1/admin/delete/rootuser": {
       "post": {
-        "operationId": "Gateway_DeleteRootUser",
+        "operationId": "Gateway_AdminDeleteRootUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteRootUserResponse"
+              "$ref": "#/definitions/v1AdminDeleteRootUserResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteRootUserRequest"
+              "$ref": "#/definitions/v1AdminDeleteRootUserRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/rootuser": {
+    "/v1/admin/get/rootuser": {
       "post": {
-        "operationId": "Gateway_GetRootUser",
+        "operationId": "Gateway_AdminGetRootUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetRootUserResponse"
+              "$ref": "#/definitions/v1AdminGetRootUserResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetRootUserRequest"
+              "$ref": "#/definitions/v1AdminGetRootUserRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/get/rootusers": {
+    "/v1/admin/get/rootusers": {
       "post": {
-        "operationId": "Gateway_GetRootUsers",
+        "operationId": "Gateway_AdminGetRootUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetRootUsersResponse"
+              "$ref": "#/definitions/v1AdminGetRootUsersResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetRootUsersRequest"
+              "$ref": "#/definitions/v1AdminGetRootUsersRequest"
             }
           }
         ],
@@ -144,14 +144,14 @@
         ]
       }
     },
-    "/v1/update/rootuser": {
+    "/v1/admin/update/rootuser": {
       "post": {
-        "operationId": "Gateway_UpdateRootUser",
+        "operationId": "Gateway_AdminUpdateRootUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateRootUserResponse"
+              "$ref": "#/definitions/v1AdminUpdateRootUserResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateRootUserRequest"
+              "$ref": "#/definitions/v1AdminUpdateRootUserRequest"
             }
           }
         ],
@@ -205,7 +205,7 @@
         }
       }
     },
-    "v1CreateRootUserRequest": {
+    "v1AdminCreateRootUserRequest": {
       "type": "object",
       "properties": {
         "Name": {
@@ -225,7 +225,7 @@
         }
       }
     },
-    "v1CreateRootUserResponse": {
+    "v1AdminCreateRootUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -233,7 +233,7 @@
         }
       }
     },
-    "v1DeleteRootUserRequest": {
+    "v1AdminDeleteRootUserRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -245,7 +245,7 @@
         }
       }
     },
-    "v1DeleteRootUserResponse": {
+    "v1AdminDeleteRootUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -253,7 +253,7 @@
         }
       }
     },
-    "v1GetRootUserRequest": {
+    "v1AdminGetRootUserRequest": {
       "type": "object",
       "properties": {
         "EntID": {
@@ -261,7 +261,7 @@
         }
       }
     },
-    "v1GetRootUserResponse": {
+    "v1AdminGetRootUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -269,7 +269,7 @@
         }
       }
     },
-    "v1GetRootUsersRequest": {
+    "v1AdminGetRootUsersRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -282,7 +282,7 @@
         }
       }
     },
-    "v1GetRootUsersResponse": {
+    "v1AdminGetRootUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -294,6 +294,38 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdateRootUserRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "AuthToken": {
+          "type": "string"
+        },
+        "Remark": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminUpdateRootUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1RootUser"
         }
       }
     },
@@ -334,45 +366,13 @@
         "Remark": {
           "type": "string"
         },
-        "CreatedAt": {
+        "AdminCreatedAt": {
           "type": "integer",
           "format": "int64"
         },
         "UpdatedAt": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1UpdateRootUserRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Email": {
-          "type": "string"
-        },
-        "AuthToken": {
-          "type": "string"
-        },
-        "Remark": {
-          "type": "string"
-        }
-      }
-    },
-    "v1UpdateRootUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1RootUser"
         }
       }
     }

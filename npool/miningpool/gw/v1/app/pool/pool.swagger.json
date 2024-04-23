@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/apppool": {
+    "/v1/admin/create/apppool": {
       "post": {
         "operationId": "Gateway_AdminCreatePool",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/delete/apppool": {
+    "/v1/admin/delete/apppool": {
       "post": {
         "operationId": "Gateway_AdminDeletePool",
         "responses": {
@@ -72,6 +72,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1AdminDeletePoolRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/get/n/apppools": {
+      "post": {
+        "operationId": "Gateway_AdminGetNPools",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetNPoolsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetNPoolsRequest"
             }
           }
         ],
@@ -136,38 +168,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetPoolsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/n/apppools": {
-      "post": {
-        "operationId": "Gateway_AdminGetNPools",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1AdminGetNPoolsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1AdminGetNPoolsRequest"
             }
           }
         ],

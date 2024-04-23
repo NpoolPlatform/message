@@ -9,15 +9,15 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
-  rpc GetPools(GetPoolsRequest) returns (GetPoolsResponse) {
+  rpc AdminAdminGetPools(AdminGetPoolsRequest) returns (AdminGetPoolsResponse) {
     option (google.api.http) = {
-      post : "/v1/get/pools"
+      post : "/v1/admin/get/pools"
       body : "*"
     };
   }
-  rpc GetPool(GetPoolRequest) returns (GetPoolResponse) {
+  rpc AdminGetPool(AdminGetPoolRequest) returns (AdminGetPoolResponse) {
     option (google.api.http) = {
-      post : "/v1/get/pool"
+      post : "/v1/admin/get/pool"
       body : "*"
     };
   }
@@ -49,16 +49,16 @@ message FractionRule {
   float WithdrawRate = 40;
 }
 
-message GetPoolsRequest {
+message AdminGetPoolsRequest {
   int32 Offset = 10;
   int32 Limit = 20;
 }
 
-message GetPoolsResponse {
+message AdminGetPoolsResponse {
   repeated Pool Infos = 10;
   uint32 Total = 20;
 }
 
-message GetPoolRequest { string EntID = 10; }
+message AdminGetPoolRequest { string EntID = 10; }
 
-message GetPoolResponse { Pool Info = 10; }
+message AdminGetPoolResponse { Pool Info = 10; }

@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/gooduser": {
+    "/v1/admin/create/gooduser": {
       "post": {
-        "operationId": "Gateway_CreateGoodUser",
+        "operationId": "Gateway_AdminCreateGoodUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateGoodUserResponse"
+              "$ref": "#/definitions/v1AdminCreateGoodUserResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateGoodUserRequest"
+              "$ref": "#/definitions/v1AdminCreateGoodUserRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/delete/gooduser": {
+    "/v1/admin/delete/gooduser": {
       "post": {
-        "operationId": "Gateway_DeleteGoodUser",
+        "operationId": "Gateway_AdminDeleteGoodUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteGoodUserResponse"
+              "$ref": "#/definitions/v1AdminDeleteGoodUserResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteGoodUserRequest"
+              "$ref": "#/definitions/v1AdminDeleteGoodUserRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/gooduser": {
+    "/v1/admin/get/gooduser": {
       "post": {
-        "operationId": "Gateway_GetGoodUser",
+        "operationId": "Gateway_AdminGetGoodUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetGoodUserResponse"
+              "$ref": "#/definitions/v1AdminGetGoodUserResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetGoodUserRequest"
+              "$ref": "#/definitions/v1AdminGetGoodUserRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/get/goodusers": {
+    "/v1/admin/get/goodusers": {
       "post": {
-        "operationId": "Gateway_GetGoodUsers",
+        "operationId": "Gateway_AdminGetGoodUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetGoodUsersResponse"
+              "$ref": "#/definitions/v1AdminGetGoodUsersResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetGoodUsersRequest"
+              "$ref": "#/definitions/v1AdminGetGoodUsersRequest"
             }
           }
         ],
@@ -144,14 +144,14 @@
         ]
       }
     },
-    "/v1/update/gooduser": {
+    "/v1/admin/update/gooduser": {
       "post": {
-        "operationId": "Gateway_UpdateGoodUser",
+        "operationId": "Gateway_AdminUpdateGoodUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateGoodUserResponse"
+              "$ref": "#/definitions/v1AdminUpdateGoodUserResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateGoodUserRequest"
+              "$ref": "#/definitions/v1AdminUpdateGoodUserRequest"
             }
           }
         ],
@@ -205,15 +205,7 @@
         }
       }
     },
-    "v1CoinType": {
-      "type": "string",
-      "enum": [
-        "DefaultCoinType",
-        "BitCoin"
-      ],
-      "default": "DefaultCoinType"
-    },
-    "v1CreateGoodUserRequest": {
+    "v1AdminCreateGoodUserRequest": {
       "type": "object",
       "properties": {
         "RootUserID": {
@@ -231,7 +223,7 @@
         }
       }
     },
-    "v1CreateGoodUserResponse": {
+    "v1AdminCreateGoodUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -239,7 +231,7 @@
         }
       }
     },
-    "v1DeleteGoodUserRequest": {
+    "v1AdminDeleteGoodUserRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -251,7 +243,7 @@
         }
       }
     },
-    "v1DeleteGoodUserResponse": {
+    "v1AdminDeleteGoodUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -259,7 +251,7 @@
         }
       }
     },
-    "v1GetGoodUserRequest": {
+    "v1AdminGetGoodUserRequest": {
       "type": "object",
       "properties": {
         "EntID": {
@@ -267,7 +259,7 @@
         }
       }
     },
-    "v1GetGoodUserResponse": {
+    "v1AdminGetGoodUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -275,7 +267,7 @@
         }
       }
     },
-    "v1GetGoodUsersRequest": {
+    "v1AdminGetGoodUsersRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -288,7 +280,7 @@
         }
       }
     },
-    "v1GetGoodUsersResponse": {
+    "v1AdminGetGoodUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -302,6 +294,41 @@
           "format": "int64"
         }
       }
+    },
+    "v1AdminUpdateGoodUserRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "HashRate": {
+          "type": "number",
+          "format": "float"
+        },
+        "RevenueType": {
+          "$ref": "#/definitions/v1RevenueType"
+        }
+      }
+    },
+    "v1AdminUpdateGoodUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodUser"
+        }
+      }
+    },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "DefaultCoinType",
+        "BitCoin"
+      ],
+      "default": "DefaultCoinType"
     },
     "v1GoodUser": {
       "type": "object",
@@ -362,33 +389,6 @@
         "PPLNS"
       ],
       "default": "DefaultRevenueType"
-    },
-    "v1UpdateGoodUserRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "HashRate": {
-          "type": "number",
-          "format": "float"
-        },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
-        }
-      }
-    },
-    "v1UpdateGoodUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodUser"
-        }
-      }
     }
   }
 }

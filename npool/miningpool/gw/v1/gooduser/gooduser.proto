@@ -9,33 +9,38 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
-  rpc CreateGoodUser(CreateGoodUserRequest) returns (CreateGoodUserResponse) {
+  rpc AdminCreateGoodUser(AdminCreateGoodUserRequest)
+      returns (AdminCreateGoodUserResponse) {
     option (google.api.http) = {
-      post : "/v1/create/gooduser"
+      post : "/v1/admin/create/gooduser"
       body : "*"
     };
   }
-  rpc GetGoodUser(GetGoodUserRequest) returns (GetGoodUserResponse) {
+  rpc AdminGetGoodUser(AdminGetGoodUserRequest)
+      returns (AdminGetGoodUserResponse) {
     option (google.api.http) = {
-      post : "/v1/get/gooduser"
+      post : "/v1/admin/get/gooduser"
       body : "*"
     };
   }
-  rpc GetGoodUsers(GetGoodUsersRequest) returns (GetGoodUsersResponse) {
+  rpc AdminGetGoodUsers(AdminGetGoodUsersRequest)
+      returns (AdminGetGoodUsersResponse) {
     option (google.api.http) = {
-      post : "/v1/get/goodusers"
+      post : "/v1/admin/get/goodusers"
       body : "*"
     };
   }
-  rpc UpdateGoodUser(UpdateGoodUserRequest) returns (UpdateGoodUserResponse) {
+  rpc AdminUpdateGoodUser(AdminUpdateGoodUserRequest)
+      returns (AdminUpdateGoodUserResponse) {
     option (google.api.http) = {
-      post : "/v1/update/gooduser"
+      post : "/v1/admin/update/gooduser"
       body : "*"
     };
   }
-  rpc DeleteGoodUser(DeleteGoodUserRequest) returns (DeleteGoodUserResponse) {
+  rpc AdminDeleteGoodUser(AdminDeleteGoodUserRequest)
+      returns (AdminDeleteGoodUserResponse) {
     option (google.api.http) = {
-      post : "/v1/delete/gooduser"
+      post : "/v1/admin/delete/gooduser"
       body : "*"
     };
   }
@@ -55,41 +60,41 @@ message GoodUser {
   uint32 UpdatedAt = 110;
 }
 
-message CreateGoodUserRequest {
+message AdminCreateGoodUserRequest {
   string RootUserID = 10;
   basetypes.miningpool.v1.CoinType CoinType = 20;
   float HashRate = 30;
   basetypes.miningpool.v1.RevenueType RevenueType = 40;
 }
 
-message CreateGoodUserResponse { GoodUser Info = 10; }
+message AdminCreateGoodUserResponse { GoodUser Info = 10; }
 
-message GetGoodUserRequest { string EntID = 10; }
+message AdminGetGoodUserRequest { string EntID = 10; }
 
-message GetGoodUserResponse { GoodUser Info = 10; }
+message AdminGetGoodUserResponse { GoodUser Info = 10; }
 
-message GetGoodUsersRequest {
+message AdminGetGoodUsersRequest {
   int32 Offset = 20;
   int32 Limit = 30;
 }
 
-message GetGoodUsersResponse {
+message AdminGetGoodUsersResponse {
   repeated GoodUser Infos = 10;
   uint32 Total = 20;
 }
 
-message UpdateGoodUserRequest {
+message AdminUpdateGoodUserRequest {
   uint32 ID = 10;
   string EntID = 20;
   optional float HashRate = 30;
   optional basetypes.miningpool.v1.RevenueType RevenueType = 40;
 }
 
-message UpdateGoodUserResponse { GoodUser Info = 10; }
+message AdminUpdateGoodUserResponse { GoodUser Info = 10; }
 
-message DeleteGoodUserRequest {
+message AdminDeleteGoodUserRequest {
   uint32 ID = 10;
   string EntID = 20;
 }
 
-message DeleteGoodUserResponse { GoodUser Info = 10; }
+message AdminDeleteGoodUserResponse { GoodUser Info = 10; }

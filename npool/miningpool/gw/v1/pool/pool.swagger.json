@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/pool": {
+    "/v1/admin/get/pool": {
       "post": {
-        "operationId": "Gateway_GetPool",
+        "operationId": "Gateway_AdminGetPool",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetPoolResponse"
+              "$ref": "#/definitions/v1AdminGetPoolResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetPoolRequest"
+              "$ref": "#/definitions/v1AdminGetPoolRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/get/pools": {
+    "/v1/admin/get/pools": {
       "post": {
-        "operationId": "Gateway_GetPools",
+        "operationId": "Gateway_AdminAdminGetPools",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetPoolsResponse"
+              "$ref": "#/definitions/v1AdminGetPoolsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetPoolsRequest"
+              "$ref": "#/definitions/v1AdminGetPoolsRequest"
             }
           }
         ],
@@ -106,6 +106,50 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AdminGetPoolRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminGetPoolResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Pool"
+        }
+      }
+    },
+    "v1AdminGetPoolsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AdminGetPoolsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Pool"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -160,50 +204,6 @@
         "WithdrawRate": {
           "type": "number",
           "format": "float"
-        }
-      }
-    },
-    "v1GetPoolRequest": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetPoolResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Pool"
-        }
-      }
-    },
-    "v1GetPoolsRequest": {
-      "type": "object",
-      "properties": {
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetPoolsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Pool"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

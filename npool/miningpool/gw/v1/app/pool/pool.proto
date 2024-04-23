@@ -12,7 +12,7 @@ service Gateway {
   rpc AdminCreatePool(AdminCreatePoolRequest)
       returns (AdminCreatePoolResponse) {
     option (google.api.http) = {
-      post : "/v1/create/apppool"
+      post : "/v1/admin/create/apppool"
       body : "*"
     };
   }
@@ -30,14 +30,14 @@ service Gateway {
   }
   rpc AdminGetNPools(AdminGetNPoolsRequest) returns (AdminGetNPoolsResponse) {
     option (google.api.http) = {
-      post : "/v1/get/n/apppools"
+      post : "/v1/admin/get/n/apppools"
       body : "*"
     };
   }
   rpc AdminDeletePool(AdminDeletePoolRequest)
       returns (AdminDeletePoolResponse) {
     option (google.api.http) = {
-      post : "/v1/delete/apppool"
+      post : "/v1/admin/delete/apppool"
       body : "*"
     };
   }

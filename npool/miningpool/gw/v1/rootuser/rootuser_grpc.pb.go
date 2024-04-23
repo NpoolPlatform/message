@@ -19,22 +19,22 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateRootUser_FullMethodName = "/miningpool.gateway.rootuser.v1.Gateway/CreateRootUser"
-	Gateway_GetRootUser_FullMethodName    = "/miningpool.gateway.rootuser.v1.Gateway/GetRootUser"
-	Gateway_GetRootUsers_FullMethodName   = "/miningpool.gateway.rootuser.v1.Gateway/GetRootUsers"
-	Gateway_UpdateRootUser_FullMethodName = "/miningpool.gateway.rootuser.v1.Gateway/UpdateRootUser"
-	Gateway_DeleteRootUser_FullMethodName = "/miningpool.gateway.rootuser.v1.Gateway/DeleteRootUser"
+	Gateway_AdminCreateRootUser_FullMethodName = "/miningpool.gateway.rootuser.v1.Gateway/AdminCreateRootUser"
+	Gateway_AdminGetRootUser_FullMethodName    = "/miningpool.gateway.rootuser.v1.Gateway/AdminGetRootUser"
+	Gateway_AdminGetRootUsers_FullMethodName   = "/miningpool.gateway.rootuser.v1.Gateway/AdminGetRootUsers"
+	Gateway_AdminUpdateRootUser_FullMethodName = "/miningpool.gateway.rootuser.v1.Gateway/AdminUpdateRootUser"
+	Gateway_AdminDeleteRootUser_FullMethodName = "/miningpool.gateway.rootuser.v1.Gateway/AdminDeleteRootUser"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateRootUser(ctx context.Context, in *CreateRootUserRequest, opts ...grpc.CallOption) (*CreateRootUserResponse, error)
-	GetRootUser(ctx context.Context, in *GetRootUserRequest, opts ...grpc.CallOption) (*GetRootUserResponse, error)
-	GetRootUsers(ctx context.Context, in *GetRootUsersRequest, opts ...grpc.CallOption) (*GetRootUsersResponse, error)
-	UpdateRootUser(ctx context.Context, in *UpdateRootUserRequest, opts ...grpc.CallOption) (*UpdateRootUserResponse, error)
-	DeleteRootUser(ctx context.Context, in *DeleteRootUserRequest, opts ...grpc.CallOption) (*DeleteRootUserResponse, error)
+	AdminCreateRootUser(ctx context.Context, in *AdminCreateRootUserRequest, opts ...grpc.CallOption) (*AdminCreateRootUserResponse, error)
+	AdminGetRootUser(ctx context.Context, in *AdminGetRootUserRequest, opts ...grpc.CallOption) (*AdminGetRootUserResponse, error)
+	AdminGetRootUsers(ctx context.Context, in *AdminGetRootUsersRequest, opts ...grpc.CallOption) (*AdminGetRootUsersResponse, error)
+	AdminUpdateRootUser(ctx context.Context, in *AdminUpdateRootUserRequest, opts ...grpc.CallOption) (*AdminUpdateRootUserResponse, error)
+	AdminDeleteRootUser(ctx context.Context, in *AdminDeleteRootUserRequest, opts ...grpc.CallOption) (*AdminDeleteRootUserResponse, error)
 }
 
 type gatewayClient struct {
@@ -45,45 +45,45 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) CreateRootUser(ctx context.Context, in *CreateRootUserRequest, opts ...grpc.CallOption) (*CreateRootUserResponse, error) {
-	out := new(CreateRootUserResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateRootUser_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminCreateRootUser(ctx context.Context, in *AdminCreateRootUserRequest, opts ...grpc.CallOption) (*AdminCreateRootUserResponse, error) {
+	out := new(AdminCreateRootUserResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminCreateRootUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) GetRootUser(ctx context.Context, in *GetRootUserRequest, opts ...grpc.CallOption) (*GetRootUserResponse, error) {
-	out := new(GetRootUserResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetRootUser_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminGetRootUser(ctx context.Context, in *AdminGetRootUserRequest, opts ...grpc.CallOption) (*AdminGetRootUserResponse, error) {
+	out := new(AdminGetRootUserResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminGetRootUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) GetRootUsers(ctx context.Context, in *GetRootUsersRequest, opts ...grpc.CallOption) (*GetRootUsersResponse, error) {
-	out := new(GetRootUsersResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetRootUsers_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminGetRootUsers(ctx context.Context, in *AdminGetRootUsersRequest, opts ...grpc.CallOption) (*AdminGetRootUsersResponse, error) {
+	out := new(AdminGetRootUsersResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminGetRootUsers_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) UpdateRootUser(ctx context.Context, in *UpdateRootUserRequest, opts ...grpc.CallOption) (*UpdateRootUserResponse, error) {
-	out := new(UpdateRootUserResponse)
-	err := c.cc.Invoke(ctx, Gateway_UpdateRootUser_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminUpdateRootUser(ctx context.Context, in *AdminUpdateRootUserRequest, opts ...grpc.CallOption) (*AdminUpdateRootUserResponse, error) {
+	out := new(AdminUpdateRootUserResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminUpdateRootUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) DeleteRootUser(ctx context.Context, in *DeleteRootUserRequest, opts ...grpc.CallOption) (*DeleteRootUserResponse, error) {
-	out := new(DeleteRootUserResponse)
-	err := c.cc.Invoke(ctx, Gateway_DeleteRootUser_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminDeleteRootUser(ctx context.Context, in *AdminDeleteRootUserRequest, opts ...grpc.CallOption) (*AdminDeleteRootUserResponse, error) {
+	out := new(AdminDeleteRootUserResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminDeleteRootUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,11 +94,11 @@ func (c *gatewayClient) DeleteRootUser(ctx context.Context, in *DeleteRootUserRe
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateRootUser(context.Context, *CreateRootUserRequest) (*CreateRootUserResponse, error)
-	GetRootUser(context.Context, *GetRootUserRequest) (*GetRootUserResponse, error)
-	GetRootUsers(context.Context, *GetRootUsersRequest) (*GetRootUsersResponse, error)
-	UpdateRootUser(context.Context, *UpdateRootUserRequest) (*UpdateRootUserResponse, error)
-	DeleteRootUser(context.Context, *DeleteRootUserRequest) (*DeleteRootUserResponse, error)
+	AdminCreateRootUser(context.Context, *AdminCreateRootUserRequest) (*AdminCreateRootUserResponse, error)
+	AdminGetRootUser(context.Context, *AdminGetRootUserRequest) (*AdminGetRootUserResponse, error)
+	AdminGetRootUsers(context.Context, *AdminGetRootUsersRequest) (*AdminGetRootUsersResponse, error)
+	AdminUpdateRootUser(context.Context, *AdminUpdateRootUserRequest) (*AdminUpdateRootUserResponse, error)
+	AdminDeleteRootUser(context.Context, *AdminDeleteRootUserRequest) (*AdminDeleteRootUserResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -106,20 +106,20 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateRootUser(context.Context, *CreateRootUserRequest) (*CreateRootUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateRootUser not implemented")
+func (UnimplementedGatewayServer) AdminCreateRootUser(context.Context, *AdminCreateRootUserRequest) (*AdminCreateRootUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateRootUser not implemented")
 }
-func (UnimplementedGatewayServer) GetRootUser(context.Context, *GetRootUserRequest) (*GetRootUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetRootUser not implemented")
+func (UnimplementedGatewayServer) AdminGetRootUser(context.Context, *AdminGetRootUserRequest) (*AdminGetRootUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminGetRootUser not implemented")
 }
-func (UnimplementedGatewayServer) GetRootUsers(context.Context, *GetRootUsersRequest) (*GetRootUsersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetRootUsers not implemented")
+func (UnimplementedGatewayServer) AdminGetRootUsers(context.Context, *AdminGetRootUsersRequest) (*AdminGetRootUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminGetRootUsers not implemented")
 }
-func (UnimplementedGatewayServer) UpdateRootUser(context.Context, *UpdateRootUserRequest) (*UpdateRootUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateRootUser not implemented")
+func (UnimplementedGatewayServer) AdminUpdateRootUser(context.Context, *AdminUpdateRootUserRequest) (*AdminUpdateRootUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateRootUser not implemented")
 }
-func (UnimplementedGatewayServer) DeleteRootUser(context.Context, *DeleteRootUserRequest) (*DeleteRootUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteRootUser not implemented")
+func (UnimplementedGatewayServer) AdminDeleteRootUser(context.Context, *AdminDeleteRootUserRequest) (*AdminDeleteRootUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminDeleteRootUser not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -134,92 +134,92 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_CreateRootUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateRootUserRequest)
+func _Gateway_AdminCreateRootUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCreateRootUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).CreateRootUser(ctx, in)
+		return srv.(GatewayServer).AdminCreateRootUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_CreateRootUser_FullMethodName,
+		FullMethod: Gateway_AdminCreateRootUser_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateRootUser(ctx, req.(*CreateRootUserRequest))
+		return srv.(GatewayServer).AdminCreateRootUser(ctx, req.(*AdminCreateRootUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetRootUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetRootUserRequest)
+func _Gateway_AdminGetRootUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminGetRootUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetRootUser(ctx, in)
+		return srv.(GatewayServer).AdminGetRootUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetRootUser_FullMethodName,
+		FullMethod: Gateway_AdminGetRootUser_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetRootUser(ctx, req.(*GetRootUserRequest))
+		return srv.(GatewayServer).AdminGetRootUser(ctx, req.(*AdminGetRootUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetRootUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetRootUsersRequest)
+func _Gateway_AdminGetRootUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminGetRootUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetRootUsers(ctx, in)
+		return srv.(GatewayServer).AdminGetRootUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetRootUsers_FullMethodName,
+		FullMethod: Gateway_AdminGetRootUsers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetRootUsers(ctx, req.(*GetRootUsersRequest))
+		return srv.(GatewayServer).AdminGetRootUsers(ctx, req.(*AdminGetRootUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_UpdateRootUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateRootUserRequest)
+func _Gateway_AdminUpdateRootUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminUpdateRootUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).UpdateRootUser(ctx, in)
+		return srv.(GatewayServer).AdminUpdateRootUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_UpdateRootUser_FullMethodName,
+		FullMethod: Gateway_AdminUpdateRootUser_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateRootUser(ctx, req.(*UpdateRootUserRequest))
+		return srv.(GatewayServer).AdminUpdateRootUser(ctx, req.(*AdminUpdateRootUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_DeleteRootUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteRootUserRequest)
+func _Gateway_AdminDeleteRootUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminDeleteRootUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).DeleteRootUser(ctx, in)
+		return srv.(GatewayServer).AdminDeleteRootUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_DeleteRootUser_FullMethodName,
+		FullMethod: Gateway_AdminDeleteRootUser_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeleteRootUser(ctx, req.(*DeleteRootUserRequest))
+		return srv.(GatewayServer).AdminDeleteRootUser(ctx, req.(*AdminDeleteRootUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -232,24 +232,24 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateRootUser",
-			Handler:    _Gateway_CreateRootUser_Handler,
+			MethodName: "AdminCreateRootUser",
+			Handler:    _Gateway_AdminCreateRootUser_Handler,
 		},
 		{
-			MethodName: "GetRootUser",
-			Handler:    _Gateway_GetRootUser_Handler,
+			MethodName: "AdminGetRootUser",
+			Handler:    _Gateway_AdminGetRootUser_Handler,
 		},
 		{
-			MethodName: "GetRootUsers",
-			Handler:    _Gateway_GetRootUsers_Handler,
+			MethodName: "AdminGetRootUsers",
+			Handler:    _Gateway_AdminGetRootUsers_Handler,
 		},
 		{
-			MethodName: "UpdateRootUser",
-			Handler:    _Gateway_UpdateRootUser_Handler,
+			MethodName: "AdminUpdateRootUser",
+			Handler:    _Gateway_AdminUpdateRootUser_Handler,
 		},
 		{
-			MethodName: "DeleteRootUser",
-			Handler:    _Gateway_DeleteRootUser_Handler,
+			MethodName: "AdminDeleteRootUser",
+			Handler:    _Gateway_AdminDeleteRootUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
