@@ -102,7 +102,7 @@ message ExistFractionCondsResponse { bool Info = 10; }
 
 message UpdateFractionRequest { FractionReq Info = 10; }
 
-message UpdateFractionResponse { Fraction Info = 10; }
+message UpdateFractionResponse {}
 
 message DeleteFractionRequest { FractionReq Info = 10; }
 

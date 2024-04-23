@@ -99,7 +99,7 @@ message ExistGoodUserCondsResponse { bool Info = 10; }
 
 message UpdateGoodUserRequest { GoodUserReq Info = 10; }
 
-message UpdateGoodUserResponse { GoodUser Info = 10; }
+message UpdateGoodUserResponse {}
 
 message DeleteGoodUserRequest { GoodUserReq Info = 10; }
 

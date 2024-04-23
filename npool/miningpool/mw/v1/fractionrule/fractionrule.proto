@@ -96,7 +96,7 @@ message ExistFractionRuleCondsResponse { bool Info = 10; }
 
 message UpdateFractionRuleRequest { FractionRuleReq Info = 10; }
 
-message UpdateFractionRuleResponse { FractionRule Info = 10; }
+message UpdateFractionRuleResponse {}
 
 message DeleteFractionRuleRequest { FractionRuleReq Info = 10; }
 

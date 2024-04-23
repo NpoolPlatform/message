@@ -86,7 +86,7 @@ message ExistPoolCondsResponse { bool Info = 10; }
 
 message UpdatePoolRequest { PoolReq Info = 10; }
 
-message UpdatePoolResponse { Pool Info = 10; }
+message UpdatePoolResponse {}
 
 message DeletePoolRequest { PoolReq Info = 10; }
 

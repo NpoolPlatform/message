@@ -250,12 +250,7 @@
       }
     },
     "v1UpdateFractionRuleResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1FractionRule"
-        }
-      }
+      "type": "object"
     }
   }
 }

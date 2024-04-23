@@ -396,12 +396,7 @@
       }
     },
     "v1UpdateOrderUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderUser"
-        }
-      }
+      "type": "object"
     }
   }
 }

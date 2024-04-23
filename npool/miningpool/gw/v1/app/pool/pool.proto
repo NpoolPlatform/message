@@ -9,7 +9,8 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
-  rpc CreatePool(CreatePoolRequest) returns (CreatePoolResponse) {
+  rpc AdminCreatePool(AdminCreatePoolRequest)
+      returns (AdminCreatePoolResponse) {
     option (google.api.http) = {
       post : "/v1/create/apppool"
       body : "*"
@@ -27,13 +28,14 @@ service Gateway {
       body : "*"
     };
   }
-  rpc GetNPools(GetNPoolsRequest) returns (GetNPoolsResponse) {
+  rpc AdminGetNPools(AdminGetNPoolsRequest) returns (AdminGetNPoolsResponse) {
     option (google.api.http) = {
       post : "/v1/get/n/apppools"
       body : "*"
     };
   }
-  rpc DeletePool(DeletePoolRequest) returns (DeletePoolResponse) {
+  rpc AdminDeletePool(AdminDeletePoolRequest)
+      returns (AdminDeletePoolResponse) {
     option (google.api.http) = {
       post : "/v1/delete/apppool"
       body : "*"
@@ -69,12 +71,12 @@ message FractionRule {
   float WithdrawRate = 40;
 }
 
-message CreatePoolRequest {
+message AdminCreatePoolRequest {
   string PoolID = 10;
   string TargetAppID = 20;
 }
 
-message CreatePoolResponse { Pool Info = 10; }
+message AdminCreatePoolResponse { Pool Info = 10; }
 
 message GetPoolRequest {
   string EntID = 10;
@@ -94,20 +96,20 @@ message GetPoolsResponse {
   uint32 Total = 20;
 }
 
-message GetNPoolsRequest {
+message AdminGetNPoolsRequest {
   string TargetAppID = 10;
   int32 Offset = 20;
   int32 Limit = 30;
 }
 
-message GetNPoolsResponse {
+message AdminGetNPoolsResponse {
   repeated Pool Infos = 10;
   uint32 Total = 20;
 }
 
-message DeletePoolRequest {
+message AdminDeletePoolRequest {
   uint32 ID = 10;
   string EntID = 20;
 }
 
-message DeletePoolResponse { Pool Info = 10; }
+message AdminDeletePoolResponse { Pool Info = 10; }

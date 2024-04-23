@@ -278,12 +278,7 @@
       }
     },
     "v1UpdateGoodUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodUser"
-        }
-      }
+      "type": "object"
     }
   }
 }

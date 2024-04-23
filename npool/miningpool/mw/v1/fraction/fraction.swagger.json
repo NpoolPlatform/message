@@ -286,12 +286,7 @@
       }
     },
     "v1UpdateFractionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Fraction"
-        }
-      }
+      "type": "object"
     },
     "v1WithdrawState": {
       "type": "string",

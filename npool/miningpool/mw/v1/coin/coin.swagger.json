@@ -287,12 +287,7 @@
       }
     },
     "v1UpdateCoinResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Coin"
-        }
-      }
+      "type": "object"
     }
   }
 }

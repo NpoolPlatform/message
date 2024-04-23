@@ -93,7 +93,7 @@ message ExistRootUserCondsResponse { bool Info = 10; }
 
 message UpdateRootUserRequest { RootUserReq Info = 10; }
 
-message UpdateRootUserResponse { RootUser Info = 10; }
+message UpdateRootUserResponse {}
 
 message DeleteRootUserRequest { RootUserReq Info = 10; }
 

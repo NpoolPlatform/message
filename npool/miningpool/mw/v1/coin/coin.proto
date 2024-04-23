@@ -96,7 +96,7 @@ message ExistCoinCondsResponse { bool Info = 10; }
 
 message UpdateCoinRequest { CoinReq Info = 10; }
 
-message UpdateCoinResponse { Coin Info = 10; }
+message UpdateCoinResponse {}
 
 message DeleteCoinRequest { CoinReq Info = 10; }
 

@@ -128,7 +128,7 @@ message ExistOrderUserCondsResponse { bool Info = 10; }
 
 message UpdateOrderUserRequest { OrderUserReq Info = 10; }
 
-message UpdateOrderUserResponse { OrderUser Info = 10; }
+message UpdateOrderUserResponse {}
 
 message DeleteOrderUserRequest { OrderUserReq Info = 10; }
 

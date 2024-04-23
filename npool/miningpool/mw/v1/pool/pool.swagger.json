@@ -229,12 +229,7 @@
       }
     },
     "v1UpdatePoolResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Pool"
-        }
-      }
+      "type": "object"
     }
   }
 }
