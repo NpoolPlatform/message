@@ -19,15 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_AdminAdminGetPools_FullMethodName = "/miningpool.gateway.pool.v1.Gateway/AdminAdminGetPools"
-	Gateway_AdminGetPool_FullMethodName       = "/miningpool.gateway.pool.v1.Gateway/AdminGetPool"
+	Gateway_AdminGetPools_FullMethodName = "/miningpool.gateway.pool.v1.Gateway/AdminGetPools"
+	Gateway_AdminGetPool_FullMethodName  = "/miningpool.gateway.pool.v1.Gateway/AdminGetPool"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	AdminAdminGetPools(ctx context.Context, in *AdminGetPoolsRequest, opts ...grpc.CallOption) (*AdminGetPoolsResponse, error)
+	AdminGetPools(ctx context.Context, in *AdminGetPoolsRequest, opts ...grpc.CallOption) (*AdminGetPoolsResponse, error)
 	AdminGetPool(ctx context.Context, in *AdminGetPoolRequest, opts ...grpc.CallOption) (*AdminGetPoolResponse, error)
 }
 
@@ -39,9 +39,9 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) AdminAdminGetPools(ctx context.Context, in *AdminGetPoolsRequest, opts ...grpc.CallOption) (*AdminGetPoolsResponse, error) {
+func (c *gatewayClient) AdminGetPools(ctx context.Context, in *AdminGetPoolsRequest, opts ...grpc.CallOption) (*AdminGetPoolsResponse, error) {
 	out := new(AdminGetPoolsResponse)
-	err := c.cc.Invoke(ctx, Gateway_AdminAdminGetPools_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Gateway_AdminGetPools_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -61,7 +61,7 @@ func (c *gatewayClient) AdminGetPool(ctx context.Context, in *AdminGetPoolReques
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	AdminAdminGetPools(context.Context, *AdminGetPoolsRequest) (*AdminGetPoolsResponse, error)
+	AdminGetPools(context.Context, *AdminGetPoolsRequest) (*AdminGetPoolsResponse, error)
 	AdminGetPool(context.Context, *AdminGetPoolRequest) (*AdminGetPoolResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -70,8 +70,8 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) AdminAdminGetPools(context.Context, *AdminGetPoolsRequest) (*AdminGetPoolsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AdminAdminGetPools not implemented")
+func (UnimplementedGatewayServer) AdminGetPools(context.Context, *AdminGetPoolsRequest) (*AdminGetPoolsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminGetPools not implemented")
 }
 func (UnimplementedGatewayServer) AdminGetPool(context.Context, *AdminGetPoolRequest) (*AdminGetPoolResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminGetPool not implemented")
@@ -89,20 +89,20 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_AdminAdminGetPools_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_AdminGetPools_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AdminGetPoolsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).AdminAdminGetPools(ctx, in)
+		return srv.(GatewayServer).AdminGetPools(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_AdminAdminGetPools_FullMethodName,
+		FullMethod: Gateway_AdminGetPools_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).AdminAdminGetPools(ctx, req.(*AdminGetPoolsRequest))
+		return srv.(GatewayServer).AdminGetPools(ctx, req.(*AdminGetPoolsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -133,8 +133,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "AdminAdminGetPools",
-			Handler:    _Gateway_AdminAdminGetPools_Handler,
+			MethodName: "AdminGetPools",
+			Handler:    _Gateway_AdminGetPools_Handler,
 		},
 		{
 			MethodName: "AdminGetPool",

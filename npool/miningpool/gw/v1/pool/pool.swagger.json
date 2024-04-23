@@ -50,7 +50,7 @@
     },
     "/v1/admin/get/pools": {
       "post": {
-        "operationId": "Gateway_AdminAdminGetPools",
+        "operationId": "Gateway_AdminGetPools",
         "responses": {
           "200": {
             "description": "A successful response.",

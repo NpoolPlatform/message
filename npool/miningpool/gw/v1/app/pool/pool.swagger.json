@@ -80,9 +80,9 @@
         ]
       }
     },
-    "/v1/admin/get/n/apppools": {
+    "/v1/admin/get/apppools": {
       "post": {
-        "operationId": "Gateway_AdminGetNPools",
+        "operationId": "Gateway_AdminGetPools",
         "responses": {
           "200": {
             "description": "A successful response.",

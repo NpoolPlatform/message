@@ -28,9 +28,9 @@ service Gateway {
       body : "*"
     };
   }
-  rpc AdminGetNPools(AdminGetNPoolsRequest) returns (AdminGetNPoolsResponse) {
+  rpc AdminGetPools(AdminGetNPoolsRequest) returns (AdminGetNPoolsResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/n/apppools"
+      post : "/v1/admin/get/apppools"
       body : "*"
     };
   }

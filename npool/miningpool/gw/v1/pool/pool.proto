@@ -9,7 +9,7 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
-  rpc AdminAdminGetPools(AdminGetPoolsRequest) returns (AdminGetPoolsResponse) {
+  rpc AdminGetPools(AdminGetPoolsRequest) returns (AdminGetPoolsResponse) {
     option (google.api.http) = {
       post : "/v1/admin/get/pools"
       body : "*"
