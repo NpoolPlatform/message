@@ -19,14 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateAppConfig_FullMethodName    = "/order.gateway.app.config.v1.Gateway/CreateAppConfig"
-	Gateway_UpdateAppConfig_FullMethodName    = "/order.gateway.app.config.v1.Gateway/UpdateAppConfig"
-	Gateway_GetAppConfig_FullMethodName       = "/order.gateway.app.config.v1.Gateway/GetAppConfig"
-	Gateway_GetAppConfigs_FullMethodName      = "/order.gateway.app.config.v1.Gateway/GetAppConfigs"
-	Gateway_CreateAppAppConfig_FullMethodName = "/order.gateway.app.config.v1.Gateway/CreateAppAppConfig"
-	Gateway_UpdateAppAppConfig_FullMethodName = "/order.gateway.app.config.v1.Gateway/UpdateAppAppConfig"
-	Gateway_GetAppAppConfigs_FullMethodName   = "/order.gateway.app.config.v1.Gateway/GetAppAppConfigs"
-	Gateway_DeleteAppAppConfig_FullMethodName = "/order.gateway.app.config.v1.Gateway/DeleteAppAppConfig"
+	Gateway_CreateAppConfig_FullMethodName      = "/order.gateway.app.config.v1.Gateway/CreateAppConfig"
+	Gateway_UpdateAppConfig_FullMethodName      = "/order.gateway.app.config.v1.Gateway/UpdateAppConfig"
+	Gateway_GetAppConfig_FullMethodName         = "/order.gateway.app.config.v1.Gateway/GetAppConfig"
+	Gateway_GetAppConfigs_FullMethodName        = "/order.gateway.app.config.v1.Gateway/GetAppConfigs"
+	Gateway_AdminCreateAppConfig_FullMethodName = "/order.gateway.app.config.v1.Gateway/AdminCreateAppConfig"
+	Gateway_AdminUpdateAppConfig_FullMethodName = "/order.gateway.app.config.v1.Gateway/AdminUpdateAppConfig"
+	Gateway_AdminGetAppConfigs_FullMethodName   = "/order.gateway.app.config.v1.Gateway/AdminGetAppConfigs"
+	Gateway_AdminDeleteAppConfig_FullMethodName = "/order.gateway.app.config.v1.Gateway/AdminDeleteAppConfig"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -38,10 +38,10 @@ type GatewayClient interface {
 	GetAppConfig(ctx context.Context, in *GetAppConfigRequest, opts ...grpc.CallOption) (*GetAppConfigResponse, error)
 	GetAppConfigs(ctx context.Context, in *GetAppConfigsRequest, opts ...grpc.CallOption) (*GetAppConfigsResponse, error)
 	// Admin apis
-	CreateAppAppConfig(ctx context.Context, in *CreateAppAppConfigRequest, opts ...grpc.CallOption) (*CreateAppAppConfigResponse, error)
-	UpdateAppAppConfig(ctx context.Context, in *UpdateAppAppConfigRequest, opts ...grpc.CallOption) (*UpdateAppAppConfigResponse, error)
-	GetAppAppConfigs(ctx context.Context, in *GetAppAppConfigsRequest, opts ...grpc.CallOption) (*GetAppAppConfigsResponse, error)
-	DeleteAppAppConfig(ctx context.Context, in *DeleteAppAppConfigRequest, opts ...grpc.CallOption) (*DeleteAppAppConfigResponse, error)
+	AdminCreateAppConfig(ctx context.Context, in *AdminCreateAppConfigRequest, opts ...grpc.CallOption) (*AdminCreateAppConfigResponse, error)
+	AdminUpdateAppConfig(ctx context.Context, in *AdminUpdateAppConfigRequest, opts ...grpc.CallOption) (*AdminUpdateAppConfigResponse, error)
+	AdminGetAppConfigs(ctx context.Context, in *AdminGetAppConfigsRequest, opts ...grpc.CallOption) (*AdminGetAppConfigsResponse, error)
+	AdminDeleteAppConfig(ctx context.Context, in *AdminDeleteAppConfigRequest, opts ...grpc.CallOption) (*AdminDeleteAppConfigResponse, error)
 }
 
 type gatewayClient struct {
@@ -88,36 +88,36 @@ func (c *gatewayClient) GetAppConfigs(ctx context.Context, in *GetAppConfigsRequ
 	return out, nil
 }
 
-func (c *gatewayClient) CreateAppAppConfig(ctx context.Context, in *CreateAppAppConfigRequest, opts ...grpc.CallOption) (*CreateAppAppConfigResponse, error) {
-	out := new(CreateAppAppConfigResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateAppAppConfig_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminCreateAppConfig(ctx context.Context, in *AdminCreateAppConfigRequest, opts ...grpc.CallOption) (*AdminCreateAppConfigResponse, error) {
+	out := new(AdminCreateAppConfigResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminCreateAppConfig_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) UpdateAppAppConfig(ctx context.Context, in *UpdateAppAppConfigRequest, opts ...grpc.CallOption) (*UpdateAppAppConfigResponse, error) {
-	out := new(UpdateAppAppConfigResponse)
-	err := c.cc.Invoke(ctx, Gateway_UpdateAppAppConfig_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminUpdateAppConfig(ctx context.Context, in *AdminUpdateAppConfigRequest, opts ...grpc.CallOption) (*AdminUpdateAppConfigResponse, error) {
+	out := new(AdminUpdateAppConfigResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminUpdateAppConfig_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) GetAppAppConfigs(ctx context.Context, in *GetAppAppConfigsRequest, opts ...grpc.CallOption) (*GetAppAppConfigsResponse, error) {
-	out := new(GetAppAppConfigsResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetAppAppConfigs_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminGetAppConfigs(ctx context.Context, in *AdminGetAppConfigsRequest, opts ...grpc.CallOption) (*AdminGetAppConfigsResponse, error) {
+	out := new(AdminGetAppConfigsResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminGetAppConfigs_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) DeleteAppAppConfig(ctx context.Context, in *DeleteAppAppConfigRequest, opts ...grpc.CallOption) (*DeleteAppAppConfigResponse, error) {
-	out := new(DeleteAppAppConfigResponse)
-	err := c.cc.Invoke(ctx, Gateway_DeleteAppAppConfig_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminDeleteAppConfig(ctx context.Context, in *AdminDeleteAppConfigRequest, opts ...grpc.CallOption) (*AdminDeleteAppConfigResponse, error) {
+	out := new(AdminDeleteAppConfigResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminDeleteAppConfig_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -133,10 +133,10 @@ type GatewayServer interface {
 	GetAppConfig(context.Context, *GetAppConfigRequest) (*GetAppConfigResponse, error)
 	GetAppConfigs(context.Context, *GetAppConfigsRequest) (*GetAppConfigsResponse, error)
 	// Admin apis
-	CreateAppAppConfig(context.Context, *CreateAppAppConfigRequest) (*CreateAppAppConfigResponse, error)
-	UpdateAppAppConfig(context.Context, *UpdateAppAppConfigRequest) (*UpdateAppAppConfigResponse, error)
-	GetAppAppConfigs(context.Context, *GetAppAppConfigsRequest) (*GetAppAppConfigsResponse, error)
-	DeleteAppAppConfig(context.Context, *DeleteAppAppConfigRequest) (*DeleteAppAppConfigResponse, error)
+	AdminCreateAppConfig(context.Context, *AdminCreateAppConfigRequest) (*AdminCreateAppConfigResponse, error)
+	AdminUpdateAppConfig(context.Context, *AdminUpdateAppConfigRequest) (*AdminUpdateAppConfigResponse, error)
+	AdminGetAppConfigs(context.Context, *AdminGetAppConfigsRequest) (*AdminGetAppConfigsResponse, error)
+	AdminDeleteAppConfig(context.Context, *AdminDeleteAppConfigRequest) (*AdminDeleteAppConfigResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -156,17 +156,17 @@ func (UnimplementedGatewayServer) GetAppConfig(context.Context, *GetAppConfigReq
 func (UnimplementedGatewayServer) GetAppConfigs(context.Context, *GetAppConfigsRequest) (*GetAppConfigsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppConfigs not implemented")
 }
-func (UnimplementedGatewayServer) CreateAppAppConfig(context.Context, *CreateAppAppConfigRequest) (*CreateAppAppConfigResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAppAppConfig not implemented")
+func (UnimplementedGatewayServer) AdminCreateAppConfig(context.Context, *AdminCreateAppConfigRequest) (*AdminCreateAppConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateAppConfig not implemented")
 }
-func (UnimplementedGatewayServer) UpdateAppAppConfig(context.Context, *UpdateAppAppConfigRequest) (*UpdateAppAppConfigResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppAppConfig not implemented")
+func (UnimplementedGatewayServer) AdminUpdateAppConfig(context.Context, *AdminUpdateAppConfigRequest) (*AdminUpdateAppConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateAppConfig not implemented")
 }
-func (UnimplementedGatewayServer) GetAppAppConfigs(context.Context, *GetAppAppConfigsRequest) (*GetAppAppConfigsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppAppConfigs not implemented")
+func (UnimplementedGatewayServer) AdminGetAppConfigs(context.Context, *AdminGetAppConfigsRequest) (*AdminGetAppConfigsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminGetAppConfigs not implemented")
 }
-func (UnimplementedGatewayServer) DeleteAppAppConfig(context.Context, *DeleteAppAppConfigRequest) (*DeleteAppAppConfigResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppAppConfig not implemented")
+func (UnimplementedGatewayServer) AdminDeleteAppConfig(context.Context, *AdminDeleteAppConfigRequest) (*AdminDeleteAppConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminDeleteAppConfig not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -253,74 +253,74 @@ func _Gateway_GetAppConfigs_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_CreateAppAppConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAppAppConfigRequest)
+func _Gateway_AdminCreateAppConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCreateAppConfigRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).CreateAppAppConfig(ctx, in)
+		return srv.(GatewayServer).AdminCreateAppConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_CreateAppAppConfig_FullMethodName,
+		FullMethod: Gateway_AdminCreateAppConfig_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateAppAppConfig(ctx, req.(*CreateAppAppConfigRequest))
+		return srv.(GatewayServer).AdminCreateAppConfig(ctx, req.(*AdminCreateAppConfigRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_UpdateAppAppConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateAppAppConfigRequest)
+func _Gateway_AdminUpdateAppConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminUpdateAppConfigRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).UpdateAppAppConfig(ctx, in)
+		return srv.(GatewayServer).AdminUpdateAppConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_UpdateAppAppConfig_FullMethodName,
+		FullMethod: Gateway_AdminUpdateAppConfig_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateAppAppConfig(ctx, req.(*UpdateAppAppConfigRequest))
+		return srv.(GatewayServer).AdminUpdateAppConfig(ctx, req.(*AdminUpdateAppConfigRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetAppAppConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppAppConfigsRequest)
+func _Gateway_AdminGetAppConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminGetAppConfigsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetAppAppConfigs(ctx, in)
+		return srv.(GatewayServer).AdminGetAppConfigs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetAppAppConfigs_FullMethodName,
+		FullMethod: Gateway_AdminGetAppConfigs_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppAppConfigs(ctx, req.(*GetAppAppConfigsRequest))
+		return srv.(GatewayServer).AdminGetAppConfigs(ctx, req.(*AdminGetAppConfigsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_DeleteAppAppConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteAppAppConfigRequest)
+func _Gateway_AdminDeleteAppConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminDeleteAppConfigRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).DeleteAppAppConfig(ctx, in)
+		return srv.(GatewayServer).AdminDeleteAppConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_DeleteAppAppConfig_FullMethodName,
+		FullMethod: Gateway_AdminDeleteAppConfig_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeleteAppAppConfig(ctx, req.(*DeleteAppAppConfigRequest))
+		return srv.(GatewayServer).AdminDeleteAppConfig(ctx, req.(*AdminDeleteAppConfigRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -349,20 +349,20 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetAppConfigs_Handler,
 		},
 		{
-			MethodName: "CreateAppAppConfig",
-			Handler:    _Gateway_CreateAppAppConfig_Handler,
+			MethodName: "AdminCreateAppConfig",
+			Handler:    _Gateway_AdminCreateAppConfig_Handler,
 		},
 		{
-			MethodName: "UpdateAppAppConfig",
-			Handler:    _Gateway_UpdateAppAppConfig_Handler,
+			MethodName: "AdminUpdateAppConfig",
+			Handler:    _Gateway_AdminUpdateAppConfig_Handler,
 		},
 		{
-			MethodName: "GetAppAppConfigs",
-			Handler:    _Gateway_GetAppAppConfigs_Handler,
+			MethodName: "AdminGetAppConfigs",
+			Handler:    _Gateway_AdminGetAppConfigs_Handler,
 		},
 		{
-			MethodName: "DeleteAppAppConfig",
-			Handler:    _Gateway_DeleteAppAppConfig_Handler,
+			MethodName: "AdminDeleteAppConfig",
+			Handler:    _Gateway_AdminDeleteAppConfig_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -39,41 +39,42 @@ service Gateway {
     }
 
     // Admin apis
-    rpc CreateAppAppConfig (CreateAppAppConfigRequest) returns (CreateAppAppConfigResponse) {
+    rpc AdminCreateAppConfig (AdminCreateAppConfigRequest) returns (AdminCreateAppConfigResponse) {
         option (google.api.http) = {
-            post: "/v1/create/app/app/config"
+            post: "/v1/admin/create/appconfig"
             body: "*"
         };
     }
 
-    rpc UpdateAppAppConfig (UpdateAppAppConfigRequest) returns (UpdateAppAppConfigResponse) {
+    rpc AdminUpdateAppConfig (AdminUpdateAppConfigRequest) returns (AdminUpdateAppConfigResponse) {
       option (google.api.http) = {
-          post: "/v1/update/app/app/config"
+          post: "/v1/admin/update/appconfig"
           body: "*"
       };
     }
 
-    rpc GetAppAppConfigs (GetAppAppConfigsRequest) returns (GetAppAppConfigsResponse) {
+    rpc AdminGetAppConfigs (AdminGetAppConfigsRequest) returns (AdminGetAppConfigsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/app/app/configs"
+            post: "/v1/admin/get/appconfigs"
             body: "*"
         };
     }
 
-    rpc DeleteAppAppConfig (DeleteAppAppConfigRequest) returns (DeleteAppAppConfigResponse) {
+    rpc AdminDeleteAppConfig (AdminDeleteAppConfigRequest) returns (AdminDeleteAppConfigResponse) {
         option (google.api.http) = {
-            post: "/v1/delete/app/app/config"
+            post: "/v1/admin/delete/appconfig"
             body: "*"
         };
     }
 }
 
 message CreateAppConfigRequest {
-    string                                 AppID                     = 10;
-    basetypes.order.v1.SimulateOrderCouponMode      SimulateOrderCouponMode            = 20;
-    optional string                        SimulateOrderCouponProbability     = 30;
-    optional string                        CashableProfitProbability = 40;
-    optional bool                          Enabled                   = 50;
+    string AppID = 10;
+    optional bool EnableSimulateOrder = 20;
+    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 30;
+    optional string SimulateOrderCouponProbability = 40;
+    optional string SimulateOrderCashableProfitProbability = 50;
+    optional uint32 MaxUnpaidOrders = 60;
 }
 
 message CreateAppConfigResponse {
@@ -81,13 +82,14 @@ message CreateAppConfigResponse {
 }
 
 message UpdateAppConfigRequest {
-    uint32                                 ID                    = 10;
-    string                                 EntID                 = 20;
-    string                                 AppID                 = 30;
-    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode    = 40;
-    optional string                        SimulateOrderCouponProbability = 50;
-    optional string                        CashableProfitProbability = 60;
-    optional bool                          Enabled               = 70;
+    uint32 ID = 10;
+    string EntID = 20;
+    string AppID = 30;
+    optional bool EnableSimulateOrder = 40;
+    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 50;
+    optional string SimulateOrderCouponProbability = 60;
+    optional string SimulateOrderCashableProfitProbability = 70;
+    optional uint32 MaxUnpaidOrders = 80;
 }
 
 message UpdateAppConfigResponse {
@@ -104,59 +106,61 @@ message GetAppConfigResponse {
 }
 
 message GetAppConfigsRequest {
-    string AppID  = 10;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+    string AppID = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
 message GetAppConfigsResponse {
     repeated order.middleware.app.config.v1.AppConfig Infos = 10;
-    uint32                  Total = 20;
+    uint32 Total = 20;
 }
 
-message CreateAppAppConfigRequest {
-    string                            TargetAppID               = 10;
-    basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode            = 20;
-    optional string                   SimulateOrderCouponProbability     = 30;
-    optional string                   CashableProfitProbability = 40;
-    optional bool                     Enabled                   = 50;
-}
-
-message CreateAppAppConfigResponse {
-    order.middleware.app.config.v1.AppConfig Info = 10;
-}
-
-message UpdateAppAppConfigRequest {
-  uint32                                 ID                    = 10;
-  string                                 EntID                 = 20;
-  string                                 TargetAppID           = 30;
-  optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode    = 40;
-  optional string                        SimulateOrderCouponProbability = 50;
-  optional string                        CashableProfitProbability = 60;
-  optional bool                          Enabled               = 70;
-}
-
-message UpdateAppAppConfigResponse {
-    order.middleware.app.config.v1.AppConfig Info = 10;
-}
-
-message GetAppAppConfigsRequest {
+message AdminCreateAppConfigRequest {
     string TargetAppID = 10;
-    int32  Offset      = 20;
-    int32  Limit       = 30;
+    optional bool EnableSimulateOrder = 20;
+    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 30;
+    optional string SimulateOrderCouponProbability = 40;
+    optional string SimulateOrderCashableProfitProbability = 50;
+    optional uint32 MaxUnpaidOrders = 60;
 }
 
-message GetAppAppConfigsResponse {
+message AdminCreateAppConfigResponse {
+    order.middleware.app.config.v1.AppConfig Info = 10;
+}
+
+message AdminUpdateAppConfigRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+    string TargetAppID = 30;
+    optional bool EnableSimulateOrder = 40;
+    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 50;
+    optional string SimulateOrderCouponProbability = 60;
+    optional string SimulateOrderCashableProfitProbability = 70;
+    optional uint32 MaxUnpaidOrders = 80;
+}
+
+message AdminUpdateAppConfigResponse {
+    order.middleware.app.config.v1.AppConfig Info = 10;
+}
+
+message AdminGetAppConfigsRequest {
+    string TargetAppID = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message AdminGetAppConfigsResponse {
     repeated order.middleware.app.config.v1.AppConfig Infos = 10;
-    uint32                  Total = 20;
+    uint32 Total = 20;
 }
 
-message DeleteAppAppConfigRequest {
-    uint32 ID          = 10;
-    string EntID       = 20;
+message AdminDeleteAppConfigRequest {
+    uint32 ID = 10;
+    string EntID = 20;
     string TargetAppID = 30;
 }
 
-message DeleteAppAppConfigResponse {
+message AdminDeleteAppConfigResponse {
     order.middleware.app.config.v1.AppConfig Info = 10;
 }
