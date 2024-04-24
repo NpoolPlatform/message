@@ -16,15 +16,15 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/app/app/config": {
+    "/v1/admin/create/appconfig": {
       "post": {
         "summary": "Admin apis",
-        "operationId": "Gateway_CreateAppAppConfig",
+        "operationId": "Gateway_AdminCreateAppConfig",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateAppAppConfigResponse"
+              "$ref": "#/definitions/v1AdminCreateAppConfigResponse"
             }
           },
           "default": {
@@ -40,7 +40,103 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateAppAppConfigRequest"
+              "$ref": "#/definitions/v1AdminCreateAppConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/delete/appconfig": {
+      "post": {
+        "operationId": "Gateway_AdminDeleteAppConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteAppConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteAppConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/get/appconfigs": {
+      "post": {
+        "operationId": "Gateway_AdminGetAppConfigs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetAppConfigsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetAppConfigsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/appconfig": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateAppConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateAppConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateAppConfigRequest"
             }
           }
         ],
@@ -73,70 +169,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/ordergatewayappconfigv1CreateAppConfigRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/delete/app/app/config": {
-      "post": {
-        "operationId": "Gateway_DeleteAppAppConfig",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1DeleteAppAppConfigResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1DeleteAppAppConfigRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/app/app/configs": {
-      "post": {
-        "operationId": "Gateway_GetAppAppConfigs",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAppAppConfigsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAppAppConfigsRequest"
             }
           }
         ],
@@ -209,38 +241,6 @@
         ]
       }
     },
-    "/v1/update/app/app/config": {
-      "post": {
-        "operationId": "Gateway_UpdateAppAppConfig",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateAppAppConfigResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateAppAppConfigRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/update/appconfig": {
       "post": {
         "operationId": "Gateway_UpdateAppConfig",
@@ -281,17 +281,21 @@
         "AppID": {
           "type": "string"
         },
+        "EnableSimulateOrder": {
+          "type": "boolean"
+        },
         "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
         "SimulateOrderCouponProbability": {
           "type": "string"
         },
-        "CashableProfitProbability": {
+        "SimulateOrderCashableProfitProbability": {
           "type": "string"
         },
-        "Enabled": {
-          "type": "boolean"
+        "MaxUnpaidOrders": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -366,17 +370,21 @@
         "AppID": {
           "type": "string"
         },
+        "EnableSimulateOrder": {
+          "type": "boolean"
+        },
         "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
         "SimulateOrderCouponProbability": {
           "type": "string"
         },
-        "CashableProfitProbability": {
+        "SimulateOrderCashableProfitProbability": {
           "type": "string"
         },
-        "Enabled": {
-          "type": "boolean"
+        "MaxUnpaidOrders": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -412,6 +420,131 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AdminCreateAppConfigRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "EnableSimulateOrder": {
+          "type": "boolean"
+        },
+        "SimulateOrderCouponMode": {
+          "$ref": "#/definitions/v1SimulateOrderCouponMode"
+        },
+        "SimulateOrderCouponProbability": {
+          "type": "string"
+        },
+        "SimulateOrderCashableProfitProbability": {
+          "type": "string"
+        },
+        "MaxUnpaidOrders": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminCreateAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
+        }
+      }
+    },
+    "v1AdminDeleteAppConfigRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
+        }
+      }
+    },
+    "v1AdminGetAppConfigsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AdminGetAppConfigsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdateAppConfigRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "EnableSimulateOrder": {
+          "type": "boolean"
+        },
+        "SimulateOrderCouponMode": {
+          "$ref": "#/definitions/v1SimulateOrderCouponMode"
+        },
+        "SimulateOrderCouponProbability": {
+          "type": "string"
+        },
+        "SimulateOrderCashableProfitProbability": {
+          "type": "string"
+        },
+        "MaxUnpaidOrders": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdateAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
         }
       }
     },
@@ -467,88 +600,6 @@
         }
       }
     },
-    "v1CreateAppAppConfigRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "SimulateOrderCouponMode": {
-          "$ref": "#/definitions/v1SimulateOrderCouponMode"
-        },
-        "SimulateOrderCouponProbability": {
-          "type": "string"
-        },
-        "CashableProfitProbability": {
-          "type": "string"
-        },
-        "Enabled": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1CreateAppAppConfigResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppConfig"
-        }
-      }
-    },
-    "v1DeleteAppAppConfigRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1DeleteAppAppConfigResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppConfig"
-        }
-      }
-    },
-    "v1GetAppAppConfigsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetAppAppConfigsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppConfig"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1SimulateOrderCouponMode": {
       "type": "string",
       "enum": [
@@ -559,41 +610,6 @@
         "FirstAndRandomBenifit"
       ],
       "default": "DefaultCouponMode"
-    },
-    "v1UpdateAppAppConfigRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
-        },
-        "SimulateOrderCouponMode": {
-          "$ref": "#/definitions/v1SimulateOrderCouponMode"
-        },
-        "SimulateOrderCouponProbability": {
-          "type": "string"
-        },
-        "CashableProfitProbability": {
-          "type": "string"
-        },
-        "Enabled": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1UpdateAppAppConfigResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1AppConfig"
-        }
-      }
     }
   }
 }
