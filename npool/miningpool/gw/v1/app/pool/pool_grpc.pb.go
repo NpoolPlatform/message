@@ -33,7 +33,7 @@ type GatewayClient interface {
 	AdminCreatePool(ctx context.Context, in *AdminCreatePoolRequest, opts ...grpc.CallOption) (*AdminCreatePoolResponse, error)
 	GetPool(ctx context.Context, in *GetPoolRequest, opts ...grpc.CallOption) (*GetPoolResponse, error)
 	GetPools(ctx context.Context, in *GetPoolsRequest, opts ...grpc.CallOption) (*GetPoolsResponse, error)
-	AdminGetPools(ctx context.Context, in *AdminGetNPoolsRequest, opts ...grpc.CallOption) (*AdminGetNPoolsResponse, error)
+	AdminGetPools(ctx context.Context, in *AdminGetPoolsRequest, opts ...grpc.CallOption) (*AdminGetPoolsResponse, error)
 	AdminDeletePool(ctx context.Context, in *AdminDeletePoolRequest, opts ...grpc.CallOption) (*AdminDeletePoolResponse, error)
 }
 
@@ -72,8 +72,8 @@ func (c *gatewayClient) GetPools(ctx context.Context, in *GetPoolsRequest, opts 
 	return out, nil
 }
 
-func (c *gatewayClient) AdminGetPools(ctx context.Context, in *AdminGetNPoolsRequest, opts ...grpc.CallOption) (*AdminGetNPoolsResponse, error) {
-	out := new(AdminGetNPoolsResponse)
+func (c *gatewayClient) AdminGetPools(ctx context.Context, in *AdminGetPoolsRequest, opts ...grpc.CallOption) (*AdminGetPoolsResponse, error) {
+	out := new(AdminGetPoolsResponse)
 	err := c.cc.Invoke(ctx, Gateway_AdminGetPools_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -97,7 +97,7 @@ type GatewayServer interface {
 	AdminCreatePool(context.Context, *AdminCreatePoolRequest) (*AdminCreatePoolResponse, error)
 	GetPool(context.Context, *GetPoolRequest) (*GetPoolResponse, error)
 	GetPools(context.Context, *GetPoolsRequest) (*GetPoolsResponse, error)
-	AdminGetPools(context.Context, *AdminGetNPoolsRequest) (*AdminGetNPoolsResponse, error)
+	AdminGetPools(context.Context, *AdminGetPoolsRequest) (*AdminGetPoolsResponse, error)
 	AdminDeletePool(context.Context, *AdminDeletePoolRequest) (*AdminDeletePoolResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -115,7 +115,7 @@ func (UnimplementedGatewayServer) GetPool(context.Context, *GetPoolRequest) (*Ge
 func (UnimplementedGatewayServer) GetPools(context.Context, *GetPoolsRequest) (*GetPoolsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPools not implemented")
 }
-func (UnimplementedGatewayServer) AdminGetPools(context.Context, *AdminGetNPoolsRequest) (*AdminGetNPoolsResponse, error) {
+func (UnimplementedGatewayServer) AdminGetPools(context.Context, *AdminGetPoolsRequest) (*AdminGetPoolsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminGetPools not implemented")
 }
 func (UnimplementedGatewayServer) AdminDeletePool(context.Context, *AdminDeletePoolRequest) (*AdminDeletePoolResponse, error) {
@@ -189,7 +189,7 @@ func _Gateway_GetPools_Handler(srv interface{}, ctx context.Context, dec func(in
 }
 
 func _Gateway_AdminGetPools_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AdminGetNPoolsRequest)
+	in := new(AdminGetPoolsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -201,7 +201,7 @@ func _Gateway_AdminGetPools_Handler(srv interface{}, ctx context.Context, dec fu
 		FullMethod: Gateway_AdminGetPools_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).AdminGetPools(ctx, req.(*AdminGetNPoolsRequest))
+		return srv.(GatewayServer).AdminGetPools(ctx, req.(*AdminGetPoolsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

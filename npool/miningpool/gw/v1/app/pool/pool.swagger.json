@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminGetNPoolsResponse"
+              "$ref": "#/definitions/v1AdminGetPoolsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminGetNPoolsRequest"
+              "$ref": "#/definitions/v1AdminGetPoolsRequest"
             }
           }
         ],
@@ -244,7 +244,7 @@
         }
       }
     },
-    "v1AdminGetNPoolsRequest": {
+    "v1AdminGetPoolsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -260,7 +260,7 @@
         }
       }
     },
-    "v1AdminGetNPoolsResponse": {
+    "v1AdminGetPoolsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
