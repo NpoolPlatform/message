@@ -110,6 +110,7 @@ message AdminGetPoolsResponse {
 message AdminDeletePoolRequest {
   uint32 ID = 10;
   string EntID = 20;
+  string TargetAppID = 30;
 }
 
 message AdminDeletePoolResponse { Pool Info = 10; }

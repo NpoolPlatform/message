@@ -233,6 +233,9 @@
         },
         "EntID": {
           "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
         }
       }
     },
