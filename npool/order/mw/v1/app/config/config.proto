@@ -24,10 +24,11 @@ message AppConfigReq {
     optional string AppID = 30;
     optional bool EnableSimulateOrder = 40;
     optional string SimulateOrderUnits =50;
-    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 60;
-    optional string SimulateOrderCouponProbability = 70;
-    optional string SimulateOrderCashableProfitProbability = 80;
-    optional uint32 MaxUnpaidOrders = 90;
+    optional string SimulateOrderDurationSeconds = 60;
+    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 70;
+    optional string SimulateOrderCouponProbability = 80;
+    optional string SimulateOrderCashableProfitProbability = 90;
+    optional uint32 MaxUnpaidOrders = 100;
 }
 
 message AppConfig {
@@ -41,15 +42,17 @@ message AppConfig {
     bool EnableSimulateOrder = 40;
     // @inject_tag: sql:"simulate_order_units"
     string SimulateOrderUnits = 50;
+    // @inject_tag: sql:"simulate_order_duration_seconds"
+    uint32 SimulateOrderDurationSeconds = 60;
     // @inject_tag: sql:"simulate_order_coupon_mode"
-    string SimulateOrderCouponModeStr = 60;
-    basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 70;
+    string SimulateOrderCouponModeStr = 70;
+    basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 80;
     // @inject_tag: sql:"simulate_order_coupon_probability"
-    string SimulateOrderCouponProbability = 80;
+    string SimulateOrderCouponProbability = 90;
     // @inject_tag: sql:"simulate_order_cashable_profit_probability"
-    string SimulateOrderCashableProfitProbability = 90;
+    string SimulateOrderCashableProfitProbability = 100;
     // @inject_tag: sql:"max_unpaid_orders"
-    uint32 MaxUnpaidOrders = 100;
+    uint32 MaxUnpaidOrders = 110;
 
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt = 1000;

@@ -72,10 +72,11 @@ message CreateAppConfigRequest {
     string AppID = 10;
     optional bool EnableSimulateOrder = 20;
     optional string SimulateOrderUnits = 30;
-    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 40;
-    optional string SimulateOrderCouponProbability = 50;
-    optional string SimulateOrderCashableProfitProbability = 60;
-    optional uint32 MaxUnpaidOrders = 70;
+    optional uint32 SimulateOrderDurationSeconds = 40;
+    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 50;
+    optional string SimulateOrderCouponProbability = 60;
+    optional string SimulateOrderCashableProfitProbability = 70;
+    optional uint32 MaxUnpaidOrders = 80;
 }
 
 message CreateAppConfigResponse {
@@ -88,10 +89,11 @@ message UpdateAppConfigRequest {
     string AppID = 30;
     optional bool EnableSimulateOrder = 40;
     optional string SimulateOrderUnits = 50;
-    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 60;
-    optional string SimulateOrderCouponProbability = 70;
-    optional string SimulateOrderCashableProfitProbability = 80;
-    optional uint32 MaxUnpaidOrders = 90;
+    optional uint32 SimulateOrderDurationSeconds = 60;
+    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 70;
+    optional string SimulateOrderCouponProbability = 80;
+    optional string SimulateOrderCashableProfitProbability = 90;
+    optional uint32 MaxUnpaidOrders = 100;
 }
 
 message UpdateAppConfigResponse {
@@ -122,10 +124,11 @@ message AdminCreateAppConfigRequest {
     string TargetAppID = 10;
     optional bool EnableSimulateOrder = 20;
     optional string SimulateOrderUnits = 30;
-    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 40;
-    optional string SimulateOrderCouponProbability = 50;
-    optional string SimulateOrderCashableProfitProbability = 60;
-    optional uint32 MaxUnpaidOrders = 70;
+    optional uint32 SimulateOrderDurationSeconds = 40;
+    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 50;
+    optional string SimulateOrderCouponProbability = 60;
+    optional string SimulateOrderCashableProfitProbability = 70;
+    optional uint32 MaxUnpaidOrders = 80;
 }
 
 message AdminCreateAppConfigResponse {
@@ -138,10 +141,11 @@ message AdminUpdateAppConfigRequest {
     string TargetAppID = 30;
     optional bool EnableSimulateOrder = 40;
     optional string SimulateOrderUnits = 50;
-    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 60;
-    optional string SimulateOrderCouponProbability = 70;
-    optional string SimulateOrderCashableProfitProbability = 80;
-    optional uint32 MaxUnpaidOrders = 90;
+    optional uint32 SimulateOrderDurationSeconds = 60;
+    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 70;
+    optional string SimulateOrderCouponProbability = 80;
+    optional string SimulateOrderCashableProfitProbability = 90;
+    optional uint32 MaxUnpaidOrders = 100;
 }
 
 message AdminUpdateAppConfigResponse {
