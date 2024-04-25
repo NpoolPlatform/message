@@ -162,6 +162,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"remark\""
         },
+        "MiningpoolTypeStr": {
+          "$ref": "#/definitions/v1MiningpoolType",
+          "title": "@inject_tag: sql:\"miningpool_type\""
+        },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },

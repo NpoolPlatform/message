@@ -45,7 +45,10 @@ message Coin {
   string Threshold = 60;
   // @inject_tag: sql:"remark"
   string Remark = 70;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
+  // @inject_tag: sql:"miningpool_type"
+  basetypes.miningpool.v1.MiningpoolType MiningpoolTypeStr = 80;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 81;
+
   repeated miningpool.middleware.coin.revenue.v1.RevenueType RevenueTypes = 90;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 100;
