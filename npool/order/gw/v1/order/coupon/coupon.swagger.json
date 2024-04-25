@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/order/gw/v1/outofgas/outofgas.proto",
+    "title": "npool/order/gw/v1/order/coupon/coupon.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,15 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/get/outofgases": {
+    "/v1/admin/get/ordercoupons": {
       "post": {
-        "summary": "Admin apis",
-        "operationId": "Gateway_AdminGetOutOfGases",
+        "operationId": "Gateway_AdminGetOrderCoupons",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminGetOutOfGasesResponse"
+              "$ref": "#/definitions/v1AdminGetOrderCouponsResponse"
             }
           },
           "default": {
@@ -40,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminGetOutOfGasesRequest"
+              "$ref": "#/definitions/v1AdminGetOrderCouponsRequest"
             }
           }
         ],
@@ -49,14 +48,14 @@
         ]
       }
     },
-    "/v1/get/my/outofgases": {
+    "/v1/get/my/ordercoupons": {
       "post": {
-        "operationId": "Gateway_GetMyOutOfGases",
+        "operationId": "Gateway_GetMyOrderCoupons",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetMyOutOfGasesResponse"
+              "$ref": "#/definitions/v1GetMyOrderCouponsResponse"
             }
           },
           "default": {
@@ -72,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetMyOutOfGasesRequest"
+              "$ref": "#/definitions/v1GetMyOrderCouponsRequest"
             }
           }
         ],
@@ -81,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/outofgases": {
+    "/v1/get/ordercoupons": {
       "post": {
-        "operationId": "Gateway_GetOutOfGases",
+        "operationId": "Gateway_GetOrderCoupons",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetOutOfGasesResponse"
+              "$ref": "#/definitions/v1GetOrderCouponsResponse"
             }
           },
           "default": {
@@ -104,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetOutOfGasesRequest"
+              "$ref": "#/definitions/v1GetOrderCouponsRequest"
             }
           }
         ],
@@ -142,13 +141,10 @@
         }
       }
     },
-    "v1AdminGetOutOfGasesRequest": {
+    "v1AdminGetOrderCouponsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
-          "type": "string"
-        },
-        "GoodID": {
           "type": "string"
         },
         "Offset": {
@@ -161,13 +157,13 @@
         }
       }
     },
-    "v1AdminGetOutOfGasesResponse": {
+    "v1AdminGetOrderCouponsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1OutOfGas"
+            "$ref": "#/definitions/v1OrderCoupon"
           }
         },
         "Total": {
@@ -176,7 +172,7 @@
         }
       }
     },
-    "v1GetMyOutOfGasesRequest": {
+    "v1GetMyOrderCouponsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -185,9 +181,6 @@
         "UserID": {
           "type": "string"
         },
-        "OrderID": {
-          "type": "string"
-        },
         "Offset": {
           "type": "integer",
           "format": "int32"
@@ -198,13 +191,13 @@
         }
       }
     },
-    "v1GetMyOutOfGasesResponse": {
+    "v1GetMyOrderCouponsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1OutOfGas"
+            "$ref": "#/definitions/v1OrderCoupon"
           }
         },
         "Total": {
@@ -213,16 +206,13 @@
         }
       }
     },
-    "v1GetOutOfGasesRequest": {
+    "v1GetOrderCouponsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
         "TargetUserID": {
-          "type": "string"
-        },
-        "AppGoodID": {
           "type": "string"
         },
         "Offset": {
@@ -235,13 +225,13 @@
         }
       }
     },
-    "v1GetOutOfGasesResponse": {
+    "v1GetOrderCouponsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1OutOfGas"
+            "$ref": "#/definitions/v1OrderCoupon"
           }
         },
         "Total": {
@@ -263,7 +253,7 @@
       ],
       "default": "DefaultGoodType"
     },
-    "v1OutOfGas": {
+    "v1OrderCoupon": {
       "type": "object",
       "properties": {
         "ID": {
@@ -306,13 +296,14 @@
         "OrderID": {
           "type": "string"
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
+        "AllocatedCouponID": {
+          "type": "string"
         },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
+        "CouponID": {
+          "type": "string"
+        },
+        "CouponName": {
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",

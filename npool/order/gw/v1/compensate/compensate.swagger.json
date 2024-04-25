@@ -81,7 +81,7 @@
         ]
       }
     },
-    "/v1/get/mycompensates": {
+    "/v1/get/my/compensates": {
       "post": {
         "operationId": "Gateway_GetMyCompensates",
         "responses": {

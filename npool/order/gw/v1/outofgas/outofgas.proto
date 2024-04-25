@@ -17,7 +17,7 @@ service Gateway {
     }
     rpc GetMyOutOfGases (GetMyOutOfGasesRequest) returns (GetMyOutOfGasesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/myoutofgases"
+            post: "/v1/get/my/outofgases"
             body: "*"
         };
     }
