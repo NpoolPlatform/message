@@ -98,8 +98,6 @@ message PowerRentalOrder {
     string AppGoodID = 80;
     // @inject_tag: sql:"order_id"
     string OrderID = 90;
-    // @inject_tag: sql:"parent_order_id"
-    string ParentOrderID = 100;
     // @inject_tag: sql:"order_type"
     string OrderTypeStr = 110;
     basetypes.order.v1.OrderType OrderType = 120;
@@ -211,8 +209,6 @@ message Conds {
     optional basetypes.v1.StringSliceVal AppGoodIDs = 100;
     optional basetypes.v1.StringVal OrderID = 110;
     optional basetypes.v1.StringSliceVal OrderIDs = 120;
-    optional basetypes.v1.StringVal ParentOrderID = 130;
-    optional basetypes.v1.StringSliceVal ParentOrderIDs = 140;
     optional basetypes.v1.Uint32Val OrderType = 150;
     optional basetypes.v1.Uint32Val PaymentType = 160;
     optional basetypes.v1.Uint32SliceVal PaymentTypes = 170;

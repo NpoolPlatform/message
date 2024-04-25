@@ -157,6 +157,12 @@ message FeeOrder {
     uint32 UpdatedAt = 1010;
 }
 
+message FeeDuration {
+    string AppGoodID = 10;
+    string AppGoodName = 20;
+    uint32 DurationSeconds = 30;
+}
+
 message CreateFeeOrderRequest {
     string AppID = 10;
     string AppGoodID = 20;
