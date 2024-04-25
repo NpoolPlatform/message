@@ -20,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Gateway_GetOrders_FullMethodName      = "/order.gateway.order1.v1.Gateway/GetOrders"
-	Gateway_GetAppOrders_FullMethodName   = "/order.gateway.order1.v1.Gateway/GetAppOrders"
+	Gateway_GetMyOrders_FullMethodName    = "/order.gateway.order1.v1.Gateway/GetMyOrders"
 	Gateway_AdminGetOrders_FullMethodName = "/order.gateway.order1.v1.Gateway/AdminGetOrders"
 )
 
@@ -29,7 +29,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error)
-	GetAppOrders(ctx context.Context, in *GetAppOrdersRequest, opts ...grpc.CallOption) (*GetAppOrdersResponse, error)
+	GetMyOrders(ctx context.Context, in *GetMyOrdersRequest, opts ...grpc.CallOption) (*GetMyOrdersResponse, error)
 	AdminGetOrders(ctx context.Context, in *AdminGetOrdersRequest, opts ...grpc.CallOption) (*AdminGetOrdersResponse, error)
 }
 
@@ -50,9 +50,9 @@ func (c *gatewayClient) GetOrders(ctx context.Context, in *GetOrdersRequest, opt
 	return out, nil
 }
 
-func (c *gatewayClient) GetAppOrders(ctx context.Context, in *GetAppOrdersRequest, opts ...grpc.CallOption) (*GetAppOrdersResponse, error) {
-	out := new(GetAppOrdersResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetAppOrders_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetMyOrders(ctx context.Context, in *GetMyOrdersRequest, opts ...grpc.CallOption) (*GetMyOrdersResponse, error) {
+	out := new(GetMyOrdersResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetMyOrders_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -73,7 +73,7 @@ func (c *gatewayClient) AdminGetOrders(ctx context.Context, in *AdminGetOrdersRe
 // for forward compatibility
 type GatewayServer interface {
 	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
-	GetAppOrders(context.Context, *GetAppOrdersRequest) (*GetAppOrdersResponse, error)
+	GetMyOrders(context.Context, *GetMyOrdersRequest) (*GetMyOrdersResponse, error)
 	AdminGetOrders(context.Context, *AdminGetOrdersRequest) (*AdminGetOrdersResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -85,8 +85,8 @@ type UnimplementedGatewayServer struct {
 func (UnimplementedGatewayServer) GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrders not implemented")
 }
-func (UnimplementedGatewayServer) GetAppOrders(context.Context, *GetAppOrdersRequest) (*GetAppOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppOrders not implemented")
+func (UnimplementedGatewayServer) GetMyOrders(context.Context, *GetMyOrdersRequest) (*GetMyOrdersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMyOrders not implemented")
 }
 func (UnimplementedGatewayServer) AdminGetOrders(context.Context, *AdminGetOrdersRequest) (*AdminGetOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminGetOrders not implemented")
@@ -122,20 +122,20 @@ func _Gateway_GetOrders_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetAppOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppOrdersRequest)
+func _Gateway_GetMyOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMyOrdersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetAppOrders(ctx, in)
+		return srv.(GatewayServer).GetMyOrders(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetAppOrders_FullMethodName,
+		FullMethod: Gateway_GetMyOrders_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppOrders(ctx, req.(*GetAppOrdersRequest))
+		return srv.(GatewayServer).GetMyOrders(ctx, req.(*GetMyOrdersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -170,8 +170,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetOrders_Handler,
 		},
 		{
-			MethodName: "GetAppOrders",
-			Handler:    _Gateway_GetAppOrders_Handler,
+			MethodName: "GetMyOrders",
+			Handler:    _Gateway_GetMyOrders_Handler,
 		},
 		{
 			MethodName: "AdminGetOrders",

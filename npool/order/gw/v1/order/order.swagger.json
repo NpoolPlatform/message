@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/get/app/orders": {
+    "/v1/get/my/orders": {
       "post": {
-        "operationId": "Gateway_GetAppOrders",
+        "operationId": "Gateway_GetMyOrders",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAppOrdersResponse"
+              "$ref": "#/definitions/v1GetMyOrdersResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAppOrdersRequest"
+              "$ref": "#/definitions/v1GetMyOrdersRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ordergatewayorder1v1GetOrdersResponse"
+              "$ref": "#/definitions/v1GetOrdersResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ordergatewayorder1v1GetOrdersRequest"
+              "$ref": "#/definitions/v1GetOrdersRequest"
             }
           }
         ],
@@ -123,40 +123,6 @@
         "BenefitBookKept"
       ],
       "default": "DefaultBenefitState"
-    },
-    "ordergatewayorder1v1GetOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "ordergatewayorder1v1GetOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Order"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
     },
     "protobufAny": {
       "type": "object",
@@ -216,10 +182,13 @@
         }
       }
     },
-    "v1GetAppOrdersRequest": {
+    "v1GetMyOrdersRequest": {
       "type": "object",
       "properties": {
         "AppID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         },
         "Offset": {
@@ -232,7 +201,41 @@
         }
       }
     },
-    "v1GetAppOrdersResponse": {
+    "v1GetMyOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Order"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetOrdersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -265,105 +268,80 @@
       "properties": {
         "ID": {
           "type": "integer",
-          "format": "int64",
-          "title": "order\n@inject_tag: sql:\"id\""
+          "format": "int64"
         },
         "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
+          "type": "string"
         },
         "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
+          "type": "string"
+        },
+        "AppName": {
+          "type": "string"
         },
         "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
         },
         "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
-        },
-        "GoodTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_type\""
+          "type": "string"
         },
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
         },
+        "GoodName": {
+          "type": "string"
+        },
         "AppGoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_good_id\""
+          "type": "string"
+        },
+        "AppGoodName": {
+          "type": "string"
         },
         "ParentOrderID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"parent_order_id\""
-        },
-        "OrderTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"order_type\""
+          "type": "string"
         },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
         },
-        "PaymentTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"payment_type\""
-        },
         "PaymentType": {
           "$ref": "#/definitions/v1PaymentType"
-        },
-        "CreateMethodStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"create_method\""
         },
         "CreateMethod": {
           "$ref": "#/definitions/v1OrderCreateMethod"
         },
         "Simulate": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"simulate\""
-        },
-        "OrderStateStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"order_state\""
+          "type": "boolean"
         },
         "OrderState": {
           "$ref": "#/definitions/v1OrderState"
-        },
-        "StartModeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"start_mode\""
         },
         "StartMode": {
           "$ref": "#/definitions/v1OrderStartMode"
         },
         "StartAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"start_at\""
+          "format": "int64"
         },
         "LastBenefitAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"last_benefit_at\""
-        },
-        "BenefitStateStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"benefit_state\""
+          "format": "int64"
         },
         "BenefitState": {
           "$ref": "#/definitions/basetypesorderv1BenefitState"
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
+          "format": "int64"
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
+          "format": "int64"
         }
       }
     },
