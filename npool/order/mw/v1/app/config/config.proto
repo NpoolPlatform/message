@@ -24,7 +24,7 @@ message AppConfigReq {
     optional string AppID = 30;
     optional bool EnableSimulateOrder = 40;
     optional string SimulateOrderUnits =50;
-    optional string SimulateOrderDurationSeconds = 60;
+    optional uint32 SimulateOrderDurationSeconds = 60;
     optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 70;
     optional string SimulateOrderCouponProbability = 80;
     optional string SimulateOrderCashableProfitProbability = 90;

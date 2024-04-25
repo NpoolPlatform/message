@@ -32,7 +32,7 @@ type AppConfigReq struct {
 	AppID                                  *string                     `protobuf:"bytes,30,opt,name=AppID,proto3,oneof" json:"AppID,omitempty"`
 	EnableSimulateOrder                    *bool                       `protobuf:"varint,40,opt,name=EnableSimulateOrder,proto3,oneof" json:"EnableSimulateOrder,omitempty"`
 	SimulateOrderUnits                     *string                     `protobuf:"bytes,50,opt,name=SimulateOrderUnits,proto3,oneof" json:"SimulateOrderUnits,omitempty"`
-	SimulateOrderDurationSeconds           *string                     `protobuf:"bytes,60,opt,name=SimulateOrderDurationSeconds,proto3,oneof" json:"SimulateOrderDurationSeconds,omitempty"`
+	SimulateOrderDurationSeconds           *uint32                     `protobuf:"varint,60,opt,name=SimulateOrderDurationSeconds,proto3,oneof" json:"SimulateOrderDurationSeconds,omitempty"`
 	SimulateOrderCouponMode                *v1.SimulateOrderCouponMode `protobuf:"varint,70,opt,name=SimulateOrderCouponMode,proto3,enum=basetypes.order.v1.SimulateOrderCouponMode,oneof" json:"SimulateOrderCouponMode,omitempty"`
 	SimulateOrderCouponProbability         *string                     `protobuf:"bytes,80,opt,name=SimulateOrderCouponProbability,proto3,oneof" json:"SimulateOrderCouponProbability,omitempty"`
 	SimulateOrderCashableProfitProbability *string                     `protobuf:"bytes,90,opt,name=SimulateOrderCashableProfitProbability,proto3,oneof" json:"SimulateOrderCashableProfitProbability,omitempty"`
@@ -106,11 +106,11 @@ func (x *AppConfigReq) GetSimulateOrderUnits() string {
 	return ""
 }
 
-func (x *AppConfigReq) GetSimulateOrderDurationSeconds() string {
+func (x *AppConfigReq) GetSimulateOrderDurationSeconds() uint32 {
 	if x != nil && x.SimulateOrderDurationSeconds != nil {
 		return *x.SimulateOrderDurationSeconds
 	}
-	return ""
+	return 0
 }
 
 func (x *AppConfigReq) GetSimulateOrderCouponMode() v1.SimulateOrderCouponMode {
@@ -1067,7 +1067,7 @@ var file_npool_order_mw_v1_app_config_config_proto_rawDesc = []byte{
 	0x48, 0x04, 0x52, 0x12, 0x53, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x64, 0x65,
 	0x72, 0x55, 0x6e, 0x69, 0x74, 0x73, 0x88, 0x01, 0x01, 0x12, 0x47, 0x0a, 0x1c, 0x53, 0x69, 0x6d,
 	0x75, 0x6c, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x44, 0x75, 0x72, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x53, 0x65, 0x63, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x09, 0x48,
+	0x6f, 0x6e, 0x53, 0x65, 0x63, 0x6f, 0x6e, 0x64, 0x73, 0x18, 0x3c, 0x20, 0x01, 0x28, 0x0d, 0x48,
 	0x05, 0x52, 0x1c, 0x53, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72,
 	0x44, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x65, 0x63, 0x6f, 0x6e, 0x64, 0x73, 0x88,
 	0x01, 0x01, 0x12, 0x6a, 0x0a, 0x17, 0x53, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x4f, 0x72,
