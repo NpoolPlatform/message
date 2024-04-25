@@ -22,7 +22,6 @@ const (
 	Gateway_CreateAppConfig_FullMethodName      = "/order.gateway.app.config.v1.Gateway/CreateAppConfig"
 	Gateway_UpdateAppConfig_FullMethodName      = "/order.gateway.app.config.v1.Gateway/UpdateAppConfig"
 	Gateway_GetAppConfig_FullMethodName         = "/order.gateway.app.config.v1.Gateway/GetAppConfig"
-	Gateway_GetAppConfigs_FullMethodName        = "/order.gateway.app.config.v1.Gateway/GetAppConfigs"
 	Gateway_AdminCreateAppConfig_FullMethodName = "/order.gateway.app.config.v1.Gateway/AdminCreateAppConfig"
 	Gateway_AdminUpdateAppConfig_FullMethodName = "/order.gateway.app.config.v1.Gateway/AdminUpdateAppConfig"
 	Gateway_AdminGetAppConfigs_FullMethodName   = "/order.gateway.app.config.v1.Gateway/AdminGetAppConfigs"
@@ -36,7 +35,6 @@ type GatewayClient interface {
 	CreateAppConfig(ctx context.Context, in *CreateAppConfigRequest, opts ...grpc.CallOption) (*CreateAppConfigResponse, error)
 	UpdateAppConfig(ctx context.Context, in *UpdateAppConfigRequest, opts ...grpc.CallOption) (*UpdateAppConfigResponse, error)
 	GetAppConfig(ctx context.Context, in *GetAppConfigRequest, opts ...grpc.CallOption) (*GetAppConfigResponse, error)
-	GetAppConfigs(ctx context.Context, in *GetAppConfigsRequest, opts ...grpc.CallOption) (*GetAppConfigsResponse, error)
 	// Admin apis
 	AdminCreateAppConfig(ctx context.Context, in *AdminCreateAppConfigRequest, opts ...grpc.CallOption) (*AdminCreateAppConfigResponse, error)
 	AdminUpdateAppConfig(ctx context.Context, in *AdminUpdateAppConfigRequest, opts ...grpc.CallOption) (*AdminUpdateAppConfigResponse, error)
@@ -73,15 +71,6 @@ func (c *gatewayClient) UpdateAppConfig(ctx context.Context, in *UpdateAppConfig
 func (c *gatewayClient) GetAppConfig(ctx context.Context, in *GetAppConfigRequest, opts ...grpc.CallOption) (*GetAppConfigResponse, error) {
 	out := new(GetAppConfigResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetAppConfig_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) GetAppConfigs(ctx context.Context, in *GetAppConfigsRequest, opts ...grpc.CallOption) (*GetAppConfigsResponse, error) {
-	out := new(GetAppConfigsResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetAppConfigs_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -131,7 +120,6 @@ type GatewayServer interface {
 	CreateAppConfig(context.Context, *CreateAppConfigRequest) (*CreateAppConfigResponse, error)
 	UpdateAppConfig(context.Context, *UpdateAppConfigRequest) (*UpdateAppConfigResponse, error)
 	GetAppConfig(context.Context, *GetAppConfigRequest) (*GetAppConfigResponse, error)
-	GetAppConfigs(context.Context, *GetAppConfigsRequest) (*GetAppConfigsResponse, error)
 	// Admin apis
 	AdminCreateAppConfig(context.Context, *AdminCreateAppConfigRequest) (*AdminCreateAppConfigResponse, error)
 	AdminUpdateAppConfig(context.Context, *AdminUpdateAppConfigRequest) (*AdminUpdateAppConfigResponse, error)
@@ -152,9 +140,6 @@ func (UnimplementedGatewayServer) UpdateAppConfig(context.Context, *UpdateAppCon
 }
 func (UnimplementedGatewayServer) GetAppConfig(context.Context, *GetAppConfigRequest) (*GetAppConfigResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppConfig not implemented")
-}
-func (UnimplementedGatewayServer) GetAppConfigs(context.Context, *GetAppConfigsRequest) (*GetAppConfigsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppConfigs not implemented")
 }
 func (UnimplementedGatewayServer) AdminCreateAppConfig(context.Context, *AdminCreateAppConfigRequest) (*AdminCreateAppConfigResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateAppConfig not implemented")
@@ -231,24 +216,6 @@ func _Gateway_GetAppConfig_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAppConfig(ctx, req.(*GetAppConfigRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_GetAppConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppConfigsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).GetAppConfigs(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_GetAppConfigs_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAppConfigs(ctx, req.(*GetAppConfigsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -343,10 +310,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppConfig",
 			Handler:    _Gateway_GetAppConfig_Handler,
-		},
-		{
-			MethodName: "GetAppConfigs",
-			Handler:    _Gateway_GetAppConfigs_Handler,
 		},
 		{
 			MethodName: "AdminCreateAppConfig",

@@ -31,13 +31,6 @@ service Gateway {
         };
     }
 
-    rpc GetAppConfigs (GetAppConfigsRequest) returns (GetAppConfigsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/appconfigs"
-            body: "*"
-        };
-    }
-
     // Admin apis
     rpc AdminCreateAppConfig (AdminCreateAppConfigRequest) returns (AdminCreateAppConfigResponse) {
         option (google.api.http) = {
@@ -107,17 +100,6 @@ message GetAppConfigRequest {
 
 message GetAppConfigResponse {
     order.middleware.app.config.v1.AppConfig Info = 10;
-}
-
-message GetAppConfigsRequest {
-    string AppID = 10;
-    int32 Offset = 20;
-    int32 Limit = 30;
-}
-
-message GetAppConfigsResponse {
-    repeated order.middleware.app.config.v1.AppConfig Infos = 10;
-    uint32 Total = 20;
 }
 
 message AdminCreateAppConfigRequest {
