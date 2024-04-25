@@ -67,12 +67,6 @@
         "OrderIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
-        "ParentOrderID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ParentOrderIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
         "OrderType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
@@ -695,10 +689,6 @@
         "OrderID": {
           "type": "string",
           "title": "@inject_tag: sql:\"order_id\""
-        },
-        "ParentOrderID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"parent_order_id\""
         },
         "OrderTypeStr": {
           "type": "string",
