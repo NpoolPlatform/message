@@ -125,7 +125,8 @@
           "type": "string"
         },
         "SimulateOrderDurationSeconds": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
