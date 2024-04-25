@@ -23,10 +23,11 @@ message AppConfigReq {
     optional string EntID = 20;
     optional string AppID = 30;
     optional bool EnableSimulateOrder = 40;
-    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 50;
-    optional string SimulateOrderCouponProbability = 60;
-    optional string SimulateOrderCashableProfitProbability = 70;
-    optional uint32 MaxUnpaidOrders = 80;
+    optional string SimulateOrderUnits =50;
+    optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 60;
+    optional string SimulateOrderCouponProbability = 70;
+    optional string SimulateOrderCashableProfitProbability = 80;
+    optional uint32 MaxUnpaidOrders = 90;
 }
 
 message AppConfig {
