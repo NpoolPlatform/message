@@ -116,6 +116,9 @@
         "EnableSimulateOrder": {
           "type": "boolean"
         },
+        "SimulateOrderUnits": {
+          "type": "string"
+        },
         "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
