@@ -18,7 +18,7 @@ service Gateway {
     }
     rpc GetMyCompensates (GetMyCompensatesRequest) returns (GetMyCompensatesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/mycompensates"
+            post: "/v1/get/my/compensates"
             body: "*"
         };
     }
