@@ -287,6 +287,10 @@
         "SimulateOrderUnits": {
           "type": "string"
         },
+        "SimulateOrderDurationSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
         "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
@@ -379,6 +383,10 @@
         "SimulateOrderUnits": {
           "type": "string"
         },
+        "SimulateOrderDurationSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
         "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
@@ -440,6 +448,10 @@
         },
         "SimulateOrderUnits": {
           "type": "string"
+        },
+        "SimulateOrderDurationSeconds": {
+          "type": "integer",
+          "format": "int64"
         },
         "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
@@ -537,6 +549,10 @@
         "SimulateOrderUnits": {
           "type": "string"
         },
+        "SimulateOrderDurationSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
         "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
@@ -583,6 +599,11 @@
         "SimulateOrderUnits": {
           "type": "string",
           "title": "@inject_tag: sql:\"simulate_order_units\""
+        },
+        "SimulateOrderDurationSeconds": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"simulate_order_duration_seconds\""
         },
         "SimulateOrderCouponModeStr": {
           "type": "string",
