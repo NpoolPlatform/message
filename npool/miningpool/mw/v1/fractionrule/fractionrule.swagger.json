@@ -61,14 +61,8 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "WithdrawInterval": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "CoinID": {
+          "$ref": "#/definitions/v1StringVal"
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
@@ -109,19 +103,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "MiningpoolTypeStr": {
+        "CoinID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_type\""
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CoinTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type\""
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
+          "title": "@inject_tag: sql:\"coin_id\""
         },
         "WithdrawInterval": {
           "type": "integer",
@@ -137,6 +121,12 @@
           "type": "number",
           "format": "float",
           "title": "@inject_tag: sql:\"withdraw_rate\""
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -160,11 +150,8 @@
         "EntID": {
           "type": "string"
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
+        "CoinID": {
+          "type": "string"
         },
         "WithdrawInterval": {
           "type": "integer",

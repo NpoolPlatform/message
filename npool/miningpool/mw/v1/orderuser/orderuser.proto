@@ -38,11 +38,8 @@ message OrderUserReq {
   optional string EntID = 20;
   optional string AppID = 30;
   optional string UserID = 40;
-  optional string RootUserID = 50;
   optional string GoodUserID = 60;
   optional string Name = 70;
-  optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
-  optional basetypes.miningpool.v1.CoinType CoinType = 90;
   optional string Proportion = 100;
   optional string RevenueAddress = 110;
   optional string ReadPageLink = 120;
@@ -58,26 +55,21 @@ message OrderUser {
   string AppID = 30;
   // @inject_tag: sql:"user_id"
   string UserID = 40;
-  // @inject_tag: sql:"root_user_id"
-  string RootUserID = 50;
   // @inject_tag: sql:"good_user_id"
-  string GoodUserID = 60;
+  string GoodUserID = 50;
   // @inject_tag: sql:"name"
-  string Name = 70;
-  // @inject_tag: sql:"miningpool_type"
-  string MiningpoolTypeStr = 80;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 81;
-  // @inject_tag: sql:"coin_type"
-  string CoinTypeStr = 90;
-  basetypes.miningpool.v1.CoinType CoinType = 91;
+  string Name = 60;
   // @inject_tag: sql:"proportion"
-  string Proportion = 100;
+  string Proportion = 70;
   // @inject_tag: sql:"revenue_address"
-  string RevenueAddress = 110;
+  string RevenueAddress = 80;
   // @inject_tag: sql:"read_page_link"
-  string ReadPageLink = 120;
+  string ReadPageLink = 90;
   // @inject_tag: sql:"auto_pay"
-  bool AutoPay = 130;
+  bool AutoPay = 100;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 110;
+  basetypes.miningpool.v1.CoinType CoinType = 120;
+  basetypes.miningpool.v1.RevenueType RevenueType = 130;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 140;
   // @inject_tag: sql:"updated_at"
@@ -89,13 +81,9 @@ message Conds {
   optional basetypes.v1.StringVal EntID = 10;
   optional basetypes.v1.StringVal AppID = 20;
   optional basetypes.v1.StringVal UserID = 30;
-  optional basetypes.v1.StringVal RootUserID = 40;
-  optional basetypes.v1.StringVal GoodUserID = 50;
-  optional basetypes.v1.StringVal Name = 60;
-  optional basetypes.v1.Uint32Val MiningpoolType = 70;
-  optional basetypes.v1.Uint32Val CoinType = 80;
-  optional basetypes.v1.StringVal RevenueAddress = 90;
-  optional basetypes.v1.BoolVal AutoPay = 100;
+  optional basetypes.v1.StringVal GoodUserID = 40;
+  optional basetypes.v1.StringVal Name = 50;
+  optional basetypes.v1.BoolVal AutoPay = 60;
   optional basetypes.v1.StringSliceVal EntIDs = 110;
 }
 

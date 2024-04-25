@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package miningpool.middleware.coin.revenue.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/coin/revenue";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/miningpool/v1/enums.proto";
+
+// Service Name
+service Middleware {
+  rpc CreateRevenueType(CreateRevenueTypeRequest)
+      returns (CreateRevenueTypeResponse) {}
+  rpc GetRevenueType(GetRevenueTypeRequest) returns (GetRevenueTypeResponse) {}
+  rpc ExistRevenueType(ExistRevenueTypeRequest)
+      returns (ExistRevenueTypeResponse) {}
+  rpc GetRevenueTypes(GetRevenueTypesRequest)
+      returns (GetRevenueTypesResponse) {}
+  rpc ExistRevenueTypeConds(ExistRevenueTypeCondsRequest)
+      returns (ExistRevenueTypeCondsResponse) {}
+  rpc UpdateRevenueType(UpdateRevenueTypeRequest)
+      returns (UpdateRevenueTypeResponse) {}
+  rpc DeleteRevenueType(DeleteRevenueTypeRequest)
+      returns (DeleteRevenueTypeResponse) {}
+}
+
+message RevenueTypeReq {
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string CoinID = 20;
+  optional basetypes.miningpool.v1.RevenueType Type = 30;
+  optional string FeeRate = 50;
+  optional string Remark = 80;
+}
+
+message RevenueType {
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"coin_id"
+  string CoinID = 31;
+  // @inject_tag: sql:"type"
+  basetypes.miningpool.v1.RevenueType Type = 50;
+  // @inject_tag: sql:"fee_rate"
+  string FeeRate = 60;
+  // @inject_tag: sql:"remark"
+  string Remark = 90;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 100;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 110;
+}
+
+message Conds {
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal CoinID = 20;
+  optional basetypes.v1.Uint32Val Type = 30;
+  optional basetypes.v1.StringSliceVal EntIDs = 50;
+}
+
+message CreateRevenueTypeRequest { RevenueTypeReq Info = 10; }
+
+message CreateRevenueTypeResponse {}
+
+message GetRevenueTypeRequest { string EntID = 10; }
+
+message GetRevenueTypeResponse { RevenueType Info = 10; }
+
+message ExistRevenueTypeRequest { string EntID = 10; }
+
+message ExistRevenueTypeResponse { bool Info = 10; }
+
+message GetRevenueTypesRequest {
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetRevenueTypesResponse {
+  repeated RevenueType Infos = 10;
+  uint32 Total = 20;
+}
+
+message ExistRevenueTypeCondsRequest { Conds Conds = 10; }
+
+message ExistRevenueTypeCondsResponse { bool Info = 10; }
+
+message UpdateRevenueTypeRequest { RevenueTypeReq Info = 10; }
+
+message UpdateRevenueTypeResponse {}
+
+message DeleteRevenueTypeRequest { RevenueTypeReq Info = 10; }
+
+message DeleteRevenueTypeResponse {}

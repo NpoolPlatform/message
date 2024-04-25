@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/coi
 
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
+import "npool/miningpool/mw/v1/coin/revenue/revenue.proto";
 
 // Service Name
 service Middleware {
@@ -21,13 +22,11 @@ service Middleware {
 message CoinReq {
   optional uint32 ID = 9;
   optional string EntID = 10;
-  optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 20;
+  optional string PoolID = 20;
   optional basetypes.miningpool.v1.CoinType CoinType = 30;
-  repeated basetypes.miningpool.v1.RevenueType RevenueTypes = 40;
-  optional string FeeRate = 50;
-  optional bool FixedRevenueAble = 60;
-  optional string Threshold = 70;
-  optional string Remark = 80;
+  optional bool FixedRevenueAble = 40;
+  optional string Threshold = 50;
+  optional string Remark = 60;
 }
 
 message Coin {
@@ -35,23 +34,19 @@ message Coin {
   uint32 ID = 10;
   // @inject_tag: sql:"ent_id"
   string EntID = 20;
-  // @inject_tag: sql:"miningpool_type"
-  string MiningpoolTypeStr = 30;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 31;
+  // @inject_tag: sql:"pool_id"
+  string PoolID = 30;
   // @inject_tag: sql:"coin_type"
   string CoinTypeStr = 40;
   basetypes.miningpool.v1.CoinType CoinType = 41;
-  // @inject_tag: sql:"revenue_types"
-  string RevenueTypesStr = 50;
-  repeated basetypes.miningpool.v1.RevenueType RevenueTypes = 51;
-  // @inject_tag: sql:"fee_rate"
-  string FeeRate = 60;
   // @inject_tag: sql:"fixed_revenue_able"
-  bool FixedRevenueAble = 70;
+  bool FixedRevenueAble = 50;
   // @inject_tag: sql:"threshold"
-  string Threshold = 80;
+  string Threshold = 60;
   // @inject_tag: sql:"remark"
-  string Remark = 90;
+  string Remark = 70;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
+  repeated miningpool.middleware.coin.revenue.v1.RevenueType RevenueTypes = 90;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 100;
   // @inject_tag: sql:"updated_at"
@@ -61,7 +56,7 @@ message Coin {
 message Conds {
   optional basetypes.v1.Uint32Val ID = 9;
   optional basetypes.v1.StringVal EntID = 10;
-  optional basetypes.v1.Uint32Val MiningpoolType = 20;
+  optional basetypes.v1.StringVal PoolID = 20;
   optional basetypes.v1.Uint32Val CoinType = 30;
   optional basetypes.v1.BoolVal FixedRevenueAble = 40;
   optional basetypes.v1.StringSliceVal EntIDs = 50;

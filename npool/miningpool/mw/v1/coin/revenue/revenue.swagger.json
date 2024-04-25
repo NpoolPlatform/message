@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/miningpool/mw/v1/rootuser/rootuser.proto",
+    "title": "npool/miningpool/mw/v1/coin/revenue/revenue.proto",
     "version": "version not set"
   },
   "tags": [
@@ -17,6 +17,55 @@
   ],
   "paths": {},
   "definitions": {
+    "basetypesminingpoolv1RevenueType": {
+      "type": "string",
+      "enum": [
+        "DefaultRevenueType",
+        "FPPS",
+        "PPLNS"
+      ],
+      "default": "DefaultRevenueType"
+    },
+    "coinrevenuev1RevenueType": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "CoinID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_id\""
+        },
+        "Type": {
+          "$ref": "#/definitions/basetypesminingpoolv1RevenueType",
+          "title": "@inject_tag: sql:\"type\""
+        },
+        "FeeRate": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_rate\""
+        },
+        "Remark": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"remark\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -44,17 +93,6 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -64,30 +102,24 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "PoolID": {
+        "CoinID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Name": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Email": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Authed": {
-          "$ref": "#/definitions/v1BoolVal"
+        "Type": {
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v1CreateRootUserResponse": {
+    "v1CreateRevenueTypeResponse": {
       "type": "object"
     },
-    "v1DeleteRootUserResponse": {
+    "v1DeleteRevenueTypeResponse": {
       "type": "object"
     },
-    "v1ExistRootUserCondsResponse": {
+    "v1ExistRevenueTypeCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -95,7 +127,7 @@
         }
       }
     },
-    "v1ExistRootUserResponse": {
+    "v1ExistRevenueTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -103,21 +135,21 @@
         }
       }
     },
-    "v1GetRootUserResponse": {
+    "v1GetRevenueTypeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1RootUser"
+          "$ref": "#/definitions/coinrevenuev1RevenueType"
         }
       }
     },
-    "v1GetRootUsersResponse": {
+    "v1GetRevenueTypesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1RootUser"
+            "$ref": "#/definitions/coinrevenuev1RevenueType"
           }
         },
         "Total": {
@@ -126,67 +158,7 @@
         }
       }
     },
-    "v1MiningpoolType": {
-      "type": "string",
-      "enum": [
-        "DefaultMiningpoolType",
-        "F2Pool",
-        "AntPool"
-      ],
-      "default": "DefaultMiningpoolType"
-    },
-    "v1RootUser": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
-        },
-        "PoolID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"pool_id\""
-        },
-        "Name": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"name\""
-        },
-        "Email": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"email\""
-        },
-        "AuthToken": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"auth_token\""
-        },
-        "Authed": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"authed\""
-        },
-        "Remark": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"remark\""
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v1RootUserReq": {
+    "v1RevenueTypeReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -196,20 +168,14 @@
         "EntID": {
           "type": "string"
         },
-        "PoolID": {
+        "CoinID": {
           "type": "string"
         },
-        "Name": {
-          "type": "string"
+        "Type": {
+          "$ref": "#/definitions/basetypesminingpoolv1RevenueType"
         },
-        "Email": {
+        "FeeRate": {
           "type": "string"
-        },
-        "AuthToken": {
-          "type": "string"
-        },
-        "Authed": {
-          "type": "boolean"
         },
         "Remark": {
           "type": "string"
@@ -253,7 +219,7 @@
         }
       }
     },
-    "v1UpdateRootUserResponse": {
+    "v1UpdateRevenueTypeResponse": {
       "type": "object"
     }
   }

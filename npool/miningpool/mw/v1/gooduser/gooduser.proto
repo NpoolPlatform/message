@@ -22,13 +22,12 @@ service Middleware {
 message GoodUserReq {
   optional uint32 ID = 10;
   optional string EntID = 20;
-  optional string Name = 30;
-  optional string RootUserID = 40;
-  optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 50;
-  optional basetypes.miningpool.v1.CoinType CoinType = 60;
-  optional float HashRate = 70;
+  optional string CoinID = 30;
+  optional string RevenueID = 50;
+  optional string RootUserID = 60;
+  optional string Name = 70;
   optional string ReadPageLink = 80;
-  optional basetypes.miningpool.v1.RevenueType RevenueType = 90;
+  optional float HashRate = 90;
 }
 
 message GoodUser {
@@ -36,37 +35,35 @@ message GoodUser {
   uint32 ID = 10;
   // @inject_tag: sql:"ent_id"
   string EntID = 20;
-  // @inject_tag: sql:"name"
-  string Name = 30;
+  // @inject_tag: sql:"coin_id"
+  string CoinID = 30;
+  // @inject_tag: sql:"revenue_id"
+  string RevenueID = 40;
   // @inject_tag: sql:"root_user_id"
-  string RootUserID = 40;
-  // @inject_tag: sql:"miningpool_type"
-  string MiningpoolTypeStr = 50;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 51;
-  // @inject_tag: sql:"coin_type"
-  string CoinTypeStr = 60;
-  basetypes.miningpool.v1.CoinType CoinType = 61;
-  // @inject_tag: sql:"hash_rate"
-  float HashRate = 70;
+  string RootUserID = 50;
+  // @inject_tag: sql:"name"
+  string Name = 60;
   // @inject_tag: sql:"read_page_link"
-  string ReadPageLink = 80;
-  // @inject_tag: sql:"revenue_type"
-  string RevenueTypeStr = 90;
-  basetypes.miningpool.v1.RevenueType RevenueType = 91;
+  string ReadPageLink = 70;
+  // @inject_tag: sql:"hash_rate"
+  float HashRate = 80;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 90;
+  basetypes.miningpool.v1.CoinType CoinType = 100;
+  basetypes.miningpool.v1.RevenueType RevenueType = 110;
+  string FeeRate = 120;
   // @inject_tag: sql:"created_at"
-  uint32 CreatedAt = 100;
+  uint32 CreatedAt = 130;
   // @inject_tag: sql:"updated_at"
-  uint32 UpdatedAt = 110;
+  uint32 UpdatedAt = 140;
 }
 
 message Conds {
   optional basetypes.v1.Uint32Val ID = 9;
   optional basetypes.v1.StringVal EntID = 10;
   optional basetypes.v1.StringVal Name = 20;
-  optional basetypes.v1.StringVal RootUserID = 30;
-  optional basetypes.v1.Uint32Val MiningpoolType = 40;
-  optional basetypes.v1.Uint32Val CoinType = 50;
-  optional basetypes.v1.Uint32Val RevenueType = 60;
+  optional basetypes.v1.StringVal CoinID = 30;
+  optional basetypes.v1.StringVal RevenueID = 40;
+  optional basetypes.v1.StringVal RootUserID = 50;
   optional basetypes.v1.StringSliceVal EntIDs = 70;
 }
 

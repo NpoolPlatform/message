@@ -143,22 +143,10 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "RootUserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "GoodUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "Name": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "RevenueAddress": {
           "$ref": "#/definitions/v1StringVal"
         },
         "AutoPay": {
@@ -259,10 +247,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
         },
-        "RootUserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"root_user_id\""
-        },
         "GoodUserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_user_id\""
@@ -270,20 +254,6 @@
         "Name": {
           "type": "string",
           "title": "@inject_tag: sql:\"name\""
-        },
-        "MiningpoolTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_type\""
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CoinTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type\""
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
         },
         "Proportion": {
           "type": "string",
@@ -300,6 +270,15 @@
         "AutoPay": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"auto_pay\""
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "RevenueType": {
+          "$ref": "#/definitions/v1RevenueType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -329,20 +308,11 @@
         "UserID": {
           "type": "string"
         },
-        "RootUserID": {
-          "type": "string"
-        },
         "GoodUserID": {
           "type": "string"
         },
         "Name": {
           "type": "string"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
         },
         "Proportion": {
           "type": "string"
@@ -357,6 +327,15 @@
           "type": "boolean"
         }
       }
+    },
+    "v1RevenueType": {
+      "type": "string",
+      "enum": [
+        "DefaultRevenueType",
+        "FPPS",
+        "PPLNS"
+      ],
+      "default": "DefaultRevenueType"
     },
     "v1StringSliceVal": {
       "type": "object",
