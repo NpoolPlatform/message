@@ -209,38 +209,6 @@
         ]
       }
     },
-    "/v1/get/appconfigs": {
-      "post": {
-        "operationId": "Gateway_GetAppConfigs",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/ordergatewayappconfigv1GetAppConfigsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ordergatewayappconfigv1GetAppConfigsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/update/appconfig": {
       "post": {
         "operationId": "Gateway_UpdateAppConfig",
@@ -330,37 +298,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1AppConfig"
-        }
-      }
-    },
-    "ordergatewayappconfigv1GetAppConfigsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "ordergatewayappconfigv1GetAppConfigsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AppConfig"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
