@@ -30,7 +30,7 @@ message PowerRentalReq {
     optional string QuantityUnitAmount = 80;
     optional uint32 DeliveryAt = 90;
     optional string UnitLockDeposit = 100;
-    optional basetypes.good.v1.GoodDurationType DurationType = 110;
+    optional basetypes.good.v1.GoodDurationType DurationDisplayType = 110;
 
     // Good information
     optional basetypes.good.v1.GoodType GoodType = 120;
@@ -99,9 +99,9 @@ message PowerRental {
     uint32 DeliveryAt = 180;
     // @inject_tag: sql:"unit_lock_deposit"
     string UnitLockDeposit = 190;
-    // @inject_tag: sql:"duration_type"
-    string DurationTypeStr = 200;
-    basetypes.good.v1.GoodDurationType DurationType = 210;
+    // @inject_tag: sql:"duration_display_type"
+    string DurationDisplayTypeStr = 200;
+    basetypes.good.v1.GoodDurationType DurationDisplayType = 210;
 
     // @inject_tag: sql:"good_type"
     string GoodTypeStr = 220;

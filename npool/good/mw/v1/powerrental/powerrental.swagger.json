@@ -371,11 +371,11 @@
           "type": "string",
           "title": "@inject_tag: sql:\"unit_lock_deposit\""
         },
-        "DurationTypeStr": {
+        "DurationDisplayTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"duration_type\""
+          "title": "@inject_tag: sql:\"duration_display_type\""
         },
-        "DurationType": {
+        "DurationDisplayType": {
           "$ref": "#/definitions/v1GoodDurationType"
         },
         "GoodTypeStr": {
@@ -556,7 +556,7 @@
         "UnitLockDeposit": {
           "type": "string"
         },
-        "DurationType": {
+        "DurationDisplayType": {
           "$ref": "#/definitions/v1GoodDurationType"
         },
         "GoodType": {

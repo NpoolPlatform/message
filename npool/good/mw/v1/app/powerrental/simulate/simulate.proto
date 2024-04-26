@@ -22,7 +22,7 @@ message SimulateReq {
     optional string EntID = 20;
     optional string AppGoodID = 30;
     optional string OrderUnits = 40;
-    optional uint32 OrderDuration = 50;
+    optional uint32 OrderDurationSeconds = 50;
 }
 
 message Simulate {
@@ -42,8 +42,8 @@ message Simulate {
     string AppGoodName = 70;
     // @inject_tag: sql:"order_units"
     string OrderUnits = 80;
-    // @inject_tag: sql:"order_duration"
-    uint32 OrderDuration = 90;
+    // @inject_tag: sql:"order_duration_seconds"
+    uint32 OrderDurationSeconds = 90;
 
     repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 200;
 

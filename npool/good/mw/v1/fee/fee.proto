@@ -26,7 +26,7 @@ message FeeReq {
     optional basetypes.good.v1.GoodSettlementType SettlementType = 60;
     // It could be amount or percent.
     optional string UnitValue = 70;
-    optional basetypes.good.v1.GoodDurationType DurationType = 80;
+    optional basetypes.good.v1.GoodDurationType DurationDisplayType = 80;
 }
 
 message Fee {
@@ -46,9 +46,9 @@ message Fee {
     basetypes.good.v1.GoodSettlementType SettlementType = 80;
     // @inject_tag: sql:"unit_value"
     string UnitValue = 90;
-    // @inject_tag: sql:"duration_type"
-    string DurationTypeStr = 100;
-    basetypes.good.v1.GoodDurationType DurationType = 110;
+    // @inject_tag: sql:"duration_display_type"
+    string DurationDisplayTypeStr = 100;
+    basetypes.good.v1.GoodDurationType DurationDisplayType = 110;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"

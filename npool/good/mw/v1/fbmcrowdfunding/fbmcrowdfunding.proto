@@ -77,10 +77,11 @@ message FbmCrowdFunding {
     string Redeemable = 110;
     // @inject_tag: sql:"redeem_delay_hours"
     string RedeemDelayHours = 120;
-    // @inject_tag: sql:"duration_type"
-    string DurationType = 130;
-    // @inject_tag: sql:"duration"
-    string Duration = 140;
+    // @inject_tag: sql:"duration_display_type"
+    string DurationDisplayTypeStr = 130;
+    basetypes.good.v1.GoodDurationType DurationDisplayType = 140;
+    // @inject_tag: sql:"duration_seconds"
+    string DurationSeconds = 150;
 
     // @inject_tag: sql:"good_type"
     string GoodTypeStr = 220;
