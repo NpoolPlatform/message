@@ -11,7 +11,7 @@ import (
 	v11 "github.com/NpoolPlatform/message/npool/basetypes/order/v1"
 	fee "github.com/NpoolPlatform/message/npool/order/gw/v1/fee"
 	coupon "github.com/NpoolPlatform/message/npool/order/gw/v1/order/coupon"
-	payment "github.com/NpoolPlatform/message/npool/order/mw/v1/payment"
+	payment "github.com/NpoolPlatform/message/npool/order/gw/v1/payment"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
