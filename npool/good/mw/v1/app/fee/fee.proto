@@ -55,9 +55,9 @@ message Fee {
     basetypes.good.v1.GoodSettlementType SettlementType = 110;
     // @inject_tag: sql:"unit_value"
     string UnitValue = 120;
-    // @inject_tag: sql:"duration_type"
-    string DurationTypeStr = 130;
-    basetypes.good.v1.GoodDurationType DurationType = 140;
+    // @inject_tag: sql:"duration_display_type"
+    string DurationDisplayTypeStr = 130;
+    basetypes.good.v1.GoodDurationType DurationDisplayType = 140;
     // @inject_tag: sql:"banner"
     string Banner = 150;
     // @inject_tag: sql:"min_order_duration"
