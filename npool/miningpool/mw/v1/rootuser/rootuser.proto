@@ -47,7 +47,9 @@ message RootUser {
   bool Authed = 70;
   // @inject_tag: sql:"remark"
   string Remark = 80;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 90;
+  // @inject_tag: sql:"miningpool_type_str"
+  string MiningpoolTypeStr = 90;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 91;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 100;
   // @inject_tag: sql:"updated_at"

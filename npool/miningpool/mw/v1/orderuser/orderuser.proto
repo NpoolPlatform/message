@@ -67,9 +67,15 @@ message OrderUser {
   string ReadPageLink = 90;
   // @inject_tag: sql:"auto_pay"
   bool AutoPay = 100;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 110;
-  basetypes.miningpool.v1.CoinType CoinType = 120;
-  basetypes.miningpool.v1.RevenueType RevenueType = 130;
+  // @inject_tag: sql:"miningpool_type"
+  string MiningpoolTypeStr = 110;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 111;
+  // @inject_tag: sql:"coin_type"
+  string CoinTypeStr = 120;
+  basetypes.miningpool.v1.CoinType CoinType = 121;
+  // @inject_tag: sql:"revenue_type"
+  string RevenueTypeStr = 130;
+  basetypes.miningpool.v1.RevenueType RevenueType = 131;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 140;
   // @inject_tag: sql:"updated_at"

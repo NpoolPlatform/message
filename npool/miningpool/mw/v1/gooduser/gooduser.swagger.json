@@ -160,11 +160,23 @@
           "format": "float",
           "title": "@inject_tag: sql:\"hash_rate\""
         },
+        "MiningpoolTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"miningpool_type\""
+        },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
+        "CoinTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type\""
+        },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
+        },
+        "RevenueTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"revenue_type\""
         },
         "RevenueType": {
           "$ref": "#/definitions/v1RevenueType"

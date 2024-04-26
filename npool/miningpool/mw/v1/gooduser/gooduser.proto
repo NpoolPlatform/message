@@ -47,9 +47,15 @@ message GoodUser {
   string ReadPageLink = 70;
   // @inject_tag: sql:"hash_rate"
   float HashRate = 80;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 90;
-  basetypes.miningpool.v1.CoinType CoinType = 100;
-  basetypes.miningpool.v1.RevenueType RevenueType = 110;
+  // @inject_tag: sql:"miningpool_type"
+  string MiningpoolTypeStr = 90;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 91;
+  // @inject_tag: sql:"coin_type"
+  string CoinTypeStr = 100;
+  basetypes.miningpool.v1.CoinType CoinType = 101;
+  // @inject_tag: sql:"revenue_type"
+  string RevenueTypeStr = 110;
+  basetypes.miningpool.v1.RevenueType RevenueType = 111;
   string FeeRate = 120;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 130;
