@@ -175,10 +175,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"banner\""
         },
-        "MinOrderDuration": {
+        "MinOrderDurationSeconds": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"min_order_duration\""
+          "title": "@inject_tag: sql:\"min_order_duration_seconds\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -224,7 +224,7 @@
           "type": "string",
           "description": "It could be amount or percent."
         },
-        "MinOrderDuration": {
+        "MinOrderDurationSeconds": {
           "type": "integer",
           "format": "int64"
         }

@@ -29,7 +29,7 @@ message FeeReq {
     optional string Banner = 80;
     // It could be amount or percent.
     optional string UnitValue = 90;
-    optional uint32 MinOrderDuration = 100;
+    optional uint32 MinOrderDurationSeconds = 100;
 }
 
 message Fee {
@@ -60,8 +60,8 @@ message Fee {
     basetypes.good.v1.GoodDurationType DurationDisplayType = 140;
     // @inject_tag: sql:"banner"
     string Banner = 150;
-    // @inject_tag: sql:"min_order_duration"
-    uint32 MinOrderDuration = 160;
+    // @inject_tag: sql:"min_order_duration_seconds"
+    uint32 MinOrderDurationSeconds = 160;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
