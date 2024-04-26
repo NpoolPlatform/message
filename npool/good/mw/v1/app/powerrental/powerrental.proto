@@ -48,8 +48,8 @@ message PowerRentalReq {
     optional string MinOrderAmount = 180;
     optional string MaxOrderAmount = 190;
     optional string MaxUserAmount = 200;
-    optional uint32 MinOrderDuration = 210;
-    optional uint32 MaxOrderDuration = 220;
+    optional uint32 MinOrderDurationSeconds = 210;
+    optional uint32 MaxOrderDurationSeconds = 220;
     optional string UnitPrice = 230;
     optional uint32 SaleStartAt = 240;
     optional uint32 SaleEndAt = 250;
@@ -107,9 +107,9 @@ message PowerRental {
     uint32 DeliveryAt = 190;
     // @inject_tag: sql:"unit_lock_deposit"
     string UnitLockDeposit = 200;
-    // @inject_tag: sql:"duration_type"
-    string DurationTypeStr = 210;
-    basetypes.good.v1.GoodDurationType DurationType = 220;
+    // @inject_tag: sql:"duration_display_type"
+    string DurationDisplayTypeStr = 210;
+    basetypes.good.v1.GoodDurationType DurationDisplayType = 220;
 
     // @inject_tag: sql:"good_type"
     string GoodTypeStr = 230;
@@ -165,10 +165,10 @@ message PowerRental {
     string MaxOrderAmount = 500;
     // @inject_tag: sql:"max_user_amount"
     string MaxUserAmount = 510;
-    // @inject_tag: sql:"min_order_duration"
-    uint32 MinOrderDuration = 520;
-    // @inject_tag: sql:"max_order_duration"
-    uint32 MaxOrderDuration = 530;
+    // @inject_tag: sql:"min_order_duration_seconds"
+    uint32 MinOrderDurationSeconds = 520;
+    // @inject_tag: sql:"max_order_duration_seconds"
+    uint32 MaxOrderDurationSeconds = 530;
     // @inject_tag: sql:"sale_start_at"
     uint32 SaleStartAt = 540;
     // @inject_tag: sql:"sale_end_at"

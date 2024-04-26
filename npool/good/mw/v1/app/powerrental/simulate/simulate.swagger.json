@@ -198,10 +198,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"order_units\""
         },
-        "OrderDuration": {
+        "OrderDurationSeconds": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"order_duration\""
+          "title": "@inject_tag: sql:\"order_duration_seconds\""
         },
         "GoodCoins": {
           "type": "array",
@@ -237,7 +237,7 @@
         "OrderUnits": {
           "type": "string"
         },
-        "OrderDuration": {
+        "OrderDurationSeconds": {
           "type": "integer",
           "format": "int64"
         }
