@@ -59,12 +59,6 @@
         "Name": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Site": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "Description": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
@@ -151,6 +145,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"site\""
         },
+        "Logo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"logo\""
+        },
         "Description": {
           "type": "string",
           "title": "@inject_tag: sql:\"description\""
@@ -184,6 +182,9 @@
           "type": "string"
         },
         "Site": {
+          "type": "string"
+        },
+        "Logo": {
           "type": "string"
         },
         "Description": {

@@ -24,7 +24,8 @@ message PoolReq {
   optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 20;
   optional string Name = 30;
   optional string Site = 40;
-  optional string Description = 50;
+  optional string Logo = 50;
+  optional string Description = 60;
 }
 
 message Pool {
@@ -39,8 +40,10 @@ message Pool {
   string Name = 40;
   // @inject_tag: sql:"site"
   string Site = 50;
+  // @inject_tag: sql:"logo"
+  string Logo = 60;
   // @inject_tag: sql:"description"
-  string Description = 60;
+  string Description = 70;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 110;
   // @inject_tag: sql:"updated_at"
@@ -52,8 +55,6 @@ message Conds {
   optional basetypes.v1.StringVal EntID = 10;
   optional basetypes.v1.Uint32Val MiningpoolType = 20;
   optional basetypes.v1.StringVal Name = 30;
-  optional basetypes.v1.StringVal Site = 50;
-  optional basetypes.v1.StringVal Description = 60;
   optional basetypes.v1.StringSliceVal EntIDs = 70;
 }
 

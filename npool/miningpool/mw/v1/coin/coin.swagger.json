@@ -17,78 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "basetypesminingpoolv1RevenueType": {
-      "type": "string",
-      "enum": [
-        "DefaultRevenueType",
-        "FPPS",
-        "PPLNS"
-      ],
-      "default": "DefaultRevenueType"
-    },
-    "coinrevenuev1RevenueType": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
-        },
-        "CoinID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_id\""
-        },
-        "Type": {
-          "$ref": "#/definitions/basetypesminingpoolv1RevenueType",
-          "title": "@inject_tag: sql:\"type\""
-        },
-        "FeeRate": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"fee_rate\""
-        },
-        "Remark": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"remark\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "middlewarecoinv1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EntID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "PoolID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "FixedRevenueAble": {
-          "$ref": "#/definitions/v1BoolVal"
-        },
-        "EntIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -150,13 +78,29 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
+        "RevenueTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"revenue_type\""
+        },
+        "RevenueType": {
+          "$ref": "#/definitions/v1RevenueType"
+        },
+        "FeeRatio": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_ratio\""
+        },
         "FixedRevenueAble": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"fixed_revenue_able\""
         },
-        "Threshold": {
+        "LeastTransferAmount": {
           "type": "string",
-          "title": "@inject_tag: sql:\"threshold\""
+          "title": "@inject_tag: sql:\"least_transfer_amount\""
+        },
+        "BenefitIntervalSeconds": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"benefit_interval_seconds\""
         },
         "Remark": {
           "type": "string",
@@ -168,12 +112,6 @@
         },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "RevenueTypes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/coinrevenuev1RevenueType"
-          }
         },
         "CreatedAt": {
           "type": "integer",
@@ -203,11 +141,21 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
+        "RevenueType": {
+          "$ref": "#/definitions/v1RevenueType"
+        },
+        "FeeRatio": {
+          "type": "string"
+        },
         "FixedRevenueAble": {
           "type": "boolean"
         },
-        "Threshold": {
+        "LeastTransferAmount": {
           "type": "string"
+        },
+        "BenefitIntervalSeconds": {
+          "type": "integer",
+          "format": "int64"
         },
         "Remark": {
           "type": "string"
@@ -221,6 +169,32 @@
         "BitCoin"
       ],
       "default": "DefaultCoinType"
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "PoolID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "RevenueType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "FixedRevenueAble": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
     },
     "v1CreateCoinResponse": {
       "type": "object"
@@ -275,6 +249,15 @@
         "AntPool"
       ],
       "default": "DefaultMiningpoolType"
+    },
+    "v1RevenueType": {
+      "type": "string",
+      "enum": [
+        "DefaultRevenueType",
+        "FPPS",
+        "PPLNS"
+      ],
+      "default": "DefaultRevenueType"
     },
     "v1StringSliceVal": {
       "type": "object",

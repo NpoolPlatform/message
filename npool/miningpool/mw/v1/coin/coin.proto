@@ -6,7 +6,6 @@ option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/coi
 
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
-import "npool/miningpool/mw/v1/coin/revenue/revenue.proto";
 
 // Service Name
 service Middleware {
@@ -24,9 +23,12 @@ message CoinReq {
   optional string EntID = 10;
   optional string PoolID = 20;
   optional basetypes.miningpool.v1.CoinType CoinType = 30;
-  optional bool FixedRevenueAble = 40;
-  optional string Threshold = 50;
-  optional string Remark = 60;
+  optional basetypes.miningpool.v1.RevenueType RevenueType = 40;
+  optional string FeeRatio = 50;
+  optional bool FixedRevenueAble = 60;
+  optional string LeastTransferAmount = 70;
+  optional uint32 BenefitIntervalSeconds = 80;
+  optional string Remark = 90;
 }
 
 message Coin {
@@ -39,21 +41,26 @@ message Coin {
   // @inject_tag: sql:"coin_type"
   string CoinTypeStr = 40;
   basetypes.miningpool.v1.CoinType CoinType = 41;
+  // @inject_tag: sql:"revenue_type"
+  string RevenueTypeStr = 50;
+  basetypes.miningpool.v1.RevenueType RevenueType = 51;
+  // @inject_tag: sql:"fee_ratio"
+  string FeeRatio = 60;
   // @inject_tag: sql:"fixed_revenue_able"
-  bool FixedRevenueAble = 50;
-  // @inject_tag: sql:"threshold"
-  string Threshold = 60;
+  bool FixedRevenueAble = 70;
+  // @inject_tag: sql:"least_transfer_amount"
+  string LeastTransferAmount = 80;
+  // @inject_tag: sql:"benefit_interval_seconds"
+  uint32 BenefitIntervalSeconds = 90;
   // @inject_tag: sql:"remark"
-  string Remark = 70;
+  string Remark = 100;
   // @inject_tag: sql:"miningpool_type"
-  string MiningpoolTypeStr = 80;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 81;
-
-  repeated miningpool.middleware.coin.revenue.v1.RevenueType RevenueTypes = 90;
+  string MiningpoolTypeStr = 110;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 111;
   // @inject_tag: sql:"created_at"
-  uint32 CreatedAt = 100;
+  uint32 CreatedAt = 120;
   // @inject_tag: sql:"updated_at"
-  uint32 UpdatedAt = 110;
+  uint32 UpdatedAt = 130;
 }
 
 message Conds {
@@ -61,8 +68,9 @@ message Conds {
   optional basetypes.v1.StringVal EntID = 10;
   optional basetypes.v1.StringVal PoolID = 20;
   optional basetypes.v1.Uint32Val CoinType = 30;
-  optional basetypes.v1.BoolVal FixedRevenueAble = 40;
-  optional basetypes.v1.StringSliceVal EntIDs = 50;
+  optional basetypes.v1.Uint32Val RevenueType = 40;
+  optional basetypes.v1.BoolVal FixedRevenueAble = 50;
+  optional basetypes.v1.StringSliceVal EntIDs = 60;
 }
 
 message CreateCoinRequest { CoinReq Info = 10; }
