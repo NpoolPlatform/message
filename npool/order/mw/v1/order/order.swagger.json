@@ -158,6 +158,14 @@
         }
       }
     },
+    "v1GetOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Order"
+        }
+      }
+    },
     "v1GetOrdersResponse": {
       "type": "object",
       "properties": {

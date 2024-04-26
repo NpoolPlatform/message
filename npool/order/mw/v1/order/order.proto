@@ -11,6 +11,7 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
+    rpc GetOrder (GetOrderRequest) returns (GetOrderResponse) {}
     rpc GetOrders (GetOrdersRequest) returns (GetOrdersResponse) {}
     rpc CountOrders (CountOrdersRequest) returns (CountOrdersResponse) {}
     rpc SumOrdersPaymentUSD (SumOrdersPaymentUSDRequest) returns (SumOrdersPaymentUSDResponse) {}
@@ -98,6 +99,14 @@ message Conds {
     // other
     optional basetypes.v1.Uint32Val CreatedAt = 220;
     optional basetypes.v1.Uint32Val UpdatedAt = 230;
+}
+
+message GetOrderRequest {
+    string EntID = 10;
+}
+
+message GetOrderResponse {
+    Order Info = 10;
 }
 
 message GetOrdersRequest {
