@@ -19,6 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
+	Middleware_GetOrder_FullMethodName            = "/order.middleware.order1.v1.Middleware/GetOrder"
 	Middleware_GetOrders_FullMethodName           = "/order.middleware.order1.v1.Middleware/GetOrders"
 	Middleware_CountOrders_FullMethodName         = "/order.middleware.order1.v1.Middleware/CountOrders"
 	Middleware_SumOrdersPaymentUSD_FullMethodName = "/order.middleware.order1.v1.Middleware/SumOrdersPaymentUSD"
@@ -30,6 +31,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
+	GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error)
 	GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error)
 	CountOrders(ctx context.Context, in *CountOrdersRequest, opts ...grpc.CallOption) (*CountOrdersResponse, error)
 	SumOrdersPaymentUSD(ctx context.Context, in *SumOrdersPaymentUSDRequest, opts ...grpc.CallOption) (*SumOrdersPaymentUSDResponse, error)
@@ -43,6 +45,15 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
+}
+
+func (c *middlewareClient) GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error) {
+	out := new(GetOrderResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetOrder_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *middlewareClient) GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error) {
@@ -94,6 +105,7 @@ func (c *middlewareClient) ExistOrderConds(ctx context.Context, in *ExistOrderCo
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
+	GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error)
 	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
 	CountOrders(context.Context, *CountOrdersRequest) (*CountOrdersResponse, error)
 	SumOrdersPaymentUSD(context.Context, *SumOrdersPaymentUSDRequest) (*SumOrdersPaymentUSDResponse, error)
@@ -106,6 +118,9 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
+func (UnimplementedMiddlewareServer) GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrder not implemented")
+}
 func (UnimplementedMiddlewareServer) GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrders not implemented")
 }
@@ -132,6 +147,24 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
+}
+
+func _Middleware_GetOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetOrder(ctx, req.(*GetOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -231,6 +264,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "order.middleware.order1.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "GetOrder",
+			Handler:    _Middleware_GetOrder_Handler,
+		},
 		{
 			MethodName: "GetOrders",
 			Handler:    _Middleware_GetOrders_Handler,
