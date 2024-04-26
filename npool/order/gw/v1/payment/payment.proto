@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package order.gateway.payment.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/payment";
+option go_package = "github.com/NpoolPlatform/message/npool/order/gw/v1/payment";
 
 message PaymentBalance {
     string CoinTypeID = 10;
