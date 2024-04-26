@@ -82,6 +82,29 @@
     }
   },
   "definitions": {
+    "middlewareeventv1Conds": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -106,29 +129,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "EventType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppGoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "EntIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -229,6 +229,12 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"inviter_layers\""
         },
+        "Coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoin"
+          }
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -238,6 +244,77 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1EventCoin": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "EventID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"event_id\""
+        },
+        "CoinConfigID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_config_id\""
+        },
+        "CoinValue": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_value\""
+        },
+        "CoinPreUSD": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_pre_usd\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1EventCoinReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EventID": {
+          "type": "string"
+        },
+        "CoinConfigID": {
+          "type": "string"
+        },
+        "CoinValue": {
+          "type": "string"
+        },
+        "CoinPreUSD": {
+          "type": "string"
         }
       }
     },
@@ -282,6 +359,18 @@
         },
         "AppGoodID": {
           "type": "string"
+        },
+        "RemoveCouponIDs": {
+          "type": "boolean"
+        },
+        "Coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoinReq"
+          }
+        },
+        "RemoveCoins": {
+          "type": "boolean"
         }
       }
     },

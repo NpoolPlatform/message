@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/event"
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/conds.proto";
+import "npool/inspire/mw/v1/event/coin/coin.proto";
 
 // Service Name
 service Middleware {
@@ -40,6 +41,9 @@ message EventReq {
   optional string GoodID = 80;
   optional uint32 InviterLayers = 90;
   optional string AppGoodID = 100;
+  optional bool RemoveCouponIDs = 110;
+  repeated inspire.middleware.event.coin.v1.EventCoinReq Coins = 120;
+  optional bool RemoveCoins = 130;
 }
 
 message Event {
@@ -67,6 +71,7 @@ message Event {
   optional string AppGoodID = 81;
   // @inject_tag: sql:"inviter_layers"
   uint32 InviterLayers = 90;
+  repeated inspire.middleware.event.coin.v1.EventCoin Coins = 100;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 200;
   // @inject_tag: sql:"updated_at"
