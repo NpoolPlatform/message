@@ -47,8 +47,12 @@ message FractionRule {
   float MinAmount = 50;
   // @inject_tag: sql:"withdraw_rate"
   float WithdrawRate = 60;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 70;
-  basetypes.miningpool.v1.CoinType CoinType = 80;
+  // @inject_tag: sql:"miningpool_type"
+  string MiningpoolTypeStr = 70;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 71;
+  // @inject_tag: sql:"coin_type"
+  string CoinTypeStr = 80;
+  basetypes.miningpool.v1.CoinType CoinType = 81;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 90;
   // @inject_tag: sql:"updated_at"
