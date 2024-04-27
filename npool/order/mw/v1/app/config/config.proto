@@ -29,6 +29,7 @@ message AppConfigReq {
     optional string SimulateOrderCouponProbability = 80;
     optional string SimulateOrderCashableProfitProbability = 90;
     optional uint32 MaxUnpaidOrders = 100;
+    optional uint32 MaxTypedCouponsPerOrder = 110;
 }
 
 message AppConfig {
@@ -53,6 +54,8 @@ message AppConfig {
     string SimulateOrderCashableProfitProbability = 100;
     // @inject_tag: sql:"max_unpaid_orders"
     uint32 MaxUnpaidOrders = 110;
+    // @inject_tag: sql:"max_typed_coupons_per_order"
+    uint32 MaxTypedCouponsPerOrder = 120;
 
     // @inject_tag: sql:"created_at"
     uint32     CreatedAt = 1000;
