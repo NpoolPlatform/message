@@ -179,6 +179,15 @@
         }
       }
     },
+    "v1CountPowerRentalOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1CreatePowerRentalOrderResponse": {
       "type": "object",
       "properties": {

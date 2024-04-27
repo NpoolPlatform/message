@@ -150,6 +150,15 @@
         }
       }
     },
+    "v1CountFeeOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1CreateFeeOrderResponse": {
       "type": "object",
       "properties": {
