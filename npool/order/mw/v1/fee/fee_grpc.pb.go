@@ -24,6 +24,7 @@ const (
 	Middleware_UpdateFeeOrder_FullMethodName     = "/order.middleware.fee.v1.Middleware/UpdateFeeOrder"
 	Middleware_GetFeeOrder_FullMethodName        = "/order.middleware.fee.v1.Middleware/GetFeeOrder"
 	Middleware_GetFeeOrders_FullMethodName       = "/order.middleware.fee.v1.Middleware/GetFeeOrders"
+	Middleware_CountFeeOrders_FullMethodName     = "/order.middleware.fee.v1.Middleware/CountFeeOrders"
 	Middleware_ExistFeeOrder_FullMethodName      = "/order.middleware.fee.v1.Middleware/ExistFeeOrder"
 	Middleware_ExistFeeOrderConds_FullMethodName = "/order.middleware.fee.v1.Middleware/ExistFeeOrderConds"
 	Middleware_DeleteFeeOrder_FullMethodName     = "/order.middleware.fee.v1.Middleware/DeleteFeeOrder"
@@ -38,6 +39,7 @@ type MiddlewareClient interface {
 	UpdateFeeOrder(ctx context.Context, in *UpdateFeeOrderRequest, opts ...grpc.CallOption) (*UpdateFeeOrderResponse, error)
 	GetFeeOrder(ctx context.Context, in *GetFeeOrderRequest, opts ...grpc.CallOption) (*GetFeeOrderResponse, error)
 	GetFeeOrders(ctx context.Context, in *GetFeeOrdersRequest, opts ...grpc.CallOption) (*GetFeeOrdersResponse, error)
+	CountFeeOrders(ctx context.Context, in *CountFeeOrdersRequest, opts ...grpc.CallOption) (*CountFeeOrdersResponse, error)
 	ExistFeeOrder(ctx context.Context, in *ExistFeeOrderRequest, opts ...grpc.CallOption) (*ExistFeeOrderResponse, error)
 	ExistFeeOrderConds(ctx context.Context, in *ExistFeeOrderCondsRequest, opts ...grpc.CallOption) (*ExistFeeOrderCondsResponse, error)
 	DeleteFeeOrder(ctx context.Context, in *DeleteFeeOrderRequest, opts ...grpc.CallOption) (*DeleteFeeOrderResponse, error)
@@ -96,6 +98,15 @@ func (c *middlewareClient) GetFeeOrders(ctx context.Context, in *GetFeeOrdersReq
 	return out, nil
 }
 
+func (c *middlewareClient) CountFeeOrders(ctx context.Context, in *CountFeeOrdersRequest, opts ...grpc.CallOption) (*CountFeeOrdersResponse, error) {
+	out := new(CountFeeOrdersResponse)
+	err := c.cc.Invoke(ctx, Middleware_CountFeeOrders_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) ExistFeeOrder(ctx context.Context, in *ExistFeeOrderRequest, opts ...grpc.CallOption) (*ExistFeeOrderResponse, error) {
 	out := new(ExistFeeOrderResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistFeeOrder_FullMethodName, in, out, opts...)
@@ -132,6 +143,7 @@ type MiddlewareServer interface {
 	UpdateFeeOrder(context.Context, *UpdateFeeOrderRequest) (*UpdateFeeOrderResponse, error)
 	GetFeeOrder(context.Context, *GetFeeOrderRequest) (*GetFeeOrderResponse, error)
 	GetFeeOrders(context.Context, *GetFeeOrdersRequest) (*GetFeeOrdersResponse, error)
+	CountFeeOrders(context.Context, *CountFeeOrdersRequest) (*CountFeeOrdersResponse, error)
 	ExistFeeOrder(context.Context, *ExistFeeOrderRequest) (*ExistFeeOrderResponse, error)
 	ExistFeeOrderConds(context.Context, *ExistFeeOrderCondsRequest) (*ExistFeeOrderCondsResponse, error)
 	DeleteFeeOrder(context.Context, *DeleteFeeOrderRequest) (*DeleteFeeOrderResponse, error)
@@ -156,6 +168,9 @@ func (UnimplementedMiddlewareServer) GetFeeOrder(context.Context, *GetFeeOrderRe
 }
 func (UnimplementedMiddlewareServer) GetFeeOrders(context.Context, *GetFeeOrdersRequest) (*GetFeeOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFeeOrders not implemented")
+}
+func (UnimplementedMiddlewareServer) CountFeeOrders(context.Context, *CountFeeOrdersRequest) (*CountFeeOrdersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountFeeOrders not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistFeeOrder(context.Context, *ExistFeeOrderRequest) (*ExistFeeOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistFeeOrder not implemented")
@@ -269,6 +284,24 @@ func _Middleware_GetFeeOrders_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_CountFeeOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountFeeOrdersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CountFeeOrders(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CountFeeOrders_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CountFeeOrders(ctx, req.(*CountFeeOrdersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_ExistFeeOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistFeeOrderRequest)
 	if err := dec(in); err != nil {
@@ -349,6 +382,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetFeeOrders",
 			Handler:    _Middleware_GetFeeOrders_Handler,
+		},
+		{
+			MethodName: "CountFeeOrders",
+			Handler:    _Middleware_CountFeeOrders_Handler,
 		},
 		{
 			MethodName: "ExistFeeOrder",

@@ -19,6 +19,7 @@ service Middleware {
     rpc UpdateFeeOrder (UpdateFeeOrderRequest) returns (UpdateFeeOrderResponse) {}
     rpc GetFeeOrder (GetFeeOrderRequest) returns (GetFeeOrderResponse) {}
     rpc GetFeeOrders (GetFeeOrdersRequest) returns (GetFeeOrdersResponse) {}
+    rpc CountFeeOrders (CountFeeOrdersRequest) returns (CountFeeOrdersResponse) {}
     rpc ExistFeeOrder (ExistFeeOrderRequest) returns (ExistFeeOrderResponse) {}
     rpc ExistFeeOrderConds (ExistFeeOrderCondsRequest) returns (ExistFeeOrderCondsResponse) {}
     rpc DeleteFeeOrder (DeleteFeeOrderRequest) returns (DeleteFeeOrderResponse) {}
@@ -242,6 +243,14 @@ message GetFeeOrdersRequest {
 message GetFeeOrdersResponse {
     repeated FeeOrder Infos = 10;
     uint32 Total = 20;
+}
+
+message CountFeeOrdersRequest {
+    Conds Conds = 10;
+}
+
+message CountFeeOrdersResponse {
+    uint32 Info = 10;
 }
 
 message ExistFeeOrderRequest {
