@@ -93,6 +93,11 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"max_unpaid_orders\""
         },
+        "MaxTypedCouponsPerOrder": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"max_typed_coupons_per_order\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -138,6 +143,10 @@
           "type": "string"
         },
         "MaxUnpaidOrders": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxTypedCouponsPerOrder": {
           "type": "integer",
           "format": "int64"
         }

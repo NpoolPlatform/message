@@ -70,6 +70,7 @@ message CreateAppConfigRequest {
     optional string SimulateOrderCouponProbability = 60;
     optional string SimulateOrderCashableProfitProbability = 70;
     optional uint32 MaxUnpaidOrders = 80;
+    optional uint32 MaxTypedCouponsPerOrder = 90;
 }
 
 message CreateAppConfigResponse {
@@ -87,6 +88,7 @@ message UpdateAppConfigRequest {
     optional string SimulateOrderCouponProbability = 80;
     optional string SimulateOrderCashableProfitProbability = 90;
     optional uint32 MaxUnpaidOrders = 100;
+    optional uint32 MaxTypedCouponsPerOrder = 110;
 }
 
 message UpdateAppConfigResponse {
@@ -111,6 +113,7 @@ message AdminCreateAppConfigRequest {
     optional string SimulateOrderCouponProbability = 60;
     optional string SimulateOrderCashableProfitProbability = 70;
     optional uint32 MaxUnpaidOrders = 80;
+    optional uint32 MaxTypedCouponsPerOrder = 90;
 }
 
 message AdminCreateAppConfigResponse {
@@ -128,6 +131,7 @@ message AdminUpdateAppConfigRequest {
     optional string SimulateOrderCouponProbability = 80;
     optional string SimulateOrderCashableProfitProbability = 90;
     optional uint32 MaxUnpaidOrders = 100;
+    optional uint32 MaxTypedCouponsPerOrder = 110;
 }
 
 message AdminUpdateAppConfigResponse {
