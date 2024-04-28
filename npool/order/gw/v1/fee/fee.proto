@@ -165,12 +165,13 @@ message FeeDuration {
 
 message CreateFeeOrderRequest {
     string AppID = 10;
-    string AppGoodID = 20;
-    string ParentOrderID = 30;
-    string DurationSeconds = 40;
-    repeated order.gateway.payment.v1.PaymentBalance Balances = 50;
-    optional string PaymentTransferCoinTypeID = 60;
-    repeated string CouponIDs = 70;
+    string UserID = 20;
+    string AppGoodID = 30;
+    string ParentOrderID = 40;
+    uint32 DurationSeconds = 50;
+    repeated order.gateway.payment.v1.PaymentBalance Balances = 60;
+    optional string PaymentTransferCoinTypeID = 70;
+    repeated string CouponIDs = 80;
 }
 
 message CreateFeeOrderResponse {
@@ -182,7 +183,8 @@ message CreateUserFeeOrderRequest {
     string TargetUserID = 20;
     string AppGoodID = 30;
     string ParentOrderID = 40;
-    string DurationSeconds = 50;
+    uint32 DurationSeconds = 50;
+    basetypes.order.v1.OrderType OrderType = 60;
 }
 
 message CreateUserFeeOrderResponse {
@@ -191,12 +193,13 @@ message CreateUserFeeOrderResponse {
 
 message CreateFeeOrdersRequest {
     string AppID = 10;
-    string ParentOrderID = 20;
-    string DurationSeconds = 30;
-    repeated order.gateway.payment.v1.PaymentBalance Balances = 40;
-    optional string PaymentTransferCoinTypeID = 50;
-    repeated string CouponIDs = 60;
-    repeated string AppGoodIDs = 70;
+    string UserID = 20;
+    string ParentOrderID = 30;
+    uint32 DurationSeconds = 40;
+    repeated order.gateway.payment.v1.PaymentBalance Balances = 50;
+    optional string PaymentTransferCoinTypeID = 60;
+    repeated string CouponIDs = 70;
+    repeated string AppGoodIDs = 80;
 }
 
 message CreateFeeOrdersResponse {
@@ -207,8 +210,9 @@ message CreateUserFeeOrdersRequest {
     string AppID = 10;
     string TargetUserID = 20;
     string ParentOrderID = 30;
-    string DurationSeconds = 40;
-    repeated string AppGoodID = 50;
+    uint32 DurationSeconds = 40;
+    repeated string AppGoodIDs = 50;
+    basetypes.order.v1.OrderType OrderType = 60;
 }
 
 message CreateUserFeeOrdersResponse {
@@ -283,7 +287,8 @@ message AdminCreateFeeOrderRequest {
     string TargetUserID = 20;
     string AppGoodID = 30;
     string ParentOrderID = 40;
-    string DurationSeconds = 50;
+    uint32 DurationSeconds = 50;
+    basetypes.order.v1.OrderType OrderType = 60;
 }
 
 message AdminCreateFeeOrderResponse {
@@ -294,8 +299,9 @@ message AdminCreateFeeOrdersRequest {
     string TargetAppID = 10;
     string TargetUserID = 20;
     string ParentOrderID = 30;
-    string DurationSeconds = 40;
+    uint32 DurationSeconds = 40;
     repeated string AppGoodID = 50;
+    basetypes.order.v1.OrderType OrderType = 60;
 }
 
 message AdminCreateFeeOrdersResponse {
