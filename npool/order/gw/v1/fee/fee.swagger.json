@@ -510,7 +510,11 @@
           "type": "string"
         },
         "DurationSeconds": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
         }
       }
     },
@@ -535,13 +539,17 @@
           "type": "string"
         },
         "DurationSeconds": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "AppGoodID": {
           "type": "array",
           "items": {
             "type": "string"
           }
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
         }
       }
     },
@@ -651,6 +659,9 @@
         "AppID": {
           "type": "string"
         },
+        "UserID": {
+          "type": "string"
+        },
         "AppGoodID": {
           "type": "string"
         },
@@ -658,7 +669,8 @@
           "type": "string"
         },
         "DurationSeconds": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Balances": {
           "type": "array",
@@ -691,11 +703,15 @@
         "AppID": {
           "type": "string"
         },
+        "UserID": {
+          "type": "string"
+        },
         "ParentOrderID": {
           "type": "string"
         },
         "DurationSeconds": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Balances": {
           "type": "array",
@@ -747,7 +763,11 @@
           "type": "string"
         },
         "DurationSeconds": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
         }
       }
     },
@@ -772,13 +792,17 @@
           "type": "string"
         },
         "DurationSeconds": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
-        "AppGoodID": {
+        "AppGoodIDs": {
           "type": "array",
           "items": {
             "type": "string"
           }
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
         }
       }
     },
