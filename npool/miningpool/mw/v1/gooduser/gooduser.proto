@@ -23,11 +23,10 @@ message GoodUserReq {
   optional uint32 ID = 10;
   optional string EntID = 20;
   optional string CoinID = 30;
-  optional string RevenueID = 50;
-  optional string RootUserID = 60;
-  optional string Name = 70;
-  optional string ReadPageLink = 80;
-  optional float HashRate = 90;
+  optional string RootUserID = 40;
+  optional string Name = 50;
+  optional string ReadPageLink = 60;
+  optional float HashRatio = 70;
 }
 
 message GoodUser {
@@ -37,26 +36,25 @@ message GoodUser {
   string EntID = 20;
   // @inject_tag: sql:"coin_id"
   string CoinID = 30;
-  // @inject_tag: sql:"revenue_id"
-  string RevenueID = 40;
   // @inject_tag: sql:"root_user_id"
-  string RootUserID = 50;
+  string RootUserID = 40;
   // @inject_tag: sql:"name"
-  string Name = 60;
+  string Name = 50;
   // @inject_tag: sql:"read_page_link"
-  string ReadPageLink = 70;
-  // @inject_tag: sql:"hash_rate"
-  float HashRate = 80;
+  string ReadPageLink = 60;
+  // @inject_tag: sql:"hash_ratio"
+  float HashRatio = 70;
   // @inject_tag: sql:"miningpool_type"
-  string MiningpoolTypeStr = 90;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 91;
+  string MiningpoolTypeStr = 80;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 81;
   // @inject_tag: sql:"coin_type"
-  string CoinTypeStr = 100;
-  basetypes.miningpool.v1.CoinType CoinType = 101;
+  string CoinTypeStr = 90;
+  basetypes.miningpool.v1.CoinType CoinType = 91;
   // @inject_tag: sql:"revenue_type"
-  string RevenueTypeStr = 110;
-  basetypes.miningpool.v1.RevenueType RevenueType = 111;
-  string FeeRate = 120;
+  string RevenueTypeStr = 100;
+  basetypes.miningpool.v1.RevenueType RevenueType = 101;
+  // @inject_tag: sql:"fee_ratio"
+  string FeeRatio = 120;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 130;
   // @inject_tag: sql:"updated_at"
@@ -68,9 +66,8 @@ message Conds {
   optional basetypes.v1.StringVal EntID = 10;
   optional basetypes.v1.StringVal Name = 20;
   optional basetypes.v1.StringVal CoinID = 30;
-  optional basetypes.v1.StringVal RevenueID = 40;
-  optional basetypes.v1.StringVal RootUserID = 50;
-  optional basetypes.v1.StringSliceVal EntIDs = 70;
+  optional basetypes.v1.StringVal RootUserID = 40;
+  optional basetypes.v1.StringSliceVal EntIDs = 50;
 }
 
 message CreateGoodUserRequest { GoodUserReq Info = 10; }

@@ -67,9 +67,6 @@
         "CoinID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "RevenueID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "RootUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -139,10 +136,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_id\""
         },
-        "RevenueID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"revenue_id\""
-        },
         "RootUserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"root_user_id\""
@@ -155,10 +148,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"read_page_link\""
         },
-        "HashRate": {
+        "HashRatio": {
           "type": "number",
           "format": "float",
-          "title": "@inject_tag: sql:\"hash_rate\""
+          "title": "@inject_tag: sql:\"hash_ratio\""
         },
         "MiningpoolTypeStr": {
           "type": "string",
@@ -181,8 +174,9 @@
         "RevenueType": {
           "$ref": "#/definitions/v1RevenueType"
         },
-        "FeeRate": {
-          "type": "string"
+        "FeeRatio": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_ratio\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -209,9 +203,6 @@
         "CoinID": {
           "type": "string"
         },
-        "RevenueID": {
-          "type": "string"
-        },
         "RootUserID": {
           "type": "string"
         },
@@ -221,7 +212,7 @@
         "ReadPageLink": {
           "type": "string"
         },
-        "HashRate": {
+        "HashRatio": {
           "type": "number",
           "format": "float"
         }
