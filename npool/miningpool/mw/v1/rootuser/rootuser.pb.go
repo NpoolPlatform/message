@@ -146,8 +146,8 @@ type RootUser struct {
 	Authed bool `protobuf:"varint,70,opt,name=Authed,proto3" json:"Authed,omitempty" sql:"authed"`
 	// @inject_tag: sql:"remark"
 	Remark string `protobuf:"bytes,80,opt,name=Remark,proto3" json:"Remark,omitempty" sql:"remark"`
-	// @inject_tag: sql:"miningpool_type_str"
-	MiningpoolTypeStr string            `protobuf:"bytes,90,opt,name=MiningpoolTypeStr,proto3" json:"MiningpoolTypeStr,omitempty" sql:"miningpool_type_str"`
+	// @inject_tag: sql:"miningpool_type"
+	MiningpoolTypeStr string            `protobuf:"bytes,90,opt,name=MiningpoolTypeStr,proto3" json:"MiningpoolTypeStr,omitempty" sql:"miningpool_type"`
 	MiningpoolType    v1.MiningpoolType `protobuf:"varint,91,opt,name=MiningpoolType,proto3,enum=basetypes.miningpool.v1.MiningpoolType" json:"MiningpoolType,omitempty"`
 	// @inject_tag: sql:"created_at"
 	CreatedAt uint32 `protobuf:"varint,100,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty" sql:"created_at"`

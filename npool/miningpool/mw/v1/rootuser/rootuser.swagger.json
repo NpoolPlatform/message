@@ -173,7 +173,7 @@
         },
         "MiningpoolTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_type_str\""
+          "title": "@inject_tag: sql:\"miningpool_type\""
         },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
