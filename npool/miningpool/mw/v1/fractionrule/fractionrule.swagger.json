@@ -113,8 +113,7 @@
           "title": "@inject_tag: sql:\"withdraw_interval\""
         },
         "MinAmount": {
-          "type": "number",
-          "format": "float",
+          "type": "string",
           "title": "@inject_tag: sql:\"min_amount\""
         },
         "WithdrawRate": {
@@ -166,8 +165,7 @@
           "format": "int64"
         },
         "MinAmount": {
-          "type": "number",
-          "format": "float"
+          "type": "string"
         },
         "WithdrawRate": {
           "type": "number",
