@@ -31,7 +31,7 @@ message FractionRuleReq {
   optional string CoinID = 30;
   optional uint32 WithdrawInterval = 50;
   optional string MinAmount = 60;
-  optional float WithdrawRate = 70;
+  optional string WithdrawRate = 70;
 }
 
 message FractionRule {
@@ -46,7 +46,7 @@ message FractionRule {
   // @inject_tag: sql:"min_amount"
   string MinAmount = 50;
   // @inject_tag: sql:"withdraw_rate"
-  float WithdrawRate = 60;
+  string WithdrawRate = 60;
   // @inject_tag: sql:"miningpool_type"
   string MiningpoolTypeStr = 70;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 71;

@@ -117,8 +117,7 @@
           "title": "@inject_tag: sql:\"min_amount\""
         },
         "WithdrawRate": {
-          "type": "number",
-          "format": "float",
+          "type": "string",
           "title": "@inject_tag: sql:\"withdraw_rate\""
         },
         "MiningpoolTypeStr": {
@@ -168,8 +167,7 @@
           "type": "string"
         },
         "WithdrawRate": {
-          "type": "number",
-          "format": "float"
+          "type": "string"
         }
       }
     },
