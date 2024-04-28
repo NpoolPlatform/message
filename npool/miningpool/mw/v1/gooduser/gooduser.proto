@@ -26,7 +26,7 @@ message GoodUserReq {
   optional string RootUserID = 40;
   optional string Name = 50;
   optional string ReadPageLink = 60;
-  optional float HashRatio = 70;
+  optional float HashRate = 70;
 }
 
 message GoodUser {
@@ -42,8 +42,8 @@ message GoodUser {
   string Name = 50;
   // @inject_tag: sql:"read_page_link"
   string ReadPageLink = 60;
-  // @inject_tag: sql:"hash_ratio"
-  float HashRatio = 70;
+  // @inject_tag: sql:"hash_rate"
+  float HashRate = 70;
   // @inject_tag: sql:"miningpool_type"
   string MiningpoolTypeStr = 80;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 81;

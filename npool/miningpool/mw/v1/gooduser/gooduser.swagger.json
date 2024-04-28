@@ -148,10 +148,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"read_page_link\""
         },
-        "HashRatio": {
+        "HashRate": {
           "type": "number",
           "format": "float",
-          "title": "@inject_tag: sql:\"hash_ratio\""
+          "title": "@inject_tag: sql:\"hash_rate\""
         },
         "MiningpoolTypeStr": {
           "type": "string",
@@ -212,7 +212,7 @@
         "ReadPageLink": {
           "type": "string"
         },
-        "HashRatio": {
+        "HashRate": {
           "type": "number",
           "format": "float"
         }
