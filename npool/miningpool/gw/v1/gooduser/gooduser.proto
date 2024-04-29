@@ -49,22 +49,23 @@ service Gateway {
 message GoodUser {
   uint32 ID = 10;
   string EntID = 20;
-  string Name = 30;
+  string CoinID = 30;
   string RootUserID = 40;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 50;
-  basetypes.miningpool.v1.CoinType CoinType = 60;
+  string Name = 50;
+  string ReadPageLink = 60;
   float HashRate = 70;
-  string ReadPageLink = 80;
-  basetypes.miningpool.v1.RevenueType RevenueType = 90;
-  uint32 CreatedAt = 100;
-  uint32 UpdatedAt = 110;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
+  basetypes.miningpool.v1.CoinType CoinType = 90;
+  basetypes.miningpool.v1.RevenueType RevenueType = 100;
+  string FeeRatio = 120;
+  uint32 CreatedAt = 130;
+  uint32 UpdatedAt = 140;
 }
 
 message AdminCreateGoodUserRequest {
-  string RootUserID = 10;
-  basetypes.miningpool.v1.CoinType CoinType = 20;
+  string CoinID = 10;
+  string RootUserID = 20;
   float HashRate = 30;
-  basetypes.miningpool.v1.RevenueType RevenueType = 40;
 }
 
 message AdminCreateGoodUserResponse { GoodUser Info = 10; }
@@ -87,7 +88,6 @@ message AdminUpdateGoodUserRequest {
   uint32 ID = 10;
   string EntID = 20;
   optional float HashRate = 30;
-  optional basetypes.miningpool.v1.RevenueType RevenueType = 40;
 }
 
 message AdminUpdateGoodUserResponse { GoodUser Info = 10; }

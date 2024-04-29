@@ -208,11 +208,11 @@
     "v1AdminCreateRootUserRequest": {
       "type": "object",
       "properties": {
-        "Name": {
+        "PoolID": {
           "type": "string"
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
+        "Name": {
+          "type": "string"
         },
         "Email": {
           "type": "string"
@@ -348,11 +348,11 @@
         "EntID": {
           "type": "string"
         },
-        "Name": {
+        "PoolID": {
           "type": "string"
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
+        "Name": {
+          "type": "string"
         },
         "Email": {
           "type": "string"
@@ -365,6 +365,9 @@
         },
         "Remark": {
           "type": "string"
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
         },
         "CreatedAt": {
           "type": "integer",

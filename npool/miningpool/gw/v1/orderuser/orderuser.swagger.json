@@ -126,7 +126,10 @@
         "EntID": {
           "type": "string"
         },
-        "Name": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         },
         "RootUserID": {
@@ -135,17 +138,8 @@
         "GoodUserID": {
           "type": "string"
         },
-        "AppID": {
+        "Name": {
           "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
         },
         "Proportion": {
           "type": "string"
@@ -159,6 +153,15 @@
         "AutoPay": {
           "type": "boolean"
         },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "RevenueType": {
+          "$ref": "#/definitions/v1RevenueType"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -168,6 +171,15 @@
           "format": "int64"
         }
       }
+    },
+    "v1RevenueType": {
+      "type": "string",
+      "enum": [
+        "DefaultRevenueType",
+        "FPPS",
+        "PPLNS"
+      ],
+      "default": "DefaultRevenueType"
     }
   }
 }

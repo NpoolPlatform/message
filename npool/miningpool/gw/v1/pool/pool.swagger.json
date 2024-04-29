@@ -156,26 +156,36 @@
     "v1Coin": {
       "type": "object",
       "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "PoolID": {
+          "type": "string"
+        },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "RevenueTypes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1RevenueType"
-          }
+        "RevenueType": {
+          "$ref": "#/definitions/v1RevenueType"
         },
-        "FeeRate": {
+        "FeeRatio": {
           "type": "string"
         },
         "FixedRevenueAble": {
           "type": "boolean"
         },
-        "Threshold": {
+        "LeastTransferAmount": {
           "type": "string"
+        },
+        "BenefitIntervalSeconds": {
+          "type": "integer",
+          "format": "int64"
         },
         "Remark": {
           "type": "string"
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
         }
       }
     },
@@ -190,20 +200,30 @@
     "v1FractionRule": {
       "type": "object",
       "properties": {
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
+        "EntID": {
+          "type": "string"
+        },
+        "CoinID": {
+          "type": "string"
         },
         "WithdrawInterval": {
           "type": "integer",
           "format": "int64"
         },
         "MinAmount": {
-          "type": "number",
-          "format": "float"
+          "type": "string"
         },
         "WithdrawRate": {
-          "type": "number",
-          "format": "float"
+          "type": "string"
+        },
+        "MiningpoolTypeStr": {
+          "type": "string"
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
         }
       }
     },
@@ -233,6 +253,9 @@
           "type": "string"
         },
         "Site": {
+          "type": "string"
+        },
+        "Logo": {
           "type": "string"
         },
         "Description": {

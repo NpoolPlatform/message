@@ -49,19 +49,20 @@ service Gateway {
 message RootUser {
   uint32 ID = 10;
   string EntID = 20;
-  string Name = 30;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 40;
+  string PoolID = 30;
+  string Name = 40;
   string Email = 50;
   string AuthToken = 60;
   bool Authed = 70;
   string Remark = 80;
-  uint32 CreatedAt = 90;
-  uint32 UpdatedAt = 100;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 90;
+  uint32 CreatedAt = 100;
+  uint32 UpdatedAt = 110;
 }
 
 message AdminCreateRootUserRequest {
-  string Name = 10;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 20;
+  string PoolID = 10;
+  string Name = 20;
   string Email = 30;
   string AuthToken = 40;
   optional string Remark = 50;

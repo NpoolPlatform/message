@@ -208,18 +208,15 @@
     "v1AdminCreateGoodUserRequest": {
       "type": "object",
       "properties": {
-        "RootUserID": {
+        "CoinID": {
           "type": "string"
         },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
+        "RootUserID": {
+          "type": "string"
         },
         "HashRate": {
           "type": "number",
           "format": "float"
-        },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
         }
       }
     },
@@ -308,9 +305,6 @@
         "HashRate": {
           "type": "number",
           "format": "float"
-        },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
         }
       }
     },
@@ -340,11 +334,21 @@
         "EntID": {
           "type": "string"
         },
-        "Name": {
+        "CoinID": {
           "type": "string"
         },
         "RootUserID": {
           "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "ReadPageLink": {
+          "type": "string"
+        },
+        "HashRate": {
+          "type": "number",
+          "format": "float"
         },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
@@ -352,15 +356,11 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "HashRate": {
-          "type": "number",
-          "format": "float"
-        },
-        "ReadPageLink": {
-          "type": "string"
-        },
         "RevenueType": {
           "$ref": "#/definitions/v1RevenueType"
+        },
+        "FeeRatio": {
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",

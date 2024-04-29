@@ -20,17 +20,18 @@ service Gateway {
 message OrderUser {
   uint32 ID = 10;
   string EntID = 20;
-  string Name = 30;
-  string RootUserID = 40;
-  string GoodUserID = 50;
-  string AppID = 60;
-  string UserID = 70;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
-  basetypes.miningpool.v1.CoinType CoinType = 90;
-  string Proportion = 100;
-  string RevenueAddress = 110;
-  string ReadPageLink = 120;
-  bool AutoPay = 130;
+  string AppID = 30;
+  string UserID = 40;
+  string RootUserID = 50;
+  string GoodUserID = 51;
+  string Name = 60;
+  string Proportion = 70;
+  string RevenueAddress = 80;
+  string ReadPageLink = 90;
+  bool AutoPay = 100;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 110;
+  basetypes.miningpool.v1.CoinType CoinType = 120;
+  basetypes.miningpool.v1.RevenueType RevenueType = 130;
   uint32 CreatedAt = 140;
   uint32 UpdatedAt = 150;
 }
