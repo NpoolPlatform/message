@@ -247,6 +247,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
         },
+        "RootUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"root_user_id\""
+        },
         "GoodUserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_user_id\""

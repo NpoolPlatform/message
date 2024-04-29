@@ -55,8 +55,10 @@ message OrderUser {
   string AppID = 30;
   // @inject_tag: sql:"user_id"
   string UserID = 40;
+  // @inject_tag: sql:"root_user_id"
+  string RootUserID = 50;
   // @inject_tag: sql:"good_user_id"
-  string GoodUserID = 50;
+  string GoodUserID = 51;
   // @inject_tag: sql:"name"
   string Name = 60;
   // @inject_tag: sql:"proportion"
