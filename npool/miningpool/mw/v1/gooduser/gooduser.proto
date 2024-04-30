@@ -34,25 +34,27 @@ message GoodUser {
   uint32 ID = 10;
   // @inject_tag: sql:"ent_id"
   string EntID = 20;
-  // @inject_tag: sql:"coin_id"
-  string CoinID = 30;
   // @inject_tag: sql:"root_user_id"
-  string RootUserID = 40;
+  string RootUserID = 30;
   // @inject_tag: sql:"name"
-  string Name = 50;
+  string Name = 40;
   // @inject_tag: sql:"read_page_link"
-  string ReadPageLink = 60;
+  string ReadPageLink = 50;
   // @inject_tag: sql:"hash_rate"
-  float HashRate = 70;
+  float HashRate = 60;
+  // @inject_tag: sql:"pool_id"
+  string PoolID = 70;
   // @inject_tag: sql:"miningpool_type"
   string MiningpoolTypeStr = 80;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 81;
+  // @inject_tag: sql:"coin_id"
+  string CoinID = 90;
   // @inject_tag: sql:"coin_type"
-  string CoinTypeStr = 90;
-  basetypes.miningpool.v1.CoinType CoinType = 91;
+  string CoinTypeStr = 100;
+  basetypes.miningpool.v1.CoinType CoinType = 101;
   // @inject_tag: sql:"revenue_type"
-  string RevenueTypeStr = 100;
-  basetypes.miningpool.v1.RevenueType RevenueType = 101;
+  string RevenueTypeStr = 110;
+  basetypes.miningpool.v1.RevenueType RevenueType = 111;
   // @inject_tag: sql:"fee_ratio"
   string FeeRatio = 120;
   // @inject_tag: sql:"created_at"

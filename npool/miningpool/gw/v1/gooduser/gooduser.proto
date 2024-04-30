@@ -49,14 +49,15 @@ service Gateway {
 message GoodUser {
   uint32 ID = 10;
   string EntID = 20;
-  string CoinID = 30;
-  string RootUserID = 40;
-  string Name = 50;
-  string ReadPageLink = 60;
-  float HashRate = 70;
+  string RootUserID = 30;
+  string Name = 40;
+  string ReadPageLink = 50;
+  float HashRate = 60;
+  string PoolID = 70;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
-  basetypes.miningpool.v1.CoinType CoinType = 90;
-  basetypes.miningpool.v1.RevenueType RevenueType = 100;
+  string CoinID = 90;
+  basetypes.miningpool.v1.CoinType CoinType = 100;
+  basetypes.miningpool.v1.RevenueType RevenueType = 110;
   string FeeRatio = 120;
   uint32 CreatedAt = 130;
   uint32 UpdatedAt = 140;

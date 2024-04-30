@@ -334,9 +334,6 @@
         "EntID": {
           "type": "string"
         },
-        "CoinID": {
-          "type": "string"
-        },
         "RootUserID": {
           "type": "string"
         },
@@ -350,8 +347,14 @@
           "type": "number",
           "format": "float"
         },
+        "PoolID": {
+          "type": "string"
+        },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "CoinID": {
+          "type": "string"
         },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"

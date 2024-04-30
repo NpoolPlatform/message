@@ -132,10 +132,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "CoinID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_id\""
-        },
         "RootUserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"root_user_id\""
@@ -153,12 +149,20 @@
           "format": "float",
           "title": "@inject_tag: sql:\"hash_rate\""
         },
+        "PoolID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"pool_id\""
+        },
         "MiningpoolTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"miningpool_type\""
         },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "CoinID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_id\""
         },
         "CoinTypeStr": {
           "type": "string",
