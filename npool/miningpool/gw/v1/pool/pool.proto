@@ -15,12 +15,6 @@ service Gateway {
       body : "*"
     };
   }
-  rpc AdminGetPool(AdminGetPoolRequest) returns (AdminGetPoolResponse) {
-    option (google.api.http) = {
-      post : "/v1/admin/get/pool"
-      body : "*"
-    };
-  }
 }
 message Pool {
   uint32 ID = 9;
@@ -67,7 +61,3 @@ message AdminGetPoolsResponse {
   repeated Pool Infos = 10;
   uint32 Total = 20;
 }
-
-message AdminGetPoolRequest { string EntID = 10; }
-
-message AdminGetPoolResponse { Pool Info = 10; }
