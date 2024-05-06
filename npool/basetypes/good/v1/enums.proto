@@ -89,6 +89,7 @@ enum GoodStartMode {
     GoodStartModeInstantly = 30; // Start when order paid
     GoodStartModeNextDay   = 40; // Start at next 00:00 UTC
     GoodStartModePreset    = 50; // Start at a preset time
+    GoodStartModeWithParent = 60; // Start with parent good
 }
 
 enum StockLockState {
