@@ -84,11 +84,12 @@ enum GoodTopMostConstraint {
 enum GoodStartMode {
   DefaultGoodStartMode = 0;
 
-  GoodStartModeTBD = 10;       // Start time will be adjusted in future
-  GoodStartModeConfirmed = 20; // Deprecated
-  GoodStartModeInstantly = 30; // Start when order paid
-  GoodStartModeNextDay = 40;   // Start at next 00:00 UTC
-  GoodStartModePreset = 50;    // Start at a preset time
+    GoodStartModeTBD       = 10; // Start time will be adjusted in future
+    GoodStartModeConfirmed = 20; // Deprecated
+    GoodStartModeInstantly = 30; // Start when order paid
+    GoodStartModeNextDay   = 40; // Start at next 00:00 UTC
+    GoodStartModePreset    = 50; // Start at a preset time
+    GoodStartModeWithParent = 60; // Start with parent good
 }
 
 enum StockLockState {

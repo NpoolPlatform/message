@@ -514,7 +514,8 @@
         "GoodStartModeConfirmed",
         "GoodStartModeInstantly",
         "GoodStartModeNextDay",
-        "GoodStartModePreset"
+        "GoodStartModePreset",
+        "GoodStartModeWithParent"
       ],
       "default": "DefaultGoodStartMode"
     },
