@@ -914,7 +914,14 @@
         "DurationDisplayType": {
           "$ref": "#/definitions/v1GoodDurationType"
         },
+        "DurationsUnit": {
+          "type": "string"
+        },
         "DurationSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationUnits": {
           "type": "integer",
           "format": "int64"
         },

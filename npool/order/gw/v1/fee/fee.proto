@@ -144,14 +144,16 @@ message FeeOrder {
     string TopMostTargetUrl = 350;
 
     basetypes.good.v1.GoodDurationType DurationDisplayType = 400;
-    uint32 DurationSeconds = 410;
-    basetypes.order.v1.OrderState CancelState = 420;
-    uint32 CanceledAt = 430;
-    uint32 PaidAt = 440;
-    bool UserSetPaid = 450;
-    bool UserSetCanceled = 460;
-    bool AdminSetCanceled = 470;
-    basetypes.order.v1.PaymentState PaymentState = 480;
+    string DurationsUnit = 410;
+    uint32 DurationSeconds = 420;
+    uint32 DurationUnits = 430;
+    basetypes.order.v1.OrderState CancelState = 440;
+    uint32 CanceledAt = 450;
+    uint32 PaidAt = 460;
+    bool UserSetPaid = 470;
+    bool UserSetCanceled = 480;
+    bool AdminSetCanceled = 490;
+    basetypes.order.v1.PaymentState PaymentState = 500;
 
     repeated order.gateway.order1.coupon.v1.OrderCouponInfo Coupons = 600;
     repeated order.gateway.payment.v1.PaymentBalanceInfo PaymentBalances = 610;

@@ -933,6 +933,17 @@
         }
       }
     },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
+    },
     "v1GoodType": {
       "type": "string",
       "enum": [
@@ -1264,7 +1275,17 @@
         "PromotionName": {
           "type": "string"
         },
+        "DurationDisplayType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationsUnit": {
+          "type": "string"
+        },
         "DurationSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationUnits": {
           "type": "integer",
           "format": "int64"
         },
