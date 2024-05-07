@@ -94,6 +94,9 @@
         },
         "ID": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },

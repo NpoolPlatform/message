@@ -28,7 +28,6 @@ message UserRewardReq {
     optional string AppID         = 30;
     optional string UserID        = 40;
     optional string ActionCredits = 50;
-    optional string CoinPreUSD    = 60;
     optional string CouponAmount  = 70;
     optional string CouponCashableAmount = 80;
 }

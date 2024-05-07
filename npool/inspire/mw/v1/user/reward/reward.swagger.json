@@ -260,9 +260,6 @@
         "ActionCredits": {
           "type": "string"
         },
-        "CoinPreUSD": {
-          "type": "string"
-        },
         "CouponAmount": {
           "type": "string"
         },
