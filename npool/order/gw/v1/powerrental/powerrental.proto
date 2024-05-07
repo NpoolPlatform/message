@@ -154,7 +154,7 @@ message PowerRentalOrder {
     string PromotionID = 440;
     string PromotionName = 450;
     basetypes.good.v1.GoodDurationType DurationDisplayType = 460;
-    string DurationsUnit = 470;
+    string DurationUnit = 470;
     uint32 DurationSeconds = 480;
     uint32 Durations = 490;
     basetypes.order.v1.InvestmentType InvestmentType = 500;
