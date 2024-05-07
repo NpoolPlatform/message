@@ -59,9 +59,10 @@ message TopMost {
 message Conds {
     optional basetypes.v1.Uint32Val ID = 10;
     optional basetypes.v1.StringVal EntID = 20;
-    optional basetypes.v1.StringVal AppID = 30;
-    optional basetypes.v1.Uint32Val TopMostType = 40;
-    optional basetypes.v1.StringVal Title = 50;
+    optional basetypes.v1.StringSliceVal EntIDs = 30;
+    optional basetypes.v1.StringVal AppID = 40;
+    optional basetypes.v1.Uint32Val TopMostType = 50;
+    optional basetypes.v1.StringVal Title = 60;
 }
 
 message CreateTopMostRequest { TopMostReq Info = 10; }
