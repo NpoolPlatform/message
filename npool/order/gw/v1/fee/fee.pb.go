@@ -44,10 +44,13 @@ type FeeOrder struct {
 	AppGoodName          string                         `protobuf:"bytes,120,opt,name=AppGoodName,proto3" json:"AppGoodName,omitempty"`
 	OrderID              string                         `protobuf:"bytes,130,opt,name=OrderID,proto3" json:"OrderID,omitempty"`
 	ParentOrderID        string                         `protobuf:"bytes,140,opt,name=ParentOrderID,proto3" json:"ParentOrderID,omitempty"`
-	OrderType            v11.OrderType                  `protobuf:"varint,150,opt,name=OrderType,proto3,enum=basetypes.order.v1.OrderType" json:"OrderType,omitempty"`
-	PaymentType          v11.PaymentType                `protobuf:"varint,160,opt,name=PaymentType,proto3,enum=basetypes.order.v1.PaymentType" json:"PaymentType,omitempty"`
-	CreateMethod         v11.OrderCreateMethod          `protobuf:"varint,170,opt,name=CreateMethod,proto3,enum=basetypes.order.v1.OrderCreateMethod" json:"CreateMethod,omitempty"`
-	OrderState           v11.OrderState                 `protobuf:"varint,200,opt,name=OrderState,proto3,enum=basetypes.order.v1.OrderState" json:"OrderState,omitempty"`
+	ParentAppGoodID      string                         `protobuf:"bytes,150,opt,name=ParentAppGoodID,proto3" json:"ParentAppGoodID,omitempty"`
+	ParentAppGoodName    string                         `protobuf:"bytes,160,opt,name=ParentAppGoodName,proto3" json:"ParentAppGoodName,omitempty"`
+	ParentGoodType       v1.GoodType                    `protobuf:"varint,170,opt,name=ParentGoodType,proto3,enum=basetypes.good.v1.GoodType" json:"ParentGoodType,omitempty"`
+	OrderType            v11.OrderType                  `protobuf:"varint,180,opt,name=OrderType,proto3,enum=basetypes.order.v1.OrderType" json:"OrderType,omitempty"`
+	PaymentType          v11.PaymentType                `protobuf:"varint,190,opt,name=PaymentType,proto3,enum=basetypes.order.v1.PaymentType" json:"PaymentType,omitempty"`
+	CreateMethod         v11.OrderCreateMethod          `protobuf:"varint,200,opt,name=CreateMethod,proto3,enum=basetypes.order.v1.OrderCreateMethod" json:"CreateMethod,omitempty"`
+	OrderState           v11.OrderState                 `protobuf:"varint,250,opt,name=OrderState,proto3,enum=basetypes.order.v1.OrderState" json:"OrderState,omitempty"`
 	GoodValueUSD         string                         `protobuf:"bytes,300,opt,name=GoodValueUSD,proto3" json:"GoodValueUSD,omitempty"`
 	PaymentAmountUSD     string                         `protobuf:"bytes,310,opt,name=PaymentAmountUSD,proto3" json:"PaymentAmountUSD,omitempty"`
 	DiscountAmountUSD    string                         `protobuf:"bytes,320,opt,name=DiscountAmountUSD,proto3" json:"DiscountAmountUSD,omitempty"`
@@ -197,6 +200,27 @@ func (x *FeeOrder) GetParentOrderID() string {
 		return x.ParentOrderID
 	}
 	return ""
+}
+
+func (x *FeeOrder) GetParentAppGoodID() string {
+	if x != nil {
+		return x.ParentAppGoodID
+	}
+	return ""
+}
+
+func (x *FeeOrder) GetParentAppGoodName() string {
+	if x != nil {
+		return x.ParentAppGoodName
+	}
+	return ""
+}
+
+func (x *FeeOrder) GetParentGoodType() v1.GoodType {
+	if x != nil {
+		return x.ParentGoodType
+	}
+	return v1.GoodType(0)
 }
 
 func (x *FeeOrder) GetOrderType() v11.OrderType {
@@ -2309,7 +2333,7 @@ var file_npool_order_gw_v1_fee_fee_proto_rawDesc = []byte{
 	0x2f, 0x63, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x27, 0x6e,
 	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x2f, 0x67, 0x77, 0x2f, 0x76, 0x31,
 	0x2f, 0x70, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x2f, 0x70, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x83, 0x0d, 0x0a, 0x08, 0x46, 0x65, 0x65, 0x4f, 0x72,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xa3, 0x0e, 0x0a, 0x08, 0x46, 0x65, 0x65, 0x4f, 0x72,
 	0x64, 0x65, 0x72, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52,
 	0x02, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01,
 	0x28, 0x09, 0x52, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70,
@@ -2335,21 +2359,31 @@ var file_npool_order_gw_v1_fee_fee_proto_rawDesc = []byte{
 	0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x18, 0x82, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
 	0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x12, 0x25, 0x0a, 0x0d, 0x50, 0x61, 0x72, 0x65, 0x6e,
 	0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x18, 0x8c, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x0d, 0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x12, 0x3c,
-	0x0a, 0x09, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65, 0x18, 0x96, 0x01, 0x20, 0x01,
+	0x0d, 0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x12, 0x29,
+	0x0a, 0x0f, 0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49,
+	0x44, 0x18, 0x96, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x50, 0x61, 0x72, 0x65, 0x6e, 0x74,
+	0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x12, 0x2d, 0x0a, 0x11, 0x50, 0x61, 0x72,
+	0x65, 0x6e, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0xa0,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x11, 0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x41, 0x70, 0x70,
+	0x47, 0x6f, 0x6f, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x44, 0x0a, 0x0e, 0x50, 0x61, 0x72, 0x65,
+	0x6e, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70, 0x65, 0x18, 0xaa, 0x01, 0x20, 0x01, 0x28,
+	0x0e, 0x32, 0x1b, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x67, 0x6f,
+	0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70, 0x65, 0x52, 0x0e,
+	0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70, 0x65, 0x12, 0x3c,
+	0x0a, 0x09, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65, 0x18, 0xb4, 0x01, 0x20, 0x01,
 	0x28, 0x0e, 0x32, 0x1d, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x6f,
 	0x72, 0x64, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x54, 0x79, 0x70,
 	0x65, 0x52, 0x09, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65, 0x12, 0x42, 0x0a, 0x0b,
-	0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x18, 0xa0, 0x01, 0x20, 0x01,
+	0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x18, 0xbe, 0x01, 0x20, 0x01,
 	0x28, 0x0e, 0x32, 0x1f, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x6f,
 	0x72, 0x64, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x54,
 	0x79, 0x70, 0x65, 0x52, 0x0b, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65,
 	0x12, 0x4a, 0x0a, 0x0c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64,
-	0x18, 0xaa, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x25, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79,
+	0x18, 0xc8, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x25, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79,
 	0x70, 0x65, 0x73, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x72, 0x64,
 	0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x52, 0x0c,
 	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x12, 0x3f, 0x0a, 0x0a,
-	0x4f, 0x72, 0x64, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x65, 0x18, 0xc8, 0x01, 0x20, 0x01, 0x28,
+	0x4f, 0x72, 0x64, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x65, 0x18, 0xfa, 0x01, 0x20, 0x01, 0x28,
 	0x0e, 0x32, 0x1e, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x6f, 0x72,
 	0x64, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74,
 	0x65, 0x52, 0x0a, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12, 0x23, 0x0a,
@@ -2902,70 +2936,71 @@ var file_npool_order_gw_v1_fee_fee_proto_goTypes = []interface{}{
 }
 var file_npool_order_gw_v1_fee_fee_proto_depIdxs = []int32{
 	30, // 0: order.gateway.fee.v1.FeeOrder.GoodType:type_name -> basetypes.good.v1.GoodType
-	31, // 1: order.gateway.fee.v1.FeeOrder.OrderType:type_name -> basetypes.order.v1.OrderType
-	32, // 2: order.gateway.fee.v1.FeeOrder.PaymentType:type_name -> basetypes.order.v1.PaymentType
-	33, // 3: order.gateway.fee.v1.FeeOrder.CreateMethod:type_name -> basetypes.order.v1.OrderCreateMethod
-	34, // 4: order.gateway.fee.v1.FeeOrder.OrderState:type_name -> basetypes.order.v1.OrderState
-	34, // 5: order.gateway.fee.v1.FeeOrder.CancelState:type_name -> basetypes.order.v1.OrderState
-	35, // 6: order.gateway.fee.v1.FeeOrder.PaymentState:type_name -> basetypes.order.v1.PaymentState
-	36, // 7: order.gateway.fee.v1.FeeOrder.PaymentObseleteState:type_name -> basetypes.order.v1.PaymentObseleteState
-	37, // 8: order.gateway.fee.v1.FeeOrder.Coupons:type_name -> order.gateway.order1.coupon.v1.OrderCouponInfo
-	38, // 9: order.gateway.fee.v1.FeeOrder.PaymentBalances:type_name -> order.gateway.payment.v1.PaymentBalanceInfo
-	39, // 10: order.gateway.fee.v1.FeeOrder.PaymentTransfers:type_name -> order.gateway.payment.v1.PaymentTransferInfo
-	40, // 11: order.gateway.fee.v1.CreateFeeOrderRequest.Balances:type_name -> order.gateway.payment.v1.PaymentBalance
-	0,  // 12: order.gateway.fee.v1.CreateFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
-	31, // 13: order.gateway.fee.v1.CreateUserFeeOrderRequest.OrderType:type_name -> basetypes.order.v1.OrderType
-	0,  // 14: order.gateway.fee.v1.CreateUserFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
-	40, // 15: order.gateway.fee.v1.CreateFeeOrdersRequest.Balances:type_name -> order.gateway.payment.v1.PaymentBalance
-	0,  // 16: order.gateway.fee.v1.CreateFeeOrdersResponse.Infos:type_name -> order.gateway.fee.v1.FeeOrder
-	31, // 17: order.gateway.fee.v1.CreateUserFeeOrdersRequest.OrderType:type_name -> basetypes.order.v1.OrderType
-	0,  // 18: order.gateway.fee.v1.CreateUserFeeOrdersResponse.Infos:type_name -> order.gateway.fee.v1.FeeOrder
-	40, // 19: order.gateway.fee.v1.UpdateFeeOrderRequest.Balances:type_name -> order.gateway.payment.v1.PaymentBalance
-	0,  // 20: order.gateway.fee.v1.UpdateFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
-	0,  // 21: order.gateway.fee.v1.UpdateUserFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
-	0,  // 22: order.gateway.fee.v1.GetFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
-	0,  // 23: order.gateway.fee.v1.GetFeeOrdersResponse.Infos:type_name -> order.gateway.fee.v1.FeeOrder
-	0,  // 24: order.gateway.fee.v1.GetMyFeeOrdersResponse.Infos:type_name -> order.gateway.fee.v1.FeeOrder
-	31, // 25: order.gateway.fee.v1.AdminCreateFeeOrderRequest.OrderType:type_name -> basetypes.order.v1.OrderType
-	0,  // 26: order.gateway.fee.v1.AdminCreateFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
-	31, // 27: order.gateway.fee.v1.AdminCreateFeeOrdersRequest.OrderType:type_name -> basetypes.order.v1.OrderType
-	0,  // 28: order.gateway.fee.v1.AdminCreateFeeOrdersResponse.Infos:type_name -> order.gateway.fee.v1.FeeOrder
-	0,  // 29: order.gateway.fee.v1.AdminUpdateFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
-	0,  // 30: order.gateway.fee.v1.AdminGetFeeOrdersResponse.Infos:type_name -> order.gateway.fee.v1.FeeOrder
-	0,  // 31: order.gateway.fee.v1.AdminDeleteFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
-	2,  // 32: order.gateway.fee.v1.Gateway.CreateFeeOrder:input_type -> order.gateway.fee.v1.CreateFeeOrderRequest
-	4,  // 33: order.gateway.fee.v1.Gateway.CreateUserFeeOrder:input_type -> order.gateway.fee.v1.CreateUserFeeOrderRequest
-	6,  // 34: order.gateway.fee.v1.Gateway.CreateFeeOrders:input_type -> order.gateway.fee.v1.CreateFeeOrdersRequest
-	8,  // 35: order.gateway.fee.v1.Gateway.CreateUserFeeOrders:input_type -> order.gateway.fee.v1.CreateUserFeeOrdersRequest
-	10, // 36: order.gateway.fee.v1.Gateway.UpdateFeeOrder:input_type -> order.gateway.fee.v1.UpdateFeeOrderRequest
-	12, // 37: order.gateway.fee.v1.Gateway.UpdateUserFeeOrder:input_type -> order.gateway.fee.v1.UpdateUserFeeOrderRequest
-	14, // 38: order.gateway.fee.v1.Gateway.GetFeeOrder:input_type -> order.gateway.fee.v1.GetFeeOrderRequest
-	16, // 39: order.gateway.fee.v1.Gateway.GetFeeOrders:input_type -> order.gateway.fee.v1.GetFeeOrdersRequest
-	18, // 40: order.gateway.fee.v1.Gateway.GetMyFeeOrders:input_type -> order.gateway.fee.v1.GetMyFeeOrdersRequest
-	20, // 41: order.gateway.fee.v1.Gateway.AdminCreateFeeOrder:input_type -> order.gateway.fee.v1.AdminCreateFeeOrderRequest
-	22, // 42: order.gateway.fee.v1.Gateway.AdminCreateFeeOrders:input_type -> order.gateway.fee.v1.AdminCreateFeeOrdersRequest
-	24, // 43: order.gateway.fee.v1.Gateway.AdminUpdateFeeOrder:input_type -> order.gateway.fee.v1.AdminUpdateFeeOrderRequest
-	26, // 44: order.gateway.fee.v1.Gateway.AdminGetFeeOrders:input_type -> order.gateway.fee.v1.AdminGetFeeOrdersRequest
-	28, // 45: order.gateway.fee.v1.Gateway.AdminDeleteFeeOrder:input_type -> order.gateway.fee.v1.AdminDeleteFeeOrderRequest
-	3,  // 46: order.gateway.fee.v1.Gateway.CreateFeeOrder:output_type -> order.gateway.fee.v1.CreateFeeOrderResponse
-	5,  // 47: order.gateway.fee.v1.Gateway.CreateUserFeeOrder:output_type -> order.gateway.fee.v1.CreateUserFeeOrderResponse
-	7,  // 48: order.gateway.fee.v1.Gateway.CreateFeeOrders:output_type -> order.gateway.fee.v1.CreateFeeOrdersResponse
-	9,  // 49: order.gateway.fee.v1.Gateway.CreateUserFeeOrders:output_type -> order.gateway.fee.v1.CreateUserFeeOrdersResponse
-	11, // 50: order.gateway.fee.v1.Gateway.UpdateFeeOrder:output_type -> order.gateway.fee.v1.UpdateFeeOrderResponse
-	13, // 51: order.gateway.fee.v1.Gateway.UpdateUserFeeOrder:output_type -> order.gateway.fee.v1.UpdateUserFeeOrderResponse
-	15, // 52: order.gateway.fee.v1.Gateway.GetFeeOrder:output_type -> order.gateway.fee.v1.GetFeeOrderResponse
-	17, // 53: order.gateway.fee.v1.Gateway.GetFeeOrders:output_type -> order.gateway.fee.v1.GetFeeOrdersResponse
-	19, // 54: order.gateway.fee.v1.Gateway.GetMyFeeOrders:output_type -> order.gateway.fee.v1.GetMyFeeOrdersResponse
-	21, // 55: order.gateway.fee.v1.Gateway.AdminCreateFeeOrder:output_type -> order.gateway.fee.v1.AdminCreateFeeOrderResponse
-	23, // 56: order.gateway.fee.v1.Gateway.AdminCreateFeeOrders:output_type -> order.gateway.fee.v1.AdminCreateFeeOrdersResponse
-	25, // 57: order.gateway.fee.v1.Gateway.AdminUpdateFeeOrder:output_type -> order.gateway.fee.v1.AdminUpdateFeeOrderResponse
-	27, // 58: order.gateway.fee.v1.Gateway.AdminGetFeeOrders:output_type -> order.gateway.fee.v1.AdminGetFeeOrdersResponse
-	29, // 59: order.gateway.fee.v1.Gateway.AdminDeleteFeeOrder:output_type -> order.gateway.fee.v1.AdminDeleteFeeOrderResponse
-	46, // [46:60] is the sub-list for method output_type
-	32, // [32:46] is the sub-list for method input_type
-	32, // [32:32] is the sub-list for extension type_name
-	32, // [32:32] is the sub-list for extension extendee
-	0,  // [0:32] is the sub-list for field type_name
+	30, // 1: order.gateway.fee.v1.FeeOrder.ParentGoodType:type_name -> basetypes.good.v1.GoodType
+	31, // 2: order.gateway.fee.v1.FeeOrder.OrderType:type_name -> basetypes.order.v1.OrderType
+	32, // 3: order.gateway.fee.v1.FeeOrder.PaymentType:type_name -> basetypes.order.v1.PaymentType
+	33, // 4: order.gateway.fee.v1.FeeOrder.CreateMethod:type_name -> basetypes.order.v1.OrderCreateMethod
+	34, // 5: order.gateway.fee.v1.FeeOrder.OrderState:type_name -> basetypes.order.v1.OrderState
+	34, // 6: order.gateway.fee.v1.FeeOrder.CancelState:type_name -> basetypes.order.v1.OrderState
+	35, // 7: order.gateway.fee.v1.FeeOrder.PaymentState:type_name -> basetypes.order.v1.PaymentState
+	36, // 8: order.gateway.fee.v1.FeeOrder.PaymentObseleteState:type_name -> basetypes.order.v1.PaymentObseleteState
+	37, // 9: order.gateway.fee.v1.FeeOrder.Coupons:type_name -> order.gateway.order1.coupon.v1.OrderCouponInfo
+	38, // 10: order.gateway.fee.v1.FeeOrder.PaymentBalances:type_name -> order.gateway.payment.v1.PaymentBalanceInfo
+	39, // 11: order.gateway.fee.v1.FeeOrder.PaymentTransfers:type_name -> order.gateway.payment.v1.PaymentTransferInfo
+	40, // 12: order.gateway.fee.v1.CreateFeeOrderRequest.Balances:type_name -> order.gateway.payment.v1.PaymentBalance
+	0,  // 13: order.gateway.fee.v1.CreateFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
+	31, // 14: order.gateway.fee.v1.CreateUserFeeOrderRequest.OrderType:type_name -> basetypes.order.v1.OrderType
+	0,  // 15: order.gateway.fee.v1.CreateUserFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
+	40, // 16: order.gateway.fee.v1.CreateFeeOrdersRequest.Balances:type_name -> order.gateway.payment.v1.PaymentBalance
+	0,  // 17: order.gateway.fee.v1.CreateFeeOrdersResponse.Infos:type_name -> order.gateway.fee.v1.FeeOrder
+	31, // 18: order.gateway.fee.v1.CreateUserFeeOrdersRequest.OrderType:type_name -> basetypes.order.v1.OrderType
+	0,  // 19: order.gateway.fee.v1.CreateUserFeeOrdersResponse.Infos:type_name -> order.gateway.fee.v1.FeeOrder
+	40, // 20: order.gateway.fee.v1.UpdateFeeOrderRequest.Balances:type_name -> order.gateway.payment.v1.PaymentBalance
+	0,  // 21: order.gateway.fee.v1.UpdateFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
+	0,  // 22: order.gateway.fee.v1.UpdateUserFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
+	0,  // 23: order.gateway.fee.v1.GetFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
+	0,  // 24: order.gateway.fee.v1.GetFeeOrdersResponse.Infos:type_name -> order.gateway.fee.v1.FeeOrder
+	0,  // 25: order.gateway.fee.v1.GetMyFeeOrdersResponse.Infos:type_name -> order.gateway.fee.v1.FeeOrder
+	31, // 26: order.gateway.fee.v1.AdminCreateFeeOrderRequest.OrderType:type_name -> basetypes.order.v1.OrderType
+	0,  // 27: order.gateway.fee.v1.AdminCreateFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
+	31, // 28: order.gateway.fee.v1.AdminCreateFeeOrdersRequest.OrderType:type_name -> basetypes.order.v1.OrderType
+	0,  // 29: order.gateway.fee.v1.AdminCreateFeeOrdersResponse.Infos:type_name -> order.gateway.fee.v1.FeeOrder
+	0,  // 30: order.gateway.fee.v1.AdminUpdateFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
+	0,  // 31: order.gateway.fee.v1.AdminGetFeeOrdersResponse.Infos:type_name -> order.gateway.fee.v1.FeeOrder
+	0,  // 32: order.gateway.fee.v1.AdminDeleteFeeOrderResponse.Info:type_name -> order.gateway.fee.v1.FeeOrder
+	2,  // 33: order.gateway.fee.v1.Gateway.CreateFeeOrder:input_type -> order.gateway.fee.v1.CreateFeeOrderRequest
+	4,  // 34: order.gateway.fee.v1.Gateway.CreateUserFeeOrder:input_type -> order.gateway.fee.v1.CreateUserFeeOrderRequest
+	6,  // 35: order.gateway.fee.v1.Gateway.CreateFeeOrders:input_type -> order.gateway.fee.v1.CreateFeeOrdersRequest
+	8,  // 36: order.gateway.fee.v1.Gateway.CreateUserFeeOrders:input_type -> order.gateway.fee.v1.CreateUserFeeOrdersRequest
+	10, // 37: order.gateway.fee.v1.Gateway.UpdateFeeOrder:input_type -> order.gateway.fee.v1.UpdateFeeOrderRequest
+	12, // 38: order.gateway.fee.v1.Gateway.UpdateUserFeeOrder:input_type -> order.gateway.fee.v1.UpdateUserFeeOrderRequest
+	14, // 39: order.gateway.fee.v1.Gateway.GetFeeOrder:input_type -> order.gateway.fee.v1.GetFeeOrderRequest
+	16, // 40: order.gateway.fee.v1.Gateway.GetFeeOrders:input_type -> order.gateway.fee.v1.GetFeeOrdersRequest
+	18, // 41: order.gateway.fee.v1.Gateway.GetMyFeeOrders:input_type -> order.gateway.fee.v1.GetMyFeeOrdersRequest
+	20, // 42: order.gateway.fee.v1.Gateway.AdminCreateFeeOrder:input_type -> order.gateway.fee.v1.AdminCreateFeeOrderRequest
+	22, // 43: order.gateway.fee.v1.Gateway.AdminCreateFeeOrders:input_type -> order.gateway.fee.v1.AdminCreateFeeOrdersRequest
+	24, // 44: order.gateway.fee.v1.Gateway.AdminUpdateFeeOrder:input_type -> order.gateway.fee.v1.AdminUpdateFeeOrderRequest
+	26, // 45: order.gateway.fee.v1.Gateway.AdminGetFeeOrders:input_type -> order.gateway.fee.v1.AdminGetFeeOrdersRequest
+	28, // 46: order.gateway.fee.v1.Gateway.AdminDeleteFeeOrder:input_type -> order.gateway.fee.v1.AdminDeleteFeeOrderRequest
+	3,  // 47: order.gateway.fee.v1.Gateway.CreateFeeOrder:output_type -> order.gateway.fee.v1.CreateFeeOrderResponse
+	5,  // 48: order.gateway.fee.v1.Gateway.CreateUserFeeOrder:output_type -> order.gateway.fee.v1.CreateUserFeeOrderResponse
+	7,  // 49: order.gateway.fee.v1.Gateway.CreateFeeOrders:output_type -> order.gateway.fee.v1.CreateFeeOrdersResponse
+	9,  // 50: order.gateway.fee.v1.Gateway.CreateUserFeeOrders:output_type -> order.gateway.fee.v1.CreateUserFeeOrdersResponse
+	11, // 51: order.gateway.fee.v1.Gateway.UpdateFeeOrder:output_type -> order.gateway.fee.v1.UpdateFeeOrderResponse
+	13, // 52: order.gateway.fee.v1.Gateway.UpdateUserFeeOrder:output_type -> order.gateway.fee.v1.UpdateUserFeeOrderResponse
+	15, // 53: order.gateway.fee.v1.Gateway.GetFeeOrder:output_type -> order.gateway.fee.v1.GetFeeOrderResponse
+	17, // 54: order.gateway.fee.v1.Gateway.GetFeeOrders:output_type -> order.gateway.fee.v1.GetFeeOrdersResponse
+	19, // 55: order.gateway.fee.v1.Gateway.GetMyFeeOrders:output_type -> order.gateway.fee.v1.GetMyFeeOrdersResponse
+	21, // 56: order.gateway.fee.v1.Gateway.AdminCreateFeeOrder:output_type -> order.gateway.fee.v1.AdminCreateFeeOrderResponse
+	23, // 57: order.gateway.fee.v1.Gateway.AdminCreateFeeOrders:output_type -> order.gateway.fee.v1.AdminCreateFeeOrdersResponse
+	25, // 58: order.gateway.fee.v1.Gateway.AdminUpdateFeeOrder:output_type -> order.gateway.fee.v1.AdminUpdateFeeOrderResponse
+	27, // 59: order.gateway.fee.v1.Gateway.AdminGetFeeOrders:output_type -> order.gateway.fee.v1.AdminGetFeeOrdersResponse
+	29, // 60: order.gateway.fee.v1.Gateway.AdminDeleteFeeOrder:output_type -> order.gateway.fee.v1.AdminDeleteFeeOrderResponse
+	47, // [47:61] is the sub-list for method output_type
+	33, // [33:47] is the sub-list for method input_type
+	33, // [33:33] is the sub-list for extension type_name
+	33, // [33:33] is the sub-list for extension extendee
+	0,  // [0:33] is the sub-list for field type_name
 }
 
 func init() { file_npool_order_gw_v1_fee_fee_proto_init() }
