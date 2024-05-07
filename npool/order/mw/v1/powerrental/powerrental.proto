@@ -149,37 +149,39 @@ message PowerRentalOrder {
     // @inject_tag: sql:"cancel_state"
     string CancelStateStr = 400;
     basetypes.order.v1.OrderState CancelState = 410;
+    // @inject_tag: sql:"canceled_at"
+    uint32 CanceledAt = 420;
     // Calculate with start at and duration seconds
-    uint32 EndAt = 420;
+    uint32 EndAt = 430;
     // @inject_tag: sql:"paid_at"
-    uint32 PaidAt = 430;
+    uint32 PaidAt = 440;
     // @inject_tag: sql:"user_set_paid"
-    bool UserSetPaid = 440;
+    bool UserSetPaid = 450;
     // @inject_tag: sql:"user_set_canceled"
-    bool UserSetCanceled = 450;
+    bool UserSetCanceled = 460;
     // @inject_tag: sql:"admin_set_canceled"
-    bool AdminSetCanceled = 460;
+    bool AdminSetCanceled = 470;
     // @inject_tag: sql:"payment_state"
-    string PaymentStateStr = 470;
-    basetypes.order.v1.PaymentState PaymentState = 480;
+    string PaymentStateStr = 480;
+    basetypes.order.v1.PaymentState PaymentState = 490;
     // @inject_tag: sql:"outofgas_seconds"
-    uint32 OutOfGasSeconds = 490;
+    uint32 OutOfGasSeconds = 500;
     // @inject_tag: sql:"compensate_seconds"
-    uint32 CompensateSeconds = 500;
+    uint32 CompensateSeconds = 510;
     // @inject_tag: sql:"renew_state"
-    string RenewStateStr = 510;
-    basetypes.order.v1.OrderRenewState RenewState = 520;
+    string RenewStateStr = 520;
+    basetypes.order.v1.OrderRenewState RenewState = 530;
     // @inject_tag: sql:"renew_notify_at"
-    uint32 RenewNotifyAt = 530;
+    uint32 RenewNotifyAt = 540;
     // @inject_tag: sql:"app_good_stock_lock_id"
-    string AppGoodStockLockID = 540;
+    string AppGoodStockLockID = 550;
     // @inject_tag: sql:"ledger_lock_id"
-    string LedgerLockID = 550;
+    string LedgerLockID = 560;
     // @inject_tag: sql:"payment_id"
-    string PaymentID = 560;
+    string PaymentID = 570;
     // @inject_tag: sql:"payment_obselete_state"
-    string PaymentObseleteStateStr = 570;
-    basetypes.order.v1.PaymentObseleteState PaymentObseleteState = 580;
+    string PaymentObseleteStateStr = 580;
+    basetypes.order.v1.PaymentObseleteState PaymentObseleteState = 590;
 
     // Coupons
     repeated order.middleware.order1.coupon.v1.OrderCouponInfo Coupons = 600;

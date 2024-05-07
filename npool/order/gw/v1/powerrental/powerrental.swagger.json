@@ -1274,6 +1274,10 @@
         "CancelState": {
           "$ref": "#/definitions/v1OrderState"
         },
+        "CanceledAt": {
+          "type": "integer",
+          "format": "int64"
+        },
         "EndAt": {
           "type": "integer",
           "format": "int64"
