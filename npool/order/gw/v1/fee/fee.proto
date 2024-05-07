@@ -140,13 +140,17 @@ message FeeOrder {
     string PaymentAmountUSD = 310;
     string DiscountAmountUSD = 320;
     string PromotionID = 330;
-    uint32 DurationSeconds = 340;
+    string TopMostTitle = 340;
+    string TopMostTargetUrl = 350;
 
-    basetypes.order.v1.OrderState CancelState = 410;
-    uint32 PaidAt = 430;
-    bool UserSetPaid = 440;
-    bool UserSetCanceled = 450;
-    bool AdminSetCanceled = 460;
+    basetypes.good.v1.GoodDurationType DurationDisplayType = 400;
+    uint32 DurationSeconds = 410;
+    basetypes.order.v1.OrderState CancelState = 420;
+    uint32 CanceledAt = 430;
+    uint32 PaidAt = 440;
+    bool UserSetPaid = 450;
+    bool UserSetCanceled = 460;
+    bool AdminSetCanceled = 470;
     basetypes.order.v1.PaymentState PaymentState = 480;
 
     repeated order.gateway.order1.coupon.v1.OrderCouponInfo Coupons = 600;

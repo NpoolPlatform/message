@@ -896,12 +896,25 @@
         "PromotionID": {
           "type": "string"
         },
+        "TopMostTitle": {
+          "type": "string"
+        },
+        "TopMostTargetUrl": {
+          "type": "string"
+        },
+        "DurationDisplayType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
         "DurationSeconds": {
           "type": "integer",
           "format": "int64"
         },
         "CancelState": {
           "$ref": "#/definitions/v1OrderState"
+        },
+        "CanceledAt": {
+          "type": "integer",
+          "format": "int64"
         },
         "PaidAt": {
           "type": "integer",
@@ -1042,6 +1055,17 @@
           "format": "int64"
         }
       }
+    },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
     },
     "v1GoodType": {
       "type": "string",
