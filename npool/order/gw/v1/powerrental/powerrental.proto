@@ -157,14 +157,15 @@ message PowerRentalOrder {
     basetypes.order.v1.InvestmentType InvestmentType = 470;
 
     basetypes.order.v1.OrderState CancelState = 500;
-    uint32 EndAt = 510;
-    uint32 PaidAt = 520;
-    bool UserSetPaid = 530;
-    bool UserSetCanceled = 540;
-    bool AdminSetCanceled = 550;
-    basetypes.order.v1.PaymentState PaymentState = 560;
-    uint32 OutOfGasSeconds = 570;
-    uint32 CompensateSeconds = 580;
+    uint32 CanceledAt = 510;
+    uint32 EndAt = 520;
+    uint32 PaidAt = 530;
+    bool UserSetPaid = 540;
+    bool UserSetCanceled = 550;
+    bool AdminSetCanceled = 560;
+    basetypes.order.v1.PaymentState PaymentState = 570;
+    uint32 OutOfGasSeconds = 580;
+    uint32 CompensateSeconds = 590;
 
     repeated order.gateway.order1.coupon.v1.OrderCouponInfo Coupons = 600;
     repeated order.gateway.payment.v1.PaymentBalanceInfo PaymentBalances = 610;
