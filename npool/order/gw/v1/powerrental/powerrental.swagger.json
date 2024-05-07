@@ -1278,7 +1278,7 @@
         "DurationDisplayType": {
           "$ref": "#/definitions/v1GoodDurationType"
         },
-        "DurationsUnit": {
+        "DurationUnit": {
           "type": "string"
         },
         "DurationSeconds": {
