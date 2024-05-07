@@ -127,11 +127,14 @@ message FeeOrder {
     string AppGoodName = 120;
     string OrderID = 130;
     string ParentOrderID = 140;
-    basetypes.order.v1.OrderType OrderType = 150;
-    basetypes.order.v1.PaymentType PaymentType = 160;
-    basetypes.order.v1.OrderCreateMethod CreateMethod = 170;
+    string ParentAppGoodID = 150;
+    string ParentAppGoodName = 160;
+    basetypes.good.v1.GoodType ParentGoodType = 170;
+    basetypes.order.v1.OrderType OrderType = 180;
+    basetypes.order.v1.PaymentType PaymentType = 190;
+    basetypes.order.v1.OrderCreateMethod CreateMethod = 200;
 
-    basetypes.order.v1.OrderState OrderState = 200;
+    basetypes.order.v1.OrderState OrderState = 250;
 
     string GoodValueUSD = 300;
     string PaymentAmountUSD = 310;

@@ -90,15 +90,20 @@ message FeeOrder {
     string OrderID = 90;
     // @inject_tag: sql:"parent_order_id"
     string ParentOrderID = 100;
+    // @inject_tag: sql:"parent_app_good_id"
+    string ParentAppGoodID = 110;
+    // @inject_tag: sql:"parent_good_type"
+    string ParentGoodTypeStr = 120;
+    basetypes.good.v1.GoodType ParentGoodType = 130;
     // @inject_tag: sql:"order_type"
-    string OrderTypeStr = 110;
-    basetypes.order.v1.OrderType OrderType = 120;
+    string OrderTypeStr = 140;
+    basetypes.order.v1.OrderType OrderType = 150;
     // @inject_tag: sql:"payment_type"
-    string PaymentTypeStr = 130;
-    basetypes.order.v1.PaymentType PaymentType = 140;
+    string PaymentTypeStr = 160;
+    basetypes.order.v1.PaymentType PaymentType = 170;
     // @inject_tag: sql:"create_method"
-    string CreateMethodStr = 150;
-    basetypes.order.v1.OrderCreateMethod CreateMethod = 160;
+    string CreateMethodStr = 180;
+    basetypes.order.v1.OrderCreateMethod CreateMethod = 190;
 
     // Base order state information
     // @inject_tag: sql:"order_state"

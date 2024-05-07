@@ -245,6 +245,17 @@
           "type": "string",
           "title": "@inject_tag: sql:\"parent_order_id\""
         },
+        "ParentAppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"parent_app_good_id\""
+        },
+        "ParentGoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"parent_good_type\""
+        },
+        "ParentGoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "OrderTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"order_type\""

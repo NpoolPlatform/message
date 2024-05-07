@@ -323,15 +323,20 @@ type FeeOrder struct {
 	OrderID string `protobuf:"bytes,90,opt,name=OrderID,proto3" json:"OrderID,omitempty" sql:"order_id"`
 	// @inject_tag: sql:"parent_order_id"
 	ParentOrderID string `protobuf:"bytes,100,opt,name=ParentOrderID,proto3" json:"ParentOrderID,omitempty" sql:"parent_order_id"`
+	// @inject_tag: sql:"parent_app_good_id"
+	ParentAppGoodID string `protobuf:"bytes,110,opt,name=ParentAppGoodID,proto3" json:"ParentAppGoodID,omitempty" sql:"parent_app_good_id"`
+	// @inject_tag: sql:"parent_good_type"
+	ParentGoodTypeStr string      `protobuf:"bytes,120,opt,name=ParentGoodTypeStr,proto3" json:"ParentGoodTypeStr,omitempty" sql:"parent_good_type"`
+	ParentGoodType    v1.GoodType `protobuf:"varint,130,opt,name=ParentGoodType,proto3,enum=basetypes.good.v1.GoodType" json:"ParentGoodType,omitempty"`
 	// @inject_tag: sql:"order_type"
-	OrderTypeStr string        `protobuf:"bytes,110,opt,name=OrderTypeStr,proto3" json:"OrderTypeStr,omitempty" sql:"order_type"`
-	OrderType    v11.OrderType `protobuf:"varint,120,opt,name=OrderType,proto3,enum=basetypes.order.v1.OrderType" json:"OrderType,omitempty"`
+	OrderTypeStr string        `protobuf:"bytes,140,opt,name=OrderTypeStr,proto3" json:"OrderTypeStr,omitempty" sql:"order_type"`
+	OrderType    v11.OrderType `protobuf:"varint,150,opt,name=OrderType,proto3,enum=basetypes.order.v1.OrderType" json:"OrderType,omitempty"`
 	// @inject_tag: sql:"payment_type"
-	PaymentTypeStr string          `protobuf:"bytes,130,opt,name=PaymentTypeStr,proto3" json:"PaymentTypeStr,omitempty" sql:"payment_type"`
-	PaymentType    v11.PaymentType `protobuf:"varint,140,opt,name=PaymentType,proto3,enum=basetypes.order.v1.PaymentType" json:"PaymentType,omitempty"`
+	PaymentTypeStr string          `protobuf:"bytes,160,opt,name=PaymentTypeStr,proto3" json:"PaymentTypeStr,omitempty" sql:"payment_type"`
+	PaymentType    v11.PaymentType `protobuf:"varint,170,opt,name=PaymentType,proto3,enum=basetypes.order.v1.PaymentType" json:"PaymentType,omitempty"`
 	// @inject_tag: sql:"create_method"
-	CreateMethodStr string                `protobuf:"bytes,150,opt,name=CreateMethodStr,proto3" json:"CreateMethodStr,omitempty" sql:"create_method"`
-	CreateMethod    v11.OrderCreateMethod `protobuf:"varint,160,opt,name=CreateMethod,proto3,enum=basetypes.order.v1.OrderCreateMethod" json:"CreateMethod,omitempty"`
+	CreateMethodStr string                `protobuf:"bytes,180,opt,name=CreateMethodStr,proto3" json:"CreateMethodStr,omitempty" sql:"create_method"`
+	CreateMethod    v11.OrderCreateMethod `protobuf:"varint,190,opt,name=CreateMethod,proto3,enum=basetypes.order.v1.OrderCreateMethod" json:"CreateMethod,omitempty"`
 	// Base order state information
 	// @inject_tag: sql:"order_state"
 	OrderStateStr string         `protobuf:"bytes,200,opt,name=OrderStateStr,proto3" json:"OrderStateStr,omitempty" sql:"order_state"`
@@ -481,6 +486,27 @@ func (x *FeeOrder) GetParentOrderID() string {
 		return x.ParentOrderID
 	}
 	return ""
+}
+
+func (x *FeeOrder) GetParentAppGoodID() string {
+	if x != nil {
+		return x.ParentAppGoodID
+	}
+	return ""
+}
+
+func (x *FeeOrder) GetParentGoodTypeStr() string {
+	if x != nil {
+		return x.ParentGoodTypeStr
+	}
+	return ""
+}
+
+func (x *FeeOrder) GetParentGoodType() v1.GoodType {
+	if x != nil {
+		return x.ParentGoodType
+	}
+	return v1.GoodType(0)
 }
 
 func (x *FeeOrder) GetOrderTypeStr() string {
@@ -2022,7 +2048,7 @@ var file_npool_order_mw_v1_fee_fee_proto_rawDesc = []byte{
 	0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x42, 0x0b, 0x0a, 0x09, 0x5f, 0x52, 0x6f, 0x6c, 0x6c, 0x62,
 	0x61, 0x63, 0x6b, 0x42, 0x0f, 0x0a, 0x0d, 0x5f, 0x4c, 0x65, 0x64, 0x67, 0x65, 0x72, 0x4c, 0x6f,
 	0x63, 0x6b, 0x49, 0x44, 0x42, 0x0c, 0x0a, 0x0a, 0x5f, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74,
-	0x49, 0x44, 0x22, 0xc3, 0x0e, 0x0a, 0x08, 0x46, 0x65, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12,
+	0x49, 0x44, 0x22, 0xe3, 0x0f, 0x0a, 0x08, 0x46, 0x65, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12,
 	0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x49, 0x44, 0x12,
 	0x14, 0x0a, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
 	0x45, 0x6e, 0x74, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x1e,
@@ -2041,23 +2067,33 @@ var file_npool_order_mw_v1_fee_fee_proto_rawDesc = []byte{
 	0x5a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x12, 0x24,
 	0x0a, 0x0d, 0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x44, 0x18,
 	0x64, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x4f, 0x72, 0x64,
-	0x65, 0x72, 0x49, 0x44, 0x12, 0x22, 0x0a, 0x0c, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x54, 0x79, 0x70,
-	0x65, 0x53, 0x74, 0x72, 0x18, 0x6e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x4f, 0x72, 0x64, 0x65,
-	0x72, 0x54, 0x79, 0x70, 0x65, 0x53, 0x74, 0x72, 0x12, 0x3b, 0x0a, 0x09, 0x4f, 0x72, 0x64, 0x65,
-	0x72, 0x54, 0x79, 0x70, 0x65, 0x18, 0x78, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1d, 0x2e, 0x62, 0x61,
+	0x65, 0x72, 0x49, 0x44, 0x12, 0x28, 0x0a, 0x0f, 0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x41, 0x70,
+	0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x18, 0x6e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x50,
+	0x61, 0x72, 0x65, 0x6e, 0x74, 0x41, 0x70, 0x70, 0x47, 0x6f, 0x6f, 0x64, 0x49, 0x44, 0x12, 0x2c,
+	0x0a, 0x11, 0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70, 0x65,
+	0x53, 0x74, 0x72, 0x18, 0x78, 0x20, 0x01, 0x28, 0x09, 0x52, 0x11, 0x50, 0x61, 0x72, 0x65, 0x6e,
+	0x74, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70, 0x65, 0x53, 0x74, 0x72, 0x12, 0x44, 0x0a, 0x0e,
+	0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79, 0x70, 0x65, 0x18, 0x82,
+	0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1b, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79,
+	0x70, 0x65, 0x52, 0x0e, 0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x47, 0x6f, 0x6f, 0x64, 0x54, 0x79,
+	0x70, 0x65, 0x12, 0x23, 0x0a, 0x0c, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65, 0x53,
+	0x74, 0x72, 0x18, 0x8c, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x4f, 0x72, 0x64, 0x65, 0x72,
+	0x54, 0x79, 0x70, 0x65, 0x53, 0x74, 0x72, 0x12, 0x3c, 0x0a, 0x09, 0x4f, 0x72, 0x64, 0x65, 0x72,
+	0x54, 0x79, 0x70, 0x65, 0x18, 0x96, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1d, 0x2e, 0x62, 0x61,
 	0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x2e, 0x76, 0x31,
 	0x2e, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65, 0x52, 0x09, 0x4f, 0x72, 0x64, 0x65,
 	0x72, 0x54, 0x79, 0x70, 0x65, 0x12, 0x27, 0x0a, 0x0e, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74,
-	0x54, 0x79, 0x70, 0x65, 0x53, 0x74, 0x72, 0x18, 0x82, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e,
+	0x54, 0x79, 0x70, 0x65, 0x53, 0x74, 0x72, 0x18, 0xa0, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e,
 	0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x53, 0x74, 0x72, 0x12, 0x42,
-	0x0a, 0x0b, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x18, 0x8c, 0x01,
+	0x0a, 0x0b, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x18, 0xaa, 0x01,
 	0x20, 0x01, 0x28, 0x0e, 0x32, 0x1f, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73,
 	0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e,
 	0x74, 0x54, 0x79, 0x70, 0x65, 0x52, 0x0b, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x79,
 	0x70, 0x65, 0x12, 0x29, 0x0a, 0x0f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x68,
-	0x6f, 0x64, 0x53, 0x74, 0x72, 0x18, 0x96, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x43, 0x72,
+	0x6f, 0x64, 0x53, 0x74, 0x72, 0x18, 0xb4, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x43, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x53, 0x74, 0x72, 0x12, 0x4a, 0x0a,
-	0x0c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x18, 0xa0, 0x01,
+	0x0c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x18, 0xbe, 0x01,
 	0x20, 0x01, 0x28, 0x0e, 0x32, 0x25, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73,
 	0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x43,
 	0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x52, 0x0c, 0x43, 0x72, 0x65,
@@ -2500,80 +2536,81 @@ var file_npool_order_mw_v1_fee_fee_proto_depIdxs = []int32{
 	28, // 6: order.middleware.fee.v1.FeeOrderReq.PaymentBalances:type_name -> order.middleware.payment.v1.PaymentBalanceReq
 	29, // 7: order.middleware.fee.v1.FeeOrderReq.PaymentTransfers:type_name -> order.middleware.payment.v1.PaymentTransferReq
 	22, // 8: order.middleware.fee.v1.FeeOrder.GoodType:type_name -> basetypes.good.v1.GoodType
-	23, // 9: order.middleware.fee.v1.FeeOrder.OrderType:type_name -> basetypes.order.v1.OrderType
-	24, // 10: order.middleware.fee.v1.FeeOrder.PaymentType:type_name -> basetypes.order.v1.PaymentType
-	25, // 11: order.middleware.fee.v1.FeeOrder.CreateMethod:type_name -> basetypes.order.v1.OrderCreateMethod
-	26, // 12: order.middleware.fee.v1.FeeOrder.OrderState:type_name -> basetypes.order.v1.OrderState
-	26, // 13: order.middleware.fee.v1.FeeOrder.CancelState:type_name -> basetypes.order.v1.OrderState
-	27, // 14: order.middleware.fee.v1.FeeOrder.PaymentState:type_name -> basetypes.order.v1.PaymentState
-	30, // 15: order.middleware.fee.v1.FeeOrder.PaymentObseleteState:type_name -> basetypes.order.v1.PaymentObseleteState
-	31, // 16: order.middleware.fee.v1.FeeOrder.Coupons:type_name -> order.middleware.order1.coupon.v1.OrderCouponInfo
-	32, // 17: order.middleware.fee.v1.FeeOrder.PaymentBalances:type_name -> order.middleware.payment.v1.PaymentBalanceInfo
-	33, // 18: order.middleware.fee.v1.FeeOrder.PaymentTransfers:type_name -> order.middleware.payment.v1.PaymentTransferInfo
-	34, // 19: order.middleware.fee.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
-	35, // 20: order.middleware.fee.v1.Conds.IDs:type_name -> basetypes.v1.Uint32SliceVal
-	36, // 21: order.middleware.fee.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	37, // 22: order.middleware.fee.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
-	36, // 23: order.middleware.fee.v1.Conds.OrderID:type_name -> basetypes.v1.StringVal
-	37, // 24: order.middleware.fee.v1.Conds.OrderIDs:type_name -> basetypes.v1.StringSliceVal
-	36, // 25: order.middleware.fee.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	36, // 26: order.middleware.fee.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
-	36, // 27: order.middleware.fee.v1.Conds.GoodID:type_name -> basetypes.v1.StringVal
-	37, // 28: order.middleware.fee.v1.Conds.GoodIDs:type_name -> basetypes.v1.StringSliceVal
-	36, // 29: order.middleware.fee.v1.Conds.AppGoodID:type_name -> basetypes.v1.StringVal
-	37, // 30: order.middleware.fee.v1.Conds.AppGoodIDs:type_name -> basetypes.v1.StringSliceVal
-	36, // 31: order.middleware.fee.v1.Conds.ParentOrderID:type_name -> basetypes.v1.StringVal
-	37, // 32: order.middleware.fee.v1.Conds.ParentOrderIDs:type_name -> basetypes.v1.StringSliceVal
-	34, // 33: order.middleware.fee.v1.Conds.OrderType:type_name -> basetypes.v1.Uint32Val
-	34, // 34: order.middleware.fee.v1.Conds.PaymentType:type_name -> basetypes.v1.Uint32Val
-	35, // 35: order.middleware.fee.v1.Conds.PaymentTypes:type_name -> basetypes.v1.Uint32SliceVal
-	34, // 36: order.middleware.fee.v1.Conds.OrderState:type_name -> basetypes.v1.Uint32Val
-	35, // 37: order.middleware.fee.v1.Conds.OrderStates:type_name -> basetypes.v1.Uint32SliceVal
-	38, // 38: order.middleware.fee.v1.Conds.UserSetCanceled:type_name -> basetypes.v1.BoolVal
-	38, // 39: order.middleware.fee.v1.Conds.AdminSetCanceled:type_name -> basetypes.v1.BoolVal
-	34, // 40: order.middleware.fee.v1.Conds.PaymentState:type_name -> basetypes.v1.Uint32Val
-	35, // 41: order.middleware.fee.v1.Conds.PaymentStates:type_name -> basetypes.v1.Uint32SliceVal
-	36, // 42: order.middleware.fee.v1.Conds.CouponID:type_name -> basetypes.v1.StringVal
-	37, // 43: order.middleware.fee.v1.Conds.CouponIDs:type_name -> basetypes.v1.StringSliceVal
-	34, // 44: order.middleware.fee.v1.Conds.CreatedAt:type_name -> basetypes.v1.Uint32Val
-	34, // 45: order.middleware.fee.v1.Conds.UpdatedAt:type_name -> basetypes.v1.Uint32Val
-	34, // 46: order.middleware.fee.v1.Conds.PaidAt:type_name -> basetypes.v1.Uint32Val
-	0,  // 47: order.middleware.fee.v1.CreateFeeOrderRequest.Info:type_name -> order.middleware.fee.v1.FeeOrderReq
-	1,  // 48: order.middleware.fee.v1.CreateFeeOrderResponse.Info:type_name -> order.middleware.fee.v1.FeeOrder
-	0,  // 49: order.middleware.fee.v1.CreateFeeOrdersRequest.Infos:type_name -> order.middleware.fee.v1.FeeOrderReq
-	1,  // 50: order.middleware.fee.v1.CreateFeeOrdersResponse.Infos:type_name -> order.middleware.fee.v1.FeeOrder
-	0,  // 51: order.middleware.fee.v1.UpdateFeeOrderRequest.Info:type_name -> order.middleware.fee.v1.FeeOrderReq
-	1,  // 52: order.middleware.fee.v1.UpdateFeeOrderResponse.Info:type_name -> order.middleware.fee.v1.FeeOrder
-	1,  // 53: order.middleware.fee.v1.GetFeeOrderResponse.Info:type_name -> order.middleware.fee.v1.FeeOrder
-	3,  // 54: order.middleware.fee.v1.GetFeeOrdersRequest.Conds:type_name -> order.middleware.fee.v1.Conds
-	1,  // 55: order.middleware.fee.v1.GetFeeOrdersResponse.Infos:type_name -> order.middleware.fee.v1.FeeOrder
-	3,  // 56: order.middleware.fee.v1.CountFeeOrdersRequest.Conds:type_name -> order.middleware.fee.v1.Conds
-	3,  // 57: order.middleware.fee.v1.ExistFeeOrderCondsRequest.Conds:type_name -> order.middleware.fee.v1.Conds
-	0,  // 58: order.middleware.fee.v1.DeleteFeeOrderRequest.Info:type_name -> order.middleware.fee.v1.FeeOrderReq
-	1,  // 59: order.middleware.fee.v1.DeleteFeeOrderResponse.Info:type_name -> order.middleware.fee.v1.FeeOrder
-	4,  // 60: order.middleware.fee.v1.Middleware.CreateFeeOrder:input_type -> order.middleware.fee.v1.CreateFeeOrderRequest
-	6,  // 61: order.middleware.fee.v1.Middleware.CreateFeeOrders:input_type -> order.middleware.fee.v1.CreateFeeOrdersRequest
-	8,  // 62: order.middleware.fee.v1.Middleware.UpdateFeeOrder:input_type -> order.middleware.fee.v1.UpdateFeeOrderRequest
-	10, // 63: order.middleware.fee.v1.Middleware.GetFeeOrder:input_type -> order.middleware.fee.v1.GetFeeOrderRequest
-	12, // 64: order.middleware.fee.v1.Middleware.GetFeeOrders:input_type -> order.middleware.fee.v1.GetFeeOrdersRequest
-	14, // 65: order.middleware.fee.v1.Middleware.CountFeeOrders:input_type -> order.middleware.fee.v1.CountFeeOrdersRequest
-	16, // 66: order.middleware.fee.v1.Middleware.ExistFeeOrder:input_type -> order.middleware.fee.v1.ExistFeeOrderRequest
-	18, // 67: order.middleware.fee.v1.Middleware.ExistFeeOrderConds:input_type -> order.middleware.fee.v1.ExistFeeOrderCondsRequest
-	20, // 68: order.middleware.fee.v1.Middleware.DeleteFeeOrder:input_type -> order.middleware.fee.v1.DeleteFeeOrderRequest
-	5,  // 69: order.middleware.fee.v1.Middleware.CreateFeeOrder:output_type -> order.middleware.fee.v1.CreateFeeOrderResponse
-	7,  // 70: order.middleware.fee.v1.Middleware.CreateFeeOrders:output_type -> order.middleware.fee.v1.CreateFeeOrdersResponse
-	9,  // 71: order.middleware.fee.v1.Middleware.UpdateFeeOrder:output_type -> order.middleware.fee.v1.UpdateFeeOrderResponse
-	11, // 72: order.middleware.fee.v1.Middleware.GetFeeOrder:output_type -> order.middleware.fee.v1.GetFeeOrderResponse
-	13, // 73: order.middleware.fee.v1.Middleware.GetFeeOrders:output_type -> order.middleware.fee.v1.GetFeeOrdersResponse
-	15, // 74: order.middleware.fee.v1.Middleware.CountFeeOrders:output_type -> order.middleware.fee.v1.CountFeeOrdersResponse
-	17, // 75: order.middleware.fee.v1.Middleware.ExistFeeOrder:output_type -> order.middleware.fee.v1.ExistFeeOrderResponse
-	19, // 76: order.middleware.fee.v1.Middleware.ExistFeeOrderConds:output_type -> order.middleware.fee.v1.ExistFeeOrderCondsResponse
-	21, // 77: order.middleware.fee.v1.Middleware.DeleteFeeOrder:output_type -> order.middleware.fee.v1.DeleteFeeOrderResponse
-	69, // [69:78] is the sub-list for method output_type
-	60, // [60:69] is the sub-list for method input_type
-	60, // [60:60] is the sub-list for extension type_name
-	60, // [60:60] is the sub-list for extension extendee
-	0,  // [0:60] is the sub-list for field type_name
+	22, // 9: order.middleware.fee.v1.FeeOrder.ParentGoodType:type_name -> basetypes.good.v1.GoodType
+	23, // 10: order.middleware.fee.v1.FeeOrder.OrderType:type_name -> basetypes.order.v1.OrderType
+	24, // 11: order.middleware.fee.v1.FeeOrder.PaymentType:type_name -> basetypes.order.v1.PaymentType
+	25, // 12: order.middleware.fee.v1.FeeOrder.CreateMethod:type_name -> basetypes.order.v1.OrderCreateMethod
+	26, // 13: order.middleware.fee.v1.FeeOrder.OrderState:type_name -> basetypes.order.v1.OrderState
+	26, // 14: order.middleware.fee.v1.FeeOrder.CancelState:type_name -> basetypes.order.v1.OrderState
+	27, // 15: order.middleware.fee.v1.FeeOrder.PaymentState:type_name -> basetypes.order.v1.PaymentState
+	30, // 16: order.middleware.fee.v1.FeeOrder.PaymentObseleteState:type_name -> basetypes.order.v1.PaymentObseleteState
+	31, // 17: order.middleware.fee.v1.FeeOrder.Coupons:type_name -> order.middleware.order1.coupon.v1.OrderCouponInfo
+	32, // 18: order.middleware.fee.v1.FeeOrder.PaymentBalances:type_name -> order.middleware.payment.v1.PaymentBalanceInfo
+	33, // 19: order.middleware.fee.v1.FeeOrder.PaymentTransfers:type_name -> order.middleware.payment.v1.PaymentTransferInfo
+	34, // 20: order.middleware.fee.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
+	35, // 21: order.middleware.fee.v1.Conds.IDs:type_name -> basetypes.v1.Uint32SliceVal
+	36, // 22: order.middleware.fee.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	37, // 23: order.middleware.fee.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
+	36, // 24: order.middleware.fee.v1.Conds.OrderID:type_name -> basetypes.v1.StringVal
+	37, // 25: order.middleware.fee.v1.Conds.OrderIDs:type_name -> basetypes.v1.StringSliceVal
+	36, // 26: order.middleware.fee.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	36, // 27: order.middleware.fee.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
+	36, // 28: order.middleware.fee.v1.Conds.GoodID:type_name -> basetypes.v1.StringVal
+	37, // 29: order.middleware.fee.v1.Conds.GoodIDs:type_name -> basetypes.v1.StringSliceVal
+	36, // 30: order.middleware.fee.v1.Conds.AppGoodID:type_name -> basetypes.v1.StringVal
+	37, // 31: order.middleware.fee.v1.Conds.AppGoodIDs:type_name -> basetypes.v1.StringSliceVal
+	36, // 32: order.middleware.fee.v1.Conds.ParentOrderID:type_name -> basetypes.v1.StringVal
+	37, // 33: order.middleware.fee.v1.Conds.ParentOrderIDs:type_name -> basetypes.v1.StringSliceVal
+	34, // 34: order.middleware.fee.v1.Conds.OrderType:type_name -> basetypes.v1.Uint32Val
+	34, // 35: order.middleware.fee.v1.Conds.PaymentType:type_name -> basetypes.v1.Uint32Val
+	35, // 36: order.middleware.fee.v1.Conds.PaymentTypes:type_name -> basetypes.v1.Uint32SliceVal
+	34, // 37: order.middleware.fee.v1.Conds.OrderState:type_name -> basetypes.v1.Uint32Val
+	35, // 38: order.middleware.fee.v1.Conds.OrderStates:type_name -> basetypes.v1.Uint32SliceVal
+	38, // 39: order.middleware.fee.v1.Conds.UserSetCanceled:type_name -> basetypes.v1.BoolVal
+	38, // 40: order.middleware.fee.v1.Conds.AdminSetCanceled:type_name -> basetypes.v1.BoolVal
+	34, // 41: order.middleware.fee.v1.Conds.PaymentState:type_name -> basetypes.v1.Uint32Val
+	35, // 42: order.middleware.fee.v1.Conds.PaymentStates:type_name -> basetypes.v1.Uint32SliceVal
+	36, // 43: order.middleware.fee.v1.Conds.CouponID:type_name -> basetypes.v1.StringVal
+	37, // 44: order.middleware.fee.v1.Conds.CouponIDs:type_name -> basetypes.v1.StringSliceVal
+	34, // 45: order.middleware.fee.v1.Conds.CreatedAt:type_name -> basetypes.v1.Uint32Val
+	34, // 46: order.middleware.fee.v1.Conds.UpdatedAt:type_name -> basetypes.v1.Uint32Val
+	34, // 47: order.middleware.fee.v1.Conds.PaidAt:type_name -> basetypes.v1.Uint32Val
+	0,  // 48: order.middleware.fee.v1.CreateFeeOrderRequest.Info:type_name -> order.middleware.fee.v1.FeeOrderReq
+	1,  // 49: order.middleware.fee.v1.CreateFeeOrderResponse.Info:type_name -> order.middleware.fee.v1.FeeOrder
+	0,  // 50: order.middleware.fee.v1.CreateFeeOrdersRequest.Infos:type_name -> order.middleware.fee.v1.FeeOrderReq
+	1,  // 51: order.middleware.fee.v1.CreateFeeOrdersResponse.Infos:type_name -> order.middleware.fee.v1.FeeOrder
+	0,  // 52: order.middleware.fee.v1.UpdateFeeOrderRequest.Info:type_name -> order.middleware.fee.v1.FeeOrderReq
+	1,  // 53: order.middleware.fee.v1.UpdateFeeOrderResponse.Info:type_name -> order.middleware.fee.v1.FeeOrder
+	1,  // 54: order.middleware.fee.v1.GetFeeOrderResponse.Info:type_name -> order.middleware.fee.v1.FeeOrder
+	3,  // 55: order.middleware.fee.v1.GetFeeOrdersRequest.Conds:type_name -> order.middleware.fee.v1.Conds
+	1,  // 56: order.middleware.fee.v1.GetFeeOrdersResponse.Infos:type_name -> order.middleware.fee.v1.FeeOrder
+	3,  // 57: order.middleware.fee.v1.CountFeeOrdersRequest.Conds:type_name -> order.middleware.fee.v1.Conds
+	3,  // 58: order.middleware.fee.v1.ExistFeeOrderCondsRequest.Conds:type_name -> order.middleware.fee.v1.Conds
+	0,  // 59: order.middleware.fee.v1.DeleteFeeOrderRequest.Info:type_name -> order.middleware.fee.v1.FeeOrderReq
+	1,  // 60: order.middleware.fee.v1.DeleteFeeOrderResponse.Info:type_name -> order.middleware.fee.v1.FeeOrder
+	4,  // 61: order.middleware.fee.v1.Middleware.CreateFeeOrder:input_type -> order.middleware.fee.v1.CreateFeeOrderRequest
+	6,  // 62: order.middleware.fee.v1.Middleware.CreateFeeOrders:input_type -> order.middleware.fee.v1.CreateFeeOrdersRequest
+	8,  // 63: order.middleware.fee.v1.Middleware.UpdateFeeOrder:input_type -> order.middleware.fee.v1.UpdateFeeOrderRequest
+	10, // 64: order.middleware.fee.v1.Middleware.GetFeeOrder:input_type -> order.middleware.fee.v1.GetFeeOrderRequest
+	12, // 65: order.middleware.fee.v1.Middleware.GetFeeOrders:input_type -> order.middleware.fee.v1.GetFeeOrdersRequest
+	14, // 66: order.middleware.fee.v1.Middleware.CountFeeOrders:input_type -> order.middleware.fee.v1.CountFeeOrdersRequest
+	16, // 67: order.middleware.fee.v1.Middleware.ExistFeeOrder:input_type -> order.middleware.fee.v1.ExistFeeOrderRequest
+	18, // 68: order.middleware.fee.v1.Middleware.ExistFeeOrderConds:input_type -> order.middleware.fee.v1.ExistFeeOrderCondsRequest
+	20, // 69: order.middleware.fee.v1.Middleware.DeleteFeeOrder:input_type -> order.middleware.fee.v1.DeleteFeeOrderRequest
+	5,  // 70: order.middleware.fee.v1.Middleware.CreateFeeOrder:output_type -> order.middleware.fee.v1.CreateFeeOrderResponse
+	7,  // 71: order.middleware.fee.v1.Middleware.CreateFeeOrders:output_type -> order.middleware.fee.v1.CreateFeeOrdersResponse
+	9,  // 72: order.middleware.fee.v1.Middleware.UpdateFeeOrder:output_type -> order.middleware.fee.v1.UpdateFeeOrderResponse
+	11, // 73: order.middleware.fee.v1.Middleware.GetFeeOrder:output_type -> order.middleware.fee.v1.GetFeeOrderResponse
+	13, // 74: order.middleware.fee.v1.Middleware.GetFeeOrders:output_type -> order.middleware.fee.v1.GetFeeOrdersResponse
+	15, // 75: order.middleware.fee.v1.Middleware.CountFeeOrders:output_type -> order.middleware.fee.v1.CountFeeOrdersResponse
+	17, // 76: order.middleware.fee.v1.Middleware.ExistFeeOrder:output_type -> order.middleware.fee.v1.ExistFeeOrderResponse
+	19, // 77: order.middleware.fee.v1.Middleware.ExistFeeOrderConds:output_type -> order.middleware.fee.v1.ExistFeeOrderCondsResponse
+	21, // 78: order.middleware.fee.v1.Middleware.DeleteFeeOrder:output_type -> order.middleware.fee.v1.DeleteFeeOrderResponse
+	70, // [70:79] is the sub-list for method output_type
+	61, // [61:70] is the sub-list for method input_type
+	61, // [61:61] is the sub-list for extension type_name
+	61, // [61:61] is the sub-list for extension extendee
+	0,  // [0:61] is the sub-list for field type_name
 }
 
 func init() { file_npool_order_mw_v1_fee_fee_proto_init() }

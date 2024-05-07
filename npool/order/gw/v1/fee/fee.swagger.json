@@ -863,6 +863,15 @@
         "ParentOrderID": {
           "type": "string"
         },
+        "ParentAppGoodID": {
+          "type": "string"
+        },
+        "ParentAppGoodName": {
+          "type": "string"
+        },
+        "ParentGoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
         },
