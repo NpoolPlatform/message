@@ -126,6 +126,8 @@ message FeeOrder {
     // @inject_tag: sql:"cancel_state"
     string CancelStateStr = 400;
     basetypes.order.v1.OrderState CancelState = 410;
+    // @inject_tag: sql:"canceled_at"
+    uint32 CanceledAt = 420;
     // @inject_tag: sql:"paid_at"
     uint32 PaidAt = 430;
     // @inject_tag: sql:"user_set_paid"
