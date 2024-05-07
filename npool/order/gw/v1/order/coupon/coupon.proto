@@ -58,7 +58,7 @@ message OrderCouponInfo {
     string AllocatedCouponID = 10;
     string CouponName = 20;
     basetypes.inspire.v1.CouponType CouponType = 30;
-    string UnitValue = 40;
+    string Denomination = 40;
     uint32 CreatedAt = 50;
 }
 
