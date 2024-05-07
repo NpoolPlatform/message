@@ -967,7 +967,7 @@
         "CouponType": {
           "$ref": "#/definitions/v1CouponType"
         },
-        "UnitValue": {
+        "Denomination": {
           "type": "string"
         },
         "CreatedAt": {
