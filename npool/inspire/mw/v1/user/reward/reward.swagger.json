@@ -221,10 +221,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"action_credits\""
         },
-        "CoinPreUSD": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_pre_usd\""
-        },
         "CouponAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"coupon_amount\""

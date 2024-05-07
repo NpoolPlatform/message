@@ -54,6 +54,7 @@ message Conds {
     optional basetypes.v1.StringVal  EventID       = 40;
     optional basetypes.v1.StringVal  CouponID      = 50;
     optional basetypes.v1.Uint32Val  ID            = 60;
+    optional basetypes.v1.StringSliceVal  EventIDs = 70;
 }
 
 message GetEventCouponsRequest {
