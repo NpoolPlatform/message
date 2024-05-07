@@ -249,7 +249,8 @@ message UpdateUserFeeOrderResponse {
 
 message GetFeeOrderRequest {
     string AppID = 10;
-    string OrderID = 20;
+    string UserID = 20;
+    string OrderID = 30;
 }
 
 message GetFeeOrderResponse {
