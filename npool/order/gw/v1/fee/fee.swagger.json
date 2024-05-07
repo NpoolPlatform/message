@@ -653,6 +653,15 @@
         }
       }
     },
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount"
+      ],
+      "default": "DefaultCouponType"
+    },
     "v1CreateFeeOrderRequest": {
       "type": "object",
       "properties": {
@@ -1087,6 +1096,12 @@
           "type": "string"
         },
         "CouponName": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "UnitValue": {
           "type": "string"
         },
         "CreatedAt": {
