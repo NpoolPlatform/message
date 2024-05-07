@@ -921,7 +921,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "DurationUnits": {
+        "Durations": {
           "type": "integer",
           "format": "int64"
         },

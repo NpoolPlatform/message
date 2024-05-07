@@ -146,7 +146,7 @@ message FeeOrder {
     basetypes.good.v1.GoodDurationType DurationDisplayType = 400;
     string DurationsUnit = 410;
     uint32 DurationSeconds = 420;
-    uint32 DurationUnits = 430;
+    uint32 Durations = 430;
     basetypes.order.v1.OrderState CancelState = 440;
     uint32 CanceledAt = 450;
     uint32 PaidAt = 460;
