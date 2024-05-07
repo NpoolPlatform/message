@@ -919,15 +919,6 @@
         "PaymentState": {
           "$ref": "#/definitions/v1PaymentState"
         },
-        "LedgerLockID": {
-          "type": "string"
-        },
-        "PaymentID": {
-          "type": "string"
-        },
-        "PaymentObseleteState": {
-          "$ref": "#/definitions/v1PaymentObseleteState"
-        },
         "Coupons": {
           "type": "array",
           "items": {
@@ -1180,18 +1171,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1PaymentObseleteState": {
-      "type": "string",
-      "enum": [
-        "DefaultPaymentObseleteState",
-        "PaymentObseleteNone",
-        "PaymentObseleteWait",
-        "PaymentObseleteUnlock",
-        "PaymentObseleted",
-        "PaymentObseleteFail"
-      ],
-      "default": "DefaultPaymentObseleteState"
     },
     "v1PaymentState": {
       "type": "string",
