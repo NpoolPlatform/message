@@ -28,6 +28,7 @@ const (
 	Middleware_ExistFeeOrder_FullMethodName      = "/order.middleware.fee.v1.Middleware/ExistFeeOrder"
 	Middleware_ExistFeeOrderConds_FullMethodName = "/order.middleware.fee.v1.Middleware/ExistFeeOrderConds"
 	Middleware_DeleteFeeOrder_FullMethodName     = "/order.middleware.fee.v1.Middleware/DeleteFeeOrder"
+	Middleware_DeleteFeeOrders_FullMethodName    = "/order.middleware.fee.v1.Middleware/DeleteFeeOrders"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -43,6 +44,7 @@ type MiddlewareClient interface {
 	ExistFeeOrder(ctx context.Context, in *ExistFeeOrderRequest, opts ...grpc.CallOption) (*ExistFeeOrderResponse, error)
 	ExistFeeOrderConds(ctx context.Context, in *ExistFeeOrderCondsRequest, opts ...grpc.CallOption) (*ExistFeeOrderCondsResponse, error)
 	DeleteFeeOrder(ctx context.Context, in *DeleteFeeOrderRequest, opts ...grpc.CallOption) (*DeleteFeeOrderResponse, error)
+	DeleteFeeOrders(ctx context.Context, in *DeleteFeeOrdersRequest, opts ...grpc.CallOption) (*DeleteFeeOrdersResponse, error)
 }
 
 type middlewareClient struct {
@@ -134,6 +136,15 @@ func (c *middlewareClient) DeleteFeeOrder(ctx context.Context, in *DeleteFeeOrde
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteFeeOrders(ctx context.Context, in *DeleteFeeOrdersRequest, opts ...grpc.CallOption) (*DeleteFeeOrdersResponse, error) {
+	out := new(DeleteFeeOrdersResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteFeeOrders_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -147,6 +158,7 @@ type MiddlewareServer interface {
 	ExistFeeOrder(context.Context, *ExistFeeOrderRequest) (*ExistFeeOrderResponse, error)
 	ExistFeeOrderConds(context.Context, *ExistFeeOrderCondsRequest) (*ExistFeeOrderCondsResponse, error)
 	DeleteFeeOrder(context.Context, *DeleteFeeOrderRequest) (*DeleteFeeOrderResponse, error)
+	DeleteFeeOrders(context.Context, *DeleteFeeOrdersRequest) (*DeleteFeeOrdersResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -180,6 +192,9 @@ func (UnimplementedMiddlewareServer) ExistFeeOrderConds(context.Context, *ExistF
 }
 func (UnimplementedMiddlewareServer) DeleteFeeOrder(context.Context, *DeleteFeeOrderRequest) (*DeleteFeeOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteFeeOrder not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteFeeOrders(context.Context, *DeleteFeeOrdersRequest) (*DeleteFeeOrdersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteFeeOrders not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -356,6 +371,24 @@ func _Middleware_DeleteFeeOrder_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteFeeOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteFeeOrdersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteFeeOrders(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteFeeOrders_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteFeeOrders(ctx, req.(*DeleteFeeOrdersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -398,6 +431,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteFeeOrder",
 			Handler:    _Middleware_DeleteFeeOrder_Handler,
+		},
+		{
+			MethodName: "DeleteFeeOrders",
+			Handler:    _Middleware_DeleteFeeOrders_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
