@@ -46,35 +46,38 @@ message PaymentContractInfo {
 }
 
 message PaymentTransferReq {
-    optional string CoinTypeID = 10;
-    optional string Amount = 20;
-    optional string AccountID = 30;
-    optional string StartAmount = 40;
-    optional string CoinUSDCurrency = 50;
-    optional string LocalCoinUSDCurrency = 60;
-    optional string LiveCoinUSDCurrency = 70;
-    optional string FinishAmount = 80;
+    optional string EntID = 10;
+    optional string CoinTypeID = 20;
+    optional string Amount = 30;
+    optional string AccountID = 40;
+    optional string StartAmount = 50;
+    optional string CoinUSDCurrency = 60;
+    optional string LocalCoinUSDCurrency = 70;
+    optional string LiveCoinUSDCurrency = 80;
+    optional string FinishAmount = 90;
 }
 
 message PaymentTransferInfo {
+    // @inject_tag: sql:"ent_id"
+    string EntID = 10;
     // @inject_tag: sql:"payment_id"
-    string PaymentID = 10;
+    string PaymentID = 20;
     // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID = 20;
+    string CoinTypeID = 30;
     // @inject_tag: sql:"amount"
-    string Amount = 30;
+    string Amount = 40;
     // @inject_tag: sql:"account_id"
-    string AccountID = 40;
+    string AccountID = 50;
     // @inject_tag: sql:"start_amount"
-    string StartAmount = 50;
+    string StartAmount = 60;
     // @inject_tag: sql:"coin_usd_currency"
-    string CoinUSDCurrency = 60;
+    string CoinUSDCurrency = 70;
     // @inject_tag: sql:"local_coin_usd_currency"
-    string LocalCoinUSDCurrency = 70;
+    string LocalCoinUSDCurrency = 80;
     // @inject_tag: sql:"live_coin_usd_currency"
-    string LiveCoinUSDCurrency = 80;
+    string LiveCoinUSDCurrency = 90;
     // @inject_tag: sql:"finish_amount"
-    string FinishAmount = 90;
+    string FinishAmount = 100;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt = 100;
+    uint32 CreatedAt = 110;
 }
