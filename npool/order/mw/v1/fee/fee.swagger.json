@@ -186,6 +186,17 @@
         }
       }
     },
+    "v1DeleteFeeOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FeeOrder"
+          }
+        }
+      }
+    },
     "v1ExistFeeOrderCondsResponse": {
       "type": "object",
       "properties": {

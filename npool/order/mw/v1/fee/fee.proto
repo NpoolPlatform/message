@@ -23,6 +23,7 @@ service Middleware {
     rpc ExistFeeOrder (ExistFeeOrderRequest) returns (ExistFeeOrderResponse) {}
     rpc ExistFeeOrderConds (ExistFeeOrderCondsRequest) returns (ExistFeeOrderCondsResponse) {}
     rpc DeleteFeeOrder (DeleteFeeOrderRequest) returns (DeleteFeeOrderResponse) {}
+    rpc DeleteFeeOrders (DeleteFeeOrdersRequest) returns (DeleteFeeOrdersResponse) {}
 }
 
 message FeeOrderReq {
@@ -284,4 +285,11 @@ message DeleteFeeOrderResponse {
     FeeOrder Info = 10;
 }
 
+message DeleteFeeOrdersRequest {
+    repeated FeeOrderReq Infos = 10;
+}
+
+message DeleteFeeOrdersResponse {
+    repeated FeeOrder Infos = 10;
+}
 
