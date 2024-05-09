@@ -637,6 +637,9 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TargetUserID": {
+          "type": "string"
+        },
         "OrderID": {
           "type": "string"
         },
@@ -1335,7 +1338,10 @@
         "EntID": {
           "type": "string"
         },
-        "TargetAppID": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
           "type": "string"
         },
         "OrderID": {
