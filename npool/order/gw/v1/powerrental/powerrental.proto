@@ -131,12 +131,13 @@ message PowerRentalOrder {
     string PaymentAmountUSD = 420;
     string DiscountAmountUSD = 430;
     string PromotionID = 440;
-    string PromotionName = 450;
-    basetypes.good.v1.GoodDurationType DurationDisplayType = 460;
-    string DurationUnit = 470;
-    uint32 DurationSeconds = 480;
-    uint32 Durations = 490;
-    basetypes.order.v1.InvestmentType InvestmentType = 500;
+    string TopMostTitle = 450;
+    string TopMostTargetUrl = 460;
+    basetypes.good.v1.GoodDurationType DurationDisplayType = 470;
+    string DurationUnit = 480;
+    uint32 DurationSeconds = 490;
+    uint32 Durations = 500;
+    basetypes.order.v1.InvestmentType InvestmentType = 510;
 
     basetypes.order.v1.OrderState CancelState = 600;
     uint32 CanceledAt = 610;
