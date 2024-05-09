@@ -97,6 +97,9 @@
         },
         "UserIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },

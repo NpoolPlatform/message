@@ -56,6 +56,7 @@ message Conds {
     optional basetypes.v1.StringVal  UserID        = 40;
     optional basetypes.v1.Uint32Val  ID            = 50;
     optional basetypes.v1.StringSliceVal  UserIDs  = 60;
+    optional basetypes.v1.StringVal  CoinTypeID    = 70;
 }
 
 message GetUserCoinRewardsRequest {
