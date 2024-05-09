@@ -244,9 +244,10 @@ message UpdateFeeOrderResponse {
 message UpdateUserFeeOrderRequest {
     uint32 ID = 10;
     string EntID = 20;
-    string TargetAppID = 30;
-    string OrderID = 40;
-    optional bool Canceled = 50;
+    string AppID = 30;
+    string TargetUserID = 40;
+    string OrderID = 50;
+    optional bool Canceled = 60;
 }
 
 message UpdateUserFeeOrderResponse {
@@ -319,8 +320,9 @@ message AdminUpdateFeeOrderRequest {
     uint32 ID = 10;
     string EntID = 20;
     string TargetAppID = 30;
-    string OrderID = 40;
-    optional bool Canceled = 50;
+    string TargetUserID = 40;
+    string OrderID = 50;
+    optional bool Canceled = 60;
 }
 
 message AdminUpdateFeeOrderResponse {
