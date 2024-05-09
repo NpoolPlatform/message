@@ -577,6 +577,9 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TargetUserID": {
+          "type": "string"
+        },
         "OrderID": {
           "type": "string"
         }

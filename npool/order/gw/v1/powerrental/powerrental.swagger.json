@@ -49,38 +49,6 @@
         ]
       }
     },
-    "/v1/admin/create/powerrentalorders": {
-      "post": {
-        "operationId": "Gateway_AdminCreatePowerRentalOrders",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1AdminCreatePowerRentalOrdersResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1AdminCreatePowerRentalOrdersRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/admin/delete/powerrentalorder": {
       "post": {
         "operationId": "Gateway_AdminDeletePowerRentalOrder",
@@ -209,38 +177,6 @@
         ]
       }
     },
-    "/v1/create/powerrentalorders": {
-      "post": {
-        "operationId": "Gateway_CreatePowerRentalOrders",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreatePowerRentalOrdersResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreatePowerRentalOrdersRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/create/user/powerrentalorder": {
       "post": {
         "operationId": "Gateway_CreateUserPowerRentalOrder",
@@ -265,38 +201,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateUserPowerRentalOrderRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/create/user/powerrentalorders": {
-      "post": {
-        "operationId": "Gateway_CreateUserPowerRentalOrders",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateUserPowerRentalOrdersResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateUserPowerRentalOrdersRequest"
             }
           }
         ],
@@ -516,10 +420,10 @@
         "AppGoodID": {
           "type": "string"
         },
-        "ParentOrderID": {
+        "DurationSeconds": {
           "type": "string"
         },
-        "DurationSeconds": {
+        "Units": {
           "type": "string"
         }
       }
@@ -529,40 +433,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1PowerRentalOrder"
-        }
-      }
-    },
-    "v1AdminCreatePowerRentalOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "ParentOrderID": {
-          "type": "string"
-        },
-        "DurationSeconds": {
-          "type": "string"
-        },
-        "AppGoodID": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1AdminCreatePowerRentalOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1PowerRentalOrder"
-          }
         }
       }
     },
@@ -577,6 +447,9 @@
           "type": "string"
         },
         "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
           "type": "string"
         },
         "OrderID": {
@@ -639,6 +512,9 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TargetUserID": {
+          "type": "string"
+        },
         "OrderID": {
           "type": "string"
         },
@@ -683,13 +559,17 @@
         "AppID": {
           "type": "string"
         },
+        "UserID": {
+          "type": "string"
+        },
         "AppGoodID": {
           "type": "string"
         },
-        "ParentOrderID": {
-          "type": "string"
-        },
         "DurationSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Units": {
           "type": "string"
         },
         "Balances": {
@@ -717,52 +597,6 @@
         }
       }
     },
-    "v1CreatePowerRentalOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "ParentOrderID": {
-          "type": "string"
-        },
-        "DurationSeconds": {
-          "type": "string"
-        },
-        "Balances": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1PaymentBalance"
-          }
-        },
-        "PaymentTransferCoinTypeID": {
-          "type": "string"
-        },
-        "CouponIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "AppGoodIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1CreatePowerRentalOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1PowerRentalOrder"
-          }
-        }
-      }
-    },
     "v1CreateUserPowerRentalOrderRequest": {
       "type": "object",
       "properties": {
@@ -775,10 +609,11 @@
         "AppGoodID": {
           "type": "string"
         },
-        "ParentOrderID": {
-          "type": "string"
-        },
         "DurationSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Units": {
           "type": "string"
         }
       }
@@ -788,40 +623,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1PowerRentalOrder"
-        }
-      }
-    },
-    "v1CreateUserPowerRentalOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "ParentOrderID": {
-          "type": "string"
-        },
-        "DurationSeconds": {
-          "type": "string"
-        },
-        "AppGoodID": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "v1CreateUserPowerRentalOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1PowerRentalOrder"
-          }
         }
       }
     },
@@ -881,6 +682,9 @@
       "type": "object",
       "properties": {
         "AppID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         },
         "OrderID": {
@@ -1415,7 +1219,10 @@
         "EntID": {
           "type": "string"
         },
-        "TargetAppID": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
           "type": "string"
         },
         "OrderID": {

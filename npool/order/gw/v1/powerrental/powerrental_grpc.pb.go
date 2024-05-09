@@ -19,20 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreatePowerRentalOrder_FullMethodName       = "/order.gateway.powerrental.v1.Gateway/CreatePowerRentalOrder"
-	Gateway_CreateUserPowerRentalOrder_FullMethodName   = "/order.gateway.powerrental.v1.Gateway/CreateUserPowerRentalOrder"
-	Gateway_CreatePowerRentalOrders_FullMethodName      = "/order.gateway.powerrental.v1.Gateway/CreatePowerRentalOrders"
-	Gateway_CreateUserPowerRentalOrders_FullMethodName  = "/order.gateway.powerrental.v1.Gateway/CreateUserPowerRentalOrders"
-	Gateway_UpdatePowerRentalOrder_FullMethodName       = "/order.gateway.powerrental.v1.Gateway/UpdatePowerRentalOrder"
-	Gateway_UpdateUserPowerRentalOrder_FullMethodName   = "/order.gateway.powerrental.v1.Gateway/UpdateUserPowerRentalOrder"
-	Gateway_GetPowerRentalOrder_FullMethodName          = "/order.gateway.powerrental.v1.Gateway/GetPowerRentalOrder"
-	Gateway_GetPowerRentalOrders_FullMethodName         = "/order.gateway.powerrental.v1.Gateway/GetPowerRentalOrders"
-	Gateway_GetMyPowerRentalOrders_FullMethodName       = "/order.gateway.powerrental.v1.Gateway/GetMyPowerRentalOrders"
-	Gateway_AdminCreatePowerRentalOrder_FullMethodName  = "/order.gateway.powerrental.v1.Gateway/AdminCreatePowerRentalOrder"
-	Gateway_AdminCreatePowerRentalOrders_FullMethodName = "/order.gateway.powerrental.v1.Gateway/AdminCreatePowerRentalOrders"
-	Gateway_AdminUpdatePowerRentalOrder_FullMethodName  = "/order.gateway.powerrental.v1.Gateway/AdminUpdatePowerRentalOrder"
-	Gateway_AdminGetPowerRentalOrders_FullMethodName    = "/order.gateway.powerrental.v1.Gateway/AdminGetPowerRentalOrders"
-	Gateway_AdminDeletePowerRentalOrder_FullMethodName  = "/order.gateway.powerrental.v1.Gateway/AdminDeletePowerRentalOrder"
+	Gateway_CreatePowerRentalOrder_FullMethodName      = "/order.gateway.powerrental.v1.Gateway/CreatePowerRentalOrder"
+	Gateway_CreateUserPowerRentalOrder_FullMethodName  = "/order.gateway.powerrental.v1.Gateway/CreateUserPowerRentalOrder"
+	Gateway_UpdatePowerRentalOrder_FullMethodName      = "/order.gateway.powerrental.v1.Gateway/UpdatePowerRentalOrder"
+	Gateway_UpdateUserPowerRentalOrder_FullMethodName  = "/order.gateway.powerrental.v1.Gateway/UpdateUserPowerRentalOrder"
+	Gateway_GetPowerRentalOrder_FullMethodName         = "/order.gateway.powerrental.v1.Gateway/GetPowerRentalOrder"
+	Gateway_GetPowerRentalOrders_FullMethodName        = "/order.gateway.powerrental.v1.Gateway/GetPowerRentalOrders"
+	Gateway_GetMyPowerRentalOrders_FullMethodName      = "/order.gateway.powerrental.v1.Gateway/GetMyPowerRentalOrders"
+	Gateway_AdminCreatePowerRentalOrder_FullMethodName = "/order.gateway.powerrental.v1.Gateway/AdminCreatePowerRentalOrder"
+	Gateway_AdminUpdatePowerRentalOrder_FullMethodName = "/order.gateway.powerrental.v1.Gateway/AdminUpdatePowerRentalOrder"
+	Gateway_AdminGetPowerRentalOrders_FullMethodName   = "/order.gateway.powerrental.v1.Gateway/AdminGetPowerRentalOrders"
+	Gateway_AdminDeletePowerRentalOrder_FullMethodName = "/order.gateway.powerrental.v1.Gateway/AdminDeletePowerRentalOrder"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -41,8 +38,6 @@ const (
 type GatewayClient interface {
 	CreatePowerRentalOrder(ctx context.Context, in *CreatePowerRentalOrderRequest, opts ...grpc.CallOption) (*CreatePowerRentalOrderResponse, error)
 	CreateUserPowerRentalOrder(ctx context.Context, in *CreateUserPowerRentalOrderRequest, opts ...grpc.CallOption) (*CreateUserPowerRentalOrderResponse, error)
-	CreatePowerRentalOrders(ctx context.Context, in *CreatePowerRentalOrdersRequest, opts ...grpc.CallOption) (*CreatePowerRentalOrdersResponse, error)
-	CreateUserPowerRentalOrders(ctx context.Context, in *CreateUserPowerRentalOrdersRequest, opts ...grpc.CallOption) (*CreateUserPowerRentalOrdersResponse, error)
 	UpdatePowerRentalOrder(ctx context.Context, in *UpdatePowerRentalOrderRequest, opts ...grpc.CallOption) (*UpdatePowerRentalOrderResponse, error)
 	UpdateUserPowerRentalOrder(ctx context.Context, in *UpdateUserPowerRentalOrderRequest, opts ...grpc.CallOption) (*UpdateUserPowerRentalOrderResponse, error)
 	GetPowerRentalOrder(ctx context.Context, in *GetPowerRentalOrderRequest, opts ...grpc.CallOption) (*GetPowerRentalOrderResponse, error)
@@ -50,7 +45,6 @@ type GatewayClient interface {
 	GetMyPowerRentalOrders(ctx context.Context, in *GetMyPowerRentalOrdersRequest, opts ...grpc.CallOption) (*GetMyPowerRentalOrdersResponse, error)
 	// Admin apis
 	AdminCreatePowerRentalOrder(ctx context.Context, in *AdminCreatePowerRentalOrderRequest, opts ...grpc.CallOption) (*AdminCreatePowerRentalOrderResponse, error)
-	AdminCreatePowerRentalOrders(ctx context.Context, in *AdminCreatePowerRentalOrdersRequest, opts ...grpc.CallOption) (*AdminCreatePowerRentalOrdersResponse, error)
 	AdminUpdatePowerRentalOrder(ctx context.Context, in *AdminUpdatePowerRentalOrderRequest, opts ...grpc.CallOption) (*AdminUpdatePowerRentalOrderResponse, error)
 	AdminGetPowerRentalOrders(ctx context.Context, in *AdminGetPowerRentalOrdersRequest, opts ...grpc.CallOption) (*AdminGetPowerRentalOrdersResponse, error)
 	AdminDeletePowerRentalOrder(ctx context.Context, in *AdminDeletePowerRentalOrderRequest, opts ...grpc.CallOption) (*AdminDeletePowerRentalOrderResponse, error)
@@ -76,24 +70,6 @@ func (c *gatewayClient) CreatePowerRentalOrder(ctx context.Context, in *CreatePo
 func (c *gatewayClient) CreateUserPowerRentalOrder(ctx context.Context, in *CreateUserPowerRentalOrderRequest, opts ...grpc.CallOption) (*CreateUserPowerRentalOrderResponse, error) {
 	out := new(CreateUserPowerRentalOrderResponse)
 	err := c.cc.Invoke(ctx, Gateway_CreateUserPowerRentalOrder_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) CreatePowerRentalOrders(ctx context.Context, in *CreatePowerRentalOrdersRequest, opts ...grpc.CallOption) (*CreatePowerRentalOrdersResponse, error) {
-	out := new(CreatePowerRentalOrdersResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreatePowerRentalOrders_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) CreateUserPowerRentalOrders(ctx context.Context, in *CreateUserPowerRentalOrdersRequest, opts ...grpc.CallOption) (*CreateUserPowerRentalOrdersResponse, error) {
-	out := new(CreateUserPowerRentalOrdersResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateUserPowerRentalOrders_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -154,15 +130,6 @@ func (c *gatewayClient) AdminCreatePowerRentalOrder(ctx context.Context, in *Adm
 	return out, nil
 }
 
-func (c *gatewayClient) AdminCreatePowerRentalOrders(ctx context.Context, in *AdminCreatePowerRentalOrdersRequest, opts ...grpc.CallOption) (*AdminCreatePowerRentalOrdersResponse, error) {
-	out := new(AdminCreatePowerRentalOrdersResponse)
-	err := c.cc.Invoke(ctx, Gateway_AdminCreatePowerRentalOrders_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) AdminUpdatePowerRentalOrder(ctx context.Context, in *AdminUpdatePowerRentalOrderRequest, opts ...grpc.CallOption) (*AdminUpdatePowerRentalOrderResponse, error) {
 	out := new(AdminUpdatePowerRentalOrderResponse)
 	err := c.cc.Invoke(ctx, Gateway_AdminUpdatePowerRentalOrder_FullMethodName, in, out, opts...)
@@ -196,8 +163,6 @@ func (c *gatewayClient) AdminDeletePowerRentalOrder(ctx context.Context, in *Adm
 type GatewayServer interface {
 	CreatePowerRentalOrder(context.Context, *CreatePowerRentalOrderRequest) (*CreatePowerRentalOrderResponse, error)
 	CreateUserPowerRentalOrder(context.Context, *CreateUserPowerRentalOrderRequest) (*CreateUserPowerRentalOrderResponse, error)
-	CreatePowerRentalOrders(context.Context, *CreatePowerRentalOrdersRequest) (*CreatePowerRentalOrdersResponse, error)
-	CreateUserPowerRentalOrders(context.Context, *CreateUserPowerRentalOrdersRequest) (*CreateUserPowerRentalOrdersResponse, error)
 	UpdatePowerRentalOrder(context.Context, *UpdatePowerRentalOrderRequest) (*UpdatePowerRentalOrderResponse, error)
 	UpdateUserPowerRentalOrder(context.Context, *UpdateUserPowerRentalOrderRequest) (*UpdateUserPowerRentalOrderResponse, error)
 	GetPowerRentalOrder(context.Context, *GetPowerRentalOrderRequest) (*GetPowerRentalOrderResponse, error)
@@ -205,7 +170,6 @@ type GatewayServer interface {
 	GetMyPowerRentalOrders(context.Context, *GetMyPowerRentalOrdersRequest) (*GetMyPowerRentalOrdersResponse, error)
 	// Admin apis
 	AdminCreatePowerRentalOrder(context.Context, *AdminCreatePowerRentalOrderRequest) (*AdminCreatePowerRentalOrderResponse, error)
-	AdminCreatePowerRentalOrders(context.Context, *AdminCreatePowerRentalOrdersRequest) (*AdminCreatePowerRentalOrdersResponse, error)
 	AdminUpdatePowerRentalOrder(context.Context, *AdminUpdatePowerRentalOrderRequest) (*AdminUpdatePowerRentalOrderResponse, error)
 	AdminGetPowerRentalOrders(context.Context, *AdminGetPowerRentalOrdersRequest) (*AdminGetPowerRentalOrdersResponse, error)
 	AdminDeletePowerRentalOrder(context.Context, *AdminDeletePowerRentalOrderRequest) (*AdminDeletePowerRentalOrderResponse, error)
@@ -221,12 +185,6 @@ func (UnimplementedGatewayServer) CreatePowerRentalOrder(context.Context, *Creat
 }
 func (UnimplementedGatewayServer) CreateUserPowerRentalOrder(context.Context, *CreateUserPowerRentalOrderRequest) (*CreateUserPowerRentalOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUserPowerRentalOrder not implemented")
-}
-func (UnimplementedGatewayServer) CreatePowerRentalOrders(context.Context, *CreatePowerRentalOrdersRequest) (*CreatePowerRentalOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreatePowerRentalOrders not implemented")
-}
-func (UnimplementedGatewayServer) CreateUserPowerRentalOrders(context.Context, *CreateUserPowerRentalOrdersRequest) (*CreateUserPowerRentalOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateUserPowerRentalOrders not implemented")
 }
 func (UnimplementedGatewayServer) UpdatePowerRentalOrder(context.Context, *UpdatePowerRentalOrderRequest) (*UpdatePowerRentalOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePowerRentalOrder not implemented")
@@ -245,9 +203,6 @@ func (UnimplementedGatewayServer) GetMyPowerRentalOrders(context.Context, *GetMy
 }
 func (UnimplementedGatewayServer) AdminCreatePowerRentalOrder(context.Context, *AdminCreatePowerRentalOrderRequest) (*AdminCreatePowerRentalOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminCreatePowerRentalOrder not implemented")
-}
-func (UnimplementedGatewayServer) AdminCreatePowerRentalOrders(context.Context, *AdminCreatePowerRentalOrdersRequest) (*AdminCreatePowerRentalOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AdminCreatePowerRentalOrders not implemented")
 }
 func (UnimplementedGatewayServer) AdminUpdatePowerRentalOrder(context.Context, *AdminUpdatePowerRentalOrderRequest) (*AdminUpdatePowerRentalOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdatePowerRentalOrder not implemented")
@@ -303,42 +258,6 @@ func _Gateway_CreateUserPowerRentalOrder_Handler(srv interface{}, ctx context.Co
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateUserPowerRentalOrder(ctx, req.(*CreateUserPowerRentalOrderRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_CreatePowerRentalOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreatePowerRentalOrdersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CreatePowerRentalOrders(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_CreatePowerRentalOrders_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreatePowerRentalOrders(ctx, req.(*CreatePowerRentalOrdersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_CreateUserPowerRentalOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateUserPowerRentalOrdersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CreateUserPowerRentalOrders(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_CreateUserPowerRentalOrders_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateUserPowerRentalOrders(ctx, req.(*CreateUserPowerRentalOrdersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -451,24 +370,6 @@ func _Gateway_AdminCreatePowerRentalOrder_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_AdminCreatePowerRentalOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AdminCreatePowerRentalOrdersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).AdminCreatePowerRentalOrders(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_AdminCreatePowerRentalOrders_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).AdminCreatePowerRentalOrders(ctx, req.(*AdminCreatePowerRentalOrdersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_AdminUpdatePowerRentalOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AdminUpdatePowerRentalOrderRequest)
 	if err := dec(in); err != nil {
@@ -539,14 +440,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_CreateUserPowerRentalOrder_Handler,
 		},
 		{
-			MethodName: "CreatePowerRentalOrders",
-			Handler:    _Gateway_CreatePowerRentalOrders_Handler,
-		},
-		{
-			MethodName: "CreateUserPowerRentalOrders",
-			Handler:    _Gateway_CreateUserPowerRentalOrders_Handler,
-		},
-		{
 			MethodName: "UpdatePowerRentalOrder",
 			Handler:    _Gateway_UpdatePowerRentalOrder_Handler,
 		},
@@ -569,10 +462,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AdminCreatePowerRentalOrder",
 			Handler:    _Gateway_AdminCreatePowerRentalOrder_Handler,
-		},
-		{
-			MethodName: "AdminCreatePowerRentalOrders",
-			Handler:    _Gateway_AdminCreatePowerRentalOrders_Handler,
 		},
 		{
 			MethodName: "AdminUpdatePowerRentalOrder",
