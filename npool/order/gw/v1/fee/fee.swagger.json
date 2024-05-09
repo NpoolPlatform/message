@@ -542,7 +542,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "AppGoodID": {
+        "AppGoodIDs": {
           "type": "array",
           "items": {
             "type": "string"
