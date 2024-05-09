@@ -1076,7 +1076,10 @@
         "PromotionID": {
           "type": "string"
         },
-        "PromotionName": {
+        "TopMostTitle": {
+          "type": "string"
+        },
+        "TopMostTargetUrl": {
           "type": "string"
         },
         "DurationDisplayType": {
