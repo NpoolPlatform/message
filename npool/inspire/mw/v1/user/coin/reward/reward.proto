@@ -27,7 +27,8 @@ message UserCoinRewardReq {
     optional string EntID         = 20;
     optional string AppID         = 30;
     optional string UserID        = 40;
-    optional string CoinRewards   = 50;
+    optional string CoinTypeID    = 50;
+    optional string CoinRewards   = 60;
 }
 
 message UserCoinReward {
