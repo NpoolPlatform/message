@@ -27,20 +27,6 @@ service Gateway {
         };
     }
 
-    rpc CreatePowerRentalOrders (CreatePowerRentalOrdersRequest) returns (CreatePowerRentalOrdersResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/powerrentalorders"
-            body: "*"
-        };
-    }
-
-    rpc CreateUserPowerRentalOrders (CreateUserPowerRentalOrdersRequest) returns (CreateUserPowerRentalOrdersResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/user/powerrentalorders"
-            body: "*"
-        };
-    }
-
     rpc UpdatePowerRentalOrder (UpdatePowerRentalOrderRequest) returns (UpdatePowerRentalOrderResponse) {
         option (google.api.http) = {
             post: "/v1/update/powerrentalorder"
@@ -80,13 +66,6 @@ service Gateway {
     rpc AdminCreatePowerRentalOrder (AdminCreatePowerRentalOrderRequest) returns (AdminCreatePowerRentalOrderResponse) {
         option (google.api.http) = {
             post: "/v1/admin/create/powerrentalorder"
-            body: "*"
-        };
-    }
-
-    rpc AdminCreatePowerRentalOrders (AdminCreatePowerRentalOrdersRequest) returns (AdminCreatePowerRentalOrdersResponse) {
-        option (google.api.http) = {
-            post: "/v1/admin/create/powerrentalorders"
             body: "*"
         };
     }
@@ -181,12 +160,13 @@ message PowerRentalOrder {
 
 message CreatePowerRentalOrderRequest {
     string AppID = 10;
-    string AppGoodID = 20;
-    string ParentOrderID = 30;
-    string DurationSeconds = 40;
-    repeated order.gateway.payment.v1.PaymentBalance Balances = 50;
-    optional string PaymentTransferCoinTypeID = 60;
-    repeated string CouponIDs = 70;
+    string UserID = 20;
+    string AppGoodID = 30;
+    uint32 DurationSeconds = 40;
+    string Units = 50;
+    repeated order.gateway.payment.v1.PaymentBalance Balances = 60;
+    optional string PaymentTransferCoinTypeID = 70;
+    repeated string CouponIDs = 80;
 }
 
 message CreatePowerRentalOrderResponse {
@@ -197,38 +177,12 @@ message CreateUserPowerRentalOrderRequest {
     string AppID = 10;
     string TargetUserID = 20;
     string AppGoodID = 30;
-    string ParentOrderID = 40;
-    string DurationSeconds = 50;
+    uint32 DurationSeconds = 40;
+    string Units = 50;
 }
 
 message CreateUserPowerRentalOrderResponse {
     PowerRentalOrder Info = 10;
-}
-
-message CreatePowerRentalOrdersRequest {
-    string AppID = 10;
-    string ParentOrderID = 20;
-    string DurationSeconds = 30;
-    repeated order.gateway.payment.v1.PaymentBalance Balances = 40;
-    optional string PaymentTransferCoinTypeID = 50;
-    repeated string CouponIDs = 60;
-    repeated string AppGoodIDs = 70;
-}
-
-message CreatePowerRentalOrdersResponse {
-    repeated PowerRentalOrder Infos = 10;
-}
-
-message CreateUserPowerRentalOrdersRequest {
-    string AppID = 10;
-    string TargetUserID = 20;
-    string ParentOrderID = 30;
-    string DurationSeconds = 40;
-    repeated string AppGoodID = 50;
-}
-
-message CreateUserPowerRentalOrdersResponse {
-    repeated PowerRentalOrder Infos = 10;
 }
 
 message UpdatePowerRentalOrderRequest {
@@ -250,9 +204,10 @@ message UpdatePowerRentalOrderResponse {
 message UpdateUserPowerRentalOrderRequest {
     uint32 ID = 10;
     string EntID = 20;
-    string TargetAppID = 30;
-    string OrderID = 40;
-    optional bool Canceled = 50;
+    string AppID = 30;
+    string TargetUserID = 40;
+    string OrderID = 50;
+    optional bool Canceled = 60;
 }
 
 message UpdateUserPowerRentalOrderResponse {
@@ -261,7 +216,8 @@ message UpdateUserPowerRentalOrderResponse {
 
 message GetPowerRentalOrderRequest {
     string AppID = 10;
-    string OrderID = 20;
+    string UserID = 20;
+    string OrderID = 30;
 }
 
 message GetPowerRentalOrderResponse {
@@ -298,32 +254,21 @@ message AdminCreatePowerRentalOrderRequest {
     string TargetAppID = 10;
     string TargetUserID = 20;
     string AppGoodID = 30;
-    string ParentOrderID = 40;
-    string DurationSeconds = 50;
+    string DurationSeconds = 40;
+    string Units = 50;
 }
 
 message AdminCreatePowerRentalOrderResponse {
     PowerRentalOrder Info = 10;
 }
 
-message AdminCreatePowerRentalOrdersRequest {
-    string TargetAppID = 10;
-    string TargetUserID = 20;
-    string ParentOrderID = 30;
-    string DurationSeconds = 40;
-    repeated string AppGoodID = 50;
-}
-
-message AdminCreatePowerRentalOrdersResponse {
-    repeated PowerRentalOrder Infos = 10;
-}
-
 message AdminUpdatePowerRentalOrderRequest {
     uint32 ID = 10;
     string EntID = 20;
     string TargetAppID = 30;
-    string OrderID = 40;
-    optional bool Canceled = 50;
+    string TargetUserID = 40;
+    string OrderID = 50;
+    optional bool Canceled = 60;
 }
 
 message AdminUpdatePowerRentalOrderResponse {
@@ -346,7 +291,8 @@ message AdminDeletePowerRentalOrderRequest {
     uint32 ID = 10;
     string EntID = 20;
     string TargetAppID = 30;
-    string OrderID = 40;
+    string TargetUserID = 40;
+    string OrderID = 50;
 }
 
 message AdminDeletePowerRentalOrderResponse {
