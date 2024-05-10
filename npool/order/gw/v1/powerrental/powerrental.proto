@@ -169,7 +169,7 @@ message CreatePowerRentalOrderRequest {
     optional string PaymentTransferCoinTypeID = 70;
     repeated string CouponIDs = 80;
     repeated string FeeAppGoodIDs = 90;
-    uint32 FeeDurationSeconds = 100;
+    optional uint32 FeeDurationSeconds = 100;
     optional bool FeeAutoDeduction = 110;
 }
 
