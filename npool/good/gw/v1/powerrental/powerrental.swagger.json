@@ -663,11 +663,11 @@
         "GoodName": {
           "type": "string"
         },
-        "ServiceStartAt": {
+        "GoodServiceStartAt": {
           "type": "integer",
           "format": "int64"
         },
-        "StartMode": {
+        "GoodStartMode": {
           "$ref": "#/definitions/v1GoodStartMode"
         },
         "TestOnly": {
@@ -731,6 +731,13 @@
         },
         "TotalRewardAmount": {
           "type": "string"
+        },
+        "AppGoodServiceStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "AppGoodStartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
         },
         "GoodCoins": {
           "type": "array",
