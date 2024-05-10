@@ -174,6 +174,7 @@ message CreatePowerRentalOrderRequest {
     optional bool Simulate = 120;
     string AppGoodStockID = 130;
     basetypes.order.v1.InvestmentType InvestmentType = 140;
+    optional string AppSpotUnits = 150;
 }
 
 message CreatePowerRentalOrderResponse {
