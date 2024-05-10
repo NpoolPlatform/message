@@ -172,7 +172,7 @@ message CreatePowerRentalOrderRequest {
     optional uint32 FeeDurationSeconds = 100;
     optional bool FeeAutoDeduction = 110;
     optional bool Simulate = 120;
-    string AppGoodStockID = 130;
+    optional string AppGoodStockID = 130;
     basetypes.order.v1.InvestmentType InvestmentType = 140;
     optional string AppSpotUnits = 150;
 }
