@@ -599,6 +599,15 @@
         },
         "FeeAutoDeduction": {
           "type": "boolean"
+        },
+        "Simulate": {
+          "type": "boolean"
+        },
+        "AppGoodStockID": {
+          "type": "string"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
         }
       }
     },
