@@ -586,6 +586,19 @@
           "items": {
             "type": "string"
           }
+        },
+        "FeeAppGoodIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "FeeDurationSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "FeeAutoDeduction": {
+          "type": "boolean"
         }
       }
     },
