@@ -120,6 +120,18 @@ message Credit {
   string Credits = 30;
 }
 
+message CoinReward {
+  string AppID = 10;
+  string UserID = 20;
+  string CoinTypeID = 30;
+  string CoinRewards = 40;
+}
+
+message Reward {
+  repeated Credit Credits = 10;
+  repeated CoinReward CoinRewards = 20;
+}
+
 message RewardEventRequest {
   string AppID = 10;
   string UserID = 20;
@@ -130,4 +142,6 @@ message RewardEventRequest {
   optional string Amount = 60;
 }
 
-message RewardEventResponse { repeated Credit Infos = 10; }
+message RewardEventResponse {
+  Reward Info = 10;
+}

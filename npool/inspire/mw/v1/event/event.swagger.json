@@ -132,6 +132,23 @@
         }
       }
     },
+    "v1CoinReward": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinRewards": {
+          "type": "string"
+        }
+      }
+    },
     "v1CreateEventResponse": {
       "type": "object",
       "properties": {
@@ -397,6 +414,23 @@
         }
       }
     },
+    "v1Reward": {
+      "type": "object",
+      "properties": {
+        "Credits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Credit"
+          }
+        },
+        "CoinRewards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinReward"
+          }
+        }
+      }
+    },
     "v1RewardEventRequest": {
       "type": "object",
       "properties": {
@@ -427,11 +461,8 @@
     "v1RewardEventResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Credit"
-          }
+        "Info": {
+          "$ref": "#/definitions/v1Reward"
         }
       }
     },
