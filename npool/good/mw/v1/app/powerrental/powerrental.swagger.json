@@ -836,6 +836,9 @@
           "format": "int64",
           "title": "Good information"
         },
+        "StartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
+        },
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
         },

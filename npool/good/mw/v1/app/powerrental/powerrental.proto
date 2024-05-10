@@ -42,6 +42,7 @@ message PowerRentalReq {
 
     // Good information
     optional uint32 ServiceStartAt = 140;
+    optional basetypes.good.v1.GoodStartMode StartMode = 141;
     optional basetypes.good.v1.CancelMode CancelMode = 150;
     optional uint32 CancelableBeforeStartSeconds = 160;
     optional bool EnableSetCommission =170;
