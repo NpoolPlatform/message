@@ -127,6 +127,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
         },
+        "GoodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_name\""
+        },
         "Title": {
           "type": "string",
           "title": "@inject_tag: sql:\"title\""
