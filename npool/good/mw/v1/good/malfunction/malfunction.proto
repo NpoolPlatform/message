@@ -55,6 +55,7 @@ message Conds {
     optional basetypes.v1.StringVal EntID = 20;
     optional basetypes.v1.StringVal EntIDs = 30;
     optional basetypes.v1.StringVal GoodID = 40;
+    optional basetypes.v1.StringVal AppGoodID = 50;
 }
 
 message CreateMalfunctionRequest {
