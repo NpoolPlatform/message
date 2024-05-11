@@ -166,7 +166,7 @@ message FeeOrder {
 message FeeDuration {
     string AppGoodID = 10;
     string AppGoodName = 20;
-    uint32 DurationSeconds = 30;
+    uint32 TotalDurationSeconds = 30;
 }
 
 message CreateFeeOrderRequest {

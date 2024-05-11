@@ -162,10 +162,12 @@ message FeeOrder {
 }
 
 message FeeDuration {
+    // @inject_tag: sql:"parent_order_id"
+    string ParentOrderID = 10;
     // @inject_tag: sql:"app_good_id"
-    string AppGoodID = 10;
-    // @inject_tag: sql:"duration_seconds"
-    uint32 DurationSeconds = 20;
+    string AppGoodID = 20;
+    // @inject_tag: sql:"total_duration_seconds"
+    uint32 TotalDurationSeconds = 30;
 }
 
 message Conds {
