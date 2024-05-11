@@ -53,7 +53,7 @@ message Malfunction {
 message Conds {
     optional basetypes.v1.Uint32Val ID = 10;
     optional basetypes.v1.StringVal EntID = 20;
-    optional basetypes.v1.StringVal EntIDs = 30;
+    optional basetypes.v1.StringSliceVal EntIDs = 30;
     optional basetypes.v1.StringVal GoodID = 40;
     optional basetypes.v1.StringVal AppGoodID = 50;
 }
