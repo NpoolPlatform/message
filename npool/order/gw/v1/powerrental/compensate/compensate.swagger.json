@@ -147,6 +147,9 @@
         "TargetAppID": {
           "type": "string"
         },
+        "TargetUserID": {
+          "type": "string"
+        },
         "ID": {
           "type": "integer",
           "format": "int64"

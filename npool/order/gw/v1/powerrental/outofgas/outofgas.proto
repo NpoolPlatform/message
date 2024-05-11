@@ -22,9 +22,10 @@ service Gateway {
 
 message AdminDeleteOutOfGasRequest {
     string TargetAppID = 10;
-    uint32 ID = 20;
-    string EntID = 30;
-    string OrderID = 40;
+    string TargetUserID = 20;
+    uint32 ID = 30;
+    string EntID = 40;
+    string OrderID = 50;
 }
 
 message AdminDeleteOutOfGasResponse {
