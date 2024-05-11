@@ -425,6 +425,18 @@
         },
         "Units": {
           "type": "string"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
+        },
+        "AppGoodStockID": {
+          "type": "string"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        },
+        "AppSpotUnits": {
+          "type": "string"
         }
       }
     },
@@ -639,6 +651,18 @@
           "format": "int64"
         },
         "Units": {
+          "type": "string"
+        },
+        "OrderType": {
+          "$ref": "#/definitions/v1OrderType"
+        },
+        "AppGoodStockID": {
+          "type": "string"
+        },
+        "InvestmentType": {
+          "$ref": "#/definitions/v1InvestmentType"
+        },
+        "AppSpotUnits": {
           "type": "string"
         }
       }
