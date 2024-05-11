@@ -124,6 +124,9 @@
         },
         "CompensateFromID": {
           "type": "string"
+        },
+        "CompensateType": {
+          "$ref": "#/definitions/v1CompensateType"
         }
       }
     },
