@@ -187,6 +187,10 @@ message CreateUserPowerRentalOrderRequest {
     string AppGoodID = 30;
     uint32 DurationSeconds = 40;
     string Units = 50;
+    basetypes.order.v1.OrderType OrderType = 60;
+    string AppGoodStockID = 70;
+    basetypes.order.v1.InvestmentType InvestmentType = 80;
+    optional string AppSpotUnits = 90;
 }
 
 message CreateUserPowerRentalOrderResponse {
@@ -264,6 +268,10 @@ message AdminCreatePowerRentalOrderRequest {
     string AppGoodID = 30;
     string DurationSeconds = 40;
     string Units = 50;
+    basetypes.order.v1.OrderType OrderType = 60;
+    string AppGoodStockID = 70;
+    basetypes.order.v1.InvestmentType InvestmentType = 80;
+    optional string AppSpotUnits = 90;
 }
 
 message AdminCreatePowerRentalOrderResponse {
