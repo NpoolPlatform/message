@@ -31,6 +31,7 @@ message AdminCreateCompensateRequest {
     optional string GoodID = 20;
     optional string OrderID = 30;
     string CompensateFromID = 40;
+    basetypes.order.v1.CompensateType CompensateType = 50;
 }
 
 message AdminCreateCompensateResponse {
