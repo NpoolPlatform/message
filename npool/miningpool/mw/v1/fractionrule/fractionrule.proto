@@ -29,7 +29,7 @@ service Middleware {
 message FractionRuleReq {
   optional uint32 ID = 10;
   optional string EntID = 20;
-  optional string CoinID = 30;
+  optional string PoolCoinTypeID = 30;
   optional uint32 WithdrawInterval = 50;
   optional string MinAmount = 60;
   optional string WithdrawRate = 70;
@@ -40,8 +40,8 @@ message FractionRule {
   uint32 ID = 10;
   // @inject_tag: sql:"ent_id"
   string EntID = 20;
-  // @inject_tag: sql:"coin_id"
-  string CoinID = 30;
+  // @inject_tag: sql:"pool_coin_type_id"
+  string PoolCoinTypeID = 30;
   // @inject_tag: sql:"withdraw_interval"
   uint32 WithdrawInterval = 40;
   // @inject_tag: sql:"min_amount"
@@ -63,7 +63,7 @@ message FractionRule {
 message Conds {
   optional basetypes.v1.Uint32Val ID = 9;
   optional basetypes.v1.StringVal EntID = 10;
-  optional basetypes.v1.StringVal CoinID = 20;
+  optional basetypes.v1.StringVal PoolCoinTypeID = 20;
   optional basetypes.v1.StringSliceVal EntIDs = 50;
 }
 

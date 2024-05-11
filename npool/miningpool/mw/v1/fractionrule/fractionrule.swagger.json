@@ -89,7 +89,7 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "CoinID": {
+        "PoolCoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "EntIDs": {
@@ -131,9 +131,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "CoinID": {
+        "PoolCoinTypeID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coin_id\""
+          "title": "@inject_tag: sql:\"pool_coin_type_id\""
         },
         "WithdrawInterval": {
           "type": "integer",
@@ -184,7 +184,7 @@
         "EntID": {
           "type": "string"
         },
-        "CoinID": {
+        "PoolCoinTypeID": {
           "type": "string"
         },
         "WithdrawInterval": {

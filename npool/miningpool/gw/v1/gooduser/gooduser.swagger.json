@@ -208,15 +208,11 @@
     "v1AdminCreateGoodUserRequest": {
       "type": "object",
       "properties": {
-        "CoinID": {
+        "PoolCoinTypeID": {
           "type": "string"
         },
         "RootUserID": {
           "type": "string"
-        },
-        "HashRate": {
-          "type": "number",
-          "format": "float"
         }
       }
     },
@@ -301,10 +297,6 @@
         },
         "EntID": {
           "type": "string"
-        },
-        "HashRate": {
-          "type": "number",
-          "format": "float"
         }
       }
     },
@@ -371,17 +363,13 @@
         "ReadPageLink": {
           "type": "string"
         },
-        "HashRate": {
-          "type": "number",
-          "format": "float"
-        },
         "PoolID": {
           "type": "string"
         },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
-        "CoinID": {
+        "PoolCoinTypeID": {
           "type": "string"
         },
         "CoinTypeID": {

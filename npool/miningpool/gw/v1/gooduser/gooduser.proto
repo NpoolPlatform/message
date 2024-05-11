@@ -53,10 +53,9 @@ message GoodUser {
   string RootUserID = 30;
   string Name = 40;
   string ReadPageLink = 50;
-  float HashRate = 60;
   string PoolID = 70;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
-  string CoinID = 90;
+  string PoolCoinTypeID = 90;
   string CoinTypeID = 100;
   basetypes.v1.CoinType CoinType = 101;
   basetypes.miningpool.v1.RevenueType RevenueType = 110;
@@ -66,9 +65,8 @@ message GoodUser {
 }
 
 message AdminCreateGoodUserRequest {
-  string CoinID = 10;
+  string PoolCoinTypeID = 10;
   string RootUserID = 20;
-  float HashRate = 30;
 }
 
 message AdminCreateGoodUserResponse { GoodUser Info = 10; }
@@ -90,7 +88,6 @@ message AdminGetGoodUsersResponse {
 message AdminUpdateGoodUserRequest {
   uint32 ID = 10;
   string EntID = 20;
-  optional float HashRate = 30;
 }
 
 message AdminUpdateGoodUserResponse { GoodUser Info = 10; }

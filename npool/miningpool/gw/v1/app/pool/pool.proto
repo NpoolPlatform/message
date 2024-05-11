@@ -73,7 +73,7 @@ message Coin {
 
 message FractionRule {
   string EntID = 10;
-  string CoinID = 20;
+  string PoolCoinTypeID = 20;
   uint32 WithdrawInterval = 30;
   string MinAmount = 40;
   string WithdrawRate = 50;

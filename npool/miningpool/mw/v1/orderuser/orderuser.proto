@@ -56,8 +56,8 @@ message OrderUser {
   string AppID = 30;
   // @inject_tag: sql:"user_id"
   string UserID = 40;
-  // @inject_tag: sql:"coin_id"
-  string CoinID = 41;
+  // @inject_tag: sql:"pool_coin_type_id"
+  string PoolCoinTypeID = 41;
   // @inject_tag: sql:"coin_type_id"
   string CoinTypeID = 42;
   // @inject_tag: sql:"root_user_id"

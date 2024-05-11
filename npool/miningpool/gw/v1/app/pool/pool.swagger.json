@@ -356,7 +356,7 @@
         "EntID": {
           "type": "string"
         },
-        "CoinID": {
+        "PoolCoinTypeID": {
           "type": "string"
         },
         "WithdrawInterval": {
