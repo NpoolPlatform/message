@@ -284,9 +284,6 @@
       "properties": {
         "AppID": {
           "type": "string"
-        },
-        "EntID": {
-          "type": "string"
         }
       }
     },

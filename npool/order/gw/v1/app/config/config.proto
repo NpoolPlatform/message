@@ -93,7 +93,6 @@ message UpdateAppConfigResponse {
 
 message GetAppConfigRequest {
     string AppID = 10;
-    string EntID = 20;
 }
 
 message GetAppConfigResponse {
