@@ -102,7 +102,7 @@
     "v1AdminDeleteOutOfGasResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
+        "Info": {
           "$ref": "#/definitions/v1OutOfGas"
         }
       }
