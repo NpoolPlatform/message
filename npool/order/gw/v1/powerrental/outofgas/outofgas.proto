@@ -29,6 +29,6 @@ message AdminDeleteOutOfGasRequest {
 }
 
 message AdminDeleteOutOfGasResponse {
-    order.gateway.outofgas.v1.OutOfGas Infos = 10;
+    order.gateway.outofgas.v1.OutOfGas Info = 10;
 }
 
