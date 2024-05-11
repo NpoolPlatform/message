@@ -7,130 +7,101 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/role";
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc CreateRole     (CreateRoleRequest)     returns (CreateRoleResponse)     {}
-    rpc CreateRoles    (CreateRolesRequest)    returns (CreateRolesResponse)    {}
-    rpc UpdateRole     (UpdateRoleRequest)     returns (UpdateRoleResponse)     {}
-    rpc GetRole        (GetRoleRequest)        returns (GetRoleResponse)        {}
-    rpc GetRoles       (GetRolesRequest)       returns (GetRolesResponse)       {}
-    rpc ExistRole      (ExistRoleRequest)      returns (ExistRoleResponse)      {}
-    rpc ExistRoleConds (ExistRoleCondsRequest) returns (ExistRoleCondsResponse) {}
-    rpc DeleteRole     (DeleteRoleRequest)     returns (DeleteRoleResponse)     {}
+  rpc CreateRole(CreateRoleRequest) returns (CreateRoleResponse) {}
+  rpc CreateRoles(CreateRolesRequest) returns (CreateRolesResponse) {}
+  rpc UpdateRole(UpdateRoleRequest) returns (UpdateRoleResponse) {}
+  rpc GetRole(GetRoleRequest) returns (GetRoleResponse) {}
+  rpc GetRoles(GetRolesRequest) returns (GetRolesResponse) {}
+  rpc ExistRole(ExistRoleRequest) returns (ExistRoleResponse) {}
+  rpc ExistRoleConds(ExistRoleCondsRequest) returns (ExistRoleCondsResponse) {}
+  rpc DeleteRole(DeleteRoleRequest) returns (DeleteRoleResponse) {}
 }
 
 message RoleReq {
-    optional uint32 ID          = 9;
-    optional string EntID       = 10;
-    optional string AppID       = 20;
-    optional string CreatedBy   = 30;
-    optional string Role        = 40;
-    optional string Description = 50;
-    optional bool   Default     = 60;
-    optional bool   Genesis     = 70;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional string CreatedBy = 30;
+  optional string Role = 40;
+  optional string Description = 50;
+  optional bool Default = 60;
+  optional bool Genesis = 70;
 }
 
 message Role {
-    // Base info
-    // @inject_tag: sql:"id"
-    uint32  ID           = 9;
-    // @inject_tag: sql:"ent_id"
-    string  EntID        = 10;
-    // @inject_tag: sql:"created_by"
-    string  CreatedBy    = 20;
-    // @inject_tag: sql:"role"
-    string  Role         = 30;
-    // @inject_tag: sql:"description"
-    string  Description  = 40;
-    // @inject_tag: sql:"default"
-    bool    Default      = 60;
-    // @inject_tag: sql:"app_id"
-    string  AppID        = 70;
-    // @inject_tag: sql:"app_name"
-    string  AppName      = 80;
-    // @inject_tag: sql:"app_logo"
-    string  AppLogo      = 90;
-    // @inject_tag: sql:"created_at"
-    uint32  CreatedAt    = 100;
-    // @inject_tag: sql:"genesis"
-    bool    Genesis      = 120;
+  // Base info
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"created_by"
+  string CreatedBy = 20;
+  // @inject_tag: sql:"role"
+  string Role = 30;
+  // @inject_tag: sql:"description"
+  string Description = 40;
+  // @inject_tag: sql:"default"
+  bool Default = 60;
+  // @inject_tag: sql:"app_id"
+  string AppID = 70;
+  // @inject_tag: sql:"app_name"
+  string AppName = 80;
+  // @inject_tag: sql:"app_logo"
+  string AppLogo = 90;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 100;
+  // @inject_tag: sql:"genesis"
+  bool Genesis = 120;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val       ID        = 9;
-    optional basetypes.v1.StringVal       EntID     = 10;
-    optional basetypes.v1.StringVal       AppID     = 20;
-    optional basetypes.v1.StringVal       CreatedBy = 30;
-    optional basetypes.v1.StringVal       Role      = 40;
-    optional basetypes.v1.BoolVal         Default   = 50;
-    optional basetypes.v1.StringSliceVal  Roles     = 60;
-    optional basetypes.v1.BoolVal         Genesis   = 70;
-    optional basetypes.v1.StringSliceVal  EntIDs    = 80;
-    optional basetypes.v1.StringSliceVal  AppIDs    = 90;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal CreatedBy = 30;
+  optional basetypes.v1.StringVal Role = 40;
+  optional basetypes.v1.BoolVal Default = 50;
+  optional basetypes.v1.StringSliceVal Roles = 60;
+  optional basetypes.v1.BoolVal Genesis = 70;
+  optional basetypes.v1.StringSliceVal EntIDs = 80;
+  optional basetypes.v1.StringSliceVal AppIDs = 90;
 }
 
-message CreateRoleRequest {
-    RoleReq Info = 10;
-}
+message CreateRoleRequest { RoleReq Info = 10; }
 
-message CreateRoleResponse {
-    Role Info = 10;
-}
+message CreateRoleResponse { Role Info = 10; }
 
-message CreateRolesRequest {
-    repeated RoleReq Infos = 10;
-}
+message CreateRolesRequest { repeated RoleReq Infos = 10; }
 
-message CreateRolesResponse {
-    repeated Role Infos = 10;
-}
+message CreateRolesResponse { repeated Role Infos = 10; }
 
-message UpdateRoleRequest {
-    RoleReq Info = 10;
-}
+message UpdateRoleRequest { RoleReq Info = 10; }
 
-message UpdateRoleResponse {
-    Role Info = 10;
-}
+message UpdateRoleResponse { Role Info = 10; }
 
-message GetRoleRequest {
-    string EntID = 10;
-}
+message GetRoleRequest { string EntID = 10; }
 
-message GetRoleResponse {
-    Role Info = 10;
-}
+message GetRoleResponse { Role Info = 10; }
 
 message GetRolesRequest {
-    Conds  Conds  = 9;
-    int32  Offset = 20;
-    int32  Limit  = 30;
+  Conds Conds = 9;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetRolesResponse {
-    repeated Role Infos = 10;
-    uint32        Total = 20;
+  repeated Role Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistRoleRequest {
-    string EntID = 10;
-}
+message ExistRoleRequest { string EntID = 10; }
 
-message ExistRoleResponse {
-    bool Info = 10;
-}
+message ExistRoleResponse { bool Info = 10; }
 
-message ExistRoleCondsRequest {
-    Conds Conds = 10;
-}
+message ExistRoleCondsRequest { Conds Conds = 10; }
 
-message ExistRoleCondsResponse {
-    bool Info = 10;
-}
+message ExistRoleCondsResponse { bool Info = 10; }
 
-message DeleteRoleRequest {
-    RoleReq Info = 10;
-}
+message DeleteRoleRequest { RoleReq Info = 10; }
 
-message DeleteRoleResponse {
-    Role Info = 10;
-}
-
+message DeleteRoleResponse { Role Info = 10; }

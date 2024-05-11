@@ -9,77 +9,71 @@ import "npool/basetypes/v1/accountlockedby.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateAccount (CreateAccountRequest) returns (CreateAccountResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/goodbenefitaccount"
-            body: "*"
-        };
-    }
+  rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse) {
+    option (google.api.http) = {
+      post : "/v1/create/goodbenefitaccount"
+      body : "*"
+    };
+  }
 
-    rpc UpdateAccount (UpdateAccountRequest) returns (UpdateAccountResponse) {
-        option (google.api.http) = {
-            post: "/v1/update/goodbenefitaccount"
-            body: "*"
-        };
-    }
+  rpc UpdateAccount(UpdateAccountRequest) returns (UpdateAccountResponse) {
+    option (google.api.http) = {
+      post : "/v1/update/goodbenefitaccount"
+      body : "*"
+    };
+  }
 
-    rpc GetAccounts (GetAccountsRequest) returns (GetAccountsResponse) {
-        option (google.api.http) = {
-            post: "/v1/get/goodbenefitaccounts"
-            body: "*"
-        };
-    }
+  rpc GetAccounts(GetAccountsRequest) returns (GetAccountsResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/goodbenefitaccounts"
+      body : "*"
+    };
+  }
 }
 
 message Account {
-    uint32 ID            = 9;
-    string EntID         = 10;
-    string GoodID        = 20;
-    string GoodName      = 30;
-    string GoodUnit      = 40;
-    string CoinTypeID    = 50;
-    string CoinName      = 60;
-    string CoinUnit      = 70;
-    string CoinEnv       = 80;
-    string CoinLogo      = 90;
-    string AccountID     = 100;
-    bool   Backup        = 110;
-    string Address       = 120;
-    bool   Active        = 130;
-    bool   Locked        = 140;
-    basetypes.v1.AccountLockedBy LockedBy = 150;
-    bool   Blocked       = 160;
-    uint32 CreatedAt     = 170;
-    uint32 UpdatedAt     = 180;
+  uint32 ID = 9;
+  string EntID = 10;
+  string GoodID = 20;
+  string GoodName = 30;
+  string GoodUnit = 40;
+  string CoinTypeID = 50;
+  string CoinName = 60;
+  string CoinUnit = 70;
+  string CoinEnv = 80;
+  string CoinLogo = 90;
+  string AccountID = 100;
+  bool Backup = 110;
+  string Address = 120;
+  bool Active = 130;
+  bool Locked = 140;
+  basetypes.v1.AccountLockedBy LockedBy = 150;
+  bool Blocked = 160;
+  uint32 CreatedAt = 170;
+  uint32 UpdatedAt = 180;
 }
 
-message CreateAccountRequest {
-    string GoodID    = 10;
-}
+message CreateAccountRequest { string GoodID = 10; }
 
-message CreateAccountResponse {
-    Account Info = 10;
-}
+message CreateAccountResponse { Account Info = 10; }
 
 message UpdateAccountRequest {
-    uint32          ID            = 10;
-    string          EntID         = 11;
-    optional bool   Backup        = 20;
-    optional bool   Active        = 30;
-    optional bool   Blocked       = 40;
-    optional bool   Locked        = 50;
+  uint32 ID = 10;
+  string EntID = 11;
+  optional bool Backup = 20;
+  optional bool Active = 30;
+  optional bool Blocked = 40;
+  optional bool Locked = 50;
 }
 
-message UpdateAccountResponse {
-    Account Info = 10;
-}
+message UpdateAccountResponse { Account Info = 10; }
 
 message GetAccountsRequest {
-    int32  Offset     = 20;
-    int32  Limit      = 30;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetAccountsResponse {
-    repeated Account Infos = 10;
-    uint32           Total = 20;
+  repeated Account Infos = 10;
+  uint32 Total = 20;
 }

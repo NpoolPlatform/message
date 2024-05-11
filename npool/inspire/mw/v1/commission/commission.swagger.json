@@ -403,6 +403,9 @@
         },
         "StartAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -419,6 +422,14 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Commission"
+        }
+      }
+    },
+    "v1ExistCommissionCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
         }
       }
     },

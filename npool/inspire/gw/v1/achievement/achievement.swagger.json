@@ -146,6 +146,26 @@
             "$ref": "#/definitions/v1GoodAchievement"
           }
         },
+        "TotalCommission": {
+          "type": "string"
+        },
+        "SelfCommission": {
+          "type": "string"
+        },
+        "DirectInvites": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "IndirectInvites": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DirectConsumeAmount": {
+          "type": "string"
+        },
+        "InviteeConsumeAmount": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"

@@ -91,11 +91,9 @@ message BalanceInfo {
   string BalanceStr = 110;
 }
 
-message GetEstimateGasRequest{
-  string Name = 100;
-}
+message GetEstimateGasRequest { string Name = 100; }
 
-message GetEstimateGasResponse{
+message GetEstimateGasResponse {
   string Fee = 100;
   string GasLimit = 110;
   string GasPrice = 120;

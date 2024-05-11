@@ -9,137 +9,123 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc GetGoodStatements       (GetGoodStatementsRequest)      returns (GetGoodStatementsResponse)    {
-        option (google.api.http) = {
-            post: "/v1/goodstatement_GetGoodStatements"
-            body: "*"
-        };
-    }
-    rpc CreateGoodStatement     (CreateGoodStatementRequest)    returns (CreateGoodStatementResponse) {
-        option (google.api.http) = {
-            post: "/v1/goodstatement_CreateGoodStatement"
-            body: "*"
-        };
-    }
-    rpc CreateGoodStatements    (CreateGoodStatementsRequest)   returns (CreateGoodStatementsResponse) {
-        option (google.api.http) = {
-            post: "/v1/goodstatement_CreateGoodStatements"
-            body: "*"
-        };
-    }
-    rpc DeleteGoodStatement     (DeleteGoodStatementRequest)    returns (DeleteGoodStatementResponse) {
-        option (google.api.http) = {
-            post: "/v1/goodstatement_DeleteGoodStatement"
-            body: "*"
-        };
-    }
-    rpc DeleteGoodStatements    (DeleteGoodStatementsRequest)   returns (DeleteGoodStatementsResponse) {
-        option (google.api.http) = {
-            post: "/v1/goodstatement_DeleteGoodStatements"
-            body: "*"
-        };
-    }
-    rpc ExistGoodStatementConds (ExistGoodStatementCondsRequest) returns (ExistGoodStatementCondsResponse) {
-        option (google.api.http) = {
-            post: "/v1/goodstatement_ExistGoodStatementConds"
-            body: "*"
-        };
-    }
+  rpc GetGoodStatements(GetGoodStatementsRequest)
+      returns (GetGoodStatementsResponse) {
+    option (google.api.http) = {
+      post : "/v1/goodstatement_GetGoodStatements"
+      body : "*"
+    };
+  }
+  rpc CreateGoodStatement(CreateGoodStatementRequest)
+      returns (CreateGoodStatementResponse) {
+    option (google.api.http) = {
+      post : "/v1/goodstatement_CreateGoodStatement"
+      body : "*"
+    };
+  }
+  rpc CreateGoodStatements(CreateGoodStatementsRequest)
+      returns (CreateGoodStatementsResponse) {
+    option (google.api.http) = {
+      post : "/v1/goodstatement_CreateGoodStatements"
+      body : "*"
+    };
+  }
+  rpc DeleteGoodStatement(DeleteGoodStatementRequest)
+      returns (DeleteGoodStatementResponse) {
+    option (google.api.http) = {
+      post : "/v1/goodstatement_DeleteGoodStatement"
+      body : "*"
+    };
+  }
+  rpc DeleteGoodStatements(DeleteGoodStatementsRequest)
+      returns (DeleteGoodStatementsResponse) {
+    option (google.api.http) = {
+      post : "/v1/goodstatement_DeleteGoodStatements"
+      body : "*"
+    };
+  }
+  rpc ExistGoodStatementConds(ExistGoodStatementCondsRequest)
+      returns (ExistGoodStatementCondsResponse) {
+    option (google.api.http) = {
+      post : "/v1/goodstatement_ExistGoodStatementConds"
+      body : "*"
+    };
+  }
 }
 
 message GoodStatementReq {
-    optional uint32     ID                 = 9;
-    optional string     EntID              = 10;
-    optional string     GoodID             = 20;
-    optional string     CoinTypeID         = 30;
-    optional uint32     BenefitDate        = 50;
-    optional uint32     CreatedAt          = 60;
-    optional string     TotalAmount        = 70;
-    optional string     UnsoldAmount       = 80;
-    optional string     TechniqueServiceFeeAmount = 90;
-    optional bool       Rollback         = 1000;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string GoodID = 20;
+  optional string CoinTypeID = 30;
+  optional uint32 BenefitDate = 50;
+  optional uint32 CreatedAt = 60;
+  optional string TotalAmount = 70;
+  optional string UnsoldAmount = 80;
+  optional string TechniqueServiceFeeAmount = 90;
+  optional bool Rollback = 1000;
 }
 
 message GoodStatement {
-    // @inject_tag: sql:"id"
-    uint32 ID          = 9;
-    // @inject_tag: sql:"ent_id"
-    string EntID       = 10;
-    // @inject_tag: sql:"good_id"
-    string GoodID      = 20;
-    // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID  = 30;
-    // @inject_tag: sql:"amount"
-    string Amount      = 40;
-    // @inject_tag: sql:"technique_service_fee_amount"
-    string TechniqueServiceFeeAmount      = 50;
-    // @inject_tag: sql:"to_platform"
-    string ToPlatform  = 60;
-    // @inject_tag: sql:"to_user"
-    string ToUser      = 70;
-    // @inject_tag: sql:"benefit_date"
-    uint32 BenefitDate = 80;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt   = 90;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt   = 100;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"good_id"
+  string GoodID = 20;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 30;
+  // @inject_tag: sql:"amount"
+  string Amount = 40;
+  // @inject_tag: sql:"technique_service_fee_amount"
+  string TechniqueServiceFeeAmount = 50;
+  // @inject_tag: sql:"to_platform"
+  string ToPlatform = 60;
+  // @inject_tag: sql:"to_user"
+  string ToUser = 70;
+  // @inject_tag: sql:"benefit_date"
+  uint32 BenefitDate = 80;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 90;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 100;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal EntID            = 10;
-    optional basetypes.v1.StringVal GoodID           = 20;
-    optional basetypes.v1.StringVal CoinTypeID       = 30;
-    optional basetypes.v1.StringVal Amount           = 40;
-    optional basetypes.v1.Uint32Val BenefitDate      = 50;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal GoodID = 20;
+  optional basetypes.v1.StringVal CoinTypeID = 30;
+  optional basetypes.v1.StringVal Amount = 40;
+  optional basetypes.v1.Uint32Val BenefitDate = 50;
 }
 
 message GetGoodStatementsRequest {
-    Conds Conds   = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetGoodStatementsResponse {
-    repeated GoodStatement Infos = 10;
-    uint32                 Total = 20;
+  repeated GoodStatement Infos = 10;
+  uint32 Total = 20;
 }
 
-message CreateGoodStatementRequest {
-    GoodStatementReq Info = 10;
-}
+message CreateGoodStatementRequest { GoodStatementReq Info = 10; }
 
-message CreateGoodStatementResponse {
-    GoodStatement Info = 10;
-}
+message CreateGoodStatementResponse { GoodStatement Info = 10; }
 
-message CreateGoodStatementsRequest {
-    repeated GoodStatementReq Infos = 10;
-}
+message CreateGoodStatementsRequest { repeated GoodStatementReq Infos = 10; }
 
-message CreateGoodStatementsResponse {
-    repeated GoodStatement Infos = 10;
-}
+message CreateGoodStatementsResponse { repeated GoodStatement Infos = 10; }
 
-message DeleteGoodStatementRequest {
-    GoodStatementReq Info = 10;
-}
+message DeleteGoodStatementRequest { GoodStatementReq Info = 10; }
 
-message DeleteGoodStatementResponse {
-    GoodStatement Info = 10;
-}
+message DeleteGoodStatementResponse { GoodStatement Info = 10; }
 
-message DeleteGoodStatementsRequest {
-    repeated GoodStatementReq Infos = 10;
-}
+message DeleteGoodStatementsRequest { repeated GoodStatementReq Infos = 10; }
 
-message DeleteGoodStatementsResponse {
-    repeated GoodStatement Infos = 10;
-}
+message DeleteGoodStatementsResponse { repeated GoodStatement Infos = 10; }
 
-message ExistGoodStatementCondsRequest {
-    Conds Conds = 10;
-}
+message ExistGoodStatementCondsRequest { Conds Conds = 10; }
 
-message ExistGoodStatementCondsResponse {
-    bool Info = 10;
-}
+message ExistGoodStatementCondsResponse { bool Info = 10; }

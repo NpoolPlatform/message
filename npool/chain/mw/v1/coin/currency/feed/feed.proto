@@ -9,79 +9,71 @@ import "npool/basetypes/v1/currencyfeedtype.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateFeed   (CreateFeedRequest)   returns (CreateFeedResponse)   {}
-    rpc UpdateFeed   (UpdateFeedRequest)   returns (UpdateFeedResponse)   {}
-    rpc GetFeeds     (GetFeedsRequest)     returns (GetFeedsResponse)     {}
+  rpc CreateFeed(CreateFeedRequest) returns (CreateFeedResponse) {}
+  rpc UpdateFeed(UpdateFeedRequest) returns (UpdateFeedResponse) {}
+  rpc GetFeeds(GetFeedsRequest) returns (GetFeedsResponse) {}
 }
 
 message FeedReq {
-    optional uint32 ID           = 9;
-    optional string EntID        = 10;
-    optional string CoinTypeID   = 20;
-    optional basetypes.v1.CurrencyFeedType FeedType = 30;
-    optional string FeedCoinName = 40;
-    optional bool   Disabled     = 50;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string CoinTypeID = 20;
+  optional basetypes.v1.CurrencyFeedType FeedType = 30;
+  optional string FeedCoinName = 40;
+  optional bool Disabled = 50;
 }
 
 message Feed {
-    // @inject_tag: sql:"id"
-    uint32 ID           = 9;
-    // @inject_tag: sql:"ent_id"
-    string EntID        = 10;
-    // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID   = 20;
-    // @inject_tag: sql:"coin_name"
-    string CoinName     = 30;
-    // @inject_tag: sql:"coin_unit"
-    string CoinUnit     = 40;
-    // @inject_tag: sql:"coin_logo"
-    string CoinLogo     = 50;
-    // @inject_tag: sql:"coin_env"
-    string CoinENV      = 60;
-    // @inject_tag: sql:"feed_type"
-    string FeedTypeStr  = 70;
-    basetypes.v1.CurrencyFeedType FeedType = 80;
-    // @inject_tag: sql:"feed_coin_name"
-    string FeedCoinName = 90;
-    // @inject_tag: sql:"disabled"
-    bool   Disabled     = 100;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt    = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt    = 1010;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 20;
+  // @inject_tag: sql:"coin_name"
+  string CoinName = 30;
+  // @inject_tag: sql:"coin_unit"
+  string CoinUnit = 40;
+  // @inject_tag: sql:"coin_logo"
+  string CoinLogo = 50;
+  // @inject_tag: sql:"coin_env"
+  string CoinENV = 60;
+  // @inject_tag: sql:"feed_type"
+  string FeedTypeStr = 70;
+  basetypes.v1.CurrencyFeedType FeedType = 80;
+  // @inject_tag: sql:"feed_coin_name"
+  string FeedCoinName = 90;
+  // @inject_tag: sql:"disabled"
+  bool Disabled = 100;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      EntID       = 10;
-    optional basetypes.v1.StringVal      CoinTypeID  = 20;
-    optional basetypes.v1.StringSliceVal CoinTypeIDs = 30;
-    optional basetypes.v1.Uint32Val      FeedType    = 40;
-    optional basetypes.v1.BoolVal        Disabled    = 50;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal CoinTypeID = 20;
+  optional basetypes.v1.StringSliceVal CoinTypeIDs = 30;
+  optional basetypes.v1.Uint32Val FeedType = 40;
+  optional basetypes.v1.BoolVal Disabled = 50;
 }
 
-message CreateFeedRequest {
-    FeedReq Info = 10;
-}
+message CreateFeedRequest { FeedReq Info = 10; }
 
-message CreateFeedResponse {
-    Feed Info = 10;
-}
+message CreateFeedResponse { Feed Info = 10; }
 
-message UpdateFeedRequest {
-    FeedReq Info = 10;
-}
+message UpdateFeedRequest { FeedReq Info = 10; }
 
-message UpdateFeedResponse {
-    Feed Info = 10;
-}
+message UpdateFeedResponse { Feed Info = 10; }
 
 message GetFeedsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetFeedsResponse {
-    repeated Feed Infos = 10;
-    uint32        Total = 20;
+  repeated Feed Infos = 10;
+  uint32 Total = 20;
 }

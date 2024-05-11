@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package notif.middleware.contact.v1;
 
-
 option go_package = "github.com/NpoolPlatform/message/npool/notif/mw/v1/contact";
 
 import "google/api/annotations.proto";
@@ -10,132 +9,111 @@ import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/signmethod.proto";
 
-
 service Middleware {
-    rpc GenerateContact   (GenerateContactRequest) returns (GenerateContactResponse) {}
-    rpc CreateContact     (CreateContactRequest)     returns (CreateContactResponse)     {}
-    rpc UpdateContact     (UpdateContactRequest)     returns (UpdateContactResponse)     {}
-    rpc GetContact        (GetContactRequest)        returns (GetContactResponse)        {}
-    rpc GetContacts       (GetContactsRequest)       returns (GetContactsResponse)       {}
-    rpc ExistContactConds (ExistContactCondsRequest) returns (ExistContactCondsResponse) {}
-    rpc DeleteContact     (DeleteContactRequest)     returns (DeleteContactResponse)     {
-        option (google.api.http) = {
-            post: "/v1/contact_DeleteContact"
-            body: "*"
-        };
-    }
+  rpc GenerateContact(GenerateContactRequest)
+      returns (GenerateContactResponse) {}
+  rpc CreateContact(CreateContactRequest) returns (CreateContactResponse) {}
+  rpc UpdateContact(UpdateContactRequest) returns (UpdateContactResponse) {}
+  rpc GetContact(GetContactRequest) returns (GetContactResponse) {}
+  rpc GetContacts(GetContactsRequest) returns (GetContactsResponse) {}
+  rpc ExistContactConds(ExistContactCondsRequest)
+      returns (ExistContactCondsResponse) {}
+  rpc DeleteContact(DeleteContactRequest) returns (DeleteContactResponse) {
+    option (google.api.http) = {
+      post : "/v1/contact_DeleteContact"
+      body : "*"
+    };
+  }
 }
 
 message ContactReq {
-    optional uint32                  ID          = 9;
-    optional string                  EntID       = 10;
-    optional string                  AppID       = 20;
-    optional string                  Account     = 30;
-    optional basetypes.v1.SignMethod AccountType = 40;
-    optional basetypes.v1.UsedFor    UsedFor     = 50;
-    optional string                  Sender      = 60;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional string Account = 30;
+  optional basetypes.v1.SignMethod AccountType = 40;
+  optional basetypes.v1.UsedFor UsedFor = 50;
+  optional string Sender = 60;
 }
 
 message Contact {
-    // @inject_tag: sql:"id"
-    uint32 ID                              = 9;
-    // @inject_tag: sql:"ent_id"
-    string EntID                           = 10;
-    // @inject_tag: sql:"app_id"
-    string                  AppID          = 20;
-    // @inject_tag: sql:"account"
-    string                  Account        = 30;
-    // @inject_tag: sql:"account_type"
-    string                  AccountTypeStr = 39;
-    basetypes.v1.SignMethod AccountType    = 40;
-    // @inject_tag: sql:"used_for"
-    string                  UsedForStr     = 49;
-    basetypes.v1.UsedFor    UsedFor        = 50;
-    // @inject_tag: sql:"sender"
-    string                  Sender         = 60;
-    // @inject_tag: sql:"created_at"
-    uint32                  CreatedAt      = 70;
-    // @inject_tag: sql:"updated_at"
-    uint32                  UpdatedAt      = 80;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"app_id"
+  string AppID = 20;
+  // @inject_tag: sql:"account"
+  string Account = 30;
+  // @inject_tag: sql:"account_type"
+  string AccountTypeStr = 39;
+  basetypes.v1.SignMethod AccountType = 40;
+  // @inject_tag: sql:"used_for"
+  string UsedForStr = 49;
+  basetypes.v1.UsedFor UsedFor = 50;
+  // @inject_tag: sql:"sender"
+  string Sender = 60;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 70;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 80;
 }
 
 message Conds {
-    basetypes.v1.Uint32Val ID          = 9;
-    basetypes.v1.StringVal EntID       = 10;
-    basetypes.v1.StringVal AppID       = 30;
-    basetypes.v1.Uint32Val AccountType = 40;
-    basetypes.v1.Uint32Val UsedFor     = 50;
+  basetypes.v1.Uint32Val ID = 9;
+  basetypes.v1.StringVal EntID = 10;
+  basetypes.v1.StringVal AppID = 30;
+  basetypes.v1.Uint32Val AccountType = 40;
+  basetypes.v1.Uint32Val UsedFor = 50;
 }
 
 message TextInfo {
-    string          Subject  = 10;
-    string          Content  = 20;
-    string          From     = 30;
-    string          To       = 40;
-    repeated string ToCCs    = 50;
-    repeated string ReplyTos = 60;
+  string Subject = 10;
+  string Content = 20;
+  string From = 30;
+  string To = 40;
+  repeated string ToCCs = 50;
+  repeated string ReplyTos = 60;
 }
 
 message GenerateContactRequest {
-    string               AppID      = 10;
-    basetypes.v1.UsedFor UsedFor    = 30;
-    string               Sender     = 40;
-    string               Subject    = 50;
-    string               Body       = 60;
-    string               SenderName = 70;
+  string AppID = 10;
+  basetypes.v1.UsedFor UsedFor = 30;
+  string Sender = 40;
+  string Subject = 50;
+  string Body = 60;
+  string SenderName = 70;
 }
 
-message GenerateContactResponse {
-    TextInfo Info = 10;
-}
+message GenerateContactResponse { TextInfo Info = 10; }
 
-message CreateContactRequest {
-    ContactReq Info = 10;
-}
+message CreateContactRequest { ContactReq Info = 10; }
 
-message CreateContactResponse {
-    Contact Info = 10;
-}
+message CreateContactResponse { Contact Info = 10; }
 
-message GetContactRequest {
-    string EntID = 10;
-}
+message GetContactRequest { string EntID = 10; }
 
-message GetContactResponse {
-    Contact Info = 10;
-}
+message GetContactResponse { Contact Info = 10; }
 
 message GetContactsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetContactsResponse {
-    repeated Contact Infos = 10;
-    uint32           Total = 20;
+  repeated Contact Infos = 10;
+  uint32 Total = 20;
 }
 
-message UpdateContactRequest {
-    ContactReq Info = 10;
-}
+message UpdateContactRequest { ContactReq Info = 10; }
 
-message UpdateContactResponse {
-    Contact Info = 10;
-}
+message UpdateContactResponse { Contact Info = 10; }
 
-message ExistContactCondsRequest {
-    Conds Conds = 10;
-}
+message ExistContactCondsRequest { Conds Conds = 10; }
 
-message ExistContactCondsResponse {
-    bool Info = 10;
-}
+message ExistContactCondsResponse { bool Info = 10; }
 
-message DeleteContactRequest {
-    ContactReq Info = 10;
-}
+message DeleteContactRequest { ContactReq Info = 10; }
 
-message DeleteContactResponse {
-    Contact Info = 10;
-}
+message DeleteContactResponse { Contact Info = 10; }

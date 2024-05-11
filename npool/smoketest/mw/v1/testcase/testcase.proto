@@ -8,136 +8,116 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateTestCase        (CreateTestCaseRequest)       returns (CreateTestCaseResponse)       {}
-    rpc UpdateTestCase        (UpdateTestCaseRequest)       returns (UpdateTestCaseResponse)       {}
-    rpc ExistTestCase         (ExistTestCaseRequest)        returns (ExistTestCaseResponse)       {}
-    rpc GetTestCases          (GetTestCasesRequest)         returns (GetTestCasesResponse)         {}
-    rpc GetTestCase           (GetTestCaseRequest)          returns (GetTestCaseResponse)          {}
-    rpc DeleteTestCase        (DeleteTestCaseRequest)       returns (DeleteTestCaseResponse)       {}
+  rpc CreateTestCase(CreateTestCaseRequest) returns (CreateTestCaseResponse) {}
+  rpc UpdateTestCase(UpdateTestCaseRequest) returns (UpdateTestCaseResponse) {}
+  rpc ExistTestCase(ExistTestCaseRequest) returns (ExistTestCaseResponse) {}
+  rpc GetTestCases(GetTestCasesRequest) returns (GetTestCasesResponse) {}
+  rpc GetTestCase(GetTestCaseRequest) returns (GetTestCaseResponse) {}
+  rpc DeleteTestCase(DeleteTestCaseRequest) returns (DeleteTestCaseResponse) {}
 }
 
 message TestCase {
-    // @inject_tag: sql:"id"
-    uint32       ID               = 9;
-    // @inject_tag: sql:"ent_id"
-    string       EntID            = 10;
-    // @inject_tag: sql:"name"
-    string       Name             = 20;
-    // @inject_tag: sql:"description"
-    string       Description      = 30;
-    // @inject_tag: sql:"module_id"
-    string       ModuleID         = 40;
-    // @inject_tag: sql:"module_name"
-    string       ModuleName       = 50;
-    // @inject_tag: sql:"api_id"
-    string       ApiID            = 60;
-    // @inject_tag: sql:"expectation"
-    string       Expectation      = 70;
-    // @inject_tag: sql:"output_desc"
-    string       OutputDesc       = 80;
-    // @inject_tag: sql:"input"
-    string       Input            = 90;
-    // @inject_tag: sql:"input_desc"
-    string       InputDesc        = 100;
-    // @inject_tag: sql:"test_case_type"
-    string       TestCaseTypeStr  = 110;
-    TestCaseType TestCaseType     = 120;
-    // @inject_tag: sql:"deprecated"
-    bool         Deprecated       = 130;
-    // @inject_tag: sql:"test_case_class"
-    string        TestCaseClassStr = 140;
-    TestCaseClass TestCaseClass    = 150;
-    // @inject_tag: sql:"created_at"
-    uint32       CreatedAt        = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32       UpdatedAt        = 1010;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"name"
+  string Name = 20;
+  // @inject_tag: sql:"description"
+  string Description = 30;
+  // @inject_tag: sql:"module_id"
+  string ModuleID = 40;
+  // @inject_tag: sql:"module_name"
+  string ModuleName = 50;
+  // @inject_tag: sql:"api_id"
+  string ApiID = 60;
+  // @inject_tag: sql:"expectation"
+  string Expectation = 70;
+  // @inject_tag: sql:"output_desc"
+  string OutputDesc = 80;
+  // @inject_tag: sql:"input"
+  string Input = 90;
+  // @inject_tag: sql:"input_desc"
+  string InputDesc = 100;
+  // @inject_tag: sql:"test_case_type"
+  string TestCaseTypeStr = 110;
+  TestCaseType TestCaseType = 120;
+  // @inject_tag: sql:"deprecated"
+  bool Deprecated = 130;
+  // @inject_tag: sql:"test_case_class"
+  string TestCaseClassStr = 140;
+  TestCaseClass TestCaseClass = 150;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 enum TestCaseType {
-    DefaultTestCaseType = 0;
-    Manual              = 10;
-    Automatic           = 20;
+  DefaultTestCaseType = 0;
+  Manual = 10;
+  Automatic = 20;
 }
 
 enum TestCaseClass {
-    DefaultTestCaseClass = 0;
-    Functionality        = 10;
-    Interface            = 20;
+  DefaultTestCaseClass = 0;
+  Functionality = 10;
+  Interface = 20;
 }
 
 message TestCaseReq {
-    optional uint32        ID            = 9;
-    optional string        EntID         = 10;
-    optional string        Name          = 20;
-    optional string        Description   = 30;
-    optional string        ModuleID      = 40;
-    optional string        ApiID         = 60;
-    optional string        Input         = 70;
-    optional string        InputDesc     = 80;
-    optional string        Expectation   = 90;
-    optional string        OutputDesc    = 100;
-    optional TestCaseType  TestCaseType  = 110;
-    optional bool          Deprecated    = 120;
-    optional TestCaseClass TestCaseClass = 130;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string Name = 20;
+  optional string Description = 30;
+  optional string ModuleID = 40;
+  optional string ApiID = 60;
+  optional string Input = 70;
+  optional string InputDesc = 80;
+  optional string Expectation = 90;
+  optional string OutputDesc = 100;
+  optional TestCaseType TestCaseType = 110;
+  optional bool Deprecated = 120;
+  optional TestCaseClass TestCaseClass = 130;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID                 = 9;
-    optional basetypes.v1.StringVal      EntID              = 10;
-    optional basetypes.v1.StringVal      ModuleID           = 20;
-    optional basetypes.v1.StringVal      ApiID              = 30;
-    optional basetypes.v1.BoolVal        Deprecated         = 50;
-    optional basetypes.v1.Uint32SliceVal IDs                = 60;
-    optional basetypes.v1.StringSliceVal EntIDs             = 70;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal ModuleID = 20;
+  optional basetypes.v1.StringVal ApiID = 30;
+  optional basetypes.v1.BoolVal Deprecated = 50;
+  optional basetypes.v1.Uint32SliceVal IDs = 60;
+  optional basetypes.v1.StringSliceVal EntIDs = 70;
 }
 
-message CreateTestCaseRequest {
-    TestCaseReq Info = 10;
-}
+message CreateTestCaseRequest { TestCaseReq Info = 10; }
 
-message CreateTestCaseResponse {
-    TestCase Info = 10;
-}
+message CreateTestCaseResponse { TestCase Info = 10; }
 
-message ExistTestCaseRequest {
-    string EntID   = 10;
-}
+message ExistTestCaseRequest { string EntID = 10; }
 
-message ExistTestCaseResponse {
-    bool Info = 10;
-}
+message ExistTestCaseResponse { bool Info = 10; }
 
-message DeleteTestCaseRequest {
-    TestCaseReq Info = 10;
-}
+message DeleteTestCaseRequest { TestCaseReq Info = 10; }
 
-message DeleteTestCaseResponse {
-    TestCase Info = 10;
-}
+message DeleteTestCaseResponse { TestCase Info = 10; }
 
 message GetTestCasesRequest {
-    Conds  Conds                              = 10;
-    int32  Offset                             = 20;
-    int32  Limit                              = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetTestCasesResponse {
-    repeated TestCase Infos   = 10;
-    uint32            Total   = 20;
+  repeated TestCase Infos = 10;
+  uint32 Total = 20;
 }
 
-message GetTestCaseRequest {
-    string EntID   = 10;
-}
+message GetTestCaseRequest { string EntID = 10; }
 
-message GetTestCaseResponse {
-    TestCase Info = 10;
-}
+message GetTestCaseResponse { TestCase Info = 10; }
 
-message UpdateTestCaseRequest {
-    TestCaseReq Info = 10;
-}
+message UpdateTestCaseRequest { TestCaseReq Info = 10; }
 
-message UpdateTestCaseResponse {
-    TestCase Info = 10;
-}
+message UpdateTestCaseResponse { TestCase Info = 10; }

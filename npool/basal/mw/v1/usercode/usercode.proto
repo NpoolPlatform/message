@@ -9,42 +9,38 @@ import "npool/basetypes/v1/usedfor.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateUserCode (CreateUserCodeRequest) returns (CreateUserCodeResponse) {}
-    rpc VerifyUserCode (VerifyUserCodeRequest) returns (VerifyUserCodeResponse) {}
+  rpc CreateUserCode(CreateUserCodeRequest) returns (CreateUserCodeResponse) {}
+  rpc VerifyUserCode(VerifyUserCodeRequest) returns (VerifyUserCodeResponse) {}
 }
 
 message UserCode {
-    string                  Prefix      = 10;
-    string                  AppID       = 20;
-    string                  Account     = 30;
-    basetypes.v1.SignMethod AccountType = 40;
-    basetypes.v1.UsedFor    UsedFor     = 50;
-    uint32                  NextAt      = 60;
-    uint32                  ExpireAt    = 70;
-    string                  Code        = 80;
+  string Prefix = 10;
+  string AppID = 20;
+  string Account = 30;
+  basetypes.v1.SignMethod AccountType = 40;
+  basetypes.v1.UsedFor UsedFor = 50;
+  uint32 NextAt = 60;
+  uint32 ExpireAt = 70;
+  string Code = 80;
 }
 
 message CreateUserCodeRequest {
-    string                  Prefix      = 10;
-    string                  AppID       = 20;
-    string                  Account     = 30;
-    basetypes.v1.SignMethod AccountType = 40;
-    basetypes.v1.UsedFor    UsedFor     = 50;
+  string Prefix = 10;
+  string AppID = 20;
+  string Account = 30;
+  basetypes.v1.SignMethod AccountType = 40;
+  basetypes.v1.UsedFor UsedFor = 50;
 }
 
-message CreateUserCodeResponse {
-    UserCode Info = 10;
-}
+message CreateUserCodeResponse { UserCode Info = 10; }
 
 message VerifyUserCodeRequest {
-    string                  Prefix      = 10;
-    string                  AppID       = 20;
-    string                  Account     = 30;
-    basetypes.v1.SignMethod AccountType = 40;
-    basetypes.v1.UsedFor    UsedFor     = 50;
-    string                  Code        = 60;
+  string Prefix = 10;
+  string AppID = 20;
+  string Account = 30;
+  basetypes.v1.SignMethod AccountType = 40;
+  basetypes.v1.UsedFor UsedFor = 50;
+  string Code = 60;
 }
 
-message VerifyUserCodeResponse {
-}
-
+message VerifyUserCodeResponse {}

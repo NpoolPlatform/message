@@ -7,87 +7,75 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/subscr
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc CreateAppSubscribe (CreateAppSubscribeRequest) returns (CreateAppSubscribeResponse) {}
-    rpc GetAppSubscribe    (GetAppSubscribeRequest)    returns (GetAppSubscribeResponse)    {}
-    rpc GetAppSubscribes   (GetAppSubscribesRequest)   returns (GetAppSubscribesResponse)   {}
-    rpc ExistAppSubscribeConds (ExistAppSubscribeCondsRequest) returns (ExistAppSubscribeCondsResponse) {}
-    rpc DeleteAppSubscribe (DeleteAppSubscribeRequest) returns (DeleteAppSubscribeResponse) {}
+  rpc CreateAppSubscribe(CreateAppSubscribeRequest)
+      returns (CreateAppSubscribeResponse) {}
+  rpc GetAppSubscribe(GetAppSubscribeRequest)
+      returns (GetAppSubscribeResponse) {}
+  rpc GetAppSubscribes(GetAppSubscribesRequest)
+      returns (GetAppSubscribesResponse) {}
+  rpc ExistAppSubscribeConds(ExistAppSubscribeCondsRequest)
+      returns (ExistAppSubscribeCondsResponse) {}
+  rpc DeleteAppSubscribe(DeleteAppSubscribeRequest)
+      returns (DeleteAppSubscribeResponse) {}
 }
 
 message AppSubscribeReq {
-    optional uint32 ID             = 9;
-    optional string EntID          = 10;
-    optional string AppID          = 20;
-    optional string SubscribeAppID = 30;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional string SubscribeAppID = 30;
 }
 
 message AppSubscribe {
-    // Base info
-    // @inject_tag: sql:"id"
-    uint32  ID               = 9;
-    // @inject_tag: sql:"ent_id"
-    string  EntID            = 10;
-    // @inject_tag: sql:"app_id"
-    string  AppID            = 20;
-    // @inject_tag: sql:"app_name"
-    string  AppName          = 30;
-    // @inject_tag: sql:"subscribe_app_id"
-    string  SubscribeAppID   = 40;
-    // @inject_tag: sql:"subscribe_app_name"
-    string  SubscribeAppName = 50;
-    // @inject_tag: sql:"created_at"
-    uint32  CreatedAt        = 60;
-    // @inject_tag: sql:"updated_at"
-    uint32  UpdatedAt        = 70;
+  // Base info
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"app_id"
+  string AppID = 20;
+  // @inject_tag: sql:"app_name"
+  string AppName = 30;
+  // @inject_tag: sql:"subscribe_app_id"
+  string SubscribeAppID = 40;
+  // @inject_tag: sql:"subscribe_app_name"
+  string SubscribeAppName = 50;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 60;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 70;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val ID             = 9;
-    optional basetypes.v1.StringVal EntID          = 10;
-    optional basetypes.v1.StringVal AppID          = 20;
-    optional basetypes.v1.StringVal SubscribeAppID = 30;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal SubscribeAppID = 30;
 }
 
-message CreateAppSubscribeRequest {
-    AppSubscribeReq Info = 10;
-}
+message CreateAppSubscribeRequest { AppSubscribeReq Info = 10; }
 
-message CreateAppSubscribeResponse {
-    AppSubscribe Info = 10;
-}
+message CreateAppSubscribeResponse { AppSubscribe Info = 10; }
 
-message GetAppSubscribeRequest {
-    string EntID = 10;
-}
+message GetAppSubscribeRequest { string EntID = 10; }
 
-message GetAppSubscribeResponse {
-    AppSubscribe Info = 10;
-}
+message GetAppSubscribeResponse { AppSubscribe Info = 10; }
 
 message GetAppSubscribesRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetAppSubscribesResponse {
-    repeated AppSubscribe Infos = 10;
-    uint32                Total = 20;
+  repeated AppSubscribe Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistAppSubscribeCondsRequest {
-    Conds Conds = 10;
-}
+message ExistAppSubscribeCondsRequest { Conds Conds = 10; }
 
-message ExistAppSubscribeCondsResponse {
-    bool Info = 10;
-}
+message ExistAppSubscribeCondsResponse { bool Info = 10; }
 
+message DeleteAppSubscribeRequest { AppSubscribeReq Info = 10; }
 
-message DeleteAppSubscribeRequest {
-    AppSubscribeReq Info = 10;
-}
-
-message DeleteAppSubscribeResponse {
-    AppSubscribe Info = 10;
-}
+message DeleteAppSubscribeResponse { AppSubscribe Info = 10; }

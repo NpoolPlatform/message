@@ -1,0 +1,345 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/mw/v1/app/config/config.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AppConfig": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "SettleModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settle_mode\""
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
+        },
+        "SettleAmountTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settle_amount_type\""
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+        },
+        "SettleIntervalStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"settle_interval\""
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
+        },
+        "CommissionTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"commission_type\""
+        },
+        "CommissionType": {
+          "$ref": "#/definitions/v1CommissionType"
+        },
+        "SettleBenefit": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"settle_benefit\""
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end_at\""
+        },
+        "MaxLevel": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"max_level\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1AppConfigReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1SettleMode"
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1SettleAmountType"
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1SettleInterval"
+        },
+        "CommissionType": {
+          "$ref": "#/definitions/v1CommissionType"
+        },
+        "SettleBenefit": {
+          "type": "boolean"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxLevel": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1BoolVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CommissionType": {
+      "type": "string",
+      "enum": [
+        "DefaultCommissionType",
+        "LayeredCommission",
+        "DirectCommission",
+        "LegacyCommission",
+        "WithoutCommission"
+      ],
+      "default": "DefaultCommissionType"
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "SettleMode": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "SettleAmountType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "SettleInterval": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "CommissionType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "SettleBenefit": {
+          "$ref": "#/definitions/v1BoolVal"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "MaxLevel": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CreateAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
+        }
+      }
+    },
+    "v1DeleteAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
+        }
+      }
+    },
+    "v1ExistAppConfigCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
+        }
+      }
+    },
+    "v1GetAppConfigsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AppConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1SettleAmountType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleAmountType",
+        "SettleByPercent",
+        "SettleByAmount"
+      ],
+      "default": "DefaultSettleAmountType"
+    },
+    "v1SettleInterval": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleInterval",
+        "SettleAggregate",
+        "SettleMonthly",
+        "SettleYearly",
+        "SettleEveryOrder"
+      ],
+      "default": "DefaultSettleInterval"
+    },
+    "v1SettleMode": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleMode",
+        "SettleWithGoodValue",
+        "SettleWithPaymentAmount"
+      ],
+      "default": "DefaultSettleMode"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateAppConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppConfig"
+        }
+      }
+    }
+  }
+}

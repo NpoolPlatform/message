@@ -9,105 +9,85 @@ import "npool/basetypes/v1/usedfor.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateNotifUser     (CreateNotifUserRequest)     returns (CreateNotifUserResponse)     {}
-    rpc UpdateNotifUser     (UpdateNotifUserRequest)     returns (UpdateNotifUserResponse)     {}
-    rpc GetNotifUser        (GetNotifUserRequest)        returns (GetNotifUserResponse)        {}
-    rpc GetNotifUsers       (GetNotifUsersRequest)       returns (GetNotifUsersResponse)       {}
-    rpc ExistNotifUser      (ExistNotifUserRequest)      returns (ExistNotifUserResponse)      {}
-    rpc ExistNotifUserConds (ExistNotifUserCondsRequest) returns (ExistNotifUserCondsResponse) {}
-    rpc DeleteNotifUser     (DeleteNotifUserRequest)     returns (DeleteNotifUserResponse)     {}
+  rpc CreateNotifUser(CreateNotifUserRequest)
+      returns (CreateNotifUserResponse) {}
+  rpc UpdateNotifUser(UpdateNotifUserRequest)
+      returns (UpdateNotifUserResponse) {}
+  rpc GetNotifUser(GetNotifUserRequest) returns (GetNotifUserResponse) {}
+  rpc GetNotifUsers(GetNotifUsersRequest) returns (GetNotifUsersResponse) {}
+  rpc ExistNotifUser(ExistNotifUserRequest) returns (ExistNotifUserResponse) {}
+  rpc ExistNotifUserConds(ExistNotifUserCondsRequest)
+      returns (ExistNotifUserCondsResponse) {}
+  rpc DeleteNotifUser(DeleteNotifUserRequest)
+      returns (DeleteNotifUserResponse) {}
 }
 
 message NotifUser {
-    // @inject_tag: sql:"id"
-    uint32 ID                      = 9;
-    // @inject_tag: sql:"ent_id"
-    string EntID                   = 10;
-    // @inject_tag: sql:"app_id"
-    string AppID                   = 20;
-    // @inject_tag: sql:"user_id"
-    string UserID                  = 30;
-    // @inject_tag: sql:"event_type"
-    string EventTypeStr            = 40;
-    basetypes.v1.UsedFor EventType = 50;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt               = 60;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt               = 70;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"app_id"
+  string AppID = 20;
+  // @inject_tag: sql:"user_id"
+  string UserID = 30;
+  // @inject_tag: sql:"event_type"
+  string EventTypeStr = 40;
+  basetypes.v1.UsedFor EventType = 50;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 60;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 70;
 }
 
 message NotifUserReq {
-    optional uint32 ID                      = 9;
-    optional string EntID                   = 10;
-    optional string AppID                   = 20;
-    optional string UserID                  = 30;
-    optional basetypes.v1.UsedFor EventType = 40;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional string UserID = 30;
+  optional basetypes.v1.UsedFor EventType = 40;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID        = 9;
-    optional basetypes.v1.StringVal      EntID     = 10;
-    optional basetypes.v1.StringSliceVal EntIDs    = 20;
-    optional basetypes.v1.StringVal      AppID     = 30;
-    optional basetypes.v1.StringVal      UserID    = 40;
-    optional basetypes.v1.Uint32Val      EventType = 50;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringSliceVal EntIDs = 20;
+  optional basetypes.v1.StringVal AppID = 30;
+  optional basetypes.v1.StringVal UserID = 40;
+  optional basetypes.v1.Uint32Val EventType = 50;
 }
 
-message CreateNotifUserRequest {
-    NotifUserReq Info = 10;
-}
+message CreateNotifUserRequest { NotifUserReq Info = 10; }
 
-message CreateNotifUserResponse {
-    NotifUser Info = 10;
-}
+message CreateNotifUserResponse { NotifUser Info = 10; }
 
-message UpdateNotifUserRequest {
-    NotifUserReq Info = 10;
-}
+message UpdateNotifUserRequest { NotifUserReq Info = 10; }
 
-message UpdateNotifUserResponse {
-    NotifUser Info = 10;
-}
+message UpdateNotifUserResponse { NotifUser Info = 10; }
 
-message GetNotifUserRequest {
-    string EntID = 10;
-}
+message GetNotifUserRequest { string EntID = 10; }
 
-message GetNotifUserResponse {
-    NotifUser Info = 10;
-}
+message GetNotifUserResponse { NotifUser Info = 10; }
 
 message GetNotifUsersRequest {
-    Conds Conds = 10;
-    int32 Offset = 20;
-    int32 Limit = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetNotifUsersResponse {
-    repeated NotifUser Infos = 10;
-    uint32             Total = 20;
+  repeated NotifUser Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistNotifUserRequest {
-    string EntID = 10;
-}
+message ExistNotifUserRequest { string EntID = 10; }
 
-message ExistNotifUserResponse {
-    bool Info = 10;
-}
+message ExistNotifUserResponse { bool Info = 10; }
 
-message ExistNotifUserCondsRequest {
-    Conds Conds = 10;
-}
+message ExistNotifUserCondsRequest { Conds Conds = 10; }
 
-message ExistNotifUserCondsResponse {
-    bool Info = 10;
-}
+message ExistNotifUserCondsResponse { bool Info = 10; }
 
-message DeleteNotifUserRequest {
-    NotifUserReq Info = 10;
-}
+message DeleteNotifUserRequest { NotifUserReq Info = 10; }
 
-message DeleteNotifUserResponse {
-    NotifUser Info = 10;
-}
+message DeleteNotifUserResponse { NotifUser Info = 10; }

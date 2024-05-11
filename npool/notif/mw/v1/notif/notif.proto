@@ -13,201 +13,170 @@ import "npool/notif/mw/v1/template/template.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateNotif    (CreateNotifRequest)    returns (CreateNotifResponse)    {
-        option (google.api.http) = {
-            post: "/v1/notif_CreateNotif"
-            body: "*"
-        };
-    }
-    rpc CreateNotifs   (CreateNotifsRequest)   returns (CreateNotifsResponse)   {
-        option (google.api.http) = {
-            post: "/v1/notif_CreateNotifs"
-            body: "*"
-        };
-    }
-    rpc UpdateNotif    (UpdateNotifRequest)    returns (UpdateNotifResponse)    {}
-    rpc UpdateNotifs   (UpdateNotifsRequest)   returns (UpdateNotifsResponse)   {}
-    rpc GetNotif       (GetNotifRequest)       returns (GetNotifResponse)       {}
-    rpc GetNotifs      (GetNotifsRequest)      returns (GetNotifsResponse)      {}
-    rpc GenerateNotifs (GenerateNotifsRequest) returns (GenerateNotifsResponse) {}
-    rpc GenerateMultiNotifs (GenerateMultiNotifsRequest) returns (GenerateMultiNotifsResponse) {}
-    rpc ExistNotifConds (ExistNotifCondsRequest) returns (ExistNotifCondsResponse) {}
-    rpc DeleteNotif     (DeleteNotifRequest)     returns (DeleteNotifResponse)     {
-        option (google.api.http) = {
-            post: "/v1/notif_DeleteNotif"
-            body: "*"
-        };
-    }
+  rpc CreateNotif(CreateNotifRequest) returns (CreateNotifResponse) {
+    option (google.api.http) = {
+      post : "/v1/notif_CreateNotif"
+      body : "*"
+    };
+  }
+  rpc CreateNotifs(CreateNotifsRequest) returns (CreateNotifsResponse) {
+    option (google.api.http) = {
+      post : "/v1/notif_CreateNotifs"
+      body : "*"
+    };
+  }
+  rpc UpdateNotif(UpdateNotifRequest) returns (UpdateNotifResponse) {}
+  rpc UpdateNotifs(UpdateNotifsRequest) returns (UpdateNotifsResponse) {}
+  rpc GetNotif(GetNotifRequest) returns (GetNotifResponse) {}
+  rpc GetNotifs(GetNotifsRequest) returns (GetNotifsResponse) {}
+  rpc GenerateNotifs(GenerateNotifsRequest) returns (GenerateNotifsResponse) {}
+  rpc GenerateMultiNotifs(GenerateMultiNotifsRequest)
+      returns (GenerateMultiNotifsResponse) {}
+  rpc ExistNotifConds(ExistNotifCondsRequest)
+      returns (ExistNotifCondsResponse) {}
+  rpc DeleteNotif(DeleteNotifRequest) returns (DeleteNotifResponse) {
+    option (google.api.http) = {
+      post : "/v1/notif_DeleteNotif"
+      body : "*"
+    };
+  }
 }
 
 message Notif {
-    // @inject_tag: sql:"id"
-    uint32 ID                         = 9;
-    // @inject_tag: sql:"ent_id"
-    string EntID                      = 10;
-    // @inject_tag: sql:"app_id"
-    string    AppID                   = 20;
-    // @inject_tag: sql:"user_id"
-    string    UserID                  = 30;
-    // @inject_tag: sql:"notified"
-    bool      Notified                = 40;
-    // @inject_tag: sql:"lang_id"
-    string    LangID                  = 50;
-    // @inject_tag: sql:"event_type"
-    string    EventTypeStr            = 59;
-    basetypes.v1.UsedFor EventType    = 60;
-    // @inject_tag: sql:"use_template"
-    bool      UseTemplate             = 70;
-    // @inject_tag: sql:"title"
-    string    Title                   = 80;
-    // @inject_tag: sql:"content"
-    string    Content                 = 90;
-    // @inject_tag: sql:"channel"
-    string    ChannelStr              = 99;
-    basetypes.v1.NotifChannel Channel = 100;
-    // @inject_tag: sql:"extra"
-    string    Extra                   = 110;
-    // @inject_tag: sql:"created_at"
-    uint32    CreatedAt               = 120;
-    // @inject_tag: sql:"updated_at"
-    uint32    UpdatedAt               = 130;
-    // @inject_tag: sql:"event_id"
-    string    EventID                 = 140;
-    // @inject_tag: sql:"type"
-    string NotifTypeStr               = 149;
-    basetypes.v1.NotifType NotifType  = 150;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"app_id"
+  string AppID = 20;
+  // @inject_tag: sql:"user_id"
+  string UserID = 30;
+  // @inject_tag: sql:"notified"
+  bool Notified = 40;
+  // @inject_tag: sql:"lang_id"
+  string LangID = 50;
+  // @inject_tag: sql:"event_type"
+  string EventTypeStr = 59;
+  basetypes.v1.UsedFor EventType = 60;
+  // @inject_tag: sql:"use_template"
+  bool UseTemplate = 70;
+  // @inject_tag: sql:"title"
+  string Title = 80;
+  // @inject_tag: sql:"content"
+  string Content = 90;
+  // @inject_tag: sql:"channel"
+  string ChannelStr = 99;
+  basetypes.v1.NotifChannel Channel = 100;
+  // @inject_tag: sql:"extra"
+  string Extra = 110;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 120;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 130;
+  // @inject_tag: sql:"event_id"
+  string EventID = 140;
+  // @inject_tag: sql:"type"
+  string NotifTypeStr = 149;
+  basetypes.v1.NotifType NotifType = 150;
 }
 
 message NotifReq {
-    optional uint32    ID          = 9;
-    optional string    EntID       = 10;
-    optional string    AppID       = 20;
-    optional string    UserID      = 30;
-    optional bool      Notified    = 40;
-    optional string    LangID      = 50;
-    optional basetypes.v1.UsedFor EventType = 60;
-    optional bool      UseTemplate = 70;
-    optional string    Title       = 80;
-    optional string    Content     = 90;
-    optional basetypes.v1.NotifChannel Channel = 100;
-    optional string    Extra       = 110;
-    optional string    EventID     = 120;
-    optional basetypes.v1.NotifType NotifType   = 130;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional string UserID = 30;
+  optional bool Notified = 40;
+  optional string LangID = 50;
+  optional basetypes.v1.UsedFor EventType = 60;
+  optional bool UseTemplate = 70;
+  optional string Title = 80;
+  optional string Content = 90;
+  optional basetypes.v1.NotifChannel Channel = 100;
+  optional string Extra = 110;
+  optional string EventID = 120;
+  optional basetypes.v1.NotifType NotifType = 130;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID          = 9;
-    optional basetypes.v1.StringVal      EntID       = 10;
-    optional basetypes.v1.StringSliceVal EntIDs      = 11;
-    optional basetypes.v1.StringVal      AppID       = 20;
-    optional basetypes.v1.StringVal      UserID      = 30;
-    optional basetypes.v1.BoolVal        Notified    = 40;
-    optional basetypes.v1.StringVal      LangID      = 50;
-    optional basetypes.v1.Uint32Val      EventType   = 60;
-    optional basetypes.v1.BoolVal        UseTemplate = 70;
-    optional basetypes.v1.Uint32SliceVal Channels    = 80;
-    optional basetypes.v1.Uint32Val      Channel     = 90;
-    optional basetypes.v1.Uint32SliceVal EventTypes  = 100;
-    optional basetypes.v1.StringVal      Extra       = 110;
-    optional basetypes.v1.StringVal      EventID     = 120;
-    optional basetypes.v1.StringSliceVal EventIDs    = 121;
-    optional basetypes.v1.Uint32Val      NotifType   = 130;
-    optional basetypes.v1.Uint32SliceVal IDs         = 140;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringSliceVal EntIDs = 11;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal UserID = 30;
+  optional basetypes.v1.BoolVal Notified = 40;
+  optional basetypes.v1.StringVal LangID = 50;
+  optional basetypes.v1.Uint32Val EventType = 60;
+  optional basetypes.v1.BoolVal UseTemplate = 70;
+  optional basetypes.v1.Uint32SliceVal Channels = 80;
+  optional basetypes.v1.Uint32Val Channel = 90;
+  optional basetypes.v1.Uint32SliceVal EventTypes = 100;
+  optional basetypes.v1.StringVal Extra = 110;
+  optional basetypes.v1.StringVal EventID = 120;
+  optional basetypes.v1.StringSliceVal EventIDs = 121;
+  optional basetypes.v1.Uint32Val NotifType = 130;
+  optional basetypes.v1.Uint32SliceVal IDs = 140;
 }
 
-message CreateNotifRequest {
-    NotifReq Info = 10;
-}
+message CreateNotifRequest { NotifReq Info = 10; }
 
-message CreateNotifResponse {
-    Notif Info = 10;
-}
+message CreateNotifResponse { Notif Info = 10; }
 
+message CreateNotifsRequest { repeated NotifReq Infos = 10; }
 
-message CreateNotifsRequest {
-    repeated NotifReq Infos = 10;
-}
+message CreateNotifsResponse { repeated Notif Infos = 10; }
 
-message CreateNotifsResponse {
-    repeated Notif Infos = 10;
-}
+message UpdateNotifRequest { NotifReq Info = 10; }
 
-message UpdateNotifRequest {
-    NotifReq Info = 10;
-}
+message UpdateNotifResponse { Notif Info = 10; }
 
-message UpdateNotifResponse {
-    Notif Info = 10;
-}
+message UpdateNotifsRequest { repeated NotifReq Infos = 10; }
 
-message UpdateNotifsRequest {
-    repeated NotifReq Infos = 10;
-}
+message UpdateNotifsResponse { repeated Notif Infos = 10; }
 
-message UpdateNotifsResponse {
-    repeated Notif Infos = 10;
-}
+message GetNotifRequest { string EntID = 10; }
 
-message GetNotifRequest {
-    string EntID = 10;
-}
-
-message GetNotifResponse {
-    Notif Info = 10;
-}
+message GetNotifResponse { Notif Info = 10; }
 
 message GetNotifsRequest {
-    Conds Conds   = 10;
-    int32 Offset  = 20;
-    int32 Limit   = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetNotifsResponse {
-    repeated Notif Infos = 10;
-    uint32         Total = 20;
+  repeated Notif Infos = 10;
+  uint32 Total = 20;
 }
 
 message GenerateNotifsRequest {
-    string                                              AppID     = 10;
-    optional string                                     UserID    = 20;
-    basetypes.v1.UsedFor                                EventType = 30;
-    optional .notif.middleware.template.v1.TemplateVars Vars      = 40;
-    optional string                                     Extra     = 50;
-    basetypes.v1.NotifType                              NotifType = 60;
+  string AppID = 10;
+  optional string UserID = 20;
+  basetypes.v1.UsedFor EventType = 30;
+  optional .notif.middleware.template.v1.TemplateVars Vars = 40;
+  optional string Extra = 50;
+  basetypes.v1.NotifType NotifType = 60;
 }
 
-message GenerateNotifsResponse {
-    repeated Notif Infos = 10;
-}
+message GenerateNotifsResponse { repeated Notif Infos = 10; }
 
 message GenerateMultiNotifsRequest {
-    string AppID = 10;
-    message _NotifReq {
-        optional string                                     UserID    = 10;
-        basetypes.v1.UsedFor                                EventType = 20;
-        optional .notif.middleware.template.v1.TemplateVars Vars      = 30;
-        optional string                                     Extra     = 40;
-        basetypes.v1.NotifType                              NotifType = 50;
-    }
-    repeated _NotifReq Reqs = 20;
+  string AppID = 10;
+  message _NotifReq {
+    optional string UserID = 10;
+    basetypes.v1.UsedFor EventType = 20;
+    optional .notif.middleware.template.v1.TemplateVars Vars = 30;
+    optional string Extra = 40;
+    basetypes.v1.NotifType NotifType = 50;
+  }
+  repeated _NotifReq Reqs = 20;
 }
 
-message GenerateMultiNotifsResponse {
-    repeated Notif Infos = 10;
-}
+message GenerateMultiNotifsResponse { repeated Notif Infos = 10; }
 
-message ExistNotifCondsRequest {
-    Conds Conds = 10;
-}
+message ExistNotifCondsRequest { Conds Conds = 10; }
 
-message ExistNotifCondsResponse {
-    bool Info = 10;
-}
+message ExistNotifCondsResponse { bool Info = 10; }
 
-message DeleteNotifRequest {
-    NotifReq Info = 10;
-}
+message DeleteNotifRequest { NotifReq Info = 10; }
 
-message DeleteNotifResponse {
-    Notif Info = 10;
-}
+message DeleteNotifResponse { Notif Info = 10; }

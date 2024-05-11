@@ -9,116 +9,100 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateTopMost    (CreateTopMostRequest)    returns (CreateTopMostResponse)    {}
-    rpc UpdateTopMost    (UpdateTopMostRequest)    returns (UpdateTopMostResponse)    {}
-    rpc GetTopMost       (GetTopMostRequest)       returns (GetTopMostResponse)       {}
-    rpc GetTopMosts      (GetTopMostsRequest)      returns (GetTopMostsResponse)      {}
-    rpc DeleteTopMost    (DeleteTopMostRequest)    returns (DeleteTopMostResponse)    {}
+  rpc CreateTopMost(CreateTopMostRequest) returns (CreateTopMostResponse) {}
+  rpc UpdateTopMost(UpdateTopMostRequest) returns (UpdateTopMostResponse) {}
+  rpc GetTopMost(GetTopMostRequest) returns (GetTopMostResponse) {}
+  rpc GetTopMosts(GetTopMostsRequest) returns (GetTopMostsResponse) {}
+  rpc DeleteTopMost(DeleteTopMostRequest) returns (DeleteTopMostResponse) {}
 }
 
 message TopMostReq {
-    optional uint32 ID         = 9;
-    optional string EntID      = 10;
-    optional string AppID      = 20;
-    optional basetypes.good.v1.GoodTopMostType TopMostType = 30;
-    optional string Title      = 40;
-    optional string Message    = 50;
-    repeated string Posters    = 60;
-    // For promotion
-    optional uint32 StartAt    = 70;
-    optional uint32 EndAt      = 80;
-    // For user specific threshold
-    optional string ThresholdCredits = 90;
-    optional uint32 RegisterElapsedSeconds = 100;
-    optional uint32 ThresholdPurchases = 110;
-    optional string ThresholdPaymentAmount = 120;
-    optional bool   KycMust    = 130;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional basetypes.good.v1.GoodTopMostType TopMostType = 30;
+  optional string Title = 40;
+  optional string Message = 50;
+  repeated string Posters = 60;
+  // For promotion
+  optional uint32 StartAt = 70;
+  optional uint32 EndAt = 80;
+  // For user specific threshold
+  optional string ThresholdCredits = 90;
+  optional uint32 RegisterElapsedSeconds = 100;
+  optional uint32 ThresholdPurchases = 110;
+  optional string ThresholdPaymentAmount = 120;
+  optional bool KycMust = 130;
 }
 
 message TopMost {
-    // @inject_tag: sql:"id"
-    uint32 ID         = 9;
-    // @inject_tag: sql:"ent_id"
-    string EntID      = 10;
-    // @inject_tag: sql:"app_id"
-    string AppID      = 20;
-    // @inject_tag: sql:"top_most_type"
-    string TopMostTypeStr = 30;
-    basetypes.good.v1.GoodTopMostType TopMostType = 40;
-    // @inject_tag: sql:"title"
-    string Title      = 50;
-    // @inject_tag: sql:"message"
-    string Message    = 60;
-    // @inject_tag: sql:"posters"
-    string PostersStr = 70;
-    repeated string Posters = 80;
-    // @inject_tag: sql:"start_at"
-    uint32 StartAt    = 90;
-    // @inject_tag: sql:"end_at"
-    uint32 EndAt      = 100;
-    // @inject_tag: sql:"threshold_credits"
-    string ThresholdCredits = 110;
-    // @inject_tag: sql:"register_elapsed_seconds"
-    uint32 RegisterElapsedSeconds = 120;
-    // @inject_tag: sql:"threshold_purchases"
-    uint32 ThresholdPurchases = 130;
-    // @inject_tag: sql:"threshold_payment_amount"
-    string ThresholdPaymentAmount = 140;
-    // @inject_tag: sql:"kyc_must"
-    bool   KycMust    = 150;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt  = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt  = 1010;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"app_id"
+  string AppID = 20;
+  // @inject_tag: sql:"top_most_type"
+  string TopMostTypeStr = 30;
+  basetypes.good.v1.GoodTopMostType TopMostType = 40;
+  // @inject_tag: sql:"title"
+  string Title = 50;
+  // @inject_tag: sql:"message"
+  string Message = 60;
+  // @inject_tag: sql:"posters"
+  string PostersStr = 70;
+  repeated string Posters = 80;
+  // @inject_tag: sql:"start_at"
+  uint32 StartAt = 90;
+  // @inject_tag: sql:"end_at"
+  uint32 EndAt = 100;
+  // @inject_tag: sql:"threshold_credits"
+  string ThresholdCredits = 110;
+  // @inject_tag: sql:"register_elapsed_seconds"
+  uint32 RegisterElapsedSeconds = 120;
+  // @inject_tag: sql:"threshold_purchases"
+  uint32 ThresholdPurchases = 130;
+  // @inject_tag: sql:"threshold_payment_amount"
+  string ThresholdPaymentAmount = 140;
+  // @inject_tag: sql:"kyc_must"
+  bool KycMust = 150;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val ID    = 9;
-    optional basetypes.v1.StringVal EntID = 10;
-    optional basetypes.v1.StringVal AppID = 20;
-    optional basetypes.v1.Uint32Val TopMostType = 30;
-    optional basetypes.v1.StringVal Title = 40;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.Uint32Val TopMostType = 30;
+  optional basetypes.v1.StringVal Title = 40;
 }
 
-message CreateTopMostRequest {
-    TopMostReq Info = 10;
-}
+message CreateTopMostRequest { TopMostReq Info = 10; }
 
-message CreateTopMostResponse {
-    TopMost Info = 10;
-}
+message CreateTopMostResponse { TopMost Info = 10; }
 
-message UpdateTopMostRequest {
-    TopMostReq Info = 10;
-}
+message UpdateTopMostRequest { TopMostReq Info = 10; }
 
-message UpdateTopMostResponse {
-    TopMost Info = 10;
-}
+message UpdateTopMostResponse { TopMost Info = 10; }
 
-message GetTopMostRequest {
-    string EntID = 10;
-}
+message GetTopMostRequest { string EntID = 10; }
 
-message GetTopMostResponse {
-    TopMost Info = 10;
-}
+message GetTopMostResponse { TopMost Info = 10; }
 
 message GetTopMostsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetTopMostsResponse {
-    repeated TopMost Infos = 10;
-    uint32           Total = 20;
+  repeated TopMost Infos = 10;
+  uint32 Total = 20;
 }
 
-message DeleteTopMostRequest {
-    TopMostReq Info = 10;
-}
+message DeleteTopMostRequest { TopMostReq Info = 10; }
 
-message DeleteTopMostResponse {
-    TopMost Info = 10;
-}
+message DeleteTopMostResponse { TopMost Info = 10; }

@@ -78,7 +78,7 @@ const (
 	OrderState_DefaultOrderState OrderState = 0
 	OrderState_OrderStateCreated OrderState = 10 // -> OrderStateWaitPayment
 	// Common state
-	OrderState_OrderStateWaitPayment OrderState = 20 // -> OrderStatePaymentTimeout || OrderStatePaymentTransferReceived || OrderStatePreCancel
+	OrderState_OrderStateWaitPayment OrderState = 20 // -> OrderStatePaymentTimeout || OrderStatePaymentTransferReceived ||
 	// Payment process
 	OrderState_OrderStatePaymentTransferReceived    OrderState = 30  // -> OrderStatePaymentTransferBookKeeping
 	OrderState_OrderStatePaymentTransferBookKeeping OrderState = 40  // -> OrderStatePaymentSpendBalance

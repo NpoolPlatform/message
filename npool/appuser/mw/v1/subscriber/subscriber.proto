@@ -7,88 +7,76 @@ option go_package = "github.com/NpoolPlatform/message/npool/appuser/mw/v1/subscr
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc CreateSubscriber (CreateSubscriberRequest) returns (CreateSubscriberResponse) {}
-    rpc UpdateSubscriber (UpdateSubscriberRequest) returns (UpdateSubscriberResponse) {}
-    rpc GetSubscriber    (GetSubscriberRequest)    returns (GetSubscriberResponse)    {}
-    rpc GetSubscriberes  (GetSubscriberesRequest)  returns (GetSubscriberesResponse)  {}
-    rpc DeleteSubscriber (DeleteSubscriberRequest) returns (DeleteSubscriberResponse) {}
+  rpc CreateSubscriber(CreateSubscriberRequest)
+      returns (CreateSubscriberResponse) {}
+  rpc UpdateSubscriber(UpdateSubscriberRequest)
+      returns (UpdateSubscriberResponse) {}
+  rpc GetSubscriber(GetSubscriberRequest) returns (GetSubscriberResponse) {}
+  rpc GetSubscriberes(GetSubscriberesRequest)
+      returns (GetSubscriberesResponse) {}
+  rpc DeleteSubscriber(DeleteSubscriberRequest)
+      returns (DeleteSubscriberResponse) {}
 }
 
 message SubscriberReq {
-    optional uint32 ID            = 9;
-    optional string EntID         = 10;
-    optional string AppID         = 20;
-    optional string EmailAddress  = 30;
-    optional bool   Registered    = 40;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string AppID = 20;
+  optional string EmailAddress = 30;
+  optional bool Registered = 40;
 }
 
 message Subscriber {
-    // Base info
-    // @inject_tag: sql:"id"
-    uint32  ID           = 9;
-    // @inject_tag: sql:"ent_id"
-    string  EntID        = 10;
-    // @inject_tag: sql:"app_id"
-    string  AppID        = 20;
-    // @inject_tag: sql:"app_name"
-    string  AppName      = 30;
-    // @inject_tag: sql:"email_address"
-    string  EmailAddress = 40;
-    // @inject_tag: sql:"registered"
-    bool    Registered   = 50;
-    // @inject_tag: sql:"created_at"
-    uint32  CreatedAt    = 60;
-    // @inject_tag: sql:"updated_at"
-    uint32  UpdatedAt    = 70;
+  // Base info
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"app_id"
+  string AppID = 20;
+  // @inject_tag: sql:"app_name"
+  string AppName = 30;
+  // @inject_tag: sql:"email_address"
+  string EmailAddress = 40;
+  // @inject_tag: sql:"registered"
+  bool Registered = 50;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 60;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 70;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val ID            = 9;
-    optional basetypes.v1.StringVal EntID         = 10;
-    optional basetypes.v1.StringVal AppID         = 20;
-    optional basetypes.v1.StringVal EmailAddress  = 30;
-    optional basetypes.v1.BoolVal   Registered    = 40;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal EmailAddress = 30;
+  optional basetypes.v1.BoolVal Registered = 40;
 }
 
-message CreateSubscriberRequest {
-    SubscriberReq Info = 10;
-}
+message CreateSubscriberRequest { SubscriberReq Info = 10; }
 
-message CreateSubscriberResponse {
-    Subscriber Info = 10;
-}
+message CreateSubscriberResponse { Subscriber Info = 10; }
 
-message UpdateSubscriberRequest {
-    SubscriberReq Info = 10;
-}
+message UpdateSubscriberRequest { SubscriberReq Info = 10; }
 
-message UpdateSubscriberResponse {
-    Subscriber Info = 10;
-}
+message UpdateSubscriberResponse { Subscriber Info = 10; }
 
-message GetSubscriberRequest {
-    string EntID = 10;
-}
+message GetSubscriberRequest { string EntID = 10; }
 
-message GetSubscriberResponse {
-    Subscriber Info = 10;
-}
+message GetSubscriberResponse { Subscriber Info = 10; }
 
 message GetSubscriberesRequest {
-    Conds Conds = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetSubscriberesResponse {
-    repeated Subscriber Infos = 10;
-    uint32              Total = 20;
+  repeated Subscriber Infos = 10;
+  uint32 Total = 20;
 }
 
-message DeleteSubscriberRequest {
-    SubscriberReq Info = 10;
-}
+message DeleteSubscriberRequest { SubscriberReq Info = 10; }
 
-message DeleteSubscriberResponse {
-    Subscriber Info = 10;
-}
+message DeleteSubscriberResponse { Subscriber Info = 10; }

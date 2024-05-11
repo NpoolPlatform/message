@@ -11,179 +11,151 @@ import "npool/basetypes/appuser/v1/enums.proto";
 import "npool/basetypes/v1/conds.proto";
 
 service Middleware {
-    rpc CreateApp       (CreateAppRequest)       returns (CreateAppResponse)       {}
-    rpc CreateApps      (CreateAppsRequest)      returns (CreateAppsResponse)      {}
-    rpc UpdateApp       (UpdateAppRequest)       returns (UpdateAppResponse)       {}
-    rpc GetApp          (GetAppRequest)          returns (GetAppResponse)          {}
-    rpc GetApps         (GetAppsRequest)         returns (GetAppsResponse)         {}
-    rpc ExistApp        (ExistAppRequest)        returns (ExistAppResponse)        {}
-    rpc ExistAppConds   (ExistAppCondsRequest)   returns (ExistAppCondsResponse)   {}
-    rpc DeleteApp       (DeleteAppRequest)       returns (DeleteAppResponse)       {}
+  rpc CreateApp(CreateAppRequest) returns (CreateAppResponse) {}
+  rpc CreateApps(CreateAppsRequest) returns (CreateAppsResponse) {}
+  rpc UpdateApp(UpdateAppRequest) returns (UpdateAppResponse) {}
+  rpc GetApp(GetAppRequest) returns (GetAppResponse) {}
+  rpc GetApps(GetAppsRequest) returns (GetAppsResponse) {}
+  rpc ExistApp(ExistAppRequest) returns (ExistAppResponse) {}
+  rpc ExistAppConds(ExistAppCondsRequest) returns (ExistAppCondsResponse) {}
+  rpc DeleteApp(DeleteAppRequest) returns (DeleteAppResponse) {}
 }
 
 message AppReq {
-    // Base info
-    optional uint32          ID                 = 9;
-    optional string          EntID              = 10;
-    optional string          CreatedBy          = 20;
-    optional string          Name               = 30;
-    optional string          Logo               = 40;
-    optional string          Description        = 50;
+  // Base info
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string CreatedBy = 20;
+  optional string Name = 30;
+  optional string Logo = 40;
+  optional string Description = 50;
 
-    // Banned
-    optional bool            Banned             = 60;
-    optional string          BanMessage         = 70;
+  // Banned
+  optional bool Banned = 60;
+  optional string BanMessage = 70;
 
-    // Sign methods
-    repeated basetypes.v1.SignMethod SignupMethods    = 80;
-    repeated basetypes.v1.SignMethod ExtSigninMethods = 90;
+  // Sign methods
+  repeated basetypes.v1.SignMethod SignupMethods = 80;
+  repeated basetypes.v1.SignMethod ExtSigninMethods = 90;
 
-    // Control flag
-    optional basetypes.v1.RecaptchaMethod RecaptchaMethod  = 100;
-    optional bool            KycEnable          = 110;
-    optional bool            SigninVerifyEnable = 120;
-    optional bool            InvitationCodeMust = 130;
-    optional basetypes.v1.CreateInvitationCodeWhen CreateInvitationCodeWhen = 140;
-    optional uint32          MaxTypedCouponsPerOrder = 150;
-    optional bool            Maintaining        = 160;
-    repeated string          CommitButtonTargets           = 170;
-    optional bool            CouponWithdrawEnable = 180;
-    optional basetypes.appuser.v1.ResetUserMethod   ResetUserMethod        = 200;
+  // Control flag
+  optional basetypes.v1.RecaptchaMethod RecaptchaMethod = 100;
+  optional bool KycEnable = 110;
+  optional bool SigninVerifyEnable = 120;
+  optional bool InvitationCodeMust = 130;
+  optional basetypes.v1.CreateInvitationCodeWhen CreateInvitationCodeWhen = 140;
+  optional uint32 MaxTypedCouponsPerOrder = 150;
+  optional bool Maintaining = 160;
+  repeated string CommitButtonTargets = 170;
+  optional bool CouponWithdrawEnable = 180;
+  optional basetypes.appuser.v1.ResetUserMethod ResetUserMethod = 200;
 }
 
 message App {
-    // Base info
-    // @inject_tag: sql:"id"
-    uint32          ID                     = 9;
-    // @inject_tag: sql:"ent_id"
-    string          EntID                  = 10;
-    // @inject_tag: sql:"created_by"
-    string          CreatedBy              = 20;
-    // @inject_tag: sql:"name"
-    string          Name                   = 30;
-    // @inject_tag: sql:"logo"
-    string          Logo                   = 40;
-    // @inject_tag: sql:"description"
-    string          Description            = 50;
+  // Base info
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"created_by"
+  string CreatedBy = 20;
+  // @inject_tag: sql:"name"
+  string Name = 30;
+  // @inject_tag: sql:"logo"
+  string Logo = 40;
+  // @inject_tag: sql:"description"
+  string Description = 50;
 
-    // Banned
-    // @inject_tag: sql:"ban_app_id"
-    string          BanAppID               = 60;
-    bool            Banned                 = 70;
-    // @inject_tag: sql:"ban_message"
-    string          BanMessage             = 80;
+  // Banned
+  // @inject_tag: sql:"ban_app_id"
+  string BanAppID = 60;
+  bool Banned = 70;
+  // @inject_tag: sql:"ban_message"
+  string BanMessage = 80;
 
-    // Sign methods
-    // @inject_tag: sql:"signup_methods"
-    string SignupMethodsStr                = 90;
-    repeated basetypes.v1.SignMethod SignupMethods    = 100;
-    // @inject_tag: sql:"extern_signin_methods"
-    string ExtSigninMethodsStr             = 110;
-    repeated basetypes.v1.SignMethod ExtSigninMethods = 120;
+  // Sign methods
+  // @inject_tag: sql:"signup_methods"
+  string SignupMethodsStr = 90;
+  repeated basetypes.v1.SignMethod SignupMethods = 100;
+  // @inject_tag: sql:"extern_signin_methods"
+  string ExtSigninMethodsStr = 110;
+  repeated basetypes.v1.SignMethod ExtSigninMethods = 120;
 
-    // Control flag
-    // @inject_tag: sql:"recaptcha_method"
-    string          RecaptchaMethodStr     = 130;
-    basetypes.v1.RecaptchaMethod RecaptchaMethod  = 131;
-    // @inject_tag: sql:"kyc_enable"
-    bool            KycEnable              = 150;
-    // @inject_tag: sql:"signin_verify_enable"
-    bool            SigninVerifyEnable     = 170;
-    // @inject_tag: sql:"invitation_code_must"
-    bool            InvitationCodeMust     = 190;
+  // Control flag
+  // @inject_tag: sql:"recaptcha_method"
+  string RecaptchaMethodStr = 130;
+  basetypes.v1.RecaptchaMethod RecaptchaMethod = 131;
+  // @inject_tag: sql:"kyc_enable"
+  bool KycEnable = 150;
+  // @inject_tag: sql:"signin_verify_enable"
+  bool SigninVerifyEnable = 170;
+  // @inject_tag: sql:"invitation_code_must"
+  bool InvitationCodeMust = 190;
 
-    // @inject_tag: sql:"created_at"
-    uint32          CreatedAt              = 200;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 200;
 
-    // @inject_tag: sql:"create_invitation_code_when"
-    string          CreateInvitationCodeWhenStr = 210;
-    basetypes.v1.CreateInvitationCodeWhen CreateInvitationCodeWhen = 220;
+  // @inject_tag: sql:"create_invitation_code_when"
+  string CreateInvitationCodeWhenStr = 210;
+  basetypes.v1.CreateInvitationCodeWhen CreateInvitationCodeWhen = 220;
 
-    // @inject_tag: sql:"max_typed_coupons_per_order"
-    uint32          MaxTypedCouponsPerOrder = 230;
-    // @inject_tag: sql:"maintaining"
-    bool            Maintaining        = 240;
-    // @inject_tag: sql:"commit_button_targets"
-    string          CommitButtonTargetsStr        = 250;
-    repeated string CommitButtonTargets           = 260;
-    // @inject_tag: sql:"coupon_withdraw_enable"
-    bool            CouponWithdrawEnable          = 270;
-    // @inject_tag: sql:"reset_user_method"
-    string          ResetUserMethodStr                = 300;
-    basetypes.appuser.v1.ResetUserMethod ResetUserMethod  = 310;
+  // @inject_tag: sql:"max_typed_coupons_per_order"
+  uint32 MaxTypedCouponsPerOrder = 230;
+  // @inject_tag: sql:"maintaining"
+  bool Maintaining = 240;
+  // @inject_tag: sql:"commit_button_targets"
+  string CommitButtonTargetsStr = 250;
+  repeated string CommitButtonTargets = 260;
+  // @inject_tag: sql:"coupon_withdraw_enable"
+  bool CouponWithdrawEnable = 270;
+  // @inject_tag: sql:"reset_user_method"
+  string ResetUserMethodStr = 300;
+  basetypes.appuser.v1.ResetUserMethod ResetUserMethod = 310;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID        = 9;
-    optional basetypes.v1.StringVal      EntID     = 10;
-    optional basetypes.v1.StringSliceVal EntIDs    = 20;
-    optional basetypes.v1.StringVal      CreatedBy = 30;
-    optional basetypes.v1.StringVal      Name      = 40;
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringSliceVal EntIDs = 20;
+  optional basetypes.v1.StringVal CreatedBy = 30;
+  optional basetypes.v1.StringVal Name = 40;
 }
 
-message CreateAppRequest {
-    AppReq Info = 10;
-}
+message CreateAppRequest { AppReq Info = 10; }
 
-message CreateAppResponse {
-    App Info = 10;
-}
+message CreateAppResponse { App Info = 10; }
 
-message CreateAppsRequest {
-    repeated AppReq Infos = 10;
-}
+message CreateAppsRequest { repeated AppReq Infos = 10; }
 
-message CreateAppsResponse {
-    repeated App Infos = 10;
-}
+message CreateAppsResponse { repeated App Infos = 10; }
 
-message UpdateAppRequest {
-    AppReq Info = 10;
-}
+message UpdateAppRequest { AppReq Info = 10; }
 
-message UpdateAppResponse {
-    App Info = 10;
-}
+message UpdateAppResponse { App Info = 10; }
 
-message GetAppRequest {
-    string EntID = 10;
-}
+message GetAppRequest { string EntID = 10; }
 
-message GetAppResponse {
-    App Info = 10;
-}
+message GetAppResponse { App Info = 10; }
 
 message GetAppsRequest {
-    Conds Conds  = 9;
-    int32 Offset = 10;
-    int32 Limit  = 20;
+  Conds Conds = 9;
+  int32 Offset = 10;
+  int32 Limit = 20;
 }
 
 message GetAppsResponse {
-    repeated App Infos = 10;
-    uint32       Total = 20;
+  repeated App Infos = 10;
+  uint32 Total = 20;
 }
 
-message ExistAppRequest {
-    string EntID = 10;
-}
+message ExistAppRequest { string EntID = 10; }
 
-message ExistAppResponse {
-    bool Info = 10;
-}
+message ExistAppResponse { bool Info = 10; }
 
-message ExistAppCondsRequest {
-    Conds Conds = 10;
-}
+message ExistAppCondsRequest { Conds Conds = 10; }
 
-message ExistAppCondsResponse {
-    bool Info = 10;
-}
+message ExistAppCondsResponse { bool Info = 10; }
 
-message DeleteAppRequest {
-    AppReq Info = 10;
-}
+message DeleteAppRequest { AppReq Info = 10; }
 
-message DeleteAppResponse {
-    App Info = 10;
-}
+message DeleteAppResponse { App Info = 10; }

@@ -8,74 +8,61 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateFiat (CreateFiatRequest) returns (CreateFiatResponse) {}
-    rpc GetFiat    (GetFiatRequest)    returns (GetFiatResponse)    {}
-    rpc GetFiats   (GetFiatsRequest)   returns (GetFiatsResponse)   {}
-    rpc UpdateFiat (UpdateFiatRequest) returns (UpdateFiatResponse) {}
+  rpc CreateFiat(CreateFiatRequest) returns (CreateFiatResponse) {}
+  rpc GetFiat(GetFiatRequest) returns (GetFiatResponse) {}
+  rpc GetFiats(GetFiatsRequest) returns (GetFiatsResponse) {}
+  rpc UpdateFiat(UpdateFiatRequest) returns (UpdateFiatResponse) {}
 }
 
 message FiatReq {
-    optional uint32 ID   = 10;
-    optional string EntID = 11;
-    optional string Name = 20;
-    optional string Logo = 30;
-    optional string Unit = 40;
+  optional uint32 ID = 10;
+  optional string EntID = 11;
+  optional string Name = 20;
+  optional string Logo = 30;
+  optional string Unit = 40;
 }
 
 message Fiat {
-    // @inject_tag: sql:"id"
-    uint32 ID        = 10;
-    // @inject_tag: sql:"ent_id"
-    string EntID     = 11;
-    // @inject_tag: sql:"name"
-    string Name      = 20;
-    // @inject_tag: sql:"logo"
-    string Logo      = 30;
-    // @inject_tag: sql:"unit"
-    string Unit      = 40;
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt = 1010;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 11;
+  // @inject_tag: sql:"name"
+  string Name = 20;
+  // @inject_tag: sql:"logo"
+  string Logo = 30;
+  // @inject_tag: sql:"unit"
+  string Unit = 40;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal EntID = 10;
-    optional basetypes.v1.StringVal Name = 20;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal Name = 20;
 }
 
-message CreateFiatRequest {
-    FiatReq Info = 10;
-}
+message CreateFiatRequest { FiatReq Info = 10; }
 
-message CreateFiatResponse {
-    Fiat Info = 10;
-}
+message CreateFiatResponse { Fiat Info = 10; }
 
-message GetFiatRequest {
-    string EntID = 10;
-}
+message GetFiatRequest { string EntID = 10; }
 
-message GetFiatResponse {
-    Fiat Info = 10;
-}
+message GetFiatResponse { Fiat Info = 10; }
 
 message GetFiatsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetFiatsResponse {
-    repeated Fiat Infos = 10;
-    uint32        Total = 20;
+  repeated Fiat Infos = 10;
+  uint32 Total = 20;
 }
 
-message UpdateFiatRequest {
-    FiatReq Info = 10;
-}
+message UpdateFiatRequest { FiatReq Info = 10; }
 
-message UpdateFiatResponse {
-    Fiat Info = 10;
-}
-
+message UpdateFiatResponse { Fiat Info = 10; }

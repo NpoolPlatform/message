@@ -5,8 +5,8 @@ package basetypes.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
 enum CurrencyFeedType {
-    DefaultFeedType   = 0;
-    CoinGecko         = 10;
-    CoinBase          = 20;
-    StableUSDHardCode = 30;
+  DefaultFeedType = 0;
+  CoinGecko = 10;
+  CoinBase = 20;
+  StableUSDHardCode = 30;
 }

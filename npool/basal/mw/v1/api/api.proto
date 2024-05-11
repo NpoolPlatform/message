@@ -8,139 +8,116 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateAPI     (CreateAPIRequest)     returns (CreateAPIResponse)     {}
-    rpc CreateAPIs    (CreateAPIsRequest)    returns (CreateAPIsResponse)    {}
-    rpc UpdateAPI     (UpdateAPIRequest)     returns (UpdateAPIResponse)     {}
-    rpc GetAPIs       (GetAPIsRequest)       returns (GetAPIsResponse)       {}
-    rpc GetDomains    (GetDomainsRequest)    returns (GetDomainsResponse)    {}
-    rpc ExistAPI      (ExistAPIRequest)      returns (ExistAPIResponse)      {}
-    rpc DeleteAPI     (DeleteAPIRequest)     returns (DeleteAPIResponse)     {}
+  rpc CreateAPI(CreateAPIRequest) returns (CreateAPIResponse) {}
+  rpc CreateAPIs(CreateAPIsRequest) returns (CreateAPIsResponse) {}
+  rpc UpdateAPI(UpdateAPIRequest) returns (UpdateAPIResponse) {}
+  rpc GetAPIs(GetAPIsRequest) returns (GetAPIsResponse) {}
+  rpc GetDomains(GetDomainsRequest) returns (GetDomainsResponse) {}
+  rpc ExistAPI(ExistAPIRequest) returns (ExistAPIResponse) {}
+  rpc DeleteAPI(DeleteAPIRequest) returns (DeleteAPIResponse) {}
 }
 
 enum Protocol {
-    DefaultProtocol = 0;
-    GRPC  = 10;
-    HTTP  = 20;
+  DefaultProtocol = 0;
+  GRPC = 10;
+  HTTP = 20;
 }
 
 enum Method {
-    DefaultMethod   = 0;
-    GET             = 10;
-    POST            = 20;
-    STREAM          = 30;
+  DefaultMethod = 0;
+  GET = 10;
+  POST = 20;
+  STREAM = 30;
 }
 
 message APIReq {
-    optional uint32     ID             = 9;
-    optional string     EntID          = 10;
-    optional Protocol   Protocol       = 20;
-    optional string     ServiceName    = 30;
-    optional Method     Method         = 40;
-    optional string     MethodName     = 50;
-    optional string     Path           = 60;
-    optional bool       Exported       = 70;
-    optional string     PathPrefix     = 80;
-    repeated string     Domains        = 90;
-    optional bool       Deprecated     = 100;
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional Protocol Protocol = 20;
+  optional string ServiceName = 30;
+  optional Method Method = 40;
+  optional string MethodName = 50;
+  optional string Path = 60;
+  optional bool Exported = 70;
+  optional string PathPrefix = 80;
+  repeated string Domains = 90;
+  optional bool Deprecated = 100;
 }
 
 message API {
-     // @inject_tag: sql:"id"
-    uint32     ID             = 9;
-     // @inject_tag: sql:"ent_id"
-    string     EntID          = 10;
-    // @inject_tag: sql:"protocol"
-    string     ProtocolStr    = 19;
-    Protocol   Protocol       = 20;
-    // @inject_tag: sql:"service_name"
-    string     ServiceName    = 30;
-    // @inject_tag: sql:"method"
-    string     MethodStr      = 39;
-    Method     Method         = 40;
-    // @inject_tag: sql:"method_name"
-    string     MethodName     = 50;
-    // @inject_tag: sql:"path"
-    string     Path           = 60;
-    // @inject_tag: sql:"exported"
-    bool       Exported       = 70;
-    // @inject_tag: sql:"path_prefix"
-    string     PathPrefix     = 80;
-    // @inject_tag: sql:"domains"
-    string     DomainsStr     = 89;
-    repeated   string  Domains = 90;
-    // @inject_tag: sql:"deprecated"
-    bool       Deprecated     = 100;
-    // @inject_tag: sql:"created_at"
-    uint32     CreatedAt      = 110;
-    // @inject_tag: sql:"updated_at"
-    uint32     UpdatedAt      = 120;
+  // @inject_tag: sql:"id"
+  uint32 ID = 9;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 10;
+  // @inject_tag: sql:"protocol"
+  string ProtocolStr = 19;
+  Protocol Protocol = 20;
+  // @inject_tag: sql:"service_name"
+  string ServiceName = 30;
+  // @inject_tag: sql:"method"
+  string MethodStr = 39;
+  Method Method = 40;
+  // @inject_tag: sql:"method_name"
+  string MethodName = 50;
+  // @inject_tag: sql:"path"
+  string Path = 60;
+  // @inject_tag: sql:"exported"
+  bool Exported = 70;
+  // @inject_tag: sql:"path_prefix"
+  string PathPrefix = 80;
+  // @inject_tag: sql:"domains"
+  string DomainsStr = 89;
+  repeated string Domains = 90;
+  // @inject_tag: sql:"deprecated"
+  bool Deprecated = 100;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 110;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 120;
 }
 
 message Conds {
-    optional basetypes.v1.StringVal      EntID       = 10;
-    optional basetypes.v1.Uint32Val      Protocol    = 20;
-    optional basetypes.v1.StringVal      ServiceName = 30;
-    optional basetypes.v1.Uint32Val      Method      = 40;
-    optional basetypes.v1.StringVal      Path        = 50;
-    optional basetypes.v1.BoolVal        Exported    = 60;
-    optional basetypes.v1.BoolVal        Deprecated  = 70;
-    optional basetypes.v1.StringSliceVal EntIDs      = 80;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.Uint32Val Protocol = 20;
+  optional basetypes.v1.StringVal ServiceName = 30;
+  optional basetypes.v1.Uint32Val Method = 40;
+  optional basetypes.v1.StringVal Path = 50;
+  optional basetypes.v1.BoolVal Exported = 60;
+  optional basetypes.v1.BoolVal Deprecated = 70;
+  optional basetypes.v1.StringSliceVal EntIDs = 80;
 }
 
-message CreateAPIRequest {
-    APIReq Info = 10;
-}
+message CreateAPIRequest { APIReq Info = 10; }
 
-message CreateAPIResponse {
-    API Info = 10;
-}
+message CreateAPIResponse { API Info = 10; }
 
-message CreateAPIsRequest {
-    repeated APIReq Infos = 10;
-}
+message CreateAPIsRequest { repeated APIReq Infos = 10; }
 
-message CreateAPIsResponse {
-    repeated API Infos = 10;
-}
+message CreateAPIsResponse { repeated API Infos = 10; }
 
-message UpdateAPIRequest {
-    APIReq Info = 10;
-}
+message UpdateAPIRequest { APIReq Info = 10; }
 
-message UpdateAPIResponse {
-    API Info = 10;
-}
+message UpdateAPIResponse { API Info = 10; }
 
 message GetAPIsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetAPIsResponse {
-    repeated API Infos = 10;
-    uint32       Total = 20;
+  repeated API Infos = 10;
+  uint32 Total = 20;
 }
 
-message GetDomainsRequest {
-}
+message GetDomainsRequest {}
 
-message GetDomainsResponse {
-    repeated string Infos = 10;
-}
+message GetDomainsResponse { repeated string Infos = 10; }
 
-message ExistAPIRequest {
-    string EntID = 10;
-}
+message ExistAPIRequest { string EntID = 10; }
 
-message ExistAPIResponse {
-    bool Info = 10;
-}
+message ExistAPIResponse { bool Info = 10; }
 
-message DeleteAPIRequest {
-    APIReq Info = 10;
-}
+message DeleteAPIRequest { APIReq Info = 10; }
 
-message DeleteAPIResponse {
-    API Info = 10;
-}
+message DeleteAPIResponse { API Info = 10; }

@@ -5,14 +5,14 @@ package basetypes.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/v1";
 
 enum HTTPMethod {
-    DefaultMethod = 0;
-    GET           = 10;
-    HEAD          = 20;
-    POST          = 30;
-    PUT           = 40;
-    DELETE        = 50;
-    CONNECT       = 60;
-    OPTIONS       = 70;
-    TRACE         = 80;
-    PATCH         = 90;
+  DefaultMethod = 0;
+  GET = 10;
+  HEAD = 20;
+  POST = 30;
+  PUT = 40;
+  DELETE = 50;
+  CONNECT = 60;
+  OPTIONS = 70;
+  TRACE = 80;
+  PATCH = 90;
 }
