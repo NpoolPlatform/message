@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+package good.middleware.good1.malfunction.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/malfunction";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateMalfunction (CreateMalfunctionRequest) returns (CreateMalfunctionResponse) {}
+    rpc GetMalfunction (GetMalfunctionRequest) returns (GetMalfunctionResponse) {}
+    rpc ExistMalfunctionConds (ExistMalfunctionCondsRequest) returns (ExistMalfunctionCondsResponse) {}
+    rpc GetMalfunctions (GetMalfunctionsRequest) returns (GetMalfunctionsResponse) {}
+    rpc UpdateMalfunction (UpdateMalfunctionRequest) returns (UpdateMalfunctionResponse) {}
+    rpc DeleteMalfunction (DeleteMalfunctionRequest) returns (DeleteMalfunctionResponse) {}
+}
+
+message MalfunctionReq {
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string GoodID = 30;
+    optional string Title = 40;
+    optional string Message = 50;
+    optional uint32 StartAt = 60;
+    optional uint32 DurationSeconds = 70;
+    optional uint32 CompensateSeconds = 80;
+}
+
+message Malfunction {
+    // @inject_tag: sql:"id"
+    uint32 ID = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID = 20;
+    // @inject_tag: sql:"good_id"
+    string GoodID = 30;
+    // @inject_tag: sql:"title"
+    string Title = 40;
+    // @inject_tag: sql:"message"
+    string Message = 50;
+    // @inject_tag: sql:"start_at"
+    uint32 StartAt = 60;
+    // @inject_tag: sql:"duration_seconds"
+    uint32 DurationSeconds = 70;
+    // @inject_tag: sql:"compensate_seconds"
+    uint32 CompensateSeconds = 80;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.Uint32Val ID = 10;
+    optional basetypes.v1.StringVal EntID = 20;
+    optional basetypes.v1.StringVal EntIDs = 30;
+    optional basetypes.v1.StringVal GoodID = 40;
+}
+
+message CreateMalfunctionRequest {
+    MalfunctionReq Info = 10;
+}
+
+message CreateMalfunctionResponse {
+    Malfunction Info = 10;
+}
+
+message GetMalfunctionRequest {
+    string EntID = 10;
+}
+
+message GetMalfunctionResponse {
+    Malfunction Info = 10;
+}
+
+message ExistMalfunctionCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistMalfunctionCondsResponse {
+    bool Info = 10;
+}
+
+message GetMalfunctionsRequest {
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetMalfunctionsResponse {
+    repeated Malfunction Infos = 10;
+    uint32 Total = 20;
+}
+
+message UpdateMalfunctionRequest {
+    MalfunctionReq Info = 10;
+}
+
+message UpdateMalfunctionResponse {
+    Malfunction Info = 10;
+}
+
+message DeleteMalfunctionRequest {
+    MalfunctionReq Info = 10;
+}
+
+message DeleteMalfunctionResponse {
+    Malfunction Info = 10;
+}

@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package good.gateway.good1.malfunction.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/good/malfunction";
+
+import "google/api/annotations.proto";
+import "npool/good/mw/v1/good/malfunction/malfunction.proto";
+
+service Gateway {
+    rpc AdminCreateMalfunction (AdminCreateMalfunctionRequest) returns (AdminCreateMalfunctionResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/create/goodmalfunction"
+            body: "*"
+        };
+    }
+
+    rpc AdminUpdateMalfunction (AdminUpdateMalfunctionRequest) returns (AdminUpdateMalfunctionResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/update/goodmalfunction"
+            body: "*"
+        };
+    }
+
+    rpc GetMalfunctions (GetMalfunctionsRequest) returns (GetMalfunctionsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/goodmalfunctions"
+            body: "*"
+        };
+    }
+
+    rpc AdminDeleteMalfunction (AdminDeleteMalfunctionRequest) returns (AdminDeleteMalfunctionResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/delete/goodmalfunction"
+            body: "*"
+        };
+    }
+}
+
+message AdminCreateMalfunctionRequest {
+    string GoodID = 10;
+    string Title = 20;
+    string Message = 30;
+    uint32 StartAt = 40;
+    optional uint32 DurationSeconds = 50; // For compensate which is start but not end, 0 means till now
+    optional uint32 CompensateSeconds = 60;
+}
+
+message AdminCreateMalfunctionResponse {
+    middleware.good1.malfunction.v1.Malfunction Info = 10;
+}
+
+message AdminUpdateMalfunctionRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+    optional bool Must = 30;
+}
+
+message AdminUpdateMalfunctionResponse {
+    middleware.good1.malfunction.v1.Malfunction Info = 10;
+}
+
+message GetMalfunctionsRequest {
+    optional string GoodID = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetMalfunctionsResponse {
+    repeated middleware.good1.malfunction.v1.Malfunction Infos = 10;
+    uint32 Total = 20;
+}
+
+message AdminDeleteMalfunctionRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+}
+
+message AdminDeleteMalfunctionResponse {
+    middleware.good1.malfunction.v1.Malfunction Info = 10;
+}
