@@ -27,6 +27,12 @@ service Middleware {
       body : "*"
     };
   }
+  rpc CalcluateEventRewards(CalcluateEventRewardsRequest) returns (CalcluateEventRewardsResponse) {
+    option (google.api.http) = {
+      post : "/v1/event_CalcluateEventRewards"
+      body : "*"
+    };
+  }
 }
 
 message EventReq {
@@ -143,5 +149,19 @@ message RewardEventRequest {
 }
 
 message RewardEventResponse {
+  Reward Info = 10;
+}
+
+message CalcluateEventRewardsRequest {
+  string AppID = 10;
+  string UserID = 20;
+  basetypes.v1.UsedFor EventType = 30;
+  optional string GoodID = 40;
+  optional string AppGoodID = 41;
+  uint32 Consecutive = 50;
+  optional string Amount = 60;
+}
+
+message CalcluateEventRewardsResponse {
   Reward Info = 10;
 }

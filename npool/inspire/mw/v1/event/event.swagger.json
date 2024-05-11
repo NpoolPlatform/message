@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/event_CalcluateEventRewards": {
+      "post": {
+        "operationId": "Middleware_CalcluateEventRewards",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CalcluateEventRewardsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CalcluateEventRewardsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
     "/v1/event_DeleteEvent": {
       "post": {
         "operationId": "Middleware_DeleteEvent",
@@ -129,6 +161,41 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1CalcluateEventRewardsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Consecutive": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Amount": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CalcluateEventRewardsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Reward"
         }
       }
     },
