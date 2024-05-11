@@ -5,13 +5,14 @@ package miningpool.gateway.pool.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/pool";
 
 import "google/api/annotations.proto";
+import "npool/basetypes/v1/cointype.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
   rpc AdminGetPools(AdminGetPoolsRequest) returns (AdminGetPoolsResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/pools"
+      post : "/v1/admin/get/miningpools"
       body : "*"
     };
   }
@@ -31,14 +32,14 @@ message Pool {
 message Coin {
   string EntID = 10;
   string PoolID = 20;
-  basetypes.miningpool.v1.CoinType CoinType = 30;
+  string CoinTypeID = 30;
+  basetypes.v1.CoinType CoinType = 31;
   basetypes.miningpool.v1.RevenueType RevenueType = 40;
   string FeeRatio = 50;
   bool FixedRevenueAble = 60;
   string LeastTransferAmount = 70;
   uint32 BenefitIntervalSeconds = 80;
   string Remark = 90;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 100;
 }
 
 message FractionRule {
@@ -48,8 +49,6 @@ message FractionRule {
   string MinAmount = 40;
   string WithdrawRate = 50;
   string MiningpoolTypeStr = 60;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 70;
-  basetypes.miningpool.v1.CoinType CoinType = 80;
 }
 
 message AdminGetPoolsRequest {

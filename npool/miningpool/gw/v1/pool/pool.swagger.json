@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/get/pools": {
+    "/v1/admin/get/miningpools": {
       "post": {
         "operationId": "Gateway_AdminGetPools",
         "responses": {
@@ -114,6 +114,9 @@
         "PoolID": {
           "type": "string"
         },
+        "CoinTypeID": {
+          "type": "string"
+        },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
@@ -135,9 +138,6 @@
         },
         "Remark": {
           "type": "string"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
         }
       }
     },
@@ -145,9 +145,37 @@
       "type": "string",
       "enum": [
         "DefaultCoinType",
-        "BitCoin"
+        "CoinTypeFileCoin",
+        "CoinTypeBitCoin",
+        "CoinTypeEthereum",
+        "CoinTypeUSDTerc20",
+        "CoinTypeSpacemesh",
+        "CoinTypeSolana",
+        "CoinTypeUSDTtrc20",
+        "CoinTypeBinanceCoin",
+        "CoinTypeTron",
+        "CoinTypeBinanceUSD",
+        "CoinTypeUSDCerc20",
+        "CoinTypeAleo",
+        "CoinTypeIronFish",
+        "CoinTypeUSDTbep20",
+        "CoinTypeTFileCoin",
+        "CoinTypeTBitCoin",
+        "CoinTypeTEthereum",
+        "CoinTypeTUSDTerc20",
+        "CoinTypeTSpacemesh",
+        "CoinTypeTSolana",
+        "CoinTypeTUSDTtrc20",
+        "CoinTypeTBinanceCoin",
+        "CoinTypeTTron",
+        "CoinTypeTBinanceUSD",
+        "CoinTypeTUSDCerc20",
+        "CoinTypeTAleo",
+        "CoinTypeTIronFish",
+        "CoinTypeTUSDTbep20"
       ],
-      "default": "DefaultCoinType"
+      "default": "DefaultCoinType",
+      "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
     },
     "v1FractionRule": {
       "type": "object",
@@ -170,12 +198,6 @@
         },
         "MiningpoolTypeStr": {
           "type": "string"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
         }
       }
     },

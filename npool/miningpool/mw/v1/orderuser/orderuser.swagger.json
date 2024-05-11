@@ -124,9 +124,37 @@
       "type": "string",
       "enum": [
         "DefaultCoinType",
-        "BitCoin"
+        "CoinTypeFileCoin",
+        "CoinTypeBitCoin",
+        "CoinTypeEthereum",
+        "CoinTypeUSDTerc20",
+        "CoinTypeSpacemesh",
+        "CoinTypeSolana",
+        "CoinTypeUSDTtrc20",
+        "CoinTypeBinanceCoin",
+        "CoinTypeTron",
+        "CoinTypeBinanceUSD",
+        "CoinTypeUSDCerc20",
+        "CoinTypeAleo",
+        "CoinTypeIronFish",
+        "CoinTypeUSDTbep20",
+        "CoinTypeTFileCoin",
+        "CoinTypeTBitCoin",
+        "CoinTypeTEthereum",
+        "CoinTypeTUSDTerc20",
+        "CoinTypeTSpacemesh",
+        "CoinTypeTSolana",
+        "CoinTypeTUSDTtrc20",
+        "CoinTypeTBinanceCoin",
+        "CoinTypeTTron",
+        "CoinTypeTBinanceUSD",
+        "CoinTypeTUSDCerc20",
+        "CoinTypeTAleo",
+        "CoinTypeTIronFish",
+        "CoinTypeTUSDTbep20"
       ],
-      "default": "DefaultCoinType"
+      "default": "DefaultCoinType",
+      "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
     },
     "v1Conds": {
       "type": "object",
@@ -246,6 +274,14 @@
         "UserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
+        },
+        "CoinID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
         },
         "RootUserID": {
           "type": "string",

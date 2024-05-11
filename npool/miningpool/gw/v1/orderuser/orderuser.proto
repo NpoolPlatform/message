@@ -5,13 +5,14 @@ package miningpool.gateway.orderuser.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/orderuser";
 
 import "google/api/annotations.proto";
+import "npool/basetypes/v1/cointype.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
   rpc GetOrderUser(GetOrderUserRequest) returns (GetOrderUserResponse) {
     option (google.api.http) = {
-      post : "/v1/get/orderuser"
+      post : "/v1/get/orderminingpooluser"
       body : "*"
     };
   }
@@ -22,6 +23,7 @@ message OrderUser {
   string EntID = 20;
   string AppID = 30;
   string UserID = 40;
+  string CoinTypeID = 41;
   string RootUserID = 50;
   string GoodUserID = 51;
   string Name = 60;
@@ -30,7 +32,7 @@ message OrderUser {
   string ReadPageLink = 90;
   bool AutoPay = 100;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 110;
-  basetypes.miningpool.v1.CoinType CoinType = 120;
+  basetypes.v1.CoinType CoinType = 120;
   basetypes.miningpool.v1.RevenueType RevenueType = 130;
   uint32 CreatedAt = 140;
   uint32 UpdatedAt = 150;

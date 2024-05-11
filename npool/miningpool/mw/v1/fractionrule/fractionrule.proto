@@ -5,6 +5,7 @@ package miningpool.middleware.fractionrule.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/fractionrule";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/cointype.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
@@ -52,7 +53,7 @@ message FractionRule {
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 71;
   // @inject_tag: sql:"coin_type"
   string CoinTypeStr = 80;
-  basetypes.miningpool.v1.CoinType CoinType = 81;
+  basetypes.v1.CoinType CoinType = 81;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 90;
   // @inject_tag: sql:"updated_at"

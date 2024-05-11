@@ -5,6 +5,7 @@ package miningpool.gateway.app.pool.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/app/pool";
 
 import "google/api/annotations.proto";
+import "npool/basetypes/v1/cointype.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
@@ -12,32 +13,32 @@ service Gateway {
   rpc AdminCreatePool(AdminCreatePoolRequest)
       returns (AdminCreatePoolResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/create/apppool"
+      post : "/v1/admin/create/appminingpool"
       body : "*"
     };
   }
   rpc GetPool(GetPoolRequest) returns (GetPoolResponse) {
     option (google.api.http) = {
-      post : "/v1/get/apppool"
+      post : "/v1/get/appminingpool"
       body : "*"
     };
   }
   rpc GetPools(GetPoolsRequest) returns (GetPoolsResponse) {
     option (google.api.http) = {
-      post : "/v1/get/apppools"
+      post : "/v1/get/appminingpools"
       body : "*"
     };
   }
   rpc AdminGetPools(AdminGetPoolsRequest) returns (AdminGetPoolsResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/apppools"
+      post : "/v1/admin/get/appminingpools"
       body : "*"
     };
   }
   rpc AdminDeletePool(AdminDeletePoolRequest)
       returns (AdminDeletePoolResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/delete/apppool"
+      post : "/v1/admin/delete/appminingpool"
       body : "*"
     };
   }
@@ -60,14 +61,14 @@ message Pool {
 message Coin {
   string EntID = 10;
   string PoolID = 20;
-  basetypes.miningpool.v1.CoinType CoinType = 30;
+  string CoinTypeID = 30;
+  basetypes.v1.CoinType CoinType = 31;
   basetypes.miningpool.v1.RevenueType RevenueType = 40;
   string FeeRatio = 50;
   bool FixedRevenueAble = 60;
   string LeastTransferAmount = 70;
   uint32 BenefitIntervalSeconds = 80;
   string Remark = 90;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 100;
 }
 
 message FractionRule {
@@ -77,8 +78,6 @@ message FractionRule {
   string MinAmount = 40;
   string WithdrawRate = 50;
   string MiningpoolTypeStr = 60;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 70;
-  basetypes.miningpool.v1.CoinType CoinType = 80;
 }
 
 message AdminCreatePoolRequest {

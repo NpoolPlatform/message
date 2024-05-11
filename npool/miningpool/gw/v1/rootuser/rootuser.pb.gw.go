@@ -213,7 +213,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminCreateRootUser", runtime.WithHTTPPathPattern("/v1/admin/create/rootuser"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminCreateRootUser", runtime.WithHTTPPathPattern("/v1/admin/create/rootminingpooluser"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -236,7 +236,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminGetRootUser", runtime.WithHTTPPathPattern("/v1/admin/get/rootuser"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminGetRootUser", runtime.WithHTTPPathPattern("/v1/admin/get/rootminingpooluser"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -259,7 +259,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminGetRootUsers", runtime.WithHTTPPathPattern("/v1/admin/get/rootusers"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminGetRootUsers", runtime.WithHTTPPathPattern("/v1/admin/get/rootminingpoolusers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -282,7 +282,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminUpdateRootUser", runtime.WithHTTPPathPattern("/v1/admin/update/rootuser"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminUpdateRootUser", runtime.WithHTTPPathPattern("/v1/admin/update/rootminingpooluser"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -305,7 +305,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminDeleteRootUser", runtime.WithHTTPPathPattern("/v1/admin/delete/rootuser"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminDeleteRootUser", runtime.WithHTTPPathPattern("/v1/admin/delete/rootminingpooluser"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -367,7 +367,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminCreateRootUser", runtime.WithHTTPPathPattern("/v1/admin/create/rootuser"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminCreateRootUser", runtime.WithHTTPPathPattern("/v1/admin/create/rootminingpooluser"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -387,7 +387,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminGetRootUser", runtime.WithHTTPPathPattern("/v1/admin/get/rootuser"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminGetRootUser", runtime.WithHTTPPathPattern("/v1/admin/get/rootminingpooluser"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -407,7 +407,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminGetRootUsers", runtime.WithHTTPPathPattern("/v1/admin/get/rootusers"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminGetRootUsers", runtime.WithHTTPPathPattern("/v1/admin/get/rootminingpoolusers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -427,7 +427,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminUpdateRootUser", runtime.WithHTTPPathPattern("/v1/admin/update/rootuser"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminUpdateRootUser", runtime.WithHTTPPathPattern("/v1/admin/update/rootminingpooluser"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -447,7 +447,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminDeleteRootUser", runtime.WithHTTPPathPattern("/v1/admin/delete/rootuser"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.rootuser.v1.Gateway/AdminDeleteRootUser", runtime.WithHTTPPathPattern("/v1/admin/delete/rootminingpooluser"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -467,15 +467,15 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_AdminCreateRootUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "rootuser"}, ""))
+	pattern_Gateway_AdminCreateRootUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "rootminingpooluser"}, ""))
 
-	pattern_Gateway_AdminGetRootUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "get", "rootuser"}, ""))
+	pattern_Gateway_AdminGetRootUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "get", "rootminingpooluser"}, ""))
 
-	pattern_Gateway_AdminGetRootUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "get", "rootusers"}, ""))
+	pattern_Gateway_AdminGetRootUsers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "get", "rootminingpoolusers"}, ""))
 
-	pattern_Gateway_AdminUpdateRootUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "update", "rootuser"}, ""))
+	pattern_Gateway_AdminUpdateRootUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "update", "rootminingpooluser"}, ""))
 
-	pattern_Gateway_AdminDeleteRootUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "rootuser"}, ""))
+	pattern_Gateway_AdminDeleteRootUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "rootminingpooluser"}, ""))
 )
 
 var (

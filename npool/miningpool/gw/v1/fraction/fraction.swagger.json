@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/fraction": {
+    "/v1/create/miningpoolfrationwithdraw": {
       "post": {
         "operationId": "Gateway_CreateFraction",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/get/fraction": {
+    "/v1/get/miningpoolfration": {
       "post": {
         "operationId": "Gateway_GetFraction",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/get/user/fractions": {
+    "/v1/get/user/miningpoolfrations": {
       "post": {
         "operationId": "Gateway_GetUserFractions",
         "responses": {
@@ -185,11 +185,11 @@
         "WithdrawState": {
           "$ref": "#/definitions/v1WithdrawState"
         },
-        "WithdrawTime": {
+        "WithdrawAt": {
           "type": "integer",
           "format": "int64"
         },
-        "PayTime": {
+        "PromisePayAt": {
           "type": "integer",
           "format": "int64"
         },

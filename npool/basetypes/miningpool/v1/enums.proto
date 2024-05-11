@@ -11,11 +11,6 @@ enum MiningpoolType {
   AntPool = 20;
 }
 
-enum CoinType {
-  DefaultCoinType = 0;
-  BitCoin = 10;
-}
-
 enum RevenueType {
   DefaultRevenueType = 0;
 

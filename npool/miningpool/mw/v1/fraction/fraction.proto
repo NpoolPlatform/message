@@ -32,8 +32,8 @@ message FractionReq {
   optional string UserID = 40;
   optional string OrderUserID = 50;
   optional basetypes.miningpool.v1.WithdrawState WithdrawState = 60;
-  optional uint32 WithdrawTime = 70;
-  optional uint32 PayTime = 80;
+  optional uint32 WithdrawAt = 70;
+  optional uint32 PromisePayAt = 80;
   optional string Msg = 90;
 }
 
@@ -52,9 +52,9 @@ message Fraction {
   string WithdrawStateStr = 60;
   basetypes.miningpool.v1.WithdrawState WithdrawState = 61;
   // @inject_tag: sql:"withdraw_time"
-  uint32 WithdrawTime = 70;
+  uint32 WithdrawAt = 70;
   // @inject_tag: sql:"pay_time"
-  uint32 PayTime = 80;
+  uint32 PromisePayAt = 80;
   // @inject_tag: sql:"msg"
   string Msg = 90;
   // @inject_tag: sql:"created_at"

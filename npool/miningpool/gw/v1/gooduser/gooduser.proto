@@ -5,6 +5,7 @@ package miningpool.gateway.gooduser.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/gooduser";
 
 import "google/api/annotations.proto";
+import "npool/basetypes/v1/cointype.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
@@ -12,35 +13,35 @@ service Gateway {
   rpc AdminCreateGoodUser(AdminCreateGoodUserRequest)
       returns (AdminCreateGoodUserResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/create/gooduser"
+      post : "/v1/admin/create/goodminingpooluser"
       body : "*"
     };
   }
   rpc AdminGetGoodUser(AdminGetGoodUserRequest)
       returns (AdminGetGoodUserResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/gooduser"
+      post : "/v1/admin/get/goodminingpooluser"
       body : "*"
     };
   }
   rpc AdminGetGoodUsers(AdminGetGoodUsersRequest)
       returns (AdminGetGoodUsersResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/goodusers"
+      post : "/v1/admin/get/goodminingpoolusers"
       body : "*"
     };
   }
   rpc AdminUpdateGoodUser(AdminUpdateGoodUserRequest)
       returns (AdminUpdateGoodUserResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/update/gooduser"
+      post : "/v1/admin/update/goodminingpooluser"
       body : "*"
     };
   }
   rpc AdminDeleteGoodUser(AdminDeleteGoodUserRequest)
       returns (AdminDeleteGoodUserResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/delete/gooduser"
+      post : "/v1/admin/delete/goodminingpooluser"
       body : "*"
     };
   }
@@ -56,7 +57,8 @@ message GoodUser {
   string PoolID = 70;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
   string CoinID = 90;
-  basetypes.miningpool.v1.CoinType CoinType = 100;
+  string CoinTypeID = 100;
+  basetypes.v1.CoinType CoinType = 101;
   basetypes.miningpool.v1.RevenueType RevenueType = 110;
   string FeeRatio = 120;
   uint32 CreatedAt = 130;

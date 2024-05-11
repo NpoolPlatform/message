@@ -11,20 +11,20 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 service Gateway {
   rpc CreateFraction(CreateFractionRequest) returns (CreateFractionResponse) {
     option (google.api.http) = {
-      post : "/v1/create/fraction"
+      post : "/v1/create/miningpoolfrationwithdraw"
       body : "*"
     };
   }
   rpc GetFraction(GetFractionRequest) returns (GetFractionResponse) {
     option (google.api.http) = {
-      post : "/v1/get/fraction"
+      post : "/v1/get/miningpoolfration"
       body : "*"
     };
   }
   rpc GetUserFractions(GetUserFractionsRequest)
       returns (GetUserFractionsResponse) {
     option (google.api.http) = {
-      post : "/v1/get/user/fractions"
+      post : "/v1/get/user/miningpoolfrations"
       body : "*"
     };
   }
@@ -37,8 +37,8 @@ message Fraction {
   string UserID = 40;
   string OrderUserID = 50;
   basetypes.miningpool.v1.WithdrawState WithdrawState = 60;
-  uint32 WithdrawTime = 70;
-  uint32 PayTime = 80;
+  uint32 WithdrawAt = 70;
+  uint32 PromisePayAt = 80;
   string Msg = 90;
   uint32 CreatedAt = 100;
   uint32 UpdatedAt = 110;

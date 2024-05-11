@@ -12,35 +12,35 @@ service Gateway {
   rpc AdminCreateRootUser(AdminCreateRootUserRequest)
       returns (AdminCreateRootUserResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/create/rootuser"
+      post : "/v1/admin/create/rootminingpooluser"
       body : "*"
     };
   }
   rpc AdminGetRootUser(AdminGetRootUserRequest)
       returns (AdminGetRootUserResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/rootuser"
+      post : "/v1/admin/get/rootminingpooluser"
       body : "*"
     };
   }
   rpc AdminGetRootUsers(AdminGetRootUsersRequest)
       returns (AdminGetRootUsersResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/rootusers"
+      post : "/v1/admin/get/rootminingpoolusers"
       body : "*"
     };
   }
   rpc AdminUpdateRootUser(AdminUpdateRootUserRequest)
       returns (AdminUpdateRootUserResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/update/rootuser"
+      post : "/v1/admin/update/rootminingpooluser"
       body : "*"
     };
   }
   rpc AdminDeleteRootUser(AdminDeleteRootUserRequest)
       returns (AdminDeleteRootUserResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/delete/rootuser"
+      post : "/v1/admin/delete/rootminingpooluser"
       body : "*"
     };
   }

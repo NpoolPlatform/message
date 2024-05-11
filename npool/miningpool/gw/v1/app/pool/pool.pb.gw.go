@@ -213,7 +213,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/AdminCreatePool", runtime.WithHTTPPathPattern("/v1/admin/create/apppool"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/AdminCreatePool", runtime.WithHTTPPathPattern("/v1/admin/create/appminingpool"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -236,7 +236,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/GetPool", runtime.WithHTTPPathPattern("/v1/get/apppool"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/GetPool", runtime.WithHTTPPathPattern("/v1/get/appminingpool"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -259,7 +259,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/GetPools", runtime.WithHTTPPathPattern("/v1/get/apppools"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/GetPools", runtime.WithHTTPPathPattern("/v1/get/appminingpools"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -282,7 +282,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/AdminGetPools", runtime.WithHTTPPathPattern("/v1/admin/get/apppools"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/AdminGetPools", runtime.WithHTTPPathPattern("/v1/admin/get/appminingpools"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -305,7 +305,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/AdminDeletePool", runtime.WithHTTPPathPattern("/v1/admin/delete/apppool"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/AdminDeletePool", runtime.WithHTTPPathPattern("/v1/admin/delete/appminingpool"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -367,7 +367,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/AdminCreatePool", runtime.WithHTTPPathPattern("/v1/admin/create/apppool"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/AdminCreatePool", runtime.WithHTTPPathPattern("/v1/admin/create/appminingpool"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -387,7 +387,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/GetPool", runtime.WithHTTPPathPattern("/v1/get/apppool"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/GetPool", runtime.WithHTTPPathPattern("/v1/get/appminingpool"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -407,7 +407,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/GetPools", runtime.WithHTTPPathPattern("/v1/get/apppools"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/GetPools", runtime.WithHTTPPathPattern("/v1/get/appminingpools"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -427,7 +427,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/AdminGetPools", runtime.WithHTTPPathPattern("/v1/admin/get/apppools"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/AdminGetPools", runtime.WithHTTPPathPattern("/v1/admin/get/appminingpools"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -447,7 +447,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/AdminDeletePool", runtime.WithHTTPPathPattern("/v1/admin/delete/apppool"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.app.pool.v1.Gateway/AdminDeletePool", runtime.WithHTTPPathPattern("/v1/admin/delete/appminingpool"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -467,15 +467,15 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_AdminCreatePool_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "apppool"}, ""))
+	pattern_Gateway_AdminCreatePool_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "appminingpool"}, ""))
 
-	pattern_Gateway_GetPool_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "apppool"}, ""))
+	pattern_Gateway_GetPool_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "appminingpool"}, ""))
 
-	pattern_Gateway_GetPools_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "apppools"}, ""))
+	pattern_Gateway_GetPools_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "appminingpools"}, ""))
 
-	pattern_Gateway_AdminGetPools_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "get", "apppools"}, ""))
+	pattern_Gateway_AdminGetPools_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "get", "appminingpools"}, ""))
 
-	pattern_Gateway_AdminDeletePool_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "apppool"}, ""))
+	pattern_Gateway_AdminDeletePool_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "appminingpool"}, ""))
 )
 
 var (

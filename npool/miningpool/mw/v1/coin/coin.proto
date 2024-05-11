@@ -5,6 +5,7 @@ package miningpool.middleware.coin.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/coin";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/cointype.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
@@ -22,7 +23,8 @@ message CoinReq {
   optional uint32 ID = 9;
   optional string EntID = 10;
   optional string PoolID = 20;
-  optional basetypes.miningpool.v1.CoinType CoinType = 30;
+  optional string CoinTypeID = 30;
+  optional basetypes.v1.CoinType CoinType = 31;
   optional basetypes.miningpool.v1.RevenueType RevenueType = 40;
   optional string FeeRatio = 50;
   optional bool FixedRevenueAble = 60;
@@ -38,9 +40,11 @@ message Coin {
   string EntID = 20;
   // @inject_tag: sql:"pool_id"
   string PoolID = 30;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 31;
   // @inject_tag: sql:"coin_type"
   string CoinTypeStr = 40;
-  basetypes.miningpool.v1.CoinType CoinType = 41;
+  basetypes.v1.CoinType CoinType = 41;
   // @inject_tag: sql:"revenue_type"
   string RevenueTypeStr = 50;
   basetypes.miningpool.v1.RevenueType RevenueType = 51;
@@ -67,6 +71,7 @@ message Conds {
   optional basetypes.v1.Uint32Val ID = 9;
   optional basetypes.v1.StringVal EntID = 10;
   optional basetypes.v1.StringVal PoolID = 20;
+  optional basetypes.v1.StringVal CoinTypeID = 21;
   optional basetypes.v1.Uint32Val MiningpoolType = 30;
   optional basetypes.v1.Uint32Val CoinType = 31;
   optional basetypes.v1.Uint32Val RevenueType = 40;

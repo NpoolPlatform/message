@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/rootuser": {
+    "/v1/admin/create/rootminingpooluser": {
       "post": {
         "operationId": "Gateway_AdminCreateRootUser",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/admin/delete/rootuser": {
+    "/v1/admin/delete/rootminingpooluser": {
       "post": {
         "operationId": "Gateway_AdminDeleteRootUser",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/admin/get/rootuser": {
+    "/v1/admin/get/rootminingpooluser": {
       "post": {
         "operationId": "Gateway_AdminGetRootUser",
         "responses": {
@@ -112,7 +112,7 @@
         ]
       }
     },
-    "/v1/admin/get/rootusers": {
+    "/v1/admin/get/rootminingpoolusers": {
       "post": {
         "operationId": "Gateway_AdminGetRootUsers",
         "responses": {
@@ -144,7 +144,7 @@
         ]
       }
     },
-    "/v1/admin/update/rootuser": {
+    "/v1/admin/update/rootminingpooluser": {
       "post": {
         "operationId": "Gateway_AdminUpdateRootUser",
         "responses": {

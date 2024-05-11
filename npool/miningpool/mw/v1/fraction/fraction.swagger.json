@@ -164,12 +164,12 @@
         "WithdrawState": {
           "$ref": "#/definitions/v1WithdrawState"
         },
-        "WithdrawTime": {
+        "WithdrawAt": {
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"withdraw_time\""
         },
-        "PayTime": {
+        "PromisePayAt": {
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"pay_time\""
@@ -212,11 +212,11 @@
         "WithdrawState": {
           "$ref": "#/definitions/v1WithdrawState"
         },
-        "WithdrawTime": {
+        "WithdrawAt": {
           "type": "integer",
           "format": "int64"
         },
-        "PayTime": {
+        "PromisePayAt": {
           "type": "integer",
           "format": "int64"
         },

@@ -5,6 +5,7 @@ package miningpool.middleware.gooduser.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/gooduser";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/cointype.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
@@ -51,7 +52,7 @@ message GoodUser {
   string CoinID = 90;
   // @inject_tag: sql:"coin_type"
   string CoinTypeStr = 100;
-  basetypes.miningpool.v1.CoinType CoinType = 101;
+  basetypes.v1.CoinType CoinType = 101;
   // @inject_tag: sql:"revenue_type"
   string RevenueTypeStr = 110;
   basetypes.miningpool.v1.RevenueType RevenueType = 111;
