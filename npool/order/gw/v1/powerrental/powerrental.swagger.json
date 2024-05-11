@@ -685,7 +685,7 @@
         "AppGoodName": {
           "type": "string"
         },
-        "DurationSeconds": {
+        "TotalDurationSeconds": {
           "type": "integer",
           "format": "int64"
         }
