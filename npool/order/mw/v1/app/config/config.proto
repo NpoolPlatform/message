@@ -23,8 +23,6 @@ message AppConfigReq {
     optional string EntID = 20;
     optional string AppID = 30;
     optional bool EnableSimulateOrder = 40;
-    optional string SimulateOrderUnits =50;
-    optional uint32 SimulateOrderDurationSeconds = 60;
     optional basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 70;
     optional string SimulateOrderCouponProbability = 80;
     optional string SimulateOrderCashableProfitProbability = 90;
@@ -41,10 +39,6 @@ message AppConfig {
     string AppID = 30;
     // @inject_tag: sql:"enable_simulate_order"
     bool EnableSimulateOrder = 40;
-    // @inject_tag: sql:"simulate_order_units"
-    string SimulateOrderUnits = 50;
-    // @inject_tag: sql:"simulate_order_duration_seconds"
-    uint32 SimulateOrderDurationSeconds = 60;
     // @inject_tag: sql:"simulate_order_coupon_mode"
     string SimulateOrderCouponModeStr = 70;
     basetypes.order.v1.SimulateOrderCouponMode SimulateOrderCouponMode = 80;

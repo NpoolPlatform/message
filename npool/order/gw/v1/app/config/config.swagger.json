@@ -252,13 +252,6 @@
         "EnableSimulateOrder": {
           "type": "boolean"
         },
-        "SimulateOrderUnits": {
-          "type": "string"
-        },
-        "SimulateOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
         "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
@@ -320,13 +313,6 @@
         },
         "EnableSimulateOrder": {
           "type": "boolean"
-        },
-        "SimulateOrderUnits": {
-          "type": "string"
-        },
-        "SimulateOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64"
         },
         "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
@@ -390,13 +376,6 @@
         },
         "EnableSimulateOrder": {
           "type": "boolean"
-        },
-        "SimulateOrderUnits": {
-          "type": "string"
-        },
-        "SimulateOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64"
         },
         "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
@@ -495,13 +474,6 @@
         "EnableSimulateOrder": {
           "type": "boolean"
         },
-        "SimulateOrderUnits": {
-          "type": "string"
-        },
-        "SimulateOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
         "SimulateOrderCouponMode": {
           "$ref": "#/definitions/v1SimulateOrderCouponMode"
         },
@@ -548,15 +520,6 @@
         "EnableSimulateOrder": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"enable_simulate_order\""
-        },
-        "SimulateOrderUnits": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"simulate_order_units\""
-        },
-        "SimulateOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"simulate_order_duration_seconds\""
         },
         "SimulateOrderCouponModeStr": {
           "type": "string",
