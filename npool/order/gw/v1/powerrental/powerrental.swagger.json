@@ -421,7 +421,8 @@
           "type": "string"
         },
         "DurationSeconds": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "Units": {
           "type": "string"
