@@ -30,6 +30,7 @@ message AdminCreateCompensateRequest {
     string TargetAppID = 10;
     optional string GoodID = 20;
     optional string OrderID = 30;
+    string CompensateFromID = 40;
 }
 
 message AdminCreateCompensateResponse {
@@ -44,6 +45,6 @@ message AdminDeleteCompensateRequest {
 }
 
 message AdminDeleteCompensateResponse {
-    order.gateway.compensate.v1.Compensate Infos = 10;
+    order.gateway.compensate.v1.Compensate Info = 10;
 }
 

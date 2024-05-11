@@ -121,6 +121,9 @@
         },
         "OrderID": {
           "type": "string"
+        },
+        "CompensateFromID": {
+          "type": "string"
         }
       }
     },
@@ -156,7 +159,7 @@
     "v1AdminDeleteCompensateResponse": {
       "type": "object",
       "properties": {
-        "Infos": {
+        "Info": {
           "$ref": "#/definitions/v1Compensate"
         }
       }
