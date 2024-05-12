@@ -77,7 +77,7 @@ message Simulate {
     string AppGoodID = 70;
     string AppGoodName = 80;
     string OrderUnits = 140;
-    uint32 OrderDuration = 150;
+    uint32 OrderDurationSeconds = 150;
 
     repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 200;
 
@@ -89,7 +89,7 @@ message CreateSimulateRequest {
     string AppID = 10;
     string AppGoodID = 20;
     string OrderUnits = 30;
-    uint32 OrderDuration = 40;
+    uint32 OrderDurationSeconds = 40;
 }
 
 message CreateSimulateResponse {
@@ -122,7 +122,7 @@ message UpdateSimulateRequest {
     string EntID = 20;
     string AppID = 30;
     optional string OrderUnits    = 40;
-    optional uint32 OrderDuration = 50;
+    optional uint32 OrderDurationSeconds = 50;
 }
 
 message UpdateSimulateResponse {
@@ -133,7 +133,7 @@ message AdminCreateSimulateRequest {
     string TargetAppID = 10;
     string AppGoodID = 20;
     string OrderUnits = 30;
-    uint32 OrderDuration = 40;
+    uint32 OrderDurationSeconds = 40;
 }
 
 message AdminCreateSimulateResponse {
@@ -166,7 +166,7 @@ message AdminUpdateSimulateRequest {
     string EntID = 20;
     string TargetAppID = 30;
     optional string OrderUnits = 40;
-    optional uint32 OrderDuration = 50;
+    optional uint32 OrderDurationSeconds = 50;
 }
 
 message AdminUpdateSimulateResponse {

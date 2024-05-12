@@ -258,7 +258,7 @@
         "UnitValue": {
           "type": "string"
         },
-        "MinOrderDuration": {
+        "MinOrderDurationSeconds": {
           "type": "integer",
           "format": "int64"
         }
@@ -331,7 +331,7 @@
         "UnitValue": {
           "type": "string"
         },
-        "MinOrderDuration": {
+        "MinOrderDurationSeconds": {
           "type": "integer",
           "format": "int64"
         }
@@ -382,7 +382,7 @@
         "UnitValue": {
           "type": "string"
         },
-        "MinOrderDuration": {
+        "MinOrderDurationSeconds": {
           "type": "integer",
           "format": "int64"
         },
@@ -474,7 +474,7 @@
         "UnitValue": {
           "type": "string"
         },
-        "MinOrderDuration": {
+        "MinOrderDurationSeconds": {
           "type": "integer",
           "format": "int64"
         }

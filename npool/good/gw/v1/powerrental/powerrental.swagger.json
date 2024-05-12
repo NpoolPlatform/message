@@ -231,7 +231,7 @@
         "UnitLockDeposit": {
           "type": "string"
         },
-        "DurationType": {
+        "DurationDisplayType": {
           "$ref": "#/definitions/v1GoodDurationType"
         },
         "GoodType": {
@@ -345,7 +345,7 @@
         "UnitLockDeposit": {
           "type": "string"
         },
-        "DurationType": {
+        "DurationDisplayType": {
           "$ref": "#/definitions/v1GoodDurationType"
         },
         "GoodType": {
@@ -651,7 +651,7 @@
         "UnitLockDeposit": {
           "type": "string"
         },
-        "DurationType": {
+        "DurationDisplayType": {
           "$ref": "#/definitions/v1GoodDurationType"
         },
         "GoodType": {

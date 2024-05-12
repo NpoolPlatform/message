@@ -216,7 +216,7 @@
         "UnitValue": {
           "type": "string"
         },
-        "DurationType": {
+        "DurationDisplayType": {
           "$ref": "#/definitions/v1GoodDurationType"
         }
       }
@@ -277,7 +277,7 @@
         "UnitValue": {
           "type": "string"
         },
-        "DurationType": {
+        "DurationDisplayType": {
           "$ref": "#/definitions/v1GoodDurationType"
         }
       }

@@ -41,7 +41,7 @@ message AdminCreateFeeRequest {
     string Name = 20;
     basetypes.good.v1.GoodSettlementType SettlementType = 30;
     string UnitValue = 40;
-    basetypes.good.v1.GoodDurationType DurationType = 50;
+    basetypes.good.v1.GoodDurationType DurationDisplayType = 50;
 }
 
 message AdminCreateFeeResponse {
@@ -56,7 +56,7 @@ message AdminUpdateFeeRequest {
     optional string Name = 50;
     optional basetypes.good.v1.GoodSettlementType SettlementType = 60;
     optional string UnitValue = 70;
-    optional basetypes.good.v1.GoodDurationType DurationType = 80;
+    optional basetypes.good.v1.GoodDurationType DurationDisplayType = 80;
 }
 
 message AdminUpdateFeeResponse {
