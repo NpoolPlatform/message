@@ -167,7 +167,7 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor",
-          "title": "Only [UserBenefitHot, UserBenefitCold, PlatformBenefitCold, GasProvider, PaymentCollector]"
+          "title": "Only [UserBenefitHot, UserBenefitCold, PlatformBenefitCold, GasProvider,\nPaymentCollector]"
         },
         "AccountID": {
           "type": "string"

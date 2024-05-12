@@ -87,11 +87,6 @@ message LockRequest {
     bool   Rollback   = 1010;
 }
 
-  // Must same as unlock request
-  string LockID = 1000;
-  bool Rollback = 1010;
-}
-
 message LockResponse { Stock Info = 10; }
 
 message LocksRequest {

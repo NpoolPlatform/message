@@ -61,38 +61,6 @@
         }
       }
     },
-<<<<<<< HEAD
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EntID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppGoodID": {
-          "$ref": "#/definitions/v1StringVal"
-<<<<<<< HEAD:npool/good/mw/v1/app/good/simulate/simulate.swagger.json
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "GoodIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "CoinTypeIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "AppGoodIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-=======
->>>>>>> Move simulate to app power rental:npool/good/mw/v1/app/powerrental/simulate/simulate.swagger.json
-        }
-      }
-    },
-=======
->>>>>>> Add coins to app simulate power rental
     "v1CreateSimulateResponse": {
       "type": "object",
       "properties": {

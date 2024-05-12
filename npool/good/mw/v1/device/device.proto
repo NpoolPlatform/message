@@ -61,8 +61,6 @@ message Conds {
     optional basetypes.v1.StringVal ManufacturerID = 40;
 }
 
-message CreateDeviceInfoRequest { DeviceInfoReq Info = 10; }
-
 message CreateDeviceTypeRequest {
     DeviceTypeReq Info = 10;
 }

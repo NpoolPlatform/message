@@ -30,7 +30,8 @@ type AccountReq struct {
 	ID         *uint32 `protobuf:"varint,9,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
 	EntID      *string `protobuf:"bytes,10,opt,name=EntID,proto3,oneof" json:"EntID,omitempty"`
 	CoinTypeID *string `protobuf:"bytes,20,opt,name=CoinTypeID,proto3,oneof" json:"CoinTypeID,omitempty"`
-	// Only [UserBenefitHot, UserBenefitCold, PlatformBenefitCold, GasProvider, PaymentCollector]
+	// Only [UserBenefitHot, UserBenefitCold, PlatformBenefitCold, GasProvider,
+	// PaymentCollector]
 	UsedFor   *v1.AccountUsedFor  `protobuf:"varint,30,opt,name=UsedFor,proto3,enum=basetypes.v1.AccountUsedFor,oneof" json:"UsedFor,omitempty"`
 	AccountID *string             `protobuf:"bytes,40,opt,name=AccountID,proto3,oneof" json:"AccountID,omitempty"`
 	Address   *string             `protobuf:"bytes,50,opt,name=Address,proto3,oneof" json:"Address,omitempty"`
