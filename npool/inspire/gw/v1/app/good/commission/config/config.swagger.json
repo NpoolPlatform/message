@@ -375,16 +375,7 @@
         "GoodID": {
           "type": "string"
         },
-        "GoodTitle": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "CoinLogo": {
+        "GoodName": {
           "type": "string"
         },
         "AmountOrPercent": {
@@ -408,7 +399,7 @@
         "AppGoodID": {
           "type": "string"
         },
-        "GoodName": {
+        "AppGoodName": {
           "type": "string"
         },
         "Disabled": {
