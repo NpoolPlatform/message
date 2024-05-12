@@ -57,16 +57,16 @@ message Compensate {
 }
 
 message Conds {
-    basetypes.v1.Uint32Val ID = 10;
-    basetypes.v1.StringVal EntID = 20;
-    basetypes.v1.StringVal OrderID = 30;
-    basetypes.v1.StringSliceVal OrderIDs = 40;
-    basetypes.v1.StringVal GoodID = 50;
-    basetypes.v1.StringVal AppGoodID = 60;
-    basetypes.v1.StringVal CompensateFromID = 70;
-    basetypes.v1.Uint32Val CompensateType = 80;
-    basetypes.v1.StringVal UserID = 90;
-    basetypes.v1.StringVal AppID = 100;
+    optional basetypes.v1.Uint32Val ID = 10;
+    optional basetypes.v1.StringVal EntID = 20;
+    optional basetypes.v1.StringVal OrderID = 30;
+    optional basetypes.v1.StringSliceVal OrderIDs = 40;
+    optional basetypes.v1.StringVal GoodID = 50;
+    optional basetypes.v1.StringVal AppGoodID = 60;
+    optional basetypes.v1.StringVal CompensateFromID = 70;
+    optional basetypes.v1.Uint32Val CompensateType = 80;
+    optional basetypes.v1.StringVal UserID = 90;
+    optional basetypes.v1.StringVal AppID = 100;
 }
 
 message GetCompensateRequest {
