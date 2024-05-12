@@ -158,6 +158,14 @@
         }
       }
     },
+    "v1ExistOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetOrderResponse": {
       "type": "object",
       "properties": {
