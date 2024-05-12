@@ -594,7 +594,7 @@
         "PowerRental",
         "MachineRental",
         "MachineCustody",
-        "LegacyPowerRetal",
+        "LegacyPowerRental",
         "TechniqueServiceFee",
         "ElectricityFee"
       ],
