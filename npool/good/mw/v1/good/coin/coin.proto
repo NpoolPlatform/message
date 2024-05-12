@@ -68,6 +68,7 @@ message Conds {
     optional basetypes.v1.StringSliceVal GoodIDs = 50;
     optional basetypes.v1.StringVal      CoinTypeID = 60;
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 70;
+    optional basetypes.v1.BoolVal        Main = 80;
 }
 
 message CreateGoodCoinRequest {
