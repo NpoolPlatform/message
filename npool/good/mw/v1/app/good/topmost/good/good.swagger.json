@@ -89,6 +89,14 @@
         }
       }
     },
+    "v1ExistTopMostGoodCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetTopMostGoodResponse": {
       "type": "object",
       "properties": {

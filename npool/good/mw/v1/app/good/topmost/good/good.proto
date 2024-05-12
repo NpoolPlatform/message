@@ -16,6 +16,8 @@ service Middleware {
   rpc GetTopMostGood(GetTopMostGoodRequest) returns (GetTopMostGoodResponse) {}
   rpc GetTopMostGoods(GetTopMostGoodsRequest)
       returns (GetTopMostGoodsResponse) {}
+  rpc ExistTopMostGoodConds(ExistTopMostGoodCondsRequest)
+      returns (ExistTopMostGoodCondsResponse) {}
   rpc DeleteTopMostGood(DeleteTopMostGoodRequest)
       returns (DeleteTopMostGoodResponse) {}
 }
