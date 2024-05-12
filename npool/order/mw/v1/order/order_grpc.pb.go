@@ -24,6 +24,7 @@ const (
 	Middleware_CountOrders_FullMethodName         = "/order.middleware.order1.v1.Middleware/CountOrders"
 	Middleware_SumOrdersPaymentUSD_FullMethodName = "/order.middleware.order1.v1.Middleware/SumOrdersPaymentUSD"
 	Middleware_SumOrdersValueUSD_FullMethodName   = "/order.middleware.order1.v1.Middleware/SumOrdersValueUSD"
+	Middleware_ExistOrder_FullMethodName          = "/order.middleware.order1.v1.Middleware/ExistOrder"
 	Middleware_ExistOrderConds_FullMethodName     = "/order.middleware.order1.v1.Middleware/ExistOrderConds"
 )
 
@@ -36,6 +37,7 @@ type MiddlewareClient interface {
 	CountOrders(ctx context.Context, in *CountOrdersRequest, opts ...grpc.CallOption) (*CountOrdersResponse, error)
 	SumOrdersPaymentUSD(ctx context.Context, in *SumOrdersPaymentUSDRequest, opts ...grpc.CallOption) (*SumOrdersPaymentUSDResponse, error)
 	SumOrdersValueUSD(ctx context.Context, in *SumOrdersValueUSDRequest, opts ...grpc.CallOption) (*SumOrdersValueUSDResponse, error)
+	ExistOrder(ctx context.Context, in *ExistOrderRequest, opts ...grpc.CallOption) (*ExistOrderResponse, error)
 	ExistOrderConds(ctx context.Context, in *ExistOrderCondsRequest, opts ...grpc.CallOption) (*ExistOrderCondsResponse, error)
 }
 
@@ -92,6 +94,15 @@ func (c *middlewareClient) SumOrdersValueUSD(ctx context.Context, in *SumOrdersV
 	return out, nil
 }
 
+func (c *middlewareClient) ExistOrder(ctx context.Context, in *ExistOrderRequest, opts ...grpc.CallOption) (*ExistOrderResponse, error) {
+	out := new(ExistOrderResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistOrder_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) ExistOrderConds(ctx context.Context, in *ExistOrderCondsRequest, opts ...grpc.CallOption) (*ExistOrderCondsResponse, error) {
 	out := new(ExistOrderCondsResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistOrderConds_FullMethodName, in, out, opts...)
@@ -110,6 +121,7 @@ type MiddlewareServer interface {
 	CountOrders(context.Context, *CountOrdersRequest) (*CountOrdersResponse, error)
 	SumOrdersPaymentUSD(context.Context, *SumOrdersPaymentUSDRequest) (*SumOrdersPaymentUSDResponse, error)
 	SumOrdersValueUSD(context.Context, *SumOrdersValueUSDRequest) (*SumOrdersValueUSDResponse, error)
+	ExistOrder(context.Context, *ExistOrderRequest) (*ExistOrderResponse, error)
 	ExistOrderConds(context.Context, *ExistOrderCondsRequest) (*ExistOrderCondsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -132,6 +144,9 @@ func (UnimplementedMiddlewareServer) SumOrdersPaymentUSD(context.Context, *SumOr
 }
 func (UnimplementedMiddlewareServer) SumOrdersValueUSD(context.Context, *SumOrdersValueUSDRequest) (*SumOrdersValueUSDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SumOrdersValueUSD not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistOrder(context.Context, *ExistOrderRequest) (*ExistOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistOrder not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistOrderConds(context.Context, *ExistOrderCondsRequest) (*ExistOrderCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistOrderConds not implemented")
@@ -239,6 +254,24 @@ func _Middleware_SumOrdersValueUSD_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistOrder(ctx, req.(*ExistOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_ExistOrderConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistOrderCondsRequest)
 	if err := dec(in); err != nil {
@@ -283,6 +316,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SumOrdersValueUSD",
 			Handler:    _Middleware_SumOrdersValueUSD_Handler,
+		},
+		{
+			MethodName: "ExistOrder",
+			Handler:    _Middleware_ExistOrder_Handler,
 		},
 		{
 			MethodName: "ExistOrderConds",
