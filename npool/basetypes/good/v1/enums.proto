@@ -22,10 +22,10 @@ enum BenefitType {
 enum GoodType {
   DefaultGoodType = 0;
 
-  PowerRenting = 10;
-  MachineRenting = 20;
-  MachineHosting = 30;
-  LegacyPowerReting = 40;
+  PowerRental = 10;
+  MachineRental = 20;
+  MachineCustody = 30;
+  LegacyPowerRetal = 40;
 
   TechniqueServiceFee = 1000;
   ElectricityFee = 2000;
