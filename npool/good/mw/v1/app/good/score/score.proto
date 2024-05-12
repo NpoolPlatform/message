@@ -8,13 +8,12 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-  rpc CreateScore(CreateScoreRequest) returns (CreateScoreResponse) {}
-  rpc UpdateScore(UpdateScoreRequest) returns (UpdateScoreResponse) {}
-  rpc GetScore(GetScoreRequest) returns (GetScoreResponse) {}
-  rpc GetScores(GetScoresRequest) returns (GetScoresResponse) {}
-  rpc ExistScoreConds(ExistScoreCondsRequest)
-      returns (ExistScoreCondsResponse) {}
-  rpc DeleteScore(DeleteScoreRequest) returns (DeleteScoreResponse) {}
+    rpc CreateScore      (CreateScoreRequest)      returns (CreateScoreResponse)      {}
+    rpc UpdateScore      (UpdateScoreRequest)      returns (UpdateScoreResponse)      {}
+    rpc GetScore         (GetScoreRequest)         returns (GetScoreResponse)         {}
+    rpc GetScores        (GetScoresRequest)        returns (GetScoresResponse)        {}
+    rpc ExistScoreConds  (ExistScoreCondsRequest)  returns (ExistScoreCondsResponse)  {}
+    rpc DeleteScore      (DeleteScoreRequest)      returns (DeleteScoreResponse)      {}
 }
 
 message ScoreReq {
@@ -51,42 +50,62 @@ message Score {
 }
 
 message Conds {
-  optional basetypes.v1.Uint32Val ID = 9;
-  optional basetypes.v1.StringVal EntID = 10;
-  optional basetypes.v1.StringVal AppID = 20;
-  optional basetypes.v1.StringVal UserID = 30;
-  optional basetypes.v1.StringVal AppGoodID = 40;
-  optional basetypes.v1.StringSliceVal AppGoodIDs = 50;
-  optional basetypes.v1.StringVal GoodID = 60;
+    optional basetypes.v1.Uint32Val      ID      = 9;
+    optional basetypes.v1.StringVal      EntID   = 10;
+    optional basetypes.v1.StringVal      AppID   = 20;
+    optional basetypes.v1.StringVal      UserID  = 30;
+    optional basetypes.v1.StringVal      AppGoodID  = 40;
+    optional basetypes.v1.StringSliceVal AppGoodIDs = 50;
+    optional basetypes.v1.StringVal      GoodID     = 60;
 }
 
-message CreateScoreRequest { ScoreReq Info = 10; }
+message CreateScoreRequest {
+    ScoreReq Info = 10;
+}
 
-message CreateScoreResponse { Score Info = 10; }
+message CreateScoreResponse {
+    Score Info = 10;
+}
 
-message UpdateScoreRequest { ScoreReq Info = 10; }
+message UpdateScoreRequest {
+    ScoreReq Info = 10;
+}
 
-message UpdateScoreResponse { Score Info = 10; }
+message UpdateScoreResponse {
+    Score Info = 10;
+}
 
-message GetScoreRequest { string EntID = 10; }
+message GetScoreRequest {
+    string EntID = 10;
+}
 
-message GetScoreResponse { Score Info = 10; }
+message GetScoreResponse {
+    Score Info = 10;
+}
 
 message GetScoresRequest {
-  Conds Conds = 10;
-  int32 Offset = 20;
-  int32 Limit = 30;
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
 message GetScoresResponse {
-  repeated Score Infos = 10;
-  uint32 Total = 20;
+    repeated Score Infos = 10;
+    uint32         Total = 20;
 }
 
-message ExistScoreCondsRequest { Conds Conds = 10; }
+message ExistScoreCondsRequest {
+    Conds Conds  = 10;
+}
 
-message ExistScoreCondsResponse { bool Info = 10; }
+message ExistScoreCondsResponse {
+    bool Info = 10;
+}
 
-message DeleteScoreRequest { ScoreReq Info = 10; }
+message DeleteScoreRequest {
+    ScoreReq Info = 10;
+}
 
-message DeleteScoreResponse { Score Info = 10; }
+message DeleteScoreResponse {
+    Score Info = 10;
+}

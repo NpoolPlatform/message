@@ -57,17 +57,29 @@ message Conds {
     optional basetypes.v1.StringVal GoodID = 70;
 }
 
-message CreateLikeRequest { LikeReq Info = 10; }
+message CreateLikeRequest {
+    LikeReq Info = 10;
+}
 
-message CreateLikeResponse { Like Info = 10; }
+message CreateLikeResponse {
+    Like Info = 10;
+}
 
-message UpdateLikeRequest { LikeReq Info = 10; }
+message UpdateLikeRequest {
+    LikeReq Info = 10;
+}
 
-message UpdateLikeResponse { Like Info = 10; }
+message UpdateLikeResponse {
+    Like Info = 10;
+}
 
-message GetLikeRequest { string EntID = 10; }
+message GetLikeRequest {
+    string EntID = 10;
+}
 
-message GetLikeResponse { Like Info = 10; }
+message GetLikeResponse {
+    Like Info = 10;
+}
 
 message GetLikesRequest {
     Conds Conds = 10;
@@ -84,8 +96,14 @@ message ExistLikeCondsRequest {
     Conds Conds = 10;
 }
 
-message ExistLikeCondsResponse { bool Info = 10; }
+message ExistLikeCondsResponse {
+    bool Info = 10;
+}
 
-message DeleteLikeRequest { LikeReq Info = 10; }
+message DeleteLikeRequest {
+    LikeReq Info = 10;
+}
 
-message DeleteLikeResponse { Like Info = 10; }
+message DeleteLikeResponse {
+    Like Info = 10;
+}

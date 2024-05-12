@@ -59,19 +59,6 @@ enum Prefix {
   PrefixCreateInspireAchievementStatement = 480;
   PrefixCreateInspireAchievement = 490;
 
-    PrefixCreateVendorBrand    = 510;
-    PrefixCreateVendorLocation = 520;
-    PrefixCreateGood           = 530;
-    PrefixCreateRequiredGood   = 540;
-    PrefixLikeGood             = 550;
-    PrefixCommentGood          = 560;
-    PrefixRecommendGood        = 570;
-    PrefixScoreGood            = 580;
-    PrefixCreateAppGood        = 590;
-    PrefixCreateTopMost        = 610;
-    PrefixCreateTopMostGood    = 620;
-    PrefixCreateAppSimulateGood = 630;
-
   PrefixCreateLedger = 700;
   PrefixCreateLedgerStatement = 710;
   PrefixCreateLedgerProfit = 720;

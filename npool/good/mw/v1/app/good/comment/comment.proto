@@ -9,13 +9,12 @@ import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Middleware {
-  rpc CreateComment(CreateCommentRequest) returns (CreateCommentResponse) {}
-  rpc UpdateComment(UpdateCommentRequest) returns (UpdateCommentResponse) {}
-  rpc GetComment(GetCommentRequest) returns (GetCommentResponse) {}
-  rpc GetComments(GetCommentsRequest) returns (GetCommentsResponse) {}
-  rpc ExistCommentConds(ExistCommentCondsRequest)
-      returns (ExistCommentCondsResponse) {}
-  rpc DeleteComment(DeleteCommentRequest) returns (DeleteCommentResponse) {}
+    rpc CreateComment      (CreateCommentRequest)      returns (CreateCommentResponse)      {}
+    rpc UpdateComment      (UpdateCommentRequest)      returns (UpdateCommentResponse)      {}
+    rpc GetComment         (GetCommentRequest)         returns (GetCommentResponse)         {}
+    rpc GetComments        (GetCommentsRequest)        returns (GetCommentsResponse)        {}
+    rpc ExistCommentConds  (ExistCommentCondsRequest)  returns (ExistCommentCondsResponse)  {}
+    rpc DeleteComment      (DeleteCommentRequest)      returns (DeleteCommentResponse)      {}
 }
 
 message CommentReq {
@@ -86,33 +85,53 @@ message Conds {
     optional basetypes.v1.StringVal GoodID = 90;
 }
 
-message CreateCommentRequest { CommentReq Info = 10; }
+message CreateCommentRequest {
+    CommentReq Info = 10;
+}
 
-message CreateCommentResponse { Comment Info = 10; }
+message CreateCommentResponse {
+    Comment Info = 10;
+}
 
-message UpdateCommentRequest { CommentReq Info = 10; }
+message UpdateCommentRequest {
+    CommentReq Info = 10;
+}
 
-message UpdateCommentResponse { Comment Info = 10; }
+message UpdateCommentResponse {
+    Comment Info = 10;
+}
 
-message GetCommentRequest { string EntID = 10; }
+message GetCommentRequest {
+    string EntID = 10;
+}
 
-message GetCommentResponse { Comment Info = 10; }
+message GetCommentResponse {
+    Comment Info = 10;
+}
 
 message GetCommentsRequest {
-  Conds Conds = 10;
-  int32 Offset = 20;
-  int32 Limit = 30;
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
 message GetCommentsResponse {
-  repeated Comment Infos = 10;
-  uint32 Total = 20;
+    repeated Comment Infos = 10;
+    uint32           Total = 20;
 }
 
-message ExistCommentCondsRequest { Conds Conds = 10; }
+message ExistCommentCondsRequest {
+    Conds Conds  = 10;
+}
 
-message ExistCommentCondsResponse { bool Info = 10; }
+message ExistCommentCondsResponse {
+    bool Info = 10;
+}
 
-message DeleteCommentRequest { CommentReq Info = 10; }
+message DeleteCommentRequest {
+    CommentReq Info = 10;
+}
 
-message DeleteCommentResponse { Comment Info = 10; }
+message DeleteCommentResponse {
+    Comment Info = 10;
+}

@@ -105,9 +105,16 @@ message DeleteTopMostRequest {
     uint32 ID = 9;
     string EntID = 10;
     string AppID = 20;
+    optional string Title = 30;
+    optional string Message = 40;
+    optional string TargetUrl = 50;
+    optional uint32 StartAt = 60;
+    optional uint32 EndAt = 70;
 }
 
-message DeleteTopMostResponse { TopMost Info = 10; }
+message DeleteTopMostResponse {
+    TopMost Info = 10;
+}
 
 message UpdateTopMostRequest {
     uint32 ID = 9;

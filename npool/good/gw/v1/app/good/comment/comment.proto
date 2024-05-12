@@ -94,17 +94,19 @@ message Comment {
 }
 
 message CreateCommentRequest {
-  string AppID = 10;
-  string UserID = 20;
-  string AppGoodID = 30;
-  optional string OrderID = 40;
-  string Content = 50;
-  optional string ReplyToID = 60;
-  optional bool Anonymous = 70;
-  optional string Score = 80;
+    string AppID = 10;
+    string UserID = 20;
+    string AppGoodID = 30;
+    optional string OrderID = 40;
+    string Content = 50;
+    optional string ReplyToID = 60;
+    optional bool   Anonymous = 70;
+    optional string Score = 80;
 }
 
-message CreateCommentResponse { Comment Info = 10; }
+message CreateCommentResponse {
+    Comment Info = 10;
+}
 
 message UpdateCommentRequest {
     uint32 ID = 10;
@@ -115,7 +117,9 @@ message UpdateCommentRequest {
     optional bool Anonymous = 60;
 }
 
-message UpdateCommentResponse { Comment Info = 10; }
+message UpdateCommentResponse {
+    Comment Info = 10;
+}
 
 message GetCommentsRequest {
     string AppID = 10;

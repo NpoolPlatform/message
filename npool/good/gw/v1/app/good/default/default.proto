@@ -86,11 +86,13 @@ message Default {
 }
 
 message CreateDefaultRequest {
-  string AppID = 10;
-  string AppGoodID = 20;
+    string AppID = 10;
+    string AppGoodID = 20;
 }
 
-message CreateDefaultResponse { Default Info = 10; }
+message CreateDefaultResponse {
+    Default Info = 10;
+}
 
 message GetDefaultsRequest {
     string AppID = 10;
@@ -109,7 +111,9 @@ message DeleteDefaultRequest {
     string AppID = 20;
 }
 
-message DeleteDefaultResponse { Default Info = 10; }
+message DeleteDefaultResponse {
+    Default Info = 10;
+}
 
 message UpdateDefaultRequest {
     uint32 ID = 10;
@@ -118,7 +122,9 @@ message UpdateDefaultRequest {
     optional string AppGoodID = 40;
 }
 
-message UpdateDefaultResponse { Default Info = 10; }
+message UpdateDefaultResponse {
+    Default Info = 10;
+}
 
 message AdminCreateDefaultRequest {
     string TargetAppID = 10;

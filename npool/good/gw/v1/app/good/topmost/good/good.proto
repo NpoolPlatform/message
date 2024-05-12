@@ -90,7 +90,9 @@ message CreateTopMostGoodRequest {
     optional uint32 Index = 50;
 }
 
-message CreateTopMostGoodResponse { TopMostGood Info = 10; }
+message CreateTopMostGoodResponse {
+    TopMostGood Info = 10;
+}
 
 message GetTopMostGoodsRequest {
     string AppID = 10;
@@ -109,7 +111,9 @@ message DeleteTopMostGoodRequest {
     string AppID = 30;
 }
 
-message DeleteTopMostGoodResponse { TopMostGood Info = 10; }
+message DeleteTopMostGoodResponse {
+    TopMostGood Info = 10;
+}
 
 message UpdateTopMostGoodRequest {
     uint32 ID = 10;
@@ -119,7 +123,9 @@ message UpdateTopMostGoodRequest {
     optional uint32 Index = 50;
 }
 
-message UpdateTopMostGoodResponse { TopMostGood Info = 10; }
+message UpdateTopMostGoodResponse {
+    TopMostGood Info = 10;
+}
 
 message AdminCreateTopMostGoodRequest {
     string TargetAppID = 10;
