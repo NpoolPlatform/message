@@ -107,7 +107,7 @@ message AppPowerRental {
     string QuantityUnitAmount = 200;
     uint32 DeliveryAt = 210;
     string UnitLockDeposit = 220;
-    basetypes.good.v1.GoodDurationType DurationType = 230;
+    basetypes.good.v1.GoodDurationType DurationDisplayType = 230;
 
     basetypes.good.v1.GoodType GoodType = 240;
     basetypes.good.v1.BenefitType BenefitType = 250;
@@ -134,8 +134,8 @@ message AppPowerRental {
     string MinOrderAmount = 450;
     string MaxOrderAmount = 460;
     string MaxUserAmount = 470;
-    uint32 MinOrderDuration = 480;
-    uint32 MaxOrderDuration = 490;
+    uint32 MinOrderDurationSeconds = 480;
+    uint32 MaxOrderDurationSeconds = 490;
     uint32 SaleStartAt = 500;
     uint32 SaleEndAt = 510;
     basetypes.good.v1.GoodSaleMode SaleMode  = 520;
@@ -201,8 +201,8 @@ message CreateAppPowerRentalRequest {
     optional string MinOrderAmount = 150;
     optional string MaxOrderAmount = 160;
     optional string MaxUserAmount = 170;
-    optional uint32 MinOrderDuration = 180;
-    optional uint32 MaxOrderDuration = 190;
+    optional uint32 MinOrderDurationSeconds = 180;
+    optional uint32 MaxOrderDurationSeconds = 190;
     string UnitPrice = 200;
     uint32 SaleStartAt = 210;
     uint32 SaleEndAt = 220;
@@ -237,8 +237,8 @@ message UpdateAppPowerRentalRequest {
     optional string MinOrderAmount = 170;
     optional string MaxOrderAmount = 180;
     optional string MaxUserAmount = 190;
-    optional uint32 MinOrderDuration = 200;
-    optional uint32 MaxOrderDuration = 210;
+    optional uint32 MinOrderDurationSeconds = 200;
+    optional uint32 MaxOrderDurationSeconds = 210;
     optional string UnitPrice = 220;
     optional uint32 SaleStartAt = 230;
     optional uint32 SaleEndAt = 240;
@@ -301,8 +301,8 @@ message AdminCreateAppPowerRentalRequest {
     optional string MinOrderAmount = 150;
     optional string MaxOrderAmount = 160;
     optional string MaxUserAmount = 170;
-    optional uint32 MinOrderDuration = 180;
-    optional uint32 MaxOrderDuration = 190;
+    optional uint32 MinOrderDurationSeconds = 180;
+    optional uint32 MaxOrderDurationSeconds = 190;
     string UnitPrice = 200;
     uint32 SaleStartAt = 210;
     uint32 SaleEndAt = 220;
@@ -337,8 +337,8 @@ message AdminUpdateAppPowerRentalRequest {
     optional string MinOrderAmount = 170;
     optional string MaxOrderAmount = 180;
     optional string MaxUserAmount = 190;
-    optional uint32 MinOrderDuration = 200;
-    optional uint32 MaxOrderDuration = 210;
+    optional uint32 MinOrderDurationSeconds = 200;
+    optional uint32 MaxOrderDurationSeconds = 210;
     optional string UnitPrice = 220;
     optional uint32 SaleStartAt = 230;
     optional uint32 SaleEndAt = 240;
