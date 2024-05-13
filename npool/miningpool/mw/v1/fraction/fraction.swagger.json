@@ -167,12 +167,12 @@
         "WithdrawAt": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"withdraw_time\""
+          "title": "@inject_tag: sql:\"withdraw_at\""
         },
         "PromisePayAt": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"pay_time\""
+          "title": "@inject_tag: sql:\"promise_pay_at\""
         },
         "Msg": {
           "type": "string",

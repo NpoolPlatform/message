@@ -152,10 +152,10 @@ type Fraction struct {
 	// @inject_tag: sql:"withdraw_state"
 	WithdrawStateStr string           `protobuf:"bytes,60,opt,name=WithdrawStateStr,proto3" json:"WithdrawStateStr,omitempty" sql:"withdraw_state"`
 	WithdrawState    v1.WithdrawState `protobuf:"varint,61,opt,name=WithdrawState,proto3,enum=basetypes.miningpool.v1.WithdrawState" json:"WithdrawState,omitempty"`
-	// @inject_tag: sql:"withdraw_time"
-	WithdrawAt uint32 `protobuf:"varint,70,opt,name=WithdrawAt,proto3" json:"WithdrawAt,omitempty" sql:"withdraw_time"`
-	// @inject_tag: sql:"pay_time"
-	PromisePayAt uint32 `protobuf:"varint,80,opt,name=PromisePayAt,proto3" json:"PromisePayAt,omitempty" sql:"pay_time"`
+	// @inject_tag: sql:"withdraw_at"
+	WithdrawAt uint32 `protobuf:"varint,70,opt,name=WithdrawAt,proto3" json:"WithdrawAt,omitempty" sql:"withdraw_at"`
+	// @inject_tag: sql:"promise_pay_at"
+	PromisePayAt uint32 `protobuf:"varint,80,opt,name=PromisePayAt,proto3" json:"PromisePayAt,omitempty" sql:"promise_pay_at"`
 	// @inject_tag: sql:"msg"
 	Msg string `protobuf:"bytes,90,opt,name=Msg,proto3" json:"Msg,omitempty" sql:"msg"`
 	// @inject_tag: sql:"created_at"

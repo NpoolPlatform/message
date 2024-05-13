@@ -51,9 +51,9 @@ message Fraction {
   // @inject_tag: sql:"withdraw_state"
   string WithdrawStateStr = 60;
   basetypes.miningpool.v1.WithdrawState WithdrawState = 61;
-  // @inject_tag: sql:"withdraw_time"
+  // @inject_tag: sql:"withdraw_at"
   uint32 WithdrawAt = 70;
-  // @inject_tag: sql:"pay_time"
+  // @inject_tag: sql:"promise_pay_at"
   uint32 PromisePayAt = 80;
   // @inject_tag: sql:"msg"
   string Msg = 90;
