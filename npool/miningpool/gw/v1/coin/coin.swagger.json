@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/miningpool/gw/v1/pool/pool.proto",
+    "title": "npool/miningpool/gw/v1/coin/coin.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/miningpool": {
+    "/v1/admin/create/miningpoolcoin": {
       "post": {
-        "operationId": "Gateway_AdminCreatePool",
+        "operationId": "Gateway_AdminCreateCoin",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminCreatePoolResponse"
+              "$ref": "#/definitions/v1AdminCreateCoinResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminCreatePoolRequest"
+              "$ref": "#/definitions/v1AdminCreateCoinRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/admin/delete/miningpool": {
+    "/v1/admin/delete/miningpoolcoin": {
       "post": {
-        "operationId": "Gateway_AdminDeletePool",
+        "operationId": "Gateway_AdminDeleteCoin",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminDeletePoolResponse"
+              "$ref": "#/definitions/v1AdminDeleteCoinResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminDeletePoolRequest"
+              "$ref": "#/definitions/v1AdminDeleteCoinRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/admin/get/miningpools": {
+    "/v1/admin/get/miningpoolcoins": {
       "post": {
-        "operationId": "Gateway_AdminGetPools",
+        "operationId": "Gateway_AdminGetCoins",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminGetPoolsResponse"
+              "$ref": "#/definitions/v1AdminGetCoinsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminGetPoolsRequest"
+              "$ref": "#/definitions/v1AdminGetCoinsRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/admin/update/miningpool": {
+    "/v1/admin/update/miningpoolcoin": {
       "post": {
-        "operationId": "Gateway_AdminUpdatePool",
+        "operationId": "Gateway_AdminUpdateCoin",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminUpdatePoolResponse"
+              "$ref": "#/definitions/v1AdminUpdateCoinResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminUpdatePoolRequest"
+              "$ref": "#/definitions/v1AdminUpdateCoinRequest"
             }
           }
         ],
@@ -173,35 +173,48 @@
         }
       }
     },
-    "v1AdminCreatePoolRequest": {
+    "v1AdminCreateCoinRequest": {
       "type": "object",
       "properties": {
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "Name": {
+        "PoolID": {
           "type": "string"
         },
-        "Site": {
+        "CoinTypeID": {
           "type": "string"
         },
-        "Logo": {
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "RevenueType": {
+          "$ref": "#/definitions/v1RevenueType"
+        },
+        "FeeRatio": {
           "type": "string"
         },
-        "Description": {
+        "FixedRevenueAble": {
+          "type": "boolean"
+        },
+        "LeastTransferAmount": {
+          "type": "string"
+        },
+        "BenefitIntervalSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Remark": {
           "type": "string"
         }
       }
     },
-    "v1AdminCreatePoolResponse": {
+    "v1AdminCreateCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Pool"
+          "$ref": "#/definitions/v1Coin"
         }
       }
     },
-    "v1AdminDeletePoolRequest": {
+    "v1AdminDeleteCoinRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -213,15 +226,15 @@
         }
       }
     },
-    "v1AdminDeletePoolResponse": {
+    "v1AdminDeleteCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Pool"
+          "$ref": "#/definitions/v1Coin"
         }
       }
     },
-    "v1AdminGetPoolsRequest": {
+    "v1AdminGetCoinsRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -234,13 +247,13 @@
         }
       }
     },
-    "v1AdminGetPoolsResponse": {
+    "v1AdminGetCoinsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Pool"
+            "$ref": "#/definitions/v1Coin"
           }
         },
         "Total": {
@@ -249,7 +262,7 @@
         }
       }
     },
-    "v1AdminUpdatePoolRequest": {
+    "v1AdminUpdateCoinRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -259,31 +272,42 @@
         "EntID": {
           "type": "string"
         },
-        "Name": {
+        "RevenueType": {
+          "$ref": "#/definitions/v1RevenueType"
+        },
+        "FeeRatio": {
           "type": "string"
         },
-        "Site": {
+        "FixedRevenueAble": {
+          "type": "boolean"
+        },
+        "LeastTransferAmount": {
           "type": "string"
         },
-        "Logo": {
-          "type": "string"
+        "BenefitIntervalSeconds": {
+          "type": "integer",
+          "format": "int64"
         },
-        "Description": {
+        "Remark": {
           "type": "string"
         }
       }
     },
-    "v1AdminUpdatePoolResponse": {
+    "v1AdminUpdateCoinResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Pool"
+          "$ref": "#/definitions/v1Coin"
         }
       }
     },
     "v1Coin": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
         "EntID": {
           "type": "string"
         },
@@ -314,6 +338,9 @@
         },
         "Remark": {
           "type": "string"
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -361,38 +388,6 @@
       "default": "DefaultCoinType",
       "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
     },
-    "v1FractionRule": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        },
-        "PoolCoinTypeID": {
-          "type": "string"
-        },
-        "WithdrawInterval": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MinAmount": {
-          "type": "string"
-        },
-        "WithdrawRate": {
-          "type": "string"
-        },
-        "MiningpoolTypeStr": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "v1MiningpoolType": {
       "type": "string",
       "enum": [
@@ -401,53 +396,6 @@
         "AntPool"
       ],
       "default": "DefaultMiningpoolType"
-    },
-    "v1Pool": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Site": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "Coins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Coin"
-          }
-        },
-        "FractionRules": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1FractionRule"
-          }
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
     },
     "v1RevenueType": {
       "type": "string",

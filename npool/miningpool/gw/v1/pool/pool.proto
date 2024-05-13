@@ -10,9 +10,30 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
+  rpc AdminCreatePool(AdminCreatePoolRequest)
+      returns (AdminCreatePoolResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/create/miningpool"
+      body : "*"
+    };
+  }
+  rpc AdminUpdatePool(AdminUpdatePoolRequest)
+      returns (AdminUpdatePoolResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/update/miningpool"
+      body : "*"
+    };
+  }
   rpc AdminGetPools(AdminGetPoolsRequest) returns (AdminGetPoolsResponse) {
     option (google.api.http) = {
       post : "/v1/admin/get/miningpools"
+      body : "*"
+    };
+  }
+  rpc AdminDeletePool(AdminDeletePoolRequest)
+      returns (AdminDeletePoolResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/delete/miningpool"
       body : "*"
     };
   }
@@ -27,6 +48,8 @@ message Pool {
   string Description = 50;
   repeated Coin Coins = 60;
   repeated FractionRule FractionRules = 70;
+  uint32 CreatedAt = 110;
+  uint32 UpdatedAt = 120;
 }
 
 message Coin {
@@ -40,6 +63,8 @@ message Coin {
   string LeastTransferAmount = 70;
   uint32 BenefitIntervalSeconds = 80;
   string Remark = 90;
+  uint32 CreatedAt = 110;
+  uint32 UpdatedAt = 120;
 }
 
 message FractionRule {
@@ -49,7 +74,30 @@ message FractionRule {
   string MinAmount = 40;
   string WithdrawRate = 50;
   string MiningpoolTypeStr = 60;
+  uint32 CreatedAt = 110;
+  uint32 UpdatedAt = 120;
 }
+
+message AdminCreatePoolRequest {
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 10;
+  string Name = 20;
+  string Site = 30;
+  string Logo = 40;
+  optional string Description = 50;
+}
+
+message AdminCreatePoolResponse { Pool Info = 10; }
+
+message AdminUpdatePoolRequest {
+  uint32 ID = 10;
+  string EntID = 20;
+  optional string Name = 30;
+  optional string Site = 40;
+  optional string Logo = 50;
+  optional string Description = 60;
+}
+
+message AdminUpdatePoolResponse { Pool Info = 10; }
 
 message AdminGetPoolsRequest {
   int32 Offset = 10;
@@ -60,3 +108,10 @@ message AdminGetPoolsResponse {
   repeated Pool Infos = 10;
   uint32 Total = 20;
 }
+
+message AdminDeletePoolRequest {
+  uint32 ID = 10;
+  string EntID = 20;
+}
+
+message AdminDeletePoolResponse { Pool Info = 10; }

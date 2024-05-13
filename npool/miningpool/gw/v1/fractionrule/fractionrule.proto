@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package miningpool.gateway.fractionrule.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/fractionrule";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/cointype.proto";
+import "npool/basetypes/miningpool/v1/enums.proto";
+
+// Service Name
+service Gateway {
+  rpc AdminCreateFractionRule(AdminCreateFractionRuleRequest)
+      returns (AdminCreateFractionRuleResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/create/miningpoolfractionrule"
+      body : "*"
+    };
+  }
+  rpc AdminUpdateFractionRule(AdminUpdateFractionRuleRequest)
+      returns (AdminUpdateFractionRuleResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/update/miningpoolfractionrule"
+      body : "*"
+    };
+  }
+  rpc AdminGetFractionRules(AdminGetFractionRulesRequest)
+      returns (AdminGetFractionRulesResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/get/miningpoolfractionrules"
+      body : "*"
+    };
+  }
+  rpc AdminDeleteFractionRule(AdminDeleteFractionRuleRequest)
+      returns (AdminDeleteFractionRuleResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/delete/miningpoolfractionrule"
+      body : "*"
+    };
+  }
+}
+message FractionRule {
+  uint32 ID = 10;
+  string EntID = 20;
+  string PoolCoinTypeID = 30;
+  uint32 WithdrawInterval = 40;
+  string MinAmount = 50;
+  string WithdrawRate = 60;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 70;
+  basetypes.v1.CoinType CoinType = 80;
+  uint32 CreatedAt = 90;
+  uint32 UpdatedAt = 100;
+}
+
+message AdminCreateFractionRuleRequest {
+  string PoolCoinTypeID = 10;
+  uint32 WithdrawInterval = 20;
+  string MinAmount = 30;
+  string WithdrawRate = 40;
+}
+
+message AdminCreateFractionRuleResponse { FractionRule Info = 10; }
+
+message AdminUpdateFractionRuleRequest {
+  uint32 ID = 10;
+  string EntID = 20;
+  optional uint32 WithdrawInterval = 30;
+  optional string MinAmount = 40;
+  optional string WithdrawRate = 50;
+}
+
+message AdminUpdateFractionRuleResponse { FractionRule Info = 10; }
+
+message AdminGetFractionRulesRequest {
+  int32 Offset = 10;
+  int32 Limit = 20;
+}
+
+message AdminGetFractionRulesResponse {
+  repeated FractionRule Infos = 10;
+  uint32 Total = 20;
+}
+
+message AdminDeleteFractionRuleRequest {
+  uint32 ID = 10;
+  string EntID = 20;
+}
+
+message AdminDeleteFractionRuleResponse { FractionRule Info = 10; }

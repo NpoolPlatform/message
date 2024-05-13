@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/miningpool/gw/v1/pool/pool.proto",
+    "title": "npool/miningpool/gw/v1/fractionrule/fractionrule.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/miningpool": {
+    "/v1/admin/create/miningpoolfractionrule": {
       "post": {
-        "operationId": "Gateway_AdminCreatePool",
+        "operationId": "Gateway_AdminCreateFractionRule",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminCreatePoolResponse"
+              "$ref": "#/definitions/v1AdminCreateFractionRuleResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminCreatePoolRequest"
+              "$ref": "#/definitions/v1AdminCreateFractionRuleRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/admin/delete/miningpool": {
+    "/v1/admin/delete/miningpoolfractionrule": {
       "post": {
-        "operationId": "Gateway_AdminDeletePool",
+        "operationId": "Gateway_AdminDeleteFractionRule",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminDeletePoolResponse"
+              "$ref": "#/definitions/v1AdminDeleteFractionRuleResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminDeletePoolRequest"
+              "$ref": "#/definitions/v1AdminDeleteFractionRuleRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/admin/get/miningpools": {
+    "/v1/admin/get/miningpoolfractionrules": {
       "post": {
-        "operationId": "Gateway_AdminGetPools",
+        "operationId": "Gateway_AdminGetFractionRules",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminGetPoolsResponse"
+              "$ref": "#/definitions/v1AdminGetFractionRulesResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminGetPoolsRequest"
+              "$ref": "#/definitions/v1AdminGetFractionRulesRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/admin/update/miningpool": {
+    "/v1/admin/update/miningpoolfractionrule": {
       "post": {
-        "operationId": "Gateway_AdminUpdatePool",
+        "operationId": "Gateway_AdminUpdateFractionRule",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminUpdatePoolResponse"
+              "$ref": "#/definitions/v1AdminUpdateFractionRuleResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminUpdatePoolRequest"
+              "$ref": "#/definitions/v1AdminUpdateFractionRuleRequest"
             }
           }
         ],
@@ -173,35 +173,33 @@
         }
       }
     },
-    "v1AdminCreatePoolRequest": {
+    "v1AdminCreateFractionRuleRequest": {
       "type": "object",
       "properties": {
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "Name": {
+        "PoolCoinTypeID": {
           "type": "string"
         },
-        "Site": {
+        "WithdrawInterval": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MinAmount": {
           "type": "string"
         },
-        "Logo": {
-          "type": "string"
-        },
-        "Description": {
+        "WithdrawRate": {
           "type": "string"
         }
       }
     },
-    "v1AdminCreatePoolResponse": {
+    "v1AdminCreateFractionRuleResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Pool"
+          "$ref": "#/definitions/v1FractionRule"
         }
       }
     },
-    "v1AdminDeletePoolRequest": {
+    "v1AdminDeleteFractionRuleRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -213,15 +211,15 @@
         }
       }
     },
-    "v1AdminDeletePoolResponse": {
+    "v1AdminDeleteFractionRuleResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Pool"
+          "$ref": "#/definitions/v1FractionRule"
         }
       }
     },
-    "v1AdminGetPoolsRequest": {
+    "v1AdminGetFractionRulesRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -234,13 +232,13 @@
         }
       }
     },
-    "v1AdminGetPoolsResponse": {
+    "v1AdminGetFractionRulesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Pool"
+            "$ref": "#/definitions/v1FractionRule"
           }
         },
         "Total": {
@@ -249,7 +247,7 @@
         }
       }
     },
-    "v1AdminUpdatePoolRequest": {
+    "v1AdminUpdateFractionRuleRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -259,69 +257,23 @@
         "EntID": {
           "type": "string"
         },
-        "Name": {
+        "WithdrawInterval": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MinAmount": {
           "type": "string"
         },
-        "Site": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "Description": {
+        "WithdrawRate": {
           "type": "string"
         }
       }
     },
-    "v1AdminUpdatePoolResponse": {
+    "v1AdminUpdateFractionRuleResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Pool"
-        }
-      }
-    },
-    "v1Coin": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        },
-        "PoolID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
-        },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
-        },
-        "FeeRatio": {
-          "type": "string"
-        },
-        "FixedRevenueAble": {
-          "type": "boolean"
-        },
-        "LeastTransferAmount": {
-          "type": "string"
-        },
-        "BenefitIntervalSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Remark": {
-          "type": "string"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
+          "$ref": "#/definitions/v1FractionRule"
         }
       }
     },
@@ -364,6 +316,10 @@
     "v1FractionRule": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
         "EntID": {
           "type": "string"
         },
@@ -380,8 +336,11 @@
         "WithdrawRate": {
           "type": "string"
         },
-        "MiningpoolTypeStr": {
-          "type": "string"
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -401,62 +360,6 @@
         "AntPool"
       ],
       "default": "DefaultMiningpoolType"
-    },
-    "v1Pool": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "Site": {
-          "type": "string"
-        },
-        "Logo": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "Coins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Coin"
-          }
-        },
-        "FractionRules": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1FractionRule"
-          }
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1RevenueType": {
-      "type": "string",
-      "enum": [
-        "DefaultRevenueType",
-        "FPPS",
-        "PPLNS"
-      ],
-      "default": "DefaultRevenueType"
     }
   }
 }

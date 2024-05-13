@@ -19,14 +19,20 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_AdminGetPools_FullMethodName = "/miningpool.gateway.pool.v1.Gateway/AdminGetPools"
+	Gateway_AdminCreatePool_FullMethodName = "/miningpool.gateway.pool.v1.Gateway/AdminCreatePool"
+	Gateway_AdminUpdatePool_FullMethodName = "/miningpool.gateway.pool.v1.Gateway/AdminUpdatePool"
+	Gateway_AdminGetPools_FullMethodName   = "/miningpool.gateway.pool.v1.Gateway/AdminGetPools"
+	Gateway_AdminDeletePool_FullMethodName = "/miningpool.gateway.pool.v1.Gateway/AdminDeletePool"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
+	AdminCreatePool(ctx context.Context, in *AdminCreatePoolRequest, opts ...grpc.CallOption) (*AdminCreatePoolResponse, error)
+	AdminUpdatePool(ctx context.Context, in *AdminUpdatePoolRequest, opts ...grpc.CallOption) (*AdminUpdatePoolResponse, error)
 	AdminGetPools(ctx context.Context, in *AdminGetPoolsRequest, opts ...grpc.CallOption) (*AdminGetPoolsResponse, error)
+	AdminDeletePool(ctx context.Context, in *AdminDeletePoolRequest, opts ...grpc.CallOption) (*AdminDeletePoolResponse, error)
 }
 
 type gatewayClient struct {
@@ -35,6 +41,24 @@ type gatewayClient struct {
 
 func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
+}
+
+func (c *gatewayClient) AdminCreatePool(ctx context.Context, in *AdminCreatePoolRequest, opts ...grpc.CallOption) (*AdminCreatePoolResponse, error) {
+	out := new(AdminCreatePoolResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminCreatePool_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) AdminUpdatePool(ctx context.Context, in *AdminUpdatePoolRequest, opts ...grpc.CallOption) (*AdminUpdatePoolResponse, error) {
+	out := new(AdminUpdatePoolResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminUpdatePool_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *gatewayClient) AdminGetPools(ctx context.Context, in *AdminGetPoolsRequest, opts ...grpc.CallOption) (*AdminGetPoolsResponse, error) {
@@ -46,11 +70,23 @@ func (c *gatewayClient) AdminGetPools(ctx context.Context, in *AdminGetPoolsRequ
 	return out, nil
 }
 
+func (c *gatewayClient) AdminDeletePool(ctx context.Context, in *AdminDeletePoolRequest, opts ...grpc.CallOption) (*AdminDeletePoolResponse, error) {
+	out := new(AdminDeletePoolResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminDeletePool_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
+	AdminCreatePool(context.Context, *AdminCreatePoolRequest) (*AdminCreatePoolResponse, error)
+	AdminUpdatePool(context.Context, *AdminUpdatePoolRequest) (*AdminUpdatePoolResponse, error)
 	AdminGetPools(context.Context, *AdminGetPoolsRequest) (*AdminGetPoolsResponse, error)
+	AdminDeletePool(context.Context, *AdminDeletePoolRequest) (*AdminDeletePoolResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -58,8 +94,17 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
+func (UnimplementedGatewayServer) AdminCreatePool(context.Context, *AdminCreatePoolRequest) (*AdminCreatePoolResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminCreatePool not implemented")
+}
+func (UnimplementedGatewayServer) AdminUpdatePool(context.Context, *AdminUpdatePoolRequest) (*AdminUpdatePoolResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdatePool not implemented")
+}
 func (UnimplementedGatewayServer) AdminGetPools(context.Context, *AdminGetPoolsRequest) (*AdminGetPoolsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminGetPools not implemented")
+}
+func (UnimplementedGatewayServer) AdminDeletePool(context.Context, *AdminDeletePoolRequest) (*AdminDeletePoolResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminDeletePool not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -72,6 +117,42 @@ type UnsafeGatewayServer interface {
 
 func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
+}
+
+func _Gateway_AdminCreatePool_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCreatePoolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminCreatePool(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminCreatePool_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminCreatePool(ctx, req.(*AdminCreatePoolRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_AdminUpdatePool_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminUpdatePoolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminUpdatePool(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminUpdatePool_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminUpdatePool(ctx, req.(*AdminUpdatePoolRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _Gateway_AdminGetPools_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -92,6 +173,24 @@ func _Gateway_AdminGetPools_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_AdminDeletePool_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminDeletePoolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminDeletePool(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminDeletePool_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminDeletePool(ctx, req.(*AdminDeletePoolRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -100,8 +199,20 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+			MethodName: "AdminCreatePool",
+			Handler:    _Gateway_AdminCreatePool_Handler,
+		},
+		{
+			MethodName: "AdminUpdatePool",
+			Handler:    _Gateway_AdminUpdatePool_Handler,
+		},
+		{
 			MethodName: "AdminGetPools",
 			Handler:    _Gateway_AdminGetPools_Handler,
+		},
+		{
+			MethodName: "AdminDeletePool",
+			Handler:    _Gateway_AdminDeletePool_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
