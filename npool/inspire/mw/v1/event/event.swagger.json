@@ -211,6 +211,9 @@
         "CoinTypeID": {
           "type": "string"
         },
+        "CoinConfigID": {
+          "type": "string"
+        },
         "CoinRewards": {
           "type": "string"
         }
@@ -484,6 +487,9 @@
     "v1Reward": {
       "type": "object",
       "properties": {
+        "TaskID": {
+          "type": "string"
+        },
         "Credits": {
           "type": "array",
           "items": {
