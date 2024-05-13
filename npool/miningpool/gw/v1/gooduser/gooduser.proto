@@ -31,13 +31,6 @@ service Gateway {
       body : "*"
     };
   }
-  rpc AdminUpdateGoodUser(AdminUpdateGoodUserRequest)
-      returns (AdminUpdateGoodUserResponse) {
-    option (google.api.http) = {
-      post : "/v1/admin/update/goodminingpooluser"
-      body : "*"
-    };
-  }
   rpc AdminDeleteGoodUser(AdminDeleteGoodUserRequest)
       returns (AdminDeleteGoodUserResponse) {
     option (google.api.http) = {
@@ -84,13 +77,6 @@ message AdminGetGoodUsersResponse {
   repeated GoodUser Infos = 10;
   uint32 Total = 20;
 }
-
-message AdminUpdateGoodUserRequest {
-  uint32 ID = 10;
-  string EntID = 20;
-}
-
-message AdminUpdateGoodUserResponse { GoodUser Info = 10; }
 
 message AdminDeleteGoodUserRequest {
   uint32 ID = 10;

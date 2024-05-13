@@ -295,9 +295,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1UpdateGoodUserResponse": {
-      "type": "object"
     }
   }
 }

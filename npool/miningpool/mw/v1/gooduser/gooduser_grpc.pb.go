@@ -24,7 +24,6 @@ const (
 	Middleware_GetGoodUsers_FullMethodName       = "/miningpool.middleware.gooduser.v1.Middleware/GetGoodUsers"
 	Middleware_ExistGoodUser_FullMethodName      = "/miningpool.middleware.gooduser.v1.Middleware/ExistGoodUser"
 	Middleware_ExistGoodUserConds_FullMethodName = "/miningpool.middleware.gooduser.v1.Middleware/ExistGoodUserConds"
-	Middleware_UpdateGoodUser_FullMethodName     = "/miningpool.middleware.gooduser.v1.Middleware/UpdateGoodUser"
 	Middleware_DeleteGoodUser_FullMethodName     = "/miningpool.middleware.gooduser.v1.Middleware/DeleteGoodUser"
 )
 
@@ -37,7 +36,6 @@ type MiddlewareClient interface {
 	GetGoodUsers(ctx context.Context, in *GetGoodUsersRequest, opts ...grpc.CallOption) (*GetGoodUsersResponse, error)
 	ExistGoodUser(ctx context.Context, in *ExistGoodUserRequest, opts ...grpc.CallOption) (*ExistGoodUserResponse, error)
 	ExistGoodUserConds(ctx context.Context, in *ExistGoodUserCondsRequest, opts ...grpc.CallOption) (*ExistGoodUserCondsResponse, error)
-	UpdateGoodUser(ctx context.Context, in *UpdateGoodUserRequest, opts ...grpc.CallOption) (*UpdateGoodUserResponse, error)
 	DeleteGoodUser(ctx context.Context, in *DeleteGoodUserRequest, opts ...grpc.CallOption) (*DeleteGoodUserResponse, error)
 }
 
@@ -94,15 +92,6 @@ func (c *middlewareClient) ExistGoodUserConds(ctx context.Context, in *ExistGood
 	return out, nil
 }
 
-func (c *middlewareClient) UpdateGoodUser(ctx context.Context, in *UpdateGoodUserRequest, opts ...grpc.CallOption) (*UpdateGoodUserResponse, error) {
-	out := new(UpdateGoodUserResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdateGoodUser_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeleteGoodUser(ctx context.Context, in *DeleteGoodUserRequest, opts ...grpc.CallOption) (*DeleteGoodUserResponse, error) {
 	out := new(DeleteGoodUserResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteGoodUser_FullMethodName, in, out, opts...)
@@ -121,7 +110,6 @@ type MiddlewareServer interface {
 	GetGoodUsers(context.Context, *GetGoodUsersRequest) (*GetGoodUsersResponse, error)
 	ExistGoodUser(context.Context, *ExistGoodUserRequest) (*ExistGoodUserResponse, error)
 	ExistGoodUserConds(context.Context, *ExistGoodUserCondsRequest) (*ExistGoodUserCondsResponse, error)
-	UpdateGoodUser(context.Context, *UpdateGoodUserRequest) (*UpdateGoodUserResponse, error)
 	DeleteGoodUser(context.Context, *DeleteGoodUserRequest) (*DeleteGoodUserResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -144,9 +132,6 @@ func (UnimplementedMiddlewareServer) ExistGoodUser(context.Context, *ExistGoodUs
 }
 func (UnimplementedMiddlewareServer) ExistGoodUserConds(context.Context, *ExistGoodUserCondsRequest) (*ExistGoodUserCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistGoodUserConds not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateGoodUser(context.Context, *UpdateGoodUserRequest) (*UpdateGoodUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateGoodUser not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteGoodUser(context.Context, *DeleteGoodUserRequest) (*DeleteGoodUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteGoodUser not implemented")
@@ -254,24 +239,6 @@ func _Middleware_ExistGoodUserConds_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_UpdateGoodUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateGoodUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateGoodUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdateGoodUser_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateGoodUser(ctx, req.(*UpdateGoodUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeleteGoodUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteGoodUserRequest)
 	if err := dec(in); err != nil {
@@ -316,10 +283,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistGoodUserConds",
 			Handler:    _Middleware_ExistGoodUserConds_Handler,
-		},
-		{
-			MethodName: "UpdateGoodUser",
-			Handler:    _Middleware_UpdateGoodUser_Handler,
 		},
 		{
 			MethodName: "DeleteGoodUser",

@@ -16,7 +16,6 @@ service Middleware {
   rpc ExistGoodUser(ExistGoodUserRequest) returns (ExistGoodUserResponse) {}
   rpc ExistGoodUserConds(ExistGoodUserCondsRequest)
       returns (ExistGoodUserCondsResponse) {}
-  rpc UpdateGoodUser(UpdateGoodUserRequest) returns (UpdateGoodUserResponse) {}
   rpc DeleteGoodUser(DeleteGoodUserRequest) returns (DeleteGoodUserResponse) {}
 }
 
@@ -96,10 +95,6 @@ message ExistGoodUserResponse { bool Info = 10; }
 message ExistGoodUserCondsRequest { Conds Conds = 10; }
 
 message ExistGoodUserCondsResponse { bool Info = 10; }
-
-message UpdateGoodUserRequest { GoodUserReq Info = 10; }
-
-message UpdateGoodUserResponse {}
 
 message DeleteGoodUserRequest { GoodUserReq Info = 10; }
 
