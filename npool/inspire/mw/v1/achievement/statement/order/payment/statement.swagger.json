@@ -94,6 +94,12 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "PaymentCoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         }
