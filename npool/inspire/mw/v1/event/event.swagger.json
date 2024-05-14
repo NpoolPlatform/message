@@ -219,6 +219,26 @@
         }
       }
     },
+    "v1CouponReward": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
+        },
+        "Denomination": {
+          "type": "string"
+        },
+        "Cashable": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1CreateEventResponse": {
       "type": "object",
       "properties": {
@@ -500,6 +520,12 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1CoinReward"
+          }
+        },
+        "CouponRewards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CouponReward"
           }
         }
       }

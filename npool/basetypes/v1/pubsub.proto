@@ -32,6 +32,8 @@ enum MsgID {
   WithdrawReviewNotifyReq = 5000;
 
   CalculateEventRewardReq = 6000;
+  ReliableEventRewardReq = 6010;
+  UnReliableEventRewardReq = 6020;
 
   CreateSampleMsgReq = 100000000;
 }

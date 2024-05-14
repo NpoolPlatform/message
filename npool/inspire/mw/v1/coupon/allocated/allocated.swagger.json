@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/allocated_CreateDirectCoupon": {
+      "post": {
+        "operationId": "Middleware_CreateDirectCoupon",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateDirectCouponResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateDirectCouponRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
     "/v1/allocated_DeleteCoupon": {
       "post": {
         "operationId": "Middleware_DeleteCoupon",
@@ -441,6 +473,9 @@
         },
         "UsedByOrderID": {
           "type": "string"
+        },
+        "Cashable": {
+          "type": "boolean"
         }
       }
     },
@@ -472,6 +507,22 @@
       }
     },
     "v1CreateCouponResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Coupon"
+        }
+      }
+    },
+    "v1CreateDirectCouponRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CouponReq"
+        }
+      }
+    },
+    "v1CreateDirectCouponResponse": {
       "type": "object",
       "properties": {
         "Info": {

@@ -134,10 +134,19 @@ message CoinReward {
   string CoinRewards = 50;
 }
 
+message CouponReward {
+  string AppID = 10;
+  string UserID = 20;
+  string CouponID = 30;
+  string Denomination = 40;
+  bool Cashable = 50;
+}
+
 message Reward {
   string TaskID = 10;
   repeated Credit Credits = 20;
   repeated CoinReward CoinRewards = 30;
+  repeated CouponReward CouponRewards = 40;
 }
 
 message RewardEventRequest {
@@ -167,3 +176,28 @@ message CalcluateEventRewardsRequest {
 message CalcluateEventRewardsResponse {
   Reward Info = 10;
 }
+
+message RewardReliable {
+  string TaskID = 10;
+  string EventID = 20;
+  repeated Credit Credits = 30;
+  repeated CoinReward CoinRewards = 40;
+}
+
+message UnRewardReliable {
+  string TaskID = 10;
+  string EventID = 20;
+  repeated CouponReward Coupons = 30;
+}
+
+message RewardReliableRequest {
+  RewardReliable Info = 10;
+}
+
+message RewardReliableResponse {}
+
+message UnRewardUnReliableRequest {
+  UnRewardReliable Info = 10;
+}
+
+message UnRewardReliableResponse {}
