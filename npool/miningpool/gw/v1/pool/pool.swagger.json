@@ -380,9 +380,6 @@
         "WithdrawRate": {
           "type": "string"
         },
-        "MiningpoolTypeStr": {
-          "type": "string"
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"

@@ -42,6 +42,7 @@ service Gateway {
 message FractionRule {
   uint32 ID = 10;
   string EntID = 20;
+  string PoolID = 29;
   string PoolCoinTypeID = 30;
   uint32 WithdrawInterval = 40;
   string MinAmount = 50;
