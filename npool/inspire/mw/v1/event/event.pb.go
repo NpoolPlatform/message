@@ -1511,152 +1511,23 @@ func (x *CalcluateEventRewardsResponse) GetInfo() *Reward {
 	return nil
 }
 
-type RewardReliable struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	TaskID      string        `protobuf:"bytes,10,opt,name=TaskID,proto3" json:"TaskID,omitempty"`
-	EventID     string        `protobuf:"bytes,20,opt,name=EventID,proto3" json:"EventID,omitempty"`
-	Credits     []*Credit     `protobuf:"bytes,30,rep,name=Credits,proto3" json:"Credits,omitempty"`
-	CoinRewards []*CoinReward `protobuf:"bytes,40,rep,name=CoinRewards,proto3" json:"CoinRewards,omitempty"`
-}
-
-func (x *RewardReliable) Reset() {
-	*x = RewardReliable{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[21]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RewardReliable) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RewardReliable) ProtoMessage() {}
-
-func (x *RewardReliable) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[21]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RewardReliable.ProtoReflect.Descriptor instead.
-func (*RewardReliable) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_event_event_proto_rawDescGZIP(), []int{21}
-}
-
-func (x *RewardReliable) GetTaskID() string {
-	if x != nil {
-		return x.TaskID
-	}
-	return ""
-}
-
-func (x *RewardReliable) GetEventID() string {
-	if x != nil {
-		return x.EventID
-	}
-	return ""
-}
-
-func (x *RewardReliable) GetCredits() []*Credit {
-	if x != nil {
-		return x.Credits
-	}
-	return nil
-}
-
-func (x *RewardReliable) GetCoinRewards() []*CoinReward {
-	if x != nil {
-		return x.CoinRewards
-	}
-	return nil
-}
-
-type UnRewardReliable struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	TaskID  string          `protobuf:"bytes,10,opt,name=TaskID,proto3" json:"TaskID,omitempty"`
-	EventID string          `protobuf:"bytes,20,opt,name=EventID,proto3" json:"EventID,omitempty"`
-	Coupons []*CouponReward `protobuf:"bytes,30,rep,name=Coupons,proto3" json:"Coupons,omitempty"`
-}
-
-func (x *UnRewardReliable) Reset() {
-	*x = UnRewardReliable{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[22]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UnRewardReliable) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UnRewardReliable) ProtoMessage() {}
-
-func (x *UnRewardReliable) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[22]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UnRewardReliable.ProtoReflect.Descriptor instead.
-func (*UnRewardReliable) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_event_event_proto_rawDescGZIP(), []int{22}
-}
-
-func (x *UnRewardReliable) GetTaskID() string {
-	if x != nil {
-		return x.TaskID
-	}
-	return ""
-}
-
-func (x *UnRewardReliable) GetEventID() string {
-	if x != nil {
-		return x.EventID
-	}
-	return ""
-}
-
-func (x *UnRewardReliable) GetCoupons() []*CouponReward {
-	if x != nil {
-		return x.Coupons
-	}
-	return nil
-}
-
 type RewardReliableRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *RewardReliable `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	AppID       string        `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	UserID      string        `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty"`
+	TaskID      string        `protobuf:"bytes,30,opt,name=TaskID,proto3" json:"TaskID,omitempty"`
+	EventID     string        `protobuf:"bytes,40,opt,name=EventID,proto3" json:"EventID,omitempty"`
+	Credits     []*Credit     `protobuf:"bytes,50,rep,name=Credits,proto3" json:"Credits,omitempty"`
+	CoinRewards []*CoinReward `protobuf:"bytes,60,rep,name=CoinRewards,proto3" json:"CoinRewards,omitempty"`
 }
 
 func (x *RewardReliableRequest) Reset() {
 	*x = RewardReliableRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[23]
+		mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1669,7 +1540,7 @@ func (x *RewardReliableRequest) String() string {
 func (*RewardReliableRequest) ProtoMessage() {}
 
 func (x *RewardReliableRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[23]
+	mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1682,12 +1553,47 @@ func (x *RewardReliableRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RewardReliableRequest.ProtoReflect.Descriptor instead.
 func (*RewardReliableRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_event_event_proto_rawDescGZIP(), []int{23}
+	return file_npool_inspire_mw_v1_event_event_proto_rawDescGZIP(), []int{21}
 }
 
-func (x *RewardReliableRequest) GetInfo() *RewardReliable {
+func (x *RewardReliableRequest) GetAppID() string {
 	if x != nil {
-		return x.Info
+		return x.AppID
+	}
+	return ""
+}
+
+func (x *RewardReliableRequest) GetUserID() string {
+	if x != nil {
+		return x.UserID
+	}
+	return ""
+}
+
+func (x *RewardReliableRequest) GetTaskID() string {
+	if x != nil {
+		return x.TaskID
+	}
+	return ""
+}
+
+func (x *RewardReliableRequest) GetEventID() string {
+	if x != nil {
+		return x.EventID
+	}
+	return ""
+}
+
+func (x *RewardReliableRequest) GetCredits() []*Credit {
+	if x != nil {
+		return x.Credits
+	}
+	return nil
+}
+
+func (x *RewardReliableRequest) GetCoinRewards() []*CoinReward {
+	if x != nil {
+		return x.CoinRewards
 	}
 	return nil
 }
@@ -1701,7 +1607,7 @@ type RewardReliableResponse struct {
 func (x *RewardReliableResponse) Reset() {
 	*x = RewardReliableResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[24]
+		mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1714,7 +1620,7 @@ func (x *RewardReliableResponse) String() string {
 func (*RewardReliableResponse) ProtoMessage() {}
 
 func (x *RewardReliableResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[24]
+	mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1727,34 +1633,38 @@ func (x *RewardReliableResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RewardReliableResponse.ProtoReflect.Descriptor instead.
 func (*RewardReliableResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_event_event_proto_rawDescGZIP(), []int{24}
+	return file_npool_inspire_mw_v1_event_event_proto_rawDescGZIP(), []int{22}
 }
 
-type UnRewardUnReliableRequest struct {
+type RewardUnReliableRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Info *UnRewardReliable `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+	AppID   string          `protobuf:"bytes,10,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	UserID  string          `protobuf:"bytes,20,opt,name=UserID,proto3" json:"UserID,omitempty"`
+	TaskID  string          `protobuf:"bytes,30,opt,name=TaskID,proto3" json:"TaskID,omitempty"`
+	EventID string          `protobuf:"bytes,40,opt,name=EventID,proto3" json:"EventID,omitempty"`
+	Coupons []*CouponReward `protobuf:"bytes,50,rep,name=Coupons,proto3" json:"Coupons,omitempty"`
 }
 
-func (x *UnRewardUnReliableRequest) Reset() {
-	*x = UnRewardUnReliableRequest{}
+func (x *RewardUnReliableRequest) Reset() {
+	*x = RewardUnReliableRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[25]
+		mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
-func (x *UnRewardUnReliableRequest) String() string {
+func (x *RewardUnReliableRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UnRewardUnReliableRequest) ProtoMessage() {}
+func (*RewardUnReliableRequest) ProtoMessage() {}
 
-func (x *UnRewardUnReliableRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[25]
+func (x *RewardUnReliableRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1765,41 +1675,69 @@ func (x *UnRewardUnReliableRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UnRewardUnReliableRequest.ProtoReflect.Descriptor instead.
-func (*UnRewardUnReliableRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_event_event_proto_rawDescGZIP(), []int{25}
+// Deprecated: Use RewardUnReliableRequest.ProtoReflect.Descriptor instead.
+func (*RewardUnReliableRequest) Descriptor() ([]byte, []int) {
+	return file_npool_inspire_mw_v1_event_event_proto_rawDescGZIP(), []int{23}
 }
 
-func (x *UnRewardUnReliableRequest) GetInfo() *UnRewardReliable {
+func (x *RewardUnReliableRequest) GetAppID() string {
 	if x != nil {
-		return x.Info
+		return x.AppID
+	}
+	return ""
+}
+
+func (x *RewardUnReliableRequest) GetUserID() string {
+	if x != nil {
+		return x.UserID
+	}
+	return ""
+}
+
+func (x *RewardUnReliableRequest) GetTaskID() string {
+	if x != nil {
+		return x.TaskID
+	}
+	return ""
+}
+
+func (x *RewardUnReliableRequest) GetEventID() string {
+	if x != nil {
+		return x.EventID
+	}
+	return ""
+}
+
+func (x *RewardUnReliableRequest) GetCoupons() []*CouponReward {
+	if x != nil {
+		return x.Coupons
 	}
 	return nil
 }
 
-type UnRewardReliableResponse struct {
+type RewardUnReliableResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *UnRewardReliableResponse) Reset() {
-	*x = UnRewardReliableResponse{}
+func (x *RewardUnReliableResponse) Reset() {
+	*x = RewardUnReliableResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[26]
+		mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
-func (x *UnRewardReliableResponse) String() string {
+func (x *RewardUnReliableResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UnRewardReliableResponse) ProtoMessage() {}
+func (*RewardUnReliableResponse) ProtoMessage() {}
 
-func (x *UnRewardReliableResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[26]
+func (x *RewardUnReliableResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_inspire_mw_v1_event_event_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1810,9 +1748,9 @@ func (x *UnRewardReliableResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UnRewardReliableResponse.ProtoReflect.Descriptor instead.
-func (*UnRewardReliableResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_event_event_proto_rawDescGZIP(), []int{26}
+// Deprecated: Use RewardUnReliableResponse.ProtoReflect.Descriptor instead.
+func (*RewardUnReliableResponse) Descriptor() ([]byte, []int) {
+	return file_npool_inspire_mw_v1_event_event_proto_rawDescGZIP(), []int{24}
 }
 
 var File_npool_inspire_mw_v1_event_event_proto protoreflect.FileDescriptor
@@ -2078,42 +2016,37 @@ var file_npool_inspire_mw_v1_event_event_proto_rawDesc = []byte{
 	0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69,
 	0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x65, 0x76,
 	0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x04, 0x49,
-	0x6e, 0x66, 0x6f, 0x22, 0xcc, 0x01, 0x0a, 0x0e, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65,
-	0x6c, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x54, 0x61, 0x73, 0x6b, 0x49, 0x44,
-	0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x54, 0x61, 0x73, 0x6b, 0x49, 0x44, 0x12, 0x18,
-	0x0a, 0x07, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x07, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x49, 0x44, 0x12, 0x3d, 0x0a, 0x07, 0x43, 0x72, 0x65, 0x64,
-	0x69, 0x74, 0x73, 0x18, 0x1e, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x69, 0x6e, 0x73, 0x70,
-	0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x65,
-	0x76, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x64, 0x69, 0x74, 0x52, 0x07,
-	0x43, 0x72, 0x65, 0x64, 0x69, 0x74, 0x73, 0x12, 0x49, 0x0a, 0x0b, 0x43, 0x6f, 0x69, 0x6e, 0x52,
-	0x65, 0x77, 0x61, 0x72, 0x64, 0x73, 0x18, 0x28, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x69,
-	0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
-	0x65, 0x2e, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69, 0x6e, 0x52,
-	0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x0b, 0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x77, 0x61, 0x72,
-	0x64, 0x73, 0x22, 0x89, 0x01, 0x0a, 0x10, 0x55, 0x6e, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52,
-	0x65, 0x6c, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x54, 0x61, 0x73, 0x6b, 0x49,
-	0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x54, 0x61, 0x73, 0x6b, 0x49, 0x44, 0x12,
-	0x18, 0x0a, 0x07, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x07, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x49, 0x44, 0x12, 0x43, 0x0a, 0x07, 0x43, 0x6f, 0x75,
-	0x70, 0x6f, 0x6e, 0x73, 0x18, 0x1e, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x29, 0x2e, 0x69, 0x6e, 0x73,
-	0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e,
-	0x65, 0x76, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x52,
-	0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x07, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x73, 0x22, 0x58,
-	0x0a, 0x15, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65, 0x6c, 0x69, 0x61, 0x62, 0x6c, 0x65,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3f, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
-	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e,
-	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x65, 0x76, 0x65, 0x6e, 0x74,
-	0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65, 0x6c, 0x69, 0x61, 0x62,
-	0x6c, 0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x18, 0x0a, 0x16, 0x52, 0x65, 0x77, 0x61,
-	0x72, 0x64, 0x52, 0x65, 0x6c, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x5e, 0x0a, 0x19, 0x55, 0x6e, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x55, 0x6e,
-	0x52, 0x65, 0x6c, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x41, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2d, 0x2e,
-	0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
-	0x72, 0x65, 0x2e, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x6e, 0x52, 0x65,
-	0x77, 0x61, 0x72, 0x64, 0x52, 0x65, 0x6c, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x04, 0x49, 0x6e,
-	0x66, 0x6f, 0x22, 0x1a, 0x0a, 0x18, 0x55, 0x6e, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65,
+	0x6e, 0x66, 0x6f, 0x22, 0x81, 0x02, 0x0a, 0x15, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65,
+	0x6c, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a,
+	0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70,
+	0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x54,
+	0x61, 0x73, 0x6b, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x54, 0x61, 0x73,
+	0x6b, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x28,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x49, 0x44, 0x12, 0x3d, 0x0a,
+	0x07, 0x43, 0x72, 0x65, 0x64, 0x69, 0x74, 0x73, 0x18, 0x32, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x23,
+	0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x61, 0x72, 0x65, 0x2e, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65,
+	0x64, 0x69, 0x74, 0x52, 0x07, 0x43, 0x72, 0x65, 0x64, 0x69, 0x74, 0x73, 0x12, 0x49, 0x0a, 0x0b,
+	0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x73, 0x18, 0x3c, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x27, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64,
+	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e,
+	0x43, 0x6f, 0x69, 0x6e, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x0b, 0x43, 0x6f, 0x69, 0x6e,
+	0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x73, 0x22, 0x18, 0x0a, 0x16, 0x52, 0x65, 0x77, 0x61, 0x72,
+	0x64, 0x52, 0x65, 0x6c, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0xbe, 0x01, 0x0a, 0x17, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x55, 0x6e, 0x52, 0x65,
+	0x6c, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a,
+	0x05, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x41, 0x70,
+	0x70, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x14, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x54,
+	0x61, 0x73, 0x6b, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x54, 0x61, 0x73,
+	0x6b, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x28,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x49, 0x44, 0x12, 0x43, 0x0a,
+	0x07, 0x43, 0x6f, 0x75, 0x70, 0x6f, 0x6e, 0x73, 0x18, 0x32, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x29,
+	0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x61, 0x72, 0x65, 0x2e, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x75,
+	0x70, 0x6f, 0x6e, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x07, 0x43, 0x6f, 0x75, 0x70, 0x6f,
+	0x6e, 0x73, 0x22, 0x1a, 0x0a, 0x18, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x55, 0x6e, 0x52, 0x65,
 	0x6c, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0xb4,
 	0x07, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x72, 0x0a,
 	0x0b, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x12, 0x2f, 0x2e, 0x69,
@@ -2193,7 +2126,7 @@ func file_npool_inspire_mw_v1_event_event_proto_rawDescGZIP() []byte {
 	return file_npool_inspire_mw_v1_event_event_proto_rawDescData
 }
 
-var file_npool_inspire_mw_v1_event_event_proto_msgTypes = make([]protoimpl.MessageInfo, 27)
+var file_npool_inspire_mw_v1_event_event_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
 var file_npool_inspire_mw_v1_event_event_proto_goTypes = []interface{}{
 	(*EventReq)(nil),                      // 0: inspire.middleware.event.v1.EventReq
 	(*Event)(nil),                         // 1: inspire.middleware.event.v1.Event
@@ -2216,30 +2149,28 @@ var file_npool_inspire_mw_v1_event_event_proto_goTypes = []interface{}{
 	(*RewardEventResponse)(nil),           // 18: inspire.middleware.event.v1.RewardEventResponse
 	(*CalcluateEventRewardsRequest)(nil),  // 19: inspire.middleware.event.v1.CalcluateEventRewardsRequest
 	(*CalcluateEventRewardsResponse)(nil), // 20: inspire.middleware.event.v1.CalcluateEventRewardsResponse
-	(*RewardReliable)(nil),                // 21: inspire.middleware.event.v1.RewardReliable
-	(*UnRewardReliable)(nil),              // 22: inspire.middleware.event.v1.UnRewardReliable
-	(*RewardReliableRequest)(nil),         // 23: inspire.middleware.event.v1.RewardReliableRequest
-	(*RewardReliableResponse)(nil),        // 24: inspire.middleware.event.v1.RewardReliableResponse
-	(*UnRewardUnReliableRequest)(nil),     // 25: inspire.middleware.event.v1.UnRewardUnReliableRequest
-	(*UnRewardReliableResponse)(nil),      // 26: inspire.middleware.event.v1.UnRewardReliableResponse
-	(v1.UsedFor)(0),                       // 27: basetypes.v1.UsedFor
-	(*coin.EventCoinReq)(nil),             // 28: inspire.middleware.event.coin.v1.EventCoinReq
-	(*coin.EventCoin)(nil),                // 29: inspire.middleware.event.coin.v1.EventCoin
-	(*v1.StringVal)(nil),                  // 30: basetypes.v1.StringVal
-	(*v1.Uint32Val)(nil),                  // 31: basetypes.v1.Uint32Val
-	(*v1.StringSliceVal)(nil),             // 32: basetypes.v1.StringSliceVal
+	(*RewardReliableRequest)(nil),         // 21: inspire.middleware.event.v1.RewardReliableRequest
+	(*RewardReliableResponse)(nil),        // 22: inspire.middleware.event.v1.RewardReliableResponse
+	(*RewardUnReliableRequest)(nil),       // 23: inspire.middleware.event.v1.RewardUnReliableRequest
+	(*RewardUnReliableResponse)(nil),      // 24: inspire.middleware.event.v1.RewardUnReliableResponse
+	(v1.UsedFor)(0),                       // 25: basetypes.v1.UsedFor
+	(*coin.EventCoinReq)(nil),             // 26: inspire.middleware.event.coin.v1.EventCoinReq
+	(*coin.EventCoin)(nil),                // 27: inspire.middleware.event.coin.v1.EventCoin
+	(*v1.StringVal)(nil),                  // 28: basetypes.v1.StringVal
+	(*v1.Uint32Val)(nil),                  // 29: basetypes.v1.Uint32Val
+	(*v1.StringSliceVal)(nil),             // 30: basetypes.v1.StringSliceVal
 }
 var file_npool_inspire_mw_v1_event_event_proto_depIdxs = []int32{
-	27, // 0: inspire.middleware.event.v1.EventReq.EventType:type_name -> basetypes.v1.UsedFor
-	28, // 1: inspire.middleware.event.v1.EventReq.Coins:type_name -> inspire.middleware.event.coin.v1.EventCoinReq
-	27, // 2: inspire.middleware.event.v1.Event.EventType:type_name -> basetypes.v1.UsedFor
-	29, // 3: inspire.middleware.event.v1.Event.Coins:type_name -> inspire.middleware.event.coin.v1.EventCoin
-	30, // 4: inspire.middleware.event.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	30, // 5: inspire.middleware.event.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	31, // 6: inspire.middleware.event.v1.Conds.EventType:type_name -> basetypes.v1.Uint32Val
-	30, // 7: inspire.middleware.event.v1.Conds.GoodID:type_name -> basetypes.v1.StringVal
-	30, // 8: inspire.middleware.event.v1.Conds.AppGoodID:type_name -> basetypes.v1.StringVal
-	32, // 9: inspire.middleware.event.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
+	25, // 0: inspire.middleware.event.v1.EventReq.EventType:type_name -> basetypes.v1.UsedFor
+	26, // 1: inspire.middleware.event.v1.EventReq.Coins:type_name -> inspire.middleware.event.coin.v1.EventCoinReq
+	25, // 2: inspire.middleware.event.v1.Event.EventType:type_name -> basetypes.v1.UsedFor
+	27, // 3: inspire.middleware.event.v1.Event.Coins:type_name -> inspire.middleware.event.coin.v1.EventCoin
+	28, // 4: inspire.middleware.event.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	28, // 5: inspire.middleware.event.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	29, // 6: inspire.middleware.event.v1.Conds.EventType:type_name -> basetypes.v1.Uint32Val
+	28, // 7: inspire.middleware.event.v1.Conds.GoodID:type_name -> basetypes.v1.StringVal
+	28, // 8: inspire.middleware.event.v1.Conds.AppGoodID:type_name -> basetypes.v1.StringVal
+	30, // 9: inspire.middleware.event.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
 	0,  // 10: inspire.middleware.event.v1.CreateEventRequest.Info:type_name -> inspire.middleware.event.v1.EventReq
 	1,  // 11: inspire.middleware.event.v1.CreateEventResponse.Info:type_name -> inspire.middleware.event.v1.Event
 	0,  // 12: inspire.middleware.event.v1.UpdateEventRequest.Info:type_name -> inspire.middleware.event.v1.EventReq
@@ -2252,34 +2183,32 @@ var file_npool_inspire_mw_v1_event_event_proto_depIdxs = []int32{
 	13, // 19: inspire.middleware.event.v1.Reward.Credits:type_name -> inspire.middleware.event.v1.Credit
 	14, // 20: inspire.middleware.event.v1.Reward.CoinRewards:type_name -> inspire.middleware.event.v1.CoinReward
 	15, // 21: inspire.middleware.event.v1.Reward.CouponRewards:type_name -> inspire.middleware.event.v1.CouponReward
-	27, // 22: inspire.middleware.event.v1.RewardEventRequest.EventType:type_name -> basetypes.v1.UsedFor
+	25, // 22: inspire.middleware.event.v1.RewardEventRequest.EventType:type_name -> basetypes.v1.UsedFor
 	16, // 23: inspire.middleware.event.v1.RewardEventResponse.Info:type_name -> inspire.middleware.event.v1.Reward
-	27, // 24: inspire.middleware.event.v1.CalcluateEventRewardsRequest.EventType:type_name -> basetypes.v1.UsedFor
+	25, // 24: inspire.middleware.event.v1.CalcluateEventRewardsRequest.EventType:type_name -> basetypes.v1.UsedFor
 	16, // 25: inspire.middleware.event.v1.CalcluateEventRewardsResponse.Info:type_name -> inspire.middleware.event.v1.Reward
-	13, // 26: inspire.middleware.event.v1.RewardReliable.Credits:type_name -> inspire.middleware.event.v1.Credit
-	14, // 27: inspire.middleware.event.v1.RewardReliable.CoinRewards:type_name -> inspire.middleware.event.v1.CoinReward
-	15, // 28: inspire.middleware.event.v1.UnRewardReliable.Coupons:type_name -> inspire.middleware.event.v1.CouponReward
-	21, // 29: inspire.middleware.event.v1.RewardReliableRequest.Info:type_name -> inspire.middleware.event.v1.RewardReliable
-	22, // 30: inspire.middleware.event.v1.UnRewardUnReliableRequest.Info:type_name -> inspire.middleware.event.v1.UnRewardReliable
-	3,  // 31: inspire.middleware.event.v1.Middleware.CreateEvent:input_type -> inspire.middleware.event.v1.CreateEventRequest
-	5,  // 32: inspire.middleware.event.v1.Middleware.UpdateEvent:input_type -> inspire.middleware.event.v1.UpdateEventRequest
-	7,  // 33: inspire.middleware.event.v1.Middleware.GetEvent:input_type -> inspire.middleware.event.v1.GetEventRequest
-	9,  // 34: inspire.middleware.event.v1.Middleware.GetEvents:input_type -> inspire.middleware.event.v1.GetEventsRequest
-	11, // 35: inspire.middleware.event.v1.Middleware.DeleteEvent:input_type -> inspire.middleware.event.v1.DeleteEventRequest
-	17, // 36: inspire.middleware.event.v1.Middleware.RewardEvent:input_type -> inspire.middleware.event.v1.RewardEventRequest
-	19, // 37: inspire.middleware.event.v1.Middleware.CalcluateEventRewards:input_type -> inspire.middleware.event.v1.CalcluateEventRewardsRequest
-	4,  // 38: inspire.middleware.event.v1.Middleware.CreateEvent:output_type -> inspire.middleware.event.v1.CreateEventResponse
-	6,  // 39: inspire.middleware.event.v1.Middleware.UpdateEvent:output_type -> inspire.middleware.event.v1.UpdateEventResponse
-	8,  // 40: inspire.middleware.event.v1.Middleware.GetEvent:output_type -> inspire.middleware.event.v1.GetEventResponse
-	10, // 41: inspire.middleware.event.v1.Middleware.GetEvents:output_type -> inspire.middleware.event.v1.GetEventsResponse
-	12, // 42: inspire.middleware.event.v1.Middleware.DeleteEvent:output_type -> inspire.middleware.event.v1.DeleteEventResponse
-	18, // 43: inspire.middleware.event.v1.Middleware.RewardEvent:output_type -> inspire.middleware.event.v1.RewardEventResponse
-	20, // 44: inspire.middleware.event.v1.Middleware.CalcluateEventRewards:output_type -> inspire.middleware.event.v1.CalcluateEventRewardsResponse
-	38, // [38:45] is the sub-list for method output_type
-	31, // [31:38] is the sub-list for method input_type
-	31, // [31:31] is the sub-list for extension type_name
-	31, // [31:31] is the sub-list for extension extendee
-	0,  // [0:31] is the sub-list for field type_name
+	13, // 26: inspire.middleware.event.v1.RewardReliableRequest.Credits:type_name -> inspire.middleware.event.v1.Credit
+	14, // 27: inspire.middleware.event.v1.RewardReliableRequest.CoinRewards:type_name -> inspire.middleware.event.v1.CoinReward
+	15, // 28: inspire.middleware.event.v1.RewardUnReliableRequest.Coupons:type_name -> inspire.middleware.event.v1.CouponReward
+	3,  // 29: inspire.middleware.event.v1.Middleware.CreateEvent:input_type -> inspire.middleware.event.v1.CreateEventRequest
+	5,  // 30: inspire.middleware.event.v1.Middleware.UpdateEvent:input_type -> inspire.middleware.event.v1.UpdateEventRequest
+	7,  // 31: inspire.middleware.event.v1.Middleware.GetEvent:input_type -> inspire.middleware.event.v1.GetEventRequest
+	9,  // 32: inspire.middleware.event.v1.Middleware.GetEvents:input_type -> inspire.middleware.event.v1.GetEventsRequest
+	11, // 33: inspire.middleware.event.v1.Middleware.DeleteEvent:input_type -> inspire.middleware.event.v1.DeleteEventRequest
+	17, // 34: inspire.middleware.event.v1.Middleware.RewardEvent:input_type -> inspire.middleware.event.v1.RewardEventRequest
+	19, // 35: inspire.middleware.event.v1.Middleware.CalcluateEventRewards:input_type -> inspire.middleware.event.v1.CalcluateEventRewardsRequest
+	4,  // 36: inspire.middleware.event.v1.Middleware.CreateEvent:output_type -> inspire.middleware.event.v1.CreateEventResponse
+	6,  // 37: inspire.middleware.event.v1.Middleware.UpdateEvent:output_type -> inspire.middleware.event.v1.UpdateEventResponse
+	8,  // 38: inspire.middleware.event.v1.Middleware.GetEvent:output_type -> inspire.middleware.event.v1.GetEventResponse
+	10, // 39: inspire.middleware.event.v1.Middleware.GetEvents:output_type -> inspire.middleware.event.v1.GetEventsResponse
+	12, // 40: inspire.middleware.event.v1.Middleware.DeleteEvent:output_type -> inspire.middleware.event.v1.DeleteEventResponse
+	18, // 41: inspire.middleware.event.v1.Middleware.RewardEvent:output_type -> inspire.middleware.event.v1.RewardEventResponse
+	20, // 42: inspire.middleware.event.v1.Middleware.CalcluateEventRewards:output_type -> inspire.middleware.event.v1.CalcluateEventRewardsResponse
+	36, // [36:43] is the sub-list for method output_type
+	29, // [29:36] is the sub-list for method input_type
+	29, // [29:29] is the sub-list for extension type_name
+	29, // [29:29] is the sub-list for extension extendee
+	0,  // [0:29] is the sub-list for field type_name
 }
 
 func init() { file_npool_inspire_mw_v1_event_event_proto_init() }
@@ -2541,30 +2470,6 @@ func file_npool_inspire_mw_v1_event_event_proto_init() {
 			}
 		}
 		file_npool_inspire_mw_v1_event_event_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RewardReliable); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_inspire_mw_v1_event_event_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UnRewardReliable); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_inspire_mw_v1_event_event_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RewardReliableRequest); i {
 			case 0:
 				return &v.state
@@ -2576,7 +2481,7 @@ func file_npool_inspire_mw_v1_event_event_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_event_event_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_event_event_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RewardReliableResponse); i {
 			case 0:
 				return &v.state
@@ -2588,8 +2493,8 @@ func file_npool_inspire_mw_v1_event_event_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_event_event_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UnRewardUnReliableRequest); i {
+		file_npool_inspire_mw_v1_event_event_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RewardUnReliableRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2600,8 +2505,8 @@ func file_npool_inspire_mw_v1_event_event_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_event_event_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UnRewardReliableResponse); i {
+		file_npool_inspire_mw_v1_event_event_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RewardUnReliableResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2624,7 +2529,7 @@ func file_npool_inspire_mw_v1_event_event_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_inspire_mw_v1_event_event_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   27,
+			NumMessages:   25,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
