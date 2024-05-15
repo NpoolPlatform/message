@@ -21,6 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Middleware_CreateMalfunction_FullMethodName     = "/good.middleware.good1.malfunction.v1.Middleware/CreateMalfunction"
 	Middleware_GetMalfunction_FullMethodName        = "/good.middleware.good1.malfunction.v1.Middleware/GetMalfunction"
+	Middleware_ExistMalfunction_FullMethodName      = "/good.middleware.good1.malfunction.v1.Middleware/ExistMalfunction"
 	Middleware_ExistMalfunctionConds_FullMethodName = "/good.middleware.good1.malfunction.v1.Middleware/ExistMalfunctionConds"
 	Middleware_GetMalfunctions_FullMethodName       = "/good.middleware.good1.malfunction.v1.Middleware/GetMalfunctions"
 	Middleware_UpdateMalfunction_FullMethodName     = "/good.middleware.good1.malfunction.v1.Middleware/UpdateMalfunction"
@@ -33,6 +34,7 @@ const (
 type MiddlewareClient interface {
 	CreateMalfunction(ctx context.Context, in *CreateMalfunctionRequest, opts ...grpc.CallOption) (*CreateMalfunctionResponse, error)
 	GetMalfunction(ctx context.Context, in *GetMalfunctionRequest, opts ...grpc.CallOption) (*GetMalfunctionResponse, error)
+	ExistMalfunction(ctx context.Context, in *ExistMalfunctionRequest, opts ...grpc.CallOption) (*ExistMalfunctionResponse, error)
 	ExistMalfunctionConds(ctx context.Context, in *ExistMalfunctionCondsRequest, opts ...grpc.CallOption) (*ExistMalfunctionCondsResponse, error)
 	GetMalfunctions(ctx context.Context, in *GetMalfunctionsRequest, opts ...grpc.CallOption) (*GetMalfunctionsResponse, error)
 	UpdateMalfunction(ctx context.Context, in *UpdateMalfunctionRequest, opts ...grpc.CallOption) (*UpdateMalfunctionResponse, error)
@@ -59,6 +61,15 @@ func (c *middlewareClient) CreateMalfunction(ctx context.Context, in *CreateMalf
 func (c *middlewareClient) GetMalfunction(ctx context.Context, in *GetMalfunctionRequest, opts ...grpc.CallOption) (*GetMalfunctionResponse, error) {
 	out := new(GetMalfunctionResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetMalfunction_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) ExistMalfunction(ctx context.Context, in *ExistMalfunctionRequest, opts ...grpc.CallOption) (*ExistMalfunctionResponse, error) {
+	out := new(ExistMalfunctionResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistMalfunction_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,6 +118,7 @@ func (c *middlewareClient) DeleteMalfunction(ctx context.Context, in *DeleteMalf
 type MiddlewareServer interface {
 	CreateMalfunction(context.Context, *CreateMalfunctionRequest) (*CreateMalfunctionResponse, error)
 	GetMalfunction(context.Context, *GetMalfunctionRequest) (*GetMalfunctionResponse, error)
+	ExistMalfunction(context.Context, *ExistMalfunctionRequest) (*ExistMalfunctionResponse, error)
 	ExistMalfunctionConds(context.Context, *ExistMalfunctionCondsRequest) (*ExistMalfunctionCondsResponse, error)
 	GetMalfunctions(context.Context, *GetMalfunctionsRequest) (*GetMalfunctionsResponse, error)
 	UpdateMalfunction(context.Context, *UpdateMalfunctionRequest) (*UpdateMalfunctionResponse, error)
@@ -123,6 +135,9 @@ func (UnimplementedMiddlewareServer) CreateMalfunction(context.Context, *CreateM
 }
 func (UnimplementedMiddlewareServer) GetMalfunction(context.Context, *GetMalfunctionRequest) (*GetMalfunctionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMalfunction not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistMalfunction(context.Context, *ExistMalfunctionRequest) (*ExistMalfunctionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistMalfunction not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistMalfunctionConds(context.Context, *ExistMalfunctionCondsRequest) (*ExistMalfunctionCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistMalfunctionConds not implemented")
@@ -181,6 +196,24 @@ func _Middleware_GetMalfunction_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetMalfunction(ctx, req.(*GetMalfunctionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_ExistMalfunction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistMalfunctionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistMalfunction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistMalfunction_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistMalfunction(ctx, req.(*ExistMalfunctionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -271,6 +304,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetMalfunction",
 			Handler:    _Middleware_GetMalfunction_Handler,
+		},
+		{
+			MethodName: "ExistMalfunction",
+			Handler:    _Middleware_ExistMalfunction_Handler,
 		},
 		{
 			MethodName: "ExistMalfunctionConds",

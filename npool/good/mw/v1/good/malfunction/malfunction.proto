@@ -10,6 +10,7 @@ import "npool/basetypes/v1/conds.proto";
 service Middleware {
     rpc CreateMalfunction (CreateMalfunctionRequest) returns (CreateMalfunctionResponse) {}
     rpc GetMalfunction (GetMalfunctionRequest) returns (GetMalfunctionResponse) {}
+    rpc ExistMalfunction (ExistMalfunctionRequest) returns (ExistMalfunctionResponse) {}
     rpc ExistMalfunctionConds (ExistMalfunctionCondsRequest) returns (ExistMalfunctionCondsResponse) {}
     rpc GetMalfunctions (GetMalfunctionsRequest) returns (GetMalfunctionsResponse) {}
     rpc UpdateMalfunction (UpdateMalfunctionRequest) returns (UpdateMalfunctionResponse) {}
@@ -74,6 +75,14 @@ message GetMalfunctionRequest {
 
 message GetMalfunctionResponse {
     Malfunction Info = 10;
+}
+
+message ExistMalfunctionRequest {
+    string EntID = 10;
+}
+
+message ExistMalfunctionResponse {
+    bool Info = 10;
 }
 
 message ExistMalfunctionCondsRequest {
