@@ -17,13 +17,6 @@ service Gateway {
       body : "*"
     };
   }
-  rpc AdminGetGoodUser(AdminGetGoodUserRequest)
-      returns (AdminGetGoodUserResponse) {
-    option (google.api.http) = {
-      post : "/v1/admin/get/goodminingpooluser"
-      body : "*"
-    };
-  }
   rpc AdminGetGoodUsers(AdminGetGoodUsersRequest)
       returns (AdminGetGoodUsersResponse) {
     option (google.api.http) = {
@@ -63,10 +56,6 @@ message AdminCreateGoodUserRequest {
 }
 
 message AdminCreateGoodUserResponse { GoodUser Info = 10; }
-
-message AdminGetGoodUserRequest { string EntID = 10; }
-
-message AdminGetGoodUserResponse { GoodUser Info = 10; }
 
 message AdminGetGoodUsersRequest {
   int32 Offset = 20;

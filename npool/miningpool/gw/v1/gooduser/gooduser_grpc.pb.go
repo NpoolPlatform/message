@@ -20,7 +20,6 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Gateway_AdminCreateGoodUser_FullMethodName = "/miningpool.gateway.gooduser.v1.Gateway/AdminCreateGoodUser"
-	Gateway_AdminGetGoodUser_FullMethodName    = "/miningpool.gateway.gooduser.v1.Gateway/AdminGetGoodUser"
 	Gateway_AdminGetGoodUsers_FullMethodName   = "/miningpool.gateway.gooduser.v1.Gateway/AdminGetGoodUsers"
 	Gateway_AdminDeleteGoodUser_FullMethodName = "/miningpool.gateway.gooduser.v1.Gateway/AdminDeleteGoodUser"
 )
@@ -30,7 +29,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	AdminCreateGoodUser(ctx context.Context, in *AdminCreateGoodUserRequest, opts ...grpc.CallOption) (*AdminCreateGoodUserResponse, error)
-	AdminGetGoodUser(ctx context.Context, in *AdminGetGoodUserRequest, opts ...grpc.CallOption) (*AdminGetGoodUserResponse, error)
 	AdminGetGoodUsers(ctx context.Context, in *AdminGetGoodUsersRequest, opts ...grpc.CallOption) (*AdminGetGoodUsersResponse, error)
 	AdminDeleteGoodUser(ctx context.Context, in *AdminDeleteGoodUserRequest, opts ...grpc.CallOption) (*AdminDeleteGoodUserResponse, error)
 }
@@ -46,15 +44,6 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) AdminCreateGoodUser(ctx context.Context, in *AdminCreateGoodUserRequest, opts ...grpc.CallOption) (*AdminCreateGoodUserResponse, error) {
 	out := new(AdminCreateGoodUserResponse)
 	err := c.cc.Invoke(ctx, Gateway_AdminCreateGoodUser_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) AdminGetGoodUser(ctx context.Context, in *AdminGetGoodUserRequest, opts ...grpc.CallOption) (*AdminGetGoodUserResponse, error) {
-	out := new(AdminGetGoodUserResponse)
-	err := c.cc.Invoke(ctx, Gateway_AdminGetGoodUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -84,7 +73,6 @@ func (c *gatewayClient) AdminDeleteGoodUser(ctx context.Context, in *AdminDelete
 // for forward compatibility
 type GatewayServer interface {
 	AdminCreateGoodUser(context.Context, *AdminCreateGoodUserRequest) (*AdminCreateGoodUserResponse, error)
-	AdminGetGoodUser(context.Context, *AdminGetGoodUserRequest) (*AdminGetGoodUserResponse, error)
 	AdminGetGoodUsers(context.Context, *AdminGetGoodUsersRequest) (*AdminGetGoodUsersResponse, error)
 	AdminDeleteGoodUser(context.Context, *AdminDeleteGoodUserRequest) (*AdminDeleteGoodUserResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -96,9 +84,6 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) AdminCreateGoodUser(context.Context, *AdminCreateGoodUserRequest) (*AdminCreateGoodUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateGoodUser not implemented")
-}
-func (UnimplementedGatewayServer) AdminGetGoodUser(context.Context, *AdminGetGoodUserRequest) (*AdminGetGoodUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AdminGetGoodUser not implemented")
 }
 func (UnimplementedGatewayServer) AdminGetGoodUsers(context.Context, *AdminGetGoodUsersRequest) (*AdminGetGoodUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminGetGoodUsers not implemented")
@@ -133,24 +118,6 @@ func _Gateway_AdminCreateGoodUser_Handler(srv interface{}, ctx context.Context, 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).AdminCreateGoodUser(ctx, req.(*AdminCreateGoodUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_AdminGetGoodUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AdminGetGoodUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).AdminGetGoodUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_AdminGetGoodUser_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).AdminGetGoodUser(ctx, req.(*AdminGetGoodUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -201,10 +168,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AdminCreateGoodUser",
 			Handler:    _Gateway_AdminCreateGoodUser_Handler,
-		},
-		{
-			MethodName: "AdminGetGoodUser",
-			Handler:    _Gateway_AdminGetGoodUser_Handler,
 		},
 		{
 			MethodName: "AdminGetGoodUsers",
