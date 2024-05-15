@@ -16,13 +16,6 @@ service Gateway {
       body : "*"
     };
   }
-  rpc AdminGetRootUser(AdminGetRootUserRequest)
-      returns (AdminGetRootUserResponse) {
-    option (google.api.http) = {
-      post : "/v1/admin/get/rootminingpooluser"
-      body : "*"
-    };
-  }
   rpc AdminGetRootUsers(AdminGetRootUsersRequest)
       returns (AdminGetRootUsersResponse) {
     option (google.api.http) = {
@@ -69,10 +62,6 @@ message AdminCreateRootUserRequest {
 }
 
 message AdminCreateRootUserResponse { RootUser Info = 10; }
-
-message AdminGetRootUserRequest { string EntID = 10; }
-
-message AdminGetRootUserResponse { RootUser Info = 10; }
 
 message AdminGetRootUsersRequest {
   int32 Offset = 20;
