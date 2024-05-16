@@ -143,11 +143,11 @@
         },
         "TotalUnits": {
           "type": "string",
-          "title": "@inject_tag: sql:\"total_units_v1\""
+          "title": "@inject_tag: sql:\"total_units\""
         },
         "SelfUnits": {
           "type": "string",
-          "title": "@inject_tag: sql:\"self_units_v1\""
+          "title": "@inject_tag: sql:\"self_units\""
         },
         "TotalCommissionUSD": {
           "type": "string",
