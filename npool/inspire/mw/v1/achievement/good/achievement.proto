@@ -59,9 +59,9 @@ message Achievement {
   string TotalAmountUSD = 70;
   // @inject_tag: sql:"self_amount_usd"
   string SelfAmountUSD = 80;
-  // @inject_tag: sql:"total_units_v1"
+  // @inject_tag: sql:"total_units"
   string TotalUnits = 90;
-  // @inject_tag: sql:"self_units_v1"
+  // @inject_tag: sql:"self_units"
   string SelfUnits = 100;
   // Commission amount in USD
   // @inject_tag: sql:"total_commission_usd"

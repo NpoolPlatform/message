@@ -53,7 +53,7 @@ message Statement {
   string OrderID = 110;
   // @inject_tag: sql:"order_user_id"
   string OrderUserID = 120;
-  // @inject_tag: sql:"coin_type_id"
+  // @inject_tag: sql:"good_coin_type_id"
   string GoodCoinTypeID = 130;
   // @inject_tag: sql:"units"
   string Units = 140;
