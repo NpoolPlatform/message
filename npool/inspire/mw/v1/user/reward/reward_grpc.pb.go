@@ -25,6 +25,8 @@ const (
 	Middleware_GetUserRewards_FullMethodName       = "/inspire.middleware.user.reward.v1.Middleware/GetUserRewards"
 	Middleware_ExistUserRewardConds_FullMethodName = "/inspire.middleware.user.reward.v1.Middleware/ExistUserRewardConds"
 	Middleware_DeleteUserReward_FullMethodName     = "/inspire.middleware.user.reward.v1.Middleware/DeleteUserReward"
+	Middleware_AddUserReward_FullMethodName        = "/inspire.middleware.user.reward.v1.Middleware/AddUserReward"
+	Middleware_SubUserReward_FullMethodName        = "/inspire.middleware.user.reward.v1.Middleware/SubUserReward"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -37,6 +39,8 @@ type MiddlewareClient interface {
 	GetUserRewards(ctx context.Context, in *GetUserRewardsRequest, opts ...grpc.CallOption) (*GetUserRewardsResponse, error)
 	ExistUserRewardConds(ctx context.Context, in *ExistUserRewardCondsRequest, opts ...grpc.CallOption) (*ExistUserRewardCondsResponse, error)
 	DeleteUserReward(ctx context.Context, in *DeleteUserRewardRequest, opts ...grpc.CallOption) (*DeleteUserRewardResponse, error)
+	AddUserReward(ctx context.Context, in *AddUserRewardRequest, opts ...grpc.CallOption) (*AddUserRewardResponse, error)
+	SubUserReward(ctx context.Context, in *SubUserRewardRequest, opts ...grpc.CallOption) (*SubUserRewardResponse, error)
 }
 
 type middlewareClient struct {
@@ -101,6 +105,24 @@ func (c *middlewareClient) DeleteUserReward(ctx context.Context, in *DeleteUserR
 	return out, nil
 }
 
+func (c *middlewareClient) AddUserReward(ctx context.Context, in *AddUserRewardRequest, opts ...grpc.CallOption) (*AddUserRewardResponse, error) {
+	out := new(AddUserRewardResponse)
+	err := c.cc.Invoke(ctx, Middleware_AddUserReward_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) SubUserReward(ctx context.Context, in *SubUserRewardRequest, opts ...grpc.CallOption) (*SubUserRewardResponse, error) {
+	out := new(SubUserRewardResponse)
+	err := c.cc.Invoke(ctx, Middleware_SubUserReward_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -111,6 +133,8 @@ type MiddlewareServer interface {
 	GetUserRewards(context.Context, *GetUserRewardsRequest) (*GetUserRewardsResponse, error)
 	ExistUserRewardConds(context.Context, *ExistUserRewardCondsRequest) (*ExistUserRewardCondsResponse, error)
 	DeleteUserReward(context.Context, *DeleteUserRewardRequest) (*DeleteUserRewardResponse, error)
+	AddUserReward(context.Context, *AddUserRewardRequest) (*AddUserRewardResponse, error)
+	SubUserReward(context.Context, *SubUserRewardRequest) (*SubUserRewardResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -135,6 +159,12 @@ func (UnimplementedMiddlewareServer) ExistUserRewardConds(context.Context, *Exis
 }
 func (UnimplementedMiddlewareServer) DeleteUserReward(context.Context, *DeleteUserRewardRequest) (*DeleteUserRewardResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUserReward not implemented")
+}
+func (UnimplementedMiddlewareServer) AddUserReward(context.Context, *AddUserRewardRequest) (*AddUserRewardResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddUserReward not implemented")
+}
+func (UnimplementedMiddlewareServer) SubUserReward(context.Context, *SubUserRewardRequest) (*SubUserRewardResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubUserReward not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -257,6 +287,42 @@ func _Middleware_DeleteUserReward_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_AddUserReward_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddUserRewardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).AddUserReward(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_AddUserReward_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).AddUserReward(ctx, req.(*AddUserRewardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_SubUserReward_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubUserRewardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).SubUserReward(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_SubUserReward_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).SubUserReward(ctx, req.(*SubUserRewardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -287,6 +353,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteUserReward",
 			Handler:    _Middleware_DeleteUserReward_Handler,
+		},
+		{
+			MethodName: "AddUserReward",
+			Handler:    _Middleware_AddUserReward_Handler,
+		},
+		{
+			MethodName: "SubUserReward",
+			Handler:    _Middleware_SubUserReward_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

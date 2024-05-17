@@ -77,6 +77,14 @@
         }
       }
     },
+    "v1AddUserRewardResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserReward"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -174,6 +182,14 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1SubUserRewardResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserReward"
         }
       }
     },

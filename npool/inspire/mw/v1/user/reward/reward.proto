@@ -20,6 +20,8 @@ service Middleware {
             body: "*"
         };
     }
+    rpc AddUserReward        (AddUserRewardRequest)        returns (AddUserRewardResponse)         {}
+    rpc SubUserReward        (SubUserRewardRequest)        returns (SubUserRewardResponse)         {}
 }
 
 message UserRewardReq {
@@ -109,5 +111,21 @@ message DeleteUserRewardRequest {
 }
 
 message DeleteUserRewardResponse {
+    UserReward Info = 10;
+}
+
+message AddUserRewardRequest {
+    UserRewardReq Info = 10;
+}
+
+message AddUserRewardResponse {
+    UserReward Info = 10;
+}
+
+message SubUserRewardRequest {
+    UserRewardReq Info = 10;
+}
+
+message SubUserRewardResponse {
     UserReward Info = 10;
 }
