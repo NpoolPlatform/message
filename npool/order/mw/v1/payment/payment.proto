@@ -4,6 +4,51 @@ package order.middleware.payment.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/payment";
 
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/order/v1/enums.proto";
+
+// Service Name
+service Middleware {
+  rpc GetPayments (GetPaymentsRequest) returns (GetPaymentsResponse) {}
+  rpc UpdatePayment (UpdatePaymentRequest) returns (UpdatePaymentResponse) {}
+}
+
+message PaymentReq {
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional basetypes.order.v1.PaymentObseleteState ObseleteState = 30;
+}
+
+message Payment {
+    // @inject_tag: sql:"id"
+    uint32 ID = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID = 20;
+    // @inject_tag: sql:"obselete_state"
+    basetypes.order.v1.PaymentObseleteState ObseleteState = 30;
+    repeated PaymentBalanceInfo PaymentBalances = 40;
+    repeated PaymentTransferInfo PaymentTransfers = 50;
+}
+
+message Conds {
+    optional basetypes.v1.Uint32Val ObseleteState = 10;
+}
+
+message GetPaymentsRequest {
+    Conds Conds = 10;
+}
+
+message GetPaymentsResponse {
+    repeated Payment Infos = 10;
+}
+
+message UpdatePaymentRequest {
+    PaymentReq Info = 10;
+}
+
+message UpdatePaymentResponse {
+}
+
 message PaymentBalanceReq {
     optional string CoinTypeID = 10;
     optional string Amount = 20;

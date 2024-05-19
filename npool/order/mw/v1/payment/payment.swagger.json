@@ -4,6 +4,11 @@
     "title": "npool/order/mw/v1/payment/payment.proto",
     "version": "version not set"
   },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
   "consumes": [
     "application/json"
   ],
@@ -38,6 +43,181 @@
           }
         }
       }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ObseleteState": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1GetPaymentsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Payment"
+          }
+        }
+      }
+    },
+    "v1Payment": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "ObseleteState": {
+          "$ref": "#/definitions/v1PaymentObseleteState",
+          "title": "@inject_tag: sql:\"obselete_state\""
+        },
+        "PaymentBalances": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PaymentBalanceInfo"
+          }
+        },
+        "PaymentTransfers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PaymentTransferInfo"
+          }
+        }
+      }
+    },
+    "v1PaymentBalanceInfo": {
+      "type": "object",
+      "properties": {
+        "PaymentID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "Amount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"amount\""
+        },
+        "CoinUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_usd_currency\""
+        },
+        "LocalCoinUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"local_coin_usd_currency\""
+        },
+        "LiveCoinUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"live_coin_usd_currency\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        }
+      }
+    },
+    "v1PaymentObseleteState": {
+      "type": "string",
+      "enum": [
+        "DefaultPaymentObseleteState",
+        "PaymentObseleteNone",
+        "PaymentObseleteWait",
+        "PaymentObseleteUnlock",
+        "PaymentObseleted",
+        "PaymentObseleteFail"
+      ],
+      "default": "DefaultPaymentObseleteState"
+    },
+    "v1PaymentReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "ObseleteState": {
+          "$ref": "#/definitions/v1PaymentObseleteState"
+        }
+      }
+    },
+    "v1PaymentTransferInfo": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "PaymentID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "Amount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"amount\""
+        },
+        "AccountID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"account_id\""
+        },
+        "StartAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"start_amount\""
+        },
+        "CoinUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_usd_currency\""
+        },
+        "LocalCoinUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"local_coin_usd_currency\""
+        },
+        "LiveCoinUSDCurrency": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"live_coin_usd_currency\""
+        },
+        "FinishAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"finish_amount\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdatePaymentResponse": {
+      "type": "object"
     }
   }
 }
