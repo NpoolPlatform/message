@@ -75,9 +75,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "ObseleteState": {
-          "$ref": "#/definitions/v1PaymentObseleteState",
+        "ObseleteStateStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"obselete_state\""
+        },
+        "ObseleteState": {
+          "$ref": "#/definitions/v1PaymentObseleteState"
         },
         "PaymentBalances": {
           "type": "array",
@@ -90,6 +93,16 @@
           "items": {
             "$ref": "#/definitions/v1PaymentTransferInfo"
           }
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
     },
