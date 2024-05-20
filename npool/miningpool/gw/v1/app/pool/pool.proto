@@ -77,7 +77,6 @@ message FractionRule {
   uint32 WithdrawInterval = 30;
   string MinAmount = 40;
   string WithdrawRate = 50;
-  string MiningpoolTypeStr = 60;
 }
 
 message AdminCreatePoolRequest {
