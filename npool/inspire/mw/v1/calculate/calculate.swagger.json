@@ -185,13 +185,16 @@
         "GoodCoinTypeID": {
           "type": "string"
         },
-        "Units": {
-          "type": "string"
-        },
         "PaymentCoinTypeID": {
           "type": "string"
         },
         "PaymentCoinUSDCurrency": {
+          "type": "string"
+        },
+        "OrderUserID": {
+          "type": "string"
+        },
+        "Units": {
           "type": "string"
         },
         "PaymentAmount": {

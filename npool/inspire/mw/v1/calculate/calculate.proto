@@ -25,9 +25,10 @@ message CalculateRequest {
   string AppGoodID = 31;
   string OrderID = 40;
   string GoodCoinTypeID = 60;
-  string Units = 90;
   string PaymentCoinTypeID = 70;
   string PaymentCoinUSDCurrency = 80;
+  string OrderUserID = 81;
+  string Units = 90;
   // Payment amount in payment coin amount
   string PaymentAmount = 100;
   string PaymentAmountUSD = 101;
