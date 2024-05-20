@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/calcul
 
 import "google/api/annotations.proto";
 import "npool/basetypes/inspire/v1/enums.proto";
-import "npool/inspire/mw/v1/achievement/statement/statement.proto";
+import "npool/inspire/mw/v1/achievement/statement/order/statement.proto";
 
 // Service Name
 service Middleware {
@@ -24,13 +24,13 @@ message CalculateRequest {
   string GoodID = 30;
   string AppGoodID = 31;
   string OrderID = 40;
-  string PaymentID = 50;
-  string CoinTypeID = 60;
+  string GoodCoinTypeID = 60;
+  string Units = 90;
   string PaymentCoinTypeID = 70;
   string PaymentCoinUSDCurrency = 80;
-  string Units = 90;
   // Payment amount in payment coin amount
   string PaymentAmount = 100;
+  string PaymentAmountUSD = 101;
   // Good value in payment coin amount
   string GoodValue = 110;
   string GoodValueUSD = 111;
@@ -40,5 +40,5 @@ message CalculateRequest {
 }
 
 message CalculateResponse {
-  repeated inspire.middleware.achievement.statement.v1.Statement Infos = 10;
+  repeated inspire.middleware.achievement.statement.order.v1.StatementReq Infos = 10;
 }
