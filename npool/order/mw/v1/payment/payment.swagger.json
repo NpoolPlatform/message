@@ -60,6 +60,10 @@
           "items": {
             "$ref": "#/definitions/v1Payment"
           }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
