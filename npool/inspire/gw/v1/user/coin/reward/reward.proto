@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package inspire.gateway.user.coin.reward.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/user/coin/reward";
+
+import "google/api/annotations.proto";
+import "npool/inspire/mw/v1/user/coin/reward/reward.proto";
+
+// Service Name
+service Gateway {
+  rpc AdminGetUserCoinRewards(AdminGetUserCoinRewardsRequest) returns (AdminGetUserCoinRewardsResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/get/usercoinwards"
+      body : "*"
+    };
+  }
+  rpc UserGetUserCoinRewards(UserGetUserCoinRewardsRequest) returns (UserGetUserCoinRewardsResponse) {
+    option (google.api.http) = {
+      post : "/v1/user/get/usercoinwards"
+      body : "*"
+    };
+  }
+}
+
+message UserGetUserCoinRewardsRequest {
+  string AppID = 10;
+  string UserID = 20;
+  int32 Offset = 30;
+  int32 Limit = 40;
+}
+
+message UserGetUserCoinRewardsResponse {
+  repeated middleware.user.coin.reward.v1.UserCoinReward Infos = 10;
+  uint32 Total = 20;
+}
+
+message AdminGetUserCoinRewardsRequest {
+  string TargetAppID = 10;
+  int32 Offset = 30;
+  int32 Limit = 40;
+}
+
+message AdminGetUserCoinRewardsResponse {
+  repeated middleware.user.coin.reward.v1.UserCoinReward Infos = 10;
+  uint32 Total = 20;
+}

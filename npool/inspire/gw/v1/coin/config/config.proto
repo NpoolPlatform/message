@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package inspire.gateway.coin.config.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/coin/config";
+
+import "google/api/annotations.proto";
+import "npool/inspire/mw/v1/coin/config/config.proto";
+
+// Service Name
+service Gateway {
+  rpc AdminCreateCoinConfig(AdminCreateCoinConfigRequest)
+      returns (AdminCreateCoinConfigResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/create/CoinConfig"
+      body : "*"
+    };
+  }
+  rpc AdminUpdateCoinConfig(AdminUpdateCoinConfigRequest)
+      returns (AdminUpdateCoinConfigResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/update/CoinConfig"
+      body : "*"
+    };
+  }
+  rpc AdminGetCoinConfigs(AdminGetCoinConfigsRequest) returns (AdminGetCoinConfigsResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/get/CoinConfigs"
+      body : "*"
+    };
+  }
+  rpc AdminDeleteCoinConfig(AdminDeleteCoinConfigRequest)
+      returns (AdminDeleteCoinConfigResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/delete/CoinConfig"
+      body : "*"
+    };
+  }
+}
+
+message AdminCreateCoinConfigRequest {
+  string TargetAppID = 10;
+  string CoinTypeID = 20;
+  string MaxValue = 30;
+  string Allocated = 40;
+}
+
+message AdminCreateCoinConfigResponse { middleware.coin.config.v1.CoinConfig Info = 10; }
+
+message AdminUpdateCoinConfigRequest {
+  uint32 ID = 10;
+  string EntID = 20;
+  string TargetAppID = 30;
+  optional string MaxValue = 40;
+  optional string Allocated = 50;
+}
+
+message AdminUpdateCoinConfigResponse { middleware.coin.config.v1.CoinConfig Info = 10; }
+
+message AdminGetCoinConfigsRequest {
+  string TargetAppID = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message AdminGetCoinConfigsResponse {
+  repeated middleware.coin.config.v1.CoinConfig Infos = 10;
+  uint32 Total = 20;
+}
+
+message AdminDeleteCoinConfigRequest {
+  uint32 ID = 10;
+  string EntID = 20;
+}
+
+message AdminDeleteCoinConfigResponse { middleware.coin.config.v1.CoinConfig Info = 10; }

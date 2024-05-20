@@ -260,9 +260,6 @@
         },
         "EntID": {
           "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
         }
       }
     },
@@ -443,7 +440,8 @@
       "type": "string",
       "enum": [
         "DefaultTaskState",
-        "InProGress",
+        "NotStarted",
+        "InProgress",
         "Done"
       ],
       "default": "DefaultTaskState"

@@ -126,7 +126,6 @@ message AdminGetTaskConfigsResponse {
 message AdminDeleteTaskConfigRequest {
   uint32 ID = 10;
   string EntID = 20;
-  string TargetAppID = 30;
 }
 
 message AdminDeleteTaskConfigResponse { middleware.task.config.v1.TaskConfig Info = 10; }

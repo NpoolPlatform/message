@@ -96,8 +96,9 @@ enum TaskType {
 enum TaskState {
   DefaultTaskState = 0;
 
-  InProGress = 10;
-  Done       = 20;
+  NotStarted = 10;
+  InProgress = 20;
+  Done       = 30;
 }
 
 enum RewardState {
