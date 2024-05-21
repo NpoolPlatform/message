@@ -7,6 +7,8 @@ option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/event"
 import "google/api/annotations.proto";
 import "npool/inspire/mw/v1/coupon/coupon.proto";
 import "npool/basetypes/v1/usedfor.proto";
+import "npool/inspire/mw/v1/event/coin/coin.proto";
+import "npool/inspire/mw/v1/coin/config/config.proto";
 
 // Service Name
 service Gateway {
@@ -43,6 +45,7 @@ message Event {
   string GoodID = 90;
   string GoodName = 100;
   uint32 InviterLayers = 110;
+  repeated inspire.middleware.coin.config.v1.CoinConfig CoinConfigs = 120;
   uint32 CreatedAt = 200;
   uint32 UpdatedAt = 210;
   uint32 DeletedAt = 220;
@@ -59,6 +62,7 @@ message CreateEventRequest {
   optional uint32 MaxConsecutive = 60;
   optional string AppGoodID = 70;
   optional uint32 InviterLayers = 80;
+  repeated inspire.middleware.event.coin.v1.EventCoinReq Coins = 90;
 }
 
 message CreateEventResponse { Event Info = 10; }
@@ -83,6 +87,9 @@ message UpdateEventRequest {
   optional string CreditsPerUSD = 50;
   optional uint32 MaxConsecutive = 60;
   optional uint32 InviterLayers = 80;
+  optional bool RemoveCouponIDs = 90;
+  repeated inspire.middleware.event.coin.v1.EventCoinReq Coins = 100;
+  optional bool RemoveCoins = 110;
 }
 
 message UpdateEventResponse { Event Info = 10; }

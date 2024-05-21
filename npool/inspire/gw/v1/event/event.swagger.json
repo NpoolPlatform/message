@@ -141,6 +141,46 @@
         }
       }
     },
+    "v1CoinConfig": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "MaxValue": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"max_value\""
+        },
+        "Allocated": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"allocated\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
     "v1Coupon": {
       "type": "object",
       "properties": {
@@ -300,6 +340,12 @@
         "InviterLayers": {
           "type": "integer",
           "format": "int64"
+        },
+        "Coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoinReq"
+          }
         }
       }
     },
@@ -356,6 +402,12 @@
           "type": "integer",
           "format": "int64"
         },
+        "CoinConfigs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinConfig"
+          }
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -372,6 +424,33 @@
           "type": "string"
         },
         "AppGoodName": {
+          "type": "string"
+        }
+      }
+    },
+    "v1EventCoinReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EventID": {
+          "type": "string"
+        },
+        "CoinConfigID": {
+          "type": "string"
+        },
+        "CoinValue": {
+          "type": "string"
+        },
+        "CoinPreUSD": {
           "type": "string"
         }
       }
@@ -439,6 +518,18 @@
         "InviterLayers": {
           "type": "integer",
           "format": "int64"
+        },
+        "RemoveCouponIDs": {
+          "type": "boolean"
+        },
+        "Coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoinReq"
+          }
+        },
+        "RemoveCoins": {
+          "type": "boolean"
         }
       }
     },
