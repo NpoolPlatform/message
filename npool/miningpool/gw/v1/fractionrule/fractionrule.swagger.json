@@ -1,0 +1,368 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/miningpool/gw/v1/fractionrule/fractionrule.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/admin/create/miningpoolfractionrule": {
+      "post": {
+        "operationId": "Gateway_AdminCreateFractionRule",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateFractionRuleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateFractionRuleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/delete/miningpoolfractionrule": {
+      "post": {
+        "operationId": "Gateway_AdminDeleteFractionRule",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteFractionRuleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteFractionRuleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/get/miningpoolfractionrules": {
+      "post": {
+        "operationId": "Gateway_AdminGetFractionRules",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetFractionRulesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetFractionRulesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/miningpoolfractionrule": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateFractionRule",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateFractionRuleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateFractionRuleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AdminCreateFractionRuleRequest": {
+      "type": "object",
+      "properties": {
+        "PoolCoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawInterval": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MinAmount": {
+          "type": "string"
+        },
+        "WithdrawRate": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminCreateFractionRuleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FractionRule"
+        }
+      }
+    },
+    "v1AdminDeleteFractionRuleRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteFractionRuleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FractionRule"
+        }
+      }
+    },
+    "v1AdminGetFractionRulesRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AdminGetFractionRulesResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FractionRule"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdateFractionRuleRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "WithdrawInterval": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MinAmount": {
+          "type": "string"
+        },
+        "WithdrawRate": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminUpdateFractionRuleResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FractionRule"
+        }
+      }
+    },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "DefaultCoinType",
+        "CoinTypeFileCoin",
+        "CoinTypeBitCoin",
+        "CoinTypeEthereum",
+        "CoinTypeUSDTerc20",
+        "CoinTypeSpacemesh",
+        "CoinTypeSolana",
+        "CoinTypeUSDTtrc20",
+        "CoinTypeBinanceCoin",
+        "CoinTypeTron",
+        "CoinTypeBinanceUSD",
+        "CoinTypeUSDCerc20",
+        "CoinTypeAleo",
+        "CoinTypeIronFish",
+        "CoinTypeUSDTbep20",
+        "CoinTypeTFileCoin",
+        "CoinTypeTBitCoin",
+        "CoinTypeTEthereum",
+        "CoinTypeTUSDTerc20",
+        "CoinTypeTSpacemesh",
+        "CoinTypeTSolana",
+        "CoinTypeTUSDTtrc20",
+        "CoinTypeTBinanceCoin",
+        "CoinTypeTTron",
+        "CoinTypeTBinanceUSD",
+        "CoinTypeTUSDCerc20",
+        "CoinTypeTAleo",
+        "CoinTypeTIronFish",
+        "CoinTypeTUSDTbep20"
+      ],
+      "default": "DefaultCoinType",
+      "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
+    },
+    "v1FractionRule": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "PoolID": {
+          "type": "string"
+        },
+        "PoolCoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawInterval": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MinAmount": {
+          "type": "string"
+        },
+        "WithdrawRate": {
+          "type": "string"
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1MiningpoolType": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningpoolType",
+        "F2Pool",
+        "AntPool"
+      ],
+      "default": "DefaultMiningpoolType"
+    }
+  }
+}

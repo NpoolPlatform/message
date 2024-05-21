@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package basetypes.miningpool.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/miningpool/v1";
+
+enum MiningpoolType {
+  DefaultMiningpoolType = 0;
+
+  F2Pool = 10;
+  AntPool = 20;
+}
+
+enum RevenueType {
+  DefaultRevenueType = 0;
+
+  FPPS = 10;
+  PPLNS = 20;
+}
+
+enum WithdrawState {
+  DefaultWithdrawState = 0;
+
+  WithdrawStateWait = 10;
+  WithdrawStateProccessing = 20;
+  WithdrawStateSuccess = 30;
+  WithdrawStateFailed = 40;
+}

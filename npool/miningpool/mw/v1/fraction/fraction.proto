@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+package miningpool.middleware.fraction.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/fraction";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/miningpool/v1/enums.proto";
+
+// Service Name
+service Middleware {
+  rpc CreateFraction(CreateFractionRequest) returns (CreateFractionResponse) {}
+  rpc GetFraction(GetFractionRequest) returns (GetFractionResponse) {}
+  rpc GetFractions(GetFractionsRequest) returns (GetFractionsResponse) {}
+  rpc ExistFraction(ExistFractionRequest) returns (ExistFractionResponse) {}
+  rpc ExistFractionConds(ExistFractionCondsRequest)
+      returns (ExistFractionCondsResponse) {}
+  rpc UpdateFraction(UpdateFractionRequest) returns (UpdateFractionResponse) {}
+  rpc DeleteFraction(DeleteFractionRequest) returns (DeleteFractionResponse) {
+    option (google.api.http) = {
+      post : "/v1/miningpool_DeleteFraction"
+      body : "*"
+    };
+  }
+}
+
+message FractionReq {
+  optional uint32 ID = 10;
+  optional string EntID = 20;
+  optional string AppID = 30;
+  optional string UserID = 40;
+  optional string OrderUserID = 50;
+  optional basetypes.miningpool.v1.WithdrawState WithdrawState = 60;
+  optional uint32 WithdrawAt = 70;
+  optional uint32 PromisePayAt = 80;
+  optional string Msg = 90;
+}
+
+message Fraction {
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"app_id"
+  string AppID = 30;
+  // @inject_tag: sql:"user_id"
+  string UserID = 40;
+  // @inject_tag: sql:"order_user_id"
+  string OrderUserID = 50;
+  // @inject_tag: sql:"withdraw_state"
+  string WithdrawStateStr = 60;
+  basetypes.miningpool.v1.WithdrawState WithdrawState = 61;
+  // @inject_tag: sql:"withdraw_at"
+  uint32 WithdrawAt = 70;
+  // @inject_tag: sql:"promise_pay_at"
+  uint32 PromisePayAt = 80;
+  // @inject_tag: sql:"msg"
+  string Msg = 90;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 100;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 110;
+}
+
+message Conds {
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal UserID = 30;
+  optional basetypes.v1.StringVal OrderUserID = 40;
+  optional basetypes.v1.Uint32Val WithdrawState = 50;
+  optional basetypes.v1.StringSliceVal EntIDs = 60;
+}
+
+message CreateFractionRequest { FractionReq Info = 10; }
+
+message CreateFractionResponse {}
+
+message GetFractionRequest { string EntID = 10; }
+
+message GetFractionResponse { Fraction Info = 10; }
+
+message GetFractionsRequest {
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetFractionsResponse {
+  repeated Fraction Infos = 10;
+  uint32 Total = 20;
+}
+
+message ExistFractionRequest { string EntID = 10; }
+
+message ExistFractionResponse { bool Info = 10; }
+
+message ExistFractionCondsRequest { Conds Conds = 10; }
+
+message ExistFractionCondsResponse { bool Info = 10; }
+
+message UpdateFractionRequest { FractionReq Info = 10; }
+
+message UpdateFractionResponse {}
+
+message DeleteFractionRequest { FractionReq Info = 10; }
+
+message DeleteFractionResponse {}

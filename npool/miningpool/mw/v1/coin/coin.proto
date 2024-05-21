@@ -1,0 +1,115 @@
+syntax = "proto3";
+
+package miningpool.middleware.coin.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/coin";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/cointype.proto";
+import "npool/basetypes/miningpool/v1/enums.proto";
+
+// Service Name
+service Middleware {
+  rpc CreateCoin(CreateCoinRequest) returns (CreateCoinResponse) {}
+  rpc GetCoin(GetCoinRequest) returns (GetCoinResponse) {}
+  rpc ExistCoin(ExistCoinRequest) returns (ExistCoinResponse) {}
+  rpc GetCoins(GetCoinsRequest) returns (GetCoinsResponse) {}
+  rpc ExistCoinConds(ExistCoinCondsRequest) returns (ExistCoinCondsResponse) {}
+  rpc UpdateCoin(UpdateCoinRequest) returns (UpdateCoinResponse) {}
+  rpc DeleteCoin(DeleteCoinRequest) returns (DeleteCoinResponse) {}
+}
+
+message CoinReq {
+  optional uint32 ID = 9;
+  optional string EntID = 10;
+  optional string PoolID = 20;
+  optional string CoinTypeID = 30;
+  optional basetypes.v1.CoinType CoinType = 31;
+  optional basetypes.miningpool.v1.RevenueType RevenueType = 40;
+  optional string FeeRatio = 50;
+  optional bool FixedRevenueAble = 60;
+  optional string LeastTransferAmount = 70;
+  optional uint32 BenefitIntervalSeconds = 80;
+  optional string Remark = 90;
+}
+
+message Coin {
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"pool_id"
+  string PoolID = 30;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 31;
+  // @inject_tag: sql:"coin_type"
+  string CoinTypeStr = 40;
+  basetypes.v1.CoinType CoinType = 41;
+  // @inject_tag: sql:"revenue_type"
+  string RevenueTypeStr = 50;
+  basetypes.miningpool.v1.RevenueType RevenueType = 51;
+  // @inject_tag: sql:"fee_ratio"
+  string FeeRatio = 60;
+  // @inject_tag: sql:"fixed_revenue_able"
+  bool FixedRevenueAble = 70;
+  // @inject_tag: sql:"least_transfer_amount"
+  string LeastTransferAmount = 80;
+  // @inject_tag: sql:"benefit_interval_seconds"
+  uint32 BenefitIntervalSeconds = 90;
+  // @inject_tag: sql:"remark"
+  string Remark = 100;
+  // @inject_tag: sql:"miningpool_type"
+  string MiningpoolTypeStr = 110;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 111;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 120;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 130;
+}
+
+message Conds {
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal PoolID = 20;
+  optional basetypes.v1.StringVal CoinTypeID = 21;
+  optional basetypes.v1.Uint32Val MiningpoolType = 30;
+  optional basetypes.v1.Uint32Val CoinType = 31;
+  optional basetypes.v1.Uint32Val RevenueType = 40;
+  optional basetypes.v1.BoolVal FixedRevenueAble = 50;
+  optional basetypes.v1.StringSliceVal EntIDs = 60;
+}
+
+message CreateCoinRequest { CoinReq Info = 10; }
+
+message CreateCoinResponse {}
+
+message GetCoinRequest { string EntID = 10; }
+
+message GetCoinResponse { Coin Info = 10; }
+
+message ExistCoinRequest { string EntID = 10; }
+
+message ExistCoinResponse { bool Info = 10; }
+
+message GetCoinsRequest {
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetCoinsResponse {
+  repeated Coin Infos = 10;
+  uint32 Total = 20;
+}
+
+message ExistCoinCondsRequest { Conds Conds = 10; }
+
+message ExistCoinCondsResponse { bool Info = 10; }
+
+message UpdateCoinRequest { CoinReq Info = 10; }
+
+message UpdateCoinResponse {}
+
+message DeleteCoinRequest { CoinReq Info = 10; }
+
+message DeleteCoinResponse {}

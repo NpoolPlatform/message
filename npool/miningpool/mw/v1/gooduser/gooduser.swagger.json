@@ -1,0 +1,300 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/miningpool/mw/v1/gooduser/gooduser.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "DefaultCoinType",
+        "CoinTypeFileCoin",
+        "CoinTypeBitCoin",
+        "CoinTypeEthereum",
+        "CoinTypeUSDTerc20",
+        "CoinTypeSpacemesh",
+        "CoinTypeSolana",
+        "CoinTypeUSDTtrc20",
+        "CoinTypeBinanceCoin",
+        "CoinTypeTron",
+        "CoinTypeBinanceUSD",
+        "CoinTypeUSDCerc20",
+        "CoinTypeAleo",
+        "CoinTypeIronFish",
+        "CoinTypeUSDTbep20",
+        "CoinTypeTFileCoin",
+        "CoinTypeTBitCoin",
+        "CoinTypeTEthereum",
+        "CoinTypeTUSDTerc20",
+        "CoinTypeTSpacemesh",
+        "CoinTypeTSolana",
+        "CoinTypeTUSDTtrc20",
+        "CoinTypeTBinanceCoin",
+        "CoinTypeTTron",
+        "CoinTypeTBinanceUSD",
+        "CoinTypeTUSDCerc20",
+        "CoinTypeTAleo",
+        "CoinTypeTIronFish",
+        "CoinTypeTUSDTbep20"
+      ],
+      "default": "DefaultCoinType",
+      "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Name": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "PoolCoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "RootUserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CreateGoodUserResponse": {
+      "type": "object"
+    },
+    "v1DeleteGoodUserResponse": {
+      "type": "object"
+    },
+    "v1ExistGoodUserCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ExistGoodUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetGoodUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1GoodUser"
+        }
+      }
+    },
+    "v1GetGoodUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GoodUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "RootUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"root_user_id\""
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "ReadPageLink": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"read_page_link\""
+        },
+        "PoolID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"pool_id\""
+        },
+        "MiningpoolTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"miningpool_type\""
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "PoolCoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"pool_coin_type_id\""
+        },
+        "CoinTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type\""
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "RevenueTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"revenue_type\""
+        },
+        "RevenueType": {
+          "$ref": "#/definitions/v1RevenueType"
+        },
+        "FeeRatio": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fee_ratio\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1GoodUserReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "PoolCoinTypeID": {
+          "type": "string"
+        },
+        "RootUserID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "ReadPageLink": {
+          "type": "string"
+        }
+      }
+    },
+    "v1MiningpoolType": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningpoolType",
+        "F2Pool",
+        "AntPool"
+      ],
+      "default": "DefaultMiningpoolType"
+    },
+    "v1RevenueType": {
+      "type": "string",
+      "enum": [
+        "DefaultRevenueType",
+        "FPPS",
+        "PPLNS"
+      ],
+      "default": "DefaultRevenueType"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}

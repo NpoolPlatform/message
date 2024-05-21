@@ -1,0 +1,105 @@
+syntax = "proto3";
+
+package miningpool.middleware.fractionrule.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/fractionrule";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/cointype.proto";
+import "npool/basetypes/miningpool/v1/enums.proto";
+
+// Service Name
+service Middleware {
+  rpc CreateFractionRule(CreateFractionRuleRequest)
+      returns (CreateFractionRuleResponse) {}
+  rpc GetFractionRule(GetFractionRuleRequest)
+      returns (GetFractionRuleResponse) {}
+  rpc GetFractionRules(GetFractionRulesRequest)
+      returns (GetFractionRulesResponse) {}
+  rpc ExistFractionRule(ExistFractionRuleRequest)
+      returns (ExistFractionRuleResponse) {}
+  rpc ExistFractionRuleConds(ExistFractionRuleCondsRequest)
+      returns (ExistFractionRuleCondsResponse) {}
+  rpc UpdateFractionRule(UpdateFractionRuleRequest)
+      returns (UpdateFractionRuleResponse) {}
+  rpc DeleteFractionRule(DeleteFractionRuleRequest)
+      returns (DeleteFractionRuleResponse) {}
+}
+
+message FractionRuleReq {
+  optional uint32 ID = 10;
+  optional string EntID = 20;
+  optional string PoolCoinTypeID = 30;
+  optional uint32 WithdrawInterval = 50;
+  optional string MinAmount = 60;
+  optional string WithdrawRate = 70;
+}
+
+message FractionRule {
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"pool_id"
+  string PoolID = 29;
+  // @inject_tag: sql:"pool_coin_type_id"
+  string PoolCoinTypeID = 30;
+  // @inject_tag: sql:"withdraw_interval"
+  uint32 WithdrawInterval = 40;
+  // @inject_tag: sql:"min_amount"
+  string MinAmount = 50;
+  // @inject_tag: sql:"withdraw_rate"
+  string WithdrawRate = 60;
+  // @inject_tag: sql:"miningpool_type"
+  string MiningpoolTypeStr = 70;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 71;
+  // @inject_tag: sql:"coin_type"
+  string CoinTypeStr = 80;
+  basetypes.v1.CoinType CoinType = 81;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 90;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 100;
+}
+
+message Conds {
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal PoolCoinTypeID = 20;
+  optional basetypes.v1.StringSliceVal EntIDs = 50;
+}
+
+message CreateFractionRuleRequest { FractionRuleReq Info = 10; }
+
+message CreateFractionRuleResponse {}
+
+message GetFractionRuleRequest { string EntID = 10; }
+
+message GetFractionRuleResponse { FractionRule Info = 10; }
+
+message GetFractionRulesRequest {
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetFractionRulesResponse {
+  repeated FractionRule Infos = 10;
+  uint32 Total = 20;
+}
+
+message ExistFractionRuleRequest { string EntID = 10; }
+
+message ExistFractionRuleResponse { bool Info = 10; }
+
+message ExistFractionRuleCondsRequest { Conds Conds = 10; }
+
+message ExistFractionRuleCondsResponse { bool Info = 10; }
+
+message UpdateFractionRuleRequest { FractionRuleReq Info = 10; }
+
+message UpdateFractionRuleResponse {}
+
+message DeleteFractionRuleRequest { FractionRuleReq Info = 10; }
+
+message DeleteFractionRuleResponse {}

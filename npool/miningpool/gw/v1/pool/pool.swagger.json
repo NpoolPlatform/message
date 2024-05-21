@@ -1,0 +1,459 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/miningpool/gw/v1/pool/pool.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/admin/create/miningpool": {
+      "post": {
+        "operationId": "Gateway_AdminCreatePool",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreatePoolResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreatePoolRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/delete/miningpool": {
+      "post": {
+        "operationId": "Gateway_AdminDeletePool",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeletePoolResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeletePoolRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/get/miningpools": {
+      "post": {
+        "operationId": "Gateway_AdminGetPools",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetPoolsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetPoolsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/miningpool": {
+      "post": {
+        "operationId": "Gateway_AdminUpdatePool",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdatePoolResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdatePoolRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AdminCreatePoolRequest": {
+      "type": "object",
+      "properties": {
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Site": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminCreatePoolResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Pool"
+        }
+      }
+    },
+    "v1AdminDeletePoolRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeletePoolResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Pool"
+        }
+      }
+    },
+    "v1AdminGetPoolsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AdminGetPoolsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Pool"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdatePoolRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Site": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminUpdatePoolResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Pool"
+        }
+      }
+    },
+    "v1Coin": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "PoolID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "RevenueType": {
+          "$ref": "#/definitions/v1RevenueType"
+        },
+        "FeeRatio": {
+          "type": "string"
+        },
+        "FixedRevenueAble": {
+          "type": "boolean"
+        },
+        "LeastTransferAmount": {
+          "type": "string"
+        },
+        "BenefitIntervalSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Remark": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "DefaultCoinType",
+        "CoinTypeFileCoin",
+        "CoinTypeBitCoin",
+        "CoinTypeEthereum",
+        "CoinTypeUSDTerc20",
+        "CoinTypeSpacemesh",
+        "CoinTypeSolana",
+        "CoinTypeUSDTtrc20",
+        "CoinTypeBinanceCoin",
+        "CoinTypeTron",
+        "CoinTypeBinanceUSD",
+        "CoinTypeUSDCerc20",
+        "CoinTypeAleo",
+        "CoinTypeIronFish",
+        "CoinTypeUSDTbep20",
+        "CoinTypeTFileCoin",
+        "CoinTypeTBitCoin",
+        "CoinTypeTEthereum",
+        "CoinTypeTUSDTerc20",
+        "CoinTypeTSpacemesh",
+        "CoinTypeTSolana",
+        "CoinTypeTUSDTtrc20",
+        "CoinTypeTBinanceCoin",
+        "CoinTypeTTron",
+        "CoinTypeTBinanceUSD",
+        "CoinTypeTUSDCerc20",
+        "CoinTypeTAleo",
+        "CoinTypeTIronFish",
+        "CoinTypeTUSDTbep20"
+      ],
+      "default": "DefaultCoinType",
+      "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
+    },
+    "v1FractionRule": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "PoolCoinTypeID": {
+          "type": "string"
+        },
+        "WithdrawInterval": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MinAmount": {
+          "type": "string"
+        },
+        "WithdrawRate": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1MiningpoolType": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningpoolType",
+        "F2Pool",
+        "AntPool"
+      ],
+      "default": "DefaultMiningpoolType"
+    },
+    "v1Pool": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Site": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Coin"
+          }
+        },
+        "FractionRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FractionRule"
+          }
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1RevenueType": {
+      "type": "string",
+      "enum": [
+        "DefaultRevenueType",
+        "FPPS",
+        "PPLNS"
+      ],
+      "default": "DefaultRevenueType"
+    }
+  }
+}

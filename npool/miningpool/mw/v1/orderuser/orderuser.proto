@@ -1,0 +1,136 @@
+syntax = "proto3";
+
+package miningpool.middleware.orderuser.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/orderuser";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/cointype.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/miningpool/v1/enums.proto";
+
+// Service Name
+service Middleware {
+  rpc CreateOrderUser(CreateOrderUserRequest)
+      returns (CreateOrderUserResponse) {
+    option (google.api.http) = {
+      post : "/v1/miningpool_CreateOrderUser"
+      body : "*"
+    };
+  }
+  rpc GetOrderUser(GetOrderUserRequest) returns (GetOrderUserResponse) {}
+  rpc GetOrderUsers(GetOrderUsersRequest) returns (GetOrderUsersResponse) {}
+  rpc ExistOrderUser(ExistOrderUserRequest) returns (ExistOrderUserResponse) {}
+  rpc ExistOrderUserConds(ExistOrderUserCondsRequest)
+      returns (ExistOrderUserCondsResponse) {}
+  rpc UpdateOrderUser(UpdateOrderUserRequest)
+      returns (UpdateOrderUserResponse) {}
+  rpc DeleteOrderUser(DeleteOrderUserRequest)
+      returns (DeleteOrderUserResponse) {
+    option (google.api.http) = {
+      post : "/v1/miningpool_DeleteOrderUser"
+      body : "*"
+    };
+  }
+}
+
+message OrderUserReq {
+  optional uint32 ID = 10;
+  optional string EntID = 20;
+  optional string AppID = 30;
+  optional string UserID = 40;
+  optional string GoodUserID = 60;
+  optional string Name = 70;
+  optional string Proportion = 100;
+  optional string RevenueAddress = 110;
+  optional string ReadPageLink = 120;
+  optional bool AutoPay = 130;
+}
+
+message OrderUser {
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"app_id"
+  string AppID = 30;
+  // @inject_tag: sql:"user_id"
+  string UserID = 40;
+  // @inject_tag: sql:"pool_coin_type_id"
+  string PoolCoinTypeID = 41;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 42;
+  // @inject_tag: sql:"root_user_id"
+  string RootUserID = 50;
+  // @inject_tag: sql:"good_user_id"
+  string GoodUserID = 51;
+  // @inject_tag: sql:"name"
+  string Name = 60;
+  // @inject_tag: sql:"proportion"
+  string Proportion = 70;
+  // @inject_tag: sql:"revenue_address"
+  string RevenueAddress = 80;
+  // @inject_tag: sql:"read_page_link"
+  string ReadPageLink = 90;
+  // @inject_tag: sql:"auto_pay"
+  bool AutoPay = 100;
+  // @inject_tag: sql:"miningpool_type"
+  string MiningpoolTypeStr = 110;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 111;
+  // @inject_tag: sql:"coin_type"
+  string CoinTypeStr = 120;
+  basetypes.v1.CoinType CoinType = 121;
+  // @inject_tag: sql:"revenue_type"
+  string RevenueTypeStr = 130;
+  basetypes.miningpool.v1.RevenueType RevenueType = 131;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 140;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 150;
+}
+
+message Conds {
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal UserID = 30;
+  optional basetypes.v1.StringVal GoodUserID = 40;
+  optional basetypes.v1.StringVal Name = 50;
+  optional basetypes.v1.BoolVal AutoPay = 60;
+  optional basetypes.v1.StringSliceVal EntIDs = 110;
+}
+
+message CreateOrderUserRequest { OrderUserReq Info = 10; }
+
+message CreateOrderUserResponse {}
+
+message GetOrderUserRequest { string EntID = 10; }
+
+message GetOrderUserResponse { OrderUser Info = 10; }
+
+message GetOrderUsersRequest {
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetOrderUsersResponse {
+  repeated OrderUser Infos = 10;
+  uint32 Total = 20;
+}
+
+message ExistOrderUserRequest { string EntID = 10; }
+
+message ExistOrderUserResponse { bool Info = 10; }
+
+message ExistOrderUserCondsRequest { Conds Conds = 10; }
+
+message ExistOrderUserCondsResponse { bool Info = 10; }
+
+message UpdateOrderUserRequest { OrderUserReq Info = 10; }
+
+message UpdateOrderUserResponse {}
+
+message DeleteOrderUserRequest { OrderUserReq Info = 10; }
+
+message DeleteOrderUserResponse {}
