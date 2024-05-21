@@ -75,9 +75,9 @@ message AdminCreateTaskConfigRequest {
   string TaskDesc = 50;
   string StepGuide = 60;
   string RecommendMessage = 70;
-  string Index = 80;
-  string MaxRewardCount = 90;
-  string CooldownSecord = 100;
+  uint32 Index = 80;
+  uint32 MaxRewardCount = 90;
+  uint32 CooldownSecord = 100;
   optional string LastTaskID = 110;
 }
 
@@ -92,9 +92,9 @@ message AdminUpdateTaskConfigRequest {
   optional string TaskDesc = 60;
   optional string StepGuide = 70;
   optional string RecommendMessage = 80;
-  optional string Index = 90;
-  optional string MaxRewardCount = 100;
-  optional string CooldownSecord = 110;
+  optional uint32 Index = 90;
+  optional uint32 MaxRewardCount = 100;
+  optional uint32 CooldownSecord = 110;
   optional string LastTaskID = 120;
 }
 

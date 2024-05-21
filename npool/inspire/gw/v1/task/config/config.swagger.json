@@ -230,13 +230,16 @@
           "type": "string"
         },
         "Index": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "MaxRewardCount": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "CooldownSecord": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "LastTaskID": {
           "type": "string"
@@ -331,13 +334,16 @@
           "type": "string"
         },
         "Index": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "MaxRewardCount": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "CooldownSecord": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "LastTaskID": {
           "type": "string"
