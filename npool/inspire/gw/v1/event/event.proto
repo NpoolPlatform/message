@@ -8,7 +8,6 @@ import "google/api/annotations.proto";
 import "npool/inspire/mw/v1/coupon/coupon.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/inspire/mw/v1/event/coin/coin.proto";
-import "npool/inspire/mw/v1/coin/config/config.proto";
 
 // Service Name
 service Gateway {
@@ -45,12 +44,26 @@ message Event {
   string GoodID = 90;
   string GoodName = 100;
   uint32 InviterLayers = 110;
-  repeated inspire.middleware.coin.config.v1.CoinConfig CoinConfigs = 120;
+  repeated EventCoin EventCoins = 120;
   uint32 CreatedAt = 200;
   uint32 UpdatedAt = 210;
   uint32 DeletedAt = 220;
   string AppGoodID = 230;
   string AppGoodName = 240;
+}
+
+message EventCoin {
+  string EntID = 10;
+  string AppID = 20;
+  string EventID = 30;
+  string CoinConfigID = 40;
+  string CoinTypeID = 50;
+  string CoinValue = 60;
+  string CoinPreUSD = 70;
+  string CoinName = 80;
+  repeated string DisplayNames = 90;
+  string CoinLogo = 100;
+  string CoinUnit = 110;
 }
 
 message CreateEventRequest {
