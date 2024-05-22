@@ -5,7 +5,6 @@ package inspire.gateway.user.coin.reward.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/user/coin/reward";
 
 import "google/api/annotations.proto";
-import "npool/inspire/mw/v1/user/coin/reward/reward.proto";
 
 // Service Name
 service Gateway {
@@ -23,6 +22,21 @@ service Gateway {
   }
 }
 
+message UserCoinReward {
+  uint32 ID = 10;
+  string EntID = 20;
+  string AppID = 30;
+  string UserID = 40;
+  string CoinTypeID = 50;
+  string CoinRewards = 60;
+  string CoinName = 70;
+  repeated string DisplayNames = 80;
+  string CoinLogo = 90;
+  string CoinUnit = 100;
+  uint32 CreatedAt = 1000;
+  uint32 UpdatedAt = 1010;
+}
+
 message UserGetUserCoinRewardsRequest {
   string AppID = 10;
   string UserID = 20;
@@ -31,7 +45,7 @@ message UserGetUserCoinRewardsRequest {
 }
 
 message UserGetUserCoinRewardsResponse {
-  repeated middleware.user.coin.reward.v1.UserCoinReward Infos = 10;
+  repeated UserCoinReward Infos = 10;
   uint32 Total = 20;
 }
 
@@ -42,6 +56,6 @@ message AdminGetUserCoinRewardsRequest {
 }
 
 message AdminGetUserCoinRewardsResponse {
-  repeated middleware.user.coin.reward.v1.UserCoinReward Infos = 10;
+  repeated UserCoinReward Infos = 10;
   uint32 Total = 20;
 }

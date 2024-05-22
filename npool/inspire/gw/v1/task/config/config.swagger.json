@@ -373,72 +373,57 @@
       "properties": {
         "ID": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
+          "format": "int64"
         },
         "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
+          "type": "string"
         },
         "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
+          "type": "string"
         },
         "EventID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"event_id\""
-        },
-        "TaskTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"task_type\""
+          "type": "string"
         },
         "TaskType": {
           "$ref": "#/definitions/v1TaskType"
         },
         "Name": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"name\""
+          "type": "string"
         },
         "TaskDesc": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"task_desc\""
+          "type": "string"
         },
         "StepGuide": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"step_guide\""
+          "type": "string"
         },
         "RecommendMessage": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"recommend_message\""
+          "type": "string"
         },
         "Index": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"index\""
+          "format": "int64"
         },
         "LastTaskID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"last_task_id\""
+          "type": "string"
         },
         "MaxRewardCount": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"max_reward_count\""
+          "format": "int64"
         },
         "CooldownSecord": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"cooldown_secord\""
+          "format": "int64"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
+          "format": "int64"
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
+          "format": "int64"
         }
       }
     },
@@ -461,6 +446,45 @@
         "GrowthTask"
       ],
       "default": "DefaultTaskType"
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Purchase",
+        "AffiliatePurchase",
+        "AffiliateSignup",
+        "GoodBenefit1",
+        "NewLogin",
+        "UpdatePassword",
+        "UpdateEmail",
+        "UpdateMobile",
+        "UpdateGoogleAuth",
+        "OrderCompleted",
+        "ResetPassword",
+        "OrderChildsRenewNotify",
+        "OrderChildsRenew",
+        "SimulateOrderProfit",
+        "WithdrawReviewNotify",
+        "Announcement",
+        "ProductPage"
+      ],
+      "default": "DefaultUsedFor"
     },
     "v1UserGetTasksRequest": {
       "type": "object",
