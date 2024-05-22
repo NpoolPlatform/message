@@ -185,28 +185,14 @@
         "GoodCoinTypeID": {
           "type": "string"
         },
-        "PaymentCoinTypeID": {
-          "type": "string"
-        },
-        "PaymentCoinUSDCurrency": {
-          "type": "string"
-        },
         "OrderUserID": {
           "type": "string"
         },
         "Units": {
           "type": "string"
         },
-        "PaymentAmount": {
-          "type": "string",
-          "title": "Payment amount in payment coin amount"
-        },
         "PaymentAmountUSD": {
           "type": "string"
-        },
-        "GoodValue": {
-          "type": "string",
-          "title": "Good value in payment coin amount"
         },
         "GoodValueUSD": {
           "type": "string"
@@ -220,6 +206,12 @@
         "OrderCreatedAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "Payments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Payment"
+          }
         }
       }
     },
@@ -244,6 +236,20 @@
         "WithoutCommissionConfig"
       ],
       "default": "DefaultCommissionConfigType"
+    },
+    "v1Payment": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinUSDCurrency": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        }
+      }
     },
     "v1SettleType": {
       "type": "string",
