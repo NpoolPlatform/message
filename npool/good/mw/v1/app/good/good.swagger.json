@@ -77,6 +77,12 @@
         },
         "AppIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodTypes": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
         }
       }
     },

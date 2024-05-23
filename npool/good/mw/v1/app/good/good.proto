@@ -75,6 +75,8 @@ message Conds {
     optional basetypes.v1.StringSliceVal EntIDs = 40;
     optional basetypes.v1.StringVal AppID = 50;
     optional basetypes.v1.StringSliceVal AppIDs = 60;
+    optional basetypes.v1.Uint32Val GoodType = 70;
+    optional basetypes.v1.Uint32SliceVal GoodTypes = 80;
 }
 
 message GetGoodRequest {
