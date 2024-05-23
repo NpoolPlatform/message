@@ -19,8 +19,7 @@ service Middleware {
 
 message Payment {
   string CoinTypeID = 10;
-  string CoinUSDCurrency = 20;
-  string Amount = 30;
+  string Amount = 20;
 }
 
 message CalculateRequest {

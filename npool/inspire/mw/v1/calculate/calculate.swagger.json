@@ -240,9 +240,6 @@
         "CoinTypeID": {
           "type": "string"
         },
-        "CoinUSDCurrency": {
-          "type": "string"
-        },
         "Amount": {
           "type": "string"
         }
