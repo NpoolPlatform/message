@@ -79,6 +79,9 @@
         "Simulate": {
           "$ref": "#/definitions/v1BoolVal"
         },
+        "OrderTypes": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        },
         "OrderState": {
           "$ref": "#/definitions/v1Uint32Val",
           "title": "orderstate"

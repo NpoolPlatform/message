@@ -216,6 +216,7 @@ message Conds {
     optional basetypes.v1.Uint32Val PaymentType = 160;
     optional basetypes.v1.Uint32SliceVal PaymentTypes = 170;
     optional basetypes.v1.BoolVal Simulate = 180;
+    optional basetypes.v1.Uint32SliceVal OrderTypes = 190;
 
     // orderstate
     optional basetypes.v1.Uint32Val OrderState = 200;
