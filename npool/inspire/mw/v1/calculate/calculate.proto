@@ -30,7 +30,6 @@ message CalculateRequest {
   string AppGoodID = 40;
   string OrderID = 50;
   string GoodCoinTypeID = 60;
-  string OrderUserID = 70;
   string Units = 80;
   string PaymentAmountUSD = 90;
   string GoodValueUSD = 100;

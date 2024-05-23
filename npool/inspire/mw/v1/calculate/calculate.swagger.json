@@ -185,9 +185,6 @@
         "GoodCoinTypeID": {
           "type": "string"
         },
-        "OrderUserID": {
-          "type": "string"
-        },
         "Units": {
           "type": "string"
         },
