@@ -100,6 +100,9 @@ message Conds {
     // other
     optional basetypes.v1.Uint32Val CreatedAt = 220;
     optional basetypes.v1.Uint32Val UpdatedAt = 230;
+
+    optional basetypes.v1.Uint32Val GoodType = 240;
+    optional basetypes.v1.Uint32SliceVal GoodTypes = 250;
 }
 
 message GetOrderRequest {
