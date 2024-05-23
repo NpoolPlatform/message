@@ -152,7 +152,8 @@
       "type": "object",
       "properties": {
         "Info": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

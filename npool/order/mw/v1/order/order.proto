@@ -129,7 +129,7 @@ message CountOrdersRequest {
 }
 
 message CountOrdersResponse {
-    string Info = 10;
+    uint32 Info = 10;
 }
 
 message SumOrdersPaymentUSDRequest {
