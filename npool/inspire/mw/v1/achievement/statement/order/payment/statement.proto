@@ -23,7 +23,6 @@ message StatementReq {
   optional string EntID = 20;
   optional string StatementID = 30;
   optional string PaymentCoinTypeID = 40;
-  optional string CoinUSDCurrency = 50;
   optional string Amount = 60;
   optional string CommissionAmount = 70;
 }

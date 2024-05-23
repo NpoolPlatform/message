@@ -66,9 +66,6 @@
         "PaymentCoinTypeID": {
           "type": "string"
         },
-        "CoinUSDCurrency": {
-          "type": "string"
-        },
         "Amount": {
           "type": "string"
         },
@@ -185,9 +182,6 @@
         "GoodCoinTypeID": {
           "type": "string"
         },
-        "OrderUserID": {
-          "type": "string"
-        },
         "Units": {
           "type": "string"
         },
@@ -196,6 +190,9 @@
         },
         "GoodValueUSD": {
           "type": "string"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
         },
         "HasCommission": {
           "type": "boolean"
@@ -244,6 +241,16 @@
           "type": "string"
         }
       }
+    },
+    "v1SettleType": {
+      "type": "string",
+      "enum": [
+        "DefaultSettleType",
+        "GoodOrderPayment",
+        "TechniqueServiceFee"
+      ],
+      "default": "DefaultSettleType",
+      "title": "- GoodOrderPayment: Divide commission according to order payment amount or good value\n - TechniqueServiceFee: Divice commission according to order technique fee"
     }
   }
 }
