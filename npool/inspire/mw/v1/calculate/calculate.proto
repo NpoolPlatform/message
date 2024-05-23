@@ -5,7 +5,6 @@ package inspire.middleware.calculate.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/calculate";
 
 import "google/api/annotations.proto";
-import "npool/basetypes/inspire/v1/enums.proto";
 import "npool/inspire/mw/v1/achievement/statement/order/statement.proto";
 
 // Service Name
@@ -35,7 +34,6 @@ message CalculateRequest {
   string Units = 80;
   string PaymentAmountUSD = 90;
   string GoodValueUSD = 100;
-  basetypes.inspire.v1.SettleType SettleType = 110;
   bool HasCommission = 120;
   uint32 OrderCreatedAt = 130;
   repeated Payment Payments = 140;
