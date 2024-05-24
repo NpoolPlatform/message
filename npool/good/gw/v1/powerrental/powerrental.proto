@@ -99,9 +99,6 @@ message PowerRental {
     string LastUnitRewardAmount = 440;
     string TotalRewardAmount = 450;
 
-    uint32 AppGoodServiceStartAt = 460;
-    basetypes.good.v1.GoodStartMode AppGoodStartMode = 470;
-
     repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 900;
     repeated good.middleware.good1.stock.v1.MiningGoodStockInfo MiningGoodStocks = 960;
 
@@ -122,7 +119,6 @@ message AdminCreatePowerRentalRequest {
 
     // Good information
     basetypes.good.v1.GoodType GoodType = 120;
-    basetypes.good.v1.BenefitType BenefitType = 130;
     string Name = 140;
     optional uint32 ServiceStartAt = 150;
     basetypes.good.v1.GoodStartMode StartMode = 160;
@@ -157,7 +153,6 @@ message AdminUpdatePowerRentalRequest {
 
     // Good information
     optional basetypes.good.v1.GoodType GoodType = 130;
-    optional basetypes.good.v1.BenefitType BenefitType = 140;
     optional string Name = 150;
     optional uint32 ServiceStartAt = 160;
     optional basetypes.good.v1.GoodStartMode StartMode = 170;

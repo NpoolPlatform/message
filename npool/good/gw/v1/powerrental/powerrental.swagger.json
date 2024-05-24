@@ -238,9 +238,6 @@
           "$ref": "#/definitions/v1GoodType",
           "title": "Good information"
         },
-        "BenefitType": {
-          "$ref": "#/definitions/v1BenefitType"
-        },
         "Name": {
           "type": "string"
         },
@@ -351,9 +348,6 @@
         "GoodType": {
           "$ref": "#/definitions/v1GoodType",
           "title": "Good information"
-        },
-        "BenefitType": {
-          "$ref": "#/definitions/v1BenefitType"
         },
         "Name": {
           "type": "string"
@@ -731,13 +725,6 @@
         },
         "TotalRewardAmount": {
           "type": "string"
-        },
-        "AppGoodServiceStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "AppGoodStartMode": {
-          "$ref": "#/definitions/v1GoodStartMode"
         },
         "GoodCoins": {
           "type": "array",
