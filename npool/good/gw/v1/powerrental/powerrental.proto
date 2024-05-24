@@ -73,23 +73,23 @@ message PowerRental {
 
     basetypes.good.v1.GoodType GoodType = 210;
     basetypes.good.v1.BenefitType BenefitType = 220;
-    string GoodName = 230;
-    uint32 GoodServiceStartAt = 240;
-    basetypes.good.v1.GoodStartMode GoodStartMode = 250;
+    string Name = 230;
+    uint32 ServiceStartAt = 240;
+    basetypes.good.v1.GoodStartMode StartMode = 250;
     bool TestOnly = 260;
     uint32 BenefitIntervalHours = 270;
-    bool GoodPurchasable = 280;
-    bool GoodOnline = 290;
+    bool Purchasable = 280;
+    bool Online = 290;
     basetypes.good.v1.GoodStockMode StockMode = 300;
 
-    string GoodStockID = 310;
-    string GoodTotal = 320;
-    string GoodSpotQuantity = 330;
-    string GoodLocked = 340;
-    string GoodInService = 350;
-    string GoodWaitStart = 360;
-    string GoodSold = 370;
-    string GoodAppReserved = 380;
+    string StockID = 310;
+    string Total = 320;
+    string SpotQuantity = 330;
+    string Locked = 340;
+    string InService = 350;
+    string WaitStart = 360;
+    string Sold = 370;
+    string AppReserved = 380;
 
     basetypes.good.v1.BenefitState RewardState = 390;
     uint32 LastRewardAt = 400;

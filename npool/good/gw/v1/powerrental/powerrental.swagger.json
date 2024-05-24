@@ -654,14 +654,14 @@
         "BenefitType": {
           "$ref": "#/definitions/v1BenefitType"
         },
-        "GoodName": {
+        "Name": {
           "type": "string"
         },
-        "GoodServiceStartAt": {
+        "ServiceStartAt": {
           "type": "integer",
           "format": "int64"
         },
-        "GoodStartMode": {
+        "StartMode": {
           "$ref": "#/definitions/v1GoodStartMode"
         },
         "TestOnly": {
@@ -671,37 +671,37 @@
           "type": "integer",
           "format": "int64"
         },
-        "GoodPurchasable": {
+        "Purchasable": {
           "type": "boolean"
         },
-        "GoodOnline": {
+        "Online": {
           "type": "boolean"
         },
         "StockMode": {
           "$ref": "#/definitions/v1GoodStockMode"
         },
-        "GoodStockID": {
+        "StockID": {
           "type": "string"
         },
-        "GoodTotal": {
+        "Total": {
           "type": "string"
         },
-        "GoodSpotQuantity": {
+        "SpotQuantity": {
           "type": "string"
         },
-        "GoodLocked": {
+        "Locked": {
           "type": "string"
         },
-        "GoodInService": {
+        "InService": {
           "type": "string"
         },
-        "GoodWaitStart": {
+        "WaitStart": {
           "type": "string"
         },
-        "GoodSold": {
+        "Sold": {
           "type": "string"
         },
-        "GoodAppReserved": {
+        "AppReserved": {
           "type": "string"
         },
         "RewardState": {
