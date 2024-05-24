@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1coinv1GetGoodCoinsResponse"
+              "$ref": "#/definitions/v1GetGoodCoinsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewaygood1coinv1GetGoodCoinsRequest"
+              "$ref": "#/definitions/v1GetGoodCoinsRequest"
             }
           }
         ],
@@ -146,34 +146,6 @@
     }
   },
   "definitions": {
-    "goodgatewaygood1coinv1GetGoodCoinsRequest": {
-      "type": "object",
-      "properties": {
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "goodgatewaygood1coinv1GetGoodCoinsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1GoodCoin"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -274,55 +246,82 @@
         }
       }
     },
+    "v1GetGoodCoinsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetGoodCoinsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodCoin"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GoodCoin": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
+          "format": "int64"
         },
         "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
+          "type": "string"
         },
         "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
+          "type": "string"
         },
         "GoodName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_name\""
-        },
-        "GoodTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_type\""
+          "type": "string"
         },
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
         },
         "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinENV": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
         },
         "Main": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"main\""
+          "type": "boolean"
         },
         "Index": {
           "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"index\""
+          "format": "int32"
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
+          "format": "int64"
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
+          "format": "int64"
         }
       }
     },

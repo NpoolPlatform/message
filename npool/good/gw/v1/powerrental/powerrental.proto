@@ -6,7 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/powerrent
 
 import "google/api/annotations.proto";
 import "npool/basetypes/good/v1/enums.proto";
-import "npool/good/mw/v1/good/coin/coin.proto";
+import "npool/good/gw/v1/good/coin/coin.proto";
 import "npool/good/mw/v1/good/stock/stock.proto";
 
 service Gateway {
@@ -99,7 +99,7 @@ message PowerRental {
     string LastUnitRewardAmount = 440;
     string TotalRewardAmount = 450;
 
-    repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 900;
+    repeated good.gateway.good1.coin.v1.GoodCoinInfo GoodCoins = 900;
     repeated good.middleware.good1.stock.v1.MiningGoodStockInfo MiningGoodStocks = 960;
 
     uint32 CreatedAt = 1000;

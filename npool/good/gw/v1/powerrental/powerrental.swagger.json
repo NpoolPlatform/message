@@ -470,22 +470,27 @@
     "v1GoodCoinInfo": {
       "type": "object",
       "properties": {
-        "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
-        },
         "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinENV": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
         },
         "Main": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"main\""
+          "type": "boolean"
         },
         "Index": {
           "type": "integer",
-          "format": "int32",
-          "title": "@inject_tag: sql:\"index\""
+          "format": "int32"
         }
       }
     },

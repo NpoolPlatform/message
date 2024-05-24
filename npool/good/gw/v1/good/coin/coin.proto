@@ -4,8 +4,8 @@ package good.gateway.good1.coin.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/good/coin";
 
-import "npool/good/mw/v1/good/coin/coin.proto";
 import "google/api/annotations.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Gateway {
@@ -35,6 +35,34 @@ service Gateway {
     }
 }
 
+message GoodCoin {
+    uint32 ID = 10;
+    string EntID = 20;
+    string GoodID = 30;
+    string GoodName = 40;
+    basetypes.good.v1.GoodType GoodType = 60;
+    string CoinTypeID = 70;
+    string CoinName = 80;
+    string CoinUnit = 90;
+    string CoinENV = 100;
+    string CoinLogo = 110;
+    bool Main = 120;
+    int32 Index = 130;
+
+    uint32 CreatedAt = 1000;
+    uint32 UpdatedAt = 1010;
+}
+
+message GoodCoinInfo {
+    string CoinTypeID = 10;
+    string CoinName = 20;
+    string CoinUnit = 30;
+    string CoinENV = 40;
+    string CoinLogo = 50;
+    bool Main = 60;
+    int32 Index = 70;
+}
+
 message AdminCreateGoodCoinRequest {
     string GoodID = 10;
     string CoinTypeID = 20;
@@ -43,7 +71,7 @@ message AdminCreateGoodCoinRequest {
 }
 
 message AdminCreateGoodCoinResponse {
-    middleware.good1.coin.v1.GoodCoin Info = 10;
+    GoodCoin Info = 10;
 }
 
 message AdminUpdateGoodCoinRequest {
@@ -54,7 +82,7 @@ message AdminUpdateGoodCoinRequest {
 }
 
 message AdminUpdateGoodCoinResponse {
-    middleware.good1.coin.v1.GoodCoin Info = 10;
+    GoodCoin Info = 10;
 }
 
 message GetGoodCoinsRequest {
@@ -63,7 +91,7 @@ message GetGoodCoinsRequest {
 }
 
 message GetGoodCoinsResponse {
-    repeated middleware.good1.coin.v1.GoodCoin Infos = 10;
+    repeated GoodCoin Infos = 10;
     uint32 Total = 20;
 }
 
@@ -73,5 +101,5 @@ message AdminDeleteGoodCoinRequest {
 }
 
 message AdminDeleteGoodCoinResponse {
-    middleware.good1.coin.v1.GoodCoin Info = 10;
+    GoodCoin Info = 10;
 }
