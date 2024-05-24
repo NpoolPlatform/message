@@ -540,9 +540,14 @@
       ],
       "default": "DefaultGoodType"
     },
-    "v1MiningGoodStockInfo": {
+    "v1MiningGoodStock": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
         "EntID": {
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
@@ -566,6 +571,22 @@
         "SpotQuantity": {
           "type": "string",
           "title": "@inject_tag: sql:\"spot_quantity\""
+        },
+        "Locked": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"locked\""
+        },
+        "WaitStart": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"wait_start\""
+        },
+        "InService": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"in_service\""
+        },
+        "Sold": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"sold\""
         }
       }
     },
@@ -740,7 +761,7 @@
         "MiningGoodStocks": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1MiningGoodStockInfo"
+            "$ref": "#/definitions/v1MiningGoodStock"
           }
         },
         "CreatedAt": {
