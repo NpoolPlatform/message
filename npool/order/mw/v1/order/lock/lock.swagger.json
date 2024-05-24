@@ -51,6 +51,9 @@
           "$ref": "#/definitions/v1Uint32Val",
           "title": "order"
         },
+        "IDs": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        },
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -60,17 +63,17 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "UserIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "OrderID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "LockType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1Uint32SliceVal"
-        },
         "OrderIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "LockType": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },

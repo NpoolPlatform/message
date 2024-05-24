@@ -50,13 +50,14 @@ message OrderLock {
 message Conds {
   // order
   basetypes.v1.Uint32Val ID = 10;
-  basetypes.v1.StringVal EntID = 20;
-  basetypes.v1.StringVal AppID = 30;
-  basetypes.v1.StringVal UserID = 40;
-  basetypes.v1.StringVal OrderID = 50;
-  basetypes.v1.Uint32Val LockType = 60;
-  basetypes.v1.Uint32SliceVal IDs = 70;
+  basetypes.v1.Uint32SliceVal IDs = 20;
+  basetypes.v1.StringVal EntID = 30;
+  basetypes.v1.StringVal AppID = 40;
+  basetypes.v1.StringVal UserID = 50;
+  basetypes.v1.StringSliceVal UserIDs = 60;
+  basetypes.v1.StringVal OrderID = 70;
   basetypes.v1.StringSliceVal OrderIDs = 80;
+  basetypes.v1.Uint32Val LockType = 90;
 }
 
 message GetOrderLockRequest { string EntID = 10; }
