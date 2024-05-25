@@ -60,12 +60,15 @@ message Fee {
     basetypes.good.v1.GoodDurationType DurationDisplayType = 140;
     // @inject_tag: sql:"banner"
     string Banner = 150;
+    // @inject_tag: sql:"candel_mode"
+    string CancelModeStr = 160;
+    basetypes.good.v1.CancelMode CancelMode = 170;
     // @inject_tag: sql:"min_order_duration_seconds"
-    uint32 MinOrderDurationSeconds = 160;
+    uint32 MinOrderDurationSeconds = 180;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt = 2000;
+    uint32 UpdatedAt = 1010;
 }
 
 message Conds {

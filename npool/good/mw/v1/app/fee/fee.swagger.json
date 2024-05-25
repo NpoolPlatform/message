@@ -44,6 +44,16 @@
         }
       }
     },
+    "v1CancelMode": {
+      "type": "string",
+      "enum": [
+        "DefaultCancelMode",
+        "CancellableBeforeStart",
+        "CancellableBeforeBenefit",
+        "Uncancellable"
+      ],
+      "default": "DefaultCancelMode"
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -174,6 +184,13 @@
         "Banner": {
           "type": "string",
           "title": "@inject_tag: sql:\"banner\""
+        },
+        "CancelModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"candel_mode\""
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
         },
         "MinOrderDurationSeconds": {
           "type": "integer",
