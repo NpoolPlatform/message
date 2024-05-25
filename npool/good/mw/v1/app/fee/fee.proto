@@ -60,7 +60,7 @@ message Fee {
     basetypes.good.v1.GoodDurationType DurationDisplayType = 140;
     // @inject_tag: sql:"banner"
     string Banner = 150;
-    // @inject_tag: sql:"candel_mode"
+    // @inject_tag: sql:"cancel_mode"
     string CancelModeStr = 160;
     basetypes.good.v1.CancelMode CancelMode = 170;
     // @inject_tag: sql:"min_order_duration_seconds"

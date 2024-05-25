@@ -174,8 +174,8 @@ type Fee struct {
 	DurationDisplayType    v1.GoodDurationType `protobuf:"varint,140,opt,name=DurationDisplayType,proto3,enum=basetypes.good.v1.GoodDurationType" json:"DurationDisplayType,omitempty"`
 	// @inject_tag: sql:"banner"
 	Banner string `protobuf:"bytes,150,opt,name=Banner,proto3" json:"Banner,omitempty" sql:"banner"`
-	// @inject_tag: sql:"candel_mode"
-	CancelModeStr string        `protobuf:"bytes,160,opt,name=CancelModeStr,proto3" json:"CancelModeStr,omitempty" sql:"candel_mode"`
+	// @inject_tag: sql:"cancel_mode"
+	CancelModeStr string        `protobuf:"bytes,160,opt,name=CancelModeStr,proto3" json:"CancelModeStr,omitempty" sql:"cancel_mode"`
 	CancelMode    v1.CancelMode `protobuf:"varint,170,opt,name=CancelMode,proto3,enum=basetypes.good.v1.CancelMode" json:"CancelMode,omitempty"`
 	// @inject_tag: sql:"min_order_duration_seconds"
 	MinOrderDurationSeconds uint32 `protobuf:"varint,180,opt,name=MinOrderDurationSeconds,proto3" json:"MinOrderDurationSeconds,omitempty" sql:"min_order_duration_seconds"`

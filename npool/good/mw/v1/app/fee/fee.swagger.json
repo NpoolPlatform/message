@@ -187,7 +187,7 @@
         },
         "CancelModeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"candel_mode\""
+          "title": "@inject_tag: sql:\"cancel_mode\""
         },
         "CancelMode": {
           "$ref": "#/definitions/v1CancelMode"
