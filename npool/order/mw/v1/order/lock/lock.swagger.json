@@ -122,6 +122,19 @@
         }
       }
     },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
+    },
     "v1OrderLock": {
       "type": "object",
       "properties": {
@@ -145,6 +158,17 @@
         "OrderID": {
           "type": "string",
           "title": "@inject_tag: sql:\"order_id\""
+        },
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "OrderUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"order_user_id\""
         },
         "LockTypeStr": {
           "type": "string",
@@ -173,9 +197,6 @@
           "format": "int64"
         },
         "EntID": {
-          "type": "string"
-        },
-        "AppID": {
           "type": "string"
         },
         "UserID": {
