@@ -101,7 +101,8 @@
         "DefaultCancelMode",
         "CancellableBeforeStart",
         "CancellableBeforeBenefit",
-        "Uncancellable"
+        "Uncancellable",
+        "CancellableBeforeUsed"
       ],
       "default": "DefaultCancelMode"
     },

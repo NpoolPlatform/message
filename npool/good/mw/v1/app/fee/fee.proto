@@ -29,7 +29,8 @@ message FeeReq {
     optional string Banner = 80;
     // It could be amount or percent.
     optional string UnitValue = 90;
-    optional uint32 MinOrderDurationSeconds = 100;
+    optional basetypes.good.v1.CancelMode CancelMode = 100;
+    optional uint32 MinOrderDurationSeconds = 110;
 }
 
 message Fee {

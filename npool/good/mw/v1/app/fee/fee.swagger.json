@@ -50,7 +50,8 @@
         "DefaultCancelMode",
         "CancellableBeforeStart",
         "CancellableBeforeBenefit",
-        "Uncancellable"
+        "Uncancellable",
+        "CancellableBeforeUsed"
       ],
       "default": "DefaultCancelMode"
     },
@@ -240,6 +241,9 @@
         "UnitValue": {
           "type": "string",
           "description": "It could be amount or percent."
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
         },
         "MinOrderDurationSeconds": {
           "type": "integer",

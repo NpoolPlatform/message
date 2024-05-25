@@ -50,6 +50,7 @@ enum CancelMode {
   CancellableBeforeStart = 10;
   CancellableBeforeBenefit = 20;
   Uncancellable = 30;
+  CancellableBeforeUsed = 40;
 }
 
 enum GoodLabel {
