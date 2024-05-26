@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package fee.gateway.app.fee.v1;
+package good.gateway.app.fee.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/fee/gw/v1/app/fee";
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/app/fee";
 
 import "npool/basetypes/good/v1/enums.proto";
 import "google/api/annotations.proto";
