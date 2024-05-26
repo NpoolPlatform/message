@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetAppFees_FullMethodName        = "/fee.gateway.app.fee.v1.Gateway/GetAppFees"
-	Gateway_GetAppFee_FullMethodName         = "/fee.gateway.app.fee.v1.Gateway/GetAppFee"
-	Gateway_UpdateAppFee_FullMethodName      = "/fee.gateway.app.fee.v1.Gateway/UpdateAppFee"
-	Gateway_AdminCreateAppFee_FullMethodName = "/fee.gateway.app.fee.v1.Gateway/AdminCreateAppFee"
-	Gateway_AdminGetAppFees_FullMethodName   = "/fee.gateway.app.fee.v1.Gateway/AdminGetAppFees"
-	Gateway_AdminUpdateAppFee_FullMethodName = "/fee.gateway.app.fee.v1.Gateway/AdminUpdateAppFee"
+	Gateway_GetAppFees_FullMethodName        = "/good.gateway.app.fee.v1.Gateway/GetAppFees"
+	Gateway_GetAppFee_FullMethodName         = "/good.gateway.app.fee.v1.Gateway/GetAppFee"
+	Gateway_UpdateAppFee_FullMethodName      = "/good.gateway.app.fee.v1.Gateway/UpdateAppFee"
+	Gateway_AdminCreateAppFee_FullMethodName = "/good.gateway.app.fee.v1.Gateway/AdminCreateAppFee"
+	Gateway_AdminGetAppFees_FullMethodName   = "/good.gateway.app.fee.v1.Gateway/AdminGetAppFees"
+	Gateway_AdminUpdateAppFee_FullMethodName = "/good.gateway.app.fee.v1.Gateway/AdminUpdateAppFee"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -261,7 +261,7 @@ func _Gateway_AdminUpdateAppFee_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "fee.gateway.app.fee.v1.Gateway",
+	ServiceName: "good.gateway.app.fee.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

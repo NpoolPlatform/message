@@ -247,7 +247,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fee.gateway.app.fee.v1.Gateway/GetAppFees", runtime.WithHTTPPathPattern("/v1/get/appfees"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.fee.v1.Gateway/GetAppFees", runtime.WithHTTPPathPattern("/v1/get/appfees"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -270,7 +270,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fee.gateway.app.fee.v1.Gateway/GetAppFee", runtime.WithHTTPPathPattern("/v1/get/appfee"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.fee.v1.Gateway/GetAppFee", runtime.WithHTTPPathPattern("/v1/get/appfee"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -293,7 +293,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fee.gateway.app.fee.v1.Gateway/UpdateAppFee", runtime.WithHTTPPathPattern("/v1/update/appfee"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.fee.v1.Gateway/UpdateAppFee", runtime.WithHTTPPathPattern("/v1/update/appfee"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -316,7 +316,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fee.gateway.app.fee.v1.Gateway/AdminCreateAppFee", runtime.WithHTTPPathPattern("/v1/admin/create/appfee"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.fee.v1.Gateway/AdminCreateAppFee", runtime.WithHTTPPathPattern("/v1/admin/create/appfee"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -339,7 +339,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fee.gateway.app.fee.v1.Gateway/AdminGetAppFees", runtime.WithHTTPPathPattern("/v1/admin/get/appfees"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.fee.v1.Gateway/AdminGetAppFees", runtime.WithHTTPPathPattern("/v1/admin/get/appfees"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -362,7 +362,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fee.gateway.app.fee.v1.Gateway/AdminUpdateAppFee", runtime.WithHTTPPathPattern("/v1/admin/update/appfee"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.fee.v1.Gateway/AdminUpdateAppFee", runtime.WithHTTPPathPattern("/v1/admin/update/appfee"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -424,7 +424,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/fee.gateway.app.fee.v1.Gateway/GetAppFees", runtime.WithHTTPPathPattern("/v1/get/appfees"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.fee.v1.Gateway/GetAppFees", runtime.WithHTTPPathPattern("/v1/get/appfees"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -444,7 +444,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/fee.gateway.app.fee.v1.Gateway/GetAppFee", runtime.WithHTTPPathPattern("/v1/get/appfee"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.fee.v1.Gateway/GetAppFee", runtime.WithHTTPPathPattern("/v1/get/appfee"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -464,7 +464,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/fee.gateway.app.fee.v1.Gateway/UpdateAppFee", runtime.WithHTTPPathPattern("/v1/update/appfee"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.fee.v1.Gateway/UpdateAppFee", runtime.WithHTTPPathPattern("/v1/update/appfee"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -484,7 +484,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/fee.gateway.app.fee.v1.Gateway/AdminCreateAppFee", runtime.WithHTTPPathPattern("/v1/admin/create/appfee"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.fee.v1.Gateway/AdminCreateAppFee", runtime.WithHTTPPathPattern("/v1/admin/create/appfee"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -504,7 +504,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/fee.gateway.app.fee.v1.Gateway/AdminGetAppFees", runtime.WithHTTPPathPattern("/v1/admin/get/appfees"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.fee.v1.Gateway/AdminGetAppFees", runtime.WithHTTPPathPattern("/v1/admin/get/appfees"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -524,7 +524,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/fee.gateway.app.fee.v1.Gateway/AdminUpdateAppFee", runtime.WithHTTPPathPattern("/v1/admin/update/appfee"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.fee.v1.Gateway/AdminUpdateAppFee", runtime.WithHTTPPathPattern("/v1/admin/update/appfee"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
