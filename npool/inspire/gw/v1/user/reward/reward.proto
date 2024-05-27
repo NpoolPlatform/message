@@ -11,13 +11,13 @@ import "npool/inspire/mw/v1/user/reward/reward.proto";
 service Gateway {
   rpc AdminGetUserRewards(AdminGetUserRewardsRequest) returns (AdminGetUserRewardsResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/userwards"
+      post : "/v1/admin/get/userrewards"
       body : "*"
     };
   }
   rpc UserGetUserRewards(UserGetUserRewardsRequest) returns (UserGetUserRewardsResponse) {
     option (google.api.http) = {
-      post : "/v1/user/get/userwards"
+      post : "/v1/user/get/userrewards"
       body : "*"
     };
   }

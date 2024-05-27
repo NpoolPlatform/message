@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/get/userwards": {
+    "/v1/admin/get/userrewards": {
       "post": {
         "operationId": "Gateway_AdminGetUserRewards",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/user/get/userwards": {
+    "/v1/user/get/userrewards": {
       "post": {
         "operationId": "Gateway_UserGetUserRewards",
         "responses": {

@@ -10,13 +10,13 @@ import "google/api/annotations.proto";
 service Gateway {
   rpc AdminGetUserCoinRewards(AdminGetUserCoinRewardsRequest) returns (AdminGetUserCoinRewardsResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/usercoinwards"
+      post : "/v1/admin/get/usercoinrewards"
       body : "*"
     };
   }
   rpc UserGetUserCoinRewards(UserGetUserCoinRewardsRequest) returns (UserGetUserCoinRewardsResponse) {
     option (google.api.http) = {
-      post : "/v1/user/get/usercoinwards"
+      post : "/v1/user/get/usercoinrewards"
       body : "*"
     };
   }
