@@ -179,7 +179,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminCreateCoinConfig", runtime.WithHTTPPathPattern("/v1/admin/create/CoinConfig"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminCreateCoinConfig", runtime.WithHTTPPathPattern("/v1/admin/create/coinconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -202,7 +202,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminUpdateCoinConfig", runtime.WithHTTPPathPattern("/v1/admin/update/CoinConfig"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminUpdateCoinConfig", runtime.WithHTTPPathPattern("/v1/admin/update/coinconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -225,7 +225,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminGetCoinConfigs", runtime.WithHTTPPathPattern("/v1/admin/get/CoinConfigs"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminGetCoinConfigs", runtime.WithHTTPPathPattern("/v1/admin/get/coinconfigs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -248,7 +248,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminDeleteCoinConfig", runtime.WithHTTPPathPattern("/v1/admin/delete/CoinConfig"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminDeleteCoinConfig", runtime.WithHTTPPathPattern("/v1/admin/delete/coinconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -310,7 +310,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminCreateCoinConfig", runtime.WithHTTPPathPattern("/v1/admin/create/CoinConfig"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminCreateCoinConfig", runtime.WithHTTPPathPattern("/v1/admin/create/coinconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -330,7 +330,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminUpdateCoinConfig", runtime.WithHTTPPathPattern("/v1/admin/update/CoinConfig"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminUpdateCoinConfig", runtime.WithHTTPPathPattern("/v1/admin/update/coinconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -350,7 +350,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminGetCoinConfigs", runtime.WithHTTPPathPattern("/v1/admin/get/CoinConfigs"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminGetCoinConfigs", runtime.WithHTTPPathPattern("/v1/admin/get/coinconfigs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -370,7 +370,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminDeleteCoinConfig", runtime.WithHTTPPathPattern("/v1/admin/delete/CoinConfig"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coin.config.v1.Gateway/AdminDeleteCoinConfig", runtime.WithHTTPPathPattern("/v1/admin/delete/coinconfig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -390,13 +390,13 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_AdminCreateCoinConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "CoinConfig"}, ""))
+	pattern_Gateway_AdminCreateCoinConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "coinconfig"}, ""))
 
-	pattern_Gateway_AdminUpdateCoinConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "update", "CoinConfig"}, ""))
+	pattern_Gateway_AdminUpdateCoinConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "update", "coinconfig"}, ""))
 
-	pattern_Gateway_AdminGetCoinConfigs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "get", "CoinConfigs"}, ""))
+	pattern_Gateway_AdminGetCoinConfigs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "get", "coinconfigs"}, ""))
 
-	pattern_Gateway_AdminDeleteCoinConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "CoinConfig"}, ""))
+	pattern_Gateway_AdminDeleteCoinConfig_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "coinconfig"}, ""))
 )
 
 var (

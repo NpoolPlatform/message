@@ -11,27 +11,27 @@ service Gateway {
   rpc AdminCreateCoinConfig(AdminCreateCoinConfigRequest)
       returns (AdminCreateCoinConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/create/CoinConfig"
+      post : "/v1/admin/create/coinconfig"
       body : "*"
     };
   }
   rpc AdminUpdateCoinConfig(AdminUpdateCoinConfigRequest)
       returns (AdminUpdateCoinConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/update/CoinConfig"
+      post : "/v1/admin/update/coinconfig"
       body : "*"
     };
   }
   rpc AdminGetCoinConfigs(AdminGetCoinConfigsRequest) returns (AdminGetCoinConfigsResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/CoinConfigs"
+      post : "/v1/admin/get/coinconfigs"
       body : "*"
     };
   }
   rpc AdminDeleteCoinConfig(AdminDeleteCoinConfigRequest)
       returns (AdminDeleteCoinConfigResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/delete/CoinConfig"
+      post : "/v1/admin/delete/coinconfig"
       body : "*"
     };
   }

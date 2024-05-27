@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/CoinConfig": {
+    "/v1/admin/create/coinconfig": {
       "post": {
         "operationId": "Gateway_AdminCreateCoinConfig",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/admin/delete/CoinConfig": {
+    "/v1/admin/delete/coinconfig": {
       "post": {
         "operationId": "Gateway_AdminDeleteCoinConfig",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/admin/get/CoinConfigs": {
+    "/v1/admin/get/coinconfigs": {
       "post": {
         "operationId": "Gateway_AdminGetCoinConfigs",
         "responses": {
@@ -112,7 +112,7 @@
         ]
       }
     },
-    "/v1/admin/update/CoinConfig": {
+    "/v1/admin/update/coinconfig": {
       "post": {
         "operationId": "Gateway_AdminUpdateCoinConfig",
         "responses": {
