@@ -9,13 +9,13 @@ import "google/api/annotations.proto";
 service Gateway {
   rpc UserGetCoinAllocateds(UserGetCoinAllocatedsRequest) returns (UserGetCoinAllocatedsResponse) {
     option (google.api.http) = {
-      post : "/v1/user/get/allocatedcoupons"
+      post : "/v1/user/get/allocatedcoins"
       body : "*"
     };
   }
   rpc AdminGetAppCoinAllocateds(AdminGetAppCoinAllocatedsRequest) returns (AdminGetAppCoinAllocatedsResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/app/allocatedcoupons"
+      post : "/v1/admin/get/app/allocatedcoins"
       body : "*"
     };
   }

@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/get/app/allocatedcoupons": {
+    "/v1/admin/get/app/allocatedcoins": {
       "post": {
         "operationId": "Gateway_AdminGetAppCoinAllocateds",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/user/get/allocatedcoupons": {
+    "/v1/user/get/allocatedcoins": {
       "post": {
         "operationId": "Gateway_UserGetCoinAllocateds",
         "responses": {

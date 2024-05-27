@@ -111,7 +111,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coin.allocated.v1.Gateway/UserGetCoinAllocateds", runtime.WithHTTPPathPattern("/v1/user/get/allocatedcoupons"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coin.allocated.v1.Gateway/UserGetCoinAllocateds", runtime.WithHTTPPathPattern("/v1/user/get/allocatedcoins"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -134,7 +134,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coin.allocated.v1.Gateway/AdminGetAppCoinAllocateds", runtime.WithHTTPPathPattern("/v1/admin/get/app/allocatedcoupons"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.gateway.coin.allocated.v1.Gateway/AdminGetAppCoinAllocateds", runtime.WithHTTPPathPattern("/v1/admin/get/app/allocatedcoins"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -196,7 +196,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coin.allocated.v1.Gateway/UserGetCoinAllocateds", runtime.WithHTTPPathPattern("/v1/user/get/allocatedcoupons"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coin.allocated.v1.Gateway/UserGetCoinAllocateds", runtime.WithHTTPPathPattern("/v1/user/get/allocatedcoins"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -216,7 +216,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coin.allocated.v1.Gateway/AdminGetAppCoinAllocateds", runtime.WithHTTPPathPattern("/v1/admin/get/app/allocatedcoupons"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.gateway.coin.allocated.v1.Gateway/AdminGetAppCoinAllocateds", runtime.WithHTTPPathPattern("/v1/admin/get/app/allocatedcoins"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -236,9 +236,9 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_UserGetCoinAllocateds_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "user", "get", "allocatedcoupons"}, ""))
+	pattern_Gateway_UserGetCoinAllocateds_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "user", "get", "allocatedcoins"}, ""))
 
-	pattern_Gateway_AdminGetAppCoinAllocateds_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "admin", "get", "app", "allocatedcoupons"}, ""))
+	pattern_Gateway_AdminGetAppCoinAllocateds_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "admin", "get", "app", "allocatedcoins"}, ""))
 )
 
 var (
