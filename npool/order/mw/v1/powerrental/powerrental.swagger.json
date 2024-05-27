@@ -771,7 +771,11 @@
         },
         "GoodValueUSD": {
           "type": "string",
-          "title": "@inject_tag: sql:\"good_value_usd\""
+          "title": "GoodValueUSD of this order\n@inject_tag: sql:\"good_value_usd\""
+        },
+        "PaymentGoodValueUSD": {
+          "type": "string",
+          "title": "GoodValueUSD of this order and the orders paid with this order\n@inject_tag: sql:\"payment_good_value_usd\""
         },
         "PaymentAmountUSD": {
           "type": "string",

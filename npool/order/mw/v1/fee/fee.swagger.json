@@ -299,6 +299,10 @@
           "type": "string",
           "title": "Power rental information\n@inject_tag: sql:\"good_value_usd\""
         },
+        "PaymentGoodValueUSD": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payment_good_value_usd\""
+        },
         "PaymentAmountUSD": {
           "type": "string",
           "title": "@inject_tag: sql:\"payment_amount_usd\""
