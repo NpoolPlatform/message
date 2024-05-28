@@ -35,6 +35,18 @@ service Gateway {
       body : "*"
     };
   }
+  rpc AdminCreateEvent(AdminCreateEventRequest) returns (AdminCreateEventResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/create/eventinspire"
+      body : "*"
+    };
+  }
+  rpc AdminUpdateEvent(AdminUpdateEventRequest) returns (AdminUpdateEventResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/update/eventinspire"
+      body : "*"
+    };
+  }
 }
 
 message Event {
