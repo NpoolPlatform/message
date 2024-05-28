@@ -27,8 +27,13 @@ message RenewInfo {
     uint32 RenewDuration = 30;
 }
 
+message OrderInfo {
+    string OrderID = 10;
+    basetypes.good.v1.GoodType GoodType = 20;
+}
+
 message MsgOrderChildsRenewReq {
-  order.middleware.order1.v1.Order ParentOrder = 10;
+  OrderInfo ParentOrder = 10;
   repeated Deduction Deductions = 20;
   bool InsufficientBalance = 30;
   bool WillCreateOrder = 40;
