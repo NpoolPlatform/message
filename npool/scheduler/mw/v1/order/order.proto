@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package scheduler.middleware.order.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/scheduler/mw/v1/order";
+
+import "npool/basetypes/good/v1/enums.proto";
+
+message OrderInfo {
+    string OrderID = 10;
+    basetypes.good.v1.GoodType GoodType = 20;
+}
+

@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/scheduler/mw/v1/orde
 import "npool/order/mw/v1/order/order.proto";
 import "npool/chain/mw/v1/app/coin/coin.proto";
 import "npool/basetypes/good/v1/enums.proto";
+import "npool/scheduler/mw/v1/order/order.proto";
 
 message AppGoodInfo {
     string AppGoodID = 10;
@@ -25,13 +26,8 @@ message RenewInfo {
     uint32 RenewDuration = 30;
 }
 
-message OrderInfo {
-    string OrderID = 10;
-    basetypes.good.v1.GoodType GoodType = 20;
-}
-
 message MsgOrderChildsRenewReq {
-  OrderInfo ParentOrder = 10;
+  scheduler.middleware.order.v1.OrderInfo ParentOrder = 10;
   repeated Deduction Deductions = 30;
   bool InsufficientBalance = 40;
   bool WillCreateOrder = 50;
