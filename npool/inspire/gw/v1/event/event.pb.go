@@ -784,6 +784,124 @@ func (x *UpdateEventResponse) GetInfo() *Event {
 	return nil
 }
 
+type AdminGetEventsRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TargetAppID string `protobuf:"bytes,10,opt,name=TargetAppID,proto3" json:"TargetAppID,omitempty"`
+	Offset      int32  `protobuf:"varint,20,opt,name=Offset,proto3" json:"Offset,omitempty"`
+	Limit       int32  `protobuf:"varint,30,opt,name=Limit,proto3" json:"Limit,omitempty"`
+}
+
+func (x *AdminGetEventsRequest) Reset() {
+	*x = AdminGetEventsRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_inspire_gw_v1_event_event_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AdminGetEventsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminGetEventsRequest) ProtoMessage() {}
+
+func (x *AdminGetEventsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_inspire_gw_v1_event_event_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminGetEventsRequest.ProtoReflect.Descriptor instead.
+func (*AdminGetEventsRequest) Descriptor() ([]byte, []int) {
+	return file_npool_inspire_gw_v1_event_event_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *AdminGetEventsRequest) GetTargetAppID() string {
+	if x != nil {
+		return x.TargetAppID
+	}
+	return ""
+}
+
+func (x *AdminGetEventsRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *AdminGetEventsRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminGetEventsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos []*Event `protobuf:"bytes,10,rep,name=Infos,proto3" json:"Infos,omitempty"`
+	Total uint32   `protobuf:"varint,20,opt,name=Total,proto3" json:"Total,omitempty"`
+}
+
+func (x *AdminGetEventsResponse) Reset() {
+	*x = AdminGetEventsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_inspire_gw_v1_event_event_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AdminGetEventsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminGetEventsResponse) ProtoMessage() {}
+
+func (x *AdminGetEventsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_inspire_gw_v1_event_event_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminGetEventsResponse.ProtoReflect.Descriptor instead.
+func (*AdminGetEventsResponse) Descriptor() ([]byte, []int) {
+	return file_npool_inspire_gw_v1_event_event_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *AdminGetEventsResponse) GetInfos() []*Event {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+func (x *AdminGetEventsResponse) GetTotal() uint32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
 var File_npool_inspire_gw_v1_event_event_proto protoreflect.FileDescriptor
 
 var file_npool_inspire_gw_v1_event_event_proto_rawDesc = []byte{
@@ -945,7 +1063,20 @@ var file_npool_inspire_gw_v1_event_event_proto_rawDesc = []byte{
 	0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x69, 0x6e,
 	0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x65, 0x76,
 	0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x52, 0x04, 0x49, 0x6e,
-	0x66, 0x6f, 0x32, 0xb4, 0x03, 0x0a, 0x07, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0x8e,
+	0x66, 0x6f, 0x22, 0x67, 0x0a, 0x15, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x47, 0x65, 0x74, 0x45, 0x76,
+	0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x54,
+	0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0b, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x70, 0x70, 0x49, 0x44, 0x12, 0x16, 0x0a,
+	0x06, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x14, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x4f,
+	0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x1e,
+	0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x65, 0x0a, 0x16, 0x41,
+	0x64, 0x6d, 0x69, 0x6e, 0x47, 0x65, 0x74, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x35, 0x0a, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x0a,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x67,
+	0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e,
+	0x45, 0x76, 0x65, 0x6e, 0x74, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05,
+	0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x54, 0x6f, 0x74,
+	0x61, 0x6c, 0x32, 0xd2, 0x04, 0x0a, 0x07, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0x8e,
 	0x01, 0x0a, 0x0b, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x12, 0x2c,
 	0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79,
 	0x2e, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
@@ -972,11 +1103,21 @@ var file_npool_inspire_gw_v1_event_event_proto_rawDesc = []byte{
 	0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c, 0x22, 0x17, 0x2f,
 	0x76, 0x31, 0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x69,
-	0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x3a, 0x01, 0x2a, 0x42, 0x3c, 0x5a, 0x3a, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61,
-	0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70,
-	0x6f, 0x6f, 0x6c, 0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x67, 0x77, 0x2f, 0x76,
-	0x31, 0x2f, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0x9b, 0x01, 0x0a, 0x0e, 0x41, 0x64,
+	0x6d, 0x69, 0x6e, 0x47, 0x65, 0x74, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x2f, 0x2e, 0x69,
+	0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e, 0x65,
+	0x76, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x47, 0x65, 0x74,
+	0x45, 0x76, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x30, 0x2e,
+	0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x2e,
+	0x65, 0x76, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x47, 0x65,
+	0x74, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x22, 0x1b, 0x2f, 0x76, 0x31, 0x2f, 0x61, 0x64, 0x6d,
+	0x69, 0x6e, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x69, 0x6e, 0x73, 0x70,
+	0x69, 0x72, 0x65, 0x73, 0x3a, 0x01, 0x2a, 0x42, 0x3c, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66,
+	0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f,
+	0x6c, 0x2f, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2f, 0x67, 0x77, 0x2f, 0x76, 0x31, 0x2f,
+	0x65, 0x76, 0x65, 0x6e, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -991,41 +1132,46 @@ func file_npool_inspire_gw_v1_event_event_proto_rawDescGZIP() []byte {
 	return file_npool_inspire_gw_v1_event_event_proto_rawDescData
 }
 
-var file_npool_inspire_gw_v1_event_event_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_npool_inspire_gw_v1_event_event_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_npool_inspire_gw_v1_event_event_proto_goTypes = []interface{}{
-	(*Event)(nil),               // 0: inspire.gateway.event.v1.Event
-	(*EventCoin)(nil),           // 1: inspire.gateway.event.v1.EventCoin
-	(*CreateEventRequest)(nil),  // 2: inspire.gateway.event.v1.CreateEventRequest
-	(*CreateEventResponse)(nil), // 3: inspire.gateway.event.v1.CreateEventResponse
-	(*GetEventsRequest)(nil),    // 4: inspire.gateway.event.v1.GetEventsRequest
-	(*GetEventsResponse)(nil),   // 5: inspire.gateway.event.v1.GetEventsResponse
-	(*UpdateEventRequest)(nil),  // 6: inspire.gateway.event.v1.UpdateEventRequest
-	(*UpdateEventResponse)(nil), // 7: inspire.gateway.event.v1.UpdateEventResponse
-	(v1.UsedFor)(0),             // 8: basetypes.v1.UsedFor
-	(*coupon.Coupon)(nil),       // 9: inspire.middleware.coupon.v1.Coupon
-	(*coin.EventCoinReq)(nil),   // 10: inspire.middleware.event.coin.v1.EventCoinReq
+	(*Event)(nil),                  // 0: inspire.gateway.event.v1.Event
+	(*EventCoin)(nil),              // 1: inspire.gateway.event.v1.EventCoin
+	(*CreateEventRequest)(nil),     // 2: inspire.gateway.event.v1.CreateEventRequest
+	(*CreateEventResponse)(nil),    // 3: inspire.gateway.event.v1.CreateEventResponse
+	(*GetEventsRequest)(nil),       // 4: inspire.gateway.event.v1.GetEventsRequest
+	(*GetEventsResponse)(nil),      // 5: inspire.gateway.event.v1.GetEventsResponse
+	(*UpdateEventRequest)(nil),     // 6: inspire.gateway.event.v1.UpdateEventRequest
+	(*UpdateEventResponse)(nil),    // 7: inspire.gateway.event.v1.UpdateEventResponse
+	(*AdminGetEventsRequest)(nil),  // 8: inspire.gateway.event.v1.AdminGetEventsRequest
+	(*AdminGetEventsResponse)(nil), // 9: inspire.gateway.event.v1.AdminGetEventsResponse
+	(v1.UsedFor)(0),                // 10: basetypes.v1.UsedFor
+	(*coupon.Coupon)(nil),          // 11: inspire.middleware.coupon.v1.Coupon
+	(*coin.EventCoinReq)(nil),      // 12: inspire.middleware.event.coin.v1.EventCoinReq
 }
 var file_npool_inspire_gw_v1_event_event_proto_depIdxs = []int32{
-	8,  // 0: inspire.gateway.event.v1.Event.EventType:type_name -> basetypes.v1.UsedFor
-	9,  // 1: inspire.gateway.event.v1.Event.Coupons:type_name -> inspire.middleware.coupon.v1.Coupon
+	10, // 0: inspire.gateway.event.v1.Event.EventType:type_name -> basetypes.v1.UsedFor
+	11, // 1: inspire.gateway.event.v1.Event.Coupons:type_name -> inspire.middleware.coupon.v1.Coupon
 	1,  // 2: inspire.gateway.event.v1.Event.EventCoins:type_name -> inspire.gateway.event.v1.EventCoin
-	8,  // 3: inspire.gateway.event.v1.CreateEventRequest.EventType:type_name -> basetypes.v1.UsedFor
-	10, // 4: inspire.gateway.event.v1.CreateEventRequest.Coins:type_name -> inspire.middleware.event.coin.v1.EventCoinReq
+	10, // 3: inspire.gateway.event.v1.CreateEventRequest.EventType:type_name -> basetypes.v1.UsedFor
+	12, // 4: inspire.gateway.event.v1.CreateEventRequest.Coins:type_name -> inspire.middleware.event.coin.v1.EventCoinReq
 	0,  // 5: inspire.gateway.event.v1.CreateEventResponse.Info:type_name -> inspire.gateway.event.v1.Event
 	0,  // 6: inspire.gateway.event.v1.GetEventsResponse.Infos:type_name -> inspire.gateway.event.v1.Event
-	10, // 7: inspire.gateway.event.v1.UpdateEventRequest.Coins:type_name -> inspire.middleware.event.coin.v1.EventCoinReq
+	12, // 7: inspire.gateway.event.v1.UpdateEventRequest.Coins:type_name -> inspire.middleware.event.coin.v1.EventCoinReq
 	0,  // 8: inspire.gateway.event.v1.UpdateEventResponse.Info:type_name -> inspire.gateway.event.v1.Event
-	2,  // 9: inspire.gateway.event.v1.Gateway.CreateEvent:input_type -> inspire.gateway.event.v1.CreateEventRequest
-	4,  // 10: inspire.gateway.event.v1.Gateway.GetEvents:input_type -> inspire.gateway.event.v1.GetEventsRequest
-	6,  // 11: inspire.gateway.event.v1.Gateway.UpdateEvent:input_type -> inspire.gateway.event.v1.UpdateEventRequest
-	3,  // 12: inspire.gateway.event.v1.Gateway.CreateEvent:output_type -> inspire.gateway.event.v1.CreateEventResponse
-	5,  // 13: inspire.gateway.event.v1.Gateway.GetEvents:output_type -> inspire.gateway.event.v1.GetEventsResponse
-	7,  // 14: inspire.gateway.event.v1.Gateway.UpdateEvent:output_type -> inspire.gateway.event.v1.UpdateEventResponse
-	12, // [12:15] is the sub-list for method output_type
-	9,  // [9:12] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	0,  // 9: inspire.gateway.event.v1.AdminGetEventsResponse.Infos:type_name -> inspire.gateway.event.v1.Event
+	2,  // 10: inspire.gateway.event.v1.Gateway.CreateEvent:input_type -> inspire.gateway.event.v1.CreateEventRequest
+	4,  // 11: inspire.gateway.event.v1.Gateway.GetEvents:input_type -> inspire.gateway.event.v1.GetEventsRequest
+	6,  // 12: inspire.gateway.event.v1.Gateway.UpdateEvent:input_type -> inspire.gateway.event.v1.UpdateEventRequest
+	8,  // 13: inspire.gateway.event.v1.Gateway.AdminGetEvents:input_type -> inspire.gateway.event.v1.AdminGetEventsRequest
+	3,  // 14: inspire.gateway.event.v1.Gateway.CreateEvent:output_type -> inspire.gateway.event.v1.CreateEventResponse
+	5,  // 15: inspire.gateway.event.v1.Gateway.GetEvents:output_type -> inspire.gateway.event.v1.GetEventsResponse
+	7,  // 16: inspire.gateway.event.v1.Gateway.UpdateEvent:output_type -> inspire.gateway.event.v1.UpdateEventResponse
+	9,  // 17: inspire.gateway.event.v1.Gateway.AdminGetEvents:output_type -> inspire.gateway.event.v1.AdminGetEventsResponse
+	14, // [14:18] is the sub-list for method output_type
+	10, // [10:14] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_npool_inspire_gw_v1_event_event_proto_init() }
@@ -1130,6 +1276,30 @@ func file_npool_inspire_gw_v1_event_event_proto_init() {
 				return nil
 			}
 		}
+		file_npool_inspire_gw_v1_event_event_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AdminGetEventsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_inspire_gw_v1_event_event_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AdminGetEventsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	file_npool_inspire_gw_v1_event_event_proto_msgTypes[2].OneofWrappers = []interface{}{}
 	file_npool_inspire_gw_v1_event_event_proto_msgTypes[6].OneofWrappers = []interface{}{}
@@ -1139,7 +1309,7 @@ func file_npool_inspire_gw_v1_event_event_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_inspire_gw_v1_event_event_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
