@@ -102,6 +102,9 @@
         },
         "PaymentCoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },

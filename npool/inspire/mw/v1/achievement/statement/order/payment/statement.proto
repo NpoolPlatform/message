@@ -81,6 +81,7 @@ message Conds {
   optional basetypes.v1.StringVal AppID = 20;
   optional basetypes.v1.StringVal UserID = 30;
   optional basetypes.v1.StringVal PaymentCoinTypeID = 40;
+  optional basetypes.v1.StringVal OrderID = 50;
 }
 
 message GetStatementsRequest {
