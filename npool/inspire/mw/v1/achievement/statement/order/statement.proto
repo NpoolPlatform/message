@@ -38,6 +38,12 @@ service Middleware {
       body : "*"
     };
   }
+  rpc ExistStatementConds(ExistStatementCondsRequest) returns (ExistStatementCondsResponse) {
+    option (google.api.http) = {
+      post : "/v1/order_statement_ExistStatementConds"
+      body : "*"
+    };
+  }
   rpc DeleteStatement(DeleteStatementRequest)
       returns (DeleteStatementResponse) {
     option (google.api.http) = {
@@ -144,6 +150,14 @@ message GetStatementsRequest {
 message GetStatementsResponse {
   repeated Statement Infos = 10;
   uint32 Total = 20;
+}
+
+message ExistStatementCondsRequest {
+  Conds Conds = 10;
+}
+
+message ExistStatementCondsResponse {
+  bool Info = 10;
 }
 
 message DeleteStatementRequest { StatementReq Info = 10; }

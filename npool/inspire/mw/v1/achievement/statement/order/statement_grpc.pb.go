@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateStatement_FullMethodName  = "/inspire.middleware.achievement.statement.order.v1.Middleware/CreateStatement"
-	Middleware_CreateStatements_FullMethodName = "/inspire.middleware.achievement.statement.order.v1.Middleware/CreateStatements"
-	Middleware_DeleteStatements_FullMethodName = "/inspire.middleware.achievement.statement.order.v1.Middleware/DeleteStatements"
-	Middleware_GetStatements_FullMethodName    = "/inspire.middleware.achievement.statement.order.v1.Middleware/GetStatements"
-	Middleware_DeleteStatement_FullMethodName  = "/inspire.middleware.achievement.statement.order.v1.Middleware/DeleteStatement"
+	Middleware_CreateStatement_FullMethodName     = "/inspire.middleware.achievement.statement.order.v1.Middleware/CreateStatement"
+	Middleware_CreateStatements_FullMethodName    = "/inspire.middleware.achievement.statement.order.v1.Middleware/CreateStatements"
+	Middleware_DeleteStatements_FullMethodName    = "/inspire.middleware.achievement.statement.order.v1.Middleware/DeleteStatements"
+	Middleware_GetStatements_FullMethodName       = "/inspire.middleware.achievement.statement.order.v1.Middleware/GetStatements"
+	Middleware_ExistStatementConds_FullMethodName = "/inspire.middleware.achievement.statement.order.v1.Middleware/ExistStatementConds"
+	Middleware_DeleteStatement_FullMethodName     = "/inspire.middleware.achievement.statement.order.v1.Middleware/DeleteStatement"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	CreateStatements(ctx context.Context, in *CreateStatementsRequest, opts ...grpc.CallOption) (*CreateStatementsResponse, error)
 	DeleteStatements(ctx context.Context, in *DeleteStatementsRequest, opts ...grpc.CallOption) (*DeleteStatementsResponse, error)
 	GetStatements(ctx context.Context, in *GetStatementsRequest, opts ...grpc.CallOption) (*GetStatementsResponse, error)
+	ExistStatementConds(ctx context.Context, in *ExistStatementCondsRequest, opts ...grpc.CallOption) (*ExistStatementCondsResponse, error)
 	DeleteStatement(ctx context.Context, in *DeleteStatementRequest, opts ...grpc.CallOption) (*DeleteStatementResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetStatements(ctx context.Context, in *GetStatementsR
 	return out, nil
 }
 
+func (c *middlewareClient) ExistStatementConds(ctx context.Context, in *ExistStatementCondsRequest, opts ...grpc.CallOption) (*ExistStatementCondsResponse, error) {
+	out := new(ExistStatementCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistStatementConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteStatement(ctx context.Context, in *DeleteStatementRequest, opts ...grpc.CallOption) (*DeleteStatementResponse, error) {
 	out := new(DeleteStatementResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteStatement_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	CreateStatements(context.Context, *CreateStatementsRequest) (*CreateStatementsResponse, error)
 	DeleteStatements(context.Context, *DeleteStatementsRequest) (*DeleteStatementsResponse, error)
 	GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error)
+	ExistStatementConds(context.Context, *ExistStatementCondsRequest) (*ExistStatementCondsResponse, error)
 	DeleteStatement(context.Context, *DeleteStatementRequest) (*DeleteStatementResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) DeleteStatements(context.Context, *DeleteSt
 }
 func (UnimplementedMiddlewareServer) GetStatements(context.Context, *GetStatementsRequest) (*GetStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStatements not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistStatementConds(context.Context, *ExistStatementCondsRequest) (*ExistStatementCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistStatementConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteStatement(context.Context, *DeleteStatementRequest) (*DeleteStatementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteStatement not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetStatements_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistStatementConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistStatementCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistStatementConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistStatementConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistStatementConds(ctx, req.(*ExistStatementCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteStatement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteStatementRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetStatements",
 			Handler:    _Middleware_GetStatements_Handler,
+		},
+		{
+			MethodName: "ExistStatementConds",
+			Handler:    _Middleware_ExistStatementConds_Handler,
 		},
 		{
 			MethodName: "DeleteStatement",
