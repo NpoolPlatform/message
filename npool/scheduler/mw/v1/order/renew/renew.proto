@@ -14,8 +14,6 @@ message AppGoodInfo {
 }
 
 message Deduction {
-    // If the deduction will be used to create order, then it has app good
-    optional AppGoodInfo AppGoodInfo = 10;
     chain.middleware.app.coin.v1.Coin AppCoin = 20;
     string USDCurrency = 30;
     string Amount = 40;
@@ -34,9 +32,9 @@ message OrderInfo {
 
 message MsgOrderChildsRenewReq {
   OrderInfo ParentOrder = 10;
-  repeated Deduction Deductions = 20;
-  bool InsufficientBalance = 30;
-  bool WillCreateOrder = 40;
-  repeated RenewInfo RenewInfos = 50;
-  optional string Error = 60;
+  repeated Deduction Deductions = 30;
+  bool InsufficientBalance = 40;
+  bool WillCreateOrder = 50;
+  repeated RenewInfo RenewInfos = 60;
+  optional string Error = 70;
 }
