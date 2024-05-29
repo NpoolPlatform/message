@@ -51,18 +51,20 @@ message Reward {
 }
 
 message RewardInfo {
+  // @inject_tag: sql:"good_id"
+  string GoodID = 10;
   // @inject_tag: sql:"coin_type_id"
-  string CoinTypeID = 10;
+  string CoinTypeID = 20;
   // @inject_tag: sql:"reward_tid"
-  string RewardTID = 20;
+  string RewardTID = 30;
   // @inject_tag: sql:"next_reward_start_amount"
-  string NextRewardStartAmount = 30;
+  string NextRewardStartAmount = 40;
   // @inject_tag: sql:"last_reward_amount"
-  string LastRewardAmount = 40;
+  string LastRewardAmount = 50;
   // @inject_tag: sql:"last_unit_reward_amount"
-  string LastUnitRewardAmount = 50;
+  string LastUnitRewardAmount = 60;
   // @inject_tag: sql:"total_reward_amount"
-  string TotalRewardAmount = 60;
+  string TotalRewardAmount = 70;
 }
 
 message Conds {
