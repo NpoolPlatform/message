@@ -477,26 +477,6 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"last_reward_at\""
         },
-        "RewardTID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"reward_tid\""
-        },
-        "NextRewardStartAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"next_reward_start_amount\""
-        },
-        "LastRewardAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"last_reward_amount\""
-        },
-        "LastUnitRewardAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"last_unit_reward_amount\""
-        },
-        "TotalRewardAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"total_reward_amount\""
-        },
         "GoodCoins": {
           "type": "array",
           "items": {
@@ -507,6 +487,12 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1MiningGoodStock"
+          }
+        },
+        "RewardInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RewardInfo"
           }
         },
         "CreatedAt": {
@@ -614,13 +600,66 @@
           "type": "integer",
           "format": "int64"
         },
+        "Rewards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RewardReq"
+          }
+        }
+      }
+    },
+    "v1RewardInfo": {
+      "type": "object",
+      "properties": {
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "RewardTID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reward_tid\""
+        },
+        "NextRewardStartAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"next_reward_start_amount\""
+        },
+        "LastRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_reward_amount\""
+        },
+        "LastUnitRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_unit_reward_amount\""
+        },
+        "TotalRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"total_reward_amount\""
+        }
+      }
+    },
+    "v1RewardReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
         "RewardTID": {
           "type": "string"
         },
-        "NextRewardStartAmount": {
+        "RewardAmount": {
           "type": "string"
         },
-        "RewardAmount": {
+        "NextRewardStartAmount": {
           "type": "string"
         }
       }

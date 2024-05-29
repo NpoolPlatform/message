@@ -8,6 +8,7 @@ import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/good/v1/enums.proto";
 import "npool/good/mw/v1/good/coin/coin.proto";
 import "npool/good/mw/v1/good/stock/stock.proto";
+import "npool/good/mw/v1/good/coin/reward/reward.proto";
 
 service Middleware {
     rpc CreatePowerRental (CreatePowerRentalRequest) returns (CreatePowerRentalResponse) {}
@@ -52,9 +53,7 @@ message PowerRentalReq {
     // Reward information
     optional basetypes.good.v1.BenefitState RewardState = 260;
     optional uint32 RewardAt = 270;
-    optional string RewardTID = 280;
-    optional string NextRewardStartAmount = 290;
-    optional string RewardAmount = 300;
+    repeated good.middleware.good1.coin.reward.v1.RewardReq Rewards = 280;
 }
 
 message PowerRental {
@@ -146,23 +145,14 @@ message PowerRental {
     string GoodAppReserved = 430;
 
     // @inject_tag: sql:"reward_state"
-    string RewardStateStr      = 440;
+    string RewardStateStr = 440;
     basetypes.good.v1.BenefitState RewardState = 450;
     // @inject_tag: sql:"last_reward_at"
-    uint32 LastRewardAt        = 460;
-    // @inject_tag: sql:"reward_tid"
-    string RewardTID           = 470;
-    // @inject_tag: sql:"next_reward_start_amount"
-    string NextRewardStartAmount = 480;
-    // @inject_tag: sql:"last_reward_amount"
-    string LastRewardAmount    = 490;
-    // @inject_tag: sql:"last_unit_reward_amount"
-    string LastUnitRewardAmount = 500;
-    // @inject_tag: sql:"total_reward_amount"
-    string TotalRewardAmount    = 510;
+    uint32 LastRewardAt = 460;
 
     repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 800;
     repeated good.middleware.good1.stock.v1.MiningGoodStock MiningGoodStocks = 810;
+    repeated good.middleware.good1.coin.reward.v1.RewardInfo RewardInfo = 820;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;

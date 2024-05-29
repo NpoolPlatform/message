@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/good/mw/v1/good/reward/history/history.proto
+// source: npool/good/mw/v1/good/coin/reward/history/history.proto
 
 package history
 
@@ -19,7 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetHistories_FullMethodName = "/good.middleware.good1.reward.history.v1.Middleware/GetHistories"
+	Middleware_GetHistories_FullMethodName = "/good.middleware.good1.coin.reward.history.v1.Middleware/GetHistories"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -96,7 +96,7 @@ func _Middleware_GetHistories_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.good1.reward.history.v1.Middleware",
+	ServiceName: "good.middleware.good1.coin.reward.history.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -105,5 +105,5 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/good/mw/v1/good/reward/history/history.proto",
+	Metadata: "npool/good/mw/v1/good/coin/reward/history/history.proto",
 }
