@@ -9,5 +9,6 @@ import "npool/basetypes/good/v1/enums.proto";
 message OrderInfo {
     string OrderID = 10;
     basetypes.good.v1.GoodType GoodType = 20;
+    string Units = 30;
 }
 

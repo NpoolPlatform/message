@@ -12,6 +12,8 @@ import "npool/scheduler/mw/v1/order/order.proto";
 message AppGoodInfo {
     string AppGoodID = 10;
     basetypes.good.v1.GoodType GoodType = 20;
+    string GoodName = 30;
+    string UnitPrice = 40;
 }
 
 message Deduction {
