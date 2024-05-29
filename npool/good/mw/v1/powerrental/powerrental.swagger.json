@@ -489,7 +489,7 @@
             "$ref": "#/definitions/v1MiningGoodStock"
           }
         },
-        "RewardInfo": {
+        "Rewards": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1RewardInfo"
