@@ -1123,6 +1123,17 @@
           "$ref": "#/definitions/v1PowerRentalOrder"
         }
       }
+    },
+    "v1UpdatePowerRentalOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PowerRentalOrder"
+          }
+        }
+      }
     }
   }
 }

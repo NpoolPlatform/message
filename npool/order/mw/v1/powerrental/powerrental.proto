@@ -17,6 +17,7 @@ service Middleware {
     rpc CreatePowerRentalOrder (CreatePowerRentalOrderRequest) returns (CreatePowerRentalOrderResponse) {}
     rpc CreatePowerRentalOrderWithFees (CreatePowerRentalOrderWithFeesRequest) returns (CreatePowerRentalOrderWithFeesResponse) {}
     rpc UpdatePowerRentalOrder (UpdatePowerRentalOrderRequest) returns (UpdatePowerRentalOrderResponse) {}
+    rpc UpdatePowerRentalOrders (UpdatePowerRentalOrdersRequest) returns (UpdatePowerRentalOrdersResponse) {}
     rpc GetPowerRentalOrder (GetPowerRentalOrderRequest) returns (GetPowerRentalOrderResponse) {}
     rpc GetPowerRentalOrders (GetPowerRentalOrdersRequest) returns (GetPowerRentalOrdersResponse) {}
     rpc CountPowerRentalOrders (CountPowerRentalOrdersRequest) returns (CountPowerRentalOrdersResponse) {}
@@ -275,6 +276,14 @@ message UpdatePowerRentalOrderRequest {
 
 message UpdatePowerRentalOrderResponse {
     PowerRentalOrder Info = 10;
+}
+
+message UpdatePowerRentalOrdersRequest {
+    repeated PowerRentalOrderReq Infos = 10;
+}
+
+message UpdatePowerRentalOrdersResponse {
+    repeated PowerRentalOrder Infos = 10;
 }
 
 message GetPowerRentalOrderRequest {
