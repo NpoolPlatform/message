@@ -117,6 +117,9 @@
     "middlewareeventv1Conds": {
       "type": "object",
       "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
