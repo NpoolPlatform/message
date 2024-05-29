@@ -25,6 +25,7 @@ const (
 	Gateway_AdminGetEvents_FullMethodName   = "/inspire.gateway.event.v1.Gateway/AdminGetEvents"
 	Gateway_AdminCreateEvent_FullMethodName = "/inspire.gateway.event.v1.Gateway/AdminCreateEvent"
 	Gateway_AdminUpdateEvent_FullMethodName = "/inspire.gateway.event.v1.Gateway/AdminUpdateEvent"
+	Gateway_AdminDeleteEvent_FullMethodName = "/inspire.gateway.event.v1.Gateway/AdminDeleteEvent"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -37,6 +38,7 @@ type GatewayClient interface {
 	AdminGetEvents(ctx context.Context, in *AdminGetEventsRequest, opts ...grpc.CallOption) (*AdminGetEventsResponse, error)
 	AdminCreateEvent(ctx context.Context, in *AdminCreateEventRequest, opts ...grpc.CallOption) (*AdminCreateEventResponse, error)
 	AdminUpdateEvent(ctx context.Context, in *AdminUpdateEventRequest, opts ...grpc.CallOption) (*AdminUpdateEventResponse, error)
+	AdminDeleteEvent(ctx context.Context, in *AdminDeleteEventRequest, opts ...grpc.CallOption) (*AdminDeleteEventResponse, error)
 }
 
 type gatewayClient struct {
@@ -101,6 +103,15 @@ func (c *gatewayClient) AdminUpdateEvent(ctx context.Context, in *AdminUpdateEve
 	return out, nil
 }
 
+func (c *gatewayClient) AdminDeleteEvent(ctx context.Context, in *AdminDeleteEventRequest, opts ...grpc.CallOption) (*AdminDeleteEventResponse, error) {
+	out := new(AdminDeleteEventResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminDeleteEvent_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -111,6 +122,7 @@ type GatewayServer interface {
 	AdminGetEvents(context.Context, *AdminGetEventsRequest) (*AdminGetEventsResponse, error)
 	AdminCreateEvent(context.Context, *AdminCreateEventRequest) (*AdminCreateEventResponse, error)
 	AdminUpdateEvent(context.Context, *AdminUpdateEventRequest) (*AdminUpdateEventResponse, error)
+	AdminDeleteEvent(context.Context, *AdminDeleteEventRequest) (*AdminDeleteEventResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -135,6 +147,9 @@ func (UnimplementedGatewayServer) AdminCreateEvent(context.Context, *AdminCreate
 }
 func (UnimplementedGatewayServer) AdminUpdateEvent(context.Context, *AdminUpdateEventRequest) (*AdminUpdateEventResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateEvent not implemented")
+}
+func (UnimplementedGatewayServer) AdminDeleteEvent(context.Context, *AdminDeleteEventRequest) (*AdminDeleteEventResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminDeleteEvent not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -257,6 +272,24 @@ func _Gateway_AdminUpdateEvent_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_AdminDeleteEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminDeleteEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminDeleteEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminDeleteEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminDeleteEvent(ctx, req.(*AdminDeleteEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -287,6 +320,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AdminUpdateEvent",
 			Handler:    _Gateway_AdminUpdateEvent_Handler,
+		},
+		{
+			MethodName: "AdminDeleteEvent",
+			Handler:    _Gateway_AdminDeleteEvent_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

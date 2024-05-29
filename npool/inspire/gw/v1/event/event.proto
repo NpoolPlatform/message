@@ -47,6 +47,12 @@ service Gateway {
       body : "*"
     };
   }
+  rpc AdminDeleteEvent(AdminDeleteEventRequest) returns (AdminDeleteEventResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/delete/eventinspire"
+      body : "*"
+    };
+  }
 }
 
 message Event {
@@ -165,3 +171,10 @@ message AdminUpdateEventRequest {
 }
 
 message AdminUpdateEventResponse { Event Info = 10; }
+
+message AdminDeleteEventRequest {
+  uint32 ID = 10;
+  string EntID = 20;
+}
+
+message AdminDeleteEventResponse { Event Info = 10; }
