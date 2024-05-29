@@ -7,8 +7,10 @@ option go_package = "github.com/NpoolPlatform/message/npool/scheduler/mw/v1/orde
 import "npool/basetypes/good/v1/enums.proto";
 
 message OrderInfo {
-    string OrderID = 10;
-    basetypes.good.v1.GoodType GoodType = 20;
-    string Units = 30;
+    string AppID = 10;
+    string UserID = 20;
+    string OrderID = 30;
+    basetypes.good.v1.GoodType GoodType = 40;
+    string Units = 50;
 }
 
