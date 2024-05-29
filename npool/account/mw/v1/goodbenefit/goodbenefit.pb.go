@@ -335,17 +335,18 @@ type Conds struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID         *v1.Uint32Val `protobuf:"bytes,9,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
-	EntID      *v1.StringVal `protobuf:"bytes,10,opt,name=EntID,proto3,oneof" json:"EntID,omitempty"`
-	GoodID     *v1.StringVal `protobuf:"bytes,20,opt,name=GoodID,proto3,oneof" json:"GoodID,omitempty"`
-	CoinTypeID *v1.StringVal `protobuf:"bytes,30,opt,name=CoinTypeID,proto3,oneof" json:"CoinTypeID,omitempty"`
-	AccountID  *v1.StringVal `protobuf:"bytes,40,opt,name=AccountID,proto3,oneof" json:"AccountID,omitempty"`
-	Backup     *v1.BoolVal   `protobuf:"bytes,50,opt,name=Backup,proto3,oneof" json:"Backup,omitempty"`
-	Address    *v1.StringVal `protobuf:"bytes,60,opt,name=Address,proto3,oneof" json:"Address,omitempty"`
-	Active     *v1.BoolVal   `protobuf:"bytes,70,opt,name=Active,proto3,oneof" json:"Active,omitempty"`
-	Locked     *v1.BoolVal   `protobuf:"bytes,80,opt,name=Locked,proto3,oneof" json:"Locked,omitempty"`
-	LockedBy   *v1.Uint32Val `protobuf:"bytes,90,opt,name=LockedBy,proto3,oneof" json:"LockedBy,omitempty"`
-	Blocked    *v1.BoolVal   `protobuf:"bytes,100,opt,name=Blocked,proto3,oneof" json:"Blocked,omitempty"`
+	ID          *v1.Uint32Val `protobuf:"bytes,9,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
+	EntID       *v1.StringVal `protobuf:"bytes,10,opt,name=EntID,proto3,oneof" json:"EntID,omitempty"`
+	GoodID      *v1.StringVal `protobuf:"bytes,20,opt,name=GoodID,proto3,oneof" json:"GoodID,omitempty"`
+	CoinTypeID  *v1.StringVal `protobuf:"bytes,30,opt,name=CoinTypeID,proto3,oneof" json:"CoinTypeID,omitempty"`
+	AccountID   *v1.StringVal `protobuf:"bytes,40,opt,name=AccountID,proto3,oneof" json:"AccountID,omitempty"`
+	Backup      *v1.BoolVal   `protobuf:"bytes,50,opt,name=Backup,proto3,oneof" json:"Backup,omitempty"`
+	Address     *v1.StringVal `protobuf:"bytes,60,opt,name=Address,proto3,oneof" json:"Address,omitempty"`
+	Active      *v1.BoolVal   `protobuf:"bytes,70,opt,name=Active,proto3,oneof" json:"Active,omitempty"`
+	Locked      *v1.BoolVal   `protobuf:"bytes,80,opt,name=Locked,proto3,oneof" json:"Locked,omitempty"`
+	LockedBy    *v1.Uint32Val `protobuf:"bytes,90,opt,name=LockedBy,proto3,oneof" json:"LockedBy,omitempty"`
+	Blocked     *v1.BoolVal   `protobuf:"bytes,100,opt,name=Blocked,proto3,oneof" json:"Blocked,omitempty"`
+	CoinTypeIDs *v1.StringVal `protobuf:"bytes,110,opt,name=CoinTypeIDs,proto3,oneof" json:"CoinTypeIDs,omitempty"`
 }
 
 func (x *Conds) Reset() {
@@ -453,6 +454,13 @@ func (x *Conds) GetLockedBy() *v1.Uint32Val {
 func (x *Conds) GetBlocked() *v1.BoolVal {
 	if x != nil {
 		return x.Blocked
+	}
+	return nil
+}
+
+func (x *Conds) GetCoinTypeIDs() *v1.StringVal {
+	if x != nil {
+		return x.CoinTypeIDs
 	}
 	return nil
 }
@@ -1217,7 +1225,7 @@ var file_npool_account_mw_v1_goodbenefit_goodbenefit_proto_rawDesc = []byte{
 	0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xe8, 0x07, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09,
 	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x1d, 0x0a, 0x09, 0x55, 0x70, 0x64,
 	0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0xf2, 0x07, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x55,
-	0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x22, 0xdc, 0x05, 0x0a, 0x05, 0x43, 0x6f, 0x6e,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x22, 0xac, 0x06, 0x0a, 0x05, 0x43, 0x6f, 0x6e,
 	0x64, 0x73, 0x12, 0x2c, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17,
 	0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x69,
 	0x6e, 0x74, 0x33, 0x32, 0x56, 0x61, 0x6c, 0x48, 0x00, 0x52, 0x02, 0x49, 0x44, 0x88, 0x01, 0x01,
@@ -1255,7 +1263,11 @@ var file_npool_account_mw_v1_goodbenefit_goodbenefit_proto_rawDesc = []byte{
 	0x01, 0x01, 0x12, 0x34, 0x0a, 0x07, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x65, 0x64, 0x18, 0x64, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e,
 	0x76, 0x31, 0x2e, 0x42, 0x6f, 0x6f, 0x6c, 0x56, 0x61, 0x6c, 0x48, 0x0a, 0x52, 0x07, 0x42, 0x6c,
-	0x6f, 0x63, 0x6b, 0x65, 0x64, 0x88, 0x01, 0x01, 0x42, 0x05, 0x0a, 0x03, 0x5f, 0x49, 0x44, 0x42,
+	0x6f, 0x63, 0x6b, 0x65, 0x64, 0x88, 0x01, 0x01, 0x12, 0x3e, 0x0a, 0x0b, 0x43, 0x6f, 0x69, 0x6e,
+	0x54, 0x79, 0x70, 0x65, 0x49, 0x44, 0x73, 0x18, 0x6e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e,
+	0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x72,
+	0x69, 0x6e, 0x67, 0x56, 0x61, 0x6c, 0x48, 0x0b, 0x52, 0x0b, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79,
+	0x70, 0x65, 0x49, 0x44, 0x73, 0x88, 0x01, 0x01, 0x42, 0x05, 0x0a, 0x03, 0x5f, 0x49, 0x44, 0x42,
 	0x08, 0x0a, 0x06, 0x5f, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x47, 0x6f,
 	0x6f, 0x64, 0x49, 0x44, 0x42, 0x0d, 0x0a, 0x0b, 0x5f, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70,
 	0x65, 0x49, 0x44, 0x42, 0x0c, 0x0a, 0x0a, 0x5f, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49,
@@ -1263,7 +1275,8 @@ var file_npool_account_mw_v1_goodbenefit_goodbenefit_proto_rawDesc = []byte{
 	0x5f, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x41, 0x63, 0x74,
 	0x69, 0x76, 0x65, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x4c, 0x6f, 0x63, 0x6b, 0x65, 0x64, 0x42, 0x0b,
 	0x0a, 0x09, 0x5f, 0x4c, 0x6f, 0x63, 0x6b, 0x65, 0x64, 0x42, 0x79, 0x42, 0x0a, 0x0a, 0x08, 0x5f,
-	0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x65, 0x64, 0x22, 0x59, 0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x65, 0x64, 0x42, 0x0e, 0x0a, 0x0c, 0x5f, 0x43, 0x6f, 0x69, 0x6e,
+	0x54, 0x79, 0x70, 0x65, 0x49, 0x44, 0x73, 0x22, 0x59, 0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74,
 	0x65, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
 	0x41, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2d, 0x2e,
 	0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61,
@@ -1454,35 +1467,36 @@ var file_npool_account_mw_v1_goodbenefit_goodbenefit_proto_depIdxs = []int32{
 	20, // 10: account.middleware.goodbenefit.v1.Conds.Locked:type_name -> basetypes.v1.BoolVal
 	18, // 11: account.middleware.goodbenefit.v1.Conds.LockedBy:type_name -> basetypes.v1.Uint32Val
 	20, // 12: account.middleware.goodbenefit.v1.Conds.Blocked:type_name -> basetypes.v1.BoolVal
-	0,  // 13: account.middleware.goodbenefit.v1.CreateAccountRequest.Info:type_name -> account.middleware.goodbenefit.v1.AccountReq
-	1,  // 14: account.middleware.goodbenefit.v1.CreateAccountResponse.Info:type_name -> account.middleware.goodbenefit.v1.Account
-	0,  // 15: account.middleware.goodbenefit.v1.UpdateAccountRequest.Info:type_name -> account.middleware.goodbenefit.v1.AccountReq
-	1,  // 16: account.middleware.goodbenefit.v1.UpdateAccountResponse.Info:type_name -> account.middleware.goodbenefit.v1.Account
-	1,  // 17: account.middleware.goodbenefit.v1.GetAccountResponse.Info:type_name -> account.middleware.goodbenefit.v1.Account
-	2,  // 18: account.middleware.goodbenefit.v1.GetAccountsRequest.Conds:type_name -> account.middleware.goodbenefit.v1.Conds
-	1,  // 19: account.middleware.goodbenefit.v1.GetAccountsResponse.Infos:type_name -> account.middleware.goodbenefit.v1.Account
-	2,  // 20: account.middleware.goodbenefit.v1.ExistAccountCondsRequest.Conds:type_name -> account.middleware.goodbenefit.v1.Conds
-	0,  // 21: account.middleware.goodbenefit.v1.DeleteAccountRequest.Info:type_name -> account.middleware.goodbenefit.v1.AccountReq
-	1,  // 22: account.middleware.goodbenefit.v1.DeleteAccountResponse.Info:type_name -> account.middleware.goodbenefit.v1.Account
-	3,  // 23: account.middleware.goodbenefit.v1.Middleware.CreateAccount:input_type -> account.middleware.goodbenefit.v1.CreateAccountRequest
-	5,  // 24: account.middleware.goodbenefit.v1.Middleware.UpdateAccount:input_type -> account.middleware.goodbenefit.v1.UpdateAccountRequest
-	7,  // 25: account.middleware.goodbenefit.v1.Middleware.GetAccount:input_type -> account.middleware.goodbenefit.v1.GetAccountRequest
-	9,  // 26: account.middleware.goodbenefit.v1.Middleware.GetAccounts:input_type -> account.middleware.goodbenefit.v1.GetAccountsRequest
-	11, // 27: account.middleware.goodbenefit.v1.Middleware.ExistAccount:input_type -> account.middleware.goodbenefit.v1.ExistAccountRequest
-	13, // 28: account.middleware.goodbenefit.v1.Middleware.ExistAccountConds:input_type -> account.middleware.goodbenefit.v1.ExistAccountCondsRequest
-	15, // 29: account.middleware.goodbenefit.v1.Middleware.DeleteAccount:input_type -> account.middleware.goodbenefit.v1.DeleteAccountRequest
-	4,  // 30: account.middleware.goodbenefit.v1.Middleware.CreateAccount:output_type -> account.middleware.goodbenefit.v1.CreateAccountResponse
-	6,  // 31: account.middleware.goodbenefit.v1.Middleware.UpdateAccount:output_type -> account.middleware.goodbenefit.v1.UpdateAccountResponse
-	8,  // 32: account.middleware.goodbenefit.v1.Middleware.GetAccount:output_type -> account.middleware.goodbenefit.v1.GetAccountResponse
-	10, // 33: account.middleware.goodbenefit.v1.Middleware.GetAccounts:output_type -> account.middleware.goodbenefit.v1.GetAccountsResponse
-	12, // 34: account.middleware.goodbenefit.v1.Middleware.ExistAccount:output_type -> account.middleware.goodbenefit.v1.ExistAccountResponse
-	14, // 35: account.middleware.goodbenefit.v1.Middleware.ExistAccountConds:output_type -> account.middleware.goodbenefit.v1.ExistAccountCondsResponse
-	16, // 36: account.middleware.goodbenefit.v1.Middleware.DeleteAccount:output_type -> account.middleware.goodbenefit.v1.DeleteAccountResponse
-	30, // [30:37] is the sub-list for method output_type
-	23, // [23:30] is the sub-list for method input_type
-	23, // [23:23] is the sub-list for extension type_name
-	23, // [23:23] is the sub-list for extension extendee
-	0,  // [0:23] is the sub-list for field type_name
+	19, // 13: account.middleware.goodbenefit.v1.Conds.CoinTypeIDs:type_name -> basetypes.v1.StringVal
+	0,  // 14: account.middleware.goodbenefit.v1.CreateAccountRequest.Info:type_name -> account.middleware.goodbenefit.v1.AccountReq
+	1,  // 15: account.middleware.goodbenefit.v1.CreateAccountResponse.Info:type_name -> account.middleware.goodbenefit.v1.Account
+	0,  // 16: account.middleware.goodbenefit.v1.UpdateAccountRequest.Info:type_name -> account.middleware.goodbenefit.v1.AccountReq
+	1,  // 17: account.middleware.goodbenefit.v1.UpdateAccountResponse.Info:type_name -> account.middleware.goodbenefit.v1.Account
+	1,  // 18: account.middleware.goodbenefit.v1.GetAccountResponse.Info:type_name -> account.middleware.goodbenefit.v1.Account
+	2,  // 19: account.middleware.goodbenefit.v1.GetAccountsRequest.Conds:type_name -> account.middleware.goodbenefit.v1.Conds
+	1,  // 20: account.middleware.goodbenefit.v1.GetAccountsResponse.Infos:type_name -> account.middleware.goodbenefit.v1.Account
+	2,  // 21: account.middleware.goodbenefit.v1.ExistAccountCondsRequest.Conds:type_name -> account.middleware.goodbenefit.v1.Conds
+	0,  // 22: account.middleware.goodbenefit.v1.DeleteAccountRequest.Info:type_name -> account.middleware.goodbenefit.v1.AccountReq
+	1,  // 23: account.middleware.goodbenefit.v1.DeleteAccountResponse.Info:type_name -> account.middleware.goodbenefit.v1.Account
+	3,  // 24: account.middleware.goodbenefit.v1.Middleware.CreateAccount:input_type -> account.middleware.goodbenefit.v1.CreateAccountRequest
+	5,  // 25: account.middleware.goodbenefit.v1.Middleware.UpdateAccount:input_type -> account.middleware.goodbenefit.v1.UpdateAccountRequest
+	7,  // 26: account.middleware.goodbenefit.v1.Middleware.GetAccount:input_type -> account.middleware.goodbenefit.v1.GetAccountRequest
+	9,  // 27: account.middleware.goodbenefit.v1.Middleware.GetAccounts:input_type -> account.middleware.goodbenefit.v1.GetAccountsRequest
+	11, // 28: account.middleware.goodbenefit.v1.Middleware.ExistAccount:input_type -> account.middleware.goodbenefit.v1.ExistAccountRequest
+	13, // 29: account.middleware.goodbenefit.v1.Middleware.ExistAccountConds:input_type -> account.middleware.goodbenefit.v1.ExistAccountCondsRequest
+	15, // 30: account.middleware.goodbenefit.v1.Middleware.DeleteAccount:input_type -> account.middleware.goodbenefit.v1.DeleteAccountRequest
+	4,  // 31: account.middleware.goodbenefit.v1.Middleware.CreateAccount:output_type -> account.middleware.goodbenefit.v1.CreateAccountResponse
+	6,  // 32: account.middleware.goodbenefit.v1.Middleware.UpdateAccount:output_type -> account.middleware.goodbenefit.v1.UpdateAccountResponse
+	8,  // 33: account.middleware.goodbenefit.v1.Middleware.GetAccount:output_type -> account.middleware.goodbenefit.v1.GetAccountResponse
+	10, // 34: account.middleware.goodbenefit.v1.Middleware.GetAccounts:output_type -> account.middleware.goodbenefit.v1.GetAccountsResponse
+	12, // 35: account.middleware.goodbenefit.v1.Middleware.ExistAccount:output_type -> account.middleware.goodbenefit.v1.ExistAccountResponse
+	14, // 36: account.middleware.goodbenefit.v1.Middleware.ExistAccountConds:output_type -> account.middleware.goodbenefit.v1.ExistAccountCondsResponse
+	16, // 37: account.middleware.goodbenefit.v1.Middleware.DeleteAccount:output_type -> account.middleware.goodbenefit.v1.DeleteAccountResponse
+	31, // [31:38] is the sub-list for method output_type
+	24, // [24:31] is the sub-list for method input_type
+	24, // [24:24] is the sub-list for extension type_name
+	24, // [24:24] is the sub-list for extension extendee
+	0,  // [0:24] is the sub-list for field type_name
 }
 
 func init() { file_npool_account_mw_v1_goodbenefit_goodbenefit_proto_init() }

@@ -241,6 +241,9 @@
         },
         "Blocked": {
           "$ref": "#/definitions/v1BoolVal"
+        },
+        "CoinTypeIDs": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
