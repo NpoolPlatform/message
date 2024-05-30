@@ -638,6 +638,10 @@
         "TotalRewardAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"total_reward_amount\""
+        },
+        "MainCoin": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"main_coin\""
         }
       }
     },

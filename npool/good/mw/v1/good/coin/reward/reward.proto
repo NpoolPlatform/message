@@ -65,6 +65,8 @@ message RewardInfo {
   string LastUnitRewardAmount = 60;
   // @inject_tag: sql:"total_reward_amount"
   string TotalRewardAmount = 70;
+  // @inject_tag: sql:"main_coin"
+  bool MainCoin = 80;
 }
 
 message Conds {
