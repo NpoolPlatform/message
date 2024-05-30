@@ -76,6 +76,9 @@
         "MainAppGoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "MainAppGoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "RequiredAppGoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
