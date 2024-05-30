@@ -157,10 +157,24 @@
         "OrderChildsRenew",
         "SimulateOrderProfit",
         "WithdrawReviewNotify",
+        "ConsecutiveLogin",
+        "GoodSocialSharing",
+        "FirstOrderCompleted",
+        "SetAddress",
+        "Set2FA",
+        "FirstBenefit",
+        "WriteComment",
+        "WriteRecommend",
+        "GoodScoring",
+        "SubmitTicket",
+        "IntallApp",
+        "SetNFTAvatar",
+        "SetPersonalImage",
         "Announcement",
         "ProductPage"
       ],
-      "default": "DefaultUsedFor"
+      "default": "DefaultUsedFor",
+      "title": "- ConsecutiveLogin: reward event"
     }
   }
 }
