@@ -67,6 +67,9 @@
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "GoodType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
         "Generated": {
           "$ref": "#/definitions/v1BoolVal"
         },
@@ -141,9 +144,20 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
         },
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "GoodName": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_name\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
         },
         "Amount": {
           "type": "string",
@@ -198,7 +212,13 @@
         "GoodID": {
           "type": "string"
         },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "GoodName": {
+          "type": "string"
+        },
+        "CoinTypeID": {
           "type": "string"
         },
         "Amount": {
@@ -221,6 +241,19 @@
           "type": "boolean"
         }
       }
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
     },
     "v1Result": {
       "type": "string",
