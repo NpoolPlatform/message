@@ -64,6 +64,8 @@ message Conds {
     optional basetypes.v1.StringVal MainAppGoodID = 60;
     optional basetypes.v1.StringVal RequiredAppGoodID = 70;
     optional basetypes.v1.BoolVal Must = 80;
+    optional basetypes.v1.Uint32Val RequiredGoodType = 90;
+    optional basetypes.v1.Uint32SliceVal RequiredGoodTypes = 100;
 }
 
 message CreateRequiredRequest {
