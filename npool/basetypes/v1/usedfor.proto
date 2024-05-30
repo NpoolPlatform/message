@@ -57,6 +57,7 @@ enum UsedFor {
   IntallApp = 410;
   SetNFTAvatar = 420;
   SetPersonalImage = 430;
+  InternalTransfer = 440;
 
   Announcement = 100000;
   ProductPage = 200000;

@@ -660,6 +660,7 @@
         "IntallApp",
         "SetNFTAvatar",
         "SetPersonalImage",
+        "InternalTransfer",
         "Announcement",
         "ProductPage"
       ],
