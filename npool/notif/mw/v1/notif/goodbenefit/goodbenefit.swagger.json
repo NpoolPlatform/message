@@ -70,6 +70,9 @@
         "GoodType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
+        "GoodTypes": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        },
         "Generated": {
           "$ref": "#/definitions/v1BoolVal"
         },
@@ -272,6 +275,21 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
         }
       }
     },

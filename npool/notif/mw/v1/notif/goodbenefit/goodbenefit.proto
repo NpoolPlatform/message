@@ -77,9 +77,10 @@ message Conds {
   optional basetypes.v1.StringVal EntID = 20;
   optional basetypes.v1.StringVal GoodID = 30;
   optional basetypes.v1.Uint32Val GoodType = 40;
-  optional basetypes.v1.BoolVal Generated = 50;
-  optional basetypes.v1.Uint32Val BenefitDateStart = 60;
-  optional basetypes.v1.Uint32Val BenefitDateEnd = 70;
+  optional basetypes.v1.Uint32SliceVal GoodTypes = 50;
+  optional basetypes.v1.BoolVal Generated = 60;
+  optional basetypes.v1.Uint32Val BenefitDateStart = 70;
+  optional basetypes.v1.Uint32Val BenefitDateEnd = 80;
 }
 
 message CreateGoodBenefitRequest { GoodBenefitReq Info = 10; }
