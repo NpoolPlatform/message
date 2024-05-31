@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/good/gw/v1/good/reward/history/history.proto
+// source: npool/good/gw/v1/good/coin/reward/history/history.proto
 
 package history
 
@@ -19,7 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetHistories_FullMethodName = "/good.gateway.good1.reward.history.v1.Gateway/GetHistories"
+	Gateway_GetHistories_FullMethodName = "/good.gateway.good1.coin.reward.history.v1.Gateway/GetHistories"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -96,7 +96,7 @@ func _Gateway_GetHistories_Handler(srv interface{}, ctx context.Context, dec fun
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.gateway.good1.reward.history.v1.Gateway",
+	ServiceName: "good.gateway.good1.coin.reward.history.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -105,5 +105,5 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/good/gw/v1/good/reward/history/history.proto",
+	Metadata: "npool/good/gw/v1/good/coin/reward/history/history.proto",
 }

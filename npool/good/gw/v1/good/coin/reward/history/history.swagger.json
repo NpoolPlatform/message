@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/good/gw/v1/good/reward/history/history.proto",
+    "title": "npool/good/gw/v1/good/coin/reward/history/history.proto",
     "version": "version not set"
   },
   "tags": [
@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/gatewaygood1rewardhistoryv1GetHistoriesResponse"
+              "$ref": "#/definitions/goodgatewaygood1coinrewardhistoryv1GetHistoriesResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/gatewaygood1rewardhistoryv1GetHistoriesRequest"
+              "$ref": "#/definitions/goodgatewaygood1coinrewardhistoryv1GetHistoriesRequest"
             }
           }
         ],
@@ -50,7 +50,7 @@
     }
   },
   "definitions": {
-    "gatewaygood1rewardhistoryv1GetHistoriesRequest": {
+    "goodgatewaygood1coinrewardhistoryv1GetHistoriesRequest": {
       "type": "object",
       "properties": {
         "GoodID": {
@@ -77,7 +77,7 @@
         }
       }
     },
-    "gatewaygood1rewardhistoryv1GetHistoriesResponse": {
+    "goodgatewaygood1coinrewardhistoryv1GetHistoriesResponse": {
       "type": "object",
       "properties": {
         "Infos": {

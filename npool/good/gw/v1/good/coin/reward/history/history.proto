@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package good.gateway.good1.reward.history.v1;
+package good.gateway.good1.coin.reward.history.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/good/reward/history";
+option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/good/coin/reward/history";
 
 import "google/api/annotations.proto";
 import "npool/good/mw/v1/good/coin/reward/history/history.proto";
