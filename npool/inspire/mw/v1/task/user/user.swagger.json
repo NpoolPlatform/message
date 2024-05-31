@@ -106,6 +106,9 @@
         },
         "ID": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "CreatedAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
