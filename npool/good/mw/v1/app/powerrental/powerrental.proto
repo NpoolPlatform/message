@@ -14,6 +14,7 @@ import "npool/good/mw/v1/app/good/display/name/name.proto";
 import "npool/good/mw/v1/app/good/display/color/color.proto";
 import "npool/good/mw/v1/app/good/stock/mining/mining.proto";
 import "npool/good/mw/v1/good/stock/stock.proto";
+import "npool/good/mw/v1/good/coin/reward/reward.proto";
 
 service Middleware {
     rpc CreatePowerRental (CreatePowerRentalRequest) returns (CreatePowerRentalResponse) {}
@@ -230,12 +231,6 @@ message PowerRental {
 
     // @inject_tag: sql:"last_reward_at"
     uint32 LastRewardAt = 1200;
-    // @inject_tag: sql:"last_reward_amount"
-    string LastRewardAmount = 1210;
-    // @inject_tag: sql:"total_reward_amount"
-    string TotalRewardAmount  = 1220;
-    // @inject_tag: sql:"last_unit_reward_amount"
-    string LastUnitRewardAmount = 1230;
 
     repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 1300;
     repeated good.middleware.app.good1.description.v1.DescriptionInfo Descriptions = 1310;
@@ -245,6 +240,7 @@ message PowerRental {
     repeated good.middleware.app.good1.stock.mining.v1.StockInfo AppMiningGoodStocks = 1350;
     repeated good.middleware.good1.stock.v1.MiningGoodStockInfo MiningGoodStocks = 1360;
     repeated good.middleware.app.good1.label.v1.LabelInfo Labels = 1370;
+    repeated good.middleware.good1.coin.reward.v1.AppGoodRewardInfo Rewards = 820;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 2000;

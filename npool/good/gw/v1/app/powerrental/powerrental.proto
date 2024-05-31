@@ -14,6 +14,7 @@ import "npool/good/mw/v1/app/good/display/name/name.proto";
 import "npool/good/mw/v1/app/good/display/color/color.proto";
 import "npool/good/mw/v1/app/good/stock/mining/mining.proto";
 import "npool/good/mw/v1/good/stock/stock.proto";
+import "npool/good/mw/v1/good/coin/reward/reward.proto";
 
 service Gateway {
     rpc CreateAppPowerRental (CreateAppPowerRentalRequest) returns (CreateAppPowerRentalResponse) {
@@ -164,9 +165,6 @@ message AppPowerRental {
     uint32 CommentCount = 710;
 
     uint32 LastRewardAt = 720;
-    string LastRewardAmount = 730;
-    string TotalRewardAmount  = 740;
-    string LastUnitRewardAmount = 750;
 
     repeated good.gateway.good1.coin.v1.GoodCoinInfo GoodCoins = 900;
     repeated good.middleware.app.good1.description.v1.DescriptionInfo Descriptions = 910;
@@ -176,6 +174,7 @@ message AppPowerRental {
     repeated good.middleware.app.good1.stock.mining.v1.StockInfo AppMiningGoodStocks = 950;
     repeated good.middleware.good1.stock.v1.MiningGoodStockInfo MiningGoodStocks = 960;
     repeated good.middleware.app.good1.label.v1.LabelInfo Labels = 970;
+    repeated good.middleware.good1.coin.reward.v1.AppGoodRewardInfo Rewards = 820;
 
     uint32 CreatedAt = 1000;
     uint32 UpdatedAt = 1010;
