@@ -40,27 +40,30 @@ message TopMostGood {
     string AppID = 30;
     // @inject_tag: sql:"good_id"
     string GoodID = 40;
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 50;
+    basetypes.good.v1.GoodType GoodType = 60;
     // @inject_tag: sql:"good_name"
-    string GoodName = 50;
+    string GoodName = 70;
     // @inject_tag: sql:"top_most_id"
-    string TopMostID = 60;
+    string TopMostID = 80;
     // @inject_tag: sql:"top_most_type"
-    string TopMostTypeStr = 70;
-    basetypes.good.v1.GoodTopMostType TopMostType = 80;
+    string TopMostTypeStr = 90;
+    basetypes.good.v1.GoodTopMostType TopMostType = 100;
     // @inject_tag: sql:"top_most_title"
-    string TopMostTitle = 90;
+    string TopMostTitle = 110;
     // @inject_tag: sql:"top_most_message"
-    string TopMostMessage = 100;
+    string TopMostMessage = 120;
     // @inject_tag: sql:"top_most_target_url"
-    string TopMostTargetUrl = 101;
+    string TopMostTargetUrl = 130;
     // @inject_tag: sql:"app_good_id"
-    string AppGoodID = 110;
+    string AppGoodID = 140;
     // @inject_tag: sql:"app_good_name"
-    string AppGoodName = 120;
+    string AppGoodName = 150;
     // @inject_tag: sql:"display_index"
-    uint32 DisplayIndex = 130;
+    uint32 DisplayIndex = 160;
     // @inject_tag: sql:"unit_price"
-    string UnitPrice = 160;
+    string UnitPrice = 170;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"

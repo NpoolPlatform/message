@@ -454,6 +454,19 @@
       ],
       "default": "DefaultGoodTopMostType"
     },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
+    },
     "v1PosterInfo": {
       "type": "object",
       "properties": {
@@ -486,6 +499,9 @@
         },
         "GoodID": {
           "type": "string"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
         },
         "GoodName": {
           "type": "string"
