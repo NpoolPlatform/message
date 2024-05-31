@@ -768,9 +768,6 @@
     "v1RewardInfo": {
       "type": "object",
       "properties": {
-        "GoodID": {
-          "type": "string"
-        },
         "CoinTypeID": {
           "type": "string"
         },
