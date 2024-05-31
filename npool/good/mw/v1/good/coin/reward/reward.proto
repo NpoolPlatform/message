@@ -50,7 +50,7 @@ message Reward {
   uint32 UpdatedAt = 1010;
 }
 
-message GoodRewardInfo {
+message RewardInfo {
   // @inject_tag: sql:"good_id"
   string GoodID = 10;
   // @inject_tag: sql:"coin_type_id"
@@ -67,21 +67,6 @@ message GoodRewardInfo {
   string TotalRewardAmount = 70;
   // @inject_tag: sql:"main_coin"
   bool MainCoin = 80;
-}
-
-message AppGoodRewardInfo {
-  // @inject_tag: sql:"app_good_id"
-  string AppGoodID = 10;
-  // @inject_tag: sql:"coin_type_id"
-  string CoinTypeID = 20;
-  // @inject_tag: sql:"last_reward_amount"
-  string LastRewardAmount = 30;
-  // @inject_tag: sql:"last_unit_reward_amount"
-  string LastUnitRewardAmount = 40;
-  // @inject_tag: sql:"total_reward_amount"
-  string TotalRewardAmount = 50;
-  // @inject_tag: sql:"main_coin"
-  bool MainCoin = 60;
 }
 
 message Conds {

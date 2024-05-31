@@ -588,35 +588,6 @@
         }
       }
     },
-    "v1AppGoodRewardInfo": {
-      "type": "object",
-      "properties": {
-        "AppGoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_good_id\""
-        },
-        "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
-        },
-        "LastRewardAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"last_reward_amount\""
-        },
-        "LastUnitRewardAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"last_unit_reward_amount\""
-        },
-        "TotalRewardAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"total_reward_amount\""
-        },
-        "MainCoin": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"main_coin\""
-        }
-      }
-    },
     "v1AppPowerRental": {
       "type": "object",
       "properties": {
@@ -905,7 +876,7 @@
         "Rewards": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1AppGoodRewardInfo"
+            "$ref": "#/definitions/v1RewardInfo"
           }
         },
         "CreatedAt": {
@@ -1336,6 +1307,47 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"index\""
+        }
+      }
+    },
+    "v1RewardInfo": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinENV": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "RewardTID": {
+          "type": "string"
+        },
+        "NextRewardStartAmount": {
+          "type": "string"
+        },
+        "LastRewardAmount": {
+          "type": "string"
+        },
+        "LastUnitRewardAmount": {
+          "type": "string"
+        },
+        "TotalRewardAmount": {
+          "type": "string"
+        },
+        "MainCoin": {
+          "type": "boolean"
         }
       }
     },

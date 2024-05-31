@@ -240,7 +240,7 @@ message PowerRental {
     repeated good.middleware.app.good1.stock.mining.v1.StockInfo AppMiningGoodStocks = 1350;
     repeated good.middleware.good1.stock.v1.MiningGoodStockInfo MiningGoodStocks = 1360;
     repeated good.middleware.app.good1.label.v1.LabelInfo Labels = 1370;
-    repeated good.middleware.good1.coin.reward.v1.AppGoodRewardInfo Rewards = 820;
+    repeated good.middleware.good1.coin.reward.v1.RewardInfo Rewards = 820;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 2000;

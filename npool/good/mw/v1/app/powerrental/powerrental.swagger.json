@@ -82,35 +82,6 @@
         }
       }
     },
-    "v1AppGoodRewardInfo": {
-      "type": "object",
-      "properties": {
-        "AppGoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_good_id\""
-        },
-        "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
-        },
-        "LastRewardAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"last_reward_amount\""
-        },
-        "LastUnitRewardAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"last_unit_reward_amount\""
-        },
-        "TotalRewardAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"total_reward_amount\""
-        },
-        "MainCoin": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"main_coin\""
-        }
-      }
-    },
     "v1BenefitType": {
       "type": "string",
       "enum": [
@@ -795,7 +766,7 @@
         "Rewards": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1AppGoodRewardInfo"
+            "$ref": "#/definitions/v1RewardInfo"
           }
         },
         "CreatedAt": {
@@ -913,6 +884,43 @@
         "AppGoodStockID": {
           "type": "string",
           "title": "Good stock"
+        }
+      }
+    },
+    "v1RewardInfo": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "RewardTID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reward_tid\""
+        },
+        "NextRewardStartAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"next_reward_start_amount\""
+        },
+        "LastRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_reward_amount\""
+        },
+        "LastUnitRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_unit_reward_amount\""
+        },
+        "TotalRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"total_reward_amount\""
+        },
+        "MainCoin": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"main_coin\""
         }
       }
     },
