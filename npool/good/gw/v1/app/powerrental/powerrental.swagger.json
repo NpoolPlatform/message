@@ -418,6 +418,9 @@
         },
         "PackageWithRequireds": {
           "type": "boolean"
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
         }
       }
     },
@@ -677,7 +680,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "StartMode": {
+        "GoodStartMode": {
           "$ref": "#/definitions/v1GoodStartMode"
         },
         "TestOnly": {
@@ -824,6 +827,9 @@
         "LastRewardAt": {
           "type": "integer",
           "format": "int64"
+        },
+        "AppGoodStartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
         },
         "GoodCoins": {
           "type": "array",
@@ -997,6 +1003,9 @@
         },
         "PackageWithRequireds": {
           "type": "boolean"
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
         }
       }
     },

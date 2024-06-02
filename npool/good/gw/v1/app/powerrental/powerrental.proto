@@ -114,7 +114,7 @@ message AppPowerRental {
     basetypes.good.v1.BenefitType BenefitType = 250;
     string GoodName = 260;
     uint32 ServiceStartAt = 270;
-    basetypes.good.v1.GoodStartMode StartMode = 280;
+    basetypes.good.v1.GoodStartMode GoodStartMode = 280;
     bool TestOnly = 290;
     uint32 BenefitIntervalHours = 300;
     bool GoodPurchasable = 310;
@@ -165,6 +165,7 @@ message AppPowerRental {
     uint32 CommentCount = 710;
 
     uint32 LastRewardAt = 720;
+    basetypes.good.v1.GoodStartMode AppGoodStartMode = 730;
 
     repeated good.gateway.good1.coin.v1.GoodCoinInfo GoodCoins = 900;
     repeated good.middleware.app.good1.description.v1.DescriptionInfo Descriptions = 910;
@@ -208,6 +209,7 @@ message CreateAppPowerRentalRequest {
     basetypes.good.v1.GoodSaleMode SaleMode = 230;
     optional bool FixedDuration = 240;
     optional bool PackageWithRequireds = 250;
+    optional basetypes.good.v1.GoodStartMode StartMode = 260;
 }
 
 message CreateAppPowerRentalResponse {
@@ -308,6 +310,7 @@ message AdminCreateAppPowerRentalRequest {
     basetypes.good.v1.GoodSaleMode SaleMode = 230;
     optional bool FixedDuration = 240;
     optional bool PackageWithRequireds = 250;
+    optional basetypes.good.v1.GoodStartMode StartMode = 260;
 }
 
 message AdminCreateAppPowerRentalResponse {
