@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetCompensate_FullMethodName         = "/order.middleware.compensate.v1.Middleware/GetCompensate"
-	Middleware_GetCompensates_FullMethodName        = "/order.middleware.compensate.v1.Middleware/GetCompensates"
-	Middleware_ExistCompensate_FullMethodName       = "/order.middleware.compensate.v1.Middleware/ExistCompensate"
-	Middleware_ExistCompensateConds_FullMethodName  = "/order.middleware.compensate.v1.Middleware/ExistCompensateConds"
-	Middleware_CountCompensateOrders_FullMethodName = "/order.middleware.compensate.v1.Middleware/CountCompensateOrders"
+	Middleware_GetCompensate_FullMethodName        = "/order.middleware.compensate.v1.Middleware/GetCompensate"
+	Middleware_GetCompensates_FullMethodName       = "/order.middleware.compensate.v1.Middleware/GetCompensates"
+	Middleware_ExistCompensate_FullMethodName      = "/order.middleware.compensate.v1.Middleware/ExistCompensate"
+	Middleware_ExistCompensateConds_FullMethodName = "/order.middleware.compensate.v1.Middleware/ExistCompensateConds"
+	Middleware_CountCompensates_FullMethodName     = "/order.middleware.compensate.v1.Middleware/CountCompensates"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,7 +34,7 @@ type MiddlewareClient interface {
 	GetCompensates(ctx context.Context, in *GetCompensatesRequest, opts ...grpc.CallOption) (*GetCompensatesResponse, error)
 	ExistCompensate(ctx context.Context, in *ExistCompensateRequest, opts ...grpc.CallOption) (*ExistCompensateResponse, error)
 	ExistCompensateConds(ctx context.Context, in *ExistCompensateCondsRequest, opts ...grpc.CallOption) (*ExistCompensateCondsResponse, error)
-	CountCompensateOrders(ctx context.Context, in *CountCompensateOrdersRequest, opts ...grpc.CallOption) (*CountCompensateOrdersResponse, error)
+	CountCompensates(ctx context.Context, in *CountCompensatesRequest, opts ...grpc.CallOption) (*CountCompensatesResponse, error)
 }
 
 type middlewareClient struct {
@@ -81,9 +81,9 @@ func (c *middlewareClient) ExistCompensateConds(ctx context.Context, in *ExistCo
 	return out, nil
 }
 
-func (c *middlewareClient) CountCompensateOrders(ctx context.Context, in *CountCompensateOrdersRequest, opts ...grpc.CallOption) (*CountCompensateOrdersResponse, error) {
-	out := new(CountCompensateOrdersResponse)
-	err := c.cc.Invoke(ctx, Middleware_CountCompensateOrders_FullMethodName, in, out, opts...)
+func (c *middlewareClient) CountCompensates(ctx context.Context, in *CountCompensatesRequest, opts ...grpc.CallOption) (*CountCompensatesResponse, error) {
+	out := new(CountCompensatesResponse)
+	err := c.cc.Invoke(ctx, Middleware_CountCompensates_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ type MiddlewareServer interface {
 	GetCompensates(context.Context, *GetCompensatesRequest) (*GetCompensatesResponse, error)
 	ExistCompensate(context.Context, *ExistCompensateRequest) (*ExistCompensateResponse, error)
 	ExistCompensateConds(context.Context, *ExistCompensateCondsRequest) (*ExistCompensateCondsResponse, error)
-	CountCompensateOrders(context.Context, *CountCompensateOrdersRequest) (*CountCompensateOrdersResponse, error)
+	CountCompensates(context.Context, *CountCompensatesRequest) (*CountCompensatesResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -118,8 +118,8 @@ func (UnimplementedMiddlewareServer) ExistCompensate(context.Context, *ExistComp
 func (UnimplementedMiddlewareServer) ExistCompensateConds(context.Context, *ExistCompensateCondsRequest) (*ExistCompensateCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistCompensateConds not implemented")
 }
-func (UnimplementedMiddlewareServer) CountCompensateOrders(context.Context, *CountCompensateOrdersRequest) (*CountCompensateOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CountCompensateOrders not implemented")
+func (UnimplementedMiddlewareServer) CountCompensates(context.Context, *CountCompensatesRequest) (*CountCompensatesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountCompensates not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -206,20 +206,20 @@ func _Middleware_ExistCompensateConds_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CountCompensateOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CountCompensateOrdersRequest)
+func _Middleware_CountCompensates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountCompensatesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CountCompensateOrders(ctx, in)
+		return srv.(MiddlewareServer).CountCompensates(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_CountCompensateOrders_FullMethodName,
+		FullMethod: Middleware_CountCompensates_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CountCompensateOrders(ctx, req.(*CountCompensateOrdersRequest))
+		return srv.(MiddlewareServer).CountCompensates(ctx, req.(*CountCompensatesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -248,8 +248,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_ExistCompensateConds_Handler,
 		},
 		{
-			MethodName: "CountCompensateOrders",
-			Handler:    _Middleware_CountCompensateOrders_Handler,
+			MethodName: "CountCompensates",
+			Handler:    _Middleware_CountCompensates_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

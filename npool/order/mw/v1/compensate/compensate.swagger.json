@@ -189,7 +189,7 @@
         }
       }
     },
-    "v1CountCompensateOrdersResponse": {
+    "v1CountCompensatesResponse": {
       "type": "object",
       "properties": {
         "Info": {
