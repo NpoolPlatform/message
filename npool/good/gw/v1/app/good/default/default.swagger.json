@@ -407,6 +407,9 @@
         "AppID": {
           "type": "string"
         },
+        "CoinTypeID": {
+          "type": "string"
+        },
         "AppGoodID": {
           "type": "string"
         }
