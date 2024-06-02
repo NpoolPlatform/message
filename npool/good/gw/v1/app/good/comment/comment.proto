@@ -22,6 +22,13 @@ service Gateway {
         };
     }
 
+    rpc GetMyComments (GetMyCommentsRequest) returns (GetMyCommentsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/my/goodcomments"
+            body: "*"
+        };
+    }
+
     rpc GetComments (GetCommentsRequest) returns (GetCommentsResponse) {
         option (google.api.http) = {
             post: "/v1/get/goodcomments"
@@ -62,6 +69,13 @@ service Gateway {
     rpc AdminDeleteComment (AdminDeleteCommentRequest) returns (AdminDeleteCommentResponse) {
         option (google.api.http) = {
             post: "/v1/admin/delete/goodcomment"
+            body: "*"
+        };
+    }
+
+    rpc AdminGetComments (AdminGetCommentsRequest) returns (AdminGetCommentsResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/get/goodcomments"
             body: "*"
         };
     }
@@ -121,10 +135,23 @@ message UpdateCommentResponse {
     Comment Info = 10;
 }
 
+message GetMyCommentsRequest {
+    string AppID = 10;
+    string UserID = 20;
+    optional string AppGoodID = 30;
+    int32 Offset = 40;
+    int32 Limit = 50;
+}
+
+message GetMyCommentsResponse {
+    repeated Comment Infos = 10;
+    uint32 Total = 20;
+}
+
 message GetCommentsRequest {
     string AppID = 10;
-    optional string AppGoodID = 20;
-    optional string UserID = 30;
+    optional string TargetUserID = 20;
+    optional string AppGoodID = 30;
     int32 Offset = 40;
     int32 Limit = 50;
 }
@@ -192,3 +219,17 @@ message AdminDeleteCommentRequest {
 message AdminDeleteCommentResponse {
     Comment Info = 10;
 }
+
+message AdminGetCommentsRequest {
+    string TargetAppID = 10;
+    optional string TargetUserID = 20;
+    optional string AppGoodID = 30;
+    int32 Offset = 40;
+    int32 Limit = 50;
+}
+
+message AdminGetCommentsResponse {
+    repeated Comment Infos = 10;
+    uint32 Total = 20;
+}
+
