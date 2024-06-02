@@ -85,7 +85,7 @@ message TopMostGood {
     string TopMostTargetUrl = 140;
     repeated good.middleware.app.good1.topmost.good2.poster.v1.PosterInfo Posters = 150;
     string UnitPrice = 160;
-    uint32 Index = 170;
+    uint32 DisplayIndex = 170;
 
     uint32 CreatedAt = 1000;
     uint32 UpdatedAt = 1010;
@@ -96,7 +96,7 @@ message CreateTopMostGoodRequest {
     string TopMostID = 20;
     string AppGoodID = 30;
     string UnitPrice = 40;
-    optional uint32 Index = 50;
+    optional uint32 DisplayIndex = 50;
 }
 
 message CreateTopMostGoodResponse {
@@ -129,7 +129,7 @@ message UpdateTopMostGoodRequest {
     string EntID = 20;
     string AppID = 30;
     optional string UnitPrice = 40;
-    optional uint32 Index = 50;
+    optional uint32 DisplayIndex = 50;
 }
 
 message UpdateTopMostGoodResponse {
@@ -141,7 +141,7 @@ message AdminCreateTopMostGoodRequest {
     string TopMostID = 20;
     string AppGoodID = 30;
     optional string UnitPrice = 40;
-    optional uint32 Index = 50;
+    optional uint32 DisplayIndex = 50;
 }
 
 message AdminCreateTopMostGoodResponse {
@@ -164,7 +164,7 @@ message AdminUpdateTopMostGoodRequest {
     string EntID = 20;
     string TargetAppID = 30;
     optional string UnitPrice = 40;
-    optional uint32 Index = 50;
+    optional uint32 DisplayIndex = 50;
 }
 
 message AdminUpdateTopMostGoodResponse {
