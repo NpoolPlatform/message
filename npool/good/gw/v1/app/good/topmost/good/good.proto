@@ -58,6 +58,14 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc AdminDeleteTopMostGood (AdminDeleteTopMostGoodRequest) returns (AdminDeleteTopMostGoodResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/delete/topmostgood"
+            body: "*"
+        };
+    }
+
 }
 
 message TopMostGood {
@@ -160,5 +168,15 @@ message AdminUpdateTopMostGoodRequest {
 }
 
 message AdminUpdateTopMostGoodResponse {
+    TopMostGood Info = 10;
+}
+
+message AdminDeleteTopMostGoodRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+    string TargetAppID = 30;
+}
+
+message AdminDeleteTopMostGoodResponse {
     TopMostGood Info = 10;
 }

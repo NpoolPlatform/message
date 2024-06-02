@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/admin/delete/topmostgood": {
+      "post": {
+        "operationId": "Gateway_AdminDeleteTopMostGood",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteTopMostGoodResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteTopMostGoodRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/admin/get/topmostgoods": {
       "post": {
         "operationId": "Gateway_AdminGetTopMostGoods",
@@ -291,6 +323,29 @@
       }
     },
     "v1AdminCreateTopMostGoodResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TopMostGood"
+        }
+      }
+    },
+    "v1AdminDeleteTopMostGoodRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteTopMostGoodResponse": {
       "type": "object",
       "properties": {
         "Info": {

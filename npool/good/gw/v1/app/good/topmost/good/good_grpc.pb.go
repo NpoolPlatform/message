@@ -26,6 +26,7 @@ const (
 	Gateway_AdminCreateTopMostGood_FullMethodName = "/good.gateway.app.good1.topmost.good2.v1.Gateway/AdminCreateTopMostGood"
 	Gateway_AdminGetTopMostGoods_FullMethodName   = "/good.gateway.app.good1.topmost.good2.v1.Gateway/AdminGetTopMostGoods"
 	Gateway_AdminUpdateTopMostGood_FullMethodName = "/good.gateway.app.good1.topmost.good2.v1.Gateway/AdminUpdateTopMostGood"
+	Gateway_AdminDeleteTopMostGood_FullMethodName = "/good.gateway.app.good1.topmost.good2.v1.Gateway/AdminDeleteTopMostGood"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -39,6 +40,7 @@ type GatewayClient interface {
 	AdminCreateTopMostGood(ctx context.Context, in *AdminCreateTopMostGoodRequest, opts ...grpc.CallOption) (*AdminCreateTopMostGoodResponse, error)
 	AdminGetTopMostGoods(ctx context.Context, in *AdminGetTopMostGoodsRequest, opts ...grpc.CallOption) (*AdminGetTopMostGoodsResponse, error)
 	AdminUpdateTopMostGood(ctx context.Context, in *AdminUpdateTopMostGoodRequest, opts ...grpc.CallOption) (*AdminUpdateTopMostGoodResponse, error)
+	AdminDeleteTopMostGood(ctx context.Context, in *AdminDeleteTopMostGoodRequest, opts ...grpc.CallOption) (*AdminDeleteTopMostGoodResponse, error)
 }
 
 type gatewayClient struct {
@@ -112,6 +114,15 @@ func (c *gatewayClient) AdminUpdateTopMostGood(ctx context.Context, in *AdminUpd
 	return out, nil
 }
 
+func (c *gatewayClient) AdminDeleteTopMostGood(ctx context.Context, in *AdminDeleteTopMostGoodRequest, opts ...grpc.CallOption) (*AdminDeleteTopMostGoodResponse, error) {
+	out := new(AdminDeleteTopMostGoodResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminDeleteTopMostGood_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -123,6 +134,7 @@ type GatewayServer interface {
 	AdminCreateTopMostGood(context.Context, *AdminCreateTopMostGoodRequest) (*AdminCreateTopMostGoodResponse, error)
 	AdminGetTopMostGoods(context.Context, *AdminGetTopMostGoodsRequest) (*AdminGetTopMostGoodsResponse, error)
 	AdminUpdateTopMostGood(context.Context, *AdminUpdateTopMostGoodRequest) (*AdminUpdateTopMostGoodResponse, error)
+	AdminDeleteTopMostGood(context.Context, *AdminDeleteTopMostGoodRequest) (*AdminDeleteTopMostGoodResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -150,6 +162,9 @@ func (UnimplementedGatewayServer) AdminGetTopMostGoods(context.Context, *AdminGe
 }
 func (UnimplementedGatewayServer) AdminUpdateTopMostGood(context.Context, *AdminUpdateTopMostGoodRequest) (*AdminUpdateTopMostGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateTopMostGood not implemented")
+}
+func (UnimplementedGatewayServer) AdminDeleteTopMostGood(context.Context, *AdminDeleteTopMostGoodRequest) (*AdminDeleteTopMostGoodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminDeleteTopMostGood not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -290,6 +305,24 @@ func _Gateway_AdminUpdateTopMostGood_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_AdminDeleteTopMostGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminDeleteTopMostGoodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminDeleteTopMostGood(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminDeleteTopMostGood_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminDeleteTopMostGood(ctx, req.(*AdminDeleteTopMostGoodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -324,6 +357,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AdminUpdateTopMostGood",
 			Handler:    _Gateway_AdminUpdateTopMostGood_Handler,
+		},
+		{
+			MethodName: "AdminDeleteTopMostGood",
+			Handler:    _Gateway_AdminDeleteTopMostGood_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
