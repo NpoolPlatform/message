@@ -22,6 +22,13 @@ service Gateway {
         };
     }
 
+    rpc GetMyRecommends (GetMyRecommendsRequest) returns (GetMyRecommendsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/my/goodrecommends"
+            body: "*"
+        };
+    }
+
     rpc GetRecommends (GetRecommendsRequest) returns (GetRecommendsResponse) {
         option (google.api.http) = {
             post: "/v1/get/goodrecommends"
@@ -49,6 +56,14 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc AdminGetRecommends (AdminGetRecommendsRequest) returns (AdminGetRecommendsResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/get/goodrecommends"
+            body: "*"
+        };
+    }
+
 }
 
 message Recommend {
@@ -95,10 +110,23 @@ message UpdateRecommendResponse {
     Recommend Info = 10;
 }
 
+message GetMyRecommendsRequest {
+    string AppID = 10;
+    string UserID = 20;
+    optional string AppGoodID = 30;
+    int32 Offset = 40;
+    int32 Limit = 50;
+}
+
+message GetMyRecommendsResponse {
+    repeated Recommend Infos = 10;
+    uint32 Total = 20;
+}
+
 message GetRecommendsRequest {
     string AppID = 10;
-    optional string AppGoodID = 20;
-    optional string UserID = 30;
+    optional string TargetUserID = 20;
+    optional string AppGoodID = 30;
     int32 Offset = 40;
     int32 Limit = 50;
 }
@@ -144,3 +172,17 @@ message AdminUpdateRecommendRequest {
 message AdminUpdateRecommendResponse {
     Recommend Info = 10;
 }
+
+message AdminGetRecommendsRequest {
+    string TargetAppID = 10;
+    optional string TargetUserID = 20;
+    optional string AppGoodID = 30;
+    int32 Offset = 40;
+    int32 Limit = 50;
+}
+
+message AdminGetRecommendsResponse {
+    repeated Recommend Infos = 10;
+    uint32 Total = 20;
+}
+

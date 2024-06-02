@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/admin/get/goodrecommends": {
+      "post": {
+        "operationId": "Gateway_AdminGetRecommends",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetRecommendsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetRecommendsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/admin/update/goodrecommend": {
       "post": {
         "operationId": "Gateway_AdminUpdateRecommend",
@@ -144,6 +176,38 @@
         ]
       }
     },
+    "/v1/get/my/goodrecommends": {
+      "post": {
+        "operationId": "Gateway_GetMyRecommends",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetMyRecommendsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetMyRecommendsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/update/goodrecommend": {
       "post": {
         "operationId": "Gateway_UpdateRecommend",
@@ -237,6 +301,43 @@
         }
       }
     },
+    "v1AdminGetRecommendsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AdminGetRecommendsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Recommend"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1AdminUpdateRecommendRequest": {
       "type": "object",
       "properties": {
@@ -323,16 +424,53 @@
         }
       }
     },
+    "v1GetMyRecommendsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetMyRecommendsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Recommend"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetRecommendsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
           "type": "string"
         },
-        "AppGoodID": {
+        "TargetUserID": {
           "type": "string"
         },
-        "UserID": {
+        "AppGoodID": {
           "type": "string"
         },
         "Offset": {

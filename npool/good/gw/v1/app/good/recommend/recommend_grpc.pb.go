@@ -21,10 +21,12 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Gateway_CreateRecommend_FullMethodName      = "/good.gateway.app.good1.recommend.v1.Gateway/CreateRecommend"
 	Gateway_UpdateRecommend_FullMethodName      = "/good.gateway.app.good1.recommend.v1.Gateway/UpdateRecommend"
+	Gateway_GetMyRecommends_FullMethodName      = "/good.gateway.app.good1.recommend.v1.Gateway/GetMyRecommends"
 	Gateway_GetRecommends_FullMethodName        = "/good.gateway.app.good1.recommend.v1.Gateway/GetRecommends"
 	Gateway_DeleteRecommend_FullMethodName      = "/good.gateway.app.good1.recommend.v1.Gateway/DeleteRecommend"
 	Gateway_UpdateUserRecommend_FullMethodName  = "/good.gateway.app.good1.recommend.v1.Gateway/UpdateUserRecommend"
 	Gateway_AdminUpdateRecommend_FullMethodName = "/good.gateway.app.good1.recommend.v1.Gateway/AdminUpdateRecommend"
+	Gateway_AdminGetRecommends_FullMethodName   = "/good.gateway.app.good1.recommend.v1.Gateway/AdminGetRecommends"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -33,10 +35,12 @@ const (
 type GatewayClient interface {
 	CreateRecommend(ctx context.Context, in *CreateRecommendRequest, opts ...grpc.CallOption) (*CreateRecommendResponse, error)
 	UpdateRecommend(ctx context.Context, in *UpdateRecommendRequest, opts ...grpc.CallOption) (*UpdateRecommendResponse, error)
+	GetMyRecommends(ctx context.Context, in *GetMyRecommendsRequest, opts ...grpc.CallOption) (*GetMyRecommendsResponse, error)
 	GetRecommends(ctx context.Context, in *GetRecommendsRequest, opts ...grpc.CallOption) (*GetRecommendsResponse, error)
 	DeleteRecommend(ctx context.Context, in *DeleteRecommendRequest, opts ...grpc.CallOption) (*DeleteRecommendResponse, error)
 	UpdateUserRecommend(ctx context.Context, in *UpdateUserRecommendRequest, opts ...grpc.CallOption) (*UpdateUserRecommendResponse, error)
 	AdminUpdateRecommend(ctx context.Context, in *AdminUpdateRecommendRequest, opts ...grpc.CallOption) (*AdminUpdateRecommendResponse, error)
+	AdminGetRecommends(ctx context.Context, in *AdminGetRecommendsRequest, opts ...grpc.CallOption) (*AdminGetRecommendsResponse, error)
 }
 
 type gatewayClient struct {
@@ -59,6 +63,15 @@ func (c *gatewayClient) CreateRecommend(ctx context.Context, in *CreateRecommend
 func (c *gatewayClient) UpdateRecommend(ctx context.Context, in *UpdateRecommendRequest, opts ...grpc.CallOption) (*UpdateRecommendResponse, error) {
 	out := new(UpdateRecommendResponse)
 	err := c.cc.Invoke(ctx, Gateway_UpdateRecommend_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetMyRecommends(ctx context.Context, in *GetMyRecommendsRequest, opts ...grpc.CallOption) (*GetMyRecommendsResponse, error) {
+	out := new(GetMyRecommendsResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetMyRecommends_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -101,16 +114,27 @@ func (c *gatewayClient) AdminUpdateRecommend(ctx context.Context, in *AdminUpdat
 	return out, nil
 }
 
+func (c *gatewayClient) AdminGetRecommends(ctx context.Context, in *AdminGetRecommendsRequest, opts ...grpc.CallOption) (*AdminGetRecommendsResponse, error) {
+	out := new(AdminGetRecommendsResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminGetRecommends_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
 	CreateRecommend(context.Context, *CreateRecommendRequest) (*CreateRecommendResponse, error)
 	UpdateRecommend(context.Context, *UpdateRecommendRequest) (*UpdateRecommendResponse, error)
+	GetMyRecommends(context.Context, *GetMyRecommendsRequest) (*GetMyRecommendsResponse, error)
 	GetRecommends(context.Context, *GetRecommendsRequest) (*GetRecommendsResponse, error)
 	DeleteRecommend(context.Context, *DeleteRecommendRequest) (*DeleteRecommendResponse, error)
 	UpdateUserRecommend(context.Context, *UpdateUserRecommendRequest) (*UpdateUserRecommendResponse, error)
 	AdminUpdateRecommend(context.Context, *AdminUpdateRecommendRequest) (*AdminUpdateRecommendResponse, error)
+	AdminGetRecommends(context.Context, *AdminGetRecommendsRequest) (*AdminGetRecommendsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -124,6 +148,9 @@ func (UnimplementedGatewayServer) CreateRecommend(context.Context, *CreateRecomm
 func (UnimplementedGatewayServer) UpdateRecommend(context.Context, *UpdateRecommendRequest) (*UpdateRecommendResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateRecommend not implemented")
 }
+func (UnimplementedGatewayServer) GetMyRecommends(context.Context, *GetMyRecommendsRequest) (*GetMyRecommendsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMyRecommends not implemented")
+}
 func (UnimplementedGatewayServer) GetRecommends(context.Context, *GetRecommendsRequest) (*GetRecommendsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRecommends not implemented")
 }
@@ -135,6 +162,9 @@ func (UnimplementedGatewayServer) UpdateUserRecommend(context.Context, *UpdateUs
 }
 func (UnimplementedGatewayServer) AdminUpdateRecommend(context.Context, *AdminUpdateRecommendRequest) (*AdminUpdateRecommendResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateRecommend not implemented")
+}
+func (UnimplementedGatewayServer) AdminGetRecommends(context.Context, *AdminGetRecommendsRequest) (*AdminGetRecommendsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminGetRecommends not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -181,6 +211,24 @@ func _Gateway_UpdateRecommend_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).UpdateRecommend(ctx, req.(*UpdateRecommendRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetMyRecommends_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMyRecommendsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetMyRecommends(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_GetMyRecommends_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetMyRecommends(ctx, req.(*GetMyRecommendsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -257,6 +305,24 @@ func _Gateway_AdminUpdateRecommend_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_AdminGetRecommends_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminGetRecommendsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminGetRecommends(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminGetRecommends_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminGetRecommends(ctx, req.(*AdminGetRecommendsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -273,6 +339,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_UpdateRecommend_Handler,
 		},
 		{
+			MethodName: "GetMyRecommends",
+			Handler:    _Gateway_GetMyRecommends_Handler,
+		},
+		{
 			MethodName: "GetRecommends",
 			Handler:    _Gateway_GetRecommends_Handler,
 		},
@@ -287,6 +357,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AdminUpdateRecommend",
 			Handler:    _Gateway_AdminUpdateRecommend_Handler,
+		},
+		{
+			MethodName: "AdminGetRecommends",
+			Handler:    _Gateway_AdminGetRecommends_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
