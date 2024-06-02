@@ -26,6 +26,7 @@ const (
 	Gateway_AdminCreateTopMost_FullMethodName = "/good.gateway.app.good1.topmost.v1.Gateway/AdminCreateTopMost"
 	Gateway_AdminGetTopMosts_FullMethodName   = "/good.gateway.app.good1.topmost.v1.Gateway/AdminGetTopMosts"
 	Gateway_AdminUpdateTopMost_FullMethodName = "/good.gateway.app.good1.topmost.v1.Gateway/AdminUpdateTopMost"
+	Gateway_AdminDeleteTopMost_FullMethodName = "/good.gateway.app.good1.topmost.v1.Gateway/AdminDeleteTopMost"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -39,6 +40,7 @@ type GatewayClient interface {
 	AdminCreateTopMost(ctx context.Context, in *AdminCreateTopMostRequest, opts ...grpc.CallOption) (*AdminCreateTopMostResponse, error)
 	AdminGetTopMosts(ctx context.Context, in *AdminGetTopMostsRequest, opts ...grpc.CallOption) (*AdminGetTopMostsResponse, error)
 	AdminUpdateTopMost(ctx context.Context, in *AdminUpdateTopMostRequest, opts ...grpc.CallOption) (*AdminUpdateTopMostResponse, error)
+	AdminDeleteTopMost(ctx context.Context, in *AdminDeleteTopMostRequest, opts ...grpc.CallOption) (*AdminDeleteTopMostResponse, error)
 }
 
 type gatewayClient struct {
@@ -112,6 +114,15 @@ func (c *gatewayClient) AdminUpdateTopMost(ctx context.Context, in *AdminUpdateT
 	return out, nil
 }
 
+func (c *gatewayClient) AdminDeleteTopMost(ctx context.Context, in *AdminDeleteTopMostRequest, opts ...grpc.CallOption) (*AdminDeleteTopMostResponse, error) {
+	out := new(AdminDeleteTopMostResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminDeleteTopMost_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -123,6 +134,7 @@ type GatewayServer interface {
 	AdminCreateTopMost(context.Context, *AdminCreateTopMostRequest) (*AdminCreateTopMostResponse, error)
 	AdminGetTopMosts(context.Context, *AdminGetTopMostsRequest) (*AdminGetTopMostsResponse, error)
 	AdminUpdateTopMost(context.Context, *AdminUpdateTopMostRequest) (*AdminUpdateTopMostResponse, error)
+	AdminDeleteTopMost(context.Context, *AdminDeleteTopMostRequest) (*AdminDeleteTopMostResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -150,6 +162,9 @@ func (UnimplementedGatewayServer) AdminGetTopMosts(context.Context, *AdminGetTop
 }
 func (UnimplementedGatewayServer) AdminUpdateTopMost(context.Context, *AdminUpdateTopMostRequest) (*AdminUpdateTopMostResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateTopMost not implemented")
+}
+func (UnimplementedGatewayServer) AdminDeleteTopMost(context.Context, *AdminDeleteTopMostRequest) (*AdminDeleteTopMostResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminDeleteTopMost not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -290,6 +305,24 @@ func _Gateway_AdminUpdateTopMost_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_AdminDeleteTopMost_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminDeleteTopMostRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminDeleteTopMost(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminDeleteTopMost_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminDeleteTopMost(ctx, req.(*AdminDeleteTopMostRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -324,6 +357,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AdminUpdateTopMost",
 			Handler:    _Gateway_AdminUpdateTopMost_Handler,
+		},
+		{
+			MethodName: "AdminDeleteTopMost",
+			Handler:    _Gateway_AdminDeleteTopMost_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/admin/delete/topmost": {
+      "post": {
+        "operationId": "Gateway_AdminDeleteTopMost",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteTopMostResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteTopMostRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/admin/get/topmosts": {
       "post": {
         "operationId": "Gateway_AdminGetTopMosts",
@@ -305,6 +337,29 @@
         }
       }
     },
+    "v1AdminDeleteTopMostRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteTopMostResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TopMost"
+        }
+      }
+    },
     "v1AdminGetTopMostsRequest": {
       "type": "object",
       "properties": {
@@ -424,23 +479,6 @@
         },
         "AppID": {
           "type": "string"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
-        },
-        "TargetUrl": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

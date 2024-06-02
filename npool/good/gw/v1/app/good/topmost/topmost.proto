@@ -58,6 +58,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc AdminDeleteTopMost (AdminDeleteTopMostRequest) returns (AdminDeleteTopMostResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/delete/topmost"
+            body: "*"
+        };
+    }
 }
 
 message TopMost {
@@ -105,11 +112,6 @@ message DeleteTopMostRequest {
     uint32 ID = 9;
     string EntID = 10;
     string AppID = 20;
-    optional string Title = 30;
-    optional string Message = 40;
-    optional string TargetUrl = 50;
-    optional uint32 StartAt = 60;
-    optional uint32 EndAt = 70;
 }
 
 message DeleteTopMostResponse {
@@ -170,3 +172,14 @@ message AdminUpdateTopMostRequest {
 message AdminUpdateTopMostResponse {
     TopMost Info = 10;
 }
+
+message AdminDeleteTopMostRequest {
+    uint32 ID = 9;
+    string EntID = 10;
+    string TargetAppID = 20;
+}
+
+message AdminDeleteTopMostResponse {
+    TopMost Info = 10;
+}
+
