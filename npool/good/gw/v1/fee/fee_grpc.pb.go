@@ -21,6 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Gateway_AdminCreateFee_FullMethodName = "/good.gateway.fee.v1.Gateway/AdminCreateFee"
 	Gateway_AdminUpdateFee_FullMethodName = "/good.gateway.fee.v1.Gateway/AdminUpdateFee"
+	Gateway_GetFee_FullMethodName         = "/good.gateway.fee.v1.Gateway/GetFee"
 	Gateway_GetFees_FullMethodName        = "/good.gateway.fee.v1.Gateway/GetFees"
 	Gateway_AdminDeleteFee_FullMethodName = "/good.gateway.fee.v1.Gateway/AdminDeleteFee"
 )
@@ -31,6 +32,7 @@ const (
 type GatewayClient interface {
 	AdminCreateFee(ctx context.Context, in *AdminCreateFeeRequest, opts ...grpc.CallOption) (*AdminCreateFeeResponse, error)
 	AdminUpdateFee(ctx context.Context, in *AdminUpdateFeeRequest, opts ...grpc.CallOption) (*AdminUpdateFeeResponse, error)
+	GetFee(ctx context.Context, in *GetFeeRequest, opts ...grpc.CallOption) (*GetFeeResponse, error)
 	GetFees(ctx context.Context, in *GetFeesRequest, opts ...grpc.CallOption) (*GetFeesResponse, error)
 	AdminDeleteFee(ctx context.Context, in *AdminDeleteFeeRequest, opts ...grpc.CallOption) (*AdminDeleteFeeResponse, error)
 }
@@ -61,6 +63,15 @@ func (c *gatewayClient) AdminUpdateFee(ctx context.Context, in *AdminUpdateFeeRe
 	return out, nil
 }
 
+func (c *gatewayClient) GetFee(ctx context.Context, in *GetFeeRequest, opts ...grpc.CallOption) (*GetFeeResponse, error) {
+	out := new(GetFeeResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetFee_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *gatewayClient) GetFees(ctx context.Context, in *GetFeesRequest, opts ...grpc.CallOption) (*GetFeesResponse, error) {
 	out := new(GetFeesResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetFees_FullMethodName, in, out, opts...)
@@ -85,6 +96,7 @@ func (c *gatewayClient) AdminDeleteFee(ctx context.Context, in *AdminDeleteFeeRe
 type GatewayServer interface {
 	AdminCreateFee(context.Context, *AdminCreateFeeRequest) (*AdminCreateFeeResponse, error)
 	AdminUpdateFee(context.Context, *AdminUpdateFeeRequest) (*AdminUpdateFeeResponse, error)
+	GetFee(context.Context, *GetFeeRequest) (*GetFeeResponse, error)
 	GetFees(context.Context, *GetFeesRequest) (*GetFeesResponse, error)
 	AdminDeleteFee(context.Context, *AdminDeleteFeeRequest) (*AdminDeleteFeeResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -99,6 +111,9 @@ func (UnimplementedGatewayServer) AdminCreateFee(context.Context, *AdminCreateFe
 }
 func (UnimplementedGatewayServer) AdminUpdateFee(context.Context, *AdminUpdateFeeRequest) (*AdminUpdateFeeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateFee not implemented")
+}
+func (UnimplementedGatewayServer) GetFee(context.Context, *GetFeeRequest) (*GetFeeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFee not implemented")
 }
 func (UnimplementedGatewayServer) GetFees(context.Context, *GetFeesRequest) (*GetFeesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFees not implemented")
@@ -155,6 +170,24 @@ func _Gateway_AdminUpdateFee_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_GetFee_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFeeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetFee(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_GetFee_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetFee(ctx, req.(*GetFeeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Gateway_GetFees_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetFeesRequest)
 	if err := dec(in); err != nil {
@@ -205,6 +238,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AdminUpdateFee",
 			Handler:    _Gateway_AdminUpdateFee_Handler,
+		},
+		{
+			MethodName: "GetFee",
+			Handler:    _Gateway_GetFee_Handler,
 		},
 		{
 			MethodName: "GetFees",

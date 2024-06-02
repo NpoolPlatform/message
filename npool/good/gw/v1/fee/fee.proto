@@ -22,6 +22,12 @@ service Gateway {
             body: "*"
         };
     }
+    rpc GetFee(GetFeeRequest) returns (GetFeeResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/fee"
+            body: "*"
+        };
+    }
     rpc GetFees(GetFeesRequest) returns (GetFeesResponse) {
         option (google.api.http) = {
             post: "/v1/get/fees"
@@ -60,6 +66,14 @@ message AdminUpdateFeeRequest {
 }
 
 message AdminUpdateFeeResponse {
+    middleware.fee.v1.Fee Info = 10;
+}
+
+message GetFeeRequest {
+    string GoodID = 10;
+}
+
+message GetFeeResponse {
     middleware.fee.v1.Fee Info = 10;
 }
 
