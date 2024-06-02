@@ -25,6 +25,7 @@ const (
 	Gateway_AdminCreateAppFee_FullMethodName = "/good.gateway.app.fee.v1.Gateway/AdminCreateAppFee"
 	Gateway_AdminGetAppFees_FullMethodName   = "/good.gateway.app.fee.v1.Gateway/AdminGetAppFees"
 	Gateway_AdminUpdateAppFee_FullMethodName = "/good.gateway.app.fee.v1.Gateway/AdminUpdateAppFee"
+	Gateway_AdminDeleteAppFee_FullMethodName = "/good.gateway.app.fee.v1.Gateway/AdminDeleteAppFee"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -37,6 +38,7 @@ type GatewayClient interface {
 	AdminCreateAppFee(ctx context.Context, in *AdminCreateAppFeeRequest, opts ...grpc.CallOption) (*AdminCreateAppFeeResponse, error)
 	AdminGetAppFees(ctx context.Context, in *AdminGetAppFeesRequest, opts ...grpc.CallOption) (*AdminGetAppFeesResponse, error)
 	AdminUpdateAppFee(ctx context.Context, in *AdminUpdateAppFeeRequest, opts ...grpc.CallOption) (*AdminUpdateAppFeeResponse, error)
+	AdminDeleteAppFee(ctx context.Context, in *AdminDeleteAppFeeRequest, opts ...grpc.CallOption) (*AdminDeleteAppFeeResponse, error)
 }
 
 type gatewayClient struct {
@@ -101,6 +103,15 @@ func (c *gatewayClient) AdminUpdateAppFee(ctx context.Context, in *AdminUpdateAp
 	return out, nil
 }
 
+func (c *gatewayClient) AdminDeleteAppFee(ctx context.Context, in *AdminDeleteAppFeeRequest, opts ...grpc.CallOption) (*AdminDeleteAppFeeResponse, error) {
+	out := new(AdminDeleteAppFeeResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminDeleteAppFee_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -111,6 +122,7 @@ type GatewayServer interface {
 	AdminCreateAppFee(context.Context, *AdminCreateAppFeeRequest) (*AdminCreateAppFeeResponse, error)
 	AdminGetAppFees(context.Context, *AdminGetAppFeesRequest) (*AdminGetAppFeesResponse, error)
 	AdminUpdateAppFee(context.Context, *AdminUpdateAppFeeRequest) (*AdminUpdateAppFeeResponse, error)
+	AdminDeleteAppFee(context.Context, *AdminDeleteAppFeeRequest) (*AdminDeleteAppFeeResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -135,6 +147,9 @@ func (UnimplementedGatewayServer) AdminGetAppFees(context.Context, *AdminGetAppF
 }
 func (UnimplementedGatewayServer) AdminUpdateAppFee(context.Context, *AdminUpdateAppFeeRequest) (*AdminUpdateAppFeeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateAppFee not implemented")
+}
+func (UnimplementedGatewayServer) AdminDeleteAppFee(context.Context, *AdminDeleteAppFeeRequest) (*AdminDeleteAppFeeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminDeleteAppFee not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -257,6 +272,24 @@ func _Gateway_AdminUpdateAppFee_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_AdminDeleteAppFee_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminDeleteAppFeeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminDeleteAppFee(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminDeleteAppFee_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminDeleteAppFee(ctx, req.(*AdminDeleteAppFeeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -287,6 +320,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AdminUpdateAppFee",
 			Handler:    _Gateway_AdminUpdateAppFee_Handler,
+		},
+		{
+			MethodName: "AdminDeleteAppFee",
+			Handler:    _Gateway_AdminDeleteAppFee_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

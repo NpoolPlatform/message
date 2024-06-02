@@ -50,6 +50,13 @@ service Gateway {
             body: "*"
         };
     }
+
+    rpc AdminDeleteAppFee (AdminDeleteAppFeeRequest) returns (AdminDeleteAppFeeResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/delete/appfee"
+            body: "*"
+        };
+    }
 }
 
 message AppFee {
@@ -146,5 +153,16 @@ message AdminUpdateAppFeeRequest {
 }
 
 message AdminUpdateAppFeeResponse {
+    AppFee Info = 10;
+}
+
+message AdminDeleteAppFeeRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+    string TargetAppID = 30;
+    string AppGoodID = 40;
+}
+
+message AdminDeleteAppFeeResponse {
     AppFee Info = 10;
 }

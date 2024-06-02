@@ -17,13 +17,6 @@ import "npool/good/mw/v1/good/stock/stock.proto";
 import "npool/good/gw/v1/good/coin/reward/reward.proto";
 
 service Gateway {
-    rpc CreateAppPowerRental (CreateAppPowerRentalRequest) returns (CreateAppPowerRentalResponse) {
-        option (google.api.http) = {
-            post: "/v1/create/apppowerrental"
-            body: "*"
-        };
-    }
-
     rpc UpdateAppPowerRental (UpdateAppPowerRentalRequest) returns (UpdateAppPowerRentalResponse) {
         option (google.api.http) = {
             post: "/v1/update/apppowerrental"
@@ -41,13 +34,6 @@ service Gateway {
     rpc GetAppPowerRentals (GetAppPowerRentalsRequest) returns (GetAppPowerRentalsResponse) {
         option (google.api.http) = {
             post: "/v1/get/apppowerrentals"
-            body: "*"
-        };
-    }
-
-    rpc DeleteAppPowerRental (DeleteAppPowerRentalRequest) returns (DeleteAppPowerRentalResponse) {
-        option (google.api.http) = {
-            post: "/v1/delete/apppowerrental"
             body: "*"
         };
     }
@@ -181,41 +167,6 @@ message AppPowerRental {
     uint32 UpdatedAt = 1010;
 }
 
-message CreateAppPowerRentalRequest {
-    string AppID = 10;
-    string GoodID = 20;
-
-    optional bool Purchasable = 30;
-    optional bool EnableProductPage = 40;
-    optional string ProductPage = 50;
-    optional bool Online = 60;
-    optional bool Visible = 70;
-    string Name = 80;
-    optional int32 DisplayIndex = 90;
-    optional string Banner = 100;
-
-    uint32 ServiceStartAt = 110;
-    optional basetypes.good.v1.CancelMode CancelMode = 120;
-    optional uint32 CancelableBeforeStartSeconds = 130;
-    optional bool EnableSetCommission =140;
-    optional string MinOrderAmount = 150;
-    optional string MaxOrderAmount = 160;
-    optional string MaxUserAmount = 170;
-    optional uint32 MinOrderDurationSeconds = 180;
-    optional uint32 MaxOrderDurationSeconds = 190;
-    string UnitPrice = 200;
-    uint32 SaleStartAt = 210;
-    uint32 SaleEndAt = 220;
-    basetypes.good.v1.GoodSaleMode SaleMode = 230;
-    optional bool FixedDuration = 240;
-    optional bool PackageWithRequireds = 250;
-    optional basetypes.good.v1.GoodStartMode StartMode = 260;
-}
-
-message CreateAppPowerRentalResponse {
-    AppPowerRental Info = 10;
-}
-
 message UpdateAppPowerRentalRequest {
     uint32 ID = 10;
     string EntID = 20;
@@ -270,17 +221,6 @@ message GetAppPowerRentalsRequest {
 message GetAppPowerRentalsResponse {
     repeated AppPowerRental Infos = 10;
     uint32 Total = 20;
-}
-
-message DeleteAppPowerRentalRequest {
-    uint32 ID = 10;
-    string EntID = 20;
-    string AppID = 30;
-    string AppGoodID = 40;
-}
-
-message DeleteAppPowerRentalResponse {
-    AppPowerRental Info = 10;
 }
 
 message AdminCreateAppPowerRentalRequest {

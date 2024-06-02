@@ -48,6 +48,38 @@
         ]
       }
     },
+    "/v1/admin/delete/appfee": {
+      "post": {
+        "operationId": "Gateway_AdminDeleteAppFee",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteAppFeeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteAppFeeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/admin/get/appfees": {
       "post": {
         "operationId": "Gateway_AdminGetAppFees",
@@ -265,6 +297,32 @@
       }
     },
     "v1AdminCreateAppFeeResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1AppFee"
+        }
+      }
+    },
+    "v1AdminDeleteAppFeeRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteAppFeeResponse": {
       "type": "object",
       "properties": {
         "Info": {

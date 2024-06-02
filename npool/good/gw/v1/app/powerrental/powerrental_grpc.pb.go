@@ -19,11 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateAppPowerRental_FullMethodName      = "/good.gateway.app.powerrental.v1.Gateway/CreateAppPowerRental"
 	Gateway_UpdateAppPowerRental_FullMethodName      = "/good.gateway.app.powerrental.v1.Gateway/UpdateAppPowerRental"
 	Gateway_GetAppPowerRental_FullMethodName         = "/good.gateway.app.powerrental.v1.Gateway/GetAppPowerRental"
 	Gateway_GetAppPowerRentals_FullMethodName        = "/good.gateway.app.powerrental.v1.Gateway/GetAppPowerRentals"
-	Gateway_DeleteAppPowerRental_FullMethodName      = "/good.gateway.app.powerrental.v1.Gateway/DeleteAppPowerRental"
 	Gateway_AdminCreateAppPowerRental_FullMethodName = "/good.gateway.app.powerrental.v1.Gateway/AdminCreateAppPowerRental"
 	Gateway_AdminUpdateAppPowerRental_FullMethodName = "/good.gateway.app.powerrental.v1.Gateway/AdminUpdateAppPowerRental"
 	Gateway_AdminGetAppPowerRentals_FullMethodName   = "/good.gateway.app.powerrental.v1.Gateway/AdminGetAppPowerRentals"
@@ -34,11 +32,9 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateAppPowerRental(ctx context.Context, in *CreateAppPowerRentalRequest, opts ...grpc.CallOption) (*CreateAppPowerRentalResponse, error)
 	UpdateAppPowerRental(ctx context.Context, in *UpdateAppPowerRentalRequest, opts ...grpc.CallOption) (*UpdateAppPowerRentalResponse, error)
 	GetAppPowerRental(ctx context.Context, in *GetAppPowerRentalRequest, opts ...grpc.CallOption) (*GetAppPowerRentalResponse, error)
 	GetAppPowerRentals(ctx context.Context, in *GetAppPowerRentalsRequest, opts ...grpc.CallOption) (*GetAppPowerRentalsResponse, error)
-	DeleteAppPowerRental(ctx context.Context, in *DeleteAppPowerRentalRequest, opts ...grpc.CallOption) (*DeleteAppPowerRentalResponse, error)
 	// Run by church admin
 	AdminCreateAppPowerRental(ctx context.Context, in *AdminCreateAppPowerRentalRequest, opts ...grpc.CallOption) (*AdminCreateAppPowerRentalResponse, error)
 	AdminUpdateAppPowerRental(ctx context.Context, in *AdminUpdateAppPowerRentalRequest, opts ...grpc.CallOption) (*AdminUpdateAppPowerRentalResponse, error)
@@ -52,15 +48,6 @@ type gatewayClient struct {
 
 func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
-}
-
-func (c *gatewayClient) CreateAppPowerRental(ctx context.Context, in *CreateAppPowerRentalRequest, opts ...grpc.CallOption) (*CreateAppPowerRentalResponse, error) {
-	out := new(CreateAppPowerRentalResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateAppPowerRental_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *gatewayClient) UpdateAppPowerRental(ctx context.Context, in *UpdateAppPowerRentalRequest, opts ...grpc.CallOption) (*UpdateAppPowerRentalResponse, error) {
@@ -84,15 +71,6 @@ func (c *gatewayClient) GetAppPowerRental(ctx context.Context, in *GetAppPowerRe
 func (c *gatewayClient) GetAppPowerRentals(ctx context.Context, in *GetAppPowerRentalsRequest, opts ...grpc.CallOption) (*GetAppPowerRentalsResponse, error) {
 	out := new(GetAppPowerRentalsResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetAppPowerRentals_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) DeleteAppPowerRental(ctx context.Context, in *DeleteAppPowerRentalRequest, opts ...grpc.CallOption) (*DeleteAppPowerRentalResponse, error) {
-	out := new(DeleteAppPowerRentalResponse)
-	err := c.cc.Invoke(ctx, Gateway_DeleteAppPowerRental_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -139,11 +117,9 @@ func (c *gatewayClient) AdminDeleteAppPowerRental(ctx context.Context, in *Admin
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateAppPowerRental(context.Context, *CreateAppPowerRentalRequest) (*CreateAppPowerRentalResponse, error)
 	UpdateAppPowerRental(context.Context, *UpdateAppPowerRentalRequest) (*UpdateAppPowerRentalResponse, error)
 	GetAppPowerRental(context.Context, *GetAppPowerRentalRequest) (*GetAppPowerRentalResponse, error)
 	GetAppPowerRentals(context.Context, *GetAppPowerRentalsRequest) (*GetAppPowerRentalsResponse, error)
-	DeleteAppPowerRental(context.Context, *DeleteAppPowerRentalRequest) (*DeleteAppPowerRentalResponse, error)
 	// Run by church admin
 	AdminCreateAppPowerRental(context.Context, *AdminCreateAppPowerRentalRequest) (*AdminCreateAppPowerRentalResponse, error)
 	AdminUpdateAppPowerRental(context.Context, *AdminUpdateAppPowerRentalRequest) (*AdminUpdateAppPowerRentalResponse, error)
@@ -156,9 +132,6 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateAppPowerRental(context.Context, *CreateAppPowerRentalRequest) (*CreateAppPowerRentalResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAppPowerRental not implemented")
-}
 func (UnimplementedGatewayServer) UpdateAppPowerRental(context.Context, *UpdateAppPowerRentalRequest) (*UpdateAppPowerRentalResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppPowerRental not implemented")
 }
@@ -167,9 +140,6 @@ func (UnimplementedGatewayServer) GetAppPowerRental(context.Context, *GetAppPowe
 }
 func (UnimplementedGatewayServer) GetAppPowerRentals(context.Context, *GetAppPowerRentalsRequest) (*GetAppPowerRentalsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppPowerRentals not implemented")
-}
-func (UnimplementedGatewayServer) DeleteAppPowerRental(context.Context, *DeleteAppPowerRentalRequest) (*DeleteAppPowerRentalResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppPowerRental not implemented")
 }
 func (UnimplementedGatewayServer) AdminCreateAppPowerRental(context.Context, *AdminCreateAppPowerRentalRequest) (*AdminCreateAppPowerRentalResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateAppPowerRental not implemented")
@@ -194,24 +164,6 @@ type UnsafeGatewayServer interface {
 
 func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
-}
-
-func _Gateway_CreateAppPowerRental_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAppPowerRentalRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CreateAppPowerRental(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_CreateAppPowerRental_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateAppPowerRental(ctx, req.(*CreateAppPowerRentalRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Gateway_UpdateAppPowerRental_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -264,24 +216,6 @@ func _Gateway_GetAppPowerRentals_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).GetAppPowerRentals(ctx, req.(*GetAppPowerRentalsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_DeleteAppPowerRental_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteAppPowerRentalRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).DeleteAppPowerRental(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_DeleteAppPowerRental_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeleteAppPowerRental(ctx, req.(*DeleteAppPowerRentalRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -366,10 +300,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateAppPowerRental",
-			Handler:    _Gateway_CreateAppPowerRental_Handler,
-		},
-		{
 			MethodName: "UpdateAppPowerRental",
 			Handler:    _Gateway_UpdateAppPowerRental_Handler,
 		},
@@ -380,10 +310,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppPowerRentals",
 			Handler:    _Gateway_GetAppPowerRentals_Handler,
-		},
-		{
-			MethodName: "DeleteAppPowerRental",
-			Handler:    _Gateway_DeleteAppPowerRental_Handler,
 		},
 		{
 			MethodName: "AdminCreateAppPowerRental",
