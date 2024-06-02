@@ -246,6 +246,7 @@ message UpdateAppPowerRentalRequest {
     optional basetypes.good.v1.GoodSaleMode SaleMode = 250;
     optional bool FixedDuration = 260;
     optional bool PackageWithRequireds = 270;
+    optional basetypes.good.v1.GoodStartMode StartMode = 280;
 }
 
 message UpdateAppPowerRentalResponse {
@@ -347,6 +348,7 @@ message AdminUpdateAppPowerRentalRequest {
     optional basetypes.good.v1.GoodSaleMode SaleMode = 250;
     optional bool FixedDuration = 260;
     optional bool PackageWithRequireds = 270;
+    optional basetypes.good.v1.GoodStartMode StartMode = 280;
 }
 
 message AdminUpdateAppPowerRentalResponse {

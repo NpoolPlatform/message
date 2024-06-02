@@ -580,6 +580,9 @@
         },
         "PackageWithRequireds": {
           "type": "boolean"
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
         }
       }
     },
@@ -1494,6 +1497,9 @@
         },
         "PackageWithRequireds": {
           "type": "boolean"
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
         }
       }
     },
