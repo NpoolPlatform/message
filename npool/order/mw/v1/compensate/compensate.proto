@@ -20,6 +20,7 @@ service Middleware {
     rpc GetCompensates (GetCompensatesRequest) returns (GetCompensatesResponse) {}
     rpc ExistCompensate (ExistCompensateRequest) returns (ExistCompensateResponse) {}
     rpc ExistCompensateConds (ExistCompensateCondsRequest) returns (ExistCompensateCondsResponse) {}
+    rpc CountCompensateOrders (CountCompensateOrdersRequest) returns (CountCompensateOrdersResponse) {}
 }
 
 message Compensate {
@@ -95,4 +96,8 @@ message ExistCompensateResponse { bool Info = 10; }
 message ExistCompensateCondsRequest { Conds Conds = 10; }
 
 message ExistCompensateCondsResponse { bool Info = 10; }
+
+message CountCompensateOrdersRequest { string CompensateFromID = 10; }
+
+message CountCompensateOrdersResponse { uint32 Info = 10; }
 

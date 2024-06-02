@@ -189,6 +189,15 @@
         }
       }
     },
+    "v1CountCompensateOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1ExistCompensateCondsResponse": {
       "type": "object",
       "properties": {
