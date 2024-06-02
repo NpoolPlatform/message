@@ -5,6 +5,7 @@ package good.middleware.good1.malfunction.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/malfunction";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Middleware {
@@ -35,18 +36,22 @@ message Malfunction {
     string EntID = 20;
     // @inject_tag: sql:"good_id"
     string GoodID = 30;
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 40;
+    basetypes.good.v1.GoodType GoodType = 50;
     // @inject_tag: sql:"good_name"
-    string GoodName = 40;
+    string GoodName = 60;
     // @inject_tag: sql:"title"
-    string Title = 50;
+    string Title = 70;
     // @inject_tag: sql:"message"
-    string Message = 60;
+    string Message = 80;
     // @inject_tag: sql:"start_at"
-    uint32 StartAt = 70;
+    uint32 StartAt = 90;
     // @inject_tag: sql:"duration_seconds"
-    uint32 DurationSeconds = 80;
+    uint32 DurationSeconds = 100;
     // @inject_tag: sql:"compensate_seconds"
-    uint32 CompensateSeconds = 90;
+    uint32 CompensateSeconds = 110;
+
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"

@@ -119,6 +119,19 @@
         }
       }
     },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
+    },
     "v1Malfunction": {
       "type": "object",
       "properties": {
@@ -134,6 +147,13 @@
         "GoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
+        },
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
         },
         "GoodName": {
           "type": "string",
