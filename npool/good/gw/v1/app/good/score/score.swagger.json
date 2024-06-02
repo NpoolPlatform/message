@@ -143,6 +143,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/get/my/appgoodscores": {
+      "post": {
+        "operationId": "Gateway_GetMyScores",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetMyScoresResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetMyScoresRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -261,10 +293,13 @@
         }
       }
     },
-    "v1GetScoresRequest": {
+    "v1GetMyScoresRequest": {
       "type": "object",
       "properties": {
         "AppID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         },
         "AppGoodID": {
@@ -273,7 +308,44 @@
         "GoodID": {
           "type": "string"
         },
-        "UserID": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetMyScoresResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Score"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetScoresRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "GoodID": {
           "type": "string"
         },
         "Offset": {

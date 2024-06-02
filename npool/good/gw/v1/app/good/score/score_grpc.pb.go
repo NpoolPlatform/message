@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Gateway_CreateScore_FullMethodName    = "/good.gateway.app.good1.score.v1.Gateway/CreateScore"
+	Gateway_GetMyScores_FullMethodName    = "/good.gateway.app.good1.score.v1.Gateway/GetMyScores"
 	Gateway_GetScores_FullMethodName      = "/good.gateway.app.good1.score.v1.Gateway/GetScores"
 	Gateway_DeleteScore_FullMethodName    = "/good.gateway.app.good1.score.v1.Gateway/DeleteScore"
 	Gateway_AdminGetScores_FullMethodName = "/good.gateway.app.good1.score.v1.Gateway/AdminGetScores"
@@ -30,6 +31,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateScore(ctx context.Context, in *CreateScoreRequest, opts ...grpc.CallOption) (*CreateScoreResponse, error)
+	GetMyScores(ctx context.Context, in *GetMyScoresRequest, opts ...grpc.CallOption) (*GetMyScoresResponse, error)
 	GetScores(ctx context.Context, in *GetScoresRequest, opts ...grpc.CallOption) (*GetScoresResponse, error)
 	DeleteScore(ctx context.Context, in *DeleteScoreRequest, opts ...grpc.CallOption) (*DeleteScoreResponse, error)
 	AdminGetScores(ctx context.Context, in *AdminGetScoresRequest, opts ...grpc.CallOption) (*AdminGetScoresResponse, error)
@@ -46,6 +48,15 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) CreateScore(ctx context.Context, in *CreateScoreRequest, opts ...grpc.CallOption) (*CreateScoreResponse, error) {
 	out := new(CreateScoreResponse)
 	err := c.cc.Invoke(ctx, Gateway_CreateScore_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetMyScores(ctx context.Context, in *GetMyScoresRequest, opts ...grpc.CallOption) (*GetMyScoresResponse, error) {
+	out := new(GetMyScoresResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetMyScores_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -84,6 +95,7 @@ func (c *gatewayClient) AdminGetScores(ctx context.Context, in *AdminGetScoresRe
 // for forward compatibility
 type GatewayServer interface {
 	CreateScore(context.Context, *CreateScoreRequest) (*CreateScoreResponse, error)
+	GetMyScores(context.Context, *GetMyScoresRequest) (*GetMyScoresResponse, error)
 	GetScores(context.Context, *GetScoresRequest) (*GetScoresResponse, error)
 	DeleteScore(context.Context, *DeleteScoreRequest) (*DeleteScoreResponse, error)
 	AdminGetScores(context.Context, *AdminGetScoresRequest) (*AdminGetScoresResponse, error)
@@ -96,6 +108,9 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) CreateScore(context.Context, *CreateScoreRequest) (*CreateScoreResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateScore not implemented")
+}
+func (UnimplementedGatewayServer) GetMyScores(context.Context, *GetMyScoresRequest) (*GetMyScoresResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMyScores not implemented")
 }
 func (UnimplementedGatewayServer) GetScores(context.Context, *GetScoresRequest) (*GetScoresResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetScores not implemented")
@@ -133,6 +148,24 @@ func _Gateway_CreateScore_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateScore(ctx, req.(*CreateScoreRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetMyScores_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMyScoresRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetMyScores(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_GetMyScores_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetMyScores(ctx, req.(*GetMyScoresRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -201,6 +234,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateScore",
 			Handler:    _Gateway_CreateScore_Handler,
+		},
+		{
+			MethodName: "GetMyScores",
+			Handler:    _Gateway_GetMyScores_Handler,
 		},
 		{
 			MethodName: "GetScores",
