@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Gateway_CreateLike_FullMethodName = "/good.gateway.app.good1.like.v1.Gateway/CreateLike"
+	Gateway_GetMyLikes_FullMethodName = "/good.gateway.app.good1.like.v1.Gateway/GetMyLikes"
 	Gateway_GetLikes_FullMethodName   = "/good.gateway.app.good1.like.v1.Gateway/GetLikes"
 	Gateway_DeleteLike_FullMethodName = "/good.gateway.app.good1.like.v1.Gateway/DeleteLike"
 )
@@ -29,6 +30,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	CreateLike(ctx context.Context, in *CreateLikeRequest, opts ...grpc.CallOption) (*CreateLikeResponse, error)
+	GetMyLikes(ctx context.Context, in *GetMyLikesRequest, opts ...grpc.CallOption) (*GetMyLikesResponse, error)
 	GetLikes(ctx context.Context, in *GetLikesRequest, opts ...grpc.CallOption) (*GetLikesResponse, error)
 	DeleteLike(ctx context.Context, in *DeleteLikeRequest, opts ...grpc.CallOption) (*DeleteLikeResponse, error)
 }
@@ -44,6 +46,15 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 func (c *gatewayClient) CreateLike(ctx context.Context, in *CreateLikeRequest, opts ...grpc.CallOption) (*CreateLikeResponse, error) {
 	out := new(CreateLikeResponse)
 	err := c.cc.Invoke(ctx, Gateway_CreateLike_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) GetMyLikes(ctx context.Context, in *GetMyLikesRequest, opts ...grpc.CallOption) (*GetMyLikesResponse, error) {
+	out := new(GetMyLikesResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetMyLikes_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -73,6 +84,7 @@ func (c *gatewayClient) DeleteLike(ctx context.Context, in *DeleteLikeRequest, o
 // for forward compatibility
 type GatewayServer interface {
 	CreateLike(context.Context, *CreateLikeRequest) (*CreateLikeResponse, error)
+	GetMyLikes(context.Context, *GetMyLikesRequest) (*GetMyLikesResponse, error)
 	GetLikes(context.Context, *GetLikesRequest) (*GetLikesResponse, error)
 	DeleteLike(context.Context, *DeleteLikeRequest) (*DeleteLikeResponse, error)
 	mustEmbedUnimplementedGatewayServer()
@@ -84,6 +96,9 @@ type UnimplementedGatewayServer struct {
 
 func (UnimplementedGatewayServer) CreateLike(context.Context, *CreateLikeRequest) (*CreateLikeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateLike not implemented")
+}
+func (UnimplementedGatewayServer) GetMyLikes(context.Context, *GetMyLikesRequest) (*GetMyLikesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMyLikes not implemented")
 }
 func (UnimplementedGatewayServer) GetLikes(context.Context, *GetLikesRequest) (*GetLikesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLikes not implemented")
@@ -118,6 +133,24 @@ func _Gateway_CreateLike_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateLike(ctx, req.(*CreateLikeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_GetMyLikes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMyLikesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).GetMyLikes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_GetMyLikes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).GetMyLikes(ctx, req.(*GetMyLikesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -168,6 +201,10 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateLike",
 			Handler:    _Gateway_CreateLike_Handler,
+		},
+		{
+			MethodName: "GetMyLikes",
+			Handler:    _Gateway_GetMyLikes_Handler,
 		},
 		{
 			MethodName: "GetLikes",
