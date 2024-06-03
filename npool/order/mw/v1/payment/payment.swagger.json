@@ -79,6 +79,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
+        "OrderID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"order_id\""
+        },
         "ObseleteStateStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"obselete_state\""

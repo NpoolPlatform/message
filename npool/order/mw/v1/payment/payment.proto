@@ -24,12 +24,14 @@ message Payment {
     uint32 ID = 10;
     // @inject_tag: sql:"ent_id"
     string EntID = 20;
+    // @inject_tag: sql:"order_id"
+    string OrderID = 30;
     // @inject_tag: sql:"obselete_state"
-    string ObseleteStateStr = 30;
-    basetypes.order.v1.PaymentObseleteState ObseleteState = 40;
+    string ObseleteStateStr = 40;
+    basetypes.order.v1.PaymentObseleteState ObseleteState = 50;
 
-    repeated PaymentBalanceInfo PaymentBalances = 50;
-    repeated PaymentTransferInfo PaymentTransfers = 60;
+    repeated PaymentBalanceInfo PaymentBalances = 60;
+    repeated PaymentTransferInfo PaymentTransfers = 70;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
