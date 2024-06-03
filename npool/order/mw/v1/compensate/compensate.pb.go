@@ -862,8 +862,10 @@ type CompensateOrderNumber struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CompensateFromID string `protobuf:"bytes,10,opt,name=CompensateFromID,proto3" json:"CompensateFromID,omitempty"`
-	Orders           uint32 `protobuf:"varint,20,opt,name=Orders,proto3" json:"Orders,omitempty"`
+	// @inject_tag: sql:"compensate_from_id"
+	CompensateFromID string `protobuf:"bytes,10,opt,name=CompensateFromID,proto3" json:"CompensateFromID,omitempty" sql:"compensate_from_id"`
+	// @inject_tag: sql:"orders"
+	Orders uint32 `protobuf:"varint,20,opt,name=Orders,proto3" json:"Orders,omitempty" sql:"orders"`
 }
 
 func (x *CompensateOrderNumber) Reset() {

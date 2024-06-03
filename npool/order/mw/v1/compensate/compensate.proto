@@ -105,7 +105,9 @@ message CountCompensatesResponse { uint32 Info = 10; }
 message CountCompensateOrdersRequest { repeated string CompensateFromIDs = 10; }
 
 message CompensateOrderNumber {
+    // @inject_tag: sql:"compensate_from_id"
     string CompensateFromID = 10;
+    // @inject_tag: sql:"orders"
     uint32 Orders = 20;
 }
 

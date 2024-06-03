@@ -148,11 +148,13 @@
       "type": "object",
       "properties": {
         "CompensateFromID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"compensate_from_id\""
         },
         "Orders": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"orders\""
         }
       }
     },
