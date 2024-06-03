@@ -144,6 +144,18 @@
         }
       }
     },
+    "v1CompensateOrderNumber": {
+      "type": "object",
+      "properties": {
+        "CompensateFromID": {
+          "type": "string"
+        },
+        "Orders": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1CompensateType": {
       "type": "string",
       "enum": [
@@ -186,6 +198,17 @@
         },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
+        }
+      }
+    },
+    "v1CountCompensateOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CompensateOrderNumber"
+          }
         }
       }
     },
