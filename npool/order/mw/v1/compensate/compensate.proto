@@ -98,7 +98,7 @@ message ExistCompensateCondsRequest { Conds Conds = 10; }
 
 message ExistCompensateCondsResponse { bool Info = 10; }
 
-message CountCompensatesRequest { string CompensateFromID = 10; }
+message CountCompensatesRequest { Conds Conds = 10; }
 
 message CountCompensatesResponse { uint32 Info = 10; }
 
