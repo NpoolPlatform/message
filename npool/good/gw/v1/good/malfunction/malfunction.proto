@@ -69,7 +69,7 @@ message AdminCreateMalfunctionResponse {
 
 message AdminUpdateMalfunctionRequest {
     uint32 ID = 10;
-    optional string EntID = 20;
+    string EntID = 20;
     optional string Title = 30;
     optional string Message = 40;
     optional uint32 StartAt = 50;
