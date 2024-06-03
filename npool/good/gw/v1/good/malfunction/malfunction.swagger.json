@@ -236,6 +236,24 @@
         },
         "EntID": {
           "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationSeconds": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CompensateSeconds": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

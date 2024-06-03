@@ -69,7 +69,12 @@ message AdminCreateMalfunctionResponse {
 
 message AdminUpdateMalfunctionRequest {
     uint32 ID = 10;
-    string EntID = 20;
+    optional string EntID = 20;
+    optional string Title = 30;
+    optional string Message = 40;
+    optional uint32 StartAt = 50;
+    optional uint32 DurationSeconds = 60; // For compensate which is start but not end, 0 means till now
+    optional uint32 CompensateSeconds = 70;
 }
 
 message AdminUpdateMalfunctionResponse {
