@@ -198,7 +198,10 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Reward"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Reward"
+          }
         }
       }
     },
@@ -511,6 +514,9 @@
       "type": "object",
       "properties": {
         "TaskID": {
+          "type": "string"
+        },
+        "UserID": {
           "type": "string"
         },
         "Credits": {
