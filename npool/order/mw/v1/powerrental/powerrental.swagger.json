@@ -231,7 +231,7 @@
       "properties": {
         "ParentOrderID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"parent_order_id\""
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "AppGoodID": {
           "type": "string",

@@ -725,8 +725,8 @@ type FeeDuration struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// @inject_tag: sql:"parent_order_id"
-	ParentOrderID string `protobuf:"bytes,10,opt,name=ParentOrderID,proto3" json:"ParentOrderID,omitempty" sql:"parent_order_id"`
+	// @inject_tag: sql:"ent_id"
+	ParentOrderID string `protobuf:"bytes,10,opt,name=ParentOrderID,proto3" json:"ParentOrderID,omitempty" sql:"ent_id"`
 	// @inject_tag: sql:"app_good_id"
 	AppGoodID string `protobuf:"bytes,20,opt,name=AppGoodID,proto3" json:"AppGoodID,omitempty" sql:"app_good_id"`
 	// @inject_tag: sql:"total_duration_seconds"
