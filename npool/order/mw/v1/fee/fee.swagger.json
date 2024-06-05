@@ -364,13 +364,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"payment_id\""
         },
-        "PaymentObseleteStateStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"payment_obselete_state\""
-        },
-        "PaymentObseleteState": {
-          "$ref": "#/definitions/v1PaymentObseleteState"
-        },
         "Coupons": {
           "type": "array",
           "items": {
@@ -671,18 +664,6 @@
           "type": "string"
         }
       }
-    },
-    "v1PaymentObseleteState": {
-      "type": "string",
-      "enum": [
-        "DefaultPaymentObseleteState",
-        "PaymentObseleteNone",
-        "PaymentObseleteWait",
-        "PaymentObseleteUnlock",
-        "PaymentObseleted",
-        "PaymentObseleteFail"
-      ],
-      "default": "DefaultPaymentObseleteState"
     },
     "v1PaymentState": {
       "type": "string",

@@ -184,9 +184,6 @@ message PowerRentalOrder {
     string LedgerLockID = 560;
     // @inject_tag: sql:"payment_id"
     string PaymentID = 570;
-    // @inject_tag: sql:"payment_obselete_state"
-    string PaymentObseleteStateStr = 580;
-    basetypes.order.v1.PaymentObseleteState PaymentObseleteState = 590;
 
     // Coupons
     repeated order.middleware.order1.coupon.v1.OrderCouponInfo Coupons = 600;

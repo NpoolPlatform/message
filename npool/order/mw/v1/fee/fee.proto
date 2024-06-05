@@ -146,9 +146,6 @@ message FeeOrder {
     string LedgerLockID = 490;
     // @inject_tag: sql:"payment_id"
     string PaymentID = 500;
-    // @inject_tag: sql:"payment_obselete_state"
-    string PaymentObseleteStateStr = 510;
-    basetypes.order.v1.PaymentObseleteState PaymentObseleteState = 520;
 
     // Coupons
     repeated order.middleware.order1.coupon.v1.OrderCouponInfo Coupons = 600;
