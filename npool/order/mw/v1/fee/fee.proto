@@ -161,7 +161,7 @@ message FeeOrder {
 }
 
 message FeeDuration {
-    // @inject_tag: sql:"ent_id"
+    // @inject_tag: sql:"parent_order_id"
     string ParentOrderID = 10;
     // @inject_tag: sql:"app_good_id"
     string AppGoodID = 20;
