@@ -240,10 +240,10 @@ message AdminCreateAppPowerRentalRequest {
     optional basetypes.good.v1.CancelMode CancelMode = 120;
     optional uint32 CancelableBeforeStartSeconds = 130;
     optional bool EnableSetCommission =140;
-    optional string MinOrderAmount = 150;
-    optional string MaxOrderAmount = 160;
+    string MinOrderAmount = 150;
+    string MaxOrderAmount = 160;
     optional string MaxUserAmount = 170;
-    optional uint32 MinOrderDurationSeconds = 180;
+    uint32 MinOrderDurationSeconds = 180;
     optional uint32 MaxOrderDurationSeconds = 190;
     string UnitPrice = 200;
     uint32 SaleStartAt = 210;
