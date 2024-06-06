@@ -130,6 +130,7 @@ message UpdateDefaultResponse {
 message AdminCreateDefaultRequest {
     string TargetAppID = 10;
     string AppGoodID = 20;
+    string CoinTypeID = 30;
 }
 
 message AdminCreateDefaultResponse {
