@@ -167,7 +167,7 @@
         "StartAt": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "EntAt": {
+        "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
         }
       }
