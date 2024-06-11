@@ -134,6 +134,18 @@
         }
       }
     },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v2Conds": {
       "type": "object",
       "properties": {
@@ -151,6 +163,12 @@
         },
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },

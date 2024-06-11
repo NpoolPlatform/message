@@ -57,6 +57,8 @@ message Conds {
     optional basetypes.v1.StringVal UserID = 30;
     optional basetypes.v1.StringVal CoinTypeID = 40;
     optional basetypes.v1.StringSliceVal CoinTypeIDs = 50;
+    optional basetypes.v1.Uint32Val StartAt = 60;
+    optional basetypes.v1.Uint32Val EntAt = 70;
 }
 
 message GetProfitRequest { string EntID = 10; }
