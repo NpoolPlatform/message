@@ -340,6 +340,9 @@
         },
         "TargetAppID": {
           "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
         }
       }
     },
@@ -393,6 +396,9 @@
           "type": "string"
         },
         "TargetAppID": {
+          "type": "string"
+        },
+        "AppGoodID": {
           "type": "string"
         },
         "OrderUnits": {
@@ -449,6 +455,9 @@
           "type": "string"
         },
         "AppID": {
+          "type": "string"
+        },
+        "AppGoodID": {
           "type": "string"
         }
       }
@@ -576,6 +585,9 @@
           "type": "string"
         },
         "AppID": {
+          "type": "string"
+        },
+        "AppGoodID": {
           "type": "string"
         },
         "OrderUnits": {

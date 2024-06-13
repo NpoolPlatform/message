@@ -111,6 +111,7 @@ message DeleteSimulateRequest {
     uint32 ID = 10;
     string EntID = 20;
     string AppID = 30;
+    string AppGoodID = 40;
 }
 
 message DeleteSimulateResponse {
@@ -121,8 +122,9 @@ message UpdateSimulateRequest {
     uint32 ID = 10;
     string EntID = 20;
     string AppID = 30;
-    optional string OrderUnits    = 40;
-    optional uint32 OrderDurationSeconds = 50;
+    string AppGoodID = 40;
+    optional string OrderUnits = 50;
+    optional uint32 OrderDurationSeconds = 60;
 }
 
 message UpdateSimulateResponse {
@@ -155,6 +157,7 @@ message AdminDeleteSimulateRequest {
     uint32 ID = 10;
     string EntID = 20;
     string TargetAppID = 30;
+    string AppGoodID = 40;
 }
 
 message AdminDeleteSimulateResponse {
@@ -165,8 +168,9 @@ message AdminUpdateSimulateRequest {
     uint32 ID = 10;
     string EntID = 20;
     string TargetAppID = 30;
-    optional string OrderUnits = 40;
-    optional uint32 OrderDurationSeconds = 50;
+    string AppGoodID = 40;
+    optional string OrderUnits = 50;
+    optional uint32 OrderDurationSeconds = 60;
 }
 
 message AdminUpdateSimulateResponse {
