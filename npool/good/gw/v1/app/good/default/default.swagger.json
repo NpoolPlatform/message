@@ -310,6 +310,9 @@
         },
         "AppGoodID": {
           "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
         }
       }
     },
