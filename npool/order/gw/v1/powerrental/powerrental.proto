@@ -164,7 +164,7 @@ message CreatePowerRentalOrderRequest {
     string UserID = 20;
     string AppGoodID = 30;
     optional uint32 DurationSeconds = 40;
-    string Units = 50;
+    optional string Units = 50;
     repeated order.gateway.payment.v1.PaymentBalance Balances = 60;
     optional string PaymentTransferCoinTypeID = 70;
     repeated string CouponIDs = 80;
@@ -186,7 +186,7 @@ message CreateUserPowerRentalOrderRequest {
     string TargetUserID = 20;
     string AppGoodID = 30;
     optional uint32 DurationSeconds = 40;
-    string Units = 50;
+    optional string Units = 50;
     basetypes.order.v1.OrderType OrderType = 60;
     string AppGoodStockID = 70;
     basetypes.order.v1.InvestmentType InvestmentType = 80;
@@ -267,7 +267,7 @@ message AdminCreatePowerRentalOrderRequest {
     string TargetUserID = 20;
     string AppGoodID = 30;
     optional uint32 DurationSeconds = 40;
-    string Units = 50;
+    optional string Units = 50;
     basetypes.order.v1.OrderType OrderType = 60;
     string AppGoodStockID = 70;
     basetypes.order.v1.InvestmentType InvestmentType = 80;
