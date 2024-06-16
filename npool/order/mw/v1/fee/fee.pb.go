@@ -323,8 +323,8 @@ type FeeOrder struct {
 	OrderID string `protobuf:"bytes,90,opt,name=OrderID,proto3" json:"OrderID,omitempty" sql:"order_id"`
 	// @inject_tag: sql:"parent_order_id"
 	ParentOrderID string `protobuf:"bytes,100,opt,name=ParentOrderID,proto3" json:"ParentOrderID,omitempty" sql:"parent_order_id"`
-	// @inject_tag: sql:"app_good_id"
-	ParentGoodID string `protobuf:"bytes,110,opt,name=ParentGoodID,proto3" json:"ParentGoodID,omitempty" sql:"app_good_id"`
+	// @inject_tag: sql:"parent_good_id"
+	ParentGoodID string `protobuf:"bytes,110,opt,name=ParentGoodID,proto3" json:"ParentGoodID,omitempty" sql:"parent_good_id"`
 	// @inject_tag: sql:"parent_app_good_id"
 	ParentAppGoodID string `protobuf:"bytes,120,opt,name=ParentAppGoodID,proto3" json:"ParentAppGoodID,omitempty" sql:"parent_app_good_id"`
 	// @inject_tag: sql:"parent_good_type"

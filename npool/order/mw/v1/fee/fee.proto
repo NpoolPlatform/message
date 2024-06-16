@@ -91,7 +91,7 @@ message FeeOrder {
     string OrderID = 90;
     // @inject_tag: sql:"parent_order_id"
     string ParentOrderID = 100;
-    // @inject_tag: sql:"app_good_id"
+    // @inject_tag: sql:"parent_good_id"
     string ParentGoodID = 110;
     // @inject_tag: sql:"parent_app_good_id"
     string ParentAppGoodID = 120;
