@@ -154,11 +154,13 @@ enum PaymentState {
 enum PaymentObseleteState {
     DefaultPaymentObseleteState = 0;
 
-    PaymentObseleteNone    = 10;
-    PaymentObseleteWait    = 20;
-    PaymentObseleteUnlock  = 30;
-    PaymentObseleted       = 40;
-    PaymentObseleteFail    = 50;
+    PaymentObseleteNone = 10;
+    PaymentObseleteWait = 20;
+    PaymentObseleteUnlockBalance  = 30;
+    PaymentObseleteTransferBookKeeping  = 40;
+    PaymentObseleteTransferUnlockAccount = 50;
+    PaymentObseleted = 60;
+    PaymentObseleteFail = 70;
 }
 
 enum InvestmentType {

@@ -154,7 +154,9 @@
         "DefaultPaymentObseleteState",
         "PaymentObseleteNone",
         "PaymentObseleteWait",
-        "PaymentObseleteUnlock",
+        "PaymentObseleteUnlockBalance",
+        "PaymentObseleteTransferBookKeeping",
+        "PaymentObseleteTransferUnlockAccount",
         "PaymentObseleted",
         "PaymentObseleteFail"
       ],
