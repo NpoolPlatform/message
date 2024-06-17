@@ -179,7 +179,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/AdminCreateDeviceType", runtime.WithHTTPPathPattern("/v1/admin/create/device"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/AdminCreateDeviceType", runtime.WithHTTPPathPattern("/v1/admin/create/devicetype"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -202,7 +202,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/AdminUpdateDeviceType", runtime.WithHTTPPathPattern("/v1/admin/update/device"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/AdminUpdateDeviceType", runtime.WithHTTPPathPattern("/v1/admin/update/devicetype"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -225,7 +225,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/GetDeviceTypes", runtime.WithHTTPPathPattern("/v1/get/devices"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/GetDeviceTypes", runtime.WithHTTPPathPattern("/v1/get/devicetypes"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -248,7 +248,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/AdminDeleteDeviceType", runtime.WithHTTPPathPattern("/v1/admin/delete/device"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/AdminDeleteDeviceType", runtime.WithHTTPPathPattern("/v1/admin/delete/devicetype"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -310,7 +310,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/AdminCreateDeviceType", runtime.WithHTTPPathPattern("/v1/admin/create/device"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/AdminCreateDeviceType", runtime.WithHTTPPathPattern("/v1/admin/create/devicetype"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -330,7 +330,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/AdminUpdateDeviceType", runtime.WithHTTPPathPattern("/v1/admin/update/device"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/AdminUpdateDeviceType", runtime.WithHTTPPathPattern("/v1/admin/update/devicetype"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -350,7 +350,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/GetDeviceTypes", runtime.WithHTTPPathPattern("/v1/get/devices"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/GetDeviceTypes", runtime.WithHTTPPathPattern("/v1/get/devicetypes"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -370,7 +370,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/AdminDeleteDeviceType", runtime.WithHTTPPathPattern("/v1/admin/delete/device"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.device.v1.Gateway/AdminDeleteDeviceType", runtime.WithHTTPPathPattern("/v1/admin/delete/devicetype"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -390,13 +390,13 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_AdminCreateDeviceType_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "device"}, ""))
+	pattern_Gateway_AdminCreateDeviceType_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "devicetype"}, ""))
 
-	pattern_Gateway_AdminUpdateDeviceType_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "update", "device"}, ""))
+	pattern_Gateway_AdminUpdateDeviceType_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "update", "devicetype"}, ""))
 
-	pattern_Gateway_GetDeviceTypes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "devices"}, ""))
+	pattern_Gateway_GetDeviceTypes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "devicetypes"}, ""))
 
-	pattern_Gateway_AdminDeleteDeviceType_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "device"}, ""))
+	pattern_Gateway_AdminDeleteDeviceType_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "devicetype"}, ""))
 )
 
 var (

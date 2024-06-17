@@ -11,25 +11,25 @@ import "google/api/annotations.proto";;
 service Gateway {
     rpc AdminCreateDeviceType(AdminCreateDeviceTypeRequest) returns (AdminCreateDeviceTypeResponse) {
         option (google.api.http) = {
-            post: "/v1/admin/create/device"
+            post: "/v1/admin/create/devicetype"
             body: "*"
         };
     }
     rpc AdminUpdateDeviceType(AdminUpdateDeviceTypeRequest) returns (AdminUpdateDeviceTypeResponse) {
         option (google.api.http) = {
-            post: "/v1/admin/update/device"
+            post: "/v1/admin/update/devicetype"
             body: "*"
         };
     }
     rpc GetDeviceTypes(GetDeviceTypesRequest) returns (GetDeviceTypesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/devices"
+            post: "/v1/get/devicetypes"
             body: "*"
         };
     }
     rpc AdminDeleteDeviceType(AdminDeleteDeviceTypeRequest) returns (AdminDeleteDeviceTypeResponse) {
         option (google.api.http) = {
-            post: "/v1/admin/delete/device"
+            post: "/v1/admin/delete/devicetype"
             body: "*"
         };
     }

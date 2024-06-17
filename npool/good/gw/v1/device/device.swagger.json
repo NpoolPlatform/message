@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/device": {
+    "/v1/admin/create/devicetype": {
       "post": {
         "operationId": "Gateway_AdminCreateDeviceType",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/admin/delete/device": {
+    "/v1/admin/delete/devicetype": {
       "post": {
         "operationId": "Gateway_AdminDeleteDeviceType",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/admin/update/device": {
+    "/v1/admin/update/devicetype": {
       "post": {
         "operationId": "Gateway_AdminUpdateDeviceType",
         "responses": {
@@ -112,7 +112,7 @@
         ]
       }
     },
-    "/v1/get/devices": {
+    "/v1/get/devicetypes": {
       "post": {
         "operationId": "Gateway_GetDeviceTypes",
         "responses": {
