@@ -29,9 +29,11 @@ message Payment {
     // @inject_tag: sql:"obselete_state"
     string ObseleteStateStr = 40;
     basetypes.order.v1.PaymentObseleteState ObseleteState = 50;
+    // @inject_tag: sql:"ledger_lock_id"
+    string LedgerLockID = 60;
 
-    repeated PaymentBalanceInfo PaymentBalances = 60;
-    repeated PaymentTransferInfo PaymentTransfers = 70;
+    repeated PaymentBalanceInfo PaymentBalances = 100;
+    repeated PaymentTransferInfo PaymentTransfers = 110;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;

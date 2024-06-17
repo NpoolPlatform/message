@@ -90,6 +90,10 @@
         "ObseleteState": {
           "$ref": "#/definitions/v1PaymentObseleteState"
         },
+        "LedgerLockID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ledger_lock_id\""
+        },
         "PaymentBalances": {
           "type": "array",
           "items": {
