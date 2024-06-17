@@ -24,13 +24,17 @@ message Payment {
     uint32 ID = 10;
     // @inject_tag: sql:"ent_id"
     string EntID = 20;
+    // @inject_tag: sql:"app_id"
+    string AppID = 30;
+    // @inject_tag: sql:"user_id"
+    string UserID = 40;
     // @inject_tag: sql:"order_id"
-    string OrderID = 30;
+    string OrderID = 50;
     // @inject_tag: sql:"obselete_state"
-    string ObseleteStateStr = 40;
-    basetypes.order.v1.PaymentObseleteState ObseleteState = 50;
+    string ObseleteStateStr = 60;
+    basetypes.order.v1.PaymentObseleteState ObseleteState = 70;
     // @inject_tag: sql:"ledger_lock_id"
-    string LedgerLockID = 60;
+    string LedgerLockID = 80;
 
     repeated PaymentBalanceInfo PaymentBalances = 100;
     repeated PaymentTransferInfo PaymentTransfers = 110;
