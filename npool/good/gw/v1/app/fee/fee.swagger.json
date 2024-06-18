@@ -264,6 +264,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -293,6 +294,9 @@
         "MinOrderDurationSeconds": {
           "type": "integer",
           "format": "int64"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
         }
       }
     },
@@ -352,6 +356,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1AppFee"
           }
         },
@@ -392,6 +397,9 @@
         "MinOrderDurationSeconds": {
           "type": "integer",
           "format": "int64"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
         }
       }
     },
@@ -444,6 +452,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -453,6 +464,17 @@
           "format": "int64"
         }
       }
+    },
+    "v1CancelMode": {
+      "type": "string",
+      "enum": [
+        "DefaultCancelMode",
+        "CancellableBeforeStart",
+        "CancellableBeforeBenefit",
+        "Uncancellable",
+        "CancellableBeforeUsed"
+      ],
+      "default": "DefaultCancelMode"
     },
     "v1GetAppFeeRequest": {
       "type": "object",
@@ -495,6 +517,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1AppFee"
           }
         },
@@ -535,6 +558,9 @@
         "MinOrderDurationSeconds": {
           "type": "integer",
           "format": "int64"
+        },
+        "CancelMode": {
+          "$ref": "#/definitions/v1CancelMode"
         }
       }
     },
