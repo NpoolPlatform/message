@@ -62,6 +62,8 @@ message Good {
     // @inject_tag: sql:"banner"
     string Banner = 240;
 
+    repeated string DisplayNames = 250;
+
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
@@ -105,4 +107,5 @@ message ExistGoodCondsRequest {
 message ExistGoodCondsResponse {
     bool Info = 10;
 }
+
 
