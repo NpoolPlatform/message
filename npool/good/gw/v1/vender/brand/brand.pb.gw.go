@@ -179,7 +179,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vender.brand.v1.Gateway/AdminCreateBrand", runtime.WithHTTPPathPattern("/v1/admin/create/venderbrand"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vendor.brand.v1.Gateway/AdminCreateBrand", runtime.WithHTTPPathPattern("/v1/admin/create/vendorbrand"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -202,7 +202,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vender.brand.v1.Gateway/AdminUpdateBrand", runtime.WithHTTPPathPattern("/v1/admin/update/venderbrand"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vendor.brand.v1.Gateway/AdminUpdateBrand", runtime.WithHTTPPathPattern("/v1/admin/update/vendorbrand"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -225,7 +225,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vender.brand.v1.Gateway/GetBrands", runtime.WithHTTPPathPattern("/v1/get/venderbrands"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vendor.brand.v1.Gateway/GetBrands", runtime.WithHTTPPathPattern("/v1/get/vendorbrands"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -248,7 +248,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vender.brand.v1.Gateway/AdminDeleteBrand", runtime.WithHTTPPathPattern("/v1/admin/delete/venderbrand"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vendor.brand.v1.Gateway/AdminDeleteBrand", runtime.WithHTTPPathPattern("/v1/admin/delete/vendorbrand"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -310,7 +310,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vender.brand.v1.Gateway/AdminCreateBrand", runtime.WithHTTPPathPattern("/v1/admin/create/venderbrand"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vendor.brand.v1.Gateway/AdminCreateBrand", runtime.WithHTTPPathPattern("/v1/admin/create/vendorbrand"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -330,7 +330,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vender.brand.v1.Gateway/AdminUpdateBrand", runtime.WithHTTPPathPattern("/v1/admin/update/venderbrand"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vendor.brand.v1.Gateway/AdminUpdateBrand", runtime.WithHTTPPathPattern("/v1/admin/update/vendorbrand"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -350,7 +350,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vender.brand.v1.Gateway/GetBrands", runtime.WithHTTPPathPattern("/v1/get/venderbrands"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vendor.brand.v1.Gateway/GetBrands", runtime.WithHTTPPathPattern("/v1/get/vendorbrands"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -370,7 +370,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vender.brand.v1.Gateway/AdminDeleteBrand", runtime.WithHTTPPathPattern("/v1/admin/delete/venderbrand"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vendor.brand.v1.Gateway/AdminDeleteBrand", runtime.WithHTTPPathPattern("/v1/admin/delete/vendorbrand"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -390,13 +390,13 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_AdminCreateBrand_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "venderbrand"}, ""))
+	pattern_Gateway_AdminCreateBrand_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "vendorbrand"}, ""))
 
-	pattern_Gateway_AdminUpdateBrand_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "update", "venderbrand"}, ""))
+	pattern_Gateway_AdminUpdateBrand_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "update", "vendorbrand"}, ""))
 
-	pattern_Gateway_GetBrands_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "venderbrands"}, ""))
+	pattern_Gateway_GetBrands_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "vendorbrands"}, ""))
 
-	pattern_Gateway_AdminDeleteBrand_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "venderbrand"}, ""))
+	pattern_Gateway_AdminDeleteBrand_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "vendorbrand"}, ""))
 )
 
 var (
