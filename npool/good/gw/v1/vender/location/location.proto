@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package good.gateway.vendor.location.v1;
+package good.gateway.vender.location.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/vender/location";
 
@@ -12,25 +12,25 @@ import "google/api/annotations.proto";
 service Gateway {
     rpc AdminCreateLocation (AdminCreateLocationRequest) returns (AdminCreateLocationResponse) {
         option (google.api.http) = {
-            post: "/v1/admin/create/vendorlocation"
+            post: "/v1/admin/create/venderlocation"
             body: "*"
         };
     }
     rpc AdminUpdateLocation (AdminUpdateLocationRequest) returns (AdminUpdateLocationResponse) {
         option (google.api.http) = {
-            post: "/v1/admin/update/vendorlocation"
+            post: "/v1/admin/update/venderlocation"
             body: "*"
         };
     }
     rpc GetLocations (GetLocationsRequest) returns (GetLocationsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/vendorlocations"
+            post: "/v1/get/venderlocations"
             body: "*"
         };
     }
     rpc AdminDeleteLocation (AdminDeleteLocationRequest) returns (AdminDeleteLocationResponse) {
         option (google.api.http) = {
-            post: "/v1/admin/delete/vendorlocation"
+            post: "/v1/admin/delete/venderlocation"
             body: "*"
         };
     }
@@ -45,7 +45,7 @@ message AdminCreateLocationRequest {
 }
 
 message AdminCreateLocationResponse {
-    middleware.vendor.location.v1.Location Info = 10;
+    middleware.vender.location.v1.Location Info = 10;
 }
 
 message AdminUpdateLocationRequest {
@@ -59,7 +59,7 @@ message AdminUpdateLocationRequest {
 }
 
 message AdminUpdateLocationResponse {
-    middleware.vendor.location.v1.Location Info = 10;
+    middleware.vender.location.v1.Location Info = 10;
 }
 
 message GetLocationsRequest {
@@ -69,7 +69,7 @@ message GetLocationsRequest {
 }
 
 message GetLocationsResponse {
-    repeated middleware.vendor.location.v1.Location Infos = 10;
+    repeated middleware.vender.location.v1.Location Infos = 10;
     uint32 Total = 20;
 }
 
@@ -79,5 +79,5 @@ message AdminDeleteLocationRequest {
 }
 
 message AdminDeleteLocationResponse {
-    middleware.vendor.location.v1.Location Info = 10;
+    middleware.vender.location.v1.Location Info = 10;
 }

@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_AdminCreateLocation_FullMethodName = "/good.gateway.vendor.location.v1.Gateway/AdminCreateLocation"
-	Gateway_AdminUpdateLocation_FullMethodName = "/good.gateway.vendor.location.v1.Gateway/AdminUpdateLocation"
-	Gateway_GetLocations_FullMethodName        = "/good.gateway.vendor.location.v1.Gateway/GetLocations"
-	Gateway_AdminDeleteLocation_FullMethodName = "/good.gateway.vendor.location.v1.Gateway/AdminDeleteLocation"
+	Gateway_AdminCreateLocation_FullMethodName = "/good.gateway.vender.location.v1.Gateway/AdminCreateLocation"
+	Gateway_AdminUpdateLocation_FullMethodName = "/good.gateway.vender.location.v1.Gateway/AdminUpdateLocation"
+	Gateway_GetLocations_FullMethodName        = "/good.gateway.vender.location.v1.Gateway/GetLocations"
+	Gateway_AdminDeleteLocation_FullMethodName = "/good.gateway.vender.location.v1.Gateway/AdminDeleteLocation"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -195,7 +195,7 @@ func _Gateway_AdminDeleteLocation_Handler(srv interface{}, ctx context.Context, 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.gateway.vendor.location.v1.Gateway",
+	ServiceName: "good.gateway.vender.location.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

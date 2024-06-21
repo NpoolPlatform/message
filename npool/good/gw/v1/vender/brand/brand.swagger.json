@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/vendorbrand": {
+    "/v1/admin/create/venderbrand": {
       "post": {
         "operationId": "Gateway_AdminCreateBrand",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/admin/delete/vendorbrand": {
+    "/v1/admin/delete/venderbrand": {
       "post": {
         "operationId": "Gateway_AdminDeleteBrand",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/admin/update/vendorbrand": {
+    "/v1/admin/update/venderbrand": {
       "post": {
         "operationId": "Gateway_AdminUpdateBrand",
         "responses": {
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/get/vendorbrands": {
+    "/v1/get/venderbrands": {
       "post": {
         "operationId": "Gateway_GetBrands",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewayvendorbrandv1GetBrandsResponse"
+              "$ref": "#/definitions/goodgatewayvenderbrandv1GetBrandsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewayvendorbrandv1GetBrandsRequest"
+              "$ref": "#/definitions/goodgatewayvenderbrandv1GetBrandsRequest"
             }
           }
         ],
@@ -146,7 +146,7 @@
     }
   },
   "definitions": {
-    "goodgatewayvendorbrandv1GetBrandsRequest": {
+    "goodgatewayvenderbrandv1GetBrandsRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -159,7 +159,7 @@
         }
       }
     },
-    "goodgatewayvendorbrandv1GetBrandsResponse": {
+    "goodgatewayvenderbrandv1GetBrandsResponse": {
       "type": "object",
       "properties": {
         "Infos": {

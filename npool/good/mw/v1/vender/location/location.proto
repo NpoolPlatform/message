@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package good.middleware.vendor.location.v1;
+package good.middleware.vender.location.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/vender/location";
 

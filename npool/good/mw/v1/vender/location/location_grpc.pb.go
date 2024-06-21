@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateLocation_FullMethodName     = "/good.middleware.vendor.location.v1.Middleware/CreateLocation"
-	Middleware_UpdateLocation_FullMethodName     = "/good.middleware.vendor.location.v1.Middleware/UpdateLocation"
-	Middleware_GetLocation_FullMethodName        = "/good.middleware.vendor.location.v1.Middleware/GetLocation"
-	Middleware_GetLocations_FullMethodName       = "/good.middleware.vendor.location.v1.Middleware/GetLocations"
-	Middleware_ExistLocationConds_FullMethodName = "/good.middleware.vendor.location.v1.Middleware/ExistLocationConds"
-	Middleware_DeleteLocation_FullMethodName     = "/good.middleware.vendor.location.v1.Middleware/DeleteLocation"
+	Middleware_CreateLocation_FullMethodName     = "/good.middleware.vender.location.v1.Middleware/CreateLocation"
+	Middleware_UpdateLocation_FullMethodName     = "/good.middleware.vender.location.v1.Middleware/UpdateLocation"
+	Middleware_GetLocation_FullMethodName        = "/good.middleware.vender.location.v1.Middleware/GetLocation"
+	Middleware_GetLocations_FullMethodName       = "/good.middleware.vender.location.v1.Middleware/GetLocations"
+	Middleware_ExistLocationConds_FullMethodName = "/good.middleware.vender.location.v1.Middleware/ExistLocationConds"
+	Middleware_DeleteLocation_FullMethodName     = "/good.middleware.vender.location.v1.Middleware/DeleteLocation"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -261,7 +261,7 @@ func _Middleware_DeleteLocation_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.middleware.vendor.location.v1.Middleware",
+	ServiceName: "good.middleware.vender.location.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

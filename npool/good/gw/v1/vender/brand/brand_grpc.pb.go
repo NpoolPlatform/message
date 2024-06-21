@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_AdminCreateBrand_FullMethodName = "/good.gateway.vendor.brand.v1.Gateway/AdminCreateBrand"
-	Gateway_AdminUpdateBrand_FullMethodName = "/good.gateway.vendor.brand.v1.Gateway/AdminUpdateBrand"
-	Gateway_GetBrands_FullMethodName        = "/good.gateway.vendor.brand.v1.Gateway/GetBrands"
-	Gateway_AdminDeleteBrand_FullMethodName = "/good.gateway.vendor.brand.v1.Gateway/AdminDeleteBrand"
+	Gateway_AdminCreateBrand_FullMethodName = "/good.gateway.vender.brand.v1.Gateway/AdminCreateBrand"
+	Gateway_AdminUpdateBrand_FullMethodName = "/good.gateway.vender.brand.v1.Gateway/AdminUpdateBrand"
+	Gateway_GetBrands_FullMethodName        = "/good.gateway.vender.brand.v1.Gateway/GetBrands"
+	Gateway_AdminDeleteBrand_FullMethodName = "/good.gateway.vender.brand.v1.Gateway/AdminDeleteBrand"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -195,7 +195,7 @@ func _Gateway_AdminDeleteBrand_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "good.gateway.vendor.brand.v1.Gateway",
+	ServiceName: "good.gateway.vender.brand.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

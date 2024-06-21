@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/vendorlocation": {
+    "/v1/admin/create/venderlocation": {
       "post": {
         "operationId": "Gateway_AdminCreateLocation",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/admin/delete/vendorlocation": {
+    "/v1/admin/delete/venderlocation": {
       "post": {
         "operationId": "Gateway_AdminDeleteLocation",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/admin/update/vendorlocation": {
+    "/v1/admin/update/venderlocation": {
       "post": {
         "operationId": "Gateway_AdminUpdateLocation",
         "responses": {
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/get/vendorlocations": {
+    "/v1/get/venderlocations": {
       "post": {
         "operationId": "Gateway_GetLocations",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/goodgatewayvendorlocationv1GetLocationsResponse"
+              "$ref": "#/definitions/goodgatewayvenderlocationv1GetLocationsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/goodgatewayvendorlocationv1GetLocationsRequest"
+              "$ref": "#/definitions/goodgatewayvenderlocationv1GetLocationsRequest"
             }
           }
         ],
@@ -146,7 +146,7 @@
     }
   },
   "definitions": {
-    "goodgatewayvendorlocationv1GetLocationsRequest": {
+    "goodgatewayvenderlocationv1GetLocationsRequest": {
       "type": "object",
       "properties": {
         "BrandID": {
@@ -162,7 +162,7 @@
         }
       }
     },
-    "goodgatewayvendorlocationv1GetLocationsResponse": {
+    "goodgatewayvenderlocationv1GetLocationsResponse": {
       "type": "object",
       "properties": {
         "Infos": {

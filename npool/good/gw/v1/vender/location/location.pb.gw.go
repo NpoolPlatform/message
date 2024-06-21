@@ -179,7 +179,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vendor.location.v1.Gateway/AdminCreateLocation", runtime.WithHTTPPathPattern("/v1/admin/create/vendorlocation"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vender.location.v1.Gateway/AdminCreateLocation", runtime.WithHTTPPathPattern("/v1/admin/create/venderlocation"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -202,7 +202,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vendor.location.v1.Gateway/AdminUpdateLocation", runtime.WithHTTPPathPattern("/v1/admin/update/vendorlocation"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vender.location.v1.Gateway/AdminUpdateLocation", runtime.WithHTTPPathPattern("/v1/admin/update/venderlocation"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -225,7 +225,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vendor.location.v1.Gateway/GetLocations", runtime.WithHTTPPathPattern("/v1/get/vendorlocations"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vender.location.v1.Gateway/GetLocations", runtime.WithHTTPPathPattern("/v1/get/venderlocations"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -248,7 +248,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vendor.location.v1.Gateway/AdminDeleteLocation", runtime.WithHTTPPathPattern("/v1/admin/delete/vendorlocation"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.vender.location.v1.Gateway/AdminDeleteLocation", runtime.WithHTTPPathPattern("/v1/admin/delete/venderlocation"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -310,7 +310,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vendor.location.v1.Gateway/AdminCreateLocation", runtime.WithHTTPPathPattern("/v1/admin/create/vendorlocation"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vender.location.v1.Gateway/AdminCreateLocation", runtime.WithHTTPPathPattern("/v1/admin/create/venderlocation"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -330,7 +330,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vendor.location.v1.Gateway/AdminUpdateLocation", runtime.WithHTTPPathPattern("/v1/admin/update/vendorlocation"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vender.location.v1.Gateway/AdminUpdateLocation", runtime.WithHTTPPathPattern("/v1/admin/update/venderlocation"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -350,7 +350,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vendor.location.v1.Gateway/GetLocations", runtime.WithHTTPPathPattern("/v1/get/vendorlocations"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vender.location.v1.Gateway/GetLocations", runtime.WithHTTPPathPattern("/v1/get/venderlocations"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -370,7 +370,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vendor.location.v1.Gateway/AdminDeleteLocation", runtime.WithHTTPPathPattern("/v1/admin/delete/vendorlocation"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.vender.location.v1.Gateway/AdminDeleteLocation", runtime.WithHTTPPathPattern("/v1/admin/delete/venderlocation"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -390,13 +390,13 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_AdminCreateLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "vendorlocation"}, ""))
+	pattern_Gateway_AdminCreateLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "venderlocation"}, ""))
 
-	pattern_Gateway_AdminUpdateLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "update", "vendorlocation"}, ""))
+	pattern_Gateway_AdminUpdateLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "update", "venderlocation"}, ""))
 
-	pattern_Gateway_GetLocations_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "vendorlocations"}, ""))
+	pattern_Gateway_GetLocations_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "venderlocations"}, ""))
 
-	pattern_Gateway_AdminDeleteLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "vendorlocation"}, ""))
+	pattern_Gateway_AdminDeleteLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "venderlocation"}, ""))
 )
 
 var (
