@@ -284,6 +284,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"banner\""
         },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
