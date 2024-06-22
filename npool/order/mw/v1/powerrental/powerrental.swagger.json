@@ -494,6 +494,10 @@
     "v1PaymentBalanceInfo": {
       "type": "object",
       "properties": {
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
         "PaymentID": {
           "type": "string",
           "title": "@inject_tag: sql:\"payment_id\""

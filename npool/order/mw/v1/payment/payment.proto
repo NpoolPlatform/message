@@ -76,20 +76,22 @@ message PaymentBalanceReq {
 }
 
 message PaymentBalanceInfo {
+    // @inject_tag: sql:"ent_id"
+    string EntID = 10;
     // @inject_tag: sql:"payment_id"
-    string PaymentID = 10;
+    string PaymentID = 20;
     // @inject_tag: sql:"coin_type_id"
-    string CoinTypeID = 20;
+    string CoinTypeID = 30;
     // @inject_tag: sql:"amount"
-    string Amount = 30;
+    string Amount = 40;
     // @inject_tag: sql:"coin_usd_currency"
-    string CoinUSDCurrency = 40;
+    string CoinUSDCurrency = 50;
     // @inject_tag: sql:"local_coin_usd_currency"
-    string LocalCoinUSDCurrency = 50;
+    string LocalCoinUSDCurrency = 60;
     // @inject_tag: sql:"live_coin_usd_currency"
-    string LiveCoinUSDCurrency = 60;
+    string LiveCoinUSDCurrency = 70;
     // @inject_tag: sql:"created_at"
-    uint32 CreatedAt = 70;
+    uint32 CreatedAt = 80;
 }
 
 message PaymentContractReq {
