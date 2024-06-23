@@ -163,13 +163,12 @@ message UnlockBalancesResponse { repeated Ledger Infos = 10; }
 message SettleBalancesRequest {
   string LockID = 10;
   basetypes.ledger.v1.IOSubType IOSubType = 20;
-  string IOExtra = 30;
   // Same count statement ids as balances
   message Statement {
     string StatementID = 10;
     string IOExtra = 20;
   }
-  repeated Statement Statements = 40;
+  repeated Statement Statements = 30;
 }
 
 message SettleBalancesResponse { repeated Ledger Infos = 10; }
