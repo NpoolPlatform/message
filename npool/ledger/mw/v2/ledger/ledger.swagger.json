@@ -588,6 +588,9 @@
         "IOSubType": {
           "$ref": "#/definitions/v1IOSubType"
         },
+        "IOExtra": {
+          "type": "string"
+        },
         "Statements": {
           "type": "array",
           "items": {
