@@ -591,7 +591,7 @@
         "IOExtra": {
           "type": "string"
         },
-        "Statements": {
+        "StatementIDs": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/SettleBalancesRequestStatement"

@@ -169,7 +169,7 @@ message SettleBalancesRequest {
     string StatementID = 10;
     string IOExtra = 20;
   }
-  repeated Statement Statements = 40;
+  repeated Statement StatementIDs = 40;
 }
 
 message SettleBalancesResponse { repeated Ledger Infos = 10; }
