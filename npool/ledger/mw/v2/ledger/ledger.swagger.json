@@ -285,6 +285,18 @@
         }
       }
     },
+    "SettleBalancesRequestStatement": {
+      "type": "object",
+      "properties": {
+        "StatementID": {
+          "type": "string"
+        },
+        "IOExtra": {
+          "type": "string"
+        }
+      },
+      "title": "Same count statement ids as balances"
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -582,9 +594,8 @@
         "StatementIDs": {
           "type": "array",
           "items": {
-            "type": "string"
-          },
-          "title": "Same count statement ids as balances"
+            "$ref": "#/definitions/SettleBalancesRequestStatement"
+          }
         }
       }
     },
