@@ -25,7 +25,7 @@ message Deduction {
 message RenewInfo {
     AppGoodInfo AppGoodInfo = 10;
     uint32 EndAt = 20;
-    uint32 RenewDuration = 30;
+    string RenewDurations = 30;
 }
 
 message MsgOrderChildsRenewReq {
