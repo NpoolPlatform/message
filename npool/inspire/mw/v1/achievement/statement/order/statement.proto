@@ -25,6 +25,13 @@ service Middleware {
       body : "*"
     };
   }
+  rpc UpdateStatements(UpdateStatementsRequest)
+      returns (UpdateStatementsResponse) {
+    option (google.api.http) = {
+      post : "/v1/order_statement_UpdateStatements"
+      body : "*"
+    };
+  }
   rpc DeleteStatements(DeleteStatementsRequest)
       returns (DeleteStatementsResponse) {
     option (google.api.http) = {
@@ -136,6 +143,10 @@ message CreateStatementResponse { Statement Info = 10; }
 message CreateStatementsRequest { repeated StatementReq Infos = 10; }
 
 message CreateStatementsResponse { repeated Statement Infos = 10; }
+
+message UpdateStatementsRequest { repeated StatementReq Infos = 10; }
+
+message UpdateStatementsResponse { repeated Statement Infos = 10; }
 
 message DeleteStatementsRequest { repeated StatementReq Infos = 10; }
 
