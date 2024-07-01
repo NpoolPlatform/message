@@ -129,6 +129,7 @@ message Conds {
   optional basetypes.v1.StringVal GoodID = 50;
   optional basetypes.v1.StringVal AppGoodID = 60;
   optional basetypes.v1.StringVal OrderID = 70;
+  optional basetypes.v1.StringSliceVal OrdersIDs = 71;
   optional basetypes.v1.StringVal OrderUserID = 80;
   optional basetypes.v1.StringVal GoodCoinTypeID = 90;
   optional basetypes.v1.StringVal AppConfigID = 100;

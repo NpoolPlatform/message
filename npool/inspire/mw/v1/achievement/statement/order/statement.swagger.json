@@ -317,6 +317,9 @@
         "OrderID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "OrdersIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "OrderUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
