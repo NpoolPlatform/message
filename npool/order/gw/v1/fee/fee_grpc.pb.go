@@ -19,20 +19,19 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateFeeOrder_FullMethodName       = "/order.gateway.fee.v1.Gateway/CreateFeeOrder"
-	Gateway_CreateUserFeeOrder_FullMethodName   = "/order.gateway.fee.v1.Gateway/CreateUserFeeOrder"
-	Gateway_CreateFeeOrders_FullMethodName      = "/order.gateway.fee.v1.Gateway/CreateFeeOrders"
-	Gateway_CreateUserFeeOrders_FullMethodName  = "/order.gateway.fee.v1.Gateway/CreateUserFeeOrders"
-	Gateway_UpdateFeeOrder_FullMethodName       = "/order.gateway.fee.v1.Gateway/UpdateFeeOrder"
-	Gateway_UpdateUserFeeOrder_FullMethodName   = "/order.gateway.fee.v1.Gateway/UpdateUserFeeOrder"
-	Gateway_GetFeeOrder_FullMethodName          = "/order.gateway.fee.v1.Gateway/GetFeeOrder"
-	Gateway_GetFeeOrders_FullMethodName         = "/order.gateway.fee.v1.Gateway/GetFeeOrders"
-	Gateway_GetMyFeeOrders_FullMethodName       = "/order.gateway.fee.v1.Gateway/GetMyFeeOrders"
-	Gateway_AdminCreateFeeOrder_FullMethodName  = "/order.gateway.fee.v1.Gateway/AdminCreateFeeOrder"
-	Gateway_AdminCreateFeeOrders_FullMethodName = "/order.gateway.fee.v1.Gateway/AdminCreateFeeOrders"
-	Gateway_AdminUpdateFeeOrder_FullMethodName  = "/order.gateway.fee.v1.Gateway/AdminUpdateFeeOrder"
-	Gateway_AdminGetFeeOrders_FullMethodName    = "/order.gateway.fee.v1.Gateway/AdminGetFeeOrders"
-	Gateway_AdminDeleteFeeOrder_FullMethodName  = "/order.gateway.fee.v1.Gateway/AdminDeleteFeeOrder"
+	Gateway_CreateFeeOrder_FullMethodName      = "/order.gateway.fee.v1.Gateway/CreateFeeOrder"
+	Gateway_CreateUserFeeOrder_FullMethodName  = "/order.gateway.fee.v1.Gateway/CreateUserFeeOrder"
+	Gateway_CreateFeeOrders_FullMethodName     = "/order.gateway.fee.v1.Gateway/CreateFeeOrders"
+	Gateway_CreateUserFeeOrders_FullMethodName = "/order.gateway.fee.v1.Gateway/CreateUserFeeOrders"
+	Gateway_UpdateFeeOrder_FullMethodName      = "/order.gateway.fee.v1.Gateway/UpdateFeeOrder"
+	Gateway_UpdateUserFeeOrder_FullMethodName  = "/order.gateway.fee.v1.Gateway/UpdateUserFeeOrder"
+	Gateway_GetFeeOrder_FullMethodName         = "/order.gateway.fee.v1.Gateway/GetFeeOrder"
+	Gateway_GetFeeOrders_FullMethodName        = "/order.gateway.fee.v1.Gateway/GetFeeOrders"
+	Gateway_GetMyFeeOrders_FullMethodName      = "/order.gateway.fee.v1.Gateway/GetMyFeeOrders"
+	Gateway_AdminCreateFeeOrder_FullMethodName = "/order.gateway.fee.v1.Gateway/AdminCreateFeeOrder"
+	Gateway_AdminUpdateFeeOrder_FullMethodName = "/order.gateway.fee.v1.Gateway/AdminUpdateFeeOrder"
+	Gateway_AdminGetFeeOrders_FullMethodName   = "/order.gateway.fee.v1.Gateway/AdminGetFeeOrders"
+	Gateway_AdminDeleteFeeOrder_FullMethodName = "/order.gateway.fee.v1.Gateway/AdminDeleteFeeOrder"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -50,7 +49,6 @@ type GatewayClient interface {
 	GetMyFeeOrders(ctx context.Context, in *GetMyFeeOrdersRequest, opts ...grpc.CallOption) (*GetMyFeeOrdersResponse, error)
 	// Admin apis
 	AdminCreateFeeOrder(ctx context.Context, in *AdminCreateFeeOrderRequest, opts ...grpc.CallOption) (*AdminCreateFeeOrderResponse, error)
-	AdminCreateFeeOrders(ctx context.Context, in *AdminCreateFeeOrdersRequest, opts ...grpc.CallOption) (*AdminCreateFeeOrdersResponse, error)
 	AdminUpdateFeeOrder(ctx context.Context, in *AdminUpdateFeeOrderRequest, opts ...grpc.CallOption) (*AdminUpdateFeeOrderResponse, error)
 	AdminGetFeeOrders(ctx context.Context, in *AdminGetFeeOrdersRequest, opts ...grpc.CallOption) (*AdminGetFeeOrdersResponse, error)
 	AdminDeleteFeeOrder(ctx context.Context, in *AdminDeleteFeeOrderRequest, opts ...grpc.CallOption) (*AdminDeleteFeeOrderResponse, error)
@@ -154,15 +152,6 @@ func (c *gatewayClient) AdminCreateFeeOrder(ctx context.Context, in *AdminCreate
 	return out, nil
 }
 
-func (c *gatewayClient) AdminCreateFeeOrders(ctx context.Context, in *AdminCreateFeeOrdersRequest, opts ...grpc.CallOption) (*AdminCreateFeeOrdersResponse, error) {
-	out := new(AdminCreateFeeOrdersResponse)
-	err := c.cc.Invoke(ctx, Gateway_AdminCreateFeeOrders_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *gatewayClient) AdminUpdateFeeOrder(ctx context.Context, in *AdminUpdateFeeOrderRequest, opts ...grpc.CallOption) (*AdminUpdateFeeOrderResponse, error) {
 	out := new(AdminUpdateFeeOrderResponse)
 	err := c.cc.Invoke(ctx, Gateway_AdminUpdateFeeOrder_FullMethodName, in, out, opts...)
@@ -205,7 +194,6 @@ type GatewayServer interface {
 	GetMyFeeOrders(context.Context, *GetMyFeeOrdersRequest) (*GetMyFeeOrdersResponse, error)
 	// Admin apis
 	AdminCreateFeeOrder(context.Context, *AdminCreateFeeOrderRequest) (*AdminCreateFeeOrderResponse, error)
-	AdminCreateFeeOrders(context.Context, *AdminCreateFeeOrdersRequest) (*AdminCreateFeeOrdersResponse, error)
 	AdminUpdateFeeOrder(context.Context, *AdminUpdateFeeOrderRequest) (*AdminUpdateFeeOrderResponse, error)
 	AdminGetFeeOrders(context.Context, *AdminGetFeeOrdersRequest) (*AdminGetFeeOrdersResponse, error)
 	AdminDeleteFeeOrder(context.Context, *AdminDeleteFeeOrderRequest) (*AdminDeleteFeeOrderResponse, error)
@@ -245,9 +233,6 @@ func (UnimplementedGatewayServer) GetMyFeeOrders(context.Context, *GetMyFeeOrder
 }
 func (UnimplementedGatewayServer) AdminCreateFeeOrder(context.Context, *AdminCreateFeeOrderRequest) (*AdminCreateFeeOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateFeeOrder not implemented")
-}
-func (UnimplementedGatewayServer) AdminCreateFeeOrders(context.Context, *AdminCreateFeeOrdersRequest) (*AdminCreateFeeOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateFeeOrders not implemented")
 }
 func (UnimplementedGatewayServer) AdminUpdateFeeOrder(context.Context, *AdminUpdateFeeOrderRequest) (*AdminUpdateFeeOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateFeeOrder not implemented")
@@ -451,24 +436,6 @@ func _Gateway_AdminCreateFeeOrder_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_AdminCreateFeeOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AdminCreateFeeOrdersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).AdminCreateFeeOrders(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_AdminCreateFeeOrders_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).AdminCreateFeeOrders(ctx, req.(*AdminCreateFeeOrdersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Gateway_AdminUpdateFeeOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AdminUpdateFeeOrderRequest)
 	if err := dec(in); err != nil {
@@ -569,10 +536,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AdminCreateFeeOrder",
 			Handler:    _Gateway_AdminCreateFeeOrder_Handler,
-		},
-		{
-			MethodName: "AdminCreateFeeOrders",
-			Handler:    _Gateway_AdminCreateFeeOrders_Handler,
 		},
 		{
 			MethodName: "AdminUpdateFeeOrder",

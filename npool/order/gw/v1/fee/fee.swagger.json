@@ -49,38 +49,6 @@
         ]
       }
     },
-    "/v1/admin/create/feeorders": {
-      "post": {
-        "operationId": "Gateway_AdminCreateFeeOrders",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1AdminCreateFeeOrdersResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1AdminCreateFeeOrdersRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/admin/delete/feeorder": {
       "post": {
         "operationId": "Gateway_AdminDeleteFeeOrder",
@@ -523,44 +491,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1FeeOrder"
-        }
-      }
-    },
-    "v1AdminCreateFeeOrdersRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "TargetUserID": {
-          "type": "string"
-        },
-        "ParentOrderID": {
-          "type": "string"
-        },
-        "DurationSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "AppGoodIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "OrderType": {
-          "$ref": "#/definitions/v1OrderType"
-        }
-      }
-    },
-    "v1AdminCreateFeeOrdersResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1FeeOrder"
-          }
         }
       }
     },

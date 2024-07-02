@@ -83,13 +83,6 @@ service Gateway {
         };
     }
 
-    rpc AdminCreateFeeOrders (AdminCreateFeeOrdersRequest) returns (AdminCreateFeeOrdersResponse) {
-        option (google.api.http) = {
-            post: "/v1/admin/create/feeorders"
-            body: "*"
-        };
-    }
-
     rpc AdminUpdateFeeOrder (AdminUpdateFeeOrderRequest) returns (AdminUpdateFeeOrderResponse) {
       option (google.api.http) = {
           post: "/v1/admin/update/feeorder"
@@ -301,19 +294,6 @@ message AdminCreateFeeOrderRequest {
 
 message AdminCreateFeeOrderResponse {
     FeeOrder Info = 10;
-}
-
-message AdminCreateFeeOrdersRequest {
-    string TargetAppID = 10;
-    string TargetUserID = 20;
-    string ParentOrderID = 30;
-    uint32 DurationSeconds = 40;
-    repeated string AppGoodIDs = 50;
-    basetypes.order.v1.OrderType OrderType = 60;
-}
-
-message AdminCreateFeeOrdersResponse {
-    repeated FeeOrder Infos = 10;
 }
 
 message AdminUpdateFeeOrderRequest {
