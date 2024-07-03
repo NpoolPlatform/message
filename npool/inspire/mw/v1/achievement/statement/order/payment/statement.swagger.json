@@ -105,6 +105,9 @@
         },
         "OrderID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
@@ -235,6 +238,20 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
