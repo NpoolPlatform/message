@@ -16,6 +16,71 @@
     "application/json"
   ],
   "paths": {
+    "/v1/admin/create/chain": {
+      "post": {
+        "summary": "admin",
+        "operationId": "Gateway_AdminCreateChain",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateChainResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateChainRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/chain": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateChain",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateChainResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateChainRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/chains": {
       "post": {
         "operationId": "Gateway_GetChains",
@@ -69,6 +134,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Chain"
           }
         },
@@ -100,8 +166,98 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AdminCreateChainRequest": {
+      "type": "object",
+      "properties": {
+        "ChainType": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "ChainID": {
+          "type": "string"
+        },
+        "NativeUnit": {
+          "type": "string"
+        },
+        "AtomicUnit": {
+          "type": "string"
+        },
+        "UnitExp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "NickName": {
+          "type": "string"
+        },
+        "GasType": {
+          "$ref": "#/definitions/v1GasType"
+        },
+        "ENV": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminCreateChainResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Chain"
+        }
+      }
+    },
+    "v1AdminUpdateChainRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "ChainType": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "ChainID": {
+          "type": "string"
+        },
+        "NativeUnit": {
+          "type": "string"
+        },
+        "AtomicUnit": {
+          "type": "string"
+        },
+        "UnitExp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "NickName": {
+          "type": "string"
+        },
+        "GasType": {
+          "$ref": "#/definitions/v1GasType"
+        },
+        "ENV": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminUpdateChainResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Chain"
         }
       }
     },
