@@ -13,7 +13,8 @@ message AppGoodInfo {
     string AppGoodID = 10;
     basetypes.good.v1.GoodType GoodType = 20;
     string GoodName = 30;
-    string UnitPrice = 40;
+    string UnitValue = 40;
+    basetypes.good.v1.GoodSettlementType SettlementType = 50;
 }
 
 message Deduction {
