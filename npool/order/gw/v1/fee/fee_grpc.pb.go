@@ -22,7 +22,6 @@ const (
 	Gateway_CreateFeeOrder_FullMethodName      = "/order.gateway.fee.v1.Gateway/CreateFeeOrder"
 	Gateway_CreateUserFeeOrder_FullMethodName  = "/order.gateway.fee.v1.Gateway/CreateUserFeeOrder"
 	Gateway_CreateFeeOrders_FullMethodName     = "/order.gateway.fee.v1.Gateway/CreateFeeOrders"
-	Gateway_CreateUserFeeOrders_FullMethodName = "/order.gateway.fee.v1.Gateway/CreateUserFeeOrders"
 	Gateway_UpdateFeeOrder_FullMethodName      = "/order.gateway.fee.v1.Gateway/UpdateFeeOrder"
 	Gateway_UpdateUserFeeOrder_FullMethodName  = "/order.gateway.fee.v1.Gateway/UpdateUserFeeOrder"
 	Gateway_GetFeeOrder_FullMethodName         = "/order.gateway.fee.v1.Gateway/GetFeeOrder"
@@ -41,7 +40,6 @@ type GatewayClient interface {
 	CreateFeeOrder(ctx context.Context, in *CreateFeeOrderRequest, opts ...grpc.CallOption) (*CreateFeeOrderResponse, error)
 	CreateUserFeeOrder(ctx context.Context, in *CreateUserFeeOrderRequest, opts ...grpc.CallOption) (*CreateUserFeeOrderResponse, error)
 	CreateFeeOrders(ctx context.Context, in *CreateFeeOrdersRequest, opts ...grpc.CallOption) (*CreateFeeOrdersResponse, error)
-	CreateUserFeeOrders(ctx context.Context, in *CreateUserFeeOrdersRequest, opts ...grpc.CallOption) (*CreateUserFeeOrdersResponse, error)
 	UpdateFeeOrder(ctx context.Context, in *UpdateFeeOrderRequest, opts ...grpc.CallOption) (*UpdateFeeOrderResponse, error)
 	UpdateUserFeeOrder(ctx context.Context, in *UpdateUserFeeOrderRequest, opts ...grpc.CallOption) (*UpdateUserFeeOrderResponse, error)
 	GetFeeOrder(ctx context.Context, in *GetFeeOrderRequest, opts ...grpc.CallOption) (*GetFeeOrderResponse, error)
@@ -83,15 +81,6 @@ func (c *gatewayClient) CreateUserFeeOrder(ctx context.Context, in *CreateUserFe
 func (c *gatewayClient) CreateFeeOrders(ctx context.Context, in *CreateFeeOrdersRequest, opts ...grpc.CallOption) (*CreateFeeOrdersResponse, error) {
 	out := new(CreateFeeOrdersResponse)
 	err := c.cc.Invoke(ctx, Gateway_CreateFeeOrders_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) CreateUserFeeOrders(ctx context.Context, in *CreateUserFeeOrdersRequest, opts ...grpc.CallOption) (*CreateUserFeeOrdersResponse, error) {
-	out := new(CreateUserFeeOrdersResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateUserFeeOrders_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -186,7 +175,6 @@ type GatewayServer interface {
 	CreateFeeOrder(context.Context, *CreateFeeOrderRequest) (*CreateFeeOrderResponse, error)
 	CreateUserFeeOrder(context.Context, *CreateUserFeeOrderRequest) (*CreateUserFeeOrderResponse, error)
 	CreateFeeOrders(context.Context, *CreateFeeOrdersRequest) (*CreateFeeOrdersResponse, error)
-	CreateUserFeeOrders(context.Context, *CreateUserFeeOrdersRequest) (*CreateUserFeeOrdersResponse, error)
 	UpdateFeeOrder(context.Context, *UpdateFeeOrderRequest) (*UpdateFeeOrderResponse, error)
 	UpdateUserFeeOrder(context.Context, *UpdateUserFeeOrderRequest) (*UpdateUserFeeOrderResponse, error)
 	GetFeeOrder(context.Context, *GetFeeOrderRequest) (*GetFeeOrderResponse, error)
@@ -212,9 +200,6 @@ func (UnimplementedGatewayServer) CreateUserFeeOrder(context.Context, *CreateUse
 }
 func (UnimplementedGatewayServer) CreateFeeOrders(context.Context, *CreateFeeOrdersRequest) (*CreateFeeOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateFeeOrders not implemented")
-}
-func (UnimplementedGatewayServer) CreateUserFeeOrders(context.Context, *CreateUserFeeOrdersRequest) (*CreateUserFeeOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateUserFeeOrders not implemented")
 }
 func (UnimplementedGatewayServer) UpdateFeeOrder(context.Context, *UpdateFeeOrderRequest) (*UpdateFeeOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeeOrder not implemented")
@@ -306,24 +291,6 @@ func _Gateway_CreateFeeOrders_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GatewayServer).CreateFeeOrders(ctx, req.(*CreateFeeOrdersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_CreateUserFeeOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateUserFeeOrdersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).CreateUserFeeOrders(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_CreateUserFeeOrders_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateUserFeeOrders(ctx, req.(*CreateUserFeeOrdersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -508,10 +475,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateFeeOrders",
 			Handler:    _Gateway_CreateFeeOrders_Handler,
-		},
-		{
-			MethodName: "CreateUserFeeOrders",
-			Handler:    _Gateway_CreateUserFeeOrders_Handler,
 		},
 		{
 			MethodName: "UpdateFeeOrder",
