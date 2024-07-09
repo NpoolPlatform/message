@@ -81,6 +81,9 @@
         },
         "BenefitDateEnd": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },

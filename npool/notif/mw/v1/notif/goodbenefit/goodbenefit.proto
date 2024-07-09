@@ -81,6 +81,7 @@ message Conds {
   optional basetypes.v1.BoolVal Generated = 60;
   optional basetypes.v1.Uint32Val BenefitDateStart = 70;
   optional basetypes.v1.Uint32Val BenefitDateEnd = 80;
+  optional basetypes.v1.StringVal CoinTypeID = 90;
 }
 
 message CreateGoodBenefitRequest { GoodBenefitReq Info = 10; }
