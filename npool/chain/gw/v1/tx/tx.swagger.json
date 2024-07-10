@@ -47,6 +47,38 @@
           "Gateway"
         ]
       }
+    },
+    "/v1/update/tx": {
+      "post": {
+        "operationId": "Gateway_UpdateTx",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateTxResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateTxRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
     }
   },
   "definitions": {
@@ -226,6 +258,29 @@
         "TxUserBenefit"
       ],
       "default": "DefaultTxType"
+    },
+    "v1UpdateTxRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1TxState"
+        }
+      }
+    },
+    "v1UpdateTxResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Tx"
+        }
+      }
     }
   }
 }
