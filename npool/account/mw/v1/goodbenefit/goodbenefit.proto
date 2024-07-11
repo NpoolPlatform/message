@@ -84,6 +84,7 @@ message Conds {
   optional basetypes.v1.BoolVal Locked = 80;
   optional basetypes.v1.Uint32Val LockedBy = 90;
   optional basetypes.v1.BoolVal Blocked = 100;
+  optional basetypes.v1.StringSliceVal CoinTypeIDs = 110;
 }
 
 message CreateAccountRequest { AccountReq Info = 10; }

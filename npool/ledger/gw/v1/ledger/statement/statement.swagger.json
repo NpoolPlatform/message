@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/app/details": {
+    "/v1/get/app/ledgerstatements": {
       "post": {
         "operationId": "Gateway_GetAppStatements",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/get/details": {
+    "/v1/get/ledgerstatements": {
       "post": {
         "operationId": "Gateway_GetStatements",
         "responses": {
@@ -196,10 +196,11 @@
         "OrderRevoke",
         "CommissionRevoke",
         "RandomCouponCash",
-        "SimulateMiningBenefit"
+        "SimulateMiningBenefit",
+        "ObseletePayment"
       ],
       "default": "DefaultSubType",
-      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
+      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra\n - RandomCouponCash: I\n - SimulateMiningBenefit: I\n - ObseletePayment: I"
     },
     "v1IOType": {
       "type": "string",
@@ -213,6 +214,19 @@
     "v1Statement": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
@@ -243,28 +257,15 @@
         "IOExtra": {
           "type": "string"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UserID": {
-          "type": "string"
-        },
         "PhoneNO": {
           "type": "string"
         },
         "EmailAddress": {
           "type": "string"
         },
-        "AppID": {
-          "type": "string"
-        },
-        "ID": {
+        "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
         }
       }
     }

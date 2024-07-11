@@ -19,20 +19,20 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateLocation_FullMethodName = "/good.gateway.vendor.location.v1.Gateway/CreateLocation"
-	Gateway_UpdateLocation_FullMethodName = "/good.gateway.vendor.location.v1.Gateway/UpdateLocation"
-	Gateway_GetLocations_FullMethodName   = "/good.gateway.vendor.location.v1.Gateway/GetLocations"
-	Gateway_DeleteLocation_FullMethodName = "/good.gateway.vendor.location.v1.Gateway/DeleteLocation"
+	Gateway_AdminCreateLocation_FullMethodName = "/good.gateway.vendor.location.v1.Gateway/AdminCreateLocation"
+	Gateway_AdminUpdateLocation_FullMethodName = "/good.gateway.vendor.location.v1.Gateway/AdminUpdateLocation"
+	Gateway_GetLocations_FullMethodName        = "/good.gateway.vendor.location.v1.Gateway/GetLocations"
+	Gateway_AdminDeleteLocation_FullMethodName = "/good.gateway.vendor.location.v1.Gateway/AdminDeleteLocation"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	CreateLocation(ctx context.Context, in *CreateLocationRequest, opts ...grpc.CallOption) (*CreateLocationResponse, error)
-	UpdateLocation(ctx context.Context, in *UpdateLocationRequest, opts ...grpc.CallOption) (*UpdateLocationResponse, error)
+	AdminCreateLocation(ctx context.Context, in *AdminCreateLocationRequest, opts ...grpc.CallOption) (*AdminCreateLocationResponse, error)
+	AdminUpdateLocation(ctx context.Context, in *AdminUpdateLocationRequest, opts ...grpc.CallOption) (*AdminUpdateLocationResponse, error)
 	GetLocations(ctx context.Context, in *GetLocationsRequest, opts ...grpc.CallOption) (*GetLocationsResponse, error)
-	DeleteLocation(ctx context.Context, in *DeleteLocationRequest, opts ...grpc.CallOption) (*DeleteLocationResponse, error)
+	AdminDeleteLocation(ctx context.Context, in *AdminDeleteLocationRequest, opts ...grpc.CallOption) (*AdminDeleteLocationResponse, error)
 }
 
 type gatewayClient struct {
@@ -43,18 +43,18 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) CreateLocation(ctx context.Context, in *CreateLocationRequest, opts ...grpc.CallOption) (*CreateLocationResponse, error) {
-	out := new(CreateLocationResponse)
-	err := c.cc.Invoke(ctx, Gateway_CreateLocation_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminCreateLocation(ctx context.Context, in *AdminCreateLocationRequest, opts ...grpc.CallOption) (*AdminCreateLocationResponse, error) {
+	out := new(AdminCreateLocationResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminCreateLocation_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) UpdateLocation(ctx context.Context, in *UpdateLocationRequest, opts ...grpc.CallOption) (*UpdateLocationResponse, error) {
-	out := new(UpdateLocationResponse)
-	err := c.cc.Invoke(ctx, Gateway_UpdateLocation_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminUpdateLocation(ctx context.Context, in *AdminUpdateLocationRequest, opts ...grpc.CallOption) (*AdminUpdateLocationResponse, error) {
+	out := new(AdminUpdateLocationResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminUpdateLocation_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -70,9 +70,9 @@ func (c *gatewayClient) GetLocations(ctx context.Context, in *GetLocationsReques
 	return out, nil
 }
 
-func (c *gatewayClient) DeleteLocation(ctx context.Context, in *DeleteLocationRequest, opts ...grpc.CallOption) (*DeleteLocationResponse, error) {
-	out := new(DeleteLocationResponse)
-	err := c.cc.Invoke(ctx, Gateway_DeleteLocation_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminDeleteLocation(ctx context.Context, in *AdminDeleteLocationRequest, opts ...grpc.CallOption) (*AdminDeleteLocationResponse, error) {
+	out := new(AdminDeleteLocationResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminDeleteLocation_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -83,10 +83,10 @@ func (c *gatewayClient) DeleteLocation(ctx context.Context, in *DeleteLocationRe
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	CreateLocation(context.Context, *CreateLocationRequest) (*CreateLocationResponse, error)
-	UpdateLocation(context.Context, *UpdateLocationRequest) (*UpdateLocationResponse, error)
+	AdminCreateLocation(context.Context, *AdminCreateLocationRequest) (*AdminCreateLocationResponse, error)
+	AdminUpdateLocation(context.Context, *AdminUpdateLocationRequest) (*AdminUpdateLocationResponse, error)
 	GetLocations(context.Context, *GetLocationsRequest) (*GetLocationsResponse, error)
-	DeleteLocation(context.Context, *DeleteLocationRequest) (*DeleteLocationResponse, error)
+	AdminDeleteLocation(context.Context, *AdminDeleteLocationRequest) (*AdminDeleteLocationResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -94,17 +94,17 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) CreateLocation(context.Context, *CreateLocationRequest) (*CreateLocationResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateLocation not implemented")
+func (UnimplementedGatewayServer) AdminCreateLocation(context.Context, *AdminCreateLocationRequest) (*AdminCreateLocationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateLocation not implemented")
 }
-func (UnimplementedGatewayServer) UpdateLocation(context.Context, *UpdateLocationRequest) (*UpdateLocationResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateLocation not implemented")
+func (UnimplementedGatewayServer) AdminUpdateLocation(context.Context, *AdminUpdateLocationRequest) (*AdminUpdateLocationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateLocation not implemented")
 }
 func (UnimplementedGatewayServer) GetLocations(context.Context, *GetLocationsRequest) (*GetLocationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLocations not implemented")
 }
-func (UnimplementedGatewayServer) DeleteLocation(context.Context, *DeleteLocationRequest) (*DeleteLocationResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteLocation not implemented")
+func (UnimplementedGatewayServer) AdminDeleteLocation(context.Context, *AdminDeleteLocationRequest) (*AdminDeleteLocationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminDeleteLocation not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -119,38 +119,38 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_CreateLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateLocationRequest)
+func _Gateway_AdminCreateLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCreateLocationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).CreateLocation(ctx, in)
+		return srv.(GatewayServer).AdminCreateLocation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_CreateLocation_FullMethodName,
+		FullMethod: Gateway_AdminCreateLocation_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).CreateLocation(ctx, req.(*CreateLocationRequest))
+		return srv.(GatewayServer).AdminCreateLocation(ctx, req.(*AdminCreateLocationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_UpdateLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateLocationRequest)
+func _Gateway_AdminUpdateLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminUpdateLocationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).UpdateLocation(ctx, in)
+		return srv.(GatewayServer).AdminUpdateLocation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_UpdateLocation_FullMethodName,
+		FullMethod: Gateway_AdminUpdateLocation_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UpdateLocation(ctx, req.(*UpdateLocationRequest))
+		return srv.(GatewayServer).AdminUpdateLocation(ctx, req.(*AdminUpdateLocationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -173,20 +173,20 @@ func _Gateway_GetLocations_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_DeleteLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteLocationRequest)
+func _Gateway_AdminDeleteLocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminDeleteLocationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).DeleteLocation(ctx, in)
+		return srv.(GatewayServer).AdminDeleteLocation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_DeleteLocation_FullMethodName,
+		FullMethod: Gateway_AdminDeleteLocation_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeleteLocation(ctx, req.(*DeleteLocationRequest))
+		return srv.(GatewayServer).AdminDeleteLocation(ctx, req.(*AdminDeleteLocationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -199,20 +199,20 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateLocation",
-			Handler:    _Gateway_CreateLocation_Handler,
+			MethodName: "AdminCreateLocation",
+			Handler:    _Gateway_AdminCreateLocation_Handler,
 		},
 		{
-			MethodName: "UpdateLocation",
-			Handler:    _Gateway_UpdateLocation_Handler,
+			MethodName: "AdminUpdateLocation",
+			Handler:    _Gateway_AdminUpdateLocation_Handler,
 		},
 		{
 			MethodName: "GetLocations",
 			Handler:    _Gateway_GetLocations_Handler,
 		},
 		{
-			MethodName: "DeleteLocation",
-			Handler:    _Gateway_DeleteLocation_Handler,
+			MethodName: "AdminDeleteLocation",
+			Handler:    _Gateway_AdminDeleteLocation_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

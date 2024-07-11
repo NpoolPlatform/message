@@ -109,6 +109,20 @@
         }
       }
     },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -117,6 +131,18 @@
         },
         "Value": {
           "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -135,8 +161,14 @@
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Incoming": {
-          "$ref": "#/definitions/v1StringVal"
+        "CoinTypeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EndAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },

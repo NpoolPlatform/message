@@ -1,0 +1,530 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/good/mw/v1/fbmcrowdfunding/fbmcrowdfunding.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "middlewarefbmcrowdfundingv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodTypes": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "RewardAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BenefitState": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitState",
+        "BenefitWait",
+        "BenefitTransferring",
+        "BenefitBookKeeping",
+        "BenefitUserBookKeeping",
+        "BenefitSimulateBookKeeping",
+        "BenefitDone",
+        "BenefitFail"
+      ],
+      "default": "DefaultBenefitState",
+      "title": "- BenefitBookKeeping: Good bookkeeping"
+    },
+    "v1BenefitType": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitType",
+        "BenefitTypePlatform",
+        "BenefitTypePool",
+        "BenefitTypeOffline",
+        "BenefitTypeContract",
+        "BenefitTypeNone"
+      ],
+      "default": "DefaultBenefitType",
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward\n - BenefitTypeContract: User receive reward from smart contract\n - BenefitTypeNone: Such as technique fee"
+    },
+    "v1CreateFbmCrowdFundingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FbmCrowdFunding"
+        }
+      }
+    },
+    "v1DeleteFbmCrowdFundingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FbmCrowdFunding"
+        }
+      }
+    },
+    "v1FbmCrowdFunding": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "MinDepositAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"min_deposit_amount\""
+        },
+        "DeliveryAt": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"delivery_at\""
+        },
+        "TargetAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"target_amount\""
+        },
+        "DepositStartAt": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"deposit_start_at\""
+        },
+        "DepositEndAt": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"deposit_end_at\""
+        },
+        "ContractAddress": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"contract_address\""
+        },
+        "DepositCoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"deposit_coin_type_id\""
+        },
+        "Redeemable": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"redeemable\""
+        },
+        "RedeemDelayHours": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"redeem_delay_hours\""
+        },
+        "DurationDisplayTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"duration_display_type\""
+        },
+        "DurationDisplayType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "DurationSeconds": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"duration_seconds\""
+        },
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "BenefitTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"benefit_type\""
+        },
+        "BenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"service_start_at\""
+        },
+        "StartModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"start_mode\""
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
+        },
+        "TestOnly": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"test_only\""
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"benefit_interval_hours\""
+        },
+        "Purchasable": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"purchasable\""
+        },
+        "Online": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"online\""
+        },
+        "RewardStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reward_state\""
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1BenefitState"
+        },
+        "LastRewardAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"last_reward_at\""
+        },
+        "RewardTID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reward_tid\""
+        },
+        "NextRewardStartAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"next_reward_start_amount\""
+        },
+        "LastRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_reward_amount\""
+        },
+        "LastUnitRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_unit_reward_amount\""
+        },
+        "TotalRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"total_reward_amount\""
+        },
+        "GoodCoins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodCoinInfo"
+          }
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1FbmCrowdFundingReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "Base of fbm crowd funding"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "MinDepositAmount": {
+          "type": "string"
+        },
+        "DeliveryAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TargetAmount": {
+          "type": "string"
+        },
+        "DepositStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DepositEndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ContractAddress": {
+          "type": "string"
+        },
+        "DepositCoinTypeID": {
+          "type": "string"
+        },
+        "Redeemable": {
+          "type": "boolean"
+        },
+        "RedeemDelayHours": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationType": {
+          "$ref": "#/definitions/v1GoodDurationType"
+        },
+        "Duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType",
+          "title": "Good information"
+        },
+        "BenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
+        },
+        "TestOnly": {
+          "type": "boolean"
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Purchasable": {
+          "type": "boolean"
+        },
+        "Online": {
+          "type": "boolean"
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1BenefitState",
+          "title": "Reward information"
+        },
+        "RewardAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "RewardTID": {
+          "type": "string"
+        },
+        "NextRewardStartAmount": {
+          "type": "string"
+        },
+        "RewardAmount": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetFbmCrowdFundingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FbmCrowdFunding"
+        }
+      }
+    },
+    "v1GetFbmCrowdFundingsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1FbmCrowdFunding"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GoodCoinInfo": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "Main": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"main\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"index\""
+        }
+      }
+    },
+    "v1GoodDurationType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodDurationType",
+        "GoodDurationByHour",
+        "GoodDurationByDay",
+        "GoodDurationByMonth",
+        "GoodDurationByYear"
+      ],
+      "default": "DefaultGoodDurationType"
+    },
+    "v1GoodStartMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStartMode",
+        "GoodStartModeTBD",
+        "GoodStartModeConfirmed",
+        "GoodStartModeInstantly",
+        "GoodStartModeNextDay",
+        "GoodStartModePreset",
+        "GoodStartModeWithParent"
+      ],
+      "default": "DefaultGoodStartMode"
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateFbmCrowdFundingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1FbmCrowdFunding"
+        }
+      }
+    }
+  }
+}

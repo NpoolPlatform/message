@@ -16,71 +16,69 @@ service Middleware {
   rpc GetTopMostGood(GetTopMostGoodRequest) returns (GetTopMostGoodResponse) {}
   rpc GetTopMostGoods(GetTopMostGoodsRequest)
       returns (GetTopMostGoodsResponse) {}
+  rpc ExistTopMostGoodConds(ExistTopMostGoodCondsRequest)
+      returns (ExistTopMostGoodCondsResponse) {}
   rpc DeleteTopMostGood(DeleteTopMostGoodRequest)
       returns (DeleteTopMostGoodResponse) {}
 }
 
 message TopMostGoodReq {
-  optional uint32 ID = 9;
-  optional string EntID = 10;
-  optional string AppGoodID = 20;
-  optional string TopMostID = 30;
-  optional uint32 DisplayIndex = 40;
-  repeated string Posters = 50;
-  optional string UnitPrice = 60;
-  optional string PackagePrice = 70;
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string AppGoodID = 30;
+    optional string TopMostID = 40;
+    optional uint32 DisplayIndex = 50;
+    optional string UnitPrice = 60;
 }
 
 message TopMostGood {
-  // @inject_tag: sql:"id"
-  uint32 ID = 9;
-  // @inject_tag: sql:"ent_id"
-  string EntID = 10;
-  // @inject_tag: sql:"app_id"
-  string AppID = 20;
-  // @inject_tag: sql:"good_id"
-  string GoodID = 30;
-  // @inject_tag: sql:"good_name"
-  string GoodName = 40;
-  // @inject_tag: sql:"coin_type_id"
-  string CoinTypeID = 50;
-  // @inject_tag: sql:"top_most_id"
-  string TopMostID = 60;
-  // @inject_tag: sql:"top_most_type"
-  string TopMostTypeStr = 70;
-  basetypes.good.v1.GoodTopMostType TopMostType = 80;
-  // @inject_tag: sql:"top_most_title"
-  string TopMostTitle = 90;
-  // @inject_tag: sql:"top_most_message"
-  string TopMostMessage = 100;
-  // @inject_tag: sql:"app_good_id"
-  string AppGoodID = 110;
-  // @inject_tag: sql:"app_good_name"
-  string AppGoodName = 120;
-  // @inject_tag: sql:"display_index"
-  uint32 DisplayIndex = 130;
-  // @inject_tag: sql:"posters"
-  string PostersStr = 140;
-  repeated string Posters = 150;
-  // @inject_tag: sql:"unit_price"
-  string UnitPrice = 160;
-  // @inject_tag: sql:"package_price"
-  string PackagePrice = 161;
-  // @inject_tag: sql:"created_at"
-  uint32 CreatedAt = 1000;
-  // @inject_tag: sql:"updated_at"
-  uint32 UpdatedAt = 1010;
+    // @inject_tag: sql:"id"
+    uint32 ID = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID = 20;
+    // @inject_tag: sql:"app_id"
+    string AppID = 30;
+    // @inject_tag: sql:"good_id"
+    string GoodID = 40;
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 50;
+    basetypes.good.v1.GoodType GoodType = 60;
+    // @inject_tag: sql:"good_name"
+    string GoodName = 70;
+    // @inject_tag: sql:"top_most_id"
+    string TopMostID = 80;
+    // @inject_tag: sql:"top_most_type"
+    string TopMostTypeStr = 90;
+    basetypes.good.v1.GoodTopMostType TopMostType = 100;
+    // @inject_tag: sql:"top_most_title"
+    string TopMostTitle = 110;
+    // @inject_tag: sql:"top_most_message"
+    string TopMostMessage = 120;
+    // @inject_tag: sql:"top_most_target_url"
+    string TopMostTargetUrl = 130;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID = 140;
+    // @inject_tag: sql:"app_good_name"
+    string AppGoodName = 150;
+    // @inject_tag: sql:"display_index"
+    uint32 DisplayIndex = 160;
+    // @inject_tag: sql:"unit_price"
+    string UnitPrice = 170;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-  optional basetypes.v1.Uint32Val ID = 9;
-  optional basetypes.v1.StringVal EntID = 10;
-  optional basetypes.v1.StringVal AppID = 20;
-  optional basetypes.v1.StringVal GoodID = 30;
-  optional basetypes.v1.StringVal AppGoodID = 40;
-  optional basetypes.v1.StringVal TopMostID = 50;
-  optional basetypes.v1.Uint32Val TopMostType = 60;
-  optional basetypes.v1.StringSliceVal AppGoodIDs = 70;
+    optional basetypes.v1.Uint32Val ID = 10;
+    optional basetypes.v1.StringVal EntID = 20;
+    optional basetypes.v1.StringVal AppID = 30;
+    optional basetypes.v1.StringVal GoodID = 40;
+    optional basetypes.v1.StringVal AppGoodID = 50;
+    optional basetypes.v1.StringVal TopMostID = 60;
+    optional basetypes.v1.Uint32Val TopMostType = 70;
+    optional basetypes.v1.StringSliceVal AppGoodIDs = 80;
 }
 
 message CreateTopMostGoodRequest { TopMostGoodReq Info = 10; }
@@ -96,14 +94,22 @@ message GetTopMostGoodRequest { string EntID = 10; }
 message GetTopMostGoodResponse { TopMostGood Info = 10; }
 
 message GetTopMostGoodsRequest {
-  Conds Conds = 10;
-  int32 Offset = 20;
-  int32 Limit = 30;
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
 message GetTopMostGoodsResponse {
-  repeated TopMostGood Infos = 10;
-  uint32 Total = 20;
+    repeated TopMostGood Infos = 10;
+    uint32 Total = 20;
+}
+
+message ExistTopMostGoodCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistTopMostGoodCondsResponse {
+    bool Info = 10;
 }
 
 message DeleteTopMostGoodRequest { TopMostGoodReq Info = 10; }

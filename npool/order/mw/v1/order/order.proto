@@ -6,337 +6,160 @@ option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/order";
 
 import "google/api/annotations.proto";
 import "npool/basetypes/order/v1/enums.proto";
+import "npool/basetypes/good/v1/enums.proto";
 import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse) {}
-  rpc CreateOrders(CreateOrdersRequest) returns (CreateOrdersResponse) {}
-  rpc UpdateOrder(UpdateOrderRequest) returns (UpdateOrderResponse) {
-    option (google.api.http) = {
-      post : "/v1/order_UpdateOrder"
-      body : "*"
-    };
-  }
-  rpc UpdateOrders(UpdateOrdersRequest) returns (UpdateOrdersResponse) {}
-  rpc GetOrder(GetOrderRequest) returns (GetOrderResponse) {}
-  rpc GetOrders(GetOrdersRequest) returns (GetOrdersResponse) {}
-  rpc SumOrderUnits(SumOrderUnitsRequest) returns (SumOrderUnitsResponse) {}
-  rpc SumOrderPaymentAmounts(SumOrderPaymentAmountsRequest)
-      returns (SumOrderPaymentAmountsResponse) {}
-  rpc CountOrders(CountOrdersRequest) returns (CountOrdersResponse) {}
-  rpc ExistOrder(ExistOrderRequest) returns (ExistOrderResponse) {}
-  rpc ExistOrderConds(ExistOrderCondsRequest)
-      returns (ExistOrderCondsResponse) {}
-  rpc DeleteOrder(DeleteOrderRequest) returns (DeleteOrderResponse) {
-    option (google.api.http) = {
-      post : "/v1/order_DeleteOrder"
-      body : "*"
-    };
-  }
-  rpc DeleteOrders(DeleteOrdersRequest) returns (DeleteOrdersResponse) {}
-}
-
-message PaymentAmount {
-  string CoinTypeID = 10;
-  string USDCurrency = 20;
-  string Amount = 30;
-}
-
-message OrderReq {
-  // order
-  optional uint32 ID = 9;
-  optional string EntID = 10;
-  optional string AppID = 20;
-  optional string UserID = 30;
-  optional string GoodID = 40;
-  optional string AppGoodID = 50;
-  optional string ParentOrderID = 60;
-  optional string Units = 70;
-  optional string GoodValue = 80;
-  optional string GoodValueUSD = 81;
-  optional string PaymentAmount = 90;
-  optional string DiscountAmount = 100;
-  optional string PromotionID = 110;
-  optional uint32 Duration = 120;
-  optional basetypes.order.v1.OrderType OrderType = 130;
-  optional basetypes.order.v1.InvestmentType InvestmentType = 140;
-  repeated string CouponIDs = 150;
-  optional basetypes.order.v1.PaymentType PaymentType = 160;
-  optional string CoinTypeID = 170;
-  optional string PaymentCoinTypeID = 171;
-  optional string TransferAmount = 180;
-  optional string BalanceAmount = 190;
-  optional string CoinUSDCurrency = 200;
-  optional string LocalCoinUSDCurrency = 210;
-  optional string LiveCoinUSDCurrency = 220;
-
-  // Support multiple payment coins from user balances
-  optional basetypes.order.v1.OrderCreateMethod CreateMethod = 221;
-  optional bool MultiPaymentCoins = 222;
-  repeated PaymentAmount PaymentAmounts = 223;
-
-  // payment
-  optional string PaymentAccountID = 230;
-  optional string PaymentStartAmount = 240;
-
-  // Create or Update
-  // orderstate
-  optional basetypes.order.v1.OrderState OrderState = 250;
-  optional basetypes.order.v1.OrderStartMode StartMode = 260;
-  optional uint32 StartAt = 270;
-  optional uint32 EndAt = 280;
-  optional uint32 LastBenefitAt = 290;
-  optional basetypes.order.v1.BenefitState BenefitState = 300;
-  optional bool UserSetPaid = 310;
-  optional bool UserSetCanceled = 320;
-  optional bool AdminSetCanceled = 321;
-  optional string PaymentTransactionID = 330;
-  optional string PaymentFinishAmount = 340;
-  optional basetypes.order.v1.PaymentState PaymentState = 350;
-  optional uint32 OutOfGasHours = 360;
-  optional uint32 CompensateHours = 370;
-  optional bool Rollback = 380;
-  optional string AppGoodStockLockID = 400;
-  optional string LedgerLockID = 410;
-  optional basetypes.order.v1.OrderRenewState RenewState = 420;
-  optional uint32 RenewNotifyAt = 430;
-  optional bool Simulate = 440;
+    rpc GetOrder (GetOrderRequest) returns (GetOrderResponse) {}
+    rpc GetOrders (GetOrdersRequest) returns (GetOrdersResponse) {}
+    rpc CountOrders (CountOrdersRequest) returns (CountOrdersResponse) {}
+    rpc SumOrdersPaymentUSD (SumOrdersPaymentUSDRequest) returns (SumOrdersPaymentUSDResponse) {}
+    rpc SumOrdersValueUSD (SumOrdersValueUSDRequest) returns (SumOrdersValueUSDResponse) {}
+    rpc ExistOrder (ExistOrderRequest) returns (ExistOrderResponse) {}
+    rpc ExistOrderConds (ExistOrderCondsRequest) returns (ExistOrderCondsResponse) {}
 }
 
 message Order {
-  // order
-  // @inject_tag: sql:"id"
-  uint32 ID = 9;
-  // @inject_tag: sql:"ent_id"
-  string EntID = 10;
-  // @inject_tag: sql:"app_id"
-  string AppID = 20;
-  // @inject_tag: sql:"user_id"
-  string UserID = 30;
-  // @inject_tag: sql:"good_id"
-  string GoodID = 40;
-  // @inject_tag: sql:"app_good_id"
-  string AppGoodID = 50;
-  // @inject_tag: sql:"payment_id"
-  string PaymentID = 60;
-  // @inject_tag: sql:"parent_order_id"
-  string ParentOrderID = 70;
-  // @inject_tag: sql:"units_v1"
-  string Units = 80;
-  // @inject_tag: sql:"good_value"
-  string GoodValue = 90;
-  // @inject_tag: sql:"good_value_usd"
-  string GoodValueUSD = 91;
-  // @inject_tag: sql:"payment_amount"
-  string PaymentAmount = 100;
-  // @inject_tag: sql:"discount_amount"
-  string DiscountAmount = 110;
-  // @inject_tag: sql:"promotion_id"
-  string PromotionID = 120;
-  // @inject_tag: sql:"duration"
-  uint32 Duration = 130;
-  // @inject_tag: sql:"order_type"
-  string OrderTypeStr = 140;
-  basetypes.order.v1.OrderType OrderType = 150;
-  // @inject_tag: sql:"investment_type"
-  string InvestmentTypeStr = 160;
-  basetypes.order.v1.InvestmentType InvestmentType = 170;
-  // @inject_tag: sql:"coupon_ids"
-  string CouponIDsStr = 180;
-  repeated string CouponIDs = 190;
-  // @inject_tag: sql:"payment_type"
-  string PaymentTypeStr = 200;
-  basetypes.order.v1.PaymentType PaymentType = 210;
-  // @inject_tag: sql:"coin_type_id"
-  string CoinTypeID = 220;
-  // @inject_tag: sql:"payment_coin_type_id"
-  string PaymentCoinTypeID = 221;
-  // @inject_tag: sql:"transfer_amount"
-  string TransferAmount = 230;
-  // @inject_tag: sql:"balance_amount"
-  string BalanceAmount = 240;
-  // @inject_tag: sql:"coin_usd_currency"
-  string CoinUSDCurrency = 250;
-  // @inject_tag: sql:"local_coin_usd_currency"
-  string LocalCoinUSDCurrency = 260;
-  // @inject_tag: sql:"live_coin_usd_currency"
-  string LiveCoinUSDCurrency = 270;
+    // order
+    // @inject_tag: sql:"id"
+    uint32 ID = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID = 20;
+    // @inject_tag: sql:"app_id"
+    string AppID = 30;
+    // @inject_tag: sql:"user_id"
+    string UserID = 40;
+    // @inject_tag: sql:"good_id"
+    string GoodID = 50;
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 60;
+    basetypes.good.v1.GoodType GoodType = 70;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID = 80;
+    // @inject_tag: sql:"parent_order_id"
+    string ParentOrderID = 90;
+    // @inject_tag: sql:"order_type"
+    string OrderTypeStr = 100;
+    basetypes.order.v1.OrderType OrderType = 110;
+    // @inject_tag: sql:"payment_type"
+    string PaymentTypeStr = 120;
+    basetypes.order.v1.PaymentType PaymentType = 130;
+    // @inject_tag: sql:"create_method"
+    string CreateMethodStr = 140;
+    basetypes.order.v1.OrderCreateMethod CreateMethod = 150;
+    // @inject_tag: sql:"simulate"
+    bool Simulate = 160;
 
-  // @inject_tag: sql:"create_method"
-  string CreateMethodStr = 271;
-  basetypes.order.v1.OrderCreateMethod CreateMethod = 272;
-  // @inject_tag: sql:"multi_payment_coins"
-  bool MultiPaymentCoins = 273;
-  // @inject_tag: sql:"payment_amounts"
-  string PaymentAmountsStr = 274;
-  repeated PaymentAmount PaymentAmounts = 275;
+    // @inject_tag: sql:"order_state"
+    string OrderStateStr = 200;
+    basetypes.order.v1.OrderState OrderState = 210;
+    // @inject_tag: sql:"start_mode"
+    string StartModeStr = 220;
+    basetypes.order.v1.OrderStartMode StartMode = 230;
+    // @inject_tag: sql:"start_at"
+    uint32 StartAt = 240;
+    // @inject_tag: sql:"last_benefit_at"
+    uint32 LastBenefitAt = 250;
+    // @inject_tag: sql:"benefit_state"
+    string BenefitStateStr = 260;
+    basetypes.order.v1.BenefitState BenefitState = 270;
 
-  // payment
-  // @inject_tag: sql:"payment_account_id"
-  string PaymentAccountID = 280;
-  // @inject_tag: sql:"payment_start_amount"
-  string PaymentStartAmount = 290;
-
-  // Orderstate
-  // @inject_tag: sql:"orderstate_id"
-  string OrderStateID = 300;
-  // @inject_tag: sql:"order_state"
-  string OrderStateStr = 310;
-  basetypes.order.v1.OrderState OrderState = 320;
-  // @inject_tag: sql:"start_mode"
-  string StartModeStr = 330;
-  basetypes.order.v1.OrderStartMode StartMode = 340;
-  // @inject_tag: sql:"start_at"
-  uint32 StartAt = 350;
-  // @inject_tag: sql:"end_at"
-  uint32 EndAt = 360;
-  // @inject_tag: sql:"last_benefit_at"
-  uint32 LastBenefitAt = 370;
-  // @inject_tag: sql:"benefit_state"
-  string BenefitStateStr = 380;
-  basetypes.order.v1.BenefitState BenefitState = 390;
-  // @inject_tag: sql:"user_set_paid"
-  bool UserSetPaid = 400;
-  // @inject_tag: sql:"user_set_canceled"
-  bool UserSetCanceled = 410;
-  // @inject_tag: sql:"admin_set_canceled"
-  bool AdminSetCanceled = 411;
-  // @inject_tag: sql:"payment_transaction_id"
-  string PaymentTransactionID = 420;
-  // @inject_tag: sql:"payment_finish_amount"
-  string PaymentFinishAmount = 430;
-  // @inject_tag: sql:"payment_state"
-  string PaymentStateStr = 440;
-  basetypes.order.v1.PaymentState PaymentState = 450;
-  // @inject_tag: sql:"outofgas_hours"
-  uint32 OutOfGasHours = 460;
-  // @inject_tag: sql:"compensate_hours"
-  uint32 CompensateHours = 470;
-  // @inject_tag: sql:"cancel_state"
-  string CancelStateStr = 480;
-  basetypes.order.v1.OrderState CancelState = 490;
-  // @inject_tag: sql:"paid_at"
-  uint32 PaidAt = 500;
-  // @inject_tag: sql:"app_good_stock_lock_id"
-  string AppGoodStockLockID = 510;
-  // @inject_tag: sql:"ledger_lock_id"
-  string LedgerLockID = 520;
-
-  // @inject_tag: sql:"renew_state"
-  string RenewStateStr = 530;
-  basetypes.order.v1.OrderRenewState RenewState = 540;
-  // @inject_tag: sql:"renew_notify_at"
-  uint32 RenewNotifyAt = 550;
-
-  // simulate
-  // @inject_tag: sql:"simulate"
-  bool Simulate = 560;
-
-  // @inject_tag: sql:"created_at"
-  uint32 CreatedAt = 1000;
-  // @inject_tag: sql:"updated_at"
-  uint32 UpdatedAt = 1010;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-  // order
-  optional basetypes.v1.Uint32Val ID = 9;
-  optional basetypes.v1.StringVal EntID = 10;
-  optional basetypes.v1.StringVal AppID = 20;
-  optional basetypes.v1.StringVal UserID = 30;
-  optional basetypes.v1.StringVal GoodID = 40;
-  optional basetypes.v1.StringVal AppGoodID = 50;
-  optional basetypes.v1.StringVal ParentOrderID = 60;
-  optional basetypes.v1.StringVal PaymentAmount = 70;
-  optional basetypes.v1.Uint32Val OrderType = 80;
-  optional basetypes.v1.Uint32Val InvestmentType = 90;
-  optional basetypes.v1.StringSliceVal CouponIDs = 100;
-  optional basetypes.v1.Uint32Val PaymentType = 110;
-  optional basetypes.v1.StringVal CoinTypeID = 120;
-  optional basetypes.v1.StringVal PaymentCoinTypeID = 130;
+    // order
+    optional basetypes.v1.Uint32Val ID = 10;
+    optional basetypes.v1.Uint32SliceVal IDs = 20;
+    optional basetypes.v1.StringVal EntID = 30;
+    optional basetypes.v1.StringSliceVal EntIDs = 40;
+    optional basetypes.v1.StringVal AppID = 50;
+    optional basetypes.v1.StringVal UserID = 60;
+    optional basetypes.v1.StringVal GoodID = 70;
+    optional basetypes.v1.StringSliceVal GoodIDs = 80;
+    optional basetypes.v1.StringVal AppGoodID = 90;
+    optional basetypes.v1.StringSliceVal AppGoodIDs = 100;
+    optional basetypes.v1.StringVal ParentOrderID = 110;
+    optional basetypes.v1.StringSliceVal ParentOrderIDs = 120;
+    optional basetypes.v1.Uint32Val OrderType = 130;
+    optional basetypes.v1.Uint32Val PaymentType = 140;
+    optional basetypes.v1.Uint32SliceVal PaymentTypes = 150;
+    optional basetypes.v1.BoolVal Simulate = 160;
 
-  // orderstate
-  optional basetypes.v1.Uint32Val OrderState = 140;
-  optional basetypes.v1.Uint32Val StartMode = 150;
-  optional basetypes.v1.Uint32Val LastBenefitAt = 160;
-  optional basetypes.v1.Uint32Val BenefitState = 170;
-  optional basetypes.v1.StringVal PaymentTransactionID = 180;
-  optional basetypes.v1.Uint32Val PaymentState = 190;
+    // orderstate
+    optional basetypes.v1.Uint32Val OrderState = 170;
+    optional basetypes.v1.Uint32SliceVal OrderStates = 180;
+    optional basetypes.v1.Uint32Val StartMode = 190;
+    optional basetypes.v1.Uint32Val LastBenefitAt = 200;
+    optional basetypes.v1.Uint32Val BenefitState = 210;
 
-  // other
-  optional basetypes.v1.Uint32SliceVal IDs = 199;
-  optional basetypes.v1.StringSliceVal EntIDs = 200;
-  optional basetypes.v1.StringVal CouponID = 210;
-  optional basetypes.v1.Uint32SliceVal OrderStates = 220;
-  optional basetypes.v1.Uint32SliceVal PaymentTypes = 230;
-  optional basetypes.v1.Uint32Val CreatedAt = 240;
-  optional basetypes.v1.Uint32Val UpdatedAt = 250;
-  optional basetypes.v1.BoolVal AdminSetCanceled = 260;
-  optional basetypes.v1.BoolVal UserSetCanceled = 270;
-  optional basetypes.v1.StringSliceVal ParentOrderIDs = 280;
-  optional basetypes.v1.Uint32Val RenewState = 290;
-  optional basetypes.v1.StringSliceVal GoodIDs = 300;
-  optional basetypes.v1.StringSliceVal AppGoodIDs = 310;
-  optional basetypes.v1.Uint32Val RenewNotifyAt = 320;
-  optional basetypes.v1.BoolVal Simulate = 330;
+    // other
+    optional basetypes.v1.Uint32Val CreatedAt = 220;
+    optional basetypes.v1.Uint32Val UpdatedAt = 230;
+
+    optional basetypes.v1.Uint32Val GoodType = 240;
+    optional basetypes.v1.Uint32SliceVal GoodTypes = 250;
 }
 
-message CreateOrderRequest { OrderReq Info = 10; }
+message GetOrderRequest {
+    string EntID = 10;
+}
 
-message CreateOrderResponse { Order Info = 10; }
-
-message CreateOrdersRequest { repeated OrderReq Infos = 10; }
-
-message CreateOrdersResponse { repeated Order Infos = 10; }
-
-message UpdateOrderRequest { OrderReq Info = 10; }
-
-message UpdateOrderResponse { Order Info = 10; }
-
-message UpdateOrdersRequest { repeated OrderReq Infos = 10; }
-
-message UpdateOrdersResponse { repeated Order Infos = 10; }
-
-message GetOrderRequest { string EntID = 10; }
-
-message GetOrderResponse { Order Info = 10; }
+message GetOrderResponse {
+    Order Info = 10;
+}
 
 message GetOrdersRequest {
-  Conds Conds = 10;
-  int32 Offset = 30;
-  int32 Limit = 40;
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
 message GetOrdersResponse {
-  repeated Order Infos = 10;
-  uint32 Total = 20;
+    repeated Order Infos = 10;
+    uint32 Total = 20;
 }
 
-message SumOrderUnitsRequest { Conds Conds = 10; }
+message CountOrdersRequest {
+    Conds Conds = 10;
+}
 
-message SumOrderUnitsResponse { string Info = 10; }
+message CountOrdersResponse {
+    uint32 Info = 10;
+}
 
-message SumOrderPaymentAmountsRequest { Conds Conds = 10; }
+message SumOrdersPaymentUSDRequest {
+    Conds Conds = 10;
+}
 
-message SumOrderPaymentAmountsResponse { string Info = 10; }
+message SumOrdersPaymentUSDResponse {
+    string Info = 10;
+}
 
-message CountOrdersRequest { Conds Conds = 10; }
+message SumOrdersValueUSDRequest {
+    Conds Conds = 10;
+}
 
-message CountOrdersResponse { uint32 Info = 10; }
+message SumOrdersValueUSDResponse {
+    string Info = 10;
+}
 
-message ExistOrderRequest { string EntID = 10; }
+message ExistOrderRequest {
+    string EntID = 10;
+}
 
-message ExistOrderResponse { bool Info = 10; }
+message ExistOrderResponse {
+    bool Info = 10;
+}
 
-message ExistOrderCondsRequest { Conds Conds = 10; }
+message ExistOrderCondsRequest {
+    Conds Conds = 10;
+}
 
-message ExistOrderCondsResponse { bool Info = 10; }
-
-message DeleteOrderRequest { OrderReq Info = 10; }
-
-message DeleteOrderResponse { Order Info = 10; }
-
-message DeleteOrdersRequest { repeated OrderReq Infos = 10; }
-
-message DeleteOrdersResponse { repeated Order Infos = 10; }
+message ExistOrderCondsResponse {
+    bool Info = 10;
+}

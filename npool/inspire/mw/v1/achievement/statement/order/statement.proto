@@ -1,0 +1,177 @@
+syntax = "proto3";
+
+package inspire.middleware.achievement.statement.order.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/achievement/statement/order";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
+import "npool/inspire/mw/v1/achievement/statement/order/payment/statement.proto";
+
+// Service Name
+service Middleware {
+  rpc CreateStatement(CreateStatementRequest)
+      returns (CreateStatementResponse) {
+    option (google.api.http) = {
+      post : "/v1/order_statement_CreateStatement"
+      body : "*"
+    };
+  }
+  rpc CreateStatements(CreateStatementsRequest)
+      returns (CreateStatementsResponse) {
+    option (google.api.http) = {
+      post : "/v1/order_statement_CreateStatements"
+      body : "*"
+    };
+  }
+  rpc UpdateStatements(UpdateStatementsRequest)
+      returns (UpdateStatementsResponse) {
+    option (google.api.http) = {
+      post : "/v1/order_statement_UpdateStatements"
+      body : "*"
+    };
+  }
+  rpc DeleteStatements(DeleteStatementsRequest)
+      returns (DeleteStatementsResponse) {
+    option (google.api.http) = {
+      post : "/v1/order_statement_DeleteStatements"
+      body : "*"
+    };
+  }
+  rpc GetStatements(GetStatementsRequest) returns (GetStatementsResponse) {
+    option (google.api.http) = {
+      post : "/v1/order_statement_GetStatements"
+      body : "*"
+    };
+  }
+  rpc ExistStatementConds(ExistStatementCondsRequest) returns (ExistStatementCondsResponse) {
+    option (google.api.http) = {
+      post : "/v1/order_statement_ExistStatementConds"
+      body : "*"
+    };
+  }
+  rpc DeleteStatement(DeleteStatementRequest)
+      returns (DeleteStatementResponse) {
+    option (google.api.http) = {
+      post : "/v1/order_statement_DeleteStatement"
+      body : "*"
+    };
+  }
+}
+
+message StatementReq {
+  optional uint32 ID = 10;
+  optional string EntID = 20;
+  optional string AppID = 30;
+  optional string UserID = 40;
+  optional string GoodID = 50;
+  optional string AppGoodID = 60;
+  optional string OrderID = 70;
+  optional string OrderUserID = 80;
+  optional string GoodCoinTypeID = 90;
+  optional string Units = 100;
+  optional string GoodValueUSD = 110;
+  optional string PaymentAmountUSD = 120;
+  optional string CommissionAmountUSD = 130;
+  optional string AppConfigID = 140;
+  optional string CommissionConfigID = 150;
+  optional basetypes.inspire.v1.CommissionConfigType CommissionConfigType = 160;
+  repeated inspire.middleware.achievement.statement.order.payment.v1.StatementReq PaymentStatements = 170;
+}
+
+message Statement {
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"app_id"
+  string AppID = 30;
+  // @inject_tag: sql:"user_id"
+  string UserID = 40;
+  // @inject_tag: sql:"good_id"
+  string GoodID = 50;
+  // @inject_tag: sql:"app_good_id"
+  string AppGoodID = 60;
+  // @inject_tag: sql:"order_id"
+  string OrderID = 70;
+  // @inject_tag: sql:"order_user_id"
+  string OrderUserID = 80;
+  // @inject_tag: sql:"good_coin_type_id"
+  string GoodCoinTypeID = 90;
+  // @inject_tag: sql:"units"
+  string Units = 100;
+  // @inject_tag: sql:"good_value_usd"
+  string GoodValueUSD = 110;
+  // @inject_tag: sql:"payment_amount_usd"
+  string PaymentAmountUSD = 120;
+  // @inject_tag: sql:"commission_amount_usd"
+  string CommissionAmountUSD = 130;
+  // @inject_tag: sql:"app_config_id"
+  string AppConfigID = 140;
+  // @inject_tag: sql:"commission_config_id"
+  string CommissionConfigID = 150;
+  // @inject_tag: sql:"commission_config_type"
+  string CommissionConfigTypeStr = 160;
+  basetypes.inspire.v1.CommissionConfigType CommissionConfigType = 170;
+
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
+}
+
+message Conds {
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal AppID = 20;
+  optional basetypes.v1.StringVal UserID = 30;
+  optional basetypes.v1.StringSliceVal UserIDs = 40;
+  optional basetypes.v1.StringVal GoodID = 50;
+  optional basetypes.v1.StringVal AppGoodID = 60;
+  optional basetypes.v1.StringVal OrderID = 70;
+  optional basetypes.v1.StringSliceVal OrderIDs = 71;
+  optional basetypes.v1.StringVal OrderUserID = 80;
+  optional basetypes.v1.StringVal GoodCoinTypeID = 90;
+  optional basetypes.v1.StringVal AppConfigID = 100;
+  optional basetypes.v1.StringVal CommissionConfigID = 110;
+  optional basetypes.v1.Uint32Val CommissionConfigType = 120;
+}
+
+message CreateStatementRequest { StatementReq Info = 10; }
+
+message CreateStatementResponse { Statement Info = 10; }
+
+message CreateStatementsRequest { repeated StatementReq Infos = 10; }
+
+message CreateStatementsResponse { repeated Statement Infos = 10; }
+
+message UpdateStatementsRequest { repeated StatementReq Infos = 10; }
+
+message UpdateStatementsResponse { repeated Statement Infos = 10; }
+
+message DeleteStatementsRequest { repeated StatementReq Infos = 10; }
+
+message DeleteStatementsResponse { repeated Statement Infos = 10; }
+
+message GetStatementsRequest {
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetStatementsResponse {
+  repeated Statement Infos = 10;
+  uint32 Total = 20;
+}
+
+message ExistStatementCondsRequest {
+  Conds Conds = 10;
+}
+
+message ExistStatementCondsResponse {
+  bool Info = 10;
+}
+
+message DeleteStatementRequest { StatementReq Info = 10; }
+
+message DeleteStatementResponse { Statement Info = 10; }

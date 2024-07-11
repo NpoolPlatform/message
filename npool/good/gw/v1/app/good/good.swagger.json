@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/appgood": {
+    "/v1/admin/get/appgoods": {
       "post": {
-        "operationId": "Gateway_CreateGood",
+        "operationId": "Gateway_AdminGetGoods",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateGoodResponse"
+              "$ref": "#/definitions/v1AdminGetGoodsResponse"
             }
           },
           "default": {
@@ -39,39 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateGoodRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/appgood": {
-      "post": {
-        "operationId": "Gateway_GetGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodRequest"
+              "$ref": "#/definitions/v1AdminGetGoodsRequest"
             }
           }
         ],
@@ -87,7 +55,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetGoodsResponse"
+              "$ref": "#/definitions/goodgatewayappgood1v1GetGoodsResponse"
             }
           },
           "default": {
@@ -103,103 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetGoodsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/n/appgoods": {
-      "post": {
-        "operationId": "Gateway_GetNGoods",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetNGoodsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetNGoodsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/update/appgood": {
-      "post": {
-        "operationId": "Gateway_UpdateGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateGoodRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/update/n/appgood": {
-      "post": {
-        "operationId": "Gateway_UpdateNGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateNGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateNGoodRequest"
+              "$ref": "#/definitions/goodgatewayappgood1v1GetGoodsRequest"
             }
           }
         ],
@@ -210,6 +82,37 @@
     }
   },
   "definitions": {
+    "goodgatewayappgood1v1GetGoodsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "goodgatewayappgood1v1GetGoodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Good"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -237,399 +140,149 @@
         }
       }
     },
+    "v1AdminGetGoodsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AdminGetGoodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Good"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1BenefitType": {
       "type": "string",
       "enum": [
         "DefaultBenefitType",
         "BenefitTypePlatform",
         "BenefitTypePool",
-        "BenefitTypeOffline"
+        "BenefitTypeOffline",
+        "BenefitTypeContract",
+        "BenefitTypeNone"
       ],
       "default": "DefaultBenefitType",
-      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward"
-    },
-    "v1CancelMode": {
-      "type": "string",
-      "enum": [
-        "DefaultCancelMode",
-        "CancellableBeforeStart",
-        "CancellableBeforeBenefit",
-        "Uncancellable"
-      ],
-      "default": "DefaultCancelMode"
-    },
-    "v1CreateGoodRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "Online": {
-          "type": "boolean"
-        },
-        "Visible": {
-          "type": "boolean"
-        },
-        "GoodName": {
-          "type": "string"
-        },
-        "UnitPrice": {
-          "type": "string"
-        },
-        "PackagePrice": {
-          "type": "string"
-        },
-        "DisplayIndex": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "SaleStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SaleEndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ServiceStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "TechnicalFeeRatio": {
-          "type": "string"
-        },
-        "ElectricityFeeRatio": {
-          "type": "string"
-        },
-        "EnablePurchase": {
-          "type": "boolean"
-        },
-        "EnableProductPage": {
-          "type": "boolean"
-        },
-        "CancelMode": {
-          "$ref": "#/definitions/v1CancelMode"
-        },
-        "DisplayColors": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CancellableBeforeStart": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ProductPage": {
-          "type": "string"
-        },
-        "EnableSetCommission": {
-          "type": "boolean"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Descriptions": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "GoodBanner": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "MinOrderAmount": {
-          "type": "string"
-        },
-        "MaxOrderAmount": {
-          "type": "string"
-        },
-        "MaxUserAmount": {
-          "type": "string"
-        },
-        "MinOrderDuration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxOrderDuration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "PackageWithRequireds": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1CreateGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Good"
-        }
-      }
-    },
-    "v1GetGoodRequest": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Good"
-        }
-      }
-    },
-    "v1GetGoodsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetGoodsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Good"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetNGoodsRequest": {
-      "type": "object",
-      "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetNGoodsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Good"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward\n - BenefitTypeContract: User receive reward from smart contract\n - BenefitTypeNone: Such as technique fee"
     },
     "v1Good": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
         },
         "EntID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
         "AppID": {
-          "type": "string"
-        },
-        "AppName": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
         },
         "GoodID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
         },
-        "Online": {
-          "type": "boolean"
-        },
-        "Visible": {
-          "type": "boolean"
-        },
-        "UnitPrice": {
-          "type": "string"
-        },
-        "PackagePrice": {
-          "type": "string"
-        },
-        "DisplayIndex": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "DeviceType": {
-          "type": "string"
-        },
-        "DeviceManufacturer": {
-          "type": "string"
-        },
-        "DevicePowerConsumption": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DeviceShipmentAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DevicePosters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "VendorLocationCountry": {
-          "type": "string"
-        },
-        "VendorBrandName": {
-          "type": "string"
-        },
-        "VendorBrandLogo": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "CoinPreSale": {
-          "type": "boolean"
-        },
-        "CoinEnv": {
-          "type": "string"
-        },
-        "CoinHomePage": {
-          "type": "string"
-        },
-        "CoinSpecs": {
-          "type": "string"
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
         },
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
+        },
+        "BenefitTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"benefit_type\""
         },
         "BenefitType": {
           "$ref": "#/definitions/v1BenefitType"
         },
         "GoodName": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_name\""
         },
-        "QuantityUnit": {
-          "type": "string"
-        },
-        "QuantityUnitAmount": {
-          "type": "string"
-        },
-        "BenefitIntervalHours": {
+        "ServiceStartAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"service_start_at\""
         },
-        "TestOnly": {
-          "type": "boolean"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1GoodLabel"
-          }
-        },
-        "GoodTotal": {
-          "type": "string"
-        },
-        "GoodSpotQuantity": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
+        "StartModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"start_mode\""
         },
         "StartMode": {
           "$ref": "#/definitions/v1GoodStartMode"
         },
-        "CreatedAt": {
+        "TestOnly": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"test_only\""
+        },
+        "BenefitIntervalHours": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"benefit_interval_hours\""
         },
-        "SaleStartAt": {
+        "GoodPurchasable": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"good_purchasable\""
+        },
+        "GoodOnline": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"good_online\""
+        },
+        "AppGoodPurchasable": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"app_good_purchasable\""
+        },
+        "AppGoodOnline": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"app_good_online\""
+        },
+        "EnableProductPage": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enable_product_page\""
+        },
+        "ProductPage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"product_page\""
+        },
+        "Visible": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"visible\""
+        },
+        "AppGoodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_name\""
+        },
+        "DisplayIndex": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32",
+          "title": "@inject_tag: sql:\"display_index\""
         },
-        "SaleEndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ServiceStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "TechnicalFeeRatio": {
-          "type": "string"
-        },
-        "ElectricityFeeRatio": {
-          "type": "string"
-        },
-        "Descriptions": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "GoodBanner": {
-          "type": "string"
+        "Banner": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"banner\""
         },
         "DisplayNames": {
           "type": "array",
@@ -637,161 +290,17 @@
             "type": "string"
           }
         },
-        "EnablePurchase": {
-          "type": "boolean"
-        },
-        "EnableProductPage": {
-          "type": "boolean"
-        },
-        "CancelMode": {
-          "$ref": "#/definitions/v1CancelMode"
-        },
-        "DisplayColors": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CancellableBeforeStart": {
+        "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
-        "ProductPage": {
-          "type": "string"
-        },
-        "EnableSetCommission": {
-          "type": "boolean"
-        },
-        "Likes": {
+        "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
-        },
-        "Dislikes": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Score": {
-          "type": "string"
-        },
-        "ScoreCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "RecommendCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CommentCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "AppGoodStockID": {
-          "type": "string"
-        },
-        "AppGoodReserved": {
-          "type": "string"
-        },
-        "AppSpotQuantity": {
-          "type": "string"
-        },
-        "AppGoodLocked": {
-          "type": "string"
-        },
-        "AppGoodWaitStart": {
-          "type": "string"
-        },
-        "AppGoodInService": {
-          "type": "string"
-        },
-        "AppGoodSold": {
-          "type": "string"
-        },
-        "LastRewardAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "LastRewardAmount": {
-          "type": "string"
-        },
-        "LastUnitRewardAmount": {
-          "type": "string"
-        },
-        "TotalRewardAmount": {
-          "type": "string"
-        },
-        "AppGoodPosters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "MinOrderAmount": {
-          "type": "string"
-        },
-        "MaxOrderAmount": {
-          "type": "string"
-        },
-        "MaxUserAmount": {
-          "type": "string"
-        },
-        "MinOrderDuration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxOrderDuration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UnitType": {
-          "$ref": "#/definitions/v1GoodUnitType"
-        },
-        "QuantityCalculateType": {
-          "$ref": "#/definitions/v1GoodUnitCalculateType"
-        },
-        "DurationType": {
-          "$ref": "#/definitions/v1GoodDurationType"
-        },
-        "DurationCalculateType": {
-          "$ref": "#/definitions/v1GoodUnitCalculateType"
-        },
-        "SettlementType": {
-          "$ref": "#/definitions/v1GoodSettlementType"
-        },
-        "PackageWithRequireds": {
-          "type": "boolean"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
-    },
-    "v1GoodDurationType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodDurationType",
-        "GoodDurationByHour",
-        "GoodDurationByDay",
-        "GoodDurationByMonth",
-        "GoodDurationByYear"
-      ],
-      "default": "DefaultGoodDurationType"
-    },
-    "v1GoodLabel": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodLabel",
-        "GoodLabelPromotion",
-        "GoodLabelNoviceExclusive",
-        "GoodLabelInnovationStarter",
-        "GoodLabelLoyaltyExclusive"
-      ],
-      "default": "DefaultGoodLabel"
-    },
-    "v1GoodSettlementType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodSettlementType",
-        "GoodSettledByCash",
-        "GoodSettledByProfit"
-      ],
-      "default": "DefaultGoodSettlementType"
     },
     "v1GoodStartMode": {
       "type": "string",
@@ -801,7 +310,8 @@
         "GoodStartModeConfirmed",
         "GoodStartModeInstantly",
         "GoodStartModeNextDay",
-        "GoodStartModePreset"
+        "GoodStartModePreset",
+        "GoodStartModeWithParent"
       ],
       "default": "DefaultGoodStartMode"
     },
@@ -809,276 +319,14 @@
       "type": "string",
       "enum": [
         "DefaultGoodType",
-        "PowerRenting",
-        "MachineRenting",
-        "MachineHosting",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
         "TechniqueServiceFee",
         "ElectricityFee"
       ],
       "default": "DefaultGoodType"
-    },
-    "v1GoodUnitCalculateType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodUnitCalculateType",
-        "GoodUnitCalculateBySelf",
-        "GoodUnitCalculateByParent"
-      ],
-      "default": "DefaultGoodUnitCalculateType"
-    },
-    "v1GoodUnitType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodUnitType",
-        "GoodUnitByDuration",
-        "GoodUnitByQuantity",
-        "GoodUnitByDurationAndQuantity"
-      ],
-      "default": "DefaultGoodUnitType"
-    },
-    "v1UpdateGoodRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "Online": {
-          "type": "boolean"
-        },
-        "Visible": {
-          "type": "boolean"
-        },
-        "GoodName": {
-          "type": "string"
-        },
-        "UnitPrice": {
-          "type": "string"
-        },
-        "PackagePrice": {
-          "type": "string"
-        },
-        "DisplayIndex": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "SaleStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SaleEndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ServiceStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "TechnicalFeeRatio": {
-          "type": "string"
-        },
-        "ElectricityFeeRatio": {
-          "type": "string"
-        },
-        "Descriptions": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "GoodBanner": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "EnablePurchase": {
-          "type": "boolean"
-        },
-        "EnableProductPage": {
-          "type": "boolean"
-        },
-        "CancelMode": {
-          "$ref": "#/definitions/v1CancelMode"
-        },
-        "DisplayColors": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CancellableBeforeStart": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ProductPage": {
-          "type": "string"
-        },
-        "EnableSetCommission": {
-          "type": "boolean"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "MinOrderAmount": {
-          "type": "string"
-        },
-        "MaxOrderAmount": {
-          "type": "string"
-        },
-        "MaxUserAmount": {
-          "type": "string"
-        },
-        "MinOrderDuration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxOrderDuration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "PackageWithRequireds": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1UpdateGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Good"
-        }
-      }
-    },
-    "v1UpdateNGoodRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "TargetAppID": {
-          "type": "string"
-        },
-        "Online": {
-          "type": "boolean"
-        },
-        "Visible": {
-          "type": "boolean"
-        },
-        "GoodName": {
-          "type": "string"
-        },
-        "UnitPrice": {
-          "type": "string"
-        },
-        "PackagePrice": {
-          "type": "string"
-        },
-        "DisplayIndex": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "ServiceStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "TechnicalFeeRatio": {
-          "type": "string"
-        },
-        "ElectricityFeeRatio": {
-          "type": "string"
-        },
-        "Descriptions": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "GoodBanner": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "EnablePurchase": {
-          "type": "boolean"
-        },
-        "EnableProductPage": {
-          "type": "boolean"
-        },
-        "CancelMode": {
-          "$ref": "#/definitions/v1CancelMode"
-        },
-        "DisplayColors": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CancellableBeforeStart": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ProductPage": {
-          "type": "string"
-        },
-        "EnableSetCommission": {
-          "type": "boolean"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "MinOrderAmount": {
-          "type": "string"
-        },
-        "MaxOrderAmount": {
-          "type": "string"
-        },
-        "MaxUserAmount": {
-          "type": "string"
-        },
-        "MinOrderDuration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxOrderDuration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "PackageWithRequireds": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1UpdateNGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Good"
-        }
-      }
     }
   }
 }

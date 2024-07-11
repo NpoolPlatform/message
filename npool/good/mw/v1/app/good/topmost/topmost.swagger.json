@@ -53,6 +53,9 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
         "AppID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -77,6 +80,14 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1TopMost"
+        }
+      }
+    },
+    "v1ExistTopMostCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
         }
       }
     },
@@ -114,6 +125,20 @@
         "TopMostLoyaltyExclusive"
       ],
       "default": "DefaultGoodTopMostType"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     },
     "v1StringVal": {
       "type": "object",
@@ -157,15 +182,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"message\""
         },
-        "PostersStr": {
+        "TargetUrl": {
           "type": "string",
-          "title": "@inject_tag: sql:\"posters\""
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "title": "@inject_tag: sql:\"target_url\""
         },
         "StartAt": {
           "type": "integer",
@@ -176,28 +195,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"end_at\""
-        },
-        "ThresholdCredits": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"threshold_credits\""
-        },
-        "RegisterElapsedSeconds": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"register_elapsed_seconds\""
-        },
-        "ThresholdPurchases": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"threshold_purchases\""
-        },
-        "ThresholdPaymentAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"threshold_payment_amount\""
-        },
-        "KycMust": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"kyc_must\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -233,11 +230,8 @@
         "Message": {
           "type": "string"
         },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "TargetUrl": {
+          "type": "string"
         },
         "StartAt": {
           "type": "integer",
@@ -247,24 +241,6 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "ThresholdCredits": {
-          "type": "string",
-          "title": "For user specific threshold"
-        },
-        "RegisterElapsedSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ThresholdPurchases": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "ThresholdPaymentAmount": {
-          "type": "string"
-        },
-        "KycMust": {
-          "type": "boolean"
         }
       }
     },

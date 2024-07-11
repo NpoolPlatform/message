@@ -19,38 +19,26 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateOrder_FullMethodName            = "/order.middleware.order1.v1.Middleware/CreateOrder"
-	Middleware_CreateOrders_FullMethodName           = "/order.middleware.order1.v1.Middleware/CreateOrders"
-	Middleware_UpdateOrder_FullMethodName            = "/order.middleware.order1.v1.Middleware/UpdateOrder"
-	Middleware_UpdateOrders_FullMethodName           = "/order.middleware.order1.v1.Middleware/UpdateOrders"
-	Middleware_GetOrder_FullMethodName               = "/order.middleware.order1.v1.Middleware/GetOrder"
-	Middleware_GetOrders_FullMethodName              = "/order.middleware.order1.v1.Middleware/GetOrders"
-	Middleware_SumOrderUnits_FullMethodName          = "/order.middleware.order1.v1.Middleware/SumOrderUnits"
-	Middleware_SumOrderPaymentAmounts_FullMethodName = "/order.middleware.order1.v1.Middleware/SumOrderPaymentAmounts"
-	Middleware_CountOrders_FullMethodName            = "/order.middleware.order1.v1.Middleware/CountOrders"
-	Middleware_ExistOrder_FullMethodName             = "/order.middleware.order1.v1.Middleware/ExistOrder"
-	Middleware_ExistOrderConds_FullMethodName        = "/order.middleware.order1.v1.Middleware/ExistOrderConds"
-	Middleware_DeleteOrder_FullMethodName            = "/order.middleware.order1.v1.Middleware/DeleteOrder"
-	Middleware_DeleteOrders_FullMethodName           = "/order.middleware.order1.v1.Middleware/DeleteOrders"
+	Middleware_GetOrder_FullMethodName            = "/order.middleware.order1.v1.Middleware/GetOrder"
+	Middleware_GetOrders_FullMethodName           = "/order.middleware.order1.v1.Middleware/GetOrders"
+	Middleware_CountOrders_FullMethodName         = "/order.middleware.order1.v1.Middleware/CountOrders"
+	Middleware_SumOrdersPaymentUSD_FullMethodName = "/order.middleware.order1.v1.Middleware/SumOrdersPaymentUSD"
+	Middleware_SumOrdersValueUSD_FullMethodName   = "/order.middleware.order1.v1.Middleware/SumOrdersValueUSD"
+	Middleware_ExistOrder_FullMethodName          = "/order.middleware.order1.v1.Middleware/ExistOrder"
+	Middleware_ExistOrderConds_FullMethodName     = "/order.middleware.order1.v1.Middleware/ExistOrderConds"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	CreateOrder(ctx context.Context, in *CreateOrderRequest, opts ...grpc.CallOption) (*CreateOrderResponse, error)
-	CreateOrders(ctx context.Context, in *CreateOrdersRequest, opts ...grpc.CallOption) (*CreateOrdersResponse, error)
-	UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*UpdateOrderResponse, error)
-	UpdateOrders(ctx context.Context, in *UpdateOrdersRequest, opts ...grpc.CallOption) (*UpdateOrdersResponse, error)
 	GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error)
 	GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error)
-	SumOrderUnits(ctx context.Context, in *SumOrderUnitsRequest, opts ...grpc.CallOption) (*SumOrderUnitsResponse, error)
-	SumOrderPaymentAmounts(ctx context.Context, in *SumOrderPaymentAmountsRequest, opts ...grpc.CallOption) (*SumOrderPaymentAmountsResponse, error)
 	CountOrders(ctx context.Context, in *CountOrdersRequest, opts ...grpc.CallOption) (*CountOrdersResponse, error)
+	SumOrdersPaymentUSD(ctx context.Context, in *SumOrdersPaymentUSDRequest, opts ...grpc.CallOption) (*SumOrdersPaymentUSDResponse, error)
+	SumOrdersValueUSD(ctx context.Context, in *SumOrdersValueUSDRequest, opts ...grpc.CallOption) (*SumOrdersValueUSDResponse, error)
 	ExistOrder(ctx context.Context, in *ExistOrderRequest, opts ...grpc.CallOption) (*ExistOrderResponse, error)
 	ExistOrderConds(ctx context.Context, in *ExistOrderCondsRequest, opts ...grpc.CallOption) (*ExistOrderCondsResponse, error)
-	DeleteOrder(ctx context.Context, in *DeleteOrderRequest, opts ...grpc.CallOption) (*DeleteOrderResponse, error)
-	DeleteOrders(ctx context.Context, in *DeleteOrdersRequest, opts ...grpc.CallOption) (*DeleteOrdersResponse, error)
 }
 
 type middlewareClient struct {
@@ -59,42 +47,6 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
-}
-
-func (c *middlewareClient) CreateOrder(ctx context.Context, in *CreateOrderRequest, opts ...grpc.CallOption) (*CreateOrderResponse, error) {
-	out := new(CreateOrderResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateOrder_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) CreateOrders(ctx context.Context, in *CreateOrdersRequest, opts ...grpc.CallOption) (*CreateOrdersResponse, error) {
-	out := new(CreateOrdersResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateOrders_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*UpdateOrderResponse, error) {
-	out := new(UpdateOrderResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdateOrder_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) UpdateOrders(ctx context.Context, in *UpdateOrdersRequest, opts ...grpc.CallOption) (*UpdateOrdersResponse, error) {
-	out := new(UpdateOrdersResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdateOrders_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *middlewareClient) GetOrder(ctx context.Context, in *GetOrderRequest, opts ...grpc.CallOption) (*GetOrderResponse, error) {
@@ -115,27 +67,27 @@ func (c *middlewareClient) GetOrders(ctx context.Context, in *GetOrdersRequest, 
 	return out, nil
 }
 
-func (c *middlewareClient) SumOrderUnits(ctx context.Context, in *SumOrderUnitsRequest, opts ...grpc.CallOption) (*SumOrderUnitsResponse, error) {
-	out := new(SumOrderUnitsResponse)
-	err := c.cc.Invoke(ctx, Middleware_SumOrderUnits_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) SumOrderPaymentAmounts(ctx context.Context, in *SumOrderPaymentAmountsRequest, opts ...grpc.CallOption) (*SumOrderPaymentAmountsResponse, error) {
-	out := new(SumOrderPaymentAmountsResponse)
-	err := c.cc.Invoke(ctx, Middleware_SumOrderPaymentAmounts_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) CountOrders(ctx context.Context, in *CountOrdersRequest, opts ...grpc.CallOption) (*CountOrdersResponse, error) {
 	out := new(CountOrdersResponse)
 	err := c.cc.Invoke(ctx, Middleware_CountOrders_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) SumOrdersPaymentUSD(ctx context.Context, in *SumOrdersPaymentUSDRequest, opts ...grpc.CallOption) (*SumOrdersPaymentUSDResponse, error) {
+	out := new(SumOrdersPaymentUSDResponse)
+	err := c.cc.Invoke(ctx, Middleware_SumOrdersPaymentUSD_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) SumOrdersValueUSD(ctx context.Context, in *SumOrdersValueUSDRequest, opts ...grpc.CallOption) (*SumOrdersValueUSDResponse, error) {
+	out := new(SumOrdersValueUSDResponse)
+	err := c.cc.Invoke(ctx, Middleware_SumOrdersValueUSD_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -160,41 +112,17 @@ func (c *middlewareClient) ExistOrderConds(ctx context.Context, in *ExistOrderCo
 	return out, nil
 }
 
-func (c *middlewareClient) DeleteOrder(ctx context.Context, in *DeleteOrderRequest, opts ...grpc.CallOption) (*DeleteOrderResponse, error) {
-	out := new(DeleteOrderResponse)
-	err := c.cc.Invoke(ctx, Middleware_DeleteOrder_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) DeleteOrders(ctx context.Context, in *DeleteOrdersRequest, opts ...grpc.CallOption) (*DeleteOrdersResponse, error) {
-	out := new(DeleteOrdersResponse)
-	err := c.cc.Invoke(ctx, Middleware_DeleteOrders_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	CreateOrder(context.Context, *CreateOrderRequest) (*CreateOrderResponse, error)
-	CreateOrders(context.Context, *CreateOrdersRequest) (*CreateOrdersResponse, error)
-	UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error)
-	UpdateOrders(context.Context, *UpdateOrdersRequest) (*UpdateOrdersResponse, error)
 	GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error)
 	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
-	SumOrderUnits(context.Context, *SumOrderUnitsRequest) (*SumOrderUnitsResponse, error)
-	SumOrderPaymentAmounts(context.Context, *SumOrderPaymentAmountsRequest) (*SumOrderPaymentAmountsResponse, error)
 	CountOrders(context.Context, *CountOrdersRequest) (*CountOrdersResponse, error)
+	SumOrdersPaymentUSD(context.Context, *SumOrdersPaymentUSDRequest) (*SumOrdersPaymentUSDResponse, error)
+	SumOrdersValueUSD(context.Context, *SumOrdersValueUSDRequest) (*SumOrdersValueUSDResponse, error)
 	ExistOrder(context.Context, *ExistOrderRequest) (*ExistOrderResponse, error)
 	ExistOrderConds(context.Context, *ExistOrderCondsRequest) (*ExistOrderCondsResponse, error)
-	DeleteOrder(context.Context, *DeleteOrderRequest) (*DeleteOrderResponse, error)
-	DeleteOrders(context.Context, *DeleteOrdersRequest) (*DeleteOrdersResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -202,44 +130,26 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateOrder(context.Context, *CreateOrderRequest) (*CreateOrderResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateOrder not implemented")
-}
-func (UnimplementedMiddlewareServer) CreateOrders(context.Context, *CreateOrdersRequest) (*CreateOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateOrders not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateOrder(context.Context, *UpdateOrderRequest) (*UpdateOrderResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrder not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateOrders(context.Context, *UpdateOrdersRequest) (*UpdateOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrders not implemented")
-}
 func (UnimplementedMiddlewareServer) GetOrder(context.Context, *GetOrderRequest) (*GetOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrder not implemented")
 }
 func (UnimplementedMiddlewareServer) GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrders not implemented")
 }
-func (UnimplementedMiddlewareServer) SumOrderUnits(context.Context, *SumOrderUnitsRequest) (*SumOrderUnitsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SumOrderUnits not implemented")
-}
-func (UnimplementedMiddlewareServer) SumOrderPaymentAmounts(context.Context, *SumOrderPaymentAmountsRequest) (*SumOrderPaymentAmountsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SumOrderPaymentAmounts not implemented")
-}
 func (UnimplementedMiddlewareServer) CountOrders(context.Context, *CountOrdersRequest) (*CountOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CountOrders not implemented")
+}
+func (UnimplementedMiddlewareServer) SumOrdersPaymentUSD(context.Context, *SumOrdersPaymentUSDRequest) (*SumOrdersPaymentUSDResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SumOrdersPaymentUSD not implemented")
+}
+func (UnimplementedMiddlewareServer) SumOrdersValueUSD(context.Context, *SumOrdersValueUSDRequest) (*SumOrdersValueUSDResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SumOrdersValueUSD not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistOrder(context.Context, *ExistOrderRequest) (*ExistOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistOrder not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistOrderConds(context.Context, *ExistOrderCondsRequest) (*ExistOrderCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistOrderConds not implemented")
-}
-func (UnimplementedMiddlewareServer) DeleteOrder(context.Context, *DeleteOrderRequest) (*DeleteOrderResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteOrder not implemented")
-}
-func (UnimplementedMiddlewareServer) DeleteOrders(context.Context, *DeleteOrdersRequest) (*DeleteOrdersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteOrders not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -252,78 +162,6 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
-}
-
-func _Middleware_CreateOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateOrderRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateOrder(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateOrder_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateOrder(ctx, req.(*CreateOrderRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_CreateOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateOrdersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateOrders(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateOrders_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateOrders(ctx, req.(*CreateOrdersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_UpdateOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateOrderRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateOrder(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdateOrder_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateOrder(ctx, req.(*UpdateOrderRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_UpdateOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateOrdersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateOrders(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdateOrders_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateOrders(ctx, req.(*UpdateOrdersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -362,42 +200,6 @@ func _Middleware_GetOrders_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_SumOrderUnits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SumOrderUnitsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).SumOrderUnits(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_SumOrderUnits_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).SumOrderUnits(ctx, req.(*SumOrderUnitsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_SumOrderPaymentAmounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SumOrderPaymentAmountsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).SumOrderPaymentAmounts(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_SumOrderPaymentAmounts_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).SumOrderPaymentAmounts(ctx, req.(*SumOrderPaymentAmountsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_CountOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CountOrdersRequest)
 	if err := dec(in); err != nil {
@@ -412,6 +214,42 @@ func _Middleware_CountOrders_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CountOrders(ctx, req.(*CountOrdersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_SumOrdersPaymentUSD_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SumOrdersPaymentUSDRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).SumOrdersPaymentUSD(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_SumOrdersPaymentUSD_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).SumOrdersPaymentUSD(ctx, req.(*SumOrdersPaymentUSDRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_SumOrdersValueUSD_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SumOrdersValueUSDRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).SumOrdersValueUSD(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_SumOrdersValueUSD_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).SumOrdersValueUSD(ctx, req.(*SumOrdersValueUSDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -452,42 +290,6 @@ func _Middleware_ExistOrderConds_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_DeleteOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteOrderRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).DeleteOrder(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_DeleteOrder_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteOrder(ctx, req.(*DeleteOrderRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_DeleteOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteOrdersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).DeleteOrders(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_DeleteOrders_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteOrders(ctx, req.(*DeleteOrdersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -495,22 +297,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "order.middleware.order1.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "CreateOrder",
-			Handler:    _Middleware_CreateOrder_Handler,
-		},
-		{
-			MethodName: "CreateOrders",
-			Handler:    _Middleware_CreateOrders_Handler,
-		},
-		{
-			MethodName: "UpdateOrder",
-			Handler:    _Middleware_UpdateOrder_Handler,
-		},
-		{
-			MethodName: "UpdateOrders",
-			Handler:    _Middleware_UpdateOrders_Handler,
-		},
 		{
 			MethodName: "GetOrder",
 			Handler:    _Middleware_GetOrder_Handler,
@@ -520,16 +306,16 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetOrders_Handler,
 		},
 		{
-			MethodName: "SumOrderUnits",
-			Handler:    _Middleware_SumOrderUnits_Handler,
-		},
-		{
-			MethodName: "SumOrderPaymentAmounts",
-			Handler:    _Middleware_SumOrderPaymentAmounts_Handler,
-		},
-		{
 			MethodName: "CountOrders",
 			Handler:    _Middleware_CountOrders_Handler,
+		},
+		{
+			MethodName: "SumOrdersPaymentUSD",
+			Handler:    _Middleware_SumOrdersPaymentUSD_Handler,
+		},
+		{
+			MethodName: "SumOrdersValueUSD",
+			Handler:    _Middleware_SumOrdersValueUSD_Handler,
 		},
 		{
 			MethodName: "ExistOrder",
@@ -538,14 +324,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistOrderConds",
 			Handler:    _Middleware_ExistOrderConds_Handler,
-		},
-		{
-			MethodName: "DeleteOrder",
-			Handler:    _Middleware_DeleteOrder_Handler,
-		},
-		{
-			MethodName: "DeleteOrders",
-			Handler:    _Middleware_DeleteOrders_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

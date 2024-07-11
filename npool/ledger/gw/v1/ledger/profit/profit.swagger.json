@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/get/coinprofits": {
+      "post": {
+        "operationId": "Gateway_GetCoinProfits",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinProfitsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCoinProfitsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/goodprofits": {
       "post": {
         "operationId": "Gateway_GetGoodProfits",
@@ -40,38 +72,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetGoodProfitsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/intervalprofits": {
-      "post": {
-        "operationId": "Gateway_GetIntervalProfits",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetIntervalProfitsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetIntervalProfitsRequest"
             }
           }
         ],
@@ -111,38 +111,6 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/get/profits": {
-      "post": {
-        "operationId": "Gateway_GetProfits",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetProfitsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetProfitsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
@@ -170,6 +138,80 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1CoinProfit": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "Incoming": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetCoinProfitsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetCoinProfitsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinProfit"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -207,48 +249,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1GoodProfit"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetIntervalProfitsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetIntervalProfitsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Profit"
           }
         },
         "Total": {
@@ -302,51 +302,6 @@
         }
       }
     },
-    "v1GetProfitsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetProfitsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Profit"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GoodDurationType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodDurationType",
-        "GoodDurationByHour",
-        "GoodDurationByDay",
-        "GoodDurationByMonth",
-        "GoodDurationByYear"
-      ],
-      "default": "DefaultGoodDurationType"
-    },
     "v1GoodProfit": {
       "type": "object",
       "properties": {
@@ -359,28 +314,15 @@
         "AppGoodID": {
           "type": "string"
         },
-        "GoodName": {
+        "AppGoodName": {
           "type": "string"
         },
-        "GoodUnit": {
-          "type": "string"
-        },
-        "MinOrderDuration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxOrderDuration": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DurationType": {
-          "$ref": "#/definitions/v1GoodDurationType"
-        },
-        "Units": {
-          "type": "string"
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
         },
         "CoinTypeID": {
-          "type": "string"
+          "type": "string",
+          "title": "Good is multiple coins"
         },
         "CoinName": {
           "type": "string"
@@ -397,10 +339,29 @@
         "CoinUnit": {
           "type": "string"
         },
+        "GoodMainCoin": {
+          "type": "boolean"
+        },
+        "Units": {
+          "type": "string"
+        },
         "Incoming": {
           "type": "string"
         }
       }
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
     },
     "v1IOSubType": {
       "type": "string",
@@ -416,10 +377,11 @@
         "OrderRevoke",
         "CommissionRevoke",
         "RandomCouponCash",
-        "SimulateMiningBenefit"
+        "SimulateMiningBenefit",
+        "ObseletePayment"
       ],
       "default": "DefaultSubType",
-      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra"
+      "title": "- Payment: I/O\nI: record tids in extra\nO: record order id in extra\n - MiningBenefit: I: record good id in extra\n - Commission: I: record user id, order id in extra\n - TechniqueFeeCommission: I: record good id in extra\n - Deposit: I: record address in extra\n - Transfer: I: record from user in extra\nO: record target user in extra\n - Withdrawal: O\n - OrderRevoke: I: record user id, order id in extra\n - CommissionRevoke: I: record user id,order id, archivement details id in extra\n - RandomCouponCash: I\n - SimulateMiningBenefit: I\n - ObseletePayment: I"
     },
     "v1IOType": {
       "type": "string",
@@ -433,6 +395,19 @@
     "v1MiningReward": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string"
         },
@@ -466,57 +441,18 @@
         "AppGoodID": {
           "type": "string"
         },
+        "AppGoodName": {
+          "type": "string"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "OrderID": {
           "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1Profit": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "Incoming": {
-          "type": "string"
         }
       }
     }

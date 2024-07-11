@@ -75,7 +75,7 @@ message Commission {
   basetypes.inspire.v1.SettleAmountType SettleAmountType = 95;
   basetypes.inspire.v1.SettleInterval SettleInterval = 100;
   string GoodID = 110;
-  string GoodTitle = 120;
+  string GoodName = 120;
   string CoinTypeID = 130;
   string CoinName = 140;
   string CoinLogo = 150;
@@ -86,7 +86,7 @@ message Commission {
   uint32 CreatedAt = 210;
   uint32 UpdatedAt = 220;
   string AppGoodID = 230;
-  string GoodName = 240;
+  string AppGoodName = 240;
 }
 
 message CreateCommissionRequest {

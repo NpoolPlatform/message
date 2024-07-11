@@ -16,70 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/good": {
-      "post": {
-        "operationId": "Gateway_CreateGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateGoodRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/good": {
-      "post": {
-        "operationId": "Gateway_GetGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetGoodRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/goods": {
       "post": {
         "operationId": "Gateway_GetGoods",
@@ -87,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetGoodsResponse"
+              "$ref": "#/definitions/goodgatewaygood1v1GetGoodsResponse"
             }
           },
           "default": {
@@ -103,39 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetGoodsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/update/good": {
-      "post": {
-        "operationId": "Gateway_UpdateGood",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateGoodResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateGoodRequest"
+              "$ref": "#/definitions/goodgatewaygood1v1GetGoodsRequest"
             }
           }
         ],
@@ -146,6 +50,34 @@
     }
   },
   "definitions": {
+    "goodgatewaygood1v1GetGoodsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "goodgatewaygood1v1GetGoodsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Good"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -179,378 +111,83 @@
         "DefaultBenefitType",
         "BenefitTypePlatform",
         "BenefitTypePool",
-        "BenefitTypeOffline"
+        "BenefitTypeOffline",
+        "BenefitTypeContract",
+        "BenefitTypeNone"
       ],
       "default": "DefaultBenefitType",
-      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward"
-    },
-    "v1CreateGoodRequest": {
-      "type": "object",
-      "properties": {
-        "DeviceInfoID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "VendorLocationID": {
-          "type": "string"
-        },
-        "UnitPrice": {
-          "type": "string"
-        },
-        "BenefitType": {
-          "$ref": "#/definitions/v1BenefitType"
-        },
-        "GoodType": {
-          "$ref": "#/definitions/v1GoodType"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "QuantityUnit": {
-          "type": "string"
-        },
-        "QuantityUnitAmount": {
-          "type": "string"
-        },
-        "DeliveryAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "StartMode": {
-          "$ref": "#/definitions/v1GoodStartMode"
-        },
-        "TestOnly": {
-          "type": "boolean"
-        },
-        "Total": {
-          "type": "string"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1GoodLabel"
-          }
-        },
-        "BenefitIntervalHours": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UnitLockDeposit": {
-          "type": "string"
-        },
-        "UnitType": {
-          "$ref": "#/definitions/v1GoodUnitType"
-        },
-        "QuantityCalculateType": {
-          "$ref": "#/definitions/v1GoodUnitCalculateType"
-        },
-        "DurationType": {
-          "$ref": "#/definitions/v1GoodDurationType"
-        },
-        "DurationCalculateType": {
-          "$ref": "#/definitions/v1GoodUnitCalculateType"
-        },
-        "SettlementType": {
-          "$ref": "#/definitions/v1GoodSettlementType"
-        }
-      }
-    },
-    "v1CreateGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Good"
-        }
-      }
-    },
-    "v1GetGoodRequest": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1GetGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Good"
-        }
-      }
-    },
-    "v1GetGoodsRequest": {
-      "type": "object",
-      "properties": {
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetGoodsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Good"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward\n - BenefitTypeContract: User receive reward from smart contract\n - BenefitTypeNone: Such as technique fee"
     },
     "v1Good": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
         },
         "EntID": {
-          "type": "string"
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
         },
-        "DeviceInfoID": {
-          "type": "string"
-        },
-        "DeviceType": {
-          "type": "string"
-        },
-        "DeviceManufacturer": {
-          "type": "string"
-        },
-        "DevicePowerConsumption": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DeviceShipmentAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "DevicePosters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        },
-        "CoinPreSale": {
-          "type": "boolean"
-        },
-        "VendorLocationID": {
-          "type": "string"
-        },
-        "VendorLocationCountry": {
-          "type": "string"
-        },
-        "VendorLocationProvince": {
-          "type": "string"
-        },
-        "VendorLocationCity": {
-          "type": "string"
-        },
-        "VendorLocationAddress": {
-          "type": "string"
-        },
-        "VendorBrandName": {
-          "type": "string"
-        },
-        "VendorBrandLogo": {
-          "type": "string"
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
         },
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
         },
+        "BenefitTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"benefit_type\""
+        },
         "BenefitType": {
           "$ref": "#/definitions/v1BenefitType"
         },
-        "UnitPrice": {
-          "type": "string"
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
         },
-        "Title": {
-          "type": "string"
-        },
-        "QuantityUnit": {
-          "type": "string"
-        },
-        "QuantityUnitAmount": {
-          "type": "string"
-        },
-        "TestOnly": {
-          "type": "boolean"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1GoodLabel"
-          }
-        },
-        "StockID": {
-          "type": "string"
-        },
-        "Total": {
-          "type": "string"
-        },
-        "SpotQuantity": {
-          "type": "string"
-        },
-        "Locked": {
-          "type": "string"
-        },
-        "InService": {
-          "type": "string"
-        },
-        "WaitStart": {
-          "type": "string"
-        },
-        "Sold": {
-          "type": "string"
-        },
-        "AppReserved": {
-          "type": "string"
-        },
-        "DeliveryAt": {
+        "ServiceStartAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"service_start_at\""
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
+        "StartModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"start_mode\""
         },
         "StartMode": {
           "$ref": "#/definitions/v1GoodStartMode"
         },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
+        "TestOnly": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"test_only\""
         },
         "BenefitIntervalHours": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"benefit_interval_hours\""
         },
-        "LastBenefitAt": {
+        "Purchasable": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"purchasable\""
+        },
+        "Online": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"online\""
+        },
+        "CreatedAt": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
         },
-        "NextBenefitStartAmount": {
-          "type": "string"
-        },
-        "LastBenefitAmount": {
-          "type": "string"
-        },
-        "Likes": {
+        "UpdatedAt": {
           "type": "integer",
-          "format": "int64"
-        },
-        "Dislikes": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Score": {
-          "type": "string"
-        },
-        "ScoreCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "RecommendCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CommentCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UnitLockDeposit": {
-          "type": "string"
-        },
-        "UnitType": {
-          "$ref": "#/definitions/v1GoodUnitType"
-        },
-        "QuantityCalculateType": {
-          "$ref": "#/definitions/v1GoodUnitCalculateType"
-        },
-        "DurationType": {
-          "$ref": "#/definitions/v1GoodDurationType"
-        },
-        "DurationCalculateType": {
-          "$ref": "#/definitions/v1GoodUnitCalculateType"
-        },
-        "SettlementType": {
-          "$ref": "#/definitions/v1GoodSettlementType"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
         }
       }
-    },
-    "v1GoodDurationType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodDurationType",
-        "GoodDurationByHour",
-        "GoodDurationByDay",
-        "GoodDurationByMonth",
-        "GoodDurationByYear"
-      ],
-      "default": "DefaultGoodDurationType"
-    },
-    "v1GoodLabel": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodLabel",
-        "GoodLabelPromotion",
-        "GoodLabelNoviceExclusive",
-        "GoodLabelInnovationStarter",
-        "GoodLabelLoyaltyExclusive"
-      ],
-      "default": "DefaultGoodLabel"
-    },
-    "v1GoodSettlementType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodSettlementType",
-        "GoodSettledByCash",
-        "GoodSettledByProfit"
-      ],
-      "default": "DefaultGoodSettlementType"
     },
     "v1GoodStartMode": {
       "type": "string",
@@ -560,7 +197,8 @@
         "GoodStartModeConfirmed",
         "GoodStartModeInstantly",
         "GoodStartModeNextDay",
-        "GoodStartModePreset"
+        "GoodStartModePreset",
+        "GoodStartModeWithParent"
       ],
       "default": "DefaultGoodStartMode"
     },
@@ -568,130 +206,14 @@
       "type": "string",
       "enum": [
         "DefaultGoodType",
-        "PowerRenting",
-        "MachineRenting",
-        "MachineHosting",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
         "TechniqueServiceFee",
         "ElectricityFee"
       ],
       "default": "DefaultGoodType"
-    },
-    "v1GoodUnitCalculateType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodUnitCalculateType",
-        "GoodUnitCalculateBySelf",
-        "GoodUnitCalculateByParent"
-      ],
-      "default": "DefaultGoodUnitCalculateType"
-    },
-    "v1GoodUnitType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodUnitType",
-        "GoodUnitByDuration",
-        "GoodUnitByQuantity",
-        "GoodUnitByDurationAndQuantity"
-      ],
-      "default": "DefaultGoodUnitType"
-    },
-    "v1UpdateGoodRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "DeviceInfoID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "VendorLocationID": {
-          "type": "string"
-        },
-        "UnitPrice": {
-          "type": "string"
-        },
-        "BenefitType": {
-          "$ref": "#/definitions/v1BenefitType"
-        },
-        "GoodType": {
-          "$ref": "#/definitions/v1GoodType"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "QuantityUnit": {
-          "type": "string"
-        },
-        "QuantityUnitAmount": {
-          "type": "string"
-        },
-        "DeliveryAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "StartMode": {
-          "$ref": "#/definitions/v1GoodStartMode"
-        },
-        "TestOnly": {
-          "type": "boolean"
-        },
-        "Total": {
-          "type": "string"
-        },
-        "Posters": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Labels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1GoodLabel"
-          }
-        },
-        "BenefitIntervalHours": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UnitLockDeposit": {
-          "type": "string"
-        },
-        "UnitType": {
-          "$ref": "#/definitions/v1GoodUnitType"
-        },
-        "QuantityCalculateType": {
-          "$ref": "#/definitions/v1GoodUnitCalculateType"
-        },
-        "DurationType": {
-          "$ref": "#/definitions/v1GoodDurationType"
-        },
-        "DurationCalculateType": {
-          "$ref": "#/definitions/v1GoodUnitCalculateType"
-        },
-        "SettlementType": {
-          "$ref": "#/definitions/v1GoodSettlementType"
-        }
-      }
-    },
-    "v1UpdateGoodResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Good"
-        }
-      }
     }
   }
 }

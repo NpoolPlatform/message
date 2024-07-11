@@ -1,0 +1,124 @@
+syntax = "proto3";
+
+package good.middleware.app.good1.display.color.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/display/color";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/good/v1/enums.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateDisplayColor (CreateDisplayColorRequest) returns (CreateDisplayColorResponse) {}
+    rpc UpdateDisplayColor (UpdateDisplayColorRequest) returns (UpdateDisplayColorResponse) {}
+    rpc GetDisplayColor (GetDisplayColorRequest) returns (GetDisplayColorResponse) {}
+    rpc GetDisplayColors (GetDisplayColorsRequest) returns (GetDisplayColorsResponse) {}
+    rpc ExistDisplayColorConds (ExistDisplayColorCondsRequest) returns (ExistDisplayColorCondsResponse) {}
+    rpc DeleteDisplayColor (DeleteDisplayColorRequest) returns (DeleteDisplayColorResponse) {}
+}
+
+message DisplayColorReq {
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string AppGoodID = 30;
+    optional string Color = 40;
+    optional uint32 Index = 50;
+}
+
+message DisplayColor {
+    // @inject_tag: sql:"id"
+    uint32 ID = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID = 20;
+    // @inject_tag: sql:"app_id"
+    string AppID = 30;
+    // @inject_tag: sql:"good_id"
+    string GoodID = 40;
+    // @inject_tag: sql:"good_name"
+    string GoodName = 50;
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID = 60;
+    // @inject_tag: sql:"app_good_name"
+    string AppGoodName = 70;
+    // @inject_tag: sql:"color"
+    string Color = 80;
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 90;
+    basetypes.good.v1.GoodType GoodType = 100;
+    // @inject_tag: sql:"index"
+    uint32 Index = 110;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 1010;
+}
+
+message DisplayColorInfo {
+    // @inject_tag: sql:"app_good_id"
+    string AppGoodID = 10;
+    // @inject_tag: sql:"color"
+    string Color = 20;
+    // @inject_tag: sql:"index"
+    uint32 Index = 30;
+}
+
+message Conds {
+    optional basetypes.v1.Uint32Val ID = 10;
+    optional basetypes.v1.StringVal EntID = 20;
+    optional basetypes.v1.StringVal AppID = 30;
+    optional basetypes.v1.StringVal GoodID = 40;
+    optional basetypes.v1.StringSliceVal GoodIDs = 50;
+    optional basetypes.v1.StringVal AppGoodID = 60;
+    optional basetypes.v1.StringSliceVal AppGoodIDs = 70;
+}
+
+message CreateDisplayColorRequest {
+    DisplayColorReq Info = 10;
+}
+
+message CreateDisplayColorResponse {
+    DisplayColor Info = 10;
+}
+
+message UpdateDisplayColorRequest {
+    DisplayColorReq Info = 10;
+}
+
+message UpdateDisplayColorResponse {
+    DisplayColor Info = 10;
+}
+
+message GetDisplayColorRequest {
+    string EntID = 10;
+}
+
+message GetDisplayColorResponse {
+    DisplayColor Info = 10;
+}
+
+message GetDisplayColorsRequest {
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetDisplayColorsResponse {
+    repeated DisplayColor Infos = 10;
+    uint32 Total = 20;
+}
+
+message ExistDisplayColorCondsRequest {
+    Conds Conds = 10;
+}
+
+message ExistDisplayColorCondsResponse {
+    bool Info = 10;
+}
+
+message DeleteDisplayColorRequest {
+    DisplayColorReq Info = 10;
+}
+
+message DeleteDisplayColorResponse {
+    DisplayColor Info = 10;
+}

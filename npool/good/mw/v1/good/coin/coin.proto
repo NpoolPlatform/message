@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+package good.middleware.good1.coin.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/coin";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/good/v1/enums.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateGoodCoin      (CreateGoodCoinRequest)      returns (CreateGoodCoinResponse)      {}
+    rpc UpdateGoodCoin      (UpdateGoodCoinRequest)      returns (UpdateGoodCoinResponse)      {}
+    rpc GetGoodCoin         (GetGoodCoinRequest)         returns (GetGoodCoinResponse)         {}
+    rpc GetGoodCoins        (GetGoodCoinsRequest)        returns (GetGoodCoinsResponse)        {}
+    rpc ExistGoodCoinConds  (ExistGoodCoinCondsRequest)  returns (ExistGoodCoinCondsResponse)  {}
+    rpc DeleteGoodCoin      (DeleteGoodCoinRequest)      returns (DeleteGoodCoinResponse)      {}
+}
+
+message GoodCoinReq {
+    optional uint32 ID = 9;
+    optional string EntID = 10;
+    optional string GoodID = 30;
+    optional string CoinTypeID = 40;
+    optional bool Main = 50;
+    optional int32 Index = 60;
+}
+
+message GoodCoin {
+    // @inject_tag: sql:"id"
+    uint32 ID = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID = 20;
+    // @inject_tag: sql:"good_id"
+    string GoodID = 30;
+    // @inject_tag: sql:"good_name"
+    string GoodName = 40;
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 50;
+    basetypes.good.v1.GoodType GoodType = 60;
+    // @inject_tag: sql:"coin_type_id"
+    string CoinTypeID = 70;
+    // @inject_tag: sql:"main"
+    bool Main = 80;
+    // @inject_tag: sql:"index"
+    int32 Index = 90;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 1010;
+}
+
+message GoodCoinInfo {
+    // @inject_tag: sql:"good_id"
+    string GoodID = 10;
+    // @inject_tag: sql:"coin_type_id"
+    string CoinTypeID = 20;
+    // @inject_tag: sql:"main"
+    bool Main = 30;
+    // @inject_tag: sql:"index"
+    int32 Index = 40;
+}
+
+message Conds {
+    optional basetypes.v1.Uint32Val      ID      = 10;
+    optional basetypes.v1.StringVal      EntID   = 30;
+    optional basetypes.v1.StringVal      GoodID  = 40;
+    optional basetypes.v1.StringSliceVal GoodIDs = 50;
+    optional basetypes.v1.StringVal      CoinTypeID = 60;
+    optional basetypes.v1.StringSliceVal CoinTypeIDs = 70;
+    optional basetypes.v1.BoolVal        Main = 80;
+}
+
+message CreateGoodCoinRequest {
+    GoodCoinReq Info = 10;
+}
+
+message CreateGoodCoinResponse {
+    GoodCoin Info = 10;
+}
+
+message UpdateGoodCoinRequest {
+    GoodCoinReq Info = 10;
+}
+
+message UpdateGoodCoinResponse {
+    GoodCoin Info = 10;
+}
+
+message GetGoodCoinRequest {
+    string EntID = 10;
+}
+
+message GetGoodCoinResponse {
+    GoodCoin Info = 10;
+}
+
+message GetGoodCoinsRequest {
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
+}
+
+message GetGoodCoinsResponse {
+    repeated GoodCoin Infos = 10;
+    uint32           Total = 20;
+}
+
+message ExistGoodCoinCondsRequest {
+    Conds Conds  = 10;
+}
+
+message ExistGoodCoinCondsResponse {
+    bool Info = 10;
+}
+
+message DeleteGoodCoinRequest {
+    GoodCoinReq Info = 10;
+}
+
+message DeleteGoodCoinResponse {
+    GoodCoin Info = 10;
+}

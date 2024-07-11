@@ -16,70 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/outofgas_CreateOutOfGas": {
-      "post": {
-        "operationId": "Middleware_CreateOutOfGas",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateOutOfGasResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateOutOfGasRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
-    "/v1/outofgas_DeleteOutOfGas": {
-      "post": {
-        "operationId": "Middleware_DeleteOutOfGas",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1DeleteOutOfGasResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1DeleteOutOfGasRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
     "/v1/outofgas_GetOutOfGas": {
       "post": {
         "operationId": "Middleware_GetOutOfGas",
@@ -104,38 +40,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetOutOfGasRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
-    "/v1/outofgas_UpdateOutOfGas": {
-      "post": {
-        "operationId": "Middleware_UpdateOutOfGas",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateOutOfGasResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateOutOfGasRequest"
             }
           }
         ],
@@ -182,46 +86,29 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "OrderID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "OrderIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         },
         "StartAt": {
           "$ref": "#/definitions/v1Uint32Val"
         },
         "EndAt": {
           "$ref": "#/definitions/v1Uint32Val"
-        }
-      }
-    },
-    "v1CreateOutOfGasRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OutOfGasReq"
-        }
-      }
-    },
-    "v1CreateOutOfGasResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OutOfGas"
-        }
-      }
-    },
-    "v1DeleteOutOfGasRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OutOfGasReq"
-        }
-      }
-    },
-    "v1DeleteOutOfGasResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OutOfGas"
         }
       }
     },
@@ -272,6 +159,19 @@
         }
       }
     },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
+    },
     "v1OutOfGas": {
       "type": "object",
       "properties": {
@@ -283,6 +183,29 @@
         "EntID": {
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "AppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_id\""
         },
         "OrderID": {
           "type": "string",
@@ -310,30 +233,17 @@
         }
       }
     },
-    "v1OutOfGasReq": {
+    "v1StringSliceVal": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
+        "Op": {
           "type": "string"
         },
-        "OrderID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -357,22 +267,6 @@
         "Value": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1UpdateOutOfGasRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OutOfGasReq"
-        }
-      }
-    },
-    "v1UpdateOutOfGasResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OutOfGas"
         }
       }
     }

@@ -6,234 +6,82 @@ option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good";
 
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/good/v1/enums.proto";
+import "npool/good/mw/v1/good/coin/coin.proto";
+import "npool/good/mw/v1/good/stock/stock.proto";
 
-// Service Name
 service Middleware {
-  rpc CreateGood(CreateGoodRequest) returns (CreateGoodResponse) {}
-  rpc GetGood(GetGoodRequest) returns (GetGoodResponse) {}
-  rpc GetGoods(GetGoodsRequest) returns (GetGoodsResponse) {}
-  rpc UpdateGood(UpdateGoodRequest) returns (UpdateGoodResponse) {}
-  rpc DeleteGood(DeleteGoodRequest) returns (DeleteGoodResponse) {}
-}
-
-message GoodReq {
-  optional uint32 ID = 9;
-  optional string EntID = 10;
-  optional string DeviceInfoID = 20;
-  optional string CoinTypeID = 40;
-  optional string VendorLocationID = 60;
-  optional string UnitPrice = 70;
-  optional basetypes.good.v1.BenefitType BenefitType = 80;
-  optional basetypes.good.v1.GoodType GoodType = 90;
-  optional string Title = 100;
-  optional string QuantityUnit = 110;
-  optional string QuantityUnitAmount = 120;
-  optional uint32 DeliveryAt = 140;
-  optional uint32 StartAt = 150;
-  optional bool TestOnly = 160;
-  optional string Total = 170;
-  repeated string Posters = 210;
-  repeated basetypes.good.v1.GoodLabel Labels = 220;
-  optional uint32 BenefitIntervalHours = 230;
-  optional string UnitLockDeposit = 240;
-  optional string AppReserved = 250;
-  optional basetypes.good.v1.BenefitState RewardState = 260;
-  optional uint32 RewardAt = 270;
-  optional string RewardTID = 280;
-  optional string NextRewardStartAmount = 290;
-  optional string RewardAmount = 300;
-  optional string UnitRewardAmount = 310;
-  optional basetypes.good.v1.GoodStartMode StartMode = 320;
-  optional basetypes.good.v1.GoodUnitType UnitType = 340;
-  optional basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 350;
-  optional basetypes.good.v1.GoodDurationType DurationType = 360;
-  optional basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 370;
-  optional basetypes.good.v1.GoodSettlementType SettlementType = 380;
+    rpc GetGood (GetGoodRequest) returns (GetGoodResponse) {}
+    rpc GetGoods (GetGoodsRequest) returns (GetGoodsResponse) {}
+    rpc ExistGoodConds (ExistGoodCondsRequest) returns (ExistGoodCondsResponse) {}
 }
 
 message Good {
-  // @inject_tag: sql:"id"
-  uint32 ID = 9;
-  // @inject_tag: sql:"ent_id"
-  string EntID = 10;
+    // @inject_tag: sql:"id"
+    uint32 ID = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID = 20;
 
-  // @inject_tag: sql:"device_info_id"
-  string DeviceInfoID = 20;
-  // @inject_tag: sql:"device_type"
-  string DeviceType = 30;
-  // @inject_tag: sql:"device_manufacturer"
-  string DeviceManufacturer = 40;
-  // @inject_tag: sql:"device_power_consumption"
-  uint32 DevicePowerConsumption = 50;
-  // @inject_tag: sql:"device_shipment_at"
-  uint32 DeviceShipmentAt = 60;
-  repeated string DevicePosters = 70;
-  // @inject_tag: sql:"device_posters"
-  string DevicePostersStr = 71;
+    // @inject_tag: sql:"good_type"
+    string GoodTypeStr = 30;
+    basetypes.good.v1.GoodType GoodType = 40;
+    // @inject_tag: sql:"benefit_type"
+    string BenefitTypeStr = 50;
+    basetypes.good.v1.BenefitType BenefitType = 60;
+    // @inject_tag: sql:"name"
+    string Name = 70;
+    // @inject_tag: sql:"service_start_at"
+    uint32 ServiceStartAt = 80;
+    // @inject_tag: sql:"start_mode"
+    string StartModeStr = 90;
+    basetypes.good.v1.GoodStartMode StartMode = 100;
+    // @inject_tag: sql:"test_only"
+    bool TestOnly = 110;
+    // @inject_tag: sql:"benefit_interval_hours"
+    uint32 BenefitIntervalHours = 120;
+    // @inject_tag: sql:"purchasable"
+    bool Purchasable = 130;
+    // @inject_tag: sql:"online"
+    bool Online = 140;
 
-  // @inject_tag: sql:"coin_type_id"
-  string CoinTypeID = 90;
-
-  // @inject_tag: sql:"vendor_location_id"
-  string VendorLocationID = 140;
-  // @inject_tag: sql:"vendor_location_country"
-  string VendorLocationCountry = 150;
-  // @inject_tag: sql:"vendor_location_province"
-  string VendorLocationProvince = 160;
-  // @inject_tag: sql:"vendor_location_city"
-  string VendorLocationCity = 170;
-  // @inject_tag: sql:"vendor_location_address"
-  string VendorLocationAddress = 180;
-  // @inject_tag: sql:"vendor_brand_name"
-  string VendorBrandName = 181;
-  // @inject_tag: sql:"vendor_brand_logo"
-  string VendorBrandLogo = 182;
-
-  basetypes.good.v1.GoodType GoodType = 190;
-  // @inject_tag: sql:"good_type"
-  string GoodTypeStr = 191;
-
-  basetypes.good.v1.BenefitType BenefitType = 200;
-  // @inject_tag: sql:"benefit_type"
-  string BenefitTypeStr = 201;
-
-  // @inject_tag: sql:"unit_price"
-  string UnitPrice = 210;
-  // @inject_tag: sql:"title"
-  string Title = 220;
-  // @inject_tag: sql:"quantity_unit"
-  string QuantityUnit = 230;
-  // @inject_tag: sql:"quantity_unit_amount"
-  string QuantityUnitAmount = 240;
-
-  // @inject_tag: sql:"test_only"
-  bool TestOnly = 260;
-  repeated string Posters = 270;
-  // @inject_tag: sql:"posters"
-  string PostersStr = 271;
-
-  repeated basetypes.good.v1.GoodLabel Labels = 280;
-  // @inject_tag: sql:"labels"
-  string LabelsStr = 281;
-
-  // @inject_tag: sql:"likes"
-  uint32 Likes = 290;
-  // @inject_tag: sql:"dislikes"
-  uint32 Dislikes = 291;
-  // @inject_tag: sql:"score"
-  string Score = 300;
-  // @inject_tag: sql:"score_count"
-  uint32 ScoreCount = 301;
-  // @inject_tag: sql:"recommend_count"
-  uint32 RecommendCount = 302;
-  // @inject_tag: sql:"comment_count"
-  uint32 CommentCount = 303;
-
-  // @inject_tag: sql:"good_stock_id"
-  string GoodStockID = 310;
-  // @inject_tag: sql:"good_total"
-  string GoodTotal = 320;
-  // @inject_tag: sql:"good_spot_quantity"
-  string GoodSpotQuantity = 321;
-  // @inject_tag: sql:"good_locked"
-  string GoodLocked = 330;
-  // @inject_tag: sql:"good_in_service"
-  string GoodInService = 340;
-  // @inject_tag: sql:"good_wait_start"
-  string GoodWaitStart = 341;
-  // @inject_tag: sql:"good_sold"
-  string GoodSold = 350;
-
-  // @inject_tag: sql:"delivery_at"
-  uint32 DeliveryAt = 360;
-  // @inject_tag: sql:"start_at"
-  uint32 StartAt = 370;
-  // @inject_tag: sql:"start_mode"
-  string StartModeStr = 371;
-  basetypes.good.v1.GoodStartMode StartMode = 372;
-
-  // @inject_tag: sql:"benefit_interval_hours"
-  uint32 BenefitIntervalHours = 400;
-  // @inject_tag: sql:"unit_lock_deposit"
-  string UnitLockDeposit = 410;
-  // @inject_tag: sql:"good_app_reserved"
-  string GoodAppReserved = 420;
-
-  // @inject_tag: sql:"reward_state"
-  string RewardStateStr = 430;
-  basetypes.good.v1.BenefitState RewardState = 440;
-  // @inject_tag: sql:"last_reward_at"
-  uint32 LastRewardAt = 450;
-  // @inject_tag: sql:"reward_tid"
-  string RewardTID = 460;
-  // @inject_tag: sql:"next_reward_start_amount"
-  string NextRewardStartAmount = 470;
-  // @inject_tag: sql:"last_reward_amount"
-  string LastRewardAmount = 480;
-  // @inject_tag: sql:"last_unit_reward_amount"
-  string LastUnitRewardAmount = 490;
-  // @inject_tag: sql:"total_reward_amount"
-  string TotalRewardAmount = 500;
-
-  // @inject_tag: sql:"unit_type"
-  string UnitTypeStr = 510;
-  basetypes.good.v1.GoodUnitType UnitType = 520;
-  // @inject_tag: sql:"quantity_calculate_type"
-  string QuantityCalculateTypeStr = 530;
-  basetypes.good.v1.GoodUnitCalculateType QuantityCalculateType = 540;
-  // @inject_tag: sql:"duration_type"
-  string DurationTypeStr = 550;
-  basetypes.good.v1.GoodDurationType DurationType = 560;
-  // @inject_tag: sql:"duration_calculate_type"
-  string DurationCalculateTypeStr = 570;
-  basetypes.good.v1.GoodUnitCalculateType DurationCalculateType = 580;
-  // @inject_tag: sql:"settlement_type"
-  string SettlementTypeStr = 590;
-  basetypes.good.v1.GoodSettlementType SettlementType = 600;
-
-  // @inject_tag: sql:"created_at"
-  uint32 CreatedAt = 1000;
-  // @inject_tag: sql:"updated_at"
-  uint32 UpdatedAt = 1100;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-  optional basetypes.v1.Uint32Val ID = 9;
-  optional basetypes.v1.StringVal EntID = 10;
-  optional basetypes.v1.StringVal DeviceInfoID = 20;
-  optional basetypes.v1.StringVal CoinTypeID = 30;
-  optional basetypes.v1.StringVal VendorLocationID = 40;
-  optional basetypes.v1.Uint32Val BenefitType = 50;
-  optional basetypes.v1.Uint32Val GoodType = 60;
-  optional basetypes.v1.Uint32SliceVal IDs = 70;
-  optional basetypes.v1.Uint32Val RewardState = 80;
-  optional basetypes.v1.Uint32Val RewardAt = 90;
-  optional basetypes.v1.StringSliceVal EntIDs = 100;
+    optional basetypes.v1.Uint32Val      ID        = 10;
+    optional basetypes.v1.Uint32SliceVal IDs       = 20;
+    optional basetypes.v1.StringVal      EntID     = 30;
+    optional basetypes.v1.StringSliceVal EntIDs    = 40;
+    optional basetypes.v1.Uint32Val      GoodType  = 50;
+    optional basetypes.v1.Uint32SliceVal GoodTypes = 60;
 }
 
-message CreateGoodRequest { GoodReq Info = 10; }
+message GetGoodRequest {
+    string EntID = 10;
+}
 
-message CreateGoodResponse { Good Info = 10; }
-
-message GetGoodRequest { string EntID = 10; }
-
-message GetGoodResponse { Good Info = 10; }
+message GetGoodResponse {
+    Good Info = 10;
+}
 
 message GetGoodsRequest {
-  Conds Conds = 10;
-  int32 Offset = 20;
-  int32 Limit = 30;
+    Conds Conds  = 10;
+    int32 Offset = 20;
+    int32 Limit  = 30;
 }
 
 message GetGoodsResponse {
-  repeated Good Infos = 10;
-  uint32 Total = 20;
+    repeated Good Infos = 10;
+    uint32        Total = 20;
 }
 
-message UpdateGoodRequest { GoodReq Info = 10; }
+message ExistGoodCondsRequest {
+    Conds Conds  = 10;
+}
 
-message UpdateGoodResponse { Good Info = 10; }
+message ExistGoodCondsResponse {
+    bool Info = 10;
+}
 
-message DeleteGoodRequest { GoodReq Info = 10; }
-
-message DeleteGoodResponse { Good Info = 10; }

@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package order.middleware.powerrental.compensate.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/powerrental/compensate";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/order/v1/enums.proto";
+import "npool/basetypes/good/v1/enums.proto";
+import "npool/order/mw/v1/compensate/compensate.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateCompensate (CreateCompensateRequest) returns (CreateCompensateResponse) {
+        option (google.api.http) = {
+            post: "/v1/powerrental_compensate_CreateCompensate"
+            body: "*"
+        };
+    }
+    rpc DeleteCompensate (DeleteCompensateRequest) returns (DeleteCompensateResponse) {
+        option (google.api.http) = {
+            post: "/v1/powerrental_compensate_DeleteCompensate"
+            body: "*"
+        };
+    }
+}
+
+message CompensateReq {
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string GoodID = 30; // If good id is set, we create compensate for all orders of this good
+    optional string OrderID = 40; // If order id is set, we create one compensate for this order
+    optional string CompensateFromID = 50;
+    optional basetypes.order.v1.CompensateType CompensateType = 60;
+    optional uint32 CompensateSeconds = 70;
+}
+
+message CreateCompensateRequest {
+    CompensateReq Info = 10;
+}
+
+message CreateCompensateResponse {
+    order.middleware.compensate.v1.Compensate Info = 10;
+}
+
+message DeleteCompensateRequest {
+    CompensateReq Info = 10;
+}
+
+message DeleteCompensateResponse {
+    order.middleware.compensate.v1.Compensate Info = 10;
+}

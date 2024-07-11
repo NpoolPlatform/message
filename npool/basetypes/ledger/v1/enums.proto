@@ -33,8 +33,12 @@ enum IOSubType {
   OrderRevoke = 170;
   // I: record user id,order id, archivement details id in extra
   CommissionRevoke = 180;
+  // I
   RandomCouponCash = 190;
+  // I
   SimulateMiningBenefit = 200;
+  // I
+  ObseletePayment = 210;
 }
 
 enum WithdrawState {

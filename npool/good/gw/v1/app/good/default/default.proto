@@ -8,132 +8,163 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-  rpc CreateDefault(CreateDefaultRequest) returns (CreateDefaultResponse) {
-    option (google.api.http) = {
-      post : "/v1/create/defaultgood"
-      body : "*"
-    };
-  }
+    rpc CreateDefault (CreateDefaultRequest) returns (CreateDefaultResponse) {
+        option (google.api.http) = {
+            post: "/v1/create/defaultgood"
+            body: "*"
+        };
+    }
 
-  rpc CreateNDefault(CreateNDefaultRequest) returns (CreateNDefaultResponse) {
-    option (google.api.http) = {
-      post : "/v1/create/n/defaultgood"
-      body : "*"
-    };
-  }
+    rpc GetDefaults (GetDefaultsRequest) returns (GetDefaultsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/defaultgoods"
+            body: "*"
+        };
+    }
 
-  rpc GetDefaults(GetDefaultsRequest) returns (GetDefaultsResponse) {
-    option (google.api.http) = {
-      post : "/v1/get/defaultgoods"
-      body : "*"
-    };
-  }
+    rpc DeleteDefault (DeleteDefaultRequest) returns (DeleteDefaultResponse) {
+        option (google.api.http) = {
+            post: "/v1/delete/defaultgood"
+            body: "*"
+        };
+    }
 
-  rpc GetNDefaults(GetNDefaultsRequest) returns (GetNDefaultsResponse) {
-    option (google.api.http) = {
-      post : "/v1/get/n/defaultgoods"
-      body : "*"
-    };
-  }
+    rpc UpdateDefault (UpdateDefaultRequest) returns (UpdateDefaultResponse) {
+        option (google.api.http) = {
+            post: "/v1/update/defaultgood"
+            body: "*"
+        };
+    }
 
-  rpc DeleteDefault(DeleteDefaultRequest) returns (DeleteDefaultResponse) {
-    option (google.api.http) = {
-      post : "/v1/delete/defaultgood"
-      body : "*"
-    };
-  }
+    // Run by church admin
+    rpc AdminCreateDefault (AdminCreateDefaultRequest) returns (AdminCreateDefaultResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/create/defaultgood"
+            body: "*"
+        };
+    }
 
-  rpc UpdateDefault(UpdateDefaultRequest) returns (UpdateDefaultResponse) {
-    option (google.api.http) = {
-      post : "/v1/update/defaultgood"
-      body : "*"
-    };
-  }
+    rpc AdminGetDefaults (AdminGetDefaultsRequest) returns (AdminGetDefaultsResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/get/defaultgoods"
+            body: "*"
+        };
+    }
 
-  rpc UpdateNDefault(UpdateNDefaultRequest) returns (UpdateNDefaultResponse) {
-    option (google.api.http) = {
-      post : "/v1/update/n/defaultgood"
-      body : "*"
-    };
-  }
+    rpc AdminDeleteDefault (AdminDeleteDefaultRequest) returns (AdminDeleteDefaultResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/delete/defaultgood"
+            body: "*"
+        };
+    }
+
+    rpc AdminUpdateDefault (AdminUpdateDefaultRequest) returns (AdminUpdateDefaultResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/update/defaultgood"
+            body: "*"
+        };
+    }
 }
 
 message Default {
-  uint32 ID = 9;
-  string EntID = 10;
-  string AppID = 20;
-  string AppName = 30;
-  string GoodID = 40;
-  string GoodName = 50;
-  string AppGoodID = 60;
-  string AppGoodName = 70;
-  string CoinTypeID = 80;
-  string CoinName = 90;
-  string CoinLogo = 100;
-  string CoinEnv = 110;
-  string CoinUnit = 120;
-  uint32 CreatedAt = 1000;
-  uint32 UpdatedAt = 1010;
+    uint32 ID = 10;
+    string EntID = 20;
+    string AppID = 30;
+    string AppName = 40;
+    string GoodID = 50;
+    string GoodName = 60;
+    string AppGoodID = 70;
+    string AppGoodName = 80;
+    string CoinTypeID = 90;
+    string CoinName = 100;
+    string CoinLogo = 110;
+    string CoinEnv = 120;
+    string CoinUnit = 130;
+
+    uint32 CreatedAt = 1000;
+    uint32 UpdatedAt = 1010;
 }
 
 message CreateDefaultRequest {
-  string AppID = 10;
-  string AppGoodID = 20;
+    string AppID = 10;
+    string CoinTypeID = 20;
+    string AppGoodID = 30;
 }
 
-message CreateDefaultResponse { Default Info = 10; }
-
-message CreateNDefaultRequest {
-  string TargetAppID = 10;
-  string AppGoodID = 20;
+message CreateDefaultResponse {
+    Default Info = 10;
 }
-
-message CreateNDefaultResponse { Default Info = 10; }
 
 message GetDefaultsRequest {
-  string AppID = 10;
-  int32 Offset = 20;
-  int32 Limit = 30;
+    string AppID = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
 }
 
 message GetDefaultsResponse {
-  repeated Default Infos = 10;
-  uint32 Total = 20;
-}
-
-message GetNDefaultsRequest {
-  string TargetAppID = 10;
-  int32 Offset = 20;
-  int32 Limit = 30;
-}
-
-message GetNDefaultsResponse {
-  repeated Default Infos = 10;
-  uint32 Total = 20;
+    repeated Default Infos = 10;
+    uint32 Total = 20;
 }
 
 message DeleteDefaultRequest {
-  uint32 ID = 9;
-  string EntID = 10;
-  string AppID = 20;
+    uint32 ID = 9;
+    string EntID = 10;
+    string AppID = 20;
 }
 
-message DeleteDefaultResponse { Default Info = 10; }
+message DeleteDefaultResponse {
+    Default Info = 10;
+}
 
 message UpdateDefaultRequest {
-  uint32 ID = 9;
-  string EntID = 10;
-  string AppID = 20;
-  optional string AppGoodID = 30;
+    uint32 ID = 10;
+    string EntID = 20;
+    string AppID = 30;
+    optional string AppGoodID = 40;
 }
 
-message UpdateDefaultResponse { Default Info = 10; }
-
-message UpdateNDefaultRequest {
-  uint32 ID = 9;
-  string EntID = 10;
-  string TargetAppID = 20;
-  optional string AppGoodID = 30;
+message UpdateDefaultResponse {
+    Default Info = 10;
 }
 
-message UpdateNDefaultResponse { Default Info = 10; }
+message AdminCreateDefaultRequest {
+    string TargetAppID = 10;
+    string AppGoodID = 20;
+    string CoinTypeID = 30;
+}
+
+message AdminCreateDefaultResponse {
+    Default Info = 10;
+}
+
+message AdminGetDefaultsRequest {
+    string TargetAppID = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message AdminGetDefaultsResponse {
+    repeated Default Infos = 10;
+    uint32 Total = 20;
+}
+
+message AdminDeleteDefaultRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+    string TargetAppID = 30;
+}
+
+message AdminDeleteDefaultResponse {
+    Default Info = 10;
+}
+
+message AdminUpdateDefaultRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+    string TargetAppID = 30;
+    optional string AppGoodID = 40;
+}
+
+message AdminUpdateDefaultResponse {
+    Default Info = 10;
+}

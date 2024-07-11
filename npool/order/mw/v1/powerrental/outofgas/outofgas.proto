@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package order.middleware.powerrental.outofgas.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/powerrental/outofgas";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/good/v1/enums.proto";
+import "npool/order/mw/v1/outofgas/outofgas.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateOutOfGas (CreateOutOfGasRequest) returns (CreateOutOfGasResponse) {
+        option (google.api.http) = {
+            post: "/v1/powerrental_outofgas_CreateOutOfGas"
+            body: "*"
+        };
+    }
+    rpc UpdateOutOfGas (UpdateOutOfGasRequest) returns (UpdateOutOfGasResponse) {
+        option (google.api.http) = {
+            post: "/v1/powerrental_outofgas_UpdateOutOfGas"
+            body: "*"
+        };
+    }
+    rpc DeleteOutOfGas (DeleteOutOfGasRequest) returns (DeleteOutOfGasResponse) {
+        option (google.api.http) = {
+            post: "/v1/powerrental_outofgas_DeleteOutOfGas"
+            body: "*"
+        };
+    }
+}
+
+message OutOfGasReq {
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string OrderID = 30;
+    optional uint32 StartAt = 40;
+    optional uint32 EndAt = 50;
+}
+
+message CreateOutOfGasRequest {
+    OutOfGasReq Info = 10;
+}
+
+message CreateOutOfGasResponse {
+    order.middleware.outofgas.v1.OutOfGas Info = 10;
+}
+
+message UpdateOutOfGasRequest {
+    OutOfGasReq Info = 10;
+}
+
+message UpdateOutOfGasResponse {
+    order.middleware.outofgas.v1.OutOfGas Info = 10;
+}
+
+message DeleteOutOfGasRequest {
+    OutOfGasReq Info = 10;
+}
+
+message DeleteOutOfGasResponse {
+    order.middleware.outofgas.v1.OutOfGas Info = 10;
+}

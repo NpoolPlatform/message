@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package good.middleware.good1.stock.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/stock";
+
+message MiningGoodStockReq {
+    optional string EntID = 10;
+    optional string MiningPoolID = 20;
+    optional string PoolGoodUserID = 30;
+    optional string Total = 40;
+}
+
+message MiningGoodStock {
+    // @inject_tag: sql:"id"
+    uint32 ID = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID = 20;
+    // @inject_tag: sql:"good_stock_id"
+    string GoodStockID = 30;
+    // @inject_tag: sql:"mining_pool_id"
+    string MiningPoolID = 40;
+    // @inject_tag: sql:"pool_good_user_id"
+    string PoolGoodUserID = 50;
+    // @inject_tag: sql:"total"
+    string Total      = 60;
+    // @inject_tag: sql:"spot_quantity"
+    string SpotQuantity = 70;
+    // @inject_tag: sql:"locked"
+    string Locked     = 80;
+    // @inject_tag: sql:"wait_start"
+    string WaitStart  = 90;
+    // @inject_tag: sql:"in_service"
+    string InService  = 100;
+    // @inject_tag: sql:"sold"
+    string Sold       = 110;
+}
+
+message MiningGoodStockInfo {
+    // @inject_tag: sql:"ent_id"
+    string EntID = 10;
+    // @inject_tag: sql:"good_stock_id"
+    string GoodStockID = 20;
+    // @inject_tag: sql:"mining_pool_id"
+    string MiningPoolID = 30;
+    // @inject_tag: sql:"pool_good_user_id"
+    string PoolGoodUserID = 40;
+    // @inject_tag: sql:"total"
+    string Total      = 50;
+    // @inject_tag: sql:"spot_quantity"
+    string SpotQuantity = 60;
+}

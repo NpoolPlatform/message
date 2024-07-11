@@ -23,9 +23,6 @@
         "EntID": {
           "type": "string"
         },
-        "GoodID": {
-          "type": "string"
-        },
         "AppGoodID": {
           "type": "string"
         },
@@ -80,6 +77,15 @@
         }
       }
     },
+    "v1GoodStockMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStockMode",
+        "GoodStockByMiningPool",
+        "GoodStockByUnique"
+      ],
+      "default": "DefaultGoodStockMode"
+    },
     "v1InServiceResponse": {
       "type": "object",
       "properties": {
@@ -104,6 +110,43 @@
           "items": {
             "$ref": "#/definitions/v1Stock"
           }
+        }
+      }
+    },
+    "v1MiningGoodStockInfo": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "GoodStockID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_stock_id\""
+        },
+        "MiningPoolID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"mining_pool_id\""
+        },
+        "PoolGoodUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"pool_good_user_id\""
+        },
+        "Total": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"total\""
+        },
+        "SpotQuantity": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"spot_quantity\""
+        }
+      }
+    },
+    "v1ReserveResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Stock"
         }
       }
     },
@@ -163,6 +206,25 @@
           "type": "string",
           "title": "@inject_tag: sql:\"sold\""
         },
+        "StockModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"stock_mode\""
+        },
+        "StockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
+        },
+        "MiningGoodStocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1MiningGoodStockInfo"
+          }
+        },
+        "AppMiningGoodStocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1StockInfo"
+          }
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -172,6 +234,66 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1StockInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppGoodStockID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_stock_id\""
+        },
+        "MiningGoodStockID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"mining_good_stock_id\""
+        },
+        "Reserved": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reserved\""
+        },
+        "SpotQuantity": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"spot_quantity\""
+        },
+        "Locked": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"locked\""
+        },
+        "WaitStart": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"wait_start\""
+        },
+        "InService": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"in_service\""
+        },
+        "Sold": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"sold\""
+        }
+      }
+    },
+    "v1StockReq": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "MiningGoodStockID": {
+          "type": "string"
+        },
+        "Reserved": {
+          "type": "string"
         }
       }
     },

@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/account/gw/v1/goodbe
 
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/accountlockedby.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Gateway {
@@ -32,28 +33,31 @@ service Gateway {
 }
 
 message Account {
-  uint32 ID = 9;
-  string EntID = 10;
-  string GoodID = 20;
-  string GoodName = 30;
-  string GoodUnit = 40;
-  string CoinTypeID = 50;
-  string CoinName = 60;
-  string CoinUnit = 70;
-  string CoinEnv = 80;
-  string CoinLogo = 90;
-  string AccountID = 100;
-  bool Backup = 110;
-  string Address = 120;
-  bool Active = 130;
-  bool Locked = 140;
-  basetypes.v1.AccountLockedBy LockedBy = 150;
-  bool Blocked = 160;
-  uint32 CreatedAt = 170;
-  uint32 UpdatedAt = 180;
+    uint32 ID            = 9;
+    string EntID         = 10;
+    string GoodID        = 20;
+    string GoodName      = 30;
+    basetypes.good.v1.GoodType GoodType = 40;
+    string CoinTypeID    = 50;
+    string CoinName      = 60;
+    string CoinUnit      = 70;
+    string CoinEnv       = 80;
+    string CoinLogo      = 90;
+    string AccountID     = 100;
+    bool   Backup        = 110;
+    string Address       = 120;
+    bool   Active        = 130;
+    bool   Locked        = 140;
+    basetypes.v1.AccountLockedBy LockedBy = 150;
+    bool   Blocked       = 160;
+    uint32 CreatedAt     = 170;
+    uint32 UpdatedAt     = 180;
 }
 
-message CreateAccountRequest { string GoodID = 10; }
+message CreateAccountRequest {
+    string GoodID     = 10;
+    string CoinTypeID = 20;
+}
 
 message CreateAccountResponse { Account Info = 10; }
 

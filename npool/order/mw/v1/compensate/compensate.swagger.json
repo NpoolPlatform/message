@@ -16,70 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/compensate_CreateCompensate": {
-      "post": {
-        "operationId": "Middleware_CreateCompensate",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateCompensateResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateCompensateRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
-    "/v1/compensate_DeleteCompensate": {
-      "post": {
-        "operationId": "Middleware_DeleteCompensate",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1DeleteCompensateResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1DeleteCompensateRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
     "/v1/compensate_GetCompensate": {
       "post": {
         "operationId": "Middleware_GetCompensate",
@@ -104,38 +40,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetCompensateRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
-    "/v1/compensate_UpdateCompensate": {
-      "post": {
-        "operationId": "Middleware_UpdateCompensate",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateCompensateResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateCompensateRequest"
             }
           }
         ],
@@ -189,23 +93,21 @@
           "type": "string",
           "title": "@inject_tag: sql:\"order_id\""
         },
-        "StartAt": {
+        "CompensateFromID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"compensate_from_id\""
+        },
+        "CompensateTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"compensate_type\""
+        },
+        "CompensateType": {
+          "$ref": "#/definitions/v1CompensateType"
+        },
+        "CompensateSeconds": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"start_at\""
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"end_at\""
-        },
-        "Title": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"title\""
-        },
-        "Message": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"message\""
+          "title": "@inject_tag: sql:\"compensate_seconds\""
         },
         "AppID": {
           "type": "string",
@@ -219,23 +121,16 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
         },
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_type\""
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
         "AppGoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_good_id\""
-        },
-        "Units": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"units_v1\""
-        },
-        "OrderStartAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "orderstate\n@inject_tag: sql:\"order_start_at\""
-        },
-        "OrderEndAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"order_end_at\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -249,34 +144,29 @@
         }
       }
     },
-    "v1CompensateReq": {
+    "v1CompensateOrderNumber": {
       "type": "object",
       "properties": {
-        "ID": {
+        "CompensateFromID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"compensate_from_id\""
+        },
+        "Orders": {
           "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "OrderID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Title": {
-          "type": "string"
-        },
-        "Message": {
-          "type": "string"
+          "format": "int64",
+          "title": "@inject_tag: sql:\"orders\""
         }
       }
+    },
+    "v1CompensateType": {
+      "type": "string",
+      "enum": [
+        "DefaultCompensateType",
+        "CompensateMalfunction",
+        "CompensateWalfare",
+        "CompensateStarterDelay"
+      ],
+      "default": "DefaultCompensateType"
     },
     "v1Conds": {
       "type": "object",
@@ -290,43 +180,46 @@
         "OrderID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "StartAt": {
+        "OrderIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CompensateFromID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CompensateType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
-    "v1CreateCompensateRequest": {
+    "v1CountCompensateOrdersResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CompensateReq"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CompensateOrderNumber"
+          }
         }
       }
     },
-    "v1CreateCompensateResponse": {
+    "v1CountCompensatesResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Compensate"
-        }
-      }
-    },
-    "v1DeleteCompensateRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CompensateReq"
-        }
-      }
-    },
-    "v1DeleteCompensateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Compensate"
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -377,6 +270,33 @@
         }
       }
     },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "v1StringVal": {
       "type": "object",
       "properties": {
@@ -397,22 +317,6 @@
         "Value": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1UpdateCompensateRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CompensateReq"
-        }
-      }
-    },
-    "v1UpdateCompensateResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Compensate"
         }
       }
     }

@@ -5,8 +5,8 @@ package inspire.middleware.calculate.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/calculate";
 
 import "google/api/annotations.proto";
+import "npool/inspire/mw/v1/achievement/statement/order/statement.proto";
 import "npool/basetypes/inspire/v1/enums.proto";
-import "npool/inspire/mw/v1/achievement/statement/statement.proto";
 
 // Service Name
 service Middleware {
@@ -18,27 +18,27 @@ service Middleware {
   }
 }
 
+message Payment {
+  string CoinTypeID = 10;
+  string Amount = 20;
+}
+
 message CalculateRequest {
   string AppID = 10;
   string UserID = 20;
   string GoodID = 30;
-  string AppGoodID = 31;
-  string OrderID = 40;
-  string PaymentID = 50;
-  string CoinTypeID = 60;
-  string PaymentCoinTypeID = 70;
-  string PaymentCoinUSDCurrency = 80;
-  string Units = 90;
-  // Payment amount in payment coin amount
-  string PaymentAmount = 100;
-  // Good value in payment coin amount
-  string GoodValue = 110;
-  string GoodValueUSD = 111;
-  basetypes.inspire.v1.SettleType SettleType = 120;
-  bool HasCommission = 130;
-  uint32 OrderCreatedAt = 140;
+  string AppGoodID = 40;
+  string OrderID = 50;
+  string GoodCoinTypeID = 60;
+  string Units = 80;
+  string PaymentAmountUSD = 90;
+  string GoodValueUSD = 100;
+  basetypes.inspire.v1.SettleType SettleType = 110;
+  bool HasCommission = 120;
+  uint32 OrderCreatedAt = 130;
+  repeated Payment Payments = 140;
 }
 
 message CalculateResponse {
-  repeated inspire.middleware.achievement.statement.v1.Statement Infos = 10;
+  repeated inspire.middleware.achievement.statement.order.v1.StatementReq Infos = 10;
 }

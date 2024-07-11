@@ -19,26 +19,18 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateGood_FullMethodName     = "/good.middleware.app.good1.v1.Middleware/CreateGood"
 	Middleware_GetGood_FullMethodName        = "/good.middleware.app.good1.v1.Middleware/GetGood"
 	Middleware_GetGoods_FullMethodName       = "/good.middleware.app.good1.v1.Middleware/GetGoods"
-	Middleware_ExistGood_FullMethodName      = "/good.middleware.app.good1.v1.Middleware/ExistGood"
 	Middleware_ExistGoodConds_FullMethodName = "/good.middleware.app.good1.v1.Middleware/ExistGoodConds"
-	Middleware_UpdateGood_FullMethodName     = "/good.middleware.app.good1.v1.Middleware/UpdateGood"
-	Middleware_DeleteGood_FullMethodName     = "/good.middleware.app.good1.v1.Middleware/DeleteGood"
 )
 
 // MiddlewareClient is the client API for Middleware service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	CreateGood(ctx context.Context, in *CreateGoodRequest, opts ...grpc.CallOption) (*CreateGoodResponse, error)
 	GetGood(ctx context.Context, in *GetGoodRequest, opts ...grpc.CallOption) (*GetGoodResponse, error)
 	GetGoods(ctx context.Context, in *GetGoodsRequest, opts ...grpc.CallOption) (*GetGoodsResponse, error)
-	ExistGood(ctx context.Context, in *ExistGoodRequest, opts ...grpc.CallOption) (*ExistGoodResponse, error)
 	ExistGoodConds(ctx context.Context, in *ExistGoodCondsRequest, opts ...grpc.CallOption) (*ExistGoodCondsResponse, error)
-	UpdateGood(ctx context.Context, in *UpdateGoodRequest, opts ...grpc.CallOption) (*UpdateGoodResponse, error)
-	DeleteGood(ctx context.Context, in *DeleteGoodRequest, opts ...grpc.CallOption) (*DeleteGoodResponse, error)
 }
 
 type middlewareClient struct {
@@ -47,15 +39,6 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
-}
-
-func (c *middlewareClient) CreateGood(ctx context.Context, in *CreateGoodRequest, opts ...grpc.CallOption) (*CreateGoodResponse, error) {
-	out := new(CreateGoodResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateGood_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *middlewareClient) GetGood(ctx context.Context, in *GetGoodRequest, opts ...grpc.CallOption) (*GetGoodResponse, error) {
@@ -76,36 +59,9 @@ func (c *middlewareClient) GetGoods(ctx context.Context, in *GetGoodsRequest, op
 	return out, nil
 }
 
-func (c *middlewareClient) ExistGood(ctx context.Context, in *ExistGoodRequest, opts ...grpc.CallOption) (*ExistGoodResponse, error) {
-	out := new(ExistGoodResponse)
-	err := c.cc.Invoke(ctx, Middleware_ExistGood_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) ExistGoodConds(ctx context.Context, in *ExistGoodCondsRequest, opts ...grpc.CallOption) (*ExistGoodCondsResponse, error) {
 	out := new(ExistGoodCondsResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistGoodConds_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) UpdateGood(ctx context.Context, in *UpdateGoodRequest, opts ...grpc.CallOption) (*UpdateGoodResponse, error) {
-	out := new(UpdateGoodResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdateGood_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) DeleteGood(ctx context.Context, in *DeleteGoodRequest, opts ...grpc.CallOption) (*DeleteGoodResponse, error) {
-	out := new(DeleteGoodResponse)
-	err := c.cc.Invoke(ctx, Middleware_DeleteGood_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,13 +72,9 @@ func (c *middlewareClient) DeleteGood(ctx context.Context, in *DeleteGoodRequest
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	CreateGood(context.Context, *CreateGoodRequest) (*CreateGoodResponse, error)
 	GetGood(context.Context, *GetGoodRequest) (*GetGoodResponse, error)
 	GetGoods(context.Context, *GetGoodsRequest) (*GetGoodsResponse, error)
-	ExistGood(context.Context, *ExistGoodRequest) (*ExistGoodResponse, error)
 	ExistGoodConds(context.Context, *ExistGoodCondsRequest) (*ExistGoodCondsResponse, error)
-	UpdateGood(context.Context, *UpdateGoodRequest) (*UpdateGoodResponse, error)
-	DeleteGood(context.Context, *DeleteGoodRequest) (*DeleteGoodResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -130,26 +82,14 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateGood(context.Context, *CreateGoodRequest) (*CreateGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateGood not implemented")
-}
 func (UnimplementedMiddlewareServer) GetGood(context.Context, *GetGoodRequest) (*GetGoodResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGood not implemented")
 }
 func (UnimplementedMiddlewareServer) GetGoods(context.Context, *GetGoodsRequest) (*GetGoodsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoods not implemented")
 }
-func (UnimplementedMiddlewareServer) ExistGood(context.Context, *ExistGoodRequest) (*ExistGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistGood not implemented")
-}
 func (UnimplementedMiddlewareServer) ExistGoodConds(context.Context, *ExistGoodCondsRequest) (*ExistGoodCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistGoodConds not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateGood(context.Context, *UpdateGoodRequest) (*UpdateGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateGood not implemented")
-}
-func (UnimplementedMiddlewareServer) DeleteGood(context.Context, *DeleteGoodRequest) (*DeleteGoodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteGood not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -162,24 +102,6 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
-}
-
-func _Middleware_CreateGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateGoodRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateGood(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateGood_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateGood(ctx, req.(*CreateGoodRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -218,24 +140,6 @@ func _Middleware_GetGoods_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_ExistGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistGoodRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistGood(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_ExistGood_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ExistGood(ctx, req.(*ExistGoodRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_ExistGoodConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistGoodCondsRequest)
 	if err := dec(in); err != nil {
@@ -254,42 +158,6 @@ func _Middleware_ExistGoodConds_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_UpdateGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateGoodRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateGood(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdateGood_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateGood(ctx, req.(*UpdateGoodRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_DeleteGood_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteGoodRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).DeleteGood(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_DeleteGood_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteGood(ctx, req.(*DeleteGoodRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -297,10 +165,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "good.middleware.app.good1.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "CreateGood",
-			Handler:    _Middleware_CreateGood_Handler,
-		},
 		{
 			MethodName: "GetGood",
 			Handler:    _Middleware_GetGood_Handler,
@@ -310,20 +174,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetGoods_Handler,
 		},
 		{
-			MethodName: "ExistGood",
-			Handler:    _Middleware_ExistGood_Handler,
-		},
-		{
 			MethodName: "ExistGoodConds",
 			Handler:    _Middleware_ExistGoodConds_Handler,
-		},
-		{
-			MethodName: "UpdateGood",
-			Handler:    _Middleware_UpdateGood_Handler,
-		},
-		{
-			MethodName: "DeleteGood",
-			Handler:    _Middleware_DeleteGood_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

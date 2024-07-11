@@ -20,8 +20,6 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_ExpropriateAchievement_FullMethodName = "/inspire.middleware.achievement.v1.Middleware/ExpropriateAchievement"
-	Middleware_GetAchievements_FullMethodName        = "/inspire.middleware.achievement.v1.Middleware/GetAchievements"
-	Middleware_DeleteAchievement_FullMethodName      = "/inspire.middleware.achievement.v1.Middleware/DeleteAchievement"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -29,8 +27,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	ExpropriateAchievement(ctx context.Context, in *ExpropriateAchievementRequest, opts ...grpc.CallOption) (*ExpropriateAchievementResponse, error)
-	GetAchievements(ctx context.Context, in *GetAchievementsRequest, opts ...grpc.CallOption) (*GetAchievementsResponse, error)
-	DeleteAchievement(ctx context.Context, in *DeleteAchievementRequest, opts ...grpc.CallOption) (*DeleteAchievementResponse, error)
 }
 
 type middlewareClient struct {
@@ -50,31 +46,11 @@ func (c *middlewareClient) ExpropriateAchievement(ctx context.Context, in *Expro
 	return out, nil
 }
 
-func (c *middlewareClient) GetAchievements(ctx context.Context, in *GetAchievementsRequest, opts ...grpc.CallOption) (*GetAchievementsResponse, error) {
-	out := new(GetAchievementsResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetAchievements_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) DeleteAchievement(ctx context.Context, in *DeleteAchievementRequest, opts ...grpc.CallOption) (*DeleteAchievementResponse, error) {
-	out := new(DeleteAchievementResponse)
-	err := c.cc.Invoke(ctx, Middleware_DeleteAchievement_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	ExpropriateAchievement(context.Context, *ExpropriateAchievementRequest) (*ExpropriateAchievementResponse, error)
-	GetAchievements(context.Context, *GetAchievementsRequest) (*GetAchievementsResponse, error)
-	DeleteAchievement(context.Context, *DeleteAchievementRequest) (*DeleteAchievementResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -84,12 +60,6 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) ExpropriateAchievement(context.Context, *ExpropriateAchievementRequest) (*ExpropriateAchievementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExpropriateAchievement not implemented")
-}
-func (UnimplementedMiddlewareServer) GetAchievements(context.Context, *GetAchievementsRequest) (*GetAchievementsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAchievements not implemented")
-}
-func (UnimplementedMiddlewareServer) DeleteAchievement(context.Context, *DeleteAchievementRequest) (*DeleteAchievementResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteAchievement not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -122,42 +92,6 @@ func _Middleware_ExpropriateAchievement_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetAchievements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAchievementsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).GetAchievements(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_GetAchievements_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetAchievements(ctx, req.(*GetAchievementsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_DeleteAchievement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteAchievementRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).DeleteAchievement(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_DeleteAchievement_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteAchievement(ctx, req.(*DeleteAchievementRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -168,14 +102,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExpropriateAchievement",
 			Handler:    _Middleware_ExpropriateAchievement_Handler,
-		},
-		{
-			MethodName: "GetAchievements",
-			Handler:    _Middleware_GetAchievements_Handler,
-		},
-		{
-			MethodName: "DeleteAchievement",
-			Handler:    _Middleware_DeleteAchievement_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -80,6 +80,14 @@
         }
       }
     },
+    "v1ExistLocationCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1GetLocationResponse": {
       "type": "object",
       "properties": {
@@ -134,6 +142,14 @@
         "BrandID": {
           "type": "string",
           "title": "@inject_tag: sql:\"brand_id\""
+        },
+        "BrandName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"brand_name\""
+        },
+        "BrandLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"brand_logo\""
         },
         "CreatedAt": {
           "type": "integer",
