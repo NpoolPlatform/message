@@ -16,6 +16,134 @@
     "application/json"
   ],
   "paths": {
+    "/v1/admin/create/eventinspire": {
+      "post": {
+        "operationId": "Gateway_AdminCreateEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateEventResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateEventRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/delete/eventinspire": {
+      "post": {
+        "operationId": "Gateway_AdminDeleteEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteEventResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteEventRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/get/eventinspires": {
+      "post": {
+        "operationId": "Gateway_AdminGetEvents",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetEventsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetEventsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/eventinspire": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateEventResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateEventRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/create/eventinspire": {
       "post": {
         "operationId": "Gateway_CreateEvent",
@@ -114,6 +242,47 @@
     }
   },
   "definitions": {
+    "gatewayeventv1EventCoin": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EventID": {
+          "type": "string"
+        },
+        "CoinConfigID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinValue": {
+          "type": "string"
+        },
+        "CoinPreUSD": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -138,6 +307,160 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AdminCreateEventRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Credits": {
+          "type": "string"
+        },
+        "CreditsPerUSD": {
+          "type": "string"
+        },
+        "MaxConsecutive": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "InviterLayers": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoinReq"
+          }
+        }
+      }
+    },
+    "v1AdminCreateEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
+    },
+    "v1AdminDeleteEventRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
+    },
+    "v1AdminGetEventsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AdminGetEventsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Event"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdateEventRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "CouponIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Credits": {
+          "type": "string"
+        },
+        "CreditsPerUSD": {
+          "type": "string"
+        },
+        "MaxConsecutive": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "InviterLayers": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "RemoveCouponIDs": {
+          "type": "boolean"
+        },
+        "Coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoinReq"
+          }
+        },
+        "RemoveCoins": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1AdminUpdateEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
         }
       }
     },
@@ -300,6 +623,12 @@
         "InviterLayers": {
           "type": "integer",
           "format": "int64"
+        },
+        "Coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoinReq"
+          }
         }
       }
     },
@@ -356,6 +685,12 @@
           "type": "integer",
           "format": "int64"
         },
+        "EventCoins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/gatewayeventv1EventCoin"
+          }
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -372,6 +707,33 @@
           "type": "string"
         },
         "AppGoodName": {
+          "type": "string"
+        }
+      }
+    },
+    "v1EventCoinReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EventID": {
+          "type": "string"
+        },
+        "CoinConfigID": {
+          "type": "string"
+        },
+        "CoinValue": {
+          "type": "string"
+        },
+        "CoinPreUSD": {
           "type": "string"
         }
       }
@@ -439,6 +801,18 @@
         "InviterLayers": {
           "type": "integer",
           "format": "int64"
+        },
+        "RemoveCouponIDs": {
+          "type": "boolean"
+        },
+        "Coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoinReq"
+          }
+        },
+        "RemoveCoins": {
+          "type": "boolean"
         }
       }
     },

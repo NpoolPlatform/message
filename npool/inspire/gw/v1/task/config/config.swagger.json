@@ -1,0 +1,609 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/gw/v1/task/config/config.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/admin/create/taskconfig": {
+      "post": {
+        "operationId": "Gateway_AdminCreateTaskConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateTaskConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateTaskConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/delete/taskconfig": {
+      "post": {
+        "operationId": "Gateway_AdminDeleteTaskConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteTaskConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteTaskConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/get/taskconfigs": {
+      "post": {
+        "operationId": "Gateway_AdminGetTaskConfigs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetTaskConfigsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetTaskConfigsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/taskconfig": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateTaskConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateTaskConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateTaskConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/user/get/tasks": {
+      "post": {
+        "operationId": "Gateway_UserGetTasks",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UserGetTasksResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UserGetTasksRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AdminCreateTaskConfigRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "EventID": {
+          "type": "string"
+        },
+        "TaskType": {
+          "$ref": "#/definitions/v1TaskType"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "TaskDesc": {
+          "type": "string"
+        },
+        "StepGuide": {
+          "type": "string"
+        },
+        "RecommendMessage": {
+          "type": "string"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxRewardCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CooldownSecord": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LastTaskID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminCreateTaskConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TaskConfig"
+        }
+      }
+    },
+    "v1AdminDeleteTaskConfigRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteTaskConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TaskConfig"
+        }
+      }
+    },
+    "v1AdminGetTaskConfigsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AdminGetTaskConfigsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TaskConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdateTaskConfigRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TaskType": {
+          "$ref": "#/definitions/v1TaskType"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "TaskDesc": {
+          "type": "string"
+        },
+        "StepGuide": {
+          "type": "string"
+        },
+        "RecommendMessage": {
+          "type": "string"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxRewardCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CooldownSecord": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LastTaskID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminUpdateTaskConfigResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TaskConfig"
+        }
+      }
+    },
+    "v1RewardState": {
+      "type": "string",
+      "enum": [
+        "DefaultRewardState",
+        "UnIssued",
+        "Issued",
+        "Revoked"
+      ],
+      "default": "DefaultRewardState"
+    },
+    "v1TaskConfig": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EventID": {
+          "type": "string"
+        },
+        "TaskType": {
+          "$ref": "#/definitions/v1TaskType"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "TaskDesc": {
+          "type": "string"
+        },
+        "StepGuide": {
+          "type": "string"
+        },
+        "RecommendMessage": {
+          "type": "string"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LastTaskID": {
+          "type": "string"
+        },
+        "MaxRewardCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CooldownSecord": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1TaskState": {
+      "type": "string",
+      "enum": [
+        "DefaultTaskState",
+        "NotStarted",
+        "InProgress",
+        "Done"
+      ],
+      "default": "DefaultTaskState"
+    },
+    "v1TaskType": {
+      "type": "string",
+      "enum": [
+        "DefaultTaskType",
+        "BaseTask",
+        "DailyTask",
+        "GrowthTask"
+      ],
+      "default": "DefaultTaskType"
+    },
+    "v1UsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultUsedFor",
+        "Signup",
+        "Signin",
+        "Update",
+        "Contact",
+        "SetWithdrawAddress",
+        "Withdraw",
+        "CreateInvitationCode",
+        "SetCommission",
+        "SetTransferTargetUser",
+        "Transfer",
+        "WithdrawalRequest",
+        "WithdrawalCompleted",
+        "DepositReceived",
+        "KYCApproved",
+        "KYCRejected",
+        "Purchase",
+        "AffiliatePurchase",
+        "AffiliateSignup",
+        "GoodBenefit1",
+        "NewLogin",
+        "UpdatePassword",
+        "UpdateEmail",
+        "UpdateMobile",
+        "UpdateGoogleAuth",
+        "OrderCompleted",
+        "ResetPassword",
+        "OrderChildsRenewNotify",
+        "OrderChildsRenew",
+        "SimulateOrderProfit",
+        "WithdrawReviewNotify",
+        "ConsecutiveLogin",
+        "GoodSocialSharing",
+        "FirstOrderCompleted",
+        "SetAddress",
+        "Set2FA",
+        "FirstBenefit",
+        "WriteComment",
+        "WriteRecommend",
+        "GoodScoring",
+        "SubmitTicket",
+        "IntallApp",
+        "SetNFTAvatar",
+        "SetPersonalImage",
+        "InternalTransfer",
+        "Announcement",
+        "ProductPage"
+      ],
+      "default": "DefaultUsedFor",
+      "title": "- ConsecutiveLogin: reward event"
+    },
+    "v1UserGetTasksRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1UserGetTasksResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserTaskConfig"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UserTaskConfig": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EventID": {
+          "type": "string"
+        },
+        "TaskType": {
+          "$ref": "#/definitions/v1TaskType"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "TaskDesc": {
+          "type": "string"
+        },
+        "StepGuide": {
+          "type": "string"
+        },
+        "RecommendMessage": {
+          "type": "string"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LastTaskID": {
+          "type": "string"
+        },
+        "MaxRewardCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CooldownSecord": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CompletionTimes": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "NextStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TaskState": {
+          "$ref": "#/definitions/v1TaskState"
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1RewardState"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}
