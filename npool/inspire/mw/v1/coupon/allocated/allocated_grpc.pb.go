@@ -19,12 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateCoupon_FullMethodName  = "/inspire.middleware.coupon.allocated.v1.Middleware/CreateCoupon"
-	Middleware_UpdateCoupon_FullMethodName  = "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupon"
-	Middleware_UpdateCoupons_FullMethodName = "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupons"
-	Middleware_GetCoupon_FullMethodName     = "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupon"
-	Middleware_GetCoupons_FullMethodName    = "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupons"
-	Middleware_DeleteCoupon_FullMethodName  = "/inspire.middleware.coupon.allocated.v1.Middleware/DeleteCoupon"
+	Middleware_CreateCoupon_FullMethodName       = "/inspire.middleware.coupon.allocated.v1.Middleware/CreateCoupon"
+	Middleware_CreateDirectCoupon_FullMethodName = "/inspire.middleware.coupon.allocated.v1.Middleware/CreateDirectCoupon"
+	Middleware_UpdateCoupon_FullMethodName       = "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupon"
+	Middleware_UpdateCoupons_FullMethodName      = "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupons"
+	Middleware_GetCoupon_FullMethodName          = "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupon"
+	Middleware_GetCoupons_FullMethodName         = "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupons"
+	Middleware_DeleteCoupon_FullMethodName       = "/inspire.middleware.coupon.allocated.v1.Middleware/DeleteCoupon"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -32,6 +33,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateCoupon(ctx context.Context, in *CreateCouponRequest, opts ...grpc.CallOption) (*CreateCouponResponse, error)
+	CreateDirectCoupon(ctx context.Context, in *CreateDirectCouponRequest, opts ...grpc.CallOption) (*CreateDirectCouponResponse, error)
 	UpdateCoupon(ctx context.Context, in *UpdateCouponRequest, opts ...grpc.CallOption) (*UpdateCouponResponse, error)
 	UpdateCoupons(ctx context.Context, in *UpdateCouponsRequest, opts ...grpc.CallOption) (*UpdateCouponsResponse, error)
 	GetCoupon(ctx context.Context, in *GetCouponRequest, opts ...grpc.CallOption) (*GetCouponResponse, error)
@@ -50,6 +52,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateCoupon(ctx context.Context, in *CreateCouponRequest, opts ...grpc.CallOption) (*CreateCouponResponse, error) {
 	out := new(CreateCouponResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateCoupon_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateDirectCoupon(ctx context.Context, in *CreateDirectCouponRequest, opts ...grpc.CallOption) (*CreateDirectCouponResponse, error) {
+	out := new(CreateDirectCouponResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateDirectCoupon_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,6 +117,7 @@ func (c *middlewareClient) DeleteCoupon(ctx context.Context, in *DeleteCouponReq
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateCoupon(context.Context, *CreateCouponRequest) (*CreateCouponResponse, error)
+	CreateDirectCoupon(context.Context, *CreateDirectCouponRequest) (*CreateDirectCouponResponse, error)
 	UpdateCoupon(context.Context, *UpdateCouponRequest) (*UpdateCouponResponse, error)
 	UpdateCoupons(context.Context, *UpdateCouponsRequest) (*UpdateCouponsResponse, error)
 	GetCoupon(context.Context, *GetCouponRequest) (*GetCouponResponse, error)
@@ -120,6 +132,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateCoupon(context.Context, *CreateCouponRequest) (*CreateCouponResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCoupon not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateDirectCoupon(context.Context, *CreateDirectCouponRequest) (*CreateDirectCouponResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateDirectCoupon not implemented")
 }
 func (UnimplementedMiddlewareServer) UpdateCoupon(context.Context, *UpdateCouponRequest) (*UpdateCouponResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoupon not implemented")
@@ -163,6 +178,24 @@ func _Middleware_CreateCoupon_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateCoupon(ctx, req.(*CreateCouponRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateDirectCoupon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateDirectCouponRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateDirectCoupon(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateDirectCoupon_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateDirectCoupon(ctx, req.(*CreateDirectCouponRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -267,6 +300,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCoupon",
 			Handler:    _Middleware_CreateCoupon_Handler,
+		},
+		{
+			MethodName: "CreateDirectCoupon",
+			Handler:    _Middleware_CreateDirectCoupon_Handler,
 		},
 		{
 			MethodName: "UpdateCoupon",

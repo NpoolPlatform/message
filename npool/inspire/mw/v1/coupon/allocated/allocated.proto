@@ -16,6 +16,12 @@ service Middleware {
       body : "*"
     };
   }
+  rpc CreateDirectCoupon(CreateDirectCouponRequest) returns (CreateDirectCouponResponse) {
+    option (google.api.http) = {
+      post : "/v1/allocated_CreateDirectCoupon"
+      body : "*"
+    };
+  }
   rpc UpdateCoupon(UpdateCouponRequest) returns (UpdateCouponResponse) {
     option (google.api.http) = {
       post : "/v1/allocated_UpdateCoupon"
@@ -56,6 +62,7 @@ message CouponReq {
   optional string UserID = 50;
   optional bool Used = 60;
   optional string UsedByOrderID = 70;
+  optional bool Cashable = 80;
 }
 
 message Coupon {
@@ -132,6 +139,10 @@ message Conds {
 message CreateCouponRequest { CouponReq Info = 10; }
 
 message CreateCouponResponse { Coupon Info = 10; }
+
+message CreateDirectCouponRequest { CouponReq Info = 10; }
+
+message CreateDirectCouponResponse { Coupon Info = 10; }
 
 message UpdateCouponRequest { CouponReq Info = 10; }
 
