@@ -55,6 +55,17 @@ message Required {
     uint32 UpdatedAt = 1010;
 }
 
+message RequiredInfo {
+    // @inject_tag: sql:"main_app_good_id"
+    string MainAppGoodID = 10;
+    // @inject_tag: sql:"required_app_good_id"
+    string RequiredAppGoodID = 20;
+    // @inject_tag: sql:"required_app_good_name"
+    string RequiredAppGoodName = 110;
+    // @inject_tag: sql:"must"
+    uint32 Must = 30;
+}
+
 message Conds {
     optional basetypes.v1.Uint32Val ID = 10;
     optional basetypes.v1.StringVal EntID = 20;

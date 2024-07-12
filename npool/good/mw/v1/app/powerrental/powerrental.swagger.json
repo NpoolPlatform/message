@@ -769,6 +769,12 @@
             "$ref": "#/definitions/v1RewardInfo"
           }
         },
+        "Requireds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RequiredInfo"
+          }
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -884,6 +890,28 @@
         "AppGoodStockID": {
           "type": "string",
           "title": "Good stock"
+        }
+      }
+    },
+    "v1RequiredInfo": {
+      "type": "object",
+      "properties": {
+        "MainAppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"main_app_good_id\""
+        },
+        "RequiredAppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"required_app_good_id\""
+        },
+        "RequiredAppGoodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"required_app_good_name\""
+        },
+        "Must": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"must\""
         }
       }
     },
