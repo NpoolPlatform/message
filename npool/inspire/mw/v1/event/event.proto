@@ -7,6 +7,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/event"
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/usedfor.proto";
 import "npool/basetypes/v1/conds.proto";
+import "npool/inspire/mw/v1/event/coin/coin.proto";
 
 // Service Name
 service Middleware {
@@ -26,6 +27,12 @@ service Middleware {
       body : "*"
     };
   }
+  rpc CalcluateEventRewards(CalcluateEventRewardsRequest) returns (CalcluateEventRewardsResponse) {
+    option (google.api.http) = {
+      post : "/v1/event_CalcluateEventRewards"
+      body : "*"
+    };
+  }
 }
 
 message EventReq {
@@ -40,6 +47,9 @@ message EventReq {
   optional string GoodID = 80;
   optional uint32 InviterLayers = 90;
   optional string AppGoodID = 100;
+  optional bool RemoveCouponIDs = 110;
+  repeated inspire.middleware.event.coin.v1.EventCoinReq Coins = 120;
+  optional bool RemoveCoins = 130;
 }
 
 message Event {
@@ -67,6 +77,7 @@ message Event {
   optional string AppGoodID = 81;
   // @inject_tag: sql:"inviter_layers"
   uint32 InviterLayers = 90;
+  repeated inspire.middleware.event.coin.v1.EventCoin Coins = 100;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 200;
   // @inject_tag: sql:"updated_at"
@@ -74,6 +85,7 @@ message Event {
 }
 
 message Conds {
+  optional basetypes.v1.Uint32Val ID = 9;
   optional basetypes.v1.StringVal EntID = 10;
   optional basetypes.v1.StringVal AppID = 20;
   optional basetypes.v1.Uint32Val EventType = 30;
@@ -114,6 +126,30 @@ message Credit {
   string UserID = 20;
   string Credits = 30;
 }
+  
+message CoinReward {
+  string AppID = 10;
+  string UserID = 20;
+  string CoinTypeID = 30;
+  string CoinConfigID = 40;
+  string CoinRewards = 50;
+}
+
+message CouponReward {
+  string AppID = 10;
+  string UserID = 20;
+  string CouponID = 30;
+  string Denomination = 40;
+  bool Cashable = 50;
+}
+
+message Reward {
+  string TaskID = 10;
+  string UserID = 20;
+  repeated Credit Credits = 30;
+  repeated CoinReward CoinRewards = 40;
+  repeated CouponReward CouponRewards = 50;
+}
 
 message RewardEventRequest {
   string AppID = 10;
@@ -126,3 +162,39 @@ message RewardEventRequest {
 }
 
 message RewardEventResponse { repeated Credit Infos = 10; }
+
+message CalcluateEventRewardsRequest {
+  string AppID = 10;
+  string UserID = 20;
+  basetypes.v1.UsedFor EventType = 30;
+  optional string GoodID = 40;
+  optional string AppGoodID = 41;
+  uint32 Consecutive = 50;
+  optional string Amount = 60;
+}
+
+message CalcluateEventRewardsResponse {
+  repeated Reward Info = 10;
+}
+
+message RewardReliableRequest {
+  string AppID = 10;
+  string UserID = 20;
+  string TaskID = 30;
+  string EventID = 40;
+  repeated Credit Credits = 50;
+  repeated CoinReward CoinRewards = 60;
+  uint32 RetryCount = 70;
+}
+
+message RewardReliableResponse {}
+
+message RewardUnReliableRequest {
+  string AppID = 10;
+  string UserID = 20;
+  string TaskID = 30;
+  string EventID = 40;
+  repeated CouponReward Coupons = 50;
+}
+
+message RewardUnReliableResponse {}

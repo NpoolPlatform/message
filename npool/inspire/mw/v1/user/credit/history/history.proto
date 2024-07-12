@@ -1,0 +1,115 @@
+syntax = "proto3";
+
+package inspire.middleware.user.credit.history.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/user/credit/history";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateUserCreditHistory     (CreateUserCreditHistoryRequest)     returns (CreateUserCreditHistoryResponse)      {}
+    rpc UpdateUserCreditHistory     (UpdateUserCreditHistoryRequest)     returns (UpdateUserCreditHistoryResponse)      {}
+    rpc GetUserCreditHistory        (GetUserCreditHistoryRequest)        returns (GetUserCreditHistoryResponse)         {}
+    rpc GetUserCreditHistories      (GetUserCreditHistoriesRequest)      returns (GetUserCreditHistoriesResponse)       {}
+    rpc ExistUserCreditHistoryConds (ExistUserCreditHistoryCondsRequest) returns (ExistUserCreditHistoryCondsResponse)  {}
+    rpc DeleteUserCreditHistory     (DeleteUserCreditHistoryRequest)     returns (DeleteUserCreditHistoryResponse)   {
+        option (google.api.http) = {
+            post: "/v1/usercredithistory_DeleteUserCreditHistory"
+            body: "*"
+        };
+    }
+}
+
+message UserCreditHistoryReq {
+    optional uint32 ID           = 10;
+    optional string EntID        = 20;
+    optional string AppID        = 30;
+    optional string UserID       = 40;
+    optional string TaskID       = 50;
+    optional string EventID      = 60;
+    optional string Credits      = 70;
+}
+
+message UserCreditHistory {
+    // @inject_tag: sql:"id"
+    uint32          ID              = 10;
+    // @inject_tag: sql:"ent_id"
+    string          EntID           = 20;
+    // @inject_tag: sql:"app_id"
+    string          AppID           = 30;
+    // @inject_tag: sql:"user_id"
+    string          UserID          = 40;
+    // @inject_tag: sql:"task_id"
+    string          TaskID          = 50;
+    // @inject_tag: sql:"event_id"
+    string          EventID         = 60;
+    // @inject_tag: sql:"credits"
+    string          Credits         = 70;
+    // @inject_tag: sql:"created_at"
+    uint32          CreatedAt       = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32          UpdatedAt       = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal  EntID         = 10;
+    optional basetypes.v1.StringVal  AppID         = 20;
+    optional basetypes.v1.StringSliceVal EntIDs    = 30;
+    optional basetypes.v1.StringVal  UserID        = 40;
+    optional basetypes.v1.StringVal  TaskID        = 50;
+    optional basetypes.v1.StringVal  EventID       = 60;
+    optional basetypes.v1.Uint32Val  ID            = 70;
+}
+
+message GetUserCreditHistoriesRequest {
+    Conds  Conds     = 10;
+    int32  Offset    = 20;
+    int32  Limit     = 30;
+}
+
+message GetUserCreditHistoriesResponse {
+    repeated UserCreditHistory Infos = 10;
+    uint32          Total = 20;
+}
+
+message CreateUserCreditHistoryRequest {
+    UserCreditHistoryReq Info = 10;
+}
+
+message CreateUserCreditHistoryResponse {
+    UserCreditHistory Info = 10;
+}
+
+message UpdateUserCreditHistoryRequest {
+    UserCreditHistoryReq Info = 10;
+}
+
+message UpdateUserCreditHistoryResponse {
+    UserCreditHistory Info = 10;
+}
+
+message GetUserCreditHistoryRequest {
+    string EntID  = 10;
+}
+
+message GetUserCreditHistoryResponse {
+    UserCreditHistory Info = 10;
+}
+
+message ExistUserCreditHistoryCondsRequest {
+  Conds Conds  = 10;
+}
+
+message ExistUserCreditHistoryCondsResponse {
+  bool Info = 10;
+}
+
+message DeleteUserCreditHistoryRequest {
+    UserCreditHistoryReq Info = 10;
+}
+
+message DeleteUserCreditHistoryResponse {
+    UserCreditHistory Info = 10;
+}

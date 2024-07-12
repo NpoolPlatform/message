@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/event_CalcluateEventRewards": {
+      "post": {
+        "operationId": "Middleware_CalcluateEventRewards",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CalcluateEventRewardsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CalcluateEventRewardsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
     "/v1/event_DeleteEvent": {
       "post": {
         "operationId": "Middleware_DeleteEvent",
@@ -82,6 +114,32 @@
     }
   },
   "definitions": {
+    "middlewareeventv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -109,26 +167,81 @@
         }
       }
     },
-    "v1Conds": {
+    "v1CalcluateEventRewardsRequest": {
       "type": "object",
       "properties": {
-        "EntID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "AppID": {
-          "$ref": "#/definitions/v1StringVal"
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
         },
         "EventType": {
-          "$ref": "#/definitions/v1Uint32Val"
+          "$ref": "#/definitions/v1UsedFor"
         },
         "GoodID": {
-          "$ref": "#/definitions/v1StringVal"
+          "type": "string"
         },
         "AppGoodID": {
-          "$ref": "#/definitions/v1StringVal"
+          "type": "string"
         },
-        "EntIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
+        "Consecutive": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Amount": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CalcluateEventRewardsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Reward"
+          }
+        }
+      }
+    },
+    "v1CoinReward": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinConfigID": {
+          "type": "string"
+        },
+        "CoinRewards": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CouponReward": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CouponID": {
+          "type": "string"
+        },
+        "Denomination": {
+          "type": "string"
+        },
+        "Cashable": {
+          "type": "boolean"
         }
       }
     },
@@ -229,6 +342,12 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"inviter_layers\""
         },
+        "Coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoin"
+          }
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -238,6 +357,77 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1EventCoin": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "EventID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"event_id\""
+        },
+        "CoinConfigID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_config_id\""
+        },
+        "CoinValue": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_value\""
+        },
+        "CoinPreUSD": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_pre_usd\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1EventCoinReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "EventID": {
+          "type": "string"
+        },
+        "CoinConfigID": {
+          "type": "string"
+        },
+        "CoinValue": {
+          "type": "string"
+        },
+        "CoinPreUSD": {
+          "type": "string"
         }
       }
     },
@@ -282,6 +472,18 @@
         },
         "AppGoodID": {
           "type": "string"
+        },
+        "RemoveCouponIDs": {
+          "type": "boolean"
+        },
+        "Coins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoinReq"
+          }
+        },
+        "RemoveCoins": {
+          "type": "boolean"
         }
       }
     },
@@ -305,6 +507,35 @@
         "Total": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1Reward": {
+      "type": "object",
+      "properties": {
+        "TaskID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Credits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Credit"
+          }
+        },
+        "CoinRewards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinReward"
+          }
+        },
+        "CouponRewards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CouponReward"
+          }
         }
       }
     },

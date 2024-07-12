@@ -1,0 +1,127 @@
+syntax = "proto3";
+
+package inspire.middleware.task.user.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/task/user";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/inspire/v1/enums.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateTaskUser     (CreateTaskUserRequest)     returns (CreateTaskUserResponse)      {}
+    rpc UpdateTaskUser     (UpdateTaskUserRequest)     returns (UpdateTaskUserResponse)      {}
+    rpc GetTaskUser        (GetTaskUserRequest)        returns (GetTaskUserResponse)         {}
+    rpc GetTaskUsers       (GetTaskUsersRequest)       returns (GetTaskUsersResponse)        {}
+    rpc ExistTaskUserConds (ExistTaskUserCondsRequest) returns (ExistTaskUserCondsResponse)  {}
+    rpc DeleteTaskUser     (DeleteTaskUserRequest)     returns (DeleteTaskUserResponse)   {
+        option (google.api.http) = {
+            post: "/v1/taskuser_DeleteTaskUser"
+            body: "*"
+        };
+    }
+}
+
+message TaskUserReq {
+    optional uint32 ID          = 10;
+    optional string EntID       = 20;
+    optional string AppID       = 30;
+    optional string UserID      = 40;
+    optional string TaskID      = 50;
+    optional string EventID     = 60;
+    optional basetypes.inspire.v1.TaskState TaskState     = 70;
+    optional string RewardInfo  = 80;
+    optional basetypes.inspire.v1.RewardState RewardState = 90;
+}
+
+message TaskUser {
+    // @inject_tag: sql:"id"
+    uint32          ID              = 10;
+    // @inject_tag: sql:"ent_id"
+    string          EntID           = 20;
+    // @inject_tag: sql:"app_id"
+    string          AppID           = 30;
+    // @inject_tag: sql:"user_id"
+    string          UserID          = 40;
+    // @inject_tag: sql:"task_id"
+    string          TaskID          = 50;
+    // @inject_tag: sql:"event_id"
+    string          EventID         = 60;
+    // @inject_tag: sql:"task_state"
+    string          TaskStateStr    = 70;
+    basetypes.inspire.v1.TaskState TaskState     = 80;
+    // @inject_tag: sql:"reward_info"
+    string          RewardInfo      = 90;
+    // @inject_tag: sql:"reward_state"
+    string          RewardStateStr  = 100;
+    basetypes.inspire.v1.RewardState RewardState = 110;
+    // @inject_tag: sql:"created_at"
+    uint32          CreatedAt       = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32          UpdatedAt       = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal  EntID         = 10;
+    optional basetypes.v1.Uint32Val  TaskState     = 20;
+    optional basetypes.v1.Uint32Val  RewardState   = 30;
+    optional basetypes.v1.StringVal  AppID         = 40;
+    optional basetypes.v1.StringSliceVal EntIDs    = 50;
+    optional basetypes.v1.StringVal  UserID        = 60;
+    optional basetypes.v1.StringVal  TaskID        = 70;
+    optional basetypes.v1.StringVal  EventID       = 80;
+    optional basetypes.v1.Uint32Val  ID            = 90;
+    optional basetypes.v1.Uint32Val  CreatedAt     = 100;
+}
+
+message GetTaskUsersRequest {
+    Conds  Conds     = 10;
+    int32  Offset    = 20;
+    int32  Limit     = 30;
+}
+
+message GetTaskUsersResponse {
+    repeated TaskUser Infos = 10;
+    uint32          Total = 20;
+}
+
+message CreateTaskUserRequest {
+    TaskUserReq Info = 10;
+}
+
+message CreateTaskUserResponse {
+    TaskUser Info = 10;
+}
+
+message UpdateTaskUserRequest {
+    TaskUserReq Info = 10;
+}
+
+message UpdateTaskUserResponse {
+    TaskUser Info = 10;
+}
+
+message GetTaskUserRequest {
+    string EntID  = 10;
+}
+
+message GetTaskUserResponse {
+    TaskUser Info = 10;
+}
+
+message ExistTaskUserCondsRequest {
+  Conds Conds  = 10;
+}
+
+message ExistTaskUserCondsResponse {
+  bool Info = 10;
+}
+
+message DeleteTaskUserRequest {
+    TaskUserReq Info = 10;
+}
+
+message DeleteTaskUserResponse {
+    TaskUser Info = 10;
+}

@@ -1,0 +1,278 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/mw/v1/coin/allocated/allocated.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/coinallocated_DeleteCoinAllocated": {
+      "post": {
+        "operationId": "Middleware_DeleteCoinAllocated",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteCoinAllocatedResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteCoinAllocatedRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CoinAllocated": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "CoinConfigID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_config_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "Value": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"value\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1CoinAllocatedReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "CoinConfigID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "CoinConfigID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CreateCoinAllocatedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinAllocated"
+        }
+      }
+    },
+    "v1DeleteCoinAllocatedRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinAllocatedReq"
+        }
+      }
+    },
+    "v1DeleteCoinAllocatedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinAllocated"
+        }
+      }
+    },
+    "v1ExistCoinAllocatedCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetCoinAllocatedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinAllocated"
+        }
+      }
+    },
+    "v1GetCoinAllocatedsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1CoinAllocated"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateCoinAllocatedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CoinAllocated"
+        }
+      }
+    }
+  }
+}
