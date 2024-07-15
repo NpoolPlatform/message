@@ -21,6 +21,7 @@ enum CoinType {
   CoinTypealeo = 12;
   CoinTypeironfish = 13;
   CoinTypeusdtbep20 = 14;
+  CoinTypedepinc = 15;
 
   // testnet
   CoinTypetfilecoin = 100;
@@ -37,6 +38,7 @@ enum CoinType {
   CoinTypetaleo = 111;
   CoinTypetironfish = 112;
   CoinTypetusdtbep20 = 113;
+  CoinTypetdepinc = 114;
 }
 
 enum ChainType {
@@ -51,6 +53,7 @@ enum ChainType {
   Tron = 7;
   Aleo = 8;
   Ironfish = 9;
+  Depinc = 10;
 
   // testnet
   TFilecoin = 101;
@@ -62,6 +65,7 @@ enum ChainType {
   TTron = 107;
   TAleo = 108;
   TIronfish = 109;
+  TDepinc = 110;
 }
 
 // fil
