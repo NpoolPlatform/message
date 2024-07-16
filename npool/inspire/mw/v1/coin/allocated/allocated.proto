@@ -30,6 +30,7 @@ message CoinAllocatedReq {
     optional string CoinTypeID   = 50;
     optional string UserID       = 60;
     optional string Value        = 70;
+    optional string Extra        = 80;
 }
 
 message CoinAllocated {
@@ -47,6 +48,8 @@ message CoinAllocated {
     string          UserID          = 60;
     // @inject_tag: sql:"value"
     string          Value           = 70;
+    // @inject_tag: sql:"extra"
+    string          Extra           = 80;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"
@@ -61,6 +64,7 @@ message Conds {
     optional basetypes.v1.StringVal  CoinTypeID    = 50;
     optional basetypes.v1.StringVal  UserID        = 60;
     optional basetypes.v1.Uint32Val  ID            = 70;
+    optional basetypes.v1.StringVal  Extra         = 80;
 }
 
 message GetCoinAllocatedsRequest {

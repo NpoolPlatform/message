@@ -312,6 +312,9 @@
         },
         "UsedByOrderIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "Extra": {
+          "$ref": "#/definitions/v1StringVal"
         }
       }
     },
@@ -428,6 +431,10 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"cashable\""
         },
+        "Extra": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"extra\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -476,6 +483,9 @@
         },
         "Cashable": {
           "type": "boolean"
+        },
+        "Extra": {
+          "type": "string"
         }
       }
     },

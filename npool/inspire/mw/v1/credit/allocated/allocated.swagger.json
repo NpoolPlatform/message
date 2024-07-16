@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/mw/v1/coin/allocated/allocated.proto",
+    "title": "npool/inspire/mw/v1/credit/allocated/allocated.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/coinallocated_DeleteCoinAllocated": {
+    "/v1/creditallocated_DeleteCreditAllocated": {
       "post": {
-        "operationId": "Middleware_DeleteCoinAllocated",
+        "operationId": "Middleware_DeleteCreditAllocated",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteCoinAllocatedResponse"
+              "$ref": "#/definitions/v1DeleteCreditAllocatedResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteCoinAllocatedRequest"
+              "$ref": "#/definitions/v1DeleteCreditAllocatedRequest"
             }
           }
         ],
@@ -77,7 +77,38 @@
         }
       }
     },
-    "v1CoinAllocated": {
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "Extra": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CreateCreditAllocatedResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1CreditAllocated"
+        }
+      }
+    },
+    "v1CreditAllocated": {
       "type": "object",
       "properties": {
         "ID": {
@@ -92,14 +123,6 @@
         "AppID": {
           "type": "string",
           "title": "@inject_tag: sql:\"app_id\""
-        },
-        "CoinConfigID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_config_id\""
-        },
-        "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
         },
         "UserID": {
           "type": "string",
@@ -125,7 +148,7 @@
         }
       }
     },
-    "v1CoinAllocatedReq": {
+    "v1CreditAllocatedReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -136,12 +159,6 @@
           "type": "string"
         },
         "AppID": {
-          "type": "string"
-        },
-        "CoinConfigID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
           "type": "string"
         },
         "UserID": {
@@ -155,60 +172,23 @@
         }
       }
     },
-    "v1Conds": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "AppID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "EntIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "CoinConfigID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "UserID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "ID": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "Extra": {
-          "$ref": "#/definitions/v1StringVal"
-        }
-      }
-    },
-    "v1CreateCoinAllocatedResponse": {
+    "v1DeleteCreditAllocatedRequest": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinAllocated"
+          "$ref": "#/definitions/v1CreditAllocatedReq"
         }
       }
     },
-    "v1DeleteCoinAllocatedRequest": {
+    "v1DeleteCreditAllocatedResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinAllocatedReq"
+          "$ref": "#/definitions/v1CreditAllocated"
         }
       }
     },
-    "v1DeleteCoinAllocatedResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinAllocated"
-        }
-      }
-    },
-    "v1ExistCoinAllocatedCondsResponse": {
+    "v1ExistCreditAllocatedCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -216,21 +196,21 @@
         }
       }
     },
-    "v1GetCoinAllocatedResponse": {
+    "v1GetCreditAllocatedResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinAllocated"
+          "$ref": "#/definitions/v1CreditAllocated"
         }
       }
     },
-    "v1GetCoinAllocatedsResponse": {
+    "v1GetCreditAllocatedsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CoinAllocated"
+            "$ref": "#/definitions/v1CreditAllocated"
           }
         },
         "Total": {
@@ -276,11 +256,11 @@
         }
       }
     },
-    "v1UpdateCoinAllocatedResponse": {
+    "v1UpdateCreditAllocatedResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1CoinAllocated"
+          "$ref": "#/definitions/v1CreditAllocated"
         }
       }
     }
