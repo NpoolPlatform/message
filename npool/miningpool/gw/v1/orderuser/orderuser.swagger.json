@@ -190,9 +190,6 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -202,15 +199,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1RevenueType": {
-      "type": "string",
-      "enum": [
-        "DefaultRevenueType",
-        "FPPS",
-        "PPLNS"
-      ],
-      "default": "DefaultRevenueType"
     }
   }
 }

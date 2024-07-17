@@ -134,9 +134,6 @@ type GoodUser struct {
 	// @inject_tag: sql:"coin_type"
 	CoinTypeStr string       `protobuf:"bytes,100,opt,name=CoinTypeStr,proto3" json:"CoinTypeStr,omitempty" sql:"coin_type"`
 	CoinType    v11.CoinType `protobuf:"varint,101,opt,name=CoinType,proto3,enum=basetypes.v1.CoinType" json:"CoinType,omitempty"`
-	// @inject_tag: sql:"revenue_type"
-	RevenueTypeStr string         `protobuf:"bytes,110,opt,name=RevenueTypeStr,proto3" json:"RevenueTypeStr,omitempty" sql:"revenue_type"`
-	RevenueType    v1.RevenueType `protobuf:"varint,111,opt,name=RevenueType,proto3,enum=basetypes.miningpool.v1.RevenueType" json:"RevenueType,omitempty"`
 	// @inject_tag: sql:"fee_ratio"
 	FeeRatio string `protobuf:"bytes,120,opt,name=FeeRatio,proto3" json:"FeeRatio,omitempty" sql:"fee_ratio"`
 	// @inject_tag: sql:"created_at"
@@ -252,20 +249,6 @@ func (x *GoodUser) GetCoinType() v11.CoinType {
 		return x.CoinType
 	}
 	return v11.CoinType(0)
-}
-
-func (x *GoodUser) GetRevenueTypeStr() string {
-	if x != nil {
-		return x.RevenueTypeStr
-	}
-	return ""
-}
-
-func (x *GoodUser) GetRevenueType() v1.RevenueType {
-	if x != nil {
-		return x.RevenueType
-	}
-	return v1.RevenueType(0)
 }
 
 func (x *GoodUser) GetFeeRatio() string {
@@ -979,7 +962,7 @@ var file_npool_miningpool_mw_v1_gooduser_gooduser_proto_rawDesc = []byte{
 	0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x49, 0x44, 0x42, 0x0d, 0x0a, 0x0b, 0x5f, 0x52, 0x6f,
 	0x6f, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x44, 0x42, 0x07, 0x0a, 0x05, 0x5f, 0x4e, 0x61, 0x6d,
 	0x65, 0x42, 0x0f, 0x0a, 0x0d, 0x5f, 0x52, 0x65, 0x61, 0x64, 0x50, 0x61, 0x67, 0x65, 0x4c, 0x69,
-	0x6e, 0x6b, 0x22, 0xe7, 0x04, 0x0a, 0x08, 0x47, 0x6f, 0x6f, 0x64, 0x55, 0x73, 0x65, 0x72, 0x12,
+	0x6e, 0x6b, 0x22, 0xf7, 0x03, 0x0a, 0x08, 0x47, 0x6f, 0x6f, 0x64, 0x55, 0x73, 0x65, 0x72, 0x12,
 	0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x49, 0x44, 0x12,
 	0x14, 0x0a, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
 	0x45, 0x6e, 0x74, 0x49, 0x44, 0x12, 0x1e, 0x0a, 0x0a, 0x52, 0x6f, 0x6f, 0x74, 0x55, 0x73, 0x65,
@@ -1005,13 +988,6 @@ var file_npool_miningpool_mw_v1_gooduser_gooduser_proto_rawDesc = []byte{
 	0x0a, 0x08, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x18, 0x65, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x16, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e,
 	0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x08, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79,
-	0x70, 0x65, 0x12, 0x26, 0x0a, 0x0e, 0x52, 0x65, 0x76, 0x65, 0x6e, 0x75, 0x65, 0x54, 0x79, 0x70,
-	0x65, 0x53, 0x74, 0x72, 0x18, 0x6e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x52, 0x65, 0x76, 0x65,
-	0x6e, 0x75, 0x65, 0x54, 0x79, 0x70, 0x65, 0x53, 0x74, 0x72, 0x12, 0x46, 0x0a, 0x0b, 0x52, 0x65,
-	0x76, 0x65, 0x6e, 0x75, 0x65, 0x54, 0x79, 0x70, 0x65, 0x18, 0x6f, 0x20, 0x01, 0x28, 0x0e, 0x32,
-	0x24, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x6d, 0x69, 0x6e, 0x69,
-	0x6e, 0x67, 0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x76, 0x65, 0x6e, 0x75,
-	0x65, 0x54, 0x79, 0x70, 0x65, 0x52, 0x0b, 0x52, 0x65, 0x76, 0x65, 0x6e, 0x75, 0x65, 0x54, 0x79,
 	0x70, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x46, 0x65, 0x65, 0x52, 0x61, 0x74, 0x69, 0x6f, 0x18, 0x78,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x46, 0x65, 0x65, 0x52, 0x61, 0x74, 0x69, 0x6f, 0x12, 0x1d,
 	0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0x82, 0x01, 0x20, 0x01,
@@ -1188,44 +1164,42 @@ var file_npool_miningpool_mw_v1_gooduser_gooduser_proto_goTypes = []interface{}{
 	(*DeleteGoodUserResponse)(nil),     // 14: miningpool.middleware.gooduser.v1.DeleteGoodUserResponse
 	(v1.MiningpoolType)(0),             // 15: basetypes.miningpool.v1.MiningpoolType
 	(v11.CoinType)(0),                  // 16: basetypes.v1.CoinType
-	(v1.RevenueType)(0),                // 17: basetypes.miningpool.v1.RevenueType
-	(*v11.Uint32Val)(nil),              // 18: basetypes.v1.Uint32Val
-	(*v11.StringVal)(nil),              // 19: basetypes.v1.StringVal
-	(*v11.StringSliceVal)(nil),         // 20: basetypes.v1.StringSliceVal
+	(*v11.Uint32Val)(nil),              // 17: basetypes.v1.Uint32Val
+	(*v11.StringVal)(nil),              // 18: basetypes.v1.StringVal
+	(*v11.StringSliceVal)(nil),         // 19: basetypes.v1.StringSliceVal
 }
 var file_npool_miningpool_mw_v1_gooduser_gooduser_proto_depIdxs = []int32{
 	15, // 0: miningpool.middleware.gooduser.v1.GoodUser.MiningpoolType:type_name -> basetypes.miningpool.v1.MiningpoolType
 	16, // 1: miningpool.middleware.gooduser.v1.GoodUser.CoinType:type_name -> basetypes.v1.CoinType
-	17, // 2: miningpool.middleware.gooduser.v1.GoodUser.RevenueType:type_name -> basetypes.miningpool.v1.RevenueType
-	18, // 3: miningpool.middleware.gooduser.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
-	19, // 4: miningpool.middleware.gooduser.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	19, // 5: miningpool.middleware.gooduser.v1.Conds.Name:type_name -> basetypes.v1.StringVal
-	19, // 6: miningpool.middleware.gooduser.v1.Conds.PoolCoinTypeID:type_name -> basetypes.v1.StringVal
-	19, // 7: miningpool.middleware.gooduser.v1.Conds.RootUserID:type_name -> basetypes.v1.StringVal
-	20, // 8: miningpool.middleware.gooduser.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
-	0,  // 9: miningpool.middleware.gooduser.v1.CreateGoodUserRequest.Info:type_name -> miningpool.middleware.gooduser.v1.GoodUserReq
-	1,  // 10: miningpool.middleware.gooduser.v1.GetGoodUserResponse.Info:type_name -> miningpool.middleware.gooduser.v1.GoodUser
-	2,  // 11: miningpool.middleware.gooduser.v1.GetGoodUsersRequest.Conds:type_name -> miningpool.middleware.gooduser.v1.Conds
-	1,  // 12: miningpool.middleware.gooduser.v1.GetGoodUsersResponse.Infos:type_name -> miningpool.middleware.gooduser.v1.GoodUser
-	2,  // 13: miningpool.middleware.gooduser.v1.ExistGoodUserCondsRequest.Conds:type_name -> miningpool.middleware.gooduser.v1.Conds
-	0,  // 14: miningpool.middleware.gooduser.v1.DeleteGoodUserRequest.Info:type_name -> miningpool.middleware.gooduser.v1.GoodUserReq
-	3,  // 15: miningpool.middleware.gooduser.v1.Middleware.CreateGoodUser:input_type -> miningpool.middleware.gooduser.v1.CreateGoodUserRequest
-	5,  // 16: miningpool.middleware.gooduser.v1.Middleware.GetGoodUser:input_type -> miningpool.middleware.gooduser.v1.GetGoodUserRequest
-	7,  // 17: miningpool.middleware.gooduser.v1.Middleware.GetGoodUsers:input_type -> miningpool.middleware.gooduser.v1.GetGoodUsersRequest
-	9,  // 18: miningpool.middleware.gooduser.v1.Middleware.ExistGoodUser:input_type -> miningpool.middleware.gooduser.v1.ExistGoodUserRequest
-	11, // 19: miningpool.middleware.gooduser.v1.Middleware.ExistGoodUserConds:input_type -> miningpool.middleware.gooduser.v1.ExistGoodUserCondsRequest
-	13, // 20: miningpool.middleware.gooduser.v1.Middleware.DeleteGoodUser:input_type -> miningpool.middleware.gooduser.v1.DeleteGoodUserRequest
-	4,  // 21: miningpool.middleware.gooduser.v1.Middleware.CreateGoodUser:output_type -> miningpool.middleware.gooduser.v1.CreateGoodUserResponse
-	6,  // 22: miningpool.middleware.gooduser.v1.Middleware.GetGoodUser:output_type -> miningpool.middleware.gooduser.v1.GetGoodUserResponse
-	8,  // 23: miningpool.middleware.gooduser.v1.Middleware.GetGoodUsers:output_type -> miningpool.middleware.gooduser.v1.GetGoodUsersResponse
-	10, // 24: miningpool.middleware.gooduser.v1.Middleware.ExistGoodUser:output_type -> miningpool.middleware.gooduser.v1.ExistGoodUserResponse
-	12, // 25: miningpool.middleware.gooduser.v1.Middleware.ExistGoodUserConds:output_type -> miningpool.middleware.gooduser.v1.ExistGoodUserCondsResponse
-	14, // 26: miningpool.middleware.gooduser.v1.Middleware.DeleteGoodUser:output_type -> miningpool.middleware.gooduser.v1.DeleteGoodUserResponse
-	21, // [21:27] is the sub-list for method output_type
-	15, // [15:21] is the sub-list for method input_type
-	15, // [15:15] is the sub-list for extension type_name
-	15, // [15:15] is the sub-list for extension extendee
-	0,  // [0:15] is the sub-list for field type_name
+	17, // 2: miningpool.middleware.gooduser.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
+	18, // 3: miningpool.middleware.gooduser.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	18, // 4: miningpool.middleware.gooduser.v1.Conds.Name:type_name -> basetypes.v1.StringVal
+	18, // 5: miningpool.middleware.gooduser.v1.Conds.PoolCoinTypeID:type_name -> basetypes.v1.StringVal
+	18, // 6: miningpool.middleware.gooduser.v1.Conds.RootUserID:type_name -> basetypes.v1.StringVal
+	19, // 7: miningpool.middleware.gooduser.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
+	0,  // 8: miningpool.middleware.gooduser.v1.CreateGoodUserRequest.Info:type_name -> miningpool.middleware.gooduser.v1.GoodUserReq
+	1,  // 9: miningpool.middleware.gooduser.v1.GetGoodUserResponse.Info:type_name -> miningpool.middleware.gooduser.v1.GoodUser
+	2,  // 10: miningpool.middleware.gooduser.v1.GetGoodUsersRequest.Conds:type_name -> miningpool.middleware.gooduser.v1.Conds
+	1,  // 11: miningpool.middleware.gooduser.v1.GetGoodUsersResponse.Infos:type_name -> miningpool.middleware.gooduser.v1.GoodUser
+	2,  // 12: miningpool.middleware.gooduser.v1.ExistGoodUserCondsRequest.Conds:type_name -> miningpool.middleware.gooduser.v1.Conds
+	0,  // 13: miningpool.middleware.gooduser.v1.DeleteGoodUserRequest.Info:type_name -> miningpool.middleware.gooduser.v1.GoodUserReq
+	3,  // 14: miningpool.middleware.gooduser.v1.Middleware.CreateGoodUser:input_type -> miningpool.middleware.gooduser.v1.CreateGoodUserRequest
+	5,  // 15: miningpool.middleware.gooduser.v1.Middleware.GetGoodUser:input_type -> miningpool.middleware.gooduser.v1.GetGoodUserRequest
+	7,  // 16: miningpool.middleware.gooduser.v1.Middleware.GetGoodUsers:input_type -> miningpool.middleware.gooduser.v1.GetGoodUsersRequest
+	9,  // 17: miningpool.middleware.gooduser.v1.Middleware.ExistGoodUser:input_type -> miningpool.middleware.gooduser.v1.ExistGoodUserRequest
+	11, // 18: miningpool.middleware.gooduser.v1.Middleware.ExistGoodUserConds:input_type -> miningpool.middleware.gooduser.v1.ExistGoodUserCondsRequest
+	13, // 19: miningpool.middleware.gooduser.v1.Middleware.DeleteGoodUser:input_type -> miningpool.middleware.gooduser.v1.DeleteGoodUserRequest
+	4,  // 20: miningpool.middleware.gooduser.v1.Middleware.CreateGoodUser:output_type -> miningpool.middleware.gooduser.v1.CreateGoodUserResponse
+	6,  // 21: miningpool.middleware.gooduser.v1.Middleware.GetGoodUser:output_type -> miningpool.middleware.gooduser.v1.GetGoodUserResponse
+	8,  // 22: miningpool.middleware.gooduser.v1.Middleware.GetGoodUsers:output_type -> miningpool.middleware.gooduser.v1.GetGoodUsersResponse
+	10, // 23: miningpool.middleware.gooduser.v1.Middleware.ExistGoodUser:output_type -> miningpool.middleware.gooduser.v1.ExistGoodUserResponse
+	12, // 24: miningpool.middleware.gooduser.v1.Middleware.ExistGoodUserConds:output_type -> miningpool.middleware.gooduser.v1.ExistGoodUserCondsResponse
+	14, // 25: miningpool.middleware.gooduser.v1.Middleware.DeleteGoodUser:output_type -> miningpool.middleware.gooduser.v1.DeleteGoodUserResponse
+	20, // [20:26] is the sub-list for method output_type
+	14, // [14:20] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	14, // [14:14] is the sub-list for extension extendee
+	0,  // [0:14] is the sub-list for field type_name
 }
 
 func init() { file_npool_miningpool_mw_v1_gooduser_gooduser_proto_init() }

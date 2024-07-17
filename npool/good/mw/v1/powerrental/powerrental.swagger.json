@@ -278,10 +278,10 @@
         "EntID": {
           "type": "string"
         },
-        "MiningPoolID": {
+        "RootUserID": {
           "type": "string"
         },
-        "PoolGoodUserID": {
+        "CoinTypeID": {
           "type": "string"
         },
         "Total": {
