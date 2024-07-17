@@ -320,6 +320,9 @@
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
         },
+        "GoodQuantityUnit": {
+          "type": "string"
+        },
         "CoinTypeID": {
           "type": "string",
           "title": "Good is multiple coins"
