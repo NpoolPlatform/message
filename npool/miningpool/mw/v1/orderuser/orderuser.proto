@@ -72,7 +72,6 @@ message OrderUser {
   // @inject_tag: sql:"miningpool_type"
   string MiningpoolTypeStr = 110;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 111;
-
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 140;
   // @inject_tag: sql:"updated_at"
