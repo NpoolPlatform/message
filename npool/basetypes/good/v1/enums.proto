@@ -169,3 +169,22 @@ enum GoodCommentHideReason {
     GoodCommentHideByFalseDescription = 30;
 }
 
+/* initial state: MiningStockStateWait
+                         |
+                         v
+           MiningStockStateCreateGoodUser---------------
+                         |                             |
+                         v                             |
+            MiningStockStateCheckHashRate---------------
+                         |                             |
+                         v                             v
+               MiningStockStateDone             MiningStockStateFail
+*/
+enum MiningStockState {
+    DefaultMiningStockState = 0;
+    MiningStockStateWait = 10;
+    MiningStockStateCreateGoodUser = 20;
+    MiningStockStateCheckHashRate = 30;
+    MiningStockStateDone = 40;
+    MiningStockStateFail = 50;
+}
