@@ -1046,6 +1046,9 @@
         "GoodName": {
           "type": "string"
         },
+        "GoodQuantityUnit": {
+          "type": "string"
+        },
         "AppGoodID": {
           "type": "string"
         },
