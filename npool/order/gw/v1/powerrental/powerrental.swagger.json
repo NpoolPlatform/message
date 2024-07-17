@@ -878,10 +878,15 @@
         "OrderStatePaymentUnlockAccount",
         "OrderStatePaid",
         "OrderStateTransferGoodStockWaitStart",
+        "OrderStateCreateOrderUser",
+        "OrderStateSetProportion",
+        "OrderStateSetRevenueAddress",
         "OrderStateInService",
         "OrderStatePaymentTimeout",
         "OrderStatePreCancel",
         "OrderStatePreExpired",
+        "OrderStateDeleteProportion",
+        "OrderStateDeleteRevenueAddress",
         "OrderStateRestoreExpiredStock",
         "OrderStateRestoreCanceledStock",
         "OrderStateDeductLockedCommission",
@@ -893,7 +898,7 @@
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state"
+      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStateCreateOrderUser: PreInService sub states for miningpool settings\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateDeleteProportion: PreExpired sub states for miningpool settings\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state"
     },
     "v1OrderType": {
       "type": "string",
