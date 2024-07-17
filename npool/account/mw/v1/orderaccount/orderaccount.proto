@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package account.middleware.orderaccount.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/orderaccount";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/accountusedfor.proto";
+
+// Service Name
+service Middleware {
+  rpc GetOrderAccount(GetOrderAccountRequest) returns (GetOrderAccountResponse) {}
+  rpc GetOrderAccounts(GetOrderAccountsRequest) returns (GetOrderAccountsResponse) {}
+}
+
+message OrderAccount {
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 30;
+  // @inject_tag: sql:"address"
+  string Address = 40;
+  // @inject_tag: sql:"used_for"
+  string UsedForStr = 49;
+  basetypes.v1.AccountUsedFor UsedFor = 50;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
+}
+
+message Conds {
+  optional basetypes.v1.Uint32Val ID = 10;
+  optional basetypes.v1.StringVal EntID = 20;
+  optional basetypes.v1.StringVal CoinTypeID = 30;
+  optional basetypes.v1.StringVal Address = 40;
+  optional basetypes.v1.Uint32Val UsedFor = 50;
+  optional basetypes.v1.Uint32Val CreatedAt = 100;
+  optional basetypes.v1.StringSliceVal EntIDs = 110;
+}
+
+message GetOrderAccountRequest { string EntID = 10; }
+
+message GetOrderAccountResponse { OrderAccount Info = 10; }
+
+message GetOrderAccountsRequest {
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetOrderAccountsResponse {
+  repeated OrderAccount Infos = 10;
+  uint32 Total = 20;
+}

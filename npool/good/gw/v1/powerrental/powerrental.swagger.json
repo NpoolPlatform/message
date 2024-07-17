@@ -178,6 +178,63 @@
     }
   },
   "definitions": {
+    "goodgatewaygood1stockv1MiningGoodStock": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "GoodStockID": {
+          "type": "string"
+        },
+        "MiningPoolID": {
+          "type": "string"
+        },
+        "PoolGoodUserID": {
+          "type": "string"
+        },
+        "Total": {
+          "type": "string"
+        },
+        "SpotQuantity": {
+          "type": "string"
+        },
+        "Locked": {
+          "type": "string"
+        },
+        "WaitStart": {
+          "type": "string"
+        },
+        "InService": {
+          "type": "string"
+        },
+        "Sold": {
+          "type": "string"
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Site": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "ReadPageLink": {
+          "type": "string"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -540,72 +597,31 @@
       ],
       "default": "DefaultGoodType"
     },
-    "v1MiningGoodStock": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
-        },
-        "GoodStockID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_stock_id\""
-        },
-        "MiningPoolID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"mining_pool_id\""
-        },
-        "PoolGoodUserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"pool_good_user_id\""
-        },
-        "Total": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"total\""
-        },
-        "SpotQuantity": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"spot_quantity\""
-        },
-        "Locked": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"locked\""
-        },
-        "WaitStart": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"wait_start\""
-        },
-        "InService": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"in_service\""
-        },
-        "Sold": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"sold\""
-        }
-      }
-    },
     "v1MiningGoodStockReq": {
       "type": "object",
       "properties": {
         "EntID": {
           "type": "string"
         },
-        "MiningPoolID": {
+        "RootUserID": {
           "type": "string"
         },
-        "PoolGoodUserID": {
+        "CoinTypeID": {
           "type": "string"
         },
         "Total": {
           "type": "string"
         }
       }
+    },
+    "v1MiningpoolType": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningpoolType",
+        "F2Pool",
+        "AntPool"
+      ],
+      "default": "DefaultMiningpoolType"
     },
     "v1PowerRental": {
       "type": "object",
@@ -746,7 +762,7 @@
         "MiningGoodStocks": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1MiningGoodStock"
+            "$ref": "#/definitions/goodgatewaygood1stockv1MiningGoodStock"
           }
         },
         "Rewards": {

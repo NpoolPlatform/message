@@ -49,9 +49,6 @@ message GoodUser {
   // @inject_tag: sql:"coin_type"
   string CoinTypeStr = 100;
   basetypes.v1.CoinType CoinType = 101;
-  // @inject_tag: sql:"revenue_type"
-  string RevenueTypeStr = 110;
-  basetypes.miningpool.v1.RevenueType RevenueType = 111;
   // @inject_tag: sql:"fee_ratio"
   string FeeRatio = 120;
   // @inject_tag: sql:"created_at"

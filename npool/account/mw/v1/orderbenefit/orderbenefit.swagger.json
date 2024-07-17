@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/miningpool/mw/v1/gooduser/gooduser.proto",
+    "title": "npool/account/mw/v1/orderbenefit/orderbenefit.proto",
     "version": "version not set"
   },
   "tags": [
@@ -15,7 +15,40 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/orderbenefit_DeleteOrderBenefit": {
+      "post": {
+        "operationId": "Middleware_DeleteOrderBenefit",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteOrderBenefitResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteOrderBenefitRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -44,41 +77,22 @@
         }
       }
     },
-    "v1CoinType": {
+    "v1AccountUsedFor": {
       "type": "string",
       "enum": [
-        "DefaultCoinType",
-        "CoinTypeFileCoin",
-        "CoinTypeBitCoin",
-        "CoinTypeEthereum",
-        "CoinTypeUSDTerc20",
-        "CoinTypeSpacemesh",
-        "CoinTypeSolana",
-        "CoinTypeUSDTtrc20",
-        "CoinTypeBinanceCoin",
-        "CoinTypeTron",
-        "CoinTypeBinanceUSD",
-        "CoinTypeUSDCerc20",
-        "CoinTypeAleo",
-        "CoinTypeIronFish",
-        "CoinTypeUSDTbep20",
-        "CoinTypeTFileCoin",
-        "CoinTypeTBitCoin",
-        "CoinTypeTEthereum",
-        "CoinTypeTUSDTerc20",
-        "CoinTypeTSpacemesh",
-        "CoinTypeTSolana",
-        "CoinTypeTUSDTtrc20",
-        "CoinTypeTBinanceCoin",
-        "CoinTypeTTron",
-        "CoinTypeTBinanceUSD",
-        "CoinTypeTUSDCerc20",
-        "CoinTypeTAleo",
-        "CoinTypeTIronFish",
-        "CoinTypeTUSDTbep20"
+        "DefaultAccountUsedFor",
+        "GoodBenefit",
+        "UserBenefitHot",
+        "UserBenefitCold",
+        "PlatformBenefitCold",
+        "GasProvider",
+        "UserWithdraw",
+        "UserDeposit",
+        "GoodPayment",
+        "PaymentCollector",
+        "UserDirectBenefit"
       ],
-      "default": "DefaultCoinType",
-      "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
+      "default": "DefaultAccountUsedFor"
     },
     "v1Conds": {
       "type": "object",
@@ -89,27 +103,48 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "Name": {
+        "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "PoolCoinTypeID": {
+        "Address": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "RootUserID": {
+        "OrderID": {
           "$ref": "#/definitions/v1StringVal"
+        },
+        "CreatedAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v1CreateGoodUserResponse": {
-      "type": "object"
+    "v1CreateOrderBenefitResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderBenefit"
+        }
+      }
     },
-    "v1DeleteGoodUserResponse": {
-      "type": "object"
+    "v1DeleteOrderBenefitRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderBenefitReq"
+        }
+      }
     },
-    "v1ExistGoodUserCondsResponse": {
+    "v1DeleteOrderBenefitResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1OrderBenefit"
+        }
+      }
+    },
+    "v1ExistOrderBenefitCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -117,7 +152,7 @@
         }
       }
     },
-    "v1ExistGoodUserResponse": {
+    "v1ExistOrderBenefitResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -125,21 +160,21 @@
         }
       }
     },
-    "v1GetGoodUserResponse": {
+    "v1GetOrderBenefitResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1GoodUser"
+          "$ref": "#/definitions/v1OrderBenefit"
         }
       }
     },
-    "v1GetGoodUsersResponse": {
+    "v1GetOrderBenefitsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1GoodUser"
+            "$ref": "#/definitions/v1OrderBenefit"
           }
         },
         "Total": {
@@ -148,7 +183,7 @@
         }
       }
     },
-    "v1GoodUser": {
+    "v1OrderBenefit": {
       "type": "object",
       "properties": {
         "ID": {
@@ -160,43 +195,24 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "RootUserID": {
+        "CoinTypeID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"root_user_id\""
+          "title": "@inject_tag: sql:\"coin_type_id\""
         },
-        "Name": {
+        "Address": {
           "type": "string",
-          "title": "@inject_tag: sql:\"name\""
+          "title": "@inject_tag: sql:\"address\""
         },
-        "ReadPageLink": {
+        "OrderID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"read_page_link\""
+          "title": "@inject_tag: sql:\"order_id\""
         },
-        "PoolID": {
+        "UsedForStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"pool_id\""
+          "title": "@inject_tag: sql:\"used_for\""
         },
-        "MiningpoolTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_type\""
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "PoolCoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"pool_coin_type_id\""
-        },
-        "CoinTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type\""
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
-        },
-        "FeeRatio": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"fee_ratio\""
+        "UsedFor": {
+          "$ref": "#/definitions/v1AccountUsedFor"
         },
         "CreatedAt": {
           "type": "integer",
@@ -210,38 +226,22 @@
         }
       }
     },
-    "v1GoodUserReq": {
+    "v1OrderBenefitReq": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
         "EntID": {
           "type": "string"
         },
-        "PoolCoinTypeID": {
+        "CoinTypeID": {
           "type": "string"
         },
-        "RootUserID": {
+        "Address": {
           "type": "string"
         },
-        "Name": {
-          "type": "string"
-        },
-        "ReadPageLink": {
+        "OrderID": {
           "type": "string"
         }
       }
-    },
-    "v1MiningpoolType": {
-      "type": "string",
-      "enum": [
-        "DefaultMiningpoolType",
-        "F2Pool",
-        "AntPool"
-      ],
-      "default": "DefaultMiningpoolType"
     },
     "v1StringSliceVal": {
       "type": "object",

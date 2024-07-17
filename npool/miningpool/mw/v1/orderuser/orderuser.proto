@@ -80,9 +80,6 @@ message OrderUser {
   // @inject_tag: sql:"coin_type"
   string CoinTypeStr = 120;
   basetypes.v1.CoinType CoinType = 121;
-  // @inject_tag: sql:"revenue_type"
-  string RevenueTypeStr = 130;
-  basetypes.miningpool.v1.RevenueType RevenueType = 131;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 140;
   // @inject_tag: sql:"updated_at"

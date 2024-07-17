@@ -325,13 +325,6 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "RevenueTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"revenue_type\""
-        },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -379,15 +372,6 @@
           "type": "boolean"
         }
       }
-    },
-    "v1RevenueType": {
-      "type": "string",
-      "enum": [
-        "DefaultRevenueType",
-        "FPPS",
-        "PPLNS"
-      ],
-      "default": "DefaultRevenueType"
     },
     "v1StringSliceVal": {
       "type": "object",

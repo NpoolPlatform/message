@@ -243,6 +243,47 @@
     }
   },
   "definitions": {
+    "goodgatewaygood1stockv1MiningGoodStockInfo": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "GoodStockID": {
+          "type": "string"
+        },
+        "MiningPoolID": {
+          "type": "string"
+        },
+        "PoolGoodUserID": {
+          "type": "string"
+        },
+        "Total": {
+          "type": "string"
+        },
+        "SpotQuantity": {
+          "type": "string"
+        },
+        "MiningpoolType": {
+          "$ref": "#/definitions/v1MiningpoolType"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Site": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "ReadPageLink": {
+          "type": "string"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -809,7 +850,7 @@
         "MiningGoodStocks": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1MiningGoodStockInfo"
+            "$ref": "#/definitions/goodgatewaygood1stockv1MiningGoodStockInfo"
           }
         },
         "Labels": {
@@ -1103,34 +1144,14 @@
         }
       }
     },
-    "v1MiningGoodStockInfo": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
-        },
-        "GoodStockID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_stock_id\""
-        },
-        "MiningPoolID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"mining_pool_id\""
-        },
-        "PoolGoodUserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"pool_good_user_id\""
-        },
-        "Total": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"total\""
-        },
-        "SpotQuantity": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"spot_quantity\""
-        }
-      }
+    "v1MiningpoolType": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningpoolType",
+        "F2Pool",
+        "AntPool"
+      ],
+      "default": "DefaultMiningpoolType"
     },
     "v1PosterInfo": {
       "type": "object",

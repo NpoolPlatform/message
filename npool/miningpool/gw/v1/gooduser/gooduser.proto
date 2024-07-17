@@ -44,7 +44,6 @@ message GoodUser {
   string PoolCoinTypeID = 90;
   string CoinTypeID = 100;
   basetypes.v1.CoinType CoinType = 101;
-  basetypes.miningpool.v1.RevenueType RevenueType = 110;
   string FeeRatio = 120;
   uint32 CreatedAt = 130;
   uint32 UpdatedAt = 140;

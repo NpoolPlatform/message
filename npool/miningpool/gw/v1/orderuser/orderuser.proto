@@ -33,7 +33,6 @@ message OrderUser {
   bool AutoPay = 100;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 110;
   basetypes.v1.CoinType CoinType = 120;
-  basetypes.miningpool.v1.RevenueType RevenueType = 130;
   uint32 CreatedAt = 140;
   uint32 UpdatedAt = 150;
 }

@@ -278,9 +278,6 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
-        },
         "FeeRatio": {
           "type": "string"
         },
@@ -302,15 +299,6 @@
         "AntPool"
       ],
       "default": "DefaultMiningpoolType"
-    },
-    "v1RevenueType": {
-      "type": "string",
-      "enum": [
-        "DefaultRevenueType",
-        "FPPS",
-        "PPLNS"
-      ],
-      "default": "DefaultRevenueType"
     }
   }
 }
