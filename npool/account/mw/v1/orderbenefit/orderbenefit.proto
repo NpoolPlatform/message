@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+package account.middleware.orderbenefit.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/account/mw/v1/orderbenefit";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/accountusedfor.proto";
+
+// Service Name
+service Middleware {
+  rpc CreateOrderBenefit(CreateOrderBenefitRequest) returns (CreateOrderBenefitResponse) {}
+  rpc GetOrderBenefit(GetOrderBenefitRequest) returns (GetOrderBenefitResponse) {}
+  rpc GetOrderBenefits(GetOrderBenefitsRequest) returns (GetOrderBenefitsResponse) {}
+  rpc ExistOrderBenefit(ExistOrderBenefitRequest) returns (ExistOrderBenefitResponse) {}
+  rpc ExistOrderBenefitConds(ExistOrderBenefitCondsRequest)
+      returns (ExistOrderBenefitCondsResponse) {}
+  rpc DeleteOrderBenefit(DeleteOrderBenefitRequest) returns (DeleteOrderBenefitResponse) {
+    option (google.api.http) = {
+      post : "/v1/orderbenefit_DeleteOrderBenefit"
+      body : "*"
+    };
+  }
+}
+
+message OrderBenefitReq {
+  optional string EntID = 10;
+  optional string CoinTypeID = 20;
+  optional string Address = 30;
+  optional string OrderID = 40;
+}
+
+message OrderBenefit {
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 30;
+  // @inject_tag: sql:"address"
+  string Address = 40;
+  // @inject_tag: sql:"order_id"
+  string OrderID = 50;
+  // @inject_tag: sql:"used_for"
+  string UsedForStr = 59;
+  basetypes.v1.AccountUsedFor UsedFor = 60;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
+}
+
+message Conds {
+  optional basetypes.v1.Uint32Val ID = 10;
+  optional basetypes.v1.StringVal EntID = 20;
+  optional basetypes.v1.StringVal CoinTypeID = 30;
+  optional basetypes.v1.StringVal Address = 40;
+  optional basetypes.v1.StringVal OrderID = 50;
+  optional basetypes.v1.Uint32Val CreatedAt = 100;
+  optional basetypes.v1.StringSliceVal EntIDs = 110;
+}
+
+message CreateOrderBenefitRequest { OrderBenefitReq Info = 10; }
+
+message CreateOrderBenefitResponse { OrderBenefit Info = 10; }
+
+message GetOrderBenefitRequest { string EntID = 10; }
+
+message GetOrderBenefitResponse { OrderBenefit Info = 10; }
+
+message GetOrderBenefitsRequest {
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetOrderBenefitsResponse {
+  repeated OrderBenefit Infos = 10;
+  uint32 Total = 20;
+}
+
+message ExistOrderBenefitRequest { string EntID = 10; }
+
+message ExistOrderBenefitResponse { bool Info = 10; }
+
+message ExistOrderBenefitCondsRequest { Conds Conds = 10; }
+
+message ExistOrderBenefitCondsResponse { bool Info = 10; }
+
+message DeleteOrderBenefitRequest { OrderBenefitReq Info = 10; }
+
+message DeleteOrderBenefitResponse { OrderBenefit Info = 10; }

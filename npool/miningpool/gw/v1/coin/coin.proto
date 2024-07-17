@@ -44,7 +44,6 @@ message Coin {
   string PoolID = 30;
   string CoinTypeID = 31;
   basetypes.v1.CoinType CoinType = 40;
-  basetypes.miningpool.v1.RevenueType RevenueType = 50;
   string FeeRatio = 60;
   bool FixedRevenueAble = 70;
   string LeastTransferAmount = 80;
@@ -59,7 +58,6 @@ message AdminCreateCoinRequest {
   string PoolID = 10;
   string CoinTypeID = 20;
   basetypes.v1.CoinType CoinType = 30;
-  basetypes.miningpool.v1.RevenueType RevenueType = 40;
   string FeeRatio = 50;
   bool FixedRevenueAble = 60;
   string LeastTransferAmount = 70;
@@ -72,7 +70,6 @@ message AdminCreateCoinResponse { Coin Info = 10; }
 message AdminUpdateCoinRequest {
   uint32 ID = 10;
   string EntID = 20;
-  optional basetypes.miningpool.v1.RevenueType RevenueType = 30;
   optional string FeeRatio = 40;
   optional bool FixedRevenueAble = 50;
   optional string LeastTransferAmount = 60;
