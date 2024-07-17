@@ -520,10 +520,7 @@
           "type": "string"
         },
         "Credits": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Credit"
-          }
+          "type": "string"
         },
         "CoinRewards": {
           "type": "array",

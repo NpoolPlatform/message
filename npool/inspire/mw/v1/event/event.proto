@@ -146,7 +146,7 @@ message CouponReward {
 message Reward {
   string TaskID = 10;
   string UserID = 20;
-  repeated Credit Credits = 30;
+  string Credits = 30;
   repeated CoinReward CoinRewards = 40;
   repeated CouponReward CouponRewards = 50;
 }
@@ -198,3 +198,37 @@ message RewardUnReliableRequest {
 }
 
 message RewardUnReliableResponse {}
+
+message CreditRewardRequest {
+  string AppID = 10;
+  string UserID = 20;
+  string TaskID = 30;
+  string TaskUserID = 40;
+  string EventID = 50;
+  string Credits = 60;
+  uint32 RetryCount = 70;
+}
+
+message CreditRewardResponse {}
+
+message CoinRewardRequest {
+  string AppID = 10;
+  string UserID = 20;
+  string TaskID = 30;
+  string TaskUserID = 40;
+  string EventID = 50;
+  repeated CoinReward CoinRewards = 60;
+}
+
+message CoinRewardResponse {}
+
+message CouponRewardRequest {
+  string AppID = 10;
+  string UserID = 20;
+  string TaskID = 30;
+  string TaskUserID = 40;
+  string EventID = 50;
+  repeated CouponReward Coupons = 60;
+}
+
+message CouponRewardResponse {}

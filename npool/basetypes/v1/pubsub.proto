@@ -34,6 +34,9 @@ enum MsgID {
   CalculateEventRewardReq = 6000;
   ReliableEventRewardReq = 6010;
   UnReliableEventRewardReq = 6020;
+  EventRewardCreditReq = 6030;
+  EventRewardCoinReq = 6040;
+  EventRewardCouponReq = 6050;
 
   CreateSampleMsgReq = 100000000;
 }
