@@ -177,28 +177,6 @@ message CalcluateEventRewardsResponse {
   repeated Reward Info = 10;
 }
 
-message RewardReliableRequest {
-  string AppID = 10;
-  string UserID = 20;
-  string TaskID = 30;
-  string EventID = 40;
-  repeated Credit Credits = 50;
-  repeated CoinReward CoinRewards = 60;
-  uint32 RetryCount = 70;
-}
-
-message RewardReliableResponse {}
-
-message RewardUnReliableRequest {
-  string AppID = 10;
-  string UserID = 20;
-  string TaskID = 30;
-  string EventID = 40;
-  repeated CouponReward Coupons = 50;
-}
-
-message RewardUnReliableResponse {}
-
 message CreditRewardRequest {
   string AppID = 10;
   string UserID = 20;
