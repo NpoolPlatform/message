@@ -31,7 +31,6 @@ message TaskUserReq {
     optional string TaskID      = 50;
     optional string EventID     = 60;
     optional basetypes.inspire.v1.TaskState TaskState     = 70;
-    optional string RewardInfo  = 80;
     optional basetypes.inspire.v1.RewardState RewardState = 90;
 }
 
@@ -51,11 +50,9 @@ message TaskUser {
     // @inject_tag: sql:"task_state"
     string          TaskStateStr    = 70;
     basetypes.inspire.v1.TaskState TaskState     = 80;
-    // @inject_tag: sql:"reward_info"
-    string          RewardInfo      = 90;
     // @inject_tag: sql:"reward_state"
-    string          RewardStateStr  = 100;
-    basetypes.inspire.v1.RewardState RewardState = 110;
+    string          RewardStateStr  = 90;
+    basetypes.inspire.v1.RewardState RewardState = 100;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt       = 1000;
     // @inject_tag: sql:"updated_at"

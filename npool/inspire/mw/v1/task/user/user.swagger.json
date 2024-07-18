@@ -247,10 +247,6 @@
         "TaskState": {
           "$ref": "#/definitions/v1TaskState"
         },
-        "RewardInfo": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"reward_info\""
-        },
         "RewardStateStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"reward_state\""
@@ -294,9 +290,6 @@
         },
         "TaskState": {
           "$ref": "#/definitions/v1TaskState"
-        },
-        "RewardInfo": {
-          "type": "string"
         },
         "RewardState": {
           "$ref": "#/definitions/v1RewardState"
