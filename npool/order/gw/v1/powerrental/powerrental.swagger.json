@@ -1111,6 +1111,15 @@
           "type": "integer",
           "format": "int64"
         },
+        "MiningPoolUserID": {
+          "type": "string"
+        },
+        "MiningPoolUserName": {
+          "type": "string"
+        },
+        "MiningPoolReadPageLink": {
+          "type": "string"
+        },
         "Units": {
           "type": "string"
         },

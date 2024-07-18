@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.18.1
-// source: npool/account/mw/v1/orderaccount/orderaccount.proto
+// source: npool/account/gw/v1/orderaccount/orderaccount.proto
 
 package orderaccount
 
@@ -19,12 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateOrderAccount_FullMethodName     = "/account.middleware.orderaccount.v1.Middleware/CreateOrderAccount"
-	Middleware_GetOrderAccount_FullMethodName        = "/account.middleware.orderaccount.v1.Middleware/GetOrderAccount"
-	Middleware_GetOrderAccounts_FullMethodName       = "/account.middleware.orderaccount.v1.Middleware/GetOrderAccounts"
-	Middleware_ExistOrderAccount_FullMethodName      = "/account.middleware.orderaccount.v1.Middleware/ExistOrderAccount"
-	Middleware_ExistOrderAccountConds_FullMethodName = "/account.middleware.orderaccount.v1.Middleware/ExistOrderAccountConds"
-	Middleware_DeleteOrderAccount_FullMethodName     = "/account.middleware.orderaccount.v1.Middleware/DeleteOrderAccount"
+	Middleware_CreateOrderAccount_FullMethodName = "/account.gateway.orderaccount.v1.Middleware/CreateOrderAccount"
+	Middleware_GetOrderAccount_FullMethodName    = "/account.gateway.orderaccount.v1.Middleware/GetOrderAccount"
+	Middleware_GetOrderAccounts_FullMethodName   = "/account.gateway.orderaccount.v1.Middleware/GetOrderAccounts"
+	Middleware_DeleteOrderAccount_FullMethodName = "/account.gateway.orderaccount.v1.Middleware/DeleteOrderAccount"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,8 +32,6 @@ type MiddlewareClient interface {
 	CreateOrderAccount(ctx context.Context, in *CreateOrderAccountRequest, opts ...grpc.CallOption) (*CreateOrderAccountResponse, error)
 	GetOrderAccount(ctx context.Context, in *GetOrderAccountRequest, opts ...grpc.CallOption) (*GetOrderAccountResponse, error)
 	GetOrderAccounts(ctx context.Context, in *GetOrderAccountsRequest, opts ...grpc.CallOption) (*GetOrderAccountsResponse, error)
-	ExistOrderAccount(ctx context.Context, in *ExistOrderAccountRequest, opts ...grpc.CallOption) (*ExistOrderAccountResponse, error)
-	ExistOrderAccountConds(ctx context.Context, in *ExistOrderAccountCondsRequest, opts ...grpc.CallOption) (*ExistOrderAccountCondsResponse, error)
 	DeleteOrderAccount(ctx context.Context, in *DeleteOrderAccountRequest, opts ...grpc.CallOption) (*DeleteOrderAccountResponse, error)
 }
 
@@ -74,24 +70,6 @@ func (c *middlewareClient) GetOrderAccounts(ctx context.Context, in *GetOrderAcc
 	return out, nil
 }
 
-func (c *middlewareClient) ExistOrderAccount(ctx context.Context, in *ExistOrderAccountRequest, opts ...grpc.CallOption) (*ExistOrderAccountResponse, error) {
-	out := new(ExistOrderAccountResponse)
-	err := c.cc.Invoke(ctx, Middleware_ExistOrderAccount_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) ExistOrderAccountConds(ctx context.Context, in *ExistOrderAccountCondsRequest, opts ...grpc.CallOption) (*ExistOrderAccountCondsResponse, error) {
-	out := new(ExistOrderAccountCondsResponse)
-	err := c.cc.Invoke(ctx, Middleware_ExistOrderAccountConds_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeleteOrderAccount(ctx context.Context, in *DeleteOrderAccountRequest, opts ...grpc.CallOption) (*DeleteOrderAccountResponse, error) {
 	out := new(DeleteOrderAccountResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteOrderAccount_FullMethodName, in, out, opts...)
@@ -108,8 +86,6 @@ type MiddlewareServer interface {
 	CreateOrderAccount(context.Context, *CreateOrderAccountRequest) (*CreateOrderAccountResponse, error)
 	GetOrderAccount(context.Context, *GetOrderAccountRequest) (*GetOrderAccountResponse, error)
 	GetOrderAccounts(context.Context, *GetOrderAccountsRequest) (*GetOrderAccountsResponse, error)
-	ExistOrderAccount(context.Context, *ExistOrderAccountRequest) (*ExistOrderAccountResponse, error)
-	ExistOrderAccountConds(context.Context, *ExistOrderAccountCondsRequest) (*ExistOrderAccountCondsResponse, error)
 	DeleteOrderAccount(context.Context, *DeleteOrderAccountRequest) (*DeleteOrderAccountResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -126,12 +102,6 @@ func (UnimplementedMiddlewareServer) GetOrderAccount(context.Context, *GetOrderA
 }
 func (UnimplementedMiddlewareServer) GetOrderAccounts(context.Context, *GetOrderAccountsRequest) (*GetOrderAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrderAccounts not implemented")
-}
-func (UnimplementedMiddlewareServer) ExistOrderAccount(context.Context, *ExistOrderAccountRequest) (*ExistOrderAccountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistOrderAccount not implemented")
-}
-func (UnimplementedMiddlewareServer) ExistOrderAccountConds(context.Context, *ExistOrderAccountCondsRequest) (*ExistOrderAccountCondsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExistOrderAccountConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteOrderAccount(context.Context, *DeleteOrderAccountRequest) (*DeleteOrderAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteOrderAccount not implemented")
@@ -203,42 +173,6 @@ func _Middleware_GetOrderAccounts_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_ExistOrderAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistOrderAccountRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistOrderAccount(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_ExistOrderAccount_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ExistOrderAccount(ctx, req.(*ExistOrderAccountRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_ExistOrderAccountConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExistOrderAccountCondsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistOrderAccountConds(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_ExistOrderAccountConds_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ExistOrderAccountConds(ctx, req.(*ExistOrderAccountCondsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeleteOrderAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteOrderAccountRequest)
 	if err := dec(in); err != nil {
@@ -261,7 +195,7 @@ func _Middleware_DeleteOrderAccount_Handler(srv interface{}, ctx context.Context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "account.middleware.orderaccount.v1.Middleware",
+	ServiceName: "account.gateway.orderaccount.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -277,18 +211,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetOrderAccounts_Handler,
 		},
 		{
-			MethodName: "ExistOrderAccount",
-			Handler:    _Middleware_ExistOrderAccount_Handler,
-		},
-		{
-			MethodName: "ExistOrderAccountConds",
-			Handler:    _Middleware_ExistOrderAccountConds_Handler,
-		},
-		{
 			MethodName: "DeleteOrderAccount",
 			Handler:    _Middleware_DeleteOrderAccount_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "npool/account/mw/v1/orderaccount/orderaccount.proto",
+	Metadata: "npool/account/gw/v1/orderaccount/orderaccount.proto",
 }

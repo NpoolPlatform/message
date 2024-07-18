@@ -19,12 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateOrderBenefit_FullMethodName     = "/account.middleware.orderbenefit.v1.Middleware/CreateOrderBenefit"
-	Middleware_GetOrderBenefit_FullMethodName        = "/account.middleware.orderbenefit.v1.Middleware/GetOrderBenefit"
-	Middleware_GetOrderBenefits_FullMethodName       = "/account.middleware.orderbenefit.v1.Middleware/GetOrderBenefits"
-	Middleware_ExistOrderBenefit_FullMethodName      = "/account.middleware.orderbenefit.v1.Middleware/ExistOrderBenefit"
-	Middleware_ExistOrderBenefitConds_FullMethodName = "/account.middleware.orderbenefit.v1.Middleware/ExistOrderBenefitConds"
-	Middleware_DeleteOrderBenefit_FullMethodName     = "/account.middleware.orderbenefit.v1.Middleware/DeleteOrderBenefit"
+	Middleware_CreateOrderBenefit_FullMethodName          = "/account.middleware.orderbenefit.v1.Middleware/CreateOrderBenefit"
+	Middleware_CreateOrderBenefitByAddress_FullMethodName = "/account.middleware.orderbenefit.v1.Middleware/CreateOrderBenefitByAddress"
+	Middleware_GetOrderBenefit_FullMethodName             = "/account.middleware.orderbenefit.v1.Middleware/GetOrderBenefit"
+	Middleware_GetOrderBenefits_FullMethodName            = "/account.middleware.orderbenefit.v1.Middleware/GetOrderBenefits"
+	Middleware_ExistOrderBenefit_FullMethodName           = "/account.middleware.orderbenefit.v1.Middleware/ExistOrderBenefit"
+	Middleware_ExistOrderBenefitConds_FullMethodName      = "/account.middleware.orderbenefit.v1.Middleware/ExistOrderBenefitConds"
+	Middleware_DeleteOrderBenefit_FullMethodName          = "/account.middleware.orderbenefit.v1.Middleware/DeleteOrderBenefit"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -32,6 +33,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateOrderBenefit(ctx context.Context, in *CreateOrderBenefitRequest, opts ...grpc.CallOption) (*CreateOrderBenefitResponse, error)
+	CreateOrderBenefitByAddress(ctx context.Context, in *CreateOrderBenefitByAddressRequest, opts ...grpc.CallOption) (*CreateOrderBenefitByAddressResponse, error)
 	GetOrderBenefit(ctx context.Context, in *GetOrderBenefitRequest, opts ...grpc.CallOption) (*GetOrderBenefitResponse, error)
 	GetOrderBenefits(ctx context.Context, in *GetOrderBenefitsRequest, opts ...grpc.CallOption) (*GetOrderBenefitsResponse, error)
 	ExistOrderBenefit(ctx context.Context, in *ExistOrderBenefitRequest, opts ...grpc.CallOption) (*ExistOrderBenefitResponse, error)
@@ -50,6 +52,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateOrderBenefit(ctx context.Context, in *CreateOrderBenefitRequest, opts ...grpc.CallOption) (*CreateOrderBenefitResponse, error) {
 	out := new(CreateOrderBenefitResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateOrderBenefit_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateOrderBenefitByAddress(ctx context.Context, in *CreateOrderBenefitByAddressRequest, opts ...grpc.CallOption) (*CreateOrderBenefitByAddressResponse, error) {
+	out := new(CreateOrderBenefitByAddressResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateOrderBenefitByAddress_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,6 +117,7 @@ func (c *middlewareClient) DeleteOrderBenefit(ctx context.Context, in *DeleteOrd
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateOrderBenefit(context.Context, *CreateOrderBenefitRequest) (*CreateOrderBenefitResponse, error)
+	CreateOrderBenefitByAddress(context.Context, *CreateOrderBenefitByAddressRequest) (*CreateOrderBenefitByAddressResponse, error)
 	GetOrderBenefit(context.Context, *GetOrderBenefitRequest) (*GetOrderBenefitResponse, error)
 	GetOrderBenefits(context.Context, *GetOrderBenefitsRequest) (*GetOrderBenefitsResponse, error)
 	ExistOrderBenefit(context.Context, *ExistOrderBenefitRequest) (*ExistOrderBenefitResponse, error)
@@ -120,6 +132,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateOrderBenefit(context.Context, *CreateOrderBenefitRequest) (*CreateOrderBenefitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOrderBenefit not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateOrderBenefitByAddress(context.Context, *CreateOrderBenefitByAddressRequest) (*CreateOrderBenefitByAddressResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrderBenefitByAddress not implemented")
 }
 func (UnimplementedMiddlewareServer) GetOrderBenefit(context.Context, *GetOrderBenefitRequest) (*GetOrderBenefitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrderBenefit not implemented")
@@ -163,6 +178,24 @@ func _Middleware_CreateOrderBenefit_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateOrderBenefit(ctx, req.(*CreateOrderBenefitRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateOrderBenefitByAddress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOrderBenefitByAddressRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateOrderBenefitByAddress(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateOrderBenefitByAddress_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateOrderBenefitByAddress(ctx, req.(*CreateOrderBenefitByAddressRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -267,6 +300,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateOrderBenefit",
 			Handler:    _Middleware_CreateOrderBenefit_Handler,
+		},
+		{
+			MethodName: "CreateOrderBenefitByAddress",
+			Handler:    _Middleware_CreateOrderBenefitByAddress_Handler,
 		},
 		{
 			MethodName: "GetOrderBenefit",
