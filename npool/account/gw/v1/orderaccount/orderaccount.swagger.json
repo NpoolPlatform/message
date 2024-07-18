@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/account/mw/v1/orderaccount/orderaccount.proto",
+    "title": "npool/account/gw/v1/orderaccount/orderaccount.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,7 +16,39 @@
     "application/json"
   ],
   "paths": {
-    "/v1/orderaccount_DeleteOrderAccount": {
+    "/v1/create/orderaccount": {
+      "post": {
+        "operationId": "Middleware_CreateOrderAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateOrderAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateOrderAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/delete/orderaccount": {
       "post": {
         "operationId": "Middleware_DeleteOrderAccount",
         "responses": {
@@ -40,6 +72,70 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1DeleteOrderAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/get/orderaccount": {
+      "post": {
+        "operationId": "Middleware_GetOrderAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetOrderAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetOrderAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
+    "/v1/get/orderaccounts": {
+      "post": {
+        "operationId": "Middleware_GetOrderAccounts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetOrderAccountsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetOrderAccountsRequest"
             }
           }
         ],
@@ -127,6 +223,26 @@
         }
       }
     },
+    "v1CreateOrderAccountRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "UsedFor": {
+          "$ref": "#/definitions/v1AccountUsedFor"
+        }
+      }
+    },
     "v1CreateOrderAccountResponse": {
       "type": "object",
       "properties": {
@@ -138,8 +254,18 @@
     "v1DeleteOrderAccountRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderAccountReq"
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
         }
       }
     },
@@ -151,19 +277,17 @@
         }
       }
     },
-    "v1ExistOrderAccountCondsResponse": {
+    "v1GetOrderAccountRequest": {
       "type": "object",
       "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistOrderAccountResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
         }
       }
     },
@@ -172,6 +296,22 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1OrderAccount"
+        }
+      }
+    },
+    "v1GetOrderAccountsRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "$ref": "#/definitions/v1Conds"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -195,68 +335,36 @@
       "properties": {
         "ID": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
+          "format": "int64"
         },
         "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
+          "type": "string"
         },
         "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
+          "type": "string"
         },
         "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
+          "type": "string"
         },
         "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
+          "type": "string"
         },
         "Address": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"address\""
+          "type": "string"
         },
         "UsedForStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"used_for\""
+          "type": "string"
         },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor"
         },
         "CreatedAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
+          "format": "int64"
         },
         "UpdatedAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v1OrderAccountReq": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1AccountUsedFor"
+          "format": "int64"
         }
       }
     },
