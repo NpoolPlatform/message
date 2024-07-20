@@ -1025,6 +1025,16 @@
       ],
       "default": "DefaultGoodSaleMode"
     },
+    "v1GoodSettlementType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodSettlementType",
+        "GoodSettledByPaymentPercent",
+        "GoodSettledByPaymentAmount",
+        "GoodSettledByProfitPercent"
+      ],
+      "default": "DefaultGoodSettlementType"
+    },
     "v1GoodStartMode": {
       "type": "string",
       "enum": [
@@ -1154,6 +1164,24 @@
         "RequiredAppGoodName": {
           "type": "string",
           "title": "@inject_tag: sql:\"required_app_good_name\""
+        },
+        "RequiredAppGoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"required_app_good_type\""
+        },
+        "RequiredAppGoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "RequiredAppGoodSettlementTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"required_app_good_settlement_type\""
+        },
+        "RequiredAppGoodSettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
+        },
+        "RequiredAppGoodUnitValue": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"required_app_good_unit_value\""
         },
         "Must": {
           "type": "integer",
