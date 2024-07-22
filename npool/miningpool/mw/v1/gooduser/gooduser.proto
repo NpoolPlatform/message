@@ -22,7 +22,7 @@ service Middleware {
 message GoodUserReq {
   optional uint32 ID = 10;
   optional string EntID = 20;
-  optional string PoolCoinTypeID = 30;
+  repeated string CoinTypeIDs = 30;
   optional string RootUserID = 40;
   optional string Name = 50;
   optional string ReadPageLink = 60;
@@ -44,8 +44,10 @@ message GoodUser {
   // @inject_tag: sql:"miningpool_type"
   string MiningpoolTypeStr = 80;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 81;
-  // @inject_tag: sql:"pool_coin_type_id"
-  string PoolCoinTypeID = 90;
+  // @inject_tag: sql:"pool_coin_type_ids"
+  repeated string PoolCoinTypeIDs = 90;
+  // @inject_tag: sql:"coin_type_ids"
+  repeated string CoinTypeIDs = 91;
   // @inject_tag: sql:"coin_type"
   string CoinTypeStr = 100;
   basetypes.v1.CoinType CoinType = 101;
@@ -61,9 +63,8 @@ message Conds {
   optional basetypes.v1.Uint32Val ID = 9;
   optional basetypes.v1.StringVal EntID = 10;
   optional basetypes.v1.StringVal Name = 20;
-  optional basetypes.v1.StringVal PoolCoinTypeID = 30;
-  optional basetypes.v1.StringVal RootUserID = 40;
-  optional basetypes.v1.StringSliceVal EntIDs = 50;
+  optional basetypes.v1.StringVal RootUserID = 30;
+  optional basetypes.v1.StringSliceVal EntIDs = 40;
 }
 
 message CreateGoodUserRequest { GoodUserReq Info = 10; }

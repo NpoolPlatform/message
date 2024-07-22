@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -15,7 +15,72 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/v1/get/orderbenefit": {
+      "post": {
+        "operationId": "Gateway_GetAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAccountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAccountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/orderbenefits": {
+      "post": {
+        "operationId": "Gateway_GetAccounts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAccountsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAccountsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -44,47 +109,7 @@
         }
       }
     },
-    "v1AccountUsedFor": {
-      "type": "string",
-      "enum": [
-        "DefaultAccountUsedFor",
-        "GoodBenefit",
-        "UserBenefitHot",
-        "UserBenefitCold",
-        "PlatformBenefitCold",
-        "GasProvider",
-        "UserWithdraw",
-        "UserDeposit",
-        "GoodPayment",
-        "PaymentCollector",
-        "UserDirectBenefit"
-      ],
-      "default": "DefaultAccountUsedFor"
-    },
-    "v1GetOrderBenefitResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1OrderBenefit"
-        }
-      }
-    },
-    "v1GetOrderBenefitsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1OrderBenefit"
-          }
-        },
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1OrderBenefit": {
+    "v1Account": {
       "type": "object",
       "properties": {
         "ID": {
@@ -100,29 +125,106 @@
         "UserID": {
           "type": "string"
         },
-        "OrderAccountID": {
-          "type": "string"
-        },
-        "OrderID": {
-          "type": "string"
-        },
         "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
           "type": "string"
         },
         "Address": {
           "type": "string"
         },
-        "UsedForStr": {
+        "OrderID": {
           "type": "string"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "Blocked": {
+          "type": "boolean"
+        },
+        "Locked": {
+          "type": "boolean"
         },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor"
+        },
+        "UsedForStr": {
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
         },
         "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AccountUsedFor": {
+      "type": "string",
+      "enum": [
+        "DefaultAccountUsedFor",
+        "GoodBenefit",
+        "UserBenefitHot",
+        "UserBenefitCold",
+        "PlatformBenefitCold",
+        "GasProvider",
+        "UserWithdraw",
+        "UserDeposit",
+        "GoodPayment",
+        "PaymentCollector",
+        "UserDirectBenefit",
+        "OrderBenefit"
+      ],
+      "default": "DefaultAccountUsedFor"
+    },
+    "v1GetAccountRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1GetAccountsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAccountsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Account"
+          }
+        },
+        "Total": {
           "type": "integer",
           "format": "int64"
         }

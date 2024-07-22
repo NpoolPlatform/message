@@ -92,9 +92,6 @@
         "Name": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "PoolCoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "RootUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -183,9 +180,19 @@
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
-        "PoolCoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"pool_coin_type_id\""
+        "PoolCoinTypeIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "@inject_tag: sql:\"pool_coin_type_ids\""
+        },
+        "CoinTypeIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "@inject_tag: sql:\"coin_type_ids\""
         },
         "CoinTypeStr": {
           "type": "string",
@@ -220,8 +227,11 @@
         "EntID": {
           "type": "string"
         },
-        "PoolCoinTypeID": {
-          "type": "string"
+        "CoinTypeIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "RootUserID": {
           "type": "string"

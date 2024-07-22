@@ -109,17 +109,6 @@
         }
       }
     },
-    "v1BoolVal": {
-      "type": "object",
-      "properties": {
-        "Op": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "boolean"
-        }
-      }
-    },
     "v1CoinType": {
       "type": "string",
       "enum": [
@@ -176,9 +165,6 @@
         },
         "Name": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "AutoPay": {
-          "$ref": "#/definitions/v1BoolVal"
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
@@ -295,21 +281,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"name\""
         },
-        "Proportion": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"proportion\""
-        },
-        "RevenueAddress": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"revenue_address\""
-        },
         "ReadPageLink": {
           "type": "string",
           "title": "@inject_tag: sql:\"read_page_link\""
-        },
-        "AutoPay": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"auto_pay\""
         },
         "MiningpoolTypeStr": {
           "type": "string",
@@ -360,7 +334,8 @@
           "type": "string"
         },
         "Proportion": {
-          "type": "string"
+          "type": "string",
+          "title": "just for update"
         },
         "RevenueAddress": {
           "type": "string"

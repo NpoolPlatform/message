@@ -6,37 +6,36 @@ option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/good/stoc
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 message MiningGoodStock {
-    uint32 ID = 10;
-    string EntID = 20;
-    string GoodStockID = 30;
-    string MiningPoolID = 40;
-    string PoolGoodUserID = 50;
-    string Total      = 60;
-    string SpotQuantity = 70;
-    string Locked     = 80;
-    string WaitStart  = 90;
-    string InService  = 100;
-    string Sold       = 110;
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 120;
-    string Name = 130;
-    string Site = 140;
-    string Logo = 150;
-    string Description = 160;
-    string ReadPageLink = 170;
+  uint32 ID = 10;
+  string EntID = 20;
+  string GoodStockID = 30;
+  string MiningPoolID = 40;
+  string PoolGoodUserID = 50;
+  string Total = 60;
+  string SpotQuantity = 70;
+  string Locked = 80;
+  string WaitStart = 90;
+  string InService = 100;
+  string Sold = 110;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 120;
+  string Name = 130;
+  string Site = 140;
+  string Logo = 150;
+  string Description = 160;
+  string ReadPageLink = 170;
 }
 
-
 message MiningGoodStockInfo {
-    string EntID = 10;
-    string GoodStockID = 20;
-    string MiningPoolID = 30;
-    string PoolGoodUserID = 40;
-    string Total      = 50;
-    string SpotQuantity = 60;
-    basetypes.miningpool.v1.MiningpoolType MiningpoolType = 70;
-    string Name = 80;
-    string Site = 90;
-    string Logo = 100;
-    string Description = 110;
-    string ReadPageLink = 120;
+  string EntID = 10;
+  string GoodStockID = 20;
+  string MiningPoolID = 30;
+  string PoolGoodUserID = 40;
+  string Total = 50;
+  string SpotQuantity = 60;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 70;
+  string Name = 80;
+  string Site = 90;
+  string Logo = 100;
+  string Description = 110;
+  string ReadPageLink = 120;
 }

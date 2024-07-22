@@ -606,8 +606,11 @@
         "RootUserID": {
           "type": "string"
         },
-        "CoinTypeID": {
-          "type": "string"
+        "CoinTypeIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "Total": {
           "type": "string"
