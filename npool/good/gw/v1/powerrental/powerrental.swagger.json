@@ -215,6 +215,9 @@
         "Sold": {
           "type": "string"
         },
+        "State": {
+          "$ref": "#/definitions/v1MiningStockState"
+        },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
@@ -232,6 +235,40 @@
         },
         "ReadPageLink": {
           "type": "string"
+        }
+      }
+    },
+    "goodgatewaygood1stockv1MiningGoodStockReq": {
+      "type": "object",
+      "properties": {
+        "PoolRootUserID": {
+          "type": "string"
+        },
+        "Total": {
+          "type": "string"
+        }
+      }
+    },
+    "goodmiddlewaregood1stockv1MiningGoodStockReq": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "PoolRootUserID": {
+          "type": "string"
+        },
+        "MiningPoolID": {
+          "type": "string"
+        },
+        "PoolGoodUserID": {
+          "type": "string"
+        },
+        "Total": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1MiningStockState"
         }
       }
     },
@@ -328,7 +365,7 @@
         "MiningGoodStocks": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1MiningGoodStockReq"
+            "$ref": "#/definitions/goodgatewaygood1stockv1MiningGoodStockReq"
           }
         }
       }
@@ -439,7 +476,7 @@
         "MiningGoodStocks": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1MiningGoodStockReq"
+            "$ref": "#/definitions/goodmiddlewaregood1stockv1MiningGoodStockReq"
           }
         }
       }
@@ -597,22 +634,18 @@
       ],
       "default": "DefaultGoodType"
     },
-    "v1MiningGoodStockReq": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        },
-        "MiningPoolID": {
-          "type": "string"
-        },
-        "PoolGoodUserID": {
-          "type": "string"
-        },
-        "Total": {
-          "type": "string"
-        }
-      }
+    "v1MiningStockState": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningStockState",
+        "MiningStockStateWait",
+        "MiningStockStateCreateGoodUser",
+        "MiningStockStateCheckHashRate",
+        "MiningStockStateDone",
+        "MiningStockStateFail"
+      ],
+      "default": "DefaultMiningStockState",
+      "title": "initial state: MiningStockStateWait\n|\nv\nMiningStockStateCreateGoodUser---------------\n|                             |\nv                             |\nMiningStockStateCheckHashRate---------------\n|                             |\nv                             v\nMiningStockStateDone             MiningStockStateFail"
     },
     "v1MiningpoolType": {
       "type": "string",

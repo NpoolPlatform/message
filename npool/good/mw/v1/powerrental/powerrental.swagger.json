@@ -234,6 +234,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
         "GoodStockID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_stock_id\""
@@ -245,6 +249,10 @@
         "PoolGoodUserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"pool_good_user_id\""
+        },
+        "PoolRootUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"pool_root_user_id\""
         },
         "Total": {
           "type": "string",
@@ -269,6 +277,10 @@
         "Sold": {
           "type": "string",
           "title": "@inject_tag: sql:\"sold\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1MiningStockState",
+          "title": "@inject_tag: sql:\"state\""
         }
       }
     },
@@ -276,6 +288,9 @@
       "type": "object",
       "properties": {
         "EntID": {
+          "type": "string"
+        },
+        "PoolRootUserID": {
           "type": "string"
         },
         "MiningPoolID": {
@@ -286,8 +301,24 @@
         },
         "Total": {
           "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1MiningStockState"
         }
       }
+    },
+    "v1MiningStockState": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningStockState",
+        "MiningStockStateWait",
+        "MiningStockStateCreateGoodUser",
+        "MiningStockStateCheckHashRate",
+        "MiningStockStateDone",
+        "MiningStockStateFail"
+      ],
+      "default": "DefaultMiningStockState",
+      "title": "initial state: MiningStockStateWait\n|\nv\nMiningStockStateCreateGoodUser---------------\n|                             |\nv                             |\nMiningStockStateCheckHashRate---------------\n|                             |\nv                             v\nMiningStockStateDone             MiningStockStateFail"
     },
     "v1PowerRental": {
       "type": "object",
