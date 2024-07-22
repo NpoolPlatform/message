@@ -4,6 +4,12 @@ package good.gateway.good1.stock.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/good/stock";
 import "npool/basetypes/miningpool/v1/enums.proto";
+import "npool/basetypes/good/v1/enums.proto";
+
+message MiningGoodStockReq {
+  string PoolRootUserID = 10;
+  string Total = 20;
+}
 
 message MiningGoodStock {
   uint32 ID = 10;
@@ -17,12 +23,13 @@ message MiningGoodStock {
   string WaitStart = 90;
   string InService = 100;
   string Sold = 110;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 120;
-  string Name = 130;
-  string Site = 140;
-  string Logo = 150;
-  string Description = 160;
-  string ReadPageLink = 170;
+  basetypes.good.v1.MiningStockState State = 120;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 130;
+  string Name = 140;
+  string Site = 150;
+  string Logo = 160;
+  string Description = 170;
+  string ReadPageLink = 180;
 }
 
 message MiningGoodStockInfo {
