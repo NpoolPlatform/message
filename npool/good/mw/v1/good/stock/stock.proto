@@ -6,8 +6,8 @@ option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/stoc
 
 message MiningGoodStockReq {
   optional string EntID = 10;
-  optional string RootUserID = 20;
-  repeated string CoinTypeIDs = 30;
+  optional string MiningPoolID = 20;
+  optional string PoolGoodUserID = 30;
   optional string Total = 40;
 }
 

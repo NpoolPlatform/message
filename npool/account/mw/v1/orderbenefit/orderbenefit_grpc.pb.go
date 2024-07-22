@@ -19,18 +19,18 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateAccount_FullMethodName     = "/account.middleware.orderbenefit.v1.Middleware/CreateAccount"
-	Middleware_GetAccount_FullMethodName        = "/account.middleware.orderbenefit.v1.Middleware/GetAccount"
-	Middleware_GetAccounts_FullMethodName       = "/account.middleware.orderbenefit.v1.Middleware/GetAccounts"
-	Middleware_ExistAccount_FullMethodName      = "/account.middleware.orderbenefit.v1.Middleware/ExistAccount"
-	Middleware_ExistAccountConds_FullMethodName = "/account.middleware.orderbenefit.v1.Middleware/ExistAccountConds"
-	Middleware_DeleteAccount_FullMethodName     = "/account.middleware.orderbenefit.v1.Middleware/DeleteAccount"
+	Gateway_CreateAccount_FullMethodName     = "/account.middleware.orderbenefit.v1.Gateway/CreateAccount"
+	Gateway_GetAccount_FullMethodName        = "/account.middleware.orderbenefit.v1.Gateway/GetAccount"
+	Gateway_GetAccounts_FullMethodName       = "/account.middleware.orderbenefit.v1.Gateway/GetAccounts"
+	Gateway_ExistAccount_FullMethodName      = "/account.middleware.orderbenefit.v1.Gateway/ExistAccount"
+	Gateway_ExistAccountConds_FullMethodName = "/account.middleware.orderbenefit.v1.Gateway/ExistAccountConds"
+	Gateway_DeleteAccount_FullMethodName     = "/account.middleware.orderbenefit.v1.Gateway/DeleteAccount"
 )
 
-// MiddlewareClient is the client API for Middleware service.
+// GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type MiddlewareClient interface {
+type GatewayClient interface {
 	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
 	GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
@@ -39,254 +39,254 @@ type MiddlewareClient interface {
 	DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error)
 }
 
-type middlewareClient struct {
+type gatewayClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
-	return &middlewareClient{cc}
+func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
+	return &gatewayClient{cc}
 }
 
-func (c *middlewareClient) CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error) {
+func (c *gatewayClient) CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error) {
 	out := new(CreateAccountResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateAccount_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Gateway_CreateAccount_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error) {
+func (c *gatewayClient) GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error) {
 	out := new(GetAccountResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetAccount_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Gateway_GetAccount_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error) {
+func (c *gatewayClient) GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error) {
 	out := new(GetAccountsResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetAccounts_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Gateway_GetAccounts_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) ExistAccount(ctx context.Context, in *ExistAccountRequest, opts ...grpc.CallOption) (*ExistAccountResponse, error) {
+func (c *gatewayClient) ExistAccount(ctx context.Context, in *ExistAccountRequest, opts ...grpc.CallOption) (*ExistAccountResponse, error) {
 	out := new(ExistAccountResponse)
-	err := c.cc.Invoke(ctx, Middleware_ExistAccount_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Gateway_ExistAccount_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) ExistAccountConds(ctx context.Context, in *ExistAccountCondsRequest, opts ...grpc.CallOption) (*ExistAccountCondsResponse, error) {
+func (c *gatewayClient) ExistAccountConds(ctx context.Context, in *ExistAccountCondsRequest, opts ...grpc.CallOption) (*ExistAccountCondsResponse, error) {
 	out := new(ExistAccountCondsResponse)
-	err := c.cc.Invoke(ctx, Middleware_ExistAccountConds_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Gateway_ExistAccountConds_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *middlewareClient) DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error) {
+func (c *gatewayClient) DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error) {
 	out := new(DeleteAccountResponse)
-	err := c.cc.Invoke(ctx, Middleware_DeleteAccount_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, Gateway_DeleteAccount_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// MiddlewareServer is the server API for Middleware service.
-// All implementations must embed UnimplementedMiddlewareServer
+// GatewayServer is the server API for Gateway service.
+// All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
-type MiddlewareServer interface {
+type GatewayServer interface {
 	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
 	GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
 	ExistAccount(context.Context, *ExistAccountRequest) (*ExistAccountResponse, error)
 	ExistAccountConds(context.Context, *ExistAccountCondsRequest) (*ExistAccountCondsResponse, error)
 	DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error)
-	mustEmbedUnimplementedMiddlewareServer()
+	mustEmbedUnimplementedGatewayServer()
 }
 
-// UnimplementedMiddlewareServer must be embedded to have forward compatible implementations.
-type UnimplementedMiddlewareServer struct {
+// UnimplementedGatewayServer must be embedded to have forward compatible implementations.
+type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error) {
+func (UnimplementedGatewayServer) CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAccount not implemented")
 }
-func (UnimplementedMiddlewareServer) GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error) {
+func (UnimplementedGatewayServer) GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccount not implemented")
 }
-func (UnimplementedMiddlewareServer) GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error) {
+func (UnimplementedGatewayServer) GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccounts not implemented")
 }
-func (UnimplementedMiddlewareServer) ExistAccount(context.Context, *ExistAccountRequest) (*ExistAccountResponse, error) {
+func (UnimplementedGatewayServer) ExistAccount(context.Context, *ExistAccountRequest) (*ExistAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAccount not implemented")
 }
-func (UnimplementedMiddlewareServer) ExistAccountConds(context.Context, *ExistAccountCondsRequest) (*ExistAccountCondsResponse, error) {
+func (UnimplementedGatewayServer) ExistAccountConds(context.Context, *ExistAccountCondsRequest) (*ExistAccountCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAccountConds not implemented")
 }
-func (UnimplementedMiddlewareServer) DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error) {
+func (UnimplementedGatewayServer) DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAccount not implemented")
 }
-func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
+func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
-// UnsafeMiddlewareServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to MiddlewareServer will
+// UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to GatewayServer will
 // result in compilation errors.
-type UnsafeMiddlewareServer interface {
-	mustEmbedUnimplementedMiddlewareServer()
+type UnsafeGatewayServer interface {
+	mustEmbedUnimplementedGatewayServer()
 }
 
-func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
-	s.RegisterService(&Middleware_ServiceDesc, srv)
+func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
+	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Middleware_CreateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_CreateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAccountRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateAccount(ctx, in)
+		return srv.(GatewayServer).CreateAccount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_CreateAccount_FullMethodName,
+		FullMethod: Gateway_CreateAccount_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateAccount(ctx, req.(*CreateAccountRequest))
+		return srv.(GatewayServer).CreateAccount(ctx, req.(*CreateAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAccountRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetAccount(ctx, in)
+		return srv.(GatewayServer).GetAccount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetAccount_FullMethodName,
+		FullMethod: Gateway_GetAccount_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetAccount(ctx, req.(*GetAccountRequest))
+		return srv.(GatewayServer).GetAccount(ctx, req.(*GetAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAccountsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetAccounts(ctx, in)
+		return srv.(GatewayServer).GetAccounts(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetAccounts_FullMethodName,
+		FullMethod: Gateway_GetAccounts_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetAccounts(ctx, req.(*GetAccountsRequest))
+		return srv.(GatewayServer).GetAccounts(ctx, req.(*GetAccountsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_ExistAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_ExistAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAccountRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistAccount(ctx, in)
+		return srv.(GatewayServer).ExistAccount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_ExistAccount_FullMethodName,
+		FullMethod: Gateway_ExistAccount_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ExistAccount(ctx, req.(*ExistAccountRequest))
+		return srv.(GatewayServer).ExistAccount(ctx, req.(*ExistAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_ExistAccountConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_ExistAccountConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistAccountCondsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).ExistAccountConds(ctx, in)
+		return srv.(GatewayServer).ExistAccountConds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_ExistAccountConds_FullMethodName,
+		FullMethod: Gateway_ExistAccountConds_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).ExistAccountConds(ctx, req.(*ExistAccountCondsRequest))
+		return srv.(GatewayServer).ExistAccountConds(ctx, req.(*ExistAccountCondsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_DeleteAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_DeleteAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAccountRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).DeleteAccount(ctx, in)
+		return srv.(GatewayServer).DeleteAccount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_DeleteAccount_FullMethodName,
+		FullMethod: Gateway_DeleteAccount_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteAccount(ctx, req.(*DeleteAccountRequest))
+		return srv.(GatewayServer).DeleteAccount(ctx, req.(*DeleteAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
+// Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "account.middleware.orderbenefit.v1.Middleware",
-	HandlerType: (*MiddlewareServer)(nil),
+var Gateway_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "account.middleware.orderbenefit.v1.Gateway",
+	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateAccount",
-			Handler:    _Middleware_CreateAccount_Handler,
+			Handler:    _Gateway_CreateAccount_Handler,
 		},
 		{
 			MethodName: "GetAccount",
-			Handler:    _Middleware_GetAccount_Handler,
+			Handler:    _Gateway_GetAccount_Handler,
 		},
 		{
 			MethodName: "GetAccounts",
-			Handler:    _Middleware_GetAccounts_Handler,
+			Handler:    _Gateway_GetAccounts_Handler,
 		},
 		{
 			MethodName: "ExistAccount",
-			Handler:    _Middleware_ExistAccount_Handler,
+			Handler:    _Gateway_ExistAccount_Handler,
 		},
 		{
 			MethodName: "ExistAccountConds",
-			Handler:    _Middleware_ExistAccountConds_Handler,
+			Handler:    _Gateway_ExistAccountConds_Handler,
 		},
 		{
 			MethodName: "DeleteAccount",
-			Handler:    _Middleware_DeleteAccount_Handler,
+			Handler:    _Gateway_DeleteAccount_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
