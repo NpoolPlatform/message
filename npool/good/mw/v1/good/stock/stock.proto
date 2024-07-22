@@ -7,20 +7,13 @@ option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/good/stoc
 import "npool/basetypes/good/v1/enums.proto";
 import "npool/basetypes/v1/conds.proto";
 
-service Middleware {
-  rpc GetMiningGoodStocks(GetMiningGoodStocksRequest)
-      returns (GetMiningGoodStocksResponse) {}
-  rpc UpdateMiningGoodStocks(UpdateMiningGoodStocksRequest)
-      returns (UpdateMiningGoodStocksResponse) {}
-}
-
 message MiningGoodStockReq {
   optional string EntID = 10;
   optional string PoolRootUserID = 20;
   optional string MiningPoolID = 30;
   optional string PoolGoodUserID = 40;
   optional string Total = 50;
-  optional basetypes.good.v1.MiningStockState State = 60;
+  optional basetypes.good.v1.GoodState State = 60;
 }
 
 message MiningGoodStock {
@@ -51,7 +44,7 @@ message MiningGoodStock {
   // @inject_tag: sql:"sold"
   string Sold = 110;
   // @inject_tag: sql:"state"
-  basetypes.good.v1.MiningStockState State = 120;
+  basetypes.good.v1.GoodState State = 120;
 }
 
 message MiningGoodStockInfo {
@@ -78,18 +71,3 @@ message Conds {
   optional basetypes.v1.StringVal PoolRootUserID = 60;
   optional basetypes.v1.StringVal State = 70;
 }
-
-message GetMiningGoodStocksRequest {
-  Conds Conds = 10;
-  int32 Offset = 20;
-  int32 Limit = 30;
-}
-
-message GetMiningGoodStocksResponse {
-  repeated MiningGoodStock Infos = 10;
-  uint32 Total = 20;
-}
-
-message UpdateMiningGoodStocksRequest { MiningGoodStockReq Info = 10; }
-
-message UpdateMiningGoodStocksResponse { MiningGoodStock Info = 10; }

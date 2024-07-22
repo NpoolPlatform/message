@@ -264,6 +264,9 @@
         "SpotQuantity": {
           "type": "string"
         },
+        "State": {
+          "$ref": "#/definitions/v1GoodState"
+        },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
@@ -1078,6 +1081,20 @@
         "GoodStartModeWithParent"
       ],
       "default": "DefaultGoodStartMode"
+    },
+    "v1GoodState": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodState",
+        "GoodStateWait",
+        "GoodStateCreateGoodUser",
+        "GoodStateCheckHashRate",
+        "GoodStateReady",
+        "GoodStateFail"
+      ],
+      "default": "DefaultGoodState",
+      "description": "- GoodStateCreateGoodUser: for miningpoolstock",
+      "title": "initial state: GoodStateWait\n|\nv\nGoodStateCreateGoodUser------------------\n|                             |\nv                             |\nGoodStateCheckHashRate-------------------\n|                             |\nv                             v\nGoodStateReady                 GoodStateFail"
     },
     "v1GoodStockMode": {
       "type": "string",
