@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "Middleware"
+      "name": "Gateway"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/orderbenefit_DeleteAccount": {
       "post": {
-        "operationId": "Middleware_DeleteAccount",
+        "operationId": "Gateway_DeleteAccount",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,7 +44,7 @@
           }
         ],
         "tags": [
-          "Middleware"
+          "Gateway"
         ]
       }
     }
