@@ -296,7 +296,11 @@
           "title": "@inject_tag: sql:\"sold\""
         },
         "State": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1MiningGoodStockState",
+=======
+          "$ref": "#/definitions/v1MiningStockState",
+>>>>>>> 9a35440dc (add miningpoolstock id)
           "title": "@inject_tag: sql:\"state\""
         }
       }
@@ -320,6 +324,7 @@
           "type": "string"
         },
         "State": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1MiningGoodStockState"
         }
       }
@@ -336,6 +341,24 @@
       ],
       "default": "DefaultMiningGoodStockState",
       "title": "initial state: MiningGoodStockStateWait\n|\nv\nMiningGoodStockStateCreateGoodUser---------------\n|                             |\nv                             |\nMiningGoodStockStateCheckHashRate----------------\n|                             |\nv                             v\nMiningGoodStockStateReady     MiningGoodStockStateFail"
+=======
+          "$ref": "#/definitions/v1MiningStockState"
+        }
+      }
+    },
+    "v1MiningStockState": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningStockState",
+        "MiningStockStateWait",
+        "MiningStockStateCreateGoodUser",
+        "MiningStockStateCheckHashRate",
+        "MiningStockStateDone",
+        "MiningStockStateFail"
+      ],
+      "default": "DefaultMiningStockState",
+      "title": "initial state: MiningStockStateWait\n|\nv\nMiningStockStateCreateGoodUser---------------\n|                             |\nv                             |\nMiningStockStateCheckHashRate---------------\n|                             |\nv                             v\nMiningStockStateDone             MiningStockStateFail"
+>>>>>>> 9a35440dc (add miningpoolstock id)
     },
     "v1PowerRental": {
       "type": "object",

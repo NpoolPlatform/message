@@ -216,7 +216,11 @@
           "type": "string"
         },
         "State": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1MiningGoodStockState"
+=======
+          "$ref": "#/definitions/v1MiningStockState"
+>>>>>>> 9a35440dc (add miningpoolstock id)
         },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
@@ -268,7 +272,11 @@
           "type": "string"
         },
         "State": {
+<<<<<<< HEAD
           "$ref": "#/definitions/v1MiningGoodStockState"
+=======
+          "$ref": "#/definitions/v1MiningStockState"
+>>>>>>> 9a35440dc (add miningpoolstock id)
         }
       }
     },
@@ -651,6 +659,7 @@
       ],
       "default": "DefaultGoodType"
     },
+<<<<<<< HEAD
     "v1MiningGoodStockState": {
       "type": "string",
       "enum": [
@@ -663,6 +672,20 @@
       ],
       "default": "DefaultMiningGoodStockState",
       "title": "initial state: MiningGoodStockStateWait\n|\nv\nMiningGoodStockStateCreateGoodUser---------------\n|                             |\nv                             |\nMiningGoodStockStateCheckHashRate----------------\n|                             |\nv                             v\nMiningGoodStockStateReady     MiningGoodStockStateFail"
+=======
+    "v1MiningStockState": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningStockState",
+        "MiningStockStateWait",
+        "MiningStockStateCreateGoodUser",
+        "MiningStockStateCheckHashRate",
+        "MiningStockStateDone",
+        "MiningStockStateFail"
+      ],
+      "default": "DefaultMiningStockState",
+      "title": "initial state: MiningStockStateWait\n|\nv\nMiningStockStateCreateGoodUser---------------\n|                             |\nv                             |\nMiningStockStateCheckHashRate---------------\n|                             |\nv                             v\nMiningStockStateDone             MiningStockStateFail"
+>>>>>>> 9a35440dc (add miningpoolstock id)
     },
     "v1MiningpoolType": {
       "type": "string",
