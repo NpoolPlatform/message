@@ -9,7 +9,7 @@ import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/v1/accountusedfor.proto";
 
 // Service Name
-service Middleware {
+service Gateway {
   rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse) {}
   rpc GetAccount(GetAccountRequest) returns (GetAccountResponse) {}
   rpc GetAccounts(GetAccountsRequest) returns (GetAccountsResponse) {}
