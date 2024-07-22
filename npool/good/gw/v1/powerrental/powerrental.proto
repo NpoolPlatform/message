@@ -163,10 +163,7 @@ message AdminUpdatePowerRentalRequest {
   optional bool Purchasable = 200;
   optional bool Online = 210;
   optional basetypes.good.v1.GoodStockMode StockMode = 220;
-<<<<<<< HEAD
   optional basetypes.good.v1.GoodState State = 221;
-=======
->>>>>>> 9a35440dc (add miningpoolstock id)
 
   // Good stock
   optional string Total = 240;
