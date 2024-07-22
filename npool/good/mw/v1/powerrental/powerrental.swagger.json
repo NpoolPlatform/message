@@ -49,6 +49,9 @@
         },
         "RewardAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -200,6 +203,20 @@
       ],
       "default": "DefaultGoodStartMode"
     },
+    "v1GoodState": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodState",
+        "GoodStateWait",
+        "GoodStateCreateGoodUser",
+        "GoodStateCheckHashRate",
+        "GoodStateReady",
+        "GoodStateFail"
+      ],
+      "default": "DefaultGoodState",
+      "description": "- GoodStateCreateGoodUser: for miningpoolstock",
+      "title": "initial state: GoodStateWait\n|\nv\nGoodStateCreateGoodUser------------------\n|                             |\nv                             |\nGoodStateCheckHashRate-------------------\n|                             |\nv                             v\nGoodStateReady                 GoodStateFail"
+    },
     "v1GoodStockMode": {
       "type": "string",
       "enum": [
@@ -279,7 +296,7 @@
           "title": "@inject_tag: sql:\"sold\""
         },
         "State": {
-          "$ref": "#/definitions/v1MiningStockState",
+          "$ref": "#/definitions/v1GoodState",
           "title": "@inject_tag: sql:\"state\""
         }
       }
@@ -303,22 +320,9 @@
           "type": "string"
         },
         "State": {
-          "$ref": "#/definitions/v1MiningStockState"
+          "$ref": "#/definitions/v1GoodState"
         }
       }
-    },
-    "v1MiningStockState": {
-      "type": "string",
-      "enum": [
-        "DefaultMiningStockState",
-        "MiningStockStateWait",
-        "MiningStockStateCreateGoodUser",
-        "MiningStockStateCheckHashRate",
-        "MiningStockStateDone",
-        "MiningStockStateFail"
-      ],
-      "default": "DefaultMiningStockState",
-      "title": "initial state: MiningStockStateWait\n|\nv\nMiningStockStateCreateGoodUser---------------\n|                             |\nv                             |\nMiningStockStateCheckHashRate---------------\n|                             |\nv                             v\nMiningStockStateDone             MiningStockStateFail"
     },
     "v1PowerRental": {
       "type": "object",
@@ -463,6 +467,13 @@
         },
         "StockMode": {
           "$ref": "#/definitions/v1GoodStockMode"
+        },
+        "StateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1GoodState"
         },
         "GoodStockID": {
           "type": "string",
@@ -609,6 +620,9 @@
         },
         "StockMode": {
           "$ref": "#/definitions/v1GoodStockMode"
+        },
+        "State": {
+          "$ref": "#/definitions/v1GoodState"
         },
         "StockID": {
           "type": "string",
