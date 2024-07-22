@@ -5,7 +5,6 @@ package miningpool.gateway.gooduser.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/gooduser";
 
 import "google/api/annotations.proto";
-import "npool/basetypes/v1/cointype.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
@@ -41,16 +40,14 @@ message GoodUser {
   string ReadPageLink = 50;
   string PoolID = 70;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
-  string PoolCoinTypeID = 90;
-  string CoinTypeID = 100;
-  basetypes.v1.CoinType CoinType = 101;
+  repeated string CoinTypeIDs = 100;
   string FeeRatio = 120;
   uint32 CreatedAt = 130;
   uint32 UpdatedAt = 140;
 }
 
 message AdminCreateGoodUserRequest {
-  string PoolCoinTypeID = 10;
+  repeated string CoinTypeIDs = 10;
   string RootUserID = 20;
 }
 

@@ -41,8 +41,10 @@ message OrderUserReq {
   optional string UserID = 40;
   optional string GoodUserID = 60;
   optional string Name = 70;
+  // just for update
   optional string Proportion = 100;
   optional string RevenueAddress = 110;
+
   optional string ReadPageLink = 120;
   optional bool AutoPay = 130;
 }
@@ -66,14 +68,8 @@ message OrderUser {
   string GoodUserID = 51;
   // @inject_tag: sql:"name"
   string Name = 60;
-  // @inject_tag: sql:"proportion"
-  string Proportion = 70;
-  // @inject_tag: sql:"revenue_address"
-  string RevenueAddress = 80;
   // @inject_tag: sql:"read_page_link"
   string ReadPageLink = 90;
-  // @inject_tag: sql:"auto_pay"
-  bool AutoPay = 100;
   // @inject_tag: sql:"miningpool_type"
   string MiningpoolTypeStr = 110;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 111;
@@ -93,7 +89,6 @@ message Conds {
   optional basetypes.v1.StringVal UserID = 30;
   optional basetypes.v1.StringVal GoodUserID = 40;
   optional basetypes.v1.StringVal Name = 50;
-  optional basetypes.v1.BoolVal AutoPay = 60;
   optional basetypes.v1.StringSliceVal EntIDs = 110;
 }
 
