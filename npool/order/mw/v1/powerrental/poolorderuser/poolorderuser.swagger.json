@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/order/mw/v1/powerrental/miningpooluser/miningpooluser.proto",
+    "title": "npool/order/mw/v1/powerrental/poolorderuser/poolorderuser.proto",
     "version": "version not set"
   },
   "tags": [
@@ -67,31 +67,23 @@
         }
       }
     },
-    "v1CreateMiningPoolUserResponse": {
+    "v1CreatePoolOrderUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1MiningPoolUser"
+          "$ref": "#/definitions/v1PoolOrderUser"
         }
       }
     },
-    "v1DeleteMiningPoolUserResponse": {
+    "v1DeletePoolOrderUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1MiningPoolUser"
+          "$ref": "#/definitions/v1PoolOrderUser"
         }
       }
     },
-    "v1ExistMiningPoolUserCondsResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1ExistMiningPoolUserResponse": {
+    "v1ExistPoolOrderUserCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -99,21 +91,29 @@
         }
       }
     },
-    "v1GetMiningPoolUserResponse": {
+    "v1ExistPoolOrderUserResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1MiningPoolUser"
+          "type": "boolean"
         }
       }
     },
-    "v1GetMiningPoolUsersResponse": {
+    "v1GetPoolOrderUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1PoolOrderUser"
+        }
+      }
+    },
+    "v1GetPoolOrderUsersResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1MiningPoolUser"
+            "$ref": "#/definitions/v1PoolOrderUser"
           }
         },
         "Total": {
@@ -122,7 +122,7 @@
         }
       }
     },
-    "v1MiningPoolUser": {
+    "v1PoolOrderUser": {
       "type": "object",
       "properties": {
         "ID": {
@@ -144,7 +144,7 @@
         }
       }
     },
-    "v1MiningPoolUserReq": {
+    "v1PoolOrderUserReq": {
       "type": "object",
       "properties": {
         "EntID": {

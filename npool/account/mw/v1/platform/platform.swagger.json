@@ -205,7 +205,8 @@
         "UserDeposit",
         "GoodPayment",
         "PaymentCollector",
-        "UserDirectBenefit"
+        "UserDirectBenefit",
+        "OrderBenefit"
       ],
       "default": "DefaultAccountUsedFor"
     },

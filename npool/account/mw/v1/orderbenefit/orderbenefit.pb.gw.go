@@ -31,8 +31,8 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_Middleware_DeleteOrderBenefit_0(ctx context.Context, marshaler runtime.Marshaler, client MiddlewareClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteOrderBenefitRequest
+func request_Middleware_DeleteAccount_0(ctx context.Context, marshaler runtime.Marshaler, client MiddlewareClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteAccountRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -43,13 +43,13 @@ func request_Middleware_DeleteOrderBenefit_0(ctx context.Context, marshaler runt
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.DeleteOrderBenefit(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.DeleteAccount(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Middleware_DeleteOrderBenefit_0(ctx context.Context, marshaler runtime.Marshaler, server MiddlewareServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeleteOrderBenefitRequest
+func local_request_Middleware_DeleteAccount_0(ctx context.Context, marshaler runtime.Marshaler, server MiddlewareServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeleteAccountRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -60,7 +60,7 @@ func local_request_Middleware_DeleteOrderBenefit_0(ctx context.Context, marshale
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.DeleteOrderBenefit(ctx, &protoReq)
+	msg, err := server.DeleteAccount(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -71,18 +71,18 @@ func local_request_Middleware_DeleteOrderBenefit_0(ctx context.Context, marshale
 // Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterMiddlewareHandlerFromEndpoint instead.
 func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux, server MiddlewareServer) error {
 
-	mux.Handle("POST", pattern_Middleware_DeleteOrderBenefit_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Middleware_DeleteAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/account.middleware.orderbenefit.v1.Middleware/DeleteOrderBenefit", runtime.WithHTTPPathPattern("/v1/orderbenefit_DeleteOrderBenefit"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/account.middleware.orderbenefit.v1.Middleware/DeleteAccount", runtime.WithHTTPPathPattern("/v1/orderbenefit_DeleteAccount"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Middleware_DeleteOrderBenefit_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Middleware_DeleteAccount_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -90,7 +90,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 			return
 		}
 
-		forward_Middleware_DeleteOrderBenefit_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_DeleteAccount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -135,23 +135,23 @@ func RegisterMiddlewareHandler(ctx context.Context, mux *runtime.ServeMux, conn 
 // "MiddlewareClient" to call the correct interceptors.
 func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux, client MiddlewareClient) error {
 
-	mux.Handle("POST", pattern_Middleware_DeleteOrderBenefit_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Middleware_DeleteAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/account.middleware.orderbenefit.v1.Middleware/DeleteOrderBenefit", runtime.WithHTTPPathPattern("/v1/orderbenefit_DeleteOrderBenefit"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/account.middleware.orderbenefit.v1.Middleware/DeleteAccount", runtime.WithHTTPPathPattern("/v1/orderbenefit_DeleteAccount"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Middleware_DeleteOrderBenefit_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Middleware_DeleteAccount_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_DeleteOrderBenefit_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_DeleteAccount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -159,9 +159,9 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 }
 
 var (
-	pattern_Middleware_DeleteOrderBenefit_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "orderbenefit_DeleteOrderBenefit"}, ""))
+	pattern_Middleware_DeleteAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "orderbenefit_DeleteAccount"}, ""))
 )
 
 var (
-	forward_Middleware_DeleteOrderBenefit_0 = runtime.ForwardResponseMessage
+	forward_Middleware_DeleteAccount_0 = runtime.ForwardResponseMessage
 )
