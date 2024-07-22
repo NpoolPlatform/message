@@ -603,14 +603,11 @@
         "EntID": {
           "type": "string"
         },
-        "RootUserID": {
+        "MiningPoolID": {
           "type": "string"
         },
-        "CoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "PoolGoodUserID": {
+          "type": "string"
         },
         "Total": {
           "type": "string"
