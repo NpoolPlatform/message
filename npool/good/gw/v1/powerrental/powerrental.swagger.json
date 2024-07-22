@@ -216,7 +216,7 @@
           "type": "string"
         },
         "State": {
-          "$ref": "#/definitions/v1MiningStockState"
+          "$ref": "#/definitions/v1GoodState"
         },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
@@ -268,7 +268,7 @@
           "type": "string"
         },
         "State": {
-          "$ref": "#/definitions/v1MiningStockState"
+          "$ref": "#/definitions/v1GoodState"
         }
       }
     },
@@ -469,6 +469,9 @@
         "StockMode": {
           "$ref": "#/definitions/v1GoodStockMode"
         },
+        "State": {
+          "$ref": "#/definitions/v1GoodState"
+        },
         "Total": {
           "type": "string",
           "title": "Good stock"
@@ -612,6 +615,20 @@
       ],
       "default": "DefaultGoodStartMode"
     },
+    "v1GoodState": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodState",
+        "GoodStateWait",
+        "GoodStateCreateGoodUser",
+        "GoodStateCheckHashRate",
+        "GoodStateReady",
+        "GoodStateFail"
+      ],
+      "default": "DefaultGoodState",
+      "description": "- GoodStateCreateGoodUser: for miningpoolstock",
+      "title": "initial state: GoodStateWait\n|\nv\nGoodStateCreateGoodUser------------------\n|                             |\nv                             |\nGoodStateCheckHashRate-------------------\n|                             |\nv                             v\nGoodStateReady                 GoodStateFail"
+    },
     "v1GoodStockMode": {
       "type": "string",
       "enum": [
@@ -633,19 +650,6 @@
         "ElectricityFee"
       ],
       "default": "DefaultGoodType"
-    },
-    "v1MiningStockState": {
-      "type": "string",
-      "enum": [
-        "DefaultMiningStockState",
-        "MiningStockStateWait",
-        "MiningStockStateCreateGoodUser",
-        "MiningStockStateCheckHashRate",
-        "MiningStockStateDone",
-        "MiningStockStateFail"
-      ],
-      "default": "DefaultMiningStockState",
-      "title": "initial state: MiningStockStateWait\n|\nv\nMiningStockStateCreateGoodUser---------------\n|                             |\nv                             |\nMiningStockStateCheckHashRate---------------\n|                             |\nv                             v\nMiningStockStateDone             MiningStockStateFail"
     },
     "v1MiningpoolType": {
       "type": "string",
@@ -754,6 +758,9 @@
         },
         "StockMode": {
           "$ref": "#/definitions/v1GoodStockMode"
+        },
+        "State": {
+          "$ref": "#/definitions/v1GoodState"
         },
         "StockID": {
           "type": "string"

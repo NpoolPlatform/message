@@ -17,29 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "middlewaregood1v1Conds": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "IDs": {
-          "$ref": "#/definitions/v1Uint32SliceVal"
-        },
-        "EntID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "EntIDs": {
-          "$ref": "#/definitions/v1StringSliceVal"
-        },
-        "GoodType": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "GoodTypes": {
-          "$ref": "#/definitions/v1Uint32SliceVal"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -79,6 +56,29 @@
       ],
       "default": "DefaultBenefitType",
       "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward\n - BenefitTypeContract: User receive reward from smart contract\n - BenefitTypeNone: Such as technique fee"
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodTypes": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
+        }
+      }
     },
     "v1ExistGoodCondsResponse": {
       "type": "object",
