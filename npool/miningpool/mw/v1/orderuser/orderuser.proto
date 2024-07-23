@@ -42,6 +42,7 @@ message OrderUserReq {
   optional string Name = 70;
 
   // set to miningpool,not recorded in db
+  optional string CoinTypeID = 99;
   optional string Proportion = 100;
   optional string RevenueAddress = 110;
   optional bool AutoPay = 130;
