@@ -41,12 +41,13 @@ message OrderUserReq {
   optional string UserID = 40;
   optional string GoodUserID = 60;
   optional string Name = 70;
-  // just for update
+
+  // set to miningpool,not recorded in db
   optional string Proportion = 100;
   optional string RevenueAddress = 110;
+  optional bool AutoPay = 130;
 
   optional string ReadPageLink = 120;
-  optional bool AutoPay = 130;
 }
 
 message OrderUser {
