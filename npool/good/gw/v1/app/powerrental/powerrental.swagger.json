@@ -265,7 +265,7 @@
           "type": "string"
         },
         "State": {
-          "$ref": "#/definitions/v1GoodState"
+          "$ref": "#/definitions/v1MiningGoodStockState"
         },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
@@ -1082,20 +1082,6 @@
       ],
       "default": "DefaultGoodStartMode"
     },
-    "v1GoodState": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodState",
-        "GoodStateWait",
-        "GoodStateCreateGoodUser",
-        "GoodStateCheckHashRate",
-        "GoodStateReady",
-        "GoodStateFail"
-      ],
-      "default": "DefaultGoodState",
-      "description": "- GoodStateCreateGoodUser: for miningpoolstock",
-      "title": "initial state: GoodStateWait\n|\nv\nGoodStateCreateGoodUser------------------\n|                             |\nv                             |\nGoodStateCheckHashRate-------------------\n|                             |\nv                             v\nGoodStateReady                 GoodStateFail"
-    },
     "v1GoodStockMode": {
       "type": "string",
       "enum": [
@@ -1150,6 +1136,19 @@
           "title": "@inject_tag: sql:\"index\""
         }
       }
+    },
+    "v1MiningGoodStockState": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningGoodStockState",
+        "MiningGoodStockStateWait",
+        "MiningGoodStockStateCreateGoodUser",
+        "MiningGoodStockStateCheckHashRate",
+        "MiningGoodStockStateReady",
+        "MiningGoodStockStateFail"
+      ],
+      "default": "DefaultMiningGoodStockState",
+      "title": "initial state: MiningGoodStockStateWait\n|\nv\nMiningGoodStockStateCreateGoodUser---------------\n|                             |\nv                             |\nMiningGoodStockStateCheckHashRate----------------\n|                             |\nv                             v\nMiningGoodStockStateReady     MiningGoodStockStateFail"
     },
     "v1MiningpoolType": {
       "type": "string",
