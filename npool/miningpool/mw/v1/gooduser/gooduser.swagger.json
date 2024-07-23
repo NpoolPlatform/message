@@ -180,20 +180,6 @@
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
-        "PoolCoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "@inject_tag: sql:\"pool_coin_type_ids\""
-        },
-        "CoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "@inject_tag: sql:\"coin_type_ids\""
-        },
         "CoinTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"coin_type\""
@@ -231,7 +217,8 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "for check if cointypes is supported in the miningpool\nnot stored in db"
         },
         "RootUserID": {
           "type": "string"

@@ -5,7 +5,6 @@ package miningpool.middleware.orderuser.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/orderuser";
 
 import "google/api/annotations.proto";
-import "npool/basetypes/v1/cointype.proto";
 import "npool/basetypes/v1/conds.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
@@ -59,10 +58,6 @@ message OrderUser {
   string AppID = 30;
   // @inject_tag: sql:"user_id"
   string UserID = 40;
-  // @inject_tag: sql:"pool_coin_type_id"
-  string PoolCoinTypeID = 41;
-  // @inject_tag: sql:"coin_type_id"
-  string CoinTypeID = 42;
   // @inject_tag: sql:"root_user_id"
   string RootUserID = 50;
   // @inject_tag: sql:"good_user_id"
@@ -74,9 +69,7 @@ message OrderUser {
   // @inject_tag: sql:"miningpool_type"
   string MiningpoolTypeStr = 110;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 111;
-  // @inject_tag: sql:"coin_type"
-  string CoinTypeStr = 120;
-  basetypes.v1.CoinType CoinType = 121;
+
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 140;
   // @inject_tag: sql:"updated_at"

@@ -191,3 +191,25 @@ enum GoodState {
   GoodStateReady = 40;
   GoodStateFail = 50;
 }
+
+/* initial state: MiningGoodStockStateWait
+                            |
+                            v
+          MiningGoodStockStateCreateGoodUser---------------
+                            |                             |
+                            v                             |
+          MiningGoodStockStateCheckHashRate----------------
+                            |                             |
+                            v                             v
+                 MiningGoodStockStateReady     MiningGoodStockStateFail
+*/
+enum MiningGoodStockState {
+  DefaultMiningGoodStockState = 0;
+  MiningGoodStockStateWait = 10;
+
+  MiningGoodStockStateCreateGoodUser = 20;
+  MiningGoodStockStateCheckHashRate = 30;
+
+  MiningGoodStockStateReady = 40;
+  MiningGoodStockStateFail = 50;
+}

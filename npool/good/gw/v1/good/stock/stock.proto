@@ -23,7 +23,7 @@ message MiningGoodStock {
   string WaitStart = 90;
   string InService = 100;
   string Sold = 110;
-  basetypes.good.v1.GoodState State = 120;
+  basetypes.good.v1.MiningGoodStockState State = 120;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 130;
   string Name = 140;
   string Site = 150;
@@ -39,7 +39,7 @@ message MiningGoodStockInfo {
   string PoolGoodUserID = 40;
   string Total = 50;
   string SpotQuantity = 60;
-  basetypes.good.v1.GoodState State = 70;
+  basetypes.good.v1.MiningGoodStockState State = 70;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
   string Name = 90;
   string Site = 100;

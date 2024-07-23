@@ -216,7 +216,7 @@
           "type": "string"
         },
         "State": {
-          "$ref": "#/definitions/v1GoodState"
+          "$ref": "#/definitions/v1MiningGoodStockState"
         },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
@@ -268,7 +268,7 @@
           "type": "string"
         },
         "State": {
-          "$ref": "#/definitions/v1GoodState"
+          "$ref": "#/definitions/v1MiningGoodStockState"
         }
       }
     },
@@ -650,6 +650,19 @@
         "ElectricityFee"
       ],
       "default": "DefaultGoodType"
+    },
+    "v1MiningGoodStockState": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningGoodStockState",
+        "MiningGoodStockStateWait",
+        "MiningGoodStockStateCreateGoodUser",
+        "MiningGoodStockStateCheckHashRate",
+        "MiningGoodStockStateReady",
+        "MiningGoodStockStateFail"
+      ],
+      "default": "DefaultMiningGoodStockState",
+      "title": "initial state: MiningGoodStockStateWait\n|\nv\nMiningGoodStockStateCreateGoodUser---------------\n|                             |\nv                             |\nMiningGoodStockStateCheckHashRate----------------\n|                             |\nv                             v\nMiningGoodStockStateReady     MiningGoodStockStateFail"
     },
     "v1MiningpoolType": {
       "type": "string",
