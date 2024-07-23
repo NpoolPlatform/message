@@ -335,16 +335,16 @@
         },
         "Proportion": {
           "type": "string",
-          "title": "just for update"
+          "title": "set to miningpool,not recorded in db"
         },
         "RevenueAddress": {
           "type": "string"
         },
-        "ReadPageLink": {
-          "type": "string"
-        },
         "AutoPay": {
           "type": "boolean"
+        },
+        "ReadPageLink": {
+          "type": "string"
         }
       }
     },
