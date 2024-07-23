@@ -22,7 +22,11 @@ service Middleware {
 message GoodUserReq {
   optional uint32 ID = 10;
   optional string EntID = 20;
+
+  // for check if cointypes is supported in the miningpool
+  // not stored in db
   repeated string CoinTypeIDs = 30;
+
   optional string RootUserID = 40;
   optional string Name = 50;
   optional string ReadPageLink = 60;
@@ -44,10 +48,6 @@ message GoodUser {
   // @inject_tag: sql:"miningpool_type"
   string MiningpoolTypeStr = 80;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 81;
-  // @inject_tag: sql:"pool_coin_type_ids"
-  repeated string PoolCoinTypeIDs = 90;
-  // @inject_tag: sql:"coin_type_ids"
-  repeated string CoinTypeIDs = 91;
   // @inject_tag: sql:"coin_type"
   string CoinTypeStr = 100;
   basetypes.v1.CoinType CoinType = 101;

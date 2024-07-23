@@ -13,7 +13,7 @@ message MiningGoodStockReq {
   optional string MiningPoolID = 30;
   optional string PoolGoodUserID = 40;
   optional string Total = 50;
-  optional basetypes.good.v1.GoodState State = 60;
+  optional basetypes.good.v1.MiningGoodStockState State = 60;
 }
 
 message MiningGoodStock {
@@ -44,7 +44,7 @@ message MiningGoodStock {
   // @inject_tag: sql:"sold"
   string Sold = 110;
   // @inject_tag: sql:"state"
-  basetypes.good.v1.GoodState State = 120;
+  basetypes.good.v1.MiningGoodStockState State = 120;
 }
 
 message MiningGoodStockInfo {
