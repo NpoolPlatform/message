@@ -31,6 +31,7 @@ message FractionReq {
   optional string AppID = 30;
   optional string UserID = 40;
   optional string OrderUserID = 50;
+  optional string CoinTypeID = 51;
   optional basetypes.miningpool.v1.WithdrawState WithdrawState = 60;
   optional uint32 WithdrawAt = 70;
   optional uint32 PromisePayAt = 80;
@@ -48,6 +49,8 @@ message Fraction {
   string UserID = 40;
   // @inject_tag: sql:"order_user_id"
   string OrderUserID = 50;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 51;
   // @inject_tag: sql:"withdraw_state"
   string WithdrawStateStr = 60;
   basetypes.miningpool.v1.WithdrawState WithdrawState = 61;
@@ -69,6 +72,7 @@ message Conds {
   optional basetypes.v1.StringVal AppID = 20;
   optional basetypes.v1.StringVal UserID = 30;
   optional basetypes.v1.StringVal OrderUserID = 40;
+  optional basetypes.v1.StringVal CoinTypeID = 41;
   optional basetypes.v1.Uint32Val WithdrawState = 50;
   optional basetypes.v1.StringSliceVal EntIDs = 60;
 }
