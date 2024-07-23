@@ -282,9 +282,12 @@
         "Name": {
           "type": "string"
         },
-        "Proportion": {
+        "CoinTypeID": {
           "type": "string",
           "title": "set to miningpool,not recorded in db"
+        },
+        "Proportion": {
+          "type": "string"
         },
         "RevenueAddress": {
           "type": "string"
