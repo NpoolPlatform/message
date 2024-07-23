@@ -207,8 +207,8 @@
         "PoolID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "CoinTypeID": {
-          "$ref": "#/definitions/v1StringVal"
+        "CoinTypeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         },
         "MiningpoolType": {
           "$ref": "#/definitions/v1Uint32Val"
