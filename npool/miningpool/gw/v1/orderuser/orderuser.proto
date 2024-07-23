@@ -5,7 +5,6 @@ package miningpool.gateway.orderuser.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/orderuser";
 
 import "google/api/annotations.proto";
-import "npool/basetypes/v1/cointype.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
@@ -27,12 +26,8 @@ message OrderUser {
   string RootUserID = 50;
   string GoodUserID = 51;
   string Name = 60;
-  string Proportion = 70;
-  string RevenueAddress = 80;
   string ReadPageLink = 90;
-  bool AutoPay = 100;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 110;
-  basetypes.v1.CoinType CoinType = 120;
   uint32 CreatedAt = 140;
   uint32 UpdatedAt = 150;
 }
