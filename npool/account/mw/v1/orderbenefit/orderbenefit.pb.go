@@ -170,8 +170,8 @@ type Account struct {
 	Address string `protobuf:"bytes,60,opt,name=Address,proto3" json:"Address,omitempty" sql:"address"`
 	// @inject_tag: sql:"order_id"
 	OrderID string `protobuf:"bytes,70,opt,name=OrderID,proto3" json:"OrderID,omitempty" sql:"order_id"`
-	// @inject_tag: sql:"address"
-	Active bool `protobuf:"varint,80,opt,name=Active,proto3" json:"Active,omitempty" sql:"address"`
+	// @inject_tag: sql:"active"
+	Active bool `protobuf:"varint,80,opt,name=Active,proto3" json:"Active,omitempty" sql:"active"`
 	// @inject_tag: sql:"blocked"
 	Blocked bool `protobuf:"varint,90,opt,name=Blocked,proto3" json:"Blocked,omitempty" sql:"blocked"`
 	// @inject_tag: sql:"locked"
