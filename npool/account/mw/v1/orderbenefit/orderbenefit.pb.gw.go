@@ -31,7 +31,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_Gateway_DeleteAccount_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Middleware_DeleteAccount_0(ctx context.Context, marshaler runtime.Marshaler, client MiddlewareClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteAccountRequest
 	var metadata runtime.ServerMetadata
 
@@ -48,7 +48,7 @@ func request_Gateway_DeleteAccount_0(ctx context.Context, marshaler runtime.Mars
 
 }
 
-func local_request_Gateway_DeleteAccount_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Middleware_DeleteAccount_0(ctx context.Context, marshaler runtime.Marshaler, server MiddlewareServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteAccountRequest
 	var metadata runtime.ServerMetadata
 
@@ -65,24 +65,24 @@ func local_request_Gateway_DeleteAccount_0(ctx context.Context, marshaler runtim
 
 }
 
-// RegisterGatewayHandlerServer registers the http handlers for service Gateway to "mux".
-// UnaryRPC     :call GatewayServer directly.
+// RegisterMiddlewareHandlerServer registers the http handlers for service Middleware to "mux".
+// UnaryRPC     :call MiddlewareServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterGatewayHandlerFromEndpoint instead.
-func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, server GatewayServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterMiddlewareHandlerFromEndpoint instead.
+func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux, server MiddlewareServer) error {
 
-	mux.Handle("POST", pattern_Gateway_DeleteAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Middleware_DeleteAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/account.middleware.orderbenefit.v1.Gateway/DeleteAccount", runtime.WithHTTPPathPattern("/v1/orderbenefit_DeleteAccount"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/account.middleware.orderbenefit.v1.Middleware/DeleteAccount", runtime.WithHTTPPathPattern("/v1/orderbenefit_DeleteAccount"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_DeleteAccount_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Middleware_DeleteAccount_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -90,16 +90,16 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Gateway_DeleteAccount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_DeleteAccount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterGatewayHandlerFromEndpoint is same as RegisterGatewayHandler but
+// RegisterMiddlewareHandlerFromEndpoint is same as RegisterMiddlewareHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterGatewayHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterMiddlewareHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -119,39 +119,39 @@ func RegisterGatewayHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeM
 		}()
 	}()
 
-	return RegisterGatewayHandler(ctx, mux, conn)
+	return RegisterMiddlewareHandler(ctx, mux, conn)
 }
 
-// RegisterGatewayHandler registers the http handlers for service Gateway to "mux".
+// RegisterMiddlewareHandler registers the http handlers for service Middleware to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterGatewayHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterGatewayHandlerClient(ctx, mux, NewGatewayClient(conn))
+func RegisterMiddlewareHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterMiddlewareHandlerClient(ctx, mux, NewMiddlewareClient(conn))
 }
 
-// RegisterGatewayHandlerClient registers the http handlers for service Gateway
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "GatewayClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "GatewayClient"
+// RegisterMiddlewareHandlerClient registers the http handlers for service Middleware
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "MiddlewareClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "MiddlewareClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "GatewayClient" to call the correct interceptors.
-func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, client GatewayClient) error {
+// "MiddlewareClient" to call the correct interceptors.
+func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux, client MiddlewareClient) error {
 
-	mux.Handle("POST", pattern_Gateway_DeleteAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Middleware_DeleteAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/account.middleware.orderbenefit.v1.Gateway/DeleteAccount", runtime.WithHTTPPathPattern("/v1/orderbenefit_DeleteAccount"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/account.middleware.orderbenefit.v1.Middleware/DeleteAccount", runtime.WithHTTPPathPattern("/v1/orderbenefit_DeleteAccount"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_DeleteAccount_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Middleware_DeleteAccount_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_DeleteAccount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_DeleteAccount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -159,9 +159,9 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_DeleteAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "orderbenefit_DeleteAccount"}, ""))
+	pattern_Middleware_DeleteAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "orderbenefit_DeleteAccount"}, ""))
 )
 
 var (
-	forward_Gateway_DeleteAccount_0 = runtime.ForwardResponseMessage
+	forward_Middleware_DeleteAccount_0 = runtime.ForwardResponseMessage
 )
