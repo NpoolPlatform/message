@@ -210,6 +210,9 @@
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "MiningpoolType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
