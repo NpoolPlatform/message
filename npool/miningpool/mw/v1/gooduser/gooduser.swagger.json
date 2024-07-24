@@ -44,42 +44,6 @@
         }
       }
     },
-    "v1CoinType": {
-      "type": "string",
-      "enum": [
-        "DefaultCoinType",
-        "CoinTypeFileCoin",
-        "CoinTypeBitCoin",
-        "CoinTypeEthereum",
-        "CoinTypeUSDTerc20",
-        "CoinTypeSpacemesh",
-        "CoinTypeSolana",
-        "CoinTypeUSDTtrc20",
-        "CoinTypeBinanceCoin",
-        "CoinTypeTron",
-        "CoinTypeBinanceUSD",
-        "CoinTypeUSDCerc20",
-        "CoinTypeAleo",
-        "CoinTypeIronFish",
-        "CoinTypeUSDTbep20",
-        "CoinTypeTFileCoin",
-        "CoinTypeTBitCoin",
-        "CoinTypeTEthereum",
-        "CoinTypeTUSDTerc20",
-        "CoinTypeTSpacemesh",
-        "CoinTypeTSolana",
-        "CoinTypeTUSDTtrc20",
-        "CoinTypeTBinanceCoin",
-        "CoinTypeTTron",
-        "CoinTypeTBinanceUSD",
-        "CoinTypeTUSDCerc20",
-        "CoinTypeTAleo",
-        "CoinTypeTIronFish",
-        "CoinTypeTUSDTbep20"
-      ],
-      "default": "DefaultCoinType",
-      "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -179,13 +143,6 @@
         },
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CoinTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type\""
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
         },
         "FeeRatio": {
           "type": "string",
