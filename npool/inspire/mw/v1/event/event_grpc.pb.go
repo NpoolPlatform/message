@@ -26,6 +26,7 @@ const (
 	Middleware_DeleteEvent_FullMethodName           = "/inspire.middleware.event.v1.Middleware/DeleteEvent"
 	Middleware_RewardEvent_FullMethodName           = "/inspire.middleware.event.v1.Middleware/RewardEvent"
 	Middleware_CalcluateEventRewards_FullMethodName = "/inspire.middleware.event.v1.Middleware/CalcluateEventRewards"
+	Middleware_ExistEventConds_FullMethodName       = "/inspire.middleware.event.v1.Middleware/ExistEventConds"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -39,6 +40,7 @@ type MiddlewareClient interface {
 	DeleteEvent(ctx context.Context, in *DeleteEventRequest, opts ...grpc.CallOption) (*DeleteEventResponse, error)
 	RewardEvent(ctx context.Context, in *RewardEventRequest, opts ...grpc.CallOption) (*RewardEventResponse, error)
 	CalcluateEventRewards(ctx context.Context, in *CalcluateEventRewardsRequest, opts ...grpc.CallOption) (*CalcluateEventRewardsResponse, error)
+	ExistEventConds(ctx context.Context, in *ExistEventCondsRequest, opts ...grpc.CallOption) (*ExistEventCondsResponse, error)
 }
 
 type middlewareClient struct {
@@ -112,6 +114,15 @@ func (c *middlewareClient) CalcluateEventRewards(ctx context.Context, in *Calclu
 	return out, nil
 }
 
+func (c *middlewareClient) ExistEventConds(ctx context.Context, in *ExistEventCondsRequest, opts ...grpc.CallOption) (*ExistEventCondsResponse, error) {
+	out := new(ExistEventCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistEventConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -123,6 +134,7 @@ type MiddlewareServer interface {
 	DeleteEvent(context.Context, *DeleteEventRequest) (*DeleteEventResponse, error)
 	RewardEvent(context.Context, *RewardEventRequest) (*RewardEventResponse, error)
 	CalcluateEventRewards(context.Context, *CalcluateEventRewardsRequest) (*CalcluateEventRewardsResponse, error)
+	ExistEventConds(context.Context, *ExistEventCondsRequest) (*ExistEventCondsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -150,6 +162,9 @@ func (UnimplementedMiddlewareServer) RewardEvent(context.Context, *RewardEventRe
 }
 func (UnimplementedMiddlewareServer) CalcluateEventRewards(context.Context, *CalcluateEventRewardsRequest) (*CalcluateEventRewardsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CalcluateEventRewards not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistEventConds(context.Context, *ExistEventCondsRequest) (*ExistEventCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistEventConds not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -290,6 +305,24 @@ func _Middleware_CalcluateEventRewards_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistEventConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistEventCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistEventConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistEventConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistEventConds(ctx, req.(*ExistEventCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -324,6 +357,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CalcluateEventRewards",
 			Handler:    _Middleware_CalcluateEventRewards_Handler,
+		},
+		{
+			MethodName: "ExistEventConds",
+			Handler:    _Middleware_ExistEventConds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

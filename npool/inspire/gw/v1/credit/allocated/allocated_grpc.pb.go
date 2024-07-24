@@ -19,16 +19,16 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_UserGetCreditAllocateds_FullMethodName     = "/inspire.gateway.credit.allocated.v1.Gateway/UserGetCreditAllocateds"
-	Gateway_AdminGetAppCreditAllocateds_FullMethodName = "/inspire.gateway.credit.allocated.v1.Gateway/AdminGetAppCreditAllocateds"
+	Gateway_GetMyCreditAllocateds_FullMethodName    = "/inspire.gateway.credit.allocated.v1.Gateway/GetMyCreditAllocateds"
+	Gateway_AdminGetCreditAllocateds_FullMethodName = "/inspire.gateway.credit.allocated.v1.Gateway/AdminGetCreditAllocateds"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	UserGetCreditAllocateds(ctx context.Context, in *UserGetCreditAllocatedsRequest, opts ...grpc.CallOption) (*UserGetCreditAllocatedsResponse, error)
-	AdminGetAppCreditAllocateds(ctx context.Context, in *AdminGetAppCreditAllocatedsRequest, opts ...grpc.CallOption) (*AdminGetAppCreditAllocatedsResponse, error)
+	GetMyCreditAllocateds(ctx context.Context, in *GetMyCreditAllocatedsRequest, opts ...grpc.CallOption) (*GetMyCreditAllocatedsResponse, error)
+	AdminGetCreditAllocateds(ctx context.Context, in *AdminGetCreditAllocatedsRequest, opts ...grpc.CallOption) (*AdminGetCreditAllocatedsResponse, error)
 }
 
 type gatewayClient struct {
@@ -39,18 +39,18 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) UserGetCreditAllocateds(ctx context.Context, in *UserGetCreditAllocatedsRequest, opts ...grpc.CallOption) (*UserGetCreditAllocatedsResponse, error) {
-	out := new(UserGetCreditAllocatedsResponse)
-	err := c.cc.Invoke(ctx, Gateway_UserGetCreditAllocateds_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetMyCreditAllocateds(ctx context.Context, in *GetMyCreditAllocatedsRequest, opts ...grpc.CallOption) (*GetMyCreditAllocatedsResponse, error) {
+	out := new(GetMyCreditAllocatedsResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetMyCreditAllocateds_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) AdminGetAppCreditAllocateds(ctx context.Context, in *AdminGetAppCreditAllocatedsRequest, opts ...grpc.CallOption) (*AdminGetAppCreditAllocatedsResponse, error) {
-	out := new(AdminGetAppCreditAllocatedsResponse)
-	err := c.cc.Invoke(ctx, Gateway_AdminGetAppCreditAllocateds_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminGetCreditAllocateds(ctx context.Context, in *AdminGetCreditAllocatedsRequest, opts ...grpc.CallOption) (*AdminGetCreditAllocatedsResponse, error) {
+	out := new(AdminGetCreditAllocatedsResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminGetCreditAllocateds_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -61,8 +61,8 @@ func (c *gatewayClient) AdminGetAppCreditAllocateds(ctx context.Context, in *Adm
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	UserGetCreditAllocateds(context.Context, *UserGetCreditAllocatedsRequest) (*UserGetCreditAllocatedsResponse, error)
-	AdminGetAppCreditAllocateds(context.Context, *AdminGetAppCreditAllocatedsRequest) (*AdminGetAppCreditAllocatedsResponse, error)
+	GetMyCreditAllocateds(context.Context, *GetMyCreditAllocatedsRequest) (*GetMyCreditAllocatedsResponse, error)
+	AdminGetCreditAllocateds(context.Context, *AdminGetCreditAllocatedsRequest) (*AdminGetCreditAllocatedsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -70,11 +70,11 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) UserGetCreditAllocateds(context.Context, *UserGetCreditAllocatedsRequest) (*UserGetCreditAllocatedsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UserGetCreditAllocateds not implemented")
+func (UnimplementedGatewayServer) GetMyCreditAllocateds(context.Context, *GetMyCreditAllocatedsRequest) (*GetMyCreditAllocatedsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMyCreditAllocateds not implemented")
 }
-func (UnimplementedGatewayServer) AdminGetAppCreditAllocateds(context.Context, *AdminGetAppCreditAllocatedsRequest) (*AdminGetAppCreditAllocatedsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AdminGetAppCreditAllocateds not implemented")
+func (UnimplementedGatewayServer) AdminGetCreditAllocateds(context.Context, *AdminGetCreditAllocatedsRequest) (*AdminGetCreditAllocatedsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminGetCreditAllocateds not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -89,38 +89,38 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_UserGetCreditAllocateds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserGetCreditAllocatedsRequest)
+func _Gateway_GetMyCreditAllocateds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMyCreditAllocatedsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).UserGetCreditAllocateds(ctx, in)
+		return srv.(GatewayServer).GetMyCreditAllocateds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_UserGetCreditAllocateds_FullMethodName,
+		FullMethod: Gateway_GetMyCreditAllocateds_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UserGetCreditAllocateds(ctx, req.(*UserGetCreditAllocatedsRequest))
+		return srv.(GatewayServer).GetMyCreditAllocateds(ctx, req.(*GetMyCreditAllocatedsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_AdminGetAppCreditAllocateds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AdminGetAppCreditAllocatedsRequest)
+func _Gateway_AdminGetCreditAllocateds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminGetCreditAllocatedsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).AdminGetAppCreditAllocateds(ctx, in)
+		return srv.(GatewayServer).AdminGetCreditAllocateds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_AdminGetAppCreditAllocateds_FullMethodName,
+		FullMethod: Gateway_AdminGetCreditAllocateds_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).AdminGetAppCreditAllocateds(ctx, req.(*AdminGetAppCreditAllocatedsRequest))
+		return srv.(GatewayServer).AdminGetCreditAllocateds(ctx, req.(*AdminGetCreditAllocatedsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -133,12 +133,12 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "UserGetCreditAllocateds",
-			Handler:    _Gateway_UserGetCreditAllocateds_Handler,
+			MethodName: "GetMyCreditAllocateds",
+			Handler:    _Gateway_GetMyCreditAllocateds_Handler,
 		},
 		{
-			MethodName: "AdminGetAppCreditAllocateds",
-			Handler:    _Gateway_AdminGetAppCreditAllocateds_Handler,
+			MethodName: "AdminGetCreditAllocateds",
+			Handler:    _Gateway_AdminGetCreditAllocateds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

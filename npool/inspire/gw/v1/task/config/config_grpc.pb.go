@@ -23,7 +23,6 @@ const (
 	Gateway_AdminUpdateTaskConfig_FullMethodName = "/inspire.gateway.task.config.v1.Gateway/AdminUpdateTaskConfig"
 	Gateway_AdminDeleteTaskConfig_FullMethodName = "/inspire.gateway.task.config.v1.Gateway/AdminDeleteTaskConfig"
 	Gateway_AdminGetTaskConfigs_FullMethodName   = "/inspire.gateway.task.config.v1.Gateway/AdminGetTaskConfigs"
-	Gateway_UserGetTasks_FullMethodName          = "/inspire.gateway.task.config.v1.Gateway/UserGetTasks"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -34,7 +33,6 @@ type GatewayClient interface {
 	AdminUpdateTaskConfig(ctx context.Context, in *AdminUpdateTaskConfigRequest, opts ...grpc.CallOption) (*AdminUpdateTaskConfigResponse, error)
 	AdminDeleteTaskConfig(ctx context.Context, in *AdminDeleteTaskConfigRequest, opts ...grpc.CallOption) (*AdminDeleteTaskConfigResponse, error)
 	AdminGetTaskConfigs(ctx context.Context, in *AdminGetTaskConfigsRequest, opts ...grpc.CallOption) (*AdminGetTaskConfigsResponse, error)
-	UserGetTasks(ctx context.Context, in *UserGetTasksRequest, opts ...grpc.CallOption) (*UserGetTasksResponse, error)
 }
 
 type gatewayClient struct {
@@ -81,15 +79,6 @@ func (c *gatewayClient) AdminGetTaskConfigs(ctx context.Context, in *AdminGetTas
 	return out, nil
 }
 
-func (c *gatewayClient) UserGetTasks(ctx context.Context, in *UserGetTasksRequest, opts ...grpc.CallOption) (*UserGetTasksResponse, error) {
-	out := new(UserGetTasksResponse)
-	err := c.cc.Invoke(ctx, Gateway_UserGetTasks_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -98,7 +87,6 @@ type GatewayServer interface {
 	AdminUpdateTaskConfig(context.Context, *AdminUpdateTaskConfigRequest) (*AdminUpdateTaskConfigResponse, error)
 	AdminDeleteTaskConfig(context.Context, *AdminDeleteTaskConfigRequest) (*AdminDeleteTaskConfigResponse, error)
 	AdminGetTaskConfigs(context.Context, *AdminGetTaskConfigsRequest) (*AdminGetTaskConfigsResponse, error)
-	UserGetTasks(context.Context, *UserGetTasksRequest) (*UserGetTasksResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -117,9 +105,6 @@ func (UnimplementedGatewayServer) AdminDeleteTaskConfig(context.Context, *AdminD
 }
 func (UnimplementedGatewayServer) AdminGetTaskConfigs(context.Context, *AdminGetTaskConfigsRequest) (*AdminGetTaskConfigsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminGetTaskConfigs not implemented")
-}
-func (UnimplementedGatewayServer) UserGetTasks(context.Context, *UserGetTasksRequest) (*UserGetTasksResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UserGetTasks not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -206,24 +191,6 @@ func _Gateway_AdminGetTaskConfigs_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_UserGetTasks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserGetTasksRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).UserGetTasks(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Gateway_UserGetTasks_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UserGetTasks(ctx, req.(*UserGetTasksRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -246,10 +213,6 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AdminGetTaskConfigs",
 			Handler:    _Gateway_AdminGetTaskConfigs_Handler,
-		},
-		{
-			MethodName: "UserGetTasks",
-			Handler:    _Gateway_UserGetTasks_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

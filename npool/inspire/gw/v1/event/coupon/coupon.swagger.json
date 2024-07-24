@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/gw/v1/task/config/config.proto",
+    "title": "npool/inspire/gw/v1/event/coupon/coupon.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/taskconfig": {
+    "/v1/admin/create/eventcouponinspire": {
       "post": {
-        "operationId": "Gateway_AdminCreateTaskConfig",
+        "operationId": "Gateway_AdminCreateEventCoupon",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminCreateTaskConfigResponse"
+              "$ref": "#/definitions/v1AdminCreateEventCouponResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminCreateTaskConfigRequest"
+              "$ref": "#/definitions/v1AdminCreateEventCouponRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/admin/delete/taskconfig": {
+    "/v1/admin/delete/eventcouponinspire": {
       "post": {
-        "operationId": "Gateway_AdminDeleteTaskConfig",
+        "operationId": "Gateway_AdminDeleteEventCoupon",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminDeleteTaskConfigResponse"
+              "$ref": "#/definitions/v1AdminDeleteEventCouponResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminDeleteTaskConfigRequest"
+              "$ref": "#/definitions/v1AdminDeleteEventCouponRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/admin/get/taskconfigs": {
+    "/v1/admin/get/eventcouponinspires": {
       "post": {
-        "operationId": "Gateway_AdminGetTaskConfigs",
+        "operationId": "Gateway_AdminGetEventCoupons",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminGetTaskConfigsResponse"
+              "$ref": "#/definitions/v1AdminGetEventCouponsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminGetTaskConfigsRequest"
+              "$ref": "#/definitions/v1AdminGetEventCouponsRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/admin/update/taskconfig": {
+    "/v1/create/eventcouponinspire": {
       "post": {
-        "operationId": "Gateway_AdminUpdateTaskConfig",
+        "operationId": "Gateway_CreateEventCoupon",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminUpdateTaskConfigResponse"
+              "$ref": "#/definitions/v1CreateEventCouponResponse"
             }
           },
           "default": {
@@ -135,7 +135,39 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminUpdateTaskConfigRequest"
+              "$ref": "#/definitions/v1CreateEventCouponRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/eventcouponinspires": {
+      "post": {
+        "operationId": "Gateway_GetEventCoupons",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetEventCouponsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetEventCouponsRequest"
             }
           }
         ],
@@ -173,7 +205,7 @@
         }
       }
     },
-    "v1AdminCreateTaskConfigRequest": {
+    "v1AdminCreateEventCouponRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -182,47 +214,20 @@
         "EventID": {
           "type": "string"
         },
-        "TaskType": {
-          "$ref": "#/definitions/v1TaskType"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "TaskDesc": {
-          "type": "string"
-        },
-        "StepGuide": {
-          "type": "string"
-        },
-        "RecommendMessage": {
-          "type": "string"
-        },
-        "Index": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxRewardCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CooldownSecord": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "LastTaskID": {
+        "CouponID": {
           "type": "string"
         }
       }
     },
-    "v1AdminCreateTaskConfigResponse": {
+    "v1AdminCreateEventCouponResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TaskConfig"
+          "$ref": "#/definitions/v1EventCoupon"
         }
       }
     },
-    "v1AdminDeleteTaskConfigRequest": {
+    "v1AdminDeleteEventCouponRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -234,18 +239,21 @@
         }
       }
     },
-    "v1AdminDeleteTaskConfigResponse": {
+    "v1AdminDeleteEventCouponResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TaskConfig"
+          "$ref": "#/definitions/v1EventCoupon"
         }
       }
     },
-    "v1AdminGetTaskConfigsRequest": {
+    "v1AdminGetEventCouponsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
+          "type": "string"
+        },
+        "EventID": {
           "type": "string"
         },
         "Offset": {
@@ -258,13 +266,13 @@
         }
       }
     },
-    "v1AdminGetTaskConfigsResponse": {
+    "v1AdminGetEventCouponsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1TaskConfig"
+            "$ref": "#/definitions/v1EventCoupon"
           }
         },
         "Total": {
@@ -273,60 +281,38 @@
         }
       }
     },
-    "v1AdminUpdateTaskConfigRequest": {
+    "v1CouponType": {
+      "type": "string",
+      "enum": [
+        "DefaultCouponType",
+        "FixAmount",
+        "Discount"
+      ],
+      "default": "DefaultCouponType"
+    },
+    "v1CreateEventCouponRequest": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
+        "AppID": {
           "type": "string"
         },
-        "TargetAppID": {
+        "EventID": {
           "type": "string"
         },
-        "TaskType": {
-          "$ref": "#/definitions/v1TaskType"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "TaskDesc": {
-          "type": "string"
-        },
-        "StepGuide": {
-          "type": "string"
-        },
-        "RecommendMessage": {
-          "type": "string"
-        },
-        "Index": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxRewardCount": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "CooldownSecord": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "LastTaskID": {
+        "CouponID": {
           "type": "string"
         }
       }
     },
-    "v1AdminUpdateTaskConfigResponse": {
+    "v1CreateEventCouponResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1TaskConfig"
+          "$ref": "#/definitions/v1EventCoupon"
         }
       }
     },
-    "v1TaskConfig": {
+    "v1EventCoupon": {
       "type": "object",
       "properties": {
         "ID": {
@@ -342,112 +328,68 @@
         "EventID": {
           "type": "string"
         },
-        "TaskType": {
-          "$ref": "#/definitions/v1TaskType"
+        "CouponID": {
+          "type": "string"
+        },
+        "CouponType": {
+          "$ref": "#/definitions/v1CouponType"
+        },
+        "Denomination": {
+          "type": "string"
+        },
+        "Circulation": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DurationDays": {
+          "type": "integer",
+          "format": "int64"
         },
         "Name": {
           "type": "string"
-        },
-        "TaskDesc": {
+        }
+      }
+    },
+    "v1GetEventCouponsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
           "type": "string"
         },
-        "StepGuide": {
+        "EventID": {
           "type": "string"
         },
-        "RecommendMessage": {
-          "type": "string"
-        },
-        "Index": {
+        "Offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
         },
-        "LastTaskID": {
-          "type": "string"
-        },
-        "MaxRewardCount": {
+        "Limit": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetEventCouponsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1EventCoupon"
+          }
         },
-        "CooldownSecord": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EventType": {
-          "$ref": "#/definitions/v1UsedFor"
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UpdatedAt": {
+        "Total": {
           "type": "integer",
           "format": "int64"
         }
       }
-    },
-    "v1TaskType": {
-      "type": "string",
-      "enum": [
-        "DefaultTaskType",
-        "BaseTask",
-        "DailyTask",
-        "GrowthTask"
-      ],
-      "default": "DefaultTaskType"
-    },
-    "v1UsedFor": {
-      "type": "string",
-      "enum": [
-        "DefaultUsedFor",
-        "Signup",
-        "Signin",
-        "Update",
-        "Contact",
-        "SetWithdrawAddress",
-        "Withdraw",
-        "CreateInvitationCode",
-        "SetCommission",
-        "SetTransferTargetUser",
-        "Transfer",
-        "WithdrawalRequest",
-        "WithdrawalCompleted",
-        "DepositReceived",
-        "KYCApproved",
-        "KYCRejected",
-        "Purchase",
-        "AffiliatePurchase",
-        "AffiliateSignup",
-        "GoodBenefit1",
-        "NewLogin",
-        "UpdatePassword",
-        "UpdateEmail",
-        "UpdateMobile",
-        "UpdateGoogleAuth",
-        "OrderCompleted",
-        "ResetPassword",
-        "OrderChildsRenewNotify",
-        "OrderChildsRenew",
-        "SimulateOrderProfit",
-        "WithdrawReviewNotify",
-        "ConsecutiveLogin",
-        "GoodSocialSharing",
-        "FirstOrderCompleted",
-        "SetAddress",
-        "Set2FA",
-        "FirstBenefit",
-        "WriteComment",
-        "WriteRecommend",
-        "GoodScoring",
-        "SubmitTicket",
-        "IntallApp",
-        "SetNFTAvatar",
-        "SetPersonalImage",
-        "InternalTransfer",
-        "Announcement",
-        "ProductPage"
-      ],
-      "default": "DefaultUsedFor",
-      "title": "- ConsecutiveLogin: reward event"
     }
   }
 }

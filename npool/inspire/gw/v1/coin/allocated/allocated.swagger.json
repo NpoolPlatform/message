@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/get/app/allocatedcoins": {
+    "/v1/admin/get/allocatedcoins": {
       "post": {
-        "operationId": "Gateway_AdminGetAppCoinAllocateds",
+        "operationId": "Gateway_AdminGetCoinAllocateds",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminGetAppCoinAllocatedsResponse"
+              "$ref": "#/definitions/v1AdminGetCoinAllocatedsResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminGetAppCoinAllocatedsRequest"
+              "$ref": "#/definitions/v1AdminGetCoinAllocatedsRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/user/get/allocatedcoins": {
+    "/v1/get/my/allocatedcoins": {
       "post": {
-        "operationId": "Gateway_UserGetCoinAllocateds",
+        "operationId": "Gateway_GetMyCoinAllocateds",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UserGetCoinAllocatedsResponse"
+              "$ref": "#/definitions/v1GetMyCoinAllocatedsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UserGetCoinAllocatedsRequest"
+              "$ref": "#/definitions/v1GetMyCoinAllocatedsRequest"
             }
           }
         ],
@@ -109,7 +109,7 @@
         }
       }
     },
-    "v1AdminGetAppCoinAllocatedsRequest": {
+    "v1AdminGetCoinAllocatedsRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
@@ -125,7 +125,7 @@
         }
       }
     },
-    "v1AdminGetAppCoinAllocatedsResponse": {
+    "v1AdminGetCoinAllocatedsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -196,7 +196,7 @@
         }
       }
     },
-    "v1UserGetCoinAllocatedsRequest": {
+    "v1GetMyCoinAllocatedsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -215,7 +215,7 @@
         }
       }
     },
-    "v1UserGetCoinAllocatedsResponse": {
+    "v1GetMyCoinAllocatedsResponse": {
       "type": "object",
       "properties": {
         "Infos": {

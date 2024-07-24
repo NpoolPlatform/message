@@ -33,6 +33,7 @@ service Middleware {
       body : "*"
     };
   }
+  rpc ExistEventConds (ExistEventCondsRequest) returns (ExistEventCondsResponse)  {}
 }
 
 message EventReq {
@@ -210,3 +211,11 @@ message CouponRewardRequest {
 }
 
 message CouponRewardResponse {}
+
+message ExistEventCondsRequest {
+  Conds Conds  = 10;
+}
+
+message ExistEventCondsResponse {
+  bool Info = 10;
+}

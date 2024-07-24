@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/inspire/gw/v1/credit/allocated/allocated.proto",
+    "title": "npool/inspire/gw/v1/task/task.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/get/allocatedcredits": {
+    "/v1/admin/get/tasks": {
       "post": {
-        "operationId": "Gateway_AdminGetCreditAllocateds",
+        "operationId": "Gateway_AdminGetTasks",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminGetCreditAllocatedsResponse"
+              "$ref": "#/definitions/v1AdminGetTasksResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminGetCreditAllocatedsRequest"
+              "$ref": "#/definitions/v1AdminGetTasksRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/get/my/allocatedcredits": {
+    "/v1/get/my/tasks": {
       "post": {
-        "operationId": "Gateway_GetMyCreditAllocateds",
+        "operationId": "Gateway_GetMyTasks",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetMyCreditAllocatedsResponse"
+              "$ref": "#/definitions/v1GetMyTasksResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetMyCreditAllocatedsRequest"
+              "$ref": "#/definitions/v1GetMyTasksRequest"
             }
           }
         ],
@@ -109,10 +109,13 @@
         }
       }
     },
-    "v1AdminGetCreditAllocatedsRequest": {
+    "v1AdminGetTasksRequest": {
       "type": "object",
       "properties": {
         "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
           "type": "string"
         },
         "Offset": {
@@ -125,13 +128,13 @@
         }
       }
     },
-    "v1AdminGetCreditAllocatedsResponse": {
+    "v1AdminGetTasksResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CreditAllocated"
+            "$ref": "#/definitions/v1UserTask"
           }
         },
         "Total": {
@@ -140,7 +143,71 @@
         }
       }
     },
-    "v1CreditAllocated": {
+    "v1GetMyTasksRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetMyTasksResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserTask"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1RewardState": {
+      "type": "string",
+      "enum": [
+        "DefaultRewardState",
+        "UnIssued",
+        "Issued",
+        "Revoked"
+      ],
+      "default": "DefaultRewardState"
+    },
+    "v1TaskState": {
+      "type": "string",
+      "enum": [
+        "DefaultTaskState",
+        "NotStarted",
+        "InProgress",
+        "Done"
+      ],
+      "default": "DefaultTaskState"
+    },
+    "v1TaskType": {
+      "type": "string",
+      "enum": [
+        "DefaultTaskType",
+        "BaseTask",
+        "DailyTask",
+        "GrowthTask"
+      ],
+      "default": "DefaultTaskType"
+    },
+    "v1UserTask": {
       "type": "object",
       "properties": {
         "ID": {
@@ -153,57 +220,58 @@
         "AppID": {
           "type": "string"
         },
-        "UserID": {
+        "EventID": {
           "type": "string"
         },
-        "EmailAddress": {
+        "TaskType": {
+          "$ref": "#/definitions/v1TaskType"
+        },
+        "Name": {
           "type": "string"
         },
-        "PhoneNO": {
+        "TaskDesc": {
           "type": "string"
         },
-        "Credits": {
+        "StepGuide": {
           "type": "string"
+        },
+        "RecommendMessage": {
+          "type": "string"
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LastTaskID": {
+          "type": "string"
+        },
+        "MaxRewardCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CooldownSecord": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CompletionTimes": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "NextStartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "TaskState": {
+          "$ref": "#/definitions/v1TaskState"
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1RewardState"
         },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
         },
         "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1GetMyCreditAllocatedsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1GetMyCreditAllocatedsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1CreditAllocated"
-          }
-        },
-        "Total": {
           "type": "integer",
           "format": "int64"
         }

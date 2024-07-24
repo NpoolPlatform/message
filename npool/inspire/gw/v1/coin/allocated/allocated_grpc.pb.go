@@ -19,16 +19,16 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_UserGetCoinAllocateds_FullMethodName     = "/inspire.gateway.coin.allocated.v1.Gateway/UserGetCoinAllocateds"
-	Gateway_AdminGetAppCoinAllocateds_FullMethodName = "/inspire.gateway.coin.allocated.v1.Gateway/AdminGetAppCoinAllocateds"
+	Gateway_GetMyCoinAllocateds_FullMethodName    = "/inspire.gateway.coin.allocated.v1.Gateway/GetMyCoinAllocateds"
+	Gateway_AdminGetCoinAllocateds_FullMethodName = "/inspire.gateway.coin.allocated.v1.Gateway/AdminGetCoinAllocateds"
 )
 
 // GatewayClient is the client API for Gateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	UserGetCoinAllocateds(ctx context.Context, in *UserGetCoinAllocatedsRequest, opts ...grpc.CallOption) (*UserGetCoinAllocatedsResponse, error)
-	AdminGetAppCoinAllocateds(ctx context.Context, in *AdminGetAppCoinAllocatedsRequest, opts ...grpc.CallOption) (*AdminGetAppCoinAllocatedsResponse, error)
+	GetMyCoinAllocateds(ctx context.Context, in *GetMyCoinAllocatedsRequest, opts ...grpc.CallOption) (*GetMyCoinAllocatedsResponse, error)
+	AdminGetCoinAllocateds(ctx context.Context, in *AdminGetCoinAllocatedsRequest, opts ...grpc.CallOption) (*AdminGetCoinAllocatedsResponse, error)
 }
 
 type gatewayClient struct {
@@ -39,18 +39,18 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) UserGetCoinAllocateds(ctx context.Context, in *UserGetCoinAllocatedsRequest, opts ...grpc.CallOption) (*UserGetCoinAllocatedsResponse, error) {
-	out := new(UserGetCoinAllocatedsResponse)
-	err := c.cc.Invoke(ctx, Gateway_UserGetCoinAllocateds_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetMyCoinAllocateds(ctx context.Context, in *GetMyCoinAllocatedsRequest, opts ...grpc.CallOption) (*GetMyCoinAllocatedsResponse, error) {
+	out := new(GetMyCoinAllocatedsResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetMyCoinAllocateds_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) AdminGetAppCoinAllocateds(ctx context.Context, in *AdminGetAppCoinAllocatedsRequest, opts ...grpc.CallOption) (*AdminGetAppCoinAllocatedsResponse, error) {
-	out := new(AdminGetAppCoinAllocatedsResponse)
-	err := c.cc.Invoke(ctx, Gateway_AdminGetAppCoinAllocateds_FullMethodName, in, out, opts...)
+func (c *gatewayClient) AdminGetCoinAllocateds(ctx context.Context, in *AdminGetCoinAllocatedsRequest, opts ...grpc.CallOption) (*AdminGetCoinAllocatedsResponse, error) {
+	out := new(AdminGetCoinAllocatedsResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminGetCoinAllocateds_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -61,8 +61,8 @@ func (c *gatewayClient) AdminGetAppCoinAllocateds(ctx context.Context, in *Admin
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	UserGetCoinAllocateds(context.Context, *UserGetCoinAllocatedsRequest) (*UserGetCoinAllocatedsResponse, error)
-	AdminGetAppCoinAllocateds(context.Context, *AdminGetAppCoinAllocatedsRequest) (*AdminGetAppCoinAllocatedsResponse, error)
+	GetMyCoinAllocateds(context.Context, *GetMyCoinAllocatedsRequest) (*GetMyCoinAllocatedsResponse, error)
+	AdminGetCoinAllocateds(context.Context, *AdminGetCoinAllocatedsRequest) (*AdminGetCoinAllocatedsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -70,11 +70,11 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) UserGetCoinAllocateds(context.Context, *UserGetCoinAllocatedsRequest) (*UserGetCoinAllocatedsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UserGetCoinAllocateds not implemented")
+func (UnimplementedGatewayServer) GetMyCoinAllocateds(context.Context, *GetMyCoinAllocatedsRequest) (*GetMyCoinAllocatedsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMyCoinAllocateds not implemented")
 }
-func (UnimplementedGatewayServer) AdminGetAppCoinAllocateds(context.Context, *AdminGetAppCoinAllocatedsRequest) (*AdminGetAppCoinAllocatedsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AdminGetAppCoinAllocateds not implemented")
+func (UnimplementedGatewayServer) AdminGetCoinAllocateds(context.Context, *AdminGetCoinAllocatedsRequest) (*AdminGetCoinAllocatedsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminGetCoinAllocateds not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -89,38 +89,38 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 	s.RegisterService(&Gateway_ServiceDesc, srv)
 }
 
-func _Gateway_UserGetCoinAllocateds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserGetCoinAllocatedsRequest)
+func _Gateway_GetMyCoinAllocateds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMyCoinAllocatedsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).UserGetCoinAllocateds(ctx, in)
+		return srv.(GatewayServer).GetMyCoinAllocateds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_UserGetCoinAllocateds_FullMethodName,
+		FullMethod: Gateway_GetMyCoinAllocateds_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UserGetCoinAllocateds(ctx, req.(*UserGetCoinAllocatedsRequest))
+		return srv.(GatewayServer).GetMyCoinAllocateds(ctx, req.(*GetMyCoinAllocatedsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_AdminGetAppCoinAllocateds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AdminGetAppCoinAllocatedsRequest)
+func _Gateway_AdminGetCoinAllocateds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminGetCoinAllocatedsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).AdminGetAppCoinAllocateds(ctx, in)
+		return srv.(GatewayServer).AdminGetCoinAllocateds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_AdminGetAppCoinAllocateds_FullMethodName,
+		FullMethod: Gateway_AdminGetCoinAllocateds_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).AdminGetAppCoinAllocateds(ctx, req.(*AdminGetAppCoinAllocatedsRequest))
+		return srv.(GatewayServer).AdminGetCoinAllocateds(ctx, req.(*AdminGetCoinAllocatedsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -133,12 +133,12 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "UserGetCoinAllocateds",
-			Handler:    _Gateway_UserGetCoinAllocateds_Handler,
+			MethodName: "GetMyCoinAllocateds",
+			Handler:    _Gateway_GetMyCoinAllocateds_Handler,
 		},
 		{
-			MethodName: "AdminGetAppCoinAllocateds",
-			Handler:    _Gateway_AdminGetAppCoinAllocateds_Handler,
+			MethodName: "AdminGetCoinAllocateds",
+			Handler:    _Gateway_AdminGetCoinAllocateds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

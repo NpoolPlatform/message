@@ -7,15 +7,15 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-  rpc UserGetCoinAllocateds(UserGetCoinAllocatedsRequest) returns (UserGetCoinAllocatedsResponse) {
+  rpc GetMyCoinAllocateds(GetMyCoinAllocatedsRequest) returns (GetMyCoinAllocatedsResponse) {
     option (google.api.http) = {
-      post : "/v1/user/get/allocatedcoins"
+      post : "/v1/get/my/allocatedcoins"
       body : "*"
     };
   }
-  rpc AdminGetAppCoinAllocateds(AdminGetAppCoinAllocatedsRequest) returns (AdminGetAppCoinAllocatedsResponse) {
+  rpc AdminGetCoinAllocateds(AdminGetCoinAllocatedsRequest) returns (AdminGetCoinAllocatedsResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/app/allocatedcoins"
+      post : "/v1/admin/get/allocatedcoins"
       body : "*"
     };
   }
@@ -39,25 +39,25 @@ message CoinAllocated {
   uint32 UpdatedAt = 1010;
 }
 
-message UserGetCoinAllocatedsRequest {
+message GetMyCoinAllocatedsRequest {
   string AppID = 10;
   string UserID = 20;
   int32 Offset = 30;
   int32 Limit = 40;
 }
 
-message UserGetCoinAllocatedsResponse {
+message GetMyCoinAllocatedsResponse {
   repeated CoinAllocated Infos = 10;
   uint32 Total = 20;
 }
 
-message AdminGetAppCoinAllocatedsRequest {
+message AdminGetCoinAllocatedsRequest {
   string TargetAppID = 10;
   int32 Offset = 20;
   int32 Limit = 30;
 }
 
-message AdminGetAppCoinAllocatedsResponse {
+message AdminGetCoinAllocatedsResponse {
   repeated CoinAllocated Infos = 10;
   uint32 Total = 20;
 }

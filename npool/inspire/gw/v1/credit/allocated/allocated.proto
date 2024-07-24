@@ -7,15 +7,15 @@ import "google/api/annotations.proto";
 
 // Service Name
 service Gateway {
-  rpc UserGetCreditAllocateds(UserGetCreditAllocatedsRequest) returns (UserGetCreditAllocatedsResponse) {
+  rpc GetMyCreditAllocateds(GetMyCreditAllocatedsRequest) returns (GetMyCreditAllocatedsResponse) {
     option (google.api.http) = {
-      post : "/v1/user/get/allocatedcredits"
+      post : "/v1/get/my/allocatedcredits"
       body : "*"
     };
   }
-  rpc AdminGetAppCreditAllocateds(AdminGetAppCreditAllocatedsRequest) returns (AdminGetAppCreditAllocatedsResponse) {
+  rpc AdminGetCreditAllocateds(AdminGetCreditAllocatedsRequest) returns (AdminGetCreditAllocatedsResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/app/allocatedcredits"
+      post : "/v1/admin/get/allocatedcredits"
       body : "*"
     };
   }
@@ -33,25 +33,25 @@ message CreditAllocated {
   uint32 UpdatedAt = 1010;
 }
 
-message UserGetCreditAllocatedsRequest {
+message GetMyCreditAllocatedsRequest {
   string AppID = 10;
   string UserID = 20;
   int32 Offset = 30;
   int32 Limit = 40;
 }
 
-message UserGetCreditAllocatedsResponse {
+message GetMyCreditAllocatedsResponse {
   repeated CreditAllocated Infos = 10;
   uint32 Total = 20;
 }
 
-message AdminGetAppCreditAllocatedsRequest {
+message AdminGetCreditAllocatedsRequest {
   string TargetAppID = 10;
   int32 Offset = 20;
   int32 Limit = 30;
 }
 
-message AdminGetAppCreditAllocatedsResponse {
+message AdminGetCreditAllocatedsResponse {
   repeated CreditAllocated Infos = 10;
   uint32 Total = 20;
 }
