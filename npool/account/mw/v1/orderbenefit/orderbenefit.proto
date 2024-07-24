@@ -55,7 +55,7 @@ message Account {
   string Address = 60;
   // @inject_tag: sql:"order_id"
   string OrderID = 70;
-  // @inject_tag: sql:"address"
+  // @inject_tag: sql:"active"
   bool Active = 80;
   // @inject_tag: sql:"blocked"
   bool Blocked = 90;
