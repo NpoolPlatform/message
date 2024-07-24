@@ -115,7 +115,7 @@
         },
         "Active": {
           "type": "boolean",
-          "title": "@inject_tag: sql:\"address\""
+          "title": "@inject_tag: sql:\"active\""
         },
         "Blocked": {
           "type": "boolean",
