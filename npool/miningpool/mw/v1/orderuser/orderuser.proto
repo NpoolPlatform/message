@@ -67,6 +67,8 @@ message OrderUser {
   string Name = 60;
   // @inject_tag: sql:"read_page_link"
   string ReadPageLink = 90;
+  // @inject_tag: sql:"pool_id"
+  string PoolID = 100;
   // @inject_tag: sql:"miningpool_type"
   string MiningpoolTypeStr = 110;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 111;

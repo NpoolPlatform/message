@@ -241,6 +241,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"read_page_link\""
         },
+        "PoolID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"pool_id\""
+        },
         "MiningpoolTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"miningpool_type\""
