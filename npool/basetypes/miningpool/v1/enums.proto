@@ -23,6 +23,6 @@ enum WithdrawState {
 
   WithdrawStateWait = 10;
   WithdrawStateProccessing = 20;
-  WithdrawStateSuccess = 30;
-  WithdrawStateFailed = 40;
+  WithdrawStateSuccess = 100;
+  WithdrawStateFailed = 110;
 }

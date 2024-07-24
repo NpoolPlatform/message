@@ -144,10 +144,6 @@
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
-        "FeeRatio": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"fee_ratio\""
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",

@@ -172,10 +172,6 @@
         "OrderID": {
           "type": "string"
         },
-        "UsedFor": {
-          "$ref": "#/definitions/v1AccountUsedFor",
-          "title": "Only [OrderBenefit]"
-        },
         "Active": {
           "type": "boolean"
         },
@@ -248,9 +244,6 @@
         },
         "Blocked": {
           "$ref": "#/definitions/v1BoolVal"
-        },
-        "UsedFor": {
-          "$ref": "#/definitions/v1Uint32Val"
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
