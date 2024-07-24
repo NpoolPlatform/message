@@ -68,6 +68,7 @@ message Conds {
   optional basetypes.v1.StringVal EntID = 10;
   optional basetypes.v1.StringVal PoolID = 20;
   optional basetypes.v1.StringSliceVal CoinTypeIDs = 21;
+  optional basetypes.v1.StringVal CoinTypeID = 22;
   optional basetypes.v1.Uint32Val MiningpoolType = 30;
   optional basetypes.v1.Uint32Val CoinType = 31;
   optional basetypes.v1.BoolVal FixedRevenueAble = 50;
