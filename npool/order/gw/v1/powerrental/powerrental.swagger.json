@@ -622,7 +622,14 @@
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
         },
-        "AppSpotUnits": {
+        "AccountID": {
+          "type": "string",
+          "title": "for order benefit account"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Address": {
           "type": "string"
         }
       }
@@ -1111,10 +1118,10 @@
           "type": "integer",
           "format": "int64"
         },
-        "MiningPoolUserID": {
+        "MiningPoolOrderUserID": {
           "type": "string"
         },
-        "MiningPoolUserName": {
+        "MiningPoolOrderUserName": {
           "type": "string"
         },
         "MiningPoolReadPageLink": {
@@ -1216,6 +1223,16 @@
           "items": {
             "$ref": "#/definitions/v1FeeDuration"
           }
+        },
+        "AccountID": {
+          "type": "string",
+          "title": "order benefit account"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
