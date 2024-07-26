@@ -113,9 +113,6 @@
     "v1AdminCreateCompensateRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
         "GoodID": {
           "type": "string"
         },
