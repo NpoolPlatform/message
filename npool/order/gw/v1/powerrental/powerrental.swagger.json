@@ -625,15 +625,11 @@
         "AppSpotUnits": {
           "type": "string"
         },
-        "AccountID": {
-          "type": "string",
-          "title": "for order benefit account"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
+        "OrderBenefitAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderBenefitAccountReq"
+          }
         }
       }
     },
@@ -829,6 +825,36 @@
         "FullPayment"
       ],
       "default": "DefaultInvestmentType"
+    },
+    "v1OrderBenefitAccount": {
+      "type": "object",
+      "properties": {
+        "AccountID": {
+          "type": "string",
+          "title": "for order benefit account"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
+    },
+    "v1OrderBenefitAccountReq": {
+      "type": "object",
+      "properties": {
+        "AccountID": {
+          "type": "string",
+          "title": "for order benefit account"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
     },
     "v1OrderCouponInfo": {
       "type": "object",
@@ -1131,7 +1157,8 @@
           "type": "string"
         },
         "Units": {
-          "type": "string"
+          "type": "string",
+          "title": "TODO: benefit mode"
         },
         "GoodValueUSD": {
           "type": "string"
@@ -1227,15 +1254,12 @@
             "$ref": "#/definitions/v1FeeDuration"
           }
         },
-        "AccountID": {
-          "type": "string",
+        "OrderBenefitAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderBenefitAccount"
+          },
           "title": "order benefit account"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
