@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package order.middleware.miningpoolorderuser.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/order/mw/v1/powerrental/miningpoolorderuser";
+
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+  rpc CreateMiningPoolOrderUser(CreateMiningPoolOrderUserRequest)
+      returns (CreateMiningPoolOrderUserResponse) {}
+  rpc GetMiningPoolOrderUser(GetMiningPoolOrderUserRequest)
+      returns (GetMiningPoolOrderUserResponse) {}
+  rpc GetMiningPoolOrderUsers(GetMiningPoolOrderUsersRequest)
+      returns (GetMiningPoolOrderUsersResponse) {}
+  rpc ExistMiningPoolOrderUser(ExistMiningPoolOrderUserRequest)
+      returns (ExistMiningPoolOrderUserResponse) {}
+  rpc ExistMiningPoolOrderUserConds(ExistMiningPoolOrderUserCondsRequest)
+      returns (ExistMiningPoolOrderUserCondsResponse) {}
+  rpc DeleteMiningPoolOrderUser(DeleteMiningPoolOrderUserRequest)
+      returns (DeleteMiningPoolOrderUserResponse) {}
+}
+
+message MiningPoolOrderUserReq {
+  optional string EntID = 10;
+  optional string OrderID = 20;
+  optional string OrderUserID = 30;
+}
+
+message MiningPoolOrderUser {
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"order_id"
+  string OrderID = 30;
+  // @inject_tag: sql:"order_user_id"
+  string OrderUserID = 40;
+}
+
+message Conds {
+  optional basetypes.v1.Uint32Val ID = 10;
+  optional basetypes.v1.StringVal EntID = 20;
+  optional basetypes.v1.StringVal OrderID = 30;
+  optional basetypes.v1.StringVal OrderUserID = 40;
+  optional basetypes.v1.Uint32Val CreatedAt = 100;
+  optional basetypes.v1.StringSliceVal EntIDs = 110;
+}
+
+message CreateMiningPoolOrderUserRequest { MiningPoolOrderUserReq Info = 10; }
+
+message CreateMiningPoolOrderUserResponse { MiningPoolOrderUser Info = 10; }
+
+message GetMiningPoolOrderUserRequest { string EntID = 10; }
+
+message GetMiningPoolOrderUserResponse { MiningPoolOrderUser Info = 10; }
+
+message GetMiningPoolOrderUsersRequest {
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetMiningPoolOrderUsersResponse {
+  repeated MiningPoolOrderUser Infos = 10;
+  uint32 Total = 20;
+}
+
+message ExistMiningPoolOrderUserRequest { string EntID = 10; }
+
+message ExistMiningPoolOrderUserResponse { bool Info = 10; }
+
+message ExistMiningPoolOrderUserCondsRequest { Conds Conds = 10; }
+
+message ExistMiningPoolOrderUserCondsResponse { bool Info = 10; }
+
+message DeleteMiningPoolOrderUserRequest { MiningPoolOrderUserReq Info = 10; }
+
+message DeleteMiningPoolOrderUserResponse { MiningPoolOrderUser Info = 10; }
