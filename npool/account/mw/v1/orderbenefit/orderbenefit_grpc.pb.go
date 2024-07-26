@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateAccount_FullMethodName     = "/account.middleware.orderbenefit.v1.Middleware/CreateAccount"
+	Middleware_CreateAccounts_FullMethodName    = "/account.middleware.orderbenefit.v1.Middleware/CreateAccounts"
 	Middleware_GetAccount_FullMethodName        = "/account.middleware.orderbenefit.v1.Middleware/GetAccount"
 	Middleware_GetAccounts_FullMethodName       = "/account.middleware.orderbenefit.v1.Middleware/GetAccounts"
 	Middleware_ExistAccount_FullMethodName      = "/account.middleware.orderbenefit.v1.Middleware/ExistAccount"
@@ -32,6 +33,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
+	CreateAccounts(ctx context.Context, in *CreateAccountsRequest, opts ...grpc.CallOption) (*CreateAccountsResponse, error)
 	GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error)
 	GetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
 	ExistAccount(ctx context.Context, in *ExistAccountRequest, opts ...grpc.CallOption) (*ExistAccountResponse, error)
@@ -50,6 +52,15 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error) {
 	out := new(CreateAccountResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateAccount_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) CreateAccounts(ctx context.Context, in *CreateAccountsRequest, opts ...grpc.CallOption) (*CreateAccountsResponse, error) {
+	out := new(CreateAccountsResponse)
+	err := c.cc.Invoke(ctx, Middleware_CreateAccounts_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,6 +117,7 @@ func (c *middlewareClient) DeleteAccount(ctx context.Context, in *DeleteAccountR
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
+	CreateAccounts(context.Context, *CreateAccountsRequest) (*CreateAccountsResponse, error)
 	GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error)
 	GetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
 	ExistAccount(context.Context, *ExistAccountRequest) (*ExistAccountResponse, error)
@@ -120,6 +132,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAccount not implemented")
+}
+func (UnimplementedMiddlewareServer) CreateAccounts(context.Context, *CreateAccountsRequest) (*CreateAccountsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAccounts not implemented")
 }
 func (UnimplementedMiddlewareServer) GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccount not implemented")
@@ -163,6 +178,24 @@ func _Middleware_CreateAccount_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateAccount(ctx, req.(*CreateAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_CreateAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAccountsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).CreateAccounts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_CreateAccounts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).CreateAccounts(ctx, req.(*CreateAccountsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -267,6 +300,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAccount",
 			Handler:    _Middleware_CreateAccount_Handler,
+		},
+		{
+			MethodName: "CreateAccounts",
+			Handler:    _Middleware_CreateAccounts_Handler,
 		},
 		{
 			MethodName: "GetAccount",
