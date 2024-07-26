@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+package inspire.middleware.event.coupon.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/event/coupon";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateEventCoupon     (CreateEventCouponRequest)     returns (CreateEventCouponResponse)      {}
+    rpc UpdateEventCoupon     (UpdateEventCouponRequest)     returns (UpdateEventCouponResponse)      {}
+    rpc GetEventCoupon        (GetEventCouponRequest)        returns (GetEventCouponResponse)         {}
+    rpc GetEventCoupons       (GetEventCouponsRequest)       returns (GetEventCouponsResponse)        {}
+    rpc ExistEventCouponConds (ExistEventCouponCondsRequest) returns (ExistEventCouponCondsResponse)  {}
+    rpc DeleteEventCoupon     (DeleteEventCouponRequest)     returns (DeleteEventCouponResponse)   {
+        option (google.api.http) = {
+            post: "/v1/eventcoupon_DeleteEventCoupon"
+            body: "*"
+        };
+    }
+}
+
+message EventCouponReq {
+    optional uint32 ID           = 10;
+    optional string EntID        = 20;
+    optional string AppID        = 30;
+    optional string EventID      = 40;
+    optional string CouponID     = 50;
+}
+
+message EventCoupon {
+    // @inject_tag: sql:"id"
+    uint32          ID              = 10;
+    // @inject_tag: sql:"ent_id"
+    string          EntID           = 20;
+    // @inject_tag: sql:"app_id"
+    string          AppID           = 30;
+    // @inject_tag: sql:"event_id"
+    string          EventID         = 40;
+    // @inject_tag: sql:"coupon_id"
+    string          CouponID        = 50;
+    // @inject_tag: sql:"created_at"
+    uint32          CreatedAt       = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32          UpdatedAt       = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal  EntID         = 10;
+    optional basetypes.v1.StringVal  AppID         = 20;
+    optional basetypes.v1.StringSliceVal EntIDs    = 30;
+    optional basetypes.v1.StringVal  EventID       = 40;
+    optional basetypes.v1.StringVal  CouponID      = 50;
+    optional basetypes.v1.Uint32Val  ID            = 60;
+    optional basetypes.v1.StringSliceVal  EventIDs = 70;
+}
+
+message GetEventCouponsRequest {
+    Conds  Conds     = 10;
+    int32  Offset    = 20;
+    int32  Limit     = 30;
+}
+
+message GetEventCouponsResponse {
+    repeated EventCoupon Infos = 10;
+    uint32          Total = 20;
+}
+
+message CreateEventCouponRequest {
+    EventCouponReq Info = 10;
+}
+
+message CreateEventCouponResponse {
+    EventCoupon Info = 10;
+}
+
+message UpdateEventCouponRequest {
+    EventCouponReq Info = 10;
+}
+
+message UpdateEventCouponResponse {
+    EventCoupon Info = 10;
+}
+
+message GetEventCouponRequest {
+    string EntID  = 10;
+}
+
+message GetEventCouponResponse {
+    EventCoupon Info = 10;
+}
+
+message ExistEventCouponCondsRequest {
+  Conds Conds  = 10;
+}
+
+message ExistEventCouponCondsResponse {
+  bool Info = 10;
+}
+
+message DeleteEventCouponRequest {
+    EventCouponReq Info = 10;
+}
+
+message DeleteEventCouponResponse {
+    EventCoupon Info = 10;
+}

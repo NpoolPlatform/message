@@ -1,0 +1,320 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/inspire/mw/v1/task/user/user.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/taskuser_DeleteTaskUser": {
+      "post": {
+        "operationId": "Middleware_DeleteTaskUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteTaskUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteTaskUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Conds": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "TaskState": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EntIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "UserID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "TaskID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "EventID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "CreatedAt": {
+          "$ref": "#/definitions/v1Uint32Val"
+        }
+      }
+    },
+    "v1CreateTaskUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TaskUser"
+        }
+      }
+    },
+    "v1DeleteTaskUserRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TaskUserReq"
+        }
+      }
+    },
+    "v1DeleteTaskUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TaskUser"
+        }
+      }
+    },
+    "v1ExistTaskUserCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetTaskUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TaskUser"
+        }
+      }
+    },
+    "v1GetTaskUsersResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1TaskUser"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1RewardState": {
+      "type": "string",
+      "enum": [
+        "DefaultRewardState",
+        "UnIssued",
+        "Issued",
+        "Revoked"
+      ],
+      "default": "DefaultRewardState"
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1TaskState": {
+      "type": "string",
+      "enum": [
+        "DefaultTaskState",
+        "NotStarted",
+        "InProgress",
+        "Done"
+      ],
+      "default": "DefaultTaskState"
+    },
+    "v1TaskUser": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "TaskID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"task_id\""
+        },
+        "EventID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"event_id\""
+        },
+        "TaskStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"task_state\""
+        },
+        "TaskState": {
+          "$ref": "#/definitions/v1TaskState"
+        },
+        "RewardStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reward_state\""
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1RewardState"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1TaskUserReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "TaskID": {
+          "type": "string"
+        },
+        "EventID": {
+          "type": "string"
+        },
+        "TaskState": {
+          "$ref": "#/definitions/v1TaskState"
+        },
+        "RewardState": {
+          "$ref": "#/definitions/v1RewardState"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateTaskUserResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1TaskUser"
+        }
+      }
+    }
+  }
+}

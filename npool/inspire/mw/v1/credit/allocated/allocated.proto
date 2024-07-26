@@ -1,0 +1,111 @@
+syntax = "proto3";
+
+package inspire.middleware.credit.allocated.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/credit/allocated";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc CreateCreditAllocated     (CreateCreditAllocatedRequest)     returns (CreateCreditAllocatedResponse)      {}
+    rpc UpdateCreditAllocated     (UpdateCreditAllocatedRequest)     returns (UpdateCreditAllocatedResponse)      {}
+    rpc GetCreditAllocated        (GetCreditAllocatedRequest)        returns (GetCreditAllocatedResponse)         {}
+    rpc GetCreditAllocateds       (GetCreditAllocatedsRequest)       returns (GetCreditAllocatedsResponse)        {}
+    rpc ExistCreditAllocatedConds (ExistCreditAllocatedCondsRequest) returns (ExistCreditAllocatedCondsResponse)  {}
+    rpc DeleteCreditAllocated     (DeleteCreditAllocatedRequest)     returns (DeleteCreditAllocatedResponse)   {
+        option (google.api.http) = {
+            post: "/v1/creditallocated_DeleteCreditAllocated"
+            body: "*"
+        };
+    }
+}
+
+message CreditAllocatedReq {
+    optional uint32 ID           = 10;
+    optional string EntID        = 20;
+    optional string AppID        = 30;
+    optional string UserID       = 40;
+    optional string Value        = 50;
+    optional string Extra        = 60;
+}
+
+message CreditAllocated {
+    // @inject_tag: sql:"id"
+    uint32          ID              = 10;
+    // @inject_tag: sql:"ent_id"
+    string          EntID           = 20;
+    // @inject_tag: sql:"app_id"
+    string          AppID           = 30;
+    // @inject_tag: sql:"user_id"
+    string          UserID          = 40;
+    // @inject_tag: sql:"value"
+    string          Value           = 50;
+    // @inject_tag: sql:"extra"
+    string          Extra           = 60;
+    // @inject_tag: sql:"created_at"
+    uint32          CreatedAt       = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32          UpdatedAt       = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal  EntID         = 10;
+    optional basetypes.v1.StringVal  AppID         = 20;
+    optional basetypes.v1.StringSliceVal EntIDs    = 30;
+    optional basetypes.v1.StringVal  UserID        = 40;
+    optional basetypes.v1.StringVal  Extra         = 50;
+    optional basetypes.v1.Uint32Val  ID            = 70;
+}
+
+message GetCreditAllocatedsRequest {
+    Conds  Conds     = 10;
+    int32  Offset    = 20;
+    int32  Limit     = 30;
+}
+
+message GetCreditAllocatedsResponse {
+    repeated CreditAllocated Infos = 10;
+    uint32          Total = 20;
+}
+
+message CreateCreditAllocatedRequest {
+    CreditAllocatedReq Info = 10;
+}
+
+message CreateCreditAllocatedResponse {
+    CreditAllocated Info = 10;
+}
+
+message UpdateCreditAllocatedRequest {
+    CreditAllocatedReq Info = 10;
+}
+
+message UpdateCreditAllocatedResponse {
+    CreditAllocated Info = 10;
+}
+
+message GetCreditAllocatedRequest {
+    string EntID  = 10;
+}
+
+message GetCreditAllocatedResponse {
+    CreditAllocated Info = 10;
+}
+
+message ExistCreditAllocatedCondsRequest {
+  Conds Conds  = 10;
+}
+
+message ExistCreditAllocatedCondsResponse {
+  bool Info = 10;
+}
+
+message DeleteCreditAllocatedRequest {
+    CreditAllocatedReq Info = 10;
+}
+
+message DeleteCreditAllocatedResponse {
+    CreditAllocated Info = 10;
+}
