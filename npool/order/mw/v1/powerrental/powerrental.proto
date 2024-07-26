@@ -21,6 +21,7 @@ service Middleware {
     rpc GetPowerRentalOrder (GetPowerRentalOrderRequest) returns (GetPowerRentalOrderResponse) {}
     rpc GetPowerRentalOrders (GetPowerRentalOrdersRequest) returns (GetPowerRentalOrdersResponse) {}
     rpc CountPowerRentalOrders (CountPowerRentalOrdersRequest) returns (CountPowerRentalOrdersResponse) {}
+    rpc SumPowerRentalOrderUnits (SumPowerRentalOrderUnitsRequest) returns (SumPowerRentalOrderUnitsResponse) {}
     rpc ExistPowerRentalOrder (ExistPowerRentalOrderRequest) returns (ExistPowerRentalOrderResponse) {}
     rpc ExistPowerRentalOrderConds (ExistPowerRentalOrderCondsRequest) returns (ExistPowerRentalOrderCondsResponse) {}
     rpc DeletePowerRentalOrder (DeletePowerRentalOrderRequest) returns (DeletePowerRentalOrderResponse) {}
@@ -308,6 +309,14 @@ message CountPowerRentalOrdersRequest {
 
 message CountPowerRentalOrdersResponse {
     uint32 Info = 10;
+}
+
+message SumPowerRentalOrderUnitsRequest {
+    Conds Conds = 10;
+}
+
+message SumPowerRentalOrderUnitsResponse {
+    string Info = 10;
 }
 
 message ExistPowerRentalOrderRequest {
