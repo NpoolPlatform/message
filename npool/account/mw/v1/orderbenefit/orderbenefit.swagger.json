@@ -201,6 +201,52 @@
       ],
       "default": "DefaultAccountUsedFor"
     },
+    "v1AccountsReq": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "BaseAccoounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1BaseAccoountReq"
+          }
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "Blocked": {
+          "type": "boolean"
+        },
+        "Locked": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1BaseAccoountReq": {
+      "type": "object",
+      "properties": {
+        "OrderBenefitID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
+    },
     "v1BoolVal": {
       "type": "object",
       "properties": {
@@ -258,6 +304,17 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1CreateAccountsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Account"
+          }
         }
       }
     },
