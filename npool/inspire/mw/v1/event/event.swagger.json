@@ -408,33 +408,6 @@
         }
       }
     },
-    "v1EventCoinReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "EventID": {
-          "type": "string"
-        },
-        "CoinConfigID": {
-          "type": "string"
-        },
-        "CoinValue": {
-          "type": "string"
-        },
-        "CoinPreUSD": {
-          "type": "string"
-        }
-      }
-    },
     "v1EventReq": {
       "type": "object",
       "properties": {
@@ -450,12 +423,6 @@
         },
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
-        },
-        "CouponIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         },
         "Credits": {
           "type": "string"
@@ -476,18 +443,6 @@
         },
         "AppGoodID": {
           "type": "string"
-        },
-        "RemoveCouponIDs": {
-          "type": "boolean"
-        },
-        "Coins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1EventCoinReq"
-          }
-        },
-        "RemoveCoins": {
-          "type": "boolean"
         }
       }
     },

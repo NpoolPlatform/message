@@ -5,9 +5,7 @@ package inspire.gateway.event.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/inspire/gw/v1/event";
 
 import "google/api/annotations.proto";
-import "npool/inspire/mw/v1/coupon/coupon.proto";
 import "npool/basetypes/v1/usedfor.proto";
-import "npool/inspire/mw/v1/event/coin/coin.proto";
 
 // Service Name
 service Gateway {
@@ -61,14 +59,12 @@ message Event {
   string AppID = 20;
   string AppName = 30;
   basetypes.v1.UsedFor EventType = 40;
-  repeated inspire.middleware.coupon.v1.Coupon Coupons = 50;
   string Credits = 60;
   string CreditsPerUSD = 70;
   uint32 MaxConsecutive = 80;
   string GoodID = 90;
   string GoodName = 100;
   uint32 InviterLayers = 110;
-  repeated EventCoin EventCoins = 120;
   uint32 CreatedAt = 200;
   uint32 UpdatedAt = 210;
   uint32 DeletedAt = 220;
@@ -76,30 +72,14 @@ message Event {
   string AppGoodName = 240;
 }
 
-message EventCoin {
-  string EntID = 10;
-  string AppID = 20;
-  string EventID = 30;
-  string CoinConfigID = 40;
-  string CoinTypeID = 50;
-  string CoinValue = 60;
-  string CoinPreUSD = 70;
-  string CoinName = 80;
-  repeated string DisplayNames = 90;
-  string CoinLogo = 100;
-  string CoinUnit = 110;
-}
-
 message CreateEventRequest {
   string AppID = 10;
   basetypes.v1.UsedFor EventType = 20;
-  repeated string CouponIDs = 30;
   optional string Credits = 40;
   optional string CreditsPerUSD = 50;
   optional uint32 MaxConsecutive = 60;
   optional string AppGoodID = 70;
   optional uint32 InviterLayers = 80;
-  repeated inspire.middleware.event.coin.v1.EventCoinReq Coins = 90;
 }
 
 message CreateEventResponse { Event Info = 10; }
@@ -119,14 +99,10 @@ message UpdateEventRequest {
   uint32 ID = 10;
   string EntID = 11;
   string AppID = 20;
-  repeated string CouponIDs = 30;
   optional string Credits = 40;
   optional string CreditsPerUSD = 50;
   optional uint32 MaxConsecutive = 60;
   optional uint32 InviterLayers = 80;
-  optional bool RemoveCouponIDs = 90;
-  repeated inspire.middleware.event.coin.v1.EventCoinReq Coins = 100;
-  optional bool RemoveCoins = 110;
 }
 
 message UpdateEventResponse { Event Info = 10; }
@@ -145,13 +121,11 @@ message AdminGetEventsResponse {
 message AdminCreateEventRequest {
   string TargetAppID = 10;
   basetypes.v1.UsedFor EventType = 20;
-  repeated string CouponIDs = 30;
   optional string Credits = 40;
   optional string CreditsPerUSD = 50;
   optional uint32 MaxConsecutive = 60;
   optional string AppGoodID = 70;
   optional uint32 InviterLayers = 80;
-  repeated inspire.middleware.event.coin.v1.EventCoinReq Coins = 90;
 }
 
 message AdminCreateEventResponse { Event Info = 10; }
@@ -160,14 +134,10 @@ message AdminUpdateEventRequest {
   uint32 ID = 10;
   string EntID = 11;
   string TargetAppID = 20;
-  repeated string CouponIDs = 30;
   optional string Credits = 40;
   optional string CreditsPerUSD = 50;
   optional uint32 MaxConsecutive = 60;
   optional uint32 InviterLayers = 80;
-  optional bool RemoveCouponIDs = 90;
-  repeated inspire.middleware.event.coin.v1.EventCoinReq Coins = 100;
-  optional bool RemoveCoins = 110;
 }
 
 message AdminUpdateEventResponse { Event Info = 10; }

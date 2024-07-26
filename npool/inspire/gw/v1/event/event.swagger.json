@@ -242,47 +242,6 @@
     }
   },
   "definitions": {
-    "gatewayeventv1EventCoin": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "EventID": {
-          "type": "string"
-        },
-        "CoinConfigID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "CoinValue": {
-          "type": "string"
-        },
-        "CoinPreUSD": {
-          "type": "string"
-        },
-        "CoinName": {
-          "type": "string"
-        },
-        "DisplayNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "CoinLogo": {
-          "type": "string"
-        },
-        "CoinUnit": {
-          "type": "string"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -319,12 +278,6 @@
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
         },
-        "CouponIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "Credits": {
           "type": "string"
         },
@@ -341,12 +294,6 @@
         "InviterLayers": {
           "type": "integer",
           "format": "int64"
-        },
-        "Coins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1EventCoinReq"
-          }
         }
       }
     },
@@ -422,12 +369,6 @@
         "TargetAppID": {
           "type": "string"
         },
-        "CouponIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "Credits": {
           "type": "string"
         },
@@ -441,18 +382,6 @@
         "InviterLayers": {
           "type": "integer",
           "format": "int64"
-        },
-        "RemoveCouponIDs": {
-          "type": "boolean"
-        },
-        "Coins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1EventCoinReq"
-          }
-        },
-        "RemoveCoins": {
-          "type": "boolean"
         }
       }
     },
@@ -464,134 +393,6 @@
         }
       }
     },
-    "v1Coupon": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
-        },
-        "CouponTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_type\""
-        },
-        "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "Denomination": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"denomination\""
-        },
-        "Circulation": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"circulation\""
-        },
-        "IssuedBy": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"issued_by\""
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"start_at\""
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"end_at\""
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"duration_days\""
-        },
-        "Message": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"message\""
-        },
-        "Name": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"name\""
-        },
-        "Allocated": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"allocated\""
-        },
-        "Threshold": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"threshold\""
-        },
-        "CouponConstraintStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_constraint\""
-        },
-        "CouponConstraint": {
-          "$ref": "#/definitions/v1CouponConstraint"
-        },
-        "Random": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"random\""
-        },
-        "CouponScopeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_scope\""
-        },
-        "CouponScope": {
-          "$ref": "#/definitions/v1CouponScope"
-        },
-        "CashableProbability": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"cashable_probability\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
-        }
-      }
-    },
-    "v1CouponConstraint": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponConstraint",
-        "Normal",
-        "PaymentThreshold"
-      ],
-      "default": "DefaultCouponConstraint"
-    },
-    "v1CouponScope": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponScope",
-        "AllGood",
-        "Whitelist",
-        "Blacklist"
-      ],
-      "default": "DefaultCouponScope"
-    },
-    "v1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount"
-      ],
-      "default": "DefaultCouponType"
-    },
     "v1CreateEventRequest": {
       "type": "object",
       "properties": {
@@ -600,12 +401,6 @@
         },
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
-        },
-        "CouponIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         },
         "Credits": {
           "type": "string"
@@ -623,12 +418,6 @@
         "InviterLayers": {
           "type": "integer",
           "format": "int64"
-        },
-        "Coins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1EventCoinReq"
-          }
         }
       }
     },
@@ -659,12 +448,6 @@
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
         },
-        "Coupons": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Coupon"
-          }
-        },
         "Credits": {
           "type": "string"
         },
@@ -685,12 +468,6 @@
           "type": "integer",
           "format": "int64"
         },
-        "EventCoins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/gatewayeventv1EventCoin"
-          }
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -707,33 +484,6 @@
           "type": "string"
         },
         "AppGoodName": {
-          "type": "string"
-        }
-      }
-    },
-    "v1EventCoinReq": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "EventID": {
-          "type": "string"
-        },
-        "CoinConfigID": {
-          "type": "string"
-        },
-        "CoinValue": {
-          "type": "string"
-        },
-        "CoinPreUSD": {
           "type": "string"
         }
       }
@@ -782,12 +532,6 @@
         "AppID": {
           "type": "string"
         },
-        "CouponIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "Credits": {
           "type": "string"
         },
@@ -801,18 +545,6 @@
         "InviterLayers": {
           "type": "integer",
           "format": "int64"
-        },
-        "RemoveCouponIDs": {
-          "type": "boolean"
-        },
-        "Coins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1EventCoinReq"
-          }
-        },
-        "RemoveCoins": {
-          "type": "boolean"
         }
       }
     },

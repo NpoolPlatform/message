@@ -41,16 +41,12 @@ message EventReq {
   optional string EntID = 11;
   optional string AppID = 20;
   optional basetypes.v1.UsedFor EventType = 30;
-  repeated string CouponIDs = 40;
   optional string Credits = 50;
   optional string CreditsPerUSD = 60;
   optional uint32 MaxConsecutive = 70;
   optional string GoodID = 80;
   optional uint32 InviterLayers = 90;
   optional string AppGoodID = 100;
-  optional bool RemoveCouponIDs = 110;
-  repeated inspire.middleware.event.coin.v1.EventCoinReq Coins = 120;
-  optional bool RemoveCoins = 130;
 }
 
 message Event {
