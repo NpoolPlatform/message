@@ -194,6 +194,7 @@ message CreatePowerRentalOrderRequest {
   optional bool Simulate = 120;
   optional string AppGoodStockID = 130;
   basetypes.order.v1.InvestmentType InvestmentType = 140;
+  optional string AppSpotUnits = 150;
 
   // for order benefit account
   optional string AccountID = 200;
