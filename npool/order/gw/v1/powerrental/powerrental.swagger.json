@@ -622,6 +622,9 @@
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
         },
+        "AppSpotUnits": {
+          "type": "string"
+        },
         "AccountID": {
           "type": "string",
           "title": "for order benefit account"
