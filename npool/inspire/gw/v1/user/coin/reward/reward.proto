@@ -14,9 +14,9 @@ service Gateway {
       body : "*"
     };
   }
-  rpc UserGetUserCoinRewards(UserGetUserCoinRewardsRequest) returns (UserGetUserCoinRewardsResponse) {
+  rpc GetMyCoinRewards(GetMyCoinRewardsRequest) returns (GetMyCoinRewardsResponse) {
     option (google.api.http) = {
-      post : "/v1/user/get/usercoinrewards"
+      post : "/v1/get/my/coinrewards"
       body : "*"
     };
   }
@@ -37,14 +37,14 @@ message UserCoinReward {
   uint32 UpdatedAt = 1010;
 }
 
-message UserGetUserCoinRewardsRequest {
+message GetMyCoinRewardsRequest {
   string AppID = 10;
   string UserID = 20;
   int32 Offset = 30;
   int32 Limit = 40;
 }
 
-message UserGetUserCoinRewardsResponse {
+message GetMyCoinRewardsResponse {
   repeated UserCoinReward Infos = 10;
   uint32 Total = 20;
 }

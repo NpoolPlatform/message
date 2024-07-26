@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/user/get/usercoinrewards": {
+    "/v1/get/my/coinrewards": {
       "post": {
-        "operationId": "Gateway_UserGetUserCoinRewards",
+        "operationId": "Gateway_GetMyCoinRewards",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UserGetUserCoinRewardsResponse"
+              "$ref": "#/definitions/v1GetMyCoinRewardsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UserGetUserCoinRewardsRequest"
+              "$ref": "#/definitions/v1GetMyCoinRewardsRequest"
             }
           }
         ],
@@ -140,6 +140,40 @@
         }
       }
     },
+    "v1GetMyCoinRewardsRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetMyCoinRewardsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserCoinReward"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1UserCoinReward": {
       "type": "object",
       "properties": {
@@ -182,40 +216,6 @@
           "format": "int64"
         },
         "UpdatedAt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UserGetUserCoinRewardsRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "v1UserGetUserCoinRewardsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1UserCoinReward"
-          }
-        },
-        "Total": {
           "type": "integer",
           "format": "int64"
         }

@@ -20,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Gateway_AdminGetUserCoinRewards_FullMethodName = "/inspire.gateway.user.coin.reward.v1.Gateway/AdminGetUserCoinRewards"
-	Gateway_UserGetUserCoinRewards_FullMethodName  = "/inspire.gateway.user.coin.reward.v1.Gateway/UserGetUserCoinRewards"
+	Gateway_GetMyCoinRewards_FullMethodName        = "/inspire.gateway.user.coin.reward.v1.Gateway/GetMyCoinRewards"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -28,7 +28,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
 	AdminGetUserCoinRewards(ctx context.Context, in *AdminGetUserCoinRewardsRequest, opts ...grpc.CallOption) (*AdminGetUserCoinRewardsResponse, error)
-	UserGetUserCoinRewards(ctx context.Context, in *UserGetUserCoinRewardsRequest, opts ...grpc.CallOption) (*UserGetUserCoinRewardsResponse, error)
+	GetMyCoinRewards(ctx context.Context, in *GetMyCoinRewardsRequest, opts ...grpc.CallOption) (*GetMyCoinRewardsResponse, error)
 }
 
 type gatewayClient struct {
@@ -48,9 +48,9 @@ func (c *gatewayClient) AdminGetUserCoinRewards(ctx context.Context, in *AdminGe
 	return out, nil
 }
 
-func (c *gatewayClient) UserGetUserCoinRewards(ctx context.Context, in *UserGetUserCoinRewardsRequest, opts ...grpc.CallOption) (*UserGetUserCoinRewardsResponse, error) {
-	out := new(UserGetUserCoinRewardsResponse)
-	err := c.cc.Invoke(ctx, Gateway_UserGetUserCoinRewards_FullMethodName, in, out, opts...)
+func (c *gatewayClient) GetMyCoinRewards(ctx context.Context, in *GetMyCoinRewardsRequest, opts ...grpc.CallOption) (*GetMyCoinRewardsResponse, error) {
+	out := new(GetMyCoinRewardsResponse)
+	err := c.cc.Invoke(ctx, Gateway_GetMyCoinRewards_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *gatewayClient) UserGetUserCoinRewards(ctx context.Context, in *UserGetU
 // for forward compatibility
 type GatewayServer interface {
 	AdminGetUserCoinRewards(context.Context, *AdminGetUserCoinRewardsRequest) (*AdminGetUserCoinRewardsResponse, error)
-	UserGetUserCoinRewards(context.Context, *UserGetUserCoinRewardsRequest) (*UserGetUserCoinRewardsResponse, error)
+	GetMyCoinRewards(context.Context, *GetMyCoinRewardsRequest) (*GetMyCoinRewardsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -73,8 +73,8 @@ type UnimplementedGatewayServer struct {
 func (UnimplementedGatewayServer) AdminGetUserCoinRewards(context.Context, *AdminGetUserCoinRewardsRequest) (*AdminGetUserCoinRewardsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminGetUserCoinRewards not implemented")
 }
-func (UnimplementedGatewayServer) UserGetUserCoinRewards(context.Context, *UserGetUserCoinRewardsRequest) (*UserGetUserCoinRewardsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UserGetUserCoinRewards not implemented")
+func (UnimplementedGatewayServer) GetMyCoinRewards(context.Context, *GetMyCoinRewardsRequest) (*GetMyCoinRewardsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMyCoinRewards not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -107,20 +107,20 @@ func _Gateway_AdminGetUserCoinRewards_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_UserGetUserCoinRewards_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserGetUserCoinRewardsRequest)
+func _Gateway_GetMyCoinRewards_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMyCoinRewardsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).UserGetUserCoinRewards(ctx, in)
+		return srv.(GatewayServer).GetMyCoinRewards(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_UserGetUserCoinRewards_FullMethodName,
+		FullMethod: Gateway_GetMyCoinRewards_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).UserGetUserCoinRewards(ctx, req.(*UserGetUserCoinRewardsRequest))
+		return srv.(GatewayServer).GetMyCoinRewards(ctx, req.(*GetMyCoinRewardsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -137,8 +137,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_AdminGetUserCoinRewards_Handler,
 		},
 		{
-			MethodName: "UserGetUserCoinRewards",
-			Handler:    _Gateway_UserGetUserCoinRewards_Handler,
+			MethodName: "GetMyCoinRewards",
+			Handler:    _Gateway_GetMyCoinRewards_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

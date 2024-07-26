@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/user/get/userrewards": {
+    "/v1/get/my/rewards": {
       "post": {
-        "operationId": "Gateway_UserGetUserRewards",
+        "operationId": "Gateway_GetMyRewards",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UserGetUserRewardsResponse"
+              "$ref": "#/definitions/v1GetMyRewardsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UserGetUserRewardsRequest"
+              "$ref": "#/definitions/v1GetMyRewardsRequest"
             }
           }
         ],
@@ -140,7 +140,7 @@
         }
       }
     },
-    "v1UserGetUserRewardsRequest": {
+    "v1GetMyRewardsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -159,7 +159,7 @@
         }
       }
     },
-    "v1UserGetUserRewardsResponse": {
+    "v1GetMyRewardsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
