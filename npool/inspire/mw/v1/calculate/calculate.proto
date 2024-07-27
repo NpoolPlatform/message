@@ -16,6 +16,12 @@ service Middleware {
       body : "*"
     };
   }
+  rpc ReconcileCalculate(ReconcileCalculateRequest) returns (ReconcileCalculateResponse) {
+    option (google.api.http) = {
+      post : "/v1/calculate_ReconcileCalculate"
+      body : "*"
+    };
+  }
 }
 
 message Payment {
@@ -40,5 +46,14 @@ message CalculateRequest {
 }
 
 message CalculateResponse {
+  repeated inspire.middleware.achievement.statement.order.v1.StatementReq Infos = 10;
+}
+
+message ReconcileCalculateRequest {
+  string AppID   = 10;
+  string OrderID = 20;
+}
+
+message ReconcileCalculateResponse {
   repeated inspire.middleware.achievement.statement.order.v1.StatementReq Infos = 10;
 }
