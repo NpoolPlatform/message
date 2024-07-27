@@ -53,6 +53,8 @@ message ReconcileCalculateRequest {
   string AppID   = 10;
   string UserID  = 20;
   string OrderID = 30;
+  uint32 OrderCreatedAt = 40;
+  basetypes.inspire.v1.SettleType SettleType = 50;
 }
 
 message ReconcileCalculateResponse {

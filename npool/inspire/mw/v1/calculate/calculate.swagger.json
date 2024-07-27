@@ -285,6 +285,13 @@
         },
         "OrderID": {
           "type": "string"
+        },
+        "OrderCreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "SettleType": {
+          "$ref": "#/definitions/v1SettleType"
         }
       }
     },
