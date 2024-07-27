@@ -51,7 +51,8 @@ message CalculateResponse {
 
 message ReconcileCalculateRequest {
   string AppID   = 10;
-  string OrderID = 20;
+  string UserID  = 20;
+  string OrderID = 30;
 }
 
 message ReconcileCalculateResponse {
