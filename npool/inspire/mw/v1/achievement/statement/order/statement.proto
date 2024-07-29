@@ -114,6 +114,8 @@ message Statement {
   // @inject_tag: sql:"commission_config_type"
   string CommissionConfigTypeStr = 160;
   basetypes.inspire.v1.CommissionConfigType CommissionConfigType = 170;
+  // @inject_tag: sql:"direct_contributor_id"
+  string DirectContributorID = 180;
 
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 1000;
