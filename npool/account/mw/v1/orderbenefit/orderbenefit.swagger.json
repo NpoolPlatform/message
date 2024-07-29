@@ -323,7 +323,7 @@
     "v1DeleteAccountsRequest": {
       "type": "object",
       "properties": {
-        "Info": {
+        "Infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1AccountReq"
@@ -334,8 +334,11 @@
     "v1DeleteAccountsResponse": {
       "type": "object",
       "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Account"
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Account"
+          }
         }
       }
     },
