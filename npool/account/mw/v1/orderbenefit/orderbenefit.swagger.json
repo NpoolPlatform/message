@@ -47,6 +47,38 @@
           "Middleware"
         ]
       }
+    },
+    "/v1/orderbenefit_DeleteAccounts": {
+      "post": {
+        "operationId": "Middleware_DeleteAccounts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAccountsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteAccountsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
     }
   },
   "definitions": {
@@ -201,52 +233,6 @@
       ],
       "default": "DefaultAccountUsedFor"
     },
-    "v1AccountsReq": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "BaseAccoounts": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1BaseAccoountReq"
-          }
-        },
-        "OrderID": {
-          "type": "string"
-        },
-        "Active": {
-          "type": "boolean"
-        },
-        "Blocked": {
-          "type": "boolean"
-        },
-        "Locked": {
-          "type": "boolean"
-        }
-      }
-    },
-    "v1BaseAccoountReq": {
-      "type": "object",
-      "properties": {
-        "OrderBenefitID": {
-          "type": "string"
-        },
-        "CoinTypeID": {
-          "type": "string"
-        },
-        "AccountID": {
-          "type": "string"
-        },
-        "Address": {
-          "type": "string"
-        }
-      }
-    },
     "v1BoolVal": {
       "type": "object",
       "properties": {
@@ -327,6 +313,25 @@
       }
     },
     "v1DeleteAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Account"
+        }
+      }
+    },
+    "v1DeleteAccountsRequest": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1AccountReq"
+          }
+        }
+      }
+    },
+    "v1DeleteAccountsResponse": {
       "type": "object",
       "properties": {
         "Info": {

@@ -26,6 +26,7 @@ const (
 	Middleware_ExistAccount_FullMethodName      = "/account.middleware.orderbenefit.v1.Middleware/ExistAccount"
 	Middleware_ExistAccountConds_FullMethodName = "/account.middleware.orderbenefit.v1.Middleware/ExistAccountConds"
 	Middleware_DeleteAccount_FullMethodName     = "/account.middleware.orderbenefit.v1.Middleware/DeleteAccount"
+	Middleware_DeleteAccounts_FullMethodName    = "/account.middleware.orderbenefit.v1.Middleware/DeleteAccounts"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -39,6 +40,7 @@ type MiddlewareClient interface {
 	ExistAccount(ctx context.Context, in *ExistAccountRequest, opts ...grpc.CallOption) (*ExistAccountResponse, error)
 	ExistAccountConds(ctx context.Context, in *ExistAccountCondsRequest, opts ...grpc.CallOption) (*ExistAccountCondsResponse, error)
 	DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error)
+	DeleteAccounts(ctx context.Context, in *DeleteAccountsRequest, opts ...grpc.CallOption) (*DeleteAccountsResponse, error)
 }
 
 type middlewareClient struct {
@@ -112,6 +114,15 @@ func (c *middlewareClient) DeleteAccount(ctx context.Context, in *DeleteAccountR
 	return out, nil
 }
 
+func (c *middlewareClient) DeleteAccounts(ctx context.Context, in *DeleteAccountsRequest, opts ...grpc.CallOption) (*DeleteAccountsResponse, error) {
+	out := new(DeleteAccountsResponse)
+	err := c.cc.Invoke(ctx, Middleware_DeleteAccounts_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -123,6 +134,7 @@ type MiddlewareServer interface {
 	ExistAccount(context.Context, *ExistAccountRequest) (*ExistAccountResponse, error)
 	ExistAccountConds(context.Context, *ExistAccountCondsRequest) (*ExistAccountCondsResponse, error)
 	DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error)
+	DeleteAccounts(context.Context, *DeleteAccountsRequest) (*DeleteAccountsResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -150,6 +162,9 @@ func (UnimplementedMiddlewareServer) ExistAccountConds(context.Context, *ExistAc
 }
 func (UnimplementedMiddlewareServer) DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAccount not implemented")
+}
+func (UnimplementedMiddlewareServer) DeleteAccounts(context.Context, *DeleteAccountsRequest) (*DeleteAccountsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAccounts not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -290,6 +305,24 @@ func _Middleware_DeleteAccount_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_DeleteAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAccountsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).DeleteAccounts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_DeleteAccounts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).DeleteAccounts(ctx, req.(*DeleteAccountsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -324,6 +357,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteAccount",
 			Handler:    _Middleware_DeleteAccount_Handler,
+		},
+		{
+			MethodName: "DeleteAccounts",
+			Handler:    _Middleware_DeleteAccounts_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
