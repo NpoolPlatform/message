@@ -69,6 +69,7 @@ message StatementReq {
   optional string AppGoodID = 60;
   optional string OrderID = 70;
   optional string OrderUserID = 80;
+  optional string DirectContributorID = 81;
   optional string GoodCoinTypeID = 90;
   optional string Units = 100;
   optional string GoodValueUSD = 110;

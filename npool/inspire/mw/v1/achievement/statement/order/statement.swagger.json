@@ -483,6 +483,9 @@
         "OrderUserID": {
           "type": "string"
         },
+        "DirectContributorID": {
+          "type": "string"
+        },
         "GoodCoinTypeID": {
           "type": "string"
         },
