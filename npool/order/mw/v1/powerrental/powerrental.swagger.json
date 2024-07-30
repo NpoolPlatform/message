@@ -901,7 +901,7 @@
           },
           "title": "Fee duration infos"
         },
-        "MiningPoolOrderUserID": {
+        "PoolOrderUserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"mining_pool_order_user_id\""
         },
@@ -1056,7 +1056,7 @@
           },
           "title": "Payment transfers"
         },
-        "MiningPoolOrderUserID": {
+        "PoolOrderUserID": {
           "type": "string",
           "title": "miningpool order user"
         }
