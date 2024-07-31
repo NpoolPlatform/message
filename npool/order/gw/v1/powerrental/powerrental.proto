@@ -133,12 +133,9 @@ message PowerRentalOrder {
   string AppGoodStockID = 300;
   optional string MiningPoolName = 310;
   optional string MiningPoolLogo = 320;
-  optional string MiningPoolFeeRatio = 330;
-  optional string MiningPoolLeastTransferAmount = 340;
-  optional uint32 MiningPoolBenefitIntervalSeconds = 350;
-  optional string MiningPoolOrderUserID = 360; // -> miningpool/orderuser
-  optional string MiningPoolOrderUserName = 370;
-  optional string MiningPoolReadPageLink = 380;
+  optional string MiningPoolOrderUserID = 330; // -> miningpool/orderuser
+  optional string MiningPoolOrderUserName = 340;
+  optional string MiningPoolReadPageLink = 350;
   // TODO: benefit mode
   string Units = 400;
   string GoodValueUSD = 410;

@@ -1137,16 +1137,6 @@
         "MiningPoolLogo": {
           "type": "string"
         },
-        "MiningPoolFeeRatio": {
-          "type": "string"
-        },
-        "MiningPoolLeastTransferAmount": {
-          "type": "string"
-        },
-        "MiningPoolBenefitIntervalSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
         "MiningPoolOrderUserID": {
           "type": "string"
         },
