@@ -438,6 +438,12 @@
         },
         "AppSpotUnits": {
           "type": "string"
+        },
+        "OrderBenefitAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderBenefitAccountReq"
+          }
         }
       }
     },
@@ -671,6 +677,12 @@
         },
         "AppSpotUnits": {
           "type": "string"
+        },
+        "OrderBenefitAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderBenefitAccountReq"
+          }
         }
       }
     },

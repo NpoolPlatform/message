@@ -218,6 +218,7 @@ message CreateUserPowerRentalOrderRequest {
   string AppGoodStockID = 70;
   basetypes.order.v1.InvestmentType InvestmentType = 80;
   optional string AppSpotUnits = 90;
+  repeated OrderBenefitAccountReq OrderBenefitAccounts = 100;
 }
 
 message CreateUserPowerRentalOrderResponse { PowerRentalOrder Info = 10; }
@@ -291,6 +292,7 @@ message AdminCreatePowerRentalOrderRequest {
   string AppGoodStockID = 70;
   basetypes.order.v1.InvestmentType InvestmentType = 80;
   optional string AppSpotUnits = 90;
+  repeated OrderBenefitAccountReq OrderBenefitAccounts = 100;
 }
 
 message AdminCreatePowerRentalOrderResponse { PowerRentalOrder Info = 10; }
