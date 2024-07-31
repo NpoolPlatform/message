@@ -28,6 +28,4 @@ message Conds {
   optional basetypes.v1.StringVal EntID = 20;
   optional basetypes.v1.StringVal OrderID = 30;
   optional basetypes.v1.StringVal PoolOrderUserID = 40;
-  optional basetypes.v1.Uint32Val CreatedAt = 100;
-  optional basetypes.v1.StringSliceVal EntIDs = 110;
 }
