@@ -218,9 +218,6 @@
         "State": {
           "$ref": "#/definitions/v1MiningGoodStockState"
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
         "Name": {
           "type": "string"
         },
@@ -256,9 +253,6 @@
           "type": "string"
         },
         "PoolRootUserID": {
-          "type": "string"
-        },
-        "MiningpoolID": {
           "type": "string"
         },
         "PoolGoodUserID": {
@@ -663,15 +657,6 @@
       ],
       "default": "DefaultMiningGoodStockState",
       "title": "initial state: MiningGoodStockStateWait\n|\nv\nMiningGoodStockStateCreateGoodUser---------------\n|                             |\nv                             |\nMiningGoodStockStateCheckHashRate----------------\n|                             |\nv                             v\nMiningGoodStockStateReady     MiningGoodStockStateFail"
-    },
-    "v1MiningpoolType": {
-      "type": "string",
-      "enum": [
-        "DefaultMiningpoolType",
-        "F2Pool",
-        "AntPool"
-      ],
-      "default": "DefaultMiningpoolType"
     },
     "v1PowerRental": {
       "type": "object",

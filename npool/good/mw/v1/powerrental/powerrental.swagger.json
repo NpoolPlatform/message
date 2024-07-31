@@ -259,10 +259,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_stock_id\""
         },
-        "MiningpoolID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"mining_pool_id\""
-        },
         "PoolGoodUserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"pool_good_user_id\""
@@ -308,9 +304,6 @@
           "type": "string"
         },
         "PoolRootUserID": {
-          "type": "string"
-        },
-        "MiningpoolID": {
           "type": "string"
         },
         "PoolGoodUserID": {

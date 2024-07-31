@@ -3,7 +3,6 @@ syntax = "proto3";
 package good.gateway.good1.stock.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/good/stock";
-import "npool/basetypes/miningpool/v1/enums.proto";
 import "npool/basetypes/good/v1/enums.proto";
 
 message MiningGoodStockReq {
@@ -24,7 +23,6 @@ message MiningGoodStock {
   string InService = 100;
   string Sold = 110;
   basetypes.good.v1.MiningGoodStockState State = 120;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 130;
   string Name = 140;
   string Site = 150;
   string Logo = 160;
@@ -40,7 +38,6 @@ message MiningGoodStockInfo {
   string Total = 50;
   string SpotQuantity = 60;
   basetypes.good.v1.MiningGoodStockState State = 70;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
   string Name = 90;
   string Site = 100;
   string Logo = 110;
