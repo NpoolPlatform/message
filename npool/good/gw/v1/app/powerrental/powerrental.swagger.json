@@ -252,7 +252,7 @@
         "GoodStockID": {
           "type": "string"
         },
-        "MiningPoolID": {
+        "MiningpoolID": {
           "type": "string"
         },
         "PoolGoodUserID": {
@@ -1096,7 +1096,7 @@
       "type": "string",
       "enum": [
         "DefaultGoodStockMode",
-        "GoodStockByMiningPool",
+        "GoodStockByMiningpool",
         "GoodStockByUnique"
       ],
       "default": "DefaultGoodStockMode"

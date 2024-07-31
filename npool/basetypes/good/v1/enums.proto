@@ -157,7 +157,7 @@ enum GoodSaleMode {
 enum GoodStockMode {
   DefaultGoodStockMode = 0;
 
-  GoodStockByMiningPool = 10;
+  GoodStockByMiningpool = 10;
   GoodStockByUnique = 20;
 }
 

@@ -131,11 +131,11 @@ message PowerRentalOrder {
   basetypes.order.v1.BenefitState BenefitState = 240;
 
   string AppGoodStockID = 300;
-  optional string MiningPoolName = 310;
-  optional string MiningPoolLogo = 320;
-  optional string MiningPoolOrderUserID = 330; // -> miningpool/orderuser
-  optional string MiningPoolOrderUserName = 340;
-  optional string MiningPoolReadPageLink = 350;
+  optional string MiningpoolName = 310;
+  optional string MiningpoolLogo = 320;
+  optional string MiningpoolOrderUserID = 330; // -> miningpool/orderuser
+  optional string MiningpoolOrderUserName = 340;
+  optional string MiningpoolReadPageLink = 350;
   // TODO: benefit mode
   string Units = 400;
   string GoodValueUSD = 410;

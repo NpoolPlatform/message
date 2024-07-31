@@ -1131,19 +1131,19 @@
         "AppGoodStockID": {
           "type": "string"
         },
-        "MiningPoolName": {
+        "MiningpoolName": {
           "type": "string"
         },
-        "MiningPoolLogo": {
+        "MiningpoolLogo": {
           "type": "string"
         },
-        "MiningPoolOrderUserID": {
+        "MiningpoolOrderUserID": {
           "type": "string"
         },
-        "MiningPoolOrderUserName": {
+        "MiningpoolOrderUserName": {
           "type": "string"
         },
-        "MiningPoolReadPageLink": {
+        "MiningpoolReadPageLink": {
           "type": "string"
         },
         "Units": {

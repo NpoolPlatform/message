@@ -15,7 +15,7 @@ message MiningGoodStock {
   uint32 ID = 10;
   string EntID = 20;
   string GoodStockID = 30;
-  string MiningPoolID = 40;
+  string MiningpoolID = 40;
   string PoolGoodUserID = 50;
   string Total = 60;
   string SpotQuantity = 70;
@@ -35,7 +35,7 @@ message MiningGoodStock {
 message MiningGoodStockInfo {
   string EntID = 10;
   string GoodStockID = 20;
-  string MiningPoolID = 30;
+  string MiningpoolID = 30;
   string PoolGoodUserID = 40;
   string Total = 50;
   string SpotQuantity = 60;
