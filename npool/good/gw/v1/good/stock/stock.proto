@@ -23,11 +23,11 @@ message MiningGoodStock {
   string InService = 100;
   string Sold = 110;
   basetypes.good.v1.MiningGoodStockState State = 120;
-  string Name = 140;
-  string Site = 150;
-  string Logo = 160;
-  string Description = 170;
-  string ReadPageLink = 180;
+  string MiningpoolName = 140;
+  string MiningpoolSite = 150;
+  string MiningpoolLogo = 160;
+  string MiningpoolDescription = 170;
+  string MiningpoolReadPageLink = 180;
 }
 
 message MiningGoodStockInfo {
@@ -38,9 +38,9 @@ message MiningGoodStockInfo {
   string Total = 50;
   string SpotQuantity = 60;
   basetypes.good.v1.MiningGoodStockState State = 70;
-  string Name = 90;
-  string Site = 100;
-  string Logo = 110;
-  string Description = 120;
-  string ReadPageLink = 130;
+  string MiningpoolName = 90;
+  string MiningpoolSite = 100;
+  string MiningpoolLogo = 110;
+  string MiningpoolDescription = 120;
+  string MiningpoolReadPageLink = 130;
 }

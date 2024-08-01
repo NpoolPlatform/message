@@ -267,19 +267,19 @@
         "State": {
           "$ref": "#/definitions/v1MiningGoodStockState"
         },
-        "Name": {
+        "MiningpoolName": {
           "type": "string"
         },
-        "Site": {
+        "MiningpoolSite": {
           "type": "string"
         },
-        "Logo": {
+        "MiningpoolLogo": {
           "type": "string"
         },
-        "Description": {
+        "MiningpoolDescription": {
           "type": "string"
         },
-        "ReadPageLink": {
+        "MiningpoolReadPageLink": {
           "type": "string"
         }
       }
