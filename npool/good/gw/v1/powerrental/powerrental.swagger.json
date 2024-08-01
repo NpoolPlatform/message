@@ -264,9 +264,6 @@
         "StockMode": {
           "$ref": "#/definitions/v1GoodStockMode"
         },
-        "State": {
-          "$ref": "#/definitions/v1GoodState"
-        },
         "Total": {
           "type": "string",
           "title": "Good stock"
@@ -377,9 +374,6 @@
         },
         "StockMode": {
           "$ref": "#/definitions/v1GoodStockMode"
-        },
-        "State": {
-          "$ref": "#/definitions/v1GoodState"
         },
         "Total": {
           "type": "string",
