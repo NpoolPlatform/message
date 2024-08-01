@@ -178,74 +178,6 @@
     }
   },
   "definitions": {
-    "goodgatewaygood1stockv1MiningGoodStock": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "GoodStockID": {
-          "type": "string"
-        },
-        "MiningpoolID": {
-          "type": "string"
-        },
-        "PoolGoodUserID": {
-          "type": "string"
-        },
-        "Total": {
-          "type": "string"
-        },
-        "SpotQuantity": {
-          "type": "string"
-        },
-        "Locked": {
-          "type": "string"
-        },
-        "WaitStart": {
-          "type": "string"
-        },
-        "InService": {
-          "type": "string"
-        },
-        "Sold": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v1MiningGoodStockState"
-        },
-        "MiningpoolName": {
-          "type": "string"
-        },
-        "MiningpoolSite": {
-          "type": "string"
-        },
-        "MiningpoolLogo": {
-          "type": "string"
-        },
-        "MiningpoolDescription": {
-          "type": "string"
-        },
-        "MiningpoolReadPageLink": {
-          "type": "string"
-        }
-      }
-    },
-    "goodgatewaygood1stockv1MiningGoodStockReq": {
-      "type": "object",
-      "properties": {
-        "PoolRootUserID": {
-          "type": "string"
-        },
-        "Total": {
-          "type": "string"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -339,7 +271,7 @@
         "MiningGoodStocks": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/goodgatewaygood1stockv1MiningGoodStockReq"
+            "$ref": "#/definitions/v1MiningGoodStockReq"
           }
         }
       }
@@ -453,7 +385,7 @@
         "MiningGoodStocks": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/goodgatewaygood1stockv1MiningGoodStockReq"
+            "$ref": "#/definitions/v1MiningGoodStockReq"
           }
         }
       }
@@ -625,6 +557,74 @@
       ],
       "default": "DefaultGoodType"
     },
+    "v1MiningGoodStock": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "GoodStockID": {
+          "type": "string"
+        },
+        "MiningpoolID": {
+          "type": "string"
+        },
+        "PoolGoodUserID": {
+          "type": "string"
+        },
+        "Total": {
+          "type": "string"
+        },
+        "SpotQuantity": {
+          "type": "string"
+        },
+        "Locked": {
+          "type": "string"
+        },
+        "WaitStart": {
+          "type": "string"
+        },
+        "InService": {
+          "type": "string"
+        },
+        "Sold": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1MiningGoodStockState"
+        },
+        "MiningpoolName": {
+          "type": "string"
+        },
+        "MiningpoolSite": {
+          "type": "string"
+        },
+        "MiningpoolLogo": {
+          "type": "string"
+        },
+        "MiningpoolDescription": {
+          "type": "string"
+        },
+        "MiningpoolReadPageLink": {
+          "type": "string"
+        }
+      }
+    },
+    "v1MiningGoodStockReq": {
+      "type": "object",
+      "properties": {
+        "PoolRootUserID": {
+          "type": "string"
+        },
+        "Total": {
+          "type": "string"
+        }
+      }
+    },
     "v1MiningGoodStockState": {
       "type": "string",
       "enum": [
@@ -780,7 +780,7 @@
         "MiningGoodStocks": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/goodgatewaygood1stockv1MiningGoodStock"
+            "$ref": "#/definitions/v1MiningGoodStock"
           }
         },
         "Rewards": {
