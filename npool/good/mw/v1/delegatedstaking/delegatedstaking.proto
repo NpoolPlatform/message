@@ -9,156 +9,148 @@ import "npool/basetypes/good/v1/enums.proto";
 import "npool/good/mw/v1/good/coin/coin.proto";
 
 service Middleware {
-    rpc CreateDelegatedStaking (CreateDelegatedStakingRequest) returns (CreateDelegatedStakingResponse) {}
-    rpc UpdateDelegatedStaking (UpdateDelegatedStakingRequest) returns (UpdateDelegatedStakingResponse) {}
-    rpc GetDelegatedStaking (GetDelegatedStakingRequest) returns (GetDelegatedStakingResponse) {}
-    rpc GetDelegatedStakings (GetDelegatedStakingsRequest) returns (GetDelegatedStakingsResponse) {}
-    rpc DeleteDelegatedStaking (DeleteDelegatedStakingRequest) returns (DeleteDelegatedStakingResponse) {}
+  rpc CreateDelegatedStaking(CreateDelegatedStakingRequest)
+      returns (CreateDelegatedStakingResponse) {}
+  rpc UpdateDelegatedStaking(UpdateDelegatedStakingRequest)
+      returns (UpdateDelegatedStakingResponse) {}
+  rpc GetDelegatedStaking(GetDelegatedStakingRequest)
+      returns (GetDelegatedStakingResponse) {}
+  rpc GetDelegatedStakings(GetDelegatedStakingsRequest)
+      returns (GetDelegatedStakingsResponse) {}
+  rpc DeleteDelegatedStaking(DeleteDelegatedStakingRequest)
+      returns (DeleteDelegatedStakingResponse) {}
 }
 
 message DelegatedStakingReq {
-    // Base of delegated staking
-    optional uint32 ID = 10;
-    optional string EntID = 20;
-    optional string GoodID = 30;
-    optional uint32 NoStakeRedeemDelayHours = 40;
-    optional uint32 MaxRedeemDelayHours = 50;
-    optional string ContractAddress = 60;
-    optional uint32 NoStakeBenefitDelayHours = 70;
+  // Base of delegated staking
+  optional uint32 ID = 10;
+  optional string EntID = 20;
+  optional string GoodID = 30;
+  optional uint32 NoStakeRedeemDelayHours = 40;
+  optional uint32 MaxRedeemDelayHours = 50;
+  optional string ContractAddress = 60;
+  optional uint32 NoStakeBenefitDelayHours = 70;
 
-    // Good information
-    optional basetypes.good.v1.GoodType GoodType = 120;
-    optional basetypes.good.v1.BenefitType BenefitType = 130;
-    optional string Name = 140;
-    optional uint32 ServiceStartAt = 150;
-    optional basetypes.good.v1.GoodStartMode StartMode = 160;
-    optional bool TestOnly = 170;
-    optional uint32 BenefitIntervalHours = 180;
-    optional bool Purchasable = 190;
-    optional bool Online = 200;
+  // Good information
+  optional basetypes.good.v1.GoodType GoodType = 120;
+  optional basetypes.good.v1.BenefitType BenefitType = 130;
+  optional string Name = 140;
+  optional uint32 ServiceStartAt = 150;
+  optional basetypes.good.v1.GoodStartMode StartMode = 160;
+  optional bool TestOnly = 170;
+  optional uint32 BenefitIntervalHours = 180;
+  optional bool Purchasable = 190;
+  optional bool Online = 200;
 
-    // Reward information
-    optional basetypes.good.v1.BenefitState RewardState = 260;
-    optional uint32 RewardAt = 270;
-    optional string RewardTID = 280;
-    optional string NextRewardStartAmount = 290;
-    optional string RewardAmount = 300;
+  // Reward information
+  optional basetypes.good.v1.BenefitState RewardState = 260;
+  optional uint32 RewardAt = 270;
+  optional string RewardTID = 280;
+  optional string NextRewardStartAmount = 290;
+  optional string RewardAmount = 300;
 }
 
 message DelegatedStaking {
-    // @inject_tag: sql:"id"
-    uint32 ID = 10;
-    // @inject_tag: sql:"ent_id"
-    string EntID = 20;
-    // @inject_tag: sql:"good_id"
-    string GoodID = 30;
-    // @inject_tag: sql:"no_stake_redeem_delay_hours"
-    string NoStakeRedeemDelayHours = 40;
-    // @inject_tag: sql:"max_redeem_delay_hours"
-    string MaxRedeemDelayHours = 50;
-    // @inject_tag: sql:"contract_address"
-    string ContractAddress = 60;
-    // @inject_tag: sql:"no_stake_benefit_delay_hours"
-    string NoStakeBenefitDelayHours = 70;
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"good_id"
+  string GoodID = 30;
+  // @inject_tag: sql:"no_stake_redeem_delay_hours"
+  string NoStakeRedeemDelayHours = 40;
+  // @inject_tag: sql:"max_redeem_delay_hours"
+  string MaxRedeemDelayHours = 50;
+  // @inject_tag: sql:"contract_address"
+  string ContractAddress = 60;
+  // @inject_tag: sql:"no_stake_benefit_delay_hours"
+  string NoStakeBenefitDelayHours = 70;
 
-    // @inject_tag: sql:"good_type"
-    string GoodTypeStr = 220;
-    basetypes.good.v1.GoodType GoodType = 230;
-    // @inject_tag: sql:"benefit_type"
-    string BenefitTypeStr = 240;
-    basetypes.good.v1.BenefitType BenefitType = 250;
-    // @inject_tag: sql:"name"
-    string Name = 260;
-    // @inject_tag: sql:"service_start_at"
-    uint32 ServiceStartAt = 270;
-    // @inject_tag: sql:"start_mode"
-    string StartModeStr = 280;
-    basetypes.good.v1.GoodStartMode StartMode = 290;
-    // @inject_tag: sql:"test_only"
-    bool TestOnly = 300;
-    // @inject_tag: sql:"benefit_interval_hours"
-    uint32 BenefitIntervalHours = 310;
-    // @inject_tag: sql:"purchasable"
-    bool Purchasable = 320;
-    // @inject_tag: sql:"online"
-    bool Online = 330;
+  // @inject_tag: sql:"good_type"
+  string GoodTypeStr = 220;
+  basetypes.good.v1.GoodType GoodType = 230;
+  // @inject_tag: sql:"benefit_type"
+  string BenefitTypeStr = 240;
+  basetypes.good.v1.BenefitType BenefitType = 250;
+  // @inject_tag: sql:"name"
+  string Name = 260;
+  // @inject_tag: sql:"service_start_at"
+  uint32 ServiceStartAt = 270;
+  // @inject_tag: sql:"start_mode"
+  string StartModeStr = 280;
+  basetypes.good.v1.GoodStartMode StartMode = 290;
+  // @inject_tag: sql:"test_only"
+  bool TestOnly = 300;
+  // @inject_tag: sql:"benefit_interval_hours"
+  uint32 BenefitIntervalHours = 310;
+  // @inject_tag: sql:"purchasable"
+  bool Purchasable = 320;
+  // @inject_tag: sql:"online"
+  bool Online = 330;
+  // @inject_tag: sql:"state"
+  string StateStr = 340;
+  basetypes.good.v1.GoodState State = 341;
 
-    // @inject_tag: sql:"reward_state"
-    string RewardStateStr      = 440;
-    basetypes.good.v1.BenefitState RewardState = 450;
-    // @inject_tag: sql:"last_reward_at"
-    uint32 LastRewardAt        = 460;
-    // @inject_tag: sql:"reward_tid"
-    string RewardTID           = 470;
-    // @inject_tag: sql:"next_reward_start_amount"
-    string NextRewardStartAmount = 480;
-    // @inject_tag: sql:"last_reward_amount"
-    string LastRewardAmount    = 490;
-    // @inject_tag: sql:"last_unit_reward_amount"
-    string LastUnitRewardAmount = 500;
-    // @inject_tag: sql:"total_reward_amount"
-    string TotalRewardAmount    = 510;
+  // @inject_tag: sql:"reward_state"
+  string RewardStateStr = 440;
+  basetypes.good.v1.BenefitState RewardState = 450;
+  // @inject_tag: sql:"last_reward_at"
+  uint32 LastRewardAt = 460;
+  // @inject_tag: sql:"reward_tid"
+  string RewardTID = 470;
+  // @inject_tag: sql:"next_reward_start_amount"
+  string NextRewardStartAmount = 480;
+  // @inject_tag: sql:"last_reward_amount"
+  string LastRewardAmount = 490;
+  // @inject_tag: sql:"last_unit_reward_amount"
+  string LastUnitRewardAmount = 500;
+  // @inject_tag: sql:"total_reward_amount"
+  string TotalRewardAmount = 510;
 
-    repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 800;
+  repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 800;
 
-    // @inject_tag: sql:"created_at"
-    uint32 CreatedAt = 1000;
-    // @inject_tag: sql:"updated_at"
-    uint32 UpdatedAt = 1010;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
 }
 
 message Conds {
-    optional basetypes.v1.Uint32Val      ID        = 10;
-    optional basetypes.v1.StringVal      EntID     = 20;
-    optional basetypes.v1.StringVal      GoodID    = 30;
-    optional basetypes.v1.StringSliceVal GoodIDs   = 40;
-    optional basetypes.v1.Uint32Val      GoodType  = 50;
-    optional basetypes.v1.Uint32SliceVal GoodTypes = 60;
-    optional basetypes.v1.StringVal      CoinTypeID = 70;
-    optional basetypes.v1.StringSliceVal CoinTypeIDs = 80;
-    optional basetypes.v1.Uint32Val      RewardState = 90;
-    optional basetypes.v1.Uint32Val      RewardAt = 100;
+  optional basetypes.v1.Uint32Val ID = 10;
+  optional basetypes.v1.StringVal EntID = 20;
+  optional basetypes.v1.StringVal GoodID = 30;
+  optional basetypes.v1.StringSliceVal GoodIDs = 40;
+  optional basetypes.v1.Uint32Val GoodType = 50;
+  optional basetypes.v1.Uint32SliceVal GoodTypes = 60;
+  optional basetypes.v1.StringVal CoinTypeID = 70;
+  optional basetypes.v1.StringSliceVal CoinTypeIDs = 80;
+  optional basetypes.v1.Uint32Val RewardState = 90;
+  optional basetypes.v1.Uint32Val RewardAt = 100;
 }
 
-message CreateDelegatedStakingRequest {
-    DelegatedStakingReq Info = 10;
-}
+message CreateDelegatedStakingRequest { DelegatedStakingReq Info = 10; }
 
-message CreateDelegatedStakingResponse {
-    DelegatedStaking Info = 10;
-}
+message CreateDelegatedStakingResponse { DelegatedStaking Info = 10; }
 
-message UpdateDelegatedStakingRequest {
-    DelegatedStakingReq Info = 10;
-}
+message UpdateDelegatedStakingRequest { DelegatedStakingReq Info = 10; }
 
-message UpdateDelegatedStakingResponse {
-    DelegatedStaking Info = 10;
-}
+message UpdateDelegatedStakingResponse { DelegatedStaking Info = 10; }
 
-message GetDelegatedStakingRequest {
-    string GoodID = 10;
-}
+message GetDelegatedStakingRequest { string GoodID = 10; }
 
-message GetDelegatedStakingResponse {
-    DelegatedStaking Info = 10;
-}
+message GetDelegatedStakingResponse { DelegatedStaking Info = 10; }
 
 message GetDelegatedStakingsRequest {
-    Conds Conds  = 10;
-    int32 Offset = 20;
-    int32 Limit  = 30;
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
 }
 
 message GetDelegatedStakingsResponse {
-    repeated DelegatedStaking Infos = 10;
-    uint32               Total = 20;
+  repeated DelegatedStaking Infos = 10;
+  uint32 Total = 20;
 }
 
-message DeleteDelegatedStakingRequest {
-    DelegatedStakingReq Info = 10;
-}
+message DeleteDelegatedStakingRequest { DelegatedStakingReq Info = 10; }
 
-message DeleteDelegatedStakingResponse {
-    DelegatedStaking Info = 10;
-}
+message DeleteDelegatedStakingResponse { DelegatedStaking Info = 10; }

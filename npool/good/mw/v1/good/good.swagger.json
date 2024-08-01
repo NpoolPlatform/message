@@ -170,6 +170,13 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"online\""
         },
+        "StateStr": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1GoodState"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -194,6 +201,20 @@
         "GoodStartModeWithParent"
       ],
       "default": "DefaultGoodStartMode"
+    },
+    "v1GoodState": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodState",
+        "GoodStateWait",
+        "GoodStateCreateGoodUser",
+        "GoodStateCheckHashRate",
+        "GoodStateReady",
+        "GoodStateFail"
+      ],
+      "default": "DefaultGoodState",
+      "description": "- GoodStateCreateGoodUser: for miningpoolstock",
+      "title": "initial state: GoodStateWait\n|\nv\nGoodStateCreateGoodUser------------------\n|                             |\nv                             |\nGoodStateCheckHashRate-------------------\n|                             |\nv                             v\nGoodStateReady                 GoodStateFail"
     },
     "v1GoodType": {
       "type": "string",

@@ -40,7 +40,9 @@ message Good {
   bool Purchasable = 130;
   // @inject_tag: sql:"online"
   bool Online = 140;
-
+  // @inject_tag: sql:"state"
+  bool StateStr = 150;
+  basetypes.good.v1.GoodState State = 151;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 1000;
   // @inject_tag: sql:"updated_at"

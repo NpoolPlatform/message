@@ -285,6 +285,20 @@
       ],
       "default": "DefaultGoodStartMode"
     },
+    "v1GoodState": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodState",
+        "GoodStateWait",
+        "GoodStateCreateGoodUser",
+        "GoodStateCheckHashRate",
+        "GoodStateReady",
+        "GoodStateFail"
+      ],
+      "default": "DefaultGoodState",
+      "description": "- GoodStateCreateGoodUser: for miningpoolstock",
+      "title": "initial state: GoodStateWait\n|\nv\nGoodStateCreateGoodUser------------------\n|                             |\nv                             |\nGoodStateCheckHashRate-------------------\n|                             |\nv                             v\nGoodStateReady                 GoodStateFail"
+    },
     "v1GoodStockMode": {
       "type": "string",
       "enum": [
@@ -538,6 +552,13 @@
         },
         "StockMode": {
           "$ref": "#/definitions/v1GoodStockMode"
+        },
+        "StateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1GoodState"
         },
         "AppGoodPurchasable": {
           "type": "boolean",
