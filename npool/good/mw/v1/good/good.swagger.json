@@ -171,7 +171,7 @@
           "title": "@inject_tag: sql:\"online\""
         },
         "StateStr": {
-          "type": "boolean",
+          "type": "string",
           "title": "@inject_tag: sql:\"state\""
         },
         "State": {

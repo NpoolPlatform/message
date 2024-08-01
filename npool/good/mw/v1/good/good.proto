@@ -41,7 +41,7 @@ message Good {
   // @inject_tag: sql:"online"
   bool Online = 140;
   // @inject_tag: sql:"state"
-  bool StateStr = 150;
+  string StateStr = 150;
   basetypes.good.v1.GoodState State = 151;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 1000;
