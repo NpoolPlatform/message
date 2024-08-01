@@ -246,26 +246,6 @@
         }
       }
     },
-    "goodmiddlewaregood1stockv1MiningGoodStockReq": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        },
-        "PoolRootUserID": {
-          "type": "string"
-        },
-        "PoolGoodUserID": {
-          "type": "string"
-        },
-        "Total": {
-          "type": "string"
-        },
-        "State": {
-          "$ref": "#/definitions/v1MiningGoodStockState"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -473,7 +453,7 @@
         "MiningGoodStocks": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/goodmiddlewaregood1stockv1MiningGoodStockReq"
+            "$ref": "#/definitions/goodgatewaygood1stockv1MiningGoodStockReq"
           }
         }
       }

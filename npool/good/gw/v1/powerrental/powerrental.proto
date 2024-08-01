@@ -167,7 +167,7 @@ message AdminUpdatePowerRentalRequest {
 
   // Good stock
   optional string Total = 240;
-  repeated good.middleware.good1.stock.v1.MiningGoodStockReq MiningGoodStocks =
+  repeated good.gateway.good1.stock.v1.MiningGoodStockReq MiningGoodStocks =
       250;
 }
 
