@@ -128,6 +128,7 @@ message AdminCreatePowerRentalRequest {
   optional uint32 BenefitIntervalHours = 180;
   optional bool Purchasable = 190;
   optional bool Online = 200;
+  basetypes.good.v1.GoodStockMode StockMode = 210;
 
   // Good stock
   string Total = 230;
@@ -160,6 +161,7 @@ message AdminUpdatePowerRentalRequest {
   optional uint32 BenefitIntervalHours = 190;
   optional bool Purchasable = 200;
   optional bool Online = 210;
+  optional basetypes.good.v1.GoodStockMode StockMode = 220;
 
   // Good stock
   optional string Total = 240;

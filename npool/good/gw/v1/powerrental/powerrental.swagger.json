@@ -261,6 +261,9 @@
         "Online": {
           "type": "boolean"
         },
+        "StockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
+        },
         "Total": {
           "type": "string",
           "title": "Good stock"
@@ -368,6 +371,9 @@
         },
         "Online": {
           "type": "boolean"
+        },
+        "StockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
         },
         "Total": {
           "type": "string",
