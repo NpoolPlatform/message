@@ -41,7 +41,8 @@ message MiningGoodStock {
   // @inject_tag: sql:"sold"
   string Sold = 110;
   // @inject_tag: sql:"state"
-  basetypes.good.v1.MiningGoodStockState State = 120;
+  string StateStr = 120;
+  basetypes.good.v1.MiningGoodStockState State = 121;
 }
 
 message MiningGoodStockInfo {

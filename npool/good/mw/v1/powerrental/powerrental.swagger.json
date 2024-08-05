@@ -291,9 +291,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"sold\""
         },
-        "State": {
-          "$ref": "#/definitions/v1MiningGoodStockState",
+        "StateStr": {
+          "type": "string",
           "title": "@inject_tag: sql:\"state\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1MiningGoodStockState"
         }
       }
     },
