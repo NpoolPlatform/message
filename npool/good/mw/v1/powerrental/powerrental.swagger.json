@@ -52,6 +52,9 @@
         },
         "State": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "StockMode": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },

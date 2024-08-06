@@ -183,6 +183,7 @@ message Conds {
   optional basetypes.v1.Uint32Val RewardState = 90;
   optional basetypes.v1.Uint32Val RewardAt = 100;
   optional basetypes.v1.Uint32Val State = 110;
+  optional basetypes.v1.Uint32Val StockMode = 120;
 }
 
 message CreatePowerRentalRequest { PowerRentalReq Info = 10; }
