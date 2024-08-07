@@ -20,8 +20,6 @@ message MiningGoodStock {
   uint32 ID = 10;
   // @inject_tag: sql:"ent_id"
   string EntID = 20;
-  // @inject_tag: sql:"good_id"
-  string GoodID = 21;
   // @inject_tag: sql:"good_stock_id"
   string GoodStockID = 30;
   // @inject_tag: sql:"pool_good_user_id"

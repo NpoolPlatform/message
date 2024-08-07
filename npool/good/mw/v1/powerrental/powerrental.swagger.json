@@ -254,10 +254,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "GoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"good_id\""
-        },
         "GoodStockID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_stock_id\""
@@ -662,6 +658,9 @@
           "items": {
             "$ref": "#/definitions/v1RewardReq"
           }
+        },
+        "Rollback": {
+          "type": "boolean"
         }
       }
     },

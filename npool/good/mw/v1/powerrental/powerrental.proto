@@ -61,6 +61,8 @@ message PowerRentalReq {
   optional basetypes.good.v1.BenefitState RewardState = 260;
   optional uint32 RewardAt = 270;
   repeated good.middleware.good1.coin.reward.v1.RewardReq Rewards = 280;
+
+  optional bool Rollback = 1000;
 }
 
 message PowerRental {
