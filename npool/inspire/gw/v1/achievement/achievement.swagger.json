@@ -313,6 +313,9 @@
         },
         "AppGoodID": {
           "type": "string"
+        },
+        "AppGoodName": {
+          "type": "string"
         }
       }
     },

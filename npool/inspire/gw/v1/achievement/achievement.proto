@@ -54,6 +54,7 @@ message GoodAchievement {
   string SuperiorCommission = 150;
 
   string AppGoodID = 160;
+  string AppGoodName = 170;
 }
 
 message Achievement {
