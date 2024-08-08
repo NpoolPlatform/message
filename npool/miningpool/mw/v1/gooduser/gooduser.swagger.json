@@ -91,7 +91,7 @@
       "properties": {
         "HashRate": {
           "type": "number",
-          "format": "float"
+          "format": "double"
         }
       }
     },
