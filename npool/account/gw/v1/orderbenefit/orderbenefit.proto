@@ -30,21 +30,20 @@ message Account {
   string UserID = 30;
 
   string CoinTypeID = 40;
-  string CoinUnit = 50;
-  string CoinEnv = 60;
-  string CoinLogo = 70;
-
-  string AccountID = 80;
-  string Address = 90;
-  string PhoneNO = 100;
-  string EmailAddress = 110;
-
-  string OrderID = 120;
-
-  bool Active = 130;
-  bool Blocked = 140;
-  bool Locked = 150;
-  basetypes.v1.AccountUsedFor UsedFor = 160;
+  string CoinName = 50;
+  repeated string CoinDisplayNames = 60;
+  string CoinUnit = 70;
+  string CoinEnv = 80;
+  string CoinLogo = 90;
+  string AccountID = 100;
+  string Address = 110;
+  string PhoneNO = 120;
+  string EmailAddress = 130;
+  string OrderID = 140;
+  bool Active = 150;
+  bool Blocked = 160;
+  bool Locked = 170;
+  basetypes.v1.AccountUsedFor UsedFor = 180;
   uint32 CreatedAt = 1000;
   uint32 UpdatedAt = 1010;
 }
