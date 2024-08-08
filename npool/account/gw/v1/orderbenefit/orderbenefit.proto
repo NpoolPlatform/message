@@ -48,7 +48,11 @@ message Account {
   uint32 UpdatedAt = 1010;
 }
 
-message GetAccountRequest { string EntID = 10; }
+message GetAccountRequest {
+  string EntID = 10;
+  string AppID = 20;
+  string UserID = 30;
+}
 
 message GetAccountResponse { Account Info = 10; }
 
