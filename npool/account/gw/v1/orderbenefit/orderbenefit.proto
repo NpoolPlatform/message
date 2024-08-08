@@ -28,15 +28,23 @@ message Account {
   string EntID = 10;
   string AppID = 20;
   string UserID = 30;
+
   string CoinTypeID = 40;
-  string AccountID = 50;
-  string Address = 60;
-  string OrderID = 70;
-  bool Active = 80;
-  bool Blocked = 90;
-  bool Locked = 100;
-  basetypes.v1.AccountUsedFor UsedFor = 110;
-  string UsedForStr = 111;
+  string CoinUnit = 50;
+  string CoinEnv = 60;
+  string CoinLogo = 70;
+
+  string AccountID = 80;
+  string Address = 90;
+  string PhoneNO = 100;
+  string EmailAddress = 110;
+
+  string OrderID = 120;
+
+  bool Active = 130;
+  bool Blocked = 140;
+  bool Locked = 150;
+  basetypes.v1.AccountUsedFor UsedFor = 160;
   uint32 CreatedAt = 1000;
   uint32 UpdatedAt = 1010;
 }

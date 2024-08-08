@@ -128,10 +128,25 @@
         "CoinTypeID": {
           "type": "string"
         },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinEnv": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
         "AccountID": {
           "type": "string"
         },
         "Address": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "EmailAddress": {
           "type": "string"
         },
         "OrderID": {
@@ -148,9 +163,6 @@
         },
         "UsedFor": {
           "$ref": "#/definitions/v1AccountUsedFor"
-        },
-        "UsedForStr": {
-          "type": "string"
         },
         "CreatedAt": {
           "type": "integer",
