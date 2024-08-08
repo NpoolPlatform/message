@@ -12,6 +12,8 @@ service Middleware {
   rpc CreateGoodUser(CreateGoodUserRequest) returns (CreateGoodUserResponse) {}
   rpc GetGoodUser(GetGoodUserRequest) returns (GetGoodUserResponse) {}
   rpc GetGoodUsers(GetGoodUsersRequest) returns (GetGoodUsersResponse) {}
+  rpc GetGoodUserHashRate(GetGoodUserHashRateRequest)
+      returns (GetGoodUserHashRateResponse) {}
   rpc ExistGoodUser(ExistGoodUserRequest) returns (ExistGoodUserResponse) {}
   rpc ExistGoodUserConds(ExistGoodUserCondsRequest)
       returns (ExistGoodUserCondsResponse) {}
@@ -79,6 +81,13 @@ message GetGoodUsersResponse {
   repeated GoodUser Infos = 10;
   uint32 Total = 20;
 }
+
+message GetGoodUserHashRateRequest {
+  string EntID = 10;
+  repeated string CoinTypeIDs = 30;
+}
+
+message GetGoodUserHashRateResponse { float HashRate = 10; }
 
 message ExistGoodUserRequest { string EntID = 10; }
 
