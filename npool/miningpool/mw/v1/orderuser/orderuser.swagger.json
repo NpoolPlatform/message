@@ -295,9 +295,6 @@
         "GoodUserID": {
           "type": "string"
         },
-        "Name": {
-          "type": "string"
-        },
         "CoinTypeID": {
           "type": "string",
           "title": "set to miningpool,not recorded in db"
@@ -310,9 +307,6 @@
         },
         "AutoPay": {
           "type": "boolean"
-        },
-        "ReadPageLink": {
-          "type": "string"
         }
       }
     },
