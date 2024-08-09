@@ -153,6 +153,18 @@
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
+        "MiningpoolName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"miningpool_name\""
+        },
+        "MiningpoolSite": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"miningpool_site\""
+        },
+        "MiningpoolLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"miningpool_logo\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",

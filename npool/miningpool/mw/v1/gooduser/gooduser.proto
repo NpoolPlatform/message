@@ -49,6 +49,12 @@ message GoodUser {
   // @inject_tag: sql:"miningpool_type"
   string MiningpoolTypeStr = 80;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 81;
+  // @inject_tag: sql:"miningpool_name"
+  string MiningpoolName = 90;
+  // @inject_tag: sql:"miningpool_site"
+  string MiningpoolSite = 100;
+  // @inject_tag: sql:"miningpool_logo"
+  string MiningpoolLogo = 110;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 130;
   // @inject_tag: sql:"updated_at"
