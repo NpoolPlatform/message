@@ -26,8 +26,7 @@ message MiningGoodStock {
   string MiningpoolName = 140;
   string MiningpoolSite = 150;
   string MiningpoolLogo = 160;
-  string MiningpoolDescription = 170;
-  string MiningpoolReadPageLink = 180;
+  string MiningpoolReadPageLink = 170;
 }
 
 message MiningGoodStockInfo {
@@ -40,6 +39,5 @@ message MiningGoodStockInfo {
   string MiningpoolName = 90;
   string MiningpoolSite = 100;
   string MiningpoolLogo = 110;
-  string MiningpoolDescription = 120;
-  string MiningpoolReadPageLink = 130;
+  string MiningpoolReadPageLink = 120;
 }

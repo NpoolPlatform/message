@@ -603,9 +603,6 @@
         "MiningpoolLogo": {
           "type": "string"
         },
-        "MiningpoolDescription": {
-          "type": "string"
-        },
         "MiningpoolReadPageLink": {
           "type": "string"
         }
