@@ -236,15 +236,6 @@
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
-        "CoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "FeeRatio": {
-          "type": "string"
-        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"

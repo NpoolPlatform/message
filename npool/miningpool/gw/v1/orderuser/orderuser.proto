@@ -22,7 +22,6 @@ message OrderUser {
   string EntID = 20;
   string AppID = 30;
   string UserID = 40;
-  string CoinTypeID = 41;
   string RootUserID = 50;
   string GoodUserID = 51;
   string Name = 60;

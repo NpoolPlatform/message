@@ -40,8 +40,6 @@ message GoodUser {
   string ReadPageLink = 50;
   string PoolID = 70;
   basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
-  repeated string CoinTypeIDs = 100;
-  string FeeRatio = 120;
   uint32 CreatedAt = 130;
   uint32 UpdatedAt = 140;
 }
