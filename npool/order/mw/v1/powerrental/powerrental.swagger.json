@@ -118,6 +118,9 @@
         "PaymentStates": {
           "$ref": "#/definitions/v1Uint32SliceVal"
         },
+        "GoodStockMode": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
         "CouponID": {
           "$ref": "#/definitions/v1StringVal",
           "title": "coupon"
@@ -374,6 +377,15 @@
           "format": "int64"
         }
       }
+    },
+    "v1GoodStockMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStockMode",
+        "GoodStockByMiningpool",
+        "GoodStockByUnique"
+      ],
+      "default": "DefaultGoodStockMode"
     },
     "v1GoodType": {
       "type": "string",
@@ -798,6 +810,13 @@
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
         },
+        "GoodStockModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_stock_mode\""
+        },
+        "GoodStockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
+        },
         "CancelStateStr": {
           "type": "string",
           "title": "Power rental state information\n@inject_tag: sql:\"cancel_state\""
@@ -983,6 +1002,9 @@
         },
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
+        },
+        "GoodStockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
         },
         "OrderState": {
           "$ref": "#/definitions/v1OrderState",

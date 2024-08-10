@@ -62,6 +62,7 @@ message PowerRentalOrderReq {
   optional string PromotionID = 250;
   optional uint32 DurationSeconds = 260;
   optional basetypes.order.v1.InvestmentType InvestmentType = 270;
+  optional basetypes.good.v1.GoodStockMode GoodStockMode = 280;
 
   // Order state base
   optional basetypes.order.v1.OrderState OrderState = 300;
@@ -165,6 +166,9 @@ message PowerRentalOrder {
   // @inject_tag: sql:"investment_type"
   string InvestmentTypeStr = 380;
   basetypes.order.v1.InvestmentType InvestmentType = 390;
+  // @inject_tag: sql:"good_stock_mode"
+  string GoodStockModeStr = 395;
+  basetypes.good.v1.GoodStockMode GoodStockMode = 396;
 
   // Power rental state information
   // @inject_tag: sql:"cancel_state"
@@ -256,6 +260,7 @@ message Conds {
   optional basetypes.v1.Uint32Val RenewNotifyAt = 410;
   optional basetypes.v1.Uint32Val PaymentState = 420;
   optional basetypes.v1.Uint32SliceVal PaymentStates = 430;
+  optional basetypes.v1.Uint32Val GoodStockMode = 440;
 
   // coupon
   optional basetypes.v1.StringVal CouponID = 500;
