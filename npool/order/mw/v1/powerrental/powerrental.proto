@@ -212,7 +212,7 @@ message PowerRentalOrder {
   repeated order.middleware.fee.v1.FeeDuration FeeDurations = 630;
 
   // @inject_tag: sql:"mining_pool_order_user_id"
-  string PoolOrderUserID = 700;
+  optional string PoolOrderUserID = 700;
 
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 1000;
