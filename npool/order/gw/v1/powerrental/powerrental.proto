@@ -149,6 +149,7 @@ message PowerRentalOrder {
   uint32 DurationSeconds = 490;
   uint32 Durations = 500;
   basetypes.order.v1.InvestmentType InvestmentType = 510;
+  basetypes.good.v1.GoodStockMode GoodStockMode = 520;
 
   basetypes.order.v1.OrderState CancelState = 600;
   uint32 CanceledAt = 610;

@@ -816,6 +816,15 @@
       ],
       "default": "DefaultGoodDurationType"
     },
+    "v1GoodStockMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStockMode",
+        "GoodStockByMiningpool",
+        "GoodStockByUnique"
+      ],
+      "default": "DefaultGoodStockMode"
+    },
     "v1GoodType": {
       "type": "string",
       "enum": [
@@ -1196,6 +1205,9 @@
         },
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
+        },
+        "GoodStockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
         },
         "CancelState": {
           "$ref": "#/definitions/v1OrderState"
