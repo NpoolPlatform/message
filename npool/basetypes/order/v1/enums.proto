@@ -11,6 +11,7 @@ enum OrderType {
   Airdrop = 30;
 }
 
+// clang-format off
 enum OrderState {
   DefaultOrderState = 0;
 
@@ -138,7 +139,7 @@ Rollback------------- InService-------------------------------|--------------|
 
   // PreExpired sub states for miningpool settings
   OrderStateDeleteProportion = 171;
-  OrderStateDeleteRevenueAddress = 172;
+  OrderStateCheckPoolBalance = 172;
 
   // Calculation
   OrderStateRestoreExpiredStock = 180;    // -> OrderStateExpired
