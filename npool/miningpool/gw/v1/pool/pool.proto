@@ -70,8 +70,9 @@ message FractionRule {
   string EntID = 10;
   string PoolCoinTypeID = 20;
   uint32 WithdrawInterval = 30;
-  string MinAmount = 40;
-  string WithdrawRate = 50;
+  string PayoutThreshold = 40;
+  string MinAmount = 50;
+  string WithdrawRate = 60;
   uint32 CreatedAt = 110;
   uint32 UpdatedAt = 120;
 }
