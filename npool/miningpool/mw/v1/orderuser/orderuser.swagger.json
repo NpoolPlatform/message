@@ -202,7 +202,8 @@
       "type": "object",
       "properties": {
         "Proportion": {
-          "type": "string"
+          "type": "number",
+          "format": "double"
         }
       }
     },
