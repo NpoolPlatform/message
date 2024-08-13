@@ -45,19 +45,21 @@ message FractionRule {
   string PoolID = 29;
   string PoolCoinTypeID = 30;
   uint32 WithdrawInterval = 40;
-  string MinAmount = 50;
-  string WithdrawRate = 60;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 70;
-  basetypes.v1.CoinType CoinType = 80;
-  uint32 CreatedAt = 90;
-  uint32 UpdatedAt = 100;
+  string PayoutThreshold = 50;
+  string MinAmount = 60;
+  string WithdrawRate = 70;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
+  basetypes.v1.CoinType CoinType = 90;
+  uint32 CreatedAt = 100;
+  uint32 UpdatedAt = 110;
 }
 
 message AdminCreateFractionRuleRequest {
   string PoolCoinTypeID = 10;
   uint32 WithdrawInterval = 20;
-  string MinAmount = 30;
-  string WithdrawRate = 40;
+  string PayoutThreshold = 30;
+  string MinAmount = 40;
+  string WithdrawRate = 50;
 }
 
 message AdminCreateFractionRuleResponse { FractionRule Info = 10; }
@@ -66,8 +68,9 @@ message AdminUpdateFractionRuleRequest {
   uint32 ID = 10;
   string EntID = 20;
   optional uint32 WithdrawInterval = 30;
-  optional string MinAmount = 40;
-  optional string WithdrawRate = 50;
+  optional string PayoutThreshold = 40;
+  optional string MinAmount = 50;
+  optional string WithdrawRate = 60;
 }
 
 message AdminUpdateFractionRuleResponse { FractionRule Info = 10; }

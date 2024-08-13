@@ -183,6 +183,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "PayoutThreshold": {
+          "type": "string"
+        },
         "MinAmount": {
           "type": "string"
         },
@@ -261,6 +264,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "PayoutThreshold": {
+          "type": "string"
+        },
         "MinAmount": {
           "type": "string"
         },
@@ -332,6 +338,9 @@
         "WithdrawInterval": {
           "type": "integer",
           "format": "int64"
+        },
+        "PayoutThreshold": {
+          "type": "string"
         },
         "MinAmount": {
           "type": "string"

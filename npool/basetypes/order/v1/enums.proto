@@ -34,6 +34,29 @@ enum OrderState {
   OrderStateTransferGoodStockWaitStart = 120; // -> OrderStateInService
   
   // PreInService sub states for miningpool settings
+  /*
+                        Paid        
+                         |        
+                         |          
+                         v    
+|---->Rollback---->TransferGoodStockWaitStart
+|         |              |         
+|         |              |          
+|         |              v           
+|     Rollback----->OrderStateCreateOrderUser
+|         |              |         
+|         |              |          
+|         |              v           
+|     Rollback----->OrderStateSetProportion
+|         |              |         
+|         |              |          
+|         |              v           
+|         ----------OrderStateSetRevenueAddress
+|                        |         
+|                        |          
+|                        v    
+--------------------InService
+  */
   OrderStateCreateOrderUser = 137;
   OrderStateSetProportion = 138;
   OrderStateSetRevenueAddress = 139;
@@ -138,6 +161,29 @@ Rollback------------- InService-------------------------------|--------------|
   OrderStatePreExpired = 170; // -> OrderStateRestoreExpiredStock
 
   // PreExpired sub states for miningpool settings
+    /*
+                     InService        
+                         |        
+                         |          
+                         v    
+|---->Rollback---->PreExpired
+|         |              |         
+|         |              |          
+|         |              v           
+|     Rollback----->OrderStateDeleteProportion
+|         |              |         
+|         |              |          
+|         |              v           
+|     Rollback----->RestoreExpiredStock
+|         |              |         
+|         |              |          
+|         |              v           
+|         ----------OrderStateCheckPoolBalance
+|                        |         
+|                        |          
+|                        v    
+--------------------Expired
+  */
   OrderStateDeleteProportion = 171;
   OrderStateCheckPoolBalance = 172;
 

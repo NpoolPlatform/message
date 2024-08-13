@@ -31,8 +31,9 @@ message FractionRuleReq {
   optional string EntID = 20;
   optional string PoolCoinTypeID = 30;
   optional uint32 WithdrawInterval = 50;
-  optional string MinAmount = 60;
-  optional string WithdrawRate = 70;
+  optional string PayoutThreshold = 60;
+  optional string MinAmount = 70;
+  optional string WithdrawRate = 80;
 }
 
 message FractionRule {
@@ -46,20 +47,22 @@ message FractionRule {
   string PoolCoinTypeID = 30;
   // @inject_tag: sql:"withdraw_interval"
   uint32 WithdrawInterval = 40;
+  // @inject_tag: sql:"payout_threshold"
+  string PayoutThreshold = 50;
   // @inject_tag: sql:"min_amount"
-  string MinAmount = 50;
+  string MinAmount = 60;
   // @inject_tag: sql:"withdraw_rate"
-  string WithdrawRate = 60;
+  string WithdrawRate = 70;
   // @inject_tag: sql:"miningpool_type"
-  string MiningpoolTypeStr = 70;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 71;
+  string MiningpoolTypeStr = 80;
+  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 81;
   // @inject_tag: sql:"coin_type"
-  string CoinTypeStr = 80;
-  basetypes.v1.CoinType CoinType = 81;
+  string CoinTypeStr = 90;
+  basetypes.v1.CoinType CoinType = 91;
   // @inject_tag: sql:"created_at"
-  uint32 CreatedAt = 90;
+  uint32 CreatedAt = 100;
   // @inject_tag: sql:"updated_at"
-  uint32 UpdatedAt = 100;
+  uint32 UpdatedAt = 110;
 }
 
 message Conds {

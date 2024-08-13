@@ -19,6 +19,10 @@ service Middleware {
   }
   rpc GetOrderUser(GetOrderUserRequest) returns (GetOrderUserResponse) {}
   rpc GetOrderUsers(GetOrderUsersRequest) returns (GetOrderUsersResponse) {}
+  rpc GetOrderUserProportion(GetOrderUserProportionRequest)
+      returns (GetOrderUserProportionResponse) {}
+  rpc GetOrderUserBalance(GetOrderUserBalanceRequest)
+      returns (GetOrderUserBalanceResponse) {}
   rpc ExistOrderUser(ExistOrderUserRequest) returns (ExistOrderUserResponse) {}
   rpc ExistOrderUserConds(ExistOrderUserCondsRequest)
       returns (ExistOrderUserCondsResponse) {}
@@ -108,6 +112,26 @@ message GetOrderUsersRequest {
 message GetOrderUsersResponse {
   repeated OrderUser Infos = 10;
   uint32 Total = 20;
+}
+
+message GetOrderUserProportionRequest {
+  string EntID = 10;
+  string CoinTypeID = 20;
+}
+
+message GetOrderUserProportionResponse { optional string Proportion = 10; }
+
+message GetOrderUserBalanceRequest {
+  string EntID = 10;
+  string CoinTypeID = 20;
+}
+
+message GetOrderUserBalanceResponse {
+  double Balance = 10;
+  double Paid = 20;
+  double TotalIncome = 30;
+  double YesterdayIncome = 40;
+  double EstimatedTodayIncome = 50;
 }
 
 message ExistOrderUserRequest { string EntID = 10; }

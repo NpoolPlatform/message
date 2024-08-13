@@ -144,6 +144,10 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"withdraw_interval\""
         },
+        "PayoutThreshold": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"payout_threshold\""
+        },
         "MinAmount": {
           "type": "string",
           "title": "@inject_tag: sql:\"min_amount\""
@@ -194,6 +198,9 @@
         "WithdrawInterval": {
           "type": "integer",
           "format": "int64"
+        },
+        "PayoutThreshold": {
+          "type": "string"
         },
         "MinAmount": {
           "type": "string"

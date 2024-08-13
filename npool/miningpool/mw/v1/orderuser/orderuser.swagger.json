@@ -173,6 +173,39 @@
         }
       }
     },
+    "v1GetOrderUserBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Balance": {
+          "type": "number",
+          "format": "double"
+        },
+        "Paid": {
+          "type": "number",
+          "format": "double"
+        },
+        "TotalIncome": {
+          "type": "number",
+          "format": "double"
+        },
+        "YesterdayIncome": {
+          "type": "number",
+          "format": "double"
+        },
+        "EstimatedTodayIncome": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1GetOrderUserProportionResponse": {
+      "type": "object",
+      "properties": {
+        "Proportion": {
+          "type": "string"
+        }
+      }
+    },
     "v1GetOrderUserResponse": {
       "type": "object",
       "properties": {
