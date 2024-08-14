@@ -109,6 +109,31 @@
         }
       }
     },
+    "v1BalanceInfo": {
+      "type": "object",
+      "properties": {
+        "Balance": {
+          "type": "number",
+          "format": "double"
+        },
+        "Paid": {
+          "type": "number",
+          "format": "double"
+        },
+        "TotalIncome": {
+          "type": "number",
+          "format": "double"
+        },
+        "YesterdayIncome": {
+          "type": "number",
+          "format": "double"
+        },
+        "EstimatedTodayIncome": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -176,25 +201,8 @@
     "v1GetOrderUserBalanceResponse": {
       "type": "object",
       "properties": {
-        "Balance": {
-          "type": "number",
-          "format": "double"
-        },
-        "Paid": {
-          "type": "number",
-          "format": "double"
-        },
-        "TotalIncome": {
-          "type": "number",
-          "format": "double"
-        },
-        "YesterdayIncome": {
-          "type": "number",
-          "format": "double"
-        },
-        "EstimatedTodayIncome": {
-          "type": "number",
-          "format": "double"
+        "Info": {
+          "$ref": "#/definitions/v1BalanceInfo"
         }
       }
     },

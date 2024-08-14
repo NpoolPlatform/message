@@ -126,13 +126,15 @@ message GetOrderUserBalanceRequest {
   string CoinTypeID = 20;
 }
 
-message GetOrderUserBalanceResponse {
+message BalanceInfo {
   double Balance = 10;
   double Paid = 20;
   double TotalIncome = 30;
   double YesterdayIncome = 40;
   double EstimatedTodayIncome = 50;
 }
+
+message GetOrderUserBalanceResponse { BalanceInfo Info = 10; }
 
 message ExistOrderUserRequest { string EntID = 10; }
 
