@@ -33,7 +33,7 @@ service Gateway {
 
 message UpdateAPIRequest {
   uint32 ID = 10;
-  optional bool Depracated = 20;
+  optional bool Deprecated = 20;
 }
 
 message UpdateAPIResponse { basal.middleware.api.v1.API Info = 10; }
@@ -41,7 +41,7 @@ message UpdateAPIResponse { basal.middleware.api.v1.API Info = 10; }
 message GetAPIsRequest {
   optional string ServiceName = 9;
   optional bool Exported = 10;
-  optional bool Depracated = 20;
+  optional bool Deprecated = 20;
   int32 Offset = 30;
   int32 Limit = 40;
 }
