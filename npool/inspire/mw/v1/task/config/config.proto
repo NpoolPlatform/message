@@ -36,7 +36,7 @@ message TaskConfigReq {
     optional uint32 Index            = 100;
     optional string LastTaskID       = 110;
     optional uint32 MaxRewardCount   = 120;
-    optional uint32 CooldownSecord   = 130;
+    optional uint32 CooldownSecond   = 130;
 }
 
 message TaskConfig {
@@ -65,8 +65,8 @@ message TaskConfig {
     string          LastTaskID       = 120;
     // @inject_tag: sql:"max_reward_count"
     uint32          MaxRewardCount   = 130;
-    // @inject_tag: sql:"cooldown_secord"
-    uint32          CooldownSecord   = 140;
+    // @inject_tag: sql:"cooldown_second"
+    uint32          CooldownSecond   = 140;
     // @inject_tag: sql:"created_at"
     uint32          CreatedAt        = 1000;
     // @inject_tag: sql:"updated_at"

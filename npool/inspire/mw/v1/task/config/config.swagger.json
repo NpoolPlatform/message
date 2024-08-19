@@ -246,10 +246,10 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"max_reward_count\""
         },
-        "CooldownSecord": {
+        "CooldownSecond": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"cooldown_secord\""
+          "title": "@inject_tag: sql:\"cooldown_second\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -305,7 +305,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "CooldownSecord": {
+        "CooldownSecond": {
           "type": "integer",
           "format": "int64"
         }

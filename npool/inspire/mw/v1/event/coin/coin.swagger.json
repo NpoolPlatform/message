@@ -155,9 +155,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"coin_value\""
         },
-        "CoinPreUSD": {
+        "CoinPerUSD": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coin_pre_usd\""
+          "title": "@inject_tag: sql:\"coin_per_usd\""
         },
         "CoinTypeID": {
           "type": "string",
@@ -197,7 +197,7 @@
         "CoinValue": {
           "type": "string"
         },
-        "CoinPreUSD": {
+        "CoinPerUSD": {
           "type": "string"
         }
       }

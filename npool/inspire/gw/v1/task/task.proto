@@ -36,7 +36,7 @@ message UserTask {
   uint32 Index = 100;
   string LastTaskID = 110;
   uint32 MaxRewardCount = 120;
-  uint32 CooldownSecord = 130;
+  uint32 CooldownSecond = 130;
   uint32 CompletionTimes = 140;
   uint32 NextStartAt = 150;
   basetypes.inspire.v1.TaskState TaskState = 160;

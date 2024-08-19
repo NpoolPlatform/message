@@ -60,7 +60,7 @@ message EventCoin {
   string CoinConfigID = 40;
   string CoinTypeID = 50;
   string CoinValue = 60;
-  string CoinPreUSD = 70;
+  string CoinPerUSD = 70;
   string CoinName = 80;
   repeated string DisplayNames = 90;
   string CoinLogo = 100;
@@ -72,7 +72,7 @@ message CreateEventCoinRequest {
   string EventID = 20;
   string CoinConfigID = 30;
   string CoinValue = 40;
-  optional string CoinPreUSD = 50;
+  optional string CoinPerUSD = 50;
 }
 
 message CreateEventCoinResponse { EventCoin Info = 10; }
@@ -94,7 +94,7 @@ message UpdateEventCoinRequest {
   string EntID = 20;
   string AppID = 30;
   optional string CoinValue = 40;
-  optional string CoinPreUSD = 50;
+  optional string CoinPerUSD = 50;
 }
 
 message UpdateEventCoinResponse { EventCoin Info = 10; }
@@ -116,7 +116,7 @@ message AdminCreateEventCoinRequest {
   string EventID = 20;
   string CoinConfigID = 30;
   string CoinValue = 40;
-  optional string CoinPreUSD = 50;
+  optional string CoinPerUSD = 50;
 }
 
 message AdminCreateEventCoinResponse { EventCoin Info = 10; }
@@ -126,7 +126,7 @@ message AdminUpdateEventCoinRequest {
   string EntID = 20;
   string TargetAppID = 30;
   optional string CoinValue = 40;
-  optional string CoinPreUSD = 50;
+  optional string CoinPerUSD = 50;
 }
 
 message AdminUpdateEventCoinResponse { EventCoin Info = 10; }

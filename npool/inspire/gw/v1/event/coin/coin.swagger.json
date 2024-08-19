@@ -284,7 +284,7 @@
         "CoinValue": {
           "type": "string"
         },
-        "CoinPreUSD": {
+        "CoinPerUSD": {
           "type": "string"
         }
       }
@@ -367,7 +367,7 @@
         "CoinValue": {
           "type": "string"
         },
-        "CoinPreUSD": {
+        "CoinPerUSD": {
           "type": "string"
         }
       }
@@ -395,7 +395,7 @@
         "CoinValue": {
           "type": "string"
         },
-        "CoinPreUSD": {
+        "CoinPerUSD": {
           "type": "string"
         }
       }
@@ -433,7 +433,7 @@
         "CoinValue": {
           "type": "string"
         },
-        "CoinPreUSD": {
+        "CoinPerUSD": {
           "type": "string"
         },
         "CoinName": {
@@ -503,7 +503,7 @@
         "CoinValue": {
           "type": "string"
         },
-        "CoinPreUSD": {
+        "CoinPerUSD": {
           "type": "string"
         }
       }

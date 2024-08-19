@@ -249,7 +249,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "CooldownSecord": {
+        "CooldownSecond": {
           "type": "integer",
           "format": "int64"
         },

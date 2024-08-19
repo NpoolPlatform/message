@@ -29,7 +29,7 @@ message EventCoinReq {
     optional string EventID      = 40;
     optional string CoinConfigID = 50;
     optional string CoinValue    = 60;
-    optional string CoinPreUSD   = 70;
+    optional string CoinPerUSD   = 70;
 }
 
 message EventCoin {
@@ -45,8 +45,8 @@ message EventCoin {
     string          CoinConfigID    = 50;
     // @inject_tag: sql:"coin_value"
     string          CoinValue       = 60;
-    // @inject_tag: sql:"coin_pre_usd"
-    string          CoinPreUSD      = 70;
+    // @inject_tag: sql:"coin_per_usd"
+    string          CoinPerUSD      = 70;
 
     // @inject_tag: sql:"coin_type_id"
     string          CoinTypeID      = 80;
