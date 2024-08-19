@@ -109,52 +109,30 @@
         }
       }
     },
-    "v1BoolVal": {
+    "v1BalanceInfo": {
       "type": "object",
       "properties": {
-        "Op": {
-          "type": "string"
+        "Balance": {
+          "type": "number",
+          "format": "double"
         },
-        "Value": {
-          "type": "boolean"
+        "Paid": {
+          "type": "number",
+          "format": "double"
+        },
+        "TotalIncome": {
+          "type": "number",
+          "format": "double"
+        },
+        "YesterdayIncome": {
+          "type": "number",
+          "format": "double"
+        },
+        "EstimatedTodayIncome": {
+          "type": "number",
+          "format": "double"
         }
       }
-    },
-    "v1CoinType": {
-      "type": "string",
-      "enum": [
-        "DefaultCoinType",
-        "CoinTypeFileCoin",
-        "CoinTypeBitCoin",
-        "CoinTypeEthereum",
-        "CoinTypeUSDTerc20",
-        "CoinTypeSpacemesh",
-        "CoinTypeSolana",
-        "CoinTypeUSDTtrc20",
-        "CoinTypeBinanceCoin",
-        "CoinTypeTron",
-        "CoinTypeBinanceUSD",
-        "CoinTypeUSDCerc20",
-        "CoinTypeAleo",
-        "CoinTypeIronFish",
-        "CoinTypeUSDTbep20",
-        "CoinTypeTFileCoin",
-        "CoinTypeTBitCoin",
-        "CoinTypeTEthereum",
-        "CoinTypeTUSDTerc20",
-        "CoinTypeTSpacemesh",
-        "CoinTypeTSolana",
-        "CoinTypeTUSDTtrc20",
-        "CoinTypeTBinanceCoin",
-        "CoinTypeTTron",
-        "CoinTypeTBinanceUSD",
-        "CoinTypeTUSDCerc20",
-        "CoinTypeTAleo",
-        "CoinTypeTIronFish",
-        "CoinTypeTUSDTbep20"
-      ],
-      "default": "DefaultCoinType",
-      "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
     },
     "v1Conds": {
       "type": "object",
@@ -176,9 +154,6 @@
         },
         "Name": {
           "$ref": "#/definitions/v1StringVal"
-        },
-        "AutoPay": {
-          "$ref": "#/definitions/v1BoolVal"
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
@@ -220,6 +195,23 @@
       "properties": {
         "Info": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1GetOrderUserBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BalanceInfo"
+        }
+      }
+    },
+    "v1GetOrderUserProportionResponse": {
+      "type": "object",
+      "properties": {
+        "Proportion": {
+          "type": "number",
+          "format": "double"
         }
       }
     },
@@ -275,14 +267,6 @@
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
         },
-        "PoolCoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"pool_coin_type_id\""
-        },
-        "CoinTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coin_type_id\""
-        },
         "RootUserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"root_user_id\""
@@ -295,21 +279,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"name\""
         },
-        "Proportion": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"proportion\""
-        },
-        "RevenueAddress": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"revenue_address\""
-        },
         "ReadPageLink": {
           "type": "string",
           "title": "@inject_tag: sql:\"read_page_link\""
         },
-        "AutoPay": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"auto_pay\""
+        "PoolID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"pool_id\""
         },
         "MiningpoolTypeStr": {
           "type": "string",
@@ -318,19 +294,17 @@
         "MiningpoolType": {
           "$ref": "#/definitions/v1MiningpoolType"
         },
-        "CoinTypeStr": {
+        "MiningpoolName": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coin_type\""
+          "title": "@inject_tag: sql:\"miningpool_name\""
         },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
-        },
-        "RevenueTypeStr": {
+        "MiningpoolSite": {
           "type": "string",
-          "title": "@inject_tag: sql:\"revenue_type\""
+          "title": "@inject_tag: sql:\"miningpool_site\""
         },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
+        "MiningpoolLogo": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"miningpool_logo\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -363,8 +337,9 @@
         "GoodUserID": {
           "type": "string"
         },
-        "Name": {
-          "type": "string"
+        "CoinTypeID": {
+          "type": "string",
+          "title": "set to miningpool,not recorded in db"
         },
         "Proportion": {
           "type": "string"
@@ -372,22 +347,10 @@
         "RevenueAddress": {
           "type": "string"
         },
-        "ReadPageLink": {
-          "type": "string"
-        },
         "AutoPay": {
           "type": "boolean"
         }
       }
-    },
-    "v1RevenueType": {
-      "type": "string",
-      "enum": [
-        "DefaultRevenueType",
-        "FPPS",
-        "PPLNS"
-      ],
-      "default": "DefaultRevenueType"
     },
     "v1StringSliceVal": {
       "type": "object",

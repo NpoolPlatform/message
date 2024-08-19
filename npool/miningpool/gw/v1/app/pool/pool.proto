@@ -63,7 +63,6 @@ message Coin {
   string PoolID = 20;
   string CoinTypeID = 30;
   basetypes.v1.CoinType CoinType = 31;
-  basetypes.miningpool.v1.RevenueType RevenueType = 40;
   string FeeRatio = 50;
   bool FixedRevenueAble = 60;
   string LeastTransferAmount = 70;
@@ -75,8 +74,9 @@ message FractionRule {
   string EntID = 10;
   string PoolCoinTypeID = 20;
   uint32 WithdrawInterval = 30;
-  string MinAmount = 40;
-  string WithdrawRate = 50;
+  string PayoutThreshold = 40;
+  string MinAmount = 50;
+  string WithdrawRate = 60;
 }
 
 message AdminCreatePoolRequest {

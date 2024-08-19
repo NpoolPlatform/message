@@ -588,10 +588,15 @@
         "OrderStatePaymentUnlockAccount",
         "OrderStatePaid",
         "OrderStateTransferGoodStockWaitStart",
+        "OrderStateCreateOrderUser",
+        "OrderStateSetProportion",
+        "OrderStateSetRevenueAddress",
         "OrderStateInService",
         "OrderStatePaymentTimeout",
         "OrderStatePreCancel",
         "OrderStatePreExpired",
+        "OrderStateDeleteProportion",
+        "OrderStateCheckPoolBalance",
         "OrderStateRestoreExpiredStock",
         "OrderStateRestoreCanceledStock",
         "OrderStateDeductLockedCommission",
@@ -603,7 +608,8 @@
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state"
+      "description": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStateCreateOrderUser: Paid        \n|        \n|          \nv    \n|----\u003eRollback----\u003eTransferGoodStockWaitStart\n|         |              |         \n|         |              |          \n|         |              v           \n|     Rollback-----\u003eOrderStateCreateOrderUser\n|         |              |         \n|         |              |          \n|         |              v           \n|     Rollback-----\u003eOrderStateSetProportion\n|         |              |         \n|         |              |          \n|         |              v           \n|         ----------OrderStateSetRevenueAddress\n|                        |         \n|                        |          \n|                        v    \n--------------------InService\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateDeleteProportion: InService        \n|        \n|          \nv    \n|----\u003eRollback----\u003ePreExpired\n|         |              |         \n|         |              |          \n|         |              v           \n|     Rollback-----\u003eOrderStateDeleteProportion\n|         |              |         \n|         |              |          \n|         |              v           \n|     Rollback-----\u003eRestoreExpiredStock\n|         |              |         \n|         |              |          \n|         |              v           \n|         ----------OrderStateCheckPoolBalance\n|                        |         \n|                        |          \n|                        v    \n--------------------Expired\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state",
+      "title": "clang-format off"
     },
     "v1OrderType": {
       "type": "string",

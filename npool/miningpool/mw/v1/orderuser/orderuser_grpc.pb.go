@@ -19,13 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateOrderUser_FullMethodName     = "/miningpool.middleware.orderuser.v1.Middleware/CreateOrderUser"
-	Middleware_GetOrderUser_FullMethodName        = "/miningpool.middleware.orderuser.v1.Middleware/GetOrderUser"
-	Middleware_GetOrderUsers_FullMethodName       = "/miningpool.middleware.orderuser.v1.Middleware/GetOrderUsers"
-	Middleware_ExistOrderUser_FullMethodName      = "/miningpool.middleware.orderuser.v1.Middleware/ExistOrderUser"
-	Middleware_ExistOrderUserConds_FullMethodName = "/miningpool.middleware.orderuser.v1.Middleware/ExistOrderUserConds"
-	Middleware_UpdateOrderUser_FullMethodName     = "/miningpool.middleware.orderuser.v1.Middleware/UpdateOrderUser"
-	Middleware_DeleteOrderUser_FullMethodName     = "/miningpool.middleware.orderuser.v1.Middleware/DeleteOrderUser"
+	Middleware_CreateOrderUser_FullMethodName        = "/miningpool.middleware.orderuser.v1.Middleware/CreateOrderUser"
+	Middleware_GetOrderUser_FullMethodName           = "/miningpool.middleware.orderuser.v1.Middleware/GetOrderUser"
+	Middleware_GetOrderUsers_FullMethodName          = "/miningpool.middleware.orderuser.v1.Middleware/GetOrderUsers"
+	Middleware_GetOrderUserProportion_FullMethodName = "/miningpool.middleware.orderuser.v1.Middleware/GetOrderUserProportion"
+	Middleware_GetOrderUserBalance_FullMethodName    = "/miningpool.middleware.orderuser.v1.Middleware/GetOrderUserBalance"
+	Middleware_ExistOrderUser_FullMethodName         = "/miningpool.middleware.orderuser.v1.Middleware/ExistOrderUser"
+	Middleware_ExistOrderUserConds_FullMethodName    = "/miningpool.middleware.orderuser.v1.Middleware/ExistOrderUserConds"
+	Middleware_UpdateOrderUser_FullMethodName        = "/miningpool.middleware.orderuser.v1.Middleware/UpdateOrderUser"
+	Middleware_DeleteOrderUser_FullMethodName        = "/miningpool.middleware.orderuser.v1.Middleware/DeleteOrderUser"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -35,6 +37,8 @@ type MiddlewareClient interface {
 	CreateOrderUser(ctx context.Context, in *CreateOrderUserRequest, opts ...grpc.CallOption) (*CreateOrderUserResponse, error)
 	GetOrderUser(ctx context.Context, in *GetOrderUserRequest, opts ...grpc.CallOption) (*GetOrderUserResponse, error)
 	GetOrderUsers(ctx context.Context, in *GetOrderUsersRequest, opts ...grpc.CallOption) (*GetOrderUsersResponse, error)
+	GetOrderUserProportion(ctx context.Context, in *GetOrderUserProportionRequest, opts ...grpc.CallOption) (*GetOrderUserProportionResponse, error)
+	GetOrderUserBalance(ctx context.Context, in *GetOrderUserBalanceRequest, opts ...grpc.CallOption) (*GetOrderUserBalanceResponse, error)
 	ExistOrderUser(ctx context.Context, in *ExistOrderUserRequest, opts ...grpc.CallOption) (*ExistOrderUserResponse, error)
 	ExistOrderUserConds(ctx context.Context, in *ExistOrderUserCondsRequest, opts ...grpc.CallOption) (*ExistOrderUserCondsResponse, error)
 	UpdateOrderUser(ctx context.Context, in *UpdateOrderUserRequest, opts ...grpc.CallOption) (*UpdateOrderUserResponse, error)
@@ -70,6 +74,24 @@ func (c *middlewareClient) GetOrderUser(ctx context.Context, in *GetOrderUserReq
 func (c *middlewareClient) GetOrderUsers(ctx context.Context, in *GetOrderUsersRequest, opts ...grpc.CallOption) (*GetOrderUsersResponse, error) {
 	out := new(GetOrderUsersResponse)
 	err := c.cc.Invoke(ctx, Middleware_GetOrderUsers_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetOrderUserProportion(ctx context.Context, in *GetOrderUserProportionRequest, opts ...grpc.CallOption) (*GetOrderUserProportionResponse, error) {
+	out := new(GetOrderUserProportionResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetOrderUserProportion_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middlewareClient) GetOrderUserBalance(ctx context.Context, in *GetOrderUserBalanceRequest, opts ...grpc.CallOption) (*GetOrderUserBalanceResponse, error) {
+	out := new(GetOrderUserBalanceResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetOrderUserBalance_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -119,6 +141,8 @@ type MiddlewareServer interface {
 	CreateOrderUser(context.Context, *CreateOrderUserRequest) (*CreateOrderUserResponse, error)
 	GetOrderUser(context.Context, *GetOrderUserRequest) (*GetOrderUserResponse, error)
 	GetOrderUsers(context.Context, *GetOrderUsersRequest) (*GetOrderUsersResponse, error)
+	GetOrderUserProportion(context.Context, *GetOrderUserProportionRequest) (*GetOrderUserProportionResponse, error)
+	GetOrderUserBalance(context.Context, *GetOrderUserBalanceRequest) (*GetOrderUserBalanceResponse, error)
 	ExistOrderUser(context.Context, *ExistOrderUserRequest) (*ExistOrderUserResponse, error)
 	ExistOrderUserConds(context.Context, *ExistOrderUserCondsRequest) (*ExistOrderUserCondsResponse, error)
 	UpdateOrderUser(context.Context, *UpdateOrderUserRequest) (*UpdateOrderUserResponse, error)
@@ -138,6 +162,12 @@ func (UnimplementedMiddlewareServer) GetOrderUser(context.Context, *GetOrderUser
 }
 func (UnimplementedMiddlewareServer) GetOrderUsers(context.Context, *GetOrderUsersRequest) (*GetOrderUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrderUsers not implemented")
+}
+func (UnimplementedMiddlewareServer) GetOrderUserProportion(context.Context, *GetOrderUserProportionRequest) (*GetOrderUserProportionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrderUserProportion not implemented")
+}
+func (UnimplementedMiddlewareServer) GetOrderUserBalance(context.Context, *GetOrderUserBalanceRequest) (*GetOrderUserBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrderUserBalance not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistOrderUser(context.Context, *ExistOrderUserRequest) (*ExistOrderUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistOrderUser not implemented")
@@ -214,6 +244,42 @@ func _Middleware_GetOrderUsers_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).GetOrderUsers(ctx, req.(*GetOrderUsersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetOrderUserProportion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrderUserProportionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetOrderUserProportion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetOrderUserProportion_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetOrderUserProportion(ctx, req.(*GetOrderUserProportionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Middleware_GetOrderUserBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrderUserBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetOrderUserBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetOrderUserBalance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetOrderUserBalance(ctx, req.(*GetOrderUserBalanceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -308,6 +374,14 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetOrderUsers",
 			Handler:    _Middleware_GetOrderUsers_Handler,
+		},
+		{
+			MethodName: "GetOrderUserProportion",
+			Handler:    _Middleware_GetOrderUserProportion_Handler,
+		},
+		{
+			MethodName: "GetOrderUserBalance",
+			Handler:    _Middleware_GetOrderUserBalance_Handler,
 		},
 		{
 			MethodName: "ExistOrderUser",

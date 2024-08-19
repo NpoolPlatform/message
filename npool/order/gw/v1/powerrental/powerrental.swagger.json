@@ -438,6 +438,12 @@
         },
         "AppSpotUnits": {
           "type": "string"
+        },
+        "OrderBenefitAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderBenefitAccountReq"
+          }
         }
       }
     },
@@ -624,6 +630,12 @@
         },
         "AppSpotUnits": {
           "type": "string"
+        },
+        "OrderBenefitAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderBenefitAccountReq"
+          }
         }
       }
     },
@@ -665,6 +677,12 @@
         },
         "AppSpotUnits": {
           "type": "string"
+        },
+        "OrderBenefitAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderBenefitAccountReq"
+          }
         }
       }
     },
@@ -798,6 +816,15 @@
       ],
       "default": "DefaultGoodDurationType"
     },
+    "v1GoodStockMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStockMode",
+        "GoodStockByMiningpool",
+        "GoodStockByUnique"
+      ],
+      "default": "DefaultGoodStockMode"
+    },
     "v1GoodType": {
       "type": "string",
       "enum": [
@@ -819,6 +846,36 @@
         "FullPayment"
       ],
       "default": "DefaultInvestmentType"
+    },
+    "v1OrderBenefitAccount": {
+      "type": "object",
+      "properties": {
+        "AccountID": {
+          "type": "string",
+          "title": "for order benefit account"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
+    },
+    "v1OrderBenefitAccountReq": {
+      "type": "object",
+      "properties": {
+        "AccountID": {
+          "type": "string",
+          "title": "for order benefit account"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
     },
     "v1OrderCouponInfo": {
       "type": "object",
@@ -878,10 +935,15 @@
         "OrderStatePaymentUnlockAccount",
         "OrderStatePaid",
         "OrderStateTransferGoodStockWaitStart",
+        "OrderStateCreateOrderUser",
+        "OrderStateSetProportion",
+        "OrderStateSetRevenueAddress",
         "OrderStateInService",
         "OrderStatePaymentTimeout",
         "OrderStatePreCancel",
         "OrderStatePreExpired",
+        "OrderStateDeleteProportion",
+        "OrderStateCheckPoolBalance",
         "OrderStateRestoreExpiredStock",
         "OrderStateRestoreCanceledStock",
         "OrderStateDeductLockedCommission",
@@ -893,7 +955,8 @@
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state"
+      "description": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStateCreateOrderUser: Paid        \n|        \n|          \nv    \n|----\u003eRollback----\u003eTransferGoodStockWaitStart\n|         |              |         \n|         |              |          \n|         |              v           \n|     Rollback-----\u003eOrderStateCreateOrderUser\n|         |              |         \n|         |              |          \n|         |              v           \n|     Rollback-----\u003eOrderStateSetProportion\n|         |              |         \n|         |              |          \n|         |              v           \n|         ----------OrderStateSetRevenueAddress\n|                        |         \n|                        |          \n|                        v    \n--------------------InService\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateDeleteProportion: InService        \n|        \n|          \nv    \n|----\u003eRollback----\u003ePreExpired\n|         |              |         \n|         |              |          \n|         |              v           \n|     Rollback-----\u003eOrderStateDeleteProportion\n|         |              |         \n|         |              |          \n|         |              v           \n|     Rollback-----\u003eRestoreExpiredStock\n|         |              |         \n|         |              |          \n|         |              v           \n|         ----------OrderStateCheckPoolBalance\n|                        |         \n|                        |          \n|                        v    \n--------------------Expired\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state",
+      "title": "clang-format off"
     },
     "v1OrderType": {
       "type": "string",
@@ -1090,24 +1153,24 @@
         "AppGoodStockID": {
           "type": "string"
         },
-        "MiningPoolName": {
+        "MiningpoolName": {
           "type": "string"
         },
-        "MiningPoolLogo": {
+        "MiningpoolLogo": {
           "type": "string"
         },
-        "MiningPoolFeeRatio": {
+        "MiningpoolOrderUserID": {
           "type": "string"
         },
-        "MiningPoolLeastTransferAmount": {
+        "MiningpoolOrderUserName": {
           "type": "string"
         },
-        "MiningPoolBenefitIntervalSeconds": {
-          "type": "integer",
-          "format": "int64"
+        "MiningpoolReadPageLink": {
+          "type": "string"
         },
         "Units": {
-          "type": "string"
+          "type": "string",
+          "title": "TODO: benefit mode"
         },
         "GoodValueUSD": {
           "type": "string"
@@ -1143,6 +1206,9 @@
         },
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
+        },
+        "GoodStockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
         },
         "CancelState": {
           "$ref": "#/definitions/v1OrderState"
@@ -1202,6 +1268,13 @@
           "items": {
             "$ref": "#/definitions/v1FeeDuration"
           }
+        },
+        "OrderBenefitAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderBenefitAccount"
+          },
+          "title": "order benefit account"
         },
         "CreatedAt": {
           "type": "integer",

@@ -95,6 +95,9 @@
         "OrderUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "WithdrawState": {
           "$ref": "#/definitions/v1Uint32Val"
         },
@@ -157,6 +160,10 @@
           "type": "string",
           "title": "@inject_tag: sql:\"order_user_id\""
         },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
         "WithdrawStateStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"withdraw_state\""
@@ -207,6 +214,9 @@
           "type": "string"
         },
         "OrderUserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
           "type": "string"
         },
         "WithdrawState": {

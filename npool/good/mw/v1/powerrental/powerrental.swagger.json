@@ -49,6 +49,12 @@
         },
         "RewardAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "State": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "StockMode": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -200,11 +206,25 @@
       ],
       "default": "DefaultGoodStartMode"
     },
+    "v1GoodState": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodState",
+        "GoodStateWait",
+        "GoodStateCreateGoodUser",
+        "GoodStateCheckHashRate",
+        "GoodStateReady",
+        "GoodStateFail"
+      ],
+      "default": "DefaultGoodState",
+      "description": "- GoodStateCreateGoodUser: for miningpoolstock",
+      "title": "initial state: GoodStateWait\n|\nv\nGoodStateCreateGoodUser------------------\n|                             |\nv                             |\nGoodStateCheckHashRate-------------------\n|                             |\nv                             v\nGoodStateReady                 GoodStateFail"
+    },
     "v1GoodStockMode": {
       "type": "string",
       "enum": [
         "DefaultGoodStockMode",
-        "GoodStockByMiningPool",
+        "GoodStockByMiningpool",
         "GoodStockByUnique"
       ],
       "default": "DefaultGoodStockMode"
@@ -238,13 +258,13 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_stock_id\""
         },
-        "MiningPoolID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"mining_pool_id\""
-        },
         "PoolGoodUserID": {
           "type": "string",
           "title": "@inject_tag: sql:\"pool_good_user_id\""
+        },
+        "PoolRootUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"pool_root_user_id\""
         },
         "Total": {
           "type": "string",
@@ -269,6 +289,13 @@
         "Sold": {
           "type": "string",
           "title": "@inject_tag: sql:\"sold\""
+        },
+        "StateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1MiningGoodStockState"
         }
       }
     },
@@ -278,7 +305,7 @@
         "EntID": {
           "type": "string"
         },
-        "MiningPoolID": {
+        "PoolRootUserID": {
           "type": "string"
         },
         "PoolGoodUserID": {
@@ -286,8 +313,24 @@
         },
         "Total": {
           "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1MiningGoodStockState"
         }
       }
+    },
+    "v1MiningGoodStockState": {
+      "type": "string",
+      "enum": [
+        "DefaultMiningGoodStockState",
+        "MiningGoodStockStateWait",
+        "MiningGoodStockStateCreateGoodUser",
+        "MiningGoodStockStateCheckHashRate",
+        "MiningGoodStockStateReady",
+        "MiningGoodStockStateFail"
+      ],
+      "default": "DefaultMiningGoodStockState",
+      "title": "initial state: MiningGoodStockStateWait\n|\nv\nMiningGoodStockStateCreateGoodUser---------------\n|                             |\nv                             |\nMiningGoodStockStateCheckHashRate----------------\n|                             |\nv                             v\nMiningGoodStockStateReady     MiningGoodStockStateFail"
     },
     "v1PowerRental": {
       "type": "object",
@@ -432,6 +475,13 @@
         },
         "StockMode": {
           "$ref": "#/definitions/v1GoodStockMode"
+        },
+        "StateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1GoodState"
         },
         "GoodStockID": {
           "type": "string",
@@ -579,6 +629,9 @@
         "StockMode": {
           "$ref": "#/definitions/v1GoodStockMode"
         },
+        "State": {
+          "$ref": "#/definitions/v1GoodState"
+        },
         "StockID": {
           "type": "string",
           "title": "Good stock"
@@ -605,6 +658,9 @@
           "items": {
             "$ref": "#/definitions/v1RewardReq"
           }
+        },
+        "Rollback": {
+          "type": "boolean"
         }
       }
     },

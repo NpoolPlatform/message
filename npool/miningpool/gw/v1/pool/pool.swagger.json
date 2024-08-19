@@ -296,9 +296,6 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
-        },
         "FeeRatio": {
           "type": "string"
         },
@@ -374,6 +371,9 @@
           "type": "integer",
           "format": "int64"
         },
+        "PayoutThreshold": {
+          "type": "string"
+        },
         "MinAmount": {
           "type": "string"
         },
@@ -445,15 +445,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1RevenueType": {
-      "type": "string",
-      "enum": [
-        "DefaultRevenueType",
-        "FPPS",
-        "PPLNS"
-      ],
-      "default": "DefaultRevenueType"
     }
   }
 }

@@ -22,5 +22,6 @@ enum AccountUsedFor {
   PaymentCollector =
       90; // Money for payment over limitation        - Platform Cold
   UserDirectBenefit =
-      100; // Benefit address for user set to product  - User set
+      100;            // Benefit address for user set to product  - User set
+  OrderBenefit = 110; // Benefit address for user set to order - Order set
 }
