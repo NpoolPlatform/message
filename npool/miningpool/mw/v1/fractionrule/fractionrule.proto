@@ -45,6 +45,8 @@ message FractionRule {
   string PoolID = 29;
   // @inject_tag: sql:"pool_coin_type_id"
   string PoolCoinTypeID = 30;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 31;
   // @inject_tag: sql:"withdraw_interval"
   uint32 WithdrawInterval = 40;
   // @inject_tag: sql:"payout_threshold"

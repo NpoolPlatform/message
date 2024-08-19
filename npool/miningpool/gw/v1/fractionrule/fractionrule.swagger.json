@@ -335,6 +335,9 @@
         "PoolCoinTypeID": {
           "type": "string"
         },
+        "CoinTypeID": {
+          "type": "string"
+        },
         "WithdrawInterval": {
           "type": "integer",
           "format": "int64"
