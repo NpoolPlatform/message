@@ -36,6 +36,7 @@ message FractionReq {
   optional uint32 WithdrawAt = 70;
   optional uint32 PromisePayAt = 80;
   optional string Msg = 90;
+  optional bool IgonrePoolErr = 100;
 }
 
 message Fraction {
