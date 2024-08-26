@@ -20,7 +20,6 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateEventCoupon_FullMethodName     = "/inspire.middleware.event.coupon.v1.Middleware/CreateEventCoupon"
-	Middleware_UpdateEventCoupon_FullMethodName     = "/inspire.middleware.event.coupon.v1.Middleware/UpdateEventCoupon"
 	Middleware_GetEventCoupon_FullMethodName        = "/inspire.middleware.event.coupon.v1.Middleware/GetEventCoupon"
 	Middleware_GetEventCoupons_FullMethodName       = "/inspire.middleware.event.coupon.v1.Middleware/GetEventCoupons"
 	Middleware_ExistEventCouponConds_FullMethodName = "/inspire.middleware.event.coupon.v1.Middleware/ExistEventCouponConds"
@@ -32,7 +31,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateEventCoupon(ctx context.Context, in *CreateEventCouponRequest, opts ...grpc.CallOption) (*CreateEventCouponResponse, error)
-	UpdateEventCoupon(ctx context.Context, in *UpdateEventCouponRequest, opts ...grpc.CallOption) (*UpdateEventCouponResponse, error)
 	GetEventCoupon(ctx context.Context, in *GetEventCouponRequest, opts ...grpc.CallOption) (*GetEventCouponResponse, error)
 	GetEventCoupons(ctx context.Context, in *GetEventCouponsRequest, opts ...grpc.CallOption) (*GetEventCouponsResponse, error)
 	ExistEventCouponConds(ctx context.Context, in *ExistEventCouponCondsRequest, opts ...grpc.CallOption) (*ExistEventCouponCondsResponse, error)
@@ -50,15 +48,6 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateEventCoupon(ctx context.Context, in *CreateEventCouponRequest, opts ...grpc.CallOption) (*CreateEventCouponResponse, error) {
 	out := new(CreateEventCouponResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateEventCoupon_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) UpdateEventCoupon(ctx context.Context, in *UpdateEventCouponRequest, opts ...grpc.CallOption) (*UpdateEventCouponResponse, error) {
-	out := new(UpdateEventCouponResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdateEventCoupon_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,7 +95,6 @@ func (c *middlewareClient) DeleteEventCoupon(ctx context.Context, in *DeleteEven
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateEventCoupon(context.Context, *CreateEventCouponRequest) (*CreateEventCouponResponse, error)
-	UpdateEventCoupon(context.Context, *UpdateEventCouponRequest) (*UpdateEventCouponResponse, error)
 	GetEventCoupon(context.Context, *GetEventCouponRequest) (*GetEventCouponResponse, error)
 	GetEventCoupons(context.Context, *GetEventCouponsRequest) (*GetEventCouponsResponse, error)
 	ExistEventCouponConds(context.Context, *ExistEventCouponCondsRequest) (*ExistEventCouponCondsResponse, error)
@@ -120,9 +108,6 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateEventCoupon(context.Context, *CreateEventCouponRequest) (*CreateEventCouponResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateEventCoupon not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateEventCoupon(context.Context, *UpdateEventCouponRequest) (*UpdateEventCouponResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateEventCoupon not implemented")
 }
 func (UnimplementedMiddlewareServer) GetEventCoupon(context.Context, *GetEventCouponRequest) (*GetEventCouponResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEventCoupon not implemented")
@@ -163,24 +148,6 @@ func _Middleware_CreateEventCoupon_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateEventCoupon(ctx, req.(*CreateEventCouponRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_UpdateEventCoupon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateEventCouponRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateEventCoupon(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdateEventCoupon_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateEventCoupon(ctx, req.(*UpdateEventCouponRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -267,10 +234,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateEventCoupon",
 			Handler:    _Middleware_CreateEventCoupon_Handler,
-		},
-		{
-			MethodName: "UpdateEventCoupon",
-			Handler:    _Middleware_UpdateEventCoupon_Handler,
 		},
 		{
 			MethodName: "GetEventCoupon",

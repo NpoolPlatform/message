@@ -20,7 +20,6 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateCreditAllocated_FullMethodName     = "/inspire.middleware.credit.allocated.v1.Middleware/CreateCreditAllocated"
-	Middleware_UpdateCreditAllocated_FullMethodName     = "/inspire.middleware.credit.allocated.v1.Middleware/UpdateCreditAllocated"
 	Middleware_GetCreditAllocated_FullMethodName        = "/inspire.middleware.credit.allocated.v1.Middleware/GetCreditAllocated"
 	Middleware_GetCreditAllocateds_FullMethodName       = "/inspire.middleware.credit.allocated.v1.Middleware/GetCreditAllocateds"
 	Middleware_ExistCreditAllocatedConds_FullMethodName = "/inspire.middleware.credit.allocated.v1.Middleware/ExistCreditAllocatedConds"
@@ -32,7 +31,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateCreditAllocated(ctx context.Context, in *CreateCreditAllocatedRequest, opts ...grpc.CallOption) (*CreateCreditAllocatedResponse, error)
-	UpdateCreditAllocated(ctx context.Context, in *UpdateCreditAllocatedRequest, opts ...grpc.CallOption) (*UpdateCreditAllocatedResponse, error)
 	GetCreditAllocated(ctx context.Context, in *GetCreditAllocatedRequest, opts ...grpc.CallOption) (*GetCreditAllocatedResponse, error)
 	GetCreditAllocateds(ctx context.Context, in *GetCreditAllocatedsRequest, opts ...grpc.CallOption) (*GetCreditAllocatedsResponse, error)
 	ExistCreditAllocatedConds(ctx context.Context, in *ExistCreditAllocatedCondsRequest, opts ...grpc.CallOption) (*ExistCreditAllocatedCondsResponse, error)
@@ -50,15 +48,6 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateCreditAllocated(ctx context.Context, in *CreateCreditAllocatedRequest, opts ...grpc.CallOption) (*CreateCreditAllocatedResponse, error) {
 	out := new(CreateCreditAllocatedResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateCreditAllocated_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) UpdateCreditAllocated(ctx context.Context, in *UpdateCreditAllocatedRequest, opts ...grpc.CallOption) (*UpdateCreditAllocatedResponse, error) {
-	out := new(UpdateCreditAllocatedResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdateCreditAllocated_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,7 +95,6 @@ func (c *middlewareClient) DeleteCreditAllocated(ctx context.Context, in *Delete
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateCreditAllocated(context.Context, *CreateCreditAllocatedRequest) (*CreateCreditAllocatedResponse, error)
-	UpdateCreditAllocated(context.Context, *UpdateCreditAllocatedRequest) (*UpdateCreditAllocatedResponse, error)
 	GetCreditAllocated(context.Context, *GetCreditAllocatedRequest) (*GetCreditAllocatedResponse, error)
 	GetCreditAllocateds(context.Context, *GetCreditAllocatedsRequest) (*GetCreditAllocatedsResponse, error)
 	ExistCreditAllocatedConds(context.Context, *ExistCreditAllocatedCondsRequest) (*ExistCreditAllocatedCondsResponse, error)
@@ -120,9 +108,6 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateCreditAllocated(context.Context, *CreateCreditAllocatedRequest) (*CreateCreditAllocatedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCreditAllocated not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateCreditAllocated(context.Context, *UpdateCreditAllocatedRequest) (*UpdateCreditAllocatedResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateCreditAllocated not implemented")
 }
 func (UnimplementedMiddlewareServer) GetCreditAllocated(context.Context, *GetCreditAllocatedRequest) (*GetCreditAllocatedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCreditAllocated not implemented")
@@ -163,24 +148,6 @@ func _Middleware_CreateCreditAllocated_Handler(srv interface{}, ctx context.Cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateCreditAllocated(ctx, req.(*CreateCreditAllocatedRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_UpdateCreditAllocated_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateCreditAllocatedRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateCreditAllocated(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdateCreditAllocated_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateCreditAllocated(ctx, req.(*UpdateCreditAllocatedRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -267,10 +234,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCreditAllocated",
 			Handler:    _Middleware_CreateCreditAllocated_Handler,
-		},
-		{
-			MethodName: "UpdateCreditAllocated",
-			Handler:    _Middleware_UpdateCreditAllocated_Handler,
 		},
 		{
 			MethodName: "GetCreditAllocated",

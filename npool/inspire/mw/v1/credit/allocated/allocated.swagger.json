@@ -255,14 +255,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1UpdateCreditAllocatedResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CreditAllocated"
-        }
-      }
     }
   }
 }

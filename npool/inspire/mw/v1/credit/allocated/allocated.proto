@@ -10,7 +10,6 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateCreditAllocated     (CreateCreditAllocatedRequest)     returns (CreateCreditAllocatedResponse)      {}
-    rpc UpdateCreditAllocated     (UpdateCreditAllocatedRequest)     returns (UpdateCreditAllocatedResponse)      {}
     rpc GetCreditAllocated        (GetCreditAllocatedRequest)        returns (GetCreditAllocatedResponse)         {}
     rpc GetCreditAllocateds       (GetCreditAllocatedsRequest)       returns (GetCreditAllocatedsResponse)        {}
     rpc ExistCreditAllocatedConds (ExistCreditAllocatedCondsRequest) returns (ExistCreditAllocatedCondsResponse)  {}
@@ -75,14 +74,6 @@ message CreateCreditAllocatedRequest {
 }
 
 message CreateCreditAllocatedResponse {
-    CreditAllocated Info = 10;
-}
-
-message UpdateCreditAllocatedRequest {
-    CreditAllocatedReq Info = 10;
-}
-
-message UpdateCreditAllocatedResponse {
     CreditAllocated Info = 10;
 }
 

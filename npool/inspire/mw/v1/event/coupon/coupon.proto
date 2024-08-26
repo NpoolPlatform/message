@@ -10,7 +10,6 @@ import "npool/basetypes/v1/conds.proto";
 // Service Name
 service Middleware {
     rpc CreateEventCoupon     (CreateEventCouponRequest)     returns (CreateEventCouponResponse)      {}
-    rpc UpdateEventCoupon     (UpdateEventCouponRequest)     returns (UpdateEventCouponResponse)      {}
     rpc GetEventCoupon        (GetEventCouponRequest)        returns (GetEventCouponResponse)         {}
     rpc GetEventCoupons       (GetEventCouponsRequest)       returns (GetEventCouponsResponse)        {}
     rpc ExistEventCouponConds (ExistEventCouponCondsRequest) returns (ExistEventCouponCondsResponse)  {}
@@ -73,14 +72,6 @@ message CreateEventCouponRequest {
 }
 
 message CreateEventCouponResponse {
-    EventCoupon Info = 10;
-}
-
-message UpdateEventCouponRequest {
-    EventCouponReq Info = 10;
-}
-
-message UpdateEventCouponResponse {
     EventCoupon Info = 10;
 }
 

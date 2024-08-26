@@ -275,14 +275,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1UpdateCoinAllocatedResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1CoinAllocated"
-        }
-      }
     }
   }
 }

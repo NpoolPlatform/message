@@ -20,7 +20,6 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_CreateCoinAllocated_FullMethodName     = "/inspire.middleware.coin.allocated.v1.Middleware/CreateCoinAllocated"
-	Middleware_UpdateCoinAllocated_FullMethodName     = "/inspire.middleware.coin.allocated.v1.Middleware/UpdateCoinAllocated"
 	Middleware_GetCoinAllocated_FullMethodName        = "/inspire.middleware.coin.allocated.v1.Middleware/GetCoinAllocated"
 	Middleware_GetCoinAllocateds_FullMethodName       = "/inspire.middleware.coin.allocated.v1.Middleware/GetCoinAllocateds"
 	Middleware_ExistCoinAllocatedConds_FullMethodName = "/inspire.middleware.coin.allocated.v1.Middleware/ExistCoinAllocatedConds"
@@ -32,7 +31,6 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	CreateCoinAllocated(ctx context.Context, in *CreateCoinAllocatedRequest, opts ...grpc.CallOption) (*CreateCoinAllocatedResponse, error)
-	UpdateCoinAllocated(ctx context.Context, in *UpdateCoinAllocatedRequest, opts ...grpc.CallOption) (*UpdateCoinAllocatedResponse, error)
 	GetCoinAllocated(ctx context.Context, in *GetCoinAllocatedRequest, opts ...grpc.CallOption) (*GetCoinAllocatedResponse, error)
 	GetCoinAllocateds(ctx context.Context, in *GetCoinAllocatedsRequest, opts ...grpc.CallOption) (*GetCoinAllocatedsResponse, error)
 	ExistCoinAllocatedConds(ctx context.Context, in *ExistCoinAllocatedCondsRequest, opts ...grpc.CallOption) (*ExistCoinAllocatedCondsResponse, error)
@@ -50,15 +48,6 @@ func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 func (c *middlewareClient) CreateCoinAllocated(ctx context.Context, in *CreateCoinAllocatedRequest, opts ...grpc.CallOption) (*CreateCoinAllocatedResponse, error) {
 	out := new(CreateCoinAllocatedResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateCoinAllocated_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) UpdateCoinAllocated(ctx context.Context, in *UpdateCoinAllocatedRequest, opts ...grpc.CallOption) (*UpdateCoinAllocatedResponse, error) {
-	out := new(UpdateCoinAllocatedResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdateCoinAllocated_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,7 +95,6 @@ func (c *middlewareClient) DeleteCoinAllocated(ctx context.Context, in *DeleteCo
 // for forward compatibility
 type MiddlewareServer interface {
 	CreateCoinAllocated(context.Context, *CreateCoinAllocatedRequest) (*CreateCoinAllocatedResponse, error)
-	UpdateCoinAllocated(context.Context, *UpdateCoinAllocatedRequest) (*UpdateCoinAllocatedResponse, error)
 	GetCoinAllocated(context.Context, *GetCoinAllocatedRequest) (*GetCoinAllocatedResponse, error)
 	GetCoinAllocateds(context.Context, *GetCoinAllocatedsRequest) (*GetCoinAllocatedsResponse, error)
 	ExistCoinAllocatedConds(context.Context, *ExistCoinAllocatedCondsRequest) (*ExistCoinAllocatedCondsResponse, error)
@@ -120,9 +108,6 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) CreateCoinAllocated(context.Context, *CreateCoinAllocatedRequest) (*CreateCoinAllocatedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCoinAllocated not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateCoinAllocated(context.Context, *UpdateCoinAllocatedRequest) (*UpdateCoinAllocatedResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateCoinAllocated not implemented")
 }
 func (UnimplementedMiddlewareServer) GetCoinAllocated(context.Context, *GetCoinAllocatedRequest) (*GetCoinAllocatedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCoinAllocated not implemented")
@@ -163,24 +148,6 @@ func _Middleware_CreateCoinAllocated_Handler(srv interface{}, ctx context.Contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MiddlewareServer).CreateCoinAllocated(ctx, req.(*CreateCoinAllocatedRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_UpdateCoinAllocated_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateCoinAllocatedRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateCoinAllocated(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdateCoinAllocated_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateCoinAllocated(ctx, req.(*UpdateCoinAllocatedRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -267,10 +234,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCoinAllocated",
 			Handler:    _Middleware_CreateCoinAllocated_Handler,
-		},
-		{
-			MethodName: "UpdateCoinAllocated",
-			Handler:    _Middleware_UpdateCoinAllocated_Handler,
 		},
 		{
 			MethodName: "GetCoinAllocated",
