@@ -17,6 +17,7 @@ message PaymentReq {
     optional uint32 ID = 10;
     optional string EntID = 20;
     optional basetypes.order.v1.PaymentObseleteState ObseleteState = 30;
+    repeated PaymentTransferReq PaymentTransfers = 40;
 }
 
 message Payment {
