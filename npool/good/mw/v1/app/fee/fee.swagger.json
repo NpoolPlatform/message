@@ -90,6 +90,9 @@
         },
         "SettlementType": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
