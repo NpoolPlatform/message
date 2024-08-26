@@ -56,7 +56,6 @@ message AdminCreateCoinConfigRequest {
   string TargetAppID = 10;
   string CoinTypeID = 20;
   string MaxValue = 30;
-  string Allocated = 40;
 }
 
 message AdminCreateCoinConfigResponse { CoinConfig Info = 10; }
@@ -66,7 +65,6 @@ message AdminUpdateCoinConfigRequest {
   string EntID = 20;
   string TargetAppID = 30;
   optional string MaxValue = 40;
-  optional string Allocated = 50;
 }
 
 message AdminUpdateCoinConfigResponse { CoinConfig Info = 10; }

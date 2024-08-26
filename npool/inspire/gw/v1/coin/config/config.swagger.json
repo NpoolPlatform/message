@@ -184,9 +184,6 @@
         },
         "MaxValue": {
           "type": "string"
-        },
-        "Allocated": {
-          "type": "string"
         }
       }
     },
@@ -263,9 +260,6 @@
           "type": "string"
         },
         "MaxValue": {
-          "type": "string"
-        },
-        "Allocated": {
           "type": "string"
         }
       }
