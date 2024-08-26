@@ -190,6 +190,12 @@
         },
         "ObseleteState": {
           "$ref": "#/definitions/v1PaymentObseleteState"
+        },
+        "PaymentTransfers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PaymentTransferReq"
+          }
         }
       }
     },
@@ -240,6 +246,38 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"created_at\""
+        }
+      }
+    },
+    "v1PaymentTransferReq": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "StartAmount": {
+          "type": "string"
+        },
+        "CoinUSDCurrency": {
+          "type": "string"
+        },
+        "LocalCoinUSDCurrency": {
+          "type": "string"
+        },
+        "LiveCoinUSDCurrency": {
+          "type": "string"
+        },
+        "FinishAmount": {
+          "type": "string"
         }
       }
     },
