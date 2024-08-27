@@ -44,10 +44,10 @@ message AchievementUser {
   string TotalCommission = 50;
   // @inject_tag: sql:"self_commission"
   string SelfCommission = 60;
-  // @inject_tag: sql:"direct_invites"
-  uint32 DirectInvites = 70;
-  // @inject_tag: sql:"indirect_invites"
-  uint32 IndirectInvites = 80;
+  // @inject_tag: sql:"direct_invitees"
+  uint32 DirectInvitees = 70;
+  // @inject_tag: sql:"indirect_invitees"
+  uint32 IndirectInvitees = 80;
   // @inject_tag: sql:"direct_consume_amount"
   string DirectConsumeAmount = 90;
   // @inject_tag: sql:"invitee_consume_amount"
