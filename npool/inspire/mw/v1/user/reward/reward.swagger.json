@@ -105,14 +105,6 @@
         }
       }
     },
-    "v1CreateUserRewardResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1UserReward"
-        }
-      }
-    },
     "v1DeleteUserRewardRequest": {
       "type": "object",
       "properties": {
@@ -202,14 +194,6 @@
         "Value": {
           "type": "integer",
           "format": "int64"
-        }
-      }
-    },
-    "v1UpdateUserRewardResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1UserReward"
         }
       }
     },

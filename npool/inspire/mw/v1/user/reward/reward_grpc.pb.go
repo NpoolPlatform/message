@@ -19,8 +19,6 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateUserReward_FullMethodName     = "/inspire.middleware.user.reward.v1.Middleware/CreateUserReward"
-	Middleware_UpdateUserReward_FullMethodName     = "/inspire.middleware.user.reward.v1.Middleware/UpdateUserReward"
 	Middleware_GetUserReward_FullMethodName        = "/inspire.middleware.user.reward.v1.Middleware/GetUserReward"
 	Middleware_GetUserRewards_FullMethodName       = "/inspire.middleware.user.reward.v1.Middleware/GetUserRewards"
 	Middleware_ExistUserRewardConds_FullMethodName = "/inspire.middleware.user.reward.v1.Middleware/ExistUserRewardConds"
@@ -33,8 +31,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	CreateUserReward(ctx context.Context, in *CreateUserRewardRequest, opts ...grpc.CallOption) (*CreateUserRewardResponse, error)
-	UpdateUserReward(ctx context.Context, in *UpdateUserRewardRequest, opts ...grpc.CallOption) (*UpdateUserRewardResponse, error)
 	GetUserReward(ctx context.Context, in *GetUserRewardRequest, opts ...grpc.CallOption) (*GetUserRewardResponse, error)
 	GetUserRewards(ctx context.Context, in *GetUserRewardsRequest, opts ...grpc.CallOption) (*GetUserRewardsResponse, error)
 	ExistUserRewardConds(ctx context.Context, in *ExistUserRewardCondsRequest, opts ...grpc.CallOption) (*ExistUserRewardCondsResponse, error)
@@ -49,24 +45,6 @@ type middlewareClient struct {
 
 func NewMiddlewareClient(cc grpc.ClientConnInterface) MiddlewareClient {
 	return &middlewareClient{cc}
-}
-
-func (c *middlewareClient) CreateUserReward(ctx context.Context, in *CreateUserRewardRequest, opts ...grpc.CallOption) (*CreateUserRewardResponse, error) {
-	out := new(CreateUserRewardResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateUserReward_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *middlewareClient) UpdateUserReward(ctx context.Context, in *UpdateUserRewardRequest, opts ...grpc.CallOption) (*UpdateUserRewardResponse, error) {
-	out := new(UpdateUserRewardResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdateUserReward_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *middlewareClient) GetUserReward(ctx context.Context, in *GetUserRewardRequest, opts ...grpc.CallOption) (*GetUserRewardResponse, error) {
@@ -127,8 +105,6 @@ func (c *middlewareClient) SubUserReward(ctx context.Context, in *SubUserRewardR
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	CreateUserReward(context.Context, *CreateUserRewardRequest) (*CreateUserRewardResponse, error)
-	UpdateUserReward(context.Context, *UpdateUserRewardRequest) (*UpdateUserRewardResponse, error)
 	GetUserReward(context.Context, *GetUserRewardRequest) (*GetUserRewardResponse, error)
 	GetUserRewards(context.Context, *GetUserRewardsRequest) (*GetUserRewardsResponse, error)
 	ExistUserRewardConds(context.Context, *ExistUserRewardCondsRequest) (*ExistUserRewardCondsResponse, error)
@@ -142,12 +118,6 @@ type MiddlewareServer interface {
 type UnimplementedMiddlewareServer struct {
 }
 
-func (UnimplementedMiddlewareServer) CreateUserReward(context.Context, *CreateUserRewardRequest) (*CreateUserRewardResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateUserReward not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateUserReward(context.Context, *UpdateUserRewardRequest) (*UpdateUserRewardResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserReward not implemented")
-}
 func (UnimplementedMiddlewareServer) GetUserReward(context.Context, *GetUserRewardRequest) (*GetUserRewardResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserReward not implemented")
 }
@@ -177,42 +147,6 @@ type UnsafeMiddlewareServer interface {
 
 func RegisterMiddlewareServer(s grpc.ServiceRegistrar, srv MiddlewareServer) {
 	s.RegisterService(&Middleware_ServiceDesc, srv)
-}
-
-func _Middleware_CreateUserReward_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateUserRewardRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateUserReward(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateUserReward_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateUserReward(ctx, req.(*CreateUserRewardRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Middleware_UpdateUserReward_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateUserRewardRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateUserReward(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdateUserReward_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateUserReward(ctx, req.(*UpdateUserRewardRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Middleware_GetUserReward_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -330,14 +264,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "inspire.middleware.user.reward.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "CreateUserReward",
-			Handler:    _Middleware_CreateUserReward_Handler,
-		},
-		{
-			MethodName: "UpdateUserReward",
-			Handler:    _Middleware_UpdateUserReward_Handler,
-		},
 		{
 			MethodName: "GetUserReward",
 			Handler:    _Middleware_GetUserReward_Handler,

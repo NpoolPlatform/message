@@ -434,194 +434,6 @@ func (x *GetUserRewardsResponse) GetTotal() uint32 {
 	return 0
 }
 
-type CreateUserRewardRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *UserRewardReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *CreateUserRewardRequest) Reset() {
-	*x = CreateUserRewardRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateUserRewardRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateUserRewardRequest) ProtoMessage() {}
-
-func (x *CreateUserRewardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateUserRewardRequest.ProtoReflect.Descriptor instead.
-func (*CreateUserRewardRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *CreateUserRewardRequest) GetInfo() *UserRewardReq {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type CreateUserRewardResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *UserReward `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *CreateUserRewardResponse) Reset() {
-	*x = CreateUserRewardResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateUserRewardResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateUserRewardResponse) ProtoMessage() {}
-
-func (x *CreateUserRewardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateUserRewardResponse.ProtoReflect.Descriptor instead.
-func (*CreateUserRewardResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *CreateUserRewardResponse) GetInfo() *UserReward {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type UpdateUserRewardRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *UserRewardReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *UpdateUserRewardRequest) Reset() {
-	*x = UpdateUserRewardRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[7]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateUserRewardRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateUserRewardRequest) ProtoMessage() {}
-
-func (x *UpdateUserRewardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[7]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateUserRewardRequest.ProtoReflect.Descriptor instead.
-func (*UpdateUserRewardRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{7}
-}
-
-func (x *UpdateUserRewardRequest) GetInfo() *UserRewardReq {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
-type UpdateUserRewardResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Info *UserReward `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
-}
-
-func (x *UpdateUserRewardResponse) Reset() {
-	*x = UpdateUserRewardResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[8]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateUserRewardResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateUserRewardResponse) ProtoMessage() {}
-
-func (x *UpdateUserRewardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[8]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateUserRewardResponse.ProtoReflect.Descriptor instead.
-func (*UpdateUserRewardResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{8}
-}
-
-func (x *UpdateUserRewardResponse) GetInfo() *UserReward {
-	if x != nil {
-		return x.Info
-	}
-	return nil
-}
-
 type GetUserRewardRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -633,7 +445,7 @@ type GetUserRewardRequest struct {
 func (x *GetUserRewardRequest) Reset() {
 	*x = GetUserRewardRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[9]
+		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -646,7 +458,7 @@ func (x *GetUserRewardRequest) String() string {
 func (*GetUserRewardRequest) ProtoMessage() {}
 
 func (x *GetUserRewardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[9]
+	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -659,7 +471,7 @@ func (x *GetUserRewardRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserRewardRequest.ProtoReflect.Descriptor instead.
 func (*GetUserRewardRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{9}
+	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetUserRewardRequest) GetEntID() string {
@@ -680,7 +492,7 @@ type GetUserRewardResponse struct {
 func (x *GetUserRewardResponse) Reset() {
 	*x = GetUserRewardResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[10]
+		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -693,7 +505,7 @@ func (x *GetUserRewardResponse) String() string {
 func (*GetUserRewardResponse) ProtoMessage() {}
 
 func (x *GetUserRewardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[10]
+	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -706,7 +518,7 @@ func (x *GetUserRewardResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserRewardResponse.ProtoReflect.Descriptor instead.
 func (*GetUserRewardResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{10}
+	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetUserRewardResponse) GetInfo() *UserReward {
@@ -727,7 +539,7 @@ type ExistUserRewardCondsRequest struct {
 func (x *ExistUserRewardCondsRequest) Reset() {
 	*x = ExistUserRewardCondsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[11]
+		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -740,7 +552,7 @@ func (x *ExistUserRewardCondsRequest) String() string {
 func (*ExistUserRewardCondsRequest) ProtoMessage() {}
 
 func (x *ExistUserRewardCondsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[11]
+	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -753,7 +565,7 @@ func (x *ExistUserRewardCondsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistUserRewardCondsRequest.ProtoReflect.Descriptor instead.
 func (*ExistUserRewardCondsRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{11}
+	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ExistUserRewardCondsRequest) GetConds() *Conds {
@@ -774,7 +586,7 @@ type ExistUserRewardCondsResponse struct {
 func (x *ExistUserRewardCondsResponse) Reset() {
 	*x = ExistUserRewardCondsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[12]
+		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -787,7 +599,7 @@ func (x *ExistUserRewardCondsResponse) String() string {
 func (*ExistUserRewardCondsResponse) ProtoMessage() {}
 
 func (x *ExistUserRewardCondsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[12]
+	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -800,7 +612,7 @@ func (x *ExistUserRewardCondsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistUserRewardCondsResponse.ProtoReflect.Descriptor instead.
 func (*ExistUserRewardCondsResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{12}
+	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ExistUserRewardCondsResponse) GetInfo() bool {
@@ -821,7 +633,7 @@ type DeleteUserRewardRequest struct {
 func (x *DeleteUserRewardRequest) Reset() {
 	*x = DeleteUserRewardRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[13]
+		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -834,7 +646,7 @@ func (x *DeleteUserRewardRequest) String() string {
 func (*DeleteUserRewardRequest) ProtoMessage() {}
 
 func (x *DeleteUserRewardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[13]
+	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -847,7 +659,7 @@ func (x *DeleteUserRewardRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteUserRewardRequest.ProtoReflect.Descriptor instead.
 func (*DeleteUserRewardRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{13}
+	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DeleteUserRewardRequest) GetInfo() *UserRewardReq {
@@ -868,7 +680,7 @@ type DeleteUserRewardResponse struct {
 func (x *DeleteUserRewardResponse) Reset() {
 	*x = DeleteUserRewardResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[14]
+		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -881,7 +693,7 @@ func (x *DeleteUserRewardResponse) String() string {
 func (*DeleteUserRewardResponse) ProtoMessage() {}
 
 func (x *DeleteUserRewardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[14]
+	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -894,7 +706,7 @@ func (x *DeleteUserRewardResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteUserRewardResponse.ProtoReflect.Descriptor instead.
 func (*DeleteUserRewardResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{14}
+	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *DeleteUserRewardResponse) GetInfo() *UserReward {
@@ -915,7 +727,7 @@ type AddUserRewardRequest struct {
 func (x *AddUserRewardRequest) Reset() {
 	*x = AddUserRewardRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[15]
+		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -928,7 +740,7 @@ func (x *AddUserRewardRequest) String() string {
 func (*AddUserRewardRequest) ProtoMessage() {}
 
 func (x *AddUserRewardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[15]
+	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -941,7 +753,7 @@ func (x *AddUserRewardRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddUserRewardRequest.ProtoReflect.Descriptor instead.
 func (*AddUserRewardRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{15}
+	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *AddUserRewardRequest) GetInfo() *UserRewardReq {
@@ -962,7 +774,7 @@ type AddUserRewardResponse struct {
 func (x *AddUserRewardResponse) Reset() {
 	*x = AddUserRewardResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[16]
+		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -975,7 +787,7 @@ func (x *AddUserRewardResponse) String() string {
 func (*AddUserRewardResponse) ProtoMessage() {}
 
 func (x *AddUserRewardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[16]
+	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -988,7 +800,7 @@ func (x *AddUserRewardResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddUserRewardResponse.ProtoReflect.Descriptor instead.
 func (*AddUserRewardResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{16}
+	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *AddUserRewardResponse) GetInfo() *UserReward {
@@ -1009,7 +821,7 @@ type SubUserRewardRequest struct {
 func (x *SubUserRewardRequest) Reset() {
 	*x = SubUserRewardRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[17]
+		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1022,7 +834,7 @@ func (x *SubUserRewardRequest) String() string {
 func (*SubUserRewardRequest) ProtoMessage() {}
 
 func (x *SubUserRewardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[17]
+	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1035,7 +847,7 @@ func (x *SubUserRewardRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubUserRewardRequest.ProtoReflect.Descriptor instead.
 func (*SubUserRewardRequest) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{17}
+	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *SubUserRewardRequest) GetInfo() *UserRewardReq {
@@ -1056,7 +868,7 @@ type SubUserRewardResponse struct {
 func (x *SubUserRewardResponse) Reset() {
 	*x = SubUserRewardResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[18]
+		mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1069,7 +881,7 @@ func (x *SubUserRewardResponse) String() string {
 func (*SubUserRewardResponse) ProtoMessage() {}
 
 func (x *SubUserRewardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[18]
+	mi := &file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1082,7 +894,7 @@ func (x *SubUserRewardResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubUserRewardResponse.ProtoReflect.Descriptor instead.
 func (*SubUserRewardResponse) Descriptor() ([]byte, []int) {
-	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{18}
+	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *SubUserRewardResponse) GetInfo() *UserReward {
@@ -1180,31 +992,7 @@ var file_npool_inspire_mw_v1_user_reward_reward_proto_rawDesc = []byte{
 	0x75, 0x73, 0x65, 0x72, 0x2e, 0x72, 0x65, 0x77, 0x61, 0x72, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55,
 	0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x05, 0x49, 0x6e, 0x66, 0x6f, 0x73,
 	0x12, 0x14, 0x0a, 0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0d, 0x52,
-	0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x5f, 0x0a, 0x17, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x44, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x30, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
-	0x77, 0x61, 0x72, 0x65, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x72, 0x65, 0x77, 0x61, 0x72, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65,
-	0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x5d, 0x0a, 0x18, 0x43, 0x72, 0x65, 0x61, 0x74,
-	0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x12, 0x41, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x2d, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64,
-	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x72, 0x65, 0x77, 0x61,
-	0x72, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64,
-	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x5f, 0x0a, 0x17, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
-	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x44, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x30, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
-	0x77, 0x61, 0x72, 0x65, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x72, 0x65, 0x77, 0x61, 0x72, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65,
-	0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x5d, 0x0a, 0x18, 0x55, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x12, 0x41, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x2d, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64,
-	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x72, 0x65, 0x77, 0x61,
-	0x72, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64,
-	0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x2c, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65,
+	0x05, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x2c, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65,
 	0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14,
 	0x0a, 0x05, 0x45, 0x6e, 0x74, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x45,
 	0x6e, 0x74, 0x49, 0x44, 0x22, 0x5a, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52,
@@ -1257,26 +1045,8 @@ var file_npool_inspire_mw_v1_user_reward_reward_proto_rawDesc = []byte{
 	0x28, 0x0b, 0x32, 0x2d, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64,
 	0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x72, 0x65, 0x77,
 	0x61, 0x72, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72,
-	0x64, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xa1, 0x09, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64,
-	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x8d, 0x01, 0x0a, 0x10, 0x43, 0x72, 0x65, 0x61, 0x74,
-	0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x12, 0x3a, 0x2e, 0x69, 0x6e,
-	0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
-	0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x72, 0x65, 0x77, 0x61, 0x72, 0x64, 0x2e, 0x76, 0x31, 0x2e,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3b, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72,
-	0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x75, 0x73, 0x65,
-	0x72, 0x2e, 0x72, 0x65, 0x77, 0x61, 0x72, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x8d, 0x01, 0x0a, 0x10, 0x55, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x12, 0x3a, 0x2e, 0x69, 0x6e,
-	0x73, 0x70, 0x69, 0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65,
-	0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x72, 0x65, 0x77, 0x61, 0x72, 0x64, 0x2e, 0x76, 0x31, 0x2e,
-	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3b, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69, 0x72,
-	0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x75, 0x73, 0x65,
-	0x72, 0x2e, 0x72, 0x65, 0x77, 0x61, 0x72, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61,
-	0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x84, 0x01, 0x0a, 0x0d, 0x47, 0x65, 0x74, 0x55, 0x73,
+	0x64, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x81, 0x07, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64,
+	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x84, 0x01, 0x0a, 0x0d, 0x47, 0x65, 0x74, 0x55, 0x73,
 	0x65, 0x72, 0x52, 0x65, 0x77, 0x61, 0x72, 0x64, 0x12, 0x37, 0x2e, 0x69, 0x6e, 0x73, 0x70, 0x69,
 	0x72, 0x65, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x75, 0x73,
 	0x65, 0x72, 0x2e, 0x72, 0x65, 0x77, 0x61, 0x72, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
@@ -1351,72 +1121,60 @@ func file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescGZIP() []byte {
 	return file_npool_inspire_mw_v1_user_reward_reward_proto_rawDescData
 }
 
-var file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
+var file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_npool_inspire_mw_v1_user_reward_reward_proto_goTypes = []interface{}{
 	(*UserRewardReq)(nil),                // 0: inspire.middleware.user.reward.v1.UserRewardReq
 	(*UserReward)(nil),                   // 1: inspire.middleware.user.reward.v1.UserReward
 	(*Conds)(nil),                        // 2: inspire.middleware.user.reward.v1.Conds
 	(*GetUserRewardsRequest)(nil),        // 3: inspire.middleware.user.reward.v1.GetUserRewardsRequest
 	(*GetUserRewardsResponse)(nil),       // 4: inspire.middleware.user.reward.v1.GetUserRewardsResponse
-	(*CreateUserRewardRequest)(nil),      // 5: inspire.middleware.user.reward.v1.CreateUserRewardRequest
-	(*CreateUserRewardResponse)(nil),     // 6: inspire.middleware.user.reward.v1.CreateUserRewardResponse
-	(*UpdateUserRewardRequest)(nil),      // 7: inspire.middleware.user.reward.v1.UpdateUserRewardRequest
-	(*UpdateUserRewardResponse)(nil),     // 8: inspire.middleware.user.reward.v1.UpdateUserRewardResponse
-	(*GetUserRewardRequest)(nil),         // 9: inspire.middleware.user.reward.v1.GetUserRewardRequest
-	(*GetUserRewardResponse)(nil),        // 10: inspire.middleware.user.reward.v1.GetUserRewardResponse
-	(*ExistUserRewardCondsRequest)(nil),  // 11: inspire.middleware.user.reward.v1.ExistUserRewardCondsRequest
-	(*ExistUserRewardCondsResponse)(nil), // 12: inspire.middleware.user.reward.v1.ExistUserRewardCondsResponse
-	(*DeleteUserRewardRequest)(nil),      // 13: inspire.middleware.user.reward.v1.DeleteUserRewardRequest
-	(*DeleteUserRewardResponse)(nil),     // 14: inspire.middleware.user.reward.v1.DeleteUserRewardResponse
-	(*AddUserRewardRequest)(nil),         // 15: inspire.middleware.user.reward.v1.AddUserRewardRequest
-	(*AddUserRewardResponse)(nil),        // 16: inspire.middleware.user.reward.v1.AddUserRewardResponse
-	(*SubUserRewardRequest)(nil),         // 17: inspire.middleware.user.reward.v1.SubUserRewardRequest
-	(*SubUserRewardResponse)(nil),        // 18: inspire.middleware.user.reward.v1.SubUserRewardResponse
-	(*v1.StringVal)(nil),                 // 19: basetypes.v1.StringVal
-	(*v1.StringSliceVal)(nil),            // 20: basetypes.v1.StringSliceVal
-	(*v1.Uint32Val)(nil),                 // 21: basetypes.v1.Uint32Val
+	(*GetUserRewardRequest)(nil),         // 5: inspire.middleware.user.reward.v1.GetUserRewardRequest
+	(*GetUserRewardResponse)(nil),        // 6: inspire.middleware.user.reward.v1.GetUserRewardResponse
+	(*ExistUserRewardCondsRequest)(nil),  // 7: inspire.middleware.user.reward.v1.ExistUserRewardCondsRequest
+	(*ExistUserRewardCondsResponse)(nil), // 8: inspire.middleware.user.reward.v1.ExistUserRewardCondsResponse
+	(*DeleteUserRewardRequest)(nil),      // 9: inspire.middleware.user.reward.v1.DeleteUserRewardRequest
+	(*DeleteUserRewardResponse)(nil),     // 10: inspire.middleware.user.reward.v1.DeleteUserRewardResponse
+	(*AddUserRewardRequest)(nil),         // 11: inspire.middleware.user.reward.v1.AddUserRewardRequest
+	(*AddUserRewardResponse)(nil),        // 12: inspire.middleware.user.reward.v1.AddUserRewardResponse
+	(*SubUserRewardRequest)(nil),         // 13: inspire.middleware.user.reward.v1.SubUserRewardRequest
+	(*SubUserRewardResponse)(nil),        // 14: inspire.middleware.user.reward.v1.SubUserRewardResponse
+	(*v1.StringVal)(nil),                 // 15: basetypes.v1.StringVal
+	(*v1.StringSliceVal)(nil),            // 16: basetypes.v1.StringSliceVal
+	(*v1.Uint32Val)(nil),                 // 17: basetypes.v1.Uint32Val
 }
 var file_npool_inspire_mw_v1_user_reward_reward_proto_depIdxs = []int32{
-	19, // 0: inspire.middleware.user.reward.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	19, // 1: inspire.middleware.user.reward.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	20, // 2: inspire.middleware.user.reward.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
-	19, // 3: inspire.middleware.user.reward.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
-	21, // 4: inspire.middleware.user.reward.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
+	15, // 0: inspire.middleware.user.reward.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	15, // 1: inspire.middleware.user.reward.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	16, // 2: inspire.middleware.user.reward.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
+	15, // 3: inspire.middleware.user.reward.v1.Conds.UserID:type_name -> basetypes.v1.StringVal
+	17, // 4: inspire.middleware.user.reward.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
 	2,  // 5: inspire.middleware.user.reward.v1.GetUserRewardsRequest.Conds:type_name -> inspire.middleware.user.reward.v1.Conds
 	1,  // 6: inspire.middleware.user.reward.v1.GetUserRewardsResponse.Infos:type_name -> inspire.middleware.user.reward.v1.UserReward
-	0,  // 7: inspire.middleware.user.reward.v1.CreateUserRewardRequest.Info:type_name -> inspire.middleware.user.reward.v1.UserRewardReq
-	1,  // 8: inspire.middleware.user.reward.v1.CreateUserRewardResponse.Info:type_name -> inspire.middleware.user.reward.v1.UserReward
-	0,  // 9: inspire.middleware.user.reward.v1.UpdateUserRewardRequest.Info:type_name -> inspire.middleware.user.reward.v1.UserRewardReq
-	1,  // 10: inspire.middleware.user.reward.v1.UpdateUserRewardResponse.Info:type_name -> inspire.middleware.user.reward.v1.UserReward
-	1,  // 11: inspire.middleware.user.reward.v1.GetUserRewardResponse.Info:type_name -> inspire.middleware.user.reward.v1.UserReward
-	2,  // 12: inspire.middleware.user.reward.v1.ExistUserRewardCondsRequest.Conds:type_name -> inspire.middleware.user.reward.v1.Conds
-	0,  // 13: inspire.middleware.user.reward.v1.DeleteUserRewardRequest.Info:type_name -> inspire.middleware.user.reward.v1.UserRewardReq
-	1,  // 14: inspire.middleware.user.reward.v1.DeleteUserRewardResponse.Info:type_name -> inspire.middleware.user.reward.v1.UserReward
-	0,  // 15: inspire.middleware.user.reward.v1.AddUserRewardRequest.Info:type_name -> inspire.middleware.user.reward.v1.UserRewardReq
-	1,  // 16: inspire.middleware.user.reward.v1.AddUserRewardResponse.Info:type_name -> inspire.middleware.user.reward.v1.UserReward
-	0,  // 17: inspire.middleware.user.reward.v1.SubUserRewardRequest.Info:type_name -> inspire.middleware.user.reward.v1.UserRewardReq
-	1,  // 18: inspire.middleware.user.reward.v1.SubUserRewardResponse.Info:type_name -> inspire.middleware.user.reward.v1.UserReward
-	5,  // 19: inspire.middleware.user.reward.v1.Middleware.CreateUserReward:input_type -> inspire.middleware.user.reward.v1.CreateUserRewardRequest
-	7,  // 20: inspire.middleware.user.reward.v1.Middleware.UpdateUserReward:input_type -> inspire.middleware.user.reward.v1.UpdateUserRewardRequest
-	9,  // 21: inspire.middleware.user.reward.v1.Middleware.GetUserReward:input_type -> inspire.middleware.user.reward.v1.GetUserRewardRequest
-	3,  // 22: inspire.middleware.user.reward.v1.Middleware.GetUserRewards:input_type -> inspire.middleware.user.reward.v1.GetUserRewardsRequest
-	11, // 23: inspire.middleware.user.reward.v1.Middleware.ExistUserRewardConds:input_type -> inspire.middleware.user.reward.v1.ExistUserRewardCondsRequest
-	13, // 24: inspire.middleware.user.reward.v1.Middleware.DeleteUserReward:input_type -> inspire.middleware.user.reward.v1.DeleteUserRewardRequest
-	15, // 25: inspire.middleware.user.reward.v1.Middleware.AddUserReward:input_type -> inspire.middleware.user.reward.v1.AddUserRewardRequest
-	17, // 26: inspire.middleware.user.reward.v1.Middleware.SubUserReward:input_type -> inspire.middleware.user.reward.v1.SubUserRewardRequest
-	6,  // 27: inspire.middleware.user.reward.v1.Middleware.CreateUserReward:output_type -> inspire.middleware.user.reward.v1.CreateUserRewardResponse
-	8,  // 28: inspire.middleware.user.reward.v1.Middleware.UpdateUserReward:output_type -> inspire.middleware.user.reward.v1.UpdateUserRewardResponse
-	10, // 29: inspire.middleware.user.reward.v1.Middleware.GetUserReward:output_type -> inspire.middleware.user.reward.v1.GetUserRewardResponse
-	4,  // 30: inspire.middleware.user.reward.v1.Middleware.GetUserRewards:output_type -> inspire.middleware.user.reward.v1.GetUserRewardsResponse
-	12, // 31: inspire.middleware.user.reward.v1.Middleware.ExistUserRewardConds:output_type -> inspire.middleware.user.reward.v1.ExistUserRewardCondsResponse
-	14, // 32: inspire.middleware.user.reward.v1.Middleware.DeleteUserReward:output_type -> inspire.middleware.user.reward.v1.DeleteUserRewardResponse
-	16, // 33: inspire.middleware.user.reward.v1.Middleware.AddUserReward:output_type -> inspire.middleware.user.reward.v1.AddUserRewardResponse
-	18, // 34: inspire.middleware.user.reward.v1.Middleware.SubUserReward:output_type -> inspire.middleware.user.reward.v1.SubUserRewardResponse
-	27, // [27:35] is the sub-list for method output_type
-	19, // [19:27] is the sub-list for method input_type
-	19, // [19:19] is the sub-list for extension type_name
-	19, // [19:19] is the sub-list for extension extendee
-	0,  // [0:19] is the sub-list for field type_name
+	1,  // 7: inspire.middleware.user.reward.v1.GetUserRewardResponse.Info:type_name -> inspire.middleware.user.reward.v1.UserReward
+	2,  // 8: inspire.middleware.user.reward.v1.ExistUserRewardCondsRequest.Conds:type_name -> inspire.middleware.user.reward.v1.Conds
+	0,  // 9: inspire.middleware.user.reward.v1.DeleteUserRewardRequest.Info:type_name -> inspire.middleware.user.reward.v1.UserRewardReq
+	1,  // 10: inspire.middleware.user.reward.v1.DeleteUserRewardResponse.Info:type_name -> inspire.middleware.user.reward.v1.UserReward
+	0,  // 11: inspire.middleware.user.reward.v1.AddUserRewardRequest.Info:type_name -> inspire.middleware.user.reward.v1.UserRewardReq
+	1,  // 12: inspire.middleware.user.reward.v1.AddUserRewardResponse.Info:type_name -> inspire.middleware.user.reward.v1.UserReward
+	0,  // 13: inspire.middleware.user.reward.v1.SubUserRewardRequest.Info:type_name -> inspire.middleware.user.reward.v1.UserRewardReq
+	1,  // 14: inspire.middleware.user.reward.v1.SubUserRewardResponse.Info:type_name -> inspire.middleware.user.reward.v1.UserReward
+	5,  // 15: inspire.middleware.user.reward.v1.Middleware.GetUserReward:input_type -> inspire.middleware.user.reward.v1.GetUserRewardRequest
+	3,  // 16: inspire.middleware.user.reward.v1.Middleware.GetUserRewards:input_type -> inspire.middleware.user.reward.v1.GetUserRewardsRequest
+	7,  // 17: inspire.middleware.user.reward.v1.Middleware.ExistUserRewardConds:input_type -> inspire.middleware.user.reward.v1.ExistUserRewardCondsRequest
+	9,  // 18: inspire.middleware.user.reward.v1.Middleware.DeleteUserReward:input_type -> inspire.middleware.user.reward.v1.DeleteUserRewardRequest
+	11, // 19: inspire.middleware.user.reward.v1.Middleware.AddUserReward:input_type -> inspire.middleware.user.reward.v1.AddUserRewardRequest
+	13, // 20: inspire.middleware.user.reward.v1.Middleware.SubUserReward:input_type -> inspire.middleware.user.reward.v1.SubUserRewardRequest
+	6,  // 21: inspire.middleware.user.reward.v1.Middleware.GetUserReward:output_type -> inspire.middleware.user.reward.v1.GetUserRewardResponse
+	4,  // 22: inspire.middleware.user.reward.v1.Middleware.GetUserRewards:output_type -> inspire.middleware.user.reward.v1.GetUserRewardsResponse
+	8,  // 23: inspire.middleware.user.reward.v1.Middleware.ExistUserRewardConds:output_type -> inspire.middleware.user.reward.v1.ExistUserRewardCondsResponse
+	10, // 24: inspire.middleware.user.reward.v1.Middleware.DeleteUserReward:output_type -> inspire.middleware.user.reward.v1.DeleteUserRewardResponse
+	12, // 25: inspire.middleware.user.reward.v1.Middleware.AddUserReward:output_type -> inspire.middleware.user.reward.v1.AddUserRewardResponse
+	14, // 26: inspire.middleware.user.reward.v1.Middleware.SubUserReward:output_type -> inspire.middleware.user.reward.v1.SubUserRewardResponse
+	21, // [21:27] is the sub-list for method output_type
+	15, // [15:21] is the sub-list for method input_type
+	15, // [15:15] is the sub-list for extension type_name
+	15, // [15:15] is the sub-list for extension extendee
+	0,  // [0:15] is the sub-list for field type_name
 }
 
 func init() { file_npool_inspire_mw_v1_user_reward_reward_proto_init() }
@@ -1486,54 +1244,6 @@ func file_npool_inspire_mw_v1_user_reward_reward_proto_init() {
 			}
 		}
 		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateUserRewardRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateUserRewardResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateUserRewardRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateUserRewardResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserRewardRequest); i {
 			case 0:
 				return &v.state
@@ -1545,7 +1255,7 @@ func file_npool_inspire_mw_v1_user_reward_reward_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserRewardResponse); i {
 			case 0:
 				return &v.state
@@ -1557,7 +1267,7 @@ func file_npool_inspire_mw_v1_user_reward_reward_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistUserRewardCondsRequest); i {
 			case 0:
 				return &v.state
@@ -1569,7 +1279,7 @@ func file_npool_inspire_mw_v1_user_reward_reward_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistUserRewardCondsResponse); i {
 			case 0:
 				return &v.state
@@ -1581,7 +1291,7 @@ func file_npool_inspire_mw_v1_user_reward_reward_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteUserRewardRequest); i {
 			case 0:
 				return &v.state
@@ -1593,7 +1303,7 @@ func file_npool_inspire_mw_v1_user_reward_reward_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteUserRewardResponse); i {
 			case 0:
 				return &v.state
@@ -1605,7 +1315,7 @@ func file_npool_inspire_mw_v1_user_reward_reward_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AddUserRewardRequest); i {
 			case 0:
 				return &v.state
@@ -1617,7 +1327,7 @@ func file_npool_inspire_mw_v1_user_reward_reward_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AddUserRewardResponse); i {
 			case 0:
 				return &v.state
@@ -1629,7 +1339,7 @@ func file_npool_inspire_mw_v1_user_reward_reward_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SubUserRewardRequest); i {
 			case 0:
 				return &v.state
@@ -1641,7 +1351,7 @@ func file_npool_inspire_mw_v1_user_reward_reward_proto_init() {
 				return nil
 			}
 		}
-		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_npool_inspire_mw_v1_user_reward_reward_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SubUserRewardResponse); i {
 			case 0:
 				return &v.state
@@ -1662,7 +1372,7 @@ func file_npool_inspire_mw_v1_user_reward_reward_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_inspire_mw_v1_user_reward_reward_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   19,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

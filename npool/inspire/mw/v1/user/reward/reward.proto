@@ -9,8 +9,6 @@ import "npool/basetypes/v1/conds.proto";
 
 // Service Name
 service Middleware {
-    rpc CreateUserReward     (CreateUserRewardRequest)     returns (CreateUserRewardResponse)      {}
-    rpc UpdateUserReward     (UpdateUserRewardRequest)     returns (UpdateUserRewardResponse)      {}
     rpc GetUserReward        (GetUserRewardRequest)        returns (GetUserRewardResponse)         {}
     rpc GetUserRewards       (GetUserRewardsRequest)       returns (GetUserRewardsResponse)        {}
     rpc ExistUserRewardConds (ExistUserRewardCondsRequest) returns (ExistUserRewardCondsResponse)  {}
@@ -72,22 +70,6 @@ message GetUserRewardsRequest {
 message GetUserRewardsResponse {
     repeated UserReward Infos = 10;
     uint32          Total = 20;
-}
-
-message CreateUserRewardRequest {
-    UserRewardReq Info = 10;
-}
-
-message CreateUserRewardResponse {
-    UserReward Info = 10;
-}
-
-message UpdateUserRewardRequest {
-    UserRewardReq Info = 10;
-}
-
-message UpdateUserRewardResponse {
-    UserReward Info = 10;
 }
 
 message GetUserRewardRequest {
