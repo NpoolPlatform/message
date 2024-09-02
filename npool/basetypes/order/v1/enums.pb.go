@@ -91,27 +91,7 @@ const (
 	// Paid
 	OrderState_OrderStatePaid                       OrderState = 110 // -> OrderStatePreCancel || OrderStateTransferGoodStockWaitStart
 	OrderState_OrderStateTransferGoodStockWaitStart OrderState = 120 // -> OrderStateInService
-	// Paid
-	// |
-	// |
-	// v
-	// |---->Rollback---->TransferGoodStockWaitStart
-	// |         |              |
-	// |         |              |
-	// |         |              v
-	// |     Rollback----->OrderStateCreateOrderUser
-	// |         |              |
-	// |         |              |
-	// |         |              v
-	// |     Rollback----->OrderStateSetProportion
-	// |         |              |
-	// |         |              |
-	// |         |              v
-	// |         ----------OrderStateSetRevenueAddress
-	// |                        |
-	// |                        |
-	// |                        v
-	// --------------------InService
+	// PreInService sub states for miningpool settings
 	OrderState_OrderStateCreateOrderUser   OrderState = 137
 	OrderState_OrderStateSetProportion     OrderState = 138
 	OrderState_OrderStateSetRevenueAddress OrderState = 139
@@ -121,27 +101,7 @@ const (
 	// End or order
 	OrderState_OrderStatePreCancel  OrderState = 160 // -> OrderStateRestoreCanceledStock
 	OrderState_OrderStatePreExpired OrderState = 170 // -> OrderStateRestoreExpiredStock
-	// InService
-	// |
-	// |
-	// v
-	// |---->Rollback---->PreExpired
-	// |         |              |
-	// |         |              |
-	// |         |              v
-	// |     Rollback----->OrderStateDeleteProportion
-	// |         |              |
-	// |         |              |
-	// |         |              v
-	// |     Rollback----->RestoreExpiredStock
-	// |         |              |
-	// |         |              |
-	// |         |              v
-	// |         ----------OrderStateCheckPoolBalance
-	// |                        |
-	// |                        |
-	// |                        v
-	// --------------------Expired
+	// PreExpired sub states for miningpool settings
 	OrderState_OrderStateDeleteProportion OrderState = 171
 	OrderState_OrderStateCheckPoolBalance OrderState = 172
 	// Calculation

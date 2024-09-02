@@ -34,29 +34,6 @@ enum OrderState {
   OrderStateTransferGoodStockWaitStart = 120; // -> OrderStateInService
   
   // PreInService sub states for miningpool settings
-  /*
-                        Paid        
-                         |        
-                         |          
-                         v    
-|---->Rollback---->TransferGoodStockWaitStart
-|         |              |         
-|         |              |          
-|         |              v           
-|     Rollback----->OrderStateCreateOrderUser
-|         |              |         
-|         |              |          
-|         |              v           
-|     Rollback----->OrderStateSetProportion
-|         |              |         
-|         |              |          
-|         |              v           
-|         ----------OrderStateSetRevenueAddress
-|                        |         
-|                        |          
-|                        v    
---------------------InService
-  */
   OrderStateCreateOrderUser = 137;
   OrderStateSetProportion = 138;
   OrderStateSetRevenueAddress = 139;
@@ -108,23 +85,47 @@ enum OrderState {
                          |                                    |              |
                          |                                    |              |
                          v                                    |              |
-Rollback------->TransferGoodStockWaitStart                    |              |
-    |                    |                                    |              |
-    |                    |                                    |              |
-    |                    v                                    |              |
-Rollback------------- InService-------------------------------|--------------|
+                        Paid                                  |              |
+                         |                                    |              |
+                         |                                    |              |
+                         v                                    |              |
+      Rollback---->TransferGoodStockWaitStart                 |              |
+          |              |                                    |              |
+          |              |                                    |              |
+          |              v                                    |              |
+      Rollback----->OrderStateCreateOrderUser                 |              |
+          |              |                                    |              |
+          |              |                                    |              |
+          |              v                                    |              |
+      Rollback----->OrderStateSetProportion                   |              |
+          |              |                                    |              |
+          |              |                                    |              |
+          |              v                                    |              |
+      Rollback----->OrderStateSetRevenueAddress               |              |
+          |              |                                    |              |
+          |              |                                    |              |
+          |              v                                    |              |
+          |---------- InService-------------------------------|--------------|
                          |                                    |
                          |                                    |
                          v                                    |
-    Rollback-------->PreExpired                               |
+      Rollback----->PreExpired                                |
+          |              |                                    |
+          |              |                                    |
+          |              v                                    |
+      Rollback----->OrderStateDeleteProportion                |
+          |              |                                    |
+          |              |                                    |
+          |              v                                    |
+      Rollback----->RestoreExpiredStock                       v
+          |              |                                PreCancel
+          |              |                                    |
+          |              v                                    |
+      Rollback------OrderStateCheckPoolBalance                |
           |              |                                    |
           |              |                                    |
           |              v                                    v
-    Rollback--->RestoreExpiredStock                       PreCancel
-          |              |                                    |
-          |              |                                    |
-          |              v                                    v
-    Rollback----------Expired                         RestoreCanceledStock<----------------Rollback
+      Rollback--------Expired                         RestoreCanceledStock<----------------Rollback
                                                               |                               |
                                                               |                               |
                                                               v                               |
@@ -161,29 +162,6 @@ Rollback------------- InService-------------------------------|--------------|
   OrderStatePreExpired = 170; // -> OrderStateRestoreExpiredStock
 
   // PreExpired sub states for miningpool settings
-    /*
-                     InService        
-                         |        
-                         |          
-                         v    
-|---->Rollback---->PreExpired
-|         |              |         
-|         |              |          
-|         |              v           
-|     Rollback----->OrderStateDeleteProportion
-|         |              |         
-|         |              |          
-|         |              v           
-|     Rollback----->RestoreExpiredStock
-|         |              |         
-|         |              |          
-|         |              v           
-|         ----------OrderStateCheckPoolBalance
-|                        |         
-|                        |          
-|                        v    
---------------------Expired
-  */
   OrderStateDeleteProportion = 171;
   OrderStateCheckPoolBalance = 172;
 
