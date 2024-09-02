@@ -98,7 +98,7 @@
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "WithdrawState": {
+        "FractionWithdrawState": {
           "$ref": "#/definitions/v1Uint32Val"
         },
         "EntIDs": {

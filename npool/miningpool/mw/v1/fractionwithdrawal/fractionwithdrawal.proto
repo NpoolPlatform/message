@@ -80,7 +80,7 @@ message Conds {
   optional basetypes.v1.StringVal UserID = 30;
   optional basetypes.v1.StringVal OrderUserID = 40;
   optional basetypes.v1.StringVal CoinTypeID = 41;
-  optional basetypes.v1.Uint32Val WithdrawState = 50;
+  optional basetypes.v1.Uint32Val FractionWithdrawState = 50;
   optional basetypes.v1.StringSliceVal EntIDs = 60;
 }
 
