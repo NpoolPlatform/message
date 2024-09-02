@@ -918,18 +918,18 @@
           "type": "string",
           "title": "@inject_tag: sql:\"required_app_good_name\""
         },
-        "RequiredAppGoodTypeStr": {
+        "RequiredGoodTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"required_app_good_type\""
+          "title": "@inject_tag: sql:\"required_good_type\""
         },
-        "RequiredAppGoodType": {
+        "RequiredGoodType": {
           "$ref": "#/definitions/v1GoodType"
         },
-        "RequiredAppGoodSettlementTypeStr": {
+        "RequiredGoodSettlementTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"required_app_good_settlement_type\""
+          "title": "@inject_tag: sql:\"required_good_settlement_type\""
         },
-        "RequiredAppGoodSettlementType": {
+        "RequiredGoodSettlementType": {
           "$ref": "#/definitions/v1GoodSettlementType"
         },
         "RequiredAppGoodUnitValue": {
