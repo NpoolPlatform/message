@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package miningpool.gateway.fractionrule.v1;
+package miningpool.gateway.fractionwithdrawalrule.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/fractionrule";
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/fractionwithdrawalrule";
 
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/cointype.proto";
@@ -14,7 +14,7 @@ service Gateway {
       AdminCreateFractionWithdrawalRuleRequest)
       returns (AdminCreateFractionWithdrawalRuleResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/create/miningpoolfractionrule"
+      post : "/v1/admin/create/miningpoolfractionwithdrawalrule"
       body : "*"
     };
   }
@@ -22,14 +22,14 @@ service Gateway {
       AdminUpdateFractionWithdrawalRuleRequest)
       returns (AdminUpdateFractionWithdrawalRuleResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/update/miningpoolfractionrule"
+      post : "/v1/admin/update/miningpoolfractionwithdrawalrule"
       body : "*"
     };
   }
   rpc AdminGetFractionWithdrawalRules(AdminGetFractionWithdrawalRulesRequest)
       returns (AdminGetFractionWithdrawalRulesResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/get/miningpoolfractionrules"
+      post : "/v1/admin/get/miningpoolfractionwithdrawalrules"
       body : "*"
     };
   }
@@ -37,7 +37,7 @@ service Gateway {
       AdminDeleteFractionWithdrawalRuleRequest)
       returns (AdminDeleteFractionWithdrawalRuleResponse) {
     option (google.api.http) = {
-      post : "/v1/admin/delete/miningpoolfractionrule"
+      post : "/v1/admin/delete/miningpoolfractionwithdrawalrule"
       body : "*"
     };
   }

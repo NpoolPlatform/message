@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/miningpoolfractionrule": {
+    "/v1/admin/create/miningpoolfractionwithdrawalrule": {
       "post": {
         "operationId": "Gateway_AdminCreateFractionWithdrawalRule",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/admin/delete/miningpoolfractionrule": {
+    "/v1/admin/delete/miningpoolfractionwithdrawalrule": {
       "post": {
         "operationId": "Gateway_AdminDeleteFractionWithdrawalRule",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/admin/get/miningpoolfractionrules": {
+    "/v1/admin/get/miningpoolfractionwithdrawalrules": {
       "post": {
         "operationId": "Gateway_AdminGetFractionWithdrawalRules",
         "responses": {
@@ -112,7 +112,7 @@
         ]
       }
     },
-    "/v1/admin/update/miningpoolfractionrule": {
+    "/v1/admin/update/miningpoolfractionwithdrawalrule": {
       "post": {
         "operationId": "Gateway_AdminUpdateFractionWithdrawalRule",
         "responses": {

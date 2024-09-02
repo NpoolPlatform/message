@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/miningpool/gw/v1/fractionwithdrawal/fractionwithdrawal.proto
 
-package fraction
+package fractionwithdrawal
 
 import (
 	context "context"
@@ -19,9 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateFractionWithdrawal_FullMethodName   = "/miningpool.gateway.fraction.v1.Gateway/CreateFractionWithdrawal"
-	Gateway_GetFractionWithdrawal_FullMethodName      = "/miningpool.gateway.fraction.v1.Gateway/GetFractionWithdrawal"
-	Gateway_GetUserFractionWithdrawals_FullMethodName = "/miningpool.gateway.fraction.v1.Gateway/GetUserFractionWithdrawals"
+	Gateway_CreateFractionWithdrawal_FullMethodName   = "/miningpool.gateway.fractionwithdrawal.v1.Gateway/CreateFractionWithdrawal"
+	Gateway_GetFractionWithdrawal_FullMethodName      = "/miningpool.gateway.fractionwithdrawal.v1.Gateway/GetFractionWithdrawal"
+	Gateway_GetUserFractionWithdrawals_FullMethodName = "/miningpool.gateway.fractionwithdrawal.v1.Gateway/GetUserFractionWithdrawals"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -162,7 +162,7 @@ func _Gateway_GetUserFractionWithdrawals_Handler(srv interface{}, ctx context.Co
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "miningpool.gateway.fraction.v1.Gateway",
+	ServiceName: "miningpool.gateway.fractionwithdrawal.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

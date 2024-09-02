@@ -2,11 +2,11 @@
 // source: npool/miningpool/gw/v1/fractionwithdrawal/fractionwithdrawal.proto
 
 /*
-Package fraction is a reverse proxy.
+Package fractionwithdrawal is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package fraction
+package fractionwithdrawal
 
 import (
 	"context"
@@ -145,7 +145,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.fraction.v1.Gateway/CreateFractionWithdrawal", runtime.WithHTTPPathPattern("/v1/create/miningpoolfration"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.fractionwithdrawal.v1.Gateway/CreateFractionWithdrawal", runtime.WithHTTPPathPattern("/v1/create/miningpoolfration"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -168,7 +168,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.fraction.v1.Gateway/GetFractionWithdrawal", runtime.WithHTTPPathPattern("/v1/get/miningpoolfration"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.fractionwithdrawal.v1.Gateway/GetFractionWithdrawal", runtime.WithHTTPPathPattern("/v1/get/miningpoolfration"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -191,7 +191,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.fraction.v1.Gateway/GetUserFractionWithdrawals", runtime.WithHTTPPathPattern("/v1/get/user/miningpoolfrations"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/miningpool.gateway.fractionwithdrawal.v1.Gateway/GetUserFractionWithdrawals", runtime.WithHTTPPathPattern("/v1/get/user/miningpoolfrations"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -253,7 +253,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.fraction.v1.Gateway/CreateFractionWithdrawal", runtime.WithHTTPPathPattern("/v1/create/miningpoolfration"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.fractionwithdrawal.v1.Gateway/CreateFractionWithdrawal", runtime.WithHTTPPathPattern("/v1/create/miningpoolfration"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -273,7 +273,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.fraction.v1.Gateway/GetFractionWithdrawal", runtime.WithHTTPPathPattern("/v1/get/miningpoolfration"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.fractionwithdrawal.v1.Gateway/GetFractionWithdrawal", runtime.WithHTTPPathPattern("/v1/get/miningpoolfration"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -293,7 +293,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.fraction.v1.Gateway/GetUserFractionWithdrawals", runtime.WithHTTPPathPattern("/v1/get/user/miningpoolfrations"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/miningpool.gateway.fractionwithdrawal.v1.Gateway/GetUserFractionWithdrawals", runtime.WithHTTPPathPattern("/v1/get/user/miningpoolfrations"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

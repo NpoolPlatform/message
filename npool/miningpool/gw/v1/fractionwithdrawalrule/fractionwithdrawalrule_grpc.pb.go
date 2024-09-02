@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/miningpool/gw/v1/fractionwithdrawalrule/fractionwithdrawalrule.proto
 
-package fractionrule
+package fractionwithdrawalrule
 
 import (
 	context "context"
@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_AdminCreateFractionWithdrawalRule_FullMethodName = "/miningpool.gateway.fractionrule.v1.Gateway/AdminCreateFractionWithdrawalRule"
-	Gateway_AdminUpdateFractionWithdrawalRule_FullMethodName = "/miningpool.gateway.fractionrule.v1.Gateway/AdminUpdateFractionWithdrawalRule"
-	Gateway_AdminGetFractionWithdrawalRules_FullMethodName   = "/miningpool.gateway.fractionrule.v1.Gateway/AdminGetFractionWithdrawalRules"
-	Gateway_AdminDeleteFractionWithdrawalRule_FullMethodName = "/miningpool.gateway.fractionrule.v1.Gateway/AdminDeleteFractionWithdrawalRule"
+	Gateway_AdminCreateFractionWithdrawalRule_FullMethodName = "/miningpool.gateway.fractionwithdrawalrule.v1.Gateway/AdminCreateFractionWithdrawalRule"
+	Gateway_AdminUpdateFractionWithdrawalRule_FullMethodName = "/miningpool.gateway.fractionwithdrawalrule.v1.Gateway/AdminUpdateFractionWithdrawalRule"
+	Gateway_AdminGetFractionWithdrawalRules_FullMethodName   = "/miningpool.gateway.fractionwithdrawalrule.v1.Gateway/AdminGetFractionWithdrawalRules"
+	Gateway_AdminDeleteFractionWithdrawalRule_FullMethodName = "/miningpool.gateway.fractionwithdrawalrule.v1.Gateway/AdminDeleteFractionWithdrawalRule"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -195,7 +195,7 @@ func _Gateway_AdminDeleteFractionWithdrawalRule_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "miningpool.gateway.fractionrule.v1.Gateway",
+	ServiceName: "miningpool.gateway.fractionwithdrawalrule.v1.Gateway",
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
