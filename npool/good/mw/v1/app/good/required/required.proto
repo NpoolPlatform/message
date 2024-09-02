@@ -63,12 +63,12 @@ message RequiredInfo {
     string RequiredAppGoodID = 20;
     // @inject_tag: sql:"required_app_good_name"
     string RequiredAppGoodName = 30;
-    // @inject_tag: sql:"required_app_good_type"
-    string RequiredAppGoodTypeStr = 40;
-    basetypes.good.v1.GoodType RequiredAppGoodType = 50;
-    // @inject_tag: sql:"required_app_good_settlement_type"
-    string RequiredAppGoodSettlementTypeStr = 60;
-    basetypes.good.v1.GoodSettlementType RequiredAppGoodSettlementType = 70;
+    // @inject_tag: sql:"required_good_type"
+    string RequiredGoodTypeStr = 40;
+    basetypes.good.v1.GoodType RequiredGoodType = 50;
+    // @inject_tag: sql:"required_good_settlement_type"
+    string RequiredGoodSettlementTypeStr = 60;
+    basetypes.good.v1.GoodSettlementType RequiredGoodSettlementType = 70;
     // @inject_tag: sql:"required_app_good_unit_value"
     string RequiredAppGoodUnitValue = 80;
     // @inject_tag: sql:"must"
