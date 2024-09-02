@@ -18,11 +18,11 @@ enum RevenueType {
   PPLNS = 20;
 }
 
-enum WithdrawState {
-  DefaultWithdrawState = 0;
+enum FractionWithdrawState {
+  DefaultFractionWithdrawState = 0;
 
-  WithdrawStateWait = 10;
-  WithdrawStateProccessing = 20;
-  WithdrawStateSuccess = 100;
-  WithdrawStateFailed = 110;
+  FractionWithdrawStateWait = 10;
+  FractionWithdrawStateProccessing = 20;
+  FractionWithdrawStateSuccess = 100;
+  FractionWithdrawStateFailed = 110;
 }

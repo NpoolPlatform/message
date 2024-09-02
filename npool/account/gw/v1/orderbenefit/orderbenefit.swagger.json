@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/orderbenefit": {
+    "/v1/get/orderbenefitaccount": {
       "post": {
         "operationId": "Gateway_GetAccount",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/get/orderbenefits": {
+    "/v1/get/orderbenefitaccounts": {
       "post": {
         "operationId": "Gateway_GetAccounts",
         "responses": {

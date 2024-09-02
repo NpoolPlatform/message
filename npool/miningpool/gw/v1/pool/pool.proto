@@ -47,7 +47,7 @@ message Pool {
   string Logo = 41;
   string Description = 50;
   repeated Coin Coins = 60;
-  repeated FractionRule FractionRules = 70;
+  repeated FractionWithdrawalRule FractionWithdrawalRules = 70;
   uint32 CreatedAt = 110;
   uint32 UpdatedAt = 120;
 }
@@ -66,13 +66,13 @@ message Coin {
   uint32 UpdatedAt = 120;
 }
 
-message FractionRule {
+message FractionWithdrawalRule {
   string EntID = 10;
   string PoolCoinTypeID = 20;
   uint32 WithdrawInterval = 30;
   string PayoutThreshold = 40;
-  string MinAmount = 50;
-  string WithdrawRate = 60;
+  string LeastWithdrawalAmount = 50;
+  string WithdrawFee = 60;
   uint32 CreatedAt = 110;
   uint32 UpdatedAt = 120;
 }

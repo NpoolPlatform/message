@@ -9,20 +9,22 @@ import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
-  rpc CreateFraction(CreateFractionRequest) returns (CreateFractionResponse) {
+  rpc CreateFractionWithdrawal(CreateFractionWithdrawalRequest)
+      returns (CreateFractionWithdrawalResponse) {
     option (google.api.http) = {
-      post : "/v1/create/miningpoolfrationwithdraw"
+      post : "/v1/create/miningpoolfration"
       body : "*"
     };
   }
-  rpc GetFraction(GetFractionRequest) returns (GetFractionResponse) {
+  rpc GetFractionWithdrawal(GetFractionWithdrawalRequest)
+      returns (GetFractionWithdrawalResponse) {
     option (google.api.http) = {
       post : "/v1/get/miningpoolfration"
       body : "*"
     };
   }
-  rpc GetUserFractions(GetUserFractionsRequest)
-      returns (GetUserFractionsResponse) {
+  rpc GetUserFractionWithdrawals(GetUserFractionWithdrawalsRequest)
+      returns (GetUserFractionWithdrawalsResponse) {
     option (google.api.http) = {
       post : "/v1/get/user/miningpoolfrations"
       body : "*"
@@ -30,13 +32,13 @@ service Gateway {
   }
 }
 
-message Fraction {
+message FractionWithdrawal {
   uint32 ID = 10;
   string EntID = 20;
   string AppID = 30;
   string UserID = 40;
   string OrderUserID = 50;
-  basetypes.miningpool.v1.WithdrawState WithdrawState = 60;
+  basetypes.miningpool.v1.FractionWithdrawState FractionWithdrawState = 60;
   uint32 WithdrawAt = 70;
   uint32 PromisePayAt = 80;
   string Msg = 90;
@@ -44,30 +46,30 @@ message Fraction {
   uint32 UpdatedAt = 110;
 }
 
-message CreateFractionRequest {
+message CreateFractionWithdrawalRequest {
   string AppID = 10;
   string UserID = 20;
   string OrderUserID = 30;
 }
 
-message CreateFractionResponse { Fraction Info = 10; }
+message CreateFractionWithdrawalResponse { FractionWithdrawal Info = 10; }
 
-message GetFractionRequest {
+message GetFractionWithdrawalRequest {
   string EntID = 10;
   string AppID = 20;
   string UserID = 30;
 }
 
-message GetFractionResponse { Fraction Info = 10; }
+message GetFractionWithdrawalResponse { FractionWithdrawal Info = 10; }
 
-message GetUserFractionsRequest {
+message GetUserFractionWithdrawalsRequest {
   string AppID = 10;
   string UserID = 20;
   int32 Offset = 30;
   int32 Limit = 40;
 }
 
-message GetUserFractionsResponse {
-  repeated Fraction Infos = 10;
+message GetUserFractionWithdrawalsResponse {
+  repeated FractionWithdrawal Infos = 10;
   uint32 Total = 20;
 }

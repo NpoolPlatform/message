@@ -111,7 +111,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/account.gateway.orderbenefit.v1.Gateway/GetAccount", runtime.WithHTTPPathPattern("/v1/get/orderbenefit"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/account.gateway.orderbenefit.v1.Gateway/GetAccount", runtime.WithHTTPPathPattern("/v1/get/orderbenefitaccount"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -134,7 +134,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/account.gateway.orderbenefit.v1.Gateway/GetAccounts", runtime.WithHTTPPathPattern("/v1/get/orderbenefits"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/account.gateway.orderbenefit.v1.Gateway/GetAccounts", runtime.WithHTTPPathPattern("/v1/get/orderbenefitaccounts"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -196,7 +196,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/account.gateway.orderbenefit.v1.Gateway/GetAccount", runtime.WithHTTPPathPattern("/v1/get/orderbenefit"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/account.gateway.orderbenefit.v1.Gateway/GetAccount", runtime.WithHTTPPathPattern("/v1/get/orderbenefitaccount"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -216,7 +216,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/account.gateway.orderbenefit.v1.Gateway/GetAccounts", runtime.WithHTTPPathPattern("/v1/get/orderbenefits"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/account.gateway.orderbenefit.v1.Gateway/GetAccounts", runtime.WithHTTPPathPattern("/v1/get/orderbenefitaccounts"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -236,9 +236,9 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_GetAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "orderbenefit"}, ""))
+	pattern_Gateway_GetAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "orderbenefitaccount"}, ""))
 
-	pattern_Gateway_GetAccounts_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "orderbenefits"}, ""))
+	pattern_Gateway_GetAccounts_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "orderbenefitaccounts"}, ""))
 )
 
 var (

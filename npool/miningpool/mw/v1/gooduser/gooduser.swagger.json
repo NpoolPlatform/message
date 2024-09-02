@@ -90,8 +90,7 @@
       "type": "object",
       "properties": {
         "HashRate": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         }
       }
     },

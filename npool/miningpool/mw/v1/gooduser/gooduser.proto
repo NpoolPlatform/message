@@ -93,7 +93,7 @@ message GetGoodUserHashRateRequest {
   repeated string CoinTypeIDs = 30;
 }
 
-message GetGoodUserHashRateResponse { double HashRate = 10; }
+message GetGoodUserHashRateResponse { string HashRate = 10; }
 
 message ExistGoodUserRequest { string EntID = 10; }
 

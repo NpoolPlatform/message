@@ -11,13 +11,13 @@ import "npool/basetypes/v1/accountusedfor.proto";
 service Gateway {
   rpc GetAccount(GetAccountRequest) returns (GetAccountResponse) {
     option (google.api.http) = {
-      post : "/v1/get/orderbenefit"
+      post : "/v1/get/orderbenefitaccount"
       body : "*"
     };
   }
   rpc GetAccounts(GetAccountsRequest) returns (GetAccountsResponse) {
     option (google.api.http) = {
-      post : "/v1/get/orderbenefits"
+      post : "/v1/get/orderbenefitaccounts"
       body : "*"
     };
   }

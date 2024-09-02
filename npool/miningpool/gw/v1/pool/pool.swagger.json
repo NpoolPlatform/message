@@ -358,7 +358,7 @@
       "default": "DefaultCoinType",
       "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
     },
-    "v1FractionRule": {
+    "v1FractionWithdrawalRule": {
       "type": "object",
       "properties": {
         "EntID": {
@@ -374,10 +374,10 @@
         "PayoutThreshold": {
           "type": "string"
         },
-        "MinAmount": {
+        "LeastWithdrawalAmount": {
           "type": "string"
         },
-        "WithdrawRate": {
+        "WithdrawFee": {
           "type": "string"
         },
         "CreatedAt": {
@@ -430,10 +430,10 @@
             "$ref": "#/definitions/v1Coin"
           }
         },
-        "FractionRules": {
+        "FractionWithdrawalRules": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1FractionRule"
+            "$ref": "#/definitions/v1FractionWithdrawalRule"
           }
         },
         "CreatedAt": {
