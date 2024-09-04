@@ -113,24 +113,19 @@
       "type": "object",
       "properties": {
         "Balance": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "Paid": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "TotalIncome": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "YesterdayIncome": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         },
         "EstimatedTodayIncome": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         }
       }
     },
@@ -210,8 +205,7 @@
       "type": "object",
       "properties": {
         "Proportion": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         }
       }
     },
