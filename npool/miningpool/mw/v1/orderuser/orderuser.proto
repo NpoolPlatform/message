@@ -119,7 +119,7 @@ message GetOrderUserProportionRequest {
   string CoinTypeID = 20;
 }
 
-message GetOrderUserProportionResponse { optional string Proportion = 10; }
+message GetOrderUserProportionResponse { string Proportion = 10; }
 
 message GetOrderUserBalanceRequest {
   string EntID = 10;
