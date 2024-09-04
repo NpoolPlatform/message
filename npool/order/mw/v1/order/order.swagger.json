@@ -361,6 +361,7 @@
         "OrderStatePreCancel",
         "OrderStatePreExpired",
         "OrderStateDeleteProportion",
+        "OrderStateCheckProportion",
         "OrderStateCheckPoolBalance",
         "OrderStateRestoreExpiredStock",
         "OrderStateRestoreCanceledStock",
