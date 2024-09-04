@@ -37,7 +37,7 @@ type FractionWithdrawalRule struct {
 	PayoutThreshold       string            `protobuf:"bytes,50,opt,name=PayoutThreshold,proto3" json:"PayoutThreshold,omitempty"`
 	LeastWithdrawalAmount string            `protobuf:"bytes,60,opt,name=LeastWithdrawalAmount,proto3" json:"LeastWithdrawalAmount,omitempty"`
 	WithdrawFee           string            `protobuf:"bytes,70,opt,name=WithdrawFee,proto3" json:"WithdrawFee,omitempty"`
-	MiningpoolType        v1.MiningpoolType `protobuf:"varint,80,opt,name=MiningpoolType,proto3,enum=basetypes.miningpool.v1.MiningpoolType" json:"MiningpoolType,omitempty"`
+	MiningPoolType        v1.MiningPoolType `protobuf:"varint,80,opt,name=MiningPoolType,proto3,enum=basetypes.miningpool.v1.MiningPoolType" json:"MiningPoolType,omitempty"`
 	CoinType              v11.CoinType      `protobuf:"varint,90,opt,name=CoinType,proto3,enum=basetypes.v1.CoinType" json:"CoinType,omitempty"`
 	CreatedAt             uint32            `protobuf:"varint,100,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
 	UpdatedAt             uint32            `protobuf:"varint,110,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
@@ -138,11 +138,11 @@ func (x *FractionWithdrawalRule) GetWithdrawFee() string {
 	return ""
 }
 
-func (x *FractionWithdrawalRule) GetMiningpoolType() v1.MiningpoolType {
+func (x *FractionWithdrawalRule) GetMiningPoolType() v1.MiningPoolType {
 	if x != nil {
-		return x.MiningpoolType
+		return x.MiningPoolType
 	}
-	return v1.MiningpoolType(0)
+	return v1.MiningPoolType(0)
 }
 
 func (x *FractionWithdrawalRule) GetCoinType() v11.CoinType {
@@ -676,11 +676,11 @@ var file_npool_miningpool_gw_v1_fractionwithdrawalrule_fractionwithdrawalrule_pr
 	0x61, 0x73, 0x74, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c, 0x41, 0x6d, 0x6f,
 	0x75, 0x6e, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x46,
 	0x65, 0x65, 0x18, 0x46, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72,
-	0x61, 0x77, 0x46, 0x65, 0x65, 0x12, 0x4f, 0x0a, 0x0e, 0x4d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70,
+	0x61, 0x77, 0x46, 0x65, 0x65, 0x12, 0x4f, 0x0a, 0x0e, 0x4d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x50,
 	0x6f, 0x6f, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x18, 0x50, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x27, 0x2e,
 	0x62, 0x61, 0x73, 0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67,
-	0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f,
-	0x6f, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x52, 0x0e, 0x4d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f,
+	0x70, 0x6f, 0x6f, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x50, 0x6f,
+	0x6f, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x52, 0x0e, 0x4d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x50, 0x6f,
 	0x6f, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x12, 0x32, 0x0a, 0x08, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79,
 	0x70, 0x65, 0x18, 0x5a, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x16, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x74,
 	0x79, 0x70, 0x65, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6f, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65,
@@ -874,11 +874,11 @@ var file_npool_miningpool_gw_v1_fractionwithdrawalrule_fractionwithdrawalrule_pr
 	(*AdminGetFractionWithdrawalRulesResponse)(nil),   // 6: miningpool.gateway.fractionwithdrawalrule.v1.AdminGetFractionWithdrawalRulesResponse
 	(*AdminDeleteFractionWithdrawalRuleRequest)(nil),  // 7: miningpool.gateway.fractionwithdrawalrule.v1.AdminDeleteFractionWithdrawalRuleRequest
 	(*AdminDeleteFractionWithdrawalRuleResponse)(nil), // 8: miningpool.gateway.fractionwithdrawalrule.v1.AdminDeleteFractionWithdrawalRuleResponse
-	(v1.MiningpoolType)(0),                            // 9: basetypes.miningpool.v1.MiningpoolType
+	(v1.MiningPoolType)(0),                            // 9: basetypes.miningpool.v1.MiningPoolType
 	(v11.CoinType)(0),                                 // 10: basetypes.v1.CoinType
 }
 var file_npool_miningpool_gw_v1_fractionwithdrawalrule_fractionwithdrawalrule_proto_depIdxs = []int32{
-	9,  // 0: miningpool.gateway.fractionwithdrawalrule.v1.FractionWithdrawalRule.MiningpoolType:type_name -> basetypes.miningpool.v1.MiningpoolType
+	9,  // 0: miningpool.gateway.fractionwithdrawalrule.v1.FractionWithdrawalRule.MiningPoolType:type_name -> basetypes.miningpool.v1.MiningPoolType
 	10, // 1: miningpool.gateway.fractionwithdrawalrule.v1.FractionWithdrawalRule.CoinType:type_name -> basetypes.v1.CoinType
 	0,  // 2: miningpool.gateway.fractionwithdrawalrule.v1.AdminCreateFractionWithdrawalRuleResponse.Info:type_name -> miningpool.gateway.fractionwithdrawalrule.v1.FractionWithdrawalRule
 	0,  // 3: miningpool.gateway.fractionwithdrawalrule.v1.AdminUpdateFractionWithdrawalRuleResponse.Info:type_name -> miningpool.gateway.fractionwithdrawalrule.v1.FractionWithdrawalRule

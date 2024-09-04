@@ -39,7 +39,7 @@ message GoodUser {
   string Name = 40;
   string ReadPageLink = 50;
   string PoolID = 70;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 80;
   uint32 CreatedAt = 130;
   uint32 UpdatedAt = 140;
 }

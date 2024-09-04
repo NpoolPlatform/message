@@ -103,12 +103,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"remark\""
         },
-        "MiningpoolTypeStr": {
+        "MiningPoolTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_type\""
+          "title": "@inject_tag: sql:\"mining_pool_type\""
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
+        "MiningPoolType": {
+          "$ref": "#/definitions/v1MiningPoolType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -213,7 +213,7 @@
         "CoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "MiningpoolType": {
+        "MiningPoolType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
         "CoinType": {
@@ -272,14 +272,14 @@
         }
       }
     },
-    "v1MiningpoolType": {
+    "v1MiningPoolType": {
       "type": "string",
       "enum": [
-        "DefaultMiningpoolType",
+        "DefaultMiningPoolType",
         "F2Pool",
         "AntPool"
       ],
-      "default": "DefaultMiningpoolType"
+      "default": "DefaultMiningPoolType"
     },
     "v1StringSliceVal": {
       "type": "object",

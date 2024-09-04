@@ -55,9 +55,9 @@ message FractionWithdrawalRule {
   string LeastWithdrawalAmount = 60;
   // @inject_tag: sql:"withdraw_rate"
   string WithdrawFee = 70;
-  // @inject_tag: sql:"miningpool_type"
-  string MiningpoolTypeStr = 80;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 81;
+  // @inject_tag: sql:"mining_pool_type"
+  string MiningPoolTypeStr = 80;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 81;
   // @inject_tag: sql:"coin_type"
   string CoinTypeStr = 90;
   basetypes.v1.CoinType CoinType = 91;

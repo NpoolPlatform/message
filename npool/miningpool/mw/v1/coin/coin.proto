@@ -54,9 +54,9 @@ message Coin {
   uint32 BenefitIntervalSeconds = 90;
   // @inject_tag: sql:"remark"
   string Remark = 100;
-  // @inject_tag: sql:"miningpool_type"
-  string MiningpoolTypeStr = 110;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 111;
+  // @inject_tag: sql:"mining_pool_type"
+  string MiningPoolTypeStr = 110;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 111;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 120;
   // @inject_tag: sql:"updated_at"
@@ -69,7 +69,7 @@ message Conds {
   optional basetypes.v1.StringVal PoolID = 20;
   optional basetypes.v1.StringSliceVal CoinTypeIDs = 21;
   optional basetypes.v1.StringVal CoinTypeID = 22;
-  optional basetypes.v1.Uint32Val MiningpoolType = 30;
+  optional basetypes.v1.Uint32Val MiningPoolType = 30;
   optional basetypes.v1.Uint32Val CoinType = 31;
   optional basetypes.v1.BoolVal FixedRevenueAble = 50;
   optional basetypes.v1.StringSliceVal EntIDs = 60;

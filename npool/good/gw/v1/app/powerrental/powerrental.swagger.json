@@ -1069,7 +1069,7 @@
       "type": "string",
       "enum": [
         "DefaultGoodStockMode",
-        "GoodStockByMiningpool",
+        "GoodStockByMiningPool",
         "GoodStockByUnique"
       ],
       "default": "DefaultGoodStockMode"
@@ -1129,7 +1129,7 @@
         "GoodStockID": {
           "type": "string"
         },
-        "MiningpoolID": {
+        "MiningPoolID": {
           "type": "string"
         },
         "PoolGoodUserID": {
@@ -1141,16 +1141,16 @@
         "SpotQuantity": {
           "type": "string"
         },
-        "MiningpoolName": {
+        "MiningPoolName": {
           "type": "string"
         },
-        "MiningpoolSite": {
+        "MiningPoolSite": {
           "type": "string"
         },
-        "MiningpoolLogo": {
+        "MiningPoolLogo": {
           "type": "string"
         },
-        "MiningpoolReadPageLink": {
+        "MiningPoolReadPageLink": {
           "type": "string"
         }
       }

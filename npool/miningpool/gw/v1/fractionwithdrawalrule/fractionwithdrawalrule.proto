@@ -52,7 +52,7 @@ message FractionWithdrawalRule {
   string PayoutThreshold = 50;
   string LeastWithdrawalAmount = 60;
   string WithdrawFee = 70;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 80;
   basetypes.v1.CoinType CoinType = 90;
   uint32 CreatedAt = 100;
   uint32 UpdatedAt = 110;

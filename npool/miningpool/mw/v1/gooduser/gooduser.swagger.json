@@ -145,24 +145,24 @@
           "type": "string",
           "title": "@inject_tag: sql:\"pool_id\""
         },
-        "MiningpoolTypeStr": {
+        "MiningPoolTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_type\""
+          "title": "@inject_tag: sql:\"mining_pool_type\""
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
+        "MiningPoolType": {
+          "$ref": "#/definitions/v1MiningPoolType"
         },
-        "MiningpoolName": {
+        "MiningPoolName": {
           "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_name\""
+          "title": "@inject_tag: sql:\"mining_pool_name\""
         },
-        "MiningpoolSite": {
+        "MiningPoolSite": {
           "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_site\""
+          "title": "@inject_tag: sql:\"mining_pool_site\""
         },
-        "MiningpoolLogo": {
+        "MiningPoolLogo": {
           "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_logo\""
+          "title": "@inject_tag: sql:\"mining_pool_logo\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -204,14 +204,14 @@
         }
       }
     },
-    "v1MiningpoolType": {
+    "v1MiningPoolType": {
       "type": "string",
       "enum": [
-        "DefaultMiningpoolType",
+        "DefaultMiningPoolType",
         "F2Pool",
         "AntPool"
       ],
-      "default": "DefaultMiningpoolType"
+      "default": "DefaultMiningPoolType"
     },
     "v1StringSliceVal": {
       "type": "object",

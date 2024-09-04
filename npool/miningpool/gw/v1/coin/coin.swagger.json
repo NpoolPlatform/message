@@ -330,8 +330,8 @@
         "Remark": {
           "type": "string"
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
+        "MiningPoolType": {
+          "$ref": "#/definitions/v1MiningPoolType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -379,14 +379,14 @@
       "default": "DefaultCoinType",
       "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
     },
-    "v1MiningpoolType": {
+    "v1MiningPoolType": {
       "type": "string",
       "enum": [
-        "DefaultMiningpoolType",
+        "DefaultMiningPoolType",
         "F2Pool",
         "AntPool"
       ],
-      "default": "DefaultMiningpoolType"
+      "default": "DefaultMiningPoolType"
     }
   }
 }

@@ -20,52 +20,52 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type MiningpoolType int32
+type MiningPoolType int32
 
 const (
-	MiningpoolType_DefaultMiningpoolType MiningpoolType = 0
-	MiningpoolType_F2Pool                MiningpoolType = 10
-	MiningpoolType_AntPool               MiningpoolType = 20
+	MiningPoolType_DefaultMiningPoolType MiningPoolType = 0
+	MiningPoolType_F2Pool                MiningPoolType = 10
+	MiningPoolType_AntPool               MiningPoolType = 20
 )
 
-// Enum value maps for MiningpoolType.
+// Enum value maps for MiningPoolType.
 var (
-	MiningpoolType_name = map[int32]string{
-		0:  "DefaultMiningpoolType",
+	MiningPoolType_name = map[int32]string{
+		0:  "DefaultMiningPoolType",
 		10: "F2Pool",
 		20: "AntPool",
 	}
-	MiningpoolType_value = map[string]int32{
-		"DefaultMiningpoolType": 0,
+	MiningPoolType_value = map[string]int32{
+		"DefaultMiningPoolType": 0,
 		"F2Pool":                10,
 		"AntPool":               20,
 	}
 )
 
-func (x MiningpoolType) Enum() *MiningpoolType {
-	p := new(MiningpoolType)
+func (x MiningPoolType) Enum() *MiningPoolType {
+	p := new(MiningPoolType)
 	*p = x
 	return p
 }
 
-func (x MiningpoolType) String() string {
+func (x MiningPoolType) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (MiningpoolType) Descriptor() protoreflect.EnumDescriptor {
+func (MiningPoolType) Descriptor() protoreflect.EnumDescriptor {
 	return file_npool_basetypes_miningpool_v1_enums_proto_enumTypes[0].Descriptor()
 }
 
-func (MiningpoolType) Type() protoreflect.EnumType {
+func (MiningPoolType) Type() protoreflect.EnumType {
 	return &file_npool_basetypes_miningpool_v1_enums_proto_enumTypes[0]
 }
 
-func (x MiningpoolType) Number() protoreflect.EnumNumber {
+func (x MiningPoolType) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use MiningpoolType.Descriptor instead.
-func (MiningpoolType) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use MiningPoolType.Descriptor instead.
+func (MiningPoolType) EnumDescriptor() ([]byte, []int) {
 	return file_npool_basetypes_miningpool_v1_enums_proto_rawDescGZIP(), []int{0}
 }
 
@@ -180,9 +180,9 @@ var file_npool_basetypes_miningpool_v1_enums_proto_rawDesc = []byte{
 	0x73, 0x2f, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x76, 0x31, 0x2f,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x17, 0x62, 0x61, 0x73,
 	0x65, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x6d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f, 0x6f,
-	0x6c, 0x2e, 0x76, 0x31, 0x2a, 0x44, 0x0a, 0x0e, 0x4d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f,
+	0x6c, 0x2e, 0x76, 0x31, 0x2a, 0x44, 0x0a, 0x0e, 0x4d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x50, 0x6f,
 	0x6f, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x12, 0x19, 0x0a, 0x15, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c,
-	0x74, 0x4d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x70, 0x6f, 0x6f, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x10,
+	0x74, 0x4d, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x50, 0x6f, 0x6f, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x10,
 	0x00, 0x12, 0x0a, 0x0a, 0x06, 0x46, 0x32, 0x50, 0x6f, 0x6f, 0x6c, 0x10, 0x0a, 0x12, 0x0b, 0x0a,
 	0x07, 0x41, 0x6e, 0x74, 0x50, 0x6f, 0x6f, 0x6c, 0x10, 0x14, 0x2a, 0x3a, 0x0a, 0x0b, 0x52, 0x65,
 	0x76, 0x65, 0x6e, 0x75, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x16, 0x0a, 0x12, 0x44, 0x65, 0x66,
@@ -222,7 +222,7 @@ func file_npool_basetypes_miningpool_v1_enums_proto_rawDescGZIP() []byte {
 
 var file_npool_basetypes_miningpool_v1_enums_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
 var file_npool_basetypes_miningpool_v1_enums_proto_goTypes = []interface{}{
-	(MiningpoolType)(0),        // 0: basetypes.miningpool.v1.MiningpoolType
+	(MiningPoolType)(0),        // 0: basetypes.miningpool.v1.MiningPoolType
 	(RevenueType)(0),           // 1: basetypes.miningpool.v1.RevenueType
 	(FractionWithdrawState)(0), // 2: basetypes.miningpool.v1.FractionWithdrawState
 }

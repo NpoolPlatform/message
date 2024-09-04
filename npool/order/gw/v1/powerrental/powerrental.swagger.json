@@ -820,7 +820,7 @@
       "type": "string",
       "enum": [
         "DefaultGoodStockMode",
-        "GoodStockByMiningpool",
+        "GoodStockByMiningPool",
         "GoodStockByUnique"
       ],
       "default": "DefaultGoodStockMode"
@@ -1153,19 +1153,19 @@
         "AppGoodStockID": {
           "type": "string"
         },
-        "MiningpoolName": {
+        "MiningPoolName": {
           "type": "string"
         },
-        "MiningpoolLogo": {
+        "MiningPoolLogo": {
           "type": "string"
         },
-        "MiningpoolOrderUserID": {
+        "MiningPoolOrderUserID": {
           "type": "string"
         },
-        "MiningpoolOrderUserName": {
+        "MiningPoolOrderUserName": {
           "type": "string"
         },
-        "MiningpoolReadPageLink": {
+        "MiningPoolReadPageLink": {
           "type": "string"
         },
         "Units": {

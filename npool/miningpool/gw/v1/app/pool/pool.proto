@@ -49,7 +49,7 @@ message Pool {
   string EntID = 20;
   string AppID = 30;
   string PoolID = 40;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 50;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 50;
   string Name = 60;
   string Site = 70;
   string Logo = 71;

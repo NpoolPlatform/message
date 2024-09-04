@@ -41,7 +41,7 @@ service Gateway {
 message Pool {
   uint32 ID = 9;
   string EntID = 10;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 20;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 20;
   string Name = 30;
   string Site = 40;
   string Logo = 41;
@@ -78,7 +78,7 @@ message FractionWithdrawalRule {
 }
 
 message AdminCreatePoolRequest {
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 10;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 10;
   string Name = 20;
   string Site = 30;
   string Logo = 40;

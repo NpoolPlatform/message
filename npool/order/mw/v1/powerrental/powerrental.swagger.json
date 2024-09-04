@@ -382,7 +382,7 @@
       "type": "string",
       "enum": [
         "DefaultGoodStockMode",
-        "GoodStockByMiningpool",
+        "GoodStockByMiningPool",
         "GoodStockByUnique"
       ],
       "default": "DefaultGoodStockMode"

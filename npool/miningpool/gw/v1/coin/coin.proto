@@ -49,7 +49,7 @@ message Coin {
   string LeastTransferAmount = 80;
   uint32 BenefitIntervalSeconds = 90;
   string Remark = 100;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 110;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 110;
   uint32 CreatedAt = 120;
   uint32 UpdatedAt = 130;
 }
