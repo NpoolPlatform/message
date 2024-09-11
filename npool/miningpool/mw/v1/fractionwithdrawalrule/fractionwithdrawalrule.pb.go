@@ -138,8 +138,8 @@ type FractionWithdrawalRule struct {
 	PayoutThreshold string `protobuf:"bytes,50,opt,name=PayoutThreshold,proto3" json:"PayoutThreshold,omitempty" sql:"payout_threshold"`
 	// @inject_tag: sql:"least_withdrawal_amount"
 	LeastWithdrawalAmount string `protobuf:"bytes,60,opt,name=LeastWithdrawalAmount,proto3" json:"LeastWithdrawalAmount,omitempty" sql:"least_withdrawal_amount"`
-	// @inject_tag: sql:"withdraw_rate"
-	WithdrawFee string `protobuf:"bytes,70,opt,name=WithdrawFee,proto3" json:"WithdrawFee,omitempty" sql:"withdraw_rate"`
+	// @inject_tag: sql:"withdraw_fee"
+	WithdrawFee string `protobuf:"bytes,70,opt,name=WithdrawFee,proto3" json:"WithdrawFee,omitempty" sql:"withdraw_fee"`
 	// @inject_tag: sql:"mining_pool_type"
 	MiningPoolTypeStr string            `protobuf:"bytes,80,opt,name=MiningPoolTypeStr,proto3" json:"MiningPoolTypeStr,omitempty" sql:"mining_pool_type"`
 	MiningPoolType    v1.MiningPoolType `protobuf:"varint,81,opt,name=MiningPoolType,proto3,enum=basetypes.miningpool.v1.MiningPoolType" json:"MiningPoolType,omitempty"`

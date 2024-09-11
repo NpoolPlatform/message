@@ -161,7 +161,7 @@
         },
         "WithdrawFee": {
           "type": "string",
-          "title": "@inject_tag: sql:\"withdraw_rate\""
+          "title": "@inject_tag: sql:\"withdraw_fee\""
         },
         "MiningPoolTypeStr": {
           "type": "string",

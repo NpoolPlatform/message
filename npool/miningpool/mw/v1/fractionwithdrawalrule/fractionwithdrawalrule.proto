@@ -53,7 +53,7 @@ message FractionWithdrawalRule {
   string PayoutThreshold = 50;
   // @inject_tag: sql:"least_withdrawal_amount"
   string LeastWithdrawalAmount = 60;
-  // @inject_tag: sql:"withdraw_rate"
+  // @inject_tag: sql:"withdraw_fee"
   string WithdrawFee = 70;
   // @inject_tag: sql:"mining_pool_type"
   string MiningPoolTypeStr = 80;
