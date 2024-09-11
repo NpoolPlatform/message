@@ -165,6 +165,9 @@
         "Credits": {
           "type": "string"
         },
+        "Extra": {
+          "type": "string"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"

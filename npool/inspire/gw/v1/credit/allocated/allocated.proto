@@ -29,6 +29,7 @@ message CreditAllocated {
   string EmailAddress = 50;
   string PhoneNO = 60;
   string Credits = 70;
+  string Extra = 80;
   uint32 CreatedAt = 1000;
   uint32 UpdatedAt = 1010;
 }
