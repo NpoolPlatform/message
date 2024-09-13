@@ -54,6 +54,9 @@ message TaskConfig {
   uint32 MaxRewardCount = 120;
   uint32 CooldownSecond = 130;
   basetypes.v1.UsedFor EventType = 140;
+  bool IntervalReset = 150;
+  uint32 IntervalResetSecond = 160;
+  uint32 MaxIntervalRewardCount = 170;
   uint32 CreatedAt = 1000;
   uint32 UpdatedAt = 1010;
 }
@@ -70,6 +73,9 @@ message AdminCreateTaskConfigRequest {
   uint32 MaxRewardCount = 90;
   uint32 CooldownSecond = 100;
   optional string LastTaskID = 110;
+  optional bool IntervalReset = 120;
+  optional uint32 IntervalResetSecond = 130;
+  optional uint32 MaxIntervalRewardCount = 140;
 }
 
 message AdminCreateTaskConfigResponse { TaskConfig Info = 10; }
@@ -87,6 +93,9 @@ message AdminUpdateTaskConfigRequest {
   optional uint32 MaxRewardCount = 100;
   optional uint32 CooldownSecond = 110;
   optional string LastTaskID = 120;
+  optional bool IntervalReset = 130;
+  optional uint32 IntervalResetSecond = 140;
+  optional uint32 MaxIntervalRewardCount = 150;
 }
 
 message AdminUpdateTaskConfigResponse { TaskConfig Info = 10; }

@@ -89,8 +89,7 @@ enum TaskType {
   DefaultTaskType = 0;
 
   BaseTask   = 10;
-  DailyTask  = 20;
-  GrowthTask = 30;
+  GrowthTask = 20;
 }
 
 enum TaskState {

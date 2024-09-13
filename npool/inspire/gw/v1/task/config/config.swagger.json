@@ -211,6 +211,17 @@
         },
         "LastTaskID": {
           "type": "string"
+        },
+        "IntervalReset": {
+          "type": "boolean"
+        },
+        "IntervalResetSecond": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxIntervalRewardCount": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -315,6 +326,17 @@
         },
         "LastTaskID": {
           "type": "string"
+        },
+        "IntervalReset": {
+          "type": "boolean"
+        },
+        "IntervalResetSecond": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxIntervalRewardCount": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -375,6 +397,17 @@
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
         },
+        "IntervalReset": {
+          "type": "boolean"
+        },
+        "IntervalResetSecond": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "MaxIntervalRewardCount": {
+          "type": "integer",
+          "format": "int64"
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -390,7 +423,6 @@
       "enum": [
         "DefaultTaskType",
         "BaseTask",
-        "DailyTask",
         "GrowthTask"
       ],
       "default": "DefaultTaskType"

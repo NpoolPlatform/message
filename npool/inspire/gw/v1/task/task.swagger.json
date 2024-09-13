@@ -202,7 +202,6 @@
       "enum": [
         "DefaultTaskType",
         "BaseTask",
-        "DailyTask",
         "GrowthTask"
       ],
       "default": "DefaultTaskType"
