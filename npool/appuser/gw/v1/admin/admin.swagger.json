@@ -887,10 +887,6 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"kol_confirmed\""
         },
-        "ActionCredits": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"action_credits\""
-        },
         "SelectedLangID": {
           "type": "string",
           "title": "@inject_tag: sql:\"selected_lang_id\""
