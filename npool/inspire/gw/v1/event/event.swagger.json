@@ -382,6 +382,9 @@
         "InviterLayers": {
           "type": "integer",
           "format": "int64"
+        },
+        "AppGoodID": {
+          "type": "string"
         }
       }
     },
@@ -545,6 +548,9 @@
         "InviterLayers": {
           "type": "integer",
           "format": "int64"
+        },
+        "AppGoodID": {
+          "type": "string"
         }
       }
     },

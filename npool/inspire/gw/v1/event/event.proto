@@ -103,6 +103,7 @@ message UpdateEventRequest {
   optional string CreditsPerUSD = 50;
   optional uint32 MaxConsecutive = 60;
   optional uint32 InviterLayers = 80;
+  optional string AppGoodID = 90;
 }
 
 message UpdateEventResponse { Event Info = 10; }
@@ -138,6 +139,7 @@ message AdminUpdateEventRequest {
   optional string CreditsPerUSD = 50;
   optional uint32 MaxConsecutive = 60;
   optional uint32 InviterLayers = 80;
+  optional string AppGoodID = 90;
 }
 
 message AdminUpdateEventResponse { Event Info = 10; }
