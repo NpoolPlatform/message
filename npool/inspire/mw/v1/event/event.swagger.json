@@ -79,38 +79,6 @@
           "Middleware"
         ]
       }
-    },
-    "/v1/event_RewardEvent": {
-      "post": {
-        "operationId": "Middleware_RewardEvent",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1RewardEventResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1RewardEventRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
     }
   },
   "definitions": {
@@ -250,20 +218,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Event"
-        }
-      }
-    },
-    "v1Credit": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "Credits": {
-          "type": "string"
         }
       }
     },
@@ -499,44 +453,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1CouponReward"
-          }
-        }
-      }
-    },
-    "v1RewardEventRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "EventType": {
-          "$ref": "#/definitions/v1UsedFor"
-        },
-        "GoodID": {
-          "type": "string"
-        },
-        "AppGoodID": {
-          "type": "string"
-        },
-        "Consecutive": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Amount": {
-          "type": "string"
-        }
-      }
-    },
-    "v1RewardEventResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Credit"
           }
         }
       }
