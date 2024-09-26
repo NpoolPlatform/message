@@ -15,22 +15,22 @@ service Gateway {
       body : "*"
     };
   }
-  rpc GetMyRewards(GetMyRewardsRequest) returns (GetMyRewardsResponse) {
+  rpc GetMyUserRewards(GetMyUserRewardsRequest) returns (GetMyUserRewardsResponse) {
     option (google.api.http) = {
-      post : "/v1/get/my/rewards"
+      post : "/v1/get/my/userrewards"
       body : "*"
     };
   }
 }
 
-message GetMyRewardsRequest {
+message GetMyUserRewardsRequest {
   string AppID = 10;
   string UserID = 20;
   int32 Offset = 30;
   int32 Limit = 40;
 }
 
-message GetMyRewardsResponse {
+message GetMyUserRewardsResponse {
   repeated middleware.user.reward.v1.UserReward Infos = 10;
   uint32 Total = 20;
 }
