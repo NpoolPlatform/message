@@ -39,6 +39,8 @@ enum IOSubType {
   SimulateMiningBenefit = 200;
   // I
   ObseletePayment = 210;
+  // I
+  EventReward = 220;
 }
 
 enum WithdrawState {
