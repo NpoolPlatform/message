@@ -141,6 +141,9 @@
         },
         "PaidAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
@@ -1070,6 +1073,14 @@
           "type": "string"
         },
         "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SumPowerRentalOrderUnitsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
           "type": "string"
         }
       }

@@ -102,6 +102,7 @@ message GoodProfit {
     string AppGoodID = 30;
     string AppGoodName = 40;
     basetypes.good.v1.GoodType GoodType = 50;
+    string GoodQuantityUnit = 51;
 
     // Good is multiple coins
     string CoinTypeID = 60;

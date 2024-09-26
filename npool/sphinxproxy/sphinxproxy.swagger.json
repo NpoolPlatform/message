@@ -327,6 +327,7 @@
         "Tron",
         "Aleo",
         "Ironfish",
+        "Depinc",
         "TFilecoin",
         "TBitcoin",
         "TEthereum",
@@ -335,7 +336,8 @@
         "TBinancecoin",
         "TTron",
         "TAleo",
-        "TIronfish"
+        "TIronfish",
+        "TDepinc"
       ],
       "default": "UnKnow",
       "title": "- Filecoin: mainnet\n - TFilecoin: testnet"
@@ -358,6 +360,7 @@
         "CoinTypealeo",
         "CoinTypeironfish",
         "CoinTypeusdtbep20",
+        "CoinTypedepinc",
         "CoinTypetfilecoin",
         "CoinTypetbitcoin",
         "CoinTypetethereum",
@@ -371,7 +374,8 @@
         "CoinTypetusdcerc20",
         "CoinTypetaleo",
         "CoinTypetironfish",
-        "CoinTypetusdtbep20"
+        "CoinTypetusdtbep20",
+        "CoinTypetdepinc"
       ],
       "default": "CoinTypeUnKnow",
       "title": "- CoinTypefilecoin: mainnet\n - CoinTypetfilecoin: testnet"

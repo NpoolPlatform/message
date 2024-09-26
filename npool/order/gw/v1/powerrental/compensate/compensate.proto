@@ -27,7 +27,6 @@ service Gateway {
 }
 
 message AdminCreateCompensateRequest {
-    string TargetAppID = 10;
     optional string GoodID = 20;
     optional string OrderID = 30;
     string CompensateFromID = 40;

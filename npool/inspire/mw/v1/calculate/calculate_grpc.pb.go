@@ -19,7 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_Calculate_FullMethodName = "/inspire.middleware.calculate.v1.Middleware/Calculate"
+	Middleware_Calculate_FullMethodName          = "/inspire.middleware.calculate.v1.Middleware/Calculate"
+	Middleware_ReconcileCalculate_FullMethodName = "/inspire.middleware.calculate.v1.Middleware/ReconcileCalculate"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -27,6 +28,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	Calculate(ctx context.Context, in *CalculateRequest, opts ...grpc.CallOption) (*CalculateResponse, error)
+	ReconcileCalculate(ctx context.Context, in *ReconcileCalculateRequest, opts ...grpc.CallOption) (*ReconcileCalculateResponse, error)
 }
 
 type middlewareClient struct {
@@ -46,11 +48,21 @@ func (c *middlewareClient) Calculate(ctx context.Context, in *CalculateRequest, 
 	return out, nil
 }
 
+func (c *middlewareClient) ReconcileCalculate(ctx context.Context, in *ReconcileCalculateRequest, opts ...grpc.CallOption) (*ReconcileCalculateResponse, error) {
+	out := new(ReconcileCalculateResponse)
+	err := c.cc.Invoke(ctx, Middleware_ReconcileCalculate_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
 	Calculate(context.Context, *CalculateRequest) (*CalculateResponse, error)
+	ReconcileCalculate(context.Context, *ReconcileCalculateRequest) (*ReconcileCalculateResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -60,6 +72,9 @@ type UnimplementedMiddlewareServer struct {
 
 func (UnimplementedMiddlewareServer) Calculate(context.Context, *CalculateRequest) (*CalculateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Calculate not implemented")
+}
+func (UnimplementedMiddlewareServer) ReconcileCalculate(context.Context, *ReconcileCalculateRequest) (*ReconcileCalculateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReconcileCalculate not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -92,6 +107,24 @@ func _Middleware_Calculate_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ReconcileCalculate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReconcileCalculateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ReconcileCalculate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ReconcileCalculate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ReconcileCalculate(ctx, req.(*ReconcileCalculateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -102,6 +135,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Calculate",
 			Handler:    _Middleware_Calculate_Handler,
+		},
+		{
+			MethodName: "ReconcileCalculate",
+			Handler:    _Middleware_ReconcileCalculate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

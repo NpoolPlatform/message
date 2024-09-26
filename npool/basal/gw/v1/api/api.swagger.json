@@ -123,7 +123,7 @@
         "Exported": {
           "type": "boolean"
         },
-        "Depracated": {
+        "Deprecated": {
           "type": "boolean"
         },
         "Offset": {
@@ -172,7 +172,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "Depracated": {
+        "Deprecated": {
           "type": "boolean"
         }
       }

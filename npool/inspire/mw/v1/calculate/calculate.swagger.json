@@ -47,6 +47,38 @@
           "Middleware"
         ]
       }
+    },
+    "/v1/calculate_ReconcileCalculate": {
+      "post": {
+        "operationId": "Middleware_ReconcileCalculate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ReconcileCalculateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ReconcileCalculateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
     }
   },
   "definitions": {
@@ -127,6 +159,9 @@
           "type": "string"
         },
         "OrderUserID": {
+          "type": "string"
+        },
+        "DirectContributorID": {
           "type": "string"
         },
         "GoodCoinTypeID": {
@@ -239,6 +274,25 @@
         },
         "Amount": {
           "type": "string"
+        }
+      }
+    },
+    "v1ReconcileCalculateRequest": {
+      "type": "object",
+      "properties": {
+        "OrderID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ReconcileCalculateResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/statementorderv1StatementReq"
+          }
         }
       }
     },

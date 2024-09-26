@@ -824,6 +824,12 @@
             "$ref": "#/definitions/v1RewardInfo"
           }
         },
+        "Requireds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RequiredInfo"
+          }
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64"
@@ -1019,6 +1025,16 @@
       ],
       "default": "DefaultGoodSaleMode"
     },
+    "v1GoodSettlementType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodSettlementType",
+        "GoodSettledByPaymentPercent",
+        "GoodSettledByPaymentAmount",
+        "GoodSettledByProfitPercent"
+      ],
+      "default": "DefaultGoodSettlementType"
+    },
     "v1GoodStartMode": {
       "type": "string",
       "enum": [
@@ -1131,6 +1147,46 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"index\""
+        }
+      }
+    },
+    "v1RequiredInfo": {
+      "type": "object",
+      "properties": {
+        "MainAppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"main_app_good_id\""
+        },
+        "RequiredAppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"required_app_good_id\""
+        },
+        "RequiredAppGoodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"required_app_good_name\""
+        },
+        "RequiredGoodTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"required_good_type\""
+        },
+        "RequiredGoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "RequiredGoodSettlementTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"required_good_settlement_type\""
+        },
+        "RequiredGoodSettlementType": {
+          "$ref": "#/definitions/v1GoodSettlementType"
+        },
+        "RequiredAppGoodUnitValue": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"required_app_good_unit_value\""
+        },
+        "Must": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"must\""
         }
       }
     },

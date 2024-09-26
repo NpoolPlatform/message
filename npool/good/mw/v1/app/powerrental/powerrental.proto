@@ -11,6 +11,7 @@ import "npool/good/mw/v1/app/good/description/description.proto";
 import "npool/good/mw/v1/app/good/poster/poster.proto";
 import "npool/good/mw/v1/app/good/label/label.proto";
 import "npool/good/mw/v1/app/good/display/name/name.proto";
+import "npool/good/mw/v1/app/good/required/required.proto";
 import "npool/good/mw/v1/app/good/display/color/color.proto";
 import "npool/good/mw/v1/app/good/stock/mining/mining.proto";
 import "npool/good/mw/v1/good/stock/stock.proto";
@@ -241,6 +242,7 @@ message PowerRental {
     repeated good.middleware.good1.stock.v1.MiningGoodStockInfo MiningGoodStocks = 1360;
     repeated good.middleware.app.good1.label.v1.LabelInfo Labels = 1370;
     repeated good.middleware.good1.coin.reward.v1.RewardInfo Rewards = 820;
+    repeated good.middleware.app.good1.required1.v1.RequiredInfo Requireds = 830;
 
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 2000;

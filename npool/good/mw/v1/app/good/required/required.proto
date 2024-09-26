@@ -5,6 +5,7 @@ package good.middleware.app.good1.required1.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/app/good/required";
 
 import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/good/v1/enums.proto";
 
 // Service Name
 service Middleware {
@@ -53,6 +54,25 @@ message Required {
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
     uint32 UpdatedAt = 1010;
+}
+
+message RequiredInfo {
+    // @inject_tag: sql:"main_app_good_id"
+    string MainAppGoodID = 10;
+    // @inject_tag: sql:"required_app_good_id"
+    string RequiredAppGoodID = 20;
+    // @inject_tag: sql:"required_app_good_name"
+    string RequiredAppGoodName = 30;
+    // @inject_tag: sql:"required_good_type"
+    string RequiredGoodTypeStr = 40;
+    basetypes.good.v1.GoodType RequiredGoodType = 50;
+    // @inject_tag: sql:"required_good_settlement_type"
+    string RequiredGoodSettlementTypeStr = 60;
+    basetypes.good.v1.GoodSettlementType RequiredGoodSettlementType = 70;
+    // @inject_tag: sql:"required_app_good_unit_value"
+    string RequiredAppGoodUnitValue = 80;
+    // @inject_tag: sql:"must"
+    uint32 Must = 100;
 }
 
 message Conds {

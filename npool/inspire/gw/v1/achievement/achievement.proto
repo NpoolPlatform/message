@@ -54,6 +54,7 @@ message GoodAchievement {
   string SuperiorCommission = 150;
 
   string AppGoodID = 160;
+  string AppGoodName = 170;
 }
 
 message Achievement {
@@ -65,12 +66,11 @@ message Achievement {
   string FirstName = 50;
   string LastName = 60;
   bool Kol = 70;
-  uint32 TotalInvitees = 80;
   repeated GoodAchievement Achievements = 90;
   string TotalCommission = 100;
   string SelfCommission = 110;
-  uint32 DirectInvites = 120;
-  uint32 IndirectInvites = 130;
+  uint32 DirectInvitees = 120;
+  uint32 IndirectInvitees = 130;
   string DirectConsumeAmount = 140;
   string InviteeConsumeAmount = 150;
   uint32 CreatedAt = 1000;

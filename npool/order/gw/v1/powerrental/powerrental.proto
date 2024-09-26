@@ -104,6 +104,7 @@ message PowerRentalOrder {
     basetypes.good.v1.GoodType GoodType = 90;
     basetypes.good.v1.BenefitType BenefitType = 100;
     string GoodName = 110;
+    string GoodQuantityUnit = 111;
     string AppGoodID = 120;
     string AppGoodName = 130;
     string OrderID = 140;

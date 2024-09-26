@@ -137,15 +137,15 @@
           "type": "string",
           "title": "@inject_tag: sql:\"self_commission\""
         },
-        "DirectInvites": {
+        "DirectInvitees": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"direct_invites\""
+          "title": "@inject_tag: sql:\"direct_invitees\""
         },
-        "IndirectInvites": {
+        "IndirectInvitees": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"indirect_invites\""
+          "title": "@inject_tag: sql:\"indirect_invitees\""
         },
         "DirectConsumeAmount": {
           "type": "string",

@@ -439,6 +439,10 @@
         "CommissionConfigType": {
           "$ref": "#/definitions/v1CommissionConfigType"
         },
+        "DirectContributorID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"direct_contributor_id\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -477,6 +481,9 @@
           "type": "string"
         },
         "OrderUserID": {
+          "type": "string"
+        },
+        "DirectContributorID": {
           "type": "string"
         },
         "GoodCoinTypeID": {
