@@ -15,6 +15,22 @@ service Gateway {
       body : "*"
     };
   }
+
+  rpc AdminUpdateOrderUser(AdminUpdateOrderUserRequest)
+      returns (AdminUpdateOrderUserResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/update/orderminingpooluser"
+      body : "*"
+    };
+  }
+
+  rpc AdminGetOrderUserProportion(AdminGetOrderUserProportionRequest)
+      returns (AdminGetOrderUserProportionResponse) {
+    option (google.api.http) = {
+      post : "/v1/admin/get/orderminingpooluserproportion"
+      body : "*"
+    };
+  }
 }
 
 message OrderUser {
@@ -38,3 +54,22 @@ message GetOrderUserRequest {
 }
 
 message GetOrderUserResponse { OrderUser Info = 10; }
+
+message AdminUpdateOrderUserRequest {
+  string EntID = 10;
+  string AppID = 20;
+  string UserID = 30;
+  string CoinTypeID = 40;
+  string Proportion = 50;
+}
+
+message AdminUpdateOrderUserResponse {}
+
+message AdminGetOrderUserProportionRequest {
+  string EntID = 10;
+  string AppID = 20;
+  string UserID = 30;
+  string CoinTypeID = 40;
+}
+
+message AdminGetOrderUserProportionResponse { string Proportion = 10; }

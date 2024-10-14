@@ -16,70 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/goodminingpooluser": {
-      "post": {
-        "operationId": "Gateway_AdminCreateGoodUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1AdminCreateGoodUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1AdminCreateGoodUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/admin/delete/goodminingpooluser": {
-      "post": {
-        "operationId": "Gateway_AdminDeleteGoodUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1AdminDeleteGoodUserResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1AdminDeleteGoodUserRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/admin/get/goodminingpoolusers": {
       "post": {
         "operationId": "Gateway_AdminGetGoodUsers",
@@ -138,48 +74,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1AdminCreateGoodUserRequest": {
-      "type": "object",
-      "properties": {
-        "CoinTypeIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "RootUserID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1AdminCreateGoodUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodUser"
-        }
-      }
-    },
-    "v1AdminDeleteGoodUserRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1AdminDeleteGoodUserResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1GoodUser"
         }
       }
     },

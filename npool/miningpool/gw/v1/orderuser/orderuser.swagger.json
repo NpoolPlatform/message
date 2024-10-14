@@ -16,6 +16,70 @@
     "application/json"
   ],
   "paths": {
+    "/v1/admin/get/orderminingpooluserproportion": {
+      "post": {
+        "operationId": "Gateway_AdminGetOrderUserProportion",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetOrderUserProportionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetOrderUserProportionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/orderminingpooluser": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateOrderUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateOrderUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateOrderUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/orderminingpooluser": {
       "post": {
         "operationId": "Gateway_GetOrderUser",
@@ -76,6 +140,54 @@
           }
         }
       }
+    },
+    "v1AdminGetOrderUserProportionRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminGetOrderUserProportionResponse": {
+      "type": "object",
+      "properties": {
+        "Proportion": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminUpdateOrderUserRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Proportion": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminUpdateOrderUserResponse": {
+      "type": "object"
     },
     "v1GetOrderUserRequest": {
       "type": "object",
