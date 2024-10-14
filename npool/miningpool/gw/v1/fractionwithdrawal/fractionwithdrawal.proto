@@ -38,6 +38,7 @@ message FractionWithdrawal {
   string AppID = 30;
   string UserID = 40;
   string OrderUserID = 50;
+  string CoinTypeID = 51;
   basetypes.miningpool.v1.FractionWithdrawState FractionWithdrawState = 60;
   uint32 WithdrawAt = 70;
   uint32 PromisePayAt = 80;
@@ -50,6 +51,7 @@ message CreateFractionWithdrawalRequest {
   string AppID = 10;
   string UserID = 20;
   string OrderUserID = 30;
+  string CoinTypeID = 40;
 }
 
 message CreateFractionWithdrawalResponse { FractionWithdrawal Info = 10; }

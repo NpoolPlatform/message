@@ -152,6 +152,9 @@
         },
         "OrderUserID": {
           "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
         }
       }
     },
@@ -191,6 +194,9 @@
           "type": "string"
         },
         "OrderUserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
           "type": "string"
         },
         "FractionWithdrawState": {
