@@ -147,10 +147,10 @@
         "EntID": {
           "type": "string"
         },
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
-        "UserID": {
+        "TargetUserID": {
           "type": "string"
         },
         "CoinTypeID": {
@@ -172,10 +172,10 @@
         "EntID": {
           "type": "string"
         },
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
-        "UserID": {
+        "TargetUserID": {
           "type": "string"
         },
         "CoinTypeID": {

@@ -57,8 +57,8 @@ message GetOrderUserResponse { OrderUser Info = 10; }
 
 message AdminUpdateOrderUserRequest {
   string EntID = 10;
-  string AppID = 20;
-  string UserID = 30;
+  string TargetAppID = 20;
+  string TargetUserID = 30;
   string CoinTypeID = 40;
   string Proportion = 50;
 }
@@ -67,8 +67,8 @@ message AdminUpdateOrderUserResponse {}
 
 message AdminGetOrderUserProportionRequest {
   string EntID = 10;
-  string AppID = 20;
-  string UserID = 30;
+  string TargetAppID = 20;
+  string TargetUserID = 30;
   string CoinTypeID = 40;
 }
 
