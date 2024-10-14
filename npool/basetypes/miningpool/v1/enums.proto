@@ -22,7 +22,6 @@ enum FractionWithdrawState {
   DefaultFractionWithdrawState = 0;
 
   FractionWithdrawStateWait = 10;
-  FractionWithdrawStateProccessing = 20;
   FractionWithdrawStateSuccess = 100;
   FractionWithdrawStateFailed = 110;
 }

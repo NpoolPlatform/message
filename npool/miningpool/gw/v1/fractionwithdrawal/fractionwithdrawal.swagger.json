@@ -171,7 +171,6 @@
       "enum": [
         "DefaultFractionWithdrawState",
         "FractionWithdrawStateWait",
-        "FractionWithdrawStateProccessing",
         "FractionWithdrawStateSuccess",
         "FractionWithdrawStateFailed"
       ],
