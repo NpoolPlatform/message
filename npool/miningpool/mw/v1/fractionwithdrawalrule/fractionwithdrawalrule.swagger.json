@@ -92,9 +92,11 @@
         "PoolCoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "PoolID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "EntIDs": {
-          "$ref": "#/definitions/v1StringSliceVal",
-          "title": "optional basetypes.v1.StringVal PoolID = 30;"
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
