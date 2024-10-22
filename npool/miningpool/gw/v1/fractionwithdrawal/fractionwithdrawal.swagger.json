@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/miningpoolfration": {
+    "/v1/create/miningpoolfrationwithdrawal": {
       "post": {
         "operationId": "Gateway_CreateFractionWithdrawal",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/get/miningpoolfration": {
+    "/v1/get/miningpoolfrationwithdrawal": {
       "post": {
         "operationId": "Gateway_GetFractionWithdrawal",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/get/user/miningpoolfrations": {
+    "/v1/get/user/miningpoolfrationwithdrawals": {
       "post": {
         "operationId": "Gateway_GetUserFractionWithdrawals",
         "responses": {

@@ -182,7 +182,8 @@ enum GoodCommentHideReason {
 */
 enum GoodState {
   DefaultGoodState = 0;
-  GoodStateWait = 10;
+  GoodStatePreWait = 9;
+  GoodStateWait = 10; // npool-schedual start proccess from wait state
 
   // for miningpoolstock
   GoodStateCreateGoodUser = 20;

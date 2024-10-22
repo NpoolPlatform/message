@@ -12,21 +12,21 @@ service Gateway {
   rpc CreateFractionWithdrawal(CreateFractionWithdrawalRequest)
       returns (CreateFractionWithdrawalResponse) {
     option (google.api.http) = {
-      post : "/v1/create/miningpoolfration"
+      post : "/v1/create/miningpoolfrationwithdrawal"
       body : "*"
     };
   }
   rpc GetFractionWithdrawal(GetFractionWithdrawalRequest)
       returns (GetFractionWithdrawalResponse) {
     option (google.api.http) = {
-      post : "/v1/get/miningpoolfration"
+      post : "/v1/get/miningpoolfrationwithdrawal"
       body : "*"
     };
   }
   rpc GetUserFractionWithdrawals(GetUserFractionWithdrawalsRequest)
       returns (GetUserFractionWithdrawalsResponse) {
     option (google.api.http) = {
-      post : "/v1/get/user/miningpoolfrations"
+      post : "/v1/get/user/miningpoolfrationwithdrawals"
       body : "*"
     };
   }

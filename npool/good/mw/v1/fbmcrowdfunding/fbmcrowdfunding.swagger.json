@@ -464,6 +464,7 @@
       "type": "string",
       "enum": [
         "DefaultGoodState",
+        "GoodStatePreWait",
         "GoodStateWait",
         "GoodStateCreateGoodUser",
         "GoodStateCheckHashRate",
