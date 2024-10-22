@@ -324,6 +324,7 @@
       "type": "string",
       "enum": [
         "DefaultMiningGoodStockState",
+        "MiningGoodStockStatePreWait",
         "MiningGoodStockStateWait",
         "MiningGoodStockStateCreateGoodUser",
         "MiningGoodStockStateCheckHashRate",

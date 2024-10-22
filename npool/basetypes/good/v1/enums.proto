@@ -206,6 +206,7 @@ enum GoodState {
 */
 enum MiningGoodStockState {
   DefaultMiningGoodStockState = 0;
+  MiningGoodStockStatePreWait = 9;
   MiningGoodStockStateWait = 10;
 
   MiningGoodStockStateCreateGoodUser = 20;
