@@ -620,6 +620,9 @@
         },
         "Total": {
           "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1MiningGoodStockState"
         }
       }
     },
