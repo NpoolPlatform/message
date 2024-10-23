@@ -162,6 +162,7 @@ message AdminUpdatePowerRentalRequest {
   optional bool Purchasable = 200;
   optional bool Online = 210;
   optional basetypes.good.v1.GoodStockMode StockMode = 220;
+  optional basetypes.good.v1.GoodState State = 221;
 
   // Good stock
   optional string Total = 240;
