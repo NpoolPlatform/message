@@ -6,6 +6,7 @@ option go_package = "github.com/NpoolPlatform/message/npool/good/gw/v1/good/stoc
 import "npool/basetypes/good/v1/enums.proto";
 
 message MiningGoodStockReq {
+  optional string EntID = 9;
   optional string PoolRootUserID = 10;
   optional string Total = 20;
   optional basetypes.good.v1.MiningGoodStockState State = 30;

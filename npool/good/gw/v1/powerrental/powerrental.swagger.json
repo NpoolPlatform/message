@@ -615,6 +615,9 @@
     "v1MiningGoodStockReq": {
       "type": "object",
       "properties": {
+        "EntID": {
+          "type": "string"
+        },
         "PoolRootUserID": {
           "type": "string"
         },
