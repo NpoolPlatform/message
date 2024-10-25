@@ -1,0 +1,113 @@
+syntax = "proto3";
+
+package inspire.middleware.user.reward.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/inspire/mw/v1/user/reward";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+
+// Service Name
+service Middleware {
+    rpc GetUserReward        (GetUserRewardRequest)        returns (GetUserRewardResponse)         {}
+    rpc GetUserRewards       (GetUserRewardsRequest)       returns (GetUserRewardsResponse)        {}
+    rpc ExistUserRewardConds (ExistUserRewardCondsRequest) returns (ExistUserRewardCondsResponse)  {}
+    rpc DeleteUserReward     (DeleteUserRewardRequest)     returns (DeleteUserRewardResponse)   {
+        option (google.api.http) = {
+            post: "/v1/userreward_DeleteUserReward"
+            body: "*"
+        };
+    }
+    rpc AddUserReward        (AddUserRewardRequest)        returns (AddUserRewardResponse)         {}
+    rpc SubUserReward        (SubUserRewardRequest)        returns (SubUserRewardResponse)         {}
+}
+
+message UserRewardReq {
+    optional uint32 ID            = 10;
+    optional string EntID         = 20;
+    optional string AppID         = 30;
+    optional string UserID        = 40;
+    optional string ActionCredits = 50;
+    optional string CouponAmount  = 70;
+    optional string CouponCashableAmount = 80;
+}
+
+message UserReward {
+    // @inject_tag: sql:"id"
+    uint32          ID              = 10;
+    // @inject_tag: sql:"ent_id"
+    string          EntID           = 20;
+    // @inject_tag: sql:"app_id"
+    string          AppID           = 30;
+    // @inject_tag: sql:"user_id"
+    string          UserID          = 40;
+    // @inject_tag: sql:"action_credits"
+    string          ActionCredits   = 50;
+    // @inject_tag: sql:"coupon_amount"
+    string          CouponAmount    = 70;
+    // @inject_tag: sql:"coupon_cashable_amount"
+    string          CouponCashableAmount  = 80;
+    // @inject_tag: sql:"created_at"
+    uint32          CreatedAt       = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32          UpdatedAt       = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal  EntID         = 10;
+    optional basetypes.v1.StringVal  AppID         = 20;
+    optional basetypes.v1.StringSliceVal EntIDs    = 30;
+    optional basetypes.v1.StringVal  UserID        = 40;
+    optional basetypes.v1.Uint32Val  ID            = 50;
+}
+
+message GetUserRewardsRequest {
+    Conds  Conds     = 10;
+    int32  Offset    = 20;
+    int32  Limit     = 30;
+}
+
+message GetUserRewardsResponse {
+    repeated UserReward Infos = 10;
+    uint32          Total = 20;
+}
+
+message GetUserRewardRequest {
+    string EntID  = 10;
+}
+
+message GetUserRewardResponse {
+    UserReward Info = 10;
+}
+
+message ExistUserRewardCondsRequest {
+  Conds Conds  = 10;
+}
+
+message ExistUserRewardCondsResponse {
+  bool Info = 10;
+}
+
+message DeleteUserRewardRequest {
+    UserRewardReq Info = 10;
+}
+
+message DeleteUserRewardResponse {
+    UserReward Info = 10;
+}
+
+message AddUserRewardRequest {
+    UserRewardReq Info = 10;
+}
+
+message AddUserRewardResponse {
+    UserReward Info = 10;
+}
+
+message SubUserRewardRequest {
+    UserRewardReq Info = 10;
+}
+
+message SubUserRewardResponse {
+    UserReward Info = 10;
+}

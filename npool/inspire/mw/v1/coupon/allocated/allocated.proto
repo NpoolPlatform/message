@@ -16,6 +16,12 @@ service Middleware {
       body : "*"
     };
   }
+  rpc CreateDirectCoupon(CreateDirectCouponRequest) returns (CreateDirectCouponResponse) {
+    option (google.api.http) = {
+      post : "/v1/allocated_CreateDirectCoupon"
+      body : "*"
+    };
+  }
   rpc UpdateCoupon(UpdateCouponRequest) returns (UpdateCouponResponse) {
     option (google.api.http) = {
       post : "/v1/allocated_UpdateCoupon"
@@ -56,6 +62,8 @@ message CouponReq {
   optional string UserID = 50;
   optional bool Used = 60;
   optional string UsedByOrderID = 70;
+  optional bool Cashable = 80;
+  optional string Extra = 90;
 }
 
 message Coupon {
@@ -110,6 +118,8 @@ message Coupon {
   basetypes.inspire.v1.CouponScope CouponScope = 260;
   // @inject_tag: sql:"cashable"
   bool Cashable = 270;
+  // @inject_tag: sql:"extra"
+  string Extra = 280;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 1000;
   // @inject_tag: sql:"updated_at"
@@ -127,11 +137,16 @@ message Conds {
   optional basetypes.v1.StringVal UsedByOrderID = 70;
   optional basetypes.v1.StringSliceVal EntIDs = 80;
   optional basetypes.v1.StringSliceVal UsedByOrderIDs = 90;
+  optional basetypes.v1.StringVal Extra = 100;
 }
 
 message CreateCouponRequest { CouponReq Info = 10; }
 
 message CreateCouponResponse { Coupon Info = 10; }
+
+message CreateDirectCouponRequest { CouponReq Info = 10; }
+
+message CreateDirectCouponResponse { Coupon Info = 10; }
 
 message UpdateCouponRequest { CouponReq Info = 10; }
 

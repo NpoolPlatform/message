@@ -295,9 +295,6 @@
         },
         "Blocked": {
           "type": "boolean"
-        },
-        "Locked": {
-          "type": "boolean"
         }
       }
     },

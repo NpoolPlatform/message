@@ -144,6 +144,9 @@
         },
         "PaidAt": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "StartAt": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },

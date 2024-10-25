@@ -19,9 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_CreateEvent_FullMethodName = "/inspire.gateway.event.v1.Gateway/CreateEvent"
-	Gateway_GetEvents_FullMethodName   = "/inspire.gateway.event.v1.Gateway/GetEvents"
-	Gateway_UpdateEvent_FullMethodName = "/inspire.gateway.event.v1.Gateway/UpdateEvent"
+	Gateway_CreateEvent_FullMethodName      = "/inspire.gateway.event.v1.Gateway/CreateEvent"
+	Gateway_GetEvents_FullMethodName        = "/inspire.gateway.event.v1.Gateway/GetEvents"
+	Gateway_UpdateEvent_FullMethodName      = "/inspire.gateway.event.v1.Gateway/UpdateEvent"
+	Gateway_AdminGetEvents_FullMethodName   = "/inspire.gateway.event.v1.Gateway/AdminGetEvents"
+	Gateway_AdminCreateEvent_FullMethodName = "/inspire.gateway.event.v1.Gateway/AdminCreateEvent"
+	Gateway_AdminUpdateEvent_FullMethodName = "/inspire.gateway.event.v1.Gateway/AdminUpdateEvent"
+	Gateway_AdminDeleteEvent_FullMethodName = "/inspire.gateway.event.v1.Gateway/AdminDeleteEvent"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -31,6 +35,10 @@ type GatewayClient interface {
 	CreateEvent(ctx context.Context, in *CreateEventRequest, opts ...grpc.CallOption) (*CreateEventResponse, error)
 	GetEvents(ctx context.Context, in *GetEventsRequest, opts ...grpc.CallOption) (*GetEventsResponse, error)
 	UpdateEvent(ctx context.Context, in *UpdateEventRequest, opts ...grpc.CallOption) (*UpdateEventResponse, error)
+	AdminGetEvents(ctx context.Context, in *AdminGetEventsRequest, opts ...grpc.CallOption) (*AdminGetEventsResponse, error)
+	AdminCreateEvent(ctx context.Context, in *AdminCreateEventRequest, opts ...grpc.CallOption) (*AdminCreateEventResponse, error)
+	AdminUpdateEvent(ctx context.Context, in *AdminUpdateEventRequest, opts ...grpc.CallOption) (*AdminUpdateEventResponse, error)
+	AdminDeleteEvent(ctx context.Context, in *AdminDeleteEventRequest, opts ...grpc.CallOption) (*AdminDeleteEventResponse, error)
 }
 
 type gatewayClient struct {
@@ -68,6 +76,42 @@ func (c *gatewayClient) UpdateEvent(ctx context.Context, in *UpdateEventRequest,
 	return out, nil
 }
 
+func (c *gatewayClient) AdminGetEvents(ctx context.Context, in *AdminGetEventsRequest, opts ...grpc.CallOption) (*AdminGetEventsResponse, error) {
+	out := new(AdminGetEventsResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminGetEvents_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) AdminCreateEvent(ctx context.Context, in *AdminCreateEventRequest, opts ...grpc.CallOption) (*AdminCreateEventResponse, error) {
+	out := new(AdminCreateEventResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminCreateEvent_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) AdminUpdateEvent(ctx context.Context, in *AdminUpdateEventRequest, opts ...grpc.CallOption) (*AdminUpdateEventResponse, error) {
+	out := new(AdminUpdateEventResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminUpdateEvent_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gatewayClient) AdminDeleteEvent(ctx context.Context, in *AdminDeleteEventRequest, opts ...grpc.CallOption) (*AdminDeleteEventResponse, error) {
+	out := new(AdminDeleteEventResponse)
+	err := c.cc.Invoke(ctx, Gateway_AdminDeleteEvent_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GatewayServer is the server API for Gateway service.
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
@@ -75,6 +119,10 @@ type GatewayServer interface {
 	CreateEvent(context.Context, *CreateEventRequest) (*CreateEventResponse, error)
 	GetEvents(context.Context, *GetEventsRequest) (*GetEventsResponse, error)
 	UpdateEvent(context.Context, *UpdateEventRequest) (*UpdateEventResponse, error)
+	AdminGetEvents(context.Context, *AdminGetEventsRequest) (*AdminGetEventsResponse, error)
+	AdminCreateEvent(context.Context, *AdminCreateEventRequest) (*AdminCreateEventResponse, error)
+	AdminUpdateEvent(context.Context, *AdminUpdateEventRequest) (*AdminUpdateEventResponse, error)
+	AdminDeleteEvent(context.Context, *AdminDeleteEventRequest) (*AdminDeleteEventResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -90,6 +138,18 @@ func (UnimplementedGatewayServer) GetEvents(context.Context, *GetEventsRequest) 
 }
 func (UnimplementedGatewayServer) UpdateEvent(context.Context, *UpdateEventRequest) (*UpdateEventResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateEvent not implemented")
+}
+func (UnimplementedGatewayServer) AdminGetEvents(context.Context, *AdminGetEventsRequest) (*AdminGetEventsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminGetEvents not implemented")
+}
+func (UnimplementedGatewayServer) AdminCreateEvent(context.Context, *AdminCreateEventRequest) (*AdminCreateEventResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminCreateEvent not implemented")
+}
+func (UnimplementedGatewayServer) AdminUpdateEvent(context.Context, *AdminUpdateEventRequest) (*AdminUpdateEventResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminUpdateEvent not implemented")
+}
+func (UnimplementedGatewayServer) AdminDeleteEvent(context.Context, *AdminDeleteEventRequest) (*AdminDeleteEventResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminDeleteEvent not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -158,6 +218,78 @@ func _Gateway_UpdateEvent_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Gateway_AdminGetEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminGetEventsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminGetEvents(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminGetEvents_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminGetEvents(ctx, req.(*AdminGetEventsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_AdminCreateEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCreateEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminCreateEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminCreateEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminCreateEvent(ctx, req.(*AdminCreateEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_AdminUpdateEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminUpdateEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminUpdateEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminUpdateEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminUpdateEvent(ctx, req.(*AdminUpdateEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Gateway_AdminDeleteEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminDeleteEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GatewayServer).AdminDeleteEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Gateway_AdminDeleteEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GatewayServer).AdminDeleteEvent(ctx, req.(*AdminDeleteEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -176,6 +308,22 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateEvent",
 			Handler:    _Gateway_UpdateEvent_Handler,
+		},
+		{
+			MethodName: "AdminGetEvents",
+			Handler:    _Gateway_AdminGetEvents_Handler,
+		},
+		{
+			MethodName: "AdminCreateEvent",
+			Handler:    _Gateway_AdminCreateEvent_Handler,
+		},
+		{
+			MethodName: "AdminUpdateEvent",
+			Handler:    _Gateway_AdminUpdateEvent_Handler,
+		},
+		{
+			MethodName: "AdminDeleteEvent",
+			Handler:    _Gateway_AdminDeleteEvent_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

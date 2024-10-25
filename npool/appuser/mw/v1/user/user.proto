@@ -70,7 +70,6 @@ message UserReq {
   optional bool Kol = 280;
   optional bool KolConfirmed = 290;
 
-  optional string ActionCredits = 300;
   optional string SelectedLangID = 310;
 }
 
@@ -183,8 +182,6 @@ message User {
   // @inject_tag: sql:"kol_confirmed"
   bool KolConfirmed = 430;
 
-  // @inject_tag: sql:"action_credits"
-  string ActionCredits = 440;
   // @inject_tag: sql:"selected_lang_id"
   optional string SelectedLangID = 450;
 

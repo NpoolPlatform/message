@@ -136,10 +136,6 @@
         "Kol": {
           "type": "boolean"
         },
-        "TotalInvitees": {
-          "type": "integer",
-          "format": "int64"
-        },
         "Achievements": {
           "type": "array",
           "items": {
@@ -152,11 +148,11 @@
         "SelfCommission": {
           "type": "string"
         },
-        "DirectInvites": {
+        "DirectInvitees": {
           "type": "integer",
           "format": "int64"
         },
-        "IndirectInvites": {
+        "IndirectInvitees": {
           "type": "integer",
           "format": "int64"
         },
@@ -312,6 +308,9 @@
           "type": "string"
         },
         "AppGoodID": {
+          "type": "string"
+        },
+        "AppGoodName": {
           "type": "string"
         }
       }

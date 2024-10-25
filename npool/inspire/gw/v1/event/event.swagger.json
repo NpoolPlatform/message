@@ -16,6 +16,134 @@
     "application/json"
   ],
   "paths": {
+    "/v1/admin/create/eventinspire": {
+      "post": {
+        "operationId": "Gateway_AdminCreateEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateEventResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminCreateEventRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/delete/eventinspire": {
+      "post": {
+        "operationId": "Gateway_AdminDeleteEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteEventResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteEventRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/get/eventinspires": {
+      "post": {
+        "operationId": "Gateway_AdminGetEvents",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetEventsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetEventsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/eventinspire": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateEventResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateEventRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/create/eventinspire": {
       "post": {
         "operationId": "Gateway_CreateEvent",
@@ -141,133 +269,132 @@
         }
       }
     },
-    "v1Coupon": {
+    "v1AdminCreateEventRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "EventType": {
+          "$ref": "#/definitions/v1UsedFor"
+        },
+        "Credits": {
+          "type": "string"
+        },
+        "CreditsPerUSD": {
+          "type": "string"
+        },
+        "MaxConsecutive": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "InviterLayers": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminCreateEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
+    },
+    "v1AdminDeleteEventRequest": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
+          "format": "int64"
         },
         "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
-        },
-        "CouponTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_type\""
-        },
-        "CouponType": {
-          "$ref": "#/definitions/v1CouponType"
-        },
-        "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
-        },
-        "Denomination": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"denomination\""
-        },
-        "Circulation": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"circulation\""
-        },
-        "IssuedBy": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"issued_by\""
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"start_at\""
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"end_at\""
-        },
-        "DurationDays": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"duration_days\""
-        },
-        "Message": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"message\""
-        },
-        "Name": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"name\""
-        },
-        "Allocated": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"allocated\""
-        },
-        "Threshold": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"threshold\""
-        },
-        "CouponConstraintStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_constraint\""
-        },
-        "CouponConstraint": {
-          "$ref": "#/definitions/v1CouponConstraint"
-        },
-        "Random": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"random\""
-        },
-        "CouponScopeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"coupon_scope\""
-        },
-        "CouponScope": {
-          "$ref": "#/definitions/v1CouponScope"
-        },
-        "CashableProbability": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"cashable_probability\""
-        },
-        "CreatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
+          "type": "string"
         }
       }
     },
-    "v1CouponConstraint": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponConstraint",
-        "Normal",
-        "PaymentThreshold"
-      ],
-      "default": "DefaultCouponConstraint"
+    "v1AdminDeleteEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
     },
-    "v1CouponScope": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponScope",
-        "AllGood",
-        "Whitelist",
-        "Blacklist"
-      ],
-      "default": "DefaultCouponScope"
+    "v1AdminGetEventsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
     },
-    "v1CouponType": {
-      "type": "string",
-      "enum": [
-        "DefaultCouponType",
-        "FixAmount",
-        "Discount"
-      ],
-      "default": "DefaultCouponType"
+    "v1AdminGetEventsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Event"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminUpdateEventRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Credits": {
+          "type": "string"
+        },
+        "CreditsPerUSD": {
+          "type": "string"
+        },
+        "MaxConsecutive": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "InviterLayers": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "AppGoodID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminUpdateEventResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
     },
     "v1CreateEventRequest": {
       "type": "object",
@@ -277,12 +404,6 @@
         },
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
-        },
-        "CouponIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         },
         "Credits": {
           "type": "string"
@@ -329,12 +450,6 @@
         },
         "EventType": {
           "$ref": "#/definitions/v1UsedFor"
-        },
-        "Coupons": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Coupon"
-          }
         },
         "Credits": {
           "type": "string"
@@ -420,12 +535,6 @@
         "AppID": {
           "type": "string"
         },
-        "CouponIDs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "Credits": {
           "type": "string"
         },
@@ -439,6 +548,9 @@
         "InviterLayers": {
           "type": "integer",
           "format": "int64"
+        },
+        "AppGoodID": {
+          "type": "string"
         }
       }
     },
@@ -484,10 +596,25 @@
         "OrderChildsRenew",
         "SimulateOrderProfit",
         "WithdrawReviewNotify",
+        "ConsecutiveLogin",
+        "GoodSocialSharing",
+        "FirstOrderCompleted",
+        "SetAddress",
+        "Set2FA",
+        "FirstBenefit",
+        "WriteComment",
+        "WriteRecommend",
+        "GoodScoring",
+        "SubmitTicket",
+        "IntallApp",
+        "SetNFTAvatar",
+        "SetPersonalImage",
+        "InternalTransfer",
         "Announcement",
         "ProductPage"
       ],
-      "default": "DefaultUsedFor"
+      "default": "DefaultUsedFor",
+      "title": "- ConsecutiveLogin: reward event"
     }
   }
 }

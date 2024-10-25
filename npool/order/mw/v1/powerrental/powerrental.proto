@@ -274,6 +274,7 @@ message Conds {
   optional basetypes.v1.Uint32Val CreatedAt = 700;
   optional basetypes.v1.Uint32Val UpdatedAt = 710;
   optional basetypes.v1.Uint32Val PaidAt = 720;
+  optional basetypes.v1.Uint32Val StartAt = 730;
 }
 
 message CreatePowerRentalOrderRequest { PowerRentalOrderReq Info = 10; }

@@ -84,3 +84,26 @@ enum CommissionConfigType {
   LegacyCommissionConfig = 30;
   WithoutCommissionConfig = 40;
 }
+
+enum TaskType {
+  DefaultTaskType = 0;
+
+  BaseTask   = 10;
+  GrowthTask = 20;
+}
+
+enum TaskState {
+  DefaultTaskState = 0;
+
+  NotStarted = 10;
+  InProgress = 20;
+  Done       = 30;
+}
+
+enum RewardState {
+  DefaultRewardState = 0;
+
+  UnIssued = 10;
+  Issued   = 20;
+  Revoked  = 30;
+}
