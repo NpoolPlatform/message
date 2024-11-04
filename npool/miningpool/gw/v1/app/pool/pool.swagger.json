@@ -293,9 +293,6 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
-        },
         "FeeRatio": {
           "type": "string"
         },
@@ -350,7 +347,7 @@
       "default": "DefaultCoinType",
       "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
     },
-    "v1FractionRule": {
+    "v1FractionWithdrawalRule": {
       "type": "object",
       "properties": {
         "EntID": {
@@ -363,10 +360,13 @@
           "type": "integer",
           "format": "int64"
         },
-        "MinAmount": {
+        "PayoutThreshold": {
           "type": "string"
         },
-        "WithdrawRate": {
+        "LeastWithdrawalAmount": {
+          "type": "string"
+        },
+        "WithdrawFee": {
           "type": "string"
         }
       }
@@ -421,14 +421,14 @@
         }
       }
     },
-    "v1MiningpoolType": {
+    "v1MiningPoolType": {
       "type": "string",
       "enum": [
-        "DefaultMiningpoolType",
+        "DefaultMiningPoolType",
         "F2Pool",
         "AntPool"
       ],
-      "default": "DefaultMiningpoolType"
+      "default": "DefaultMiningPoolType"
     },
     "v1Pool": {
       "type": "object",
@@ -446,8 +446,8 @@
         "PoolID": {
           "type": "string"
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
+        "MiningPoolType": {
+          "$ref": "#/definitions/v1MiningPoolType"
         },
         "Name": {
           "type": "string"
@@ -467,22 +467,13 @@
             "$ref": "#/definitions/v1Coin"
           }
         },
-        "FractionRules": {
+        "FractionWithdrawalRules": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1FractionRule"
+            "$ref": "#/definitions/v1FractionWithdrawalRule"
           }
         }
       }
-    },
-    "v1RevenueType": {
-      "type": "string",
-      "enum": [
-        "DefaultRevenueType",
-        "FPPS",
-        "PPLNS"
-      ],
-      "default": "DefaultRevenueType"
     }
   }
 }

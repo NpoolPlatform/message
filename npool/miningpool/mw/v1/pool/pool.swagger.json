@@ -53,7 +53,7 @@
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "MiningpoolType": {
+        "MiningPoolType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
         "Name": {
@@ -109,14 +109,14 @@
         }
       }
     },
-    "v1MiningpoolType": {
+    "v1MiningPoolType": {
       "type": "string",
       "enum": [
-        "DefaultMiningpoolType",
+        "DefaultMiningPoolType",
         "F2Pool",
         "AntPool"
       ],
-      "default": "DefaultMiningpoolType"
+      "default": "DefaultMiningPoolType"
     },
     "v1Pool": {
       "type": "object",
@@ -130,12 +130,12 @@
           "type": "string",
           "title": "@inject_tag: sql:\"ent_id\""
         },
-        "MiningpoolTypeStr": {
+        "MiningPoolTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_type\""
+          "title": "@inject_tag: sql:\"mining_pool_type\""
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
+        "MiningPoolType": {
+          "$ref": "#/definitions/v1MiningPoolType"
         },
         "Name": {
           "type": "string",
@@ -175,8 +175,8 @@
         "EntID": {
           "type": "string"
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
+        "MiningPoolType": {
+          "$ref": "#/definitions/v1MiningPoolType"
         },
         "Name": {
           "type": "string"

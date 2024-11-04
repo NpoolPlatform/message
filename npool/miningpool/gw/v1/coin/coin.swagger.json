@@ -185,9 +185,6 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
-        },
         "FeeRatio": {
           "type": "string"
         },
@@ -272,9 +269,6 @@
         "EntID": {
           "type": "string"
         },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
-        },
         "FeeRatio": {
           "type": "string"
         },
@@ -320,9 +314,6 @@
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
-        },
         "FeeRatio": {
           "type": "string"
         },
@@ -339,8 +330,8 @@
         "Remark": {
           "type": "string"
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
+        "MiningPoolType": {
+          "$ref": "#/definitions/v1MiningPoolType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -388,23 +379,14 @@
       "default": "DefaultCoinType",
       "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
     },
-    "v1MiningpoolType": {
+    "v1MiningPoolType": {
       "type": "string",
       "enum": [
-        "DefaultMiningpoolType",
+        "DefaultMiningPoolType",
         "F2Pool",
         "AntPool"
       ],
-      "default": "DefaultMiningpoolType"
-    },
-    "v1RevenueType": {
-      "type": "string",
-      "enum": [
-        "DefaultRevenueType",
-        "FPPS",
-        "PPLNS"
-      ],
-      "default": "DefaultRevenueType"
+      "default": "DefaultMiningPoolType"
     }
   }
 }

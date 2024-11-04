@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/miningpool/mw/v1/fraction/fraction.proto",
+    "title": "npool/miningpool/mw/v1/fractionwithdrawal/fractionwithdrawal.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/miningpool_DeleteFraction": {
+    "/v1/miningpool_DeleteFractionWithdrawal": {
       "post": {
-        "operationId": "Middleware_DeleteFraction",
+        "operationId": "Middleware_DeleteFractionWithdrawal",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteFractionResponse"
+              "$ref": "#/definitions/v1DeleteFractionWithdrawalResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteFractionRequest"
+              "$ref": "#/definitions/v1DeleteFractionWithdrawalRequest"
             }
           }
         ],
@@ -95,7 +95,10 @@
         "OrderUserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "WithdrawState": {
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "FractionWithdrawState": {
           "$ref": "#/definitions/v1Uint32Val"
         },
         "EntIDs": {
@@ -103,21 +106,21 @@
         }
       }
     },
-    "v1CreateFractionResponse": {
+    "v1CreateFractionWithdrawalResponse": {
       "type": "object"
     },
-    "v1DeleteFractionRequest": {
+    "v1DeleteFractionWithdrawalRequest": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1FractionReq"
+          "$ref": "#/definitions/v1FractionWithdrawalReq"
         }
       }
     },
-    "v1DeleteFractionResponse": {
+    "v1DeleteFractionWithdrawalResponse": {
       "type": "object"
     },
-    "v1ExistFractionCondsResponse": {
+    "v1ExistFractionWithdrawalCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -125,7 +128,7 @@
         }
       }
     },
-    "v1ExistFractionResponse": {
+    "v1ExistFractionWithdrawalResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -133,7 +136,17 @@
         }
       }
     },
-    "v1Fraction": {
+    "v1FractionWithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultFractionWithdrawState",
+        "FractionWithdrawStateWait",
+        "FractionWithdrawStateSuccess",
+        "FractionWithdrawStateFailed"
+      ],
+      "default": "DefaultFractionWithdrawState"
+    },
+    "v1FractionWithdrawal": {
       "type": "object",
       "properties": {
         "ID": {
@@ -157,12 +170,16 @@
           "type": "string",
           "title": "@inject_tag: sql:\"order_user_id\""
         },
-        "WithdrawStateStr": {
+        "CoinTypeID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"withdraw_state\""
+          "title": "@inject_tag: sql:\"coin_type_id\""
         },
-        "WithdrawState": {
-          "$ref": "#/definitions/v1WithdrawState"
+        "FractionWithdrawStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"fraction_withdraw_state\""
+        },
+        "FractionWithdrawState": {
+          "$ref": "#/definitions/v1FractionWithdrawState"
         },
         "WithdrawAt": {
           "type": "integer",
@@ -190,7 +207,7 @@
         }
       }
     },
-    "v1FractionReq": {
+    "v1FractionWithdrawalReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -209,8 +226,11 @@
         "OrderUserID": {
           "type": "string"
         },
-        "WithdrawState": {
-          "$ref": "#/definitions/v1WithdrawState"
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "FractionWithdrawState": {
+          "$ref": "#/definitions/v1FractionWithdrawState"
         },
         "WithdrawAt": {
           "type": "integer",
@@ -225,21 +245,21 @@
         }
       }
     },
-    "v1GetFractionResponse": {
+    "v1GetFractionWithdrawalResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Fraction"
+          "$ref": "#/definitions/v1FractionWithdrawal"
         }
       }
     },
-    "v1GetFractionsResponse": {
+    "v1GetFractionWithdrawalsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Fraction"
+            "$ref": "#/definitions/v1FractionWithdrawal"
           }
         },
         "Total": {
@@ -285,19 +305,8 @@
         }
       }
     },
-    "v1UpdateFractionResponse": {
+    "v1UpdateFractionWithdrawalResponse": {
       "type": "object"
-    },
-    "v1WithdrawState": {
-      "type": "string",
-      "enum": [
-        "DefaultWithdrawState",
-        "WithdrawStateWait",
-        "WithdrawStateProccessing",
-        "WithdrawStateSuccess",
-        "WithdrawStateFailed"
-      ],
-      "default": "DefaultWithdrawState"
     }
   }
 }

@@ -16,6 +16,70 @@
     "application/json"
   ],
   "paths": {
+    "/v1/admin/get/orderminingpooluserproportion": {
+      "post": {
+        "operationId": "Gateway_AdminGetOrderUserProportion",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetOrderUserProportionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminGetOrderUserProportionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/orderminingpooluser": {
+      "post": {
+        "operationId": "Gateway_AdminUpdateOrderUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateOrderUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminUpdateOrderUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/orderminingpooluser": {
       "post": {
         "operationId": "Gateway_GetOrderUser",
@@ -77,41 +141,53 @@
         }
       }
     },
-    "v1CoinType": {
-      "type": "string",
-      "enum": [
-        "DefaultCoinType",
-        "CoinTypeFileCoin",
-        "CoinTypeBitCoin",
-        "CoinTypeEthereum",
-        "CoinTypeUSDTerc20",
-        "CoinTypeSpacemesh",
-        "CoinTypeSolana",
-        "CoinTypeUSDTtrc20",
-        "CoinTypeBinanceCoin",
-        "CoinTypeTron",
-        "CoinTypeBinanceUSD",
-        "CoinTypeUSDCerc20",
-        "CoinTypeAleo",
-        "CoinTypeIronFish",
-        "CoinTypeUSDTbep20",
-        "CoinTypeTFileCoin",
-        "CoinTypeTBitCoin",
-        "CoinTypeTEthereum",
-        "CoinTypeTUSDTerc20",
-        "CoinTypeTSpacemesh",
-        "CoinTypeTSolana",
-        "CoinTypeTUSDTtrc20",
-        "CoinTypeTBinanceCoin",
-        "CoinTypeTTron",
-        "CoinTypeTBinanceUSD",
-        "CoinTypeTUSDCerc20",
-        "CoinTypeTAleo",
-        "CoinTypeTIronFish",
-        "CoinTypeTUSDTbep20"
-      ],
-      "default": "DefaultCoinType",
-      "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
+    "v1AdminGetOrderUserProportionRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminGetOrderUserProportionResponse": {
+      "type": "object",
+      "properties": {
+        "Proportion": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminUpdateOrderUserRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        },
+        "TargetAppID": {
+          "type": "string"
+        },
+        "TargetUserID": {
+          "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Proportion": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminUpdateOrderUserResponse": {
+      "type": "object"
     },
     "v1GetOrderUserRequest": {
       "type": "object",
@@ -135,14 +211,14 @@
         }
       }
     },
-    "v1MiningpoolType": {
+    "v1MiningPoolType": {
       "type": "string",
       "enum": [
-        "DefaultMiningpoolType",
+        "DefaultMiningPoolType",
         "F2Pool",
         "AntPool"
       ],
-      "default": "DefaultMiningpoolType"
+      "default": "DefaultMiningPoolType"
     },
     "v1OrderUser": {
       "type": "object",
@@ -160,9 +236,6 @@
         "UserID": {
           "type": "string"
         },
-        "CoinTypeID": {
-          "type": "string"
-        },
         "RootUserID": {
           "type": "string"
         },
@@ -172,26 +245,11 @@
         "Name": {
           "type": "string"
         },
-        "Proportion": {
-          "type": "string"
-        },
-        "RevenueAddress": {
-          "type": "string"
-        },
         "ReadPageLink": {
           "type": "string"
         },
-        "AutoPay": {
-          "type": "boolean"
-        },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
-        },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
-        },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
+        "MiningPoolType": {
+          "$ref": "#/definitions/v1MiningPoolType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -202,15 +260,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1RevenueType": {
-      "type": "string",
-      "enum": [
-        "DefaultRevenueType",
-        "FPPS",
-        "PPLNS"
-      ],
-      "default": "DefaultRevenueType"
     }
   }
 }

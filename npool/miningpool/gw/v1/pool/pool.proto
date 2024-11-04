@@ -41,13 +41,13 @@ service Gateway {
 message Pool {
   uint32 ID = 9;
   string EntID = 10;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 20;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 20;
   string Name = 30;
   string Site = 40;
   string Logo = 41;
   string Description = 50;
   repeated Coin Coins = 60;
-  repeated FractionRule FractionRules = 70;
+  repeated FractionWithdrawalRule FractionWithdrawalRules = 70;
   uint32 CreatedAt = 110;
   uint32 UpdatedAt = 120;
 }
@@ -57,7 +57,6 @@ message Coin {
   string PoolID = 20;
   string CoinTypeID = 30;
   basetypes.v1.CoinType CoinType = 31;
-  basetypes.miningpool.v1.RevenueType RevenueType = 40;
   string FeeRatio = 50;
   bool FixedRevenueAble = 60;
   string LeastTransferAmount = 70;
@@ -67,18 +66,19 @@ message Coin {
   uint32 UpdatedAt = 120;
 }
 
-message FractionRule {
+message FractionWithdrawalRule {
   string EntID = 10;
   string PoolCoinTypeID = 20;
   uint32 WithdrawInterval = 30;
-  string MinAmount = 40;
-  string WithdrawRate = 50;
+  string PayoutThreshold = 40;
+  string LeastWithdrawalAmount = 50;
+  string WithdrawFee = 60;
   uint32 CreatedAt = 110;
   uint32 UpdatedAt = 120;
 }
 
 message AdminCreatePoolRequest {
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 10;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 10;
   string Name = 20;
   string Site = 30;
   string Logo = 40;

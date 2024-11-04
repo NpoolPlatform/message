@@ -21,7 +21,7 @@ service Middleware {
 message PoolReq {
   optional uint32 ID = 9;
   optional string EntID = 10;
-  optional basetypes.miningpool.v1.MiningpoolType MiningpoolType = 20;
+  optional basetypes.miningpool.v1.MiningPoolType MiningPoolType = 20;
   optional string Name = 30;
   optional string Site = 40;
   optional string Logo = 50;
@@ -33,9 +33,9 @@ message Pool {
   uint32 ID = 10;
   // @inject_tag: sql:"ent_id"
   string EntID = 20;
-  // @inject_tag: sql:"miningpool_type"
-  string MiningpoolTypeStr = 30;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 31;
+  // @inject_tag: sql:"mining_pool_type"
+  string MiningPoolTypeStr = 30;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 31;
   // @inject_tag: sql:"name"
   string Name = 40;
   // @inject_tag: sql:"site"
@@ -53,7 +53,7 @@ message Pool {
 message Conds {
   optional basetypes.v1.Uint32Val ID = 9;
   optional basetypes.v1.StringVal EntID = 10;
-  optional basetypes.v1.Uint32Val MiningpoolType = 20;
+  optional basetypes.v1.Uint32Val MiningPoolType = 20;
   optional basetypes.v1.StringVal Name = 30;
   optional basetypes.v1.StringSliceVal EntIDs = 70;
 }

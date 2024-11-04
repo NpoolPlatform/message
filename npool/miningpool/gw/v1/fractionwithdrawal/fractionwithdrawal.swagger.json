@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/miningpool/gw/v1/fraction/fraction.proto",
+    "title": "npool/miningpool/gw/v1/fractionwithdrawal/fractionwithdrawal.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/create/miningpoolfrationwithdraw": {
+    "/v1/create/miningpoolfrationwithdrawal": {
       "post": {
-        "operationId": "Gateway_CreateFraction",
+        "operationId": "Gateway_CreateFractionWithdrawal",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateFractionResponse"
+              "$ref": "#/definitions/v1CreateFractionWithdrawalResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateFractionRequest"
+              "$ref": "#/definitions/v1CreateFractionWithdrawalRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/get/miningpoolfration": {
+    "/v1/get/miningpoolfrationwithdrawal": {
       "post": {
-        "operationId": "Gateway_GetFraction",
+        "operationId": "Gateway_GetFractionWithdrawal",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetFractionResponse"
+              "$ref": "#/definitions/v1GetFractionWithdrawalResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetFractionRequest"
+              "$ref": "#/definitions/v1GetFractionWithdrawalRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/get/user/miningpoolfrations": {
+    "/v1/get/user/miningpoolfrationwithdrawals": {
       "post": {
-        "operationId": "Gateway_GetUserFractions",
+        "operationId": "Gateway_GetUserFractionWithdrawals",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetUserFractionsResponse"
+              "$ref": "#/definitions/v1GetUserFractionWithdrawalsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetUserFractionsRequest"
+              "$ref": "#/definitions/v1GetUserFractionWithdrawalsRequest"
             }
           }
         ],
@@ -141,7 +141,7 @@
         }
       }
     },
-    "v1CreateFractionRequest": {
+    "v1CreateFractionWithdrawalRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -152,18 +152,31 @@
         },
         "OrderUserID": {
           "type": "string"
+        },
+        "CoinTypeID": {
+          "type": "string"
         }
       }
     },
-    "v1CreateFractionResponse": {
+    "v1CreateFractionWithdrawalResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Fraction"
+          "$ref": "#/definitions/v1FractionWithdrawal"
         }
       }
     },
-    "v1Fraction": {
+    "v1FractionWithdrawState": {
+      "type": "string",
+      "enum": [
+        "DefaultFractionWithdrawState",
+        "FractionWithdrawStateWait",
+        "FractionWithdrawStateSuccess",
+        "FractionWithdrawStateFailed"
+      ],
+      "default": "DefaultFractionWithdrawState"
+    },
+    "v1FractionWithdrawal": {
       "type": "object",
       "properties": {
         "ID": {
@@ -182,8 +195,11 @@
         "OrderUserID": {
           "type": "string"
         },
-        "WithdrawState": {
-          "$ref": "#/definitions/v1WithdrawState"
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "FractionWithdrawState": {
+          "$ref": "#/definitions/v1FractionWithdrawState"
         },
         "WithdrawAt": {
           "type": "integer",
@@ -206,7 +222,7 @@
         }
       }
     },
-    "v1GetFractionRequest": {
+    "v1GetFractionWithdrawalRequest": {
       "type": "object",
       "properties": {
         "EntID": {
@@ -220,15 +236,15 @@
         }
       }
     },
-    "v1GetFractionResponse": {
+    "v1GetFractionWithdrawalResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Fraction"
+          "$ref": "#/definitions/v1FractionWithdrawal"
         }
       }
     },
-    "v1GetUserFractionsRequest": {
+    "v1GetUserFractionWithdrawalsRequest": {
       "type": "object",
       "properties": {
         "AppID": {
@@ -247,13 +263,13 @@
         }
       }
     },
-    "v1GetUserFractionsResponse": {
+    "v1GetUserFractionWithdrawalsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Fraction"
+            "$ref": "#/definitions/v1FractionWithdrawal"
           }
         },
         "Total": {
@@ -261,17 +277,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1WithdrawState": {
-      "type": "string",
-      "enum": [
-        "DefaultWithdrawState",
-        "WithdrawStateWait",
-        "WithdrawStateProccessing",
-        "WithdrawStateSuccess",
-        "WithdrawStateFailed"
-      ],
-      "default": "DefaultWithdrawState"
     }
   }
 }

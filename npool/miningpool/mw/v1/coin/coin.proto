@@ -25,7 +25,6 @@ message CoinReq {
   optional string PoolID = 20;
   optional string CoinTypeID = 30;
   optional basetypes.v1.CoinType CoinType = 31;
-  optional basetypes.miningpool.v1.RevenueType RevenueType = 40;
   optional string FeeRatio = 50;
   optional bool FixedRevenueAble = 60;
   optional string LeastTransferAmount = 70;
@@ -45,9 +44,6 @@ message Coin {
   // @inject_tag: sql:"coin_type"
   string CoinTypeStr = 40;
   basetypes.v1.CoinType CoinType = 41;
-  // @inject_tag: sql:"revenue_type"
-  string RevenueTypeStr = 50;
-  basetypes.miningpool.v1.RevenueType RevenueType = 51;
   // @inject_tag: sql:"fee_ratio"
   string FeeRatio = 60;
   // @inject_tag: sql:"fixed_revenue_able"
@@ -58,9 +54,9 @@ message Coin {
   uint32 BenefitIntervalSeconds = 90;
   // @inject_tag: sql:"remark"
   string Remark = 100;
-  // @inject_tag: sql:"miningpool_type"
-  string MiningpoolTypeStr = 110;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 111;
+  // @inject_tag: sql:"mining_pool_type"
+  string MiningPoolTypeStr = 110;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 111;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 120;
   // @inject_tag: sql:"updated_at"
@@ -71,10 +67,10 @@ message Conds {
   optional basetypes.v1.Uint32Val ID = 9;
   optional basetypes.v1.StringVal EntID = 10;
   optional basetypes.v1.StringVal PoolID = 20;
-  optional basetypes.v1.StringVal CoinTypeID = 21;
-  optional basetypes.v1.Uint32Val MiningpoolType = 30;
+  optional basetypes.v1.StringSliceVal CoinTypeIDs = 21;
+  optional basetypes.v1.StringVal CoinTypeID = 22;
+  optional basetypes.v1.Uint32Val MiningPoolType = 30;
   optional basetypes.v1.Uint32Val CoinType = 31;
-  optional basetypes.v1.Uint32Val RevenueType = 40;
   optional basetypes.v1.BoolVal FixedRevenueAble = 50;
   optional basetypes.v1.StringSliceVal EntIDs = 60;
 }

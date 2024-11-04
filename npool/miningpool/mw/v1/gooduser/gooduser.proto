@@ -5,7 +5,6 @@ package miningpool.middleware.gooduser.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/gooduser";
 
 import "npool/basetypes/v1/conds.proto";
-import "npool/basetypes/v1/cointype.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
@@ -13,6 +12,8 @@ service Middleware {
   rpc CreateGoodUser(CreateGoodUserRequest) returns (CreateGoodUserResponse) {}
   rpc GetGoodUser(GetGoodUserRequest) returns (GetGoodUserResponse) {}
   rpc GetGoodUsers(GetGoodUsersRequest) returns (GetGoodUsersResponse) {}
+  rpc GetGoodUserHashRate(GetGoodUserHashRateRequest)
+      returns (GetGoodUserHashRateResponse) {}
   rpc ExistGoodUser(ExistGoodUserRequest) returns (ExistGoodUserResponse) {}
   rpc ExistGoodUserConds(ExistGoodUserCondsRequest)
       returns (ExistGoodUserCondsResponse) {}
@@ -22,7 +23,11 @@ service Middleware {
 message GoodUserReq {
   optional uint32 ID = 10;
   optional string EntID = 20;
-  optional string PoolCoinTypeID = 30;
+
+  // for check if cointypes is supported in the miningpool
+  // not stored in db
+  repeated string CoinTypeIDs = 30;
+
   optional string RootUserID = 40;
   optional string Name = 50;
   optional string ReadPageLink = 60;
@@ -41,19 +46,15 @@ message GoodUser {
   string ReadPageLink = 50;
   // @inject_tag: sql:"pool_id"
   string PoolID = 70;
-  // @inject_tag: sql:"miningpool_type"
-  string MiningpoolTypeStr = 80;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 81;
-  // @inject_tag: sql:"pool_coin_type_id"
-  string PoolCoinTypeID = 90;
-  // @inject_tag: sql:"coin_type"
-  string CoinTypeStr = 100;
-  basetypes.v1.CoinType CoinType = 101;
-  // @inject_tag: sql:"revenue_type"
-  string RevenueTypeStr = 110;
-  basetypes.miningpool.v1.RevenueType RevenueType = 111;
-  // @inject_tag: sql:"fee_ratio"
-  string FeeRatio = 120;
+  // @inject_tag: sql:"mining_pool_type"
+  string MiningPoolTypeStr = 80;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 81;
+  // @inject_tag: sql:"mining_pool_name"
+  string MiningPoolName = 90;
+  // @inject_tag: sql:"mining_pool_site"
+  string MiningPoolSite = 100;
+  // @inject_tag: sql:"mining_pool_logo"
+  string MiningPoolLogo = 110;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 130;
   // @inject_tag: sql:"updated_at"
@@ -64,9 +65,8 @@ message Conds {
   optional basetypes.v1.Uint32Val ID = 9;
   optional basetypes.v1.StringVal EntID = 10;
   optional basetypes.v1.StringVal Name = 20;
-  optional basetypes.v1.StringVal PoolCoinTypeID = 30;
-  optional basetypes.v1.StringVal RootUserID = 40;
-  optional basetypes.v1.StringSliceVal EntIDs = 50;
+  optional basetypes.v1.StringVal RootUserID = 30;
+  optional basetypes.v1.StringSliceVal EntIDs = 40;
 }
 
 message CreateGoodUserRequest { GoodUserReq Info = 10; }
@@ -87,6 +87,13 @@ message GetGoodUsersResponse {
   repeated GoodUser Infos = 10;
   uint32 Total = 20;
 }
+
+message GetGoodUserHashRateRequest {
+  string EntID = 10;
+  repeated string CoinTypeIDs = 30;
+}
+
+message GetGoodUserHashRateResponse { string HashRate = 10; }
 
 message ExistGoodUserRequest { string EntID = 10; }
 

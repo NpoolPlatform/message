@@ -49,13 +49,13 @@ message Pool {
   string EntID = 20;
   string AppID = 30;
   string PoolID = 40;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 50;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 50;
   string Name = 60;
   string Site = 70;
   string Logo = 71;
   string Description = 80;
   repeated Coin Coins = 90;
-  repeated FractionRule FractionRules = 100;
+  repeated FractionWithdrawalRule FractionWithdrawalRules = 100;
 }
 
 message Coin {
@@ -63,7 +63,6 @@ message Coin {
   string PoolID = 20;
   string CoinTypeID = 30;
   basetypes.v1.CoinType CoinType = 31;
-  basetypes.miningpool.v1.RevenueType RevenueType = 40;
   string FeeRatio = 50;
   bool FixedRevenueAble = 60;
   string LeastTransferAmount = 70;
@@ -71,12 +70,13 @@ message Coin {
   string Remark = 90;
 }
 
-message FractionRule {
+message FractionWithdrawalRule {
   string EntID = 10;
   string PoolCoinTypeID = 20;
   uint32 WithdrawInterval = 30;
-  string MinAmount = 40;
-  string WithdrawRate = 50;
+  string PayoutThreshold = 40;
+  string LeastWithdrawalAmount = 50;
+  string WithdrawFee = 60;
 }
 
 message AdminCreatePoolRequest {

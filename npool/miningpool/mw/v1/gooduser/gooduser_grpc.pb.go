@@ -19,12 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateGoodUser_FullMethodName     = "/miningpool.middleware.gooduser.v1.Middleware/CreateGoodUser"
-	Middleware_GetGoodUser_FullMethodName        = "/miningpool.middleware.gooduser.v1.Middleware/GetGoodUser"
-	Middleware_GetGoodUsers_FullMethodName       = "/miningpool.middleware.gooduser.v1.Middleware/GetGoodUsers"
-	Middleware_ExistGoodUser_FullMethodName      = "/miningpool.middleware.gooduser.v1.Middleware/ExistGoodUser"
-	Middleware_ExistGoodUserConds_FullMethodName = "/miningpool.middleware.gooduser.v1.Middleware/ExistGoodUserConds"
-	Middleware_DeleteGoodUser_FullMethodName     = "/miningpool.middleware.gooduser.v1.Middleware/DeleteGoodUser"
+	Middleware_CreateGoodUser_FullMethodName      = "/miningpool.middleware.gooduser.v1.Middleware/CreateGoodUser"
+	Middleware_GetGoodUser_FullMethodName         = "/miningpool.middleware.gooduser.v1.Middleware/GetGoodUser"
+	Middleware_GetGoodUsers_FullMethodName        = "/miningpool.middleware.gooduser.v1.Middleware/GetGoodUsers"
+	Middleware_GetGoodUserHashRate_FullMethodName = "/miningpool.middleware.gooduser.v1.Middleware/GetGoodUserHashRate"
+	Middleware_ExistGoodUser_FullMethodName       = "/miningpool.middleware.gooduser.v1.Middleware/ExistGoodUser"
+	Middleware_ExistGoodUserConds_FullMethodName  = "/miningpool.middleware.gooduser.v1.Middleware/ExistGoodUserConds"
+	Middleware_DeleteGoodUser_FullMethodName      = "/miningpool.middleware.gooduser.v1.Middleware/DeleteGoodUser"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	CreateGoodUser(ctx context.Context, in *CreateGoodUserRequest, opts ...grpc.CallOption) (*CreateGoodUserResponse, error)
 	GetGoodUser(ctx context.Context, in *GetGoodUserRequest, opts ...grpc.CallOption) (*GetGoodUserResponse, error)
 	GetGoodUsers(ctx context.Context, in *GetGoodUsersRequest, opts ...grpc.CallOption) (*GetGoodUsersResponse, error)
+	GetGoodUserHashRate(ctx context.Context, in *GetGoodUserHashRateRequest, opts ...grpc.CallOption) (*GetGoodUserHashRateResponse, error)
 	ExistGoodUser(ctx context.Context, in *ExistGoodUserRequest, opts ...grpc.CallOption) (*ExistGoodUserResponse, error)
 	ExistGoodUserConds(ctx context.Context, in *ExistGoodUserCondsRequest, opts ...grpc.CallOption) (*ExistGoodUserCondsResponse, error)
 	DeleteGoodUser(ctx context.Context, in *DeleteGoodUserRequest, opts ...grpc.CallOption) (*DeleteGoodUserResponse, error)
@@ -74,6 +76,15 @@ func (c *middlewareClient) GetGoodUsers(ctx context.Context, in *GetGoodUsersReq
 	return out, nil
 }
 
+func (c *middlewareClient) GetGoodUserHashRate(ctx context.Context, in *GetGoodUserHashRateRequest, opts ...grpc.CallOption) (*GetGoodUserHashRateResponse, error) {
+	out := new(GetGoodUserHashRateResponse)
+	err := c.cc.Invoke(ctx, Middleware_GetGoodUserHashRate_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) ExistGoodUser(ctx context.Context, in *ExistGoodUserRequest, opts ...grpc.CallOption) (*ExistGoodUserResponse, error) {
 	out := new(ExistGoodUserResponse)
 	err := c.cc.Invoke(ctx, Middleware_ExistGoodUser_FullMethodName, in, out, opts...)
@@ -108,6 +119,7 @@ type MiddlewareServer interface {
 	CreateGoodUser(context.Context, *CreateGoodUserRequest) (*CreateGoodUserResponse, error)
 	GetGoodUser(context.Context, *GetGoodUserRequest) (*GetGoodUserResponse, error)
 	GetGoodUsers(context.Context, *GetGoodUsersRequest) (*GetGoodUsersResponse, error)
+	GetGoodUserHashRate(context.Context, *GetGoodUserHashRateRequest) (*GetGoodUserHashRateResponse, error)
 	ExistGoodUser(context.Context, *ExistGoodUserRequest) (*ExistGoodUserResponse, error)
 	ExistGoodUserConds(context.Context, *ExistGoodUserCondsRequest) (*ExistGoodUserCondsResponse, error)
 	DeleteGoodUser(context.Context, *DeleteGoodUserRequest) (*DeleteGoodUserResponse, error)
@@ -126,6 +138,9 @@ func (UnimplementedMiddlewareServer) GetGoodUser(context.Context, *GetGoodUserRe
 }
 func (UnimplementedMiddlewareServer) GetGoodUsers(context.Context, *GetGoodUsersRequest) (*GetGoodUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodUsers not implemented")
+}
+func (UnimplementedMiddlewareServer) GetGoodUserHashRate(context.Context, *GetGoodUserHashRateRequest) (*GetGoodUserHashRateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGoodUserHashRate not implemented")
 }
 func (UnimplementedMiddlewareServer) ExistGoodUser(context.Context, *ExistGoodUserRequest) (*ExistGoodUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistGoodUser not implemented")
@@ -203,6 +218,24 @@ func _Middleware_GetGoodUsers_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_GetGoodUserHashRate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoodUserHashRateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).GetGoodUserHashRate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_GetGoodUserHashRate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).GetGoodUserHashRate(ctx, req.(*GetGoodUserHashRateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_ExistGoodUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExistGoodUserRequest)
 	if err := dec(in); err != nil {
@@ -275,6 +308,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetGoodUsers",
 			Handler:    _Middleware_GetGoodUsers_Handler,
+		},
+		{
+			MethodName: "GetGoodUserHashRate",
+			Handler:    _Middleware_GetGoodUserHashRate_Handler,
 		},
 		{
 			MethodName: "ExistGoodUser",

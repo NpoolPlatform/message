@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/miningpool/gw/v1/fractionrule/fractionrule.proto",
+    "title": "npool/miningpool/gw/v1/fractionwithdrawalrule/fractionwithdrawalrule.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/miningpoolfractionrule": {
+    "/v1/admin/create/miningpoolfractionwithdrawalrule": {
       "post": {
-        "operationId": "Gateway_AdminCreateFractionRule",
+        "operationId": "Gateway_AdminCreateFractionWithdrawalRule",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminCreateFractionRuleResponse"
+              "$ref": "#/definitions/v1AdminCreateFractionWithdrawalRuleResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminCreateFractionRuleRequest"
+              "$ref": "#/definitions/v1AdminCreateFractionWithdrawalRuleRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/admin/delete/miningpoolfractionrule": {
+    "/v1/admin/delete/miningpoolfractionwithdrawalrule": {
       "post": {
-        "operationId": "Gateway_AdminDeleteFractionRule",
+        "operationId": "Gateway_AdminDeleteFractionWithdrawalRule",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminDeleteFractionRuleResponse"
+              "$ref": "#/definitions/v1AdminDeleteFractionWithdrawalRuleResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminDeleteFractionRuleRequest"
+              "$ref": "#/definitions/v1AdminDeleteFractionWithdrawalRuleRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/admin/get/miningpoolfractionrules": {
+    "/v1/admin/get/miningpoolfractionwithdrawalrules": {
       "post": {
-        "operationId": "Gateway_AdminGetFractionRules",
+        "operationId": "Gateway_AdminGetFractionWithdrawalRules",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminGetFractionRulesResponse"
+              "$ref": "#/definitions/v1AdminGetFractionWithdrawalRulesResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminGetFractionRulesRequest"
+              "$ref": "#/definitions/v1AdminGetFractionWithdrawalRulesRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/admin/update/miningpoolfractionrule": {
+    "/v1/admin/update/miningpoolfractionwithdrawalrule": {
       "post": {
-        "operationId": "Gateway_AdminUpdateFractionRule",
+        "operationId": "Gateway_AdminUpdateFractionWithdrawalRule",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1AdminUpdateFractionRuleResponse"
+              "$ref": "#/definitions/v1AdminUpdateFractionWithdrawalRuleResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1AdminUpdateFractionRuleRequest"
+              "$ref": "#/definitions/v1AdminUpdateFractionWithdrawalRuleRequest"
             }
           }
         ],
@@ -173,7 +173,7 @@
         }
       }
     },
-    "v1AdminCreateFractionRuleRequest": {
+    "v1AdminCreateFractionWithdrawalRuleRequest": {
       "type": "object",
       "properties": {
         "PoolCoinTypeID": {
@@ -183,23 +183,26 @@
           "type": "integer",
           "format": "int64"
         },
-        "MinAmount": {
+        "PayoutThreshold": {
           "type": "string"
         },
-        "WithdrawRate": {
+        "LeastWithdrawalAmount": {
+          "type": "string"
+        },
+        "WithdrawFee": {
           "type": "string"
         }
       }
     },
-    "v1AdminCreateFractionRuleResponse": {
+    "v1AdminCreateFractionWithdrawalRuleResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1FractionRule"
+          "$ref": "#/definitions/v1FractionWithdrawalRule"
         }
       }
     },
-    "v1AdminDeleteFractionRuleRequest": {
+    "v1AdminDeleteFractionWithdrawalRuleRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -211,15 +214,15 @@
         }
       }
     },
-    "v1AdminDeleteFractionRuleResponse": {
+    "v1AdminDeleteFractionWithdrawalRuleResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1FractionRule"
+          "$ref": "#/definitions/v1FractionWithdrawalRule"
         }
       }
     },
-    "v1AdminGetFractionRulesRequest": {
+    "v1AdminGetFractionWithdrawalRulesRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -232,13 +235,13 @@
         }
       }
     },
-    "v1AdminGetFractionRulesResponse": {
+    "v1AdminGetFractionWithdrawalRulesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1FractionRule"
+            "$ref": "#/definitions/v1FractionWithdrawalRule"
           }
         },
         "Total": {
@@ -247,7 +250,7 @@
         }
       }
     },
-    "v1AdminUpdateFractionRuleRequest": {
+    "v1AdminUpdateFractionWithdrawalRuleRequest": {
       "type": "object",
       "properties": {
         "ID": {
@@ -261,19 +264,22 @@
           "type": "integer",
           "format": "int64"
         },
-        "MinAmount": {
+        "PayoutThreshold": {
           "type": "string"
         },
-        "WithdrawRate": {
+        "LeastWithdrawalAmount": {
+          "type": "string"
+        },
+        "WithdrawFee": {
           "type": "string"
         }
       }
     },
-    "v1AdminUpdateFractionRuleResponse": {
+    "v1AdminUpdateFractionWithdrawalRuleResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1FractionRule"
+          "$ref": "#/definitions/v1FractionWithdrawalRule"
         }
       }
     },
@@ -313,7 +319,7 @@
       "default": "DefaultCoinType",
       "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
     },
-    "v1FractionRule": {
+    "v1FractionWithdrawalRule": {
       "type": "object",
       "properties": {
         "ID": {
@@ -329,18 +335,24 @@
         "PoolCoinTypeID": {
           "type": "string"
         },
+        "CoinTypeID": {
+          "type": "string"
+        },
         "WithdrawInterval": {
           "type": "integer",
           "format": "int64"
         },
-        "MinAmount": {
+        "PayoutThreshold": {
           "type": "string"
         },
-        "WithdrawRate": {
+        "LeastWithdrawalAmount": {
           "type": "string"
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
+        "WithdrawFee": {
+          "type": "string"
+        },
+        "MiningPoolType": {
+          "$ref": "#/definitions/v1MiningPoolType"
         },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
@@ -355,14 +367,14 @@
         }
       }
     },
-    "v1MiningpoolType": {
+    "v1MiningPoolType": {
       "type": "string",
       "enum": [
-        "DefaultMiningpoolType",
+        "DefaultMiningPoolType",
         "F2Pool",
         "AntPool"
       ],
-      "default": "DefaultMiningpoolType"
+      "default": "DefaultMiningPoolType"
     }
   }
 }

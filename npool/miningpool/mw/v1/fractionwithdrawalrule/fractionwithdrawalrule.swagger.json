@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/miningpool/mw/v1/fractionrule/fractionrule.proto",
+    "title": "npool/miningpool/mw/v1/fractionwithdrawalrule/fractionwithdrawalrule.proto",
     "version": "version not set"
   },
   "tags": [
@@ -92,18 +92,21 @@
         "PoolCoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
+        "PoolID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v1CreateFractionRuleResponse": {
+    "v1CreateFractionWithdrawalRuleResponse": {
       "type": "object"
     },
-    "v1DeleteFractionRuleResponse": {
+    "v1DeleteFractionWithdrawalRuleResponse": {
       "type": "object"
     },
-    "v1ExistFractionRuleCondsResponse": {
+    "v1ExistFractionWithdrawalRuleCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -111,7 +114,7 @@
         }
       }
     },
-    "v1ExistFractionRuleResponse": {
+    "v1ExistFractionWithdrawalRuleResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -119,7 +122,7 @@
         }
       }
     },
-    "v1FractionRule": {
+    "v1FractionWithdrawalRule": {
       "type": "object",
       "properties": {
         "ID": {
@@ -139,25 +142,33 @@
           "type": "string",
           "title": "@inject_tag: sql:\"pool_coin_type_id\""
         },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
         "WithdrawInterval": {
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"withdraw_interval\""
         },
-        "MinAmount": {
+        "PayoutThreshold": {
           "type": "string",
-          "title": "@inject_tag: sql:\"min_amount\""
+          "title": "@inject_tag: sql:\"payout_threshold\""
         },
-        "WithdrawRate": {
+        "LeastWithdrawalAmount": {
           "type": "string",
-          "title": "@inject_tag: sql:\"withdraw_rate\""
+          "title": "@inject_tag: sql:\"least_withdrawal_amount\""
         },
-        "MiningpoolTypeStr": {
+        "WithdrawFee": {
           "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_type\""
+          "title": "@inject_tag: sql:\"withdraw_fee\""
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
+        "MiningPoolTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"mining_pool_type\""
+        },
+        "MiningPoolType": {
+          "$ref": "#/definitions/v1MiningPoolType"
         },
         "CoinTypeStr": {
           "type": "string",
@@ -178,7 +189,7 @@
         }
       }
     },
-    "v1FractionRuleReq": {
+    "v1FractionWithdrawalRuleReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -195,29 +206,32 @@
           "type": "integer",
           "format": "int64"
         },
-        "MinAmount": {
+        "PayoutThreshold": {
           "type": "string"
         },
-        "WithdrawRate": {
+        "LeastWithdrawalAmount": {
+          "type": "string"
+        },
+        "WithdrawFee": {
           "type": "string"
         }
       }
     },
-    "v1GetFractionRuleResponse": {
+    "v1GetFractionWithdrawalRuleResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1FractionRule"
+          "$ref": "#/definitions/v1FractionWithdrawalRule"
         }
       }
     },
-    "v1GetFractionRulesResponse": {
+    "v1GetFractionWithdrawalRulesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1FractionRule"
+            "$ref": "#/definitions/v1FractionWithdrawalRule"
           }
         },
         "Total": {
@@ -226,14 +240,14 @@
         }
       }
     },
-    "v1MiningpoolType": {
+    "v1MiningPoolType": {
       "type": "string",
       "enum": [
-        "DefaultMiningpoolType",
+        "DefaultMiningPoolType",
         "F2Pool",
         "AntPool"
       ],
-      "default": "DefaultMiningpoolType"
+      "default": "DefaultMiningPoolType"
     },
     "v1StringSliceVal": {
       "type": "object",
@@ -272,7 +286,7 @@
         }
       }
     },
-    "v1UpdateFractionRuleResponse": {
+    "v1UpdateFractionWithdrawalRuleResponse": {
       "type": "object"
     }
   }

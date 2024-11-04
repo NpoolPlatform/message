@@ -44,42 +44,6 @@
         }
       }
     },
-    "v1CoinType": {
-      "type": "string",
-      "enum": [
-        "DefaultCoinType",
-        "CoinTypeFileCoin",
-        "CoinTypeBitCoin",
-        "CoinTypeEthereum",
-        "CoinTypeUSDTerc20",
-        "CoinTypeSpacemesh",
-        "CoinTypeSolana",
-        "CoinTypeUSDTtrc20",
-        "CoinTypeBinanceCoin",
-        "CoinTypeTron",
-        "CoinTypeBinanceUSD",
-        "CoinTypeUSDCerc20",
-        "CoinTypeAleo",
-        "CoinTypeIronFish",
-        "CoinTypeUSDTbep20",
-        "CoinTypeTFileCoin",
-        "CoinTypeTBitCoin",
-        "CoinTypeTEthereum",
-        "CoinTypeTUSDTerc20",
-        "CoinTypeTSpacemesh",
-        "CoinTypeTSolana",
-        "CoinTypeTUSDTtrc20",
-        "CoinTypeTBinanceCoin",
-        "CoinTypeTTron",
-        "CoinTypeTBinanceUSD",
-        "CoinTypeTUSDCerc20",
-        "CoinTypeTAleo",
-        "CoinTypeTIronFish",
-        "CoinTypeTUSDTbep20"
-      ],
-      "default": "DefaultCoinType",
-      "title": "- CoinTypeFileCoin: mainnet\n - CoinTypeTFileCoin: testnet"
-    },
     "v1Conds": {
       "type": "object",
       "properties": {
@@ -90,9 +54,6 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "Name": {
-          "$ref": "#/definitions/v1StringVal"
-        },
-        "PoolCoinTypeID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "RootUserID": {
@@ -122,6 +83,14 @@
       "properties": {
         "Info": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1GetGoodUserHashRateResponse": {
+      "type": "object",
+      "properties": {
+        "HashRate": {
+          "type": "string"
         }
       }
     },
@@ -176,34 +145,24 @@
           "type": "string",
           "title": "@inject_tag: sql:\"pool_id\""
         },
-        "MiningpoolTypeStr": {
+        "MiningPoolTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"miningpool_type\""
+          "title": "@inject_tag: sql:\"mining_pool_type\""
         },
-        "MiningpoolType": {
-          "$ref": "#/definitions/v1MiningpoolType"
+        "MiningPoolType": {
+          "$ref": "#/definitions/v1MiningPoolType"
         },
-        "PoolCoinTypeID": {
+        "MiningPoolName": {
           "type": "string",
-          "title": "@inject_tag: sql:\"pool_coin_type_id\""
+          "title": "@inject_tag: sql:\"mining_pool_name\""
         },
-        "CoinTypeStr": {
+        "MiningPoolSite": {
           "type": "string",
-          "title": "@inject_tag: sql:\"coin_type\""
+          "title": "@inject_tag: sql:\"mining_pool_site\""
         },
-        "CoinType": {
-          "$ref": "#/definitions/v1CoinType"
-        },
-        "RevenueTypeStr": {
+        "MiningPoolLogo": {
           "type": "string",
-          "title": "@inject_tag: sql:\"revenue_type\""
-        },
-        "RevenueType": {
-          "$ref": "#/definitions/v1RevenueType"
-        },
-        "FeeRatio": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"fee_ratio\""
+          "title": "@inject_tag: sql:\"mining_pool_logo\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -227,8 +186,12 @@
         "EntID": {
           "type": "string"
         },
-        "PoolCoinTypeID": {
-          "type": "string"
+        "CoinTypeIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "for check if cointypes is supported in the miningpool\nnot stored in db"
         },
         "RootUserID": {
           "type": "string"
@@ -241,23 +204,14 @@
         }
       }
     },
-    "v1MiningpoolType": {
+    "v1MiningPoolType": {
       "type": "string",
       "enum": [
-        "DefaultMiningpoolType",
+        "DefaultMiningPoolType",
         "F2Pool",
         "AntPool"
       ],
-      "default": "DefaultMiningpoolType"
-    },
-    "v1RevenueType": {
-      "type": "string",
-      "enum": [
-        "DefaultRevenueType",
-        "FPPS",
-        "PPLNS"
-      ],
-      "default": "DefaultRevenueType"
+      "default": "DefaultMiningPoolType"
     },
     "v1StringSliceVal": {
       "type": "object",

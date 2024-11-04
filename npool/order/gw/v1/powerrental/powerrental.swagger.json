@@ -438,6 +438,12 @@
         },
         "AppSpotUnits": {
           "type": "string"
+        },
+        "OrderBenefitAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderBenefitAccountReq"
+          }
         }
       }
     },
@@ -624,6 +630,12 @@
         },
         "AppSpotUnits": {
           "type": "string"
+        },
+        "OrderBenefitAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderBenefitAccountReq"
+          }
         }
       }
     },
@@ -665,6 +677,12 @@
         },
         "AppSpotUnits": {
           "type": "string"
+        },
+        "OrderBenefitAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderBenefitAccountReq"
+          }
         }
       }
     },
@@ -798,6 +816,15 @@
       ],
       "default": "DefaultGoodDurationType"
     },
+    "v1GoodStockMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStockMode",
+        "GoodStockByMiningPool",
+        "GoodStockByUnique"
+      ],
+      "default": "DefaultGoodStockMode"
+    },
     "v1GoodType": {
       "type": "string",
       "enum": [
@@ -819,6 +846,36 @@
         "FullPayment"
       ],
       "default": "DefaultInvestmentType"
+    },
+    "v1OrderBenefitAccount": {
+      "type": "object",
+      "properties": {
+        "AccountID": {
+          "type": "string",
+          "title": "for order benefit account"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
+    },
+    "v1OrderBenefitAccountReq": {
+      "type": "object",
+      "properties": {
+        "AccountID": {
+          "type": "string",
+          "title": "for order benefit account"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
     },
     "v1OrderCouponInfo": {
       "type": "object",
@@ -878,10 +935,16 @@
         "OrderStatePaymentUnlockAccount",
         "OrderStatePaid",
         "OrderStateTransferGoodStockWaitStart",
+        "OrderStateCreateOrderUser",
+        "OrderStateSetProportion",
+        "OrderStateSetRevenueAddress",
         "OrderStateInService",
         "OrderStatePaymentTimeout",
         "OrderStatePreCancel",
         "OrderStatePreExpired",
+        "OrderStateDeleteProportion",
+        "OrderStateCheckProportion",
+        "OrderStateCheckPoolBalance",
         "OrderStateRestoreExpiredStock",
         "OrderStateRestoreCanceledStock",
         "OrderStateDeductLockedCommission",
@@ -893,7 +956,8 @@
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state"
+      "description": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStateCreateOrderUser: PreInService sub states for miningpool settings\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateDeleteProportion: PreExpired sub states for miningpool settings\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state",
+      "title": "clang-format off"
     },
     "v1OrderType": {
       "type": "string",
@@ -1096,18 +1160,18 @@
         "MiningPoolLogo": {
           "type": "string"
         },
-        "MiningPoolFeeRatio": {
+        "MiningPoolOrderUserID": {
           "type": "string"
         },
-        "MiningPoolLeastTransferAmount": {
+        "MiningPoolOrderUserName": {
           "type": "string"
         },
-        "MiningPoolBenefitIntervalSeconds": {
-          "type": "integer",
-          "format": "int64"
+        "MiningPoolReadPageLink": {
+          "type": "string"
         },
         "Units": {
-          "type": "string"
+          "type": "string",
+          "title": "TODO: benefit mode"
         },
         "GoodValueUSD": {
           "type": "string"
@@ -1143,6 +1207,9 @@
         },
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
+        },
+        "GoodStockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
         },
         "CancelState": {
           "$ref": "#/definitions/v1OrderState"
@@ -1202,6 +1269,13 @@
           "items": {
             "$ref": "#/definitions/v1FeeDuration"
           }
+        },
+        "OrderBenefitAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1OrderBenefitAccount"
+          },
+          "title": "order benefit account"
         },
         "CreatedAt": {
           "type": "integer",

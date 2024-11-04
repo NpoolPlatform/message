@@ -118,6 +118,9 @@
         "PaymentStates": {
           "$ref": "#/definitions/v1Uint32SliceVal"
         },
+        "GoodStockMode": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
         "CouponID": {
           "$ref": "#/definitions/v1StringVal",
           "title": "coupon"
@@ -378,6 +381,15 @@
         }
       }
     },
+    "v1GoodStockMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStockMode",
+        "GoodStockByMiningPool",
+        "GoodStockByUnique"
+      ],
+      "default": "DefaultGoodStockMode"
+    },
     "v1GoodType": {
       "type": "string",
       "enum": [
@@ -467,10 +479,16 @@
         "OrderStatePaymentUnlockAccount",
         "OrderStatePaid",
         "OrderStateTransferGoodStockWaitStart",
+        "OrderStateCreateOrderUser",
+        "OrderStateSetProportion",
+        "OrderStateSetRevenueAddress",
         "OrderStateInService",
         "OrderStatePaymentTimeout",
         "OrderStatePreCancel",
         "OrderStatePreExpired",
+        "OrderStateDeleteProportion",
+        "OrderStateCheckProportion",
+        "OrderStateCheckPoolBalance",
         "OrderStateRestoreExpiredStock",
         "OrderStateRestoreCanceledStock",
         "OrderStateDeductLockedCommission",
@@ -482,7 +500,8 @@
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "title": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state"
+      "description": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStateCreateOrderUser: PreInService sub states for miningpool settings\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateDeleteProportion: PreExpired sub states for miningpool settings\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state",
+      "title": "clang-format off"
     },
     "v1OrderType": {
       "type": "string",
@@ -796,6 +815,13 @@
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
         },
+        "GoodStockModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_stock_mode\""
+        },
+        "GoodStockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
+        },
         "CancelStateStr": {
           "type": "string",
           "title": "Power rental state information\n@inject_tag: sql:\"cancel_state\""
@@ -899,6 +925,10 @@
           },
           "title": "Fee duration infos"
         },
+        "PoolOrderUserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"mining_pool_order_user_id\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -978,6 +1008,9 @@
         "InvestmentType": {
           "$ref": "#/definitions/v1InvestmentType"
         },
+        "GoodStockMode": {
+          "$ref": "#/definitions/v1GoodStockMode"
+        },
         "OrderState": {
           "$ref": "#/definitions/v1OrderState",
           "title": "Order state base"
@@ -1049,6 +1082,10 @@
             "$ref": "#/definitions/v1PaymentTransferReq"
           },
           "title": "Payment transfers"
+        },
+        "PoolOrderUserID": {
+          "type": "string",
+          "title": "miningpool order user"
         }
       }
     },

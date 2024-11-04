@@ -48,7 +48,7 @@ message RootUser {
   string AuthToken = 60;
   bool Authed = 70;
   string Remark = 80;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 90;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 90;
   uint32 CreatedAt = 100;
   uint32 UpdatedAt = 110;
 }

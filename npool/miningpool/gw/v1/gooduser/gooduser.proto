@@ -5,29 +5,14 @@ package miningpool.gateway.gooduser.v1;
 option go_package = "github.com/NpoolPlatform/message/npool/miningpool/gw/v1/gooduser";
 
 import "google/api/annotations.proto";
-import "npool/basetypes/v1/cointype.proto";
 import "npool/basetypes/miningpool/v1/enums.proto";
 
 // Service Name
 service Gateway {
-  rpc AdminCreateGoodUser(AdminCreateGoodUserRequest)
-      returns (AdminCreateGoodUserResponse) {
-    option (google.api.http) = {
-      post : "/v1/admin/create/goodminingpooluser"
-      body : "*"
-    };
-  }
   rpc AdminGetGoodUsers(AdminGetGoodUsersRequest)
       returns (AdminGetGoodUsersResponse) {
     option (google.api.http) = {
       post : "/v1/admin/get/goodminingpoolusers"
-      body : "*"
-    };
-  }
-  rpc AdminDeleteGoodUser(AdminDeleteGoodUserRequest)
-      returns (AdminDeleteGoodUserResponse) {
-    option (google.api.http) = {
-      post : "/v1/admin/delete/goodminingpooluser"
       body : "*"
     };
   }
@@ -40,22 +25,10 @@ message GoodUser {
   string Name = 40;
   string ReadPageLink = 50;
   string PoolID = 70;
-  basetypes.miningpool.v1.MiningpoolType MiningpoolType = 80;
-  string PoolCoinTypeID = 90;
-  string CoinTypeID = 100;
-  basetypes.v1.CoinType CoinType = 101;
-  basetypes.miningpool.v1.RevenueType RevenueType = 110;
-  string FeeRatio = 120;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 80;
   uint32 CreatedAt = 130;
   uint32 UpdatedAt = 140;
 }
-
-message AdminCreateGoodUserRequest {
-  string PoolCoinTypeID = 10;
-  string RootUserID = 20;
-}
-
-message AdminCreateGoodUserResponse { GoodUser Info = 10; }
 
 message AdminGetGoodUsersRequest {
   int32 Offset = 20;
@@ -66,10 +39,3 @@ message AdminGetGoodUsersResponse {
   repeated GoodUser Infos = 10;
   uint32 Total = 20;
 }
-
-message AdminDeleteGoodUserRequest {
-  uint32 ID = 10;
-  string EntID = 20;
-}
-
-message AdminDeleteGoodUserResponse { GoodUser Info = 10; }

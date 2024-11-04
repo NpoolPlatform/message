@@ -1,0 +1,117 @@
+syntax = "proto3";
+
+package miningpool.middleware.fractionwithdrawalrule.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/miningpool/mw/v1/fractionwithdrawalrule";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/v1/cointype.proto";
+import "npool/basetypes/miningpool/v1/enums.proto";
+
+// Service Name
+service Middleware {
+  rpc CreateFractionWithdrawalRule(CreateFractionWithdrawalRuleRequest)
+      returns (CreateFractionWithdrawalRuleResponse) {}
+  rpc GetFractionWithdrawalRule(GetFractionWithdrawalRuleRequest)
+      returns (GetFractionWithdrawalRuleResponse) {}
+  rpc GetFractionWithdrawalRules(GetFractionWithdrawalRulesRequest)
+      returns (GetFractionWithdrawalRulesResponse) {}
+  rpc ExistFractionWithdrawalRule(ExistFractionWithdrawalRuleRequest)
+      returns (ExistFractionWithdrawalRuleResponse) {}
+  rpc ExistFractionWithdrawalRuleConds(ExistFractionWithdrawalRuleCondsRequest)
+      returns (ExistFractionWithdrawalRuleCondsResponse) {}
+  rpc UpdateFractionWithdrawalRule(UpdateFractionWithdrawalRuleRequest)
+      returns (UpdateFractionWithdrawalRuleResponse) {}
+  rpc DeleteFractionWithdrawalRule(DeleteFractionWithdrawalRuleRequest)
+      returns (DeleteFractionWithdrawalRuleResponse) {}
+}
+
+message FractionWithdrawalRuleReq {
+  optional uint32 ID = 10;
+  optional string EntID = 20;
+  optional string PoolCoinTypeID = 30;
+  optional uint32 WithdrawInterval = 50;
+  optional string PayoutThreshold = 60;
+  optional string LeastWithdrawalAmount = 70;
+  optional string WithdrawFee = 80;
+}
+
+message FractionWithdrawalRule {
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"pool_id"
+  string PoolID = 29;
+  // @inject_tag: sql:"pool_coin_type_id"
+  string PoolCoinTypeID = 30;
+  // @inject_tag: sql:"coin_type_id"
+  string CoinTypeID = 31;
+  // @inject_tag: sql:"withdraw_interval"
+  uint32 WithdrawInterval = 40;
+  // @inject_tag: sql:"payout_threshold"
+  string PayoutThreshold = 50;
+  // @inject_tag: sql:"least_withdrawal_amount"
+  string LeastWithdrawalAmount = 60;
+  // @inject_tag: sql:"withdraw_fee"
+  string WithdrawFee = 70;
+  // @inject_tag: sql:"mining_pool_type"
+  string MiningPoolTypeStr = 80;
+  basetypes.miningpool.v1.MiningPoolType MiningPoolType = 81;
+  // @inject_tag: sql:"coin_type"
+  string CoinTypeStr = 90;
+  basetypes.v1.CoinType CoinType = 91;
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 100;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 110;
+}
+
+message Conds {
+  optional basetypes.v1.Uint32Val ID = 9;
+  optional basetypes.v1.StringVal EntID = 10;
+  optional basetypes.v1.StringVal PoolCoinTypeID = 20;
+  optional basetypes.v1.StringVal PoolID = 30;
+  optional basetypes.v1.StringSliceVal EntIDs = 50;
+}
+
+message CreateFractionWithdrawalRuleRequest {
+  FractionWithdrawalRuleReq Info = 10;
+}
+
+message CreateFractionWithdrawalRuleResponse {}
+
+message GetFractionWithdrawalRuleRequest { string EntID = 10; }
+
+message GetFractionWithdrawalRuleResponse { FractionWithdrawalRule Info = 10; }
+
+message GetFractionWithdrawalRulesRequest {
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetFractionWithdrawalRulesResponse {
+  repeated FractionWithdrawalRule Infos = 10;
+  uint32 Total = 20;
+}
+
+message ExistFractionWithdrawalRuleRequest { string EntID = 10; }
+
+message ExistFractionWithdrawalRuleResponse { bool Info = 10; }
+
+message ExistFractionWithdrawalRuleCondsRequest { Conds Conds = 10; }
+
+message ExistFractionWithdrawalRuleCondsResponse { bool Info = 10; }
+
+message UpdateFractionWithdrawalRuleRequest {
+  FractionWithdrawalRuleReq Info = 10;
+}
+
+message UpdateFractionWithdrawalRuleResponse {}
+
+message DeleteFractionWithdrawalRuleRequest {
+  FractionWithdrawalRuleReq Info = 10;
+}
+
+message DeleteFractionWithdrawalRuleResponse {}
