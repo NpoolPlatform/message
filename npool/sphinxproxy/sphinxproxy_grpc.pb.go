@@ -8,6 +8,7 @@ package sphinxproxy
 
 import (
 	context "context"
+	v1 "github.com/NpoolPlatform/message/npool/basetypes/v1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -24,7 +25,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SphinxProxyClient interface {
 	// sync
-	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
+	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*v1.VersionResponse, error)
 	// async stream
 	ProxyConnnection(ctx context.Context, opts ...grpc.CallOption) (SphinxProxy_ProxyConnnectionClient, error)
 }
@@ -37,8 +38,8 @@ func NewSphinxProxyClient(cc grpc.ClientConnInterface) SphinxProxyClient {
 	return &sphinxProxyClient{cc}
 }
 
-func (c *sphinxProxyClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error) {
-	out := new(VersionResponse)
+func (c *sphinxProxyClient) Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*v1.VersionResponse, error) {
+	out := new(v1.VersionResponse)
 	err := c.cc.Invoke(ctx, "/sphinx.proxy.v1.SphinxProxy/Version", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -82,7 +83,7 @@ func (x *sphinxProxyProxyConnnectionClient) Recv() (*DataElement, error) {
 // for forward compatibility
 type SphinxProxyServer interface {
 	// sync
-	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
+	Version(context.Context, *emptypb.Empty) (*v1.VersionResponse, error)
 	// async stream
 	ProxyConnnection(SphinxProxy_ProxyConnnectionServer) error
 	mustEmbedUnimplementedSphinxProxyServer()
@@ -92,7 +93,7 @@ type SphinxProxyServer interface {
 type UnimplementedSphinxProxyServer struct {
 }
 
-func (UnimplementedSphinxProxyServer) Version(context.Context, *emptypb.Empty) (*VersionResponse, error) {
+func (UnimplementedSphinxProxyServer) Version(context.Context, *emptypb.Empty) (*v1.VersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Version not implemented")
 }
 func (UnimplementedSphinxProxyServer) ProxyConnnection(SphinxProxy_ProxyConnnectionServer) error {
