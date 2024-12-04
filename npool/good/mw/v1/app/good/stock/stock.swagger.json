@@ -30,7 +30,8 @@
           "type": "string"
         },
         "AppSpotUnits": {
-          "type": "string"
+          "type": "string",
+          "title": "Locked from app spot quantity"
         }
       }
     },
@@ -56,6 +57,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -108,6 +110,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Stock"
           }
         }
@@ -216,12 +219,14 @@
         "MiningGoodStocks": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1MiningGoodStockInfo"
           }
         },
         "AppMiningGoodStocks": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1StockInfo"
           }
         },

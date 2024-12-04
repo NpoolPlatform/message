@@ -39,6 +39,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -196,6 +197,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Fee"
           }
         },
@@ -224,7 +226,8 @@
         "GoodSettledByPaymentAmount",
         "GoodSettledByProfitPercent"
       ],
-      "default": "DefaultGoodSettlementType"
+      "default": "DefaultGoodSettlementType",
+      "title": "- GoodSettledByProfitPercent: Percent in default"
     },
     "v1GoodType": {
       "type": "string",

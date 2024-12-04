@@ -39,6 +39,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -162,7 +163,8 @@
           "type": "boolean"
         },
         "Locked": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "Locked when collecting"
         },
         "LockedBy": {
           "$ref": "#/definitions/v1AccountLockedBy"
@@ -171,7 +173,8 @@
           "type": "boolean"
         },
         "CollectingTID": {
-          "type": "string"
+          "type": "string",
+          "title": "Used to free the address when transaction done"
         },
         "Incoming": {
           "type": "string"
@@ -275,6 +278,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Account"
           }
         },

@@ -168,6 +168,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -229,6 +230,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Withdraw"
           }
         },
@@ -260,6 +262,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Withdraw"
           }
         },
@@ -294,6 +297,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Withdraw"
           }
         },
@@ -318,7 +322,8 @@
         "Username",
         "Reset"
       ],
-      "default": "DefaultSignMethod"
+      "default": "DefaultSignMethod",
+      "title": "- Mobile: For signup, signin, verify\n - Email: For signup, signin, verify\n - Twitter: For signin\n - Github: For signin\n - Facebook: For signin\n - Linkedin: For signin\n - Wechat: For signin\n - Google: For signin, verify\n - Username: For signup, signin\n - Reset: For Reset Password in all auth factors are lost"
     },
     "v1Withdraw": {
       "type": "object",
@@ -396,7 +401,8 @@
         "SpendSuccessfulBalance",
         "Successful"
       ],
-      "default": "DefaultWithdrawState"
+      "default": "DefaultWithdrawState",
+      "title": "- ReturnRejectedBalance: -\u003e Rejected\n - Rejected: ReturnRejectedBalance \u003c- (rollback)\n - ReturnFailBalance: -\u003e TransactionFail\n - TransactionFail: ReturnFailBalance \u003c-\n - SpendSuccessfulBalance: -\u003e Successful\n - Successful: SpendSuccessfulBalance \u003c-"
     }
   }
 }

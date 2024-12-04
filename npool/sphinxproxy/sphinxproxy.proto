@@ -18,62 +18,16 @@ service SphinxProxy {
       body : "*"
     };
   }
-  rpc GetBalance(GetBalanceRequest) returns (GetBalanceResponse) {
-    option (google.api.http) = {
-      post : "/v1/get/balance"
-      body : "*"
-    };
-  }
-  rpc CreateWallet(CreateWalletRequest) returns (CreateWalletResponse) {
-    option (google.api.http) = {
-      post : "/v1/create/wallet"
-      body : "*"
-    };
-  }
-  rpc CreateTransaction(CreateTransactionRequest)
-      returns (CreateTransactionResponse) {
-    option (google.api.http) = {
-      post : "/v1/create/transaction"
-      body : "*"
-    };
-  }
-  rpc UpdateTransaction(UpdateTransactionRequest)
-      returns (UpdateTransactionResponse) {
-    option (google.api.http) = {
-      post : "/v1/update/transaction"
-      body : "*"
-    };
-  }
-  rpc GetTransaction(GetTransactionRequest) returns (GetTransactionResponse) {
-    option (google.api.http) = {
-      post : "/v1/get/transaction"
-      body : "*"
-    };
-  }
-  rpc GetTransactions(GetTransactionsRequest)
-      returns (GetTransactionsResponse) {
-    option (google.api.http) = {
-      post : "/v1/get/transactions"
-      body : "*"
-    };
-  }
-  rpc GetEstimateGas(GetEstimateGasRequest) returns (GetEstimateGasResponse) {
-    option (google.api.http) = {
-      post : "/v1/get/estimate/gas"
-      body : "*"
-    };
-  }
   // async stream
-  rpc ProxyPlugin(stream ProxyPluginResponse)
-      returns (stream ProxyPluginRequest) {}
-  rpc ProxySign(stream ProxySignResponse) returns (stream ProxySignRequest) {}
+  rpc ProxyConnnection(stream DataElement)
+      returns (stream DataElement) {}
 }
 
-enum RPCExitCode {
-  RPCExitCodeUnKnow = 0;
+enum ErrorCode {
+  RErrorCodeUnKnow = 0;
   // proxy communicate with plugin and sign grpc error code
   // common error code start from 1
-  RPCExitCodeNotSupportCoin = 1;
+  ErrorCodeNotSupportCoin = 1;
   // plugin error code start from 50
   // sign error code start from 100
 }
@@ -81,195 +35,10 @@ enum RPCExitCode {
 // ############################# sync
 message VersionResponse { string Info = 100; }
 
-message GetBalanceRequest {
-  string Name = 100;
-  string Address = 110;
-}
-
-message BalanceInfo {
-  double Balance = 100;
-  string BalanceStr = 110;
-}
-
-message GetEstimateGasRequest { string Name = 100; }
-
-message GetEstimateGasResponse {
-  string Fee = 100;
-  string GasLimit = 110;
-  string GasPrice = 120;
-  string TipsPrice = 130;
-  uint64 BlockNum = 140;
-}
-
-message GetBalanceResponse { BalanceInfo Info = 100; }
-
-message CreateWalletRequest { string Name = 100; }
-
-message WalletInfo { string Address = 100; }
-
-message CreateWalletResponse { WalletInfo Info = 100; }
-
-message CreateTransactionRequest {
-  string Name = 100;
-  string TransactionID = 110;
-  double Amount = 120;
-  string From = 130;
-  string To = 140;
-  optional string Memo = 150;
-}
-
-message CreateTransactionResponse {}
-
-message UpdateTransactionRequest {
-  string TransactionID = 100;
-  TransactionState TransactionState = 110;
-  TransactionState NextTransactionState = 111;
-  bytes Payload = 120;
-  string CID = 130;
-  int64 ExitCode = 140;
-}
-
-message UpdateTransactionResponse {}
-
-message GetTransactionRequest { string TransactionID = 100; }
-
-message TransactionInfo {
-  string TransactionID = 100;
-  string Name = 110;
-  double Amount = 120;
-  string From = 130;
-  string To = 140;
-  string Memo = 141;
-  TransactionState TransactionState = 150;
-  bytes Payload = 151;
-  string CID = 160;
-  int64 ExitCode = 170;
-  uint32 CreatedAt = 180;
-  uint32 UpdatedAt = 190;
-}
-
-message GetTransactionResponse { TransactionInfo Info = 100; }
-
-message GetTransactionsRequest {
-  sphinx.plugin.v1.CoinType CoinType = 100;
-  TransactionState TransactionState = 110;
-  string ENV = 120; // main or test
-  uint32 Offset = 130;
-  uint32 Limit = 140;
-}
-
-message GetTransactionsResponse {
-  repeated TransactionInfo Infos = 100;
-  uint32 Total = 110;
-}
-
 // ############################# async
-message ProxyPluginResponse {
-  sphinx.plugin.v1.CoinType CoinType = 100;
-  sphinx.plugin.v1.ChainType ChainType = 101;
-  string ChainNativeUnit = 102;
-  string ChainAtomicUnit = 103;
-  uint32 ChainUnitExp = 104;
-  basetypes.v1.GasType GasType = 105;
-  string ChainID = 106;
-  string ChainNickname = 107;
-  string ChainNativeCoinName = 108;
-
-  TransactionType TransactionType = 110;
-  string ENV = 111; // main or test
-  string Unit = 112;
-  string Name = 113;
-  string TransactionID = 120;
-
-  string CID = 140;
-  double Balance = 150;
-  string BalanceStr = 160;
-  sphinx.plugin.v1.UnsignedMessage Message = 170;
-  int64 ExitCode = 180; // -1 find cid state on chain internal server error
-  string PluginWanIP = 190;
-  string PluginPosition = 200;
-  string RPCExitMessage = 1000;
-  RPCExitCode RPCExitCode = 1001;
-
-  bytes Payload = 1100;
-}
-
-// MpoolGetNonce WalletBalance MpoolPush ..
-message ProxyPluginRequest {
-  sphinx.plugin.v1.CoinType CoinType = 100;
-  TransactionType TransactionType = 110;
-  string TransactionID = 120;
-  // query wallet account
-  string Address = 130;
-  string Name = 131;
-  sphinx.plugin.v1.UnsignedMessage Message = 140;
-  // fil
-  sphinx.plugin.v1.Signature Signature = 150;
-  // btc
-  sphinx.plugin.v1.MsgTx MsgTx = 151;
-  // eth/usdt
-  string SignedRawTxHex = 152;
-  string CID = 160;
-
-  // gas fee
-  double Fee = 170;
-  bytes Payload = 180;
-}
-
-message ProxySignRequest {
-  sphinx.plugin.v1.CoinType CoinType = 100;
-  TransactionType TransactionType = 110;
-  string Name = 111;
-  string TransactionID = 120;
-  sphinx.plugin.v1.UnsignedMessage Message = 130;
-  bytes Payload = 140;
-}
-
-message ProxySignResponse {
-  sphinx.plugin.v1.CoinType CoinType = 100;
-  TransactionType TransactionType = 110;
-  string TransactionID = 120;
-  // fil
-  ProxySignResponseInfo Info = 130;
-  // btc
-  sphinx.plugin.v1.MsgTx MsgTx = 140;
-  // eth/usdt
-  string SignedRawTxHex = 150;
-
-  string RPCExitMessage = 1000;
-  RPCExitCode RPCExitCode = 1001;
-
-  bytes Payload = 1100;
-}
-
-message ProxySignResponseInfo {
-  string Address = 100; // create new account address
-  sphinx.plugin.v1.UnsignedMessage Message = 110;
-  sphinx.plugin.v1.Signature Signature = 120;
-}
-
-// state step by 10
-enum TransactionType {
-  Invalid = 0;
-  WalletNew = 1;
-  Balance = 2;
-  RegisterCoin = 3;
-  GasFee = 4;
-  EstimateGas = 5;
-  // some coin such as aleo  10 -> 2
-  PreBalance = 10;
-}
-
-// state step by 10
-enum TransactionState {
-  TransactionStateUnKnow = 0;
-  TransactionStateWait = 1;
-  TransactionStateSign = 2;
-  TransactionStateSync = 3;
-  TransactionStateDone = 4;
-  TransactionStateFail = 5;
-  TransactionStateBroadcast = 20; // TODO: caution
-
-  // some coin such as aleo 30 -> 1
-  TransactionStatePrepare = 30; 
+message DataElement {
+  string ConnectID = 10;
+  bytes Payload = 100;
+  optional ErrorCode ErrorCode = 200; 
+  optional string ErrorMsg = 210; 
 }

@@ -296,6 +296,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -382,6 +383,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1TopMost"
           }
         },
@@ -512,6 +514,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1TopMost"
           }
         },
@@ -586,6 +589,7 @@
         "Posters": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1PosterInfo"
           }
         },

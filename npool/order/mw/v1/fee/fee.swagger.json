@@ -134,6 +134,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -173,6 +174,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1FeeOrder"
           }
         }
@@ -192,6 +194,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1FeeOrder"
           }
         }
@@ -371,6 +374,7 @@
         "Coupons": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1OrderCouponInfo"
           },
           "title": "Coupons"
@@ -378,6 +382,7 @@
         "PaymentBalances": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1PaymentBalanceInfo"
           },
           "title": "Payment balances"
@@ -385,6 +390,7 @@
         "PaymentTransfers": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1PaymentTransferInfo"
           },
           "title": "Payment transfers"
@@ -431,7 +437,8 @@
           "type": "string"
         },
         "ParentOrderID": {
-          "type": "string"
+          "type": "string",
+          "title": "It's must for fee order"
         },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
@@ -496,6 +503,7 @@
         "PaymentBalances": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1PaymentBalanceReq"
           },
           "title": "Payment balances"
@@ -503,6 +511,7 @@
         "PaymentTransfers": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1PaymentTransferReq"
           },
           "title": "Payment transfers"
@@ -523,6 +532,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1FeeOrder"
           }
         },
@@ -609,7 +619,7 @@
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "description": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStateCreateOrderUser: PreInService sub states for miningpool settings\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateDeleteProportion: PreExpired sub states for miningpool settings\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state",
+      "description": "- OrderStateCreated: -\u003e OrderStateWaitPayment\n - OrderStateWaitPayment: Common state\n\n-\u003e OrderStatePaymentTimeout || OrderStatePaymentTransferReceived || OrderStatePreCancel\n - OrderStatePaymentTransferReceived: Payment process\n\n-\u003e OrderStatePaymentTransferBookKeeping\n - OrderStatePaymentTransferBookKeeping: -\u003e OrderStatePaymentSpendBalance\n - OrderStatePaymentSpendBalance: -\u003e OrderStateTransferGoodStockLocked\n - OrderStateTransferGoodStockLocked: -\u003e OrderStateAddCommission\n - OrderStateAddCommission: -\u003e OrderStateAchievementBookKeeping\n - OrderStateAchievementBookKeeping: -\u003e OrderStatePaymentUnlockAccount\n - OrderStatePaymentUnlockAccount: -\u003e OrderStatePaid\n - OrderStatePaid: Paid\n\n-\u003e OrderStatePreCancel || OrderStateTransferGoodStockWaitStart\n - OrderStateTransferGoodStockWaitStart: -\u003e OrderStateInService\n - OrderStateCreateOrderUser: PreInService sub states for miningpool settings\n - OrderStateInService: -\u003e OrderStatePreCancel || OrderStatePreExpired\n - OrderStatePaymentTimeout: Timeout of order\n\n-\u003e OrderStatePreCancel\n - OrderStatePreCancel: End or order\n\n-\u003e OrderStateRestoreCanceledStock\n - OrderStatePreExpired: -\u003e OrderStateRestoreExpiredStock\n - OrderStateDeleteProportion: PreExpired sub states for miningpool settings\n - OrderStateRestoreExpiredStock: Calculation\n\n-\u003e OrderStateExpired\n - OrderStateRestoreCanceledStock: -\u003e OrderStateDeductLockedCommission\n - OrderStateDeductLockedCommission: -\u003e OrderStateCancelAchievement\n - OrderStateCancelAchievement: -\u003e OrderStateReturnCanceledBalance\n - OrderStateReturnCanceledBalance: -\u003e OrderStateCanceledTransferBookKeeping\n - OrderStateCanceledTransferBookKeeping: -\u003e OrderStateCancelUnlockPaymentAccount\n - OrderStateCancelUnlockPaymentAccount: -\u003e OrderStateCanceled\n - OrderStateCanceled: End state",
       "title": "clang-format off"
     },
     "v1OrderType": {
