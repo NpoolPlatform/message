@@ -86,6 +86,9 @@
         "ConnectID": {
           "type": "string"
         },
+        "MsgID": {
+          "type": "string"
+        },
         "Payload": {
           "type": "string",
           "format": "byte"

@@ -119,6 +119,7 @@ message ConnectionInfo {
 
 message DataElement {
   string ConnectID = 10;
+  string MsgID = 20;
   bytes Payload = 100;
   optional ErrorCode ErrorCode = 200; 
   optional string ErrorMsg = 210; 
