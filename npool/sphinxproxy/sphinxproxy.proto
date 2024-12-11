@@ -25,6 +25,7 @@ service SphinxProxy {
 enum StatusCode {
   StatusCodeDefault = 0;
   StatusCodeSuccess = 10;
+  StatusCodeFailed = 11;
   StatusCodeNotSupportCoin = 20;
 }
 
