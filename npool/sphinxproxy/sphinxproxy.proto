@@ -22,13 +22,10 @@ service SphinxProxy {
       returns (stream DataElement) {}
 }
 
-enum ErrorCode {
-  RErrorCodeUnKnow = 0;
-  // proxy communicate with plugin and sign grpc error code
-  // common error code start from 1
-  ErrorCodeNotSupportCoin = 1;
-  // plugin error code start from 50
-  // sign error code start from 100
+enum StatusCode {
+  StatusCodeDefault = 0;
+  StatusCodeSuccess = 10;
+  StatusCodeNotSupportCoin = 20;
 }
 
 enum SiderType {
@@ -121,6 +118,6 @@ message DataElement {
   string ConnectID = 10;
   string MsgID = 20;
   bytes Payload = 100;
-  optional ErrorCode ErrorCode = 200; 
-  optional string ErrorMsg = 210; 
+  StatusCode StatusCode = 200; 
+  optional string StatusMsg = 210; 
 }

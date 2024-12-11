@@ -93,23 +93,22 @@
           "type": "string",
           "format": "byte"
         },
-        "ErrorCode": {
-          "$ref": "#/definitions/v1ErrorCode"
+        "StatusCode": {
+          "$ref": "#/definitions/v1StatusCode"
         },
-        "ErrorMsg": {
+        "StatusMsg": {
           "type": "string"
         }
       }
     },
-    "v1ErrorCode": {
+    "v1StatusCode": {
       "type": "string",
       "enum": [
-        "RErrorCodeUnKnow",
-        "ErrorCodeNotSupportCoin"
+        "StatusCodeDefault",
+        "StatusCodeSuccess",
+        "StatusCodeNotSupportCoin"
       ],
-      "default": "RErrorCodeUnKnow",
-      "description": "plugin error code start from 50\n sign error code start from 100",
-      "title": "- ErrorCodeNotSupportCoin: proxy communicate with plugin and sign grpc error code\ncommon error code start from 1"
+      "default": "StatusCodeDefault"
     },
     "v1VersionResponse": {
       "type": "object",
