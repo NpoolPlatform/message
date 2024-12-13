@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package basetypes.account.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/basetypes/account/v1";
+
+enum ContractType {
+  DefaultContractType = 0;
+
+  ContractDeployment = 10;
+  ContractSettlement = 20;
+}
