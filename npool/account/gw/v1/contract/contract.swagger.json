@@ -1,0 +1,212 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/account/gw/v1/contract/contract.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/admin/get/contractaccounts": {
+      "post": {
+        "operationId": "Gateway_AdminGetAccounts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetAccountsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetAccountsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Account": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "GoodName": {
+          "type": "string"
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "CoinTypeID": {
+          "type": "string"
+        },
+        "CoinName": {
+          "type": "string"
+        },
+        "CoinUnit": {
+          "type": "string"
+        },
+        "CoinEnv": {
+          "type": "string"
+        },
+        "CoinLogo": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Backup": {
+          "type": "boolean"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "Locked": {
+          "type": "boolean"
+        },
+        "LockedBy": {
+          "$ref": "#/definitions/v1AccountLockedBy"
+        },
+        "Blocked": {
+          "type": "boolean"
+        },
+        "ContractType": {
+          "$ref": "#/definitions/v1ContractType"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AccountLockedBy": {
+      "type": "string",
+      "enum": [
+        "DefaultLockedBy",
+        "Payment",
+        "Collecting"
+      ],
+      "default": "DefaultLockedBy"
+    },
+    "v1ContractType": {
+      "type": "string",
+      "enum": [
+        "DefaultContractType",
+        "ContractDeployment",
+        "ContractSettlement"
+      ],
+      "default": "DefaultContractType"
+    },
+    "v1GetAccountsRequest": {
+      "type": "object",
+      "properties": {
+        "TargetAppID": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetAccountsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Account"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "Pledge",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
+    }
+  }
+}
