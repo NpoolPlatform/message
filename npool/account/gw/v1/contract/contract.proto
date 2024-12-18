@@ -23,6 +23,7 @@ message Account {
     uint32 ID            = 9;
     string EntID         = 10;
     string GoodID        = 20;
+    string PledgeID      = 21;
     string GoodName      = 30;
     basetypes.good.v1.GoodType GoodType = 40;
     string CoinTypeID    = 50;
@@ -43,7 +44,6 @@ message Account {
 }
 
 message GetAccountsRequest {
-  string TargetAppID = 10;
   int32 Offset = 20;
   int32 Limit = 30;
 }

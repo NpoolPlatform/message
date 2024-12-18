@@ -90,6 +90,9 @@
         "GoodID": {
           "type": "string"
         },
+        "PledgeID": {
+          "type": "string"
+        },
         "GoodName": {
           "type": "string"
         },
@@ -166,9 +169,6 @@
     "v1GetAccountsRequest": {
       "type": "object",
       "properties": {
-        "TargetAppID": {
-          "type": "string"
-        },
         "Offset": {
           "type": "integer",
           "format": "int32"

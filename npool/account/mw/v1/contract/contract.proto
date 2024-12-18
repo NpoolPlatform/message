@@ -39,8 +39,7 @@ message AccountReq {
   optional bool Locked = 100; // Locked when transferring
   optional basetypes.v1.AccountLockedBy LockedBy = 110;
   optional bool Blocked = 120;
-  optional string TransactionID = 130;
-  optional basetypes.account.v1.ContractType ContractType = 140;
+  optional basetypes.account.v1.ContractType ContractType = 130;
 }
 
 message Account {
@@ -69,8 +68,6 @@ message Account {
   basetypes.v1.AccountLockedBy LockedBy = 120;
   // @inject_tag: sql:"blocked"
   bool Blocked = 130;
-  // @inject_tag: sql:"transaction_id"
-  string TransactionID = 140;
   // @inject_tag: sql:"contract_type"
   string ContractTypeStr = 150;
   basetypes.account.v1.ContractType ContractType = 160;

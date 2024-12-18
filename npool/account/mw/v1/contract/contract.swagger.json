@@ -132,10 +132,6 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"blocked\""
         },
-        "TransactionID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"transaction_id\""
-        },
         "ContractTypeStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"contract_type\""
@@ -203,9 +199,6 @@
         },
         "Blocked": {
           "type": "boolean"
-        },
-        "TransactionID": {
-          "type": "string"
         },
         "ContractType": {
           "$ref": "#/definitions/v1ContractType"
