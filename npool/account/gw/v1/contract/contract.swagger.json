@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetAccountsResponse"
+              "$ref": "#/definitions/v1AdminGetAccountsResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetAccountsRequest"
+              "$ref": "#/definitions/v1AdminGetAccountsRequest"
             }
           }
         ],
@@ -157,16 +157,7 @@
       ],
       "default": "DefaultLockedBy"
     },
-    "v1ContractType": {
-      "type": "string",
-      "enum": [
-        "DefaultContractType",
-        "ContractDeployment",
-        "ContractSettlement"
-      ],
-      "default": "DefaultContractType"
-    },
-    "v1GetAccountsRequest": {
+    "v1AdminGetAccountsRequest": {
       "type": "object",
       "properties": {
         "Offset": {
@@ -179,7 +170,7 @@
         }
       }
     },
-    "v1GetAccountsResponse": {
+    "v1AdminGetAccountsResponse": {
       "type": "object",
       "properties": {
         "Infos": {
@@ -193,6 +184,15 @@
           "format": "int64"
         }
       }
+    },
+    "v1ContractType": {
+      "type": "string",
+      "enum": [
+        "DefaultContractType",
+        "ContractDeployment",
+        "ContractSettlement"
+      ],
+      "default": "DefaultContractType"
     },
     "v1GoodType": {
       "type": "string",

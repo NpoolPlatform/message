@@ -11,7 +11,7 @@ import "npool/basetypes/account/v1/enums.proto";
 
 // Service Name
 service Gateway {
-  rpc AdminGetAccounts(GetAccountsRequest) returns (GetAccountsResponse) {
+  rpc AdminGetAccounts(AdminGetAccountsRequest) returns (AdminGetAccountsResponse) {
     option (google.api.http) = {
       post : "/v1/admin/get/contractaccounts"
       body : "*"
@@ -43,12 +43,12 @@ message Account {
     uint32 UpdatedAt     = 1010;
 }
 
-message GetAccountsRequest {
+message AdminGetAccountsRequest {
   int32 Offset = 20;
   int32 Limit = 30;
 }
 
-message GetAccountsResponse {
+message AdminGetAccountsResponse {
   repeated Account Infos = 10;
   uint32 Total = 20;
 }

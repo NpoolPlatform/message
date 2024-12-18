@@ -26,7 +26,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GatewayClient interface {
-	AdminGetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error)
+	AdminGetAccounts(ctx context.Context, in *AdminGetAccountsRequest, opts ...grpc.CallOption) (*AdminGetAccountsResponse, error)
 }
 
 type gatewayClient struct {
@@ -37,8 +37,8 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) AdminGetAccounts(ctx context.Context, in *GetAccountsRequest, opts ...grpc.CallOption) (*GetAccountsResponse, error) {
-	out := new(GetAccountsResponse)
+func (c *gatewayClient) AdminGetAccounts(ctx context.Context, in *AdminGetAccountsRequest, opts ...grpc.CallOption) (*AdminGetAccountsResponse, error) {
+	out := new(AdminGetAccountsResponse)
 	err := c.cc.Invoke(ctx, Gateway_AdminGetAccounts_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -50,7 +50,7 @@ func (c *gatewayClient) AdminGetAccounts(ctx context.Context, in *GetAccountsReq
 // All implementations must embed UnimplementedGatewayServer
 // for forward compatibility
 type GatewayServer interface {
-	AdminGetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error)
+	AdminGetAccounts(context.Context, *AdminGetAccountsRequest) (*AdminGetAccountsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -58,7 +58,7 @@ type GatewayServer interface {
 type UnimplementedGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) AdminGetAccounts(context.Context, *GetAccountsRequest) (*GetAccountsResponse, error) {
+func (UnimplementedGatewayServer) AdminGetAccounts(context.Context, *AdminGetAccountsRequest) (*AdminGetAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminGetAccounts not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
@@ -75,7 +75,7 @@ func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
 }
 
 func _Gateway_AdminGetAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAccountsRequest)
+	in := new(AdminGetAccountsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -87,7 +87,7 @@ func _Gateway_AdminGetAccounts_Handler(srv interface{}, ctx context.Context, dec
 		FullMethod: Gateway_AdminGetAccounts_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).AdminGetAccounts(ctx, req.(*GetAccountsRequest))
+		return srv.(GatewayServer).AdminGetAccounts(ctx, req.(*AdminGetAccountsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
