@@ -26,6 +26,7 @@ enum GoodType {
   MachineRental = 20;
   MachineCustody = 30;
   LegacyPowerRental = 40;
+  Pledge = 50;
 
   TechniqueServiceFee = 1000;
   ElectricityFee = 2000;
@@ -214,4 +215,12 @@ enum MiningGoodStockState {
 
   MiningGoodStockStateReady = 100;
   MiningGoodStockStateFail = 110;
+}
+
+enum ContractState {
+  DefaultContractState = 0;
+  ContractWaitDeployment = 10;
+  ContractInDeployment = 20;
+  ContractDeploymentSuccess = 30;
+  ContractDeploymentFail = 40;
 }

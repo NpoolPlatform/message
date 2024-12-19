@@ -418,6 +418,7 @@
         "MachineRental",
         "MachineCustody",
         "LegacyPowerRental",
+        "Pledge",
         "TechniqueServiceFee",
         "ElectricityFee"
       ],

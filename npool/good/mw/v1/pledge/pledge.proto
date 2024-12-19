@@ -1,0 +1,207 @@
+syntax = "proto3";
+
+package good.middleware.pledge.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/good/mw/v1/pledge";
+
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/good/v1/enums.proto";
+import "npool/good/mw/v1/good/coin/coin.proto";
+import "npool/good/mw/v1/good/coin/reward/reward.proto";
+
+service Middleware {
+  rpc CreatePledge(CreatePledgeRequest)
+      returns (CreatePledgeResponse) {}
+  rpc UpdatePledge(UpdatePledgeRequest)
+      returns (UpdatePledgeResponse) {}
+  rpc GetPledge(GetPledgeRequest) returns (GetPledgeResponse) {}
+  rpc GetPledges(GetPledgesRequest)
+      returns (GetPledgesResponse) {}
+  rpc ExistPledgeConds(ExistPledgeCondsRequest)
+      returns (ExistPledgeCondsResponse) {}
+  rpc DeletePledge(DeletePledgeRequest)
+      returns (DeletePledgeResponse) {}
+}
+
+message PledgeReq {
+  // Base of power rental
+  optional uint32 ID = 10;
+  optional string EntID = 20;
+  optional string GoodID = 30;
+  optional string DeviceTypeID = 40;
+  optional string VendorLocationID = 50;
+  optional string UnitPrice = 60;
+  optional string QuantityUnit = 70;
+  optional string QuantityUnitAmount = 80;
+  optional uint32 DeliveryAt = 90;
+  optional string UnitLockDeposit = 100;
+  optional basetypes.good.v1.GoodDurationType DurationDisplayType = 110;
+
+  // Good information
+  optional basetypes.good.v1.GoodType GoodType = 120;
+  optional basetypes.good.v1.BenefitType BenefitType = 130;
+  optional string Name = 140;
+  optional uint32 ServiceStartAt = 150;
+  optional basetypes.good.v1.GoodStartMode StartMode = 160;
+  optional bool TestOnly = 170;
+  optional uint32 BenefitIntervalHours = 180;
+  optional bool Purchasable = 190;
+  optional bool Online = 200;
+  optional basetypes.good.v1.GoodState State = 211;
+
+  // Reward information
+  optional basetypes.good.v1.BenefitState RewardState = 260;
+  optional uint32 RewardAt = 270;
+  repeated good.middleware.good1.coin.reward.v1.RewardReq Rewards = 280;
+
+  // Pledge information
+  optional string ContractCodeURL = 290;
+  optional string ContractCodeBranch = 300;
+  optional basetypes.good.v1.ContractState ContractState = 310;
+
+  optional bool Rollback = 1000;
+}
+
+message Pledge {
+  // @inject_tag: sql:"id"
+  uint32 ID = 10;
+  // @inject_tag: sql:"ent_id"
+  string EntID = 20;
+  // @inject_tag: sql:"good_id"
+  string GoodID = 30;
+
+  // @inject_tag: sql:"device_type_id"
+  string DeviceTypeID = 40;
+  // @inject_tag: sql:"device_type"
+  string DeviceType = 50;
+  // @inject_tag: sql:"device_manufacturer_name"
+  string DeviceManufacturerName = 60;
+  // @inject_tag: sql:"device_manufacturer_logo"
+  string DeviceManufacturerLogo = 70;
+  // @inject_tag: sql:"device_power_consumption"
+  uint32 DevicePowerConsumption = 80;
+  // @inject_tag: sql:"device_shipment_at"
+  uint32 DeviceShipmentAt = 90;
+
+  // @inject_tag: sql:"vendor_location_id"
+  string VendorLocationID = 100;
+  // @inject_tag: sql:"vendor_brand"
+  string VendorBrand = 110;
+  // @inject_tag: sql:"vendor_logo"
+  string VendorLogo = 120;
+  // @inject_tag: sql:"vendor_country"
+  string VendorCountry = 130;
+  // @inject_tag: sql:"vendor_province"
+  string VendorProvince = 140;
+
+  // @inject_tag: sql:"unit_price"
+  string UnitPrice = 150;
+  // @inject_tag: sql:"quantity_unit"
+  string QuantityUnit = 160;
+  // @inject_tag: sql:"quantity_unit_amount"
+  string QuantityUnitAmount = 170;
+  // @inject_tag: sql:"delivery_at"
+  uint32 DeliveryAt = 180;
+  // @inject_tag: sql:"unit_lock_deposit"
+  string UnitLockDeposit = 190;
+  // @inject_tag: sql:"duration_display_type"
+  string DurationDisplayTypeStr = 200;
+  basetypes.good.v1.GoodDurationType DurationDisplayType = 210;
+
+  // @inject_tag: sql:"good_type"
+  string GoodTypeStr = 220;
+  basetypes.good.v1.GoodType GoodType = 230;
+  // @inject_tag: sql:"benefit_type"
+  string BenefitTypeStr = 240;
+  basetypes.good.v1.BenefitType BenefitType = 250;
+  // @inject_tag: sql:"name"
+  string Name = 260;
+  // @inject_tag: sql:"service_start_at"
+  uint32 ServiceStartAt = 270;
+  // @inject_tag: sql:"start_mode"
+  string StartModeStr = 280;
+  basetypes.good.v1.GoodStartMode StartMode = 290;
+  // @inject_tag: sql:"test_only"
+  bool TestOnly = 300;
+  // @inject_tag: sql:"benefit_interval_hours"
+  uint32 BenefitIntervalHours = 310;
+  // @inject_tag: sql:"purchasable"
+  bool Purchasable = 320;
+  // @inject_tag: sql:"online"
+  bool Online = 330;
+  // @inject_tag: sql:"stock_mode"
+  string StockModeStr = 340;
+  basetypes.good.v1.GoodStockMode StockMode = 350;
+  // @inject_tag: sql:"state"
+  string StateStr = 351;
+  basetypes.good.v1.GoodState State = 352;
+
+  // @inject_tag: sql:"reward_state"
+  string RewardStateStr = 440;
+  basetypes.good.v1.BenefitState RewardState = 450;
+  // @inject_tag: sql:"last_reward_at"
+  uint32 LastRewardAt = 460;
+
+  repeated good.middleware.good1.coin.v1.GoodCoinInfo GoodCoins = 800;
+
+  repeated good.middleware.good1.coin.reward.v1.RewardInfo Rewards = 820;
+
+  // @inject_tag: sql:"contract_code_url"
+  string ContractCodeURL = 830;
+  // @inject_tag: sql:"contract_code_branch"
+  string ContractCodeBranch = 840;
+  // @inject_tag: sql:"contract_state"
+  string ContractStateStr = 850;
+  basetypes.good.v1.ContractState ContractState = 860;
+
+  // @inject_tag: sql:"created_at"
+  uint32 CreatedAt = 1000;
+  // @inject_tag: sql:"updated_at"
+  uint32 UpdatedAt = 1010;
+}
+
+message Conds {
+  optional basetypes.v1.Uint32Val ID = 10;
+  optional basetypes.v1.StringVal EntID = 20;
+  optional basetypes.v1.StringVal GoodID = 30;
+  optional basetypes.v1.StringSliceVal GoodIDs = 40;
+  optional basetypes.v1.Uint32Val GoodType = 50;
+  optional basetypes.v1.Uint32SliceVal GoodTypes = 60;
+  optional basetypes.v1.StringVal CoinTypeID = 70;
+  optional basetypes.v1.StringSliceVal CoinTypeIDs = 80;
+  optional basetypes.v1.Uint32Val RewardState = 90;
+  optional basetypes.v1.Uint32Val RewardAt = 100;
+  optional basetypes.v1.Uint32Val State = 110;
+  optional basetypes.v1.Uint32Val ContractState = 120;
+}
+
+message CreatePledgeRequest { PledgeReq Info = 10; }
+
+message CreatePledgeResponse { Pledge Info = 10; }
+
+message UpdatePledgeRequest { PledgeReq Info = 10; }
+
+message UpdatePledgeResponse { Pledge Info = 10; }
+
+message GetPledgeRequest { string GoodID = 10; }
+
+message GetPledgeResponse { Pledge Info = 10; }
+
+message GetPledgesRequest {
+  Conds Conds = 10;
+  int32 Offset = 20;
+  int32 Limit = 30;
+}
+
+message GetPledgesResponse {
+  repeated Pledge Infos = 10;
+  uint32 Total = 20;
+}
+
+message ExistPledgeCondsRequest { Conds Conds = 10; }
+
+message ExistPledgeCondsResponse { bool Info = 10; }
+
+message DeletePledgeRequest { PledgeReq Info = 10; }
+
+message DeletePledgeResponse { Pledge Info = 10; }
