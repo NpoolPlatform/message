@@ -297,6 +297,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -376,6 +377,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Simulate"
           }
         },
@@ -492,6 +494,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Simulate"
           }
         },
@@ -561,6 +564,7 @@
         "GoodCoins": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1GoodCoinInfo"
           }
         },

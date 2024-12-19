@@ -77,6 +77,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -198,6 +199,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1PowerRental"
           }
         },
@@ -249,7 +251,8 @@
         "GoodLabelInnovationStarter",
         "GoodLabelLoyaltyExclusive"
       ],
-      "default": "DefaultGoodLabel"
+      "default": "DefaultGoodLabel",
+      "title": "- GoodLabelNoviceExclusive: Newbie\n - GoodLabelInnovationStarter: First batch mining\n - GoodLabelLoyaltyExclusive: User with action credis pass threshold"
     },
     "v1GoodSaleMode": {
       "type": "string",
@@ -270,7 +273,8 @@
         "GoodSettledByPaymentAmount",
         "GoodSettledByProfitPercent"
       ],
-      "default": "DefaultGoodSettlementType"
+      "default": "DefaultGoodSettlementType",
+      "title": "- GoodSettledByProfitPercent: Percent in default"
     },
     "v1GoodStartMode": {
       "type": "string",
@@ -283,7 +287,8 @@
         "GoodStartModePreset",
         "GoodStartModeWithParent"
       ],
-      "default": "DefaultGoodStartMode"
+      "default": "DefaultGoodStartMode",
+      "title": "- GoodStartModeTBD: Start time will be adjusted in future\n - GoodStartModeConfirmed: Deprecated\n - GoodStartModeInstantly: Start when order paid\n - GoodStartModeNextDay: Start at next 00:00 UTC\n - GoodStartModePreset: Start at a preset time\n - GoodStartModeWithParent: Start with parent good"
     },
     "v1GoodState": {
       "type": "string",
@@ -297,7 +302,7 @@
         "GoodStateFail"
       ],
       "default": "DefaultGoodState",
-      "description": "- GoodStateCreateGoodUser: for miningpoolstock",
+      "description": "- GoodStateWait: npool-schedual start proccess from wait state\n - GoodStateCreateGoodUser: for miningpoolstock",
       "title": "initial state: GoodStateWait\n|\nv\nGoodStateCreateGoodUser------------------\n|                             |\nv                             |\nGoodStateCheckHashRate-------------------\n|                             |\nv                             v\nGoodStateReady                 GoodStateFail"
     },
     "v1GoodStockMode": {
@@ -750,60 +755,70 @@
         "GoodCoins": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1GoodCoinInfo"
           }
         },
         "Descriptions": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1DescriptionInfo"
           }
         },
         "Posters": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1PosterInfo"
           }
         },
         "DisplayNames": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1DisplayNameInfo"
           }
         },
         "DisplayColors": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1DisplayColorInfo"
           }
         },
         "AppMiningGoodStocks": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1StockInfo"
           }
         },
         "MiningGoodStocks": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1MiningGoodStockInfo"
           }
         },
         "Labels": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1LabelInfo"
           }
         },
         "Rewards": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1RewardInfo"
           }
         },
         "Requireds": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1RequiredInfo"
           }
         },

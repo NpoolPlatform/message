@@ -104,6 +104,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -139,6 +140,7 @@
         "Achievements": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1GoodAchievement"
           }
         },
@@ -197,8 +199,10 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Achievement"
-          }
+          },
+          "title": "Each user"
         },
         "Total": {
           "type": "integer",
@@ -234,6 +238,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Achievement"
           }
         },

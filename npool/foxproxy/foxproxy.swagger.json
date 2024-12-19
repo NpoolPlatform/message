@@ -1,0 +1,325 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/foxproxy/foxproxy.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "FoxProxyStream"
+    },
+    {
+      "name": "FoxProxy"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/version": {
+      "post": {
+        "summary": "sync",
+        "operationId": "FoxProxy_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "FoxProxy"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1ChainType": {
+      "type": "string",
+      "enum": [
+        "UnKnow",
+        "Filecoin",
+        "Bitcoin",
+        "Ethereum",
+        "Spacemesh",
+        "Solana",
+        "Binancecoin",
+        "Tron",
+        "Aleo",
+        "Ironfish",
+        "Depinc",
+        "Chia",
+        "TFilecoin",
+        "TBitcoin",
+        "TEthereum",
+        "TSpacemesh",
+        "TSolana",
+        "TBinancecoin",
+        "TTron",
+        "TAleo",
+        "TIronfish",
+        "TDepinc",
+        "TChia"
+      ],
+      "default": "UnKnow",
+      "title": "- Filecoin: mainnet\n - TFilecoin: testnet"
+    },
+    "v1ClientInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CoinInfo"
+          }
+        },
+        "Position": {
+          "type": "string"
+        },
+        "ClientType": {
+          "$ref": "#/definitions/v1ClientType"
+        }
+      }
+    },
+    "v1ClientType": {
+      "type": "string",
+      "enum": [
+        "ClientTypeDefault",
+        "ClientTypePlugin",
+        "ClientTypeSign"
+      ],
+      "default": "ClientTypeDefault"
+    },
+    "v1CoinInfo": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "ChainType": {
+          "$ref": "#/definitions/v1ChainType"
+        }
+      }
+    },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "CoinTypeUnKnow",
+        "CoinTypefilecoin",
+        "CoinTypebitcoin",
+        "CoinTypeethereum",
+        "CoinTypeusdterc20",
+        "CoinTypespacemesh",
+        "CoinTypesolana",
+        "CoinTypeusdttrc20",
+        "CoinTypebinancecoin",
+        "CoinTypetron",
+        "CoinTypebinanceusd",
+        "CoinTypeusdcerc20",
+        "CoinTypealeo",
+        "CoinTypeironfish",
+        "CoinTypeusdtbep20",
+        "CoinTypedepinc",
+        "CoinTypechia",
+        "CoinTypetfilecoin",
+        "CoinTypetbitcoin",
+        "CoinTypetethereum",
+        "CoinTypetusdterc20",
+        "CoinTypetspacemesh",
+        "CoinTypetsolana",
+        "CoinTypetusdttrc20",
+        "CoinTypetbinancecoin",
+        "CoinTypettron",
+        "CoinTypetbinanceusd",
+        "CoinTypetusdcerc20",
+        "CoinTypetaleo",
+        "CoinTypetironfish",
+        "CoinTypetusdtbep20",
+        "CoinTypetdepinc",
+        "CoinTypetchia"
+      ],
+      "default": "CoinTypeUnKnow",
+      "title": "- CoinTypefilecoin: mainnet\n - CoinTypetfilecoin: testnet"
+    },
+    "v1DataElement": {
+      "type": "object",
+      "properties": {
+        "ConnectID": {
+          "type": "string"
+        },
+        "MsgID": {
+          "type": "string"
+        },
+        "MsgType": {
+          "$ref": "#/definitions/v1MsgType"
+        },
+        "Payload": {
+          "type": "string",
+          "format": "byte"
+        },
+        "StatusCode": {
+          "$ref": "#/definitions/v1StatusCode"
+        },
+        "StatusMsg": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GasType": {
+      "type": "string",
+      "enum": [
+        "DefaultGasType",
+        "FixedGas",
+        "DynamicGas",
+        "GasUnsupported"
+      ],
+      "default": "DefaultGasType"
+    },
+    "v1GetClientInfosResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ClientInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1MsgType": {
+      "type": "string",
+      "enum": [
+        "MsgTypeDefault",
+        "MsgTypeEcho",
+        "MsgTypeRegisterCoin",
+        "MsgTypeGetBalance",
+        "MsgTypeUpdateTx"
+      ],
+      "default": "MsgTypeDefault"
+    },
+    "v1RegisterCoinInfo": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "ENV": {
+          "type": "string"
+        },
+        "ChainType": {
+          "$ref": "#/definitions/v1ChainType"
+        },
+        "ChainNativeUnit": {
+          "type": "string"
+        },
+        "ChainAtomicUnit": {
+          "type": "string"
+        },
+        "ChainUnitExp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GasType": {
+          "$ref": "#/definitions/v1GasType"
+        },
+        "ChainID": {
+          "type": "string"
+        },
+        "ChainNickname": {
+          "type": "string"
+        },
+        "ChainNativeCoinName": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RegisterCoinResponse": {
+      "type": "object"
+    },
+    "v1StatusCode": {
+      "type": "string",
+      "enum": [
+        "StatusCodeDefault",
+        "StatusCodeSuccess",
+        "StatusCodeFailed",
+        "StatusCodeNotSupportCoin",
+        "StatusCodeUnmarshalErr",
+        "StatusCodeMarshalErr"
+      ],
+      "default": "StatusCodeDefault",
+      "title": "################ define types and states ###################"
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -39,6 +39,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -155,7 +156,8 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "For withdraw and benefit address"
         },
         "Active": {
           "type": "boolean"
@@ -187,7 +189,8 @@
         "UserDirectBenefit",
         "OrderBenefit"
       ],
-      "default": "DefaultAccountUsedFor"
+      "default": "DefaultAccountUsedFor",
+      "title": "- GoodBenefit: Daily good benefit receiver              - Platform Hot\n - UserBenefitHot: Limited amount money for withdrawal      - Platform Hot\n - UserBenefitCold: Money of user benefit over limitation    - Platform Cold\n - PlatformBenefitCold: Money over limitation                    - Platform Cold\n - GasProvider: Deposit money for transaction gas        - Platform Hot\n - UserWithdraw: User set withdraw address                - User Set\n - UserDeposit: Platform created user deposit address    - Platform Create\n - GoodPayment: Platform created for good payment        - Platform Created\n - PaymentCollector: Money for payment over limitation        - Platform Cold\n - UserDirectBenefit: Benefit address for user set to product  - User set\n - OrderBenefit: Benefit address for user set to order - Order set"
     },
     "v1BoolVal": {
       "type": "object",
@@ -279,6 +282,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Account"
           }
         },
