@@ -260,6 +260,9 @@
         },
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "ContractType": {
+          "$ref": "#/definitions/v1Uint32Val"
         }
       }
     },
