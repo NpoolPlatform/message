@@ -274,7 +274,7 @@
       "enum": [
         "DefaultContractType",
         "ContractDeployment",
-        "ContractSettlement"
+        "ContractCalculate"
       ],
       "default": "DefaultContractType"
     },

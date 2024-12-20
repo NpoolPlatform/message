@@ -8,5 +8,5 @@ enum ContractType {
   DefaultContractType = 0;
 
   ContractDeployment = 10;
-  ContractSettlement = 20;
+  ContractCalculate = 20;
 }
