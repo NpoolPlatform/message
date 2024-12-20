@@ -308,51 +308,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "CancelMode": {
-          "$ref": "#/definitions/v1CancelMode"
-        },
-        "CancelableBeforeStartSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
         "EnableSetCommission": {
-          "type": "boolean"
-        },
-        "MinOrderAmount": {
-          "type": "string"
-        },
-        "MaxOrderAmount": {
-          "type": "string"
-        },
-        "MaxUserAmount": {
-          "type": "string"
-        },
-        "MinOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UnitPrice": {
-          "type": "string"
-        },
-        "SaleStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SaleEndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SaleMode": {
-          "$ref": "#/definitions/v1GoodSaleMode"
-        },
-        "FixedDuration": {
-          "type": "boolean"
-        },
-        "PackageWithRequireds": {
           "type": "boolean"
         },
         "StartMode": {
@@ -470,51 +426,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "CancelMode": {
-          "$ref": "#/definitions/v1CancelMode"
-        },
-        "CancelableBeforeStartSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
         "EnableSetCommission": {
-          "type": "boolean"
-        },
-        "MinOrderAmount": {
-          "type": "string"
-        },
-        "MaxOrderAmount": {
-          "type": "string"
-        },
-        "MaxUserAmount": {
-          "type": "string"
-        },
-        "MinOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UnitPrice": {
-          "type": "string"
-        },
-        "SaleStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SaleEndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SaleMode": {
-          "$ref": "#/definitions/v1GoodSaleMode"
-        },
-        "FixedDuration": {
-          "type": "boolean"
-        },
-        "PackageWithRequireds": {
           "type": "boolean"
         },
         "StartMode": {
@@ -554,25 +466,6 @@
         },
         "AppGoodID": {
           "type": "string"
-        },
-        "UnitPrice": {
-          "type": "string"
-        },
-        "QuantityUnit": {
-          "type": "string"
-        },
-        "QuantityUnitAmount": {
-          "type": "string"
-        },
-        "DeliveryAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UnitLockDeposit": {
-          "type": "string"
-        },
-        "DurationDisplayType": {
-          "$ref": "#/definitions/v1GoodDurationType"
         },
         "GoodType": {
           "$ref": "#/definitions/v1GoodType"
@@ -631,48 +524,7 @@
         "Banner": {
           "type": "string"
         },
-        "CancelMode": {
-          "$ref": "#/definitions/v1CancelMode"
-        },
-        "CancelableBeforeStartSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
         "EnableSetCommission": {
-          "type": "boolean"
-        },
-        "MinOrderAmount": {
-          "type": "string"
-        },
-        "MaxOrderAmount": {
-          "type": "string"
-        },
-        "MaxUserAmount": {
-          "type": "string"
-        },
-        "MinOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SaleStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SaleEndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SaleMode": {
-          "$ref": "#/definitions/v1GoodSaleMode"
-        },
-        "FixedDuration": {
-          "type": "boolean"
-        },
-        "PackageWithRequireds": {
           "type": "boolean"
         },
         "Likes": {
@@ -745,12 +597,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1RewardInfo"
-          }
-        },
-        "Requireds": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1RequiredInfo"
           }
         },
         "CreatedAt": {
@@ -915,17 +761,6 @@
         }
       }
     },
-    "v1GoodDurationType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodDurationType",
-        "GoodDurationByHour",
-        "GoodDurationByDay",
-        "GoodDurationByMonth",
-        "GoodDurationByYear"
-      ],
-      "default": "DefaultGoodDurationType"
-    },
     "v1GoodLabel": {
       "type": "string",
       "enum": [
@@ -947,16 +782,6 @@
         "GoodSaleModeTestnetPresale"
       ],
       "default": "DefaultGoodSaleMode"
-    },
-    "v1GoodSettlementType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodSettlementType",
-        "GoodSettledByPaymentPercent",
-        "GoodSettledByPaymentAmount",
-        "GoodSettledByProfitPercent"
-      ],
-      "default": "DefaultGoodSettlementType"
     },
     "v1GoodStartMode": {
       "type": "string",
@@ -1048,46 +873,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"index\""
-        }
-      }
-    },
-    "v1RequiredInfo": {
-      "type": "object",
-      "properties": {
-        "MainAppGoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"main_app_good_id\""
-        },
-        "RequiredAppGoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"required_app_good_id\""
-        },
-        "RequiredAppGoodName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"required_app_good_name\""
-        },
-        "RequiredGoodTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"required_good_type\""
-        },
-        "RequiredGoodType": {
-          "$ref": "#/definitions/v1GoodType"
-        },
-        "RequiredGoodSettlementTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"required_good_settlement_type\""
-        },
-        "RequiredGoodSettlementType": {
-          "$ref": "#/definitions/v1GoodSettlementType"
-        },
-        "RequiredAppGoodUnitValue": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"required_app_good_unit_value\""
-        },
-        "Must": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"must\""
         }
       }
     },

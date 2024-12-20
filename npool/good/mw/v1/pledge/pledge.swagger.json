@@ -55,6 +55,9 @@
         },
         "ContractState": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "ContractStates": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
         }
       }
     },

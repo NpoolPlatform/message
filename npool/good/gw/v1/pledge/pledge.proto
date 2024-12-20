@@ -96,6 +96,9 @@ message AdminCreatePledgeRequest {
   string ContractCodeURL = 10;
   string ContractCodeBranch = 20;
 
+  // Good coin
+  string CoinTypeID = 30;
+
   // Good information
   basetypes.good.v1.GoodType GoodType = 120;
   string Name = 140;

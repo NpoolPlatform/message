@@ -263,6 +263,9 @@
         },
         "ContractType": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "PledgeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },

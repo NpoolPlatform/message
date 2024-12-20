@@ -215,6 +215,10 @@
         "ContractCodeBranch": {
           "type": "string"
         },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "Good coin"
+        },
         "GoodType": {
           "$ref": "#/definitions/v1GoodType",
           "title": "Good information"

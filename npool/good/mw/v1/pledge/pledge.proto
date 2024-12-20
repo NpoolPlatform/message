@@ -173,6 +173,7 @@ message Conds {
   optional basetypes.v1.Uint32Val RewardAt = 100;
   optional basetypes.v1.Uint32Val State = 110;
   optional basetypes.v1.Uint32Val ContractState = 120;
+  optional basetypes.v1.Uint32SliceVal ContractStates = 130;
 }
 
 message CreatePledgeRequest { PledgeReq Info = 10; }
