@@ -196,17 +196,6 @@
         }
       }
     },
-    "v1GoodDurationType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodDurationType",
-        "GoodDurationByHour",
-        "GoodDurationByDay",
-        "GoodDurationByMonth",
-        "GoodDurationByYear"
-      ],
-      "default": "DefaultGoodDurationType"
-    },
     "v1GoodStartMode": {
       "type": "string",
       "enum": [
@@ -273,80 +262,6 @@
         "GoodID": {
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
-        },
-        "DeviceTypeID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"device_type_id\""
-        },
-        "DeviceType": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"device_type\""
-        },
-        "DeviceManufacturerName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"device_manufacturer_name\""
-        },
-        "DeviceManufacturerLogo": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"device_manufacturer_logo\""
-        },
-        "DevicePowerConsumption": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"device_power_consumption\""
-        },
-        "DeviceShipmentAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"device_shipment_at\""
-        },
-        "VendorLocationID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"vendor_location_id\""
-        },
-        "VendorBrand": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"vendor_brand\""
-        },
-        "VendorLogo": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"vendor_logo\""
-        },
-        "VendorCountry": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"vendor_country\""
-        },
-        "VendorProvince": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"vendor_province\""
-        },
-        "UnitPrice": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"unit_price\""
-        },
-        "QuantityUnit": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"quantity_unit\""
-        },
-        "QuantityUnitAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"quantity_unit_amount\""
-        },
-        "DeliveryAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"delivery_at\""
-        },
-        "UnitLockDeposit": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"unit_lock_deposit\""
-        },
-        "DurationDisplayTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"duration_display_type\""
-        },
-        "DurationDisplayType": {
-          "$ref": "#/definitions/v1GoodDurationType"
         },
         "GoodTypeStr": {
           "type": "string",
@@ -466,7 +381,7 @@
         "ID": {
           "type": "integer",
           "format": "int64",
-          "title": "Base of power rental"
+          "title": "Base information"
         },
         "EntID": {
           "type": "string"
@@ -474,37 +389,9 @@
         "GoodID": {
           "type": "string"
         },
-        "DeviceTypeID": {
-          "type": "string"
-        },
-        "VendorLocationID": {
-          "type": "string"
-        },
-        "UnitPrice": {
-          "type": "string"
-        },
-        "QuantityUnit": {
-          "type": "string"
-        },
-        "QuantityUnitAmount": {
-          "type": "string"
-        },
-        "DeliveryAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UnitLockDeposit": {
-          "type": "string"
-        },
-        "DurationDisplayType": {
-          "$ref": "#/definitions/v1GoodDurationType"
-        },
         "GoodType": {
           "$ref": "#/definitions/v1GoodType",
           "title": "Good information"
-        },
-        "BenefitType": {
-          "$ref": "#/definitions/v1BenefitType"
         },
         "Name": {
           "type": "string"
@@ -528,9 +415,6 @@
         },
         "Online": {
           "type": "boolean"
-        },
-        "State": {
-          "$ref": "#/definitions/v1GoodState"
         },
         "RewardState": {
           "$ref": "#/definitions/v1BenefitState",

@@ -11,7 +11,6 @@ import "npool/good/mw/v1/app/good/description/description.proto";
 import "npool/good/mw/v1/app/good/poster/poster.proto";
 import "npool/good/mw/v1/app/good/label/label.proto";
 import "npool/good/mw/v1/app/good/display/name/name.proto";
-import "npool/good/mw/v1/app/good/required/required.proto";
 import "npool/good/mw/v1/app/good/display/color/color.proto";
 import "npool/good/mw/v1/good/coin/reward/reward.proto";
 
@@ -85,9 +84,6 @@ message Pledge {
   bool GoodPurchasable = 330;
   // @inject_tag: sql:"good_online"
   bool GoodOnline = 340;
-  // @inject_tag: sql:"stock_mode"
-  string StockModeStr = 350;
-  basetypes.good.v1.GoodStockMode StockMode = 360;
   // @inject_tag: sql:"state"
   string StateStr = 365;
   basetypes.good.v1.GoodState State = 366;
@@ -109,34 +105,8 @@ message Pledge {
   int32 DisplayIndex = 430;
   // @inject_tag: sql:"banner"
   string Banner = 440;
-  // @inject_tag: sql:"cancel_mode"
-  string CancelModeStr = 450;
-  basetypes.good.v1.CancelMode CancelMode = 460;
-  // @inject_tag: sql:"cancelable_before_start_seconds"
-  uint32 CancelableBeforeStartSeconds = 470;
   // @inject_tag: sql:"enable_set_commission"
   bool EnableSetCommission = 480;
-  // @inject_tag: sql:"min_order_amount"
-  string MinOrderAmount = 490;
-  // @inject_tag: sql:"max_order_amount"
-  string MaxOrderAmount = 500;
-  // @inject_tag: sql:"max_user_amount"
-  string MaxUserAmount = 510;
-  // @inject_tag: sql:"min_order_duration_seconds"
-  uint32 MinOrderDurationSeconds = 520;
-  // @inject_tag: sql:"max_order_duration_seconds"
-  uint32 MaxOrderDurationSeconds = 530;
-  // @inject_tag: sql:"sale_start_at"
-  uint32 SaleStartAt = 540;
-  // @inject_tag: sql:"sale_end_at"
-  uint32 SaleEndAt = 550;
-  // @inject_tag: sql:"sale_mode"
-  string SaleModeStr = 560;
-  basetypes.good.v1.GoodSaleMode SaleMode = 570;
-  // @inject_tag: sql:"fixed_duration"
-  bool FixedDuration = 580;
-  // @inject_tag: sql:"package_with_requireds"
-  bool PackageWithRequireds = 590;
 
   // @inject_tag: sql:"app_good_service_start_at"
   uint32 AppGoodServiceStartAt = 600;
@@ -169,7 +139,6 @@ message Pledge {
   repeated good.middleware.app.good1.display.color.v1.DisplayColorInfo DisplayColors = 740;
   repeated good.middleware.app.good1.label.v1.LabelInfo Labels = 750;
   repeated good.middleware.good1.coin.reward.v1.RewardInfo Rewards = 760;
-  repeated good.middleware.app.good1.required1.v1.RequiredInfo Requireds = 770;
 
   // @inject_tag: sql:"contract_code_url"
   string ContractCodeURL = 780;

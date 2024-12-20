@@ -95,17 +95,6 @@
       "default": "DefaultBenefitType",
       "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward\n - BenefitTypeContract: User receive reward from smart contract\n - BenefitTypeNone: Such as technique fee"
     },
-    "v1CancelMode": {
-      "type": "string",
-      "enum": [
-        "DefaultCancelMode",
-        "CancellableBeforeStart",
-        "CancellableBeforeBenefit",
-        "Uncancellable",
-        "CancellableBeforeUsed"
-      ],
-      "default": "DefaultCancelMode"
-    },
     "v1ContractState": {
       "type": "string",
       "enum": [
@@ -251,27 +240,6 @@
       ],
       "default": "DefaultGoodLabel"
     },
-    "v1GoodSaleMode": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodSaleMode",
-        "GoodSaleModeMainnetSpot",
-        "GoodSaleModeMainnetPresaleSpot",
-        "GoodSaleModeMainnetPresaleScratch",
-        "GoodSaleModeTestnetPresale"
-      ],
-      "default": "DefaultGoodSaleMode"
-    },
-    "v1GoodSettlementType": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodSettlementType",
-        "GoodSettledByPaymentPercent",
-        "GoodSettledByPaymentAmount",
-        "GoodSettledByProfitPercent"
-      ],
-      "default": "DefaultGoodSettlementType"
-    },
     "v1GoodStartMode": {
       "type": "string",
       "enum": [
@@ -299,15 +267,6 @@
       "default": "DefaultGoodState",
       "description": "- GoodStateCreateGoodUser: for miningpoolstock",
       "title": "initial state: GoodStateWait\n|\nv\nGoodStateCreateGoodUser------------------\n|                             |\nv                             |\nGoodStateCheckHashRate-------------------\n|                             |\nv                             v\nGoodStateReady                 GoodStateFail"
-    },
-    "v1GoodStockMode": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodStockMode",
-        "GoodStockByMiningPool",
-        "GoodStockByUnique"
-      ],
-      "default": "DefaultGoodStockMode"
     },
     "v1GoodType": {
       "type": "string",
@@ -427,13 +386,6 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"good_online\""
         },
-        "StockModeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"stock_mode\""
-        },
-        "StockMode": {
-          "$ref": "#/definitions/v1GoodStockMode"
-        },
         "StateStr": {
           "type": "string",
           "title": "@inject_tag: sql:\"state\""
@@ -474,68 +426,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"banner\""
         },
-        "CancelModeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"cancel_mode\""
-        },
-        "CancelMode": {
-          "$ref": "#/definitions/v1CancelMode"
-        },
-        "CancelableBeforeStartSeconds": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"cancelable_before_start_seconds\""
-        },
         "EnableSetCommission": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"enable_set_commission\""
-        },
-        "MinOrderAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"min_order_amount\""
-        },
-        "MaxOrderAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"max_order_amount\""
-        },
-        "MaxUserAmount": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"max_user_amount\""
-        },
-        "MinOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"min_order_duration_seconds\""
-        },
-        "MaxOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"max_order_duration_seconds\""
-        },
-        "SaleStartAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"sale_start_at\""
-        },
-        "SaleEndAt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"sale_end_at\""
-        },
-        "SaleModeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"sale_mode\""
-        },
-        "SaleMode": {
-          "$ref": "#/definitions/v1GoodSaleMode"
-        },
-        "FixedDuration": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"fixed_duration\""
-        },
-        "PackageWithRequireds": {
-          "type": "boolean",
-          "title": "@inject_tag: sql:\"package_with_requireds\""
         },
         "AppGoodServiceStartAt": {
           "type": "integer",
@@ -623,12 +516,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/v1RewardInfo"
-          }
-        },
-        "Requireds": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1RequiredInfo"
           }
         },
         "ContractCodeURL": {
@@ -731,46 +618,6 @@
           "type": "integer",
           "format": "int64",
           "title": "@inject_tag: sql:\"index\""
-        }
-      }
-    },
-    "v1RequiredInfo": {
-      "type": "object",
-      "properties": {
-        "MainAppGoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"main_app_good_id\""
-        },
-        "RequiredAppGoodID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"required_app_good_id\""
-        },
-        "RequiredAppGoodName": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"required_app_good_name\""
-        },
-        "RequiredGoodTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"required_good_type\""
-        },
-        "RequiredGoodType": {
-          "$ref": "#/definitions/v1GoodType"
-        },
-        "RequiredGoodSettlementTypeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"required_good_settlement_type\""
-        },
-        "RequiredGoodSettlementType": {
-          "$ref": "#/definitions/v1GoodSettlementType"
-        },
-        "RequiredAppGoodUnitValue": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"required_app_good_unit_value\""
-        },
-        "Must": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"must\""
         }
       }
     },
