@@ -608,7 +608,7 @@
         "ContractDeploymentAddress": {
           "type": "string"
         },
-        "ContractSettlementAddress": {
+        "ContractCalculateAddress": {
           "type": "string"
         },
         "CreatedAt": {
