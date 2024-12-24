@@ -224,15 +224,6 @@
       "description": "- GoodStateCreateGoodUser: for miningpoolstock",
       "title": "initial state: GoodStateWait\n|\nv\nGoodStateCreateGoodUser------------------\n|                             |\nv                             |\nGoodStateCheckHashRate-------------------\n|                             |\nv                             v\nGoodStateReady                 GoodStateFail"
     },
-    "v1GoodStockMode": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodStockMode",
-        "GoodStockByMiningPool",
-        "GoodStockByUnique"
-      ],
-      "default": "DefaultGoodStockMode"
-    },
     "v1GoodType": {
       "type": "string",
       "enum": [
@@ -309,13 +300,6 @@
         "Online": {
           "type": "boolean",
           "title": "@inject_tag: sql:\"online\""
-        },
-        "StockModeStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"stock_mode\""
-        },
-        "StockMode": {
-          "$ref": "#/definitions/v1GoodStockMode"
         },
         "StateStr": {
           "type": "string",

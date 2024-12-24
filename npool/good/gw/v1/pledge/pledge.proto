@@ -71,7 +71,6 @@ message Pledge {
   uint32 BenefitIntervalHours = 270;
   bool Purchasable = 280;
   bool Online = 290;
-  basetypes.good.v1.GoodStockMode StockMode = 300;
   basetypes.good.v1.GoodState State = 301;
 
   basetypes.good.v1.BenefitState RewardState = 390;

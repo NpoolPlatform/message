@@ -81,9 +81,6 @@ message Pledge {
   bool Purchasable = 320;
   // @inject_tag: sql:"online"
   bool Online = 330;
-  // @inject_tag: sql:"stock_mode"
-  string StockModeStr = 340;
-  basetypes.good.v1.GoodStockMode StockMode = 350;
   // @inject_tag: sql:"state"
   string StateStr = 351;
   basetypes.good.v1.GoodState State = 352;
