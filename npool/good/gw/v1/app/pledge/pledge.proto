@@ -141,20 +141,7 @@ message UpdateAppPledgeRequest {
   optional string Banner = 120;
 
   optional uint32 ServiceStartAt = 130;
-  optional basetypes.good.v1.CancelMode CancelMode = 140;
-  optional uint32 CancelableBeforeStartSeconds = 150;
   optional bool EnableSetCommission = 160;
-  optional string MinOrderAmount = 170;
-  optional string MaxOrderAmount = 180;
-  optional string MaxUserAmount = 190;
-  optional uint32 MinOrderDurationSeconds = 200;
-  optional uint32 MaxOrderDurationSeconds = 210;
-  optional string UnitPrice = 220;
-  optional uint32 SaleStartAt = 230;
-  optional uint32 SaleEndAt = 240;
-  optional basetypes.good.v1.GoodSaleMode SaleMode = 250;
-  optional bool FixedDuration = 260;
-  optional bool PackageWithRequireds = 270;
   optional basetypes.good.v1.GoodStartMode StartMode = 280;
 }
 

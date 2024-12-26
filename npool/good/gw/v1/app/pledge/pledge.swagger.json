@@ -622,17 +622,6 @@
       "default": "DefaultBenefitType",
       "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward\n - BenefitTypeContract: User receive reward from smart contract\n - BenefitTypeNone: Such as technique fee"
     },
-    "v1CancelMode": {
-      "type": "string",
-      "enum": [
-        "DefaultCancelMode",
-        "CancellableBeforeStart",
-        "CancellableBeforeBenefit",
-        "Uncancellable",
-        "CancellableBeforeUsed"
-      ],
-      "default": "DefaultCancelMode"
-    },
     "v1DescriptionInfo": {
       "type": "object",
       "properties": {
@@ -771,17 +760,6 @@
         "GoodLabelLoyaltyExclusive"
       ],
       "default": "DefaultGoodLabel"
-    },
-    "v1GoodSaleMode": {
-      "type": "string",
-      "enum": [
-        "DefaultGoodSaleMode",
-        "GoodSaleModeMainnetSpot",
-        "GoodSaleModeMainnetPresaleSpot",
-        "GoodSaleModeMainnetPresaleScratch",
-        "GoodSaleModeTestnetPresale"
-      ],
-      "default": "DefaultGoodSaleMode"
     },
     "v1GoodStartMode": {
       "type": "string",
@@ -959,51 +937,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "CancelMode": {
-          "$ref": "#/definitions/v1CancelMode"
-        },
-        "CancelableBeforeStartSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
         "EnableSetCommission": {
-          "type": "boolean"
-        },
-        "MinOrderAmount": {
-          "type": "string"
-        },
-        "MaxOrderAmount": {
-          "type": "string"
-        },
-        "MaxUserAmount": {
-          "type": "string"
-        },
-        "MinOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "MaxOrderDurationSeconds": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UnitPrice": {
-          "type": "string"
-        },
-        "SaleStartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SaleEndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "SaleMode": {
-          "$ref": "#/definitions/v1GoodSaleMode"
-        },
-        "FixedDuration": {
-          "type": "boolean"
-        },
-        "PackageWithRequireds": {
           "type": "boolean"
         },
         "StartMode": {
