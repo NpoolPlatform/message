@@ -150,6 +150,7 @@ type FoxProxyClient interface {
 	GetClientInfos(ctx context.Context, in *GetClientInfosRequest, opts ...grpc.CallOption) (*GetClientInfosResponse, error)
 	GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error)
 	CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error)
+	GetEstimateGas(ctx context.Context, in *GetEstimateGasRequest, opts ...grpc.CallOption) (*GetEstimateGasResponse, error)
 }
 
 type foxProxyClient struct {
@@ -205,6 +206,15 @@ func (c *foxProxyClient) CreateWallet(ctx context.Context, in *CreateWalletReque
 	return out, nil
 }
 
+func (c *foxProxyClient) GetEstimateGas(ctx context.Context, in *GetEstimateGasRequest, opts ...grpc.CallOption) (*GetEstimateGasResponse, error) {
+	out := new(GetEstimateGasResponse)
+	err := c.cc.Invoke(ctx, "/fox.proxy.v1.FoxProxy/GetEstimateGas", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // FoxProxyServer is the server API for FoxProxy service.
 // All implementations must embed UnimplementedFoxProxyServer
 // for forward compatibility
@@ -215,6 +225,7 @@ type FoxProxyServer interface {
 	GetClientInfos(context.Context, *GetClientInfosRequest) (*GetClientInfosResponse, error)
 	GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error)
 	CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error)
+	GetEstimateGas(context.Context, *GetEstimateGasRequest) (*GetEstimateGasResponse, error)
 	mustEmbedUnimplementedFoxProxyServer()
 }
 
@@ -236,6 +247,9 @@ func (UnimplementedFoxProxyServer) GetBalance(context.Context, *GetBalanceReques
 }
 func (UnimplementedFoxProxyServer) CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateWallet not implemented")
+}
+func (UnimplementedFoxProxyServer) GetEstimateGas(context.Context, *GetEstimateGasRequest) (*GetEstimateGasResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetEstimateGas not implemented")
 }
 func (UnimplementedFoxProxyServer) mustEmbedUnimplementedFoxProxyServer() {}
 
@@ -340,6 +354,24 @@ func _FoxProxy_CreateWallet_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _FoxProxy_GetEstimateGas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEstimateGasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FoxProxyServer).GetEstimateGas(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/fox.proxy.v1.FoxProxy/GetEstimateGas",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FoxProxyServer).GetEstimateGas(ctx, req.(*GetEstimateGasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // FoxProxy_ServiceDesc is the grpc.ServiceDesc for FoxProxy service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -366,6 +398,10 @@ var FoxProxy_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateWallet",
 			Handler:    _FoxProxy_CreateWallet_Handler,
+		},
+		{
+			MethodName: "GetEstimateGas",
+			Handler:    _FoxProxy_GetEstimateGas_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

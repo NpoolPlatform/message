@@ -256,6 +256,27 @@
         }
       }
     },
+    "v1GetEstimateGasResponse": {
+      "type": "object",
+      "properties": {
+        "Fee": {
+          "type": "string"
+        },
+        "GasLimit": {
+          "type": "string"
+        },
+        "GasPrice": {
+          "type": "string"
+        },
+        "TipsPrice": {
+          "type": "string"
+        },
+        "BlockNum": {
+          "type": "string",
+          "format": "uint64"
+        }
+      }
+    },
     "v1MsgType": {
       "type": "string",
       "enum": [
@@ -266,13 +287,13 @@
         "MsgTypeGetBalance",
         "MsgTypeGetViewKey",
         "MsgTypeCreateWallet",
-        "MsgTypeEstimateGas",
+        "MsgTypeGetEstimateGas",
         "MsgTypeUpdateTx",
         "MsgTypeDealTxs",
         "MsgTypeSignTxs"
       ],
       "default": "MsgTypeDefault",
-      "title": "- MsgTypeEcho: all\n - MsgTypeResponse: all\n - MsgTypeRegisterCoin: plugin -\u003e proxy\n - MsgTypeGetBalance: plugin\n - MsgTypeGetViewKey: sign\n - MsgTypeCreateWallet: sign\n - MsgTypeEstimateGas: plugin\n - MsgTypeUpdateTx: proxy\n - MsgTypeDealTxs: plugin\n - MsgTypeSignTxs: sign"
+      "title": "- MsgTypeEcho: all\n - MsgTypeResponse: all\n - MsgTypeRegisterCoin: plugin -\u003e proxy\n - MsgTypeGetBalance: plugin\n - MsgTypeGetViewKey: sign\n - MsgTypeCreateWallet: sign\n - MsgTypeGetEstimateGas: plugin\n - MsgTypeUpdateTx: proxy\n - MsgTypeDealTxs: plugin\n - MsgTypeSignTxs: sign"
     },
     "v1RegisterCoinInfo": {
       "type": "object",
