@@ -81,7 +81,6 @@ message Conds {
   optional basetypes.v1.Uint32Val ID = 9;
   optional basetypes.v1.StringVal EntID = 10;
   optional basetypes.v1.StringVal GoodID = 20;
-  optional basetypes.v1.StringVal AppGoodID = 30;
   optional basetypes.v1.StringVal PledgeID = 40;
   optional basetypes.v1.StringVal CoinTypeID = 50;
   optional basetypes.v1.StringVal AccountID = 60;

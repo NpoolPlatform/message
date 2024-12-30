@@ -228,9 +228,6 @@
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "AppGoodID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "PledgeID": {
           "$ref": "#/definitions/v1StringVal"
         },
