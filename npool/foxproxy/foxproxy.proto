@@ -27,17 +27,10 @@ service FoxProxy {
   }
   rpc RegisterCoin(RegisterCoinRequest) returns (RegisterCoinResponse) {}
   rpc GetClientInfos(GetClientInfosRequest) returns (GetClientInfosResponse) {}
+  rpc GetBalance(GetBalanceRequest) returns (GetBalanceResponse) {}
+  rpc CreateWallet(CreateWalletRequest) returns (CreateWalletResponse) {}
 }
 // ################ define types and states ###################
-enum StatusCode {
-  StatusCodeDefault = 0;
-  StatusCodeSuccess = 10;
-  StatusCodeFailed = 11;
-  StatusCodeNotSupportCoin = 20;
-  StatusCodeUnmarshalErr = 30;
-  StatusCodeMarshalErr = 40;
-}
-
 enum ClientType {
   ClientTypeDefault = 0;
   ClientTypePlugin = 10;
@@ -46,10 +39,20 @@ enum ClientType {
 
 enum MsgType {
   MsgTypeDefault = 0;
-  MsgTypeEcho = 1;
-  MsgTypeRegisterCoin = 10;
-  MsgTypeGetBalance = 20;
-  MsgTypeUpdateTx = 30;
+  MsgTypeEcho = 1; // all
+  MsgTypeResponse = 2; // all
+  MsgTypeRegisterCoin = 10; // plugin -> proxy
+
+  MsgTypeGetBalance = 100; // plugin
+  MsgTypeGetViewKey = 110; // sign
+  
+  MsgTypeCreateWallet = 200; // sign
+
+  MsgTypeEstimateGas = 300; // plugin
+
+  MsgTypeUpdateTx = 400; // proxy
+  MsgTypeDealTxs = 500; //plugin
+  MsgTypeSignTxs = 600; //sign
 }
 
 // state step by 10
@@ -86,24 +89,6 @@ enum CoinType {
   CoinTypeusdtbep20 = 14;
   CoinTypedepinc = 15;
   CoinTypechia = 16;
-
-  // testnet
-  CoinTypetfilecoin = 100;
-  CoinTypetbitcoin = 101;
-  CoinTypetethereum = 102;
-  CoinTypetusdterc20 = 103;
-  CoinTypetspacemesh = 104;
-  CoinTypetsolana = 105;
-  CoinTypetusdttrc20 = 106;
-  CoinTypetbinancecoin = 107;
-  CoinTypettron = 108;
-  CoinTypetbinanceusd = 109;
-  CoinTypetusdcerc20 = 110;
-  CoinTypetaleo = 111;
-  CoinTypetironfish = 112;
-  CoinTypetusdtbep20 = 113;
-  CoinTypetdepinc = 114;
-  CoinTypetchia = 115;
 }
 
 enum ChainType {
@@ -120,27 +105,15 @@ enum ChainType {
   Ironfish = 9;
   Depinc = 10;
   Chia = 11;
-
-  // testnet
-  TFilecoin = 101;
-  TBitcoin = 102;
-  TEthereum = 103;
-  TSpacemesh = 104;
-  TSolana = 105;
-  TBinancecoin = 106;
-  TTron = 107;
-  TAleo = 108;
-  TIronfish = 109;
-  TDepinc = 110;
-  TChia = 111;
 }
 
 // ################## define infos for payload ####################
-
 message CoinInfo {
   string Name = 10;
+  string TempName = 11;
   CoinType CoinType = 20;
   ChainType ChainType = 30;
+  string ENV = 40;
 }
 
 message ClientInfo {
@@ -169,12 +142,11 @@ message DataElement {
   string MsgID = 20;
   MsgType MsgType = 30;
   bytes Payload = 100;
-  StatusCode StatusCode = 200; 
-  optional string StatusMsg = 210; 
+  optional string ErrMsg = 210; 
+  optional CoinInfo CoinInfo = 220;
 }
 
 message EmptyResponse {}
-
 // ######################### sync api struct ###############################
 message RegisterCoinRequest {
   RegisterCoinInfo Info = 10;
@@ -182,9 +154,27 @@ message RegisterCoinRequest {
 
 message RegisterCoinResponse {}
 
+message CreateWalletRequest { string Name = 100; }
+
+message WalletInfo { string Address = 100; }
+
+message CreateWalletResponse { WalletInfo Info = 100; }
+
 message GetClientInfosRequest {}
 
 message GetClientInfosResponse {
   repeated ClientInfo Infos = 10;
   uint32 Total = 20;
 }
+
+message GetBalanceRequest {
+  string Name = 10;
+  string Address = 20;
+}
+
+message BalanceInfo {
+  double Balance = 10;
+  string BalanceStr = 20;
+}
+
+message GetBalanceResponse { BalanceInfo Info = 100; }

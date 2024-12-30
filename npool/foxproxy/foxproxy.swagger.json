@@ -83,6 +83,18 @@
         }
       }
     },
+    "v1BalanceInfo": {
+      "type": "object",
+      "properties": {
+        "Balance": {
+          "type": "number",
+          "format": "double"
+        },
+        "BalanceStr": {
+          "type": "string"
+        }
+      }
+    },
     "v1ChainType": {
       "type": "string",
       "enum": [
@@ -97,21 +109,10 @@
         "Aleo",
         "Ironfish",
         "Depinc",
-        "Chia",
-        "TFilecoin",
-        "TBitcoin",
-        "TEthereum",
-        "TSpacemesh",
-        "TSolana",
-        "TBinancecoin",
-        "TTron",
-        "TAleo",
-        "TIronfish",
-        "TDepinc",
-        "TChia"
+        "Chia"
       ],
       "default": "UnKnow",
-      "title": "- Filecoin: mainnet\n - TFilecoin: testnet"
+      "title": "- Filecoin: mainnet"
     },
     "v1ClientInfo": {
       "type": "object",
@@ -141,7 +142,8 @@
         "ClientTypePlugin",
         "ClientTypeSign"
       ],
-      "default": "ClientTypeDefault"
+      "default": "ClientTypeDefault",
+      "title": "################ define types and states ###################"
     },
     "v1CoinInfo": {
       "type": "object",
@@ -149,13 +151,20 @@
         "Name": {
           "type": "string"
         },
+        "TempName": {
+          "type": "string"
+        },
         "CoinType": {
           "$ref": "#/definitions/v1CoinType"
         },
         "ChainType": {
           "$ref": "#/definitions/v1ChainType"
+        },
+        "ENV": {
+          "type": "string"
         }
-      }
+      },
+      "title": "################## define infos for payload ####################"
     },
     "v1CoinType": {
       "type": "string",
@@ -176,26 +185,18 @@
         "CoinTypeironfish",
         "CoinTypeusdtbep20",
         "CoinTypedepinc",
-        "CoinTypechia",
-        "CoinTypetfilecoin",
-        "CoinTypetbitcoin",
-        "CoinTypetethereum",
-        "CoinTypetusdterc20",
-        "CoinTypetspacemesh",
-        "CoinTypetsolana",
-        "CoinTypetusdttrc20",
-        "CoinTypetbinancecoin",
-        "CoinTypettron",
-        "CoinTypetbinanceusd",
-        "CoinTypetusdcerc20",
-        "CoinTypetaleo",
-        "CoinTypetironfish",
-        "CoinTypetusdtbep20",
-        "CoinTypetdepinc",
-        "CoinTypetchia"
+        "CoinTypechia"
       ],
       "default": "CoinTypeUnKnow",
-      "title": "- CoinTypefilecoin: mainnet\n - CoinTypetfilecoin: testnet"
+      "title": "- CoinTypefilecoin: mainnet"
+    },
+    "v1CreateWalletResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1WalletInfo"
+        }
+      }
     },
     "v1DataElement": {
       "type": "object",
@@ -213,11 +214,11 @@
           "type": "string",
           "format": "byte"
         },
-        "StatusCode": {
-          "$ref": "#/definitions/v1StatusCode"
-        },
-        "StatusMsg": {
+        "ErrMsg": {
           "type": "string"
+        },
+        "CoinInfo": {
+          "$ref": "#/definitions/v1CoinInfo"
         }
       }
     },
@@ -230,6 +231,14 @@
         "GasUnsupported"
       ],
       "default": "DefaultGasType"
+    },
+    "v1GetBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BalanceInfo"
+        }
+      }
     },
     "v1GetClientInfosResponse": {
       "type": "object",
@@ -252,11 +261,18 @@
       "enum": [
         "MsgTypeDefault",
         "MsgTypeEcho",
+        "MsgTypeResponse",
         "MsgTypeRegisterCoin",
         "MsgTypeGetBalance",
-        "MsgTypeUpdateTx"
+        "MsgTypeGetViewKey",
+        "MsgTypeCreateWallet",
+        "MsgTypeEstimateGas",
+        "MsgTypeUpdateTx",
+        "MsgTypeDealTxs",
+        "MsgTypeSignTxs"
       ],
-      "default": "MsgTypeDefault"
+      "default": "MsgTypeDefault",
+      "title": "- MsgTypeEcho: all\n - MsgTypeResponse: all\n - MsgTypeRegisterCoin: plugin -\u003e proxy\n - MsgTypeGetBalance: plugin\n - MsgTypeGetViewKey: sign\n - MsgTypeCreateWallet: sign\n - MsgTypeEstimateGas: plugin\n - MsgTypeUpdateTx: proxy\n - MsgTypeDealTxs: plugin\n - MsgTypeSignTxs: sign"
     },
     "v1RegisterCoinInfo": {
       "type": "object",
@@ -300,23 +316,18 @@
     "v1RegisterCoinResponse": {
       "type": "object"
     },
-    "v1StatusCode": {
-      "type": "string",
-      "enum": [
-        "StatusCodeDefault",
-        "StatusCodeSuccess",
-        "StatusCodeFailed",
-        "StatusCodeNotSupportCoin",
-        "StatusCodeUnmarshalErr",
-        "StatusCodeMarshalErr"
-      ],
-      "default": "StatusCodeDefault",
-      "title": "################ define types and states ###################"
-    },
     "v1VersionResponse": {
       "type": "object",
       "properties": {
         "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1WalletInfo": {
+      "type": "object",
+      "properties": {
+        "Address": {
           "type": "string"
         }
       }

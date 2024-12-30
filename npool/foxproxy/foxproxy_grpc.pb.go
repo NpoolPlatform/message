@@ -148,6 +148,8 @@ type FoxProxyClient interface {
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*v1.VersionResponse, error)
 	RegisterCoin(ctx context.Context, in *RegisterCoinRequest, opts ...grpc.CallOption) (*RegisterCoinResponse, error)
 	GetClientInfos(ctx context.Context, in *GetClientInfosRequest, opts ...grpc.CallOption) (*GetClientInfosResponse, error)
+	GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error)
+	CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error)
 }
 
 type foxProxyClient struct {
@@ -185,6 +187,24 @@ func (c *foxProxyClient) GetClientInfos(ctx context.Context, in *GetClientInfosR
 	return out, nil
 }
 
+func (c *foxProxyClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error) {
+	out := new(GetBalanceResponse)
+	err := c.cc.Invoke(ctx, "/fox.proxy.v1.FoxProxy/GetBalance", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *foxProxyClient) CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error) {
+	out := new(CreateWalletResponse)
+	err := c.cc.Invoke(ctx, "/fox.proxy.v1.FoxProxy/CreateWallet", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // FoxProxyServer is the server API for FoxProxy service.
 // All implementations must embed UnimplementedFoxProxyServer
 // for forward compatibility
@@ -193,6 +213,8 @@ type FoxProxyServer interface {
 	Version(context.Context, *emptypb.Empty) (*v1.VersionResponse, error)
 	RegisterCoin(context.Context, *RegisterCoinRequest) (*RegisterCoinResponse, error)
 	GetClientInfos(context.Context, *GetClientInfosRequest) (*GetClientInfosResponse, error)
+	GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error)
+	CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error)
 	mustEmbedUnimplementedFoxProxyServer()
 }
 
@@ -208,6 +230,12 @@ func (UnimplementedFoxProxyServer) RegisterCoin(context.Context, *RegisterCoinRe
 }
 func (UnimplementedFoxProxyServer) GetClientInfos(context.Context, *GetClientInfosRequest) (*GetClientInfosResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetClientInfos not implemented")
+}
+func (UnimplementedFoxProxyServer) GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBalance not implemented")
+}
+func (UnimplementedFoxProxyServer) CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateWallet not implemented")
 }
 func (UnimplementedFoxProxyServer) mustEmbedUnimplementedFoxProxyServer() {}
 
@@ -276,6 +304,42 @@ func _FoxProxy_GetClientInfos_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _FoxProxy_GetBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FoxProxyServer).GetBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/fox.proxy.v1.FoxProxy/GetBalance",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FoxProxyServer).GetBalance(ctx, req.(*GetBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _FoxProxy_CreateWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateWalletRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FoxProxyServer).CreateWallet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/fox.proxy.v1.FoxProxy/CreateWallet",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FoxProxyServer).CreateWallet(ctx, req.(*CreateWalletRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // FoxProxy_ServiceDesc is the grpc.ServiceDesc for FoxProxy service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -294,6 +358,14 @@ var FoxProxy_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetClientInfos",
 			Handler:    _FoxProxy_GetClientInfos_Handler,
+		},
+		{
+			MethodName: "GetBalance",
+			Handler:    _FoxProxy_GetBalance_Handler,
+		},
+		{
+			MethodName: "CreateWallet",
+			Handler:    _FoxProxy_CreateWallet_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
