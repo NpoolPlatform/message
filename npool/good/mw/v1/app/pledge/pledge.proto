@@ -162,8 +162,6 @@ message Conds {
   optional basetypes.v1.StringSliceVal GoodIDs = 50;
   optional basetypes.v1.StringVal AppGoodID = 60;
   optional basetypes.v1.StringSliceVal AppGoodIDs = 70;
-  optional basetypes.v1.Uint32Val GoodType = 80;
-  optional basetypes.v1.Uint32SliceVal GoodTypes = 90;
   optional basetypes.v1.StringVal CoinTypeID = 100;
   optional basetypes.v1.StringSliceVal CoinTypeIDs = 110;
 }
