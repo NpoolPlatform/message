@@ -127,7 +127,6 @@ message AdminUpdatePledgeRequest {
   optional uint32 BenefitIntervalHours = 190;
   optional bool Purchasable = 200;
   optional bool Online = 210;
-  optional basetypes.good.v1.GoodState State = 221;
 }
 
 message AdminUpdatePledgeResponse { Pledge Info = 10; }
