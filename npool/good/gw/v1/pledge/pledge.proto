@@ -120,7 +120,6 @@ message AdminUpdatePledgeRequest {
   optional string ContractCodeBranch = 60;
 
   // Good information
-  optional basetypes.good.v1.GoodType GoodType = 130;
   optional string Name = 150;
   optional uint32 ServiceStartAt = 160;
   optional basetypes.good.v1.GoodStartMode StartMode = 170;

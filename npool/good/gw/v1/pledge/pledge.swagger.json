@@ -298,12 +298,9 @@
         "ContractCodeBranch": {
           "type": "string"
         },
-        "GoodType": {
-          "$ref": "#/definitions/v1GoodType",
-          "title": "Good information"
-        },
         "Name": {
-          "type": "string"
+          "type": "string",
+          "title": "Good information"
         },
         "ServiceStartAt": {
           "type": "integer",
