@@ -4,9 +4,9 @@ package basetypes.account.v1;
 
 option go_package = "github.com/NpoolPlatform/message/npool/basetypes/account/v1";
 
-enum ContractType {
-  DefaultContractType = 0;
+enum ContractOperatorType {
+  DefaultContractOperatorType = 0;
 
-  ContractDeployment = 10;
-  ContractCalculate = 20;
+  ContractOwner = 10;
+  ContractCalculator = 20;
 }

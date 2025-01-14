@@ -93,9 +93,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"good_id\""
         },
-        "PledgeID": {
+        "DelegatedStakingID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"pledge_id\""
+          "title": "@inject_tag: sql:\"delegated_staking_id\""
         },
         "CoinTypeID": {
           "type": "string",
@@ -132,12 +132,12 @@
           "type": "boolean",
           "title": "@inject_tag: sql:\"blocked\""
         },
-        "ContractTypeStr": {
+        "ContractOperatorTypeStr": {
           "type": "string",
-          "title": "@inject_tag: sql:\"contract_type\""
+          "title": "@inject_tag: sql:\"contract_operator_type\""
         },
-        "ContractType": {
-          "$ref": "#/definitions/v1ContractType"
+        "ContractOperatorType": {
+          "$ref": "#/definitions/v1ContractOperatorType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -173,7 +173,7 @@
         "GoodID": {
           "type": "string"
         },
-        "PledgeID": {
+        "DelegatedStakingID": {
           "type": "string"
         },
         "CoinTypeID": {
@@ -200,8 +200,8 @@
         "Blocked": {
           "type": "boolean"
         },
-        "ContractType": {
-          "$ref": "#/definitions/v1ContractType"
+        "ContractOperatorType": {
+          "$ref": "#/definitions/v1ContractOperatorType"
         }
       }
     },
@@ -228,7 +228,7 @@
         "GoodID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "PledgeID": {
+        "DelegatedStakingID": {
           "$ref": "#/definitions/v1StringVal"
         },
         "CoinTypeID": {
@@ -258,22 +258,22 @@
         "CoinTypeIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         },
-        "ContractType": {
+        "ContractOperatorType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
-        "PledgeIDs": {
+        "DelegatedStakingIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
         }
       }
     },
-    "v1ContractType": {
+    "v1ContractOperatorType": {
       "type": "string",
       "enum": [
-        "DefaultContractType",
-        "ContractDeployment",
-        "ContractCalculate"
+        "DefaultContractOperatorType",
+        "ContractOwner",
+        "ContractCalculator"
       ],
-      "default": "DefaultContractType"
+      "default": "DefaultContractOperatorType"
     },
     "v1CreateAccountResponse": {
       "type": "object",

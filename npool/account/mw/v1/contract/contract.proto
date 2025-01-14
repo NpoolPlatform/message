@@ -30,7 +30,7 @@ message AccountReq {
   optional uint32 ID = 9;
   optional string EntID = 10;
   optional string GoodID = 20;
-  optional string PledgeID = 40;
+  optional string DelegatedStakingID = 40;
   optional string CoinTypeID = 50; // CoinTypeID of the good
   optional string AccountID = 60;
   optional string Address = 70;
@@ -39,7 +39,7 @@ message AccountReq {
   optional bool Locked = 100; // Locked when transferring
   optional basetypes.v1.AccountLockedBy LockedBy = 110;
   optional bool Blocked = 120;
-  optional basetypes.account.v1.ContractType ContractType = 130;
+  optional basetypes.account.v1.ContractOperatorType ContractOperatorType = 130;
 }
 
 message Account {
@@ -49,8 +49,8 @@ message Account {
   string EntID = 10;
   // @inject_tag: sql:"good_id"
   string GoodID = 20;
-  // @inject_tag: sql:"pledge_id"
-  string PledgeID = 40;
+  // @inject_tag: sql:"delegated_staking_id"
+  string DelegatedStakingID = 40;
   // @inject_tag: sql:"coin_type_id"
   string CoinTypeID = 50;
   // @inject_tag: sql:"account_id"
@@ -68,9 +68,9 @@ message Account {
   basetypes.v1.AccountLockedBy LockedBy = 120;
   // @inject_tag: sql:"blocked"
   bool Blocked = 130;
-  // @inject_tag: sql:"contract_type"
-  string ContractTypeStr = 150;
-  basetypes.account.v1.ContractType ContractType = 160;
+  // @inject_tag: sql:"contract_operator_type"
+  string ContractOperatorTypeStr = 150;
+  basetypes.account.v1.ContractOperatorType ContractOperatorType = 160;
   // @inject_tag: sql:"created_at"
   uint32 CreatedAt = 1000;
   // @inject_tag: sql:"updated_at"
@@ -81,7 +81,7 @@ message Conds {
   optional basetypes.v1.Uint32Val ID = 9;
   optional basetypes.v1.StringVal EntID = 10;
   optional basetypes.v1.StringVal GoodID = 20;
-  optional basetypes.v1.StringVal PledgeID = 40;
+  optional basetypes.v1.StringVal DelegatedStakingID = 40;
   optional basetypes.v1.StringVal CoinTypeID = 50;
   optional basetypes.v1.StringVal AccountID = 60;
   optional basetypes.v1.BoolVal Backup = 70;
@@ -91,8 +91,8 @@ message Conds {
   optional basetypes.v1.Uint32Val LockedBy = 110;
   optional basetypes.v1.BoolVal Blocked = 120;
   optional basetypes.v1.StringSliceVal CoinTypeIDs = 130;
-  optional basetypes.v1.Uint32Val ContractType = 140;
-  optional basetypes.v1.StringSliceVal PledgeIDs = 150;
+  optional basetypes.v1.Uint32Val ContractOperatorType = 140;
+  optional basetypes.v1.StringSliceVal DelegatedStakingIDs = 150;
 }
 
 message CreateAccountRequest { AccountReq Info = 10; }

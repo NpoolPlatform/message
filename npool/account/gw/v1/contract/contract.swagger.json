@@ -90,7 +90,7 @@
         "GoodID": {
           "type": "string"
         },
-        "PledgeID": {
+        "DelegatedStakingID": {
           "type": "string"
         },
         "GoodName": {
@@ -135,8 +135,8 @@
         "Blocked": {
           "type": "boolean"
         },
-        "ContractType": {
-          "$ref": "#/definitions/v1ContractType"
+        "ContractOperatorType": {
+          "$ref": "#/definitions/v1ContractOperatorType"
         },
         "CreatedAt": {
           "type": "integer",
@@ -185,14 +185,14 @@
         }
       }
     },
-    "v1ContractType": {
+    "v1ContractOperatorType": {
       "type": "string",
       "enum": [
-        "DefaultContractType",
-        "ContractDeployment",
-        "ContractCalculate"
+        "DefaultContractOperatorType",
+        "ContractOwner",
+        "ContractCalculator"
       ],
-      "default": "DefaultContractType"
+      "default": "DefaultContractOperatorType"
     },
     "v1GoodType": {
       "type": "string",
@@ -202,7 +202,7 @@
         "MachineRental",
         "MachineCustody",
         "LegacyPowerRental",
-        "Pledge",
+        "DelegatedStaking",
         "TechniqueServiceFee",
         "ElectricityFee"
       ],
