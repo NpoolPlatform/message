@@ -190,6 +190,9 @@
       "default": "CoinTypeUnKnow",
       "title": "- CoinTypefilecoin: mainnet"
     },
+    "v1CreateTransactionResponse": {
+      "type": "object"
+    },
     "v1CreateWalletResponse": {
       "type": "object",
       "properties": {
@@ -277,6 +280,30 @@
         }
       }
     },
+    "v1GetTransactionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Transaction"
+        }
+      }
+    },
+    "v1GetTransactionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Transaction"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1MsgType": {
       "type": "string",
       "enum": [
@@ -335,6 +362,76 @@
       }
     },
     "v1RegisterCoinResponse": {
+      "type": "object"
+    },
+    "v1Transaction": {
+      "type": "object",
+      "properties": {
+        "TransactionID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "From": {
+          "type": "string"
+        },
+        "To": {
+          "type": "string"
+        },
+        "Memo": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1TransactionState"
+        },
+        "Payload": {
+          "type": "string",
+          "format": "byte"
+        },
+        "CID": {
+          "type": "string"
+        },
+        "LockTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ExitCode": {
+          "type": "string",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1TransactionState": {
+      "type": "string",
+      "enum": [
+        "TransactionStateUnKnow",
+        "TransactionStatePrepare",
+        "TransactionStateGetViewKey",
+        "TransactionStateSign",
+        "TransactionStateBroadcast",
+        "TransactionStateSync",
+        "TransactionStateDone",
+        "TransactionStateFail",
+        "TransactionStateExceedTime"
+      ],
+      "default": "TransactionStateUnKnow",
+      "description": "- TransactionStatePrepare: plugin\n - TransactionStateGetViewKey: sign\n - TransactionStateSign: sign\n - TransactionStateBroadcast: plugin\n - TransactionStateSync: plugin, never exceedtime\n - TransactionStateDone: proxy\n - TransactionStateFail: proxy\n - TransactionStateExceedTime: proxy",
+      "title": "state step by 10"
+    },
+    "v1UpdateTransactionResponse": {
       "type": "object"
     },
     "v1VersionResponse": {
