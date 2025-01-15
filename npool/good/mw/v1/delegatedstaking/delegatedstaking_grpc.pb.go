@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_CreateDelegatedStaking_FullMethodName = "/good.middleware.delegatedstaking.v1.Middleware/CreateDelegatedStaking"
-	Middleware_UpdateDelegatedStaking_FullMethodName = "/good.middleware.delegatedstaking.v1.Middleware/UpdateDelegatedStaking"
-	Middleware_GetDelegatedStaking_FullMethodName    = "/good.middleware.delegatedstaking.v1.Middleware/GetDelegatedStaking"
-	Middleware_GetDelegatedStakings_FullMethodName   = "/good.middleware.delegatedstaking.v1.Middleware/GetDelegatedStakings"
-	Middleware_DeleteDelegatedStaking_FullMethodName = "/good.middleware.delegatedstaking.v1.Middleware/DeleteDelegatedStaking"
+	Middleware_CreateDelegatedStaking_FullMethodName     = "/good.middleware.delegatedstaking.v1.Middleware/CreateDelegatedStaking"
+	Middleware_UpdateDelegatedStaking_FullMethodName     = "/good.middleware.delegatedstaking.v1.Middleware/UpdateDelegatedStaking"
+	Middleware_GetDelegatedStaking_FullMethodName        = "/good.middleware.delegatedstaking.v1.Middleware/GetDelegatedStaking"
+	Middleware_GetDelegatedStakings_FullMethodName       = "/good.middleware.delegatedstaking.v1.Middleware/GetDelegatedStakings"
+	Middleware_ExistDelegatedStakingConds_FullMethodName = "/good.middleware.delegatedstaking.v1.Middleware/ExistDelegatedStakingConds"
+	Middleware_DeleteDelegatedStaking_FullMethodName     = "/good.middleware.delegatedstaking.v1.Middleware/DeleteDelegatedStaking"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -34,6 +35,7 @@ type MiddlewareClient interface {
 	UpdateDelegatedStaking(ctx context.Context, in *UpdateDelegatedStakingRequest, opts ...grpc.CallOption) (*UpdateDelegatedStakingResponse, error)
 	GetDelegatedStaking(ctx context.Context, in *GetDelegatedStakingRequest, opts ...grpc.CallOption) (*GetDelegatedStakingResponse, error)
 	GetDelegatedStakings(ctx context.Context, in *GetDelegatedStakingsRequest, opts ...grpc.CallOption) (*GetDelegatedStakingsResponse, error)
+	ExistDelegatedStakingConds(ctx context.Context, in *ExistDelegatedStakingCondsRequest, opts ...grpc.CallOption) (*ExistDelegatedStakingCondsResponse, error)
 	DeleteDelegatedStaking(ctx context.Context, in *DeleteDelegatedStakingRequest, opts ...grpc.CallOption) (*DeleteDelegatedStakingResponse, error)
 }
 
@@ -81,6 +83,15 @@ func (c *middlewareClient) GetDelegatedStakings(ctx context.Context, in *GetDele
 	return out, nil
 }
 
+func (c *middlewareClient) ExistDelegatedStakingConds(ctx context.Context, in *ExistDelegatedStakingCondsRequest, opts ...grpc.CallOption) (*ExistDelegatedStakingCondsResponse, error) {
+	out := new(ExistDelegatedStakingCondsResponse)
+	err := c.cc.Invoke(ctx, Middleware_ExistDelegatedStakingConds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *middlewareClient) DeleteDelegatedStaking(ctx context.Context, in *DeleteDelegatedStakingRequest, opts ...grpc.CallOption) (*DeleteDelegatedStakingResponse, error) {
 	out := new(DeleteDelegatedStakingResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteDelegatedStaking_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type MiddlewareServer interface {
 	UpdateDelegatedStaking(context.Context, *UpdateDelegatedStakingRequest) (*UpdateDelegatedStakingResponse, error)
 	GetDelegatedStaking(context.Context, *GetDelegatedStakingRequest) (*GetDelegatedStakingResponse, error)
 	GetDelegatedStakings(context.Context, *GetDelegatedStakingsRequest) (*GetDelegatedStakingsResponse, error)
+	ExistDelegatedStakingConds(context.Context, *ExistDelegatedStakingCondsRequest) (*ExistDelegatedStakingCondsResponse, error)
 	DeleteDelegatedStaking(context.Context, *DeleteDelegatedStakingRequest) (*DeleteDelegatedStakingResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
@@ -117,6 +129,9 @@ func (UnimplementedMiddlewareServer) GetDelegatedStaking(context.Context, *GetDe
 }
 func (UnimplementedMiddlewareServer) GetDelegatedStakings(context.Context, *GetDelegatedStakingsRequest) (*GetDelegatedStakingsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDelegatedStakings not implemented")
+}
+func (UnimplementedMiddlewareServer) ExistDelegatedStakingConds(context.Context, *ExistDelegatedStakingCondsRequest) (*ExistDelegatedStakingCondsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistDelegatedStakingConds not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteDelegatedStaking(context.Context, *DeleteDelegatedStakingRequest) (*DeleteDelegatedStakingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteDelegatedStaking not implemented")
@@ -206,6 +221,24 @@ func _Middleware_GetDelegatedStakings_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_ExistDelegatedStakingConds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistDelegatedStakingCondsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).ExistDelegatedStakingConds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_ExistDelegatedStakingConds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).ExistDelegatedStakingConds(ctx, req.(*ExistDelegatedStakingCondsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Middleware_DeleteDelegatedStaking_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteDelegatedStakingRequest)
 	if err := dec(in); err != nil {
@@ -246,6 +279,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDelegatedStakings",
 			Handler:    _Middleware_GetDelegatedStakings_Handler,
+		},
+		{
+			MethodName: "ExistDelegatedStakingConds",
+			Handler:    _Middleware_ExistDelegatedStakingConds_Handler,
 		},
 		{
 			MethodName: "DeleteDelegatedStaking",

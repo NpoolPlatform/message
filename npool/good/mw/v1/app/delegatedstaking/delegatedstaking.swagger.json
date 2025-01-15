@@ -1,0 +1,701 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/good/mw/v1/app/delegatedstaking/delegatedstaking.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Middleware"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "appdelegatedstakingv1Conds": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
+        "EntID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "GoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "AppGoodID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "AppGoodIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        },
+        "CoinTypeID": {
+          "$ref": "#/definitions/v1StringVal"
+        },
+        "CoinTypeIDs": {
+          "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BenefitType": {
+      "type": "string",
+      "enum": [
+        "DefaultBenefitType",
+        "BenefitTypePlatform",
+        "BenefitTypePool",
+        "BenefitTypeOffline",
+        "BenefitTypeContract",
+        "BenefitTypeNone"
+      ],
+      "default": "DefaultBenefitType",
+      "title": "- BenefitTypePlatform: Platform receive benefit, then distribute benefit to user\n - BenefitTypePool: User receive benefit from pool directly\n - BenefitTypeOffline: User do not receive any online reward\n - BenefitTypeContract: User receive reward from smart contract\n - BenefitTypeNone: Such as technique fee"
+    },
+    "v1ContractState": {
+      "type": "string",
+      "enum": [
+        "DefaultContractState",
+        "ContractWaitDeployment",
+        "ContractInDeployment",
+        "ContractDeploymentSuccess",
+        "ContractDeploymentFail"
+      ],
+      "default": "DefaultContractState"
+    },
+    "v1CreateDelegatedStakingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1DelegatedStaking"
+        }
+      }
+    },
+    "v1DelegatedStaking": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "AppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_id\""
+        },
+        "GoodTypeStr": {
+          "type": "string",
+          "title": "good_base\n@inject_tag: sql:\"good_type\""
+        },
+        "GoodType": {
+          "$ref": "#/definitions/v1GoodType"
+        },
+        "BenefitTypeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"benefit_type\""
+        },
+        "BenefitType": {
+          "$ref": "#/definitions/v1BenefitType"
+        },
+        "GoodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_name\""
+        },
+        "GoodServiceStartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"good_service_start_at\""
+        },
+        "GoodStartModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_start_mode\""
+        },
+        "GoodStartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
+        },
+        "TestOnly": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"test_only\""
+        },
+        "BenefitIntervalHours": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"benefit_interval_hours\""
+        },
+        "GoodPurchasable": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"good_purchasable\""
+        },
+        "GoodOnline": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"good_online\""
+        },
+        "StateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"state\""
+        },
+        "State": {
+          "$ref": "#/definitions/v1GoodState"
+        },
+        "AppGoodPurchasable": {
+          "type": "boolean",
+          "title": "app_good\n@inject_tag: sql:\"app_good_purchasable\""
+        },
+        "AppGoodOnline": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"app_good_online\""
+        },
+        "EnableProductPage": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enable_product_page\""
+        },
+        "ProductPage": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"product_page\""
+        },
+        "Visible": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"visible\""
+        },
+        "AppGoodName": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_name\""
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"display_index\""
+        },
+        "Banner": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"banner\""
+        },
+        "EnableSetCommission": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"enable_set_commission\""
+        },
+        "AppGoodServiceStartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"app_good_service_start_at\""
+        },
+        "AppGoodStartModeStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_start_mode\""
+        },
+        "AppGoodStartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
+        },
+        "Likes": {
+          "type": "integer",
+          "format": "int64",
+          "title": "extra_info\n@inject_tag: sql:\"likes\""
+        },
+        "Dislikes": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"dislikes\""
+        },
+        "Score": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"score\""
+        },
+        "ScoreCount": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"score_count\""
+        },
+        "RecommendCount": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"recommend_count\""
+        },
+        "CommentCount": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"comment_count\""
+        },
+        "LastRewardAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "good_reward\n@inject_tag: sql:\"last_reward_at\""
+        },
+        "GoodCoins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1GoodCoinInfo"
+          }
+        },
+        "Descriptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1DescriptionInfo"
+          }
+        },
+        "Posters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PosterInfo"
+          }
+        },
+        "DisplayNames": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1DisplayNameInfo"
+          }
+        },
+        "DisplayColors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1DisplayColorInfo"
+          }
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1LabelInfo"
+          }
+        },
+        "Rewards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1RewardInfo"
+          }
+        },
+        "ContractCodeURL": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"contract_code_url\""
+        },
+        "ContractCodeBranch": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"contract_code_branch\""
+        },
+        "ContractStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"contract_state\""
+        },
+        "ContractState": {
+          "$ref": "#/definitions/v1ContractState"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1DelegatedStakingReq": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "Base of app good"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "GoodID": {
+          "type": "string"
+        },
+        "AppGoodID": {
+          "type": "string"
+        },
+        "Purchasable": {
+          "type": "boolean"
+        },
+        "EnableProductPage": {
+          "type": "boolean"
+        },
+        "ProductPage": {
+          "type": "string"
+        },
+        "Online": {
+          "type": "boolean"
+        },
+        "Visible": {
+          "type": "boolean"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "DisplayIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Banner": {
+          "type": "string"
+        },
+        "ServiceStartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "Good information"
+        },
+        "StartMode": {
+          "$ref": "#/definitions/v1GoodStartMode"
+        },
+        "EnableSetCommission": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1DeleteDelegatedStakingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1DelegatedStaking"
+        }
+      }
+    },
+    "v1DescriptionInfo": {
+      "type": "object",
+      "properties": {
+        "AppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_id\""
+        },
+        "Description": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"description\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
+        }
+      }
+    },
+    "v1DisplayColorInfo": {
+      "type": "object",
+      "properties": {
+        "AppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_id\""
+        },
+        "Color": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"color\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
+        }
+      }
+    },
+    "v1DisplayNameInfo": {
+      "type": "object",
+      "properties": {
+        "AppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_id\""
+        },
+        "Name": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"name\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
+        }
+      }
+    },
+    "v1ExistDelegatedStakingCondsResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetDelegatedStakingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1DelegatedStaking"
+        }
+      }
+    },
+    "v1GetDelegatedStakingsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1DelegatedStaking"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GoodCoinInfo": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "Main": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"main\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: sql:\"index\""
+        }
+      }
+    },
+    "v1GoodLabel": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodLabel",
+        "GoodLabelPromotion",
+        "GoodLabelNoviceExclusive",
+        "GoodLabelInnovationStarter",
+        "GoodLabelLoyaltyExclusive"
+      ],
+      "default": "DefaultGoodLabel"
+    },
+    "v1GoodStartMode": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodStartMode",
+        "GoodStartModeTBD",
+        "GoodStartModeConfirmed",
+        "GoodStartModeInstantly",
+        "GoodStartModeNextDay",
+        "GoodStartModePreset",
+        "GoodStartModeWithParent"
+      ],
+      "default": "DefaultGoodStartMode"
+    },
+    "v1GoodState": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodState",
+        "GoodStatePreWait",
+        "GoodStateWait",
+        "GoodStateCreateGoodUser",
+        "GoodStateCheckHashRate",
+        "GoodStateReady",
+        "GoodStateFail"
+      ],
+      "default": "DefaultGoodState",
+      "description": "- GoodStateCreateGoodUser: for miningpoolstock",
+      "title": "initial state: GoodStateWait\n|\nv\nGoodStateCreateGoodUser------------------\n|                             |\nv                             |\nGoodStateCheckHashRate-------------------\n|                             |\nv                             v\nGoodStateReady                 GoodStateFail"
+    },
+    "v1GoodType": {
+      "type": "string",
+      "enum": [
+        "DefaultGoodType",
+        "PowerRental",
+        "MachineRental",
+        "MachineCustody",
+        "LegacyPowerRental",
+        "DelegatedStaking",
+        "TechniqueServiceFee",
+        "ElectricityFee"
+      ],
+      "default": "DefaultGoodType"
+    },
+    "v1LabelInfo": {
+      "type": "object",
+      "properties": {
+        "AppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_id\""
+        },
+        "Icon": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"icon\""
+        },
+        "IconBgColor": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"icon_bg_color\""
+        },
+        "LabelStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"label\""
+        },
+        "Label": {
+          "$ref": "#/definitions/v1GoodLabel"
+        },
+        "LabelBgColor": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"label_bg_color\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
+        }
+      }
+    },
+    "v1PosterInfo": {
+      "type": "object",
+      "properties": {
+        "AppGoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_good_id\""
+        },
+        "Poster": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"poster\""
+        },
+        "Index": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"index\""
+        }
+      }
+    },
+    "v1RewardInfo": {
+      "type": "object",
+      "properties": {
+        "GoodID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"good_id\""
+        },
+        "CoinTypeID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"coin_type_id\""
+        },
+        "RewardTID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"reward_tid\""
+        },
+        "NextRewardStartAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"next_reward_start_amount\""
+        },
+        "LastRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_reward_amount\""
+        },
+        "LastUnitRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"last_unit_reward_amount\""
+        },
+        "TotalRewardAmount": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"total_reward_amount\""
+        },
+        "MainCoin": {
+          "type": "boolean",
+          "title": "@inject_tag: sql:\"main_coin\""
+        }
+      }
+    },
+    "v1StringSliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1StringVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Uint32Val": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateDelegatedStakingResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1DelegatedStaking"
+        }
+      }
+    }
+  }
+}
