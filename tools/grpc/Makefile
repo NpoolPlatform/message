@@ -17,7 +17,7 @@ tool:
 	${UNZIP} -u /tmp/protoc.zip -d /tmp/protoc && \
 	mv /tmp/protoc/bin/protoc ${GOBIN} && \
 	go mod tidy -e -compat=1.17 && \
-	go get -d google.golang.org/grpc && \
+	go get -d google.golang.org/grpc@v1.64.0 && \
 	go get -d github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc && \
 	go install \
     github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway \

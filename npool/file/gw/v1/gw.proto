@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package file.gateway.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/file/gw/v1";
+
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+  rpc Upload(UploadRequest) returns (UploadResponse) {
+    option (google.api.http) = {
+      post: "/v1/upload"
+      body: "*"
+    };
+  }
+}
+
+message UploadRequest {
+  string Payload = 10;
+}
+
+message UploadResponse {
+  string FileId = 10;
+}
