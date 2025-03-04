@@ -1,0 +1,145 @@
+syntax = "proto3";
+
+package billing.middleware.credit.exchange.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/billing/mw/v1/credit/credit/exchange";
+
+import "google/api/annotations.proto";
+import "npool/basetypes/v1/conds.proto";
+import "npool/basetypes/billing/v1/enums.proto";
+
+service Middleware {
+    rpc GetExchanges(GetExchangesRequest) returns (GetExchangesResponse) {
+        option (google.api.http) = {
+            post : "/v1/credit/billingexchange_GetExchanges"
+            body : "*"
+        };
+    }
+    rpc GetExchangesCount(GetExchangesCountRequest) returns (GetExchangesCountResponse) {
+        option (google.api.http) = {
+            post : "/v1/credit/billingexchange_GetExchangesCount"
+            body : "*"
+        };
+    }
+    rpc GetExchange(GetExchangeRequest) returns (GetExchangeResponse) {
+        option (google.api.http) = {
+            post : "/v1/credit/billingexchange_GetExchange"
+            body : "*"
+        };
+    }
+    rpc ExistExchangeConds(ExistExchangeCondsRequest)
+        returns (ExistExchangeCondsResponse) {
+        option (google.api.http) = {
+            post : "/v1/credit/billingexchange_ExistExchangeConds"
+            body : "*"
+        };
+    }
+    rpc CreateExchanges(CreateExchangesRequest)
+        returns (CreateExchangesResponse) {
+        option (google.api.http) = {
+            post : "/v1/credit/billingexchange_CreateExchanges"
+            body : "*"
+        };
+    }
+    rpc DeleteExchanges(DeleteExchangesRequest)
+        returns (DeleteExchangesResponse) {
+        option (google.api.http) = {
+            post : "/v1/credit/billingexchange_DeleteExchanges"
+            body : "*"
+        };
+    }
+    rpc CreateExchange(CreateExchangeRequest)
+        returns (CreateExchangeResponse) {
+        option (google.api.http) = {
+            post : "/v1/credit/billingexchange_CreateExchange"
+            body : "*"
+        };
+    }
+    rpc DeleteExchange(DeleteExchangeRequest)
+        returns (DeleteExchangeResponse) {
+        option (google.api.http) = {
+            post : "/v1/credit/billingexchange_DeleteExchange"
+            body : "*"
+        };
+    }
+}
+
+message ExchangeReq {
+    optional uint32 ID = 10;
+    optional string EntID = 20;
+    optional string AppID = 30;
+    optional basetypes.billing.v1.UsageType UsageType = 40;
+    optional uint32 Credit = 50;
+    optional uint32 ExchangeThreshold = 60;
+}
+
+message Exchange {
+    // @inject_tag: sql:"id"
+    uint32 ID = 10;
+    // @inject_tag: sql:"ent_id"
+    string EntID = 20;
+    // @inject_tag: sql:"app_id"
+    string AppID = 30;
+    // @inject_tag: sql:"usage_type"
+    string UsageTypeStr = 40;
+    basetypes.billing.v1.UsageType UsageType = 41;
+    // @inject_tag: sql:"credit"
+    uint32 Credit = 50;
+    // @inject_tag: sql:"exchange_threshold"
+    uint32 ExchangeThreshold = 60;
+    // @inject_tag: sql:"created_at"
+    uint32 CreatedAt = 1000;
+    // @inject_tag: sql:"updated_at"
+    uint32 UpdatedAt = 1010;
+}
+
+message Conds {
+    optional basetypes.v1.StringVal EntID = 10;
+    optional basetypes.v1.StringVal AppID = 20;
+    optional basetypes.v1.Uint32Val UsageType = 30;
+    optional basetypes.v1.StringSliceVal EntIDs = 70;
+}
+
+message GetExchangesRequest {
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetExchangesResponse {
+    repeated Exchange Infos = 10;
+}
+
+message GetExchangesCountRequest {
+    Conds Conds = 10;
+    int32 Offset = 20;
+    int32 Limit = 30;
+}
+
+message GetExchangesCountResponse {
+    uint32 Total = 20;
+}
+
+message GetExchangeRequest { string EntID = 10; }
+
+message GetExchangeResponse { Exchange Info = 10; }
+
+message ExistExchangeCondsRequest { Conds Conds = 10; }
+
+message ExistExchangeCondsResponse { bool Info = 10; }
+
+message CreateExchangesRequest { repeated ExchangeReq Infos = 10; }
+
+message CreateExchangesResponse { repeated Exchange Infos = 10; }
+
+message DeleteExchangesRequest { repeated ExchangeReq Infos = 10; }
+
+message DeleteExchangesResponse { repeated Exchange Infos = 10; }
+
+message CreateExchangeRequest { ExchangeReq Info = 10; }
+
+message CreateExchangeResponse { Exchange Info = 10; }
+
+message DeleteExchangeRequest { ExchangeReq Info = 10; }
+
+message DeleteExchangeResponse { Exchange Info = 10; }
