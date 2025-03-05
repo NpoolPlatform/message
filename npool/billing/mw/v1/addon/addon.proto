@@ -61,6 +61,13 @@ service Middleware {
             body : "*"
         };
     }
+    rpc UpdateAddon(UpdateAddonRequest)
+        returns (UpdateAddonResponse) {
+        option (google.api.http) = {
+            post : "/v1/billingaddon_UpdateAddon"
+            body : "*"
+        };
+    }
 }
 
 message AddonReq {
@@ -148,3 +155,7 @@ message CreateAddonResponse { Addon Info = 10; }
 message DeleteAddonRequest { AddonReq Info = 10; }
 
 message DeleteAddonResponse { Addon Info = 10; }
+
+message UpdateAddonRequest { AddonReq Info = 10; }
+
+message UpdateAddonResponse { Addon Info = 10; }

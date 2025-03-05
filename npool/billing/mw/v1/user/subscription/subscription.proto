@@ -62,6 +62,13 @@ service Middleware {
             body : "*"
         };
     }
+    rpc UpdateSubscription(UpdateSubscriptionRequest)
+        returns (UpdateSubscriptionResponse) {
+        option (google.api.http) = {
+            post : "/v1/user/billingsubscription_UpdateSubscription"
+            body : "*"
+        };
+    }
 }
 
 message SubscriptionReq {
@@ -163,3 +170,7 @@ message CreateSubscriptionResponse { Subscription Info = 10; }
 message DeleteSubscriptionRequest { SubscriptionReq Info = 10; }
 
 message DeleteSubscriptionResponse { Subscription Info = 10; }
+
+message UpdateSubscriptionRequest { SubscriptionReq Info = 10; }
+
+message UpdateSubscriptionResponse { Subscription Info = 10; }

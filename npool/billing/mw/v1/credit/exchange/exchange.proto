@@ -62,6 +62,13 @@ service Middleware {
             body : "*"
         };
     }
+    rpc UpdateExchange(UpdateExchangeRequest)
+        returns (UpdateExchangeResponse) {
+        option (google.api.http) = {
+            post : "/v1/credit/billingexchange_UpdateExchange"
+            body : "*"
+        };
+    }
 }
 
 message ExchangeReq {
@@ -143,3 +150,7 @@ message CreateExchangeResponse { Exchange Info = 10; }
 message DeleteExchangeRequest { ExchangeReq Info = 10; }
 
 message DeleteExchangeResponse { Exchange Info = 10; }
+
+message UpdateExchangeRequest { ExchangeReq Info = 10; }
+
+message UpdateExchangeResponse { Exchange Info = 10; }

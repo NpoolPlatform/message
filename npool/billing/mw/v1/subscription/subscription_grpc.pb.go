@@ -27,6 +27,7 @@ const (
 	Middleware_DeleteSubscriptions_FullMethodName    = "/billing.middleware.subscription.v1.Middleware/DeleteSubscriptions"
 	Middleware_CreateSubscription_FullMethodName     = "/billing.middleware.subscription.v1.Middleware/CreateSubscription"
 	Middleware_DeleteSubscription_FullMethodName     = "/billing.middleware.subscription.v1.Middleware/DeleteSubscription"
+	Middleware_UpdateSubscription_FullMethodName     = "/billing.middleware.subscription.v1.Middleware/UpdateSubscription"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -41,6 +42,7 @@ type MiddlewareClient interface {
 	DeleteSubscriptions(ctx context.Context, in *DeleteSubscriptionsRequest, opts ...grpc.CallOption) (*DeleteSubscriptionsResponse, error)
 	CreateSubscription(ctx context.Context, in *CreateSubscriptionRequest, opts ...grpc.CallOption) (*CreateSubscriptionResponse, error)
 	DeleteSubscription(ctx context.Context, in *DeleteSubscriptionRequest, opts ...grpc.CallOption) (*DeleteSubscriptionResponse, error)
+	UpdateSubscription(ctx context.Context, in *UpdateSubscriptionRequest, opts ...grpc.CallOption) (*UpdateSubscriptionResponse, error)
 }
 
 type middlewareClient struct {
@@ -123,6 +125,15 @@ func (c *middlewareClient) DeleteSubscription(ctx context.Context, in *DeleteSub
 	return out, nil
 }
 
+func (c *middlewareClient) UpdateSubscription(ctx context.Context, in *UpdateSubscriptionRequest, opts ...grpc.CallOption) (*UpdateSubscriptionResponse, error) {
+	out := new(UpdateSubscriptionResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateSubscription_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -135,6 +146,7 @@ type MiddlewareServer interface {
 	DeleteSubscriptions(context.Context, *DeleteSubscriptionsRequest) (*DeleteSubscriptionsResponse, error)
 	CreateSubscription(context.Context, *CreateSubscriptionRequest) (*CreateSubscriptionResponse, error)
 	DeleteSubscription(context.Context, *DeleteSubscriptionRequest) (*DeleteSubscriptionResponse, error)
+	UpdateSubscription(context.Context, *UpdateSubscriptionRequest) (*UpdateSubscriptionResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -165,6 +177,9 @@ func (UnimplementedMiddlewareServer) CreateSubscription(context.Context, *Create
 }
 func (UnimplementedMiddlewareServer) DeleteSubscription(context.Context, *DeleteSubscriptionRequest) (*DeleteSubscriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteSubscription not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateSubscription(context.Context, *UpdateSubscriptionRequest) (*UpdateSubscriptionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateSubscription not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -323,6 +338,24 @@ func _Middleware_DeleteSubscription_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_UpdateSubscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateSubscriptionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateSubscription(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateSubscription_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateSubscription(ctx, req.(*UpdateSubscriptionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -361,6 +394,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteSubscription",
 			Handler:    _Middleware_DeleteSubscription_Handler,
+		},
+		{
+			MethodName: "UpdateSubscription",
+			Handler:    _Middleware_UpdateSubscription_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

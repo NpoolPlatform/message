@@ -27,6 +27,7 @@ const (
 	Middleware_DeleteAddons_FullMethodName    = "/billing.middleware.Addon.v1.Middleware/DeleteAddons"
 	Middleware_CreateAddon_FullMethodName     = "/billing.middleware.Addon.v1.Middleware/CreateAddon"
 	Middleware_DeleteAddon_FullMethodName     = "/billing.middleware.Addon.v1.Middleware/DeleteAddon"
+	Middleware_UpdateAddon_FullMethodName     = "/billing.middleware.Addon.v1.Middleware/UpdateAddon"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -41,6 +42,7 @@ type MiddlewareClient interface {
 	DeleteAddons(ctx context.Context, in *DeleteAddonsRequest, opts ...grpc.CallOption) (*DeleteAddonsResponse, error)
 	CreateAddon(ctx context.Context, in *CreateAddonRequest, opts ...grpc.CallOption) (*CreateAddonResponse, error)
 	DeleteAddon(ctx context.Context, in *DeleteAddonRequest, opts ...grpc.CallOption) (*DeleteAddonResponse, error)
+	UpdateAddon(ctx context.Context, in *UpdateAddonRequest, opts ...grpc.CallOption) (*UpdateAddonResponse, error)
 }
 
 type middlewareClient struct {
@@ -123,6 +125,15 @@ func (c *middlewareClient) DeleteAddon(ctx context.Context, in *DeleteAddonReque
 	return out, nil
 }
 
+func (c *middlewareClient) UpdateAddon(ctx context.Context, in *UpdateAddonRequest, opts ...grpc.CallOption) (*UpdateAddonResponse, error) {
+	out := new(UpdateAddonResponse)
+	err := c.cc.Invoke(ctx, Middleware_UpdateAddon_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -135,6 +146,7 @@ type MiddlewareServer interface {
 	DeleteAddons(context.Context, *DeleteAddonsRequest) (*DeleteAddonsResponse, error)
 	CreateAddon(context.Context, *CreateAddonRequest) (*CreateAddonResponse, error)
 	DeleteAddon(context.Context, *DeleteAddonRequest) (*DeleteAddonResponse, error)
+	UpdateAddon(context.Context, *UpdateAddonRequest) (*UpdateAddonResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -165,6 +177,9 @@ func (UnimplementedMiddlewareServer) CreateAddon(context.Context, *CreateAddonRe
 }
 func (UnimplementedMiddlewareServer) DeleteAddon(context.Context, *DeleteAddonRequest) (*DeleteAddonResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAddon not implemented")
+}
+func (UnimplementedMiddlewareServer) UpdateAddon(context.Context, *UpdateAddonRequest) (*UpdateAddonResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAddon not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -323,6 +338,24 @@ func _Middleware_DeleteAddon_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Middleware_UpdateAddon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAddonRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddlewareServer).UpdateAddon(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Middleware_UpdateAddon_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddlewareServer).UpdateAddon(ctx, req.(*UpdateAddonRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -361,6 +394,10 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteAddon",
 			Handler:    _Middleware_DeleteAddon_Handler,
+		},
+		{
+			MethodName: "UpdateAddon",
+			Handler:    _Middleware_UpdateAddon_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

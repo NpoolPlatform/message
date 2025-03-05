@@ -62,6 +62,13 @@ service Middleware {
             body : "*"
         };
     }
+    rpc UpdateRecord(UpdateRecordRequest)
+        returns (UpdateRecordResponse) {
+        option (google.api.http) = {
+            post : "/v1/user/credit/billingrecord_UpdateRecord"
+            body : "*"
+        };
+    }
 }
 
 message RecordReq {
@@ -147,3 +154,7 @@ message CreateRecordResponse { Record Info = 10; }
 message DeleteRecordRequest { RecordReq Info = 10; }
 
 message DeleteRecordResponse { Record Info = 10; }
+
+message UpdateRecordRequest { RecordReq Info = 10; }
+
+message UpdateRecordResponse { Record Info = 10; }

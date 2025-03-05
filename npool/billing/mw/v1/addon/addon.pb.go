@@ -1117,6 +1117,100 @@ func (x *DeleteAddonResponse) GetInfo() *Addon {
 	return nil
 }
 
+type UpdateAddonRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *AddonReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateAddonRequest) Reset() {
+	*x = UpdateAddonRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_billing_mw_v1_addon_addon_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateAddonRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAddonRequest) ProtoMessage() {}
+
+func (x *UpdateAddonRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_billing_mw_v1_addon_addon_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAddonRequest.ProtoReflect.Descriptor instead.
+func (*UpdateAddonRequest) Descriptor() ([]byte, []int) {
+	return file_npool_billing_mw_v1_addon_addon_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *UpdateAddonRequest) GetInfo() *AddonReq {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type UpdateAddonResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *Addon `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateAddonResponse) Reset() {
+	*x = UpdateAddonResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_billing_mw_v1_addon_addon_proto_msgTypes[20]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateAddonResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAddonResponse) ProtoMessage() {}
+
+func (x *UpdateAddonResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_billing_mw_v1_addon_addon_proto_msgTypes[20]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAddonResponse.ProtoReflect.Descriptor instead.
+func (*UpdateAddonResponse) Descriptor() ([]byte, []int) {
+	return file_npool_billing_mw_v1_addon_addon_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *UpdateAddonResponse) GetInfo() *Addon {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 var File_npool_billing_mw_v1_addon_addon_proto protoreflect.FileDescriptor
 
 var file_npool_billing_mw_v1_addon_addon_proto_rawDesc = []byte{
@@ -1271,8 +1365,18 @@ var file_npool_billing_mw_v1_addon_addon_proto_rawDesc = []byte{
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
 	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e,
 	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x41, 0x64, 0x64, 0x6f, 0x6e,
+	0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22,
+	0x4f, 0x0a, 0x12, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x39, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x69,
+	0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x2e, 0x76,
+	0x31, 0x2e, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f,
+	0x22, 0x4d, 0x0a, 0x13, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18,
+	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e,
+	0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x41, 0x64, 0x64, 0x6f, 0x6e,
 	0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32,
-	0xfc, 0x09, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x91,
+	0x98, 0x0b, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0x91,
 	0x01, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x73, 0x12, 0x2d, 0x2e, 0x62,
 	0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72,
 	0x65, 0x2e, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x64,
@@ -1351,12 +1455,21 @@ var file_npool_billing_mw_v1_addon_addon_proto_rawDesc = []byte{
 	0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x27, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x21, 0x3a, 0x01, 0x2a,
 	0x22, 0x1c, 0x2f, 0x76, 0x31, 0x2f, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x61, 0x64, 0x64,
-	0x6f, 0x6e, 0x5f, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x42, 0x3c,
-	0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f,
-	0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67,
-	0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x6e, 0x5f, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x12, 0x99,
+	0x01, 0x0a, 0x0b, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x12, 0x2f,
+	0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x61, 0x72, 0x65, 0x2e, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x30, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x77, 0x61, 0x72, 0x65, 0x2e, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x27, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x21, 0x3a, 0x01, 0x2a, 0x22, 0x1c, 0x2f, 0x76,
+	0x31, 0x2f, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x61, 0x64, 0x64, 0x6f, 0x6e, 0x5f, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x42, 0x3c, 0x5a, 0x3a, 0x67, 0x69,
+	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c,
+	0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e,
+	0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2f, 0x6d, 0x77, 0x2f,
+	0x76, 0x31, 0x2f, 0x41, 0x64, 0x64, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1371,7 +1484,7 @@ func file_npool_billing_mw_v1_addon_addon_proto_rawDescGZIP() []byte {
 	return file_npool_billing_mw_v1_addon_addon_proto_rawDescData
 }
 
-var file_npool_billing_mw_v1_addon_addon_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
+var file_npool_billing_mw_v1_addon_addon_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
 var file_npool_billing_mw_v1_addon_addon_proto_goTypes = []interface{}{
 	(*AddonReq)(nil),                // 0: billing.middleware.Addon.v1.AddonReq
 	(*Addon)(nil),                   // 1: billing.middleware.Addon.v1.Addon
@@ -1392,20 +1505,22 @@ var file_npool_billing_mw_v1_addon_addon_proto_goTypes = []interface{}{
 	(*CreateAddonResponse)(nil),     // 16: billing.middleware.Addon.v1.CreateAddonResponse
 	(*DeleteAddonRequest)(nil),      // 17: billing.middleware.Addon.v1.DeleteAddonRequest
 	(*DeleteAddonResponse)(nil),     // 18: billing.middleware.Addon.v1.DeleteAddonResponse
-	(*v1.Uint32Val)(nil),            // 19: basetypes.v1.Uint32Val
-	(*v1.StringVal)(nil),            // 20: basetypes.v1.StringVal
-	(*v1.BoolVal)(nil),              // 21: basetypes.v1.BoolVal
-	(*v1.Uint32SliceVal)(nil),       // 22: basetypes.v1.Uint32SliceVal
-	(*v1.StringSliceVal)(nil),       // 23: basetypes.v1.StringSliceVal
+	(*UpdateAddonRequest)(nil),      // 19: billing.middleware.Addon.v1.UpdateAddonRequest
+	(*UpdateAddonResponse)(nil),     // 20: billing.middleware.Addon.v1.UpdateAddonResponse
+	(*v1.Uint32Val)(nil),            // 21: basetypes.v1.Uint32Val
+	(*v1.StringVal)(nil),            // 22: basetypes.v1.StringVal
+	(*v1.BoolVal)(nil),              // 23: basetypes.v1.BoolVal
+	(*v1.Uint32SliceVal)(nil),       // 24: basetypes.v1.Uint32SliceVal
+	(*v1.StringSliceVal)(nil),       // 25: basetypes.v1.StringSliceVal
 }
 var file_npool_billing_mw_v1_addon_addon_proto_depIdxs = []int32{
-	19, // 0: billing.middleware.Addon.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
-	20, // 1: billing.middleware.Addon.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	20, // 2: billing.middleware.Addon.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	19, // 3: billing.middleware.Addon.v1.Conds.SortOrder:type_name -> basetypes.v1.Uint32Val
-	21, // 4: billing.middleware.Addon.v1.Conds.Enabled:type_name -> basetypes.v1.BoolVal
-	22, // 5: billing.middleware.Addon.v1.Conds.IDs:type_name -> basetypes.v1.Uint32SliceVal
-	23, // 6: billing.middleware.Addon.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
+	21, // 0: billing.middleware.Addon.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
+	22, // 1: billing.middleware.Addon.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	22, // 2: billing.middleware.Addon.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	21, // 3: billing.middleware.Addon.v1.Conds.SortOrder:type_name -> basetypes.v1.Uint32Val
+	23, // 4: billing.middleware.Addon.v1.Conds.Enabled:type_name -> basetypes.v1.BoolVal
+	24, // 5: billing.middleware.Addon.v1.Conds.IDs:type_name -> basetypes.v1.Uint32SliceVal
+	25, // 6: billing.middleware.Addon.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
 	2,  // 7: billing.middleware.Addon.v1.GetAddonsRequest.Conds:type_name -> billing.middleware.Addon.v1.Conds
 	1,  // 8: billing.middleware.Addon.v1.GetAddonsResponse.Infos:type_name -> billing.middleware.Addon.v1.Addon
 	2,  // 9: billing.middleware.Addon.v1.GetAddonsCountRequest.Conds:type_name -> billing.middleware.Addon.v1.Conds
@@ -1419,27 +1534,31 @@ var file_npool_billing_mw_v1_addon_addon_proto_depIdxs = []int32{
 	1,  // 17: billing.middleware.Addon.v1.CreateAddonResponse.Info:type_name -> billing.middleware.Addon.v1.Addon
 	0,  // 18: billing.middleware.Addon.v1.DeleteAddonRequest.Info:type_name -> billing.middleware.Addon.v1.AddonReq
 	1,  // 19: billing.middleware.Addon.v1.DeleteAddonResponse.Info:type_name -> billing.middleware.Addon.v1.Addon
-	3,  // 20: billing.middleware.Addon.v1.Middleware.GetAddons:input_type -> billing.middleware.Addon.v1.GetAddonsRequest
-	5,  // 21: billing.middleware.Addon.v1.Middleware.GetAddonsCount:input_type -> billing.middleware.Addon.v1.GetAddonsCountRequest
-	7,  // 22: billing.middleware.Addon.v1.Middleware.GetAddon:input_type -> billing.middleware.Addon.v1.GetAddonRequest
-	9,  // 23: billing.middleware.Addon.v1.Middleware.ExistAddonConds:input_type -> billing.middleware.Addon.v1.ExistAddonCondsRequest
-	11, // 24: billing.middleware.Addon.v1.Middleware.CreateAddons:input_type -> billing.middleware.Addon.v1.CreateAddonsRequest
-	13, // 25: billing.middleware.Addon.v1.Middleware.DeleteAddons:input_type -> billing.middleware.Addon.v1.DeleteAddonsRequest
-	15, // 26: billing.middleware.Addon.v1.Middleware.CreateAddon:input_type -> billing.middleware.Addon.v1.CreateAddonRequest
-	17, // 27: billing.middleware.Addon.v1.Middleware.DeleteAddon:input_type -> billing.middleware.Addon.v1.DeleteAddonRequest
-	4,  // 28: billing.middleware.Addon.v1.Middleware.GetAddons:output_type -> billing.middleware.Addon.v1.GetAddonsResponse
-	6,  // 29: billing.middleware.Addon.v1.Middleware.GetAddonsCount:output_type -> billing.middleware.Addon.v1.GetAddonsCountResponse
-	8,  // 30: billing.middleware.Addon.v1.Middleware.GetAddon:output_type -> billing.middleware.Addon.v1.GetAddonResponse
-	10, // 31: billing.middleware.Addon.v1.Middleware.ExistAddonConds:output_type -> billing.middleware.Addon.v1.ExistAddonCondsResponse
-	12, // 32: billing.middleware.Addon.v1.Middleware.CreateAddons:output_type -> billing.middleware.Addon.v1.CreateAddonsResponse
-	14, // 33: billing.middleware.Addon.v1.Middleware.DeleteAddons:output_type -> billing.middleware.Addon.v1.DeleteAddonsResponse
-	16, // 34: billing.middleware.Addon.v1.Middleware.CreateAddon:output_type -> billing.middleware.Addon.v1.CreateAddonResponse
-	18, // 35: billing.middleware.Addon.v1.Middleware.DeleteAddon:output_type -> billing.middleware.Addon.v1.DeleteAddonResponse
-	28, // [28:36] is the sub-list for method output_type
-	20, // [20:28] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	0,  // 20: billing.middleware.Addon.v1.UpdateAddonRequest.Info:type_name -> billing.middleware.Addon.v1.AddonReq
+	1,  // 21: billing.middleware.Addon.v1.UpdateAddonResponse.Info:type_name -> billing.middleware.Addon.v1.Addon
+	3,  // 22: billing.middleware.Addon.v1.Middleware.GetAddons:input_type -> billing.middleware.Addon.v1.GetAddonsRequest
+	5,  // 23: billing.middleware.Addon.v1.Middleware.GetAddonsCount:input_type -> billing.middleware.Addon.v1.GetAddonsCountRequest
+	7,  // 24: billing.middleware.Addon.v1.Middleware.GetAddon:input_type -> billing.middleware.Addon.v1.GetAddonRequest
+	9,  // 25: billing.middleware.Addon.v1.Middleware.ExistAddonConds:input_type -> billing.middleware.Addon.v1.ExistAddonCondsRequest
+	11, // 26: billing.middleware.Addon.v1.Middleware.CreateAddons:input_type -> billing.middleware.Addon.v1.CreateAddonsRequest
+	13, // 27: billing.middleware.Addon.v1.Middleware.DeleteAddons:input_type -> billing.middleware.Addon.v1.DeleteAddonsRequest
+	15, // 28: billing.middleware.Addon.v1.Middleware.CreateAddon:input_type -> billing.middleware.Addon.v1.CreateAddonRequest
+	17, // 29: billing.middleware.Addon.v1.Middleware.DeleteAddon:input_type -> billing.middleware.Addon.v1.DeleteAddonRequest
+	19, // 30: billing.middleware.Addon.v1.Middleware.UpdateAddon:input_type -> billing.middleware.Addon.v1.UpdateAddonRequest
+	4,  // 31: billing.middleware.Addon.v1.Middleware.GetAddons:output_type -> billing.middleware.Addon.v1.GetAddonsResponse
+	6,  // 32: billing.middleware.Addon.v1.Middleware.GetAddonsCount:output_type -> billing.middleware.Addon.v1.GetAddonsCountResponse
+	8,  // 33: billing.middleware.Addon.v1.Middleware.GetAddon:output_type -> billing.middleware.Addon.v1.GetAddonResponse
+	10, // 34: billing.middleware.Addon.v1.Middleware.ExistAddonConds:output_type -> billing.middleware.Addon.v1.ExistAddonCondsResponse
+	12, // 35: billing.middleware.Addon.v1.Middleware.CreateAddons:output_type -> billing.middleware.Addon.v1.CreateAddonsResponse
+	14, // 36: billing.middleware.Addon.v1.Middleware.DeleteAddons:output_type -> billing.middleware.Addon.v1.DeleteAddonsResponse
+	16, // 37: billing.middleware.Addon.v1.Middleware.CreateAddon:output_type -> billing.middleware.Addon.v1.CreateAddonResponse
+	18, // 38: billing.middleware.Addon.v1.Middleware.DeleteAddon:output_type -> billing.middleware.Addon.v1.DeleteAddonResponse
+	20, // 39: billing.middleware.Addon.v1.Middleware.UpdateAddon:output_type -> billing.middleware.Addon.v1.UpdateAddonResponse
+	31, // [31:40] is the sub-list for method output_type
+	22, // [22:31] is the sub-list for method input_type
+	22, // [22:22] is the sub-list for extension type_name
+	22, // [22:22] is the sub-list for extension extendee
+	0,  // [0:22] is the sub-list for field type_name
 }
 
 func init() { file_npool_billing_mw_v1_addon_addon_proto_init() }
@@ -1676,6 +1795,30 @@ func file_npool_billing_mw_v1_addon_addon_proto_init() {
 				return nil
 			}
 		}
+		file_npool_billing_mw_v1_addon_addon_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateAddonRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_billing_mw_v1_addon_addon_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateAddonResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	file_npool_billing_mw_v1_addon_addon_proto_msgTypes[0].OneofWrappers = []interface{}{}
 	file_npool_billing_mw_v1_addon_addon_proto_msgTypes[2].OneofWrappers = []interface{}{}
@@ -1685,7 +1828,7 @@ func file_npool_billing_mw_v1_addon_addon_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_billing_mw_v1_addon_addon_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   19,
+			NumMessages:   21,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

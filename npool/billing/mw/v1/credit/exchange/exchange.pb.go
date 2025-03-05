@@ -1084,6 +1084,100 @@ func (x *DeleteExchangeResponse) GetInfo() *Exchange {
 	return nil
 }
 
+type UpdateExchangeRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *ExchangeReq `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateExchangeRequest) Reset() {
+	*x = UpdateExchangeRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_billing_mw_v1_credit_exchange_exchange_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateExchangeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateExchangeRequest) ProtoMessage() {}
+
+func (x *UpdateExchangeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_billing_mw_v1_credit_exchange_exchange_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateExchangeRequest.ProtoReflect.Descriptor instead.
+func (*UpdateExchangeRequest) Descriptor() ([]byte, []int) {
+	return file_npool_billing_mw_v1_credit_exchange_exchange_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *UpdateExchangeRequest) GetInfo() *ExchangeReq {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type UpdateExchangeResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *Exchange `protobuf:"bytes,10,opt,name=Info,proto3" json:"Info,omitempty"`
+}
+
+func (x *UpdateExchangeResponse) Reset() {
+	*x = UpdateExchangeResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_npool_billing_mw_v1_credit_exchange_exchange_proto_msgTypes[20]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateExchangeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateExchangeResponse) ProtoMessage() {}
+
+func (x *UpdateExchangeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_npool_billing_mw_v1_credit_exchange_exchange_proto_msgTypes[20]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateExchangeResponse.ProtoReflect.Descriptor instead.
+func (*UpdateExchangeResponse) Descriptor() ([]byte, []int) {
+	return file_npool_billing_mw_v1_credit_exchange_exchange_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *UpdateExchangeResponse) GetInfo() *Exchange {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 var File_npool_billing_mw_v1_credit_exchange_exchange_proto protoreflect.FileDescriptor
 
 var file_npool_billing_mw_v1_credit_exchange_exchange_proto_rawDesc = []byte{
@@ -1252,7 +1346,19 @@ var file_npool_billing_mw_v1_credit_exchange_exchange_proto_rawDesc = []byte{
 	0x32, 0x2f, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
 	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x72, 0x65, 0x64, 0x69, 0x74, 0x2e, 0x65, 0x78, 0x63,
 	0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x63, 0x68, 0x61, 0x6e, 0x67,
-	0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0xcc, 0x0c, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64,
+	0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x5f, 0x0a, 0x15, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x45, 0x78, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x46, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x32,
+	0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77,
+	0x61, 0x72, 0x65, 0x2e, 0x63, 0x72, 0x65, 0x64, 0x69, 0x74, 0x2e, 0x65, 0x78, 0x63, 0x68, 0x61,
+	0x6e, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x52,
+	0x65, 0x71, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x5d, 0x0a, 0x16, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x45, 0x78, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x43, 0x0a, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x2f, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c,
+	0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x72, 0x65, 0x64, 0x69, 0x74, 0x2e, 0x65, 0x78, 0x63,
+	0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x45, 0x78, 0x63, 0x68, 0x61, 0x6e, 0x67,
+	0x65, 0x52, 0x04, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x92, 0x0e, 0x0a, 0x0a, 0x4d, 0x69, 0x64, 0x64,
 	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x12, 0xbb, 0x01, 0x0a, 0x0c, 0x47, 0x65, 0x74, 0x45, 0x78,
 	0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x73, 0x12, 0x3a, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
 	0x67, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x72, 0x65,
@@ -1353,12 +1459,25 @@ var file_npool_billing_mw_v1_credit_exchange_exchange_proto_rawDesc = []byte{
 	0x22, 0x34, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2e, 0x3a, 0x01, 0x2a, 0x22, 0x29, 0x2f, 0x76, 0x31,
 	0x2f, 0x63, 0x72, 0x65, 0x64, 0x69, 0x74, 0x2f, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x65,
 	0x78, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x5f, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x45, 0x78,
-	0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x42, 0x4d, 0x5a, 0x4b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f,
-	0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c,
-	0x2f, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2f, 0x6d, 0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63,
-	0x72, 0x65, 0x64, 0x69, 0x74, 0x2f, 0x63, 0x72, 0x65, 0x64, 0x69, 0x74, 0x2f, 0x65, 0x78, 0x63,
-	0x68, 0x61, 0x6e, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x12, 0xc3, 0x01, 0x0a, 0x0e, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x45, 0x78, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x12, 0x3c, 0x2e, 0x62, 0x69, 0x6c, 0x6c,
+	0x69, 0x6e, 0x67, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63,
+	0x72, 0x65, 0x64, 0x69, 0x74, 0x2e, 0x65, 0x78, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x76,
+	0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x45, 0x78, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3d, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
+	0x67, 0x2e, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2e, 0x63, 0x72, 0x65,
+	0x64, 0x69, 0x74, 0x2e, 0x65, 0x78, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x45, 0x78, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x34, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2e, 0x3a, 0x01,
+	0x2a, 0x22, 0x29, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x64, 0x69, 0x74, 0x2f, 0x62, 0x69,
+	0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x65, 0x78, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x5f, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x45, 0x78, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x42, 0x4d, 0x5a, 0x4b,
+	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x4e, 0x70, 0x6f, 0x6f, 0x6c,
+	0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
+	0x2f, 0x6e, 0x70, 0x6f, 0x6f, 0x6c, 0x2f, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2f, 0x6d,
+	0x77, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x65, 0x64, 0x69, 0x74, 0x2f, 0x63, 0x72, 0x65, 0x64,
+	0x69, 0x74, 0x2f, 0x65, 0x78, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1373,7 +1492,7 @@ func file_npool_billing_mw_v1_credit_exchange_exchange_proto_rawDescGZIP() []byt
 	return file_npool_billing_mw_v1_credit_exchange_exchange_proto_rawDescData
 }
 
-var file_npool_billing_mw_v1_credit_exchange_exchange_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
+var file_npool_billing_mw_v1_credit_exchange_exchange_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
 var file_npool_billing_mw_v1_credit_exchange_exchange_proto_goTypes = []interface{}{
 	(*ExchangeReq)(nil),                // 0: billing.middleware.credit.exchange.v1.ExchangeReq
 	(*Exchange)(nil),                   // 1: billing.middleware.credit.exchange.v1.Exchange
@@ -1394,21 +1513,23 @@ var file_npool_billing_mw_v1_credit_exchange_exchange_proto_goTypes = []interfac
 	(*CreateExchangeResponse)(nil),     // 16: billing.middleware.credit.exchange.v1.CreateExchangeResponse
 	(*DeleteExchangeRequest)(nil),      // 17: billing.middleware.credit.exchange.v1.DeleteExchangeRequest
 	(*DeleteExchangeResponse)(nil),     // 18: billing.middleware.credit.exchange.v1.DeleteExchangeResponse
-	(v1.UsageType)(0),                  // 19: basetypes.billing.v1.UsageType
-	(*v11.Uint32Val)(nil),              // 20: basetypes.v1.Uint32Val
-	(*v11.StringVal)(nil),              // 21: basetypes.v1.StringVal
-	(*v11.Uint32SliceVal)(nil),         // 22: basetypes.v1.Uint32SliceVal
-	(*v11.StringSliceVal)(nil),         // 23: basetypes.v1.StringSliceVal
+	(*UpdateExchangeRequest)(nil),      // 19: billing.middleware.credit.exchange.v1.UpdateExchangeRequest
+	(*UpdateExchangeResponse)(nil),     // 20: billing.middleware.credit.exchange.v1.UpdateExchangeResponse
+	(v1.UsageType)(0),                  // 21: basetypes.billing.v1.UsageType
+	(*v11.Uint32Val)(nil),              // 22: basetypes.v1.Uint32Val
+	(*v11.StringVal)(nil),              // 23: basetypes.v1.StringVal
+	(*v11.Uint32SliceVal)(nil),         // 24: basetypes.v1.Uint32SliceVal
+	(*v11.StringSliceVal)(nil),         // 25: basetypes.v1.StringSliceVal
 }
 var file_npool_billing_mw_v1_credit_exchange_exchange_proto_depIdxs = []int32{
-	19, // 0: billing.middleware.credit.exchange.v1.ExchangeReq.UsageType:type_name -> basetypes.billing.v1.UsageType
-	19, // 1: billing.middleware.credit.exchange.v1.Exchange.UsageType:type_name -> basetypes.billing.v1.UsageType
-	20, // 2: billing.middleware.credit.exchange.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
-	21, // 3: billing.middleware.credit.exchange.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
-	21, // 4: billing.middleware.credit.exchange.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
-	20, // 5: billing.middleware.credit.exchange.v1.Conds.UsageType:type_name -> basetypes.v1.Uint32Val
-	22, // 6: billing.middleware.credit.exchange.v1.Conds.IDs:type_name -> basetypes.v1.Uint32SliceVal
-	23, // 7: billing.middleware.credit.exchange.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
+	21, // 0: billing.middleware.credit.exchange.v1.ExchangeReq.UsageType:type_name -> basetypes.billing.v1.UsageType
+	21, // 1: billing.middleware.credit.exchange.v1.Exchange.UsageType:type_name -> basetypes.billing.v1.UsageType
+	22, // 2: billing.middleware.credit.exchange.v1.Conds.ID:type_name -> basetypes.v1.Uint32Val
+	23, // 3: billing.middleware.credit.exchange.v1.Conds.EntID:type_name -> basetypes.v1.StringVal
+	23, // 4: billing.middleware.credit.exchange.v1.Conds.AppID:type_name -> basetypes.v1.StringVal
+	22, // 5: billing.middleware.credit.exchange.v1.Conds.UsageType:type_name -> basetypes.v1.Uint32Val
+	24, // 6: billing.middleware.credit.exchange.v1.Conds.IDs:type_name -> basetypes.v1.Uint32SliceVal
+	25, // 7: billing.middleware.credit.exchange.v1.Conds.EntIDs:type_name -> basetypes.v1.StringSliceVal
 	2,  // 8: billing.middleware.credit.exchange.v1.GetExchangesRequest.Conds:type_name -> billing.middleware.credit.exchange.v1.Conds
 	1,  // 9: billing.middleware.credit.exchange.v1.GetExchangesResponse.Infos:type_name -> billing.middleware.credit.exchange.v1.Exchange
 	2,  // 10: billing.middleware.credit.exchange.v1.GetExchangesCountRequest.Conds:type_name -> billing.middleware.credit.exchange.v1.Conds
@@ -1422,27 +1543,31 @@ var file_npool_billing_mw_v1_credit_exchange_exchange_proto_depIdxs = []int32{
 	1,  // 18: billing.middleware.credit.exchange.v1.CreateExchangeResponse.Info:type_name -> billing.middleware.credit.exchange.v1.Exchange
 	0,  // 19: billing.middleware.credit.exchange.v1.DeleteExchangeRequest.Info:type_name -> billing.middleware.credit.exchange.v1.ExchangeReq
 	1,  // 20: billing.middleware.credit.exchange.v1.DeleteExchangeResponse.Info:type_name -> billing.middleware.credit.exchange.v1.Exchange
-	3,  // 21: billing.middleware.credit.exchange.v1.Middleware.GetExchanges:input_type -> billing.middleware.credit.exchange.v1.GetExchangesRequest
-	5,  // 22: billing.middleware.credit.exchange.v1.Middleware.GetExchangesCount:input_type -> billing.middleware.credit.exchange.v1.GetExchangesCountRequest
-	7,  // 23: billing.middleware.credit.exchange.v1.Middleware.GetExchange:input_type -> billing.middleware.credit.exchange.v1.GetExchangeRequest
-	9,  // 24: billing.middleware.credit.exchange.v1.Middleware.ExistExchangeConds:input_type -> billing.middleware.credit.exchange.v1.ExistExchangeCondsRequest
-	11, // 25: billing.middleware.credit.exchange.v1.Middleware.CreateExchanges:input_type -> billing.middleware.credit.exchange.v1.CreateExchangesRequest
-	13, // 26: billing.middleware.credit.exchange.v1.Middleware.DeleteExchanges:input_type -> billing.middleware.credit.exchange.v1.DeleteExchangesRequest
-	15, // 27: billing.middleware.credit.exchange.v1.Middleware.CreateExchange:input_type -> billing.middleware.credit.exchange.v1.CreateExchangeRequest
-	17, // 28: billing.middleware.credit.exchange.v1.Middleware.DeleteExchange:input_type -> billing.middleware.credit.exchange.v1.DeleteExchangeRequest
-	4,  // 29: billing.middleware.credit.exchange.v1.Middleware.GetExchanges:output_type -> billing.middleware.credit.exchange.v1.GetExchangesResponse
-	6,  // 30: billing.middleware.credit.exchange.v1.Middleware.GetExchangesCount:output_type -> billing.middleware.credit.exchange.v1.GetExchangesCountResponse
-	8,  // 31: billing.middleware.credit.exchange.v1.Middleware.GetExchange:output_type -> billing.middleware.credit.exchange.v1.GetExchangeResponse
-	10, // 32: billing.middleware.credit.exchange.v1.Middleware.ExistExchangeConds:output_type -> billing.middleware.credit.exchange.v1.ExistExchangeCondsResponse
-	12, // 33: billing.middleware.credit.exchange.v1.Middleware.CreateExchanges:output_type -> billing.middleware.credit.exchange.v1.CreateExchangesResponse
-	14, // 34: billing.middleware.credit.exchange.v1.Middleware.DeleteExchanges:output_type -> billing.middleware.credit.exchange.v1.DeleteExchangesResponse
-	16, // 35: billing.middleware.credit.exchange.v1.Middleware.CreateExchange:output_type -> billing.middleware.credit.exchange.v1.CreateExchangeResponse
-	18, // 36: billing.middleware.credit.exchange.v1.Middleware.DeleteExchange:output_type -> billing.middleware.credit.exchange.v1.DeleteExchangeResponse
-	29, // [29:37] is the sub-list for method output_type
-	21, // [21:29] is the sub-list for method input_type
-	21, // [21:21] is the sub-list for extension type_name
-	21, // [21:21] is the sub-list for extension extendee
-	0,  // [0:21] is the sub-list for field type_name
+	0,  // 21: billing.middleware.credit.exchange.v1.UpdateExchangeRequest.Info:type_name -> billing.middleware.credit.exchange.v1.ExchangeReq
+	1,  // 22: billing.middleware.credit.exchange.v1.UpdateExchangeResponse.Info:type_name -> billing.middleware.credit.exchange.v1.Exchange
+	3,  // 23: billing.middleware.credit.exchange.v1.Middleware.GetExchanges:input_type -> billing.middleware.credit.exchange.v1.GetExchangesRequest
+	5,  // 24: billing.middleware.credit.exchange.v1.Middleware.GetExchangesCount:input_type -> billing.middleware.credit.exchange.v1.GetExchangesCountRequest
+	7,  // 25: billing.middleware.credit.exchange.v1.Middleware.GetExchange:input_type -> billing.middleware.credit.exchange.v1.GetExchangeRequest
+	9,  // 26: billing.middleware.credit.exchange.v1.Middleware.ExistExchangeConds:input_type -> billing.middleware.credit.exchange.v1.ExistExchangeCondsRequest
+	11, // 27: billing.middleware.credit.exchange.v1.Middleware.CreateExchanges:input_type -> billing.middleware.credit.exchange.v1.CreateExchangesRequest
+	13, // 28: billing.middleware.credit.exchange.v1.Middleware.DeleteExchanges:input_type -> billing.middleware.credit.exchange.v1.DeleteExchangesRequest
+	15, // 29: billing.middleware.credit.exchange.v1.Middleware.CreateExchange:input_type -> billing.middleware.credit.exchange.v1.CreateExchangeRequest
+	17, // 30: billing.middleware.credit.exchange.v1.Middleware.DeleteExchange:input_type -> billing.middleware.credit.exchange.v1.DeleteExchangeRequest
+	19, // 31: billing.middleware.credit.exchange.v1.Middleware.UpdateExchange:input_type -> billing.middleware.credit.exchange.v1.UpdateExchangeRequest
+	4,  // 32: billing.middleware.credit.exchange.v1.Middleware.GetExchanges:output_type -> billing.middleware.credit.exchange.v1.GetExchangesResponse
+	6,  // 33: billing.middleware.credit.exchange.v1.Middleware.GetExchangesCount:output_type -> billing.middleware.credit.exchange.v1.GetExchangesCountResponse
+	8,  // 34: billing.middleware.credit.exchange.v1.Middleware.GetExchange:output_type -> billing.middleware.credit.exchange.v1.GetExchangeResponse
+	10, // 35: billing.middleware.credit.exchange.v1.Middleware.ExistExchangeConds:output_type -> billing.middleware.credit.exchange.v1.ExistExchangeCondsResponse
+	12, // 36: billing.middleware.credit.exchange.v1.Middleware.CreateExchanges:output_type -> billing.middleware.credit.exchange.v1.CreateExchangesResponse
+	14, // 37: billing.middleware.credit.exchange.v1.Middleware.DeleteExchanges:output_type -> billing.middleware.credit.exchange.v1.DeleteExchangesResponse
+	16, // 38: billing.middleware.credit.exchange.v1.Middleware.CreateExchange:output_type -> billing.middleware.credit.exchange.v1.CreateExchangeResponse
+	18, // 39: billing.middleware.credit.exchange.v1.Middleware.DeleteExchange:output_type -> billing.middleware.credit.exchange.v1.DeleteExchangeResponse
+	20, // 40: billing.middleware.credit.exchange.v1.Middleware.UpdateExchange:output_type -> billing.middleware.credit.exchange.v1.UpdateExchangeResponse
+	32, // [32:41] is the sub-list for method output_type
+	23, // [23:32] is the sub-list for method input_type
+	23, // [23:23] is the sub-list for extension type_name
+	23, // [23:23] is the sub-list for extension extendee
+	0,  // [0:23] is the sub-list for field type_name
 }
 
 func init() { file_npool_billing_mw_v1_credit_exchange_exchange_proto_init() }
@@ -1679,6 +1804,30 @@ func file_npool_billing_mw_v1_credit_exchange_exchange_proto_init() {
 				return nil
 			}
 		}
+		file_npool_billing_mw_v1_credit_exchange_exchange_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateExchangeRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_npool_billing_mw_v1_credit_exchange_exchange_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateExchangeResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	file_npool_billing_mw_v1_credit_exchange_exchange_proto_msgTypes[0].OneofWrappers = []interface{}{}
 	file_npool_billing_mw_v1_credit_exchange_exchange_proto_msgTypes[2].OneofWrappers = []interface{}{}
@@ -1688,7 +1837,7 @@ func file_npool_billing_mw_v1_credit_exchange_exchange_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_npool_billing_mw_v1_credit_exchange_exchange_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   19,
+			NumMessages:   21,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
