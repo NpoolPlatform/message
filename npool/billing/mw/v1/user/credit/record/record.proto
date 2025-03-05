@@ -34,13 +34,6 @@ service Middleware {
             body : "*"
         };
     }
-    rpc CreateRecords(CreateRecordsRequest)
-        returns (CreateRecordsResponse) {
-        option (google.api.http) = {
-            post : "/v1/user/credit/billingrecord_CreateRecords"
-            body : "*"
-        };
-    }
     rpc DeleteRecords(DeleteRecordsRequest)
         returns (DeleteRecordsResponse) {
         option (google.api.http) = {
@@ -138,10 +131,6 @@ message GetRecordResponse { Record Info = 10; }
 message ExistRecordCondsRequest { Conds Conds = 10; }
 
 message ExistRecordCondsResponse { bool Info = 10; }
-
-message CreateRecordsRequest { repeated RecordReq Infos = 10; }
-
-message CreateRecordsResponse { repeated Record Infos = 10; }
 
 message DeleteRecordsRequest { repeated RecordReq Infos = 10; }
 

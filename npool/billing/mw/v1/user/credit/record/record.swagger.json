@@ -48,38 +48,6 @@
         ]
       }
     },
-    "/v1/user/credit/billingrecord_CreateRecords": {
-      "post": {
-        "operationId": "Middleware_CreateRecords",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateRecordsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateRecordsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
     "/v1/user/credit/billingrecord_DeleteRecord": {
       "post": {
         "operationId": "Middleware_DeleteRecord",
@@ -372,28 +340,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Record"
-        }
-      }
-    },
-    "v1CreateRecordsRequest": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1RecordReq"
-          }
-        }
-      }
-    },
-    "v1CreateRecordsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Record"
-          }
         }
       }
     },

@@ -23,7 +23,6 @@ const (
 	Middleware_GetSubscriptionsCount_FullMethodName  = "/billing.middleware.subscription.v1.Middleware/GetSubscriptionsCount"
 	Middleware_GetSubscription_FullMethodName        = "/billing.middleware.subscription.v1.Middleware/GetSubscription"
 	Middleware_ExistSubscriptionConds_FullMethodName = "/billing.middleware.subscription.v1.Middleware/ExistSubscriptionConds"
-	Middleware_CreateSubscriptions_FullMethodName    = "/billing.middleware.subscription.v1.Middleware/CreateSubscriptions"
 	Middleware_DeleteSubscriptions_FullMethodName    = "/billing.middleware.subscription.v1.Middleware/DeleteSubscriptions"
 	Middleware_CreateSubscription_FullMethodName     = "/billing.middleware.subscription.v1.Middleware/CreateSubscription"
 	Middleware_DeleteSubscription_FullMethodName     = "/billing.middleware.subscription.v1.Middleware/DeleteSubscription"
@@ -38,7 +37,6 @@ type MiddlewareClient interface {
 	GetSubscriptionsCount(ctx context.Context, in *GetSubscriptionsCountRequest, opts ...grpc.CallOption) (*GetSubscriptionsCountResponse, error)
 	GetSubscription(ctx context.Context, in *GetSubscriptionRequest, opts ...grpc.CallOption) (*GetSubscriptionResponse, error)
 	ExistSubscriptionConds(ctx context.Context, in *ExistSubscriptionCondsRequest, opts ...grpc.CallOption) (*ExistSubscriptionCondsResponse, error)
-	CreateSubscriptions(ctx context.Context, in *CreateSubscriptionsRequest, opts ...grpc.CallOption) (*CreateSubscriptionsResponse, error)
 	DeleteSubscriptions(ctx context.Context, in *DeleteSubscriptionsRequest, opts ...grpc.CallOption) (*DeleteSubscriptionsResponse, error)
 	CreateSubscription(ctx context.Context, in *CreateSubscriptionRequest, opts ...grpc.CallOption) (*CreateSubscriptionResponse, error)
 	DeleteSubscription(ctx context.Context, in *DeleteSubscriptionRequest, opts ...grpc.CallOption) (*DeleteSubscriptionResponse, error)
@@ -89,15 +87,6 @@ func (c *middlewareClient) ExistSubscriptionConds(ctx context.Context, in *Exist
 	return out, nil
 }
 
-func (c *middlewareClient) CreateSubscriptions(ctx context.Context, in *CreateSubscriptionsRequest, opts ...grpc.CallOption) (*CreateSubscriptionsResponse, error) {
-	out := new(CreateSubscriptionsResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateSubscriptions_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeleteSubscriptions(ctx context.Context, in *DeleteSubscriptionsRequest, opts ...grpc.CallOption) (*DeleteSubscriptionsResponse, error) {
 	out := new(DeleteSubscriptionsResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteSubscriptions_FullMethodName, in, out, opts...)
@@ -142,7 +131,6 @@ type MiddlewareServer interface {
 	GetSubscriptionsCount(context.Context, *GetSubscriptionsCountRequest) (*GetSubscriptionsCountResponse, error)
 	GetSubscription(context.Context, *GetSubscriptionRequest) (*GetSubscriptionResponse, error)
 	ExistSubscriptionConds(context.Context, *ExistSubscriptionCondsRequest) (*ExistSubscriptionCondsResponse, error)
-	CreateSubscriptions(context.Context, *CreateSubscriptionsRequest) (*CreateSubscriptionsResponse, error)
 	DeleteSubscriptions(context.Context, *DeleteSubscriptionsRequest) (*DeleteSubscriptionsResponse, error)
 	CreateSubscription(context.Context, *CreateSubscriptionRequest) (*CreateSubscriptionResponse, error)
 	DeleteSubscription(context.Context, *DeleteSubscriptionRequest) (*DeleteSubscriptionResponse, error)
@@ -165,9 +153,6 @@ func (UnimplementedMiddlewareServer) GetSubscription(context.Context, *GetSubscr
 }
 func (UnimplementedMiddlewareServer) ExistSubscriptionConds(context.Context, *ExistSubscriptionCondsRequest) (*ExistSubscriptionCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistSubscriptionConds not implemented")
-}
-func (UnimplementedMiddlewareServer) CreateSubscriptions(context.Context, *CreateSubscriptionsRequest) (*CreateSubscriptionsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateSubscriptions not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteSubscriptions(context.Context, *DeleteSubscriptionsRequest) (*DeleteSubscriptionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteSubscriptions not implemented")
@@ -266,24 +251,6 @@ func _Middleware_ExistSubscriptionConds_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CreateSubscriptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateSubscriptionsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateSubscriptions(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateSubscriptions_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateSubscriptions(ctx, req.(*CreateSubscriptionsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeleteSubscriptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteSubscriptionsRequest)
 	if err := dec(in); err != nil {
@@ -378,10 +345,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistSubscriptionConds",
 			Handler:    _Middleware_ExistSubscriptionConds_Handler,
-		},
-		{
-			MethodName: "CreateSubscriptions",
-			Handler:    _Middleware_CreateSubscriptions_Handler,
 		},
 		{
 			MethodName: "DeleteSubscriptions",

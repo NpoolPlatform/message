@@ -33,13 +33,6 @@ service Middleware {
             body : "*"
         };
     }
-    rpc CreateAddons(CreateAddonsRequest)
-        returns (CreateAddonsResponse) {
-        option (google.api.http) = {
-            post : "/v1/billingaddon_CreateAddons"
-            body : "*"
-        };
-    }
     rpc DeleteAddons(DeleteAddonsRequest)
         returns (DeleteAddonsResponse) {
         option (google.api.http) = {
@@ -139,10 +132,6 @@ message GetAddonResponse { Addon Info = 10; }
 message ExistAddonCondsRequest { Conds Conds = 10; }
 
 message ExistAddonCondsResponse { bool Info = 10; }
-
-message CreateAddonsRequest { repeated AddonReq Infos = 10; }
-
-message CreateAddonsResponse { repeated Addon Infos = 10; }
 
 message DeleteAddonsRequest { repeated AddonReq Infos = 10; }
 

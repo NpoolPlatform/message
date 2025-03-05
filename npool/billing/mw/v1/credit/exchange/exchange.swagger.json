@@ -48,38 +48,6 @@
         ]
       }
     },
-    "/v1/credit/billingexchange_CreateExchanges": {
-      "post": {
-        "operationId": "Middleware_CreateExchanges",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1CreateExchangesResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1CreateExchangesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
     "/v1/credit/billingexchange_DeleteExchange": {
       "post": {
         "operationId": "Middleware_DeleteExchange",
@@ -369,28 +337,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Exchange"
-        }
-      }
-    },
-    "v1CreateExchangesRequest": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1ExchangeReq"
-          }
-        }
-      }
-    },
-    "v1CreateExchangesResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Exchange"
-          }
         }
       }
     },

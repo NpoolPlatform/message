@@ -23,7 +23,6 @@ const (
 	Middleware_GetAddonsCount_FullMethodName  = "/billing.middleware.Addon.v1.Middleware/GetAddonsCount"
 	Middleware_GetAddon_FullMethodName        = "/billing.middleware.Addon.v1.Middleware/GetAddon"
 	Middleware_ExistAddonConds_FullMethodName = "/billing.middleware.Addon.v1.Middleware/ExistAddonConds"
-	Middleware_CreateAddons_FullMethodName    = "/billing.middleware.Addon.v1.Middleware/CreateAddons"
 	Middleware_DeleteAddons_FullMethodName    = "/billing.middleware.Addon.v1.Middleware/DeleteAddons"
 	Middleware_CreateAddon_FullMethodName     = "/billing.middleware.Addon.v1.Middleware/CreateAddon"
 	Middleware_DeleteAddon_FullMethodName     = "/billing.middleware.Addon.v1.Middleware/DeleteAddon"
@@ -38,7 +37,6 @@ type MiddlewareClient interface {
 	GetAddonsCount(ctx context.Context, in *GetAddonsCountRequest, opts ...grpc.CallOption) (*GetAddonsCountResponse, error)
 	GetAddon(ctx context.Context, in *GetAddonRequest, opts ...grpc.CallOption) (*GetAddonResponse, error)
 	ExistAddonConds(ctx context.Context, in *ExistAddonCondsRequest, opts ...grpc.CallOption) (*ExistAddonCondsResponse, error)
-	CreateAddons(ctx context.Context, in *CreateAddonsRequest, opts ...grpc.CallOption) (*CreateAddonsResponse, error)
 	DeleteAddons(ctx context.Context, in *DeleteAddonsRequest, opts ...grpc.CallOption) (*DeleteAddonsResponse, error)
 	CreateAddon(ctx context.Context, in *CreateAddonRequest, opts ...grpc.CallOption) (*CreateAddonResponse, error)
 	DeleteAddon(ctx context.Context, in *DeleteAddonRequest, opts ...grpc.CallOption) (*DeleteAddonResponse, error)
@@ -89,15 +87,6 @@ func (c *middlewareClient) ExistAddonConds(ctx context.Context, in *ExistAddonCo
 	return out, nil
 }
 
-func (c *middlewareClient) CreateAddons(ctx context.Context, in *CreateAddonsRequest, opts ...grpc.CallOption) (*CreateAddonsResponse, error) {
-	out := new(CreateAddonsResponse)
-	err := c.cc.Invoke(ctx, Middleware_CreateAddons_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) DeleteAddons(ctx context.Context, in *DeleteAddonsRequest, opts ...grpc.CallOption) (*DeleteAddonsResponse, error) {
 	out := new(DeleteAddonsResponse)
 	err := c.cc.Invoke(ctx, Middleware_DeleteAddons_FullMethodName, in, out, opts...)
@@ -142,7 +131,6 @@ type MiddlewareServer interface {
 	GetAddonsCount(context.Context, *GetAddonsCountRequest) (*GetAddonsCountResponse, error)
 	GetAddon(context.Context, *GetAddonRequest) (*GetAddonResponse, error)
 	ExistAddonConds(context.Context, *ExistAddonCondsRequest) (*ExistAddonCondsResponse, error)
-	CreateAddons(context.Context, *CreateAddonsRequest) (*CreateAddonsResponse, error)
 	DeleteAddons(context.Context, *DeleteAddonsRequest) (*DeleteAddonsResponse, error)
 	CreateAddon(context.Context, *CreateAddonRequest) (*CreateAddonResponse, error)
 	DeleteAddon(context.Context, *DeleteAddonRequest) (*DeleteAddonResponse, error)
@@ -165,9 +153,6 @@ func (UnimplementedMiddlewareServer) GetAddon(context.Context, *GetAddonRequest)
 }
 func (UnimplementedMiddlewareServer) ExistAddonConds(context.Context, *ExistAddonCondsRequest) (*ExistAddonCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistAddonConds not implemented")
-}
-func (UnimplementedMiddlewareServer) CreateAddons(context.Context, *CreateAddonsRequest) (*CreateAddonsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAddons not implemented")
 }
 func (UnimplementedMiddlewareServer) DeleteAddons(context.Context, *DeleteAddonsRequest) (*DeleteAddonsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAddons not implemented")
@@ -266,24 +251,6 @@ func _Middleware_ExistAddonConds_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_CreateAddons_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAddonsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).CreateAddons(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_CreateAddons_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).CreateAddons(ctx, req.(*CreateAddonsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_DeleteAddons_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteAddonsRequest)
 	if err := dec(in); err != nil {
@@ -378,10 +345,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistAddonConds",
 			Handler:    _Middleware_ExistAddonConds_Handler,
-		},
-		{
-			MethodName: "CreateAddons",
-			Handler:    _Middleware_CreateAddons_Handler,
 		},
 		{
 			MethodName: "DeleteAddons",

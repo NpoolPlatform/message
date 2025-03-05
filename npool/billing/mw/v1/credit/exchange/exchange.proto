@@ -34,13 +34,6 @@ service Middleware {
             body : "*"
         };
     }
-    rpc CreateExchanges(CreateExchangesRequest)
-        returns (CreateExchangesResponse) {
-        option (google.api.http) = {
-            post : "/v1/credit/billingexchange_CreateExchanges"
-            body : "*"
-        };
-    }
     rpc DeleteExchanges(DeleteExchangesRequest)
         returns (DeleteExchangesResponse) {
         option (google.api.http) = {
@@ -134,10 +127,6 @@ message GetExchangeResponse { Exchange Info = 10; }
 message ExistExchangeCondsRequest { Conds Conds = 10; }
 
 message ExistExchangeCondsResponse { bool Info = 10; }
-
-message CreateExchangesRequest { repeated ExchangeReq Infos = 10; }
-
-message CreateExchangesResponse { repeated Exchange Infos = 10; }
 
 message DeleteExchangesRequest { repeated ExchangeReq Infos = 10; }
 

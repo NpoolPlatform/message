@@ -34,13 +34,6 @@ service Middleware {
             body : "*"
         };
     }
-    rpc CreateSubscriptions(CreateSubscriptionsRequest)
-        returns (CreateSubscriptionsResponse) {
-        option (google.api.http) = {
-            post : "/v1/user/billingsubscription_CreateSubscriptions"
-            body : "*"
-        };
-    }
     rpc DeleteSubscriptions(DeleteSubscriptionsRequest)
         returns (DeleteSubscriptionsResponse) {
         option (google.api.http) = {
@@ -154,10 +147,6 @@ message GetSubscriptionResponse { Subscription Info = 10; }
 message ExistSubscriptionCondsRequest { Conds Conds = 10; }
 
 message ExistSubscriptionCondsResponse { bool Info = 10; }
-
-message CreateSubscriptionsRequest { repeated SubscriptionReq Infos = 10; }
-
-message CreateSubscriptionsResponse { repeated Subscription Infos = 10; }
 
 message DeleteSubscriptionsRequest { repeated SubscriptionReq Infos = 10; }
 
