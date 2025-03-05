@@ -565,7 +565,8 @@
           "$ref": "#/definitions/v1OperationType"
         },
         "CreditsChange": {
-          "type": "string"
+          "type": "integer",
+          "format": "int32"
         },
         "Extra": {
           "type": "string"
