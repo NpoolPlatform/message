@@ -133,8 +133,6 @@ message GetSubscriptionsResponse {
 }
 
 message GetSubscriptionsCountRequest {
-    Conds Conds = 10;
-    int32 Offset = 20;
     int32 Limit = 30;
 }
 

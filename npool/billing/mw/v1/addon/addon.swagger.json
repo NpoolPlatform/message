@@ -533,14 +533,6 @@
       "properties": {
         "Conds": {
           "$ref": "#/definitions/v1Conds"
-        },
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
         }
       }
     },
