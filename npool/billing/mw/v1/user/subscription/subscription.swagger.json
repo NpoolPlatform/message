@@ -210,7 +210,6 @@
     },
     "/v1/user/billingsubscription_GetSubscriptions": {
       "post": {
-        "summary": "rpc GetSubscription()",
         "operationId": "Middleware_GetSubscriptions",
         "responses": {
           "200": {
@@ -305,6 +304,9 @@
     "v1Conds": {
       "type": "object",
       "properties": {
+        "ID": {
+          "$ref": "#/definitions/v1Uint32Val"
+        },
         "EntID": {
           "$ref": "#/definitions/v1StringVal"
         },
@@ -328,6 +330,9 @@
         },
         "UsageState": {
           "$ref": "#/definitions/v1Uint32Val"
+        },
+        "IDs": {
+          "$ref": "#/definitions/v1Uint32SliceVal"
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
@@ -624,6 +629,21 @@
         "AddonCredit": {
           "type": "integer",
           "format": "int64"
+        }
+      }
+    },
+    "v1Uint32SliceVal": {
+      "type": "object",
+      "properties": {
+        "Op": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
         }
       }
     },

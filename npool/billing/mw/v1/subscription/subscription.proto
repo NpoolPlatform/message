@@ -110,13 +110,15 @@ message Subscription {
 }
 
 message Conds {
+    optional basetypes.v1.Uint32Val ID = 9;
     optional basetypes.v1.StringVal EntID = 10;
     optional basetypes.v1.StringVal AppID = 20;
     optional basetypes.v1.StringVal PackageName = 30;
     optional basetypes.v1.StringVal SortOrder = 40;
     optional basetypes.v1.Uint32Val PackageType = 50;
     optional basetypes.v1.Uint32Val ResetType = 60;
-    optional basetypes.v1.StringSliceVal EntIDs = 70;
+    optional basetypes.v1.Uint32SliceVal IDs = 1000;
+    optional basetypes.v1.StringSliceVal EntIDs = 1010;
 }
 
 message GetSubscriptionsRequest {

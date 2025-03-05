@@ -33,7 +33,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	// rpc GetSubscription()
 	GetSubscriptions(ctx context.Context, in *GetSubscriptionsRequest, opts ...grpc.CallOption) (*GetSubscriptionsResponse, error)
 	GetSubscriptionsCount(ctx context.Context, in *GetSubscriptionsCountRequest, opts ...grpc.CallOption) (*GetSubscriptionsCountResponse, error)
 	GetSubscription(ctx context.Context, in *GetSubscriptionRequest, opts ...grpc.CallOption) (*GetSubscriptionResponse, error)
@@ -128,7 +127,6 @@ func (c *middlewareClient) DeleteSubscription(ctx context.Context, in *DeleteSub
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	// rpc GetSubscription()
 	GetSubscriptions(context.Context, *GetSubscriptionsRequest) (*GetSubscriptionsResponse, error)
 	GetSubscriptionsCount(context.Context, *GetSubscriptionsCountRequest) (*GetSubscriptionsCountResponse, error)
 	GetSubscription(context.Context, *GetSubscriptionRequest) (*GetSubscriptionResponse, error)

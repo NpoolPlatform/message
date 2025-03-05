@@ -109,6 +109,7 @@ message Subscription {
 }
 
 message Conds {
+    optional basetypes.v1.Uint32Val ID = 9;
     optional basetypes.v1.StringVal EntID = 10;
     optional basetypes.v1.StringVal AppID = 20;
     optional basetypes.v1.StringVal UserID = 30;
@@ -117,7 +118,8 @@ message Conds {
     optional basetypes.v1.StringVal StartAt = 60;
     optional basetypes.v1.StringVal EndAt = 70;
     optional basetypes.v1.Uint32Val UsageState = 80;
-    optional basetypes.v1.StringSliceVal EntIDs = 90;
+    optional basetypes.v1.Uint32SliceVal IDs = 1000;
+    optional basetypes.v1.StringSliceVal EntIDs = 1010;
 }
 
 message GetSubscriptionsRequest {

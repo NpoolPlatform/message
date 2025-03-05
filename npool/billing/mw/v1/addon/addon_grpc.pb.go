@@ -33,7 +33,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	// rpc GetAddon()
 	GetAddons(ctx context.Context, in *GetAddonsRequest, opts ...grpc.CallOption) (*GetAddonsResponse, error)
 	GetAddonsCount(ctx context.Context, in *GetAddonsCountRequest, opts ...grpc.CallOption) (*GetAddonsCountResponse, error)
 	GetAddon(ctx context.Context, in *GetAddonRequest, opts ...grpc.CallOption) (*GetAddonResponse, error)
@@ -128,7 +127,6 @@ func (c *middlewareClient) DeleteAddon(ctx context.Context, in *DeleteAddonReque
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	// rpc GetAddon()
 	GetAddons(context.Context, *GetAddonsRequest) (*GetAddonsResponse, error)
 	GetAddonsCount(context.Context, *GetAddonsCountRequest) (*GetAddonsCountResponse, error)
 	GetAddon(context.Context, *GetAddonRequest) (*GetAddonResponse, error)

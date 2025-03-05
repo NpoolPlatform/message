@@ -33,7 +33,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
-	// rpc GetExchange()
 	GetExchanges(ctx context.Context, in *GetExchangesRequest, opts ...grpc.CallOption) (*GetExchangesResponse, error)
 	GetExchangesCount(ctx context.Context, in *GetExchangesCountRequest, opts ...grpc.CallOption) (*GetExchangesCountResponse, error)
 	GetExchange(ctx context.Context, in *GetExchangeRequest, opts ...grpc.CallOption) (*GetExchangeResponse, error)
@@ -128,7 +127,6 @@ func (c *middlewareClient) DeleteExchange(ctx context.Context, in *DeleteExchang
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
 type MiddlewareServer interface {
-	// rpc GetExchange()
 	GetExchanges(context.Context, *GetExchangesRequest) (*GetExchangesResponse, error)
 	GetExchangesCount(context.Context, *GetExchangesCountRequest) (*GetExchangesCountResponse, error)
 	GetExchange(context.Context, *GetExchangeRequest) (*GetExchangeResponse, error)
