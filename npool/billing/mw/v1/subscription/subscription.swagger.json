@@ -505,7 +505,7 @@
         "ResetType": {
           "$ref": "#/definitions/v1PackageType"
         },
-        "QpsLimit": {
+        "QPSLimit": {
           "type": "string",
           "title": "@inject_tag: sql:\"qps_limit\""
         },
@@ -557,7 +557,7 @@
         "ResetType": {
           "$ref": "#/definitions/v1ResetType"
         },
-        "QpsLimit": {
+        "QPSLimit": {
           "type": "integer",
           "format": "int64"
         }
