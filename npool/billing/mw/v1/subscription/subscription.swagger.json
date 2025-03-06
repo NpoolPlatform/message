@@ -285,7 +285,7 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "SortOrder": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "PackageType": {
           "$ref": "#/definitions/v1Uint32Val"
@@ -484,7 +484,8 @@
           "title": "@inject_tag: sql:\"description\""
         },
         "SortOrder": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"sort_order\""
         },
         "PackageTypeStr": {
@@ -495,7 +496,8 @@
           "$ref": "#/definitions/v1PackageType"
         },
         "Credit": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"credit\""
         },
         "ResetTypeStr": {
@@ -506,7 +508,8 @@
           "$ref": "#/definitions/v1PackageType"
         },
         "QPSLimit": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"qps_limit\""
         },
         "CreatedAt": {

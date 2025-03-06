@@ -85,17 +85,17 @@ message Subscription {
     // @inject_tag: sql:"description"
     string Description = 60;
     // @inject_tag: sql:"sort_order"
-    string SortOrder = 70;
+    uint32 SortOrder = 70;
     // @inject_tag: sql:"package_type"
     string PackageTypeStr = 80;
     basetypes.billing.v1.PackageType PackageType = 81;
     // @inject_tag: sql:"credit"
-    string Credit = 90;
+    uint32 Credit = 90;
     // @inject_tag: sql:"reset_type"
     string ResetTypeStr = 100;
     basetypes.billing.v1.PackageType ResetType = 101;
     // @inject_tag: sql:"qps_limit"
-    string QPSLimit = 110;
+    uint32 QPSLimit = 110;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
@@ -107,7 +107,7 @@ message Conds {
     optional basetypes.v1.StringVal EntID = 10;
     optional basetypes.v1.StringVal AppID = 20;
     optional basetypes.v1.StringVal PackageName = 30;
-    optional basetypes.v1.StringVal SortOrder = 40;
+    optional basetypes.v1.Uint32Val SortOrder = 40;
     optional basetypes.v1.Uint32Val PackageType = 50;
     optional basetypes.v1.Uint32Val ResetType = 60;
     optional basetypes.v1.Uint32SliceVal IDs = 1000;
