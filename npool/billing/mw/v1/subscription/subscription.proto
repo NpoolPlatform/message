@@ -93,7 +93,7 @@ message Subscription {
     uint32 Credit = 90;
     // @inject_tag: sql:"reset_type"
     string ResetTypeStr = 100;
-    basetypes.billing.v1.PackageType ResetType = 101;
+    basetypes.billing.v1.ResetType ResetType = 101;
     // @inject_tag: sql:"qps_limit"
     uint32 QPSLimit = 110;
     // @inject_tag: sql:"created_at"
