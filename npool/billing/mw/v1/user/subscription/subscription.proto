@@ -92,9 +92,9 @@ message Subscription {
     string UsageStateStr = 90;
     basetypes.billing.v1.UsageState UsageState = 91;
     // @inject_tag: sql:"subscription_credit"
-    string SubscriptionCredit = 100;
+    uint32 SubscriptionCredit = 100;
     // @inject_tag: sql:"addon_credit"
-    string AddonCredit = 110;
+    uint32 AddonCredit = 110;
     // @inject_tag: sql:"created_at"
     uint32 CreatedAt = 1000;
     // @inject_tag: sql:"updated_at"
@@ -108,8 +108,8 @@ message Conds {
     optional basetypes.v1.StringVal UserID = 30;
     optional basetypes.v1.StringVal PackageID = 40;
     optional basetypes.v1.StringVal OrderID = 50;
-    optional basetypes.v1.StringVal StartAt = 60;
-    optional basetypes.v1.StringVal EndAt = 70;
+    optional basetypes.v1.Uint32Val StartAt = 60;
+    optional basetypes.v1.Uint32Val EndAt = 70;
     optional basetypes.v1.Uint32Val UsageState = 80;
     optional basetypes.v1.Uint32SliceVal IDs = 1000;
     optional basetypes.v1.StringSliceVal EntIDs = 1010;

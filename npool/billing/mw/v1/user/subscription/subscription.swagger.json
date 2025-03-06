@@ -291,10 +291,10 @@
           "$ref": "#/definitions/v1StringVal"
         },
         "StartAt": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "EndAt": {
-          "$ref": "#/definitions/v1StringVal"
+          "$ref": "#/definitions/v1Uint32Val"
         },
         "UsageState": {
           "$ref": "#/definitions/v1Uint32Val"
@@ -486,11 +486,13 @@
           "$ref": "#/definitions/v1UsageState"
         },
         "SubscriptionCredit": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"subscription_credit\""
         },
         "AddonCredit": {
-          "type": "string",
+          "type": "integer",
+          "format": "int64",
           "title": "@inject_tag: sql:\"addon_credit\""
         },
         "CreatedAt": {
