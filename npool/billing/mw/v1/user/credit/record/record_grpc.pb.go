@@ -25,7 +25,6 @@ const (
 	Middleware_ExistRecordConds_FullMethodName = "/billing.middleware.user.credit.record.v1.Middleware/ExistRecordConds"
 	Middleware_CreateRecord_FullMethodName     = "/billing.middleware.user.credit.record.v1.Middleware/CreateRecord"
 	Middleware_DeleteRecord_FullMethodName     = "/billing.middleware.user.credit.record.v1.Middleware/DeleteRecord"
-	Middleware_UpdateRecord_FullMethodName     = "/billing.middleware.user.credit.record.v1.Middleware/UpdateRecord"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -38,7 +37,6 @@ type MiddlewareClient interface {
 	ExistRecordConds(ctx context.Context, in *ExistRecordCondsRequest, opts ...grpc.CallOption) (*ExistRecordCondsResponse, error)
 	CreateRecord(ctx context.Context, in *CreateRecordRequest, opts ...grpc.CallOption) (*CreateRecordResponse, error)
 	DeleteRecord(ctx context.Context, in *DeleteRecordRequest, opts ...grpc.CallOption) (*DeleteRecordResponse, error)
-	UpdateRecord(ctx context.Context, in *UpdateRecordRequest, opts ...grpc.CallOption) (*UpdateRecordResponse, error)
 }
 
 type middlewareClient struct {
@@ -103,15 +101,6 @@ func (c *middlewareClient) DeleteRecord(ctx context.Context, in *DeleteRecordReq
 	return out, nil
 }
 
-func (c *middlewareClient) UpdateRecord(ctx context.Context, in *UpdateRecordRequest, opts ...grpc.CallOption) (*UpdateRecordResponse, error) {
-	out := new(UpdateRecordResponse)
-	err := c.cc.Invoke(ctx, Middleware_UpdateRecord_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MiddlewareServer is the server API for Middleware service.
 // All implementations must embed UnimplementedMiddlewareServer
 // for forward compatibility
@@ -122,7 +111,6 @@ type MiddlewareServer interface {
 	ExistRecordConds(context.Context, *ExistRecordCondsRequest) (*ExistRecordCondsResponse, error)
 	CreateRecord(context.Context, *CreateRecordRequest) (*CreateRecordResponse, error)
 	DeleteRecord(context.Context, *DeleteRecordRequest) (*DeleteRecordResponse, error)
-	UpdateRecord(context.Context, *UpdateRecordRequest) (*UpdateRecordResponse, error)
 	mustEmbedUnimplementedMiddlewareServer()
 }
 
@@ -147,9 +135,6 @@ func (UnimplementedMiddlewareServer) CreateRecord(context.Context, *CreateRecord
 }
 func (UnimplementedMiddlewareServer) DeleteRecord(context.Context, *DeleteRecordRequest) (*DeleteRecordResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteRecord not implemented")
-}
-func (UnimplementedMiddlewareServer) UpdateRecord(context.Context, *UpdateRecordRequest) (*UpdateRecordResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateRecord not implemented")
 }
 func (UnimplementedMiddlewareServer) mustEmbedUnimplementedMiddlewareServer() {}
 
@@ -272,24 +257,6 @@ func _Middleware_DeleteRecord_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_UpdateRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateRecordRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).UpdateRecord(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_UpdateRecord_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).UpdateRecord(ctx, req.(*UpdateRecordRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // Middleware_ServiceDesc is the grpc.ServiceDesc for Middleware service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -320,10 +287,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteRecord",
 			Handler:    _Middleware_DeleteRecord_Handler,
-		},
-		{
-			MethodName: "UpdateRecord",
-			Handler:    _Middleware_UpdateRecord_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

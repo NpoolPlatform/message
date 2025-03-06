@@ -544,19 +544,22 @@
           "type": "string"
         },
         "SortOrder": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "PackageType": {
           "$ref": "#/definitions/v1PackageType"
         },
         "Credit": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "ResetType": {
           "$ref": "#/definitions/v1ResetType"
         },
         "QpsLimit": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

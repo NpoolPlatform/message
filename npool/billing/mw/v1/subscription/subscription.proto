@@ -64,11 +64,11 @@ message SubscriptionReq {
     optional string PackageName = 40;
     optional string Price = 50;
     optional string Description = 60;
-    optional string SortOrder = 70;
+    optional uint32 SortOrder = 70;
     optional basetypes.billing.v1.PackageType PackageType = 80;
-    optional string Credit = 90;
+    optional uint32 Credit = 90;
     optional basetypes.billing.v1.ResetType ResetType = 100;
-    optional string QpsLimit = 110;
+    optional uint32 QpsLimit = 110;
 }
 
 message Subscription {
