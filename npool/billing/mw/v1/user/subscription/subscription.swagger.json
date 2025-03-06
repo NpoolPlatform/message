@@ -80,38 +80,6 @@
         ]
       }
     },
-    "/v1/user/billingsubscription_DeleteSubscriptions": {
-      "post": {
-        "operationId": "Middleware_DeleteSubscriptions",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1DeleteSubscriptionsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1DeleteSubscriptionsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
     "/v1/user/billingsubscription_ExistSubscriptionConds": {
       "post": {
         "operationId": "Middleware_ExistSubscriptionConds",
@@ -371,28 +339,6 @@
         }
       }
     },
-    "v1DeleteSubscriptionsRequest": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1SubscriptionReq"
-          }
-        }
-      }
-    },
-    "v1DeleteSubscriptionsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Subscription"
-          }
-        }
-      }
-    },
     "v1ExistSubscriptionCondsRequest": {
       "type": "object",
       "properties": {
@@ -428,9 +374,8 @@
     "v1GetSubscriptionsCountRequest": {
       "type": "object",
       "properties": {
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
+        "Conds": {
+          "$ref": "#/definitions/v1Conds"
         }
       }
     },

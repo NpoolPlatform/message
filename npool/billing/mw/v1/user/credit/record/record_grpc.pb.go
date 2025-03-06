@@ -23,7 +23,6 @@ const (
 	Middleware_GetRecordsCount_FullMethodName  = "/billing.middleware.user.credit.record.v1.Middleware/GetRecordsCount"
 	Middleware_GetRecord_FullMethodName        = "/billing.middleware.user.credit.record.v1.Middleware/GetRecord"
 	Middleware_ExistRecordConds_FullMethodName = "/billing.middleware.user.credit.record.v1.Middleware/ExistRecordConds"
-	Middleware_DeleteRecords_FullMethodName    = "/billing.middleware.user.credit.record.v1.Middleware/DeleteRecords"
 	Middleware_CreateRecord_FullMethodName     = "/billing.middleware.user.credit.record.v1.Middleware/CreateRecord"
 	Middleware_DeleteRecord_FullMethodName     = "/billing.middleware.user.credit.record.v1.Middleware/DeleteRecord"
 	Middleware_UpdateRecord_FullMethodName     = "/billing.middleware.user.credit.record.v1.Middleware/UpdateRecord"
@@ -37,7 +36,6 @@ type MiddlewareClient interface {
 	GetRecordsCount(ctx context.Context, in *GetRecordsCountRequest, opts ...grpc.CallOption) (*GetRecordsCountResponse, error)
 	GetRecord(ctx context.Context, in *GetRecordRequest, opts ...grpc.CallOption) (*GetRecordResponse, error)
 	ExistRecordConds(ctx context.Context, in *ExistRecordCondsRequest, opts ...grpc.CallOption) (*ExistRecordCondsResponse, error)
-	DeleteRecords(ctx context.Context, in *DeleteRecordsRequest, opts ...grpc.CallOption) (*DeleteRecordsResponse, error)
 	CreateRecord(ctx context.Context, in *CreateRecordRequest, opts ...grpc.CallOption) (*CreateRecordResponse, error)
 	DeleteRecord(ctx context.Context, in *DeleteRecordRequest, opts ...grpc.CallOption) (*DeleteRecordResponse, error)
 	UpdateRecord(ctx context.Context, in *UpdateRecordRequest, opts ...grpc.CallOption) (*UpdateRecordResponse, error)
@@ -87,15 +85,6 @@ func (c *middlewareClient) ExistRecordConds(ctx context.Context, in *ExistRecord
 	return out, nil
 }
 
-func (c *middlewareClient) DeleteRecords(ctx context.Context, in *DeleteRecordsRequest, opts ...grpc.CallOption) (*DeleteRecordsResponse, error) {
-	out := new(DeleteRecordsResponse)
-	err := c.cc.Invoke(ctx, Middleware_DeleteRecords_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) CreateRecord(ctx context.Context, in *CreateRecordRequest, opts ...grpc.CallOption) (*CreateRecordResponse, error) {
 	out := new(CreateRecordResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateRecord_FullMethodName, in, out, opts...)
@@ -131,7 +120,6 @@ type MiddlewareServer interface {
 	GetRecordsCount(context.Context, *GetRecordsCountRequest) (*GetRecordsCountResponse, error)
 	GetRecord(context.Context, *GetRecordRequest) (*GetRecordResponse, error)
 	ExistRecordConds(context.Context, *ExistRecordCondsRequest) (*ExistRecordCondsResponse, error)
-	DeleteRecords(context.Context, *DeleteRecordsRequest) (*DeleteRecordsResponse, error)
 	CreateRecord(context.Context, *CreateRecordRequest) (*CreateRecordResponse, error)
 	DeleteRecord(context.Context, *DeleteRecordRequest) (*DeleteRecordResponse, error)
 	UpdateRecord(context.Context, *UpdateRecordRequest) (*UpdateRecordResponse, error)
@@ -153,9 +141,6 @@ func (UnimplementedMiddlewareServer) GetRecord(context.Context, *GetRecordReques
 }
 func (UnimplementedMiddlewareServer) ExistRecordConds(context.Context, *ExistRecordCondsRequest) (*ExistRecordCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistRecordConds not implemented")
-}
-func (UnimplementedMiddlewareServer) DeleteRecords(context.Context, *DeleteRecordsRequest) (*DeleteRecordsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteRecords not implemented")
 }
 func (UnimplementedMiddlewareServer) CreateRecord(context.Context, *CreateRecordRequest) (*CreateRecordResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateRecord not implemented")
@@ -251,24 +236,6 @@ func _Middleware_ExistRecordConds_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_DeleteRecords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteRecordsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).DeleteRecords(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_DeleteRecords_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteRecords(ctx, req.(*DeleteRecordsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_CreateRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateRecordRequest)
 	if err := dec(in); err != nil {
@@ -345,10 +312,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistRecordConds",
 			Handler:    _Middleware_ExistRecordConds_Handler,
-		},
-		{
-			MethodName: "DeleteRecords",
-			Handler:    _Middleware_DeleteRecords_Handler,
 		},
 		{
 			MethodName: "CreateRecord",

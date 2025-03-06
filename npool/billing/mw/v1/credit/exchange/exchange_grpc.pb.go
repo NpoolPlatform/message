@@ -23,7 +23,6 @@ const (
 	Middleware_GetExchangesCount_FullMethodName  = "/billing.middleware.credit.exchange.v1.Middleware/GetExchangesCount"
 	Middleware_GetExchange_FullMethodName        = "/billing.middleware.credit.exchange.v1.Middleware/GetExchange"
 	Middleware_ExistExchangeConds_FullMethodName = "/billing.middleware.credit.exchange.v1.Middleware/ExistExchangeConds"
-	Middleware_DeleteExchanges_FullMethodName    = "/billing.middleware.credit.exchange.v1.Middleware/DeleteExchanges"
 	Middleware_CreateExchange_FullMethodName     = "/billing.middleware.credit.exchange.v1.Middleware/CreateExchange"
 	Middleware_DeleteExchange_FullMethodName     = "/billing.middleware.credit.exchange.v1.Middleware/DeleteExchange"
 	Middleware_UpdateExchange_FullMethodName     = "/billing.middleware.credit.exchange.v1.Middleware/UpdateExchange"
@@ -37,7 +36,6 @@ type MiddlewareClient interface {
 	GetExchangesCount(ctx context.Context, in *GetExchangesCountRequest, opts ...grpc.CallOption) (*GetExchangesCountResponse, error)
 	GetExchange(ctx context.Context, in *GetExchangeRequest, opts ...grpc.CallOption) (*GetExchangeResponse, error)
 	ExistExchangeConds(ctx context.Context, in *ExistExchangeCondsRequest, opts ...grpc.CallOption) (*ExistExchangeCondsResponse, error)
-	DeleteExchanges(ctx context.Context, in *DeleteExchangesRequest, opts ...grpc.CallOption) (*DeleteExchangesResponse, error)
 	CreateExchange(ctx context.Context, in *CreateExchangeRequest, opts ...grpc.CallOption) (*CreateExchangeResponse, error)
 	DeleteExchange(ctx context.Context, in *DeleteExchangeRequest, opts ...grpc.CallOption) (*DeleteExchangeResponse, error)
 	UpdateExchange(ctx context.Context, in *UpdateExchangeRequest, opts ...grpc.CallOption) (*UpdateExchangeResponse, error)
@@ -87,15 +85,6 @@ func (c *middlewareClient) ExistExchangeConds(ctx context.Context, in *ExistExch
 	return out, nil
 }
 
-func (c *middlewareClient) DeleteExchanges(ctx context.Context, in *DeleteExchangesRequest, opts ...grpc.CallOption) (*DeleteExchangesResponse, error) {
-	out := new(DeleteExchangesResponse)
-	err := c.cc.Invoke(ctx, Middleware_DeleteExchanges_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *middlewareClient) CreateExchange(ctx context.Context, in *CreateExchangeRequest, opts ...grpc.CallOption) (*CreateExchangeResponse, error) {
 	out := new(CreateExchangeResponse)
 	err := c.cc.Invoke(ctx, Middleware_CreateExchange_FullMethodName, in, out, opts...)
@@ -131,7 +120,6 @@ type MiddlewareServer interface {
 	GetExchangesCount(context.Context, *GetExchangesCountRequest) (*GetExchangesCountResponse, error)
 	GetExchange(context.Context, *GetExchangeRequest) (*GetExchangeResponse, error)
 	ExistExchangeConds(context.Context, *ExistExchangeCondsRequest) (*ExistExchangeCondsResponse, error)
-	DeleteExchanges(context.Context, *DeleteExchangesRequest) (*DeleteExchangesResponse, error)
 	CreateExchange(context.Context, *CreateExchangeRequest) (*CreateExchangeResponse, error)
 	DeleteExchange(context.Context, *DeleteExchangeRequest) (*DeleteExchangeResponse, error)
 	UpdateExchange(context.Context, *UpdateExchangeRequest) (*UpdateExchangeResponse, error)
@@ -153,9 +141,6 @@ func (UnimplementedMiddlewareServer) GetExchange(context.Context, *GetExchangeRe
 }
 func (UnimplementedMiddlewareServer) ExistExchangeConds(context.Context, *ExistExchangeCondsRequest) (*ExistExchangeCondsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExistExchangeConds not implemented")
-}
-func (UnimplementedMiddlewareServer) DeleteExchanges(context.Context, *DeleteExchangesRequest) (*DeleteExchangesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteExchanges not implemented")
 }
 func (UnimplementedMiddlewareServer) CreateExchange(context.Context, *CreateExchangeRequest) (*CreateExchangeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateExchange not implemented")
@@ -251,24 +236,6 @@ func _Middleware_ExistExchangeConds_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_DeleteExchanges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteExchangesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MiddlewareServer).DeleteExchanges(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Middleware_DeleteExchanges_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).DeleteExchanges(ctx, req.(*DeleteExchangesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Middleware_CreateExchange_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateExchangeRequest)
 	if err := dec(in); err != nil {
@@ -345,10 +312,6 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExistExchangeConds",
 			Handler:    _Middleware_ExistExchangeConds_Handler,
-		},
-		{
-			MethodName: "DeleteExchanges",
-			Handler:    _Middleware_DeleteExchanges_Handler,
 		},
 		{
 			MethodName: "CreateExchange",

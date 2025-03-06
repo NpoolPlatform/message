@@ -80,38 +80,6 @@
         ]
       }
     },
-    "/v1/billingaddon_DeleteAddons": {
-      "post": {
-        "operationId": "Middleware_DeleteAddons",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1DeleteAddonsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1DeleteAddonsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
     "/v1/billingaddon_ExistAddonConds": {
       "post": {
         "operationId": "Middleware_ExistAddonConds",
@@ -449,28 +417,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Addon"
-        }
-      }
-    },
-    "v1DeleteAddonsRequest": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1AddonReq"
-          }
-        }
-      }
-    },
-    "v1DeleteAddonsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Addon"
-          }
         }
       }
     },
