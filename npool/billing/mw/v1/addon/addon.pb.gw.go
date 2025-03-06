@@ -2,11 +2,11 @@
 // source: npool/billing/mw/v1/addon/addon.proto
 
 /*
-Package Addon is a reverse proxy.
+Package addon is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package Addon
+package addon
 
 import (
 	"context"
@@ -281,7 +281,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/GetAddons", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddons"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/GetAddons", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddons"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -304,7 +304,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/GetAddonsCount", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddonsCount"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/GetAddonsCount", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddonsCount"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -327,7 +327,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/GetAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddon"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/GetAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -350,7 +350,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/ExistAddonConds", runtime.WithHTTPPathPattern("/v1/billingaddon_ExistAddonConds"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/ExistAddonConds", runtime.WithHTTPPathPattern("/v1/billingaddon_ExistAddonConds"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -373,7 +373,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/CreateAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_CreateAddon"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/CreateAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_CreateAddon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -396,7 +396,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/DeleteAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_DeleteAddon"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/DeleteAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_DeleteAddon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -419,7 +419,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/UpdateAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_UpdateAddon"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/UpdateAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_UpdateAddon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -481,7 +481,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/GetAddons", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddons"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/GetAddons", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddons"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -501,7 +501,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/GetAddonsCount", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddonsCount"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/GetAddonsCount", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddonsCount"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -521,7 +521,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/GetAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddon"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/GetAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -541,7 +541,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/ExistAddonConds", runtime.WithHTTPPathPattern("/v1/billingaddon_ExistAddonConds"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/ExistAddonConds", runtime.WithHTTPPathPattern("/v1/billingaddon_ExistAddonConds"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -561,7 +561,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/CreateAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_CreateAddon"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/CreateAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_CreateAddon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -581,7 +581,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/DeleteAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_DeleteAddon"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/DeleteAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_DeleteAddon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -601,7 +601,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.Addon.v1.Middleware/UpdateAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_UpdateAddon"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/UpdateAddon", runtime.WithHTTPPathPattern("/v1/billingaddon_UpdateAddon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

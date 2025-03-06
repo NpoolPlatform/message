@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: npool/billing/mw/v1/addon/addon.proto
 
-package Addon
+package addon
 
 import (
 	context "context"
@@ -19,13 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Middleware_GetAddons_FullMethodName       = "/billing.middleware.Addon.v1.Middleware/GetAddons"
-	Middleware_GetAddonsCount_FullMethodName  = "/billing.middleware.Addon.v1.Middleware/GetAddonsCount"
-	Middleware_GetAddon_FullMethodName        = "/billing.middleware.Addon.v1.Middleware/GetAddon"
-	Middleware_ExistAddonConds_FullMethodName = "/billing.middleware.Addon.v1.Middleware/ExistAddonConds"
-	Middleware_CreateAddon_FullMethodName     = "/billing.middleware.Addon.v1.Middleware/CreateAddon"
-	Middleware_DeleteAddon_FullMethodName     = "/billing.middleware.Addon.v1.Middleware/DeleteAddon"
-	Middleware_UpdateAddon_FullMethodName     = "/billing.middleware.Addon.v1.Middleware/UpdateAddon"
+	Middleware_GetAddons_FullMethodName       = "/billing.middleware.addon.v1.Middleware/GetAddons"
+	Middleware_GetAddonsCount_FullMethodName  = "/billing.middleware.addon.v1.Middleware/GetAddonsCount"
+	Middleware_GetAddon_FullMethodName        = "/billing.middleware.addon.v1.Middleware/GetAddon"
+	Middleware_ExistAddonConds_FullMethodName = "/billing.middleware.addon.v1.Middleware/ExistAddonConds"
+	Middleware_CreateAddon_FullMethodName     = "/billing.middleware.addon.v1.Middleware/CreateAddon"
+	Middleware_DeleteAddon_FullMethodName     = "/billing.middleware.addon.v1.Middleware/DeleteAddon"
+	Middleware_UpdateAddon_FullMethodName     = "/billing.middleware.addon.v1.Middleware/UpdateAddon"
 )
 
 // MiddlewareClient is the client API for Middleware service.
@@ -294,7 +294,7 @@ func _Middleware_UpdateAddon_Handler(srv interface{}, ctx context.Context, dec f
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Middleware_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "billing.middleware.Addon.v1.Middleware",
+	ServiceName: "billing.middleware.addon.v1.Middleware",
 	HandlerType: (*MiddlewareServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

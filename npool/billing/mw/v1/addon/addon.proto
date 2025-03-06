@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package billing.middleware.Addon.v1;
+package billing.middleware.addon.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/billing/mw/v1/Addon";
+option go_package = "github.com/NpoolPlatform/message/npool/billing/mw/v1/addon";
 
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
