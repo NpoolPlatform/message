@@ -315,20 +315,22 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/CreateSimulate", runtime.WithHTTPPathPattern("/v1/create/apppowerrentalsimulate"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/CreateSimulate", runtime.WithHTTPPathPattern("/v1/create/apppowerrentalsimulate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_CreateSimulate_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_CreateSimulate_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_CreateSimulate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CreateSimulate_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -338,20 +340,22 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/GetSimulates", runtime.WithHTTPPathPattern("/v1/get/apppowerrentalsimulates"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/GetSimulates", runtime.WithHTTPPathPattern("/v1/get/apppowerrentalsimulates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_GetSimulates_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_GetSimulates_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_GetSimulates_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetSimulates_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -361,20 +365,22 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/DeleteSimulate", runtime.WithHTTPPathPattern("/v1/delete/apppowerrentalsimulate"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/DeleteSimulate", runtime.WithHTTPPathPattern("/v1/delete/apppowerrentalsimulate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_DeleteSimulate_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_DeleteSimulate_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_DeleteSimulate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_DeleteSimulate_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -384,20 +390,22 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/UpdateSimulate", runtime.WithHTTPPathPattern("/v1/update/apppowerrentalsimulate"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/UpdateSimulate", runtime.WithHTTPPathPattern("/v1/update/apppowerrentalsimulate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_UpdateSimulate_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_UpdateSimulate_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_UpdateSimulate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_UpdateSimulate_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -407,20 +415,22 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminCreateSimulate", runtime.WithHTTPPathPattern("/v1/admin/create/apppowerrentalsimulate"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminCreateSimulate", runtime.WithHTTPPathPattern("/v1/admin/create/apppowerrentalsimulate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_AdminCreateSimulate_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_AdminCreateSimulate_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_AdminCreateSimulate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminCreateSimulate_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -430,20 +440,22 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminGetSimulates", runtime.WithHTTPPathPattern("/v1/admin/get/apppowerrentalsimulates"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminGetSimulates", runtime.WithHTTPPathPattern("/v1/admin/get/apppowerrentalsimulates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_AdminGetSimulates_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_AdminGetSimulates_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_AdminGetSimulates_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminGetSimulates_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -453,20 +465,22 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminDeleteSimulate", runtime.WithHTTPPathPattern("/v1/admin/delete/apppowerrentalsimulate"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminDeleteSimulate", runtime.WithHTTPPathPattern("/v1/admin/delete/apppowerrentalsimulate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_AdminDeleteSimulate_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_AdminDeleteSimulate_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_AdminDeleteSimulate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminDeleteSimulate_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -476,20 +490,22 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminUpdateSimulate", runtime.WithHTTPPathPattern("/v1/admin/update/apppowerrentalsimulate"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminUpdateSimulate", runtime.WithHTTPPathPattern("/v1/admin/update/apppowerrentalsimulate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_AdminUpdateSimulate_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_AdminUpdateSimulate_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_AdminUpdateSimulate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminUpdateSimulate_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -499,7 +515,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 // RegisterGatewayHandlerFromEndpoint is same as RegisterGatewayHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
 func RegisterGatewayHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
-	conn, err := grpc.Dial(endpoint, opts...)
+	conn, err := grpc.DialContext(ctx, endpoint, opts...)
 	if err != nil {
 		return err
 	}
@@ -538,19 +554,21 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/CreateSimulate", runtime.WithHTTPPathPattern("/v1/create/apppowerrentalsimulate"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/CreateSimulate", runtime.WithHTTPPathPattern("/v1/create/apppowerrentalsimulate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_CreateSimulate_0(rctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_Gateway_CreateSimulate_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_CreateSimulate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CreateSimulate_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -558,19 +576,21 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/GetSimulates", runtime.WithHTTPPathPattern("/v1/get/apppowerrentalsimulates"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/GetSimulates", runtime.WithHTTPPathPattern("/v1/get/apppowerrentalsimulates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_GetSimulates_0(rctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_Gateway_GetSimulates_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_GetSimulates_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_GetSimulates_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -578,19 +598,21 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/DeleteSimulate", runtime.WithHTTPPathPattern("/v1/delete/apppowerrentalsimulate"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/DeleteSimulate", runtime.WithHTTPPathPattern("/v1/delete/apppowerrentalsimulate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_DeleteSimulate_0(rctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_Gateway_DeleteSimulate_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_DeleteSimulate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_DeleteSimulate_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -598,19 +620,21 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/UpdateSimulate", runtime.WithHTTPPathPattern("/v1/update/apppowerrentalsimulate"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/UpdateSimulate", runtime.WithHTTPPathPattern("/v1/update/apppowerrentalsimulate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_UpdateSimulate_0(rctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_Gateway_UpdateSimulate_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_UpdateSimulate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_UpdateSimulate_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -618,19 +642,21 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminCreateSimulate", runtime.WithHTTPPathPattern("/v1/admin/create/apppowerrentalsimulate"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminCreateSimulate", runtime.WithHTTPPathPattern("/v1/admin/create/apppowerrentalsimulate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_AdminCreateSimulate_0(rctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_Gateway_AdminCreateSimulate_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_AdminCreateSimulate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminCreateSimulate_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -638,19 +664,21 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminGetSimulates", runtime.WithHTTPPathPattern("/v1/admin/get/apppowerrentalsimulates"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminGetSimulates", runtime.WithHTTPPathPattern("/v1/admin/get/apppowerrentalsimulates"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_AdminGetSimulates_0(rctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_Gateway_AdminGetSimulates_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_AdminGetSimulates_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminGetSimulates_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -658,19 +686,21 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminDeleteSimulate", runtime.WithHTTPPathPattern("/v1/admin/delete/apppowerrentalsimulate"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminDeleteSimulate", runtime.WithHTTPPathPattern("/v1/admin/delete/apppowerrentalsimulate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_AdminDeleteSimulate_0(rctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_Gateway_AdminDeleteSimulate_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_AdminDeleteSimulate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminDeleteSimulate_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -678,19 +708,21 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminUpdateSimulate", runtime.WithHTTPPathPattern("/v1/admin/update/apppowerrentalsimulate"))
+		var err error
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/good.gateway.app.powerrental.simulate.v1.Gateway/AdminUpdateSimulate", runtime.WithHTTPPathPattern("/v1/admin/update/apppowerrentalsimulate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_AdminUpdateSimulate_0(rctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_Gateway_AdminUpdateSimulate_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_AdminUpdateSimulate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminUpdateSimulate_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 

@@ -56,9 +56,9 @@ enum MsgType {
 
   MsgTypeGetEstimateGas = 300; // plugin
 
-  MsgTypeUpdateTx = 400; // proxy
-  MsgTypeDealTxs = 500; //plugin
-  MsgTypeSignTxs = 600; //sign
+  MsgTypeSubmitTx = 400; // proxy
+  MsgTypeAssignPluginTxs = 500; // plugin sign
+  MsgTypeAssignSignTxs = 600; // plugin sign
 }
 
 // state step by 10
@@ -218,19 +218,21 @@ message UpdateTransactionResponse {}
 message GetTransactionRequest { string TransactionID = 100; }
 
 message Transaction {
-  string TransactionID = 100;
-  string Name = 110;
-  double Amount = 120;
-  string From = 130;
-  string To = 140;
-  string Memo = 141;
-  TransactionState State = 150;
-  bytes Payload = 151;
-  string CID = 160;
-  uint32 LockTime = 161;
-  int64 ExitCode = 170;
-  uint32 CreatedAt = 180;
-  uint32 UpdatedAt = 190;
+  string TransactionID = 10;
+  string Name = 20;
+  double Amount = 30;
+  string From = 40;
+  string To = 50;
+  string Memo = 60;
+  TransactionState State = 70;
+  bytes Payload = 80;
+  string CID = 90;
+  uint32 LockTime = 100;
+  int64 ExitCode = 110;
+  CoinType CoinType = 120;
+  ChainType ChainType = 130;
+  uint32 CreatedAt = 200;
+  uint32 UpdatedAt = 210;
 }
 
 message SubmitTransaction {

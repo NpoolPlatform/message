@@ -315,12 +315,12 @@
         "MsgTypeGetViewKey",
         "MsgTypeCreateWallet",
         "MsgTypeGetEstimateGas",
-        "MsgTypeUpdateTx",
-        "MsgTypeDealTxs",
-        "MsgTypeSignTxs"
+        "MsgTypeSubmitTx",
+        "MsgTypeAssignPluginTxs",
+        "MsgTypeAssignSignTxs"
       ],
       "default": "MsgTypeDefault",
-      "title": "- MsgTypeEcho: all\n - MsgTypeResponse: all\n - MsgTypeRegisterCoin: plugin -\u003e proxy\n - MsgTypeGetBalance: plugin\n - MsgTypeGetViewKey: sign\n - MsgTypeCreateWallet: sign\n - MsgTypeGetEstimateGas: plugin\n - MsgTypeUpdateTx: proxy\n - MsgTypeDealTxs: plugin\n - MsgTypeSignTxs: sign"
+      "title": "- MsgTypeEcho: all\n - MsgTypeResponse: all\n - MsgTypeRegisterCoin: plugin -\u003e proxy\n - MsgTypeGetBalance: plugin\n - MsgTypeGetViewKey: sign\n - MsgTypeCreateWallet: sign\n - MsgTypeGetEstimateGas: plugin\n - MsgTypeSubmitTx: proxy\n - MsgTypeAssignPluginTxs: plugin sign\n - MsgTypeAssignSignTxs: plugin sign"
     },
     "v1RegisterCoinInfo": {
       "type": "object",
@@ -403,6 +403,12 @@
         "ExitCode": {
           "type": "string",
           "format": "int64"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "ChainType": {
+          "$ref": "#/definitions/v1ChainType"
         },
         "CreatedAt": {
           "type": "integer",
