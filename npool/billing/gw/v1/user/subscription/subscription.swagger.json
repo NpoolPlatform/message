@@ -1,0 +1,479 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/billing/gw/v1/user/subscription/subscription.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Gateway"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/admin/create/user/subscription": {
+      "post": {
+        "operationId": "Gateway_CreateSubscription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/billinggatewayusersubscriptionv1CreateSubscriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/billinggatewayusersubscriptionv1CreateSubscriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/delete/user/subscription": {
+      "post": {
+        "operationId": "Gateway_AdminDeleteSubscription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteSubscriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdminDeleteSubscriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/admin/update/user/subscription": {
+      "post": {
+        "operationId": "Gateway_UpdateSubscription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/billinggatewayusersubscriptionv1UpdateSubscriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/billinggatewayusersubscriptionv1UpdateSubscriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/user/subscription": {
+      "post": {
+        "operationId": "Gateway_GetSubscription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/billinggatewayusersubscriptionv1GetSubscriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/billinggatewayusersubscriptionv1GetSubscriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/user/subscriptions": {
+      "post": {
+        "operationId": "Gateway_GetSubscriptions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/billinggatewayusersubscriptionv1GetSubscriptionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/billinggatewayusersubscriptionv1GetSubscriptionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/user/subscriptions/count": {
+      "post": {
+        "operationId": "Gateway_GetSubscriptionsCount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/billinggatewayusersubscriptionv1GetSubscriptionsCountResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/billinggatewayusersubscriptionv1GetSubscriptionsCountRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "billinggatewayusersubscriptionv1CreateSubscriptionRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PackageID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "OrderID": {
+          "type": "string"
+        },
+        "UsageState": {
+          "$ref": "#/definitions/v1UsageState"
+        },
+        "SubscriptionCredit": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "AddonCredit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "billinggatewayusersubscriptionv1CreateSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Subscription"
+        }
+      }
+    },
+    "billinggatewayusersubscriptionv1GetSubscriptionRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "billinggatewayusersubscriptionv1GetSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Subscription"
+        }
+      }
+    },
+    "billinggatewayusersubscriptionv1GetSubscriptionsCountRequest": {
+      "type": "object"
+    },
+    "billinggatewayusersubscriptionv1GetSubscriptionsCountResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "billinggatewayusersubscriptionv1GetSubscriptionsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "billinggatewayusersubscriptionv1GetSubscriptionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Subscription"
+          }
+        }
+      }
+    },
+    "billinggatewayusersubscriptionv1UpdateSubscriptionRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UsageState": {
+          "$ref": "#/definitions/v1UsageState"
+        },
+        "SubscriptionCredit": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "AddonCredit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "billinggatewayusersubscriptionv1UpdateSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Subscription"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AdminDeleteSubscriptionRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdminDeleteSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Subscription"
+        }
+      }
+    },
+    "v1Subscription": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"id\""
+        },
+        "EntID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"ent_id\""
+        },
+        "AppID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"app_id\""
+        },
+        "UserID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"user_id\""
+        },
+        "PackageID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"package_id\""
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"start_at\""
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"end_at\""
+        },
+        "OrderID": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"order_id\""
+        },
+        "UsageStateStr": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"usage_state\""
+        },
+        "UsageState": {
+          "$ref": "#/definitions/v1UsageState"
+        },
+        "SubscriptionCredit": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"subscription_credit\""
+        },
+        "AddonCredit": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"addon_credit\""
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"created_at\""
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "@inject_tag: sql:\"updated_at\""
+        }
+      }
+    },
+    "v1UsageState": {
+      "type": "string",
+      "enum": [
+        "DefaultUsageState",
+        "Expire",
+        "Usful",
+        "Disable"
+      ],
+      "default": "DefaultUsageState"
+    }
+  }
+}

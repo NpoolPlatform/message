@@ -1,0 +1,113 @@
+syntax = "proto3";
+
+package billing.gateway.user.subscription.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/billing/gw/v1/user/subscription";
+
+import "npool/billing/mw/v1/user/subscription/subscription.proto";
+import "google/api/annotations.proto";
+import "npool/basetypes/billing/v1/enums.proto";
+
+// Service Name
+service Gateway {
+    rpc CreateSubscription(CreateSubscriptionRequest) returns (CreateSubscriptionResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/create/user/subscription"
+            body: "*"
+        };
+    }
+    rpc UpdateSubscription(UpdateSubscriptionRequest) returns (UpdateSubscriptionResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/update/user/subscription"
+            body: "*"
+        };
+    }
+    rpc GetSubscription(GetSubscriptionRequest) returns (GetSubscriptionResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/subscription"
+            body: "*"
+        };
+    }
+    rpc GetSubscriptions(GetSubscriptionsRequest) returns (GetSubscriptionsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/subscriptions"
+            body: "*"
+        };
+    }
+    rpc GetSubscriptionsCount(GetSubscriptionsCountRequest) returns (GetSubscriptionsCountResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/subscriptions/count"
+            body: "*"
+        };
+    }
+    rpc AdminDeleteSubscription(AdminDeleteSubscriptionRequest) returns (AdminDeleteSubscriptionResponse) {
+        option (google.api.http) = {
+            post: "/v1/admin/delete/user/subscription"
+            body: "*"
+        };
+    }
+}
+
+message CreateSubscriptionRequest {
+    string AppID = 10;
+    optional string UserID = 40;
+    optional string PackageID = 50;
+    optional uint32 StartAt = 60;
+    optional uint32 EndAt = 70;
+    optional string OrderID = 80;
+    optional basetypes.billing.v1.UsageState UsageState = 90;
+    optional uint32 SubscriptionCredit = 100;
+    optional uint32 AddonCredit = 110;
+}
+
+message CreateSubscriptionResponse {
+    middleware.user.subscription.v1.Subscription Info = 10;
+}
+
+message UpdateSubscriptionRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+    string AppID = 30;
+    string UserID = 40;
+    optional uint32 StartAt = 60;
+    optional uint32 EndAt = 70;
+    optional basetypes.billing.v1.UsageState UsageState = 90;
+    optional uint32 SubscriptionCredit = 100;
+    optional uint32 AddonCredit = 110;
+}
+
+message UpdateSubscriptionResponse {
+    middleware.user.subscription.v1.Subscription Info = 10;
+}
+
+message GetSubscriptionRequest {
+    string EntID = 10;
+}
+
+message GetSubscriptionResponse {
+    middleware.user.subscription.v1.Subscription Info = 10;
+}
+
+message GetSubscriptionsRequest {
+    int32 Offset = 10;
+    int32 Limit = 20;
+}
+
+message GetSubscriptionsResponse {
+    repeated middleware.user.subscription.v1.Subscription Infos = 10;
+}
+
+message GetSubscriptionsCountRequest {}
+
+message GetSubscriptionsCountResponse {
+    uint32 Total = 10;
+}
+
+message AdminDeleteSubscriptionRequest {
+    uint32 ID = 10;
+    string EntID = 20;
+}
+
+message AdminDeleteSubscriptionResponse {
+    middleware.user.subscription.v1.Subscription Info = 10;
+}

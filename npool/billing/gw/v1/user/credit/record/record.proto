@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package billing.gateway.user.credit.record.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/billing/gw/v1/user/credit/record";
+
+import "npool/billing/mw/v1/user/credit/record/record.proto";
+import "google/api/annotations.proto";
+
+// Service Name
+service Gateway {
+    rpc GetUserCreditRecord(GetUserCreditRecordRequest) returns (GetUserCreditRecordResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/credit/record"
+            body: "*"
+        };
+    }
+    rpc GetUserCreditRecords(GetUserCreditRecordsRequest) returns (GetUserCreditRecordsResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/credit/records"
+            body: "*"
+        };
+    }
+    rpc GetUserCreditRecordsCount(GetUserCreditRecordsCountRequest) returns (GetUserCreditRecordsCountResponse) {
+        option (google.api.http) = {
+            post: "/v1/get/user/credit/records/count"
+            body: "*"
+        };
+    }
+}
+
+message GetUserCreditRecordRequest {
+    string EntID = 10;
+}
+
+message GetUserCreditRecordResponse {
+    middleware.user.credit.record.v1.Record Info = 10;
+}
+
+message GetUserCreditRecordsRequest {
+    int32 Offset = 10;
+    int32 Limit = 20;
+}
+
+message GetUserCreditRecordsResponse {
+    repeated middleware.user.credit.record.v1.Record Infos = 10;
+}
+
+message GetUserCreditRecordsCountRequest {}
+
+message GetUserCreditRecordsCountResponse {
+    uint32 Total = 10;
+}
