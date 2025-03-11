@@ -8,7 +8,7 @@ package exchange
 
 import (
 	v1 "github.com/NpoolPlatform/message/npool/basetypes/billing/v1"
-	exchange "github.com/NpoolPlatform/message/npool/billing/mw/v1/credit/credit/exchange"
+	exchange "github.com/NpoolPlatform/message/npool/billing/mw/v1/credit/exchange"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"

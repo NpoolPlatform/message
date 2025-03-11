@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package billing.middleware.credit.exchange.v1;
 
-option go_package = "github.com/NpoolPlatform/message/npool/billing/mw/v1/credit/credit/exchange";
+option go_package = "github.com/NpoolPlatform/message/npool/billing/mw/v1/credit/exchange";
 
 import "google/api/annotations.proto";
 import "npool/basetypes/v1/conds.proto";
