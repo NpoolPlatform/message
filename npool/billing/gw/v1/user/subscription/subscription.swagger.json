@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/billinggatewayusersubscriptionv1CreateSubscriptionResponse"
+              "$ref": "#/definitions/v1CreateSubscriptionResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/billinggatewayusersubscriptionv1CreateSubscriptionRequest"
+              "$ref": "#/definitions/v1CreateSubscriptionRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/billinggatewayusersubscriptionv1UpdateSubscriptionResponse"
+              "$ref": "#/definitions/v1UpdateSubscriptionResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/billinggatewayusersubscriptionv1UpdateSubscriptionRequest"
+              "$ref": "#/definitions/v1UpdateSubscriptionRequest"
             }
           }
         ],
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/billinggatewayusersubscriptionv1GetSubscriptionResponse"
+              "$ref": "#/definitions/v1GetSubscriptionResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/billinggatewayusersubscriptionv1GetSubscriptionRequest"
+              "$ref": "#/definitions/v1GetSubscriptionRequest"
             }
           }
         ],
@@ -151,7 +151,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/billinggatewayusersubscriptionv1GetSubscriptionsResponse"
+              "$ref": "#/definitions/v1GetSubscriptionsResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/billinggatewayusersubscriptionv1GetSubscriptionsRequest"
+              "$ref": "#/definitions/v1GetSubscriptionsRequest"
             }
           }
         ],
@@ -183,7 +183,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/billinggatewayusersubscriptionv1GetSubscriptionsCountResponse"
+              "$ref": "#/definitions/v1GetSubscriptionsCountResponse"
             }
           },
           "default": {
@@ -199,7 +199,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/billinggatewayusersubscriptionv1GetSubscriptionsCountRequest"
+              "$ref": "#/definitions/v1GetSubscriptionsCountRequest"
             }
           }
         ],
@@ -210,147 +210,6 @@
     }
   },
   "definitions": {
-    "billinggatewayusersubscriptionv1CreateSubscriptionRequest": {
-      "type": "object",
-      "properties": {
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "PackageID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "OrderID": {
-          "type": "string"
-        },
-        "UsageState": {
-          "$ref": "#/definitions/v1UsageState"
-        },
-        "SubscriptionCredit": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "AddonCredit": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "billinggatewayusersubscriptionv1CreateSubscriptionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Subscription"
-        }
-      }
-    },
-    "billinggatewayusersubscriptionv1GetSubscriptionRequest": {
-      "type": "object",
-      "properties": {
-        "EntID": {
-          "type": "string"
-        }
-      }
-    },
-    "billinggatewayusersubscriptionv1GetSubscriptionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Subscription"
-        }
-      }
-    },
-    "billinggatewayusersubscriptionv1GetSubscriptionsCountRequest": {
-      "type": "object"
-    },
-    "billinggatewayusersubscriptionv1GetSubscriptionsCountResponse": {
-      "type": "object",
-      "properties": {
-        "Total": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "billinggatewayusersubscriptionv1GetSubscriptionsRequest": {
-      "type": "object",
-      "properties": {
-        "Offset": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Limit": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "billinggatewayusersubscriptionv1GetSubscriptionsResponse": {
-      "type": "object",
-      "properties": {
-        "Infos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/v1Subscription"
-          }
-        }
-      }
-    },
-    "billinggatewayusersubscriptionv1UpdateSubscriptionRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UsageState": {
-          "$ref": "#/definitions/v1UsageState"
-        },
-        "SubscriptionCredit": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "AddonCredit": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "billinggatewayusersubscriptionv1UpdateSubscriptionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Subscription"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -394,74 +253,148 @@
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Subscription"
+          "$ref": "#/definitions/v1UserSubscription"
         }
       }
     },
-    "v1Subscription": {
+    "v1CreateSubscriptionRequest": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"id\""
-        },
-        "EntID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"ent_id\""
-        },
         "AppID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"app_id\""
+          "type": "string"
         },
         "UserID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"user_id\""
+          "type": "string"
         },
         "PackageID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"package_id\""
+          "type": "string"
         },
         "StartAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"start_at\""
+          "format": "int64"
         },
         "EndAt": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"end_at\""
+          "format": "int64"
         },
         "OrderID": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"order_id\""
-        },
-        "UsageStateStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"usage_state\""
+          "type": "string"
         },
         "UsageState": {
           "$ref": "#/definitions/v1UsageState"
         },
         "SubscriptionCredit": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"subscription_credit\""
+          "format": "int64"
         },
         "AddonCredit": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"addon_credit\""
-        },
-        "CreatedAt": {
+          "format": "int64"
+        }
+      }
+    },
+    "v1CreateSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserSubscription"
+        }
+      }
+    },
+    "v1GetSubscriptionRequest": {
+      "type": "object",
+      "properties": {
+        "EntID": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserSubscription"
+        }
+      }
+    },
+    "v1GetSubscriptionsCountRequest": {
+      "type": "object"
+    },
+    "v1GetSubscriptionsCountResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"created_at\""
-        },
-        "UpdatedAt": {
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetSubscriptionsRequest": {
+      "type": "object",
+      "properties": {
+        "Offset": {
           "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"updated_at\""
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetSubscriptionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1UserSubscription"
+          }
+        }
+      }
+    },
+    "v1UpdateSubscriptionRequest": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UsageState": {
+          "$ref": "#/definitions/v1UsageState"
+        },
+        "SubscriptionCredit": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "AddonCredit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserSubscription"
         }
       }
     },
@@ -474,6 +407,63 @@
         "Disable"
       ],
       "default": "DefaultUsageState"
+    },
+    "v1UserSubscription": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
+        "AppID": {
+          "type": "string"
+        },
+        "AppName": {
+          "type": "string"
+        },
+        "PackageID": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNO": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UsageState": {
+          "$ref": "#/definitions/v1UsageState"
+        },
+        "SubscriptionCredit": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "AddonCredit": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
     }
   }
 }
