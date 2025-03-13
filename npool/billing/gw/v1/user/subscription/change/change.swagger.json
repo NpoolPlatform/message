@@ -16,38 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/delete/user/subscription": {
-      "post": {
-        "operationId": "Gateway_AdminDeleteSubscriptionChange",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1AdminDeleteSubscriptionChangeResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1AdminDeleteSubscriptionChangeRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
     "/v1/get/user/subscription/change": {
       "post": {
         "operationId": "Gateway_GetSubscriptionChange",
@@ -170,26 +138,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1AdminDeleteSubscriptionChangeRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        }
-      }
-    },
-    "v1AdminDeleteSubscriptionChangeResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1UserSubscriptionChange"
         }
       }
     },

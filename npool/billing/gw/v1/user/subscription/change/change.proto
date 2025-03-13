@@ -26,12 +26,6 @@ service Gateway {
             body: "*"
         };
     }
-    rpc AdminDeleteSubscriptionChange(AdminDeleteSubscriptionChangeRequest) returns (AdminDeleteSubscriptionChangeResponse) {
-        option (google.api.http) = {
-            post: "/v1/admin/delete/user/subscription"
-            body: "*"
-        };
-    }
 }
 
 message UserSubscriptionChange {
@@ -71,13 +65,4 @@ message GetSubscriptionChangesCountRequest {}
 
 message GetSubscriptionChangesCountResponse {
     uint32 Total = 10;
-}
-
-message AdminDeleteSubscriptionChangeRequest {
-    uint32 ID = 10;
-    string EntID = 20;
-}
-
-message AdminDeleteSubscriptionChangeResponse {
-    UserSubscriptionChange Info = 10;
 }

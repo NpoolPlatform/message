@@ -427,13 +427,11 @@
           "title": "@inject_tag: sql:\"user_subscription_id\""
         },
         "OldPackageID": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"old_package_id\""
         },
         "NewPackageID": {
-          "type": "integer",
-          "format": "int64",
+          "type": "string",
           "title": "@inject_tag: sql:\"new_package_id\""
         },
         "CreatedAt": {
