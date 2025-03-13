@@ -53,6 +53,7 @@ message AdminCreateExchangeRequest {
     basetypes.billing.v1.UsageType UsageType = 20;
     uint32 Credit = 30;
     uint32 ExchangeThreshold = 40;
+    string Path = 50;
 }
 
 message AdminCreateExchangeResponse {
@@ -63,8 +64,9 @@ message AdminUpdateExchangeRequest {
     uint32 ID = 10;
     string EntID = 20;
     string TargetAppID = 30;
-    uint32 Credit = 40;
-    uint32 ExchangeThreshold = 50;
+    optional uint32 Credit = 40;
+    optional uint32 ExchangeThreshold = 50;
+    optional string Path = 60;
 }
 
 message AdminUpdateExchangeResponse {

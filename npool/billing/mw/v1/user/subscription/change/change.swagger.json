@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "npool/billing/mw/v1/user/subscription/subscription.proto",
+    "title": "npool/billing/mw/v1/user/subscription/change/change.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/user/billingsubscription_CreateSubscription": {
+    "/v1/user/billingsubscription_CreateSubscriptionChange": {
       "post": {
-        "operationId": "Middleware_CreateSubscription",
+        "operationId": "Middleware_CreateSubscriptionChange",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateSubscriptionResponse"
+              "$ref": "#/definitions/v1CreateSubscriptionChangeResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateSubscriptionRequest"
+              "$ref": "#/definitions/v1CreateSubscriptionChangeRequest"
             }
           }
         ],
@@ -48,14 +48,14 @@
         ]
       }
     },
-    "/v1/user/billingsubscription_DeleteSubscription": {
+    "/v1/user/billingsubscription_DeleteSubscriptionChange": {
       "post": {
-        "operationId": "Middleware_DeleteSubscription",
+        "operationId": "Middleware_DeleteSubscriptionChange",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteSubscriptionResponse"
+              "$ref": "#/definitions/v1DeleteSubscriptionChangeResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1DeleteSubscriptionRequest"
+              "$ref": "#/definitions/v1DeleteSubscriptionChangeRequest"
             }
           }
         ],
@@ -80,14 +80,14 @@
         ]
       }
     },
-    "/v1/user/billingsubscription_ExistSubscriptionConds": {
+    "/v1/user/billingsubscription_ExistSubscriptionChangeConds": {
       "post": {
-        "operationId": "Middleware_ExistSubscriptionConds",
+        "operationId": "Middleware_ExistSubscriptionChangeConds",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1ExistSubscriptionCondsResponse"
+              "$ref": "#/definitions/v1ExistSubscriptionChangeCondsResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1ExistSubscriptionCondsRequest"
+              "$ref": "#/definitions/v1ExistSubscriptionChangeCondsRequest"
             }
           }
         ],
@@ -112,14 +112,14 @@
         ]
       }
     },
-    "/v1/user/billingsubscription_GetSubscription": {
+    "/v1/user/billingsubscription_GetSubscriptionChange": {
       "post": {
-        "operationId": "Middleware_GetSubscription",
+        "operationId": "Middleware_GetSubscriptionChange",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionResponse"
+              "$ref": "#/definitions/v1GetSubscriptionChangeResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionRequest"
+              "$ref": "#/definitions/v1GetSubscriptionChangeRequest"
             }
           }
         ],
@@ -144,14 +144,14 @@
         ]
       }
     },
-    "/v1/user/billingsubscription_GetSubscriptions": {
+    "/v1/user/billingsubscription_GetSubscriptionChanges": {
       "post": {
-        "operationId": "Middleware_GetSubscriptions",
+        "operationId": "Middleware_GetSubscriptionChanges",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionsResponse"
+              "$ref": "#/definitions/v1GetSubscriptionChangesResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionsRequest"
+              "$ref": "#/definitions/v1GetSubscriptionChangesRequest"
             }
           }
         ],
@@ -176,14 +176,14 @@
         ]
       }
     },
-    "/v1/user/billingsubscription_GetSubscriptionsCount": {
+    "/v1/user/billingsubscription_GetSubscriptionChangesCount": {
       "post": {
-        "operationId": "Middleware_GetSubscriptionsCount",
+        "operationId": "Middleware_GetSubscriptionChangesCount",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionsCountResponse"
+              "$ref": "#/definitions/v1GetSubscriptionChangesCountResponse"
             }
           },
           "default": {
@@ -199,39 +199,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionsCountRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
-    "/v1/user/billingsubscription_UpdateSubscription": {
-      "post": {
-        "operationId": "Middleware_UpdateSubscription",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1UpdateSubscriptionResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1UpdateSubscriptionRequest"
+              "$ref": "#/definitions/v1GetSubscriptionChangesCountRequest"
             }
           }
         ],
@@ -284,20 +252,14 @@
         "UserID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "PackageID": {
+        "UserSubscriptionID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "OrderID": {
+        "OldPackageID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "StartAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "EndAt": {
-          "$ref": "#/definitions/v1Uint32Val"
-        },
-        "UsageState": {
-          "$ref": "#/definitions/v1Uint32Val"
+        "NewPackageID": {
+          "$ref": "#/definitions/v1StringVal"
         },
         "IDs": {
           "$ref": "#/definitions/v1Uint32SliceVal"
@@ -307,39 +269,39 @@
         }
       }
     },
-    "v1CreateSubscriptionRequest": {
+    "v1CreateSubscriptionChangeRequest": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1SubscriptionReq"
+          "$ref": "#/definitions/v1SubscriptionChangeReq"
         }
       }
     },
-    "v1CreateSubscriptionResponse": {
+    "v1CreateSubscriptionChangeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Subscription"
+          "$ref": "#/definitions/v1SubscriptionChange"
         }
       }
     },
-    "v1DeleteSubscriptionRequest": {
+    "v1DeleteSubscriptionChangeRequest": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1SubscriptionReq"
+          "$ref": "#/definitions/v1SubscriptionChangeReq"
         }
       }
     },
-    "v1DeleteSubscriptionResponse": {
+    "v1DeleteSubscriptionChangeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Subscription"
+          "$ref": "#/definitions/v1SubscriptionChange"
         }
       }
     },
-    "v1ExistSubscriptionCondsRequest": {
+    "v1ExistSubscriptionChangeCondsRequest": {
       "type": "object",
       "properties": {
         "Conds": {
@@ -347,7 +309,7 @@
         }
       }
     },
-    "v1ExistSubscriptionCondsResponse": {
+    "v1ExistSubscriptionChangeCondsResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -355,7 +317,7 @@
         }
       }
     },
-    "v1GetSubscriptionRequest": {
+    "v1GetSubscriptionChangeRequest": {
       "type": "object",
       "properties": {
         "EntID": {
@@ -363,15 +325,15 @@
         }
       }
     },
-    "v1GetSubscriptionResponse": {
+    "v1GetSubscriptionChangeResponse": {
       "type": "object",
       "properties": {
         "Info": {
-          "$ref": "#/definitions/v1Subscription"
+          "$ref": "#/definitions/v1SubscriptionChange"
         }
       }
     },
-    "v1GetSubscriptionsCountRequest": {
+    "v1GetSubscriptionChangesCountRequest": {
       "type": "object",
       "properties": {
         "Conds": {
@@ -379,7 +341,7 @@
         }
       }
     },
-    "v1GetSubscriptionsCountResponse": {
+    "v1GetSubscriptionChangesCountResponse": {
       "type": "object",
       "properties": {
         "Total": {
@@ -388,7 +350,7 @@
         }
       }
     },
-    "v1GetSubscriptionsRequest": {
+    "v1GetSubscriptionChangesRequest": {
       "type": "object",
       "properties": {
         "Conds": {
@@ -404,13 +366,13 @@
         }
       }
     },
-    "v1GetSubscriptionsResponse": {
+    "v1GetSubscriptionChangesResponse": {
       "type": "object",
       "properties": {
         "Infos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1Subscription"
+            "$ref": "#/definitions/v1SubscriptionChange"
           }
         }
       }
@@ -440,7 +402,7 @@
         }
       }
     },
-    "v1Subscription": {
+    "v1SubscriptionChange": {
       "type": "object",
       "properties": {
         "ID": {
@@ -460,36 +422,19 @@
           "type": "string",
           "title": "@inject_tag: sql:\"user_id\""
         },
-        "PackageID": {
+        "UserSubscriptionID": {
           "type": "string",
-          "title": "@inject_tag: sql:\"package_id\""
+          "title": "@inject_tag: sql:\"user_subscription_id\""
         },
-        "StartAt": {
+        "OldPackageID": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"start_at\""
+          "title": "@inject_tag: sql:\"old_package_id\""
         },
-        "EndAt": {
+        "NewPackageID": {
           "type": "integer",
           "format": "int64",
-          "title": "@inject_tag: sql:\"end_at\""
-        },
-        "UsageStateStr": {
-          "type": "string",
-          "title": "@inject_tag: sql:\"usage_state\""
-        },
-        "UsageState": {
-          "$ref": "#/definitions/v1UsageState"
-        },
-        "SubscriptionCredit": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"subscription_credit\""
-        },
-        "AddonCredit": {
-          "type": "integer",
-          "format": "int64",
-          "title": "@inject_tag: sql:\"addon_credit\""
+          "title": "@inject_tag: sql:\"new_package_id\""
         },
         "CreatedAt": {
           "type": "integer",
@@ -503,7 +448,7 @@
         }
       }
     },
-    "v1SubscriptionReq": {
+    "v1SubscriptionChangeReq": {
       "type": "object",
       "properties": {
         "ID": {
@@ -519,30 +464,14 @@
         "UserID": {
           "type": "string"
         },
-        "PackageID": {
+        "UserSubscriptionID": {
           "type": "string"
         },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "OrderID": {
+        "OldPackageID": {
           "type": "string"
         },
-        "UsageState": {
-          "$ref": "#/definitions/v1UsageState"
-        },
-        "SubscriptionCredit": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "AddonCredit": {
-          "type": "integer",
-          "format": "int64"
+        "NewPackageID": {
+          "type": "string"
         }
       }
     },
@@ -572,32 +501,6 @@
           "format": "int64"
         }
       }
-    },
-    "v1UpdateSubscriptionRequest": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1SubscriptionReq"
-        }
-      }
-    },
-    "v1UpdateSubscriptionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1Subscription"
-        }
-      }
-    },
-    "v1UsageState": {
-      "type": "string",
-      "enum": [
-        "DefaultUsageState",
-        "Expire",
-        "Usful",
-        "Disable"
-      ],
-      "default": "DefaultUsageState"
     }
   }
 }

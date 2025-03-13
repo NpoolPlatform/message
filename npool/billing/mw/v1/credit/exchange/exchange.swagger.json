@@ -284,6 +284,9 @@
         "UsageType": {
           "$ref": "#/definitions/v1Uint32Val"
         },
+        "Path": {
+          "$ref": "#/definitions/v1StringVal"
+        },
         "IDs": {
           "$ref": "#/definitions/v1Uint32SliceVal"
         },
@@ -357,6 +360,10 @@
           "format": "int64",
           "title": "@inject_tag: sql:\"exchange_threshold\""
         },
+        "Path": {
+          "type": "string",
+          "title": "@inject_tag: sql:\"path\""
+        },
         "CreatedAt": {
           "type": "integer",
           "format": "int64",
@@ -392,6 +399,9 @@
         "ExchangeThreshold": {
           "type": "integer",
           "format": "int64"
+        },
+        "Path": {
+          "type": "string"
         }
       }
     },

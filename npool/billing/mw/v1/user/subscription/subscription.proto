@@ -86,8 +86,6 @@ message Subscription {
     uint32 StartAt = 60;
     // @inject_tag: sql:"end_at"
     uint32 EndAt = 70;
-    // @inject_tag: sql:"order_id"
-    string OrderID = 80;
     // @inject_tag: sql:"usage_state"
     string UsageStateStr = 90;
     basetypes.billing.v1.UsageState UsageState = 91;
