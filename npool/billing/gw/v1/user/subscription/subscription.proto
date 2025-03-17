@@ -86,6 +86,7 @@ message UpdateSubscriptionRequest {
     string EntID = 20;
     string AppID = 30;
     string UserID = 40;
+    optional string PackageID = 50;
     optional uint32 StartAt = 60;
     optional uint32 EndAt = 70;
     optional basetypes.billing.v1.UsageState UsageState = 90;

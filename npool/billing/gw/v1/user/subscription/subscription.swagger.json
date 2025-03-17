@@ -369,6 +369,9 @@
         "UserID": {
           "type": "string"
         },
+        "PackageID": {
+          "type": "string"
+        },
         "StartAt": {
           "type": "integer",
           "format": "int64"
