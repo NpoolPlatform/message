@@ -97,7 +97,7 @@
     "v1CalculateChargeResponse": {
       "type": "object",
       "properties": {
-        "allow": {
+        "Allow": {
           "type": "boolean"
         },
         "Message": {

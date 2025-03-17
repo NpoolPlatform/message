@@ -24,6 +24,6 @@ message CalculateChargeRequest {
 }
 
 message CalculateChargeResponse {
-    bool allow = 10;
+    bool Allow = 10;
     optional string Message = 20;
 }
