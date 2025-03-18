@@ -240,10 +240,10 @@
     "v1AdminCreateSubscriptionRequest": {
       "type": "object",
       "properties": {
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
-        "UserID": {
+        "TargetUserID": {
           "type": "string"
         },
         "PackageID": {
@@ -308,10 +308,10 @@
         "EntID": {
           "type": "string"
         },
-        "AppID": {
+        "TargetAppID": {
           "type": "string"
         },
-        "UserID": {
+        "TargetUserID": {
           "type": "string"
         },
         "PackageID": {

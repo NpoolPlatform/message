@@ -66,8 +66,8 @@ message UserSubscription {
 }
 
 message AdminCreateSubscriptionRequest {
-    string AppID = 10;
-    string UserID = 40;
+    string TargetAppID = 10;
+    string TargetUserID = 40;
     optional string PackageID = 50;
     optional uint32 StartAt = 60;
     optional uint32 EndAt = 70;
@@ -83,8 +83,8 @@ message AdminCreateSubscriptionResponse {
 message AdminUpdateSubscriptionRequest {
     uint32 ID = 10;
     string EntID = 20;
-    string AppID = 30;
-    string UserID = 40;
+    string TargetAppID = 30;
+    string TargetUserID = 40;
     optional string PackageID = 50;
     optional uint32 StartAt = 60;
     optional uint32 EndAt = 70;
