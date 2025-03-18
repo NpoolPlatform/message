@@ -65,7 +65,6 @@ message SubscriptionReq {
     optional string PackageID = 50;
     optional uint32 StartAt = 60;
     optional uint32 EndAt = 70;
-    optional string OrderID = 80;
     optional basetypes.billing.v1.UsageState UsageState = 90;
     optional uint32 SubscriptionCredit = 100;
     optional uint32 AddonCredit = 110;
@@ -105,7 +104,6 @@ message Conds {
     optional basetypes.v1.StringVal AppID = 20;
     optional basetypes.v1.StringVal UserID = 30;
     optional basetypes.v1.StringVal PackageID = 40;
-    optional basetypes.v1.StringVal OrderID = 50;
     optional basetypes.v1.Uint32Val StartAt = 60;
     optional basetypes.v1.Uint32Val EndAt = 70;
     optional basetypes.v1.Uint32Val UsageState = 80;

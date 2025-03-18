@@ -287,9 +287,6 @@
         "PackageID": {
           "$ref": "#/definitions/v1StringVal"
         },
-        "OrderID": {
-          "$ref": "#/definitions/v1StringVal"
-        },
         "StartAt": {
           "$ref": "#/definitions/v1Uint32Val"
         },
@@ -529,9 +526,6 @@
         "EndAt": {
           "type": "integer",
           "format": "int64"
-        },
-        "OrderID": {
-          "type": "string"
         },
         "UsageState": {
           "$ref": "#/definitions/v1UsageState"
