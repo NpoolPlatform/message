@@ -9,13 +9,13 @@ import "npool/basetypes/billing/v1/enums.proto";
 
 // Service Name
 service Gateway {
-    rpc CreateSubscription(CreateSubscriptionRequest) returns (CreateSubscriptionResponse) {
+    rpc AdminCreateSubscription(AdminCreateSubscriptionRequest) returns (AdminCreateSubscriptionResponse) {
         option (google.api.http) = {
             post: "/v1/admin/create/user/subscription"
             body: "*"
         };
     }
-    rpc UpdateSubscription(UpdateSubscriptionRequest) returns (UpdateSubscriptionResponse) {
+    rpc AdminUpdateSubscription(AdminUpdateSubscriptionRequest) returns (AdminUpdateSubscriptionResponse) {
         option (google.api.http) = {
             post: "/v1/admin/update/user/subscription"
             body: "*"
@@ -65,23 +65,22 @@ message UserSubscription {
     uint32 UpdatedAt = 1010;
 }
 
-message CreateSubscriptionRequest {
+message AdminCreateSubscriptionRequest {
     string AppID = 10;
-    optional string UserID = 40;
+    string UserID = 40;
     optional string PackageID = 50;
     optional uint32 StartAt = 60;
     optional uint32 EndAt = 70;
-    optional string OrderID = 80;
-    optional basetypes.billing.v1.UsageState UsageState = 90;
-    optional uint32 SubscriptionCredit = 100;
-    optional uint32 AddonCredit = 110;
+    basetypes.billing.v1.UsageState UsageState = 90;
+    uint32 SubscriptionCredit = 100;
+    uint32 AddonCredit = 110;
 }
 
-message CreateSubscriptionResponse {
+message AdminCreateSubscriptionResponse {
     UserSubscription Info = 10;
 }
 
-message UpdateSubscriptionRequest {
+message AdminUpdateSubscriptionRequest {
     uint32 ID = 10;
     string EntID = 20;
     string AppID = 30;
@@ -94,7 +93,7 @@ message UpdateSubscriptionRequest {
     optional uint32 AddonCredit = 110;
 }
 
-message UpdateSubscriptionResponse {
+message AdminUpdateSubscriptionResponse {
     UserSubscription Info = 10;
 }
 

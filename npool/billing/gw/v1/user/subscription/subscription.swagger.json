@@ -18,12 +18,12 @@
   "paths": {
     "/v1/admin/create/user/subscription": {
       "post": {
-        "operationId": "Gateway_CreateSubscription",
+        "operationId": "Gateway_AdminCreateSubscription",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateSubscriptionResponse"
+              "$ref": "#/definitions/v1AdminCreateSubscriptionResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateSubscriptionRequest"
+              "$ref": "#/definitions/v1AdminCreateSubscriptionRequest"
             }
           }
         ],
@@ -82,12 +82,12 @@
     },
     "/v1/admin/update/user/subscription": {
       "post": {
-        "operationId": "Gateway_UpdateSubscription",
+        "operationId": "Gateway_AdminUpdateSubscription",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateSubscriptionResponse"
+              "$ref": "#/definitions/v1AdminUpdateSubscriptionResponse"
             }
           },
           "default": {
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1UpdateSubscriptionRequest"
+              "$ref": "#/definitions/v1AdminUpdateSubscriptionRequest"
             }
           }
         ],
@@ -237,6 +237,47 @@
         }
       }
     },
+    "v1AdminCreateSubscriptionRequest": {
+      "type": "object",
+      "properties": {
+        "AppID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "PackageID": {
+          "type": "string"
+        },
+        "StartAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EndAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UsageState": {
+          "$ref": "#/definitions/v1UsageState"
+        },
+        "SubscriptionCredit": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "AddonCredit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1AdminCreateSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1UserSubscription"
+        }
+      }
+    },
     "v1AdminDeleteSubscriptionRequest": {
       "type": "object",
       "properties": {
@@ -257,9 +298,16 @@
         }
       }
     },
-    "v1CreateSubscriptionRequest": {
+    "v1AdminUpdateSubscriptionRequest": {
       "type": "object",
       "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "EntID": {
+          "type": "string"
+        },
         "AppID": {
           "type": "string"
         },
@@ -277,9 +325,6 @@
           "type": "integer",
           "format": "int64"
         },
-        "OrderID": {
-          "type": "string"
-        },
         "UsageState": {
           "$ref": "#/definitions/v1UsageState"
         },
@@ -293,7 +338,7 @@
         }
       }
     },
-    "v1CreateSubscriptionResponse": {
+    "v1AdminUpdateSubscriptionResponse": {
       "type": "object",
       "properties": {
         "Info": {
@@ -350,54 +395,6 @@
           "items": {
             "$ref": "#/definitions/v1UserSubscription"
           }
-        }
-      }
-    },
-    "v1UpdateSubscriptionRequest": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EntID": {
-          "type": "string"
-        },
-        "AppID": {
-          "type": "string"
-        },
-        "UserID": {
-          "type": "string"
-        },
-        "PackageID": {
-          "type": "string"
-        },
-        "StartAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "EndAt": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "UsageState": {
-          "$ref": "#/definitions/v1UsageState"
-        },
-        "SubscriptionCredit": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "AddonCredit": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "v1UpdateSubscriptionResponse": {
-      "type": "object",
-      "properties": {
-        "Info": {
-          "$ref": "#/definitions/v1UserSubscription"
         }
       }
     },

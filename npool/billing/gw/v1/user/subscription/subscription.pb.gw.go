@@ -31,8 +31,8 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_Gateway_CreateSubscription_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateSubscriptionRequest
+func request_Gateway_AdminCreateSubscription_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq AdminCreateSubscriptionRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -43,13 +43,13 @@ func request_Gateway_CreateSubscription_0(ctx context.Context, marshaler runtime
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreateSubscription(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.AdminCreateSubscription(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Gateway_CreateSubscription_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreateSubscriptionRequest
+func local_request_Gateway_AdminCreateSubscription_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq AdminCreateSubscriptionRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -60,13 +60,13 @@ func local_request_Gateway_CreateSubscription_0(ctx context.Context, marshaler r
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreateSubscription(ctx, &protoReq)
+	msg, err := server.AdminCreateSubscription(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_Gateway_UpdateSubscription_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateSubscriptionRequest
+func request_Gateway_AdminUpdateSubscription_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq AdminUpdateSubscriptionRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -77,13 +77,13 @@ func request_Gateway_UpdateSubscription_0(ctx context.Context, marshaler runtime
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.UpdateSubscription(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.AdminUpdateSubscription(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Gateway_UpdateSubscription_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdateSubscriptionRequest
+func local_request_Gateway_AdminUpdateSubscription_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq AdminUpdateSubscriptionRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -94,7 +94,7 @@ func local_request_Gateway_UpdateSubscription_0(ctx context.Context, marshaler r
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.UpdateSubscription(ctx, &protoReq)
+	msg, err := server.AdminUpdateSubscription(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -241,18 +241,18 @@ func local_request_Gateway_AdminDeleteSubscription_0(ctx context.Context, marsha
 // Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterGatewayHandlerFromEndpoint instead.
 func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, server GatewayServer) error {
 
-	mux.Handle("POST", pattern_Gateway_CreateSubscription_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_AdminCreateSubscription_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/CreateSubscription", runtime.WithHTTPPathPattern("/v1/admin/create/user/subscription"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminCreateSubscription", runtime.WithHTTPPathPattern("/v1/admin/create/user/subscription"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_CreateSubscription_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_AdminCreateSubscription_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -260,22 +260,22 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Gateway_CreateSubscription_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminCreateSubscription_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_UpdateSubscription_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_AdminUpdateSubscription_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/UpdateSubscription", runtime.WithHTTPPathPattern("/v1/admin/update/user/subscription"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminUpdateSubscription", runtime.WithHTTPPathPattern("/v1/admin/update/user/subscription"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_UpdateSubscription_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_AdminUpdateSubscription_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -283,7 +283,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Gateway_UpdateSubscription_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminUpdateSubscription_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -420,43 +420,43 @@ func RegisterGatewayHandler(ctx context.Context, mux *runtime.ServeMux, conn *gr
 // "GatewayClient" to call the correct interceptors.
 func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, client GatewayClient) error {
 
-	mux.Handle("POST", pattern_Gateway_CreateSubscription_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_AdminCreateSubscription_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/CreateSubscription", runtime.WithHTTPPathPattern("/v1/admin/create/user/subscription"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminCreateSubscription", runtime.WithHTTPPathPattern("/v1/admin/create/user/subscription"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_CreateSubscription_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_AdminCreateSubscription_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_CreateSubscription_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminCreateSubscription_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_UpdateSubscription_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_AdminUpdateSubscription_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/UpdateSubscription", runtime.WithHTTPPathPattern("/v1/admin/update/user/subscription"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminUpdateSubscription", runtime.WithHTTPPathPattern("/v1/admin/update/user/subscription"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_UpdateSubscription_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_AdminUpdateSubscription_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_UpdateSubscription_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_AdminUpdateSubscription_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -544,9 +544,9 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_CreateSubscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "admin", "create", "user", "subscription"}, ""))
+	pattern_Gateway_AdminCreateSubscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "admin", "create", "user", "subscription"}, ""))
 
-	pattern_Gateway_UpdateSubscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "admin", "update", "user", "subscription"}, ""))
+	pattern_Gateway_AdminUpdateSubscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "admin", "update", "user", "subscription"}, ""))
 
 	pattern_Gateway_GetSubscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "user", "subscription"}, ""))
 
@@ -558,9 +558,9 @@ var (
 )
 
 var (
-	forward_Gateway_CreateSubscription_0 = runtime.ForwardResponseMessage
+	forward_Gateway_AdminCreateSubscription_0 = runtime.ForwardResponseMessage
 
-	forward_Gateway_UpdateSubscription_0 = runtime.ForwardResponseMessage
+	forward_Gateway_AdminUpdateSubscription_0 = runtime.ForwardResponseMessage
 
 	forward_Gateway_GetSubscription_0 = runtime.ForwardResponseMessage
 
