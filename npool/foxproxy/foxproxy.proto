@@ -247,9 +247,16 @@ message SubmitTransaction {
 message GetTransactionResponse { Transaction Info = 100; }
 
 message GetTransactionsRequest {
-  CoinType CoinType = 100;
-  TransactionState State = 110;
-  string ENV = 120; // main or test
+  optional string Name = 10;
+  optional string From = 20;
+  optional string To = 30;
+  optional string CID = 40;
+  optional string Memo = 50;
+  optional double Amount = 60;
+  optional CoinType CoinType = 70;
+  optional ChainType ChainType = 80;
+  optional TransactionState State = 90;
+  
   uint32 Offset = 130;
   uint32 Limit = 140;
 }
