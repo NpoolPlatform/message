@@ -71,7 +71,6 @@ enum TransactionState {
   TransactionStateSync = 50; // plugin, never exceedtime
   TransactionStateDone = 100; // proxy
   TransactionStateFail = 110; // proxy
-  TransactionStateExceedTime = 120; // proxy
 }
 
 

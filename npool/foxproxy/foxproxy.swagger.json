@@ -430,11 +430,10 @@
         "TransactionStateBroadcast",
         "TransactionStateSync",
         "TransactionStateDone",
-        "TransactionStateFail",
-        "TransactionStateExceedTime"
+        "TransactionStateFail"
       ],
       "default": "TransactionStateUnKnow",
-      "description": "- TransactionStatePrepare: plugin\n - TransactionStateGetViewKey: sign\n - TransactionStateSign: sign\n - TransactionStateBroadcast: plugin\n - TransactionStateSync: plugin, never exceedtime\n - TransactionStateDone: proxy\n - TransactionStateFail: proxy\n - TransactionStateExceedTime: proxy",
+      "description": "- TransactionStatePrepare: plugin\n - TransactionStateGetViewKey: sign\n - TransactionStateSign: sign\n - TransactionStateBroadcast: plugin\n - TransactionStateSync: plugin, never exceedtime\n - TransactionStateDone: proxy\n - TransactionStateFail: proxy",
       "title": "state step by 10"
     },
     "v1UpdateTransactionResponse": {
