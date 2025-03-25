@@ -288,7 +288,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -360,7 +359,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/statementorderv1Statement"
           }
         },
@@ -515,7 +513,6 @@
         "PaymentStatements": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/orderpaymentv1StatementReq"
           }
         }
@@ -554,7 +551,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/statementorderv1StatementReq"
           }
         }
@@ -566,7 +562,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/statementorderv1Statement"
           }
         }
@@ -594,7 +589,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/statementorderv1StatementReq"
           }
         }
@@ -606,7 +600,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/statementorderv1Statement"
           }
         }
@@ -671,7 +664,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/statementorderv1StatementReq"
           }
         }
@@ -683,7 +675,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/statementorderv1Statement"
           }
         }

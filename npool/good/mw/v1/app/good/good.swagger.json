@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -109,7 +108,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Good"
           }
         },
@@ -255,8 +253,7 @@
         "GoodStartModePreset",
         "GoodStartModeWithParent"
       ],
-      "default": "DefaultGoodStartMode",
-      "title": "- GoodStartModeTBD: Start time will be adjusted in future\n - GoodStartModeConfirmed: Deprecated\n - GoodStartModeInstantly: Start when order paid\n - GoodStartModeNextDay: Start at next 00:00 UTC\n - GoodStartModePreset: Start at a preset time\n - GoodStartModeWithParent: Start with parent good"
+      "default": "DefaultGoodStartMode"
     },
     "v1GoodState": {
       "type": "string",
@@ -270,7 +267,7 @@
         "GoodStateFail"
       ],
       "default": "DefaultGoodState",
-      "description": "- GoodStateWait: npool-schedual start proccess from wait state\n - GoodStateCreateGoodUser: for miningpoolstock",
+      "description": "- GoodStateCreateGoodUser: for miningpoolstock",
       "title": "initial state: GoodStateWait\n|\nv\nGoodStateCreateGoodUser------------------\n|                             |\nv                             |\nGoodStateCheckHashRate-------------------\n|                             |\nv                             v\nGoodStateReady                 GoodStateFail"
     },
     "v1GoodType": {

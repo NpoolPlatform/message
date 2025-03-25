@@ -245,7 +245,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1CashControl"
           }
         },
@@ -303,7 +302,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -376,8 +374,7 @@
         "OrderThreshold",
         "PaymentAmountThreshold"
       ],
-      "default": "DefaultControlType",
-      "title": "- CreditThreshold: 积分达到一定数量\n - OrderThreshold: 成单数达到一定数量\n - PaymentAmountThreshold: 已花费的美金达到一定数量"
+      "default": "DefaultControlType"
     },
     "v1CouponType": {
       "type": "string",
@@ -410,7 +407,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1CashControl"
           }
         },

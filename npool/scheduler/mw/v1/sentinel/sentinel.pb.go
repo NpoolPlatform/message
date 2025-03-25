@@ -82,7 +82,6 @@ type TriggerRequest struct {
 
 	Subsystem string `protobuf:"bytes,10,opt,name=Subsystem,proto3" json:"Subsystem,omitempty"`
 	// Types that are assignable to Cond:
-	//
 	//	*TriggerRequest_BenefitWait
 	Cond isTriggerRequest_Cond `protobuf_oneof:"Cond"`
 }

@@ -56,7 +56,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -119,7 +118,6 @@
         "Posters": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1PosterInfo"
           }
         },
@@ -183,7 +181,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1DeviceType"
           }
         },

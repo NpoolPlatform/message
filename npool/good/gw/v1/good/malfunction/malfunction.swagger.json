@@ -168,7 +168,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -192,8 +191,7 @@
         },
         "DurationSeconds": {
           "type": "integer",
-          "format": "int64",
-          "title": "For compensate which is start but not end, 0 means till now"
+          "format": "int64"
         },
         "CompensateSeconds": {
           "type": "integer",
@@ -251,8 +249,7 @@
         },
         "DurationSeconds": {
           "type": "integer",
-          "format": "int64",
-          "title": "For compensate which is start but not end, 0 means till now"
+          "format": "int64"
         },
         "CompensateSeconds": {
           "type": "integer",
@@ -290,7 +287,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Malfunction"
           }
         },

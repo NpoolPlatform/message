@@ -168,7 +168,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -241,7 +240,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Pool"
           }
         },
@@ -429,14 +427,12 @@
         "Coins": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Coin"
           }
         },
         "FractionWithdrawalRules": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1FractionWithdrawalRule"
           }
         },

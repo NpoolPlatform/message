@@ -128,7 +128,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -192,7 +191,6 @@
         "PaymentStatements": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/orderpaymentv1StatementReq"
           }
         }
@@ -241,7 +239,6 @@
         "Payments": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Payment"
           }
         }
@@ -253,7 +250,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/statementorderv1StatementReq"
           }
         }
@@ -295,7 +291,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/statementorderv1StatementReq"
           }
         }

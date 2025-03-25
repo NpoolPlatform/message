@@ -307,7 +307,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -417,7 +416,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Ledger"
           }
         },
@@ -529,7 +527,6 @@
         "Balances": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/LockBalancesRequest_Balance"
           }
         }
@@ -541,7 +538,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Ledger"
           }
         }
@@ -599,7 +595,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Ledger"
           }
         }
@@ -642,7 +637,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2Ledger"
           }
         }

@@ -213,7 +213,6 @@
         "Children": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/cmsgatewaycategoryv1Category"
           }
         }
@@ -296,7 +295,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/cmsgatewaycategoryv1Category"
           }
         },
@@ -413,7 +411,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -433,7 +430,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/cmsgatewaycategoryv1Category"
           }
         }
