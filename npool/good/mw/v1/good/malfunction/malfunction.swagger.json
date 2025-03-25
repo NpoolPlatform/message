@@ -129,6 +129,7 @@
         "MachineRental",
         "MachineCustody",
         "LegacyPowerRental",
+        "DelegatedStaking",
         "TechniqueServiceFee",
         "ElectricityFee"
       ],
