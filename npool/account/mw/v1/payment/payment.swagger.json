@@ -72,6 +72,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -182,7 +183,8 @@
           "type": "boolean"
         },
         "CollectingTID": {
-          "type": "string"
+          "type": "string",
+          "title": "Used to free the address when transaction done"
         },
         "AvailableAt": {
           "type": "integer",
@@ -269,6 +271,7 @@
         "Infos": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1Account"
           }
         },

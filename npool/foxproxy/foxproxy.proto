@@ -1,0 +1,266 @@
+syntax = "proto3";
+
+package fox.proxy.v1;
+
+option go_package = "github.com/NpoolPlatform/message/npool/foxproxy";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "npool/basetypes/v1/version.proto";
+import "npool/basetypes/v1/gastype.proto";
+
+// FoxProxy http service only for inner
+service FoxProxyStream {
+  // async stream
+  rpc DEStream(stream DataElement)
+      returns (stream DataElement) {}
+}
+
+// FoxProxy http service only for inner
+service FoxProxy {
+  // sync
+  rpc Version(google.protobuf.Empty) returns (basetypes.v1.VersionResponse) {
+    option (google.api.http) = {
+      post : "/version"
+      body : "*"
+    };
+  }
+  rpc RegisterCoin(RegisterCoinRequest) returns (RegisterCoinResponse) {}
+  rpc GetClientInfos(GetClientInfosRequest) returns (GetClientInfosResponse) {}
+  rpc GetBalance(GetBalanceRequest) returns (GetBalanceResponse) {}
+  rpc CreateWallet(CreateWalletRequest) returns (CreateWalletResponse) {}
+  rpc GetEstimateGas(GetEstimateGasRequest) returns (GetEstimateGasResponse) {}
+  
+  rpc CreateTransaction(CreateTransactionRequest) returns (CreateTransactionResponse) {}
+  rpc UpdateTransaction(UpdateTransactionRequest) returns (UpdateTransactionResponse) {}
+  rpc GetTransaction(GetTransactionRequest) returns (GetTransactionResponse) {}
+  rpc GetTransactions(GetTransactionsRequest) returns (GetTransactionsResponse) {}
+}
+// ################ define types and states ###################
+enum ClientType {
+  ClientTypeDefault = 0;
+  ClientTypePlugin = 10;
+  ClientTypeSign = 20;
+}
+
+enum MsgType {
+  MsgTypeDefault = 0;
+  MsgTypeEcho = 1; // all
+  MsgTypeResponse = 2; // all
+  MsgTypeRegisterCoin = 10; // plugin -> proxy
+
+  MsgTypeGetBalance = 100; // plugin
+  MsgTypeGetViewKey = 110; // sign
+  
+  MsgTypeCreateWallet = 200; // sign
+
+  MsgTypeGetEstimateGas = 300; // plugin
+
+  MsgTypeSubmitTx = 400; // proxy
+  MsgTypeAssignPluginTxs = 500; // plugin sign
+  MsgTypeAssignSignTxs = 600; // plugin sign
+}
+
+// state step by 10
+enum TransactionState {
+  TransactionStateUnKnow = 0;
+  TransactionStatePrepare = 10; // plugin
+  TransactionStateGetViewKey = 20; // sign
+  TransactionStateSign = 30; // sign
+  TransactionStateBroadcast = 40; // plugin
+  TransactionStateSync = 50; // plugin, never exceedtime
+  TransactionStateDone = 100; // proxy
+  TransactionStateFail = 110; // proxy
+}
+
+
+enum CoinType {
+  CoinTypeUnKnow = 0;
+  // mainnet
+  CoinTypefilecoin = 1;
+  CoinTypebitcoin = 2;
+  CoinTypeethereum = 3;
+  CoinTypeusdterc20 = 4;
+  CoinTypespacemesh = 5;
+  CoinTypesolana = 6;
+  CoinTypeusdttrc20 = 7;
+  CoinTypebinancecoin = 8;
+  CoinTypetron = 9;
+  CoinTypebinanceusd = 10;
+  CoinTypeusdcerc20 = 11;
+  CoinTypealeo = 12;
+  CoinTypeironfish = 13;
+  CoinTypeusdtbep20 = 14;
+  CoinTypedepinc = 15;
+  CoinTypechia = 16;
+}
+
+enum ChainType {
+  UnKnow = 0;
+  // mainnet
+  Filecoin = 1;
+  Bitcoin = 2;
+  Ethereum = 3;
+  Spacemesh = 4;
+  Solana = 5;
+  Binancecoin = 6;
+  Tron = 7;
+  Aleo = 8;
+  Ironfish = 9;
+  Depinc = 10;
+  Chia = 11;
+}
+
+// ################## define infos for payload ####################
+message CoinInfo {
+  string Name = 10;
+  string TempName = 11;
+  CoinType CoinType = 20;
+  ChainType ChainType = 30;
+  string ENV = 40;
+}
+
+message ClientInfo {
+  string ID = 10;
+  repeated CoinInfo Infos = 20;
+  string Position = 30;
+  ClientType ClientType = 40;
+}
+
+message RegisterCoinInfo {
+  string Name = 10;
+  string Unit = 20;
+  string ENV = 30;
+  ChainType ChainType = 40;
+  string ChainNativeUnit = 50;
+  string ChainAtomicUnit = 60;
+  uint32 ChainUnitExp = 70;
+  basetypes.v1.GasType GasType = 80;
+  string ChainID = 90;
+  string ChainNickname = 100;
+  string ChainNativeCoinName = 110;
+}
+
+message DataElement {
+  string ConnectID = 10;
+  string MsgID = 20;
+  MsgType MsgType = 30;
+  bytes Payload = 100;
+  optional string ErrMsg = 210; 
+  optional CoinInfo CoinInfo = 220;
+}
+
+message EmptyResponse {}
+// ######################### sync api struct ###############################
+message RegisterCoinRequest {
+  RegisterCoinInfo Info = 10;
+}
+
+message RegisterCoinResponse {}
+
+message CreateWalletRequest { string Name = 100; }
+
+message WalletInfo { string Address = 100; }
+
+message CreateWalletResponse { WalletInfo Info = 100; }
+
+message GetClientInfosRequest {}
+
+message GetClientInfosResponse {
+  repeated ClientInfo Infos = 10;
+  uint32 Total = 20;
+}
+
+message GetBalanceRequest {
+  string Name = 10;
+  string Address = 20;
+}
+
+message BalanceInfo {
+  double Balance = 10;
+  string BalanceStr = 20;
+}
+
+message GetBalanceResponse { BalanceInfo Info = 100; }
+
+message GetEstimateGasRequest { string Name = 100; }
+
+message GetEstimateGasResponse {
+  string Fee = 100;
+  string GasLimit = 110;
+  string GasPrice = 120;
+  string TipsPrice = 130;
+  uint64 BlockNum = 140;
+}
+
+message CreateTransactionRequest {
+  string Name = 100;
+  string TransactionID = 110;
+  double Amount = 120;
+  string From = 130;
+  string To = 140;
+  optional string Memo = 150;
+}
+
+message CreateTransactionResponse {}
+
+message UpdateTransactionRequest {
+  string TransactionID = 100;
+  TransactionState State = 110;
+  bytes Payload = 120;
+  string CID = 130;
+  int64 ExitCode = 140;
+}
+
+message UpdateTransactionResponse {}
+
+message GetTransactionRequest { string TransactionID = 100; }
+
+message Transaction {
+  string TransactionID = 10;
+  string Name = 20;
+  double Amount = 30;
+  string From = 40;
+  string To = 50;
+  string Memo = 60;
+  TransactionState State = 70;
+  bytes Payload = 80;
+  string CID = 90;
+  uint32 LockTime = 100;
+  int64 ExitCode = 110;
+  CoinType CoinType = 120;
+  ChainType ChainType = 130;
+  uint32 CreatedAt = 200;
+  uint32 UpdatedAt = 210;
+}
+
+message SubmitTransaction {
+  string TransactionID = 10;
+  optional bytes Payload = 20;
+  optional string CID = 30;
+  TransactionState State = 40;
+  uint32 LockTime = 50;
+  int64 ExitCode = 60;
+}
+
+message GetTransactionResponse { Transaction Info = 100; }
+
+message GetTransactionsRequest {
+  optional string Name = 10;
+  optional string From = 20;
+  optional string To = 30;
+  optional string CID = 40;
+  optional string Memo = 50;
+  optional double Amount = 60;
+  optional CoinType CoinType = 70;
+  optional ChainType ChainType = 80;
+  optional TransactionState State = 90;
+  
+  uint32 Offset = 130;
+  uint32 Limit = 140;
+}
+
+message GetTransactionsResponse {
+  repeated Transaction Infos = 100;
+  uint32 Total = 110;
+}

@@ -1,0 +1,459 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "npool/foxproxy/foxproxy.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "FoxProxyStream"
+    },
+    {
+      "name": "FoxProxy"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/version": {
+      "post": {
+        "summary": "sync",
+        "operationId": "FoxProxy_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1VersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "FoxProxy"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BalanceInfo": {
+      "type": "object",
+      "properties": {
+        "Balance": {
+          "type": "number",
+          "format": "double"
+        },
+        "BalanceStr": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ChainType": {
+      "type": "string",
+      "enum": [
+        "UnKnow",
+        "Filecoin",
+        "Bitcoin",
+        "Ethereum",
+        "Spacemesh",
+        "Solana",
+        "Binancecoin",
+        "Tron",
+        "Aleo",
+        "Ironfish",
+        "Depinc",
+        "Chia"
+      ],
+      "default": "UnKnow",
+      "title": "- Filecoin: mainnet"
+    },
+    "v1ClientInfo": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CoinInfo"
+          }
+        },
+        "Position": {
+          "type": "string"
+        },
+        "ClientType": {
+          "$ref": "#/definitions/v1ClientType"
+        }
+      }
+    },
+    "v1ClientType": {
+      "type": "string",
+      "enum": [
+        "ClientTypeDefault",
+        "ClientTypePlugin",
+        "ClientTypeSign"
+      ],
+      "default": "ClientTypeDefault",
+      "title": "################ define types and states ###################"
+    },
+    "v1CoinInfo": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "TempName": {
+          "type": "string"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "ChainType": {
+          "$ref": "#/definitions/v1ChainType"
+        },
+        "ENV": {
+          "type": "string"
+        }
+      },
+      "title": "################## define infos for payload ####################"
+    },
+    "v1CoinType": {
+      "type": "string",
+      "enum": [
+        "CoinTypeUnKnow",
+        "CoinTypefilecoin",
+        "CoinTypebitcoin",
+        "CoinTypeethereum",
+        "CoinTypeusdterc20",
+        "CoinTypespacemesh",
+        "CoinTypesolana",
+        "CoinTypeusdttrc20",
+        "CoinTypebinancecoin",
+        "CoinTypetron",
+        "CoinTypebinanceusd",
+        "CoinTypeusdcerc20",
+        "CoinTypealeo",
+        "CoinTypeironfish",
+        "CoinTypeusdtbep20",
+        "CoinTypedepinc",
+        "CoinTypechia"
+      ],
+      "default": "CoinTypeUnKnow",
+      "title": "- CoinTypefilecoin: mainnet"
+    },
+    "v1CreateTransactionResponse": {
+      "type": "object"
+    },
+    "v1CreateWalletResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1WalletInfo"
+        }
+      }
+    },
+    "v1DataElement": {
+      "type": "object",
+      "properties": {
+        "ConnectID": {
+          "type": "string"
+        },
+        "MsgID": {
+          "type": "string"
+        },
+        "MsgType": {
+          "$ref": "#/definitions/v1MsgType"
+        },
+        "Payload": {
+          "type": "string",
+          "format": "byte"
+        },
+        "ErrMsg": {
+          "type": "string"
+        },
+        "CoinInfo": {
+          "$ref": "#/definitions/v1CoinInfo"
+        }
+      }
+    },
+    "v1GasType": {
+      "type": "string",
+      "enum": [
+        "DefaultGasType",
+        "FixedGas",
+        "DynamicGas",
+        "GasUnsupported"
+      ],
+      "default": "DefaultGasType"
+    },
+    "v1GetBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1BalanceInfo"
+        }
+      }
+    },
+    "v1GetClientInfosResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ClientInfo"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetEstimateGasResponse": {
+      "type": "object",
+      "properties": {
+        "Fee": {
+          "type": "string"
+        },
+        "GasLimit": {
+          "type": "string"
+        },
+        "GasPrice": {
+          "type": "string"
+        },
+        "TipsPrice": {
+          "type": "string"
+        },
+        "BlockNum": {
+          "type": "string",
+          "format": "uint64"
+        }
+      }
+    },
+    "v1GetTransactionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "$ref": "#/definitions/v1Transaction"
+        }
+      }
+    },
+    "v1GetTransactionsResponse": {
+      "type": "object",
+      "properties": {
+        "Infos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Transaction"
+          }
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1MsgType": {
+      "type": "string",
+      "enum": [
+        "MsgTypeDefault",
+        "MsgTypeEcho",
+        "MsgTypeResponse",
+        "MsgTypeRegisterCoin",
+        "MsgTypeGetBalance",
+        "MsgTypeGetViewKey",
+        "MsgTypeCreateWallet",
+        "MsgTypeGetEstimateGas",
+        "MsgTypeSubmitTx",
+        "MsgTypeAssignPluginTxs",
+        "MsgTypeAssignSignTxs"
+      ],
+      "default": "MsgTypeDefault",
+      "title": "- MsgTypeEcho: all\n - MsgTypeResponse: all\n - MsgTypeRegisterCoin: plugin -\u003e proxy\n - MsgTypeGetBalance: plugin\n - MsgTypeGetViewKey: sign\n - MsgTypeCreateWallet: sign\n - MsgTypeGetEstimateGas: plugin\n - MsgTypeSubmitTx: proxy\n - MsgTypeAssignPluginTxs: plugin sign\n - MsgTypeAssignSignTxs: plugin sign"
+    },
+    "v1RegisterCoinInfo": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        },
+        "ENV": {
+          "type": "string"
+        },
+        "ChainType": {
+          "$ref": "#/definitions/v1ChainType"
+        },
+        "ChainNativeUnit": {
+          "type": "string"
+        },
+        "ChainAtomicUnit": {
+          "type": "string"
+        },
+        "ChainUnitExp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "GasType": {
+          "$ref": "#/definitions/v1GasType"
+        },
+        "ChainID": {
+          "type": "string"
+        },
+        "ChainNickname": {
+          "type": "string"
+        },
+        "ChainNativeCoinName": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RegisterCoinResponse": {
+      "type": "object"
+    },
+    "v1Transaction": {
+      "type": "object",
+      "properties": {
+        "TransactionID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "From": {
+          "type": "string"
+        },
+        "To": {
+          "type": "string"
+        },
+        "Memo": {
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/v1TransactionState"
+        },
+        "Payload": {
+          "type": "string",
+          "format": "byte"
+        },
+        "CID": {
+          "type": "string"
+        },
+        "LockTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ExitCode": {
+          "type": "string",
+          "format": "int64"
+        },
+        "CoinType": {
+          "$ref": "#/definitions/v1CoinType"
+        },
+        "ChainType": {
+          "$ref": "#/definitions/v1ChainType"
+        },
+        "CreatedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "UpdatedAt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1TransactionState": {
+      "type": "string",
+      "enum": [
+        "TransactionStateUnKnow",
+        "TransactionStatePrepare",
+        "TransactionStateGetViewKey",
+        "TransactionStateSign",
+        "TransactionStateBroadcast",
+        "TransactionStateSync",
+        "TransactionStateDone",
+        "TransactionStateFail"
+      ],
+      "default": "TransactionStateUnKnow",
+      "description": "- TransactionStatePrepare: plugin\n - TransactionStateGetViewKey: sign\n - TransactionStateSign: sign\n - TransactionStateBroadcast: plugin\n - TransactionStateSync: plugin, never exceedtime\n - TransactionStateDone: proxy\n - TransactionStateFail: proxy",
+      "title": "state step by 10"
+    },
+    "v1UpdateTransactionResponse": {
+      "type": "object"
+    },
+    "v1VersionResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
+        }
+      }
+    },
+    "v1WalletInfo": {
+      "type": "object",
+      "properties": {
+        "Address": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
