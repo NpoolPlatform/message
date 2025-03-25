@@ -360,7 +360,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -456,8 +455,7 @@
         "UserDirectBenefit",
         "OrderBenefit"
       ],
-      "default": "DefaultAccountUsedFor",
-      "title": "- GoodBenefit: Daily good benefit receiver              - Platform Hot\n - UserBenefitHot: Limited amount money for withdrawal      - Platform Hot\n - UserBenefitCold: Money of user benefit over limitation    - Platform Cold\n - PlatformBenefitCold: Money over limitation                    - Platform Cold\n - GasProvider: Deposit money for transaction gas        - Platform Hot\n - UserWithdraw: User set withdraw address                - User Set\n - UserDeposit: Platform created user deposit address    - Platform Create\n - GoodPayment: Platform created for good payment        - Platform Created\n - PaymentCollector: Money for payment over limitation        - Platform Cold\n - UserDirectBenefit: Benefit address for user set to product  - User set\n - OrderBenefit: Benefit address for user set to order - Order set"
+      "default": "DefaultAccountUsedFor"
     },
     "v1CreateAccountRequest": {
       "type": "object",
@@ -560,7 +558,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Account"
           }
         },
@@ -592,7 +589,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Account"
           }
         },
@@ -624,7 +620,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Account"
           }
         },
@@ -678,7 +673,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Account"
           }
         },
@@ -710,7 +704,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Account"
           }
         },
@@ -735,8 +728,7 @@
         "Username",
         "Reset"
       ],
-      "default": "DefaultSignMethod",
-      "title": "- Mobile: For signup, signin, verify\n - Email: For signup, signin, verify\n - Twitter: For signin\n - Github: For signin\n - Facebook: For signin\n - Linkedin: For signin\n - Wechat: For signin\n - Google: For signin, verify\n - Username: For signup, signin\n - Reset: For Reset Password in all auth factors are lost"
+      "default": "DefaultSignMethod"
     },
     "v1UpdateAccountRequest": {
       "type": "object",

@@ -168,7 +168,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/locationv1Location"
           }
         },
@@ -252,7 +251,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }

@@ -168,7 +168,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -235,8 +234,7 @@
         "SpendSuccessfulBalance",
         "Successful"
       ],
-      "default": "DefaultWithdrawState",
-      "title": "- ReturnRejectedBalance: -\u003e Rejected\n - Rejected: ReturnRejectedBalance \u003c- (rollback)\n - ReturnFailBalance: -\u003e TransactionFail\n - TransactionFail: ReturnFailBalance \u003c-\n - SpendSuccessfulBalance: -\u003e Successful\n - Successful: SpendSuccessfulBalance \u003c-"
+      "default": "DefaultWithdrawState"
     },
     "v2GetAppWithdrawReviewsRequest": {
       "type": "object",
@@ -260,7 +258,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2WithdrawReview"
           }
         },
@@ -292,7 +289,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v2WithdrawReview"
           }
         },
@@ -315,8 +311,7 @@
           "type": "string"
         },
         "UserID": {
-          "type": "string",
-          "title": "Reviewer"
+          "type": "string"
         },
         "State": {
           "$ref": "#/definitions/v1ReviewState"
@@ -344,8 +339,7 @@
           "type": "string"
         },
         "UserID": {
-          "type": "string",
-          "title": "Reviewer"
+          "type": "string"
         },
         "State": {
           "$ref": "#/definitions/v1ReviewState"

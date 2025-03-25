@@ -99,7 +99,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1RecoveryCode"
           }
         }
@@ -130,7 +129,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1RecoveryCode"
           }
         },
@@ -162,7 +160,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }

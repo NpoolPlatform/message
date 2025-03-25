@@ -281,22 +281,20 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/CreateCoupon", runtime.WithHTTPPathPattern("/v1/allocated_CreateCoupon"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/CreateCoupon", runtime.WithHTTPPathPattern("/v1/allocated_CreateCoupon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Middleware_CreateCoupon_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Middleware_CreateCoupon_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_CreateCoupon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_CreateCoupon_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -306,22 +304,20 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/CreateDirectCoupon", runtime.WithHTTPPathPattern("/v1/allocated_CreateDirectCoupon"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/CreateDirectCoupon", runtime.WithHTTPPathPattern("/v1/allocated_CreateDirectCoupon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Middleware_CreateDirectCoupon_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Middleware_CreateDirectCoupon_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_CreateDirectCoupon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_CreateDirectCoupon_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -331,22 +327,20 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupon", runtime.WithHTTPPathPattern("/v1/allocated_UpdateCoupon"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupon", runtime.WithHTTPPathPattern("/v1/allocated_UpdateCoupon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Middleware_UpdateCoupon_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Middleware_UpdateCoupon_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_UpdateCoupon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_UpdateCoupon_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -356,22 +350,20 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupons", runtime.WithHTTPPathPattern("/v1/allocated_UpdateCoupons"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupons", runtime.WithHTTPPathPattern("/v1/allocated_UpdateCoupons"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Middleware_UpdateCoupons_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Middleware_UpdateCoupons_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_UpdateCoupons_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_UpdateCoupons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -381,22 +373,20 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupon", runtime.WithHTTPPathPattern("/v1/allocated_GetCoupon"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupon", runtime.WithHTTPPathPattern("/v1/allocated_GetCoupon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Middleware_GetCoupon_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Middleware_GetCoupon_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_GetCoupon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_GetCoupon_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -406,22 +396,20 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupons", runtime.WithHTTPPathPattern("/v1/allocated_GetCoupons"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupons", runtime.WithHTTPPathPattern("/v1/allocated_GetCoupons"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Middleware_GetCoupons_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Middleware_GetCoupons_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_GetCoupons_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_GetCoupons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -431,22 +419,20 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/DeleteCoupon", runtime.WithHTTPPathPattern("/v1/allocated_DeleteCoupon"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/DeleteCoupon", runtime.WithHTTPPathPattern("/v1/allocated_DeleteCoupon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Middleware_DeleteCoupon_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Middleware_DeleteCoupon_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_DeleteCoupon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_DeleteCoupon_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -456,7 +442,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 // RegisterMiddlewareHandlerFromEndpoint is same as RegisterMiddlewareHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
 func RegisterMiddlewareHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
-	conn, err := grpc.DialContext(ctx, endpoint, opts...)
+	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
 	}
@@ -495,21 +481,19 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/CreateCoupon", runtime.WithHTTPPathPattern("/v1/allocated_CreateCoupon"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/CreateCoupon", runtime.WithHTTPPathPattern("/v1/allocated_CreateCoupon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Middleware_CreateCoupon_0(annotatedContext, inboundMarshaler, client, req, pathParams)
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		resp, md, err := request_Middleware_CreateCoupon_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_CreateCoupon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_CreateCoupon_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -517,21 +501,19 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/CreateDirectCoupon", runtime.WithHTTPPathPattern("/v1/allocated_CreateDirectCoupon"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/CreateDirectCoupon", runtime.WithHTTPPathPattern("/v1/allocated_CreateDirectCoupon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Middleware_CreateDirectCoupon_0(annotatedContext, inboundMarshaler, client, req, pathParams)
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		resp, md, err := request_Middleware_CreateDirectCoupon_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_CreateDirectCoupon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_CreateDirectCoupon_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -539,21 +521,19 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupon", runtime.WithHTTPPathPattern("/v1/allocated_UpdateCoupon"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupon", runtime.WithHTTPPathPattern("/v1/allocated_UpdateCoupon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Middleware_UpdateCoupon_0(annotatedContext, inboundMarshaler, client, req, pathParams)
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		resp, md, err := request_Middleware_UpdateCoupon_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_UpdateCoupon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_UpdateCoupon_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -561,21 +541,19 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupons", runtime.WithHTTPPathPattern("/v1/allocated_UpdateCoupons"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/UpdateCoupons", runtime.WithHTTPPathPattern("/v1/allocated_UpdateCoupons"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Middleware_UpdateCoupons_0(annotatedContext, inboundMarshaler, client, req, pathParams)
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		resp, md, err := request_Middleware_UpdateCoupons_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_UpdateCoupons_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_UpdateCoupons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -583,21 +561,19 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupon", runtime.WithHTTPPathPattern("/v1/allocated_GetCoupon"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupon", runtime.WithHTTPPathPattern("/v1/allocated_GetCoupon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Middleware_GetCoupon_0(annotatedContext, inboundMarshaler, client, req, pathParams)
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		resp, md, err := request_Middleware_GetCoupon_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_GetCoupon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_GetCoupon_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -605,21 +581,19 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupons", runtime.WithHTTPPathPattern("/v1/allocated_GetCoupons"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/GetCoupons", runtime.WithHTTPPathPattern("/v1/allocated_GetCoupons"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Middleware_GetCoupons_0(annotatedContext, inboundMarshaler, client, req, pathParams)
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		resp, md, err := request_Middleware_GetCoupons_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_GetCoupons_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_GetCoupons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -627,21 +601,19 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/DeleteCoupon", runtime.WithHTTPPathPattern("/v1/allocated_DeleteCoupon"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/inspire.middleware.coupon.allocated.v1.Middleware/DeleteCoupon", runtime.WithHTTPPathPattern("/v1/allocated_DeleteCoupon"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Middleware_DeleteCoupon_0(annotatedContext, inboundMarshaler, client, req, pathParams)
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		resp, md, err := request_Middleware_DeleteCoupon_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_DeleteCoupon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_DeleteCoupon_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 

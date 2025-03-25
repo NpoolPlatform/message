@@ -130,7 +130,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -169,7 +168,6 @@
         "Info": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Reward"
           }
         }
@@ -301,7 +299,6 @@
         "Coins": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1EventCoin"
           }
         },
@@ -425,7 +422,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Event"
           }
         },
@@ -450,14 +446,12 @@
         "CoinRewards": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1CoinReward"
           }
         },
         "CouponRewards": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1CouponReward"
           }
         }

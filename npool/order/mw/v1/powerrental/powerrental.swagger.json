@@ -172,7 +172,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -281,8 +280,7 @@
           "type": "string"
         },
         "ParentOrderID": {
-          "type": "string",
-          "title": "It's must for fee order"
+          "type": "string"
         },
         "OrderType": {
           "$ref": "#/definitions/v1OrderType"
@@ -347,7 +345,6 @@
         "PaymentBalances": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1PaymentBalanceReq"
           },
           "title": "Payment balances"
@@ -355,7 +352,6 @@
         "PaymentTransfers": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1PaymentTransferReq"
           },
           "title": "Payment transfers"
@@ -376,7 +372,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1PowerRentalOrder"
           }
         },
@@ -468,8 +463,7 @@
         "OrderStartNextDay",
         "OrderStartPreset"
       ],
-      "default": "DefaultOrderStartMode",
-      "title": "- OrderStartInstantly: Start when order paid\n - OrderStartNextDay: Start at next 00:00 UTC\n - OrderStartPreset: Start at a preset time"
+      "default": "DefaultOrderStartMode"
     },
     "v1OrderState": {
       "type": "string",
@@ -507,7 +501,7 @@
         "OrderStateExpired"
       ],
       "default": "DefaultOrderState",
-      "description": "- OrderStateCreated: -\u003e OrderStateWaitPayment\n - OrderStateWaitPayment: Common state\n\n-\u003e OrderStatePaymentTimeout || OrderStatePaymentTransferReceived || OrderStatePreCancel\n - OrderStatePaymentTransferReceived: Payment process\n\n-\u003e OrderStatePaymentTransferBookKeeping\n - OrderStatePaymentTransferBookKeeping: -\u003e OrderStatePaymentSpendBalance\n - OrderStatePaymentSpendBalance: -\u003e OrderStateTransferGoodStockLocked\n - OrderStateTransferGoodStockLocked: -\u003e OrderStateAddCommission\n - OrderStateAddCommission: -\u003e OrderStateAchievementBookKeeping\n - OrderStateAchievementBookKeeping: -\u003e OrderStatePaymentUnlockAccount\n - OrderStatePaymentUnlockAccount: -\u003e OrderStatePaid\n - OrderStatePaid: Paid\n\n-\u003e OrderStatePreCancel || OrderStateTransferGoodStockWaitStart\n - OrderStateTransferGoodStockWaitStart: -\u003e OrderStateInService\n - OrderStateCreateOrderUser: PreInService sub states for miningpool settings\n - OrderStateInService: -\u003e OrderStatePreCancel || OrderStatePreExpired\n - OrderStatePaymentTimeout: Timeout of order\n\n-\u003e OrderStatePreCancel\n - OrderStatePreCancel: End or order\n\n-\u003e OrderStateRestoreCanceledStock\n - OrderStatePreExpired: -\u003e OrderStateRestoreExpiredStock\n - OrderStateDeleteProportion: PreExpired sub states for miningpool settings\n - OrderStateRestoreExpiredStock: Calculation\n\n-\u003e OrderStateExpired\n - OrderStateRestoreCanceledStock: -\u003e OrderStateDeductLockedCommission\n - OrderStateDeductLockedCommission: -\u003e OrderStateCancelAchievement\n - OrderStateCancelAchievement: -\u003e OrderStateReturnCanceledBalance\n - OrderStateReturnCanceledBalance: -\u003e OrderStateCanceledTransferBookKeeping\n - OrderStateCanceledTransferBookKeeping: -\u003e OrderStateCancelUnlockPaymentAccount\n - OrderStateCancelUnlockPaymentAccount: -\u003e OrderStateCanceled\n - OrderStateCanceled: End state",
+      "description": "- OrderStateWaitPayment: Common state\n - OrderStatePaymentTransferReceived: Payment process\n - OrderStatePaid: Paid\n - OrderStateCreateOrderUser: PreInService sub states for miningpool settings\n - OrderStatePaymentTimeout: Timeout of order\n - OrderStatePreCancel: End or order\n - OrderStateDeleteProportion: PreExpired sub states for miningpool settings\n - OrderStateRestoreExpiredStock: Calculation\n - OrderStateCanceled: End state",
       "title": "clang-format off"
     },
     "v1OrderType": {
@@ -907,7 +901,6 @@
         "Coupons": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1OrderCouponInfo"
           },
           "title": "Coupons"
@@ -915,7 +908,6 @@
         "PaymentBalances": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1PaymentBalanceInfo"
           },
           "title": "Payment balances"
@@ -923,7 +915,6 @@
         "PaymentTransfers": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1PaymentTransferInfo"
           },
           "title": "Payment transfers"
@@ -931,7 +922,6 @@
         "FeeDurations": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1FeeDuration"
           },
           "title": "Fee duration infos"
@@ -1083,7 +1073,6 @@
         "PaymentBalances": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1PaymentBalanceReq"
           },
           "title": "Payment balances"
@@ -1091,7 +1080,6 @@
         "PaymentTransfers": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1PaymentTransferReq"
           },
           "title": "Payment transfers"
@@ -1176,7 +1164,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1PowerRentalOrder"
           }
         }

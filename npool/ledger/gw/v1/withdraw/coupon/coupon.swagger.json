@@ -136,7 +136,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -208,8 +207,7 @@
         },
         "ReviewUintID": {
           "type": "integer",
-          "format": "int64",
-          "title": "only for smoketest"
+          "format": "int64"
         },
         "CreatedAt": {
           "type": "integer",
@@ -265,7 +263,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1CouponWithdraw"
           }
         },
@@ -300,7 +297,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1CouponWithdraw"
           }
         },
@@ -328,8 +324,7 @@
         "SpendSuccessfulBalance",
         "Successful"
       ],
-      "default": "DefaultWithdrawState",
-      "title": "- ReturnRejectedBalance: -\u003e Rejected\n - Rejected: ReturnRejectedBalance \u003c- (rollback)\n - ReturnFailBalance: -\u003e TransactionFail\n - TransactionFail: ReturnFailBalance \u003c-\n - SpendSuccessfulBalance: -\u003e Successful\n - Successful: SpendSuccessfulBalance \u003c-"
+      "default": "DefaultWithdrawState"
     }
   }
 }

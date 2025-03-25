@@ -39,7 +39,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -59,7 +58,6 @@
         "Infos": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1Payment"
           }
         },
@@ -107,14 +105,12 @@
         "PaymentBalances": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1PaymentBalanceInfo"
           }
         },
         "PaymentTransfers": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1PaymentTransferInfo"
           }
         },
@@ -198,7 +194,6 @@
         "PaymentTransfers": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1PaymentTransferReq"
           }
         }

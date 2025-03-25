@@ -104,7 +104,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -188,12 +187,10 @@
           "type": "string"
         },
         "GoodID": {
-          "type": "string",
-          "title": "If good id is set, we create compensate for all orders of this good"
+          "type": "string"
         },
         "OrderID": {
-          "type": "string",
-          "title": "If order id is set, we create one compensate for this order"
+          "type": "string"
         },
         "CompensateFromID": {
           "type": "string"
