@@ -15,9 +15,9 @@ service Middleware {
             body : "*"
         };
     }
-    rpc GetRecordsCount(GetRecordsCountRequest) returns (GetRecordsCountResponse) {
+    rpc CountRecords(CountRecordsRequest) returns (CountRecordsResponse) {
         option (google.api.http) = {
-            post : "/v1/user/credit/billingrecord_GetRecordsCount"
+            post : "/v1/user/credit/billingrecord_CountRecords"
             body : "*"
         };
     }
@@ -102,11 +102,11 @@ message GetRecordsResponse {
     repeated Record Infos = 10;
 }
 
-message GetRecordsCountRequest {
+message CountRecordsRequest {
     Conds Conds = 10;
 }
 
-message GetRecordsCountResponse {
+message CountRecordsResponse {
     uint32 Total = 20;
 }
 

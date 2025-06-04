@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/user/billingsubscription_CountSubscriptionChanges": {
+      "post": {
+        "operationId": "Middleware_CountSubscriptionChanges",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CountSubscriptionChangesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CountSubscriptionChangesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
     "/v1/user/billingsubscription_CreateSubscriptionChange": {
       "post": {
         "operationId": "Middleware_CreateSubscriptionChange",
@@ -175,38 +207,6 @@
           "Middleware"
         ]
       }
-    },
-    "/v1/user/billingsubscription_GetSubscriptionChangesCount": {
-      "post": {
-        "operationId": "Middleware_GetSubscriptionChangesCount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionChangesCountResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionChangesCountRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
     }
   },
   "definitions": {
@@ -266,6 +266,23 @@
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CountSubscriptionChangesRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "$ref": "#/definitions/v1Conds"
+        }
+      }
+    },
+    "v1CountSubscriptionChangesResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -330,23 +347,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1SubscriptionChange"
-        }
-      }
-    },
-    "v1GetSubscriptionChangesCountRequest": {
-      "type": "object",
-      "properties": {
-        "Conds": {
-          "$ref": "#/definitions/v1Conds"
-        }
-      }
-    },
-    "v1GetSubscriptionChangesCountResponse": {
-      "type": "object",
-      "properties": {
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

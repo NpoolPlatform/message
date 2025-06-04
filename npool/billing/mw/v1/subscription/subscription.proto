@@ -15,9 +15,9 @@ service Middleware {
             body : "*"
         };
     }
-    rpc GetSubscriptionsCount(GetSubscriptionsCountRequest) returns (GetSubscriptionsCountResponse) {
+    rpc CountSubscriptions(CountSubscriptionsRequest) returns (CountSubscriptionsResponse) {
         option (google.api.http) = {
-            post : "/v1/billingsubscription_GetSubscriptionsCount"
+            post : "/v1/billingsubscription_CountSubscriptions"
             body : "*"
         };
     }
@@ -124,11 +124,11 @@ message GetSubscriptionsResponse {
     repeated Subscription Infos = 10;
 }
 
-message GetSubscriptionsCountRequest {
+message CountSubscriptionsRequest {
     Conds Conds = 10;
 }
 
-message GetSubscriptionsCountResponse {
+message CountSubscriptionsResponse {
     uint32 Total = 20;
 }
 

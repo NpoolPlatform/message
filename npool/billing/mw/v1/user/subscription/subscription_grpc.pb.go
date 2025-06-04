@@ -20,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_GetSubscriptions_FullMethodName       = "/billing.middleware.user.subscription.v1.Middleware/GetSubscriptions"
-	Middleware_GetSubscriptionsCount_FullMethodName  = "/billing.middleware.user.subscription.v1.Middleware/GetSubscriptionsCount"
+	Middleware_CountSubscriptions_FullMethodName     = "/billing.middleware.user.subscription.v1.Middleware/CountSubscriptions"
 	Middleware_GetSubscription_FullMethodName        = "/billing.middleware.user.subscription.v1.Middleware/GetSubscription"
 	Middleware_ExistSubscriptionConds_FullMethodName = "/billing.middleware.user.subscription.v1.Middleware/ExistSubscriptionConds"
 	Middleware_CreateSubscription_FullMethodName     = "/billing.middleware.user.subscription.v1.Middleware/CreateSubscription"
@@ -33,7 +33,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	GetSubscriptions(ctx context.Context, in *GetSubscriptionsRequest, opts ...grpc.CallOption) (*GetSubscriptionsResponse, error)
-	GetSubscriptionsCount(ctx context.Context, in *GetSubscriptionsCountRequest, opts ...grpc.CallOption) (*GetSubscriptionsCountResponse, error)
+	CountSubscriptions(ctx context.Context, in *CountSubscriptionsRequest, opts ...grpc.CallOption) (*CountSubscriptionsResponse, error)
 	GetSubscription(ctx context.Context, in *GetSubscriptionRequest, opts ...grpc.CallOption) (*GetSubscriptionResponse, error)
 	ExistSubscriptionConds(ctx context.Context, in *ExistSubscriptionCondsRequest, opts ...grpc.CallOption) (*ExistSubscriptionCondsResponse, error)
 	CreateSubscription(ctx context.Context, in *CreateSubscriptionRequest, opts ...grpc.CallOption) (*CreateSubscriptionResponse, error)
@@ -58,9 +58,9 @@ func (c *middlewareClient) GetSubscriptions(ctx context.Context, in *GetSubscrip
 	return out, nil
 }
 
-func (c *middlewareClient) GetSubscriptionsCount(ctx context.Context, in *GetSubscriptionsCountRequest, opts ...grpc.CallOption) (*GetSubscriptionsCountResponse, error) {
-	out := new(GetSubscriptionsCountResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetSubscriptionsCount_FullMethodName, in, out, opts...)
+func (c *middlewareClient) CountSubscriptions(ctx context.Context, in *CountSubscriptionsRequest, opts ...grpc.CallOption) (*CountSubscriptionsResponse, error) {
+	out := new(CountSubscriptionsResponse)
+	err := c.cc.Invoke(ctx, Middleware_CountSubscriptions_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -117,7 +117,7 @@ func (c *middlewareClient) UpdateSubscription(ctx context.Context, in *UpdateSub
 // for forward compatibility
 type MiddlewareServer interface {
 	GetSubscriptions(context.Context, *GetSubscriptionsRequest) (*GetSubscriptionsResponse, error)
-	GetSubscriptionsCount(context.Context, *GetSubscriptionsCountRequest) (*GetSubscriptionsCountResponse, error)
+	CountSubscriptions(context.Context, *CountSubscriptionsRequest) (*CountSubscriptionsResponse, error)
 	GetSubscription(context.Context, *GetSubscriptionRequest) (*GetSubscriptionResponse, error)
 	ExistSubscriptionConds(context.Context, *ExistSubscriptionCondsRequest) (*ExistSubscriptionCondsResponse, error)
 	CreateSubscription(context.Context, *CreateSubscriptionRequest) (*CreateSubscriptionResponse, error)
@@ -133,8 +133,8 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) GetSubscriptions(context.Context, *GetSubscriptionsRequest) (*GetSubscriptionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSubscriptions not implemented")
 }
-func (UnimplementedMiddlewareServer) GetSubscriptionsCount(context.Context, *GetSubscriptionsCountRequest) (*GetSubscriptionsCountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSubscriptionsCount not implemented")
+func (UnimplementedMiddlewareServer) CountSubscriptions(context.Context, *CountSubscriptionsRequest) (*CountSubscriptionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountSubscriptions not implemented")
 }
 func (UnimplementedMiddlewareServer) GetSubscription(context.Context, *GetSubscriptionRequest) (*GetSubscriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSubscription not implemented")
@@ -182,20 +182,20 @@ func _Middleware_GetSubscriptions_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetSubscriptionsCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSubscriptionsCountRequest)
+func _Middleware_CountSubscriptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountSubscriptionsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetSubscriptionsCount(ctx, in)
+		return srv.(MiddlewareServer).CountSubscriptions(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetSubscriptionsCount_FullMethodName,
+		FullMethod: Middleware_CountSubscriptions_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetSubscriptionsCount(ctx, req.(*GetSubscriptionsCountRequest))
+		return srv.(MiddlewareServer).CountSubscriptions(ctx, req.(*CountSubscriptionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -302,8 +302,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetSubscriptions_Handler,
 		},
 		{
-			MethodName: "GetSubscriptionsCount",
-			Handler:    _Middleware_GetSubscriptionsCount_Handler,
+			MethodName: "CountSubscriptions",
+			Handler:    _Middleware_CountSubscriptions_Handler,
 		},
 		{
 			MethodName: "GetSubscription",

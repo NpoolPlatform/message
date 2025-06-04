@@ -15,9 +15,9 @@ service Middleware {
             body : "*"
         };
     }
-    rpc GetExchangesCount(GetExchangesCountRequest) returns (GetExchangesCountResponse) {
+    rpc CountExchanges(CountExchangesRequest) returns (CountExchangesResponse) {
         option (google.api.http) = {
-            post : "/v1/credit/billingexchange_GetExchangesCount"
+            post : "/v1/credit/billingexchange_CountExchanges"
             body : "*"
         };
     }
@@ -109,11 +109,11 @@ message GetExchangesResponse {
     repeated Exchange Infos = 10;
 }
 
-message GetExchangesCountRequest {
+message CountExchangesRequest {
     Conds Conds = 10;
 }
 
-message GetExchangesCountResponse {
+message CountExchangesResponse {
     uint32 Total = 20;
 }
 

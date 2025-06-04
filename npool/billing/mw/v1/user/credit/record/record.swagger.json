@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/user/credit/billingrecord_CountRecords": {
+      "post": {
+        "operationId": "Middleware_CountRecords",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CountRecordsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CountRecordsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
     "/v1/user/credit/billingrecord_CreateRecord": {
       "post": {
         "operationId": "Middleware_CreateRecord",
@@ -175,38 +207,6 @@
           "Middleware"
         ]
       }
-    },
-    "/v1/user/credit/billingrecord_GetRecordsCount": {
-      "post": {
-        "operationId": "Middleware_GetRecordsCount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetRecordsCountResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetRecordsCountRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
     }
   },
   "definitions": {
@@ -260,6 +260,23 @@
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CountRecordsRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "$ref": "#/definitions/v1Conds"
+        }
+      }
+    },
+    "v1CountRecordsResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -324,23 +341,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Record"
-        }
-      }
-    },
-    "v1GetRecordsCountRequest": {
-      "type": "object",
-      "properties": {
-        "Conds": {
-          "$ref": "#/definitions/v1Conds"
-        }
-      }
-    },
-    "v1GetRecordsCountResponse": {
-      "type": "object",
-      "properties": {
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

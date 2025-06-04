@@ -20,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_GetSubscriptionChanges_FullMethodName       = "/billing.middleware.user.subscription.change.v1.Middleware/GetSubscriptionChanges"
-	Middleware_GetSubscriptionChangesCount_FullMethodName  = "/billing.middleware.user.subscription.change.v1.Middleware/GetSubscriptionChangesCount"
+	Middleware_CountSubscriptionChanges_FullMethodName     = "/billing.middleware.user.subscription.change.v1.Middleware/CountSubscriptionChanges"
 	Middleware_GetSubscriptionChange_FullMethodName        = "/billing.middleware.user.subscription.change.v1.Middleware/GetSubscriptionChange"
 	Middleware_ExistSubscriptionChangeConds_FullMethodName = "/billing.middleware.user.subscription.change.v1.Middleware/ExistSubscriptionChangeConds"
 	Middleware_CreateSubscriptionChange_FullMethodName     = "/billing.middleware.user.subscription.change.v1.Middleware/CreateSubscriptionChange"
@@ -32,7 +32,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	GetSubscriptionChanges(ctx context.Context, in *GetSubscriptionChangesRequest, opts ...grpc.CallOption) (*GetSubscriptionChangesResponse, error)
-	GetSubscriptionChangesCount(ctx context.Context, in *GetSubscriptionChangesCountRequest, opts ...grpc.CallOption) (*GetSubscriptionChangesCountResponse, error)
+	CountSubscriptionChanges(ctx context.Context, in *CountSubscriptionChangesRequest, opts ...grpc.CallOption) (*CountSubscriptionChangesResponse, error)
 	GetSubscriptionChange(ctx context.Context, in *GetSubscriptionChangeRequest, opts ...grpc.CallOption) (*GetSubscriptionChangeResponse, error)
 	ExistSubscriptionChangeConds(ctx context.Context, in *ExistSubscriptionChangeCondsRequest, opts ...grpc.CallOption) (*ExistSubscriptionChangeCondsResponse, error)
 	CreateSubscriptionChange(ctx context.Context, in *CreateSubscriptionChangeRequest, opts ...grpc.CallOption) (*CreateSubscriptionChangeResponse, error)
@@ -56,9 +56,9 @@ func (c *middlewareClient) GetSubscriptionChanges(ctx context.Context, in *GetSu
 	return out, nil
 }
 
-func (c *middlewareClient) GetSubscriptionChangesCount(ctx context.Context, in *GetSubscriptionChangesCountRequest, opts ...grpc.CallOption) (*GetSubscriptionChangesCountResponse, error) {
-	out := new(GetSubscriptionChangesCountResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetSubscriptionChangesCount_FullMethodName, in, out, opts...)
+func (c *middlewareClient) CountSubscriptionChanges(ctx context.Context, in *CountSubscriptionChangesRequest, opts ...grpc.CallOption) (*CountSubscriptionChangesResponse, error) {
+	out := new(CountSubscriptionChangesResponse)
+	err := c.cc.Invoke(ctx, Middleware_CountSubscriptionChanges_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,7 +106,7 @@ func (c *middlewareClient) DeleteSubscriptionChange(ctx context.Context, in *Del
 // for forward compatibility
 type MiddlewareServer interface {
 	GetSubscriptionChanges(context.Context, *GetSubscriptionChangesRequest) (*GetSubscriptionChangesResponse, error)
-	GetSubscriptionChangesCount(context.Context, *GetSubscriptionChangesCountRequest) (*GetSubscriptionChangesCountResponse, error)
+	CountSubscriptionChanges(context.Context, *CountSubscriptionChangesRequest) (*CountSubscriptionChangesResponse, error)
 	GetSubscriptionChange(context.Context, *GetSubscriptionChangeRequest) (*GetSubscriptionChangeResponse, error)
 	ExistSubscriptionChangeConds(context.Context, *ExistSubscriptionChangeCondsRequest) (*ExistSubscriptionChangeCondsResponse, error)
 	CreateSubscriptionChange(context.Context, *CreateSubscriptionChangeRequest) (*CreateSubscriptionChangeResponse, error)
@@ -121,8 +121,8 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) GetSubscriptionChanges(context.Context, *GetSubscriptionChangesRequest) (*GetSubscriptionChangesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSubscriptionChanges not implemented")
 }
-func (UnimplementedMiddlewareServer) GetSubscriptionChangesCount(context.Context, *GetSubscriptionChangesCountRequest) (*GetSubscriptionChangesCountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSubscriptionChangesCount not implemented")
+func (UnimplementedMiddlewareServer) CountSubscriptionChanges(context.Context, *CountSubscriptionChangesRequest) (*CountSubscriptionChangesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountSubscriptionChanges not implemented")
 }
 func (UnimplementedMiddlewareServer) GetSubscriptionChange(context.Context, *GetSubscriptionChangeRequest) (*GetSubscriptionChangeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSubscriptionChange not implemented")
@@ -167,20 +167,20 @@ func _Middleware_GetSubscriptionChanges_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetSubscriptionChangesCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSubscriptionChangesCountRequest)
+func _Middleware_CountSubscriptionChanges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountSubscriptionChangesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetSubscriptionChangesCount(ctx, in)
+		return srv.(MiddlewareServer).CountSubscriptionChanges(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetSubscriptionChangesCount_FullMethodName,
+		FullMethod: Middleware_CountSubscriptionChanges_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetSubscriptionChangesCount(ctx, req.(*GetSubscriptionChangesCountRequest))
+		return srv.(MiddlewareServer).CountSubscriptionChanges(ctx, req.(*CountSubscriptionChangesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -269,8 +269,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetSubscriptionChanges_Handler,
 		},
 		{
-			MethodName: "GetSubscriptionChangesCount",
-			Handler:    _Middleware_GetSubscriptionChangesCount_Handler,
+			MethodName: "CountSubscriptionChanges",
+			Handler:    _Middleware_CountSubscriptionChanges_Handler,
 		},
 		{
 			MethodName: "GetSubscriptionChange",

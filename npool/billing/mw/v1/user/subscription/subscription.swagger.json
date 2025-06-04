@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/user/billingsubscription_CountSubscriptions": {
+      "post": {
+        "operationId": "Middleware_CountSubscriptions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CountSubscriptionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CountSubscriptionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
     "/v1/user/billingsubscription_CreateSubscription": {
       "post": {
         "operationId": "Middleware_CreateSubscription",
@@ -176,38 +208,6 @@
         ]
       }
     },
-    "/v1/user/billingsubscription_GetSubscriptionsCount": {
-      "post": {
-        "operationId": "Middleware_GetSubscriptionsCount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionsCountResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionsCountRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
     "/v1/user/billingsubscription_UpdateSubscription": {
       "post": {
         "operationId": "Middleware_UpdateSubscription",
@@ -304,6 +304,23 @@
         }
       }
     },
+    "v1CountSubscriptionsRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "$ref": "#/definitions/v1Conds"
+        }
+      }
+    },
+    "v1CountSubscriptionsResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1CreateSubscriptionRequest": {
       "type": "object",
       "properties": {
@@ -365,23 +382,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Subscription"
-        }
-      }
-    },
-    "v1GetSubscriptionsCountRequest": {
-      "type": "object",
-      "properties": {
-        "Conds": {
-          "$ref": "#/definitions/v1Conds"
-        }
-      }
-    },
-    "v1GetSubscriptionsCountResponse": {
-      "type": "object",
-      "properties": {
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

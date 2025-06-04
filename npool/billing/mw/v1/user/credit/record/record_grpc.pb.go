@@ -20,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_GetRecords_FullMethodName       = "/billing.middleware.user.credit.record.v1.Middleware/GetRecords"
-	Middleware_GetRecordsCount_FullMethodName  = "/billing.middleware.user.credit.record.v1.Middleware/GetRecordsCount"
+	Middleware_CountRecords_FullMethodName     = "/billing.middleware.user.credit.record.v1.Middleware/CountRecords"
 	Middleware_GetRecord_FullMethodName        = "/billing.middleware.user.credit.record.v1.Middleware/GetRecord"
 	Middleware_ExistRecordConds_FullMethodName = "/billing.middleware.user.credit.record.v1.Middleware/ExistRecordConds"
 	Middleware_CreateRecord_FullMethodName     = "/billing.middleware.user.credit.record.v1.Middleware/CreateRecord"
@@ -32,7 +32,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	GetRecords(ctx context.Context, in *GetRecordsRequest, opts ...grpc.CallOption) (*GetRecordsResponse, error)
-	GetRecordsCount(ctx context.Context, in *GetRecordsCountRequest, opts ...grpc.CallOption) (*GetRecordsCountResponse, error)
+	CountRecords(ctx context.Context, in *CountRecordsRequest, opts ...grpc.CallOption) (*CountRecordsResponse, error)
 	GetRecord(ctx context.Context, in *GetRecordRequest, opts ...grpc.CallOption) (*GetRecordResponse, error)
 	ExistRecordConds(ctx context.Context, in *ExistRecordCondsRequest, opts ...grpc.CallOption) (*ExistRecordCondsResponse, error)
 	CreateRecord(ctx context.Context, in *CreateRecordRequest, opts ...grpc.CallOption) (*CreateRecordResponse, error)
@@ -56,9 +56,9 @@ func (c *middlewareClient) GetRecords(ctx context.Context, in *GetRecordsRequest
 	return out, nil
 }
 
-func (c *middlewareClient) GetRecordsCount(ctx context.Context, in *GetRecordsCountRequest, opts ...grpc.CallOption) (*GetRecordsCountResponse, error) {
-	out := new(GetRecordsCountResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetRecordsCount_FullMethodName, in, out, opts...)
+func (c *middlewareClient) CountRecords(ctx context.Context, in *CountRecordsRequest, opts ...grpc.CallOption) (*CountRecordsResponse, error) {
+	out := new(CountRecordsResponse)
+	err := c.cc.Invoke(ctx, Middleware_CountRecords_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,7 +106,7 @@ func (c *middlewareClient) DeleteRecord(ctx context.Context, in *DeleteRecordReq
 // for forward compatibility
 type MiddlewareServer interface {
 	GetRecords(context.Context, *GetRecordsRequest) (*GetRecordsResponse, error)
-	GetRecordsCount(context.Context, *GetRecordsCountRequest) (*GetRecordsCountResponse, error)
+	CountRecords(context.Context, *CountRecordsRequest) (*CountRecordsResponse, error)
 	GetRecord(context.Context, *GetRecordRequest) (*GetRecordResponse, error)
 	ExistRecordConds(context.Context, *ExistRecordCondsRequest) (*ExistRecordCondsResponse, error)
 	CreateRecord(context.Context, *CreateRecordRequest) (*CreateRecordResponse, error)
@@ -121,8 +121,8 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) GetRecords(context.Context, *GetRecordsRequest) (*GetRecordsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRecords not implemented")
 }
-func (UnimplementedMiddlewareServer) GetRecordsCount(context.Context, *GetRecordsCountRequest) (*GetRecordsCountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetRecordsCount not implemented")
+func (UnimplementedMiddlewareServer) CountRecords(context.Context, *CountRecordsRequest) (*CountRecordsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountRecords not implemented")
 }
 func (UnimplementedMiddlewareServer) GetRecord(context.Context, *GetRecordRequest) (*GetRecordResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRecord not implemented")
@@ -167,20 +167,20 @@ func _Middleware_GetRecords_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetRecordsCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetRecordsCountRequest)
+func _Middleware_CountRecords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountRecordsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetRecordsCount(ctx, in)
+		return srv.(MiddlewareServer).CountRecords(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetRecordsCount_FullMethodName,
+		FullMethod: Middleware_CountRecords_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetRecordsCount(ctx, req.(*GetRecordsCountRequest))
+		return srv.(MiddlewareServer).CountRecords(ctx, req.(*CountRecordsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -269,8 +269,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetRecords_Handler,
 		},
 		{
-			MethodName: "GetRecordsCount",
-			Handler:    _Middleware_GetRecordsCount_Handler,
+			MethodName: "CountRecords",
+			Handler:    _Middleware_CountRecords_Handler,
 		},
 		{
 			MethodName: "GetRecord",

@@ -14,9 +14,9 @@ service Middleware {
             body : "*"
         };
     }
-    rpc GetAddonsCount(GetAddonsCountRequest) returns (GetAddonsCountResponse) {
+    rpc CountAddons(CountAddonsRequest) returns (CountAddonsResponse) {
         option (google.api.http) = {
-            post : "/v1/billingaddon_GetAddonsCount"
+            post : "/v1/billingaddon_CountAddons"
             body : "*"
         };
     }
@@ -110,11 +110,11 @@ message GetAddonsResponse {
     repeated Addon Infos = 10;
 }
 
-message GetAddonsCountRequest {
+message CountAddonsRequest {
     Conds Conds = 10;
 }
 
-message GetAddonsCountResponse {
+message CountAddonsResponse {
     uint32 Total = 20;
 }
 

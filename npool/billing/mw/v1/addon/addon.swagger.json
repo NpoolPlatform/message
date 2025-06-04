@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/billingaddon_CountAddons": {
+      "post": {
+        "operationId": "Middleware_CountAddons",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CountAddonsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CountAddonsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
     "/v1/billingaddon_CreateAddon": {
       "post": {
         "operationId": "Middleware_CreateAddon",
@@ -168,38 +200,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetAddonsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
-    "/v1/billingaddon_GetAddonsCount": {
-      "post": {
-        "operationId": "Middleware_GetAddonsCount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetAddonsCountResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetAddonsCountRequest"
             }
           }
         ],
@@ -388,6 +388,23 @@
         }
       }
     },
+    "v1CountAddonsRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "$ref": "#/definitions/v1Conds"
+        }
+      }
+    },
+    "v1CountAddonsResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1CreateAddonRequest": {
       "type": "object",
       "properties": {
@@ -449,23 +466,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Addon"
-        }
-      }
-    },
-    "v1GetAddonsCountRequest": {
-      "type": "object",
-      "properties": {
-        "Conds": {
-          "$ref": "#/definitions/v1Conds"
-        }
-      }
-    },
-    "v1GetAddonsCountResponse": {
-      "type": "object",
-      "properties": {
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

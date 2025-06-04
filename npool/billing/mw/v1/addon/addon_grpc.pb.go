@@ -20,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_GetAddons_FullMethodName       = "/billing.middleware.addon.v1.Middleware/GetAddons"
-	Middleware_GetAddonsCount_FullMethodName  = "/billing.middleware.addon.v1.Middleware/GetAddonsCount"
+	Middleware_CountAddons_FullMethodName     = "/billing.middleware.addon.v1.Middleware/CountAddons"
 	Middleware_GetAddon_FullMethodName        = "/billing.middleware.addon.v1.Middleware/GetAddon"
 	Middleware_ExistAddonConds_FullMethodName = "/billing.middleware.addon.v1.Middleware/ExistAddonConds"
 	Middleware_CreateAddon_FullMethodName     = "/billing.middleware.addon.v1.Middleware/CreateAddon"
@@ -33,7 +33,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	GetAddons(ctx context.Context, in *GetAddonsRequest, opts ...grpc.CallOption) (*GetAddonsResponse, error)
-	GetAddonsCount(ctx context.Context, in *GetAddonsCountRequest, opts ...grpc.CallOption) (*GetAddonsCountResponse, error)
+	CountAddons(ctx context.Context, in *CountAddonsRequest, opts ...grpc.CallOption) (*CountAddonsResponse, error)
 	GetAddon(ctx context.Context, in *GetAddonRequest, opts ...grpc.CallOption) (*GetAddonResponse, error)
 	ExistAddonConds(ctx context.Context, in *ExistAddonCondsRequest, opts ...grpc.CallOption) (*ExistAddonCondsResponse, error)
 	CreateAddon(ctx context.Context, in *CreateAddonRequest, opts ...grpc.CallOption) (*CreateAddonResponse, error)
@@ -58,9 +58,9 @@ func (c *middlewareClient) GetAddons(ctx context.Context, in *GetAddonsRequest, 
 	return out, nil
 }
 
-func (c *middlewareClient) GetAddonsCount(ctx context.Context, in *GetAddonsCountRequest, opts ...grpc.CallOption) (*GetAddonsCountResponse, error) {
-	out := new(GetAddonsCountResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetAddonsCount_FullMethodName, in, out, opts...)
+func (c *middlewareClient) CountAddons(ctx context.Context, in *CountAddonsRequest, opts ...grpc.CallOption) (*CountAddonsResponse, error) {
+	out := new(CountAddonsResponse)
+	err := c.cc.Invoke(ctx, Middleware_CountAddons_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -117,7 +117,7 @@ func (c *middlewareClient) UpdateAddon(ctx context.Context, in *UpdateAddonReque
 // for forward compatibility
 type MiddlewareServer interface {
 	GetAddons(context.Context, *GetAddonsRequest) (*GetAddonsResponse, error)
-	GetAddonsCount(context.Context, *GetAddonsCountRequest) (*GetAddonsCountResponse, error)
+	CountAddons(context.Context, *CountAddonsRequest) (*CountAddonsResponse, error)
 	GetAddon(context.Context, *GetAddonRequest) (*GetAddonResponse, error)
 	ExistAddonConds(context.Context, *ExistAddonCondsRequest) (*ExistAddonCondsResponse, error)
 	CreateAddon(context.Context, *CreateAddonRequest) (*CreateAddonResponse, error)
@@ -133,8 +133,8 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) GetAddons(context.Context, *GetAddonsRequest) (*GetAddonsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAddons not implemented")
 }
-func (UnimplementedMiddlewareServer) GetAddonsCount(context.Context, *GetAddonsCountRequest) (*GetAddonsCountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAddonsCount not implemented")
+func (UnimplementedMiddlewareServer) CountAddons(context.Context, *CountAddonsRequest) (*CountAddonsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountAddons not implemented")
 }
 func (UnimplementedMiddlewareServer) GetAddon(context.Context, *GetAddonRequest) (*GetAddonResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAddon not implemented")
@@ -182,20 +182,20 @@ func _Middleware_GetAddons_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetAddonsCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAddonsCountRequest)
+func _Middleware_CountAddons_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountAddonsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetAddonsCount(ctx, in)
+		return srv.(MiddlewareServer).CountAddons(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetAddonsCount_FullMethodName,
+		FullMethod: Middleware_CountAddons_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetAddonsCount(ctx, req.(*GetAddonsCountRequest))
+		return srv.(MiddlewareServer).CountAddons(ctx, req.(*CountAddonsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -302,8 +302,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetAddons_Handler,
 		},
 		{
-			MethodName: "GetAddonsCount",
-			Handler:    _Middleware_GetAddonsCount_Handler,
+			MethodName: "CountAddons",
+			Handler:    _Middleware_CountAddons_Handler,
 		},
 		{
 			MethodName: "GetAddon",

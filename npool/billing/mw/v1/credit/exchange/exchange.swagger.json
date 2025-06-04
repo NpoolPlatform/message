@@ -16,6 +16,38 @@
     "application/json"
   ],
   "paths": {
+    "/v1/credit/billingexchange_CountExchanges": {
+      "post": {
+        "operationId": "Middleware_CountExchanges",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CountExchangesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CountExchangesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Middleware"
+        ]
+      }
+    },
     "/v1/credit/billingexchange_CreateExchange": {
       "post": {
         "operationId": "Middleware_CreateExchange",
@@ -176,38 +208,6 @@
         ]
       }
     },
-    "/v1/credit/billingexchange_GetExchangesCount": {
-      "post": {
-        "operationId": "Middleware_GetExchangesCount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetExchangesCountResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetExchangesCountRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Middleware"
-        ]
-      }
-    },
     "/v1/credit/billingexchange_UpdateExchange": {
       "post": {
         "operationId": "Middleware_UpdateExchange",
@@ -292,6 +292,23 @@
         },
         "EntIDs": {
           "$ref": "#/definitions/v1StringSliceVal"
+        }
+      }
+    },
+    "v1CountExchangesRequest": {
+      "type": "object",
+      "properties": {
+        "Conds": {
+          "$ref": "#/definitions/v1Conds"
+        }
+      }
+    },
+    "v1CountExchangesResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -434,23 +451,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Exchange"
-        }
-      }
-    },
-    "v1GetExchangesCountRequest": {
-      "type": "object",
-      "properties": {
-        "Conds": {
-          "$ref": "#/definitions/v1Conds"
-        }
-      }
-    },
-    "v1GetExchangesCountResponse": {
-      "type": "object",
-      "properties": {
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

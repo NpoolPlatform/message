@@ -65,8 +65,8 @@ func local_request_Middleware_GetAddons_0(ctx context.Context, marshaler runtime
 
 }
 
-func request_Middleware_GetAddonsCount_0(ctx context.Context, marshaler runtime.Marshaler, client MiddlewareClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAddonsCountRequest
+func request_Middleware_CountAddons_0(ctx context.Context, marshaler runtime.Marshaler, client MiddlewareClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CountAddonsRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -77,13 +77,13 @@ func request_Middleware_GetAddonsCount_0(ctx context.Context, marshaler runtime.
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetAddonsCount(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CountAddons(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Middleware_GetAddonsCount_0(ctx context.Context, marshaler runtime.Marshaler, server MiddlewareServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetAddonsCountRequest
+func local_request_Middleware_CountAddons_0(ctx context.Context, marshaler runtime.Marshaler, server MiddlewareServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CountAddonsRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -94,7 +94,7 @@ func local_request_Middleware_GetAddonsCount_0(ctx context.Context, marshaler ru
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetAddonsCount(ctx, &protoReq)
+	msg, err := server.CountAddons(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -298,18 +298,18 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 
 	})
 
-	mux.Handle("POST", pattern_Middleware_GetAddonsCount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Middleware_CountAddons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/GetAddonsCount", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddonsCount"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/CountAddons", runtime.WithHTTPPathPattern("/v1/billingaddon_CountAddons"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Middleware_GetAddonsCount_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Middleware_CountAddons_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -317,7 +317,7 @@ func RegisterMiddlewareHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 			return
 		}
 
-		forward_Middleware_GetAddonsCount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_CountAddons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -497,23 +497,23 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 
 	})
 
-	mux.Handle("POST", pattern_Middleware_GetAddonsCount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Middleware_CountAddons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/GetAddonsCount", runtime.WithHTTPPathPattern("/v1/billingaddon_GetAddonsCount"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.middleware.addon.v1.Middleware/CountAddons", runtime.WithHTTPPathPattern("/v1/billingaddon_CountAddons"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Middleware_GetAddonsCount_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Middleware_CountAddons_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Middleware_GetAddonsCount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Middleware_CountAddons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -623,7 +623,7 @@ func RegisterMiddlewareHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 var (
 	pattern_Middleware_GetAddons_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "billingaddon_GetAddons"}, ""))
 
-	pattern_Middleware_GetAddonsCount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "billingaddon_GetAddonsCount"}, ""))
+	pattern_Middleware_CountAddons_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "billingaddon_CountAddons"}, ""))
 
 	pattern_Middleware_GetAddon_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "billingaddon_GetAddon"}, ""))
 
@@ -639,7 +639,7 @@ var (
 var (
 	forward_Middleware_GetAddons_0 = runtime.ForwardResponseMessage
 
-	forward_Middleware_GetAddonsCount_0 = runtime.ForwardResponseMessage
+	forward_Middleware_CountAddons_0 = runtime.ForwardResponseMessage
 
 	forward_Middleware_GetAddon_0 = runtime.ForwardResponseMessage
 

@@ -20,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	Middleware_GetExchanges_FullMethodName       = "/billing.middleware.credit.exchange.v1.Middleware/GetExchanges"
-	Middleware_GetExchangesCount_FullMethodName  = "/billing.middleware.credit.exchange.v1.Middleware/GetExchangesCount"
+	Middleware_CountExchanges_FullMethodName     = "/billing.middleware.credit.exchange.v1.Middleware/CountExchanges"
 	Middleware_GetExchange_FullMethodName        = "/billing.middleware.credit.exchange.v1.Middleware/GetExchange"
 	Middleware_ExistExchangeConds_FullMethodName = "/billing.middleware.credit.exchange.v1.Middleware/ExistExchangeConds"
 	Middleware_CreateExchange_FullMethodName     = "/billing.middleware.credit.exchange.v1.Middleware/CreateExchange"
@@ -33,7 +33,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MiddlewareClient interface {
 	GetExchanges(ctx context.Context, in *GetExchangesRequest, opts ...grpc.CallOption) (*GetExchangesResponse, error)
-	GetExchangesCount(ctx context.Context, in *GetExchangesCountRequest, opts ...grpc.CallOption) (*GetExchangesCountResponse, error)
+	CountExchanges(ctx context.Context, in *CountExchangesRequest, opts ...grpc.CallOption) (*CountExchangesResponse, error)
 	GetExchange(ctx context.Context, in *GetExchangeRequest, opts ...grpc.CallOption) (*GetExchangeResponse, error)
 	ExistExchangeConds(ctx context.Context, in *ExistExchangeCondsRequest, opts ...grpc.CallOption) (*ExistExchangeCondsResponse, error)
 	CreateExchange(ctx context.Context, in *CreateExchangeRequest, opts ...grpc.CallOption) (*CreateExchangeResponse, error)
@@ -58,9 +58,9 @@ func (c *middlewareClient) GetExchanges(ctx context.Context, in *GetExchangesReq
 	return out, nil
 }
 
-func (c *middlewareClient) GetExchangesCount(ctx context.Context, in *GetExchangesCountRequest, opts ...grpc.CallOption) (*GetExchangesCountResponse, error) {
-	out := new(GetExchangesCountResponse)
-	err := c.cc.Invoke(ctx, Middleware_GetExchangesCount_FullMethodName, in, out, opts...)
+func (c *middlewareClient) CountExchanges(ctx context.Context, in *CountExchangesRequest, opts ...grpc.CallOption) (*CountExchangesResponse, error) {
+	out := new(CountExchangesResponse)
+	err := c.cc.Invoke(ctx, Middleware_CountExchanges_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -117,7 +117,7 @@ func (c *middlewareClient) UpdateExchange(ctx context.Context, in *UpdateExchang
 // for forward compatibility
 type MiddlewareServer interface {
 	GetExchanges(context.Context, *GetExchangesRequest) (*GetExchangesResponse, error)
-	GetExchangesCount(context.Context, *GetExchangesCountRequest) (*GetExchangesCountResponse, error)
+	CountExchanges(context.Context, *CountExchangesRequest) (*CountExchangesResponse, error)
 	GetExchange(context.Context, *GetExchangeRequest) (*GetExchangeResponse, error)
 	ExistExchangeConds(context.Context, *ExistExchangeCondsRequest) (*ExistExchangeCondsResponse, error)
 	CreateExchange(context.Context, *CreateExchangeRequest) (*CreateExchangeResponse, error)
@@ -133,8 +133,8 @@ type UnimplementedMiddlewareServer struct {
 func (UnimplementedMiddlewareServer) GetExchanges(context.Context, *GetExchangesRequest) (*GetExchangesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetExchanges not implemented")
 }
-func (UnimplementedMiddlewareServer) GetExchangesCount(context.Context, *GetExchangesCountRequest) (*GetExchangesCountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetExchangesCount not implemented")
+func (UnimplementedMiddlewareServer) CountExchanges(context.Context, *CountExchangesRequest) (*CountExchangesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountExchanges not implemented")
 }
 func (UnimplementedMiddlewareServer) GetExchange(context.Context, *GetExchangeRequest) (*GetExchangeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetExchange not implemented")
@@ -182,20 +182,20 @@ func _Middleware_GetExchanges_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Middleware_GetExchangesCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetExchangesCountRequest)
+func _Middleware_CountExchanges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountExchangesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MiddlewareServer).GetExchangesCount(ctx, in)
+		return srv.(MiddlewareServer).CountExchanges(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Middleware_GetExchangesCount_FullMethodName,
+		FullMethod: Middleware_CountExchanges_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MiddlewareServer).GetExchangesCount(ctx, req.(*GetExchangesCountRequest))
+		return srv.(MiddlewareServer).CountExchanges(ctx, req.(*CountExchangesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -302,8 +302,8 @@ var Middleware_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Middleware_GetExchanges_Handler,
 		},
 		{
-			MethodName: "GetExchangesCount",
-			Handler:    _Middleware_GetExchangesCount_Handler,
+			MethodName: "CountExchanges",
+			Handler:    _Middleware_CountExchanges_Handler,
 		},
 		{
 			MethodName: "GetExchange",

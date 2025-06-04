@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CountSubscriptionsResponse"
+              "$ref": "#/definitions/billinggatewaysubscriptionv1CountSubscriptionsResponse"
             }
           },
           "default": {
@@ -135,7 +135,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CountSubscriptionsRequest"
+              "$ref": "#/definitions/billinggatewaysubscriptionv1CountSubscriptionsRequest"
             }
           }
         ],
@@ -210,6 +210,18 @@
     }
   },
   "definitions": {
+    "billinggatewaysubscriptionv1CountSubscriptionsRequest": {
+      "type": "object"
+    },
+    "billinggatewaysubscriptionv1CountSubscriptionsResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "billinggatewaysubscriptionv1GetSubscriptionRequest": {
       "type": "object",
       "properties": {
@@ -384,18 +396,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Subscription"
-        }
-      }
-    },
-    "v1CountSubscriptionsRequest": {
-      "type": "object"
-    },
-    "v1CountSubscriptionsResponse": {
-      "type": "object",
-      "properties": {
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
