@@ -49,7 +49,7 @@ service Gateway {
 
 message AdminCreateAddonRequest {
     string TargetAppID = 10;
-    string Price = 20;
+    string UsdPrice = 20;
     uint32 Credit = 30;
     uint32 SortOrder = 40;
     bool Enabled = 50;
@@ -64,7 +64,7 @@ message AdminUpdateAddonRequest {
     uint32 ID = 10;
     string EntID = 20;
     string TargetAppID = 30;
-    optional string Price = 40;
+    optional string UsdPrice = 40;
     optional uint32 Credit = 50;
     optional uint32 SortOrder = 60;
     optional bool Enabled = 70;

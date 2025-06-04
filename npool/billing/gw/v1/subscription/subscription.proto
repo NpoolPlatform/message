@@ -51,7 +51,7 @@ service Gateway {
 message AdminCreateSubscriptionRequest {
     string TargetAppID = 10;
     optional string PackageName = 20;
-    optional string Price = 30;
+    optional string UsdPrice = 30;
     optional string Description = 40;
     optional uint32 SortOrder = 50;
     optional basetypes.billing.v1.PackageType PackageType = 60;
@@ -69,7 +69,7 @@ message AdminUpdateSubscriptionRequest {
     string EntID = 20;
     string TargetAppID = 30;
     optional string PackageName = 40;
-    optional string Price = 50;
+    optional string UsdPrice = 50;
     optional string Description = 60;
     optional uint32 SortOrder = 70;
     optional uint32 Credit = 80;

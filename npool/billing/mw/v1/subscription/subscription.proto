@@ -62,7 +62,7 @@ message SubscriptionReq {
     optional string EntID = 20;
     optional string AppID = 30;
     optional string PackageName = 40;
-    optional string Price = 50;
+    optional string UsdPrice = 50;
     optional string Description = 60;
     optional uint32 SortOrder = 70;
     optional basetypes.billing.v1.PackageType PackageType = 80;
@@ -80,8 +80,8 @@ message Subscription {
     string AppID = 30;
     // @inject_tag: sql:"package_name"
     string PackageName = 40;
-    // @inject_tag: sql:"price"
-    string Price = 50;
+    // @inject_tag: sql:"usd_price"
+    string UsdPrice = 50;
     // @inject_tag: sql:"description"
     string Description = 60;
     // @inject_tag: sql:"sort_order"

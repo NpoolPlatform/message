@@ -298,7 +298,7 @@
         "PackageName": {
           "type": "string"
         },
-        "Price": {
+        "UsdPrice": {
           "type": "string"
         },
         "Description": {
@@ -368,7 +368,7 @@
         "PackageName": {
           "type": "string"
         },
-        "Price": {
+        "UsdPrice": {
           "type": "string"
         },
         "Description": {
@@ -440,9 +440,9 @@
           "type": "string",
           "title": "@inject_tag: sql:\"package_name\""
         },
-        "Price": {
+        "UsdPrice": {
           "type": "string",
-          "title": "@inject_tag: sql:\"price\""
+          "title": "@inject_tag: sql:\"usd_price\""
         },
         "Description": {
           "type": "string",
