@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/user/subscription": {
+    "/v1/admin/create/usersubscription": {
       "post": {
         "operationId": "Gateway_AdminCreateSubscription",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/admin/delete/user/subscription": {
+    "/v1/admin/delete/usersubscription": {
       "post": {
         "operationId": "Gateway_AdminDeleteSubscription",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/admin/update/user/subscription": {
+    "/v1/admin/update/usersubscription": {
       "post": {
         "operationId": "Gateway_AdminUpdateSubscription",
         "responses": {
@@ -112,7 +112,39 @@
         ]
       }
     },
-    "/v1/get/user/subscription": {
+    "/v1/count/usersubscriptions": {
+      "post": {
+        "operationId": "Gateway_CountSubscriptions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CountSubscriptionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CountSubscriptionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/usersubscription": {
       "post": {
         "operationId": "Gateway_GetSubscription",
         "responses": {
@@ -144,7 +176,7 @@
         ]
       }
     },
-    "/v1/get/user/subscriptions": {
+    "/v1/get/usersubscriptions": {
       "post": {
         "operationId": "Gateway_GetSubscriptions",
         "responses": {
@@ -168,38 +200,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetSubscriptionsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/user/subscriptions/count": {
-      "post": {
-        "operationId": "Gateway_GetSubscriptionsCount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionsCountResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionsCountRequest"
             }
           }
         ],
@@ -346,6 +346,18 @@
         }
       }
     },
+    "v1CountSubscriptionsRequest": {
+      "type": "object"
+    },
+    "v1CountSubscriptionsResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetSubscriptionRequest": {
       "type": "object",
       "properties": {
@@ -359,18 +371,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1UserSubscription"
-        }
-      }
-    },
-    "v1GetSubscriptionsCountRequest": {
-      "type": "object"
-    },
-    "v1GetSubscriptionsCountResponse": {
-      "type": "object",
-      "properties": {
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

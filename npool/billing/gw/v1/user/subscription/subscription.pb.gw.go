@@ -167,8 +167,8 @@ func local_request_Gateway_GetSubscriptions_0(ctx context.Context, marshaler run
 
 }
 
-func request_Gateway_GetSubscriptionsCount_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetSubscriptionsCountRequest
+func request_Gateway_CountSubscriptions_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CountSubscriptionsRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -179,13 +179,13 @@ func request_Gateway_GetSubscriptionsCount_0(ctx context.Context, marshaler runt
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetSubscriptionsCount(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CountSubscriptions(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Gateway_GetSubscriptionsCount_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetSubscriptionsCountRequest
+func local_request_Gateway_CountSubscriptions_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CountSubscriptionsRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -196,7 +196,7 @@ func local_request_Gateway_GetSubscriptionsCount_0(ctx context.Context, marshale
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetSubscriptionsCount(ctx, &protoReq)
+	msg, err := server.CountSubscriptions(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -247,7 +247,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminCreateSubscription", runtime.WithHTTPPathPattern("/v1/admin/create/user/subscription"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminCreateSubscription", runtime.WithHTTPPathPattern("/v1/admin/create/usersubscription"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -270,7 +270,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminUpdateSubscription", runtime.WithHTTPPathPattern("/v1/admin/update/user/subscription"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminUpdateSubscription", runtime.WithHTTPPathPattern("/v1/admin/update/usersubscription"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -293,7 +293,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/GetSubscription", runtime.WithHTTPPathPattern("/v1/get/user/subscription"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/GetSubscription", runtime.WithHTTPPathPattern("/v1/get/usersubscription"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -316,7 +316,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/GetSubscriptions", runtime.WithHTTPPathPattern("/v1/get/user/subscriptions"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/GetSubscriptions", runtime.WithHTTPPathPattern("/v1/get/usersubscriptions"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -333,18 +333,18 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_GetSubscriptionsCount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CountSubscriptions_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/GetSubscriptionsCount", runtime.WithHTTPPathPattern("/v1/get/user/subscriptions/count"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/CountSubscriptions", runtime.WithHTTPPathPattern("/v1/count/usersubscriptions"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_GetSubscriptionsCount_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_CountSubscriptions_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -352,7 +352,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Gateway_GetSubscriptionsCount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CountSubscriptions_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -362,7 +362,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminDeleteSubscription", runtime.WithHTTPPathPattern("/v1/admin/delete/user/subscription"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminDeleteSubscription", runtime.WithHTTPPathPattern("/v1/admin/delete/usersubscription"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -424,7 +424,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminCreateSubscription", runtime.WithHTTPPathPattern("/v1/admin/create/user/subscription"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminCreateSubscription", runtime.WithHTTPPathPattern("/v1/admin/create/usersubscription"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -444,7 +444,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminUpdateSubscription", runtime.WithHTTPPathPattern("/v1/admin/update/user/subscription"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminUpdateSubscription", runtime.WithHTTPPathPattern("/v1/admin/update/usersubscription"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -464,7 +464,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/GetSubscription", runtime.WithHTTPPathPattern("/v1/get/user/subscription"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/GetSubscription", runtime.WithHTTPPathPattern("/v1/get/usersubscription"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -484,7 +484,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/GetSubscriptions", runtime.WithHTTPPathPattern("/v1/get/user/subscriptions"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/GetSubscriptions", runtime.WithHTTPPathPattern("/v1/get/usersubscriptions"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -500,23 +500,23 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_GetSubscriptionsCount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CountSubscriptions_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/GetSubscriptionsCount", runtime.WithHTTPPathPattern("/v1/get/user/subscriptions/count"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/CountSubscriptions", runtime.WithHTTPPathPattern("/v1/count/usersubscriptions"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_GetSubscriptionsCount_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_CountSubscriptions_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_GetSubscriptionsCount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CountSubscriptions_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -524,7 +524,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminDeleteSubscription", runtime.WithHTTPPathPattern("/v1/admin/delete/user/subscription"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.user.subscription.v1.Gateway/AdminDeleteSubscription", runtime.WithHTTPPathPattern("/v1/admin/delete/usersubscription"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -544,17 +544,17 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_AdminCreateSubscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "admin", "create", "user", "subscription"}, ""))
+	pattern_Gateway_AdminCreateSubscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "usersubscription"}, ""))
 
-	pattern_Gateway_AdminUpdateSubscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "admin", "update", "user", "subscription"}, ""))
+	pattern_Gateway_AdminUpdateSubscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "update", "usersubscription"}, ""))
 
-	pattern_Gateway_GetSubscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "user", "subscription"}, ""))
+	pattern_Gateway_GetSubscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "usersubscription"}, ""))
 
-	pattern_Gateway_GetSubscriptions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "user", "subscriptions"}, ""))
+	pattern_Gateway_GetSubscriptions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "usersubscriptions"}, ""))
 
-	pattern_Gateway_GetSubscriptionsCount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "user", "subscriptions", "count"}, ""))
+	pattern_Gateway_CountSubscriptions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "count", "usersubscriptions"}, ""))
 
-	pattern_Gateway_AdminDeleteSubscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "admin", "delete", "user", "subscription"}, ""))
+	pattern_Gateway_AdminDeleteSubscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "usersubscription"}, ""))
 )
 
 var (
@@ -566,7 +566,7 @@ var (
 
 	forward_Gateway_GetSubscriptions_0 = runtime.ForwardResponseMessage
 
-	forward_Gateway_GetSubscriptionsCount_0 = runtime.ForwardResponseMessage
+	forward_Gateway_CountSubscriptions_0 = runtime.ForwardResponseMessage
 
 	forward_Gateway_AdminDeleteSubscription_0 = runtime.ForwardResponseMessage
 )

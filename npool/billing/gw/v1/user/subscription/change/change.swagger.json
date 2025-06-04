@@ -16,7 +16,39 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/user/subscription/change": {
+    "/v1/count/usersubscriptionchanges": {
+      "post": {
+        "operationId": "Gateway_CountSubscriptionChanges",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CountSubscriptionChangesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CountSubscriptionChangesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/usersubscriptionchange": {
       "post": {
         "operationId": "Gateway_GetSubscriptionChange",
         "responses": {
@@ -48,39 +80,7 @@
         ]
       }
     },
-    "/v1/get/user/subscription/change/count": {
-      "post": {
-        "operationId": "Gateway_GetSubscriptionChangesCount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionChangesCountResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetSubscriptionChangesCountRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/user/subscription/changes": {
+    "/v1/get/usersubscriptionchanges": {
       "post": {
         "operationId": "Gateway_GetSubscriptionChanges",
         "responses": {
@@ -141,6 +141,18 @@
         }
       }
     },
+    "v1CountSubscriptionChangesRequest": {
+      "type": "object"
+    },
+    "v1CountSubscriptionChangesResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetSubscriptionChangeRequest": {
       "type": "object",
       "properties": {
@@ -154,18 +166,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1UserSubscriptionChange"
-        }
-      }
-    },
-    "v1GetSubscriptionChangesCountRequest": {
-      "type": "object"
-    },
-    "v1GetSubscriptionChangesCountResponse": {
-      "type": "object",
-      "properties": {
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

@@ -16,7 +16,39 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/user/credit/record": {
+    "/v1/count/usercreditrecords": {
+      "post": {
+        "operationId": "Gateway_CountUserCreditRecords",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CountUserCreditRecordsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CountUserCreditRecordsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/usercreditrecord": {
       "post": {
         "operationId": "Gateway_GetUserCreditRecord",
         "responses": {
@@ -48,7 +80,7 @@
         ]
       }
     },
-    "/v1/get/user/credit/records": {
+    "/v1/get/usercreditrecords": {
       "post": {
         "operationId": "Gateway_GetUserCreditRecords",
         "responses": {
@@ -72,38 +104,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetUserCreditRecordsRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
-    },
-    "/v1/get/user/credit/records/count": {
-      "post": {
-        "operationId": "Gateway_GetUserCreditRecordsCount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetUserCreditRecordsCountResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1GetUserCreditRecordsCountRequest"
             }
           }
         ],
@@ -141,6 +141,18 @@
         }
       }
     },
+    "v1CountUserCreditRecordsRequest": {
+      "type": "object"
+    },
+    "v1CountUserCreditRecordsResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
     "v1GetUserCreditRecordRequest": {
       "type": "object",
       "properties": {
@@ -154,18 +166,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1UserCreditRecord"
-        }
-      }
-    },
-    "v1GetUserCreditRecordsCountRequest": {
-      "type": "object"
-    },
-    "v1GetUserCreditRecordsCountResponse": {
-      "type": "object",
-      "properties": {
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },

@@ -34,9 +34,9 @@ service Gateway {
             body: "*"
         };
     }
-    rpc GetSubscriptionsCount(GetSubscriptionsCountRequest) returns (GetSubscriptionsCountResponse) {
+    rpc CountSubscriptions(CountSubscriptionsRequest) returns (CountSubscriptionsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/subscriptions/count"
+            post: "/v1/count/subscriptions"
             body: "*"
         };
     }
@@ -98,9 +98,9 @@ message GetSubscriptionsResponse {
     repeated middleware.subscription.v1.Subscription Infos = 10;
 }
 
-message GetSubscriptionsCountRequest {}
+message CountSubscriptionsRequest {}
 
-message GetSubscriptionsCountResponse {
+message CountSubscriptionsResponse {
     uint32 Total = 10;
 }
 

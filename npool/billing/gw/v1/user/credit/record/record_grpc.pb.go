@@ -19,9 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetUserCreditRecord_FullMethodName       = "/billing.gateway.user.credit.record.v1.Gateway/GetUserCreditRecord"
-	Gateway_GetUserCreditRecords_FullMethodName      = "/billing.gateway.user.credit.record.v1.Gateway/GetUserCreditRecords"
-	Gateway_GetUserCreditRecordsCount_FullMethodName = "/billing.gateway.user.credit.record.v1.Gateway/GetUserCreditRecordsCount"
+	Gateway_GetUserCreditRecord_FullMethodName    = "/billing.gateway.user.credit.record.v1.Gateway/GetUserCreditRecord"
+	Gateway_GetUserCreditRecords_FullMethodName   = "/billing.gateway.user.credit.record.v1.Gateway/GetUserCreditRecords"
+	Gateway_CountUserCreditRecords_FullMethodName = "/billing.gateway.user.credit.record.v1.Gateway/CountUserCreditRecords"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -30,7 +30,7 @@ const (
 type GatewayClient interface {
 	GetUserCreditRecord(ctx context.Context, in *GetUserCreditRecordRequest, opts ...grpc.CallOption) (*GetUserCreditRecordResponse, error)
 	GetUserCreditRecords(ctx context.Context, in *GetUserCreditRecordsRequest, opts ...grpc.CallOption) (*GetUserCreditRecordsResponse, error)
-	GetUserCreditRecordsCount(ctx context.Context, in *GetUserCreditRecordsCountRequest, opts ...grpc.CallOption) (*GetUserCreditRecordsCountResponse, error)
+	CountUserCreditRecords(ctx context.Context, in *CountUserCreditRecordsRequest, opts ...grpc.CallOption) (*CountUserCreditRecordsResponse, error)
 }
 
 type gatewayClient struct {
@@ -59,9 +59,9 @@ func (c *gatewayClient) GetUserCreditRecords(ctx context.Context, in *GetUserCre
 	return out, nil
 }
 
-func (c *gatewayClient) GetUserCreditRecordsCount(ctx context.Context, in *GetUserCreditRecordsCountRequest, opts ...grpc.CallOption) (*GetUserCreditRecordsCountResponse, error) {
-	out := new(GetUserCreditRecordsCountResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetUserCreditRecordsCount_FullMethodName, in, out, opts...)
+func (c *gatewayClient) CountUserCreditRecords(ctx context.Context, in *CountUserCreditRecordsRequest, opts ...grpc.CallOption) (*CountUserCreditRecordsResponse, error) {
+	out := new(CountUserCreditRecordsResponse)
+	err := c.cc.Invoke(ctx, Gateway_CountUserCreditRecords_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -74,7 +74,7 @@ func (c *gatewayClient) GetUserCreditRecordsCount(ctx context.Context, in *GetUs
 type GatewayServer interface {
 	GetUserCreditRecord(context.Context, *GetUserCreditRecordRequest) (*GetUserCreditRecordResponse, error)
 	GetUserCreditRecords(context.Context, *GetUserCreditRecordsRequest) (*GetUserCreditRecordsResponse, error)
-	GetUserCreditRecordsCount(context.Context, *GetUserCreditRecordsCountRequest) (*GetUserCreditRecordsCountResponse, error)
+	CountUserCreditRecords(context.Context, *CountUserCreditRecordsRequest) (*CountUserCreditRecordsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -88,8 +88,8 @@ func (UnimplementedGatewayServer) GetUserCreditRecord(context.Context, *GetUserC
 func (UnimplementedGatewayServer) GetUserCreditRecords(context.Context, *GetUserCreditRecordsRequest) (*GetUserCreditRecordsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserCreditRecords not implemented")
 }
-func (UnimplementedGatewayServer) GetUserCreditRecordsCount(context.Context, *GetUserCreditRecordsCountRequest) (*GetUserCreditRecordsCountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserCreditRecordsCount not implemented")
+func (UnimplementedGatewayServer) CountUserCreditRecords(context.Context, *CountUserCreditRecordsRequest) (*CountUserCreditRecordsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountUserCreditRecords not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -140,20 +140,20 @@ func _Gateway_GetUserCreditRecords_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetUserCreditRecordsCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserCreditRecordsCountRequest)
+func _Gateway_CountUserCreditRecords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountUserCreditRecordsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetUserCreditRecordsCount(ctx, in)
+		return srv.(GatewayServer).CountUserCreditRecords(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetUserCreditRecordsCount_FullMethodName,
+		FullMethod: Gateway_CountUserCreditRecords_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetUserCreditRecordsCount(ctx, req.(*GetUserCreditRecordsCountRequest))
+		return srv.(GatewayServer).CountUserCreditRecords(ctx, req.(*CountUserCreditRecordsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -174,8 +174,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetUserCreditRecords_Handler,
 		},
 		{
-			MethodName: "GetUserCreditRecordsCount",
-			Handler:    _Gateway_GetUserCreditRecordsCount_Handler,
+			MethodName: "CountUserCreditRecords",
+			Handler:    _Gateway_CountUserCreditRecords_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

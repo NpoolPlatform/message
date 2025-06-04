@@ -23,7 +23,7 @@ const (
 	Gateway_AdminUpdateSubscription_FullMethodName = "/billing.gateway.subscription.v1.Gateway/AdminUpdateSubscription"
 	Gateway_GetSubscription_FullMethodName         = "/billing.gateway.subscription.v1.Gateway/GetSubscription"
 	Gateway_GetSubscriptions_FullMethodName        = "/billing.gateway.subscription.v1.Gateway/GetSubscriptions"
-	Gateway_GetSubscriptionsCount_FullMethodName   = "/billing.gateway.subscription.v1.Gateway/GetSubscriptionsCount"
+	Gateway_CountSubscriptions_FullMethodName      = "/billing.gateway.subscription.v1.Gateway/CountSubscriptions"
 	Gateway_AdminDeleteSubscription_FullMethodName = "/billing.gateway.subscription.v1.Gateway/AdminDeleteSubscription"
 )
 
@@ -35,7 +35,7 @@ type GatewayClient interface {
 	AdminUpdateSubscription(ctx context.Context, in *AdminUpdateSubscriptionRequest, opts ...grpc.CallOption) (*AdminUpdateSubscriptionResponse, error)
 	GetSubscription(ctx context.Context, in *GetSubscriptionRequest, opts ...grpc.CallOption) (*GetSubscriptionResponse, error)
 	GetSubscriptions(ctx context.Context, in *GetSubscriptionsRequest, opts ...grpc.CallOption) (*GetSubscriptionsResponse, error)
-	GetSubscriptionsCount(ctx context.Context, in *GetSubscriptionsCountRequest, opts ...grpc.CallOption) (*GetSubscriptionsCountResponse, error)
+	CountSubscriptions(ctx context.Context, in *CountSubscriptionsRequest, opts ...grpc.CallOption) (*CountSubscriptionsResponse, error)
 	AdminDeleteSubscription(ctx context.Context, in *AdminDeleteSubscriptionRequest, opts ...grpc.CallOption) (*AdminDeleteSubscriptionResponse, error)
 }
 
@@ -83,9 +83,9 @@ func (c *gatewayClient) GetSubscriptions(ctx context.Context, in *GetSubscriptio
 	return out, nil
 }
 
-func (c *gatewayClient) GetSubscriptionsCount(ctx context.Context, in *GetSubscriptionsCountRequest, opts ...grpc.CallOption) (*GetSubscriptionsCountResponse, error) {
-	out := new(GetSubscriptionsCountResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetSubscriptionsCount_FullMethodName, in, out, opts...)
+func (c *gatewayClient) CountSubscriptions(ctx context.Context, in *CountSubscriptionsRequest, opts ...grpc.CallOption) (*CountSubscriptionsResponse, error) {
+	out := new(CountSubscriptionsResponse)
+	err := c.cc.Invoke(ctx, Gateway_CountSubscriptions_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -109,7 +109,7 @@ type GatewayServer interface {
 	AdminUpdateSubscription(context.Context, *AdminUpdateSubscriptionRequest) (*AdminUpdateSubscriptionResponse, error)
 	GetSubscription(context.Context, *GetSubscriptionRequest) (*GetSubscriptionResponse, error)
 	GetSubscriptions(context.Context, *GetSubscriptionsRequest) (*GetSubscriptionsResponse, error)
-	GetSubscriptionsCount(context.Context, *GetSubscriptionsCountRequest) (*GetSubscriptionsCountResponse, error)
+	CountSubscriptions(context.Context, *CountSubscriptionsRequest) (*CountSubscriptionsResponse, error)
 	AdminDeleteSubscription(context.Context, *AdminDeleteSubscriptionRequest) (*AdminDeleteSubscriptionResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -130,8 +130,8 @@ func (UnimplementedGatewayServer) GetSubscription(context.Context, *GetSubscript
 func (UnimplementedGatewayServer) GetSubscriptions(context.Context, *GetSubscriptionsRequest) (*GetSubscriptionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSubscriptions not implemented")
 }
-func (UnimplementedGatewayServer) GetSubscriptionsCount(context.Context, *GetSubscriptionsCountRequest) (*GetSubscriptionsCountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSubscriptionsCount not implemented")
+func (UnimplementedGatewayServer) CountSubscriptions(context.Context, *CountSubscriptionsRequest) (*CountSubscriptionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountSubscriptions not implemented")
 }
 func (UnimplementedGatewayServer) AdminDeleteSubscription(context.Context, *AdminDeleteSubscriptionRequest) (*AdminDeleteSubscriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminDeleteSubscription not implemented")
@@ -221,20 +221,20 @@ func _Gateway_GetSubscriptions_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetSubscriptionsCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSubscriptionsCountRequest)
+func _Gateway_CountSubscriptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountSubscriptionsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetSubscriptionsCount(ctx, in)
+		return srv.(GatewayServer).CountSubscriptions(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetSubscriptionsCount_FullMethodName,
+		FullMethod: Gateway_CountSubscriptions_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetSubscriptionsCount(ctx, req.(*GetSubscriptionsCountRequest))
+		return srv.(GatewayServer).CountSubscriptions(ctx, req.(*CountSubscriptionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -281,8 +281,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetSubscriptions_Handler,
 		},
 		{
-			MethodName: "GetSubscriptionsCount",
-			Handler:    _Gateway_GetSubscriptionsCount_Handler,
+			MethodName: "CountSubscriptions",
+			Handler:    _Gateway_CountSubscriptions_Handler,
 		},
 		{
 			MethodName: "AdminDeleteSubscription",

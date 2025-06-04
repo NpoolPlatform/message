@@ -167,8 +167,8 @@ func local_request_Gateway_GetExchanges_0(ctx context.Context, marshaler runtime
 
 }
 
-func request_Gateway_GetExchangesCount_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetExchangesCountRequest
+func request_Gateway_CountExchanges_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CountExchangesRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -179,13 +179,13 @@ func request_Gateway_GetExchangesCount_0(ctx context.Context, marshaler runtime.
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetExchangesCount(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CountExchanges(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Gateway_GetExchangesCount_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetExchangesCountRequest
+func local_request_Gateway_CountExchanges_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CountExchangesRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -196,7 +196,7 @@ func local_request_Gateway_GetExchangesCount_0(ctx context.Context, marshaler ru
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetExchangesCount(ctx, &protoReq)
+	msg, err := server.CountExchanges(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -247,7 +247,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/AdminCreateExchange", runtime.WithHTTPPathPattern("/v1/admin/create/credit/exchange"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/AdminCreateExchange", runtime.WithHTTPPathPattern("/v1/admin/create/creditexchange"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -270,7 +270,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/AdminUpdateExchange", runtime.WithHTTPPathPattern("/v1/admin/update/credit/exchange"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/AdminUpdateExchange", runtime.WithHTTPPathPattern("/v1/admin/update/creditexchange"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -293,7 +293,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/GetExchange", runtime.WithHTTPPathPattern("/v1/get/credit/exchange"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/GetExchange", runtime.WithHTTPPathPattern("/v1/get/creditexchange"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -316,7 +316,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/GetExchanges", runtime.WithHTTPPathPattern("/v1/get/credit/exchanges"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/GetExchanges", runtime.WithHTTPPathPattern("/v1/get/creditexchanges"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -333,18 +333,18 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_GetExchangesCount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CountExchanges_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/GetExchangesCount", runtime.WithHTTPPathPattern("/v1/get/credit/exchanges/count"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/CountExchanges", runtime.WithHTTPPathPattern("/v1/count/creditexchanges"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Gateway_GetExchangesCount_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Gateway_CountExchanges_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -352,7 +352,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Gateway_GetExchangesCount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CountExchanges_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -362,7 +362,7 @@ func RegisterGatewayHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/AdminDeleteExchange", runtime.WithHTTPPathPattern("/v1/admin/delete/credit/exchange"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/AdminDeleteExchange", runtime.WithHTTPPathPattern("/v1/admin/delete/creditexchange"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -424,7 +424,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/AdminCreateExchange", runtime.WithHTTPPathPattern("/v1/admin/create/credit/exchange"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/AdminCreateExchange", runtime.WithHTTPPathPattern("/v1/admin/create/creditexchange"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -444,7 +444,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/AdminUpdateExchange", runtime.WithHTTPPathPattern("/v1/admin/update/credit/exchange"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/AdminUpdateExchange", runtime.WithHTTPPathPattern("/v1/admin/update/creditexchange"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -464,7 +464,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/GetExchange", runtime.WithHTTPPathPattern("/v1/get/credit/exchange"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/GetExchange", runtime.WithHTTPPathPattern("/v1/get/creditexchange"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -484,7 +484,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/GetExchanges", runtime.WithHTTPPathPattern("/v1/get/credit/exchanges"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/GetExchanges", runtime.WithHTTPPathPattern("/v1/get/creditexchanges"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -500,23 +500,23 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 
 	})
 
-	mux.Handle("POST", pattern_Gateway_GetExchangesCount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Gateway_CountExchanges_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/GetExchangesCount", runtime.WithHTTPPathPattern("/v1/get/credit/exchanges/count"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/CountExchanges", runtime.WithHTTPPathPattern("/v1/count/creditexchanges"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Gateway_GetExchangesCount_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Gateway_CountExchanges_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Gateway_GetExchangesCount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Gateway_CountExchanges_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -524,7 +524,7 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/AdminDeleteExchange", runtime.WithHTTPPathPattern("/v1/admin/delete/credit/exchange"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/billing.gateway.credit.exchange.v1.Gateway/AdminDeleteExchange", runtime.WithHTTPPathPattern("/v1/admin/delete/creditexchange"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -544,17 +544,17 @@ func RegisterGatewayHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Gateway_AdminCreateExchange_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "admin", "create", "credit", "exchange"}, ""))
+	pattern_Gateway_AdminCreateExchange_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "create", "creditexchange"}, ""))
 
-	pattern_Gateway_AdminUpdateExchange_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "admin", "update", "credit", "exchange"}, ""))
+	pattern_Gateway_AdminUpdateExchange_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "update", "creditexchange"}, ""))
 
-	pattern_Gateway_GetExchange_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "credit", "exchange"}, ""))
+	pattern_Gateway_GetExchange_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "creditexchange"}, ""))
 
-	pattern_Gateway_GetExchanges_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "get", "credit", "exchanges"}, ""))
+	pattern_Gateway_GetExchanges_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "get", "creditexchanges"}, ""))
 
-	pattern_Gateway_GetExchangesCount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "get", "credit", "exchanges", "count"}, ""))
+	pattern_Gateway_CountExchanges_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "count", "creditexchanges"}, ""))
 
-	pattern_Gateway_AdminDeleteExchange_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"v1", "admin", "delete", "credit", "exchange"}, ""))
+	pattern_Gateway_AdminDeleteExchange_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "admin", "delete", "creditexchange"}, ""))
 )
 
 var (
@@ -566,7 +566,7 @@ var (
 
 	forward_Gateway_GetExchanges_0 = runtime.ForwardResponseMessage
 
-	forward_Gateway_GetExchangesCount_0 = runtime.ForwardResponseMessage
+	forward_Gateway_CountExchanges_0 = runtime.ForwardResponseMessage
 
 	forward_Gateway_AdminDeleteExchange_0 = runtime.ForwardResponseMessage
 )

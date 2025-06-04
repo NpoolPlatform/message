@@ -11,19 +11,19 @@ import "npool/basetypes/billing/v1/enums.proto";
 service Gateway {
     rpc GetUserCreditRecord(GetUserCreditRecordRequest) returns (GetUserCreditRecordResponse) {
         option (google.api.http) = {
-            post: "/v1/get/user/credit/record"
+            post: "/v1/get/usercreditrecord"
             body: "*"
         };
     }
     rpc GetUserCreditRecords(GetUserCreditRecordsRequest) returns (GetUserCreditRecordsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/user/credit/records"
+            post: "/v1/get/usercreditrecords"
             body: "*"
         };
     }
-    rpc GetUserCreditRecordsCount(GetUserCreditRecordsCountRequest) returns (GetUserCreditRecordsCountResponse) {
+    rpc CountUserCreditRecords(CountUserCreditRecordsRequest) returns (CountUserCreditRecordsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/user/credit/records/count"
+            post: "/v1/count/usercreditrecords"
             body: "*"
         };
     }
@@ -61,8 +61,8 @@ message GetUserCreditRecordsResponse {
     repeated UserCreditRecord Infos = 10;
 }
 
-message GetUserCreditRecordsCountRequest {}
+message CountUserCreditRecordsRequest {}
 
-message GetUserCreditRecordsCountResponse {
+message CountUserCreditRecordsResponse {
     uint32 Total = 10;
 }

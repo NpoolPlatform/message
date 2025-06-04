@@ -10,19 +10,19 @@ import "google/api/annotations.proto";
 service Gateway {
     rpc GetSubscriptionChange(GetSubscriptionChangeRequest) returns (GetSubscriptionChangeResponse) {
         option (google.api.http) = {
-            post: "/v1/get/user/subscription/change"
+            post: "/v1/get/usersubscriptionchange"
             body: "*"
         };
     }
     rpc GetSubscriptionChanges(GetSubscriptionChangesRequest) returns (GetSubscriptionChangesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/user/subscription/changes"
+            post: "/v1/get/usersubscriptionchanges"
             body: "*"
         };
     }
-    rpc GetSubscriptionChangesCount(GetSubscriptionChangesCountRequest) returns (GetSubscriptionChangesCountResponse) {
+    rpc CountSubscriptionChanges(CountSubscriptionChangesRequest) returns (CountSubscriptionChangesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/user/subscription/change/count"
+            post: "/v1/count/usersubscriptionchanges"
             body: "*"
         };
     }
@@ -61,8 +61,8 @@ message GetSubscriptionChangesResponse {
     repeated UserSubscriptionChange Infos = 10;
 }
 
-message GetSubscriptionChangesCountRequest {}
+message CountSubscriptionChangesRequest {}
 
-message GetSubscriptionChangesCountResponse {
+message CountSubscriptionChangesResponse {
     uint32 Total = 10;
 }

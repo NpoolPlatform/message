@@ -23,7 +23,7 @@ const (
 	Gateway_AdminUpdateAddon_FullMethodName = "/billing.gateway.addon.v1.Gateway/AdminUpdateAddon"
 	Gateway_GetAddon_FullMethodName         = "/billing.gateway.addon.v1.Gateway/GetAddon"
 	Gateway_GetAddons_FullMethodName        = "/billing.gateway.addon.v1.Gateway/GetAddons"
-	Gateway_GetAddonsCount_FullMethodName   = "/billing.gateway.addon.v1.Gateway/GetAddonsCount"
+	Gateway_CountAddons_FullMethodName      = "/billing.gateway.addon.v1.Gateway/CountAddons"
 	Gateway_AdminDeleteAddon_FullMethodName = "/billing.gateway.addon.v1.Gateway/AdminDeleteAddon"
 )
 
@@ -35,7 +35,7 @@ type GatewayClient interface {
 	AdminUpdateAddon(ctx context.Context, in *AdminUpdateAddonRequest, opts ...grpc.CallOption) (*AdminUpdateAddonResponse, error)
 	GetAddon(ctx context.Context, in *GetAddonRequest, opts ...grpc.CallOption) (*GetAddonResponse, error)
 	GetAddons(ctx context.Context, in *GetAddonsRequest, opts ...grpc.CallOption) (*GetAddonsResponse, error)
-	GetAddonsCount(ctx context.Context, in *GetAddonsCountRequest, opts ...grpc.CallOption) (*GetAddonsCountResponse, error)
+	CountAddons(ctx context.Context, in *CountAddonsRequest, opts ...grpc.CallOption) (*CountAddonsResponse, error)
 	AdminDeleteAddon(ctx context.Context, in *AdminDeleteAddonRequest, opts ...grpc.CallOption) (*AdminDeleteAddonResponse, error)
 }
 
@@ -83,9 +83,9 @@ func (c *gatewayClient) GetAddons(ctx context.Context, in *GetAddonsRequest, opt
 	return out, nil
 }
 
-func (c *gatewayClient) GetAddonsCount(ctx context.Context, in *GetAddonsCountRequest, opts ...grpc.CallOption) (*GetAddonsCountResponse, error) {
-	out := new(GetAddonsCountResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetAddonsCount_FullMethodName, in, out, opts...)
+func (c *gatewayClient) CountAddons(ctx context.Context, in *CountAddonsRequest, opts ...grpc.CallOption) (*CountAddonsResponse, error) {
+	out := new(CountAddonsResponse)
+	err := c.cc.Invoke(ctx, Gateway_CountAddons_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -109,7 +109,7 @@ type GatewayServer interface {
 	AdminUpdateAddon(context.Context, *AdminUpdateAddonRequest) (*AdminUpdateAddonResponse, error)
 	GetAddon(context.Context, *GetAddonRequest) (*GetAddonResponse, error)
 	GetAddons(context.Context, *GetAddonsRequest) (*GetAddonsResponse, error)
-	GetAddonsCount(context.Context, *GetAddonsCountRequest) (*GetAddonsCountResponse, error)
+	CountAddons(context.Context, *CountAddonsRequest) (*CountAddonsResponse, error)
 	AdminDeleteAddon(context.Context, *AdminDeleteAddonRequest) (*AdminDeleteAddonResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -130,8 +130,8 @@ func (UnimplementedGatewayServer) GetAddon(context.Context, *GetAddonRequest) (*
 func (UnimplementedGatewayServer) GetAddons(context.Context, *GetAddonsRequest) (*GetAddonsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAddons not implemented")
 }
-func (UnimplementedGatewayServer) GetAddonsCount(context.Context, *GetAddonsCountRequest) (*GetAddonsCountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAddonsCount not implemented")
+func (UnimplementedGatewayServer) CountAddons(context.Context, *CountAddonsRequest) (*CountAddonsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountAddons not implemented")
 }
 func (UnimplementedGatewayServer) AdminDeleteAddon(context.Context, *AdminDeleteAddonRequest) (*AdminDeleteAddonResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminDeleteAddon not implemented")
@@ -221,20 +221,20 @@ func _Gateway_GetAddons_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetAddonsCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAddonsCountRequest)
+func _Gateway_CountAddons_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountAddonsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetAddonsCount(ctx, in)
+		return srv.(GatewayServer).CountAddons(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetAddonsCount_FullMethodName,
+		FullMethod: Gateway_CountAddons_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetAddonsCount(ctx, req.(*GetAddonsCountRequest))
+		return srv.(GatewayServer).CountAddons(ctx, req.(*CountAddonsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -281,8 +281,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetAddons_Handler,
 		},
 		{
-			MethodName: "GetAddonsCount",
-			Handler:    _Gateway_GetAddonsCount_Handler,
+			MethodName: "CountAddons",
+			Handler:    _Gateway_CountAddons_Handler,
 		},
 		{
 			MethodName: "AdminDeleteAddon",

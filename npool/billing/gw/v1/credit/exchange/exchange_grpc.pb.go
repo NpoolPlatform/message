@@ -23,7 +23,7 @@ const (
 	Gateway_AdminUpdateExchange_FullMethodName = "/billing.gateway.credit.exchange.v1.Gateway/AdminUpdateExchange"
 	Gateway_GetExchange_FullMethodName         = "/billing.gateway.credit.exchange.v1.Gateway/GetExchange"
 	Gateway_GetExchanges_FullMethodName        = "/billing.gateway.credit.exchange.v1.Gateway/GetExchanges"
-	Gateway_GetExchangesCount_FullMethodName   = "/billing.gateway.credit.exchange.v1.Gateway/GetExchangesCount"
+	Gateway_CountExchanges_FullMethodName      = "/billing.gateway.credit.exchange.v1.Gateway/CountExchanges"
 	Gateway_AdminDeleteExchange_FullMethodName = "/billing.gateway.credit.exchange.v1.Gateway/AdminDeleteExchange"
 )
 
@@ -35,7 +35,7 @@ type GatewayClient interface {
 	AdminUpdateExchange(ctx context.Context, in *AdminUpdateExchangeRequest, opts ...grpc.CallOption) (*AdminUpdateExchangeResponse, error)
 	GetExchange(ctx context.Context, in *GetExchangeRequest, opts ...grpc.CallOption) (*GetExchangeResponse, error)
 	GetExchanges(ctx context.Context, in *GetExchangesRequest, opts ...grpc.CallOption) (*GetExchangesResponse, error)
-	GetExchangesCount(ctx context.Context, in *GetExchangesCountRequest, opts ...grpc.CallOption) (*GetExchangesCountResponse, error)
+	CountExchanges(ctx context.Context, in *CountExchangesRequest, opts ...grpc.CallOption) (*CountExchangesResponse, error)
 	AdminDeleteExchange(ctx context.Context, in *AdminDeleteExchangeRequest, opts ...grpc.CallOption) (*AdminDeleteExchangeResponse, error)
 }
 
@@ -83,9 +83,9 @@ func (c *gatewayClient) GetExchanges(ctx context.Context, in *GetExchangesReques
 	return out, nil
 }
 
-func (c *gatewayClient) GetExchangesCount(ctx context.Context, in *GetExchangesCountRequest, opts ...grpc.CallOption) (*GetExchangesCountResponse, error) {
-	out := new(GetExchangesCountResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetExchangesCount_FullMethodName, in, out, opts...)
+func (c *gatewayClient) CountExchanges(ctx context.Context, in *CountExchangesRequest, opts ...grpc.CallOption) (*CountExchangesResponse, error) {
+	out := new(CountExchangesResponse)
+	err := c.cc.Invoke(ctx, Gateway_CountExchanges_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -109,7 +109,7 @@ type GatewayServer interface {
 	AdminUpdateExchange(context.Context, *AdminUpdateExchangeRequest) (*AdminUpdateExchangeResponse, error)
 	GetExchange(context.Context, *GetExchangeRequest) (*GetExchangeResponse, error)
 	GetExchanges(context.Context, *GetExchangesRequest) (*GetExchangesResponse, error)
-	GetExchangesCount(context.Context, *GetExchangesCountRequest) (*GetExchangesCountResponse, error)
+	CountExchanges(context.Context, *CountExchangesRequest) (*CountExchangesResponse, error)
 	AdminDeleteExchange(context.Context, *AdminDeleteExchangeRequest) (*AdminDeleteExchangeResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
@@ -130,8 +130,8 @@ func (UnimplementedGatewayServer) GetExchange(context.Context, *GetExchangeReque
 func (UnimplementedGatewayServer) GetExchanges(context.Context, *GetExchangesRequest) (*GetExchangesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetExchanges not implemented")
 }
-func (UnimplementedGatewayServer) GetExchangesCount(context.Context, *GetExchangesCountRequest) (*GetExchangesCountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetExchangesCount not implemented")
+func (UnimplementedGatewayServer) CountExchanges(context.Context, *CountExchangesRequest) (*CountExchangesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountExchanges not implemented")
 }
 func (UnimplementedGatewayServer) AdminDeleteExchange(context.Context, *AdminDeleteExchangeRequest) (*AdminDeleteExchangeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AdminDeleteExchange not implemented")
@@ -221,20 +221,20 @@ func _Gateway_GetExchanges_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetExchangesCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetExchangesCountRequest)
+func _Gateway_CountExchanges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountExchangesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetExchangesCount(ctx, in)
+		return srv.(GatewayServer).CountExchanges(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetExchangesCount_FullMethodName,
+		FullMethod: Gateway_CountExchanges_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetExchangesCount(ctx, req.(*GetExchangesCountRequest))
+		return srv.(GatewayServer).CountExchanges(ctx, req.(*CountExchangesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -281,8 +281,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetExchanges_Handler,
 		},
 		{
-			MethodName: "GetExchangesCount",
-			Handler:    _Gateway_GetExchangesCount_Handler,
+			MethodName: "CountExchanges",
+			Handler:    _Gateway_CountExchanges_Handler,
 		},
 		{
 			MethodName: "AdminDeleteExchange",

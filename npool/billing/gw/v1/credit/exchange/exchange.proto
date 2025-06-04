@@ -12,37 +12,37 @@ import "npool/basetypes/billing/v1/enums.proto";
 service Gateway {
     rpc AdminCreateExchange(AdminCreateExchangeRequest) returns (AdminCreateExchangeResponse) {
         option (google.api.http) = {
-            post: "/v1/admin/create/credit/exchange"
+            post: "/v1/admin/create/creditexchange"
             body: "*"
         };
     }
     rpc AdminUpdateExchange(AdminUpdateExchangeRequest) returns (AdminUpdateExchangeResponse) {
         option (google.api.http) = {
-            post: "/v1/admin/update/credit/exchange"
+            post: "/v1/admin/update/creditexchange"
             body: "*"
         };
     }
     rpc GetExchange(GetExchangeRequest) returns (GetExchangeResponse) {
         option (google.api.http) = {
-            post: "/v1/get/credit/exchange"
+            post: "/v1/get/creditexchange"
             body: "*"
         };
     }
     rpc GetExchanges(GetExchangesRequest) returns (GetExchangesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/credit/exchanges"
+            post: "/v1/get/creditexchanges"
             body: "*"
         };
     }
-    rpc GetExchangesCount(GetExchangesCountRequest) returns (GetExchangesCountResponse) {
+    rpc CountExchanges(CountExchangesRequest) returns (CountExchangesResponse) {
         option (google.api.http) = {
-            post: "/v1/get/credit/exchanges/count"
+            post: "/v1/count/creditexchanges"
             body: "*"
         };
     }
     rpc AdminDeleteExchange(AdminDeleteExchangeRequest) returns (AdminDeleteExchangeResponse) {
         option (google.api.http) = {
-            post: "/v1/admin/delete/credit/exchange"
+            post: "/v1/admin/delete/creditexchange"
             body: "*"
         };
     }
@@ -90,9 +90,9 @@ message GetExchangesResponse {
     repeated middleware.credit.exchange.v1.Exchange Infos = 10;
 }
 
-message GetExchangesCountRequest {}
+message CountExchangesRequest {}
 
-message GetExchangesCountResponse {
+message CountExchangesResponse {
     uint32 Total = 10;
 }
 

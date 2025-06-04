@@ -112,6 +112,38 @@
         ]
       }
     },
+    "/v1/count/addons": {
+      "post": {
+        "operationId": "Gateway_CountAddons",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CountAddonsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CountAddonsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/addon": {
       "post": {
         "operationId": "Gateway_GetAddon",
@@ -175,38 +207,6 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/get/addons/count": {
-      "post": {
-        "operationId": "Gateway_GetAddonsCount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/billinggatewayaddonv1GetAddonsCountResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/billinggatewayaddonv1GetAddonsCountRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
@@ -223,18 +223,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Addon"
-        }
-      }
-    },
-    "billinggatewayaddonv1GetAddonsCountRequest": {
-      "type": "object"
-    },
-    "billinggatewayaddonv1GetAddonsCountResponse": {
-      "type": "object",
-      "properties": {
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -429,6 +417,18 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Addon"
+        }
+      }
+    },
+    "v1CountAddonsRequest": {
+      "type": "object"
+    },
+    "v1CountAddonsResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     }

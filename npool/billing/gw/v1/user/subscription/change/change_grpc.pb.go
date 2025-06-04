@@ -19,9 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Gateway_GetSubscriptionChange_FullMethodName       = "/billing.gateway.user.subscription.change.v1.Gateway/GetSubscriptionChange"
-	Gateway_GetSubscriptionChanges_FullMethodName      = "/billing.gateway.user.subscription.change.v1.Gateway/GetSubscriptionChanges"
-	Gateway_GetSubscriptionChangesCount_FullMethodName = "/billing.gateway.user.subscription.change.v1.Gateway/GetSubscriptionChangesCount"
+	Gateway_GetSubscriptionChange_FullMethodName    = "/billing.gateway.user.subscription.change.v1.Gateway/GetSubscriptionChange"
+	Gateway_GetSubscriptionChanges_FullMethodName   = "/billing.gateway.user.subscription.change.v1.Gateway/GetSubscriptionChanges"
+	Gateway_CountSubscriptionChanges_FullMethodName = "/billing.gateway.user.subscription.change.v1.Gateway/CountSubscriptionChanges"
 )
 
 // GatewayClient is the client API for Gateway service.
@@ -30,7 +30,7 @@ const (
 type GatewayClient interface {
 	GetSubscriptionChange(ctx context.Context, in *GetSubscriptionChangeRequest, opts ...grpc.CallOption) (*GetSubscriptionChangeResponse, error)
 	GetSubscriptionChanges(ctx context.Context, in *GetSubscriptionChangesRequest, opts ...grpc.CallOption) (*GetSubscriptionChangesResponse, error)
-	GetSubscriptionChangesCount(ctx context.Context, in *GetSubscriptionChangesCountRequest, opts ...grpc.CallOption) (*GetSubscriptionChangesCountResponse, error)
+	CountSubscriptionChanges(ctx context.Context, in *CountSubscriptionChangesRequest, opts ...grpc.CallOption) (*CountSubscriptionChangesResponse, error)
 }
 
 type gatewayClient struct {
@@ -59,9 +59,9 @@ func (c *gatewayClient) GetSubscriptionChanges(ctx context.Context, in *GetSubsc
 	return out, nil
 }
 
-func (c *gatewayClient) GetSubscriptionChangesCount(ctx context.Context, in *GetSubscriptionChangesCountRequest, opts ...grpc.CallOption) (*GetSubscriptionChangesCountResponse, error) {
-	out := new(GetSubscriptionChangesCountResponse)
-	err := c.cc.Invoke(ctx, Gateway_GetSubscriptionChangesCount_FullMethodName, in, out, opts...)
+func (c *gatewayClient) CountSubscriptionChanges(ctx context.Context, in *CountSubscriptionChangesRequest, opts ...grpc.CallOption) (*CountSubscriptionChangesResponse, error) {
+	out := new(CountSubscriptionChangesResponse)
+	err := c.cc.Invoke(ctx, Gateway_CountSubscriptionChanges_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -74,7 +74,7 @@ func (c *gatewayClient) GetSubscriptionChangesCount(ctx context.Context, in *Get
 type GatewayServer interface {
 	GetSubscriptionChange(context.Context, *GetSubscriptionChangeRequest) (*GetSubscriptionChangeResponse, error)
 	GetSubscriptionChanges(context.Context, *GetSubscriptionChangesRequest) (*GetSubscriptionChangesResponse, error)
-	GetSubscriptionChangesCount(context.Context, *GetSubscriptionChangesCountRequest) (*GetSubscriptionChangesCountResponse, error)
+	CountSubscriptionChanges(context.Context, *CountSubscriptionChangesRequest) (*CountSubscriptionChangesResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }
 
@@ -88,8 +88,8 @@ func (UnimplementedGatewayServer) GetSubscriptionChange(context.Context, *GetSub
 func (UnimplementedGatewayServer) GetSubscriptionChanges(context.Context, *GetSubscriptionChangesRequest) (*GetSubscriptionChangesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSubscriptionChanges not implemented")
 }
-func (UnimplementedGatewayServer) GetSubscriptionChangesCount(context.Context, *GetSubscriptionChangesCountRequest) (*GetSubscriptionChangesCountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSubscriptionChangesCount not implemented")
+func (UnimplementedGatewayServer) CountSubscriptionChanges(context.Context, *CountSubscriptionChangesRequest) (*CountSubscriptionChangesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CountSubscriptionChanges not implemented")
 }
 func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
 
@@ -140,20 +140,20 @@ func _Gateway_GetSubscriptionChanges_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetSubscriptionChangesCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSubscriptionChangesCountRequest)
+func _Gateway_CountSubscriptionChanges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountSubscriptionChangesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetSubscriptionChangesCount(ctx, in)
+		return srv.(GatewayServer).CountSubscriptionChanges(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Gateway_GetSubscriptionChangesCount_FullMethodName,
+		FullMethod: Gateway_CountSubscriptionChanges_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetSubscriptionChangesCount(ctx, req.(*GetSubscriptionChangesCountRequest))
+		return srv.(GatewayServer).CountSubscriptionChanges(ctx, req.(*CountSubscriptionChangesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -174,8 +174,8 @@ var Gateway_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Gateway_GetSubscriptionChanges_Handler,
 		},
 		{
-			MethodName: "GetSubscriptionChangesCount",
-			Handler:    _Gateway_GetSubscriptionChangesCount_Handler,
+			MethodName: "CountSubscriptionChanges",
+			Handler:    _Gateway_CountSubscriptionChanges_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

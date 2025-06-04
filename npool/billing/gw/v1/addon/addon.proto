@@ -33,9 +33,9 @@ service Gateway {
             body: "*"
         };
     }
-    rpc GetAddonsCount(GetAddonsCountRequest) returns (GetAddonsCountResponse) {
+    rpc CountAddons(CountAddonsRequest) returns (CountAddonsResponse) {
         option (google.api.http) = {
-            post: "/v1/get/addons/count"
+            post: "/v1/count/addons"
             body: "*"
         };
     }
@@ -92,9 +92,9 @@ message GetAddonsResponse {
     repeated middleware.addon.v1.Addon Infos = 10;
 }
 
-message GetAddonsCountRequest {}
+message CountAddonsRequest {}
 
-message GetAddonsCountResponse {
+message CountAddonsResponse {
     uint32 Total = 10;
 }
 

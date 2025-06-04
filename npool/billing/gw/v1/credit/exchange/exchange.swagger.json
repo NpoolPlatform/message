@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/admin/create/credit/exchange": {
+    "/v1/admin/create/creditexchange": {
       "post": {
         "operationId": "Gateway_AdminCreateExchange",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/v1/admin/delete/credit/exchange": {
+    "/v1/admin/delete/creditexchange": {
       "post": {
         "operationId": "Gateway_AdminDeleteExchange",
         "responses": {
@@ -80,7 +80,7 @@
         ]
       }
     },
-    "/v1/admin/update/credit/exchange": {
+    "/v1/admin/update/creditexchange": {
       "post": {
         "operationId": "Gateway_AdminUpdateExchange",
         "responses": {
@@ -112,7 +112,39 @@
         ]
       }
     },
-    "/v1/get/credit/exchange": {
+    "/v1/count/creditexchanges": {
+      "post": {
+        "operationId": "Gateway_CountExchanges",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CountExchangesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CountExchangesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
+    "/v1/get/creditexchange": {
       "post": {
         "operationId": "Gateway_GetExchange",
         "responses": {
@@ -144,7 +176,7 @@
         ]
       }
     },
-    "/v1/get/credit/exchanges": {
+    "/v1/get/creditexchanges": {
       "post": {
         "operationId": "Gateway_GetExchanges",
         "responses": {
@@ -175,38 +207,6 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/get/credit/exchanges/count": {
-      "post": {
-        "operationId": "Gateway_GetExchangesCount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/billinggatewaycreditexchangev1GetExchangesCountResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/billinggatewaycreditexchangev1GetExchangesCountRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
@@ -223,18 +223,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Exchange"
-        }
-      }
-    },
-    "billinggatewaycreditexchangev1GetExchangesCountRequest": {
-      "type": "object"
-    },
-    "billinggatewaycreditexchangev1GetExchangesCountResponse": {
-      "type": "object",
-      "properties": {
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -370,6 +358,18 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Exchange"
+        }
+      }
+    },
+    "v1CountExchangesRequest": {
+      "type": "object"
+    },
+    "v1CountExchangesResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

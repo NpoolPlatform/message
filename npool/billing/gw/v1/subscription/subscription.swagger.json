@@ -112,6 +112,38 @@
         ]
       }
     },
+    "/v1/count/subscriptions": {
+      "post": {
+        "operationId": "Gateway_CountSubscriptions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CountSubscriptionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CountSubscriptionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Gateway"
+        ]
+      }
+    },
     "/v1/get/subscription": {
       "post": {
         "operationId": "Gateway_GetSubscription",
@@ -175,38 +207,6 @@
           "Gateway"
         ]
       }
-    },
-    "/v1/get/subscriptions/count": {
-      "post": {
-        "operationId": "Gateway_GetSubscriptionsCount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/billinggatewaysubscriptionv1GetSubscriptionsCountResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/billinggatewaysubscriptionv1GetSubscriptionsCountRequest"
-            }
-          }
-        ],
-        "tags": [
-          "Gateway"
-        ]
-      }
     }
   },
   "definitions": {
@@ -223,18 +223,6 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Subscription"
-        }
-      }
-    },
-    "billinggatewaysubscriptionv1GetSubscriptionsCountRequest": {
-      "type": "object"
-    },
-    "billinggatewaysubscriptionv1GetSubscriptionsCountResponse": {
-      "type": "object",
-      "properties": {
-        "Total": {
-          "type": "integer",
-          "format": "int64"
         }
       }
     },
@@ -396,6 +384,18 @@
       "properties": {
         "Info": {
           "$ref": "#/definitions/v1Subscription"
+        }
+      }
+    },
+    "v1CountSubscriptionsRequest": {
+      "type": "object"
+    },
+    "v1CountSubscriptionsResponse": {
+      "type": "object",
+      "properties": {
+        "Total": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
