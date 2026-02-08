@@ -22,6 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	SphinxProxy_Version_FullMethodName           = "/sphinx.proxy.v1.SphinxProxy/Version"
 	SphinxProxy_GetBalance_FullMethodName        = "/sphinx.proxy.v1.SphinxProxy/GetBalance"
+	SphinxProxy_GetPrivateKey_FullMethodName     = "/sphinx.proxy.v1.SphinxProxy/GetPrivateKey"
 	SphinxProxy_CreateWallet_FullMethodName      = "/sphinx.proxy.v1.SphinxProxy/CreateWallet"
 	SphinxProxy_CreateTransaction_FullMethodName = "/sphinx.proxy.v1.SphinxProxy/CreateTransaction"
 	SphinxProxy_UpdateTransaction_FullMethodName = "/sphinx.proxy.v1.SphinxProxy/UpdateTransaction"
@@ -39,6 +40,7 @@ type SphinxProxyClient interface {
 	// sync
 	Version(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*VersionResponse, error)
 	GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error)
+	GetPrivateKey(ctx context.Context, in *GetPrivateKeyRequest, opts ...grpc.CallOption) (*GetPrivateKeyResponse, error)
 	CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error)
 	CreateTransaction(ctx context.Context, in *CreateTransactionRequest, opts ...grpc.CallOption) (*CreateTransactionResponse, error)
 	UpdateTransaction(ctx context.Context, in *UpdateTransactionRequest, opts ...grpc.CallOption) (*UpdateTransactionResponse, error)
@@ -70,6 +72,15 @@ func (c *sphinxProxyClient) Version(ctx context.Context, in *emptypb.Empty, opts
 func (c *sphinxProxyClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error) {
 	out := new(GetBalanceResponse)
 	err := c.cc.Invoke(ctx, SphinxProxy_GetBalance_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sphinxProxyClient) GetPrivateKey(ctx context.Context, in *GetPrivateKeyRequest, opts ...grpc.CallOption) (*GetPrivateKeyResponse, error) {
+	out := new(GetPrivateKeyResponse)
+	err := c.cc.Invoke(ctx, SphinxProxy_GetPrivateKey_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -199,6 +210,7 @@ type SphinxProxyServer interface {
 	// sync
 	Version(context.Context, *emptypb.Empty) (*VersionResponse, error)
 	GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error)
+	GetPrivateKey(context.Context, *GetPrivateKeyRequest) (*GetPrivateKeyResponse, error)
 	CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error)
 	CreateTransaction(context.Context, *CreateTransactionRequest) (*CreateTransactionResponse, error)
 	UpdateTransaction(context.Context, *UpdateTransactionRequest) (*UpdateTransactionResponse, error)
@@ -220,6 +232,9 @@ func (UnimplementedSphinxProxyServer) Version(context.Context, *emptypb.Empty) (
 }
 func (UnimplementedSphinxProxyServer) GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBalance not implemented")
+}
+func (UnimplementedSphinxProxyServer) GetPrivateKey(context.Context, *GetPrivateKeyRequest) (*GetPrivateKeyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPrivateKey not implemented")
 }
 func (UnimplementedSphinxProxyServer) CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateWallet not implemented")
@@ -290,6 +305,24 @@ func _SphinxProxy_GetBalance_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SphinxProxyServer).GetBalance(ctx, req.(*GetBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SphinxProxy_GetPrivateKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPrivateKeyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SphinxProxyServer).GetPrivateKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: SphinxProxy_GetPrivateKey_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SphinxProxyServer).GetPrivateKey(ctx, req.(*GetPrivateKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -468,6 +501,10 @@ var SphinxProxy_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetBalance",
 			Handler:    _SphinxProxy_GetBalance_Handler,
+		},
+		{
+			MethodName: "GetPrivateKey",
+			Handler:    _SphinxProxy_GetPrivateKey_Handler,
 		},
 		{
 			MethodName: "CreateWallet",

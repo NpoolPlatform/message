@@ -144,6 +144,38 @@
         ]
       }
     },
+    "/v1/get/privatekey": {
+      "post": {
+        "operationId": "SphinxProxy_GetPrivateKey",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetPrivateKeyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetPrivateKeyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SphinxProxy"
+        ]
+      }
+    },
     "/v1/get/transaction": {
       "post": {
         "operationId": "SphinxProxy_GetTransaction",
@@ -482,6 +514,25 @@
         "BlockNum": {
           "type": "string",
           "format": "uint64"
+        }
+      }
+    },
+    "v1GetPrivateKeyRequest": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetPrivateKeyResponse": {
+      "type": "object",
+      "properties": {
+        "Info": {
+          "type": "string"
         }
       }
     },

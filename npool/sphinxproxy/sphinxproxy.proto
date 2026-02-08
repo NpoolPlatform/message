@@ -24,6 +24,12 @@ service SphinxProxy {
       body : "*"
     };
   }
+  rpc GetPrivateKey(GetPrivateKeyRequest) returns (GetPrivateKeyResponse) {
+    option (google.api.http) = {
+      post : "/v1/get/privatekey"
+      body : "*"
+    };
+  }
   rpc CreateWallet(CreateWalletRequest) returns (CreateWalletResponse) {
     option (google.api.http) = {
       post : "/v1/create/wallet"
@@ -102,6 +108,13 @@ message GetEstimateGasResponse {
 }
 
 message GetBalanceResponse { BalanceInfo Info = 100; }
+
+message GetPrivateKeyRequest {
+  string Name = 100;
+  string Address = 110;
+}
+
+message GetPrivateKeyResponse { string Info = 100; }
 
 message CreateWalletRequest { string Name = 100; }
 
